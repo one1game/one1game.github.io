@@ -1,24 +1,20 @@
-/* Сброс стандартных стилей */
+/* Общие стили */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Arial', sans-serif;
 }
 
-/* Фон страницы */
 body {
-    background-color: #1C1C1C;
-    color: #F4F4F4;
-    font-size: 16px;
-    line-height: 1.6;
-    padding: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
 }
 
-/* Шапка сайта */
+/* Шапка */
 header {
     background-color: #333;
-    color: #FF6347;
+    color: #ff6347;
     padding: 20px;
     text-align: center;
 }
@@ -26,127 +22,85 @@ header {
 header h1 {
     font-size: 2.5rem;
     font-weight: bold;
-    margin-bottom: 10px;
 }
 
-header p {
-    font-size: 1rem;
-}
-
-/* Горизонтальное меню */
-nav {
-    background-color: #222;
-    text-align: center;
-    padding: 10px 0;
-}
-
-nav ul {
+header nav ul {
     list-style: none;
-    display: flex;
-    justify-content: center;
-    gap: 30px;
+    margin-top: 10px;
 }
 
-nav ul li {
-    display: inline-block;
+header nav ul li {
+    display: inline;
+    margin: 0 15px;
 }
 
-nav ul li a {
-    color: #FF6347;
+header nav ul li a {
+    color: white;
     text-decoration: none;
-    font-size: 1.2rem;
-    padding: 10px;
-    transition: background-color 0.3s ease;
 }
 
-nav ul li a:hover {
-    background-color: #FF6347;
-    color: #fff;
+header nav ul li a:hover {
+    text-decoration: underline;
 }
 
-/* Контейнер с контентом */
-.container {
-    max-width: 1200px;
-    margin: 30px auto;
+/* Лента новостей */
+.news-feed {
     display: flex;
-    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
     gap: 20px;
-    justify-content: space-between;
-    padding: 0 20px;
 }
 
-/* Карточки */
-.card {
-    background-color: #444;
-    width: 48%;
+.news-card {
+    background-color: #fff;
+    width: 80%;
+    max-width: 600px;
     border-radius: 8px;
     padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.card:hover {
+.news-card:hover {
     transform: translateY(-5px);
-    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
 }
 
-.card h3 {
-    font-size: 1.8rem;
-    color: #FF6347;
+.news-card h3 {
+    font-size: 1.5rem;
+    color: #333;
     margin-bottom: 10px;
 }
 
-.card p {
+.news-card p {
     font-size: 1rem;
-    color: #F4F4F4;
+    color: #666;
 }
 
-/* Кнопка */
-button {
-    padding: 10px 20px;
-    background-color: #FF6347;
+.news-card .read-more {
+    background-color: #ff6347;
     color: white;
     border: none;
-    font-size: 1.2rem;
+    padding: 10px 20px;
+    font-size: 1rem;
     border-radius: 5px;
     cursor: pointer;
     transition: background-color 0.3s ease;
-    width: 100%;
-    margin-top: 20px;
 }
 
-button:hover {
-    background-color: #FF4500;
-}
-
-/* Подвал сайта */
-footer {
-    background-color: #333;
-    color: #F4F4F4;
-    text-align: center;
-    padding: 20px;
-    margin-top: 30px;
+.news-card .read-more:hover {
+    background-color: #e5533b;
 }
 
 /* Адаптивность */
 @media (max-width: 768px) {
-    .container {
+    .news-feed {
         flex-direction: column;
         align-items: center;
     }
 
-    .card {
-        width: 90%;
-    }
-
-    button {
-        width: 90%;
-    }
-
-    nav ul {
-        flex-direction: column;
-    }
-
-    nav ul li {
-        margin-bottom: 10px;
+    .news-card {
+        width: 100%;
     }
 }
