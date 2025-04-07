@@ -1,4 +1,4 @@
-/* Основные стили для всего сайта */
+/* Сброс стилей и установка глобальных настроек */
 * {
     margin: 0;
     padding: 0;
@@ -6,18 +6,19 @@
     font-family: 'Arial', sans-serif;
 }
 
-/* Фоновый цвет и общие отступы */
+/* Общие стили для страницы */
 body {
     background-color: #2C3E50;
     color: #ECF0F1;
     line-height: 1.6;
     padding: 20px;
+    font-size: 16px;
 }
 
-/* Заголовок сайта */
+/* Стиль для заголовка */
 header {
     text-align: center;
-    margin-bottom: 30px;
+    margin-bottom: 40px;
 }
 
 header h1 {
@@ -29,20 +30,20 @@ header h1 {
     text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.2);
 }
 
-/* Основные блоки контента */
+/* Основной контейнер */
 .container {
     max-width: 1200px;
     margin: 0 auto;
-    padding: 20px;
-    background: #34495E;
-    border-radius: 8px;
+    padding: 30px;
+    background-color: #34495E;
+    border-radius: 10px;
 }
 
 /* Стили для ссылок */
 a {
     color: #E74C3C;
     text-decoration: none;
-    transition: all 0.3s ease;
+    transition: color 0.3s ease;
 }
 
 a:hover {
@@ -50,14 +51,14 @@ a:hover {
     text-decoration: underline;
 }
 
-/* Стиль кнопок */
+/* Стиль для кнопок */
 button {
     padding: 12px 20px;
     border: none;
     background-color: #E74C3C;
     color: white;
-    font-size: 1.1rem;
-    border-radius: 4px;
+    font-size: 1.2rem;
+    border-radius: 6px;
     cursor: pointer;
     transition: background-color 0.3s ease;
 }
@@ -68,20 +69,21 @@ button:hover {
 
 /* Стили для карточек */
 .card {
-    background: #1ABC9C;
-    border-radius: 8px;
+    background-color: #1ABC9C;
+    border-radius: 10px;
     padding: 20px;
     margin: 20px 0;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .card:hover {
     transform: translateY(-10px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
 }
 
 .card h3 {
-    font-size: 1.8rem;
+    font-size: 2rem;
     color: #2C3E50;
 }
 
@@ -96,6 +98,7 @@ footer {
     padding: 20px;
     background-color: #34495E;
     color: #ECF0F1;
+    margin-top: 40px;
 }
 
 footer p {
@@ -113,7 +116,7 @@ footer p {
     }
 
     .container {
-        padding: 10px;
+        padding: 20px;
     }
 
     button {
@@ -122,5 +125,13 @@ footer p {
 
     .card {
         margin: 10px 0;
+    }
+
+    .card h3 {
+        font-size: 1.5rem;
+    }
+
+    .card p {
+        font-size: 0.9rem;
     }
 }
