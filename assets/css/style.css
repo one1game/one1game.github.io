@@ -33,6 +33,37 @@ header p {
     font-size: 1rem;
 }
 
+/* Горизонтальное меню */
+nav {
+    background-color: #222;
+    text-align: center;
+    padding: 10px 0;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+}
+
+nav ul li {
+    display: inline-block;
+}
+
+nav ul li a {
+    color: #FF6347;
+    text-decoration: none;
+    font-size: 1.2rem;
+    padding: 10px;
+    transition: background-color 0.3s ease;
+}
+
+nav ul li a:hover {
+    background-color: #FF6347;
+    color: #fff;
+}
+
 /* Контейнер с контентом */
 .container {
     max-width: 1200px;
@@ -109,5 +140,13 @@ footer {
 
     button {
         width: 90%;
+    }
+
+    nav ul {
+        flex-direction: column;
+    }
+
+    nav ul li {
+        margin-bottom: 10px;
     }
 }
