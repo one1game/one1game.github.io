@@ -1,62 +1,72 @@
 <!DOCTYPE html>
 <html lang="ru">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>One1Game - Игровой канал</title>
-    <link rel="stylesheet" href="assets/css/style.css">
+    <title>One1Game - YouTube & ВКонтакте</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #1e1e1e;
+            color: #fff;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background-color: #222;
+            padding: 20px;
+            text-align: center;
+        }
+        h1 {
+            font-size: 2.5em;
+            margin: 0;
+        }
+        .content {
+            padding: 30px;
+        }
+        .button {
+            background-color: #ff6347;
+            color: #fff;
+            font-size: 1.2em;
+            padding: 15px 30px;
+            margin: 20px;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+            text-decoration: none;
+        }
+        .button:hover {
+            background-color: #e5533e;
+        }
+        footer {
+            background-color: #222;
+            padding: 10px;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            text-align: center;
+        }
+    </style>
 </head>
-
 <body>
+
     <header>
-        <div class="container">
-            <h1>One1Game</h1>
-            <nav>
-                <ul>
-                    <li><a href="index.html">Главная</a></li>
-                    <li><a href="about.html">О канале</a></li>
-                    <li><a href="games.html">Игры</a></li>
-                    <li><a href="contact.html">Контакты</a></li>
-                </ul>
-            </nav>
-        </div>
+        <h1>One1Game</h1>
+        <p>Добро пожаловать на мой канал и группу!</p>
     </header>
 
-    <!-- Лента новостей -->
-    <section class="news-feed">
-        <h2>Последние новости</h2>
-        <div class="news-card">
-            <h3>Заголовок новости 1</h3>
-            <p>Это краткое описание новости. Подробнее...</p>
-            <a href="#" class="read-more">Читать далее</a>
-        </div>
-        <div class="news-card">
-            <h3>Заголовок новости 2</h3>
-            <p>Это краткое описание новости. Подробнее...</p>
-            <a href="#" class="read-more">Читать далее</a>
-        </div>
-        <div class="news-card">
-            <h3>Заголовок новости 3</h3>
-            <p>Это краткое описание новости. Подробнее...</p>
-            <a href="#" class="read-more">Читать далее</a>
-        </div>
-    </section>
-
-    <section class="intro">
-        <div class="container">
-            <h2>Добро пожаловать на канал One1Game!</h2>
-            <p>Здесь ты найдешь увлекательные игровые видео, прохождения и новости о лучших играх!</p>
-        </div>
-    </section>
+    <div class="content">
+        <h2>Подпишитесь на меня!</h2>
+        <p>Я создаю интересный контент для геймеров!</p>
+        
+        <a href="https://www.youtube.com/@one1game" class="button" target="_blank">Перейти на мой YouTube канал</a>
+        <a href="https://vk.com/one1games" class="button" target="_blank">Перейти в группу ВКонтакте</a>
+    </div>
 
     <footer>
-        <div class="container">
-            <p>&copy; 2025 One1Game. Все права защищены.</p>
-        </div>
+        <p>&copy; 2025 One1Game. Все права защищены.</p>
     </footer>
 
-    <script src="assets/js/script.js"></script>
 </body>
-
 </html>
