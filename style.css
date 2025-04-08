@@ -44,12 +44,11 @@ body {
     padding: 15px 30px;
     border-radius: 5px;
     text-decoration: none;
-    display: inline-block;
-    transition: transform 0.3s ease, background-color 0.3s ease;
-    display: flex;
+    display: inline-flex;
     align-items: center;
     justify-content: center;
     gap: 10px;
+    transition: transform 0.3s ease, background-color 0.3s ease;
   }
   
   .youtube-button {
