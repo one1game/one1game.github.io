@@ -8,12 +8,13 @@ body {
     justify-content: center;
   }
   
-  /* Обертка по ширине кнопок */
+  /* Ограничиваем ширину сайта до ширины двух кнопок */
   .site-wrapper {
-    width: max-content;
-    max-width: 100%;
+    max-width: 460px; /* 2 кнопки по 220px + отступы */
+    width: 100%;
     padding: 20px;
     text-align: center;
+    box-sizing: border-box;
   }
   
   /* Стили */
@@ -30,27 +31,35 @@ body {
     margin-bottom: 20px;
   }
   
-  /* Кнопки */
+  /* Кнопки в строчку */
+  .button-row {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    margin-bottom: 30px;
+  }
+  
   .button {
-    font-size: 1.1em;
-    padding: 15px 25px;
-    margin: 10px auto;
-    display: block;
+    font-size: 1em;
+    padding: 12px 20px;
     border: none;
     border-radius: 5px;
     text-decoration: none;
-    transition: background-color 0.3s;
     color: white;
-    width: fit-content;
+    transition: background-color 0.3s;
+    width: 200px;
+    text-align: center;
   }
   
-  /* Индивидуальные */
+  /* Цвета кнопок */
   .youtube-button {
     background-color: #ff0000;
   }
   .youtube-button:hover {
     background-color: #cc0000;
   }
+  
   .vk-button {
     background-color: #4c75a3;
   }
@@ -60,7 +69,7 @@ body {
   
   /* Анимация */
   .animation-container {
-    margin-top: 30px;
+    margin-top: 20px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -87,4 +96,25 @@ body {
   }
   
   footer {
+    margin-top: 20px;
+    font-size: 0.9em;
+    color: #aaa;
+  }
+  
+  /* Адаптивность */
+  @media (max-width: 480px) {
+    .button-row {
+      flex-direction: column;
+      gap: 10px;
+    }
+  
+    .button {
+      width: 100%;
+    }
+  
+    .circle-animation {
+      width: 35px;
+      height: 35px;
+    }
+  }
   
