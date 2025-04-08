@@ -24,8 +24,6 @@ h1 {
 }
 
 .button {
-    background-color: #ff6347;
-    color: #fff;
     font-size: 1.2em;
     padding: 15px 30px;
     margin: 20px;
@@ -35,19 +33,54 @@ h1 {
     text-decoration: none;
     display: inline-block;
     transition: background-color 0.3s;
+    color: white;
 }
 
-.button:hover {
-    background-color: #e5533e;
+/* Индивидуальные кнопки */
+.youtube-button {
+    background-color: #ff0000;
+}
+.youtube-button:hover {
+    background-color: #cc0000;
+}
+.vk-button {
+    background-color: #4c75a3;
+}
+.vk-button:hover {
+    background-color: #3b5d85;
 }
 
-footer {
-    background-color: #222;
-    padding: 10px;
-    text-align: center;
+/* Анимация */
+.animation-container {
+    margin-top: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 150px;
 }
 
-/* Адаптивные стили */
+.circle-animation {
+    width: 50px;
+    height: 50px;
+    border: 5px solid #ff6347;
+    border-top: 5px solid transparent;
+    border-radius: 50%;
+    animation: spin 1.5s linear infinite;
+}
+
+/* Если используешь gif/svg */
+.animated-img {
+    max-width: 100px;
+    height: auto;
+}
+
+/* Ключевые кадры */
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* Адаптивность */
 @media (max-width: 768px) {
     header {
         padding: 15px;
@@ -61,6 +94,10 @@ footer {
     .button {
         font-size: 1em;
         padding: 12px 25px;
+    }
+    .circle-animation {
+        width: 40px;
+        height: 40px;
     }
 }
 
@@ -78,4 +115,9 @@ footer {
         font-size: 0.9em;
         padding: 10px 20px;
     }
+    .circle-animation {
+        width: 30px;
+        height: 30px;
+    }
 }
+
