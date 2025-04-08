@@ -7,37 +7,51 @@ body {
     padding: 0;
     box-sizing: border-box;
 }
-
+  
 .site-wrapper {
     width: 100%;
     max-width: 1200px;
     margin: 0 auto;
     padding: 20px;
 }
-
+  
 header {
     text-align: center;
     padding: 30px 0;
 }
-
+  
 h1 {
     font-size: 3em;
     margin-bottom: 10px;
 }
-
+  
 p {
     font-size: 1.2em;
     margin-bottom: 20px;
 }
+  
+/* Центрирование контента */
+.content {
+    background-color: #292929; /* Темный фон для контента */
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    text-align: center; /* Центрирование текста */
+}
 
-/* Кнопки */
+h2 {
+    margin-top: 0;
+    font-size: 2.5em;
+    margin-bottom: 20px;
+}
+  
 .button-row {
     display: flex;
     justify-content: center;
     gap: 20px;
     margin-bottom: 30px;
 }
-
+  
 .button {
     background-color: #ff6347;
     color: white;
@@ -50,39 +64,36 @@ p {
     justify-content: center;
     gap: 10px;
     transition: transform 0.3s ease, background-color 0.3s ease;
-    font-weight: 500; /* Сделать текст на кнопке жирным */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Добавление тени */
 }
-
+  
 .youtube-button {
     background-color: #ff0000;
 }
-
+  
 .vk-button {
     background-color: #4c75a3;
 }
-
+  
 .button:hover {
     transform: scale(1.1);
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); /* Увеличенная тень при наведении */
 }
-
+  
 .button i {
     font-size: 1.5em;
 }
-
+  
 /* Анимация */
 .animation-container {
     text-align: center;
     margin-top: 30px;
 }
-
+  
 .animated-img {
     width: 100%;
     max-width: 300px;
-    animation: fadeIn 1.5s ease-in-out; /* Уменьшил время анимации */
+    animation: fadeIn 2s ease-in-out;
 }
-
+  
 @keyframes fadeIn {
     from {
         opacity: 0;
@@ -91,7 +102,7 @@ p {
         opacity: 1;
     }
 }
-
+  
 /* Адаптивные стили */
 @media (max-width: 768px) {
     header h1 {
@@ -116,7 +127,7 @@ p {
         max-width: 250px;
     }
 }
-
+  
 @media (max-width: 480px) {
     header h1 {
         font-size: 2em;
@@ -141,7 +152,6 @@ p {
     }
 }
 
-/* Стили футера */
 footer {
     text-align: center;
     padding: 20px;
@@ -161,10 +171,9 @@ footer p {
     padding: 20px;
     border-radius: 10px; /* Скругленные углы */
     width: 100%;
-    max-width: 320px; /* Немного увеличил ширину */
+    max-width: 300px; /* Ограничение ширины */
     margin-left: auto;
-    margin-right: auto;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Тень вокруг плеера */
+    margin-right: auto; /* Центрирование */
 }
 
 .radio-style h3 {
@@ -206,12 +215,4 @@ audio::-webkit-media-controls-volume-slider {
     .radio-style h3 {
         font-size: 1.2em;
     }
-}
-
-/* Стили для контента */
-.content {
-    background-color: #292929; /* Темный фон для контента */
-    padding: 30px;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
