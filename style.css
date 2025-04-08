@@ -1,120 +1,151 @@
+/* Общие стили */
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Roboto', sans-serif;
     background-color: #1e1e1e;
     color: #fff;
     margin: 0;
     padding: 0;
-    display: flex;
-    justify-content: center;
-  }
-  
-  /* Ограничиваем ширину сайта до ширины двух кнопок */
-  .site-wrapper {
-    max-width: 460px; /* 2 кнопки по 220px + отступы */
-    width: 100%;
-    padding: 20px;
-    text-align: center;
     box-sizing: border-box;
   }
   
-  /* Стили */
+  .site-wrapper {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+  
   header {
-    padding: 20px 0;
+    text-align: center;
+    padding: 30px 0;
   }
   
   h1 {
-    font-size: 2.2em;
-    margin: 0;
+    font-size: 3em;
+    margin-bottom: 10px;
   }
   
-  .content h2 {
+  p {
+    font-size: 1.2em;
     margin-bottom: 20px;
   }
   
-  /* Кнопки в строчку */
   .button-row {
     display: flex;
     justify-content: center;
     gap: 20px;
-    flex-wrap: wrap;
     margin-bottom: 30px;
   }
   
   .button {
-    font-size: 1em;
-    padding: 12px 20px;
-    border: none;
+    background-color: #ff6347;
+    color: white;
+    font-size: 1.2em;
+    padding: 15px 30px;
     border-radius: 5px;
     text-decoration: none;
-    color: white;
-    transition: background-color 0.3s;
-    width: 200px;
-    text-align: center;
+    display: inline-block;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
   }
   
-  /* Цвета кнопок */
   .youtube-button {
     background-color: #ff0000;
-  }
-  .youtube-button:hover {
-    background-color: #cc0000;
   }
   
   .vk-button {
     background-color: #4c75a3;
   }
-  .vk-button:hover {
-    background-color: #3b5d85;
+  
+  .button:hover {
+    transform: scale(1.1);
+  }
+  
+  .button i {
+    font-size: 1.5em;
   }
   
   /* Анимация */
   .animation-container {
-    margin-top: 20px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 120px;
-  }
-  
-  .circle-animation {
-    width: 50px;
-    height: 50px;
-    border: 5px solid #ff6347;
-    border-top: 5px solid transparent;
-    border-radius: 50%;
-    animation: spin 1.5s linear infinite;
+    text-align: center;
+    margin-top: 30px;
   }
   
   .animated-img {
-    max-width: 100px;
-    height: auto;
+    width: 100%;
+    max-width: 300px;
+    animation: fadeIn 2s ease-in-out;
   }
   
-  @keyframes spin {
-    0% { transform: rotate(0deg); }
-    100% { transform: rotate(360deg); }
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
   }
   
-  footer {
-    margin-top: 20px;
-    font-size: 0.9em;
-    color: #aaa;
-  }
+  /* Адаптивные стили */
+  @media (max-width: 768px) {
+    header h1 {
+      font-size: 2.5em;
+    }
   
-  /* Адаптивность */
-  @media (max-width: 480px) {
+    header p {
+      font-size: 1.1em;
+    }
+  
     .button-row {
       flex-direction: column;
       gap: 10px;
     }
   
     .button {
-      width: 100%;
+      font-size: 1em;
+      padding: 12px 25px;
     }
   
-    .circle-animation {
-      width: 35px;
-      height: 35px;
+    .animated-img {
+      max-width: 250px;
     }
+  }
+  
+  @media (max-width: 480px) {
+    header h1 {
+      font-size: 2em;
+    }
+  
+    header p {
+      font-size: 1em;
+    }
+  
+    .button-row {
+      flex-direction: column;
+      gap: 8px;
+    }
+  
+    .button {
+      font-size: 0.9em;
+      padding: 10px 20px;
+    }
+  
+    .animated-img {
+      max-width: 200px;
+    }
+  }
+  
+  footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #222;
+    margin-top: 30px;
+  }
+  
+  footer p {
+    font-size: 1em;
   }
   
