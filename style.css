@@ -148,3 +148,57 @@ body {
     font-size: 1em;
   }
   
+  /* Стили для проигрывателя */
+.music-player {
+    text-align: center;
+    margin-top: 30px;
+    background-color: #222; /* Темный фон для радио */
+    padding: 20px;
+    border-radius: 10px; /* Скругленные углы */
+    width: 100%;
+    max-width: 300px; /* Ограничение ширины */
+    margin-left: auto;
+    margin-right: auto; /* Центрирование */
+  }
+  
+  .radio-style h3 {
+    color: #fff;
+    font-family: 'Courier New', Courier, monospace; /* Шрифт в стиле ретро */
+    font-size: 1.5em;
+    margin-bottom: 15px;
+    text-transform: uppercase; /* Заглавные буквы */
+  }
+  
+  audio {
+    width: 100%;
+    border: 2px solid #ff6347; /* Оранжевая рамка, чтобы выделять */
+    border-radius: 5px;
+    background-color: #333; /* Темный фон для плеера */
+    padding: 5px;
+  }
+  
+  audio::-webkit-media-controls-panel {
+    background-color: #444; /* Темный цвет панели управления */
+  }
+  
+  audio::-webkit-media-controls-play-button {
+    background-color: #ff6347; /* Цвет кнопки воспроизведения */
+    border-radius: 50%;
+  }
+  
+  audio::-webkit-media-controls-volume-slider {
+    background-color: #ff6347; /* Цвет ползунка громкости */
+  }
+  
+  /* Адаптивность */
+  @media (max-width: 480px) {
+    .music-player {
+      max-width: 80%;
+      padding: 15px;
+    }
+  
+    .radio-style h3 {
+      font-size: 1.2em;
+    }
+  }
+  
