@@ -6,38 +6,39 @@ body {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-  }
-  
-  .site-wrapper {
+}
+
+.site-wrapper {
     width: 100%;
     max-width: 1200px;
     margin: 0 auto;
     padding: 20px;
-  }
-  
-  header {
+}
+
+header {
     text-align: center;
     padding: 30px 0;
-  }
-  
-  h1 {
+}
+
+h1 {
     font-size: 3em;
     margin-bottom: 10px;
-  }
-  
-  p {
+}
+
+p {
     font-size: 1.2em;
     margin-bottom: 20px;
-  }
-  
-  .button-row {
+}
+
+/* Кнопки */
+.button-row {
     display: flex;
     justify-content: center;
     gap: 20px;
     margin-bottom: 30px;
-  }
-  
-  .button {
+}
+
+.button {
     background-color: #ff6347;
     color: white;
     font-size: 1.2em;
@@ -49,106 +50,110 @@ body {
     justify-content: center;
     gap: 10px;
     transition: transform 0.3s ease, background-color 0.3s ease;
-  }
-  
-  .youtube-button {
+    font-weight: 500; /* Сделать текст на кнопке жирным */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Добавление тени */
+}
+
+.youtube-button {
     background-color: #ff0000;
-  }
-  
-  .vk-button {
+}
+
+.vk-button {
     background-color: #4c75a3;
-  }
-  
-  .button:hover {
+}
+
+.button:hover {
     transform: scale(1.1);
-  }
-  
-  .button i {
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); /* Увеличенная тень при наведении */
+}
+
+.button i {
     font-size: 1.5em;
-  }
-  
-  /* Анимация */
-  .animation-container {
+}
+
+/* Анимация */
+.animation-container {
     text-align: center;
     margin-top: 30px;
-  }
-  
-  .animated-img {
+}
+
+.animated-img {
     width: 100%;
     max-width: 300px;
-    animation: fadeIn 2s ease-in-out;
-  }
-  
-  @keyframes fadeIn {
+    animation: fadeIn 1.5s ease-in-out; /* Уменьшил время анимации */
+}
+
+@keyframes fadeIn {
     from {
-      opacity: 0;
+        opacity: 0;
     }
     to {
-      opacity: 1;
+        opacity: 1;
     }
-  }
-  
-  /* Адаптивные стили */
-  @media (max-width: 768px) {
+}
+
+/* Адаптивные стили */
+@media (max-width: 768px) {
     header h1 {
-      font-size: 2.5em;
+        font-size: 2.5em;
     }
-  
+
     header p {
-      font-size: 1.1em;
+        font-size: 1.1em;
     }
-  
+
     .button-row {
-      flex-direction: column;
-      gap: 10px;
+        flex-direction: column;
+        gap: 10px;
     }
-  
+
     .button {
-      font-size: 1em;
-      padding: 12px 25px;
+        font-size: 1em;
+        padding: 12px 25px;
     }
-  
+
     .animated-img {
-      max-width: 250px;
+        max-width: 250px;
     }
-  }
-  
-  @media (max-width: 480px) {
+}
+
+@media (max-width: 480px) {
     header h1 {
-      font-size: 2em;
+        font-size: 2em;
     }
-  
+
     header p {
-      font-size: 1em;
+        font-size: 1em;
     }
-  
+
     .button-row {
-      flex-direction: column;
-      gap: 8px;
+        flex-direction: column;
+        gap: 8px;
     }
-  
+
     .button {
-      font-size: 0.9em;
-      padding: 10px 20px;
+        font-size: 0.9em;
+        padding: 10px 20px;
     }
-  
+
     .animated-img {
-      max-width: 200px;
+        max-width: 200px;
     }
-  }
-  
-  footer {
+}
+
+/* Стили футера */
+footer {
     text-align: center;
     padding: 20px;
     background-color: #222;
     margin-top: 30px;
-  }
-  
-  footer p {
+}
+
+footer p {
     font-size: 1em;
-  }
-  
-  /* Стили для проигрывателя */
+}
+
+/* Стили для проигрывателя */
 .music-player {
     text-align: center;
     margin-top: 30px;
@@ -156,49 +161,57 @@ body {
     padding: 20px;
     border-radius: 10px; /* Скругленные углы */
     width: 100%;
-    max-width: 300px; /* Ограничение ширины */
+    max-width: 320px; /* Немного увеличил ширину */
     margin-left: auto;
-    margin-right: auto; /* Центрирование */
-  }
-  
-  .radio-style h3 {
+    margin-right: auto;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Тень вокруг плеера */
+}
+
+.radio-style h3 {
     color: #fff;
     font-family: 'Courier New', Courier, monospace; /* Шрифт в стиле ретро */
     font-size: 1.5em;
     margin-bottom: 15px;
     text-transform: uppercase; /* Заглавные буквы */
-  }
-  
-  audio {
+}
+
+audio {
     width: 100%;
     border: 2px solid #ff6347; /* Оранжевая рамка, чтобы выделять */
     border-radius: 5px;
     background-color: #333; /* Темный фон для плеера */
     padding: 5px;
-  }
-  
-  audio::-webkit-media-controls-panel {
+}
+
+audio::-webkit-media-controls-panel {
     background-color: #444; /* Темный цвет панели управления */
-  }
-  
-  audio::-webkit-media-controls-play-button {
+}
+
+audio::-webkit-media-controls-play-button {
     background-color: #ff6347; /* Цвет кнопки воспроизведения */
     border-radius: 50%;
-  }
-  
-  audio::-webkit-media-controls-volume-slider {
+}
+
+audio::-webkit-media-controls-volume-slider {
     background-color: #ff6347; /* Цвет ползунка громкости */
-  }
-  
-  /* Адаптивность */
-  @media (max-width: 480px) {
+}
+
+/* Адаптивность */
+@media (max-width: 480px) {
     .music-player {
-      max-width: 80%;
-      padding: 15px;
+        max-width: 80%;
+        padding: 15px;
     }
-  
+
     .radio-style h3 {
-      font-size: 1.2em;
+        font-size: 1.2em;
     }
-  }
-  
+}
+
+/* Стили для контента */
+.content {
+    background-color: #292929; /* Темный фон для контента */
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
