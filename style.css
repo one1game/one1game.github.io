@@ -4,120 +4,87 @@ body {
     color: #fff;
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
-}
-
-header {
-    background-color: #222;
+    display: flex;
+    justify-content: center;
+  }
+  
+  /* Обертка по ширине кнопок */
+  .site-wrapper {
+    width: max-content;
+    max-width: 100%;
     padding: 20px;
     text-align: center;
-}
-
-h1 {
-    font-size: 2.5em;
+  }
+  
+  /* Стили */
+  header {
+    padding: 20px 0;
+  }
+  
+  h1 {
+    font-size: 2.2em;
     margin: 0;
-}
-
-.content {
-    padding: 30px;
-    text-align: center;
-}
-
-.button {
-    font-size: 1.2em;
-    padding: 15px 30px;
-    margin: 20px;
+  }
+  
+  .content h2 {
+    margin-bottom: 20px;
+  }
+  
+  /* Кнопки */
+  .button {
+    font-size: 1.1em;
+    padding: 15px 25px;
+    margin: 10px auto;
+    display: block;
     border: none;
-    cursor: pointer;
     border-radius: 5px;
     text-decoration: none;
-    display: inline-block;
     transition: background-color 0.3s;
     color: white;
-}
-
-/* Индивидуальные кнопки */
-.youtube-button {
+    width: fit-content;
+  }
+  
+  /* Индивидуальные */
+  .youtube-button {
     background-color: #ff0000;
-}
-.youtube-button:hover {
+  }
+  .youtube-button:hover {
     background-color: #cc0000;
-}
-.vk-button {
+  }
+  .vk-button {
     background-color: #4c75a3;
-}
-.vk-button:hover {
+  }
+  .vk-button:hover {
     background-color: #3b5d85;
-}
-
-/* Анимация */
-.animation-container {
-    margin-top: 40px;
+  }
+  
+  /* Анимация */
+  .animation-container {
+    margin-top: 30px;
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 150px;
-}
-
-.circle-animation {
+    height: 120px;
+  }
+  
+  .circle-animation {
     width: 50px;
     height: 50px;
     border: 5px solid #ff6347;
     border-top: 5px solid transparent;
     border-radius: 50%;
     animation: spin 1.5s linear infinite;
-}
-
-/* Если используешь gif/svg */
-.animated-img {
+  }
+  
+  .animated-img {
     max-width: 100px;
     height: auto;
-}
-
-/* Ключевые кадры */
-@keyframes spin {
+  }
+  
+  @keyframes spin {
     0% { transform: rotate(0deg); }
     100% { transform: rotate(360deg); }
-}
-
-/* Адаптивность */
-@media (max-width: 768px) {
-    header {
-        padding: 15px;
-    }
-    h1 {
-        font-size: 2em;
-    }
-    .content {
-        padding: 20px;
-    }
-    .button {
-        font-size: 1em;
-        padding: 12px 25px;
-    }
-    .circle-animation {
-        width: 40px;
-        height: 40px;
-    }
-}
-
-@media (max-width: 480px) {
-    header {
-        padding: 10px;
-    }
-    h1 {
-        font-size: 1.8em;
-    }
-    .content {
-        padding: 15px;
-    }
-    .button {
-        font-size: 0.9em;
-        padding: 10px 20px;
-    }
-    .circle-animation {
-        width: 30px;
-        height: 30px;
-    }
-}
-
+  }
+  
+  footer {
+  
