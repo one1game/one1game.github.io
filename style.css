@@ -165,17 +165,30 @@ audio {
 
 footer {
     text-align: center;
-    padding: 10px 0; /* Уменьшены отступы */
+    padding: 20px 0; /* Добавляем немного отступов сверху и снизу */
     background-color: #28a745; /* Зеленый фон */
     margin-top: 50px;
     max-width: 1200px; /* Ширина подвала ограничена */
     margin-left: auto; /* Центрируем по горизонтали */
     margin-right: auto; /* Центрируем по горизонтали */
+    border-top: 3px solid #fff; /* Белая линия сверху для отделения */
 }
 
 footer p {
-    font-size: 1em;
-    color: #aaa;
+    font-size: 1.2em; /* Увеличиваем размер шрифта */
+    color: #fff; /* Белый цвет текста */
+    margin: 0; /* Убираем отступы */
+}
+
+footer a {
+    color: #fff; /* Белый цвет ссылок */
+    text-decoration: none; /* Убираем подчеркивание */
+    font-weight: bold; /* Жирный шрифт для ссылок */
+    transition: color 0.3s ease; /* Плавный переход при наведении */
+}
+
+footer a:hover {
+    color: #ffd700; /* Золотой цвет при наведении */
 }
 
 /* Видео */
