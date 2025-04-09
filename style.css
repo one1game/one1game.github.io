@@ -165,8 +165,9 @@ audio {
 
 footer {
     height: 4px; /* Высота полоски */
-    background-color: #000; /* Черная полоска */
+    background-color: #28a745; /* Зеленая полоска */
     margin-top: 50px;
+    margin-bottom: 20px; /* Отступ снизу */
     max-width: 1200px; /* Ширина полоски ограничена */
     margin-left: auto; /* Центрируем по горизонтали */
     margin-right: auto; /* Центрируем по горизонтали */
