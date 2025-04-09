@@ -216,3 +216,14 @@ audio::-webkit-media-controls-volume-slider {
         font-size: 1.2em;
     }
 }
+
+
+.random-video-block {
+    text-align: center;
+    margin: 20px auto;
+  }
+  .random-video-block iframe {
+    max-width: 100%;
+    height: auto;
+  }
+  
