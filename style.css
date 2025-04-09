@@ -165,10 +165,9 @@ audio {
 
 footer {
     text-align: center;
+    padding: 10px 0; /* Уменьшены отступы */
     background-color: #28a745; /* Зеленый фон */
     margin-top: 50px;
-    margin-bottom: 20px; /* Отступ снизу */
-    height: 50px; /* Устанавливаем высоту подвала */
     max-width: 1200px; /* Ширина подвала ограничена */
     margin-left: auto; /* Центрируем по горизонтали */
     margin-right: auto; /* Центрируем по горизонтали */
