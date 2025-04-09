@@ -1,31 +1,29 @@
-// Управление проигрывателем
-const radioPlayer = document.getElementById('radio-player');
+// Получаем элементы
 const playPauseBtn = document.getElementById('playPauseBtn');
-const volumeControl = document.getElementById('volumeControl');
+const stopBtn = document.getElementById('stopBtn');
+const audioPlayer = document.getElementById('radio-player');
+const bars = document.querySelectorAll('.bar');
 
-// Функция для воспроизведения/паузы
+// Функция для старта/паузы воспроизведения
 playPauseBtn.addEventListener('click', () => {
-    if (radioPlayer.paused) {
-        radioPlayer.play();
+    if (audioPlayer.paused) {
+        audioPlayer.play();
         playPauseBtn.textContent = 'Pause';
+        // Запускаем анимацию эквалайзера
+        bars.forEach(bar => bar.style.animationPlayState = 'running');
     } else {
-        radioPlayer.pause();
+        audioPlayer.pause();
         playPauseBtn.textContent = 'Play';
+        // Останавливаем анимацию эквалайзера
+        bars.forEach(bar => bar.style.animationPlayState = 'paused');
     }
 });
 
-// Управление громкостью
-volumeControl.addEventListener('input', () => {
-    radioPlayer.volume = volumeControl.value;
+// Функция для остановки воспроизведения
+stopBtn.addEventListener('click', () => {
+    audioPlayer.pause();
+    audioPlayer.currentTime = 0; // сбросить время воспроизведения
+    playPauseBtn.textContent = 'Play';
+    // Останавливаем анимацию эквалайзера
+    bars.forEach(bar => bar.style.animationPlayState = 'paused');
 });
-
-// Эквалайзер
-const bars = document.querySelectorAll('.bar');
-
-// Эмуляция "анимированного" эквалайзера (пока без реального анализа звука)
-setInterval(() => {
-    bars.forEach(bar => {
-        const randomHeight = Math.random() * 20 + 10; // Случайная высота для имитации эквалайзера
-        bar.style.height = `${randomHeight}px`;
-    });
-}, 100);
