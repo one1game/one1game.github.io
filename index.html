@@ -46,7 +46,7 @@
   <div id="video-container"></div>
 </div>
 
-   <!-- Проигрыватель с эквалайзером -->
+  <!-- Проигрыватель с эквалайзером -->
 <div class="music-player">
   <div class="radio-style">
       <h3>8-Bit Radio</h3>
@@ -54,7 +54,7 @@
           <button id="playPauseBtn" class="playPauseBtn">Play</button>
           <input type="range" id="volumeControl" min="0" max="1" step="0.1" value="1" />
       </div>
-      <audio id="radio-player" controls>
+      <audio id="radio-player">
           <source src="https://spritelayerradio.com/listen/classic/classic.mp3" type="audio/mp3" />
           Ваш браузер не поддерживает аудио.
       </audio>
@@ -67,6 +67,7 @@
       </div>
   </div>
 </div>
+
 
     <footer>
       <p>&copy; 2025 One1Game.</p>
@@ -113,7 +114,6 @@
   document.getElementById('header').style.backgroundSize = 'cover';
   document.getElementById('header').style.backgroundPosition = 'center';
 </script>
-
 <script src="scripts.js"></script>
   
 </body>
