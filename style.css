@@ -164,12 +164,10 @@ audio {
 }
 
 footer {
-    text-align: center;
-    padding: 41px 20px; /* Скопировал отступы из header */
-    background-color: #1a1a1a;
+    height: 4px; /* Высота полоски */
+    background-color: #000; /* Черная полоска */
     margin-top: 50px;
-    border-top: 1px solid #333;
-    max-width: 1200px; /* Ширина подвала ограничена, как у шапки */
+    max-width: 1200px; /* Ширина полоски ограничена */
     margin-left: auto; /* Центрируем по горизонтали */
     margin-right: auto; /* Центрируем по горизонтали */
 }
