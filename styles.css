@@ -63,6 +63,7 @@ input[type="range"] {
     position: relative;
     z-index: 1;
     height: 50px; /* Ограничиваем высоту эквалайзера */
+    align-items: flex-end; /* Выравнивание полосок по низу */
 }
 
 .bar {
