@@ -13,11 +13,10 @@
 </head>
 <body>
 
-  <div class="site-wrapper">
-    <header>
+      <div class="site-wrapper">
+    <header id="header">
       <h1>One1Game</h1>
       <p>Добро пожаловать на мой канал и группу!</p>
-    </header>
 
    
     
@@ -82,6 +81,23 @@
         console.error('Ошибка загрузки видео:', error);
       });
   </script>
+
+<script>
+  // Список изображений для шапки
+  const headerImages = [
+    'img/header1.jpg',
+    'img/header2.jpg',
+    'img/header3.jpg'
+  ];
+
+  // Выбор случайного изображения
+  const randomImage = headerImages[Math.floor(Math.random() * headerImages.length)];
+
+  // Применение выбранного изображения к элементу header
+  document.getElementById('header').style.backgroundImage = `url(${randomImage})`;
+  document.getElementById('header').style.backgroundSize = 'cover';
+  document.getElementById('header').style.backgroundPosition = 'center';
+</script>
   
 </body>
 </html>

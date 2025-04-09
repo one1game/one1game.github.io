@@ -26,13 +26,14 @@ body {
     }
 }
 
+/* Общие стили для шапки */
 header {
     text-align: center;
     padding: 40px 20px;
-    background-image: url('img/logo.jpg'); /* добавьте свой путь к изображению */
+    color: white;
+    background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
-    background-repeat: no-repeat;
 }
 
 h1 {
