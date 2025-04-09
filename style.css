@@ -46,6 +46,7 @@ p {
     margin-bottom: 20px;
 }
 
+/* Обновления: уменьшение ширины блока "Подпишитесь на меня!" */
 .content {
     background-color: #1f1f1f;
     padding: 30px;
@@ -53,10 +54,13 @@ p {
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
     text-align: center;
     margin-top: 30px;
+    max-width: 800px; /* Ограничиваем ширину */
+    margin-left: auto;
+    margin-right: auto;
 }
 
 h2 {
-    font-size: 2.2em;
+    font-size: 1.8em; /* Уменьшаем размер заголовка */
     margin-bottom: 20px;
     color: #ff6347;
 }
@@ -73,7 +77,7 @@ h2 {
     background-color: #ff6347;
     color: white;
     font-size: 1.1em;
-    padding: 15px 25px;
+    padding: 12px 20px; /* Меньше отступы */
     border-radius: 8px;
     text-decoration: none;
     display: inline-flex;
@@ -101,13 +105,14 @@ h2 {
     font-size: 1.3em;
 }
 
+/* Обновления: уменьшение ширины блока с анимацией */
 .animation-container {
     margin-top: 30px;
 }
 
 .animated-img {
     width: 100%;
-    max-width: 300px;
+    max-width: 250px; /* Меньше максимальная ширина */
     animation: fadeIn 2s ease-in-out;
 }
 
@@ -127,7 +132,7 @@ h2 {
     padding: 25px;
     border-radius: 15px;
     margin: 40px auto;
-    max-width: 400px;
+    max-width: 800px; /* Ограничиваем ширину */
     text-align: center;
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);
 }
@@ -187,18 +192,17 @@ footer p {
     margin: 40px auto;
 }
 
+/* Обновления: Уменьшаем ширину блока "Случайное видео с канала" */
+.random-video-block, .music-player {
+    max-width: 800px; /* Максимальная ширина для всех блоков */
+    margin-left: auto;
+    margin-right: auto;
+}
+
 /* Адаптивность */
 @media (max-width: 768px) {
-    header {
-        padding: 20px 10px;
-    }
-
-    h1 {
-        font-size: 2.2em;
-    }
-
-    h2 {
-        font-size: 1.8em;
+    .content, .random-video-block, .music-player {
+        max-width: 90%; /* Уменьшаем ширину для мобильных устройств */
     }
 
     .button {
@@ -206,12 +210,8 @@ footer p {
         padding: 12px 20px;
     }
 
-    .music-player {
-        max-width: 90%;
-    }
-
     .animated-img {
-        max-width: 250px;
+        max-width: 200px;
     }
 }
 
@@ -241,5 +241,3 @@ footer p {
         padding: 15px;
     }
 }
-
-  
