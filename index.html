@@ -19,6 +19,12 @@
       <p>Добро пожаловать на мой канал и группу!</p>
     </header>
 
+    <div id="random-video" class="random-video-block">
+      <p>Случайное видео с канала:</p>
+      <div id="video-container"></div>
+    </div>
+    
+
     <div class="content">
       <h2>Подпишитесь на меня!</h2>
 
@@ -51,6 +57,28 @@
     </footer>
   </div>
 
+  <script>
+    fetch('videos.json')
+      .then(response => response.json())
+      .then(videos => {
+        if (videos.length > 0) {
+          const randomIndex = Math.floor(Math.random() * videos.length);
+          const videoUrl = videos[randomIndex];
+          const videoContainer = document.getElementById('video-container');
+          videoContainer.innerHTML = `
+            <iframe width="560" height="315"
+              src="${videoUrl}"
+              frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowfullscreen></iframe>
+          `;
+        }
+      })
+      .catch(error => {
+        console.error('Ошибка загрузки видео:', error);
+      });
+  </script>
+  
 </body>
 </html>
 
