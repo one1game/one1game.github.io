@@ -5,7 +5,7 @@ audio {
 
 /* Стили для кастомных элементов управления */
 .music-player {
-    background-color: #2a2a2a; /* фон плеера */
+    background-color: #2a2a2a; /* Фон плеера */
     padding: 20px;
     border-radius: 10px;
     text-align: center;
@@ -17,7 +17,14 @@ audio {
     position: relative;
 }
 
+/* Добавляем фоновую картинку */
 .radio-style {
+    background-image: url('img/radio.jpg'); /* Путь к вашей картинке */
+    background-size: cover; /* Заполняет блок картинкой */
+    background-position: center; /* Центрирует картинку */
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1); /* Легкая тень для блока */
     color: #fff;
 }
 
@@ -119,4 +126,3 @@ input[type="range"] {
         height: 60px; /* Максимальная высота в середине анимации */
     }
 }
-
