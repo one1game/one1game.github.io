@@ -32,7 +32,7 @@ audio {
     margin-bottom: 10px;
 }
 
-.playPauseBtn {
+.playPauseBtn, .stopBtn {
     background-color: #ff4500;
     border: none;
     color: white;
@@ -43,7 +43,7 @@ audio {
     margin-right: 10px;
 }
 
-.playPauseBtn:hover {
+.playPauseBtn:hover, .stopBtn:hover {
     background-color: #ff6347;
 }
 
@@ -62,7 +62,7 @@ input[type="range"] {
     justify-content: space-around;
     margin-top: 10px;
     position: relative;
-    z-index: 1; /* Чтобы эквалайзер не выходил за пределы */
+    z-index: 1;
     height: 50px; /* Ограничиваем высоту эквалайзера */
 }
 
@@ -72,7 +72,7 @@ input[type="range"] {
     margin: 0 4px;
     background: linear-gradient(180deg, #ff4500, #ff6347);
     border-radius: 5px;
-    animation: bounce 1.5s infinite ease-in-out;
+    animation: bounce 1.5s infinite ease-in-out paused; /* Устанавливаем анимацию как приостановленную */
 }
 
 .bar:nth-child(1) {
@@ -109,3 +109,4 @@ input[type="range"] {
         height: 40px;
     }
 }
+
