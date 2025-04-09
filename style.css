@@ -165,7 +165,7 @@ audio {
 
 footer {
     text-align: center;
-    padding: 20px;
+    padding: 41px 20px; /* Скопировал отступы из header */
     background-color: #1a1a1a;
     margin-top: 50px;
     border-top: 1px solid #333;
