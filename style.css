@@ -169,6 +169,9 @@ footer {
     background-color: #1a1a1a;
     margin-top: 50px;
     border-top: 1px solid #333;
+    max-width: 1200px; /* Ширина подвала ограничена, как у шапки */
+    margin-left: auto; /* Центрируем по горизонтали */
+    margin-right: auto; /* Центрируем по горизонтали */
 }
 
 footer p {
