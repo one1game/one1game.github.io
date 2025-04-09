@@ -56,7 +56,7 @@ p {
 
 /* Обновления: уменьшение ширины блока "Подпишитесь на меня!" */
 .content {
-    background-color: #1f1f1f;
+    background: url('img/subscrube.jpg') no-repeat center center/cover; /* Фон с картинкой */
     padding: 30px;
     border-radius: 15px;
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
@@ -112,6 +112,7 @@ h2 {
 .button i {
     font-size: 1.3em;
 }
+
 
 /* Обновления: уменьшение ширины блока с анимацией */
 .animation-container {
