@@ -19,10 +19,11 @@
       <p>Добро пожаловать на мой канал и группу!</p>
     </header>
 
-    <div id="random-video" class="random-video-block">
-      <p>Случайное видео с канала:</p>
-      <div id="video-container"></div>
-    </div>
+    <!-- Блок для видео -->
+<div id="random-video" class="random-video-block">
+  <p>Случайное видео с канала:</p>
+  <div id="video-container"></div>
+</div>
     
 
     <div class="content">
@@ -66,11 +67,13 @@
           const videoUrl = videos[randomIndex];
           const videoContainer = document.getElementById('video-container');
           videoContainer.innerHTML = `
-            <iframe width="560" height="315"
-              src="${videoUrl}"
-              frameborder="0"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-              allowfullscreen></iframe>
+            <div class="video-wrapper">
+              <iframe
+                src="${videoUrl}"
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen></iframe>
+            </div>
           `;
         }
       })
