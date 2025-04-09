@@ -11,10 +11,10 @@ body {
 .site-wrapper {
     max-width: 1200px;
     margin: 0 auto;
-    padding: 25px; /* Увеличен отступ для рамки */
+    padding: 20px;
     animation: fadeInPage 1s ease-in-out;
-    border: 1px solid rgba(255, 255, 255, 0.1); /* Легкая рамка */
-    border-radius: 10px;
+    border: 5px solid #ff6347; /* Рамка вокруг сайта */
+    border-radius: 10px; /* Скругление углов рамки */
 }
 
 @keyframes fadeInPage {
@@ -30,7 +30,7 @@ body {
 
 header {
     text-align: center;
-    padding: 41px 20px; /* Увеличено на 1 мм */
+    padding: 40px 20px;
     color: rgb(224, 224, 224);
     background-color: rgba(0, 0, 0, 0.7); /* Черный фон с прозрачностью */
     background-repeat: no-repeat;
@@ -165,7 +165,7 @@ audio {
 
 footer {
     text-align: center;
-    padding: 20px;
+    padding: 40px 20px; /* Сделаем подвал по размерам похожим на шапку */
     background-color: #1a1a1a;
     margin-top: 50px;
     border-top: 1px solid #333;
