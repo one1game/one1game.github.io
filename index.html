@@ -68,24 +68,30 @@
   </div>
 </div>
 
-<div class="news-block">
-  <h3>🔥 Горячие игровые новости</h3>
-  <ul id="news-list"></ul>
+<!-- Горячие игровые новости -->
+<div class="news-section">
+  <h2>🔥 Горячие игровые новости</h2>
+  <ul id="news-list">
+    <li>Загрузка новостей...</li>
+  </ul>
 </div>
 
 <script>
   fetch('news.json')
     .then(response => response.json())
-    .then(news => {
-      const newsList = document.getElementById('news-list');
-      news.slice(0, 3).forEach(item => {
+    .then(data => {
+      const list = document.getElementById('news-list');
+      list.innerHTML = ''; // Очищаем "Загрузка новостей..."
+
+      data.forEach(news => {
         const li = document.createElement('li');
-        li.textContent = item.text;
-        newsList.appendChild(li);
+        li.innerHTML = `<a href="${news.link}" target="_blank">${news.text}</a>`;
+        list.appendChild(li);
       });
     })
-    .catch(err => {
-      console.error('Не удалось загрузить новости:', err);
+    .catch(error => {
+      console.error('Ошибка загрузки новостей:', error);
+      document.getElementById('news-list').innerHTML = '<li>Не удалось загрузить новости.</li>';
     });
 </script>
 

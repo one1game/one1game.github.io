@@ -1,29 +1,23 @@
 import requests
+import os
 import json
 
-# Пример API Hugging Face для генерации текстов
+# Получаем ключ из переменной окружения
+API_TOKEN = os.environ.get("HF_TOKEN")
 API_URL = "https://api-inference.huggingface.co/models/gpt2"
-headers = {"Authorization": f"Bearer hf_NmyDFEgHPPnBeijTrqlplZWjPFQLqfkMyLRY"}
+headers = {"Authorization": f"Bearer {API_TOKEN}"}
 
-def generate_news():
-    payload = {
-        "inputs": "Generate 3 hot gaming news in short format."
-    }
+# Генерируем новости
+payload = {
+    "inputs": "🔥 Напиши короткую новость из мира видеоигр:",
+    "parameters": {"max_length": 100, "temperature": 0.8, "num_return_sequences": 3}
+}
 
-    response = requests.post(API_URL, headers=headers, json=payload)
-    if response.status_code == 200:
-        news = response.json()
-        # Берем только текстовые новости
-        generated_text = news[0]['generated_text']
-        news_items = generated_text.split("\n")[:3]  # Разделим по строкам и выберем первые 3
-        return [{'text': item} for item in news_items]
-    else:
-        print(f"Error: {response.status_code}")
-        return []
+response = requests.post(API_URL, headers=headers, json=payload)
+data = response.json()
 
-# Генерация новостей
-news = generate_news()
-
-# Сохранение новостей в json
+# Обрабатываем и сохраняем
+news = [{"text": item['generated_text']} for item in data]
 with open('news.json', 'w', encoding='utf-8') as f:
-    json.dump(news, f, ensure_ascii=False, indent=4)
+    json.dump(news, f, ensure_ascii=False, indent=2)
+
