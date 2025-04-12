@@ -1,40 +1,22 @@
-name: Generate Game News Free
+import requests
+import os
+import json
 
-on:
-  schedule:
-    - cron: '52 8 * * *'  # каждый день в 10:00 по Москве
+# Получаем ключ из переменной окружения
+API_TOKEN = os.environ.get("HF_TOKEN")
+API_URL = "https://api-inference.huggingface.co/models/gpt2"
+headers = {"Authorization": f"Bearer {API_TOKEN}"}
 
-    
-  workflow_dispatch:
+# Генерируем новости
+payload = {
+    "inputs": "🔥 Напиши короткую новость из мира видеоигр:",
+    "parameters": {"max_length": 100, "temperature": 0.8, "num_return_sequences": 3}
+}
 
-jobs:
-  fetch-news:
-    runs-on: ubuntu-latest
+response = requests.post(API_URL, headers=headers, json=payload)
+data = response.json()
 
-    steps:
-    - name: Checkout repository
-      uses: actions/checkout@v3
-
-    - name: Set up Python
-      uses: actions/setup-python@v2
-      with:
-        python-version: '3.x'
-
-    - name: Install dependencies
-      run: |
-        python -m pip install --upgrade pip
-        pip install requests
-
-    - name: Get 3 hot gaming news
-      run: |
-        curl https://raw.githubusercontent.com/1hax/news-ai-free/main/fetch_news.py -o fetch_news.py
-        python3 fetch_news.py > news.json
-
-    - name: Commit news.json
-      run: |
-        git config --global user.name "github-actions"
-        git config --global user.email "github-actions@github.com"
-        git add news.json
-        git commit -m "Автоматически обновлённые игровые новости"
-        git push
-
+# Обрабатываем и сохраняем
+news = [{"text": item['generated_text']} for item in data]
+with open('news.json', 'w', encoding='utf-8') as f:
+    json.dump(news, f, ensure_ascii=False, indent=2)
