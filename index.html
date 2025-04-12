@@ -73,6 +73,22 @@
   <ul id="news-list"></ul>
 </div>
 
+<script>
+  fetch('news.json')
+    .then(response => response.json())
+    .then(news => {
+      const newsList = document.getElementById('news-list');
+      news.slice(0, 3).forEach(item => {
+        const li = document.createElement('li');
+        li.textContent = item.text;
+        newsList.appendChild(li);
+      });
+    })
+    .catch(err => {
+      console.error('Не удалось загрузить новости:', err);
+    });
+</script>
+
 
 <footer>
   <p>© 2025 Tech Hub 404. Все права защищены.</p>
@@ -121,21 +137,7 @@
 </script>
 <script src="scripts.js"></script>
 
-<script>
-  fetch('news.json')
-    .then(response => response.json())
-    .then(news => {
-      const newsList = document.getElementById('news-list');
-      news.slice(0, 3).forEach(item => {
-        const li = document.createElement('li');
-        li.textContent = item.text;
-        newsList.appendChild(li);
-      });
-    })
-    .catch(err => {
-      console.error('Не удалось загрузить новости:', err);
-    });
-</script>
+
 
   
 </body>
