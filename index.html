@@ -68,32 +68,7 @@
   </div>
 </div>
 
-<!-- Горячие игровые новости -->
-<div class="news-section">
-  <h2>🔥 Горячие игровые новости</h2>
-  <ul id="news-list">
-    <li>Загрузка новостей...</li>
-  </ul>
-</div>
 
-<script>
-  fetch('news.json')
-    .then(response => response.json())
-    .then(data => {
-      const list = document.getElementById('news-list');
-      list.innerHTML = ''; // Очищаем "Загрузка новостей..."
-
-      data.forEach(news => {
-        const li = document.createElement('li');
-        li.innerHTML = `<a href="${news.link}" target="_blank">${news.text}</a>`;
-        list.appendChild(li);
-      });
-    })
-    .catch(error => {
-      console.error('Ошибка загрузки новостей:', error);
-      document.getElementById('news-list').innerHTML = '<li>Не удалось загрузить новости.</li>';
-    });
-</script>
 
 
 <footer>
