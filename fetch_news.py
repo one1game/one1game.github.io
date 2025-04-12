@@ -13,11 +13,18 @@ payload = {
     "parameters": {"max_length": 100, "temperature": 0.8, "num_return_sequences": 3}
 }
 
+# Отправка запроса
 response = requests.post(API_URL, headers=headers, json=payload)
-data = response.json()
 
-# Обрабатываем и сохраняем
-news = [{"text": item['generated_text']} for item in data]
-with open('news.json', 'w', encoding='utf-8') as f:
-    json.dump(news, f, ensure_ascii=False, indent=2)
+# Проверка успешности запроса
+if response.status_code == 200:
+    data = response.json()
+
+    # Обрабатываем и сохраняем
+    news = [{"text": item['generated_text']} for item in data]
+    with open('news.json', 'w', encoding='utf-8') as f:
+        json.dump(news, f, ensure_ascii=False, indent=2)
+else:
+    print(f"Ошибка при запросе: {response.status_code}")
+
 
