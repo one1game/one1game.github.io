@@ -249,3 +249,12 @@ footer {
         padding: 15px;
     }
 }
+
+.animated-img {
+    transition: transform 0.1s ease;
+  }
+  
+  .animated-img:active {
+    transform: scale(1.05);
+  }
+  
