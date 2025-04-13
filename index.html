@@ -11,75 +11,131 @@
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet" />
   <link rel="stylesheet" href="style.css" />
   <link rel="stylesheet" href="styles.css">
+
+  <style>
+    /* Эффект движения элементов */
+    .animated-img {
+      animation: moveImage 2s infinite alternate;
+    }
+
+    @keyframes moveImage {
+      0% {
+        transform: translateX(0);
+      }
+      100% {
+        transform: translateX(10px);
+      }
+    }
+
+    /* Эффект случайной смены фона */
+    @keyframes randomBackground {
+      0% {
+        background-color: #ff0000;
+      }
+      25% {
+        background-color: #0000ff;
+      }
+      50% {
+        background-color: #00ff00;
+      }
+      75% {
+        background-color: #ff00ff;
+      }
+      100% {
+        background-color: #ffff00;
+      }
+    }
+
+    body {
+      animation: randomBackground 5s infinite;
+    }
+
+    /* Эффект движения на экране */
+    @keyframes randomMovement {
+      0% {
+        top: 10px;
+        left: 10px;
+      }
+      50% {
+        top: 50px;
+        left: 100px;
+      }
+      100% {
+        top: 10px;
+        left: 200px;
+      }
+    }
+
+    .random-move {
+      position: relative;
+      animation: randomMovement 3s infinite ease-in-out;
+    }
+  </style>
 </head>
 <body>
 
   <div class="site-wrapper">
     <header id="header">
       <h1>ONE1GAME</h1>
-      <p>Здесь игра говорит сама за себя.</p>
+      <p>Здесь игры говорят сами за себя.</p>
     </header>
-</div>
+  </div>
 
-<div id="news-container">
-  <!-- Здесь будут отображаться новости -->
-</div>
-    
-    <div class="content">
-      <h2>Подпишитесь на ONE1GAME!</h2>
+  <div id="news-container">
+    <!-- Здесь будут отображаться новости -->
+  </div>
 
-      <div class="button-row">
-        <a href="https://www.youtube.com/@one1game" class="button youtube-button" target="_blank">
-          <i class="fab fa-youtube"></i> YouTube
-        </a>
-        <a href="https://vk.com/one1games" class="button vk-button" target="_blank">
-          <i class="fab fa-vk"></i> ВКонтакте
-        </a>
-      </div>
-      <div id="clicker-container" style="text-align: center; margin-top: 10px;">
-        <p>Клики: <span id="click-count"></span></p> <!-- Оставляем пустым, скрипт обновит это значение -->
+  <div class="content">
+    <h2>Подпишитесь на ONE1GAME!</h2>
+
+    <div class="button-row">
+      <a href="https://www.youtube.com/@one1game" class="button youtube-button" target="_blank">
+        <i class="fab fa-youtube"></i> YouTube
+      </a>
+      <a href="https://vk.com/one1games" class="button vk-button" target="_blank">
+        <i class="fab fa-vk"></i> ВКонтакте
+      </a>
     </div>
-    
-      <div class="animation-container">
-        <img src="img/awesome-pixel-art.gif" class="animated-img" alt="Анимация" />
-      </div>
+    <div id="clicker-container" style="text-align: center; margin-top: 10px;">
+      <p>Клики: <span id="click-count"></span></p> <!-- Оставляем пустым, скрипт обновит это значение -->
     </div>
 
- <!-- Блок для видео -->
- <div id="random-video" class="random-video-block">
-  <p>Случайное видео с канала ONE1GAME:</p>
-  <div id="video-container"></div>
-</div>
+    <div class="animation-container random-move">
+      <img src="img/awesome-pixel-art.gif" class="animated-img" alt="Анимация" />
+    </div>
+  </div>
 
-<!-- Проигрыватель с эквалайзером -->
-<div class="music-player">
-  <div class="radio-style">
+  <!-- Блок для видео -->
+  <div id="random-video" class="random-video-block">
+    <p>Случайное видео с канала ONE1GAME:</p>
+    <div id="video-container"></div>
+  </div>
+
+  <!-- Проигрыватель с эквалайзером -->
+  <div class="music-player">
+    <div class="radio-style">
       <h3>8-Bit Radio</h3>
       <div class="player-controls">
-          <button id="playPauseBtn" class="playPauseBtn">Play</button>
-          <input type="range" id="volumeControl" min="0" max="1" step="0.1" value="1" />
+        <button id="playPauseBtn" class="playPauseBtn">Play</button>
+        <input type="range" id="volumeControl" min="0" max="1" step="0.1" value="1" />
       </div>
       <audio id="radio-player">
-          <source src="https://spritelayerradio.com/listen/classic/classic.mp3" type="audio/mp3" />
-          Ваш браузер не поддерживает аудио.
+        <source src="https://spritelayerradio.com/listen/classic/classic.mp3" type="audio/mp3" />
+        Ваш браузер не поддерживает аудио.
       </audio>
       <div class="equalizer">
-          <div class="bar" id="bar1"></div>
-          <div class="bar" id="bar2"></div>
-          <div class="bar" id="bar3"></div>
-          <div class="bar" id="bar4"></div>
-          <div class="bar" id="bar5"></div>
+        <div class="bar" id="bar1"></div>
+        <div class="bar" id="bar2"></div>
+        <div class="bar" id="bar3"></div>
+        <div class="bar" id="bar4"></div>
+        <div class="bar" id="bar5"></div>
       </div>
+    </div>
   </div>
-</div>
 
-
-
-
-<footer>
-  <p>© 2025 Tech Hub 404. Все права защищены.</p>
+  <footer>
+    <p>© 2025 Tech Hub 404. Все права защищены.</p>
   </footer>
-  </div>
 
   <script>
     fetch('videos.json')
@@ -105,49 +161,46 @@
       });
   </script>
 
-<script>
-  // Список изображений для шапки
-  const headerImages = [
-    'img/header1.jpg',
-    'img/header2.jpg',
-    'img/header3.jpg'
-  ];
+  <script>
+    // Список изображений для шапки
+    const headerImages = [
+      'img/header1.jpg',
+      'img/header2.jpg',
+      'img/header3.jpg'
+    ];
 
-  // Выбор случайного изображения
-  const randomImage = headerImages[Math.floor(Math.random() * headerImages.length)];
+    // Выбор случайного изображения
+    const randomImage = headerImages[Math.floor(Math.random() * headerImages.length)];
 
-  // Применение выбранного изображения к элементу header
-  document.getElementById('header').style.backgroundImage = `url(${randomImage})`;
-  document.getElementById('header').style.backgroundSize = 'cover';
-  document.getElementById('header').style.backgroundPosition = 'center';
-</script>
-<script src="scripts.js"></script>
+    // Применение выбранного изображения к элементу header
+    document.getElementById('header').style.backgroundImage = `url(${randomImage})`;
+    document.getElementById('header').style.backgroundSize = 'cover';
+    document.getElementById('header').style.backgroundPosition = 'center';
+  </script>
 
-<script src="scripsnew.js"></script>
+  <script src="scripts.js"></script>
 
-<script>
-  // Проверка на сохраненное количество кликов в localStorage
-  let clickCount = localStorage.getItem('clickCount') ? parseInt(localStorage.getItem('clickCount')) : 0;
+  <script src="scripsnew.js"></script>
 
-  const clickImage = document.querySelector('.animated-img');
-  const clickDisplay = document.getElementById('click-count');
+  <script>
+    // Проверка на сохраненное количество кликов в localStorage
+    let clickCount = localStorage.getItem('clickCount') ? parseInt(localStorage.getItem('clickCount')) : 0;
 
-  clickImage.style.cursor = 'pointer'; // указатель мыши
+    const clickImage = document.querySelector('.animated-img');
+    const clickDisplay = document.getElementById('click-count');
 
-  // Отображаем сохраненное количество кликов
-  clickDisplay.textContent = clickCount;
+    clickImage.style.cursor = 'pointer'; // указатель мыши
 
-  clickImage.addEventListener('click', () => {
-    clickCount++;
+    // Отображаем сохраненное количество кликов
     clickDisplay.textContent = clickCount;
-    
-    // Сохраняем количество кликов в localStorage
-    localStorage.setItem('clickCount', clickCount);
-  });
-</script>
 
-
+    clickImage.addEventListener('click', () => {
+      clickCount++;
+      clickDisplay.textContent = clickCount;
+      
+      // Сохраняем количество кликов в localStorage
+      localStorage.setItem('clickCount', clickCount);
+    });
+  </script>
 </body>
 </html>
-
-
