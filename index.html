@@ -125,16 +125,23 @@
 <script src="scripsnew.js"></script>
 
 <script>
-  let clickCount = 0;
+  // Проверка на сохраненное количество кликов в localStorage
+  let clickCount = localStorage.getItem('clickCount') ? parseInt(localStorage.getItem('clickCount')) : 0;
 
   const clickImage = document.querySelector('.animated-img');
   const clickDisplay = document.getElementById('click-count');
 
   clickImage.style.cursor = 'pointer'; // указатель мыши
 
+  // Отображаем сохраненное количество кликов
+  clickDisplay.textContent = clickCount;
+
   clickImage.addEventListener('click', () => {
     clickCount++;
     clickDisplay.textContent = clickCount;
+    
+    // Сохраняем количество кликов в localStorage
+    localStorage.setItem('clickCount', clickCount);
   });
 </script>
 
