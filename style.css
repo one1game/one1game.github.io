@@ -251,11 +251,10 @@ footer {
 }
 
 .animated-img {
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    transition: transform 0.1s ease-in-out, opacity 0.1s ease-in-out;
     cursor: pointer;
   }
   
   .animated-img:active {
-    transform: scale(0.95); /* Эффект сжатия */
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Лёгкая тень при клике */
-  }
+    transform: scale(0.98);  /* Лёгкое уменьшение размера */
+    opacity: 0.9;  /* Лёгкое уменьшение прозрачности */
