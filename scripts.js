@@ -5,21 +5,28 @@ const bars = document.querySelectorAll('.bar');
 
 // Загрузка случайного видео
 function loadRandomVideo() {
-  fetch('videos.json')
-    .then(response => response.json())
-    .then(videos => {
-      if (videos.length > 0) {
-        const randomIndex = Math.floor(Math.random() * videos.length);
-        const videoContainer = document.getElementById('video-container');
-        videoContainer.innerHTML = `
-          <iframe src="${videos[randomIndex]}" 
-                  frameborder="0" 
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-                  allowfullscreen></iframe>`;
-      }
-    })
-    .catch(error => console.error('Ошибка загрузки видео:', error));
-}
+    fetch('videos.json')
+      .then(response => {
+        if (!response.ok) throw new Error('Network error');
+        return response.json();
+      })
+      .then(videos => {
+        if (videos.length > 0) {
+          const randomIndex = Math.floor(Math.random() * videos.length);
+          const videoUrl = videos[randomIndex] + '?autoplay=1';
+          document.getElementById('video-container').innerHTML = `
+            <iframe src="${videoUrl}" 
+                    frameborder="0" 
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                    allowfullscreen></iframe>`;
+        }
+      })
+      .catch(error => {
+        console.error('Error loading video:', error);
+        document.getElementById('video-container').innerHTML = 
+          '<p>Не удалось загрузить видео. Попробуйте позже.</p>';
+      });
+  }
 
 // Кликер-игра
 function setupClickerGame() {
