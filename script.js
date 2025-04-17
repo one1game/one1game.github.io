@@ -44,6 +44,8 @@ function setupClickerGame() {
     setTimeout(() => { clickerImage.style.transform = 'scale(1)'; }, 100);
   });
 }
+  // Автоматический запуск при загрузке страницы
+  document.addEventListener('DOMContentLoaded', loadRandomVideo);
 
 // 8-bit радио
 function setupMusicPlayer() {
