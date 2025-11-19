@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Статьи - One1Game</title>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Rajdhani:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+    .articles-container {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 40px 20px;
+    }
+    
+    .article-list {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+    
+    .article-item {
+      background: rgba(16, 16, 26, 0.8);
+      padding: 25px;
+      border-radius: 12px;
+      border: 1px solid rgba(255, 193, 7, 0.3);
+      transition: all 0.3s ease;
+    }
+    
+    .article-item:hover {
+      border-color: #00ff88;
+      transform: translateX(10px);
+    }
+    
+    .article-category {
+      display: inline-block;
+      padding: 4px 12px;
+      background: #8a2be2;
+      color: #000;
+      border-radius: 4px;
+      font-size: 0.8rem;
+      font-weight: 600;
+      margin-bottom: 10px;
+    }
+    
+    .back-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 30px;
+      color: #00f3ff;
+      text-decoration: none;
+    }
+  </style>
+</head>
+<body>
+  <div class="cyber-bg"></div>
+  
+  <div class="container">
+    <div class="articles-container">
+      <a href="index.html" class="back-btn">
+        <i class="fas fa-arrow-left"></i> На главную
+      </a>
+      
+      <h1 style="text-align: center; margin-bottom: 40px;">
+        <i class="fas fa-newspaper"></i> Игровые Статьи
+      </h1>
+      
+      <div class="article-list">
+        <div class="article-item">
+          <span class="article-category">Обзор</span>
+          <h3>Cyberpunk 2077: Возрождение легенды</h3>
+          <p>Полный размотр обновления 2.0 и дополнения Phantom Liberty. Как CD Projekt Red исправила ошибки и создала одну из лучших RPG...</p>
+          <div style="color: #b0b0b0; font-size: 0.9rem; margin-top: 15px;">
+            <i class="far fa-calendar"></i> 15 января 2024 · <i class="far fa-clock"></i> 8 мин
+          </div>
+        </div>
+        
+        <div class="article-item">
+          <span class="article-category">Гайд</span>
+          <h3>Топ 10 скрытых механик в Baldur's Gate 3</h3>
+          <p>Секретные возможности, о которых не знают 90% игроков. От скрытых диалогов до неочевидных комбинаций способностей...</p>
+          <div style="color: #b0b0b0; font-size: 0.9rem; margin-top: 15px;">
+            <i class="far fa-calendar"></i> 12 января 2024 · <i class="far fa-clock"></i> 6 мин
+          </div>
+        </div>
+        
+        <div class="article-item">
+          <span class="article-category">Новости</span>
+          <h3>Анонс GTA 6: Все что известно</h3>
+          <p>Дата выхода, геймплей, платформы - последние новости о самой ожидаемой игре десятилетия. Анализ трейлера и утечек...</p>
+          <div style="color: #b0b0b0; font-size: 0.9rem; margin-top: 15px;">
+            <i class="far fa-calendar"></i> 10 января 2024 · <i class="far fa-clock"></i> 5 мин
+          </div>
+        </div>
+        
+        <div class="article-item">
+          <span class="article-category">Ретро</span>
+          <h3>Nostalgia Trip: Почему Half-Life 2 актуальна</h3>
+          <p>Разбираем геймдизайн классики, который опередил время. Физика, сторителлинг и AI, которые до сих пор впечатляют...</p>
+          <div style="color: #b0b0b0; font-size: 0.9rem; margin-top: 15px;">
+            <i class="far fa-calendar"></i> 8 января 2024 · <i class="far fa-clock"></i> 7 мин
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
