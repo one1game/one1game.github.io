@@ -62,7 +62,7 @@ class One1GamePlatform {
     console.log('📰 Loading latest articles...');
     
     // Берем 3 последние статьи
-    const latestArticles = window.allArticles.slice(0, 3);
+    const latestArticles = window.allArticles.slice(0, 4);
     const container = document.getElementById('latest-articles');
     
     if (!container) {
