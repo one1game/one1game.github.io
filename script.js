@@ -38,7 +38,7 @@ class One1Game {
       } catch (error) {
           console.error('Error loading video:', error);
           document.getElementById('video-container').innerHTML = 
-              '<p class="error-message">Система загрузки видео временно недоступна</p>';
+              '<p style="text-align: center; color: #ff00ff; padding: 20px;">Система загрузки видео временно недоступна</p>';
       }
   }
 
@@ -57,12 +57,6 @@ class One1Game {
       highScoreDisplay.textContent = this.formatNumber(this.highScore);
 
       clickerImage.addEventListener('click', (e) => {
-          this.handleClick(e);
-      });
-
-      // Touch support for mobile
-      clickerImage.addEventListener('touchstart', (e) => {
-          e.preventDefault();
           this.handleClick(e);
       });
 
@@ -88,34 +82,11 @@ class One1Game {
       
       // Visual feedback
       const clickerImage = event.target;
-      this.createClickEffect(event);
       clickerImage.style.transform = 'scale(0.95)';
       
       setTimeout(() => {
           clickerImage.style.transform = 'scale(1)';
       }, 100);
-  }
-
-  createClickEffect(event) {
-      const effect = document.createElement('div');
-      effect.className = 'click-effect';
-      effect.style.cssText = `
-          position: absolute;
-          width: 20px;
-          height: 20px;
-          background: radial-gradient(circle, var(--neon-green), transparent);
-          border-radius: 50%;
-          pointer-events: none;
-          left: ${event.clientX - 10}px;
-          top: ${event.clientY - 10}px;
-          animation: clickExpand 0.6s ease-out forwards;
-      `;
-      
-      document.body.appendChild(effect);
-      
-      setTimeout(() => {
-          effect.remove();
-      }, 600);
   }
 
   resetClicks() {
@@ -125,11 +96,12 @@ class One1Game {
       
       // Visual confirmation
       const resetButton = document.getElementById('reset-clicks');
+      const originalText = resetButton.textContent;
       resetButton.textContent = 'СБРОШЕНО!';
       resetButton.style.background = 'var(--neon-green)';
       
       setTimeout(() => {
-          resetButton.textContent = 'Сбросить';
+          resetButton.textContent = originalText;
           resetButton.style.background = '';
       }, 2000);
   }
@@ -171,13 +143,6 @@ class One1Game {
       player.addEventListener('pause', () => {
           this.updatePlaybackState(false, playPauseBtn, bars, statusDisplay);
       });
-
-      player.addEventListener('ended', () => {
-          this.updatePlaybackState(false, playPauseBtn, bars, statusDisplay);
-      });
-
-      // Simulate spectrum analyzer
-      this.startSpectrumAnalyzer(bars);
   }
 
   togglePlayback(player, button, bars, status) {
@@ -220,18 +185,6 @@ class One1Game {
       }
   }
 
-  startSpectrumAnalyzer(bars) {
-      // Simulate random bar movements
-      setInterval(() => {
-          if (this.isPlaying) {
-              bars.forEach(bar => {
-                  const randomHeight = Math.random() * 80 + 10;
-                  bar.style.height = `${randomHeight}px`;
-              });
-          }
-      }, 200);
-  }
-
   setupEventListeners() {
       // Keyboard shortcuts
       document.addEventListener('keydown', (e) => {
@@ -240,77 +193,9 @@ class One1Game {
               const playButton = document.getElementById('playPauseBtn');
               if (playButton) playButton.click();
           }
-          
-          if (e.code === 'KeyR' && e.ctrlKey) {
-              e.preventDefault();
-              this.resetClicks();
-          }
-      });
-
-      // Intersection Observer for animations
-      const observerOptions = {
-          threshold: 0.1,
-          rootMargin: '0px 0px -50px 0px'
-      };
-
-      const observer = new IntersectionObserver((entries) => {
-          entries.forEach(entry => {
-              if (entry.isIntersecting) {
-                  entry.target.style.opacity = '1';
-                  entry.target.style.transform = 'translateY(0)';
-              }
-          });
-      }, observerOptions);
-
-      // Observe all sections for scroll animations
-      document.querySelectorAll('section').forEach(section => {
-          section.style.opacity = '0';
-          section.style.transform = 'translateY(20px)';
-          section.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
-          observer.observe(section);
       });
   }
 }
-
-// Add CSS for click effects
-const style = document.createElement('style');
-style.textContent = `
-  @keyframes clickExpand {
-      0% {
-          transform: scale(1);
-          opacity: 1;
-      }
-      100% {
-          transform: scale(3);
-          opacity: 0;
-      }
-  }
-  
-  .error-message {
-      text-align: center;
-      color: var(--neon-pink);
-      font-family: 'Orbitron', monospace;
-      padding: 20px;
-  }
-  
-  .click-effect {
-      z-index: 1000;
-  }
-`;
-document.head.appendChild(style);
 
 // Initialize the application
 new One1Game();
-
-// Service Worker registration for PWA capabilities
-if ('serviceWorker' in navigator) {
-  window.addEventListener('load', () => {
-      navigator.serviceWorker.register('/sw.js')
-          .then(registration => {
-              console.log('SW registered: ', registration);
-          })
-          .catch(registrationError => {
-              console.log('SW registration failed: ', registrationError);
-          });
-  });
-}
