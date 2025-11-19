@@ -497,29 +497,33 @@ h2 i {
 }
 
 .article-preview h4 {
-  font-family: 'Orbitron', monospace;
-  font-size: 1.2rem;
-  margin-bottom: 12px;
+  font-family: 'Rajdhani', sans-serif; /* Более читаемый шрифт */
+  font-size: 1.3rem;
+  margin-bottom: 15px;
   color: var(--text-primary);
   line-height: 1.4;
   font-weight: 600;
+  text-decoration: none; /* Убираем подчеркивание */
 }
 
 .article-preview p {
   color: var(--text-secondary);
-  font-size: 1rem;
+  font-size: 1.05rem;
   line-height: 1.6;
   margin-bottom: 15px;
   opacity: 0.9;
+  font-family: 'Rajdhani', sans-serif; /* Читаемый шрифт для текста */
+  font-weight: 400;
 }
 
 .article-preview-meta {
-  font-size: 0.85rem;
+  font-size: 0.9rem;
   color: var(--text-secondary);
   opacity: 0.8;
   display: flex;
   align-items: center;
   gap: 15px;
+  font-family: 'Rajdhani', sans-serif; /* Читаемый шрифт */
 }
 
 .article-preview-meta i {
@@ -532,14 +536,15 @@ h2 i {
   align-items: center;
   gap: 10px;
   color: var(--neon-cyan);
-  text-decoration: none;
-  font-weight: 500;
+  text-decoration: none; /* Убираем подчеркивание */
+  font-weight: 600;
   font-size: 1.1rem;
   padding: 12px 20px;
   border: 1px solid rgba(0, 243, 255, 0.3);
   border-radius: 6px;
   transition: all 0.3s ease;
   background: rgba(0, 243, 255, 0.1);
+  font-family: 'Rajdhani', sans-serif; /* Читаемый шрифт */
 }
 
 .view-all-btn:hover {
@@ -547,6 +552,18 @@ h2 i {
   background: rgba(0, 243, 255, 0.2);
   box-shadow: 0 0 20px rgba(0, 243, 255, 0.3);
   transform: translateX(5px);
+  text-decoration: none; /* Убираем подчеркивание при наведении */
+}
+
+/* Ссылки внутри превью статей */
+.article-preview-link {
+  text-decoration: none; /* Убираем подчеркивание у ссылок */
+  color: inherit;
+  display: block;
+}
+
+.article-preview-link:hover {
+  text-decoration: none; /* Убираем подчеркивание при наведении */
 }
 
 /* Улучшения для мобильных устройств */
@@ -565,10 +582,10 @@ h2 i {
   }
   
   .article-preview h4 {
-    font-size: 1.1rem;
+    font-size: 1.2rem;
   }
   
   .article-preview p {
-    font-size: 0.95rem;
+    font-size: 1rem;
   }
 }
