@@ -4,6 +4,27 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CodeFusion | Продвинутый анализатор кода</title>
+    
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="CodeFusion - инновационный анализатор и компилятор исходного кода. Анализируйте, просматривайте и экспортируйте код из различных файлов и папок.">
+    <meta name="keywords" content="анализатор кода, компилятор, программирование, исходный код, HTML, CSS, JavaScript, Python, Java, PHP, XML, JSON">
+    <meta name="author" content="CodeFusion">
+    <meta name="robots" content="index, follow">
+    
+    <!-- Open Graph для соцсетей -->
+    <meta property="og:title" content="CodeFusion | Продвинутый анализатор кода">
+    <meta property="og:description" content="Инновационный анализатор и компилятор исходного кода с поддержкой множества языков программирования">
+    <meta property="og:image" content="https://one1game.github.io/anal-code/og-image.png">
+    <meta property="og:url" content="https://one1game.github.io/anal-code">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="CodeFusion">
+    
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="CodeFusion | Анализатор кода">
+    <meta name="twitter:description" content="Анализируйте и экспортируйте код из различных файлов и папок">
+    <meta name="twitter:image" content="https://one1game.github.io/anal-code/og-image.png">
+    
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/github-dark.min.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@300;400;500&display=swap" rel="stylesheet">
@@ -158,6 +179,10 @@
             display: none;
         }
 
+        .directory-input {
+            display: none;
+        }
+
         .browse-btn {
             background: linear-gradient(135deg, var(--primary), var(--accent));
             color: white;
@@ -178,6 +203,14 @@
             box-shadow: 0 10px 25px rgba(99, 102, 241, 0.4);
         }
 
+        .input-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            margin-top: 1rem;
+            flex-wrap: wrap;
+        }
+
         .selected-files {
             margin-top: 2rem;
         }
@@ -185,7 +218,7 @@
         .file-list {
             display: grid;
             gap: 1rem;
-            max-height: 200px;
+            max-height: 300px;
             overflow-y: auto;
         }
 
@@ -226,6 +259,12 @@
 
         .file-name {
             font-weight: 600;
+        }
+
+        .file-path {
+            font-size: 0.8rem;
+            color: var(--gray);
+            margin-top: 0.2rem;
         }
 
         .file-size {
@@ -291,6 +330,50 @@
             opacity: 0.6;
             cursor: not-allowed;
             transform: none !important;
+        }
+
+        .social-share {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            margin: 2rem 0;
+            flex-wrap: wrap;
+        }
+
+        .social-btn {
+            background: rgba(255, 255, 255, 0.1);
+            color: white;
+            border: 1px solid var(--glass-border);
+            padding: 0.8rem 1.5rem;
+            border-radius: 50px;
+            font-size: 1rem;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .social-btn:hover {
+            transform: translateY(-2px);
+            background: rgba(255, 255, 255, 0.2);
+        }
+
+        .social-btn.twitter {
+            background: linear-gradient(135deg, #1da1f2, #0d8bd9);
+        }
+
+        .social-btn.telegram {
+            background: linear-gradient(135deg, #0088cc, #0077b5);
+        }
+
+        .social-btn.vk {
+            background: linear-gradient(135deg, #4c75a3, #3b5998);
+        }
+
+        .social-btn.whatsapp {
+            background: linear-gradient(135deg, #25d366, #128c7e);
         }
 
         .results-section {
@@ -459,8 +542,17 @@
                 padding: 2rem 1rem;
             }
 
+            .input-buttons {
+                flex-direction: column;
+            }
+
             .action-buttons {
                 flex-direction: column;
+            }
+
+            .social-share {
+                flex-direction: column;
+                align-items: center;
             }
 
             .results-header {
@@ -503,6 +595,32 @@
             50% { transform: scale(1.05); }
             100% { transform: scale(1); }
         }
+
+        .footer {
+            text-align: center;
+            margin-top: 3rem;
+            padding: 2rem;
+            color: var(--gray);
+            border-top: 1px solid var(--glass-border);
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-top: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .footer-link {
+            color: var(--primary);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .footer-link:hover {
+            color: var(--accent);
+        }
     </style>
 </head>
 <body>
@@ -515,17 +633,41 @@
             </div>
             <h1>CodeFusion</h1>
             <p class="subtitle">Инновационный анализатор и компилятор исходного кода</p>
+            
+            <!-- Кнопки репостов -->
+            <div class="social-share">
+                <button class="social-btn twitter" onclick="shareOnTwitter()">
+                    <i class="fab fa-twitter"></i> Twitter
+                </button>
+                <button class="social-btn telegram" onclick="shareOnTelegram()">
+                    <i class="fab fa-telegram"></i> Telegram
+                </button>
+                <button class="social-btn vk" onclick="shareOnVK()">
+                    <i class="fab fa-vk"></i> ВКонтакте
+                </button>
+                <button class="social-btn whatsapp" onclick="shareOnWhatsApp()">
+                    <i class="fab fa-whatsapp"></i> WhatsApp
+                </button>
+            </div>
         </header>
 
         <section class="upload-section">
             <div class="drop-zone" id="dropZone">
                 <i class="fas fa-cloud-upload-alt"></i>
-                <div class="drop-text">Перетащите файлы с кодом или нажмите для выбора</div>
+                <div class="drop-text">Перетащите файлы, папки или нажмите для выбора</div>
                 <p>Поддерживаемые форматы: .html, .css, .js, .java, .py, .php, .xml, .json</p>
+                
+                <div class="input-buttons">
+                    <button class="browse-btn" onclick="document.getElementById('fileInput').click()">
+                        <i class="fas fa-file"></i> Выбрать файлы
+                    </button>
+                    <button class="browse-btn" onclick="document.getElementById('directoryInput').click()">
+                        <i class="fas fa-folder"></i> Выбрать папку
+                    </button>
+                </div>
+                
                 <input type="file" id="fileInput" class="file-input" multiple accept=".html,.css,.js,.java,.py,.php,.xml,.json,.txt,.md">
-                <button class="browse-btn" onclick="document.getElementById('fileInput').click()">
-                    <i class="fas fa-folder-open"></i> Выбрать файлы
-                </button>
+                <input type="file" id="directoryInput" class="directory-input" webkitdirectory mozdirectory msdirectory odirectory directory>
             </div>
 
             <div class="selected-files">
@@ -586,6 +728,16 @@
                 </div>
             </div>
         </section>
+
+        <!-- Футер -->
+        <footer class="footer">
+            <p>&copy; 2024 CodeFusion. Инновационный анализатор кода.</p>
+            <div class="footer-links">
+                <a href="https://one1game.github.io" class="footer-link" target="_blank">Главная страница</a>
+                <a href="https://github.com/one1game" class="footer-link" target="_blank">GitHub</a>
+                <a href="#" class="footer-link" onclick="showAbout()">О проекте</a>
+            </div>
+        </footer>
     </div>
 
     <div class="notification" id="notification">
@@ -609,6 +761,37 @@
             }
         }
 
+        // Функции для репостов в соцсети
+        function shareOnTwitter() {
+            const text = 'Попробуйте CodeFusion - инновационный анализатор кода! Анализируйте, просматривайте и экспортируйте код из различных файлов и папок.';
+            const url = 'https://one1game.github.io/anal-code';
+            const hashtags = 'анализаторкода, программирование, разработка';
+            window.open(`https://twitter.com/intent/tweet?text=${encodeURIComponent(text)}&url=${encodeURIComponent(url)}&hashtags=${encodeURIComponent(hashtags)}`, '_blank', 'width=600,height=400');
+        }
+
+        function shareOnTelegram() {
+            const text = 'Попробуйте CodeFusion - инновационный анализатор кода! Анализируйте, просматривайте и экспортируйте код из различных файлов и папок.';
+            const url = 'https://one1game.github.io/anal-code';
+            window.open(`https://t.me/share/url?url=${encodeURIComponent(url)}&text=${encodeURIComponent(text)}`, '_blank', 'width=600,height=400');
+        }
+
+        function shareOnVK() {
+            const url = 'https://one1game.github.io/anal-code';
+            const title = 'CodeFusion | Анализатор кода';
+            const description = 'Инновационный анализатор и компилятор исходного кода с поддержкой множества языков программирования';
+            const image = 'https://one1game.github.io/anal-code/og-image.png';
+            window.open(`https://vk.com/share.php?url=${encodeURIComponent(url)}&title=${encodeURIComponent(title)}&description=${encodeURIComponent(description)}&image=${encodeURIComponent(image)}`, '_blank', 'width=600,height=400');
+        }
+
+        function shareOnWhatsApp() {
+            const text = 'Попробуйте CodeFusion - инновационный анализатор кода! https://one1game.github.io/anal-code';
+            window.open(`https://wa.me/?text=${encodeURIComponent(text)}`, '_blank', 'width=600,height=400');
+        }
+
+        function showAbout() {
+            alert('CodeFusion - инновационный анализатор и компилятор исходного кода.\n\nВозможности:\n• Загрузка файлов и папок\n• Подсветка синтаксиса\n• Экспорт кода\n• Статистика анализа\n\nПоддерживаемые языки: HTML, CSS, JavaScript, Python, Java, PHP, XML, JSON и другие.');
+        }
+
         // Инициализация приложения
         document.addEventListener('DOMContentLoaded', function() {
             createParticles();
@@ -619,6 +802,7 @@
         function initDragAndDrop() {
             const dropZone = document.getElementById('dropZone');
             const fileInput = document.getElementById('fileInput');
+            const directoryInput = document.getElementById('directoryInput');
 
             ['dragenter', 'dragover', 'dragleave', 'drop'].forEach(eventName => {
                 dropZone.addEventListener(eventName, preventDefaults, false);
@@ -649,19 +833,88 @@
 
             function handleDrop(e) {
                 const dt = e.dataTransfer;
-                const files = dt.files;
-                handleFiles(files);
+                const items = dt.items;
+                
+                // Проверяем, есть ли папки среди перетащенных элементов
+                let hasDirectories = false;
+                for (let i = 0; i < items.length; i++) {
+                    if (items[i].webkitGetAsEntry && items[i].webkitGetAsEntry().isDirectory) {
+                        hasDirectories = true;
+                        break;
+                    }
+                }
+                
+                if (hasDirectories) {
+                    // Обрабатываем папки
+                    processDataTransferItems(items);
+                } else {
+                    // Обрабатываем обычные файлы
+                    const files = dt.files;
+                    handleFiles(files);
+                }
             }
 
             fileInput.addEventListener('change', function() {
                 handleFiles(this.files);
             });
+
+            directoryInput.addEventListener('change', function() {
+                handleFiles(this.files);
+            });
         }
 
         let selectedFiles = [];
+        let fileContents = new Map(); // Храним содержимое файлов
+
+        // Обработка элементов DataTransfer (для папок)
+        function processDataTransferItems(items) {
+            const fileEntries = [];
+            
+            function processItem(item) {
+                return new Promise((resolve) => {
+                    if (item.isFile) {
+                        item.file((file) => {
+                            // Сохраняем относительный путь
+                            file.relativePath = item.fullPath || item.name;
+                            fileEntries.push(file);
+                            resolve();
+                        });
+                    } else if (item.isDirectory) {
+                        const dirReader = item.createReader();
+                        dirReader.readEntries((entries) => {
+                            const promises = entries.map(processItem);
+                            Promise.all(promises).then(resolve);
+                        });
+                    }
+                });
+            }
+
+            for (let i = 0; i < items.length; i++) {
+                const entry = items[i].webkitGetAsEntry();
+                if (entry) {
+                    processItem(entry).then(() => {
+                        if (i === items.length - 1) {
+                            handleFiles(fileEntries);
+                        }
+                    });
+                }
+            }
+        }
 
         function handleFiles(files) {
-            selectedFiles = Array.from(files);
+            const newFiles = Array.from(files);
+            
+            // Добавляем новые файлы к существующим
+            selectedFiles = [...selectedFiles, ...newFiles];
+            
+            // Убираем дубликаты по имени и пути
+            selectedFiles = selectedFiles.filter((file, index, self) =>
+                index === self.findIndex(f => 
+                    f.name === file.name && 
+                    (f.relativePath === file.relativePath || (!f.relativePath && !file.relativePath))
+                )
+            );
+            
             updateFileList();
             updateProcessButton();
         }
@@ -683,6 +936,7 @@
             selectedFiles.forEach((file, index) => {
                 const extension = file.name.split('.').pop().toLowerCase();
                 const icon = getFileIcon(extension);
+                const relativePath = file.relativePath || file.webkitRelativePath || '';
                 
                 const fileItem = document.createElement('div');
                 fileItem.className = 'file-item';
@@ -691,6 +945,7 @@
                         <div class="file-icon">${icon}</div>
                         <div class="file-details">
                             <div class="file-name">${file.name}</div>
+                            ${relativePath ? `<div class="file-path">${relativePath}</div>` : ''}
                             <div class="file-size">${formatFileSize(file.size)}</div>
                         </div>
                     </div>
@@ -704,6 +959,7 @@
 
         function removeFile(index) {
             selectedFiles.splice(index, 1);
+            fileContents.delete(selectedFiles[index]); // Удаляем содержимое файла
             updateFileList();
             updateProcessButton();
         }
@@ -720,12 +976,27 @@
             processBtn.innerHTML = '<span class="loading"></span> Обработка...';
             processBtn.disabled = true;
 
-            // Имитация обработки для демонстрации
-            setTimeout(() => {
-                displayResults();
-                processBtn.innerHTML = originalHtml;
-                processBtn.disabled = false;
-            }, 1500);
+            // Очищаем предыдущее содержимое
+            fileContents.clear();
+
+            // Читаем все файлы и сохраняем их содержимое
+            let filesProcessed = 0;
+            
+            selectedFiles.forEach(file => {
+                const reader = new FileReader();
+                reader.onload = function(e) {
+                    fileContents.set(file, e.target.result);
+                    filesProcessed++;
+                    
+                    // Когда все файлы прочитаны, отображаем результаты
+                    if (filesProcessed === selectedFiles.length) {
+                        displayResults();
+                        processBtn.innerHTML = originalHtml;
+                        processBtn.disabled = false;
+                    }
+                };
+                reader.readAsText(file);
+            });
         }
 
         function displayResults() {
@@ -738,14 +1009,14 @@
             let totalSize = 0;
 
             selectedFiles.forEach(file => {
-                const reader = new FileReader();
-                reader.onload = function(e) {
-                    const content = e.target.result;
+                const content = fileContents.get(file);
+                if (content) {
                     totalLines += content.split('\n').length;
                     totalSize += file.size;
 
                     const extension = file.name.split('.').pop().toLowerCase();
                     const language = getLanguage(extension);
+                    const relativePath = file.relativePath || file.webkitRelativePath || '';
                     
                     const codeContainer = document.createElement('div');
                     codeContainer.className = 'code-container';
@@ -753,7 +1024,10 @@
                         <div class="file-header">
                             <div class="file-title">
                                 <i class="${getFileIcon(extension, true)}"></i>
-                                ${file.name}
+                                <div>
+                                    <div>${file.name}</div>
+                                    ${relativePath ? `<div style="font-size: 0.8rem; opacity: 0.8;">${relativePath}</div>` : ''}
+                                </div>
                             </div>
                             <div class="file-meta">
                                 <span>${formatFileSize(file.size)}</span>
@@ -767,40 +1041,90 @@
                     
                     results.appendChild(codeContainer);
                     hljs.highlightElement(codeContainer.querySelector('code'));
-
-                    // Обновляем статистику
-                    document.getElementById('totalFiles').textContent = selectedFiles.length;
-                    document.getElementById('totalLines').textContent = totalLines;
-                    document.getElementById('totalSize').textContent = formatFileSize(totalSize);
-                    stats.style.display = 'grid';
-                    copyAllBtn.disabled = false;
-                };
-                reader.readAsText(file);
+                }
             });
+
+            // Обновляем статистику
+            document.getElementById('totalFiles').textContent = selectedFiles.length;
+            document.getElementById('totalLines').textContent = totalLines;
+            document.getElementById('totalSize').textContent = formatFileSize(totalSize);
+            stats.style.display = 'grid';
+            copyAllBtn.disabled = false;
         }
 
         function copyAllCode() {
+            if (fileContents.size === 0) {
+                showNotification('Сначала обработайте файлы!');
+                return;
+            }
+
             let combinedCode = '';
 
-            selectedFiles.forEach((file, index) => {
-                const reader = new FileReader();
-                reader.onload = function(e) {
-                    combinedCode += `// ======== ${file.name} ========\n\n`;
-                    combinedCode += e.target.result;
+            selectedFiles.forEach(file => {
+                const content = fileContents.get(file);
+                if (content) {
+                    const relativePath = file.relativePath || file.webkitRelativePath || '';
+                    const pathInfo = relativePath ? ` (${relativePath})` : '';
+                    
+                    combinedCode += `// ======== ${file.name}${pathInfo} ========\n\n`;
+                    combinedCode += content;
                     combinedCode += '\n\n';
+                }
+            });
 
-                    if (index === selectedFiles.length - 1) {
-                        navigator.clipboard.writeText(combinedCode).then(() => {
-                            showNotification();
-                        });
-                    }
-                };
-                reader.readAsText(file);
+            navigator.clipboard.writeText(combinedCode).then(() => {
+                showNotification('Весь код успешно скопирован в буфер обмена!');
+            }).catch(err => {
+                console.error('Ошибка копирования: ', err);
+                showNotification('Ошибка при копировании в буфер обмена');
             });
         }
 
-        function showNotification() {
+        function exportResults() {
+            if (fileContents.size === 0) {
+                showNotification('Сначала обработайте файлы!');
+                return;
+            }
+
+            let combinedCode = '';
+
+            selectedFiles.forEach(file => {
+                const content = fileContents.get(file);
+                if (content) {
+                    const relativePath = file.relativePath || file.webkitRelativePath || '';
+                    const pathInfo = relativePath ? ` (${relativePath})` : '';
+                    
+                    combinedCode += `// ======== ${file.name}${pathInfo} ========\n\n`;
+                    combinedCode += content;
+                    combinedCode += '\n\n';
+                }
+            });
+
+            // Создаем Blob с содержимым
+            const blob = new Blob([combinedCode], { type: 'text/plain;charset=utf-8' });
+            
+            // Создаем URL для Blob
+            const url = URL.createObjectURL(blob);
+            
+            // Создаем временную ссылку для скачивания
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = 'code_analysis.txt';
+            
+            // Добавляем ссылку в DOM, кликаем и удаляем
+            document.body.appendChild(a);
+            a.click();
+            document.body.removeChild(a);
+            
+            // Освобождаем память
+            URL.revokeObjectURL(url);
+            
+            showNotification('Результаты экспортированы в файл!');
+        }
+
+        function showNotification(message = 'Весь код успешно скопирован в буфер обмена!') {
             const notification = document.getElementById('notification');
+            notification.querySelector('span').textContent = message;
             notification.classList.add('show');
             setTimeout(() => {
                 notification.classList.remove('show');
@@ -809,7 +1133,9 @@
 
         function clearAll() {
             selectedFiles = [];
+            fileContents.clear();
             document.getElementById('fileInput').value = '';
+            document.getElementById('directoryInput').value = '';
             updateFileList();
             updateProcessButton();
             document.getElementById('results').innerHTML = `
@@ -823,11 +1149,6 @@
             `;
             document.getElementById('stats').style.display = 'none';
             document.getElementById('copyAllBtn').disabled = true;
-        }
-
-        function exportResults() {
-            // Функция для экспорта результатов
-            alert('Функция экспорта в разработке!');
         }
 
         // Вспомогательные функции
