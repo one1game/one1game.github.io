@@ -4,7 +4,7 @@ class One1GamePlatform {
       this.clicks = 0;
       this.highScore = 0;
       this.isPlaying = false;
-      this.allArticles = window.allArticles || []; // Добавляем доступ к статьям
+      this.allArticles = window.allArticles || []; // ← ЭТА СТРОЧКА ДОБАВЛЕНА
       this.init();
   }
 
@@ -28,7 +28,7 @@ class One1GamePlatform {
       this.setupClickerGame();
       this.setupMusicPlayer();
       this.setupEventListeners();
-      this.loadLatestArticles(); // Добавляем загрузку статей
+      this.loadLatestArticles(); // ← ЭТА СТРОЧКА ДОБАВЛЕНА
       
       console.log('✅ One1Game Platform initialized successfully!');
   }
@@ -59,45 +59,42 @@ class One1GamePlatform {
 
   // Latest Articles System
   loadLatestArticles() {
-      console.log('📰 Loading latest articles...');
+    console.log('📰 Loading latest articles...');
+    
+    // Проверяем что статьи есть
+    if (!window.allArticles || window.allArticles.length === 0) {
+      console.log('⏳ Articles not loaded yet, waiting...');
       
-      // Берем 3 последние статьи из архива
-      const latestArticles = this.allArticles.slice(0, 3);
-      const container = document.getElementById('latest-articles');
-      
-      if (!container) {
-          console.error('❌ Latest articles container not found!');
-          return;
-      }
-      
-      if (latestArticles.length === 0) {
-          container.innerHTML = `
-              <div class="article-preview">
-                  <h4>Статьи скоро появятся</h4>
-                  <p>Мы готовим для вас интересный контент. Возвращайтесь позже!</p>
-                  <div class="article-preview-meta">
-                      <i class="far fa-calendar"></i> Скоро · 
-                      <i class="far fa-clock"></i> 0 мин
-                  </div>
-              </div>
-          `;
-          return;
-      }
-      
-      container.innerHTML = latestArticles.map(article => `
-          <a href="${article.url}" class="article-preview-link">
-              <div class="article-preview">
-                  <h4>${article.title}</h4>
-                  <p>${article.excerpt}</p>
-                  <div class="article-preview-meta">
-                      <i class="far fa-calendar"></i> ${article.date} · 
-                      <i class="far fa-clock"></i> ${article.readTime}
-                  </div>
-              </div>
-          </a>
-      `).join('');
-      
-      console.log(`✅ Loaded ${latestArticles.length} latest articles`);
+      // Пробуем еще раз через секунду
+      setTimeout(() => {
+        this.loadLatestArticles();
+      }, 1000);
+      return;
+    }
+    
+    // Берем 3 последние статьи из архива
+    const latestArticles = window.allArticles.slice(0, 3);
+    const container = document.getElementById('latest-articles');
+    
+    if (!container) {
+      console.error('❌ Latest articles container not found!');
+      return;
+    }
+    
+    container.innerHTML = latestArticles.map(article => `
+      <a href="${article.url}" class="article-preview-link">
+        <div class="article-preview">
+          <h4>${article.title}</h4>
+          <p>${article.excerpt}</p>
+          <div class="article-preview-meta">
+            <i class="far fa-calendar"></i> ${article.date} · 
+            <i class="far fa-clock"></i> ${article.readTime}
+          </div>
+        </div>
+      </a>
+    `).join('');
+    
+    console.log(`✅ Loaded ${latestArticles.length} latest articles`);
   }
 
   // Video System
