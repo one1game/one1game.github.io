@@ -2,65 +2,179 @@
 <html lang="ru">
 <head>
   <meta charset="UTF-8" />
-  <link rel="icon" type="image/png" href="img/favicon.png">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🎮</text></svg>">
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="One1Game — канал об играх с уникальным контентом. Смотрите наши видео на YouTube, присоединяйтесь к сообществу ВКонтакте!" />
-  <title>One1Game - YouTube & ВКонтакте</title>
-  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Roboto:wght@400;500&display=swap" rel="stylesheet" />
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet" />
+  <meta name="description" content="One1Game — инновационный игровой портал с уникальным контентом, кликер-игрой и 8-bit радио. Присоединяйтесь к сообществу геймеров!" />
+  <meta name="keywords" content="one1game, игры, гейминг, 8-bit, радио, кликер, YouTube, ВКонтакте" />
+  <meta name="author" content="One1Game" />
+  <meta property="og:title" content="One1Game - Инновационный игровой портал" />
+  <meta property="og:description" content="Экспериментальная платформа для настоящих геймеров с уникальным контентом и интерактивными возможностями" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://one1game.github.io" />
+  <title>One1Game | Экспериментальная игровая платформа</title>
+  
+  <!-- Preload critical resources -->
+  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Rajdhani:wght@300;400;500;600&display=swap" as="style">
+  <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" as="style">
+  
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Rajdhani:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet" />
   <link rel="stylesheet" href="styles.css" />
+  
+  <!-- JSON-LD Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "One1Game",
+    "description": "Экспериментальная игровая платформа с уникальным контентом",
+    "url": "https://one1game.github.io",
+    "potentialAction": {
+      "@type": "SearchAction",
+      "target": "https://one1game.github.io/search?q={search_term_string}",
+      "query-input": "required name=search_term_string"
+    }
+  }
+  </script>
 </head>
 <body>
+  <!-- Animated Background -->
+  <div class="matrix-bg"></div>
+  <div class="cyber-grid"></div>
+  
   <div class="site-wrapper">
-    <header id="header">
-      <h1>ONE1GAME</h1>
-      <p>Здесь игры говорят сами за себя.</p>
+    <!-- Header -->
+    <header id="header" role="banner">
+      <div class="glitch-container">
+        <h1 class="glitch" data-text="ONE1GAME">ONE1GAME</h1>
+      </div>
+      <p class="tagline">Где игровые миры становятся реальностью</p>
+      <div class="cyber-line"></div>
     </header>
 
-    <main class="content">
-      <section class="social-section">
-        <h2>Подпишитесь на ONE1GAME!</h2>
-        <div class="button-row">
-          <a href="https://www.youtube.com/@one1game" class="button youtube-button" target="_blank">
-            <i class="fab fa-youtube"></i> YouTube
+    <main class="content" role="main">
+      <!-- Social Links -->
+      <section class="social-section" aria-labelledby="social-title">
+        <h2 id="social-title" class="section-title">Присоединяйтесь к Эксперименту</h2>
+        <div class="button-grid">
+          <a href="https://www.youtube.com/@one1game" class="cyber-button youtube-button" target="_blank" rel="noopener noreferrer">
+            <i class="fab fa-youtube"></i>
+            <span>YouTube Канал</span>
+            <div class="button-hover"></div>
           </a>
-          <a href="https://vk.com/one1games" class="button vk-button" target="_blank">
-            <i class="fab fa-vk"></i> ВКонтакте
+          <a href="https://vk.com/one1games" class="cyber-button vk-button" target="_blank" rel="noopener noreferrer">
+            <i class="fab fa-vk"></i>
+            <span>ВКонтакте</span>
+            <div class="button-hover"></div>
+          </a>
+          <a href="https://one1game.github.io/cyber-scanner/" class="cyber-button scanner-button" target="_blank" rel="noopener noreferrer">
+            <i class="fas fa-radar"></i>
+            <span>Cyber Scanner</span>
+            <div class="button-hover"></div>
           </a>
         </div>
       </section>
 
-      <section class="video-section">
-        <h3>Случайное видео:</h3>
-        <div id="video-container"></div>
+      <!-- Random Video -->
+      <section class="video-section" aria-labelledby="video-title">
+        <h3 id="video-title" class="section-title">Случайный Эксперимент</h3>
+        <div id="video-container" class="cyber-frame">
+          <div class="loading-pulse"></div>
+        </div>
       </section>
 
-      <section class="clicker-game">
-        <p>Клики: <span id="click-count">0</span></p>
-        <img src="img/awesome-pixel-art.gif" id="clicker-image" alt="Кликер" />
-      </section>
-
-      <section class="music-player">
-        <div class="radio-style">
-          <h3>8-Bit Radio</h3>
-          <div class="player-controls">
-            <button id="playPauseBtn" class="playPauseBtn">Play</button>
-            <input type="range" id="volumeControl" min="0" max="1" step="0.1" value="1" />
+      <!-- Clicker Game -->
+      <section class="clicker-game" aria-labelledby="clicker-title">
+        <h3 id="clicker-title" class="section-title">Энергетический Сбор</h3>
+        <div class="clicker-stats">
+          <div class="stat-item">
+            <span class="stat-label">Текущая энергия:</span>
+            <span id="click-count" class="stat-value">0</span>
           </div>
-          <audio id="radio-player" src="https://spritelayerradio.com/listen/classic/classic.mp3"></audio>
-          <div class="equalizer">
-            <div class="bar" id="bar1"></div>
-            <div class="bar" id="bar2"></div>
-            <div class="bar" id="bar3"></div>
-            <div class="bar" id="bar4"></div>
-            <div class="bar" id="bar5"></div>
+          <div class="stat-item">
+            <span class="stat-label">Рекорд:</span>
+            <span id="high-score" class="stat-value">0</span>
+          </div>
+        </div>
+        <div class="clicker-core">
+          <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 200'%3E%3Ccircle cx='100' cy='100' r='80' fill='%2300ff88' opacity='0.8'/%3E%3C/svg%3E" 
+               id="clicker-image" 
+               alt="Энергетическое ядро" 
+               class="pulsing-core" />
+          <div class="energy-rings"></div>
+        </div>
+        <button id="reset-clicks" class="cyber-button small">Сбросить</button>
+      </section>
+
+      <!-- Music Player -->
+      <section class="music-player" aria-labelledby="music-title">
+        <div class="cyber-terminal">
+          <div class="terminal-header">
+            <div class="terminal-dots">
+              <span></span>
+              <span></span>
+              <span></span>
+            </div>
+            <h3 id="music-title">8-BIT RADIO TRANSMISSION</h3>
+          </div>
+          <div class="terminal-body">
+            <div class="player-controls">
+              <button id="playPauseBtn" class="cyber-button icon" aria-label="Воспроизвести/Пауза">
+                <i class="fas fa-play"></i>
+              </button>
+              <div class="volume-container">
+                <i class="fas fa-volume-up"></i>
+                <input type="range" id="volumeControl" min="0" max="1" step="0.1" value="0.7" aria-label="Громкость" />
+              </div>
+            </div>
+            <audio id="radio-player" src="https://spritelayerradio.com/listen/classic/classic.mp3" preload="metadata"></audio>
+            <div class="spectrum-analyzer">
+              <div class="equalizer">
+                <div class="bar" id="bar1"></div>
+                <div class="bar" id="bar2"></div>
+                <div class="bar" id="bar3"></div>
+                <div class="bar" id="bar4"></div>
+                <div class="bar" id="bar5"></div>
+                <div class="bar" id="bar6"></div>
+                <div class="bar" id="bar7"></div>
+              </div>
+            </div>
+            <div class="frequency-display">
+              <span class="freq">87.6 MHz</span>
+              <span class="status" id="radio-status">СИГНАЛ ОБНАРУЖЕН</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Additional Tools -->
+      <section class="tools-section" aria-labelledby="tools-title">
+        <h3 id="tools-title" class="section-title">Инструменты Разработчика</h3>
+        <div class="tools-grid">
+          <a href="http://jsonld-generator.com/" class="tool-card" target="_blank" rel="noopener noreferrer">
+            <i class="fas fa-code"></i>
+            <h4>JSON-LD Generator</h4>
+            <p>Генератор структурированных данных для SEO</p>
+          </a>
+          <div class="tool-card coming-soon">
+            <i class="fas fa-wrench"></i>
+            <h4>Cyber Tools</h4>
+            <p>Скоро будет доступно</p>
           </div>
         </div>
       </section>
     </main>
 
-    <footer>
-      <p>© 2025 One1Game. Все права защищены.</p>
+    <!-- Footer -->
+    <footer role="contentinfo">
+      <div class="footer-content">
+        <p>© 2025 One1Game Experimental Platform. Все системы активны.</p>
+        <div class="footer-links">
+          <a href="#privacy" class="footer-link">Конфиденциальность</a>
+          <a href="#terms" class="footer-link">Условия</a>
+          <a href="#contact" class="footer-link">Контакт</a>
+        </div>
+      </div>
     </footer>
   </div>
 
