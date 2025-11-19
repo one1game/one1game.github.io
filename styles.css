@@ -16,9 +16,6 @@
   --cyber-red: #ff003c;
   --text-primary: #ffffff;
   --text-secondary: #b0b0b0;
-  --glow-cyan: 0 0 10px var(--neon-cyan), 0 0 20px var(--neon-cyan), 0 0 30px var(--neon-cyan);
-  --glow-pink: 0 0 10px var(--neon-pink), 0 0 20px var(--neon-pink), 0 0 30px var(--neon-pink);
-  --glow-green: 0 0 10px var(--neon-green), 0 0 20px var(--neon-green), 0 0 30px var(--neon-green);
 }
 
 /* Base Styles */
@@ -111,22 +108,24 @@ body {
   left: 2px;
   text-shadow: -2px 0 var(--neon-cyan);
   animation: glitch-1 2s infinite linear alternate-reverse;
+  clip-path: polygon(0 0, 100% 0, 100% 35%, 0 35%);
 }
 
 .glitch::after {
   left: -2px;
   text-shadow: 2px 0 var(--neon-pink);
   animation: glitch-2 3s infinite linear alternate-reverse;
+  clip-path: polygon(0 65%, 100% 65%, 100% 100%, 0 100%);
 }
 
 @keyframes glitch-1 {
-  0%, 14%, 15%, 49%, 50%, 99%, 100% { clip-path: inset(0 0 0 0); }
-  15%, 49% { clip-path: inset(20% 0 30% 0); }
+  0%, 14%, 15%, 49%, 50%, 99%, 100% { clip-path: polygon(0 0, 100% 0, 100% 35%, 0 35%); }
+  15%, 49% { clip-path: polygon(0 20%, 100% 20%, 100% 30%, 0 30%); }
 }
 
 @keyframes glitch-2 {
-  0%, 24%, 25%, 59%, 60%, 99%, 100% { clip-path: inset(0 0 0 0); }
-  25%, 59% { clip-path: inset(10% 0 40% 0); }
+  0%, 24%, 25%, 59%, 60%, 99%, 100% { clip-path: polygon(0 65%, 100% 65%, 100% 100%, 0 100%); }
+  25%, 59% { clip-path: polygon(0 70%, 100% 70%, 100% 80%, 0 80%); }
 }
 
 .tagline {
@@ -204,6 +203,7 @@ body {
   letter-spacing: 0.1em;
   transition: all 0.3s ease;
   overflow: hidden;
+  cursor: pointer;
 }
 
 .cyber-button::before {
@@ -222,7 +222,7 @@ body {
 }
 
 .cyber-button:hover {
-  box-shadow: var(--glow-cyan);
+  box-shadow: 0 0 10px var(--neon-cyan), 0 0 20px var(--neon-cyan), 0 0 30px var(--neon-cyan);
   transform: translateY(-2px);
 }
 
@@ -241,11 +241,15 @@ body {
 }
 
 .youtube-button:hover {
-  box-shadow: var(--glow-pink);
+  box-shadow: 0 0 10px var(--neon-pink), 0 0 20px var(--neon-pink), 0 0 30px var(--neon-pink);
 }
 
 .vk-button {
   border-color: var(--cyber-blue);
+}
+
+.vk-button:hover {
+  box-shadow: 0 0 10px var(--cyber-blue), 0 0 20px var(--cyber-blue), 0 0 30px var(--cyber-blue);
 }
 
 .scanner-button {
@@ -253,7 +257,7 @@ body {
 }
 
 .scanner-button:hover {
-  box-shadow: var(--glow-green);
+  box-shadow: 0 0 10px var(--neon-green), 0 0 20px var(--neon-green), 0 0 30px var(--neon-green);
 }
 
 /* Video Section */
@@ -370,6 +374,7 @@ body {
   filter: drop-shadow(0 0 20px var(--neon-green));
   animation: corePulse 2s ease-in-out infinite;
   transition: all 0.1s ease;
+  background: radial-gradient(circle, var(--neon-green) 0%, transparent 70%);
 }
 
 @keyframes corePulse {
@@ -494,7 +499,7 @@ body {
   background: var(--neon-cyan);
   border-radius: 50%;
   cursor: pointer;
-  box-shadow: var(--glow-cyan);
+  box-shadow: 0 0 10px var(--neon-cyan);
 }
 
 .spectrum-analyzer {
@@ -689,15 +694,6 @@ footer {
   .footer-links {
     flex-direction: column;
     gap: 15px;
-  }
-}
-
-/* Accessibility */
-@media (prefers-reduced-motion: reduce) {
-  *, *::before, *::after {
-    animation-duration: 0.01ms !important;
-    animation-iteration-count: 1 !important;
-    transition-duration: 0.01ms !important;
   }
 }
 
