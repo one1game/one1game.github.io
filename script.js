@@ -61,18 +61,7 @@ class One1GamePlatform {
   loadLatestArticles() {
     console.log('📰 Loading latest articles...');
     
-    // Проверяем что статьи есть
-    if (!window.allArticles || window.allArticles.length === 0) {
-      console.log('⏳ Articles not loaded yet, waiting...');
-      
-      // Пробуем еще раз через секунду
-      setTimeout(() => {
-        this.loadLatestArticles();
-      }, 1000);
-      return;
-    }
-    
-    // Берем 3 последние статьи из архива
+    // Берем 3 последние статьи
     const latestArticles = window.allArticles.slice(0, 3);
     const container = document.getElementById('latest-articles');
     

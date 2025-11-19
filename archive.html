@@ -129,46 +129,11 @@
     </div>
   </div>
 
+  <!-- ПОДКЛЮЧАЕМ ФАЙЛ СО СТАТЬЯМИ -->
+  <script src="articles-data.js"></script>
+  
   <script>
-    // Все статьи (глобальная переменная для доступа с главной страницы)
-    window.allArticles = [
-      {
-        url: "/archive/metaverses-ai-2025.html",
-        title: "Игровые метавселенные 2025: Как нейросети создают миры на лету",
-        excerpt: "Игровые метавселенные 2025: нейросети и AI создают уникальные динамичные миры в реальном времени. Генерация квестов, NPC и ландшафтов на лету.",
-        date: "19 ноября 2025",
-        readTime: "5 мин"
-      },
-      {
-        url: "/archive/vr-ai-2025.html",
-        title: "VR + AI 2025: Как искусственный интеллект превращает виртуальную реальность в живой мир",
-        excerpt: "VR + AI 2025: использование искусственного интеллекта в виртуальной реальности. Динамические NPC, живые миры, адаптивные квесты и новые тренды игрового опыта.",
-        date: "19 ноября 2025",
-        readTime: "10 мин"
-      },
-      {
-        url: "/archive/game-design-ai-2025.html",
-        title: "AI-Геймдизайн 2025: Как искусственный интеллект меняет процесс создания игр",
-        excerpt: "AI-Геймдизайн 2025: использование искусственного интеллекта в создании игр, генерации миров и квестов. Примеры проектов, тренды и будущее индустрии.",
-        date: "19 ноября 2025",
-        readTime: "10 мин"
-      },
-      {
-        url: "/archive/ai-comics-2025.html",
-        title: "Нейросетевые комиксы 2025: ИИ меняет графический сторителлинг",
-        excerpt: "Нейросетевые комиксы 2025: ИИ создает сюжеты и визуальные истории. Узнайте, как генеративные модели меняют индустрию комиксов и графических новелл.",
-        date: "19 ноября 2025", 
-        readTime: "7 мин"
-      },
-      {
-        url: "/archive/aa-games-trend-2025.html",
-        title: "Почему AA-игры — главный тренд 2025 года",
-        excerpt: "Среднебюджетные AA-игры захватывают игровую индустрию в 2025 году. Почему игроки и издатели выбирают их вместо AAA и что нас ждёт дальше...",
-        date: "19 ноября 2025",
-        readTime: "10 мин"
-      }
-    ];
-
+    // Убираем массив статей отсюда, оставляем только логику пагинации
     const ARTICLES_PER_PAGE = 5;
     let currentPage = 1;
 
@@ -176,6 +141,19 @@
       const articlesList = document.getElementById('articles-list');
       const startIndex = (page - 1) * ARTICLES_PER_PAGE;
       const endIndex = startIndex + ARTICLES_PER_PAGE;
+      
+      // Проверяем что статьи загрузились
+      if (!window.allArticles || window.allArticles.length === 0) {
+        articlesList.innerHTML = `
+          <div class="article-item">
+            <h3>Статьи загружаются...</h3>
+            <p>Пожалуйста, подождите</p>
+          </div>
+        `;
+        setTimeout(() => displayArticles(page), 500);
+        return;
+      }
+      
       const articlesToShow = window.allArticles.slice(startIndex, endIndex);
 
       articlesList.innerHTML = articlesToShow.map(article => `
@@ -196,6 +174,9 @@
 
     function updatePagination() {
       const pagination = document.getElementById('pagination');
+      
+      if (!window.allArticles) return;
+      
       const totalPages = Math.ceil(window.allArticles.length / ARTICLES_PER_PAGE);
       
       let paginationHTML = '';
@@ -236,6 +217,7 @@
     }
 
     function changePage(page) {
+      if (!window.allArticles) return;
       if (page < 1 || page > Math.ceil(window.allArticles.length / ARTICLES_PER_PAGE)) return;
       displayArticles(page);
       window.scrollTo({ top: 0, behavior: 'smooth' });
