@@ -13,29 +13,9 @@
   <meta property="og:url" content="https://one1game.github.io" />
   <title>One1Game | Экспериментальная игровая платформа</title>
   
-  <!-- Preload critical resources -->
-  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Rajdhani:wght@300;400;500;600&display=swap" as="style">
-  <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" as="style">
-  
   <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Rajdhani:wght@300;400;500;600&display=swap" rel="stylesheet" />
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet" />
   <link rel="stylesheet" href="styles.css" />
-  
-  <!-- JSON-LD Structured Data -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "WebSite",
-    "name": "One1Game",
-    "description": "Экспериментальная игровая платформа с уникальным контентом",
-    "url": "https://one1game.github.io",
-    "potentialAction": {
-      "@type": "SearchAction",
-      "target": "https://one1game.github.io/search?q={search_term_string}",
-      "query-input": "required name=search_term_string"
-    }
-  }
-  </script>
 </head>
 <body>
   <!-- Animated Background -->
@@ -44,7 +24,7 @@
   
   <div class="site-wrapper">
     <!-- Header -->
-    <header id="header" role="banner">
+    <header id="header">
       <div class="glitch-container">
         <h1 class="glitch" data-text="ONE1GAME">ONE1GAME</h1>
       </div>
@@ -52,40 +32,37 @@
       <div class="cyber-line"></div>
     </header>
 
-    <main class="content" role="main">
+    <main class="content">
       <!-- Social Links -->
-      <section class="social-section" aria-labelledby="social-title">
-        <h2 id="social-title" class="section-title">Присоединяйтесь к Эксперименту</h2>
+      <section class="social-section">
+        <h2 class="section-title">Присоединяйтесь к Эксперименту</h2>
         <div class="button-grid">
-          <a href="https://www.youtube.com/@one1game" class="cyber-button youtube-button" target="_blank" rel="noopener noreferrer">
+          <a href="https://www.youtube.com/@one1game" class="cyber-button youtube-button" target="_blank">
             <i class="fab fa-youtube"></i>
             <span>YouTube Канал</span>
-            <div class="button-hover"></div>
           </a>
-          <a href="https://vk.com/one1games" class="cyber-button vk-button" target="_blank" rel="noopener noreferrer">
+          <a href="https://vk.com/one1games" class="cyber-button vk-button" target="_blank">
             <i class="fab fa-vk"></i>
             <span>ВКонтакте</span>
-            <div class="button-hover"></div>
           </a>
-          <a href="https://one1game.github.io/cyber-scanner/" class="cyber-button scanner-button" target="_blank" rel="noopener noreferrer">
+          <a href="https://one1game.github.io/cyber-scanner/" class="cyber-button scanner-button" target="_blank">
             <i class="fas fa-radar"></i>
             <span>Cyber Scanner</span>
-            <div class="button-hover"></div>
           </a>
         </div>
       </section>
 
       <!-- Random Video -->
-      <section class="video-section" aria-labelledby="video-title">
-        <h3 id="video-title" class="section-title">Случайный Эксперимент</h3>
+      <section class="video-section">
+        <h3 class="section-title">Случайный Эксперимент</h3>
         <div id="video-container" class="cyber-frame">
           <div class="loading-pulse"></div>
         </div>
       </section>
 
       <!-- Clicker Game -->
-      <section class="clicker-game" aria-labelledby="clicker-title">
-        <h3 id="clicker-title" class="section-title">Энергетический Сбор</h3>
+      <section class="clicker-game">
+        <h3 class="section-title">Энергетический Сбор</h3>
         <div class="clicker-stats">
           <div class="stat-item">
             <span class="stat-label">Текущая энергия:</span>
@@ -97,17 +74,14 @@
           </div>
         </div>
         <div class="clicker-core">
-          <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 200'%3E%3Ccircle cx='100' cy='100' r='80' fill='%2300ff88' opacity='0.8'/%3E%3C/svg%3E" 
-               id="clicker-image" 
-               alt="Энергетическое ядро" 
-               class="pulsing-core" />
+          <div id="clicker-image" class="pulsing-core"></div>
           <div class="energy-rings"></div>
         </div>
-        <button id="reset-clicks" class="cyber-button small">Сбросить</button>
+        <button id="reset-clicks" class="cyber-button small">Сбросить прогресс</button>
       </section>
 
       <!-- Music Player -->
-      <section class="music-player" aria-labelledby="music-title">
+      <section class="music-player">
         <div class="cyber-terminal">
           <div class="terminal-header">
             <div class="terminal-dots">
@@ -115,28 +89,28 @@
               <span></span>
               <span></span>
             </div>
-            <h3 id="music-title">8-BIT RADIO TRANSMISSION</h3>
+            <h3>8-BIT RADIO TRANSMISSION</h3>
           </div>
           <div class="terminal-body">
             <div class="player-controls">
-              <button id="playPauseBtn" class="cyber-button icon" aria-label="Воспроизвести/Пауза">
+              <button id="playPauseBtn" class="cyber-button icon">
                 <i class="fas fa-play"></i>
               </button>
               <div class="volume-container">
                 <i class="fas fa-volume-up"></i>
-                <input type="range" id="volumeControl" min="0" max="1" step="0.1" value="0.7" aria-label="Громкость" />
+                <input type="range" id="volumeControl" min="0" max="1" step="0.1" value="0.7" />
               </div>
             </div>
             <audio id="radio-player" src="https://spritelayerradio.com/listen/classic/classic.mp3" preload="metadata"></audio>
             <div class="spectrum-analyzer">
               <div class="equalizer">
-                <div class="bar" id="bar1"></div>
-                <div class="bar" id="bar2"></div>
-                <div class="bar" id="bar3"></div>
-                <div class="bar" id="bar4"></div>
-                <div class="bar" id="bar5"></div>
-                <div class="bar" id="bar6"></div>
-                <div class="bar" id="bar7"></div>
+                <div class="bar"></div>
+                <div class="bar"></div>
+                <div class="bar"></div>
+                <div class="bar"></div>
+                <div class="bar"></div>
+                <div class="bar"></div>
+                <div class="bar"></div>
               </div>
             </div>
             <div class="frequency-display">
@@ -148,10 +122,10 @@
       </section>
 
       <!-- Additional Tools -->
-      <section class="tools-section" aria-labelledby="tools-title">
-        <h3 id="tools-title" class="section-title">Инструменты Разработчика</h3>
+      <section class="tools-section">
+        <h3 class="section-title">Инструменты Разработчика</h3>
         <div class="tools-grid">
-          <a href="http://jsonld-generator.com/" class="tool-card" target="_blank" rel="noopener noreferrer">
+          <a href="http://jsonld-generator.com/" class="tool-card" target="_blank">
             <i class="fas fa-code"></i>
             <h4>JSON-LD Generator</h4>
             <p>Генератор структурированных данных для SEO</p>
@@ -165,14 +139,13 @@
       </section>
     </main>
 
-    <!-- Footer -->
-    <footer role="contentinfo">
+    <footer>
       <div class="footer-content">
         <p>© 2025 One1Game Experimental Platform. Все системы активны.</p>
         <div class="footer-links">
-          <a href="#privacy" class="footer-link">Конфиденциальность</a>
-          <a href="#terms" class="footer-link">Условия</a>
-          <a href="#contact" class="footer-link">Контакт</a>
+          <a href="#" class="footer-link">Конфиденциальность</a>
+          <a href="#" class="footer-link">Условия</a>
+          <a href="#" class="footer-link">Контакт</a>
         </div>
       </div>
     </footer>

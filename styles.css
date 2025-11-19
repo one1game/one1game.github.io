@@ -704,3 +704,177 @@ footer {
   outline: 2px solid var(--neon-green);
   outline-offset: 2px;
 }
+
+/* Добавьте этот код в конец вашего styles.css */
+
+/* Clicker Game Specific Styles */
+.clicker-core {
+  position: relative;
+  display: inline-block;
+  margin: 20px 0;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.pulsing-core {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  background: radial-gradient(circle, #00ff88 0%, #00cc66 50%, transparent 70%);
+  box-shadow: 
+      0 0 20px #00ff88,
+      0 0 40px #00ff88,
+      inset 0 0 20px rgba(0, 255, 136, 0.5);
+  animation: corePulse 2s ease-in-out infinite;
+  transition: all 0.1s ease;
+}
+
+@keyframes corePulse {
+  0%, 100% { 
+      transform: scale(1);
+      box-shadow: 
+          0 0 20px #00ff88,
+          0 0 40px #00ff88,
+          inset 0 0 20px rgba(0, 255, 136, 0.5);
+  }
+  50% { 
+      transform: scale(1.05);
+      box-shadow: 
+          0 0 30px #00ff88,
+          0 0 60px #00ff88,
+          inset 0 0 30px rgba(0, 255, 136, 0.7);
+  }
+}
+
+.pulsing-core:active {
+  transform: scale(0.95);
+  animation: none;
+}
+
+.energy-rings {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 250px;
+  height: 250px;
+  border: 2px solid #00ff88;
+  border-radius: 50%;
+  animation: rotate 10s linear infinite;
+  pointer-events: none;
+}
+
+.energy-rings::before,
+.energy-rings::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border: 1px solid #00ff88;
+  border-radius: 50%;
+  opacity: 0.6;
+  pointer-events: none;
+}
+
+.energy-rings::before {
+  width: 220px;
+  height: 220px;
+  animation: rotate 8s linear infinite reverse;
+}
+
+.energy-rings::after {
+  width: 190px;
+  height: 190px;
+  animation: rotate 6s linear infinite;
+}
+
+@keyframes rotate {
+  0% { transform: translate(-50%, -50%) rotate(0deg); }
+  100% { transform: translate(-50%, -50%) rotate(360deg); }
+}
+
+/* Stats styling */
+.clicker-stats {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  margin-bottom: 30px;
+  flex-wrap: wrap;
+}
+
+.stat-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  padding: 15px 25px;
+  background: rgba(0, 0, 0, 0.5);
+  border: 1px solid #00ff88;
+  border-radius: 8px;
+  min-width: 150px;
+}
+
+.stat-label {
+  font-size: 0.9rem;
+  color: #b0b0b0;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+.stat-value {
+  font-family: 'Orbitron', monospace;
+  font-size: 1.8rem;
+  color: #00ff88;
+  font-weight: 700;
+  text-shadow: 0 0 10px #00ff88;
+}
+
+/* Reset button specific styles */
+#reset-clicks {
+  margin-top: 20px;
+  background: rgba(255, 0, 60, 0.2);
+  border-color: #ff003c;
+  transition: all 0.3s ease;
+}
+
+#reset-clicks:hover {
+  background: rgba(255, 0, 60, 0.4);
+  box-shadow: 0 0 15px #ff003c;
+}
+
+/* Mobile responsiveness for clicker game */
+@media (max-width: 768px) {
+  .pulsing-core {
+      width: 150px;
+      height: 150px;
+  }
+  
+  .energy-rings {
+      width: 180px;
+      height: 180px;
+  }
+  
+  .energy-rings::before {
+      width: 160px;
+      height: 160px;
+  }
+  
+  .energy-rings::after {
+      width: 140px;
+      height: 140px;
+  }
+  
+  .clicker-stats {
+      gap: 20px;
+  }
+  
+  .stat-item {
+      min-width: 120px;
+      padding: 10px 15px;
+  }
+  
+  .stat-value {
+      font-size: 1.4rem;
+  }
+}
