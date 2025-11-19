@@ -1,179 +1,217 @@
 /* Базовые стили */
 body {
-    font-family: 'Roboto', sans-serif;
-    background: #1a1a1a url('img/bg-pattern.png') fixed;
-    color: #fff;
-    margin: 0;
-    padding: 0;
-    line-height: 1.6;
-  }
-  
-  .site-wrapper {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 20px;
-  }
-  
-  /* Шапка */
-  #header {
-    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('img/header-bg.jpg') center/cover;
-    text-align: center;
-    padding: 60px 20px;
-    border-radius: 10px;
-    margin-bottom: 30px;
-  }
-  
+  font-family: 'Roboto', sans-serif;
+  background: #1a1a1a url('img/bg-pattern.png') fixed;
+  color: #fff;
+  margin: 0;
+  padding: 0;
+  line-height: 1.6;
+}
+
+.site-wrapper {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+/* Шапка */
+#header {
+  background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('img/header-bg.jpg') center/cover;
+  text-align: center;
+  padding: 60px 20px;
+  border-radius: 10px;
+  margin-bottom: 30px;
+}
+
+#header h1 {
+  font-family: 'Press Start 2P', cursive;
+  font-size: 2.5rem;
+  color: #ff4500;
+  text-shadow: 3px 3px 0 #000;
+}
+
+#header p {
+  font-size: 1.2rem;
+  margin-top: 10px;
+}
+
+/* Кнопки соцсетей */
+.button-row {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin: 20px 0;
+}
+
+.button {
+  padding: 12px 25px;
+  border-radius: 5px;
+  font-weight: bold;
+  text-decoration: none;
+  transition: transform 0.2s;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.button:hover {
+  transform: translateY(-3px);
+}
+
+.youtube-button {
+  background: #ff0000;
+  color: white;
+}
+
+.vk-button {
+  background: #0077ff;
+  color: white;
+}
+
+/* Видео-блок */
+.video-section {
+  background: rgba(0, 0, 0, 0.5);
+  padding: 20px;
+  border-radius: 10px;
+  margin: 20px 0;
+  text-align: center;
+}
+
+#video-container {
+  position: relative;
+  padding-bottom: 56.25%; /* 16:9 */
+  height: 0;
+  overflow: hidden;
+  border-radius: 5px;
+}
+
+#video-container iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 5px;
+}
+
+/* Кликер-игра */
+.clicker-game {
+  text-align: center;
+  margin: 30px 0;
+  background: rgba(0, 0, 0, 0.5);
+  padding: 20px;
+  border-radius: 10px;
+}
+
+#clicker-image {
+  cursor: pointer;
+  max-width: 200px;
+  border-radius: 10px;
+  transition: transform 0.1s;
+}
+
+#clicker-image:active {
+  transform: scale(0.95);
+}
+
+/* Музыкальный плеер */
+.music-player {
+  background: rgba(0, 0, 0, 0.7);
+  padding: 20px;
+  border-radius: 10px;
+  margin-top: 30px;
+}
+
+.radio-style {
+  background: url('img/radio-bg.jpg') center/cover;
+  padding: 20px;
+  border-radius: 8px;
+  text-align: center;
+}
+
+.radio-style h3 {
+  color: #fff;
+  font-family: 'Courier New', monospace;
+  font-size: 1.5em;
+  text-transform: uppercase;
+  margin-bottom: 15px;
+}
+
+.playPauseBtn {
+  background: #ff4500;
+  border: none;
+  color: white;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 5px;
+  margin-right: 10px;
+}
+
+audio {
+  width: 100%;
+  border: 2px solid #ff6347;
+  border-radius: 10px;
+  background-color: #333;
+  padding: 5px;
+  margin: 10px 0;
+}
+
+.equalizer {
+  display: flex;
+  justify-content: center;
+  gap: 5px;
+  height: 60px;
+  align-items: flex-end;
+  margin-top: 15px;
+}
+
+.bar {
+  width: 8px;
+  background: linear-gradient(to top, #ff4500, #ff8c00);
+  border-radius: 3px;
+  animation: equalizer-animation 1s infinite ease-in-out;
+  animation-play-state: paused;
+}
+
+/* Анимации */
+@keyframes equalizer-animation {
+  0%, 100% { height: 10px; }
+  50% { height: 60px; }
+}
+
+.bar:nth-child(1) { animation-delay: 0.1s; }
+.bar:nth-child(2) { animation-delay: 0.3s; }
+.bar:nth-child(3) { animation-delay: 0.5s; }
+.bar:nth-child(4) { animation-delay: 0.2s; }
+.bar:nth-child(5) { animation-delay: 0.4s; }
+
+/* Футер */
+footer {
+  text-align: center;
+  padding: 20px;
+  background-color: #1a1a1a;
+  margin-top: 50px;
+  border-top: 1px solid #333;
+  border-radius: 10px;
+}
+
+/* Адаптивность */
+@media (max-width: 768px) {
   #header h1 {
-    font-family: 'Press Start 2P', cursive;
-    font-size: 2.5rem;
-    color: #ff4500;
-    text-shadow: 3px 3px 0 #000;
+    font-size: 1.8rem;
   }
   
-  /* Кнопки соцсетей */
   .button-row {
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-    margin: 20px 0;
-  }
-  
-  .button {
-    padding: 12px 25px;
-    border-radius: 5px;
-    font-weight: bold;
-    text-decoration: none;
-    transition: transform 0.2s;
-    display: flex;
+    flex-direction: column;
     align-items: center;
-    gap: 10px;
-  }
-  
-  .button:hover {
-    transform: translateY(-3px);
-  }
-  
-  .youtube-button {
-    background: #ff0000;
-    color: white;
-  }
-  
-  .vk-button {
-    background: #0077ff;
-    color: white;
-  }
-  
-  /* Видео-блок */
-  .video-section {
-    background: rgba(0, 0, 0, 0.5);
-    padding: 20px;
-    border-radius: 10px;
-    margin: 20px 0;
-  }
-  
-  #video-container {
-    position: relative;
-    padding-bottom: 56.25%; /* 16:9 */
-    height: 0;
-    overflow: hidden;
-  }
-  
-  #video-container iframe {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    border-radius: 5px;
-  }
-  
-  /* Кликер-игра */
-  .clicker-game {
-    text-align: center;
-    margin: 30px 0;
-  }
-  
-  #clicker-image {
-    cursor: pointer;
-    max-width: 200px;
-    border-radius: 10px;
-    transition: transform 0.1s;
-  }
-  
-  #clicker-image:active {
-    transform: scale(0.95);
-  }
-  
-  /* Музыкальный плеер */
-  .music-player {
-    background: rgba(0, 0, 0, 0.7);
-    padding: 20px;
-    border-radius: 10px;
-    margin-top: 30px;
-  }
-  
-  .radio-style {
-    background: url('img/radio-bg.jpg') center/cover;
-    padding: 20px;
-    border-radius: 8px;
-  }
-  
-  .playPauseBtn {
-    background: #ff4500;
-    border: none;
-    color: white;
-    padding: 10px 20px;
-    font-size: 16px;
-    cursor: pointer;
-    border-radius: 5px;
-    margin-right: 10px;
   }
   
   .equalizer {
-    display: flex;
-    justify-content: center;
-    gap: 5px;
-    height: 60px;
-    align-items: flex-end;
-    margin-top: 15px;
+    height: 40px;
   }
   
   .bar {
-    width: 8px;
-    background: linear-gradient(to top, #ff4500, #ff8c00);
-    border-radius: 3px;
-    animation: equalizer-animation 1s infinite ease-in-out;
-    animation-play-state: paused;
+    width: 6px;
   }
-  
-  /* Анимации */
-  @keyframes equalizer-animation {
-    0%, 100% { height: 10px; }
-    50% { height: 60px; }
-  }
-  
-  .bar:nth-child(1) { animation-delay: 0.1s; }
-  .bar:nth-child(2) { animation-delay: 0.3s; }
-  .bar:nth-child(3) { animation-delay: 0.5s; }
-  .bar:nth-child(4) { animation-delay: 0.2s; }
-  .bar:nth-child(5) { animation-delay: 0.4s; }
-  
-  /* Адаптивность */
-  @media (max-width: 768px) {
-    #header h1 {
-      font-size: 1.8rem;
-    }
-    
-    .button-row {
-      flex-direction: column;
-      align-items: center;
-    }
-    
-    .equalizer {
-      height: 40px;
-    }
-    
-    .bar {
-      width: 6px;
-    }
-  }
+}
