@@ -28,7 +28,13 @@
       transition: all 0.3s ease;
     }
     
-    .article-item:hover {
+    .article-link {
+      text-decoration: none;
+      color: inherit;
+      display: block;
+    }
+    
+    .article-link:hover .article-item {
       border-color: #00ff88;
       transform: translateX(10px);
     }
@@ -68,43 +74,50 @@
       </h1>
       
       <div class="article-list">
+        <!-- Твоя статья -->
         <a href="/archive/aa-trendy-2025.html" class="article-link">
-            <div class="article-item">
-              <span class="article-category">Индустрия</span>
-              <h3>Почему AA-игры — главный тренд 2025 года</h3>
-              <p>Среднебюджетные AA-игры захватывают игровую индустрию в 2025 году. Почему игроки и издатели выбирают их вместо AAA и что нас ждёт дальше...</p>
-              <div style="color: #b0b0b0; font-size: 0.9rem; margin-top: 15px;">
-                <i class="far fa-calendar"></i> 19 ноября 2025 · <i class="far fa-clock"></i> 10 мин
-              </div>
+          <div class="article-item">
+            <span class="article-category">Индустрия</span>
+            <h3>Почему AA-игры — главный тренд 2025 года</h3>
+            <p>Среднебюджетные AA-игры захватывают игровую индустрию в 2025 году. Почему игроки и издатели выбирают их вместо AAA и что нас ждёт дальше...</p>
+            <div style="color: #b0b0b0; font-size: 0.9rem; margin-top: 15px;">
+              <i class="far fa-calendar"></i> 19 ноября 2025 · <i class="far fa-clock"></i> 10 мин
             </div>
-          </a>
-        
-        <div class="article-item">
-          <span class="article-category">Гайд</span>
-          <h3>Топ 10 скрытых механик в Baldur's Gate 3</h3>
-          <p>Секретные возможности, о которых не знают 90% игроков. От скрытых диалогов до неочевидных комбинаций способностей...</p>
-          <div style="color: #b0b0b0; font-size: 0.9rem; margin-top: 15px;">
-            <i class="far fa-calendar"></i> 12 января 2024 · <i class="far fa-clock"></i> 6 мин
           </div>
-        </div>
+        </a>
         
-        <div class="article-item">
-          <span class="article-category">Новости</span>
-          <h3>Анонс GTA 6: Все что известно</h3>
-          <p>Дата выхода, геймплей, платформы - последние новости о самой ожидаемой игре десятилетия. Анализ трейлера и утечек...</p>
-          <div style="color: #b0b0b0; font-size: 0.9rem; margin-top: 15px;">
-            <i class="far fa-calendar"></i> 10 января 2024 · <i class="far fa-clock"></i> 5 мин
+        <a href="baldurs-gate-article.html" class="article-link">
+          <div class="article-item">
+            <span class="article-category">Гайд</span>
+            <h3>Топ 10 скрытых механик в Baldur's Gate 3</h3>
+            <p>Секретные возможности, о которых не знают 90% игроков. От скрытых диалогов до неочевидных комбинаций способностей...</p>
+            <div style="color: #b0b0b0; font-size: 0.9rem; margin-top: 15px;">
+              <i class="far fa-calendar"></i> 12 января 2024 · <i class="far fa-clock"></i> 6 мин
+            </div>
           </div>
-        </div>
+        </a>
         
-        <div class="article-item">
-          <span class="article-category">Ретро</span>
-          <h3>Nostalgia Trip: Почему Half-Life 2 актуальна</h3>
-          <p>Разбираем геймдизайн классики, который опередил время. Физика, сторителлинг и AI, которые до сих пор впечатляют...</p>
-          <div style="color: #b0b0b0; font-size: 0.9rem; margin-top: 15px;">
-            <i class="far fa-calendar"></i> 8 января 2024 · <i class="far fa-clock"></i> 7 мин
+        <a href="gta6-article.html" class="article-link">
+          <div class="article-item">
+            <span class="article-category">Новости</span>
+            <h3>Анонс GTA 6: Все что известно</h3>
+            <p>Дата выхода, геймплей, платформы - последние новости о самой ожидаемой игре десятилетия. Анализ трейлера и утечек...</p>
+            <div style="color: #b0b0b0; font-size: 0.9rem; margin-top: 15px;">
+              <i class="far fa-calendar"></i> 10 января 2024 · <i class="far fa-clock"></i> 5 мин
+            </div>
           </div>
-        </div>
+        </a>
+        
+        <a href="half-life-article.html" class="article-link">
+          <div class="article-item">
+            <span class="article-category">Ретро</span>
+            <h3>Nostalgia Trip: Почему Half-Life 2 актуальна</h3>
+            <p>Разбираем геймдизайн классики, который опередил время. Физика, сторителлинг и AI, которые до сих пор впечатляют...</p>
+            <div style="color: #b0b0b0; font-size: 0.9rem; margin-top: 15px;">
+              <i class="far fa-calendar"></i> 8 января 2024 · <i class="far fa-clock"></i> 7 мин
+            </div>
+          </div>
+        </a>
       </div>
     </div>
   </div>
