@@ -18,6 +18,7 @@
       display: flex;
       flex-direction: column;
       gap: 20px;
+      min-height: 600px;
     }
     
     .article-item {
@@ -58,6 +59,50 @@
       color: #00f3ff;
       text-decoration: none;
     }
+
+    /* Пагинация */
+    .pagination {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 10px;
+      margin-top: 40px;
+      flex-wrap: wrap;
+    }
+
+    .page-btn {
+      padding: 10px 16px;
+      background: rgba(0, 0, 0, 0.6);
+      border: 1px solid var(--neon-cyan);
+      border-radius: 6px;
+      color: var(--text-primary);
+      cursor: pointer;
+      transition: all 0.3s ease;
+      font-family: 'Rajdhani', sans-serif;
+      font-weight: 500;
+    }
+
+    .page-btn:hover {
+      background: rgba(0, 243, 255, 0.2);
+      transform: translateY(-2px);
+    }
+
+    .page-btn.active {
+      background: var(--neon-cyan);
+      color: #000;
+      font-weight: 600;
+      box-shadow: 0 0 15px var(--neon-cyan);
+    }
+
+    .page-btn.disabled {
+      opacity: 0.5;
+      cursor: not-allowed;
+    }
+
+    .page-btn.disabled:hover {
+      transform: none;
+      background: rgba(0, 0, 0, 0.6);
+    }
   </style>
 </head>
 <body>
@@ -73,59 +118,181 @@
         <i class="fas fa-newspaper"></i> Игровые Статьи
       </h1>
       
-      <div class="article-list">
-        <!-- Твоя статья -->
-        <a href="/archive/vr-ai-2025.html" class="article-link">
-            <div class="article-item">
-              
-              <h3>VR + AI 2025: Как искусственный интеллект превращает виртуальную реальность в живой мир</h3>
-              <p>VR + AI 2025: использование искусственного интеллекта в виртуальной реальности. Динамические NPC, живые миры, адаптивные квесты и новые тренды игрового опыта.</p>
-              <div style="color: #b0b0b0; font-size: 0.9rem; margin-top: 15px;">
-                <i class="far fa-calendar"></i> 19 ноября 2025 · <i class="far fa-clock"></i> 10 мин
-              </div>
-            </div>
-          </a>
+      <div class="article-list" id="articles-list">
+        <!-- Статьи будут загружаться через JavaScript -->
+      </div>
 
-        <a href="/archive/game-design-ai-2025.html" class="article-link">
-            <div class="article-item">
-              
-              <h3>AI-Геймдизайн 2025: Как искусственный интеллект меняет процесс создания игр</h3>
-              <p>AI-Геймдизайн 2025: использование искусственного интеллекта в создании игр, генерации миров и квестов. Примеры проектов, тренды и будущее индустрии.</p>
-              <div style="color: #b0b0b0; font-size: 0.9rem; margin-top: 15px;">
-                <i class="far fa-calendar"></i> 19 ноября 2025 · <i class="far fa-clock"></i> 10 мин
-              </div>
-            </div>
-          </a>
-        
-        <a href="/archive/ai-comics-2025.html" class="article-link">
-          <div class="article-item">
-            
-            <h3>Нейросетевые комиксы 2025: ИИ меняет графический сторителлинг</h3>
-            <p>Нейросетевые комиксы 2025: ИИ создает сюжеты и визуальные истории. Узнайте, как генеративные модели меняют индустрию комиксов и графических новелл.</p>
-            <div style="color: #b0b0b0; font-size: 0.9rem; margin-top: 15px;">
-              <i class="far fa-calendar"></i> 19 ноября 2025 · <i class="far fa-clock"></i> 7 мин
-            </div>
-          </div>
-        </a>
-
-        <a href="/archive/aa-games-trend-2025.html" class="article-link">
-            <div class="article-item">
-              
-              <h3>Почему AA-игры — главный тренд 2025 года</h3>
-              <p>Среднебюджетные AA-игры захватывают игровую индустрию в 2025 году. Почему игроки и издатели выбирают их вместо AAA и что нас ждёт дальше...</p>
-              <div style="color: #b0b0b0; font-size: 0.9rem; margin-top: 15px;">
-                <i class="far fa-calendar"></i> 19 ноября 2025 · <i class="far fa-clock"></i> 10 мин
-              </div>
-            </div>
-          </a>
-        
-        
-        
-        
-        
-    
+      <!-- Пагинация -->
+      <div class="pagination" id="pagination">
+        <!-- Кнопки страниц будут генерироваться через JavaScript -->
       </div>
     </div>
   </div>
+
+  <script>
+    // Все статьи
+    const allArticles = [
+      {
+        url: "/archive/vr-ai-2025.html",
+        title: "VR + AI 2025: Как искусственный интеллект превращает виртуальную реальность в живой мир",
+        excerpt: "VR + AI 2025: использование искусственного интеллекта в виртуальной реальности. Динамические NPC, живые миры, адаптивные квесты и новые тренды игрового опыта.",
+        date: "19 ноября 2025",
+        readTime: "10 мин"
+      },
+      {
+        url: "/archive/game-design-ai-2025.html",
+        title: "AI-Геймдизайн 2025: Как искусственный интеллект меняет процесс создания игр",
+        excerpt: "AI-Геймдизайн 2025: использование искусственного интеллекта в создании игр, генерации миров и квестов. Примеры проектов, тренды и будущее индустрии.",
+        date: "19 ноября 2025",
+        readTime: "10 мин"
+      },
+      {
+        url: "/archive/ai-comics-2025.html",
+        title: "Нейросетевые комиксы 2025: ИИ меняет графический сторителлинг",
+        excerpt: "Нейросетевые комиксы 2025: ИИ создает сюжеты и визуальные истории. Узнайте, как генеративные модели меняют индустрию комиксов и графических новелл.",
+        date: "19 ноября 2025", 
+        readTime: "7 мин"
+      },
+      {
+        url: "/archive/aa-games-trend-2025.html",
+        title: "Почему AA-игры — главный тренд 2025 года",
+        excerpt: "Среднебюджетные AA-игры захватывают игровую индустрию в 2025 году. Почему игроки и издатели выбирают их вместо AAA и что нас ждёт дальше...",
+        date: "19 ноября 2025",
+        readTime: "10 мин"
+      },
+      {
+        url: "/archive/cloud-gaming-2025.html",
+        title: "Облачный гейминг 2025: Будущее без консолей",
+        excerpt: "Технологии облачного гейминга в 2025 году. Как стриминг игр меняет индустрию и что ждет игроков в ближайшем будущем.",
+        date: "18 ноября 2025",
+        readTime: "8 мин"
+      },
+      {
+        url: "/archive/esports-evolution.html",
+        title: "Эволюция киберспорта: От нишевого хобби к мейнстриму",
+        excerpt: "Как киберспорт превратился в многомиллиардную индустрию и что ждет его в будущем. Анализ трендов и перспектив.",
+        date: "17 ноября 2025", 
+        readTime: "12 мин"
+      },
+      {
+        url: "/archive/indie-success.html",
+        title: "Феномен инди-игр: Почему маленькие проекты побеждают гигантов",
+        excerpt: "Истории успеха инди-разработчиков. Как небольшие студии создают хиты и конкурируют с AAA-проектами.",
+        date: "16 ноября 2025",
+        readTime: "9 мин"
+      },
+      {
+        url: "/archive/game-preservation.html",
+        title: "Сохранение игрового наследия: Битва со временем",
+        excerpt: "Почему старые игры исчезают и как энтузиасты сохраняют игровую историю для будущих поколений.",
+        date: "15 ноября 2025",
+        readTime: "11 мин"
+      },
+      {
+        url: "/archive/ar-gaming-future.html", 
+        title: "Дополненная реальность в играх: Следующий рубеж",
+        excerpt: "AR-технологии в гейминге. Как дополненная реальность изменит наш игровой опыт в ближайшие годы.",
+        date: "14 ноября 2025",
+        readTime: "7 мин"
+      },
+      {
+        url: "/archive/game-accessibility.html",
+        title: "Доступность в играх: Инклюзивный дизайн для всех",
+        excerpt: "Как разработчики делают игры доступными для игроков с ограниченными возможностями и почему это важно.",
+        date: "13 ноября 2025",
+        readTime: "8 мин"
+      },
+      {
+        url: "/archive/blockchain-gaming.html",
+        title: "Блокчейн в играх: Технология будущего или пузырь?",
+        excerpt: "Анализ блокчейн-игр и NFT. Перспективы технологии и реальные кейсы использования в гейминге.",
+        date: "12 ноября 2025",
+        readTime: "10 мин"
+      },
+      {
+        url: "/archive/retro-revival.html",
+        title: "Ретро-ренессанс: Почему старые игры снова в моде",
+        excerpt: "Возрождение ретро-стиля в современных играх. Ностальгия как мощный инструмент геймдизайна.",
+        date: "11 ноября 2025",
+        readTime: "6 мин"
+      }
+    ];
+
+    const ARTICLES_PER_PAGE = 5;
+    let currentPage = 1;
+
+    function displayArticles(page = 1) {
+      const articlesList = document.getElementById('articles-list');
+      const startIndex = (page - 1) * ARTICLES_PER_PAGE;
+      const endIndex = startIndex + ARTICLES_PER_PAGE;
+      const articlesToShow = allArticles.slice(startIndex, endIndex);
+
+      articlesList.innerHTML = articlesToShow.map(article => `
+        <a href="${article.url}" class="article-link">
+          <div class="article-item">
+            <span class="article-category">Индустрия</span>
+            <h3>${article.title}</h3>
+            <p>${article.excerpt}</p>
+            <div style="color: #b0b0b0; font-size: 0.9rem; margin-top: 15px;">
+              <i class="far fa-calendar"></i> ${article.date} · <i class="far fa-clock"></i> ${article.readTime}
+            </div>
+          </div>
+        </a>
+      `).join('');
+
+      currentPage = page;
+      updatePagination();
+    }
+
+    function updatePagination() {
+      const pagination = document.getElementById('pagination');
+      const totalPages = Math.ceil(allArticles.length / ARTICLES_PER_PAGE);
+      
+      let paginationHTML = '';
+
+      // Кнопка "Назад"
+      paginationHTML += `
+        <button class="page-btn ${currentPage === 1 ? 'disabled' : ''}" 
+                onclick="changePage(${currentPage - 1})" 
+                ${currentPage === 1 ? 'disabled' : ''}>
+          <i class="fas fa-chevron-left"></i>
+        </button>
+      `;
+
+      // Номера страниц
+      for (let i = 1; i <= totalPages; i++) {
+        if (i === 1 || i === totalPages || (i >= currentPage - 1 && i <= currentPage + 1)) {
+          paginationHTML += `
+            <button class="page-btn ${i === currentPage ? 'active' : ''}" 
+                    onclick="changePage(${i})">
+              ${i}
+            </button>
+          `;
+        } else if (i === currentPage - 2 || i === currentPage + 2) {
+          paginationHTML += `<span class="page-btn disabled">...</span>`;
+        }
+      }
+
+      // Кнопка "Вперед"
+      paginationHTML += `
+        <button class="page-btn ${currentPage === totalPages ? 'disabled' : ''}" 
+                onclick="changePage(${currentPage + 1})" 
+                ${currentPage === totalPages ? 'disabled' : ''}>
+          <i class="fas fa-chevron-right"></i>
+        </button>
+      `;
+
+      pagination.innerHTML = paginationHTML;
+    }
+
+    function changePage(page) {
+      if (page < 1 || page > Math.ceil(allArticles.length / ARTICLES_PER_PAGE)) return;
+      displayArticles(page);
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    // Инициализация
+    displayArticles(1);
+  </script>
 </body>
 </html>
