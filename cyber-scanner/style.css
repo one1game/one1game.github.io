@@ -1,0 +1,487 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Share+Tech+Mono&family=Orbitron:wght@400;700&display=swap');
+
+:root {
+    --neon-blue: #00f3ff;
+    --neon-pink: #ff00ff;
+    --neon-green: #00ff00;
+    --neon-purple: #9d00ff;
+    --dark-bg: #0a0a0a;
+    --darker-bg: #050505;
+    --panel-bg: rgba(0, 243, 255, 0.05);
+    --border-glow: 0 0 10px var(--neon-blue);
+}
+
+body {
+    font-family: 'Share Tech Mono', monospace;
+    background: var(--dark-bg);
+    color: var(--neon-blue);
+    min-height: 100vh;
+    overflow-x: hidden;
+    background-image: 
+        radial-gradient(circle at 10% 20%, rgba(0, 243, 255, 0.1) 0%, transparent 20%),
+        radial-gradient(circle at 90% 80%, rgba(255, 0, 255, 0.1) 0%, transparent 20%);
+}
+
+.cyber-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 20px;
+    position: relative;
+}
+
+/* Глитч эффект для текста */
+.glitch-text {
+    position: relative;
+    font-family: 'Orbitron', sans-serif;
+    font-weight: 700;
+    font-size: 2.5em;
+    text-transform: uppercase;
+}
+
+.glitch-text::before,
+.glitch-text::after {
+    content: attr(data-text);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.glitch-text::before {
+    animation: glitch-1 0.5s infinite linear alternate-reverse;
+    color: var(--neon-pink);
+    z-index: -1;
+}
+
+.glitch-text::after {
+    animation: glitch-2 0.5s infinite linear alternate-reverse;
+    color: var(--neon-green);
+    z-index: -2;
+}
+
+@keyframes glitch-1 {
+    0% { transform: translate(0); }
+    20% { transform: translate(-2px, 2px); }
+    40% { transform: translate(-2px, -2px); }
+    60% { transform: translate(2px, 2px); }
+    80% { transform: translate(2px, -2px); }
+    100% { transform: translate(0); }
+}
+
+@keyframes glitch-2 {
+    0% { transform: translate(0); }
+    20% { transform: translate(2px, 2px); }
+    40% { transform: translate(2px, -2px); }
+    60% { transform: translate(-2px, 2px); }
+    80% { transform: translate(-2px, -2px); }
+    100% { transform: translate(0); }
+}
+
+/* Хедер */
+.cyber-header {
+    text-align: center;
+    margin-bottom: 40px;
+    padding: 20px;
+    border: 1px solid var(--neon-blue);
+    box-shadow: var(--border-glow);
+    background: var(--panel-bg);
+    position: relative;
+}
+
+.cyber-header::before {
+    content: '';
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    right: -2px;
+    bottom: -2px;
+    background: linear-gradient(45deg, var(--neon-blue), var(--neon-pink), var(--neon-green));
+    z-index: -1;
+    animation: border-animate 3s linear infinite;
+}
+
+@keyframes border-animate {
+    0%, 100% { opacity: 0.5; }
+    50% { opacity: 1; }
+}
+
+.subtitle {
+    font-size: 1.2em;
+    color: var(--neon-green);
+    margin: 10px 0;
+}
+
+.status-line {
+    font-size: 0.9em;
+    color: var(--neon-green);
+}
+
+.blink {
+    animation: blink 1s infinite;
+    color: var(--neon-green);
+}
+
+@keyframes blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0; }
+}
+
+/* Основные панели */
+.cyber-main {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.scan-panel,
+.progress-section,
+.results-section {
+    border: 1px solid var(--neon-blue);
+    padding: 30px;
+    background: var(--panel-bg);
+    box-shadow: var(--border-glow);
+    position: relative;
+}
+
+.panel-title {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 1.3em;
+    color: var(--neon-pink);
+    margin-bottom: 20px;
+    text-transform: uppercase;
+}
+
+/* Ввод данных */
+.input-group {
+    margin-bottom: 30px;
+}
+
+.input-label {
+    color: var(--neon-green);
+    margin-bottom: 10px;
+    font-size: 0.9em;
+}
+
+.cyber-input {
+    width: 100%;
+    padding: 15px;
+    background: rgba(0, 0, 0, 0.8);
+    border: 1px solid var(--neon-blue);
+    color: var(--neon-green);
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 1.1em;
+    margin-bottom: 20px;
+    transition: all 0.3s ease;
+}
+
+.cyber-input:focus {
+    outline: none;
+    box-shadow: 0 0 20px var(--neon-blue);
+    border-color: var(--neon-green);
+}
+
+/* Кнопка */
+.cyber-button {
+    position: relative;
+    padding: 20px 40px;
+    background: linear-gradient(45deg, var(--neon-blue), var(--neon-purple));
+    border: none;
+    color: black;
+    font-family: 'Orbitron', sans-serif;
+    font-size: 1.2em;
+    font-weight: bold;
+    text-transform: uppercase;
+    cursor: pointer;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    width: 100%;
+}
+
+.cyber-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 30px rgba(0, 243, 255, 0.4);
+}
+
+.cyber-button:active {
+    transform: translateY(0);
+}
+
+.btn-overlay {
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
+    transition: left 0.5s;
+}
+
+.cyber-button:hover .btn-overlay {
+    left: 100%;
+}
+
+/* Модули сканирования */
+.modules-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.module-card {
+    padding: 20px;
+    background: rgba(0, 0, 0, 0.6);
+    border: 1px solid var(--neon-blue);
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.module-card:hover {
+    border-color: var(--neon-green);
+    box-shadow: 0 0 15px var(--neon-green);
+    transform: translateY(-3px);
+}
+
+.module-card.active {
+    border-color: var(--neon-pink);
+    box-shadow: 0 0 20px var(--neon-pink);
+}
+
+.module-status {
+    width: 10px;
+    height: 10px;
+    background: var(--neon-green);
+    border-radius: 50%;
+    margin: 0 auto 10px;
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.5; }
+}
+
+.module-name {
+    font-size: 0.9em;
+    color: var(--neon-blue);
+}
+
+/* Прогресс бар */
+.cyber-progress {
+    margin-top: 20px;
+}
+
+.progress-bar {
+    width: 100%;
+    height: 20px;
+    background: rgba(0, 0, 0, 0.8);
+    border: 1px solid var(--neon-blue);
+    position: relative;
+    overflow: hidden;
+}
+
+.progress-fill {
+    height: 100%;
+    background: linear-gradient(90deg, var(--neon-blue), var(--neon-green));
+    width: 0%;
+    transition: width 0.3s ease;
+    position: relative;
+}
+
+.progress-glow {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
+    animation: shine 2s infinite;
+}
+
+@keyframes shine {
+    0% { transform: translateX(-100%); }
+    100% { transform: translateX(100%); }
+}
+
+.progress-text {
+    text-align: center;
+    margin-top: 10px;
+    color: var(--neon-green);
+    font-size: 1.1em;
+}
+
+/* Результаты */
+.results-grid {
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr;
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.stats-panel,
+.vuln-panel,
+.recom-panel {
+    padding: 20px;
+    background: rgba(0, 0, 0, 0.6);
+    border: 1px solid var(--neon-blue);
+    min-height: 300px;
+}
+
+.vuln-list {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.vuln-item {
+    padding: 15px;
+    border-left: 4px solid;
+    background: rgba(0, 0, 0, 0.8);
+    transition: all 0.3s ease;
+}
+
+.vuln-item:hover {
+    transform: translateX(5px);
+    box-shadow: 0 5px 15px rgba(0, 243, 255, 0.3);
+}
+
+.vuln-item.critical { border-left-color: #ff0000; background: rgba(255, 0, 0, 0.1); }
+.vuln-item.high { border-left-color: #ff6b00; background: rgba(255, 107, 0, 0.1); }
+.vuln-item.medium { border-left-color: #ffd700; background: rgba(255, 215, 0, 0.1); }
+.vuln-item.low { border-left-color: #00ff00; background: rgba(0, 255, 0, 0.1); }
+.vuln-item.info { border-left-color: #00f3ff; background: rgba(0, 243, 255, 0.1); }
+
+.vuln-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.vuln-title {
+    font-weight: bold;
+    color: var(--neon-blue);
+}
+
+.severity-badge {
+    padding: 5px 10px;
+    border-radius: 3px;
+    font-size: 0.8em;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.severity-badge.critical { background: #ff0000; color: white; }
+.severity-badge.high { background: #ff6b00; color: white; }
+.severity-badge.medium { background: #ffd700; color: black; }
+.severity-badge.low { background: #00ff00; color: black; }
+.severity-badge.info { background: #00f3ff; color: black; }
+
+/* Панель ошибок */
+.error-panel {
+    padding: 20px;
+    background: rgba(255, 0, 0, 0.1);
+    border: 1px solid #ff0000;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    animation: error-pulse 2s infinite;
+}
+
+@keyframes error-pulse {
+    0%, 100% { box-shadow: 0 0 10px rgba(255, 0, 0, 0.5); }
+    50% { box-shadow: 0 0 20px rgba(255, 0, 0, 0.8); }
+}
+
+.error-icon {
+    font-size: 2em;
+    color: #ff0000;
+}
+
+.error-text {
+    color: #ff6b6b;
+    font-size: 1.1em;
+}
+
+/* Футер */
+.cyber-footer {
+    margin-top: 40px;
+    padding: 20px;
+    border-top: 1px solid var(--neon-blue);
+    text-align: center;
+}
+
+.footer-text {
+    color: var(--neon-pink);
+    margin-bottom: 15px;
+}
+
+.terminal-line {
+    font-family: 'Share Tech Mono', monospace;
+    color: var(--neon-green);
+    font-size: 1.1em;
+}
+
+.prompt {
+    color: var(--neon-green);
+}
+
+.command {
+    color: var(--neon-blue);
+    animation: typing 3s steps(40, end) infinite;
+}
+
+@keyframes typing {
+    from { width: 0; }
+    to { width: 100%; }
+}
+
+/* Утилиты */
+.hidden {
+    display: none !important;
+}
+
+/* Адаптивность */
+@media (max-width: 768px) {
+    .results-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .modules-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .cyber-container {
+        padding: 10px;
+    }
+    
+    .glitch-text {
+        font-size: 1.8em;
+    }
+}
+
+/* Сканирующие линии */
+.scan-line {
+    position: fixed;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, var(--neon-blue), transparent);
+    animation: scan 3s linear infinite;
+    z-index: 1000;
+}
+
+@keyframes scan {
+    0% { top: 0; opacity: 0; }
+    50% { opacity: 1; }
+    100% { top: 100vh; opacity: 0; }
+}
