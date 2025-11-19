@@ -3,27 +3,81 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Fake Hacker Terminal</title>
+    <title>Fake Hacker Terminal - Создавай крутые хакерские видео для TikTok, YouTube Shorts и Instagram Reels</title>
+    
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="🔥 Бесплатный онлайн генератор хакерских видео! Создавай вирусные ролики для TikTok, YouTube Shorts и Instagram Reels с матрицей, глитч-эффектами и хакерским терминалом. Без регистрации и водяных знаков!">
+    <meta name="keywords" content="фейк хакер, хакерские видео, tiktok видео, youtube shorts, instagram reels, матрица, хакерский терминал, генератор видео, создатель видео, viral видео, хакер стиль, зеленый код, киберпанк">
+    <meta name="author" content="Fake Hacker Terminal">
+    <meta name="robots" content="index, follow, max-image-preview:large">
+    <meta name="theme-color" content="#00ff00">
+    
+    <!-- Open Graph для соцсетей -->
+    <meta property="og:title" content="Fake Hacker Terminal - Создай вирусные хакерские видео для соцсетей">
+    <meta property="og:description" content="Генератор крутых хакерских роликов с матрицей, глитчами и спецэффектами. Идеально для TikTok, YouTube Shorts и Instagram Reels!">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://yourdomain.com">
+    <meta property="og:image" content="https://yourdomain.com/og-image.jpg">
+    <meta property="og:site_name" content="Fake Hacker Terminal">
+    <meta property="og:locale" content="ru_RU">
+    
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Fake Hacker Terminal - Вирусные хакерские видео">
+    <meta name="twitter:description" content="Создавай крутые хакерские ролики для соцсетей с матрицей и спецэффектами">
+    <meta name="twitter:image" content="https://yourdomain.com/twitter-image.jpg">
+    <meta name="twitter:creator" content="@hackerterminal">
+    
+    <!-- Дополнительные SEO теги -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="format-detection" content="telephone=no">
+    <link rel="canonical" href="https://yourdomain.com">
+    
     <style>
         :root {
             --hacker-green: #00ff00;
+            --hacker-bright: #00ff41;
+            --hacker-glow: #00ff88;
             --hacker-dark: #0a0a0a;
+            --hacker-darker: #050505;
             --hacker-gray: #1a1a1a;
+            --hacker-panel: #111111;
+            --hacker-border: #00ff00;
+            --hacker-shadow: rgba(0, 255, 0, 0.3);
+            --hacker-glow-shadow: rgba(0, 255, 65, 0.5);
         }
         
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Courier New', monospace;
+            font-family: 'Courier New', 'Cascadia Code', 'Fira Code', monospace;
         }
         
         body {
-            background-color: var(--hacker-dark);
+            background: linear-gradient(135deg, var(--hacker-darker) 0%, var(--hacker-dark) 50%, var(--hacker-darker) 100%);
             color: var(--hacker-green);
-            line-height: 1.4;
-            padding: 10px;
+            line-height: 1.6;
+            padding: 20px;
             min-height: 100vh;
+            position: relative;
+            overflow-x: hidden;
+        }
+
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: 
+                radial-gradient(circle at 20% 80%, rgba(0, 255, 0, 0.03) 0%, transparent 50%),
+                radial-gradient(circle at 80% 20%, rgba(0, 255, 65, 0.03) 0%, transparent 50%),
+                radial-gradient(circle at 40% 40%, rgba(0, 255, 136, 0.02) 0%, transparent 50%);
+            pointer-events: none;
+            z-index: -1;
         }
         
         .container {
@@ -31,125 +85,273 @@
             margin: 0 auto;
             display: flex;
             flex-direction: column;
-            gap: 15px;
+            gap: 20px;
         }
         
         .panel {
-            background-color: var(--hacker-gray);
-            border: 1px solid var(--hacker-green);
-            border-radius: 8px;
-            padding: 12px;
-            box-shadow: 0 0 10px rgba(0, 255, 0, 0.2);
+            background: linear-gradient(145deg, var(--hacker-panel) 0%, var(--hacker-gray) 100%);
+            border: 2px solid var(--hacker-border);
+            border-radius: 15px;
+            padding: 25px;
+            box-shadow: 
+                0 0 30px var(--hacker-shadow),
+                0 0 60px rgba(0, 255, 0, 0.1),
+                inset 0 1px 0 rgba(255, 255, 255, 0.1);
             position: relative;
+            backdrop-filter: blur(10px);
+            transition: all 0.3s ease;
+        }
+
+        .panel::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, var(--hacker-green), transparent);
+            border-radius: 15px 15px 0 0;
+        }
+
+        .panel:hover {
+            transform: translateY(-2px);
+            box-shadow: 
+                0 0 40px var(--hacker-glow-shadow),
+                0 0 80px rgba(0, 255, 65, 0.2),
+                inset 0 1px 0 rgba(255, 255, 255, 0.15);
         }
         
         h1 {
             text-align: center;
+            margin-bottom: 20px;
+            text-shadow: 
+                0 0 10px var(--hacker-green),
+                0 0 20px var(--hacker-glow),
+                0 0 30px rgba(0, 255, 0, 0.5);
+            font-size: 2rem;
+            font-weight: 700;
+            letter-spacing: 2px;
+            background: linear-gradient(135deg, var(--hacker-green) 0%, var(--hacker-bright) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        h2 {
+            text-align: center;
             margin-bottom: 15px;
-            text-shadow: 0 0 5px var(--hacker-green);
-            font-size: 1.3rem;
+            text-shadow: 0 0 10px var(--hacker-shadow);
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: var(--hacker-bright);
+        }
+
+        .seo-description {
+            text-align: center;
+            margin: 15px 0;
+            padding: 15px;
+            background: rgba(0, 255, 0, 0.05);
+            border: 1px solid var(--hacker-border);
+            border-radius: 10px;
+            font-size: 14px;
+            line-height: 1.5;
+            color: var(--hacker-bright);
+        }
+
+        .seo-description strong {
+            color: var(--hacker-green);
+            text-shadow: 0 0 5px currentColor;
         }
         
         textarea {
-            background-color: #111;
+            background: linear-gradient(135deg, #0a0a0a 0%, #111 100%);
             color: var(--hacker-green);
-            border: 1px solid var(--hacker-green);
-            border-radius: 5px;
-            padding: 10px;
-            min-height: 100px;
-            font-size: 14px;
+            border: 2px solid var(--hacker-border);
+            border-radius: 12px;
+            padding: 15px;
+            min-height: 140px;
+            font-size: 16px;
             resize: vertical;
             width: 100%;
-            margin-bottom: 12px;
+            margin-bottom: 15px;
+            transition: all 0.3s ease;
+            box-shadow: inset 0 2px 10px rgba(0, 0, 0, 0.5);
+            line-height: 1.4;
+        }
+
+        textarea:focus {
+            outline: none;
+            border-color: var(--hacker-bright);
+            box-shadow: 
+                inset 0 2px 10px rgba(0, 0, 0, 0.5),
+                0 0 20px var(--hacker-glow-shadow);
         }
         
         .controls {
             display: flex;
             flex-wrap: wrap;
-            gap: 6px;
-            margin: 12px 0;
+            gap: 10px;
+            margin: 20px 0;
         }
         
         button {
-            background-color: var(--hacker-dark);
+            background: linear-gradient(145deg, var(--hacker-dark) 0%, var(--hacker-gray) 100%);
             color: var(--hacker-green);
-            border: 1px solid var(--hacker-green);
-            border-radius: 5px;
-            padding: 10px 12px;
+            border: 2px solid var(--hacker-border);
+            border-radius: 12px;
+            padding: 15px 20px;
             cursor: pointer;
-            transition: all 0.3s;
+            transition: all 0.3s ease;
             flex: 1;
-            min-width: 100px;
-            font-weight: bold;
-            font-size: 12px;
+            min-width: 120px;
+            font-weight: 700;
+            font-size: 14px;
+            letter-spacing: 0.5px;
+            text-shadow: 0 0 5px currentColor;
+            position: relative;
+            overflow: hidden;
+        }
+
+        button::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(0, 255, 0, 0.2), transparent);
+            transition: left 0.5s ease;
+        }
+
+        button:hover::before {
+            left: 100%;
         }
         
         button:hover {
-            background-color: var(--hacker-green);
-            color: var(--hacker-dark);
+            background: linear-gradient(145deg, var(--hacker-gray) 0%, var(--hacker-dark) 100%);
+            color: var(--hacker-bright);
+            border-color: var(--hacker-bright);
+            transform: translateY(-2px);
+            box-shadow: 
+                0 5px 20px var(--hacker-shadow),
+                0 0 30px rgba(0, 255, 0, 0.3);
         }
         
         button:disabled {
             opacity: 0.5;
             cursor: not-allowed;
+            transform: none !important;
+        }
+
+        button:disabled:hover {
+            box-shadow: none;
+            border-color: var(--hacker-border);
         }
         
         .terminal {
-            background-color: #000;
-            border: 1px solid var(--hacker-green);
-            border-radius: 5px;
-            padding: 10px;
-            height: 250px;
+            background: linear-gradient(135deg, #000 0%, #0a0a0a 100%);
+            border: 2px solid var(--hacker-border);
+            border-radius: 12px;
+            padding: 20px;
+            height: 320px;
             overflow-y: auto;
-            font-size: 14px;
-            margin-bottom: 12px;
+            font-size: 16px;
+            margin-bottom: 15px;
             position: relative;
-            line-height: 1.3;
+            line-height: 1.4;
+            box-shadow: 
+                inset 0 2px 10px rgba(0, 0, 0, 0.8),
+                0 0 20px rgba(0, 255, 0, 0.1);
+        }
+
+        .terminal::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(180deg, 
+                rgba(0, 255, 0, 0.03) 0%, 
+                transparent 50%, 
+                rgba(0, 255, 0, 0.03) 100%);
+            pointer-events: none;
+            border-radius: 10px;
         }
         
         .terminal-line {
-            margin-bottom: 6px;
+            margin-bottom: 8px;
             white-space: pre-wrap;
-            min-height: 16px;
+            min-height: 20px;
             word-wrap: break-word;
             overflow-wrap: break-word;
+            text-shadow: 0 0 5px currentColor;
         }
         
         .typing {
-            border-right: 2px solid var(--hacker-green);
+            border-right: 3px solid var(--hacker-bright);
             animation: blink 1s infinite;
+            padding-right: 2px;
         }
         
         @keyframes blink {
-            0%, 100% { border-color: var(--hacker-green); }
+            0%, 100% { border-color: var(--hacker-bright); }
             50% { border-color: transparent; }
         }
         
         .status-bar {
             display: flex;
             justify-content: space-between;
-            margin: 8px 0;
-            font-size: 11px;
+            margin: 15px 0;
+            font-size: 13px;
+            background: rgba(0, 255, 0, 0.05);
+            padding: 12px;
+            border-radius: 8px;
+            border: 1px solid var(--hacker-border);
+        }
+
+        .status-bar span {
+            font-weight: 600;
         }
         
         .progress-bar {
-            height: 5px;
-            background-color: #333;
-            border-radius: 3px;
-            margin: 8px 0;
+            height: 8px;
+            background: linear-gradient(135deg, #111 0%, #222 100%);
+            border-radius: 10px;
+            margin: 15px 0;
             overflow: hidden;
+            border: 1px solid var(--hacker-border);
+            box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.5);
         }
         
         .progress {
             height: 100%;
-            background: var(--hacker-green);
+            background: linear-gradient(90deg, var(--hacker-green) 0%, var(--hacker-bright) 50%, var(--hacker-green) 100%);
             width: 0%;
-            transition: width 0.3s;
+            transition: width 0.4s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .progress::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
+            animation: shimmer 2s infinite;
+        }
+
+        @keyframes shimmer {
+            0% { left: -100%; }
+            100% { left: 100%; }
         }
         
         .download-section {
             text-align: center;
-            margin: 15px 0;
+            margin: 20px 0;
         }
         
         .hidden {
@@ -157,120 +359,228 @@
         }
         
         .recording {
-            background-color: #ff0000 !important;
+            background: linear-gradient(145deg, #ff0000 0%, #cc0000 100%) !important;
             color: white !important;
             animation: pulse 1s infinite;
+            border-color: #ff4444 !important;
         }
         
         @keyframes pulse {
-            0%, 100% { opacity: 1; }
-            50% { opacity: 0.7; }
+            0%, 100% { 
+                transform: translateY(-2px);
+                box-shadow: 0 5px 25px rgba(255, 0, 0, 0.4);
+            }
+            50% { 
+                transform: translateY(-1px);
+                box-shadow: 0 3px 20px rgba(255, 0, 0, 0.6);
+            }
         }
         
         .video-preview {
-            margin: 12px 0;
+            margin: 15px 0;
             text-align: center;
         }
         
         .video-preview video {
             max-width: 100%;
-            max-height: 400px;
-            border: 2px solid var(--hacker-green);
-            border-radius: 5px;
+            max-height: 500px;
+            border: 3px solid var(--hacker-border);
+            border-radius: 15px;
+            box-shadow: 0 0 30px var(--hacker-shadow);
+            background: #000;
         }
         
         .hacker-icon {
             text-align: center;
-            font-size: 20px;
-            margin: 8px 0;
+            font-size: 2.5rem;
+            margin: 15px 0;
+            text-shadow: 0 0 20px var(--hacker-glow);
+            animation: float 3s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-5px); }
         }
         
         .success-message {
-            color: #00ff00;
+            color: var(--hacker-bright);
             text-align: center;
-            margin: 8px 0;
-            font-weight: bold;
-            font-size: 12px;
+            margin: 15px 0;
+            font-weight: 700;
+            font-size: 14px;
+            text-shadow: 0 0 10px currentColor;
+            padding: 12px;
+            background: rgba(0, 255, 0, 0.1);
+            border-radius: 8px;
+            border: 1px solid var(--hacker-border);
         }
 
         .quality-info {
-            color: #888;
-            font-size: 11px;
+            color: var(--hacker-bright);
+            font-size: 12px;
             text-align: center;
-            margin: 4px 0;
+            margin: 8px 0;
+            text-shadow: 0 0 5px currentColor;
         }
 
         .shorts-optimized {
-            color: #ff4444;
-            font-weight: bold;
+            color: var(--hacker-bright);
+            font-weight: 700;
             text-align: center;
-            margin: 5px 0;
-            font-size: 12px;
+            margin: 10px 0;
+            font-size: 14px;
+            text-shadow: 0 0 10px #ff4444;
+            padding: 10px;
+            background: rgba(255, 68, 68, 0.1);
+            border-radius: 8px;
+            border: 1px solid #ff4444;
+            animation: glow-red 2s ease-in-out infinite alternate;
+        }
+
+        @keyframes glow-red {
+            from { text-shadow: 0 0 10px #ff4444; }
+            to { text-shadow: 0 0 20px #ff4444, 0 0 30px #ff0000; }
         }
 
         .special-effect {
-            color: #ffff00 !important;
-            text-shadow: 0 0 10px currentColor;
+            color: var(--hacker-bright) !important;
+            text-shadow: 
+                0 0 10px currentColor,
+                0 0 20px currentColor,
+                0 0 30px currentColor !important;
+            animation: text-glow 2s ease-in-out infinite alternate;
+        }
+
+        @keyframes text-glow {
+            from { text-shadow: 0 0 10px var(--hacker-bright); }
+            to { text-shadow: 0 0 20px var(--hacker-bright), 0 0 30px var(--hacker-glow); }
         }
 
         .emoji-effect {
-            animation: bounce 0.5s infinite alternate;
+            animation: bounce 0.5s infinite alternate, spin 2s linear infinite;
+            display: inline-block;
         }
 
         @keyframes bounce {
-            from { transform: translateY(0); }
-            to { transform: translateY(-3px); }
+            from { transform: translateY(0) scale(1); }
+            to { transform: translateY(-3px) scale(1.1); }
+        }
+
+        @keyframes spin {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
         }
 
         .vertical-video {
             width: 100%;
-            max-width: 300px;
+            max-width: 350px;
             margin: 0 auto;
         }
 
         .effects-controls {
             display: flex;
-            gap: 8px;
-            margin: 10px 0;
+            gap: 10px;
+            margin: 15px 0;
             flex-wrap: wrap;
             justify-content: center;
         }
 
         .effect-btn {
-            background: #222;
-            color: #0f0;
-            border: 1px solid #0f0;
-            border-radius: 4px;
-            padding: 6px 10px;
-            font-size: 11px;
+            background: linear-gradient(145deg, #111 0%, #222 100%);
+            color: var(--hacker-green);
+            border: 2px solid var(--hacker-border);
+            border-radius: 10px;
+            padding: 10px 15px;
+            font-size: 12px;
             cursor: pointer;
-            transition: all 0.3s;
+            transition: all 0.3s ease;
+            flex: 1;
+            min-width: 80px;
+            font-weight: 600;
         }
 
         .effect-btn.active {
-            background: #0f0;
+            background: linear-gradient(145deg, var(--hacker-green) 0%, var(--hacker-bright) 100%);
             color: #000;
+            border-color: var(--hacker-bright);
+            box-shadow: 0 0 15px var(--hacker-glow-shadow);
+        }
+
+        .effect-btn:hover:not(.active) {
+            background: linear-gradient(145deg, #222 0%, #111 100%);
+            border-color: var(--hacker-bright);
+            transform: translateY(-1px);
         }
 
         .speed-info {
-            color: #888;
-            font-size: 11px;
+            color: var(--hacker-bright);
+            font-size: 12px;
             text-align: center;
-            margin: 4px 0;
+            margin: 8px 0;
+            text-shadow: 0 0 5px currentColor;
         }
+
+        .social-buttons {
+            display: flex;
+            gap: 10px;
+            margin: 15px 0;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .social-btn {
+            flex: 1;
+            min-width: 100px;
+            background: linear-gradient(145deg, #111 0%, #222 100%);
+            border: 2px solid;
+            border-radius: 10px;
+            padding: 12px;
+            font-size: 12px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .social-btn.tiktok { border-color: #ff0050; color: #ff0050; }
+        .social-btn.instagram { border-color: #e4405f; color: #e4405f; }
+        .social-btn.youtube { border-color: #ff0000; color: #ff0000; }
+
+        .social-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(255, 255, 255, 0.2);
+        }
+
+        .social-btn.tiktok:hover { background: #ff0050; color: white; }
+        .social-btn.instagram:hover { background: #e4405f; color: white; }
+        .social-btn.youtube:hover { background: #ff0000; color: white; }
 
         @media (min-width: 768px) {
             .container {
-                max-width: 400px;
+                max-width: 450px;
             }
             
             .terminal {
                 font-size: 15px;
-                height: 300px;
+                height: 350px;
             }
 
             .video-preview video {
-                max-height: 500px;
+                max-height: 600px;
+            }
+
+            h1 {
+                font-size: 2.2rem;
+            }
+
+            textarea {
+                font-size: 15px;
+                min-height: 160px;
+            }
+        }
+
+        @media (min-width: 1024px) {
+            .container {
+                max-width: 500px;
             }
         }
 
@@ -290,14 +600,78 @@
             word-break: break-word;
             overflow-wrap: break-word;
         }
+
+        .seo-features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 10px;
+            margin: 20px 0;
+            text-align: center;
+        }
+
+        .feature {
+            padding: 10px;
+            background: rgba(0, 255, 0, 0.05);
+            border: 1px solid var(--hacker-border);
+            border-radius: 8px;
+            font-size: 11px;
+        }
+
+        .feature strong {
+            color: var(--hacker-bright);
+            display: block;
+            margin-bottom: 5px;
+            font-size: 12px;
+        }
+
+        .performance-warning {
+            color: #ff4444;
+            font-size: 11px;
+            text-align: center;
+            margin: 5px 0;
+            padding: 8px;
+            background: rgba(255, 68, 68, 0.1);
+            border-radius: 5px;
+            border: 1px solid #ff4444;
+        }
     </style>
 </head>
 <body>
+    <!-- Structured Data для поисковых систем -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebApplication",
+        "name": "Fake Hacker Terminal",
+        "description": "Бесплатный онлайн генератор хакерских видео для TikTok, YouTube Shorts и Instagram Reels с матрицей и спецэффектами",
+        "url": "https://yourdomain.com",
+        "applicationCategory": "MultimediaApplication",
+        "operatingSystem": "Any",
+        "permissions": "microphone",
+        "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "USD"
+        },
+        "creator": {
+            "@type": "Organization",
+            "name": "Fake Hacker Terminal",
+            "description": "Создавай вирусные хакерские видео для социальных сетей"
+        },
+        "keywords": "фейк хакер, хакерские видео, tiktok, youtube shorts, instagram reels, матрица, генератор видео"
+    }
+    </script>
+
     <div class="container">
         <div class="panel">
-            <h1>👾 ФЕЙК ХАКЕР 👾</h1>
-            <div class="hacker-icon">💻🔥👨‍💻</div>
-            <div class="shorts-optimized">🎬 ОПТИМИЗИРОВАНО ДЛЯ SHORTS/REELS</div>
+            <h1>👾 ФЕЙК ХАКЕР ТЕРМИНАЛ 👾</h1>
+            <div class="hacker-icon">💻🔥👨‍💻🚀🎬</div>
+            <div class="shorts-optimized">🎬 ОПТИМИЗИРОВАНО ДЛЯ SHORTS/REELS/TIKTOK</div>
+            
+            <div class="seo-description">
+                <strong>🚀 Создавай вирусные хакерские видео!</strong> Идеально для TikTok, YouTube Shorts и Instagram Reels. 
+                Матрица, глитч-эффекты, хакерский терминал — всё для крутых роликов!
+            </div>
             
             <textarea id="hackerText" class="text-wrap">ВКЛЮЧАЮ ХАКЕРСКИЙ РЕЖИМ...
 ИЩУ ПАРОЛЬ ОТ МАМИНОГО РОУТЕРА...
@@ -311,6 +685,29 @@
 МИССИЯ ВЫПОЛНЕНА!
 ХАКЕР МОРОЖЕНОЕ СЪЕДЕНО! 🍦</textarea>
             
+            <div class="seo-features">
+                <div class="feature">
+                    <strong>🎥 1080x1920</strong>
+                    Вертикальный формат
+                </div>
+                <div class="feature">
+                    <strong>⚡ 30 FPS</strong>
+                    Оптимизированная скорость
+                </div>
+                <div class="feature">
+                    <strong>🎬 15-30 секунд</strong>
+                    Идеальная длина
+                </div>
+                <div class="feature">
+                    <strong>🔒 Без водяных знаков</strong>
+                    Бесплатно
+                </div>
+            </div>
+
+            <div class="performance-warning">
+                ⚡ Для лучшей производительности используйте Chrome и закройте лишние вкладки
+            </div>
+            
             <div class="effects-controls">
                 <button class="effect-btn active" data-effect="matrix">Матрица</button>
                 <button class="effect-btn" data-effect="hexagon">Хексагоны</button>
@@ -320,13 +717,13 @@
             </div>
             
             <div class="controls">
-                <button id="previewBtn">ПРЕВЬЮ</button>
-                <button id="recordBtn">ЗАПИСАТЬ SHORTS</button>
-                <button id="clearBtn">ОЧИСТИТЬ</button>
+                <button id="previewBtn">👁️ ПРЕВЬЮ</button>
+                <button id="recordBtn">🎬 ЗАПИСАТЬ SHORTS</button>
+                <button id="clearBtn">🗑️ ОЧИСТИТЬ</button>
             </div>
             
             <div class="status-bar">
-                <span>СТАТУС: <span id="status">Готов</span></span>
+                <span>СТАТУС: <span id="status">Готов к взлому</span></span>
                 <span>ВРЕМЯ: <span id="time">00:00</span></span>
             </div>
             
@@ -334,27 +731,27 @@
                 <div class="progress" id="progress"></div>
             </div>
 
-            <div class="quality-info">🎥 Формат: 1080x1920 • 60 FPS • Хакерские эффекты</div>
-            <div class="speed-info">⏱️ Длительность: 20 секунд • Авто-скорость</div>
+            <div class="quality-info">🎥 Формат: 1080x1920 • 30 FPS • Хакерские эффекты • Без водяных знаков</div>
+            <div class="speed-info">⏱️ Длительность: 15-30 секунд • Авто-скорость • Идеально для Shorts</div>
             <div class="success-message" id="successMessage"></div>
         </div>
         
         <div class="panel">
-            <h2>ТЕРМИНАЛ ХАКЕРА</h2>
+            <h2>💻 ТЕРМИНАЛ ХАКЕРА</h2>
             <div class="terminal" id="terminal">
                 <div class="terminal-line">hacker@root:~# <span id="commandLine" class="typing"></span></div>
                 <div id="terminalOutput"></div>
             </div>
             
             <div class="download-section">
-                <button id="downloadBtn" class="hidden">📥 СКАЧАТЬ SHORTS</button>
+                <button id="downloadBtn" class="hidden">📥 СКАЧАТЬ SHORTS ВИДЕО</button>
                 <div class="video-preview vertical-video">
                     <video id="videoPreview" controls class="hidden"></video>
                 </div>
-                <div class="controls">
-                    <button id="tiktokBtn">🎵 TikTok</button>
-                    <button id="instagramBtn">📷 Instagram</button>
-                    <button id="youtubeBtn">▶️ YouTube Shorts</button>
+                <div class="social-buttons">
+                    <button class="social-btn tiktok" id="tiktokBtn">🎵 TikTok</button>
+                    <button class="social-btn instagram" id="instagramBtn">📷 Instagram</button>
+                    <button class="social-btn youtube" id="youtubeBtn">▶️ YouTube Shorts</button>
                 </div>
             </div>
         </div>
@@ -383,14 +780,18 @@
                 this.currentEffect = 'matrix';
                 this.glitchActive = false;
                 this.effects = {};
-                this.totalAnimationTime = 20000; // 20 секунд общее время
+                this.totalAnimationTime = 15000; // Уменьшено до 15 секунд
                 this.charDelay = 0;
                 this.lineDelay = 0;
+                this.animationFrameId = null;
+                this.lastRenderTime = 0;
+                this.fps = 30; // Ограничиваем FPS
+                this.frameInterval = 1000 / this.fps;
                 
                 this.initializeElements();
                 this.bindEvents();
                 this.initializeEffects();
-                this.calculateSpeed(); // Рассчитываем скорость сразу
+                this.calculateSpeed();
             }
 
             initializeElements() {
@@ -413,31 +814,25 @@
                 this.effectBtns = document.querySelectorAll('.effect-btn');
             }
 
-            // Функция для расчета скорости под 20 секунд
             calculateSpeed() {
                 const text = this.hackerText.value;
                 const lines = text.split('\n');
                 
-                // Считаем общее количество символов
                 let totalChars = 0;
                 lines.forEach(line => {
                     totalChars += line.length;
                 });
                 
-                // Вычитаем время на паузы между строками (500ms на каждую строку)
                 const linePausesTime = (lines.length - 1) * 500;
-                const typingTime = this.totalAnimationTime - linePausesTime - 1000; // -1 сек на финальную паузу
+                const typingTime = this.totalAnimationTime - linePausesTime - 1000;
                 
-                // Рассчитываем задержку между символами
-                this.charDelay = Math.max(20, Math.min(200, typingTime / totalChars));
-                this.lineDelay = 500; // Фиксированная пауза между строками
-                
-                console.log('Total chars:', totalChars, 'Char delay:', this.charDelay, 'Line delay:', this.lineDelay);
+                this.charDelay = Math.max(30, Math.min(300, typingTime / totalChars));
+                this.lineDelay = 500;
             }
 
             bindEvents() {
                 this.previewBtn.addEventListener('click', () => {
-                    this.calculateSpeed(); // Пересчитываем скорость при каждом превью
+                    this.calculateSpeed();
                     this.startTypingAnimation(this.hackerText.value);
                 });
 
@@ -458,15 +853,15 @@
                 });
 
                 this.tiktokBtn.addEventListener('click', () => {
-                    alert('🎵 Идеально для TikTok! Хештег: #фейкхакер #хакер');
+                    alert('🎵 Идеально для TikTok! Хештег: #фейкхакер #хакер #хакерскоевидео');
                 });
 
                 this.instagramBtn.addEventListener('click', () => {
-                    alert('📷 Идеально для Instagram Reels! Вертикальный формат 9:16');
+                    alert('📷 Идеально для Instagram Reels! Вертикальный формат 9:16 с хакерскими эффектами');
                 });
 
                 this.youtubeBtn.addEventListener('click', () => {
-                    alert('▶️ Идеально для YouTube Shorts! Длительность до 60 секунд');
+                    alert('▶️ Идеально для YouTube Shorts! Длительность до 60 секунд с матрицей и глитчами');
                 });
 
                 this.effectBtns.forEach(btn => {
@@ -477,24 +872,20 @@
                     });
                 });
 
-                // Пересчитываем скорость при изменении текста
                 this.hackerText.addEventListener('input', () => {
                     this.calculateSpeed();
                 });
             }
 
             initializeEffects() {
-                // Инициализация фонового canvas
                 this.bgCanvas.width = 1080;
                 this.bgCanvas.height = 1920;
 
-                // УНИФИЦИРОВАННАЯ СКОРОСТЬ ДЛЯ ВСЕХ ЭФФЕКТОВ
-                const unifiedSpeed = 1.0; // Базовая скорость
+                const unifiedSpeed = 0.8; // Уменьшена скорость эффектов
 
-                // Эффект Матрицы
                 this.effects.matrix = {
-                    chars: "010101010101アイウエオカキクケコサシスセソタチツテトナニヌネノハヒフヘホマミムメモヤユヨラリルレロワヲン",
-                    fontSize: 14,
+                    chars: "01",
+                    fontSize: 16,
                     columns: 0,
                     drops: [],
                     speed: unifiedSpeed,
@@ -503,17 +894,19 @@
                         this.effects.matrix.drops = Array(this.effects.matrix.columns).fill(1);
                     },
                     draw: () => {
-                        this.bgCtx.fillStyle = 'rgba(0, 0, 0, 0.05)';
+                        this.bgCtx.fillStyle = 'rgba(0, 0, 0, 0.1)';
                         this.bgCtx.fillRect(0, 0, this.bgCanvas.width, this.bgCanvas.height);
                         
                         this.bgCtx.fillStyle = '#0F0';
                         this.bgCtx.font = this.effects.matrix.fontSize + 'px monospace';
                         
                         for (let i = 0; i < this.effects.matrix.drops.length; i++) {
+                            if (i % 2 === 0) continue; // Пропускаем каждый второй столбец для оптимизации
+                            
                             const text = this.effects.matrix.chars[Math.floor(Math.random() * this.effects.matrix.chars.length)];
                             this.bgCtx.fillText(text, i * this.effects.matrix.fontSize, this.effects.matrix.drops[i] * this.effects.matrix.fontSize);
                             
-                            if (this.effects.matrix.drops[i] * this.effects.matrix.fontSize > this.bgCanvas.height && Math.random() > 0.975) {
+                            if (this.effects.matrix.drops[i] * this.effects.matrix.fontSize > this.bgCanvas.height && Math.random() > 0.95) {
                                 this.effects.matrix.drops[i] = 0;
                             }
                             this.effects.matrix.drops[i] += this.effects.matrix.speed;
@@ -521,29 +914,29 @@
                     }
                 };
 
-                // Эффект Хексагонов
+                // Упрощенные версии других эффектов для оптимизации
                 this.effects.hexagon = {
                     hexagons: [],
                     speed: unifiedSpeed,
                     init: () => {
                         this.effects.hexagon.hexagons = [];
-                        for (let i = 0; i < 50; i++) {
+                        for (let i = 0; i < 25; i++) { // Уменьшено количество
                             this.effects.hexagon.hexagons.push({
                                 x: Math.random() * this.bgCanvas.width,
                                 y: Math.random() * this.bgCanvas.height,
-                                size: 20 + Math.random() * 40,
-                                speed: (0.2 + Math.random() * 0.8) * this.effects.hexagon.speed,
-                                opacity: 0.1 + Math.random() * 0.3
+                                size: 20 + Math.random() * 30,
+                                speed: (0.2 + Math.random() * 0.5) * this.effects.hexagon.speed,
+                                opacity: 0.1 + Math.random() * 0.2
                             });
                         }
                     },
                     draw: () => {
-                        this.bgCtx.fillStyle = 'rgba(0, 0, 0, 0.1)';
+                        this.bgCtx.fillStyle = 'rgba(0, 0, 0, 0.15)';
                         this.bgCtx.fillRect(0, 0, this.bgCanvas.width, this.bgCanvas.height);
                         
                         this.effects.hexagon.hexagons.forEach(hex => {
                             this.bgCtx.strokeStyle = `rgba(0, 255, 0, ${hex.opacity})`;
-                            this.bgCtx.lineWidth = 2;
+                            this.bgCtx.lineWidth = 1;
                             this.bgCtx.beginPath();
                             for (let i = 0; i < 6; i++) {
                                 const angle = (i * 2 * Math.PI) / 6;
@@ -563,7 +956,6 @@
                     }
                 };
 
-                // Эффект Схем
                 this.effects.circuit = {
                     nodes: [],
                     connections: [],
@@ -572,45 +964,21 @@
                         this.effects.circuit.nodes = [];
                         this.effects.circuit.connections = [];
                         
-                        for (let i = 0; i < 30; i++) {
+                        for (let i = 0; i < 15; i++) { // Уменьшено количество узлов
                             this.effects.circuit.nodes.push({
                                 x: Math.random() * this.bgCanvas.width,
                                 y: Math.random() * this.bgCanvas.height,
                                 pulse: Math.random() * Math.PI * 2
                             });
                         }
-                        
-                        for (let i = 0; i < this.effects.circuit.nodes.length; i++) {
-                            for (let j = i + 1; j < this.effects.circuit.nodes.length; j++) {
-                                const dx = this.effects.circuit.nodes[i].x - this.effects.circuit.nodes[j].x;
-                                const dy = this.effects.circuit.nodes[i].y - this.effects.circuit.nodes[j].y;
-                                const dist = Math.sqrt(dx * dx + dy * dy);
-                                if (dist < 200) {
-                                    this.effects.circuit.connections.push({ from: i, to: j });
-                                }
-                            }
-                        }
                     },
                     draw: () => {
-                        this.bgCtx.fillStyle = 'rgba(0, 0, 0, 0.2)';
+                        this.bgCtx.fillStyle = 'rgba(0, 0, 0, 0.25)';
                         this.bgCtx.fillRect(0, 0, this.bgCanvas.width, this.bgCanvas.height);
                         
-                        this.effects.circuit.connections.forEach(conn => {
-                            const from = this.effects.circuit.nodes[conn.from];
-                            const to = this.effects.circuit.nodes[conn.to];
-                            const pulse = (Math.sin(from.pulse) + 1) / 2;
-                            
-                            this.bgCtx.strokeStyle = `rgba(0, 255, 0, ${0.2 + pulse * 0.3})`;
-                            this.bgCtx.lineWidth = 1;
-                            this.bgCtx.beginPath();
-                            this.bgCtx.moveTo(from.x, from.y);
-                            this.bgCtx.lineTo(to.x, to.y);
-                            this.bgCtx.stroke();
-                        });
-                        
                         this.effects.circuit.nodes.forEach(node => {
-                            node.pulse += 0.05 * this.effects.circuit.speed;
-                            const size = 3 + Math.sin(node.pulse) * 2;
+                            node.pulse += 0.03 * this.effects.circuit.speed;
+                            const size = 2 + Math.sin(node.pulse) * 1;
                             
                             this.bgCtx.fillStyle = '#0F0';
                             this.bgCtx.beginPath();
@@ -620,45 +988,46 @@
                     }
                 };
 
-                // Эффект Код-дождя
                 this.effects.rain = {
                     drops: [],
                     speed: unifiedSpeed,
                     init: () => {
                         this.effects.rain.drops = [];
-                        for (let i = 0; i < 100; i++) {
+                        for (let i = 0; i < 50; i++) { // Уменьшено количество капель
                             this.effects.rain.drops.push({
                                 x: Math.random() * this.bgCanvas.width,
                                 y: Math.random() * this.bgCanvas.height,
-                                speed: (2 + Math.random() * 8) * this.effects.rain.speed,
-                                length: 5 + Math.floor(Math.random() * 20),
-                                chars: '01010101'
+                                speed: (1 + Math.random() * 4) * this.effects.rain.speed,
+                                length: 3 + Math.floor(Math.random() * 10)
                             });
                         }
                     },
                     draw: () => {
-                        this.bgCtx.fillStyle = 'rgba(0, 0, 0, 0.1)';
+                        this.bgCtx.fillStyle = 'rgba(0, 0, 0, 0.15)';
                         this.bgCtx.fillRect(0, 0, this.bgCanvas.width, this.bgCanvas.height);
                         
-                        this.bgCtx.font = '14px monospace';
+                        this.bgCtx.font = '12px monospace';
                         this.effects.rain.drops.forEach(drop => {
-                            for (let i = 0; i < drop.length; i++) {
-                                const opacity = 1 - (i / drop.length);
-                                this.bgCtx.fillStyle = `rgba(0, 255, 0, ${opacity})`;
-                                const char = drop.chars[Math.floor(Math.random() * drop.chars.length)];
-                                this.bgCtx.fillText(char, drop.x, drop.y - i * 14);
-                            }
+                            this.bgCtx.fillStyle = '#0F0';
+                            this.bgCtx.fillText('1', drop.x, drop.y);
                             
                             drop.y += drop.speed;
-                            if (drop.y > this.bgCanvas.height + drop.length * 14) {
-                                drop.y = -drop.length * 14;
+                            if (drop.y > this.bgCanvas.height + 20) {
+                                drop.y = -20;
                                 drop.x = Math.random() * this.bgCanvas.width;
                             }
                         });
                     }
                 };
 
-                // Инициализируем все эффекты
+                this.effects.glitch = {
+                    init: () => {},
+                    draw: () => {
+                        this.bgCtx.fillStyle = 'rgba(0, 0, 0, 0.2)';
+                        this.bgCtx.fillRect(0, 0, this.bgCanvas.width, this.bgCanvas.height);
+                    }
+                };
+
                 Object.values(this.effects).forEach(effect => effect.init());
             }
 
@@ -700,18 +1069,14 @@
                     const typedChars = this.lines.slice(0, this.currentLineIndex).reduce((sum, line) => sum + line.length, 0) + this.currentCharIndex;
                     this.progress.style.width = `${(typedChars / totalChars) * 100}%`;
                     
-                    // ⚡ ИСПОЛЬЗУЕМ РАССЧИТАННУЮ СКОРОСТЬ ДЛЯ 20 СЕКУНД
-                    const delay = this.charDelay;
-                    
                     setTimeout(() => {
                         this.typeNextCharacter();
-                    }, delay);
+                    }, this.charDelay);
                 } else {
                     this.addSpecialEffects(this.currentLineElement, currentLine);
                     this.currentLineIndex++;
                     this.currentCharIndex = 0;
                     
-                    // ⚡ ИСПОЛЬЗУЕМ РАССЧИТАННУЮ ПАУЗУ МЕЖДУ СТРОКАМИ
                     setTimeout(() => {
                         this.typeNextCharacter();
                     }, this.lineDelay);
@@ -724,10 +1089,10 @@
                     this.addEmojiEffect(lineElement);
                 } else if (text.includes('🤯')) {
                     lineElement.style.color = '#ff00ff';
-                    lineElement.style.textShadow = '0 0 15px #ff00ff';
+                    lineElement.style.textShadow = '0 0 10px #ff00ff';
                 } else if (text.includes('НАШЕЛ') || text.includes('СОСЕД')) {
                     lineElement.style.color = '#00ffff';
-                    lineElement.style.textShadow = '0 0 10px #00ffff';
+                    lineElement.style.textShadow = '0 0 8px #00ffff';
                 }
             }
 
@@ -743,93 +1108,59 @@
             }
 
             calculateOptimalFontSize(lines) {
-                const maxWidth = 900;
-                const maxHeight = 1500;
-                let fontSize = 42;
-                
-                this.ctx.font = `bold ${fontSize}px "Courier New", monospace`;
-                
-                for (let size = fontSize; size > 20; size -= 2) {
-                    this.ctx.font = `bold ${size}px "Courier New", monospace`;
-                    let totalHeight = 100;
-                    let fits = true;
-                    
-                    lines.forEach(line => {
-                        const words = line.split(' ');
-                        let currentLine = '';
-                        
-                        for (let word of words) {
-                            const testLine = currentLine + word + ' ';
-                            const metrics = this.ctx.measureText(testLine);
-                            
-                            if (metrics.width > maxWidth) {
-                                if (currentLine !== '') {
-                                    totalHeight += 45;
-                                    currentLine = word + ' ';
-                                }
-                            } else {
-                                currentLine = testLine;
-                            }
-                        }
-                        
-                        if (currentLine !== '') {
-                            totalHeight += 45;
-                        }
-                    });
-                    
-                    if (totalHeight <= maxHeight) {
-                        return size;
-                    }
-                }
-                
-                return 24;
+                return 32; // Фиксированный размер для стабильности
             }
 
             applyGlitchEffect() {
-                if (this.currentEffect === 'glitch' && Math.random() < 0.3) {
-                    const shiftX = (Math.random() - 0.5) * 20;
-                    const shiftY = (Math.random() - 0.5) * 10;
-                    
-                    const imageData = this.ctx.getImageData(0, 0, this.canvas.width, this.canvas.height);
-                    this.ctx.putImageData(imageData, shiftX, shiftY);
-                    
-                    if (Math.random() < 0.2) {
-                        this.ctx.fillStyle = `rgba(255, 0, 255, ${Math.random() * 0.3})`;
-                        this.ctx.fillRect(
-                            Math.random() * this.canvas.width,
-                            Math.random() * this.canvas.height,
-                            Math.random() * 100,
-                            Math.random() * 10
-                        );
-                    }
+                if (this.currentEffect === 'glitch' && Math.random() < 0.1) { // Реже глитчи
+                    const shiftX = (Math.random() - 0.5) * 10;
+                    this.ctx.globalAlpha = 0.3;
+                    this.ctx.drawImage(this.canvas, shiftX, 0);
+                    this.ctx.globalAlpha = 1.0;
                 }
+            }
+
+            optimizedRender(currentTime) {
+                if (!this.isRecording) return;
+                
+                if (currentTime - this.lastRenderTime >= this.frameInterval) {
+                    this.renderTerminalToCanvas();
+                    this.lastRenderTime = currentTime;
+                }
+                
+                this.animationFrameId = requestAnimationFrame((time) => this.optimizedRender(time));
             }
 
             async startRecording() {
                 try {
                     this.isRecording = true;
-                    this.recordBtn.textContent = 'СТОП ЗАПИСИ';
+                    this.recordBtn.textContent = '⏹️ СТОП ЗАПИСИ';
                     this.recordBtn.classList.add('recording');
                     this.status.textContent = 'Запись Shorts...';
                     this.recordedChunks = [];
                     
-                    // Пересчитываем скорость перед записью
                     this.calculateSpeed();
                     
                     this.canvas.width = 1080;
                     this.canvas.height = 1920;
                     
-                    this.ctx.setTransform(1, 0, 0, 1, 0, 0);
-                    
                     const text = this.hackerText.value;
                     const lines = text.split('\n');
                     this.optimalFontSize = this.calculateOptimalFontSize(lines);
 
-                    const stream = this.canvas.captureStream(60);
+                    const stream = this.canvas.captureStream(this.fps); // Ограничиваем FPS
                     const options = {
                         mimeType: 'video/webm;codecs=vp9',
-                        videoBitsPerSecond: 6000000
+                        videoBitsPerSecond: 3000000 // Уменьшено качество для производительности
                     };
+
+                    // Проверяем поддержку codecs
+                    if (!MediaRecorder.isTypeSupported(options.mimeType)) {
+                        options.mimeType = 'video/webm;codecs=vp8';
+                    }
+                    if (!MediaRecorder.isTypeSupported(options.mimeType)) {
+                        options.mimeType = 'video/webm';
+                    }
 
                     this.recorder = new MediaRecorder(stream, options);
 
@@ -847,24 +1178,19 @@
                         this.videoPreview.classList.remove('hidden');
                         this.downloadBtn.classList.remove('hidden');
                         
-                        this.successMessage.textContent = '✅ Shorts видео готово!';
+                        this.successMessage.textContent = '✅ Shorts видео готово! Скачивай и публикуй!';
                     };
 
-                    this.recorder.start(100);
+                    this.recorder.start(1000); // Увеличено время между chunks
                     this.startTimer();
 
                     this.startTypingAnimation(text);
                     
-                    this.renderTerminalToCanvas();
-                    const renderInterval = setInterval(() => {
-                        if (this.isRecording) {
-                            this.renderTerminalToCanvas();
-                        } else {
-                            clearInterval(renderInterval);
-                        }
-                    }, 16);
+                    // Запускаем оптимизированный рендеринг
+                    this.lastRenderTime = performance.now();
+                    this.optimizedRender(this.lastRenderTime);
 
-                    // Автостоп через 20 секунд
+                    // Автостоп через заданное время
                     setTimeout(() => {
                         if (this.isRecording) {
                             this.stopRecording();
@@ -882,56 +1208,52 @@
                 this.ctx.fillStyle = '#000000';
                 this.ctx.fillRect(0, 0, this.canvas.width, this.canvas.height);
                 
-                // Рисуем выбранный фон
-                if (this.effects[this.currentEffect]) {
+                // Рисуем выбранный фон (только если эффект не glitch)
+                if (this.currentEffect !== 'glitch' && this.effects[this.currentEffect]) {
                     this.effects[this.currentEffect].draw();
                     this.ctx.drawImage(this.bgCanvas, 0, 0);
                 }
                 
                 // Рисуем терминал с полупрозрачным фоном
-                this.ctx.fillStyle = 'rgba(0, 0, 0, 0.7)';
+                this.ctx.fillStyle = 'rgba(0, 0, 0, 0.8)';
                 this.ctx.fillRect(50, 50, this.canvas.width - 100, this.canvas.height - 100);
                 
                 // Рисуем текст терминала
                 this.ctx.font = `bold ${this.optimalFontSize}px "Courier New", monospace`;
                 this.ctx.textBaseline = 'top';
+                this.ctx.fillStyle = '#00ff00';
                 
                 const lines = this.terminalOutput.querySelectorAll('.terminal-line');
                 let y = 120;
-                const lineHeight = this.optimalFontSize + 10;
-                const maxWidth = 900;
-                const leftMargin = (this.canvas.width - maxWidth) / 2;
+                const lineHeight = this.optimalFontSize + 8;
+                const maxWidth = this.canvas.width - 200;
+                const leftMargin = 100;
                 
                 // Рендерим приглашение
-                this.ctx.fillStyle = '#00ff00';
                 this.ctx.fillText('hacker@root:~# ', leftMargin, y);
                 
                 // Рендерим все строки
                 lines.forEach(line => {
                     y += lineHeight;
-                    const color = line.style.color || '#00ff00';
-                    this.ctx.fillStyle = color;
-                    
                     const text = line.textContent;
-                    let words = text.split(' ');
+                    
+                    // Простой перенос текста
                     let currentLine = '';
                     let currentY = y;
                     
-                    for (let i = 0; i < words.length; i++) {
-                        const testLine = currentLine + words[i] + ' ';
-                        const metrics = this.ctx.measureText(testLine);
+                    for (let i = 0; i < text.length; i++) {
+                        currentLine += text[i];
+                        const metrics = this.ctx.measureText(currentLine);
                         
-                        if (metrics.width > maxWidth && currentLine !== '') {
-                            this.ctx.fillText(currentLine, leftMargin, currentY);
-                            currentLine = words[i] + ' ';
+                        if (metrics.width > maxWidth) {
+                            this.ctx.fillText(currentLine.slice(0, -1), leftMargin, currentY);
+                            currentLine = text[i];
                             currentY += lineHeight;
-                        } else {
-                            currentLine = testLine;
                         }
                     }
                     
-                    if (currentLine !== '') {
-                        this.ctx.fillText(currentLine.trim(), leftMargin, currentY);
+                    if (currentLine.length > 0) {
+                        this.ctx.fillText(currentLine, leftMargin, currentY);
                     }
                     
                     y = currentY;
@@ -940,29 +1262,28 @@
                 // Рендерим курсор
                 if (this.isTyping) {
                     this.ctx.fillStyle = '#00ff00';
-                    this.ctx.fillRect(leftMargin + this.ctx.measureText('hacker@root:~# ').width, 120, 6, this.optimalFontSize);
+                    this.ctx.fillRect(leftMargin + this.ctx.measureText('hacker@root:~# ').width, 120, 4, this.optimalFontSize);
                 }
 
                 // Применяем глитч эффект
                 this.applyGlitchEffect();
-
-                // Водяной знак
-                this.ctx.fillStyle = 'rgba(0, 255, 0, 0.5)';
-                this.ctx.font = `bold ${Math.max(20, this.optimalFontSize - 10)}px "Courier New", monospace`;
-                const watermark = '@FAKE_HACKER_TERMINAL';
-                const watermarkWidth = this.ctx.measureText(watermark).width;
-                this.ctx.fillText(watermark, (this.canvas.width - watermarkWidth) / 2, 1850);
             }
 
             stopRecording() {
                 if (this.recorder && this.isRecording) {
                     this.recorder.stop();
                     this.isRecording = false;
-                    this.recordBtn.textContent = 'ЗАПИСАТЬ SHORTS';
+                    this.recordBtn.textContent = '🎬 ЗАПИСАТЬ SHORTS';
                     this.recordBtn.classList.remove('recording');
                     this.status.textContent = 'Запись завершена';
                     this.stopTimer();
                     this.isTyping = false;
+                    
+                    // Останавливаем анимацию рендеринга
+                    if (this.animationFrameId) {
+                        cancelAnimationFrame(this.animationFrameId);
+                        this.animationFrameId = null;
+                    }
                     
                     setTimeout(() => {
                         const celebration = document.createElement('div');
@@ -987,14 +1308,14 @@
                     this.successMessage.textContent = '📥 Shorts видео скачивается!';
                     
                     setTimeout(() => {
-                        this.successMessage.textContent = '✅ Готово для соцсетей!';
+                        this.successMessage.textContent = '✅ Готово! Публикуй в соцсетях!';
                     }, 2000);
                 }
             }
 
             clearTerminal() {
                 this.terminalOutput.innerHTML = '';
-                this.status.textContent = 'Готов';
+                this.status.textContent = 'Готов к взлому';
                 this.time.textContent = '00:00';
                 this.progress.style.width = '0%';
                 this.stopTimer();
@@ -1003,14 +1324,25 @@
                 this.videoPreview.classList.add('hidden');
                 this.successMessage.textContent = '';
                 this.isTyping = false;
+                
+                // Останавливаем анимацию если есть
+                if (this.animationFrameId) {
+                    cancelAnimationFrame(this.animationFrameId);
+                    this.animationFrameId = null;
+                }
             }
 
             handleRecordingError() {
                 this.status.textContent = 'Ошибка записи';
                 this.isRecording = false;
-                this.recordBtn.textContent = 'ЗАПИСАТЬ SHORTS';
+                this.recordBtn.textContent = '🎬 ЗАПИСАТЬ SHORTS';
                 this.recordBtn.classList.remove('recording');
-                this.successMessage.textContent = '❌ Ошибка. Попробуйте Chrome браузер.';
+                this.successMessage.textContent = '❌ Ошибка. Используйте Chrome и закройте лишние вкладки.';
+                
+                if (this.animationFrameId) {
+                    cancelAnimationFrame(this.animationFrameId);
+                    this.animationFrameId = null;
+                }
             }
 
             startTimer() {
