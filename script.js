@@ -1,4 +1,4 @@
-// One1Game Platform - Full Functional Version
+// One1Game Platform - Working Version
 class One1GamePlatform {
   constructor() {
       this.clicks = 0;
@@ -8,21 +8,61 @@ class One1GamePlatform {
   }
 
   init() {
-      document.addEventListener('DOMContentLoaded', () => {
-          this.loadRandomVideo();
-          this.setupClickerGame();
-          this.setupMusicPlayer();
-          this.setupEventListeners();
-          console.log('🚀 One1Game Platform initialized!');
+      if (document.readyState === 'loading') {
+          document.addEventListener('DOMContentLoaded', () => {
+              this.initializePlatform();
+          });
+      } else {
+          this.initializePlatform();
+      }
+  }
+
+  initializePlatform() {
+      console.log('🚀 Initializing One1Game Platform...');
+      
+      // Проверяем наличие всех элементов
+      this.checkElements();
+      
+      this.loadRandomVideo();
+      this.setupClickerGame();
+      this.setupMusicPlayer();
+      this.setupEventListeners();
+      
+      console.log('✅ One1Game Platform initialized successfully!');
+  }
+
+  checkElements() {
+      const requiredElements = [
+          'video-container',
+          'clicker-target', 
+          'click-count',
+          'high-score',
+          'reset-game',
+          'play-pause',
+          'radio-stream',
+          'volume-slider',
+          'status-text'
+      ];
+
+      requiredElements.forEach(id => {
+          const element = document.getElementById(id);
+          if (!element) {
+              console.error(`❌ Element with id "${id}" not found!`);
+          } else {
+              console.log(`✅ Found element: ${id}`);
+          }
       });
   }
 
   // Video System
   async loadRandomVideo() {
       try {
+          const videoContainer = document.getElementById('video-container');
+          if (!videoContainer) return;
+
           const videos = [
               "https://www.youtube.com/embed/bA3CwT1yy_U",
-              "https://www.youtube.com/embed/zlXKmLXKA8E",
+              "https://www.youtube.com/embed/zlXKmLXKA8E", 
               "https://www.youtube.com/embed/FbaI71tWi1Q",
               "https://www.youtube.com/embed/29JZvl1sYKg",
               "https://www.youtube.com/embed/Y4Xo-6zemAs"
@@ -31,21 +71,23 @@ class One1GamePlatform {
           const randomIndex = Math.floor(Math.random() * videos.length);
           const videoUrl = videos[randomIndex] + '?autoplay=1&mute=1';
           
-          document.getElementById('video-container').innerHTML = `
+          videoContainer.innerHTML = `
               <iframe src="${videoUrl}" 
                       frameborder="0" 
                       allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
                       allowfullscreen
                       loading="lazy"></iframe>`;
+                      
+          console.log('📹 Video loaded successfully');
       } catch (error) {
           console.error('Video loading error:', error);
-          document.getElementById('video-container').innerHTML = 
-              '<p style="text-align: center; color: #ff00ff; padding: 20px;">🎮 Видео загружено!</p>';
       }
   }
 
   // Clicker Game System
   setupClickerGame() {
+      console.log('🎮 Setting up clicker game...');
+      
       // Load saved data
       this.clicks = parseInt(localStorage.getItem('one1game_clicks')) || 0;
       this.highScore = parseInt(localStorage.getItem('one1game_highscore')) || 0;
@@ -55,6 +97,11 @@ class One1GamePlatform {
 
       // Click handler
       const clicker = document.getElementById('clicker-target');
+      if (!clicker) {
+          console.error('❌ Clicker target not found!');
+          return;
+      }
+
       clicker.addEventListener('click', (e) => {
           this.handleClick(e);
       });
@@ -66,9 +113,14 @@ class One1GamePlatform {
       });
 
       // Reset button
-      document.getElementById('reset-game').addEventListener('click', () => {
-          this.resetGame();
-      });
+      const resetBtn = document.getElementById('reset-game');
+      if (resetBtn) {
+          resetBtn.addEventListener('click', () => {
+              this.resetGame();
+          });
+      }
+
+      console.log('✅ Clicker game setup complete');
   }
 
   handleClick(event) {
@@ -90,21 +142,27 @@ class One1GamePlatform {
   }
 
   updateGameDisplay() {
-      document.getElementById('click-count').textContent = this.formatNumber(this.clicks);
-      document.getElementById('high-score').textContent = this.formatNumber(this.highScore);
+      const clickCount = document.getElementById('click-count');
+      const highScore = document.getElementById('high-score');
+      
+      if (clickCount) clickCount.textContent = this.formatNumber(this.clicks);
+      if (highScore) highScore.textContent = this.formatNumber(this.highScore);
   }
 
   animateCore() {
       const core = document.getElementById('clicker-target');
-      core.style.transform = 'scale(0.9)';
-      
-      setTimeout(() => {
-          core.style.transform = 'scale(1)';
-      }, 100);
+      if (core) {
+          core.style.transform = 'scale(0.95)';
+          
+          setTimeout(() => {
+              core.style.transform = 'scale(1)';
+          }, 100);
+      }
   }
 
   createClickEffect(event) {
       const effect = document.createElement('div');
+      effect.className = 'click-effect';
       effect.style.cssText = `
           position: fixed;
           width: 20px;
@@ -114,13 +172,23 @@ class One1GamePlatform {
           pointer-events: none;
           left: ${event.clientX - 10}px;
           top: ${event.clientY - 10}px;
-          animation: clickEffect 0.6s ease-out forwards;
           z-index: 1000;
       `;
       
       document.body.appendChild(effect);
       
-      setTimeout(() => effect.remove(), 600);
+      // Анимация через CSS
+      effect.animate([
+          { transform: 'scale(1)', opacity: 1 },
+          { transform: 'scale(3)', opacity: 0 }
+      ], {
+          duration: 600,
+          easing: 'ease-out'
+      }).onfinish = () => {
+          if (effect.parentNode) {
+              effect.parentNode.removeChild(effect);
+          }
+      };
   }
 
   resetGame() {
@@ -134,30 +202,39 @@ class One1GamePlatform {
       
       // Visual feedback
       const btn = document.getElementById('reset-game');
-      const originalText = btn.innerHTML;
-      btn.innerHTML = '<i class="fas fa-check"></i> Прогресс сброшен!';
-      btn.style.background = 'rgba(0, 255, 136, 0.3)';
-      btn.style.borderColor = '#00ff88';
-      btn.style.color = '#00ff88';
-      
-      setTimeout(() => {
-          btn.innerHTML = originalText;
-          btn.style.background = '';
-          btn.style.borderColor = '#ff003c';
-          btn.style.color = '#ff003c';
-      }, 2000);
+      if (btn) {
+          const originalText = btn.innerHTML;
+          btn.innerHTML = '<i class="fas fa-check"></i> Прогресс сброшен!';
+          btn.style.background = 'rgba(0, 255, 136, 0.3)';
+          btn.style.borderColor = '#00ff88';
+          btn.style.color = '#00ff88';
+          
+          setTimeout(() => {
+              btn.innerHTML = originalText;
+              btn.style.background = '';
+              btn.style.borderColor = '#ff003c';
+              btn.style.color = '#ff003c';
+          }, 2000);
+      }
   }
 
   // Music Player System
   setupMusicPlayer() {
+      console.log('🎵 Setting up music player...');
+      
       const player = document.getElementById('radio-stream');
       const playBtn = document.getElementById('play-pause');
       const volumeSlider = document.getElementById('volume-slider');
       const statusText = document.getElementById('status-text');
-      const bars = document.querySelectorAll('.bar');
+      const bars = document.querySelectorAll('.visualizer .bar');
+
+      if (!player || !playBtn) {
+          console.error('❌ Music player elements not found!');
+          return;
+      }
 
       // Set initial volume
-      player.volume = volumeSlider.value;
+      player.volume = volumeSlider ? volumeSlider.value : 0.7;
 
       // Play/Pause
       playBtn.addEventListener('click', () => {
@@ -165,10 +242,12 @@ class One1GamePlatform {
       });
 
       // Volume control
-      volumeSlider.addEventListener('input', () => {
-          player.volume = volumeSlider.value;
-          this.updateVolumeIcon(volumeSlider.value);
-      });
+      if (volumeSlider) {
+          volumeSlider.addEventListener('input', () => {
+              player.volume = volumeSlider.value;
+              this.updateVolumeIcon(volumeSlider.value);
+          });
+      }
 
       // Player events
       player.addEventListener('play', () => {
@@ -181,21 +260,30 @@ class One1GamePlatform {
 
       player.addEventListener('ended', () => {
           this.setPlaybackState(false, playBtn, bars, statusText);
-          statusText.textContent = 'Трансляция завершена';
+          if (statusText) {
+              statusText.textContent = 'Трансляция завершена';
+          }
       });
 
-      player.addEventListener('error', () => {
-          statusText.textContent = 'Ошибка подключения';
-          statusText.style.color = '#ff003c';
+      player.addEventListener('error', (e) => {
+          console.error('Audio error:', e);
+          if (statusText) {
+              statusText.textContent = 'Ошибка подключения';
+              statusText.style.color = '#ff003c';
+          }
       });
+
+      console.log('✅ Music player setup complete');
   }
 
   togglePlayback(player, button, bars, status) {
       if (player.paused) {
           player.play().catch(error => {
               console.error('Playback error:', error);
-              status.textContent = 'Ошибка воспроизведения';
-              status.style.color = '#ff003c';
+              if (status) {
+                  status.textContent = 'Ошибка воспроизведения';
+                  status.style.color = '#ff003c';
+              }
           });
       } else {
           player.pause();
@@ -204,30 +292,45 @@ class One1GamePlatform {
 
   setPlaybackState(playing, button, bars, status) {
       const icon = button.querySelector('i');
+      if (!icon) return;
       
       if (playing) {
           icon.className = 'fas fa-pause';
-          status.textContent = 'В эфире - 8-Bit Radio';
-          status.style.color = '#00ff88';
-          bars.forEach(bar => bar.style.animationPlayState = 'running');
+          if (status) {
+              status.textContent = 'В эфире - 8-Bit Radio';
+              status.style.color = '#00ff88';
+          }
+          if (bars && bars.length > 0) {
+              bars.forEach(bar => {
+                  bar.style.animationPlayState = 'running';
+              });
+          }
           button.style.background = '#00ff88';
       } else {
           icon.className = 'fas fa-play';
-          status.textContent = 'На паузе';
-          status.style.color = '#b0b0b0';
-          bars.forEach(bar => bar.style.animationPlayState = 'paused');
+          if (status) {
+              status.textContent = 'На паузе';
+              status.style.color = '#b0b0b0';
+          }
+          if (bars && bars.length > 0) {
+              bars.forEach(bar => {
+                  bar.style.animationPlayState = 'paused';
+              });
+          }
           button.style.background = '#00f3ff';
       }
   }
 
   updateVolumeIcon(volume) {
       const icon = document.querySelector('.volume-control i');
-      if (volume == 0) {
-          icon.className = 'fas fa-volume-mute';
-      } else if (volume < 0.5) {
-          icon.className = 'fas fa-volume-down';
-      } else {
-          icon.className = 'fas fa-volume-up';
+      if (icon) {
+          if (volume == 0) {
+              icon.className = 'fas fa-volume-mute';
+          } else if (volume < 0.5) {
+              icon.className = 'fas fa-volume-down';
+          } else {
+              icon.className = 'fas fa-volume-up';
+          }
       }
   }
 
@@ -242,26 +345,52 @@ class One1GamePlatform {
           // Space - play/pause music
           if (e.code === 'Space') {
               e.preventDefault();
-              document.getElementById('play-pause').click();
+              const playBtn = document.getElementById('play-pause');
+              if (playBtn) playBtn.click();
           }
-          // R - reset game
-          if (e.code === 'KeyR' && e.ctrlKey) {
-              e.preventDefault();
-              this.resetGame();
+          // R - reset game (without Ctrl для простоты)
+          if (e.code === 'KeyR') {
+              const resetBtn = document.getElementById('reset-game');
+              if (resetBtn && document.activeElement !== resetBtn) {
+                  e.preventDefault();
+                  this.resetGame();
+              }
           }
       });
 
-      // Add click effect styles
-      const styles = document.createElement('style');
-      styles.textContent = `
-          @keyframes clickEffect {
-              0% { transform: scale(1); opacity: 1; }
-              100% { transform: scale(3); opacity: 0; }
-          }
-      `;
-      document.head.appendChild(styles);
+      console.log('✅ Event listeners setup complete');
   }
 }
+
+// Добавляем CSS для анимаций
+const platformStyles = document.createElement('style');
+platformStyles.textContent = `
+  .click-effect {
+      animation: clickEffect 0.6s ease-out forwards;
+  }
+  
+  @keyframes clickEffect {
+      0% { transform: scale(1); opacity: 1; }
+      100% { transform: scale(3); opacity: 0; }
+  }
+  
+  .visualizer .bar {
+      animation: visualizer 1.5s infinite ease-in-out;
+      animation-play-state: paused;
+  }
+  
+  @keyframes visualizer {
+      0%, 100% { transform: scaleY(0.5); }
+      50% { transform: scaleY(1); }
+  }
+  
+  .visualizer .bar:nth-child(1) { animation-delay: 0.1s; }
+  .visualizer .bar:nth-child(2) { animation-delay: 0.3s; }
+  .visualizer .bar:nth-child(3) { animation-delay: 0.5s; }
+  .visualizer .bar:nth-child(4) { animation-delay: 0.7s; }
+  .visualizer .bar:nth-child(5) { animation-delay: 0.9s; }
+`;
+document.head.appendChild(platformStyles);
 
 // Initialize the platform
 new One1GamePlatform();
