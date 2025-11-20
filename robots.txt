@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://one1game.github.io/sitemap.xml
