@@ -3,7 +3,18 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Статьи - One1Game</title>
+  <meta name="description" content="Архив игровых статей One1Game — обзоры, гайды, новости игровой индустрии. Все материалы в одном месте." />
+  <meta name="keywords" content="игровые статьи, обзоры игр, гайды, игровые новости, one1game, gaming articles" />
+  <title>Архив статей - One1Game</title>
+  
+  <!-- Google Tag Manager -->
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-N2929MZG');</script>
+  <!-- End Google Tag Manager -->
+  
   <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Rajdhani:wght@300;400;500;600&display=swap" rel="stylesheet" />
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet" />
   <link rel="stylesheet" href="styles.css" />
@@ -26,7 +37,24 @@
       padding: 25px;
       border-radius: 12px;
       border: 1px solid rgba(255, 193, 7, 0.3);
-      transition: all 0.3s ease;
+      transition: transform 0.3s ease, border-color 0.3s ease;
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .article-item::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(0, 255, 136, 0.1), transparent);
+      transition: left 0.6s ease;
+    }
+    
+    .article-item:hover::before {
+      left: 100%;
     }
     
     .article-link {
@@ -40,15 +68,29 @@
       transform: translateX(10px);
     }
     
-    .article-category {
-      display: inline-block;
-      padding: 4px 12px;
-      background: #8a2be2;
-      color: #000;
-      border-radius: 4px;
-      font-size: 0.8rem;
-      font-weight: 600;
+    .article-item h3 {
+      color: #00f3ff;
       margin-bottom: 10px;
+      font-size: 1.3rem;
+    }
+    
+    .article-item p {
+      color: #cccccc;
+      line-height: 1.6;
+    }
+    
+    .article-meta {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+      color: #b0b0b0;
+      font-size: 0.9rem;
+      margin-top: 15px;
+      flex-wrap: wrap;
+    }
+    
+    .article-meta i {
+      color: #00ff88;
     }
     
     .back-btn {
@@ -58,6 +100,15 @@
       margin-bottom: 30px;
       color: #00f3ff;
       text-decoration: none;
+      padding: 8px 16px;
+      border: 1px solid rgba(0, 243, 255, 0.3);
+      border-radius: 6px;
+      transition: all 0.3s ease;
+    }
+    
+    .back-btn:hover {
+      background: rgba(0, 243, 255, 0.1);
+      transform: translateX(-5px);
     }
 
     /* Пагинация */
@@ -80,9 +131,14 @@
       transition: all 0.3s ease;
       font-family: 'Rajdhani', sans-serif;
       font-weight: 500;
+      min-width: 44px;
+      height: 44px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
     }
 
-    .page-btn:hover {
+    .page-btn:hover:not(.disabled) {
       background: rgba(0, 243, 255, 0.2);
       transform: translateY(-2px);
     }
@@ -97,15 +153,59 @@
     .page-btn.disabled {
       opacity: 0.5;
       cursor: not-allowed;
+      pointer-events: none;
     }
 
-    .page-btn.disabled:hover {
-      transform: none;
+    .dots {
+      padding: 10px;
+      color: #666;
+    }
+
+    /* Loading state */
+    .loading {
+      text-align: center;
+      padding: 40px;
+      color: #00f3ff;
+      font-size: 1.2rem;
+    }
+
+    /* Категории */
+    .category-filter {
+      display: flex;
+      gap: 10px;
+      margin-bottom: 25px;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+    
+    .category-btn {
+      padding: 6px 15px;
       background: rgba(0, 0, 0, 0.6);
+      border: 1px solid #8a2be2;
+      border-radius: 20px;
+      color: #b0b0b0;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      font-size: 0.9rem;
+    }
+    
+    .category-btn.active {
+      background: #8a2be2;
+      color: #000;
+      font-weight: 600;
+    }
+    
+    .category-btn:hover:not(.active) {
+      background: rgba(138, 43, 226, 0.3);
     }
   </style>
 </head>
 <body>
+  <!-- Google Tag Manager (noscript) -->
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-N2929MZG"
+  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+  <!-- End Google Tag Manager (noscript) -->
+  
   <div class="cyber-bg"></div>
   
   <div class="container">
@@ -118,8 +218,17 @@
         <i class="fas fa-newspaper"></i> Игровые Статьи
       </h1>
       
+      <!-- Фильтр по категориям -->
+      <div class="category-filter" id="category-filter">
+        <button class="category-btn active" data-category="all">Все статьи</button>
+        <!-- Категории будут добавлены динамически -->
+      </div>
+      
+      <!-- Список статей -->
       <div class="article-list" id="articles-list">
-        <!-- Статьи будут загружаться через JavaScript -->
+        <div class="loading">
+          <i class="fas fa-spinner fa-spin"></i> Загрузка статей...
+        </div>
       </div>
 
       <!-- Пагинация -->
@@ -129,40 +238,100 @@
     </div>
   </div>
 
-  <!-- ПОДКЛЮЧАЕМ ФАЙЛ СО СТАТЬЯМИ -->
+  <!-- Подключаем файл со статьями -->
   <script src="articles-data.js"></script>
   
   <script>
-    // Убираем массив статей отсюда, оставляем только логику пагинации
+    // Конфигурация
     const ARTICLES_PER_PAGE = 5;
     let currentPage = 1;
+    let currentCategory = 'all';
+    let filteredArticles = [];
 
-    function displayArticles(page = 1) {
-      const articlesList = document.getElementById('articles-list');
-      const startIndex = (page - 1) * ARTICLES_PER_PAGE;
-      const endIndex = startIndex + ARTICLES_PER_PAGE;
+    // DOM элементы
+    const articlesList = document.getElementById('articles-list');
+    const pagination = document.getElementById('pagination');
+    const categoryFilter = document.getElementById('category-filter');
+
+    // Функция для получения всех уникальных категорий
+    function getAllCategories(articles) {
+      const categories = new Set();
+      articles.forEach(article => {
+        if (article.category) {
+          categories.add(article.category);
+        }
+      });
+      return Array.from(categories);
+    }
+
+    // Инициализация фильтра по категориям
+    function initCategoryFilter(articles) {
+      const categories = getAllCategories(articles);
       
-      // Проверяем что статьи загрузились
-      if (!window.allArticles || window.allArticles.length === 0) {
-        articlesList.innerHTML = `
-          <div class="article-item">
-            <h3>Статьи загружаются...</h3>
-            <p>Пожалуйста, подождите</p>
-          </div>
-        `;
-        setTimeout(() => displayArticles(page), 500);
-        return;
+      categories.forEach(category => {
+        const btn = document.createElement('button');
+        btn.className = 'category-btn';
+        btn.textContent = category;
+        btn.dataset.category = category;
+        btn.onclick = () => changeCategory(category);
+        categoryFilter.appendChild(btn);
+      });
+    }
+
+    // Смена категории
+    function changeCategory(category) {
+      currentCategory = category;
+      currentPage = 1;
+      
+      // Обновляем активную кнопку
+      document.querySelectorAll('.category-btn').forEach(btn => {
+        btn.classList.toggle('active', btn.dataset.category === category);
+      });
+      
+      // Фильтруем статьи
+      if (category === 'all') {
+        filteredArticles = [...window.allArticles];
+      } else {
+        filteredArticles = window.allArticles.filter(article => article.category === category);
       }
       
-      const articlesToShow = window.allArticles.slice(startIndex, endIndex);
+      displayArticles(currentPage);
+    }
+
+    // Отображение статей
+    function displayArticles(page = 1) {
+      if (!window.allArticles || window.allArticles.length === 0) {
+        articlesList.innerHTML = '<div class="loading"><i class="fas fa-exclamation-triangle"></i> Статьи не найдены</div>';
+        return;
+      }
+
+      // Если фильтр не инициализирован, делаем это
+      if (!filteredArticles.length) {
+        filteredArticles = [...window.allArticles];
+        if (categoryFilter.children.length === 1) {
+          initCategoryFilter(window.allArticles);
+        }
+      }
+
+      const startIndex = (page - 1) * ARTICLES_PER_PAGE;
+      const endIndex = startIndex + ARTICLES_PER_PAGE;
+      const articlesToShow = filteredArticles.slice(startIndex, endIndex);
+
+      if (articlesToShow.length === 0) {
+        articlesList.innerHTML = '<div class="loading">Статьи в этой категории не найдены</div>';
+        pagination.innerHTML = '';
+        return;
+      }
 
       articlesList.innerHTML = articlesToShow.map(article => `
-        <a href="${article.url}" class="article-link">
+        <a href="${article.url}" class="article-link" aria-label="Читать статью: ${article.title}">
           <div class="article-item">
             <h3>${article.title}</h3>
             <p>${article.excerpt}</p>
-            <div style="color: #b0b0b0; font-size: 0.9rem; margin-top: 15px;">
-              <i class="far fa-calendar"></i> ${article.date} · <i class="far fa-clock"></i> ${article.readTime}
+            <div class="article-meta">
+              <span><i class="far fa-calendar"></i> ${article.date}</span>
+              <span><i class="far fa-clock"></i> ${article.readTime}</span>
+              ${article.category ? `<span style="color: #8a2be2;"><i class="fas fa-tag"></i> ${article.category}</span>` : ''}
             </div>
           </div>
         </a>
@@ -172,43 +341,62 @@
       updatePagination();
     }
 
+    // Обновление пагинации
     function updatePagination() {
-      const pagination = document.getElementById('pagination');
+      const totalPages = Math.ceil(filteredArticles.length / ARTICLES_PER_PAGE);
       
-      if (!window.allArticles) return;
-      
-      const totalPages = Math.ceil(window.allArticles.length / ARTICLES_PER_PAGE);
-      
+      if (totalPages <= 1) {
+        pagination.innerHTML = '';
+        return;
+      }
+
       let paginationHTML = '';
 
       // Кнопка "Назад"
       paginationHTML += `
         <button class="page-btn ${currentPage === 1 ? 'disabled' : ''}" 
                 onclick="changePage(${currentPage - 1})" 
-                ${currentPage === 1 ? 'disabled' : ''}>
+                ${currentPage === 1 ? 'disabled' : ''}
+                aria-label="Предыдущая страница">
           <i class="fas fa-chevron-left"></i>
         </button>
       `;
 
       // Номера страниц
-      for (let i = 1; i <= totalPages; i++) {
-        if (i === 1 || i === totalPages || (i >= currentPage - 1 && i <= currentPage + 1)) {
-          paginationHTML += `
-            <button class="page-btn ${i === currentPage ? 'active' : ''}" 
-                    onclick="changePage(${i})">
-              ${i}
-            </button>
-          `;
-        } else if (i === currentPage - 2 || i === currentPage + 2) {
-          paginationHTML += `<span class="page-btn disabled">...</span>`;
-        }
+      const maxVisiblePages = 5;
+      let startPage = Math.max(1, currentPage - Math.floor(maxVisiblePages / 2));
+      let endPage = Math.min(totalPages, startPage + maxVisiblePages - 1);
+
+      if (endPage - startPage + 1 < maxVisiblePages) {
+        startPage = Math.max(1, endPage - maxVisiblePages + 1);
+      }
+
+      if (startPage > 1) {
+        paginationHTML += `<button class="page-btn" onclick="changePage(1)">1</button>`;
+        if (startPage > 2) paginationHTML += `<span class="dots">...</span>`;
+      }
+
+      for (let i = startPage; i <= endPage; i++) {
+        paginationHTML += `
+          <button class="page-btn ${i === currentPage ? 'active' : ''}" 
+                  onclick="changePage(${i})"
+                  aria-label="Страница ${i}">
+            ${i}
+          </button>
+        `;
+      }
+
+      if (endPage < totalPages) {
+        if (endPage < totalPages - 1) paginationHTML += `<span class="dots">...</span>`;
+        paginationHTML += `<button class="page-btn" onclick="changePage(${totalPages})">${totalPages}</button>`;
       }
 
       // Кнопка "Вперед"
       paginationHTML += `
         <button class="page-btn ${currentPage === totalPages ? 'disabled' : ''}" 
                 onclick="changePage(${currentPage + 1})" 
-                ${currentPage === totalPages ? 'disabled' : ''}>
+                ${currentPage === totalPages ? 'disabled' : ''}
+                aria-label="Следующая страница">
           <i class="fas fa-chevron-right"></i>
         </button>
       `;
@@ -216,15 +404,32 @@
       pagination.innerHTML = paginationHTML;
     }
 
+    // Смена страницы
     function changePage(page) {
-      if (!window.allArticles) return;
-      if (page < 1 || page > Math.ceil(window.allArticles.length / ARTICLES_PER_PAGE)) return;
+      if (page < 1 || page > Math.ceil(filteredArticles.length / ARTICLES_PER_PAGE)) return;
       displayArticles(page);
       window.scrollTo({ top: 0, behavior: 'smooth' });
     }
 
-    // Инициализация
-    displayArticles(1);
+    // Инициализация при загрузке
+    document.addEventListener('DOMContentLoaded', () => {
+      // Проверяем загрузку статей
+      if (window.allArticles && window.allArticles.length > 0) {
+        displayArticles(1);
+      } else {
+        // Если статьи еще не загружены, проверяем каждые 500мс
+        const checkArticles = setInterval(() => {
+          if (window.allArticles && window.allArticles.length > 0) {
+            clearInterval(checkArticles);
+            displayArticles(1);
+          }
+        }, 500);
+      }
+    });
+
+    // Экспортируем функции для использования в консоли
+    window.changePage = changePage;
+    window.changeCategory = changeCategory;
   </script>
 </body>
 </html>
