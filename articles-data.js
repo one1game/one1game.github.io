@@ -1,12 +1,12 @@
 // articles-data.js
 window.allArticles = [
-    {
+   {
       url: "/archive/nintendo-switch-2-russia-2026.html",
       title: "Nintendo Switch 2 в России 2026",
       excerpt: "Как купить, настроить eShop и запустить старые игры — полный гайд для российских геймеров.",
       date: "20 января 2026",
       readTime: "6 мин"
-    },
+    }, 
    {
       url: "/archive/metaverses-ai-2025.html",
       title: "Игровые метавселенные 2025: Как нейросети создают миры на лету",
