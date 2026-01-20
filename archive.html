@@ -278,15 +278,21 @@
       });
     }
 
-    // Смена категории
+    // Смена категории - ИСПРАВЛЕННАЯ ВЕРСИЯ
     function changeCategory(category) {
       currentCategory = category;
       currentPage = 1;
       
-      // Обновляем активную кнопку
+      // Убираем active у всех кнопок, затем добавляем только выбранной
       document.querySelectorAll('.category-btn').forEach(btn => {
-        btn.classList.toggle('active', btn.dataset.category === category);
+        btn.classList.remove('active');
       });
+      
+      // Находим и активируем нужную кнопку
+      const activeBtn = document.querySelector(`.category-btn[data-category="${category}"]`);
+      if (activeBtn) {
+        activeBtn.classList.add('active');
+      }
       
       // Фильтруем статьи
       if (category === 'all') {
