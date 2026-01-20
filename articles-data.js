@@ -1,6 +1,15 @@
 // articles-data.js
 window.allArticles = [
-   {
+   
+  {
+  url: "/archive/ai-game-translators-2026-guide.html",
+  title: "Как играть в любую новинку 2026 без русской локализации? Гайд по AI-переводчикам",
+  excerpt: "Гайд по AI-переводчикам 2026: играем в Monster Hunter Wilds, Judas и GTA VI без русской локализации. LunaTranslator 2.0, GPT-4o, DeepL и локальные LLM.",
+  date: "20 января 2026",
+  readTime: "8 мин",
+  category: "Гайды"
+},
+  {
       url: "/archive/nintendo-switch-2-russia-2026.html",
       title: "Nintendo Switch 2 в России 2026",
       excerpt: "Как купить, настроить eShop и запустить старые игры — полный гайд для российских геймеров.",
@@ -43,6 +52,5 @@ window.allArticles = [
       readTime: "10 мин"
     }
   ];
-
 
   
