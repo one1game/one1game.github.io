@@ -3,17 +3,19 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-SZYYDYEC6T"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-SZYYDYEC6T');
+  </script>
+  
   <meta name="description" content="Архив игровых статей One1Game — обзоры, гайды, новости игровой индустрии. Все материалы в одном месте." />
   <meta name="keywords" content="игровые статьи, обзоры игр, гайды, игровые новости, one1game, gaming articles" />
   <title>Архив статей - One1Game</title>
-  
-  <!-- Google Tag Manager -->
-  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-  })(window,document,'script','dataLayer','GTM-N2929MZG');</script>
-  <!-- End Google Tag Manager -->
   
   <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Rajdhani:wght@300;400;500;600&display=swap" rel="stylesheet" />
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet" />
@@ -124,9 +126,9 @@
     .page-btn {
       padding: 10px 16px;
       background: rgba(0, 0, 0, 0.6);
-      border: 1px solid var(--neon-cyan);
+      border: 1px solid #00f3ff;
       border-radius: 6px;
-      color: var(--text-primary);
+      color: #ffffff;
       cursor: pointer;
       transition: all 0.3s ease;
       font-family: 'Rajdhani', sans-serif;
@@ -144,10 +146,10 @@
     }
 
     .page-btn.active {
-      background: var(--neon-cyan);
+      background: #00f3ff;
       color: #000;
       font-weight: 600;
-      box-shadow: 0 0 15px var(--neon-cyan);
+      box-shadow: 0 0 15px #00f3ff;
     }
 
     .page-btn.disabled {
@@ -179,33 +181,42 @@
     }
     
     .category-btn {
-      padding: 6px 15px;
+      padding: 8px 18px;
       background: rgba(0, 0, 0, 0.6);
       border: 1px solid #8a2be2;
       border-radius: 20px;
       color: #b0b0b0;
       cursor: pointer;
       transition: all 0.3s ease;
-      font-size: 0.9rem;
+      font-size: 0.95rem;
+      font-family: 'Rajdhani', sans-serif;
+      font-weight: 500;
     }
     
     .category-btn.active {
       background: #8a2be2;
-      color: #000;
+      color: #ffffff;
       font-weight: 600;
+      box-shadow: 0 0 10px rgba(138, 43, 226, 0.5);
     }
     
     .category-btn:hover:not(.active) {
       background: rgba(138, 43, 226, 0.3);
+      transform: translateY(-2px);
+    }
+    
+    .no-articles {
+      text-align: center;
+      padding: 60px 20px;
+      color: #888;
+      font-size: 1.1rem;
+      background: rgba(16, 16, 26, 0.8);
+      border-radius: 12px;
+      border: 1px solid rgba(255, 193, 7, 0.1);
     }
   </style>
 </head>
 <body>
-  <!-- Google Tag Manager (noscript) -->
-  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-N2929MZG"
-  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-  <!-- End Google Tag Manager (noscript) -->
-  
   <div class="cyber-bg"></div>
   
   <div class="container">
@@ -257,16 +268,21 @@
     function getAllCategories(articles) {
       const categories = new Set();
       articles.forEach(article => {
-        if (article.category) {
+        if (article.category && article.category.trim() !== '') {
           categories.add(article.category);
         }
       });
-      return Array.from(categories);
+      return Array.from(categories).sort();
     }
 
     // Инициализация фильтра по категориям
     function initCategoryFilter(articles) {
       const categories = getAllCategories(articles);
+      
+      // Очищаем кнопки (оставляем только "Все статьи")
+      while (categoryFilter.children.length > 1) {
+        categoryFilter.removeChild(categoryFilter.lastChild);
+      }
       
       categories.forEach(category => {
         const btn = document.createElement('button');
@@ -280,16 +296,20 @@
 
     // Смена категории - ИСПРАВЛЕННАЯ ВЕРСИЯ
     function changeCategory(category) {
+      // Обновляем текущую категорию
       currentCategory = category;
       currentPage = 1;
       
-      // Убираем active у всех кнопок, затем добавляем только выбранной
+      // Убираем active у всех кнопок
       document.querySelectorAll('.category-btn').forEach(btn => {
         btn.classList.remove('active');
       });
       
-      // Находим и активируем нужную кнопку
-      const activeBtn = document.querySelector(`.category-btn[data-category="${category}"]`);
+      // Добавляем active к выбранной кнопке
+      const activeBtn = category === 'all' 
+        ? document.querySelector('.category-btn[data-category="all"]')
+        : document.querySelector(`.category-btn[data-category="${category}"]`);
+      
       if (activeBtn) {
         activeBtn.classList.add('active');
       }
@@ -298,21 +318,25 @@
       if (category === 'all') {
         filteredArticles = [...window.allArticles];
       } else {
-        filteredArticles = window.allArticles.filter(article => article.category === category);
+        filteredArticles = window.allArticles.filter(article => 
+          article.category && article.category === category
+        );
       }
       
+      // Отображаем статьи
       displayArticles(currentPage);
     }
 
     // Отображение статей
     function displayArticles(page = 1) {
       if (!window.allArticles || window.allArticles.length === 0) {
-        articlesList.innerHTML = '<div class="loading"><i class="fas fa-exclamation-triangle"></i> Статьи не найдены</div>';
+        articlesList.innerHTML = '<div class="no-articles"><i class="fas fa-exclamation-triangle"></i> Статьи не найдены или не загружены</div>';
+        pagination.innerHTML = '';
         return;
       }
 
-      // Если фильтр не инициализирован, делаем это
-      if (!filteredArticles.length) {
+      // Инициализируем фильтр при первом отображении
+      if (filteredArticles.length === 0) {
         filteredArticles = [...window.allArticles];
         if (categoryFilter.children.length === 1) {
           initCategoryFilter(window.allArticles);
@@ -324,19 +348,24 @@
       const articlesToShow = filteredArticles.slice(startIndex, endIndex);
 
       if (articlesToShow.length === 0) {
-        articlesList.innerHTML = '<div class="loading">Статьи в этой категории не найдены</div>';
+        articlesList.innerHTML = `
+          <div class="no-articles">
+            <i class="fas fa-search"></i><br><br>
+            В категории "${currentCategory === 'all' ? 'Все статьи' : currentCategory}" статьи не найдены
+          </div>
+        `;
         pagination.innerHTML = '';
         return;
       }
 
       articlesList.innerHTML = articlesToShow.map(article => `
-        <a href="${article.url}" class="article-link" aria-label="Читать статью: ${article.title}">
+        <a href="${article.url || '#'}" class="article-link" aria-label="Читать статью: ${article.title}">
           <div class="article-item">
-            <h3>${article.title}</h3>
-            <p>${article.excerpt}</p>
+            <h3>${article.title || 'Без названия'}</h3>
+            <p>${article.excerpt || 'Описание отсутствует'}</p>
             <div class="article-meta">
-              <span><i class="far fa-calendar"></i> ${article.date}</span>
-              <span><i class="far fa-clock"></i> ${article.readTime}</span>
+              <span><i class="far fa-calendar"></i> ${article.date || 'Не указано'}</span>
+              <span><i class="far fa-clock"></i> ${article.readTime || '5 мин'}</span>
               ${article.category ? `<span style="color: #8a2be2;"><i class="fas fa-tag"></i> ${article.category}</span>` : ''}
             </div>
           </div>
@@ -419,14 +448,59 @@
 
     // Инициализация при загрузке
     document.addEventListener('DOMContentLoaded', () => {
+      console.log('DOM загружен, проверяем статьи...');
+      
       // Проверяем загрузку статей
       if (window.allArticles && window.allArticles.length > 0) {
+        console.log(`Загружено ${window.allArticles.length} статей`);
         displayArticles(1);
       } else {
-        // Если статьи еще не загружены, проверяем каждые 500мс
+        console.log('Статьи еще не загружены, ожидаем...');
+        
+        // Если articles-data.js еще не загружен, пытаемся загрузить вручную
+        if (!window.allArticles) {
+          window.allArticles = [];
+          
+          // Создаем тестовые данные, если файл не загрузился
+          setTimeout(() => {
+            if (window.allArticles.length === 0) {
+              console.warn('Файл articles-data.js не загрузился, создаем тестовые данные');
+              window.allArticles = [
+                {
+                  title: "Тестовая статья 1",
+                  excerpt: "Это тестовая статья для демонстрации работы фильтра",
+                  date: "2024-01-15",
+                  readTime: "5 мин",
+                  category: "Гайды",
+                  url: "#"
+                },
+                {
+                  title: "Тестовая статья 2",
+                  excerpt: "Еще одна тестовая статья",
+                  date: "2024-01-14",
+                  readTime: "3 мин",
+                  category: "Новости",
+                  url: "#"
+                },
+                {
+                  title: "Тестовая статья 3",
+                  excerpt: "Статья без категории",
+                  date: "2024-01-13",
+                  readTime: "7 мин",
+                  category: "",
+                  url: "#"
+                }
+              ];
+            }
+            displayArticles(1);
+          }, 1000);
+        }
+        
+        // Или проверяем каждые 500мс
         const checkArticles = setInterval(() => {
           if (window.allArticles && window.allArticles.length > 0) {
             clearInterval(checkArticles);
+            console.log(`Статьи загружены через интервал: ${window.allArticles.length} шт`);
             displayArticles(1);
           }
         }, 500);
@@ -436,6 +510,12 @@
     // Экспортируем функции для использования в консоли
     window.changePage = changePage;
     window.changeCategory = changeCategory;
+    window.getCurrentState = () => ({
+      currentPage,
+      currentCategory,
+      totalArticles: window.allArticles?.length || 0,
+      filteredArticles: filteredArticles.length
+    });
   </script>
 </body>
 </html>
