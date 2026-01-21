@@ -1,4 +1,4 @@
-// One1Game Platform - Working Version with Global Radio
+// One1Game Platform - Working Version with Smart Radio
 class One1GamePlatform {
   constructor() {
       this.clicks = 0;
@@ -7,12 +7,21 @@ class One1GamePlatform {
       this.allArticles = window.allArticles || [];
       this.globalRadio = null;
       
-      // Инициализируем глобальное радио
-      this.initGlobalRadio();
+      // Инициализируем глобальное радио ТОЛЬКО если это не архив
+      if (!this.isArchivePage()) {
+        this.initGlobalRadio();
+      }
       this.init();
   }
 
-  // Глобальное радио для всех страниц
+  // Проверяем, это архив или нет
+  isArchivePage() {
+    return window.location.pathname.includes('archive.html') || 
+           document.title.includes('Архив') ||
+           document.querySelector('.articles-container') !== null;
+  }
+
+  // Глобальное радио для всех страниц (кроме архива)
   initGlobalRadio() {
     // Проверяем, есть ли уже глобальное радио
     if (window.One1GameRadio) {
@@ -21,8 +30,7 @@ class One1GamePlatform {
       return;
     }
     
-    // Создаем глобальное радио
-    console.log('📻 Creating global radio player...');
+    console.log('📻 Creating global radio player (not for archive)...');
     
     // Создаем скрытый аудио элемент для радио
     let radioAudio = document.getElementById('radio-stream');
@@ -75,11 +83,11 @@ class One1GamePlatform {
     // Сохраняем в глобальной области видимости
     window.One1GameRadio = this.globalRadio;
     
-    // Восстанавливаем состояние воспроизведения
+    // Восстанавливаем состояние воспроизведения (только если не было паузы)
     if (savedPaused !== 'true') {
       setTimeout(() => {
         this.globalRadio.audio.play().catch(e => {
-          console.log('Auto-play on init blocked, waiting for user interaction');
+          console.log('Auto-play on init blocked');
         });
       }, 1000);
     }
@@ -89,7 +97,7 @@ class One1GamePlatform {
       localStorage.setItem('one1game_radio_volume', radioAudio.volume);
     });
     
-    console.log('✅ Global radio initialized');
+    console.log('✅ Global radio initialized (not for archive)');
   }
 
   init() {
@@ -136,11 +144,9 @@ class One1GamePlatform {
 
   // Загрузка контента в зависимости от страницы
   loadPageContent() {
-    const path = window.location.pathname;
-    
-    if (path.includes('archive.html') || path.endsWith('archive.html')) {
-      console.log('📚 Archive page detected');
-      // Для архива используется отдельный скрипт в archive.html
+    if (this.isArchivePage()) {
+      console.log('📚 Archive page detected - NO RADIO');
+      // Для архива НЕ загружаем радио
     } else {
       console.log('🏠 Home page detected');
       this.loadHomePageContent();
@@ -160,7 +166,13 @@ class One1GamePlatform {
     const volumeSlider = document.getElementById('volume-slider');
     const statusText = document.getElementById('status-text');
     
-    if (!playBtn || !this.globalRadio) {
+    // Если это архив или нет глобального радио - ничего не настраиваем
+    if (this.isArchivePage() || !this.globalRadio) {
+      console.log('📻 No radio controls for archive page');
+      return;
+    }
+    
+    if (!playBtn) {
       console.log('📻 No visible radio controls on this page');
       return;
     }
@@ -221,7 +233,7 @@ class One1GamePlatform {
     const icon = button.querySelector('i');
     if (!icon) return;
     
-    const isPlaying = this.globalRadio.isPlaying();
+    const isPlaying = this.globalRadio ? this.globalRadio.isPlaying() : false;
     icon.className = isPlaying ? 'fas fa-pause' : 'fas fa-play';
     button.style.background = isPlaying ? '#00ff88' : '#00f3ff';
   }
@@ -243,7 +255,7 @@ class One1GamePlatform {
     const bars = document.querySelectorAll('.visualizer .bar');
     if (!bars.length) return;
     
-    const isPlaying = this.globalRadio.isPlaying();
+    const isPlaying = this.globalRadio ? this.globalRadio.isPlaying() : false;
     
     bars.forEach(bar => {
       bar.style.animationPlayState = isPlaying ? 'running' : 'paused';
@@ -474,7 +486,7 @@ class One1GamePlatform {
   setupEventListeners() {
     // Keyboard shortcuts
     document.addEventListener('keydown', (e) => {
-      // Space - play/pause music (только если есть кнопка на странице)
+      // Space - play/pause music (только если есть кнопка на странице И есть радио)
       if (e.code === 'Space') {
         const playBtn = document.getElementById('play-pause');
         if (playBtn && this.globalRadio) {
