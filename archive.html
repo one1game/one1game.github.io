@@ -21,6 +21,7 @@
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet" />
   <link rel="stylesheet" href="styles.css" />
   <style>
+    /* Стили остаются без изменений */
     .articles-container {
       max-width: 800px;
       margin: 0 auto;
@@ -268,78 +269,111 @@
     // Функция для получения всех уникальных категорий
     function getAllCategories(articles) {
       const categories = new Set();
+      categories.add('all'); // Добавляем категорию "все статьи"
       articles.forEach(article => {
         if (article.category && article.category.trim() !== '') {
           categories.add(article.category);
         }
       });
-      return Array.from(categories).sort();
+      return Array.from(categories);
     }
 
     // Инициализация фильтра по категориям
     function initCategoryFilter(articles) {
       const categories = getAllCategories(articles);
       
-      // Очищаем кнопки (оставляем только "Все статьи")
-      while (categoryFilter.children.length > 1) {
-        categoryFilter.removeChild(categoryFilter.lastChild);
-      }
+      // Очищаем все кнопки
+      categoryFilter.innerHTML = '';
       
-      categories.forEach(category => {
+      // Сортируем категории, чтобы "all" была первой
+      const sortedCategories = categories.sort((a, b) => {
+        if (a === 'all') return -1;
+        if (b === 'all') return 1;
+        return a.localeCompare(b);
+      });
+      
+      sortedCategories.forEach(category => {
         const btn = document.createElement('button');
         btn.className = 'category-btn';
-        btn.textContent = category;
+        btn.textContent = category === 'all' ? 'Все статьи' : category;
         btn.dataset.category = category;
-        btn.onclick = () => changeCategory(category);
+        btn.onclick = () => handleCategoryClick(category);
+        
+        if (category === 'all') {
+          btn.classList.add('active');
+        }
+        
         categoryFilter.appendChild(btn);
       });
     }
 
-    // Смена категории - ПЕРЕРАБОТАННАЯ ВЕРСИЯ
-    function changeCategory(category) {
-      console.log('changeCategory вызвана с категорией:', category);
+    // Обработчик клика по категории
+    function handleCategoryClick(category) {
+      console.log('Клик по категории:', category);
       console.log('Текущая категория была:', currentCategory);
+      
+      // Если кликаем по текущей категории - ничего не делаем
+      if (category === currentCategory) {
+        console.log('Это уже текущая категория, игнорируем');
+        return;
+      }
       
       // Обновляем текущую категорию
       currentCategory = category;
       currentPage = 1;
       
+      // Обновляем активные кнопки
+      updateActiveCategoryButton();
+      
+      // Фильтруем статьи
+      filterArticles();
+      
+      // Отображаем статьи
+      displayArticles(currentPage);
+    }
+
+    // Обновление активной кнопки категории
+    function updateActiveCategoryButton() {
       // Убираем active у всех кнопок
       document.querySelectorAll('.category-btn').forEach(btn => {
         btn.classList.remove('active');
       });
       
       // Находим и активируем нужную кнопку
-      let activeBtn;
-      if (category === 'all') {
-        activeBtn = document.querySelector('.category-btn[data-category="all"]');
-      } else {
-        activeBtn = document.querySelector(`.category-btn[data-category="${category}"]`);
-      }
-      
+      const activeBtn = document.querySelector(`.category-btn[data-category="${currentCategory}"]`);
       if (activeBtn) {
         activeBtn.classList.add('active');
         console.log('Активирована кнопка:', activeBtn.textContent);
       } else {
-        console.error('Кнопка не найдена для категории:', category);
+        console.error('Кнопка не найдена для категории:', currentCategory);
+        // Если кнопка не найдена, активируем "Все статьи"
+        const allBtn = document.querySelector('.category-btn[data-category="all"]');
+        if (allBtn) {
+          allBtn.classList.add('active');
+          currentCategory = 'all';
+        }
       }
-      
-      // Фильтруем статьи
+    }
+
+    // Фильтрация статей
+    function filterArticles() {
+      console.log('Фильтрация статей по категории:', currentCategory);
       console.log('Всего статей в allArticles:', allArticles.length);
       
-      if (category === 'all') {
+      if (currentCategory === 'all') {
+        // ВОТ ИСПРАВЛЕНИЕ: Просто присваиваем все статьи
         filteredArticles = [...allArticles];
         console.log('Выбрана категория "all", filteredArticles установлен на все статьи:', filteredArticles.length);
       } else {
+        // Фильтруем по категории
         filteredArticles = allArticles.filter(article => {
-          const match = article.category && article.category === category;
-          return match;
+          // Проверяем, что у статьи есть категория и она совпадает
+          return article.category && article.category === currentCategory;
         });
-        console.log(`Фильтр "${category}" применен, найдено статей:`, filteredArticles.length);
+        console.log(`Фильтр "${currentCategory}" применен, найдено статей:`, filteredArticles.length);
       }
       
-      // Отображаем статьи
-      displayArticles(currentPage);
+      console.log('Результат фильтрации:', filteredArticles);
     }
 
     // Отображение статей
@@ -365,6 +399,18 @@
           <div class="no-articles">
             <i class="fas fa-search"></i><br><br>
             В категории "${currentCategory === 'all' ? 'Все статьи' : currentCategory}" статьи не найдены
+            <br><br>
+            <button onclick="handleCategoryClick('all')" style="
+              padding: 8px 16px;
+              background: #8a2be2;
+              border: none;
+              border-radius: 6px;
+              color: white;
+              cursor: pointer;
+              font-family: 'Rajdhani', sans-serif;
+            ">
+              Показать все статьи
+            </button>
           </div>
         `;
         pagination.innerHTML = '';
@@ -464,7 +510,7 @@
       window.scrollTo({ top: 0, behavior: 'smooth' });
     }
 
-    // Инициализация при загрузке
+    // Инициализация статей
     function initArticles() {
       console.log('initArticles вызвана');
       
@@ -472,7 +518,9 @@
       if (window.allArticles && window.allArticles.length > 0) {
         console.log('Статьи найдены в window.allArticles:', window.allArticles.length);
         allArticles = [...window.allArticles];
-        filteredArticles = [...allArticles];
+        
+        // Фильтруем статьи (по умолчанию "все")
+        filterArticles();
         
         // Инициализируем фильтр категорий
         initCategoryFilter(allArticles);
@@ -542,7 +590,8 @@
           }
         ];
         
-        filteredArticles = [...allArticles];
+        // Фильтруем статьи (по умолчанию "все")
+        filterArticles();
         
         // Инициализируем фильтр категорий
         initCategoryFilter(allArticles);
@@ -552,10 +601,11 @@
       }
     }
 
+    // Запуск при загрузке страницы
     document.addEventListener('DOMContentLoaded', () => {
-      console.log('DOM загружен');
+      console.log('DOM загружен, запускаем инициализацию...');
       
-      // Даем время на загрузку articles-data.js
+      // Ждем немного, чтобы articles-data.js успел загрузиться
       setTimeout(() => {
         initArticles();
       }, 100);
@@ -563,23 +613,23 @@
 
     // Экспортируем функции для использования в консоли
     window.changePage = changePage;
-    window.changeCategory = changeCategory;
-    window.getCurrentState = () => ({
-      currentPage,
-      currentCategory,
-      totalArticles: allArticles.length,
-      filteredArticles: filteredArticles.length,
-      allArticlesCount: allArticles.length
-    });
-    
-    // Добавляем глобальную ссылку для отладки
+    window.handleCategoryClick = handleCategoryClick;
     window.debugFilter = () => {
       console.log('=== ДЕБАГ ФИЛЬТРА ===');
       console.log('allArticles:', allArticles);
       console.log('filteredArticles:', filteredArticles);
       console.log('currentCategory:', currentCategory);
       console.log('currentPage:', currentPage);
-      console.log('Кнопки категорий:', document.querySelectorAll('.category-btn').length);
+      console.log('Кнопки категорий:', Array.from(document.querySelectorAll('.category-btn')).map(btn => ({
+        text: btn.textContent,
+        category: btn.dataset.category,
+        active: btn.classList.contains('active')
+      })));
+    };
+    
+    // Функция для сброса к "Все статьи"
+    window.resetToAllArticles = () => {
+      handleCategoryClick('all');
     };
   </script>
 </body>
