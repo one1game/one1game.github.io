@@ -4,7 +4,7 @@ class One1GamePlatform {
       this.clicks = 0;
       this.highScore = 0;
       this.isPlaying = false;
-      this.allArticles = window.allArticles || []; // ← ЭТА СТРОЧКА ДОБАВЛЕНА
+      this.allArticles = window.allArticles || [];
       this.init();
   }
 
@@ -28,7 +28,7 @@ class One1GamePlatform {
       this.setupClickerGame();
       this.setupMusicPlayer();
       this.setupEventListeners();
-      this.loadLatestArticles(); // ← ЭТА СТРОЧКА ДОБАВЛЕНА
+      this.loadLatestArticles(); // ← Теперь использует новый формат полосок
       
       console.log('✅ One1Game Platform initialized successfully!');
   }
@@ -57,12 +57,10 @@ class One1GamePlatform {
       });
   }
 
-  // Latest Articles System
+  // Latest Articles System - ОБНОВЛЕНО ДЛЯ ПОЛОСОК
   loadLatestArticles() {
-    console.log('📰 Loading latest articles...');
+    console.log('📰 Loading latest articles (strip format)...');
     
-    // Берем 3 последние статьи
-    const latestArticles = window.allArticles.slice(0, 4);
     const container = document.getElementById('latest-articles');
     
     if (!container) {
@@ -70,20 +68,42 @@ class One1GamePlatform {
       return;
     }
     
-    container.innerHTML = latestArticles.map(article => `
-      <a href="${article.url}" class="article-preview-link">
-        <div class="article-preview">
-          <h4>${article.title}</h4>
-          <p>${article.excerpt}</p>
-          <div class="article-preview-meta">
-            <i class="far fa-calendar"></i> ${article.date} · 
-            <i class="far fa-clock"></i> ${article.readTime}
+    // Проверяем статьи
+    if (!window.allArticles || window.allArticles.length === 0) {
+      container.innerHTML = `
+        <div class="article-strip">
+          <h3>Статьи загружаются...</h3>
+          <p>Пожалуйста, подождите немного или обновите страницу.</p>
+          <div class="article-meta-strip">
+            <span><i class="far fa-clock"></i> 1 мин</span>
           </div>
+        </div>
+      `;
+      return;
+    }
+    
+    // Сортируем статьи по дате (новые первыми)
+    const sortedArticles = [...window.allArticles].sort((a, b) => {
+      return new Date(b.date || 0) - new Date(a.date || 0);
+    });
+    
+    // Берем только последние 5 статей
+    const latestArticles = sortedArticles.slice(0, 5);
+    
+    // Генерируем HTML для полосок статей
+    container.innerHTML = latestArticles.map(article => `
+      <a href="${article.url || '#'}" class="article-strip" ${article.url ? 'target="_blank"' : ''}>
+        <h3>${article.title || 'Без названия'}</h3>
+        <p>${article.excerpt || 'Описание отсутствует'}</p>
+        <div class="article-meta-strip">
+          <span><i class="far fa-calendar"></i> ${article.date || 'Не указано'}</span>
+          <span><i class="far fa-clock"></i> ${article.readTime || '5 мин'}</span>
+          ${article.category ? `<span class="category-badge"><i class="fas fa-tag"></i> ${article.category}</span>` : ''}
         </div>
       </a>
     `).join('');
     
-    console.log(`✅ Loaded ${latestArticles.length} latest articles`);
+    console.log(`✅ Loaded ${latestArticles.length} latest articles in strip format`);
   }
 
   // Video System
