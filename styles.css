@@ -464,7 +464,7 @@ h2 i {
   box-shadow: 0 0 10px #ffc107, 0 0 20px #ffc107;
 }
 
-/* Latest Articles Section */
+/* Latest Articles Section - ОБНОВЛЕНО ДЛЯ ПОЛОСОК */
 .latest-articles {
   background: var(--card-bg);
   padding: 30px;
@@ -475,117 +475,154 @@ h2 i {
 }
 
 .articles-preview {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-  gap: 25px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
   margin-bottom: 25px;
 }
 
-.article-preview {
+/* Стили для полосок статей */
+.article-strip {
   background: rgba(20, 20, 30, 0.6);
-  padding: 25px;
-  border-radius: 10px;
-  border: 1px solid rgba(255, 193, 7, 0.15);
+  border-radius: 8px;
+  padding: 20px;
+  border-left: 4px solid #8a2be2;
   transition: all 0.3s ease;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+  text-decoration: none;
+  display: block;
+  color: inherit;
+  position: relative;
+  overflow: hidden;
 }
 
-.article-preview:hover {
-  border-color: rgba(0, 255, 136, 0.4);
-  transform: translateY(-3px);
-  box-shadow: 0 6px 25px rgba(0, 255, 136, 0.15);
+.article-strip::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(0, 243, 255, 0.1), transparent);
+  transition: left 0.6s ease;
 }
 
-.article-preview h4 {
-  font-family: 'Rajdhani', sans-serif; /* Более читаемый шрифт */
-  font-size: 1.3rem;
-  margin-bottom: 15px;
-  color: var(--text-primary);
-  line-height: 1.4;
+.article-strip:hover::before {
+  left: 100%;
+}
+
+.article-strip:hover {
+  transform: translateX(5px);
+  border-left-color: var(--neon-cyan);
+  box-shadow: 0 5px 15px rgba(0, 243, 255, 0.2);
+}
+
+.article-strip h3 {
+  color: var(--neon-cyan);
+  margin-bottom: 8px;
+  font-size: 1.1rem;
   font-weight: 600;
-  text-decoration: none; /* Убираем подчеркивание */
+  font-family: 'Rajdhani', sans-serif;
 }
 
-.article-preview p {
+.article-strip p {
   color: var(--text-secondary);
-  font-size: 1.05rem;
-  line-height: 1.6;
-  margin-bottom: 15px;
-  opacity: 0.9;
-  font-family: 'Rajdhani', sans-serif; /* Читаемый шрифт для текста */
-  font-weight: 400;
+  font-size: 0.95rem;
+  line-height: 1.5;
+  margin-bottom: 10px;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
 }
 
-.article-preview-meta {
-  font-size: 0.9rem;
-  color: var(--text-secondary);
-  opacity: 0.8;
+.article-meta-strip {
   display: flex;
   align-items: center;
   gap: 15px;
-  font-family: 'Rajdhani', sans-serif; /* Читаемый шрифт */
+  color: #999;
+  font-size: 0.85rem;
+  flex-wrap: wrap;
 }
 
-.article-preview-meta i {
+.article-meta-strip i {
+  color: var(--neon-green);
   margin-right: 5px;
-  opacity: 0.7;
+}
+
+.category-badge {
+  background: rgba(138, 43, 226, 0.2);
+  color: #d0a2ff;
+  padding: 3px 10px;
+  border-radius: 12px;
+  font-size: 0.8rem;
+  border: 1px solid rgba(138, 43, 226, 0.5);
 }
 
 .view-all-btn {
   display: inline-flex;
   align-items: center;
+  justify-content: center;
   gap: 10px;
-  color: var(--neon-cyan);
-  text-decoration: none; /* Убираем подчеркивание */
+  padding: 12px 25px;
+  background: linear-gradient(45deg, var(--neon-purple), var(--neon-cyan));
+  color: white;
+  text-decoration: none;
+  border-radius: 8px;
   font-weight: 600;
-  font-size: 1.1rem;
-  padding: 12px 20px;
-  border: 1px solid rgba(0, 243, 255, 0.3);
-  border-radius: 6px;
   transition: all 0.3s ease;
-  background: rgba(0, 243, 255, 0.1);
-  font-family: 'Rajdhani', sans-serif; /* Читаемый шрифт */
+  border: none;
+  cursor: pointer;
+  margin-top: 10px;
+  width: 100%;
+  max-width: 300px;
+  font-family: 'Rajdhani', sans-serif;
 }
 
 .view-all-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 20px rgba(0, 243, 255, 0.3);
   gap: 15px;
-  background: rgba(0, 243, 255, 0.2);
-  box-shadow: 0 0 20px rgba(0, 243, 255, 0.3);
-  transform: translateX(5px);
-  text-decoration: none; /* Убираем подчеркивание при наведении */
 }
 
-/* Ссылки внутри превью статей */
-.article-preview-link {
-  text-decoration: none; /* Убираем подчеркивание у ссылок */
-  color: inherit;
-  display: block;
+/* Убираем старые стили квадратных превью */
+.article-preview,
+.article-preview-link,
+.article-preview h4,
+.article-preview p,
+.article-preview-meta {
+  display: none;
 }
 
-.article-preview-link:hover {
-  text-decoration: none; /* Убираем подчеркивание при наведении */
-}
-
-/* Улучшения для мобильных устройств */
+/* Адаптивность для полосок */
 @media (max-width: 768px) {
   .latest-articles {
     padding: 20px;
   }
   
-  .articles-preview {
-    grid-template-columns: 1fr;
-    gap: 20px;
+  .article-strip {
+    padding: 15px;
   }
   
-  .article-preview {
-    padding: 20px;
-  }
-  
-  .article-preview h4 {
-    font-size: 1.2rem;
-  }
-  
-  .article-preview p {
+  .article-strip h3 {
     font-size: 1rem;
   }
+  
+  .article-strip p {
+    font-size: 0.9rem;
+  }
+  
+  .article-meta-strip {
+    font-size: 0.8rem;
+    gap: 10px;
+  }
+  
+  .view-all-btn {
+    padding: 10px 20px;
+    max-width: 100%;
+  }
+}
+
+/* Убираем отступы у иконки в заголовке latest-articles */
+.latest-articles h2 i {
+  color: #ff4757;
 }

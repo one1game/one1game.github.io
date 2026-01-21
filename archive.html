@@ -21,7 +21,6 @@
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet" />
   <link rel="stylesheet" href="styles.css" />
   <style>
-    /* Стили остаются без изменений */
     .articles-container {
       max-width: 800px;
       margin: 0 auto;
@@ -309,14 +308,8 @@
 
     // Обработчик клика по категории
     function handleCategoryClick(category) {
-      console.log('Клик по категории:', category);
-      console.log('Текущая категория была:', currentCategory);
-      
       // Если кликаем по текущей категории - ничего не делаем
-      if (category === currentCategory) {
-        console.log('Это уже текущая категория, игнорируем');
-        return;
-      }
+      if (category === currentCategory) return;
       
       // Обновляем текущую категорию
       currentCategory = category;
@@ -343,9 +336,7 @@
       const activeBtn = document.querySelector(`.category-btn[data-category="${currentCategory}"]`);
       if (activeBtn) {
         activeBtn.classList.add('active');
-        console.log('Активирована кнопка:', activeBtn.textContent);
       } else {
-        console.error('Кнопка не найдена для категории:', currentCategory);
         // Если кнопка не найдена, активируем "Все статьи"
         const allBtn = document.querySelector('.category-btn[data-category="all"]');
         if (allBtn) {
@@ -357,31 +348,17 @@
 
     // Фильтрация статей
     function filterArticles() {
-      console.log('Фильтрация статей по категории:', currentCategory);
-      console.log('Всего статей в allArticles:', allArticles.length);
-      
       if (currentCategory === 'all') {
-        // ВОТ ИСПРАВЛЕНИЕ: Просто присваиваем все статьи
         filteredArticles = [...allArticles];
-        console.log('Выбрана категория "all", filteredArticles установлен на все статьи:', filteredArticles.length);
       } else {
-        // Фильтруем по категории
         filteredArticles = allArticles.filter(article => {
-          // Проверяем, что у статьи есть категория и она совпадает
           return article.category && article.category === currentCategory;
         });
-        console.log(`Фильтр "${currentCategory}" применен, найдено статей:`, filteredArticles.length);
       }
-      
-      console.log('Результат фильтрации:', filteredArticles);
     }
 
     // Отображение статей
     function displayArticles(page = 1) {
-      console.log('displayArticles вызвана, страница:', page);
-      console.log('Текущая категория:', currentCategory);
-      console.log('filteredArticles.length:', filteredArticles.length);
-      
       if (!allArticles || allArticles.length === 0) {
         articlesList.innerHTML = '<div class="no-articles"><i class="fas fa-exclamation-triangle"></i> Статьи не найдены или не загружены</div>';
         pagination.innerHTML = '';
@@ -391,8 +368,6 @@
       const startIndex = (page - 1) * ARTICLES_PER_PAGE;
       const endIndex = startIndex + ARTICLES_PER_PAGE;
       const articlesToShow = filteredArticles.slice(startIndex, endIndex);
-
-      console.log('Показываем статьи с', startIndex, 'по', endIndex, ':', articlesToShow.length);
 
       if (articlesToShow.length === 0) {
         articlesList.innerHTML = `
@@ -438,7 +413,6 @@
     // Обновление пагинации
     function updatePagination() {
       const totalPages = Math.ceil(filteredArticles.length / ARTICLES_PER_PAGE);
-      console.log('updatePagination, всего страниц:', totalPages);
       
       if (totalPages <= 1) {
         pagination.innerHTML = '';
@@ -501,22 +475,15 @@
 
     // Смена страницы
     function changePage(page) {
-      console.log('changePage вызвана:', page);
-      if (page < 1 || page > Math.ceil(filteredArticles.length / ARTICLES_PER_PAGE)) {
-        console.log('Некорректная страница');
-        return;
-      }
+      if (page < 1 || page > Math.ceil(filteredArticles.length / ARTICLES_PER_PAGE)) return;
       displayArticles(page);
       window.scrollTo({ top: 0, behavior: 'smooth' });
     }
 
     // Инициализация статей
     function initArticles() {
-      console.log('initArticles вызвана');
-      
       // Проверяем, есть ли статьи в window.allArticles
       if (window.allArticles && window.allArticles.length > 0) {
-        console.log('Статьи найдены в window.allArticles:', window.allArticles.length);
         allArticles = [...window.allArticles];
         
         // Фильтруем статьи (по умолчанию "все")
@@ -528,109 +495,22 @@
         // Отображаем статьи
         displayArticles(1);
       } else {
-        console.log('Статьи не найдены в window.allArticles, создаем тестовые данные');
-        
-        // Создаем тестовые данные
-        allArticles = [
-          {
-            title: "Гайд по Elden Ring: Как победить Малинию",
-            excerpt: "Подробное руководство по победе над одним из самых сложных боссов в истории игр",
-            date: "2024-01-15",
-            readTime: "10 мин",
-            category: "Гайды",
-            url: "#"
-          },
-          {
-            title: "Новости игровой индустрии 2024",
-            excerpt: "Обзор самых ожидаемых игр и событий в игровом мире в этом году",
-            date: "2024-01-14",
-            readTime: "7 мин",
-            category: "Новости",
-            url: "#"
-          },
-          {
-            title: "Обзор Baldur's Gate 3",
-            excerpt: "Почему эта игра стала лучшей RPG десятилетия и заслужила все награды",
-            date: "2024-01-13",
-            readTime: "15 мин",
-            category: "Обзоры",
-            url: "#"
-          },
-          {
-            title: "Секреты в God of War: Ragnarok",
-            excerpt: "Спрятанные предметы, секретные боссы и пасхалки, которые вы могли пропустить",
-            date: "2024-01-12",
-            readTime: "8 мин",
-            category: "Гайды",
-            url: "#"
-          },
-          {
-            title: "Лучшие кооперативные игры 2023",
-            excerpt: "Топ игр для игры с друзьями на разных платформах",
-            date: "2024-01-11",
-            readTime: "12 мин",
-            category: "Подборки",
-            url: "#"
-          },
-          {
-            title: "Оптимизация ПК для игр",
-            excerpt: "Как повысить FPS и снизить задержки в любых играх",
-            date: "2024-01-10",
-            readTime: "9 мин",
-            category: "Советы",
-            url: "#"
-          },
-          {
-            title: "ИИ в играх: будущее уже здесь",
-            excerpt: "Как искусственный интеллект меняет игровую индустрию",
-            date: "2024-01-09",
-            readTime: "11 мин",
-            category: "Аналитика",
-            url: "#"
-          }
-        ];
-        
-        // Фильтруем статьи (по умолчанию "все")
-        filterArticles();
-        
-        // Инициализируем фильтр категорий
-        initCategoryFilter(allArticles);
-        
-        // Отображаем статьи
-        displayArticles(1);
+        // Если файл articles-data.js не загружен
+        articlesList.innerHTML = '<div class="no-articles"><i class="fas fa-exclamation-triangle"></i> Файл со статьями не загружен</div>';
       }
     }
 
     // Запуск при загрузке страницы
     document.addEventListener('DOMContentLoaded', () => {
-      console.log('DOM загружен, запускаем инициализацию...');
-      
       // Ждем немного, чтобы articles-data.js успел загрузиться
       setTimeout(() => {
         initArticles();
       }, 100);
     });
 
-    // Экспортируем функции для использования в консоли
+    // Экспортируем функции для использования
     window.changePage = changePage;
     window.handleCategoryClick = handleCategoryClick;
-    window.debugFilter = () => {
-      console.log('=== ДЕБАГ ФИЛЬТРА ===');
-      console.log('allArticles:', allArticles);
-      console.log('filteredArticles:', filteredArticles);
-      console.log('currentCategory:', currentCategory);
-      console.log('currentPage:', currentPage);
-      console.log('Кнопки категорий:', Array.from(document.querySelectorAll('.category-btn')).map(btn => ({
-        text: btn.textContent,
-        category: btn.dataset.category,
-        active: btn.classList.contains('active')
-      })));
-    };
-    
-    // Функция для сброса к "Все статьи"
-    window.resetToAllArticles = () => {
-      handleCategoryClick('all');
-    };
   </script>
 </body>
 </html>
