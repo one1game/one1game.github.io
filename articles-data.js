@@ -1,13 +1,13 @@
 // articles-data.js
 window.allArticles = [
-   
-  {
+   {
   url: "/archive/aa-games-trend-2026.html",
   title: "AA-игры 2026 — как средний бюджет стал главным форматом индустрии",
   excerpt: "Почему AAA-модель трещит по швам, а среднебюджетные AA-проекты стали новой точкой равновесия между качеством, риском и прибылью в 2026 году...",
-  date: "20 января 2026",
-  readTime: "7 мин"
-},
+  date: "21 января 2026",
+  readTime: "7 мин",
+  category: "Аналитика"
+ },
   {
   url: "/archive/ai-game-translators-2026-guide.html",
   title: "Как играть в любую новинку 2026 без русской локализации? Гайд по AI-переводчикам",
@@ -15,7 +15,7 @@ window.allArticles = [
   date: "20 января 2026",
   readTime: "8 мин",
   category: "Гайды"
-},
+ },
   {
       url: "/archive/nintendo-switch-2-russia-2026.html",
       title: "Nintendo Switch 2 в России 2026",
