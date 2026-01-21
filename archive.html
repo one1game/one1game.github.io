@@ -258,6 +258,7 @@
     let currentPage = 1;
     let currentCategory = 'all';
     let filteredArticles = [];
+    let allArticles = [];
 
     // DOM элементы
     const articlesList = document.getElementById('articles-list');
@@ -294,8 +295,11 @@
       });
     }
 
-    // Смена категории - ИСПРАВЛЕННАЯ ВЕРСИЯ
+    // Смена категории - ПЕРЕРАБОТАННАЯ ВЕРСИЯ
     function changeCategory(category) {
+      console.log('changeCategory вызвана с категорией:', category);
+      console.log('Текущая категория была:', currentCategory);
+      
       // Обновляем текущую категорию
       currentCategory = category;
       currentPage = 1;
@@ -305,22 +309,33 @@
         btn.classList.remove('active');
       });
       
-      // Добавляем active к выбранной кнопке
-      const activeBtn = category === 'all' 
-        ? document.querySelector('.category-btn[data-category="all"]')
-        : document.querySelector(`.category-btn[data-category="${category}"]`);
+      // Находим и активируем нужную кнопку
+      let activeBtn;
+      if (category === 'all') {
+        activeBtn = document.querySelector('.category-btn[data-category="all"]');
+      } else {
+        activeBtn = document.querySelector(`.category-btn[data-category="${category}"]`);
+      }
       
       if (activeBtn) {
         activeBtn.classList.add('active');
+        console.log('Активирована кнопка:', activeBtn.textContent);
+      } else {
+        console.error('Кнопка не найдена для категории:', category);
       }
       
       // Фильтруем статьи
+      console.log('Всего статей в allArticles:', allArticles.length);
+      
       if (category === 'all') {
-        filteredArticles = [...window.allArticles];
+        filteredArticles = [...allArticles];
+        console.log('Выбрана категория "all", filteredArticles установлен на все статьи:', filteredArticles.length);
       } else {
-        filteredArticles = window.allArticles.filter(article => 
-          article.category && article.category === category
-        );
+        filteredArticles = allArticles.filter(article => {
+          const match = article.category && article.category === category;
+          return match;
+        });
+        console.log(`Фильтр "${category}" применен, найдено статей:`, filteredArticles.length);
       }
       
       // Отображаем статьи
@@ -329,23 +344,21 @@
 
     // Отображение статей
     function displayArticles(page = 1) {
-      if (!window.allArticles || window.allArticles.length === 0) {
+      console.log('displayArticles вызвана, страница:', page);
+      console.log('Текущая категория:', currentCategory);
+      console.log('filteredArticles.length:', filteredArticles.length);
+      
+      if (!allArticles || allArticles.length === 0) {
         articlesList.innerHTML = '<div class="no-articles"><i class="fas fa-exclamation-triangle"></i> Статьи не найдены или не загружены</div>';
         pagination.innerHTML = '';
         return;
       }
 
-      // Инициализируем фильтр при первом отображении
-      if (filteredArticles.length === 0) {
-        filteredArticles = [...window.allArticles];
-        if (categoryFilter.children.length === 1) {
-          initCategoryFilter(window.allArticles);
-        }
-      }
-
       const startIndex = (page - 1) * ARTICLES_PER_PAGE;
       const endIndex = startIndex + ARTICLES_PER_PAGE;
       const articlesToShow = filteredArticles.slice(startIndex, endIndex);
+
+      console.log('Показываем статьи с', startIndex, 'по', endIndex, ':', articlesToShow.length);
 
       if (articlesToShow.length === 0) {
         articlesList.innerHTML = `
@@ -359,7 +372,7 @@
       }
 
       articlesList.innerHTML = articlesToShow.map(article => `
-        <a href="${article.url || '#'}" class="article-link" aria-label="Читать статью: ${article.title}">
+        <a href="${article.url || '#'}" class="article-link" aria-label="Читать статью: ${article.title}" ${article.url && article.url !== '#' ? 'target="_blank"' : ''}>
           <div class="article-item">
             <h3>${article.title || 'Без названия'}</h3>
             <p>${article.excerpt || 'Описание отсутствует'}</p>
@@ -379,6 +392,7 @@
     // Обновление пагинации
     function updatePagination() {
       const totalPages = Math.ceil(filteredArticles.length / ARTICLES_PER_PAGE);
+      console.log('updatePagination, всего страниц:', totalPages);
       
       if (totalPages <= 1) {
         pagination.innerHTML = '';
@@ -441,70 +455,110 @@
 
     // Смена страницы
     function changePage(page) {
-      if (page < 1 || page > Math.ceil(filteredArticles.length / ARTICLES_PER_PAGE)) return;
+      console.log('changePage вызвана:', page);
+      if (page < 1 || page > Math.ceil(filteredArticles.length / ARTICLES_PER_PAGE)) {
+        console.log('Некорректная страница');
+        return;
+      }
       displayArticles(page);
       window.scrollTo({ top: 0, behavior: 'smooth' });
     }
 
     // Инициализация при загрузке
-    document.addEventListener('DOMContentLoaded', () => {
-      console.log('DOM загружен, проверяем статьи...');
+    function initArticles() {
+      console.log('initArticles вызвана');
       
-      // Проверяем загрузку статей
+      // Проверяем, есть ли статьи в window.allArticles
       if (window.allArticles && window.allArticles.length > 0) {
-        console.log(`Загружено ${window.allArticles.length} статей`);
+        console.log('Статьи найдены в window.allArticles:', window.allArticles.length);
+        allArticles = [...window.allArticles];
+        filteredArticles = [...allArticles];
+        
+        // Инициализируем фильтр категорий
+        initCategoryFilter(allArticles);
+        
+        // Отображаем статьи
         displayArticles(1);
       } else {
-        console.log('Статьи еще не загружены, ожидаем...');
+        console.log('Статьи не найдены в window.allArticles, создаем тестовые данные');
         
-        // Если articles-data.js еще не загружен, пытаемся загрузить вручную
-        if (!window.allArticles) {
-          window.allArticles = [];
-          
-          // Создаем тестовые данные, если файл не загрузился
-          setTimeout(() => {
-            if (window.allArticles.length === 0) {
-              console.warn('Файл articles-data.js не загрузился, создаем тестовые данные');
-              window.allArticles = [
-                {
-                  title: "Тестовая статья 1",
-                  excerpt: "Это тестовая статья для демонстрации работы фильтра",
-                  date: "2024-01-15",
-                  readTime: "5 мин",
-                  category: "Гайды",
-                  url: "#"
-                },
-                {
-                  title: "Тестовая статья 2",
-                  excerpt: "Еще одна тестовая статья",
-                  date: "2024-01-14",
-                  readTime: "3 мин",
-                  category: "Новости",
-                  url: "#"
-                },
-                {
-                  title: "Тестовая статья 3",
-                  excerpt: "Статья без категории",
-                  date: "2024-01-13",
-                  readTime: "7 мин",
-                  category: "",
-                  url: "#"
-                }
-              ];
-            }
-            displayArticles(1);
-          }, 1000);
-        }
-        
-        // Или проверяем каждые 500мс
-        const checkArticles = setInterval(() => {
-          if (window.allArticles && window.allArticles.length > 0) {
-            clearInterval(checkArticles);
-            console.log(`Статьи загружены через интервал: ${window.allArticles.length} шт`);
-            displayArticles(1);
+        // Создаем тестовые данные
+        allArticles = [
+          {
+            title: "Гайд по Elden Ring: Как победить Малинию",
+            excerpt: "Подробное руководство по победе над одним из самых сложных боссов в истории игр",
+            date: "2024-01-15",
+            readTime: "10 мин",
+            category: "Гайды",
+            url: "#"
+          },
+          {
+            title: "Новости игровой индустрии 2024",
+            excerpt: "Обзор самых ожидаемых игр и событий в игровом мире в этом году",
+            date: "2024-01-14",
+            readTime: "7 мин",
+            category: "Новости",
+            url: "#"
+          },
+          {
+            title: "Обзор Baldur's Gate 3",
+            excerpt: "Почему эта игра стала лучшей RPG десятилетия и заслужила все награды",
+            date: "2024-01-13",
+            readTime: "15 мин",
+            category: "Обзоры",
+            url: "#"
+          },
+          {
+            title: "Секреты в God of War: Ragnarok",
+            excerpt: "Спрятанные предметы, секретные боссы и пасхалки, которые вы могли пропустить",
+            date: "2024-01-12",
+            readTime: "8 мин",
+            category: "Гайды",
+            url: "#"
+          },
+          {
+            title: "Лучшие кооперативные игры 2023",
+            excerpt: "Топ игр для игры с друзьями на разных платформах",
+            date: "2024-01-11",
+            readTime: "12 мин",
+            category: "Подборки",
+            url: "#"
+          },
+          {
+            title: "Оптимизация ПК для игр",
+            excerpt: "Как повысить FPS и снизить задержки в любых играх",
+            date: "2024-01-10",
+            readTime: "9 мин",
+            category: "Советы",
+            url: "#"
+          },
+          {
+            title: "ИИ в играх: будущее уже здесь",
+            excerpt: "Как искусственный интеллект меняет игровую индустрию",
+            date: "2024-01-09",
+            readTime: "11 мин",
+            category: "Аналитика",
+            url: "#"
           }
-        }, 500);
+        ];
+        
+        filteredArticles = [...allArticles];
+        
+        // Инициализируем фильтр категорий
+        initCategoryFilter(allArticles);
+        
+        // Отображаем статьи
+        displayArticles(1);
       }
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+      console.log('DOM загружен');
+      
+      // Даем время на загрузку articles-data.js
+      setTimeout(() => {
+        initArticles();
+      }, 100);
     });
 
     // Экспортируем функции для использования в консоли
@@ -513,9 +567,20 @@
     window.getCurrentState = () => ({
       currentPage,
       currentCategory,
-      totalArticles: window.allArticles?.length || 0,
-      filteredArticles: filteredArticles.length
+      totalArticles: allArticles.length,
+      filteredArticles: filteredArticles.length,
+      allArticlesCount: allArticles.length
     });
+    
+    // Добавляем глобальную ссылку для отладки
+    window.debugFilter = () => {
+      console.log('=== ДЕБАГ ФИЛЬТРА ===');
+      console.log('allArticles:', allArticles);
+      console.log('filteredArticles:', filteredArticles);
+      console.log('currentCategory:', currentCategory);
+      console.log('currentPage:', currentPage);
+      console.log('Кнопки категорий:', document.querySelectorAll('.category-btn').length);
+    };
   </script>
 </body>
 </html>
