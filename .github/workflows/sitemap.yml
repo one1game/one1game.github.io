@@ -1,0 +1,23 @@
+name: Generate Sitemap
+on:
+  push:
+    paths:
+      - 'articles-data.js' # Запускать только когда меняются статьи
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.x'
+      - name: Run generator
+        run: python generate-sitemap.py
+      - name: Commit and push if changed
+        run: |
+          git config --global user.name 'Sitemap Bot'
+          git config --global user.email 'bot@github.com'
+          git add sitemap.xml
+          git diff --quiet && git diff --staged --quiet || (git commit -m "Auto-update sitemap" && git push)
