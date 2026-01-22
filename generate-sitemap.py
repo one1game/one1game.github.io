@@ -1,33 +1,49 @@
 import re
 
-# Читаем данные из вашего файла со статьями
-try:
-    with open('articles-data.js', 'r', encoding='utf-8') as f:
-        content = f.read()
-except FileNotFoundError:
-    print("Файл articles-data.js не найден!")
-    exit(1)
+# Путь к вашему файлу с данными
+DATA_FILE = 'articles-data.js'
+# Путь к итоговому sitemap
+SITEMAP_FILE = 'sitemap.xml'
+# Ваш домен
+BASE_URL = 'https://one1game.github.io'
 
-# Ищем все ссылки (поддерживаем оба формата записи в JS)
-urls = re.findall(r'url:\s*["\']([^"\']+)["\']', content)
+def generate():
+    try:
+        with open(DATA_FILE, 'r', encoding='utf-8') as f:
+            content = f.read()
+    except FileNotFoundError:
+        print(f"Ошибка: {DATA_FILE} не найден")
+        return
 
-# Формируем XML
-xml_content = [
-    '<?xml version="1.0" encoding="UTF-8"?>',
-    '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">',
-    '  <url><loc>https://one1game.github.io/</loc><priority>1.0</priority></url>',
-    '  <url><loc>https://one1game.github.io/archive.html</loc><priority>0.8</priority></url>'
-]
+    # Это "умное" регулярное выражение найдет URL, 
+    # даже если слово url в кавычках или без них, и если используются ' или "
+    # Оно ищет паттерны: "url": "...", url: "...", 'url': '...' и т.д.
+    regex = r'["\']?url["\']?:\s*["\']([^"\']+)["\']'
+    urls = re.findall(regex, content)
 
-for url in urls:
-    # Очищаем ссылку от начального слэша, чтобы не было двойного //
-    clean_url = url.lstrip('/')
-    xml_content.append(f'  <url><loc>https://one1game.github.io/{clean_url}</loc><priority>0.7</priority></url>')
+    if not urls:
+        print("Статьи не найдены. Проверьте формат в articles-data.js")
+        return
 
-xml_content.append('</urlset>')
+    # Собираем XML
+    lines = [
+        '<?xml version="1.0" encoding="UTF-8"?>',
+        '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">',
+        f'  <url><loc>{BASE_URL}/</loc><priority>1.0</priority></url>',
+        f'  <url><loc>{BASE_URL}/archive.html</loc><priority>0.8</priority></url>'
+    ]
 
-# Записываем поверх вашего пустого sitemap.xml
-with open('sitemap.xml', 'w', encoding='utf-8') as f:
-    f.write('\n'.join(xml_content))
+    for url in urls:
+        # Убираем лишние слэши в начале, если они есть
+        clean_path = url.lstrip('/')
+        lines.append(f'  <url><loc>{BASE_URL}/{clean_path}</loc><priority>0.7</priority></url>')
 
-print("Sitemap успешно обновлен!")
+    lines.append('</urlset>')
+
+    with open(SITEMAP_FILE, 'w', encoding='utf-8') as f:
+        f.write('\n'.join(lines))
+    
+    print(f"Готово! В sitemap добавлено страниц: {len(urls) + 2}")
+
+if __name__ == "__main__":
+    generate()
