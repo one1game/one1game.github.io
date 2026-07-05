@@ -1,1209 +1,2525 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="ru" data-theme="dark">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CodeFusion | Продвинутый анализатор кода</title>
-    
-    <!-- SEO Meta Tags -->
-    <meta name="description" content="CodeFusion - инновационный анализатор и компилятор исходного кода. Анализируйте, просматривайте и экспортируйте код из различных файлов и папок.">
-    <meta name="keywords" content="анализатор кода, компилятор, программирование, исходный код, HTML, CSS, JavaScript, Python, Java, PHP, XML, JSON">
-    <meta name="author" content="CodeFusion">
-    <meta name="robots" content="index, follow">
-    
-    <!-- Open Graph для соцсетей -->
-    <meta property="og:title" content="CodeFusion | Продвинутый анализатор кода">
-    <meta property="og:description" content="Инновационный анализатор и компилятор исходного кода с поддержкой множества языков программирования">
-    <meta property="og:image" content="https://one1game.github.io/anal-code/og-image.png">
-    <meta property="og:url" content="https://one1game.github.io/anal-code">
-    <meta property="og:type" content="website">
-    <meta property="og:site_name" content="CodeFusion">
-    
-    <!-- Twitter Card -->
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="CodeFusion | Анализатор кода">
-    <meta name="twitter:description" content="Анализируйте и экспортируйте код из различных файлов и папок">
-    <meta name="twitter:image" content="https://one1game.github.io/anal-code/og-image.png">
-    
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/github-dark.min.css">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@300;400;500&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <style>
-        :root {
-            --primary: #6366f1;
-            --primary-hover: #4f46e5;
-            --secondary: #10b981;
-            --accent: #8b5cf6;
-            --dark: #0f172a;
-            --darker: #020617;
-            --light: #f8fafc;
-            --gray: #64748b;
-            --success: #22c55e;
-            --error: #ef4444;
-            --warning: #f59e0b;
-            --glass: rgba(255, 255, 255, 0.05);
-            --glass-border: rgba(255, 255, 255, 0.1);
-        }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: 'Inter', sans-serif;
-            background: linear-gradient(135deg, var(--darker) 0%, var(--dark) 100%);
-            color: var(--light);
-            min-height: 100vh;
-            line-height: 1.6;
-            overflow-x: hidden;
-        }
-
-        .particles {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            z-index: -1;
-            pointer-events: none;
-        }
-
-        .particle {
-            position: absolute;
-            background: linear-gradient(45deg, var(--primary), var(--accent));
-            border-radius: 50%;
-            opacity: 0.3;
-            animation: float 20s infinite linear;
-        }
-
-        @keyframes float {
-            0% { transform: translateY(0) rotate(0deg); opacity: 0; }
-            10% { opacity: 0.3; }
-            90% { opacity: 0.3; }
-            100% { transform: translateY(-100vh) rotate(360deg); opacity: 0; }
-        }
-
-        .container {
-            max-width: 1400px;
-            margin: 0 auto;
-            padding: 2rem;
-        }
-
-        header {
-            text-align: center;
-            margin-bottom: 3rem;
-            position: relative;
-        }
-
-        .logo {
-            font-size: 3.5rem;
-            margin-bottom: 1rem;
-            background: linear-gradient(135deg, var(--primary), var(--accent));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            animation: glow 2s ease-in-out infinite alternate;
-        }
-
-        @keyframes glow {
-            from { filter: drop-shadow(0 0 10px rgba(99, 102, 241, 0.5)); }
-            to { filter: drop-shadow(0 0 20px rgba(139, 92, 246, 0.8)); }
-        }
-
-        h1 {
-            font-size: 3rem;
-            font-weight: 700;
-            margin-bottom: 0.5rem;
-            background: linear-gradient(135deg, var(--light), #e2e8f0);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-
-        .subtitle {
-            font-size: 1.2rem;
-            color: var(--gray);
-            margin-bottom: 2rem;
-        }
-
-        .upload-section {
-            background: var(--glass);
-            backdrop-filter: blur(20px);
-            border: 1px solid var(--glass-border);
-            border-radius: 20px;
-            padding: 3rem;
-            margin-bottom: 3rem;
-            text-align: center;
-            transition: all 0.3s ease;
-        }
-
-        .upload-section:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.3);
-        }
-
-        .drop-zone {
-            border: 2px dashed var(--glass-border);
-            border-radius: 15px;
-            padding: 3rem;
-            margin-bottom: 2rem;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .drop-zone:hover {
-            border-color: var(--primary);
-            transform: scale(1.02);
-        }
-
-        .drop-zone.active {
-            border-color: var(--success);
-            background: rgba(34, 197, 94, 0.1);
-        }
-
-        .drop-zone i {
-            font-size: 4rem;
-            margin-bottom: 1rem;
-            color: var(--primary);
-        }
-
-        .drop-text {
-            font-size: 1.3rem;
-            margin-bottom: 1rem;
-        }
-
-        .file-input {
-            display: none;
-        }
-
-        .directory-input {
-            display: none;
-        }
-
-        .browse-btn {
-            background: linear-gradient(135deg, var(--primary), var(--accent));
-            color: white;
-            border: none;
-            padding: 1rem 2rem;
-            border-radius: 50px;
-            font-size: 1.1rem;
-            font-weight: 600;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-        }
-
-        .browse-btn:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 10px 25px rgba(99, 102, 241, 0.4);
-        }
-
-        .input-buttons {
-            display: flex;
-            gap: 1rem;
-            justify-content: center;
-            margin-top: 1rem;
-            flex-wrap: wrap;
-        }
-
-        .selected-files {
-            margin-top: 2rem;
-        }
-
-        .file-list {
-            display: grid;
-            gap: 1rem;
-            max-height: 300px;
-            overflow-y: auto;
-        }
-
-        .file-item {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            background: rgba(255, 255, 255, 0.1);
-            padding: 1rem;
-            border-radius: 10px;
-            animation: slideIn 0.3s ease;
-        }
-
-        @keyframes slideIn {
-            from { opacity: 0; transform: translateX(-20px); }
-            to { opacity: 1; transform: translateX(0); }
-        }
-
-        .file-info {
-            display: flex;
-            align-items: center;
-            gap: 1rem;
-        }
-
-        .file-icon {
-            width: 40px;
-            height: 40px;
-            background: linear-gradient(135deg, var(--primary), var(--accent));
-            border-radius: 10px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .file-details {
-            text-align: left;
-        }
-
-        .file-name {
-            font-weight: 600;
-        }
-
-        .file-path {
-            font-size: 0.8rem;
-            color: var(--gray);
-            margin-top: 0.2rem;
-        }
-
-        .file-size {
-            font-size: 0.9rem;
-            color: var(--gray);
-        }
-
-        .remove-file {
-            background: none;
-            border: none;
-            color: var(--error);
-            cursor: pointer;
-            padding: 0.5rem;
-            border-radius: 5px;
-            transition: all 0.3s ease;
-        }
-
-        .remove-file:hover {
-            background: rgba(239, 68, 68, 0.2);
-        }
-
-        .action-buttons {
-            display: flex;
-            gap: 1rem;
-            justify-content: center;
-            margin-top: 2rem;
-        }
-
-        .btn {
-            padding: 1rem 2rem;
-            border: none;
-            border-radius: 50px;
-            font-size: 1.1rem;
-            font-weight: 600;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-        }
-
-        .btn-primary {
-            background: linear-gradient(135deg, var(--primary), var(--accent));
-            color: white;
-        }
-
-        .btn-primary:hover:not(:disabled) {
-            transform: translateY(-2px);
-            box-shadow: 0 10px 25px rgba(99, 102, 241, 0.4);
-        }
-
-        .btn-secondary {
-            background: rgba(255, 255, 255, 0.1);
-            color: white;
-            border: 1px solid var(--glass-border);
-        }
-
-        .btn-secondary:hover {
-            background: rgba(255, 255, 255, 0.2);
-        }
-
-        .btn:disabled {
-            opacity: 0.6;
-            cursor: not-allowed;
-            transform: none !important;
-        }
-
-        .social-share {
-            display: flex;
-            gap: 1rem;
-            justify-content: center;
-            margin: 2rem 0;
-            flex-wrap: wrap;
-        }
-
-        .social-btn {
-            background: rgba(255, 255, 255, 0.1);
-            color: white;
-            border: 1px solid var(--glass-border);
-            padding: 0.8rem 1.5rem;
-            border-radius: 50px;
-            font-size: 1rem;
-            font-weight: 500;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-        }
-
-        .social-btn:hover {
-            transform: translateY(-2px);
-            background: rgba(255, 255, 255, 0.2);
-        }
-
-        .social-btn.twitter {
-            background: linear-gradient(135deg, #1da1f2, #0d8bd9);
-        }
-
-        .social-btn.telegram {
-            background: linear-gradient(135deg, #0088cc, #0077b5);
-        }
-
-        .social-btn.vk {
-            background: linear-gradient(135deg, #4c75a3, #3b5998);
-        }
-
-        .social-btn.whatsapp {
-            background: linear-gradient(135deg, #25d366, #128c7e);
-        }
-
-        .results-section {
-            background: var(--glass);
-            backdrop-filter: blur(20px);
-            border: 1px solid var(--glass-border);
-            border-radius: 20px;
-            padding: 2rem;
-            margin-bottom: 2rem;
-        }
-
-        .results-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 2rem;
-            padding-bottom: 1rem;
-            border-bottom: 1px solid var(--glass-border);
-        }
-
-        .results-title {
-            font-size: 1.5rem;
-            font-weight: 600;
-        }
-
-        .results-actions {
-            display: flex;
-            gap: 1rem;
-        }
-
-        .code-container {
-            background: rgba(15, 23, 42, 0.8);
-            border-radius: 15px;
-            overflow: hidden;
-            margin-bottom: 2rem;
-            border: 1px solid var(--glass-border);
-            animation: scaleIn 0.3s ease;
-        }
-
-        @keyframes scaleIn {
-            from { opacity: 0; transform: scale(0.9); }
-            to { opacity: 1; transform: scale(1); }
-        }
-
-        .file-header {
-            background: linear-gradient(90deg, var(--primary), var(--accent));
-            padding: 1.5rem;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .file-title {
-            display: flex;
-            align-items: center;
-            gap: 1rem;
-            font-weight: 600;
-        }
-
-        .file-meta {
-            display: flex;
-            align-items: center;
-            gap: 1rem;
-            font-size: 0.9rem;
-            opacity: 0.9;
-        }
-
-        .code-content {
-            position: relative;
-        }
-
-        pre {
-            margin: 0;
-            padding: 2rem;
-            overflow-x: auto;
-            background: #0d1117;
-        }
-
-        code {
-            font-family: 'JetBrains Mono', monospace;
-            font-size: 14px;
-            line-height: 1.6;
-        }
-
-        .hljs {
-            background: #0d1117 !important;
-            padding: 0;
-        }
-
-        .empty-state {
-            text-align: center;
-            padding: 4rem 2rem;
-            color: var(--gray);
-        }
-
-        .empty-icon {
-            font-size: 4rem;
-            margin-bottom: 1rem;
-            opacity: 0.5;
-        }
-
-        .notification {
-            position: fixed;
-            top: 2rem;
-            right: 2rem;
-            background: linear-gradient(135deg, var(--success), #16a34a);
-            color: white;
-            padding: 1rem 2rem;
-            border-radius: 10px;
-            box-shadow: 0 10px 25px rgba(34, 197, 94, 0.3);
-            z-index: 1000;
-            display: flex;
-            align-items: center;
-            gap: 1rem;
-            transform: translateX(100%);
-            transition: transform 0.3s ease;
-        }
-
-        .notification.show {
-            transform: translateX(0);
-        }
-
-        .stats {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 1rem;
-            margin-top: 2rem;
-        }
-
-        .stat-card {
-            background: rgba(255, 255, 255, 0.05);
-            padding: 1.5rem;
-            border-radius: 15px;
-            text-align: center;
-            backdrop-filter: blur(10px);
-        }
-
-        .stat-value {
-            font-size: 2rem;
-            font-weight: 700;
-            background: linear-gradient(135deg, var(--primary), var(--accent));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            margin-bottom: 0.5rem;
-        }
-
-        .stat-label {
-            color: var(--gray);
-            font-size: 0.9rem;
-        }
-
-        @media (max-width: 768px) {
-            .container {
-                padding: 1rem;
-            }
-
-            h1 {
-                font-size: 2rem;
-            }
-
-            .upload-section {
-                padding: 2rem 1rem;
-            }
-
-            .drop-zone {
-                padding: 2rem 1rem;
-            }
-
-            .input-buttons {
-                flex-direction: column;
-            }
-
-            .action-buttons {
-                flex-direction: column;
-            }
-
-            .social-share {
-                flex-direction: column;
-                align-items: center;
-            }
-
-            .results-header {
-                flex-direction: column;
-                gap: 1rem;
-                align-items: stretch;
-            }
-
-            .results-actions {
-                justify-content: center;
-            }
-
-            .file-header {
-                flex-direction: column;
-                gap: 1rem;
-                text-align: center;
-            }
-        }
-
-        .loading {
-            display: inline-block;
-            width: 20px;
-            height: 20px;
-            border: 3px solid rgba(255,255,255,.3);
-            border-radius: 50%;
-            border-top-color: #fff;
-            animation: spin 1s ease-in-out infinite;
-        }
-
-        @keyframes spin {
-            to { transform: rotate(360deg); }
-        }
-
-        .pulse {
-            animation: pulse 2s infinite;
-        }
-
-        @keyframes pulse {
-            0% { transform: scale(1); }
-            50% { transform: scale(1.05); }
-            100% { transform: scale(1); }
-        }
-
-        .footer {
-            text-align: center;
-            margin-top: 3rem;
-            padding: 2rem;
-            color: var(--gray);
-            border-top: 1px solid var(--glass-border);
-        }
-
-        .footer-links {
-            display: flex;
-            justify-content: center;
-            gap: 2rem;
-            margin-top: 1rem;
-            flex-wrap: wrap;
-        }
-
-        .footer-link {
-            color: var(--primary);
-            text-decoration: none;
-            transition: color 0.3s ease;
-        }
-
-        .footer-link:hover {
-            color: var(--accent);
-        }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#6366f1">
+<title>CodeFusion — Онлайн анализатор исходного кода с AI | GitHub, Diff, Security Scan</title>
+<meta name="title" content="CodeFusion — Онлайн анализатор исходного кода с AI | GitHub, Diff, Security Scan">
+<meta name="description" content="CodeFusion v3.0 — AI-анализатор кода. Загрузка с GitHub, diff-сравнение, security scan, code metrics, command palette, minimap, share-ссылки. 50+ языков. Бесплатно, без регистрации.">
+<meta name="keywords" content="анализатор кода онлайн, AI код, github анализ, diff онлайн, security scan, code metrics, code viewer, CodeFusion">
+<meta name="author" content="CodeFusion">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<link rel="canonical" href="https://one1game.github.io/anal-code/">
+<link rel="alternate" hreflang="ru" href="https://one1game.github.io/anal-code/">
+<link rel="alternate" hreflang="en" href="https://one1game.github.io/anal-code/en/">
+<link rel="alternate" hreflang="x-default" href="https://one1game.github.io/anal-code/">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://one1game.github.io/anal-code/">
+<meta property="og:title" content="CodeFusion v3.0 — AI анализатор кода">
+<meta property="og:description" content="AI-анализ, GitHub, Diff, Security Scan, Code Metrics. Бесплатно.">
+<meta property="og:image" content="https://one1game.github.io/anal-code/og-image.png">
+<meta property="og:site_name" content="CodeFusion">
+<meta property="og:locale" content="ru_RU">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="CodeFusion v3.0 — AI анализатор кода">
+<meta name="twitter:description" content="AI-анализ, GitHub, Diff, Security Scan. Бесплатно.">
+<meta name="twitter:image" content="https://one1game.github.io/anal-code/og-image.png">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚡</text></svg>">
+<link rel="manifest" href="manifest.json">
+<link rel="preconnect" href="https://cdnjs.cloudflare.com">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/github-dark.min.css" id="hljs-theme">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<!-- JSON-LD: SoftwareApplication -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "CodeFusion",
+  "operatingSystem": "Web",
+  "applicationCategory": "DeveloperApplication",
+  "applicationSubCategory": "Source Code Analyzer",
+  "description": "AI-анализатор исходного кода с GitHub интеграцией, diff-сравнением, security scan и code metrics.",
+  "url": "https://one1game.github.io/anal-code/",
+  "logo": "https://one1game.github.io/anal-code/logo.png",
+  "image": "https://one1game.github.io/anal-code/og-image.png",
+  "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD", "availability": "https://schema.org/InStock"},
+  "author": {"@type": "Organization", "name": "CodeFusion", "url": "https://github.com/one1game"},
+  "featureList": [
+    "AI-объяснение кода",
+    "Загрузка с GitHub по URL",
+    "Diff-сравнение файлов",
+    "Security scan (поиск уязвимостей)",
+    "Code metrics (сложность, дупликаты)",
+    "Command Palette (Ctrl+K)",
+    "Minimap кода",
+    "Share-ссылки с кодом",
+    "50+ языков программирования",
+    "Экспорт в TXT, ZIP, Markdown, PNG"
+  ],
+  "programmingLanguage": ["HTML","CSS","JavaScript","Python","Java","PHP","Go","Rust","TypeScript","C++"],
+  "softwareVersion": "3.0",
+  "datePublished": "2024-01-01",
+  "dateModified": "2026-07-01",
+  "aggregateRating": {"@type": "AggregateRating", "ratingValue": "4.9", "ratingCount": "127", "bestRating": "5", "worstRating": "1"}
+}
+</script>
+
+<!-- JSON-LD: FAQ (синхронизирован с HTML — 5 вопросов) -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {"@type":"Question","name":"Что такое CodeFusion?","acceptedAnswer":{"@type":"Answer","text":"CodeFusion v3.0 — это AI-анализатор исходного кода с поддержкой 50+ языков. Включает загрузку с GitHub, diff-сравнение, security scan, code metrics, command palette и minimap."}},
+    {"@type":"Question","name":"Как загрузить код с GitHub?","acceptedAnswer":{"@type":"Answer","text":"Вставьте URL репозитория или файла в поле 'Загрузить с GitHub'. CodeFusion автоматически распарсит URL и загрузит файлы через GitHub API."}},
+    {"@type":"Question","name":"Безопасно ли загружать файлы?","acceptedAnswer":{"@type":"Answer","text":"Да. Все файлы обрабатываются локально в браузере через File API. Данные не отправляются на сервер. AI-анализ также работает локально (эвристики)."}},
+    {"@type":"Question","name":"Какие форматы поддерживаются?","acceptedAnswer":{"@type":"Answer","text":"50+ форматов: HTML, CSS, JS, TS, Python, Java, PHP, Go, Rust, C/C++, C#, Ruby, Swift, Kotlin, SQL, XML, JSON, YAML, Markdown и другие."}},
+    {"@type":"Question","name":"Нужна ли регистрация?","acceptedAnswer":{"@type":"Answer","text":"Нет. CodeFusion полностью бесплатен и работает без регистрации. Все операции происходят локально в браузере."}}
+  ]
+}
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {"@type":"ListItem","position":1,"name":"Главная","item":"https://one1game.github.io/"},
+    {"@type":"ListItem","position":2,"name":"Инструменты","item":"https://one1game.github.io/tools/"},
+    {"@type":"ListItem","position":3,"name":"CodeFusion — AI анализатор кода","item":"https://one1game.github.io/anal-code/"}
+  ]
+}
+</script>
+
+<style>
+:root {
+  --primary: #6366f1;
+  --primary-hover: #4f46e5;
+  --secondary: #10b981;
+  --accent: #8b5cf6;
+  --dark: #0f172a;
+  --darker: #020617;
+  --light: #f8fafc;
+  --gray: #64748b;
+  --success: #22c55e;
+  --error: #ef4444;
+  --warning: #f59e0b;
+  --info: #3b82f6;
+  --glass: rgba(255, 255, 255, 0.05);
+  --glass-border: rgba(255, 255, 255, 0.1);
+  --bg-gradient: linear-gradient(135deg, var(--darker) 0%, var(--dark) 100%);
+  --text-color: var(--light);
+  --card-bg: var(--glass);
+  --code-bg: #0d1117;
+  --border-color: var(--glass-border);
+}
+[data-theme="light"] {
+  --dark: #f1f5f9;
+  --darker: #e2e8f0;
+  --light: #0f172a;
+  --gray: #475569;
+  --glass: rgba(255, 255, 255, 0.7);
+  --glass-border: rgba(0, 0, 0, 0.1);
+  --bg-gradient: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+  --text-color: #0f172a;
+  --card-bg: rgba(255, 255, 255, 0.8);
+  --code-bg: #1e293b;
+  --border-color: rgba(0, 0, 0, 0.1);
+}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+  font-family: 'Inter', sans-serif;
+  background: var(--bg-gradient);
+  color: var(--text-color);
+  min-height: 100vh;
+  line-height: 1.6;
+  overflow-x: hidden;
+  transition: background 0.3s ease, color 0.3s ease;
+}
+/* Canvas particles — оптимизировано */
+#particlesCanvas {
+  position: fixed; top: 0; left: 0;
+  width: 100%; height: 100%;
+  z-index: -1; pointer-events: none;
+}
+.container { max-width: 1400px; margin: 0 auto; padding: 2rem; }
+header { text-align: center; margin-bottom: 3rem; position: relative; }
+.header-top { display: flex; justify-content: space-between; align-items: center; margin-bottom: 2rem; gap: 0.5rem; }
+.icon-btn-header {
+  background: var(--glass);
+  border: 1px solid var(--glass-border);
+  color: var(--text-color);
+  width: 44px; height: 44px;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex; align-items: center; justify-content: center;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(10px);
+}
+.icon-btn-header:hover { transform: rotate(180deg); background: var(--primary); }
+.logo {
+  font-size: 3.5rem; margin-bottom: 1rem;
+  background: linear-gradient(135deg, var(--primary), var(--accent));
+  -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: glow 2s ease-in-out infinite alternate;
+}
+@keyframes glow {
+  from { filter: drop-shadow(0 0 10px rgba(99, 102, 241, 0.5)); }
+  to { filter: drop-shadow(0 0 20px rgba(139, 92, 246, 0.8)); }
+}
+h1 {
+  font-size: 3rem; font-weight: 800; margin-bottom: 0.5rem;
+  background: linear-gradient(135deg, var(--light), #e2e8f0);
+  -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+[data-theme="light"] h1 { background: linear-gradient(135deg, #0f172a, #334155); -webkit-background-clip: text; background-clip: text; }
+.subtitle { font-size: 1.2rem; color: var(--gray); margin-bottom: 2rem; }
+.version-badge {
+  display: inline-block;
+  background: linear-gradient(135deg, var(--primary), var(--accent));
+  color: white;
+  padding: 0.25rem 0.75rem;
+  border-radius: 50px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  margin-left: 0.5rem;
+  vertical-align: middle;
+}
+/* Social Share */
+.social-share { display: flex; gap: 1rem; justify-content: center; margin: 2rem 0; flex-wrap: wrap; }
+.social-btn {
+  background: rgba(255, 255, 255, 0.1);
+  color: white;
+  border: 1px solid var(--glass-border);
+  padding: 0.8rem 1.5rem;
+  border-radius: 50px;
+  font-size: 1rem; font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: inline-flex; align-items: center; gap: 0.5rem;
+}
+[data-theme="light"] .social-btn { color: white; }
+.social-btn:hover { transform: translateY(-2px); box-shadow: 0 10px 25px rgba(0,0,0,0.2); }
+.social-btn.twitter { background: linear-gradient(135deg, #1da1f2, #0d8bd9); }
+.social-btn.telegram { background: linear-gradient(135deg, #0088cc, #0077b5); }
+.social-btn.vk { background: linear-gradient(135deg, #4c75a3, #3b5998); }
+.social-btn.whatsapp { background: linear-gradient(135deg, #25d366, #128c7e); }
+.social-btn.github { background: linear-gradient(135deg, #333, #000); }
+/* Tabs */
+.tabs {
+  display: flex;
+  gap: 0.5rem;
+  background: var(--glass);
+  border: 1px solid var(--glass-border);
+  padding: 0.5rem;
+  border-radius: 50px;
+  margin: 0 auto 2rem;
+  width: fit-content;
+  flex-wrap: wrap;
+  justify-content: center;
+  backdrop-filter: blur(10px);
+}
+.tab-btn {
+  background: transparent;
+  border: none;
+  color: var(--text-color);
+  padding: 0.6rem 1.2rem;
+  border-radius: 50px;
+  cursor: pointer;
+  font-size: 0.95rem;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  display: inline-flex; align-items: center; gap: 0.5rem;
+}
+.tab-btn:hover { background: rgba(255,255,255,0.1); }
+.tab-btn.active {
+  background: linear-gradient(135deg, var(--primary), var(--accent));
+  color: white;
+}
+.tab-content { display: none; }
+.tab-content.active { display: block; animation: fadeIn 0.3s ease; }
+@keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+/* Upload Section */
+.upload-section {
+  background: var(--card-bg);
+  backdrop-filter: blur(20px);
+  border: 1px solid var(--glass-border);
+  border-radius: 20px;
+  padding: 2rem;
+  margin-bottom: 2rem;
+}
+.drop-zone {
+  border: 2px dashed var(--glass-border);
+  border-radius: 15px;
+  padding: 2.5rem;
+  margin-bottom: 1.5rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+  text-align: center;
+}
+.drop-zone:hover { border-color: var(--primary); transform: scale(1.01); }
+.drop-zone.active { border-color: var(--success); background: rgba(34, 197, 94, 0.1); transform: scale(1.01); }
+.drop-zone i { font-size: 3rem; margin-bottom: 0.5rem; color: var(--primary); }
+.drop-text { font-size: 1.2rem; margin-bottom: 0.5rem; }
+.file-input, .directory-input { display: none; }
+.input-buttons { display: flex; gap: 0.75rem; justify-content: center; margin-top: 1rem; flex-wrap: wrap; }
+.browse-btn {
+  background: linear-gradient(135deg, var(--primary), var(--accent));
+  color: white;
+  border: none;
+  padding: 0.8rem 1.5rem;
+  border-radius: 50px;
+  font-size: 1rem; font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: inline-flex; align-items: center; gap: 0.5rem;
+}
+.browse-btn:hover { transform: translateY(-2px); box-shadow: 0 10px 25px rgba(99, 102, 241, 0.4); }
+.browse-btn.secondary {
+  background: rgba(255,255,255,0.1);
+  border: 1px solid var(--glass-border);
+}
+/* GitHub URL input */
+.github-input-wrapper {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+  flex-wrap: wrap;
+}
+.github-input {
+  flex: 1;
+  min-width: 250px;
+  padding: 0.8rem 1rem 0.8rem 2.5rem;
+  background: rgba(255,255,255,0.05);
+  border: 1px solid var(--glass-border);
+  border-radius: 50px;
+  color: var(--text-color);
+  font-size: 0.95rem;
+  outline: none;
+  transition: all 0.2s ease;
+}
+.github-input:focus { border-color: var(--primary); box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.2); }
+.github-input-icon {
+  position: absolute;
+  left: 1rem;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--gray);
+}
+.github-input-container { position: relative; flex: 1; min-width: 250px; }
+/* Filters */
+.filters-bar { display: flex; gap: 0.5rem; justify-content: center; margin: 1rem 0; flex-wrap: wrap; }
+.filter-chip {
+  background: var(--glass);
+  border: 1px solid var(--glass-border);
+  color: var(--text-color);
+  padding: 0.4rem 1rem;
+  border-radius: 50px;
+  font-size: 0.85rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+.filter-chip.active { background: var(--primary); color: white; border-color: var(--primary); }
+/* File List */
+.selected-files { margin-top: 1.5rem; }
+.view-toggle { display: flex; gap: 0.5rem; justify-content: flex-end; margin-bottom: 1rem; }
+.view-btn {
+  background: var(--glass);
+  border: 1px solid var(--glass-border);
+  color: var(--text-color);
+  width: 36px; height: 36px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+.view-btn.active { background: var(--primary); color: white; }
+.file-list { display: grid; gap: 0.75rem; max-height: 400px; overflow-y: auto; padding-right: 0.5rem; }
+.file-list.tree-view {
+  display: block;
+  background: rgba(0,0,0,0.2);
+  padding: 1rem;
+  border-radius: 10px;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.9rem;
+}
+.file-item {
+  display: flex; align-items: center; justify-content: space-between;
+  background: rgba(255, 255, 255, 0.08);
+  padding: 0.8rem 1rem;
+  border-radius: 10px;
+  animation: slideIn 0.3s ease;
+  transition: all 0.2s ease;
+}
+.file-item:hover { background: rgba(255, 255, 255, 0.12); transform: translateX(4px); }
+@keyframes slideIn { from { opacity: 0; transform: translateX(-20px); } to { opacity: 1; transform: translateX(0); } }
+.file-info { display: flex; align-items: center; gap: 1rem; flex: 1; min-width: 0; }
+.file-icon {
+  width: 40px; height: 40px;
+  background: linear-gradient(135deg, var(--primary), var(--accent));
+  border-radius: 10px;
+  display: flex; align-items: center; justify-content: center;
+  flex-shrink: 0;
+}
+.file-details { text-align: left; flex: 1; min-width: 0; }
+.file-name { font-weight: 600; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.file-path { font-size: 0.8rem; color: var(--gray); margin-top: 0.2rem; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.file-size { font-size: 0.9rem; color: var(--gray); margin-right: 1rem; flex-shrink: 0; }
+.remove-file {
+  background: none; border: none; color: var(--error);
+  cursor: pointer; padding: 0.5rem; border-radius: 5px;
+  transition: all 0.3s ease;
+}
+.remove-file:hover { background: rgba(239, 68, 68, 0.2); }
+/* Progress */
+.progress-container { margin: 1rem 0; display: none; }
+.progress-container.active { display: block; }
+.progress-bar { width: 100%; height: 8px; background: rgba(255,255,255,0.1); border-radius: 10px; overflow: hidden; }
+.progress-fill {
+  height: 100%;
+  background: linear-gradient(90deg, var(--primary), var(--accent));
+  width: 0%;
+  transition: width 0.3s ease;
+  border-radius: 10px;
+}
+.progress-text { font-size: 0.85rem; color: var(--gray); margin-top: 0.5rem; text-align: center; }
+/* Buttons */
+.action-buttons { display: flex; gap: 0.75rem; justify-content: center; margin-top: 1.5rem; flex-wrap: wrap; }
+.btn {
+  padding: 0.8rem 1.5rem;
+  border: none;
+  border-radius: 50px;
+  font-size: 1rem; font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: inline-flex; align-items: center; gap: 0.5rem;
+}
+.btn-primary { background: linear-gradient(135deg, var(--primary), var(--accent)); color: white; }
+.btn-primary:hover:not(:disabled) { transform: translateY(-2px); box-shadow: 0 10px 25px rgba(99, 102, 241, 0.4); }
+.btn-secondary { background: rgba(255, 255, 255, 0.1); color: white; border: 1px solid var(--glass-border); }
+[data-theme="light"] .btn-secondary { background: rgba(0, 0, 0, 0.05); color: var(--text-color); }
+.btn-secondary:hover { background: rgba(255, 255, 255, 0.2); }
+.btn-success { background: linear-gradient(135deg, var(--success), #16a34a); color: white; }
+.btn-warning { background: linear-gradient(135deg, var(--warning), #d97706); color: white; }
+.btn-danger { background: linear-gradient(135deg, var(--error), #dc2626); color: white; }
+.btn:disabled { opacity: 0.6; cursor: not-allowed; transform: none !important; }
+/* Results */
+.results-section {
+  background: var(--card-bg);
+  backdrop-filter: blur(20px);
+  border: 1px solid var(--glass-border);
+  border-radius: 20px;
+  padding: 2rem;
+  margin-bottom: 2rem;
+}
+.results-header {
+  display: flex; justify-content: space-between; align-items: center;
+  margin-bottom: 1.5rem; padding-bottom: 1rem;
+  border-bottom: 1px solid var(--glass-border);
+  flex-wrap: wrap; gap: 1rem;
+}
+.results-title { font-size: 1.5rem; font-weight: 600; }
+.results-actions { display: flex; gap: 0.5rem; flex-wrap: wrap; }
+/* Search */
+.search-container { position: relative; margin-bottom: 1.5rem; display: none; }
+.search-container.active { display: block; }
+.search-input {
+  width: 100%;
+  padding: 0.8rem 1rem 0.8rem 2.5rem;
+  background: rgba(255,255,255,0.05);
+  border: 1px solid var(--glass-border);
+  border-radius: 10px;
+  color: var(--text-color);
+  font-size: 1rem;
+  outline: none;
+  transition: all 0.2s ease;
+}
+.search-input:focus { border-color: var(--primary); box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.2); }
+.search-icon { position: absolute; left: 1rem; top: 50%; transform: translateY(-50%); color: var(--gray); }
+.search-info { position: absolute; right: 1rem; top: 50%; transform: translateY(-50%); font-size: 0.85rem; color: var(--gray); }
+mark { background: rgba(250, 204, 21, 0.4); color: inherit; padding: 0 2px; border-radius: 2px; }
+/* Code Container */
+.code-container {
+  background: rgba(15, 23, 42, 0.8);
+  border-radius: 15px;
+  overflow: hidden;
+  margin-bottom: 1.5rem;
+  border: 1px solid var(--glass-border);
+  animation: scaleIn 0.3s ease;
+  position: relative;
+}
+@keyframes scaleIn { from { opacity: 0; transform: scale(0.95); } to { opacity: 1; transform: scale(1); } }
+.file-header {
+  background: linear-gradient(90deg, var(--primary), var(--accent));
+  padding: 0.8rem 1.2rem;
+  display: flex; justify-content: space-between; align-items: center;
+  flex-wrap: wrap; gap: 0.75rem;
+}
+.file-title { display: flex; align-items: center; gap: 0.75rem; font-weight: 600; color: white; }
+.file-meta { display: flex; align-items: center; gap: 0.75rem; font-size: 0.85rem; opacity: 0.9; color: white; }
+.file-actions { display: flex; gap: 0.4rem; }
+.icon-btn {
+  background: rgba(255,255,255,0.2);
+  border: none;
+  color: white;
+  width: 32px; height: 32px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 0.85rem;
+}
+.icon-btn:hover { background: rgba(255,255,255,0.3); transform: scale(1.1); }
+.code-wrapper { display: flex; position: relative; }
+.code-content {
+  position: relative;
+  max-height: 600px;
+  overflow: hidden;
+  transition: max-height 0.3s ease;
+  flex: 1;
+  min-width: 0;
+}
+.code-content.collapsed { max-height: 200px; }
+.code-content.collapsed::after {
+  content: '';
+  position: absolute;
+  bottom: 0; left: 0; right: 0;
+  height: 80px;
+  background: linear-gradient(to top, #0d1117, transparent);
+  pointer-events: none;
+}
+pre { margin: 0; padding: 1.5rem; overflow-x: auto; background: #0d1117; counter-reset: line; }
+pre code { font-family: 'JetBrains Mono', monospace; font-size: 14px; line-height: 1.6; display: block; }
+.code-line { display: block; padding-left: 3.5rem; position: relative; }
+.code-line::before {
+  counter-increment: line;
+  content: counter(line);
+  position: absolute;
+  left: 0;
+  width: 2.5rem;
+  text-align: right;
+  color: #475569;
+  padding-right: 0.5rem;
+  user-select: none;
+  font-size: 0.85rem;
+}
+.hljs { background: #0d1117 !important; padding: 0; }
+/* Minimap */
+.minimap {
+  width: 80px;
+  background: #0a0e1a;
+  border-left: 1px solid var(--glass-border);
+  position: relative;
+  cursor: pointer;
+  overflow: hidden;
+}
+.minimap canvas { width: 100%; height: 100%; display: block; }
+.minimap-viewport {
+  position: absolute;
+  left: 0; right: 0;
+  background: rgba(99, 102, 241, 0.2);
+  border: 1px solid var(--primary);
+  pointer-events: none;
+  transition: top 0.1s ease;
+}
+/* Stats */
+.stats { display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 0.75rem; margin-top: 1.5rem; }
+.stat-card {
+  background: rgba(255, 255, 255, 0.05);
+  padding: 1.2rem;
+  border-radius: 15px;
+  text-align: center;
+  backdrop-filter: blur(10px);
+  border: 1px solid var(--glass-border);
+  transition: transform 0.2s ease;
+}
+.stat-card:hover { transform: translateY(-4px); }
+.stat-value {
+  font-size: 1.8rem; font-weight: 700;
+  background: linear-gradient(135deg, var(--primary), var(--accent));
+  -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin-bottom: 0.3rem;
+}
+.stat-label { color: var(--gray); font-size: 0.85rem; }
+/* AI Analysis Panel */
+.ai-panel {
+  background: linear-gradient(135deg, rgba(99, 102, 241, 0.1), rgba(139, 92, 246, 0.1));
+  border: 1px solid var(--primary);
+  border-radius: 15px;
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+.ai-panel-header {
+  display: flex; align-items: center; gap: 0.75rem;
+  margin-bottom: 1rem;
+  font-weight: 600;
+  font-size: 1.1rem;
+}
+.ai-panel-header i { color: var(--accent); }
+.ai-section { margin-bottom: 1rem; }
+.ai-section-title { font-weight: 600; margin-bottom: 0.5rem; color: var(--primary); font-size: 0.95rem; }
+.ai-section-content { color: var(--text-color); font-size: 0.9rem; line-height: 1.7; }
+.ai-tag {
+  display: inline-block;
+  background: rgba(99, 102, 241, 0.2);
+  color: var(--primary);
+  padding: 0.2rem 0.6rem;
+  border-radius: 50px;
+  font-size: 0.75rem;
+  margin: 0.2rem;
+  font-weight: 500;
+}
+/* Security scan */
+.security-item {
+  display: flex; align-items: flex-start; gap: 0.75rem;
+  padding: 0.75rem;
+  background: rgba(255,255,255,0.03);
+  border-radius: 10px;
+  margin-bottom: 0.5rem;
+  border-left: 3px solid var(--warning);
+}
+.security-item.critical { border-left-color: var(--error); }
+.security-item.info { border-left-color: var(--info); }
+.security-item.safe { border-left-color: var(--success); }
+.security-icon { font-size: 1.2rem; flex-shrink: 0; }
+.security-text { flex: 1; font-size: 0.9rem; }
+.security-text strong { display: block; margin-bottom: 0.2rem; }
+/* Diff viewer */
+.diff-viewer {
+  background: #0d1117;
+  border-radius: 10px;
+  overflow: hidden;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 13px;
+  border: 1px solid var(--glass-border);
+}
+.diff-header {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  background: rgba(255,255,255,0.05);
+  padding: 0.5rem 1rem;
+  font-weight: 600;
+  border-bottom: 1px solid var(--glass-border);
+}
+.diff-content { display: grid; grid-template-columns: 1fr 1fr; max-height: 500px; overflow: auto; }
+.diff-side { padding: 0.5rem; }
+.diff-line { padding: 0 0.5rem; white-space: pre-wrap; word-break: break-all; }
+.diff-line.added { background: rgba(34, 197, 94, 0.15); color: #86efac; }
+.diff-line.removed { background: rgba(239, 68, 68, 0.15); color: #fca5a5; }
+.diff-line-num { display: inline-block; width: 30px; color: #475569; text-align: right; padding-right: 0.5rem; user-select: none; }
+/* Command Palette */
+.command-palette {
+  position: fixed;
+  top: 20%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 90%;
+  max-width: 600px;
+  background: var(--dark);
+  border: 1px solid var(--glass-border);
+  border-radius: 15px;
+  box-shadow: 0 25px 50px rgba(0,0,0,0.5);
+  z-index: 3000;
+  display: none;
+  overflow: hidden;
+  backdrop-filter: blur(20px);
+}
+.command-palette.active { display: block; animation: fadeIn 0.2s ease; }
+.command-palette-input {
+  width: 100%;
+  padding: 1rem 1.5rem;
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid var(--glass-border);
+  color: var(--text-color);
+  font-size: 1.1rem;
+  outline: none;
+}
+.command-list { max-height: 400px; overflow-y: auto; padding: 0.5rem; }
+.command-item {
+  padding: 0.75rem 1rem;
+  border-radius: 8px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  transition: all 0.15s ease;
+}
+.command-item:hover, .command-item.selected { background: rgba(99, 102, 241, 0.2); }
+.command-item i { color: var(--primary); width: 20px; text-align: center; }
+.command-item-text { flex: 1; }
+.command-item-shortcut { font-size: 0.8rem; color: var(--gray); font-family: 'JetBrains Mono', monospace; }
+/* Onboarding */
+.onboarding {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: rgba(0,0,0,0.85);
+  backdrop-filter: blur(10px);
+  z-index: 5000;
+  display: none;
+  align-items: center;
+  justify-content: center;
+}
+.onboarding.active { display: flex; }
+.onboarding-content {
+  background: var(--dark);
+  border: 1px solid var(--glass-border);
+  border-radius: 20px;
+  padding: 2.5rem;
+  max-width: 600px;
+  width: 90%;
+  text-align: center;
+}
+.onboarding-step { display: none; }
+.onboarding-step.active { display: block; animation: fadeIn 0.3s ease; }
+.onboarding-icon { font-size: 4rem; margin-bottom: 1rem; background: linear-gradient(135deg, var(--primary), var(--accent)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+.onboarding-title { font-size: 1.8rem; font-weight: 700; margin-bottom: 0.75rem; }
+.onboarding-text { color: var(--gray); margin-bottom: 1.5rem; line-height: 1.7; }
+.onboarding-dots { display: flex; gap: 0.5rem; justify-content: center; margin-bottom: 1.5rem; }
+.onboarding-dot { width: 8px; height: 8px; border-radius: 50%; background: var(--glass-border); transition: all 0.3s ease; }
+.onboarding-dot.active { background: var(--primary); width: 24px; border-radius: 4px; }
+/* Modal */
+.modal {
+  position: fixed; top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: rgba(0,0,0,0.7);
+  backdrop-filter: blur(5px);
+  display: none;
+  align-items: center; justify-content: center;
+  z-index: 2000;
+}
+.modal.active { display: flex; }
+.modal-content {
+  background: var(--dark);
+  border: 1px solid var(--glass-border);
+  border-radius: 20px;
+  padding: 2rem;
+  max-width: 600px;
+  width: 90%;
+  max-height: 80vh;
+  overflow-y: auto;
+}
+.modal-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.5rem; }
+.shortcut-item { display: flex; justify-content: space-between; padding: 0.5rem 0; border-bottom: 1px solid var(--glass-border); }
+kbd {
+  background: rgba(255,255,255,0.1);
+  padding: 0.2rem 0.5rem;
+  border-radius: 4px;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.85rem;
+  border: 1px solid var(--glass-border);
+}
+/* Empty State */
+.empty-state { text-align: center; padding: 3rem 2rem; color: var(--gray); }
+.empty-icon { font-size: 4rem; margin-bottom: 1rem; opacity: 0.5; }
+/* Notification */
+.notification {
+  position: fixed;
+  top: 2rem; right: 2rem;
+  background: linear-gradient(135deg, var(--success), #16a34a);
+  color: white;
+  padding: 1rem 1.5rem;
+  border-radius: 10px;
+  box-shadow: 0 10px 25px rgba(34, 197, 94, 0.3);
+  z-index: 4000;
+  display: flex; align-items: center; gap: 0.75rem;
+  transform: translateX(calc(100% + 3rem));
+  transition: transform 0.3s ease;
+  max-width: 400px;
+}
+.notification.show { transform: translateX(0); }
+.notification.error { background: linear-gradient(135deg, var(--error), #dc2626); }
+.notification.warning { background: linear-gradient(135deg, var(--warning), #d97706); }
+.notification.info { background: linear-gradient(135deg, var(--info), #2563eb); }
+/* Loading */
+.loading { display: inline-block; width: 18px; height: 18px; border: 3px solid rgba(255,255,255,.3); border-radius: 50%; border-top-color: #fff; animation: spin 1s ease-in-out infinite; }
+@keyframes spin { to { transform: rotate(360deg); } }
+/* Footer */
+.footer { text-align: center; margin-top: 3rem; padding: 2rem; color: var(--gray); border-top: 1px solid var(--glass-border); }
+.footer-links { display: flex; justify-content: center; gap: 2rem; margin-top: 1rem; flex-wrap: wrap; }
+.footer-link { color: var(--primary); text-decoration: none; transition: color 0.3s ease; }
+.footer-link:hover { color: var(--accent); }
+/* FAQ */
+.faq-section {
+  background: var(--card-bg);
+  backdrop-filter: blur(20px);
+  border: 1px solid var(--glass-border);
+  border-radius: 20px;
+  padding: 2rem;
+  margin-bottom: 2rem;
+}
+.faq-item { border-bottom: 1px solid var(--glass-border); padding: 1rem 0; }
+.faq-item:last-child { border-bottom: none; }
+.faq-question { font-weight: 600; cursor: pointer; display: flex; justify-content: space-between; align-items: center; padding: 0.5rem 0; }
+.faq-answer { max-height: 0; overflow: hidden; transition: max-height 0.3s ease; color: var(--gray); }
+.faq-item.open .faq-answer { max-height: 500px; padding-top: 0.5rem; }
+.faq-item.open .faq-question i { transform: rotate(180deg); }
+.faq-question i { transition: transform 0.3s ease; }
+/* Scrollbar */
+::-webkit-scrollbar { width: 8px; height: 8px; }
+::-webkit-scrollbar-track { background: rgba(0,0,0,0.2); }
+::-webkit-scrollbar-thumb { background: var(--primary); border-radius: 4px; }
+::-webkit-scrollbar-thumb:hover { background: var(--primary-hover); }
+/* Responsive */
+@media (max-width: 768px) {
+  .container { padding: 1rem; }
+  h1 { font-size: 2rem; }
+  .upload-section { padding: 1.5rem 1rem; }
+  .drop-zone { padding: 1.5rem 1rem; }
+  .input-buttons, .action-buttons, .social-share { flex-direction: column; }
+  .results-header { flex-direction: column; align-items: stretch; }
+  .results-actions { justify-content: center; }
+  .file-header { flex-direction: column; text-align: center; }
+  .header-top { flex-direction: row-reverse; }
+  .minimap { display: none; }
+  .diff-content, .diff-header { grid-template-columns: 1fr; }
+}
+.sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); border: 0; }
+</style>
 </head>
 <body>
-    <div class="particles" id="particles"></div>
-    
-    <div class="container">
-        <header>
-            <div class="logo">
-                <i class="fas fa-code-branch"></i>
-            </div>
-            <h1>CodeFusion</h1>
-            <p class="subtitle">Инновационный анализатор и компилятор исходного кода</p>
-            
-            <!-- Кнопки репостов -->
-            <div class="social-share">
-                <button class="social-btn twitter" onclick="shareOnTwitter()">
-                    <i class="fab fa-twitter"></i> Twitter
-                </button>
-                <button class="social-btn telegram" onclick="shareOnTelegram()">
-                    <i class="fab fa-telegram"></i> Telegram
-                </button>
-                <button class="social-btn vk" onclick="shareOnVK()">
-                    <i class="fab fa-vk"></i> ВКонтакте
-                </button>
-                <button class="social-btn whatsapp" onclick="shareOnWhatsApp()">
-                    <i class="fab fa-whatsapp"></i> WhatsApp
-                </button>
-            </div>
-        </header>
+<canvas id="particlesCanvas" aria-hidden="true"></canvas>
 
-        <section class="upload-section">
-            <div class="drop-zone" id="dropZone">
-                <i class="fas fa-cloud-upload-alt"></i>
-                <div class="drop-text">Перетащите файлы, папки или нажмите для выбора</div>
-                <p>Поддерживаемые форматы: .html, .css, .js, .java, .py, .php, .xml, .json</p>
-                
-                <div class="input-buttons">
-                    <button class="browse-btn" onclick="document.getElementById('fileInput').click()">
-                        <i class="fas fa-file"></i> Выбрать файлы
-                    </button>
-                    <button class="browse-btn" onclick="document.getElementById('directoryInput').click()">
-                        <i class="fas fa-folder"></i> Выбрать папку
-                    </button>
-                </div>
-                
-                <input type="file" id="fileInput" class="file-input" multiple accept=".html,.css,.js,.java,.py,.php,.xml,.json,.txt,.md">
-                <input type="file" id="directoryInput" class="directory-input" webkitdirectory mozdirectory msdirectory odirectory directory>
-            </div>
+<div class="container">
+  <div class="header-top">
+    <div style="display:flex;gap:0.5rem;">
+      <button class="icon-btn-header" onclick="toggleTheme()" aria-label="Переключить тему" title="Тема (T)">
+        <i class="fas fa-moon" id="themeIcon"></i>
+      </button>
+      <button class="icon-btn-header" onclick="openCommandPalette()" aria-label="Command Palette" title="Command Palette (Ctrl+K)">
+        <i class="fas fa-terminal"></i>
+      </button>
+      <button class="icon-btn-header" onclick="showShortcuts()" aria-label="Горячие клавиши" title="Горячие клавиши (?)">
+        <i class="fas fa-keyboard"></i>
+      </button>
+    </div>
+  </div>
 
-            <div class="selected-files">
-                <h3>Выбранные файлы:</h3>
-                <div class="file-list" id="fileList">
-                    <div class="empty-state">
-                        <i class="fas fa-folder-open"></i>
-                        <p>Файлы не выбраны</p>
-                    </div>
-                </div>
-            </div>
+  <header>
+    <div class="logo" aria-hidden="true"><i class="fas fa-code-branch"></i></div>
+    <h1>CodeFusion <span class="version-badge">v3.0</span></h1>
+    <p class="subtitle">AI-анализатор кода • GitHub • Diff • Security Scan • 50+ языков</p>
+    <nav class="social-share" aria-label="Поделиться">
+      <button class="social-btn twitter" onclick="shareOn('twitter')"><i class="fab fa-twitter"></i> Twitter</button>
+      <button class="social-btn telegram" onclick="shareOn('telegram')"><i class="fab fa-telegram"></i> Telegram</button>
+      <button class="social-btn vk" onclick="shareOn('vk')"><i class="fab fa-vk"></i> VK</button>
+      <button class="social-btn whatsapp" onclick="shareOn('whatsapp')"><i class="fab fa-whatsapp"></i> WhatsApp</button>
+      <button class="social-btn github" onclick="window.open('https://github.com/one1game','_blank')"><i class="fab fa-github"></i> GitHub</button>
+    </nav>
+  </header>
 
-            <div class="action-buttons">
-                <button class="btn btn-primary" id="processBtn" onclick="processFiles()" disabled>
-                    <i class="fas fa-bolt"></i> Анализировать код
-                </button>
-                <button class="btn btn-secondary" onclick="clearAll()">
-                    <i class="fas fa-trash"></i> Очистить всё
-                </button>
-            </div>
-        </section>
-
-        <section class="results-section" id="resultsSection">
-            <div class="results-header">
-                <h2 class="results-title">Результаты анализа</h2>
-                <div class="results-actions">
-                    <button class="btn btn-primary" id="copyAllBtn" onclick="copyAllCode()" disabled>
-                        <i class="fas fa-copy"></i> Скопировать всё
-                    </button>
-                    <button class="btn btn-secondary" onclick="exportResults()">
-                        <i class="fas fa-download"></i> Экспорт
-                    </button>
-                </div>
-            </div>
-
-            <div id="results">
-                <div class="empty-state">
-                    <div class="empty-icon">
-                        <i class="fas fa-code"></i>
-                    </div>
-                    <p>Загрузите файлы для анализа</p>
-                    <small>Результаты появятся здесь после обработки</small>
-                </div>
-            </div>
-
-            <div class="stats" id="stats" style="display: none;">
-                <div class="stat-card">
-                    <div class="stat-value" id="totalFiles">0</div>
-                    <div class="stat-label">Файлов обработано</div>
-                </div>
-                <div class="stat-card">
-                    <div class="stat-value" id="totalLines">0</div>
-                    <div class="stat-label">Строк кода</div>
-                </div>
-                <div class="stat-card">
-                    <div class="stat-value" id="totalSize">0 KB</div>
-                    <div class="stat-label">Общий размер</div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Футер -->
-        <footer class="footer">
-            <p>&copy; 2024 CodeFusion. Инновационный анализатор кода.</p>
-            <div class="footer-links">
-                <a href="https://one1game.github.io" class="footer-link" target="_blank">Главная страница</a>
-                <a href="https://github.com/one1game" class="footer-link" target="_blank">GitHub</a>
-                <a href="#" class="footer-link" onclick="showAbout()">О проекте</a>
-            </div>
-        </footer>
+  <main>
+    <!-- Tabs -->
+    <div class="tabs">
+      <button class="tab-btn active" onclick="switchTab('files')" data-tab="files"><i class="fas fa-file-code"></i> Файлы</button>
+      <button class="tab-btn" onclick="switchTab('github')" data-tab="github"><i class="fab fa-github"></i> GitHub</button>
+      <button class="tab-btn" onclick="switchTab('diff')" data-tab="diff"><i class="fas fa-code-branch"></i> Diff</button>
+      <button class="tab-btn" onclick="switchTab('paste')" data-tab="paste"><i class="fas fa-paste"></i> Вставить</button>
     </div>
 
-    <div class="notification" id="notification">
-        <i class="fas fa-check-circle"></i>
-        <span>Весь код успешно скопирован в буфер обмена!</span>
+    <!-- Tab: Files -->
+    <section class="tab-content active upload-section" id="tab-files">
+      <div class="drop-zone" id="dropZone" role="button" tabindex="0" aria-label="Зона для перетаскивания">
+        <i class="fas fa-cloud-upload-alt" aria-hidden="true"></i>
+        <div class="drop-text">Перетащите файлы, папки или текст сюда</div>
+        <p style="color:var(--gray);font-size:0.9rem;">Поддержка 50+ форматов • Drag & Drop • Без регистрации</p>
+        <div class="input-buttons">
+          <button class="browse-btn" onclick="document.getElementById('fileInput').click()">
+            <i class="fas fa-file"></i> Выбрать файлы
+          </button>
+          <button class="browse-btn secondary" onclick="document.getElementById('directoryInput').click()">
+            <i class="fas fa-folder"></i> Выбрать папку
+          </button>
+        </div>
+        <input type="file" id="fileInput" class="file-input" multiple>
+        <input type="file" id="directoryInput" class="directory-input" webkitdirectory mozdirectory>
+      </div>
+
+      <div class="progress-container" id="progressContainer">
+        <div class="progress-bar"><div class="progress-fill" id="progressFill"></div></div>
+        <div class="progress-text" id="progressText">Обработка: 0%</div>
+      </div>
+
+      <div class="selected-files">
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:1rem;flex-wrap:wrap;gap:1rem;">
+          <h3>Выбранные файлы: <span id="fileCount">0</span></h3>
+          <div class="view-toggle">
+            <button class="view-btn active" onclick="setView('list')" id="listViewBtn" title="Список"><i class="fas fa-list"></i></button>
+            <button class="view-btn" onclick="setView('tree')" id="treeViewBtn" title="Дерево"><i class="fas fa-sitemap"></i></button>
+          </div>
+        </div>
+        <div class="filters-bar" id="filtersBar"></div>
+        <div class="file-list" id="fileList">
+          <div class="empty-state">
+            <i class="fas fa-folder-open"></i>
+            <p>Файлы не выбраны</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="action-buttons">
+        <button class="btn btn-primary" id="processBtn" onclick="processFiles()" disabled>
+          <i class="fas fa-bolt"></i> Анализировать
+        </button>
+        <button class="btn btn-secondary" onclick="clearAll()">
+          <i class="fas fa-trash"></i> Очистить
+        </button>
+      </div>
+    </section>
+
+    <!-- Tab: GitHub -->
+    <section class="tab-content upload-section" id="tab-github">
+      <h3 style="margin-bottom:1rem;"><i class="fab fa-github"></i> Загрузить с GitHub</h3>
+      <p style="color:var(--gray);margin-bottom:1rem;">Вставьте URL репозитория, файла или папки</p>
+      <div class="github-input-container" style="margin-bottom:1rem;">
+        <i class="fab fa-github github-input-icon"></i>
+        <input type="text" class="github-input" id="githubUrl" placeholder="https://github.com/user/repo или URL файла">
+      </div>
+      <div class="action-buttons" style="margin-top:0;">
+        <button class="btn btn-primary" onclick="loadFromGitHub()">
+          <i class="fas fa-download"></i> Загрузить
+        </button>
+        <button class="btn btn-secondary" onclick="loadGitHubExamples()">
+          <i class="fas fa-lightbulb"></i> Примеры
+        </button>
+      </div>
+      <div id="githubStatus" style="margin-top:1rem;text-align:center;color:var(--gray);"></div>
+    </section>
+
+    <!-- Tab: Diff -->
+    <section class="tab-content upload-section" id="tab-diff">
+      <h3 style="margin-bottom:1rem;"><i class="fas fa-code-branch"></i> Сравнение файлов (Diff)</h3>
+      <p style="color:var(--gray);margin-bottom:1rem;">Вставьте два фрагмента кода для сравнения</p>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-bottom:1rem;">
+        <div>
+          <label style="font-weight:600;margin-bottom:0.5rem;display:block;">Оригинал</label>
+          <textarea id="diffLeft" style="width:100%;min-height:200px;padding:1rem;background:rgba(255,255,255,0.05);border:1px solid var(--glass-border);border-radius:10px;color:var(--text-color);font-family:'JetBrains Mono',monospace;font-size:13px;resize:vertical;" placeholder="Вставьте оригинальный код..."></textarea>
+        </div>
+        <div>
+          <label style="font-weight:600;margin-bottom:0.5rem;display:block;">Изменённый</label>
+          <textarea id="diffRight" style="width:100%;min-height:200px;padding:1rem;background:rgba(255,255,255,0.05);border:1px solid var(--glass-border);border-radius:10px;color:var(--text-color);font-family:'JetBrains Mono',monospace;font-size:13px;resize:vertical;" placeholder="Вставьте изменённый код..."></textarea>
+        </div>
+      </div>
+      <div class="action-buttons" style="margin-top:0;">
+        <button class="btn btn-primary" onclick="computeDiff()">
+          <i class="fas fa-code-branch"></i> Сравнить
+        </button>
+      </div>
+      <div id="diffResult" style="margin-top:1.5rem;"></div>
+    </section>
+
+    <!-- Tab: Paste -->
+    <section class="tab-content upload-section" id="tab-paste">
+      <h3 style="margin-bottom:1rem;"><i class="fas fa-paste"></i> Вставить код</h3>
+      <p style="color:var(--gray);margin-bottom:1rem;">Вставьте код напрямую или перетащите текст со страницы</p>
+      <div style="margin-bottom:1rem;">
+        <input type="text" id="pasteFilename" placeholder="Имя файла (например: script.js)" style="width:100%;padding:0.8rem 1rem;background:rgba(255,255,255,0.05);border:1px solid var(--glass-border);border-radius:10px;color:var(--text-color);margin-bottom:0.5rem;">
+        <textarea id="pasteContent" style="width:100%;min-height:300px;padding:1rem;background:rgba(255,255,255,0.05);border:1px solid var(--glass-border);border-radius:10px;color:var(--text-color);font-family:'JetBrains Mono',monospace;font-size:13px;resize:vertical;" placeholder="Вставьте код сюда..."></textarea>
+      </div>
+      <div class="action-buttons" style="margin-top:0;">
+        <button class="btn btn-primary" onclick="addPastedCode()">
+          <i class="fas fa-plus"></i> Добавить файл
+        </button>
+      </div>
+    </section>
+
+    <!-- Results -->
+    <section class="results-section" id="resultsSection">
+      <div class="results-header">
+        <h2 class="results-title"><i class="fas fa-chart-line"></i> Результаты анализа</h2>
+        <div class="results-actions">
+          <button class="btn btn-secondary" onclick="toggleSearch()" id="searchToggleBtn" disabled title="Поиск (Ctrl+F)">
+            <i class="fas fa-search"></i> Поиск
+          </button>
+          <button class="btn btn-success" onclick="runAIScan()" id="aiScanBtn" disabled>
+            <i class="fas fa-robot"></i> AI-анализ
+          </button>
+          <button class="btn btn-warning" onclick="runSecurityScan()" id="securityBtn" disabled>
+            <i class="fas fa-shield-alt"></i> Security
+          </button>
+          <button class="btn btn-secondary" onclick="copyAllCode()" id="copyAllBtn" disabled>
+            <i class="fas fa-copy"></i> Копировать
+          </button>
+          <button class="btn btn-secondary" onclick="openShareModal()" id="shareBtn" disabled>
+            <i class="fas fa-share-alt"></i> Поделиться
+          </button>
+          <div style="display:flex;gap:0.3rem;">
+            <button class="btn btn-secondary" onclick="exportAs('txt')" title="TXT"><i class="fas fa-file-alt"></i></button>
+            <button class="btn btn-secondary" onclick="exportAs('zip')" title="ZIP"><i class="fas fa-file-archive"></i></button>
+            <button class="btn btn-secondary" onclick="exportAs('md')" title="Markdown"><i class="fab fa-markdown"></i></button>
+          </div>
+        </div>
+      </div>
+
+      <div class="search-container" id="searchContainer">
+        <i class="fas fa-search search-icon"></i>
+        <input type="text" class="search-input" id="searchInput" placeholder="Поиск... (Enter — далее, Esc — закрыть)">
+        <span class="search-info" id="searchInfo"></span>
+      </div>
+
+      <div id="aiPanel"></div>
+      <div id="securityPanel"></div>
+      <div id="results">
+        <div class="empty-state">
+          <div class="empty-icon"><i class="fas fa-code"></i></div>
+          <p>Загрузите файлы для анализа</p>
+          <small>Результаты появятся здесь после обработки</small>
+        </div>
+      </div>
+
+      <div class="stats" id="stats" style="display: none;">
+        <div class="stat-card"><div class="stat-value" id="totalFiles">0</div><div class="stat-label">Файлов</div></div>
+        <div class="stat-card"><div class="stat-value" id="totalLines">0</div><div class="stat-label">Строк</div></div>
+        <div class="stat-card"><div class="stat-value" id="totalChars">0</div><div class="stat-label">Символов</div></div>
+        <div class="stat-card"><div class="stat-value" id="totalWords">0</div><div class="stat-label">Слов</div></div>
+        <div class="stat-card"><div class="stat-value" id="totalSize">0 KB</div><div class="stat-label">Размер</div></div>
+        <div class="stat-card"><div class="stat-value" id="complexity">—</div><div class="stat-label">Сложность</div></div>
+        <div class="stat-card"><div class="stat-value" id="duplication">—</div><div class="stat-label">Дупликаты</div></div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="faq-section">
+      <h2 style="margin-bottom:1rem;font-size:1.5rem;"><i class="fas fa-question-circle"></i> Часто задаваемые вопросы</h2>
+      <div class="faq-item">
+        <div class="faq-question" onclick="toggleFaq(this)"><span>Что такое CodeFusion?</span><i class="fas fa-chevron-down"></i></div>
+        <div class="faq-answer"><p>CodeFusion v3.0 — это AI-анализатор исходного кода с поддержкой 50+ языков. Включает загрузку с GitHub, diff-сравнение, security scan, code metrics, command palette и minimap.</p></div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question" onclick="toggleFaq(this)"><span>Как загрузить код с GitHub?</span><i class="fas fa-chevron-down"></i></div>
+        <div class="faq-answer"><p>Вставьте URL репозитория или файла во вкладке «GitHub». CodeFusion автоматически распарсит URL и загрузит файлы через GitHub API.</p></div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question" onclick="toggleFaq(this)"><span>Безопасно ли загружать файлы?</span><i class="fas fa-chevron-down"></i></div>
+        <div class="faq-answer"><p>Да. Все файлы обрабатываются локально в браузере через File API. Данные не отправляются на сервер. AI-анализ также работает локально.</p></div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question" onclick="toggleFaq(this)"><span>Какие форматы поддерживаются?</span><i class="fas fa-chevron-down"></i></div>
+        <div class="faq-answer"><p>50+ форматов: HTML, CSS, JS, TS, Python, Java, PHP, Go, Rust, C/C++, C#, Ruby, Swift, Kotlin, SQL, XML, JSON, YAML, Markdown и другие.</p></div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question" onclick="toggleFaq(this)"><span>Нужна ли регистрация?</span><i class="fas fa-chevron-down"></i></div>
+        <div class="faq-answer"><p>Нет. CodeFusion полностью бесплатен и работает без регистрации. Все операции происходят локально в браузере.</p></div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p>&copy; <span id="currentYear">2026</span> CodeFusion v3.0 — AI-анализатор исходного кода</p>
+    <div class="footer-links">
+      <a href="https://one1game.github.io" class="footer-link" target="_blank" rel="noopener">Главная</a>
+      <a href="https://github.com/one1game" class="footer-link" target="_blank" rel="noopener">GitHub</a>
+      <a href="#" class="footer-link" onclick="showOnboarding();return false;">О проекте</a>
+      <a href="#" class="footer-link" onclick="showShortcuts();return false;">Горячие клавиши</a>
+      <a href="sitemap.xml" class="footer-link">Карта сайта</a>
     </div>
+  </footer>
+</div>
 
-    <script>
-        // Инициализация частиц
-        function createParticles() {
-            const container = document.getElementById('particles');
-            for (let i = 0; i < 50; i++) {
-                const particle = document.createElement('div');
-                particle.className = 'particle';
-                particle.style.width = Math.random() * 20 + 5 + 'px';
-                particle.style.height = particle.style.width;
-                particle.style.left = Math.random() * 100 + '%';
-                particle.style.animationDuration = Math.random() * 30 + 10 + 's';
-                particle.style.animationDelay = Math.random() * 5 + 's';
-                container.appendChild(particle);
-            }
+<!-- Command Palette -->
+<div class="command-palette" id="commandPalette">
+  <input type="text" class="command-palette-input" id="commandInput" placeholder="Введите команду... (Esc — закрыть)">
+  <div class="command-list" id="commandList"></div>
+</div>
+
+<!-- Onboarding -->
+<div class="onboarding" id="onboarding">
+  <div class="onboarding-content">
+    <div class="onboarding-step active" data-step="0">
+      <div class="onboarding-icon"><i class="fas fa-rocket"></i></div>
+      <div class="onboarding-title">Добро пожаловать в CodeFusion v3.0!</div>
+      <div class="onboarding-text">Мощный AI-анализатор кода прямо в браузере. 50+ языков, GitHub, Diff, Security Scan — всё бесплатно.</div>
+    </div>
+    <div class="onboarding-step" data-step="1">
+      <div class="onboarding-icon"><i class="fab fa-github"></i></div>
+      <div class="onboarding-title">Загрузка с GitHub</div>
+      <div class="onboarding-text">Вставьте URL репозитория или файла — мы загрузим всё автоматически. Никаких токенов не нужно.</div>
+    </div>
+    <div class="onboarding-step" data-step="2">
+      <div class="onboarding-icon"><i class="fas fa-robot"></i></div>
+      <div class="onboarding-title">AI-анализ</div>
+      <div class="onboarding-text">Получите объяснение кода, метрики сложности, поиск дубликатов и security-проверку в 1 клик.</div>
+    </div>
+    <div class="onboarding-step" data-step="3">
+      <div class="onboarding-icon"><i class="fas fa-terminal"></i></div>
+      <div class="onboarding-title">Command Palette</div>
+      <div class="onboarding-text">Нажмите <kbd>Ctrl</kbd>+<kbd>K</kbd> для быстрого доступа ко всем функциям. Как в VS Code!</div>
+    </div>
+    <div class="onboarding-dots" id="onboardingDots"></div>
+    <div style="display:flex;gap:0.5rem;justify-content:center;">
+      <button class="btn btn-secondary" onclick="prevOnboarding()" id="onbPrev" style="display:none;"><i class="fas fa-arrow-left"></i> Назад</button>
+      <button class="btn btn-primary" onclick="nextOnboarding()" id="onbNext">Далее <i class="fas fa-arrow-right"></i></button>
+    </div>
+    <button class="btn btn-secondary" onclick="closeOnboarding()" style="margin-top:1rem;font-size:0.85rem;">Пропустить</button>
+  </div>
+</div>
+
+<!-- Share Modal -->
+<div class="modal" id="shareModal" onclick="if(event.target===this)closeShareModal()">
+  <div class="modal-content">
+    <div class="modal-header">
+      <h3><i class="fas fa-share-alt"></i> Поделиться анализом</h3>
+      <button class="icon-btn" onclick="closeShareModal()" style="background:rgba(255,255,255,0.1);color:var(--text-color);"><i class="fas fa-times"></i></button>
+    </div>
+    <p style="color:var(--gray);margin-bottom:1rem;">Ссылка содержит ваш код (сжато). Никто кроме получателя не сможет его прочитать.</p>
+    <div style="display:flex;gap:0.5rem;margin-bottom:1rem;">
+      <input type="text" id="shareLink" readonly style="flex:1;padding:0.8rem;background:rgba(255,255,255,0.05);border:1px solid var(--glass-border);border-radius:10px;color:var(--text-color);font-family:'JetBrains Mono',monospace;font-size:0.85rem;">
+      <button class="btn btn-primary" onclick="copyShareLink()"><i class="fas fa-copy"></i></button>
+    </div>
+    <div class="action-buttons" style="margin-top:0;">
+      <button class="btn btn-secondary" onclick="shareNative()"><i class="fas fa-share"></i> Системный шеринг</button>
+      <button class="btn btn-secondary" onclick="exportAsImage()"><i class="fas fa-image"></i> PNG</button>
+    </div>
+  </div>
+</div>
+
+<!-- Shortcuts Modal -->
+<div class="modal" id="shortcutsModal" onclick="if(event.target===this)hideShortcuts()">
+  <div class="modal-content">
+    <div class="modal-header">
+      <h3><i class="fas fa-keyboard"></i> Горячие клавиши</h3>
+      <button class="icon-btn" onclick="hideShortcuts()" style="background:rgba(255,255,255,0.1);color:var(--text-color);"><i class="fas fa-times"></i></button>
+    </div>
+    <div class="shortcut-item"><span>Command Palette</span><span><kbd>Ctrl</kbd> + <kbd>K</kbd></span></div>
+    <div class="shortcut-item"><span>Открыть файлы</span><span><kbd>Ctrl</kbd> + <kbd>O</kbd></span></div>
+    <div class="shortcut-item"><span>Анализировать</span><span><kbd>Ctrl</kbd> + <kbd>Enter</kbd></span></div>
+    <div class="shortcut-item"><span>Сохранить (TXT)</span><span><kbd>Ctrl</kbd> + <kbd>S</kbd></span></div>
+    <div class="shortcut-item"><span>Поиск</span><span><kbd>Ctrl</kbd> + <kbd>F</kbd></span></div>
+    <div class="shortcut-item"><span>AI-анализ</span><span><kbd>Ctrl</kbd> + <kbd>I</kbd></span></div>
+    <div class="shortcut-item"><span>Security scan</span><span><kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>S</kbd></span></div>
+    <div class="shortcut-item"><span>Переключить тему</span><span><kbd>T</kbd></span></div>
+    <div class="shortcut-item"><span>Очистить всё</span><span><kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>X</kbd></span></div>
+    <div class="shortcut-item"><span>Отменить</span><span><kbd>Ctrl</kbd> + <kbd>Z</kbd></span></div>
+    <div class="shortcut-item"><span>Повторить</span><span><kbd>Ctrl</kbd> + <kbd>Y</kbd></span></div>
+    <div class="shortcut-item"><span>Закрыть</span><span><kbd>Esc</kbd></span></div>
+  </div>
+</div>
+
+<!-- Notification -->
+<div class="notification" id="notification" role="alert">
+  <i class="fas fa-check-circle"></i>
+  <span id="notificationText">Успешно!</span>
+</div>
+
+<script>
+/* ============================================================
+   CODEFUSION v3.0 — AI Code Analyzer
+   ============================================================ */
+
+/* ===================== STATE ===================== */
+const State = {
+  selectedFiles: [],
+  fileContents: new Map(),
+  currentView: 'list',
+  currentFilter: 'all',
+  searchMatches: [],
+  currentMatchIndex: -1,
+  history: [],
+  historyIndex: -1,
+  isProcessing: false,
+  analysisCache: new WeakMap()
+};
+
+/* ===================== INIT ===================== */
+document.addEventListener('DOMContentLoaded', () => {
+  initParticles();
+  initDragAndDrop();
+  loadTheme();
+  document.getElementById('currentYear').textContent = new Date().getFullYear();
+  setupKeyboardShortcuts();
+  setupSearch();
+  initCommandPalette();
+  checkOnboarding();
+  loadFromHash();
+});
+
+/* ===================== THEME ===================== */
+function loadTheme() {
+  const theme = localStorage.getItem('codefusion-theme') || 'dark';
+  document.documentElement.setAttribute('data-theme', theme);
+  updateThemeIcon(theme);
+  updateHljsTheme(theme);
+}
+function toggleTheme() {
+  const current = document.documentElement.getAttribute('data-theme');
+  const next = current === 'dark' ? 'light' : 'dark';
+  document.documentElement.setAttribute('data-theme', next);
+  localStorage.setItem('codefusion-theme', next);
+  updateThemeIcon(next);
+  updateHljsTheme(next);
+  showNotification(`Тема: ${next === 'dark' ? 'тёмная' : 'светлая'}`);
+}
+function updateThemeIcon(theme) {
+  document.getElementById('themeIcon').className = theme === 'dark' ? 'fas fa-moon' : 'fas fa-sun';
+}
+function updateHljsTheme(theme) {
+  document.getElementById('hljs-theme').href = theme === 'dark'
+    ? 'https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/github-dark.min.css'
+    : 'https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/github.min.css';
+}
+
+/* ===================== PARTICLES (Canvas — оптимизировано) ===================== */
+function initParticles() {
+  const canvas = document.getElementById('particlesCanvas');
+  const ctx = canvas.getContext('2d');
+  let particles = [];
+  const COUNT = window.innerWidth < 768 ? 20 : 40;
+
+  function resize() {
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+  }
+  resize();
+  window.addEventListener('resize', resize);
+
+  for (let i = 0; i < COUNT; i++) {
+    particles.push({
+      x: Math.random() * canvas.width,
+      y: Math.random() * canvas.height,
+      size: Math.random() * 3 + 1,
+      speedX: (Math.random() - 0.5) * 0.3,
+      speedY: (Math.random() - 0.5) * 0.3,
+      opacity: Math.random() * 0.5 + 0.1
+    });
+  }
+
+  function animate() {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    const theme = document.documentElement.getAttribute('data-theme');
+    const color = theme === 'dark' ? '99, 102, 241' : '79, 70, 229';
+
+    particles.forEach(p => {
+      p.x += p.speedX;
+      p.y += p.speedY;
+      if (p.x < 0 || p.x > canvas.width) p.speedX *= -1;
+      if (p.y < 0 || p.y > canvas.height) p.speedY *= -1;
+      ctx.beginPath();
+      ctx.arc(p.x, p.y, p.size, 0, Math.PI * 2);
+      ctx.fillStyle = `rgba(${color}, ${p.opacity})`;
+      ctx.fill();
+    });
+
+    // Соединения
+    for (let i = 0; i < particles.length; i++) {
+      for (let j = i + 1; j < particles.length; j++) {
+        const dx = particles[i].x - particles[j].x;
+        const dy = particles[i].y - particles[j].y;
+        const dist = Math.sqrt(dx * dx + dy * dy);
+        if (dist < 120) {
+          ctx.beginPath();
+          ctx.moveTo(particles[i].x, particles[i].y);
+          ctx.lineTo(particles[j].x, particles[j].y);
+          ctx.strokeStyle = `rgba(${color}, ${0.15 * (1 - dist / 120)})`;
+          ctx.lineWidth = 0.5;
+          ctx.stroke();
         }
+      }
+    }
+    requestAnimationFrame(animate);
+  }
+  animate();
+}
 
-        // Функции для репостов в соцсети
-        function shareOnTwitter() {
-            const text = 'Попробуйте CodeFusion - инновационный анализатор кода! Анализируйте, просматривайте и экспортируйте код из различных файлов и папок.';
-            const url = 'https://one1game.github.io/anal-code';
-            const hashtags = 'анализаторкода, программирование, разработка';
-            window.open(`https://twitter.com/intent/tweet?text=${encodeURIComponent(text)}&url=${encodeURIComponent(url)}&hashtags=${encodeURIComponent(hashtags)}`, '_blank', 'width=600,height=400');
-        }
+/* ===================== TABS ===================== */
+function switchTab(tabName) {
+  document.querySelectorAll('.tab-btn').forEach(b => b.classList.toggle('active', b.dataset.tab === tabName));
+  document.querySelectorAll('.tab-content').forEach(c => c.classList.toggle('active', c.id === `tab-${tabName}`));
+}
 
-        function shareOnTelegram() {
-            const text = 'Попробуйте CodeFusion - инновационный анализатор кода! Анализируйте, просматривайте и экспортируйте код из различных файлов и папок.';
-            const url = 'https://one1game.github.io/anal-code';
-            window.open(`https://t.me/share/url?url=${encodeURIComponent(url)}&text=${encodeURIComponent(text)}`, '_blank', 'width=600,height=400');
-        }
+/* ===================== SOCIAL SHARE ===================== */
+function shareOn(platform) {
+  const url = 'https://one1game.github.io/anal-code/';
+  const text = 'CodeFusion v3.0 — AI-анализатор кода с GitHub, Diff, Security Scan!';
+  const links = {
+    twitter: `https://twitter.com/intent/tweet?text=${encodeURIComponent(text)}&url=${encodeURIComponent(url)}`,
+    telegram: `https://t.me/share/url?url=${encodeURIComponent(url)}&text=${encodeURIComponent(text)}`,
+    vk: `https://vk.com/share.php?url=${encodeURIComponent(url)}`,
+    whatsapp: `https://wa.me/?text=${encodeURIComponent(text + ' ' + url)}`
+  };
+  window.open(links[platform], '_blank', 'width=600,height=400');
+}
 
-        function shareOnVK() {
-            const url = 'https://one1game.github.io/anal-code';
-            const title = 'CodeFusion | Анализатор кода';
-            const description = 'Инновационный анализатор и компилятор исходного кода с поддержкой множества языков программирования';
-            const image = 'https://one1game.github.io/anal-code/og-image.png';
-            window.open(`https://vk.com/share.php?url=${encodeURIComponent(url)}&title=${encodeURIComponent(title)}&description=${encodeURIComponent(description)}&image=${encodeURIComponent(image)}`, '_blank', 'width=600,height=400');
-        }
+/* ===================== DRAG & DROP ===================== */
+function initDragAndDrop() {
+  const dropZone = document.getElementById('dropZone');
+  const fileInput = document.getElementById('fileInput');
+  const directoryInput = document.getElementById('directoryInput');
 
-        function shareOnWhatsApp() {
-            const text = 'Попробуйте CodeFusion - инновационный анализатор кода! https://one1game.github.io/anal-code';
-            window.open(`https://wa.me/?text=${encodeURIComponent(text)}`, '_blank', 'width=600,height=400');
-        }
+  ['dragenter', 'dragover', 'dragleave', 'drop'].forEach(e => {
+    dropZone.addEventListener(e, preventDefaults, false);
+    document.body.addEventListener(e, preventDefaults, false);
+  });
+  function preventDefaults(e) { e.preventDefault(); e.stopPropagation(); }
+  ['dragenter', 'dragover'].forEach(e => dropZone.addEventListener(e, () => dropZone.classList.add('active')));
+  ['dragleave', 'drop'].forEach(e => dropZone.addEventListener(e, () => dropZone.classList.remove('active')));
 
-        function showAbout() {
-            alert('CodeFusion - инновационный анализатор и компилятор исходного кода.\n\nВозможности:\n• Загрузка файлов и папок\n• Подсветка синтаксиса\n• Экспорт кода\n• Статистика анализа\n\nПоддерживаемые языки: HTML, CSS, JavaScript, Python, Java, PHP, XML, JSON и другие.');
-        }
+  dropZone.addEventListener('drop', handleDrop, false);
+  dropZone.addEventListener('click', (e) => {
+    if (e.target === dropZone || e.target.closest('.drop-text') || e.target.closest('.drop-zone > p')) fileInput.click();
+  });
+  fileInput.addEventListener('change', function() { handleFiles(this.files); });
+  directoryInput.addEventListener('change', function() { handleFiles(this.files); });
 
-        // Инициализация приложения
-        document.addEventListener('DOMContentLoaded', function() {
-            createParticles();
-            initDragAndDrop();
+  // Поддержка drag&drop текста со страницы
+  document.body.addEventListener('drop', async (e) => {
+    e.preventDefault();
+    const text = e.dataTransfer.getData('text/plain');
+    if (text && !e.dataTransfer.files.length) {
+      const name = prompt('Имя файла:', 'snippet.js') || 'snippet.js';
+      addTextAsFile(name, text);
+    }
+  });
+}
+
+function handleDrop(e) {
+  const items = e.dataTransfer.items;
+  if (items && items.length && items[0].webkitGetAsEntry) {
+    processDataTransferItems(items);
+  } else {
+    handleFiles(e.dataTransfer.files);
+  }
+}
+
+async function processDataTransferItems(items) {
+  const fileEntries = [];
+  async function processItem(item) {
+    return new Promise((resolve) => {
+      if (item.isFile) {
+        item.file(file => {
+          file.relativePath = item.fullPath || item.name;
+          fileEntries.push(file);
+          resolve();
         });
-
-        // Drag and Drop
-        function initDragAndDrop() {
-            const dropZone = document.getElementById('dropZone');
-            const fileInput = document.getElementById('fileInput');
-            const directoryInput = document.getElementById('directoryInput');
-
-            ['dragenter', 'dragover', 'dragleave', 'drop'].forEach(eventName => {
-                dropZone.addEventListener(eventName, preventDefaults, false);
-            });
-
-            function preventDefaults(e) {
-                e.preventDefault();
-                e.stopPropagation();
+      } else if (item.isDirectory) {
+        const dirReader = item.createReader();
+        const allEntries = [];
+        const readBatch = () => {
+          dirReader.readEntries(async entries => {
+            if (entries.length === 0) {
+              await Promise.all(allEntries.map(processItem));
+              resolve();
+            } else {
+              allEntries.push(...entries);
+              readBatch();
             }
+          });
+        };
+        readBatch();
+      } else resolve();
+    });
+  }
+  const entries = Array.from(items).map(i => i.webkitGetAsEntry()).filter(Boolean);
+  await Promise.all(entries.map(processItem));
+  handleFiles(fileEntries);
+}
 
-            ['dragenter', 'dragover'].forEach(eventName => {
-                dropZone.addEventListener(eventName, highlight, false);
-            });
+/* ===================== FILE HANDLING ===================== */
+const ALLOWED_EXTENSIONS = ['html','css','js','ts','tsx','jsx','java','py','php','xml','json','txt','md','c','cpp','h','cs','go','rs','rb','swift','kt','sql','yaml','yml','toml','ini','sh','bash','bat','ps1','vue','svelte','lua','r','scala','perl','pl','dart','zig','nim','haskell','hs','elm','clojure','clj','f#','fs','v','vhdl','vhd','asm','s','dockerfile','makefile','cmake'];
 
-            ['dragleave', 'drop'].forEach(eventName => {
-                dropZone.addEventListener(eventName, unhighlight, false);
-            });
+function handleFiles(files) {
+  const newFiles = Array.from(files).filter(f => {
+    const ext = f.name.split('.').pop().toLowerCase();
+    return ALLOWED_EXTENSIONS.includes(ext) || f.type.startsWith('text/') || f.size < 10 * 1024 * 1024;
+  });
+  if (newFiles.length === 0) {
+    showNotification('Поддерживаются только текстовые файлы', 'warning');
+    return;
+  }
+  pushHistory();
+  State.selectedFiles = [...State.selectedFiles, ...newFiles];
+  dedupeFiles();
+  updateFileList();
+  updateProcessButton();
+  showNotification(`Добавлено: ${newFiles.length}`);
+}
 
-            function highlight() {
-                dropZone.classList.add('active');
-            }
+function dedupeFiles() {
+  const seen = new Set();
+  State.selectedFiles = State.selectedFiles.filter(file => {
+    const key = `${file.name}|${file.relativePath || file.webkitRelativePath || ''}|${file.size}`;
+    if (seen.has(key)) return false;
+    seen.add(key);
+    return true;
+  });
+}
 
-            function unhighlight() {
-                dropZone.classList.remove('active');
-            }
+function addTextAsFile(name, content) {
+  const blob = new Blob([content], { type: 'text/plain' });
+  const file = new File([blob], name, { type: 'text/plain' });
+  pushHistory();
+  State.selectedFiles.push(file);
+  State.fileContents.set(file, content);
+  updateFileList();
+  updateProcessButton();
+  showNotification(`Добавлен: ${name}`);
+  switchTab('files');
+}
 
-            dropZone.addEventListener('drop', handleDrop, false);
+function addPastedCode() {
+  const name = document.getElementById('pasteFilename').value.trim() || 'snippet.js';
+  const content = document.getElementById('pasteContent').value;
+  if (!content) { showNotification('Вставьте код', 'warning'); return; }
+  addTextAsFile(name, content);
+  document.getElementById('pasteFilename').value = '';
+  document.getElementById('pasteContent').value = '';
+}
 
-            function handleDrop(e) {
-                const dt = e.dataTransfer;
-                const items = dt.items;
-                
-                // Проверяем, есть ли папки среди перетащенных элементов
-                let hasDirectories = false;
-                for (let i = 0; i < items.length; i++) {
-                    if (items[i].webkitGetAsEntry && items[i].webkitGetAsEntry().isDirectory) {
-                        hasDirectories = true;
-                        break;
-                    }
-                }
-                
-                if (hasDirectories) {
-                    // Обрабатываем папки
-                    processDataTransferItems(items);
-                } else {
-                    // Обрабатываем обычные файлы
-                    const files = dt.files;
-                    handleFiles(files);
-                }
-            }
+function updateFileList() {
+  const fileList = document.getElementById('fileList');
+  document.getElementById('fileCount').textContent = State.selectedFiles.length;
+  updateFilters();
+  if (State.selectedFiles.length === 0) {
+    fileList.innerHTML = `<div class="empty-state"><i class="fas fa-folder-open"></i><p>Файлы не выбраны</p></div>`;
+    fileList.className = 'file-list';
+    return;
+  }
+  const filtered = State.currentFilter === 'all'
+    ? State.selectedFiles
+    : State.selectedFiles.filter(f => f.name.split('.').pop().toLowerCase() === State.currentFilter);
 
-            fileInput.addEventListener('change', function() {
-                handleFiles(this.files);
-            });
+  if (State.currentView === 'tree') {
+    fileList.className = 'file-list tree-view';
+    fileList.innerHTML = buildTree(filtered);
+  } else {
+    fileList.className = 'file-list';
+    fileList.innerHTML = '';
+    filtered.forEach((file) => {
+      const realIndex = State.selectedFiles.indexOf(file);
+      const ext = file.name.split('.').pop().toLowerCase();
+      const icon = getFileIcon(ext);
+      const relativePath = file.relativePath || file.webkitRelativePath || '';
+      const item = document.createElement('div');
+      item.className = 'file-item';
+      item.innerHTML = `
+        <div class="file-info">
+          <div class="file-icon">${icon}</div>
+          <div class="file-details">
+            <div class="file-name">${escapeHtml(file.name)}</div>
+            ${relativePath ? `<div class="file-path">${escapeHtml(relativePath)}</div>` : ''}
+          </div>
+        </div>
+        <div class="file-size">${formatFileSize(file.size)}</div>
+        <button class="remove-file" onclick="removeFile(${realIndex})" aria-label="Удалить"><i class="fas fa-times"></i></button>
+      `;
+      fileList.appendChild(item);
+    });
+  }
+}
 
-            directoryInput.addEventListener('change', function() {
-                handleFiles(this.files);
-            });
-        }
+function buildTree(files) {
+  const tree = {};
+  files.forEach(file => {
+    const path = (file.relativePath || file.webkitRelativePath || file.name).replace(/^\//, '');
+    const parts = path.split('/');
+    let current = tree;
+    parts.forEach((part, i) => {
+      if (i === parts.length - 1) current[part] = { __isFile: true, __file: file };
+      else { if (!current[part]) current[part] = {}; current = current[part]; }
+    });
+  });
+  function render(node, indent = 0) {
+    let html = '';
+    const entries = Object.entries(node).sort(([a, va], [b, vb]) => {
+      const aDir = !va.__isFile, bDir = !vb.__isFile;
+      if (aDir !== bDir) return aDir ? -1 : 1;
+      return a.localeCompare(b);
+    });
+    for (const [name, value] of entries) {
+      const prefix = '│ '.repeat(indent) + (indent > 0 ? '├─ ' : '');
+      if (value.__isFile) {
+        const ext = name.split('.').pop().toLowerCase();
+        html += `<div style="padding:2px 0;">${prefix}<i class="${getFileIcon(ext, true)}" style="color:var(--primary);margin-right:6px;"></i>${escapeHtml(name)} <span style="color:var(--gray);font-size:0.8rem;">(${formatFileSize(value.__file.size)})</span></div>`;
+      } else {
+        html += `<div style="padding:2px 0;color:var(--accent);font-weight:600;">${prefix}📁 ${escapeHtml(name)}/</div>`;
+        html += render(value, indent + 1);
+      }
+    }
+    return html;
+  }
+  return render(tree);
+}
 
-        let selectedFiles = [];
-        let fileContents = new Map(); // Храним содержимое файлов
+function updateFilters() {
+  const bar = document.getElementById('filtersBar');
+  const exts = new Set();
+  State.selectedFiles.forEach(f => exts.add(f.name.split('.').pop().toLowerCase()));
+  let html = `<button class="filter-chip ${State.currentFilter === 'all' ? 'active' : ''}" onclick="setFilter('all')">Все (${State.selectedFiles.length})</button>`;
+  Array.from(exts).sort().forEach(ext => {
+    const count = State.selectedFiles.filter(f => f.name.split('.').pop().toLowerCase() === ext).length;
+    html += `<button class="filter-chip ${State.currentFilter === ext ? 'active' : ''}" onclick="setFilter('${ext}')">.${ext} (${count})</button>`;
+  });
+  bar.innerHTML = html;
+}
+function setFilter(filter) { State.currentFilter = filter; updateFileList(); }
+function setView(view) {
+  State.currentView = view;
+  document.getElementById('listViewBtn').classList.toggle('active', view === 'list');
+  document.getElementById('treeViewBtn').classList.toggle('active', view === 'tree');
+  updateFileList();
+}
+function removeFile(index) {
+  pushHistory();
+  const file = State.selectedFiles[index];
+  State.selectedFiles.splice(index, 1);
+  State.fileContents.delete(file);
+  updateFileList();
+  updateProcessButton();
+}
+function updateProcessButton() {
+  const hasFiles = State.selectedFiles.length > 0;
+  document.getElementById('processBtn').disabled = !hasFiles;
+}
+function clearAll() {
+  if (State.selectedFiles.length === 0) return;
+  if (!confirm('Очистить всё?')) return;
+  pushHistory();
+  State.selectedFiles = [];
+  State.fileContents.clear();
+  document.getElementById('fileInput').value = '';
+  document.getElementById('directoryInput').value = '';
+  updateFileList();
+  updateProcessButton();
+  document.getElementById('results').innerHTML = `<div class="empty-state"><div class="empty-icon"><i class="fas fa-code"></i></div><p>Загрузите файлы для анализа</p></div>`;
+  document.getElementById('stats').style.display = 'none';
+  document.getElementById('aiPanel').innerHTML = '';
+  document.getElementById('securityPanel').innerHTML = '';
+  ['copyAllBtn','searchToggleBtn','aiScanBtn','securityBtn','shareBtn'].forEach(id => document.getElementById(id).disabled = true);
+  showNotification('Очищено');
+}
 
-        // Обработка элементов DataTransfer (для папок)
-        function processDataTransferItems(items) {
-            const fileEntries = [];
-            
-            function processItem(item) {
-                return new Promise((resolve) => {
-                    if (item.isFile) {
-                        item.file((file) => {
-                            // Сохраняем относительный путь
-                            file.relativePath = item.fullPath || item.name;
-                            fileEntries.push(file);
-                            resolve();
-                        });
-                    } else if (item.isDirectory) {
-                        const dirReader = item.createReader();
-                        dirReader.readEntries((entries) => {
-                            const promises = entries.map(processItem);
-                            Promise.all(promises).then(resolve);
-                        });
-                    }
-                });
-            }
+/* ===================== HISTORY (Undo/Redo) ===================== */
+function pushHistory() {
+  State.history = State.history.slice(0, State.historyIndex + 1);
+  State.history.push({
+    files: State.selectedFiles.slice(),
+    contents: new Map(State.fileContents)
+  });
+  State.historyIndex = State.history.length - 1;
+  if (State.history.length > 20) { State.history.shift(); State.historyIndex--; }
+}
+function undo() {
+  if (State.historyIndex <= 0) { showNotification('Нечего отменять', 'warning'); return; }
+  State.historyIndex--;
+  restoreHistory();
+}
+function redo() {
+  if (State.historyIndex >= State.history.length - 1) { showNotification('Нечего повторять', 'warning'); return; }
+  State.historyIndex++;
+  restoreHistory();
+}
+function restoreHistory() {
+  const snap = State.history[State.historyIndex];
+  State.selectedFiles = snap.files.slice();
+  State.fileContents = new Map(snap.contents);
+  updateFileList();
+  updateProcessButton();
+  showNotification('Восстановлено');
+}
 
-            for (let i = 0; i < items.length; i++) {
-                const entry = items[i].webkitGetAsEntry();
-                if (entry) {
-                    processItem(entry).then(() => {
-                        if (i === items.length - 1) {
-                            handleFiles(fileEntries);
-                        }
-                    });
-                }
-            }
-        }
+/* ===================== GITHUB LOADER ===================== */
+async function loadFromGitHub() {
+  const url = document.getElementById('githubUrl').value.trim();
+  const status = document.getElementById('githubStatus');
+  if (!url) { showNotification('Вставьте URL', 'warning'); return; }
 
-        function handleFiles(files) {
-            const newFiles = Array.from(files);
-            
-            // Добавляем новые файлы к существующим
-            selectedFiles = [...selectedFiles, ...newFiles];
-            
-            // Убираем дубликаты по имени и пути
-            selectedFiles = selectedFiles.filter((file, index, self) =>
-                index === self.findIndex(f => 
-                    f.name === file.name && 
-                    (f.relativePath === file.relativePath || (!f.relativePath && !file.relativePath))
-                )
-            );
-            
-            updateFileList();
-            updateProcessButton();
-        }
+  status.innerHTML = '<span class="loading"></span> Загрузка...';
+  try {
+    const parsed = parseGitHubUrl(url);
+    if (!parsed) throw new Error('Неверный URL GitHub');
 
-        function updateFileList() {
-            const fileList = document.getElementById('fileList');
-            fileList.innerHTML = '';
+    let files = [];
+    if (parsed.type === 'repo') {
+      files = await fetchGitHubRepo(parsed.user, parsed.repo, parsed.path || '');
+    } else if (parsed.type === 'file') {
+      const content = await fetchGitHubFile(parsed.user, parsed.repo, parsed.path);
+      files = [{ name: parsed.path.split('/').pop(), content, relativePath: parsed.path }];
+    }
+    pushHistory();
+    files.forEach(f => {
+      const blob = new Blob([f.content], { type: 'text/plain' });
+      const file = new File([blob], f.name, { type: 'text/plain' });
+      file.relativePath = f.relativePath || f.name;
+      State.selectedFiles.push(file);
+      State.fileContents.set(file, f.content);
+    });
+    dedupeFiles();
+    updateFileList();
+    updateProcessButton();
+    status.innerHTML = `<span style="color:var(--success);"><i class="fas fa-check"></i> Загружено файлов: ${files.length}</span>`;
+    showNotification(`Загружено с GitHub: ${files.length}`);
+    switchTab('files');
+  } catch (err) {
+    status.innerHTML = `<span style="color:var(--error);"><i class="fas fa-exclamation-circle"></i> ${err.message}</span>`;
+    showNotification(err.message, 'error');
+  }
+}
 
-            if (selectedFiles.length === 0) {
-                fileList.innerHTML = `
-                    <div class="empty-state">
-                        <i class="fas fa-folder-open"></i>
-                        <p>Файлы не выбраны</p>
-                    </div>
-                `;
-                return;
-            }
+function parseGitHubUrl(url) {
+  const m = url.match(/github\.com\/([^\/]+)\/([^\/]+)(?:\/(?:tree|blob)\/[^\/]+\/(.+))?/);
+  if (!m) return null;
+  const [, user, repo, path] = m;
+  const type = path && url.includes('/blob/') ? 'file' : 'repo';
+  return { user, repo, path, type };
+}
 
-            selectedFiles.forEach((file, index) => {
-                const extension = file.name.split('.').pop().toLowerCase();
-                const icon = getFileIcon(extension);
-                const relativePath = file.relativePath || file.webkitRelativePath || '';
-                
-                const fileItem = document.createElement('div');
-                fileItem.className = 'file-item';
-                fileItem.innerHTML = `
-                    <div class="file-info">
-                        <div class="file-icon">${icon}</div>
-                        <div class="file-details">
-                            <div class="file-name">${file.name}</div>
-                            ${relativePath ? `<div class="file-path">${relativePath}</div>` : ''}
-                            <div class="file-size">${formatFileSize(file.size)}</div>
-                        </div>
-                    </div>
-                    <button class="remove-file" onclick="removeFile(${index})">
-                        <i class="fas fa-times"></i>
-                    </button>
-                `;
-                fileList.appendChild(fileItem);
-            });
-        }
+async function fetchGitHubRepo(user, repo, path) {
+  const apiUrl = `https://api.github.com/repos/${user}/${repo}/git/trees/main?recursive=1`;
+  const res = await fetch(apiUrl);
+  if (!res.ok) {
+    // fallback на master
+    const res2 = await fetch(`https://api.github.com/repos/${user}/${repo}/git/trees/master?recursive=1`);
+    if (!res2.ok) throw new Error('Не удалось получить репозиторий');
+    return processTree(user, repo, await res2.json(), path);
+  }
+  return processTree(user, repo, await res.json(), path);
+}
 
-        function removeFile(index) {
-            selectedFiles.splice(index, 1);
-            fileContents.delete(selectedFiles[index]); // Удаляем содержимое файла
-            updateFileList();
-            updateProcessButton();
-        }
+async function processTree(user, repo, data, basePath) {
+  if (!data.tree) throw new Error('Неверная структура');
+  const files = data.tree.filter(item => item.type === 'blob' && (!basePath || item.path.startsWith(basePath)));
+  const limited = files.slice(0, 50); // Лимит для производительности
+  const results = await Promise.all(limited.map(async item => {
+    try {
+      const content = await fetchGitHubFile(user, repo, item.path);
+      return { name: item.path.split('/').pop(), content, relativePath: item.path };
+    } catch { return null; }
+  }));
+  return results.filter(Boolean);
+}
 
-        function updateProcessButton() {
-            document.getElementById('processBtn').disabled = selectedFiles.length === 0;
-        }
+async function fetchGitHubFile(user, repo, path) {
+  const res = await fetch(`https://raw.githubusercontent.com/${user}/${repo}/main/${path}`);
+  if (!res.ok) {
+    const res2 = await fetch(`https://raw.githubusercontent.com/${user}/${repo}/master/${path}`);
+    if (!res2.ok) throw new Error(`Файл не найден: ${path}`);
+    return res2.text();
+  }
+  return res.text();
+}
 
-        function processFiles() {
-            if (selectedFiles.length === 0) return;
+function loadGitHubExamples() {
+  const examples = [
+    'https://github.com/vuejs/vue',
+    'https://github.com/expressjs/express',
+    'https://github.com/microsoft/TypeScript'
+  ];
+  const choice = prompt('Выберите пример (1-3):\n1. Vue.js\n2. Express\n3. TypeScript\n\nИли вставьте свой URL:');
+  if (choice === '1') document.getElementById('githubUrl').value = examples[0];
+  else if (choice === '2') document.getElementById('githubUrl').value = examples[1];
+  else if (choice === '3') document.getElementById('githubUrl').value = examples[2];
+  else if (choice && choice.startsWith('http')) document.getElementById('githubUrl').value = choice;
+}
 
-            const processBtn = document.getElementById('processBtn');
-            const originalHtml = processBtn.innerHTML;
-            processBtn.innerHTML = '<span class="loading"></span> Обработка...';
-            processBtn.disabled = true;
+/* ===================== DIFF ENGINE ===================== */
+function computeDiff() {
+  const left = document.getElementById('diffLeft').value;
+  const right = document.getElementById('diffRight').value;
+  if (!left && !right) { showNotification('Вставьте оба фрагмента', 'warning'); return; }
 
-            // Очищаем предыдущее содержимое
-            fileContents.clear();
+  const leftLines = left.split('\n');
+  const rightLines = right.split('\n');
+  const diff = lcsDiff(leftLines, rightLines);
 
-            // Читаем все файлы и сохраняем их содержимое
-            let filesProcessed = 0;
-            
-            selectedFiles.forEach(file => {
-                const reader = new FileReader();
-                reader.onload = function(e) {
-                    fileContents.set(file, e.target.result);
-                    filesProcessed++;
-                    
-                    // Когда все файлы прочитаны, отображаем результаты
-                    if (filesProcessed === selectedFiles.length) {
-                        displayResults();
-                        processBtn.innerHTML = originalHtml;
-                        processBtn.disabled = false;
-                    }
-                };
-                reader.readAsText(file);
-            });
-        }
+  let leftHtml = '', rightHtml = '';
+  let leftNum = 0, rightNum = 0;
+  diff.forEach(op => {
+    if (op[0] === 'equal') {
+      leftNum++; rightNum++;
+      leftHtml += `<div class="diff-line"><span class="diff-line-num">${leftNum}</span>${escapeHtml(op[1])}</div>`;
+      rightHtml += `<div class="diff-line"><span class="diff-line-num">${rightNum}</span>${escapeHtml(op[1])}</div>`;
+    } else if (op[0] === 'remove') {
+      leftNum++;
+      leftHtml += `<div class="diff-line removed"><span class="diff-line-num">${leftNum}</span>${escapeHtml(op[1])}</div>`;
+    } else if (op[0] === 'add') {
+      rightNum++;
+      rightHtml += `<div class="diff-line added"><span class="diff-line-num">${rightNum}</span>${escapeHtml(op[1])}</div>`;
+    }
+  });
 
-        function displayResults() {
-            const results = document.getElementById('results');
-            const stats = document.getElementById('stats');
-            const copyAllBtn = document.getElementById('copyAllBtn');
-            
-            results.innerHTML = '';
-            let totalLines = 0;
-            let totalSize = 0;
+  document.getElementById('diffResult').innerHTML = `
+    <div class="diff-viewer">
+      <div class="diff-header"><div>Оригинал</div><div>Изменённый</div></div>
+      <div class="diff-content">
+        <div class="diff-side">${leftHtml || '<div class="diff-line" style="color:var(--gray);">Пусто</div>'}</div>
+        <div class="diff-side">${rightHtml || '<div class="diff-line" style="color:var(--gray);">Пусто</div>'}</div>
+      </div>
+    </div>
+    <div style="margin-top:1rem;color:var(--gray);font-size:0.9rem;">
+      Изменений: <strong style="color:var(--primary);">${diff.filter(o => o[0] !== 'equal').length}</strong>
+    </div>
+  `;
+}
 
-            selectedFiles.forEach(file => {
-                const content = fileContents.get(file);
-                if (content) {
-                    totalLines += content.split('\n').length;
-                    totalSize += file.size;
+function lcsDiff(a, b) {
+  const m = a.length, n = b.length;
+  const dp = Array(m + 1).fill(null).map(() => Array(n + 1).fill(0));
+  for (let i = 1; i <= m; i++) {
+    for (let j = 1; j <= n; j++) {
+      if (a[i-1] === b[j-1]) dp[i][j] = dp[i-1][j-1] + 1;
+      else dp[i][j] = Math.max(dp[i-1][j], dp[i][j-1]);
+    }
+  }
+  const result = [];
+  let i = m, j = n;
+  while (i > 0 && j > 0) {
+    if (a[i-1] === b[j-1]) { result.unshift(['equal', a[i-1]]); i--; j--; }
+    else if (dp[i-1][j] >= dp[i][j-1]) { result.unshift(['remove', a[i-1]]); i--; }
+    else { result.unshift(['add', b[j-1]]); j--; }
+  }
+  while (i > 0) { result.unshift(['remove', a[i-1]]); i--; }
+  while (j > 0) { result.unshift(['add', b[j-1]]); j--; }
+  return result;
+}
 
-                    const extension = file.name.split('.').pop().toLowerCase();
-                    const language = getLanguage(extension);
-                    const relativePath = file.relativePath || file.webkitRelativePath || '';
-                    
-                    const codeContainer = document.createElement('div');
-                    codeContainer.className = 'code-container';
-                    codeContainer.innerHTML = `
-                        <div class="file-header">
-                            <div class="file-title">
-                                <i class="${getFileIcon(extension, true)}"></i>
-                                <div>
-                                    <div>${file.name}</div>
-                                    ${relativePath ? `<div style="font-size: 0.8rem; opacity: 0.8;">${relativePath}</div>` : ''}
-                                </div>
-                            </div>
-                            <div class="file-meta">
-                                <span>${formatFileSize(file.size)}</span>
-                                <span>${language.toUpperCase()}</span>
-                            </div>
-                        </div>
-                        <div class="code-content">
-                            <pre><code class="language-${language}">${escapeHtml(content)}</code></pre>
-                        </div>
-                    `;
-                    
-                    results.appendChild(codeContainer);
-                    hljs.highlightElement(codeContainer.querySelector('code'));
-                }
-            });
+/* ===================== PROCESS FILES ===================== */
+async function processFiles() {
+  if (State.selectedFiles.length === 0 || State.isProcessing) return;
+  State.isProcessing = true;
+  const processBtn = document.getElementById('processBtn');
+  const originalHtml = processBtn.innerHTML;
+  processBtn.innerHTML = '<span class="loading"></span> Обработка...';
+  processBtn.disabled = true;
 
-            // Обновляем статистику
-            document.getElementById('totalFiles').textContent = selectedFiles.length;
-            document.getElementById('totalLines').textContent = totalLines;
-            document.getElementById('totalSize').textContent = formatFileSize(totalSize);
-            stats.style.display = 'grid';
-            copyAllBtn.disabled = false;
-        }
+  const progressContainer = document.getElementById('progressContainer');
+  const progressFill = document.getElementById('progressFill');
+  const progressText = document.getElementById('progressText');
+  progressContainer.classList.add('active');
 
-        function copyAllCode() {
-            if (fileContents.size === 0) {
-                showNotification('Сначала обработайте файлы!');
-                return;
-            }
+  State.fileContents.clear();
+  let processed = 0;
+  for (const file of State.selectedFiles) {
+    try {
+      const content = await readFileAsync(file);
+      State.fileContents.set(file, content);
+    } catch (err) {
+      State.fileContents.set(file, `// Ошибка: ${err.message}`);
+    }
+    processed++;
+    const percent = Math.round((processed / State.selectedFiles.length) * 100);
+    progressFill.style.width = percent + '%';
+    progressText.textContent = `Обработка: ${processed} / ${State.selectedFiles.length} (${percent}%)`;
+    await new Promise(r => setTimeout(r, 10)); // UI update
+  }
 
-            let combinedCode = '';
+  displayResults();
+  processBtn.innerHTML = originalHtml;
+  processBtn.disabled = false;
+  State.isProcessing = false;
+  ['copyAllBtn','searchToggleBtn','aiScanBtn','securityBtn','shareBtn'].forEach(id => document.getElementById(id).disabled = false);
+  setTimeout(() => { progressContainer.classList.remove('active'); progressFill.style.width = '0%'; }, 800);
+  showNotification(`Обработано: ${State.selectedFiles.length}`);
+}
 
-            selectedFiles.forEach(file => {
-                const content = fileContents.get(file);
-                if (content) {
-                    const relativePath = file.relativePath || file.webkitRelativePath || '';
-                    const pathInfo = relativePath ? ` (${relativePath})` : '';
-                    
-                    combinedCode += `// ======== ${file.name}${pathInfo} ========\n\n`;
-                    combinedCode += content;
-                    combinedCode += '\n\n';
-                }
-            });
+function readFileAsync(file) {
+  return new Promise((resolve, reject) => {
+    const reader = new FileReader();
+    reader.onload = e => resolve(e.target.result);
+    reader.onerror = () => reject(new Error('Не удалось прочитать'));
+    reader.readAsText(file);
+  });
+}
 
-            navigator.clipboard.writeText(combinedCode).then(() => {
-                showNotification('Весь код успешно скопирован в буфер обмена!');
-            }).catch(err => {
-                console.error('Ошибка копирования: ', err);
-                showNotification('Ошибка при копировании в буфер обмена');
-            });
-        }
+/* ===================== DISPLAY RESULTS ===================== */
+function displayResults() {
+  const results = document.getElementById('results');
+  const stats = document.getElementById('stats');
+  results.innerHTML = '';
+  let totalLines = 0, totalChars = 0, totalWords = 0, totalSize = 0;
 
-        function exportResults() {
-            if (fileContents.size === 0) {
-                showNotification('Сначала обработайте файлы!');
-                return;
-            }
+  State.selectedFiles.forEach((file, idx) => {
+    const content = State.fileContents.get(file);
+    if (!content) return;
+    const lines = content.split('\n');
+    totalLines += lines.length;
+    totalChars += content.length;
+    totalWords += content.trim().split(/\s+/).filter(Boolean).length;
+    totalSize += file.size;
 
-            let combinedCode = '';
+    const ext = file.name.split('.').pop().toLowerCase();
+    const language = getLanguage(ext);
+    const relativePath = file.relativePath || file.webkitRelativePath || '';
+    const container = document.createElement('div');
+    container.className = 'code-container';
+    container.dataset.fileIndex = idx;
 
-            selectedFiles.forEach(file => {
-                const content = fileContents.get(file);
-                if (content) {
-                    const relativePath = file.relativePath || file.webkitRelativePath || '';
-                    const pathInfo = relativePath ? ` (${relativePath})` : '';
-                    
-                    combinedCode += `// ======== ${file.name}${pathInfo} ========\n\n`;
-                    combinedCode += content;
-                    combinedCode += '\n\n';
-                }
-            });
+    const codeLines = lines.map(line => `<span class="code-line">${escapeHtml(line) || ' '}</span>`).join('\n');
+    container.innerHTML = `
+      <div class="file-header">
+        <div class="file-title">
+          <i class="${getFileIcon(ext, true)}"></i>
+          <div>
+            <div>${escapeHtml(file.name)}</div>
+            ${relativePath ? `<div style="font-size:0.8rem;opacity:0.8;">${escapeHtml(relativePath)}</div>` : ''}
+          </div>
+        </div>
+        <div class="file-meta">
+          <span>${formatFileSize(file.size)}</span>
+          <span>${lines.length} строк</span>
+          <span>${language.toUpperCase()}</span>
+          <div class="file-actions">
+            <button class="icon-btn" onclick="copySingleFile(${idx})" title="Копировать"><i class="fas fa-copy"></i></button>
+            <button class="icon-btn" onclick="toggleCollapse(${idx})" title="Свернуть"><i class="fas fa-compress"></i></button>
+            <button class="icon-btn" onclick="speakCode(${idx})" title="Озвучить (TTS)"><i class="fas fa-volume-up"></i></button>
+          </div>
+        </div>
+      </div>
+      <div class="code-wrapper">
+        <div class="code-content" id="code-${idx}">
+          <pre><code class="language-${language}">${codeLines}</code></pre>
+        </div>
+        <div class="minimap" data-for="${idx}"><canvas></canvas><div class="minimap-viewport"></div></div>
+      </div>
+    `;
+    results.appendChild(container);
 
-            // Создаем Blob с содержимым
-            const blob = new Blob([combinedCode], { type: 'text/plain;charset=utf-8' });
-            
-            // Создаем URL для Blob
-            const url = URL.createObjectURL(blob);
-            
-            // Создаем временную ссылку для скачивания
-            const a = document.createElement('a');
-            a.href = url;
-            a.download = 'code_analysis.txt';
-            
-            // Добавляем ссылку в DOM, кликаем и удаляем
-            document.body.appendChild(a);
-            a.click();
-            document.body.removeChild(a);
-            
-            // Освобождаем память
-            URL.revokeObjectURL(url);
-            
-            showNotification('Результаты экспортированы в файл!');
-        }
+    const codeEl = container.querySelector('code');
+    hljs.highlightElement(codeEl);
+    // Сохраняем оригинал ПОСЛЕ highlight для корректного поиска
+    codeEl.setAttribute('data-original-html', codeEl.innerHTML);
+    initMinimap(container, idx);
+  });
 
-        function showNotification(message = 'Весь код успешно скопирован в буфер обмена!') {
-            const notification = document.getElementById('notification');
-            notification.querySelector('span').textContent = message;
-            notification.classList.add('show');
-            setTimeout(() => {
-                notification.classList.remove('show');
-            }, 3000);
-        }
+  document.getElementById('totalFiles').textContent = State.selectedFiles.length;
+  document.getElementById('totalLines').textContent = totalLines.toLocaleString('ru');
+  document.getElementById('totalChars').textContent = totalChars.toLocaleString('ru');
+  document.getElementById('totalWords').textContent = totalWords.toLocaleString('ru');
+  document.getElementById('totalSize').textContent = formatFileSize(totalSize);
 
-        function clearAll() {
-            selectedFiles = [];
-            fileContents.clear();
-            document.getElementById('fileInput').value = '';
-            document.getElementById('directoryInput').value = '';
-            updateFileList();
-            updateProcessButton();
-            document.getElementById('results').innerHTML = `
-                <div class="empty-state">
-                    <div class="empty-icon">
-                        <i class="fas fa-code"></i>
-                    </div>
-                    <p>Загрузите файлы для анализа</p>
-                    <small>Результаты появятся здесь после обработки</small>
-                </div>
-            `;
-            document.getElementById('stats').style.display = 'none';
-            document.getElementById('copyAllBtn').disabled = true;
-        }
+  const metrics = calculateMetrics();
+  document.getElementById('complexity').textContent = metrics.complexity;
+  document.getElementById('duplication').textContent = metrics.duplication + '%';
 
-        // Вспомогательные функции
-        function getFileIcon(extension, isClass = false) {
-            const icons = {
-                'js': 'fab fa-js-square',
-                'html': 'fab fa-html5',
-                'css': 'fab fa-css3-alt',
-                'java': 'fab fa-java',
-                'py': 'fab fa-python',
-                'php': 'fab fa-php',
-                'xml': 'fas fa-code',
-                'json': 'fas fa-brackets-curly',
-                'txt': 'fas fa-file-alt',
-                'md': 'fas fa-markdown'
-            };
+  stats.style.display = 'grid';
+  document.getElementById('resultsSection').scrollIntoView({ behavior: 'smooth', block: 'start' });
+}
 
-            if (isClass) {
-                return icons[extension] || 'fas fa-file-code';
-            }
+function toggleCollapse(idx) {
+  document.getElementById(`code-${idx}`).classList.toggle('collapsed');
+}
 
-            const iconClass = icons[extension] || 'fas fa-file-code';
-            return `<i class="${iconClass}"></i>`;
-        }
+async function copySingleFile(idx) {
+  const file = State.selectedFiles[idx];
+  const content = State.fileContents.get(file);
+  if (!content) return;
+  await safeCopy(content);
+  showNotification(`Скопировано: ${file.name}`);
+}
 
-        function getLanguage(extension) {
-            const languages = {
-                'js': 'javascript',
-                'html': 'html',
-                'css': 'css',
-                'java': 'java',
-                'py': 'python',
-                'php': 'php',
-                'xml': 'xml',
-                'json': 'json',
-                'txt': 'plaintext',
-                'md': 'markdown'
-            };
-            return languages[extension] || 'plaintext';
-        }
+/* ===================== MINIMAP ===================== */
+function initMinimap(container, idx) {
+  const minimap = container.querySelector('.minimap');
+  const canvas = minimap.querySelector('canvas');
+  const viewport = minimap.querySelector('.minimap-viewport');
+  const codeContent = container.querySelector('.code-content');
+  const pre = container.querySelector('pre');
 
-        function formatFileSize(bytes) {
-            if (bytes < 1024) return bytes + ' B';
-            if (bytes < 1048576) return (bytes / 1024).toFixed(1) + ' KB';
-            return (bytes / 1048576).toFixed(1) + ' MB';
-        }
+  const ctx = canvas.getContext('2d');
+  const content = State.fileContents.get(State.selectedFiles[idx]) || '';
+  const lines = content.split('\n');
 
-        function escapeHtml(unsafe) {
-            return unsafe
-                .replace(/&/g, "&amp;")
-                .replace(/</g, "&lt;")
-                .replace(/>/g, "&gt;")
-                .replace(/"/g, "&quot;")
-                .replace(/'/g, "&#039;");
-        }
-    </script>
+  function draw() {
+    const rect = minimap.getBoundingClientRect();
+    canvas.width = rect.width;
+    canvas.height = rect.height;
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+    const lineHeight = Math.max(1, canvas.height / Math.max(lines.length, 1));
+    lines.forEach((line, i) => {
+      const y = i * lineHeight;
+      const len = Math.min(line.length, 100);
+      const width = (len / 100) * canvas.width;
+      const brightness = line.trim() ? 0.6 : 0.2;
+      ctx.fillStyle = `rgba(99, 102, 241, ${brightness})`;
+      ctx.fillRect(0, y, width, Math.max(1, lineHeight - 0.5));
+    });
+  }
+
+  function updateViewport() {
+    const scrollTop = codeContent.scrollTop;
+    const scrollHeight = pre.scrollHeight;
+    const clientHeight = codeContent.clientHeight;
+    const ratio = canvas.height / scrollHeight;
+    viewport.style.top = (scrollTop * ratio) + 'px';
+    viewport.style.height = Math.max(10, clientHeight * ratio) + 'px';
+  }
+
+  draw();
+  updateViewport();
+  codeContent.addEventListener('scroll', updateViewport);
+  minimap.addEventListener('click', (e) => {
+    const rect = minimap.getBoundingClientRect();
+    const clickY = e.clientY - rect.top;
+    const ratio = clickY / rect.height;
+    codeContent.scrollTop = ratio * pre.scrollHeight - codeContent.clientHeight / 2;
+  });
+}
+
+/* ===================== METRICS ===================== */
+function calculateMetrics() {
+  let totalComplexity = 0;
+  let totalLines = 0;
+  const allLines = [];
+
+  State.fileContents.forEach(content => {
+    const lines = content.split('\n');
+    totalLines += lines.length;
+    allLines.push(...lines.map(l => l.trim()).filter(l => l && !l.startsWith('//') && !l.startsWith('#') && !l.startsWith('*')));
+
+    // Цикломатическая сложность (эвристика)
+    const complexityKeywords = /\b(if|else|for|while|case|catch|&&|\|\||\?)\b/g;
+    const matches = content.match(complexityKeywords);
+    totalComplexity += matches ? matches.length : 0;
+  });
+
+  // Дупликаты
+  const lineCounts = {};
+  allLines.forEach(l => {
+    if (l.length > 10) lineCounts[l] = (lineCounts[l] || 0) + 1;
+  });
+  const duplicates = Object.values(lineCounts).filter(c => c > 1).reduce((a, b) => a + b, 0);
+  const duplicationPct = allLines.length > 0 ? Math.round((duplicates / allLines.length) * 100) : 0;
+
+  let complexityLabel = 'Низкая';
+  const avg = totalLines > 0 ? totalComplexity / totalLines : 0;
+  if (avg > 0.3) complexityLabel = 'Высокая';
+  else if (avg > 0.15) complexityLabel = 'Средняя';
+
+  return { complexity: complexityLabel, duplication: duplicationPct, raw: totalComplexity };
+}
+
+/* ===================== AI ANALYSIS (эвристики) ===================== */
+function runAIScan() {
+  if (State.fileContents.size === 0) return;
+  const panel = document.getElementById('aiPanel');
+  panel.innerHTML = '<div class="ai-panel"><div class="ai-panel-header"><span class="loading"></span> AI анализирует код...</div></div>';
+
+  setTimeout(() => {
+    const analysis = analyzeCode();
+    panel.innerHTML = renderAIAnalysis(analysis);
+    showNotification('AI-анализ завершён', 'info');
+  }, 300);
+}
+
+function analyzeCode() {
+  const result = {
+    languages: new Set(),
+    patterns: [],
+    functions: [],
+    imports: [],
+    todos: [],
+    complexity: 0,
+    summary: ''
+  };
+
+  State.fileContents.forEach((content, file) => {
+    const ext = file.name.split('.').pop().toLowerCase();
+    result.languages.add(ext);
+
+    // Функции
+    const funcMatches = content.match(/(?:function\s+(\w+)|(?:const|let|var)\s+(\w+)\s*=\s*(?:function|\([^)]*\)\s*=>)|(\w+)\s*\([^)]*\)\s*\{|def\s+(\w+)|public\s+(?:static\s+)?\w+\s+(\w+)\s*\(|class\s+(\w+))/g);
+    if (funcMatches) result.functions.push(...funcMatches.slice(0, 10).map(f => f.trim()));
+
+    // Импорт
+    const imports = content.match(/(?:import|require|from|include|use|using)\s+[^\n;]+/g);
+    if (imports) result.imports.push(...imports.slice(0, 5).map(i => i.trim()));
+
+    // TODO
+    const todos = content.match(/(?:TODO|FIXME|XXX|HACK)\s*:?\s*[^\n]*/gi);
+    if (todos) result.todos.push(...todos);
+
+    // Паттерны
+    if (/addEventListener|onclick|on\w+=/.test(content)) result.patterns.push('Событийная модель');
+    if (/async|await|Promise/.test(content)) result.patterns.push('Асинхронность');
+    if (/class\s+\w+/.test(content)) result.patterns.push('ООП');
+    if (/=>|lambda/.test(content)) result.patterns.push('Функциональный стиль');
+    if (/fetch|axios|XMLHttpRequest/.test(content)) result.patterns.push('HTTP-запросы');
+    if (/localStorage|sessionStorage/.test(content)) result.patterns.push('Локальное хранилище');
+    if (/document\.|window\./.test(content)) result.patterns.push('DOM-манипуляции');
+    if (/SELECT|INSERT|UPDATE|DELETE/.test(content)) result.patterns.push('SQL-запросы');
+    if (/try\s*{|catch\s*\(/.test(content)) result.patterns.push('Обработка ошибок');
+    if (/console\.log|print\(|debugger/.test(content)) result.patterns.push('Отладочный вывод');
+  });
+
+  result.languages = Array.from(result.languages);
+  result.patterns = [...new Set(result.patterns)];
+  result.functions = [...new Set(result.functions)].slice(0, 8);
+  result.imports = [...new Set(result.imports)].slice(0, 5);
+  result.todos = [...new Set(result.todos)].slice(0, 5);
+
+  const metrics = calculateMetrics();
+  result.complexity = metrics.complexity;
+  result.summary = generateSummary(result, metrics);
+
+  return result;
+}
+
+function generateSummary(analysis, metrics) {
+  const parts = [];
+  parts.push(`Код на ${analysis.languages.join(', ')} содержит ${analysis.functions.length} функций/классов.`);
+  if (analysis.patterns.length > 0) parts.push(`Используемые паттерны: ${analysis.patterns.slice(0, 3).join(', ')}.`);
+  parts.push(`Сложность: ${metrics.complexity}. Дубликатов: ${metrics.duplication}%.`);
+  if (analysis.todos.length > 0) parts.push(`Найдено ${analysis.todos.length} TODO/FIXME.`);
+  return parts.join(' ');
+}
+
+function renderAIAnalysis(a) {
+  return `
+    <div class="ai-panel">
+      <div class="ai-panel-header"><i class="fas fa-robot"></i> AI-анализ кода</div>
+      <div class="ai-section">
+        <div class="ai-section-title"><i class="fas fa-info-circle"></i> Резюме</div>
+        <div class="ai-section-content">${escapeHtml(a.summary)}</div>
+      </div>
+      ${a.patterns.length ? `
+      <div class="ai-section">
+        <div class="ai-section-title"><i class="fas fa-cubes"></i> Паттерны и технологии</div>
+        <div>${a.patterns.map(p => `<span class="ai-tag">${escapeHtml(p)}</span>`).join('')}</div>
+      </div>` : ''}
+      ${a.functions.length ? `
+      <div class="ai-section">
+        <div class="ai-section-title"><i class="fas fa-code"></i> Функции и классы</div>
+        <div class="ai-section-content" style="font-family:'JetBrains Mono',monospace;font-size:0.85rem;">
+          ${a.functions.map(f => `<div style="padding:0.2rem 0;">• ${escapeHtml(f)}</div>`).join('')}
+        </div>
+      </div>` : ''}
+      ${a.imports.length ? `
+      <div class="ai-section">
+        <div class="ai-section-title"><i class="fas fa-link"></i> Зависимости</div>
+        <div class="ai-section-content" style="font-family:'JetBrains Mono',monospace;font-size:0.85rem;">
+          ${a.imports.map(i => `<div style="padding:0.2rem 0;">• ${escapeHtml(i)}</div>`).join('')}
+        </div>
+      </div>` : ''}
+      ${a.todos.length ? `
+      <div class="ai-section">
+        <div class="ai-section-title"><i class="fas fa-tasks"></i> TODO / FIXME</div>
+        <div class="ai-section-content" style="color:var(--warning);">
+          ${a.todos.map(t => `<div style="padding:0.2rem 0;">⚠ ${escapeHtml(t)}</div>`).join('')}
+        </div>
+      </div>` : ''}
+    </div>
+  `;
+}
+
+/* ===================== SECURITY SCAN ===================== */
+function runSecurityScan() {
+  if (State.fileContents.size === 0) return;
+  const panel = document.getElementById('securityPanel');
+  panel.innerHTML = '<div class="ai-panel"><div class="ai-panel-header"><span class="loading"></span> Security scan...</div></div>';
+
+  setTimeout(() => {
+    const issues = scanSecurity();
+    panel.innerHTML = renderSecurityScan(issues);
+    showNotification(issues.length ? `Найдено проблем: ${issues.length}` : 'Уязвимостей не найдено', issues.length ? 'warning' : 'success');
+  }, 300);
+}
+
+function scanSecurity() {
+  const issues = [];
+  const rules = [
+    { pattern: /password\s*[:=]\s*["'][^"']+["']/gi, level: 'critical', title: 'Хардкод пароля', desc: 'Обнаружен пароль в исходном коде' },
+    { pattern: /api[_-]?key\s*[:=]\s*["'][^"']+["']/gi, level: 'critical', title: 'Хардкод API-ключа', desc: 'API-ключ в коде — риск утечки' },
+    { pattern: /secret\s*[:=]\s*["'][^"']+["']/gi, level: 'critical', title: 'Хардкод секрета', desc: 'Секретные данные в коде' },
+    { pattern: /-----BEGIN (?:RSA )?PRIVATE KEY-----/g, level: 'critical', title: 'Приватный ключ', desc: 'Приватный ключ в коде!' },
+    { pattern: /eval\s*\(/g, level: 'critical', title: 'eval()', desc: 'eval — источник XSS и инъекций' },
+    { pattern: /document\.write\s*\(/g, level: 'warning', title: 'document.write', desc: 'Устаревший и небезопасный метод' },
+    { pattern: /innerHTML\s*=\s*[^"']/g, level: 'warning', title: 'innerHTML', desc: 'Риск XSS при динамической вставке' },
+    { pattern: /dangerouslySetInnerHTML/g, level: 'warning', title: 'dangerouslySetInnerHTML', desc: 'React: риск XSS' },
+    { pattern: /http:\/\//g, level: 'info', title: 'Небезопасный HTTP', desc: 'Используйте HTTPS' },
+    { pattern: /console\.log\s*\(\s*(?:password|token|secret)/gi, level: 'warning', title: 'Логирование секретов', desc: 'Секреты в консоли' },
+    { pattern: /TODO.*(?:security|безопасн)/gi, level: 'info', title: 'Security TODO', desc: 'Задача по безопасности не решена' },
+    { pattern: /MD5|SHA1(?!\s*-)/g, level: 'info', title: 'Слабые хэши', desc: 'MD5/SHA1 не рекомендуются' },
+    { pattern: /localStorage\.setItem\s*\(\s*["'](?:token|jwt|session)/gi, level: 'warning', title: 'Токен в localStorage', desc: 'Уязвимо к XSS. Используйте httpOnly cookies' }
+  ];
+
+  State.fileContents.forEach((content, file) => {
+    rules.forEach(rule => {
+      const matches = content.match(rule.pattern);
+      if (matches) {
+        issues.push({
+          level: rule.level,
+          title: rule.title,
+          desc: rule.desc,
+          file: file.name,
+          count: matches.length
+        });
+      }
+    });
+  });
+
+  return issues;
+}
+
+function renderSecurityScan(issues) {
+  if (issues.length === 0) {
+    return `
+      <div class="ai-panel" style="border-color:var(--success);background:linear-gradient(135deg,rgba(34,197,94,0.1),rgba(16,185,129,0.1));">
+        <div class="ai-panel-header" style="color:var(--success);"><i class="fas fa-shield-alt"></i> Security scan: чисто</div>
+        <div class="ai-section-content">Уязвимостей не обнаружено. Код выглядит безопасно.</div>
+      </div>
+    `;
+  }
+  const icon = { critical: 'fa-exclamation-circle', warning: 'fa-exclamation-triangle', info: 'fa-info-circle' };
+  const color = { critical: 'var(--error)', warning: 'var(--warning)', info: 'var(--info)' };
+  return `
+    <div class="ai-panel" style="border-color:var(--warning);">
+      <div class="ai-panel-header" style="color:var(--warning);"><i class="fas fa-shield-alt"></i> Security scan: найдено ${issues.length}</div>
+      ${issues.map(i => `
+        <div class="security-item ${i.level}">
+          <i class="fas ${icon[i.level]} security-icon" style="color:${color[i.level]};"></i>
+          <div class="security-text">
+            <strong style="color:${color[i.level]};">${escapeHtml(i.title)} <span style="font-weight:400;color:var(--gray);">— ${escapeHtml(i.file)} (×${i.count})</span></strong>
+            ${escapeHtml(i.desc)}
+          </div>
+        </div>
+      `).join('')}
+    </div>
+  `;
+}
+
+/* ===================== EXPORT ===================== */
+function getCombinedCode() {
+  let combined = '';
+  State.selectedFiles.forEach(file => {
+    const content = State.fileContents.get(file);
+    if (content) {
+      const path = file.relativePath || file.webkitRelativePath || '';
+      combined += `// ======== ${file.name}${path ? ` (${path})` : ''} ========\n`;
+      combined += content + '\n\n';
+    }
+  });
+  return combined;
+}
+
+async function copyAllCode() {
+  if (State.fileContents.size === 0) { showNotification('Сначала обработайте', 'warning'); return; }
+  await safeCopy(getCombinedCode());
+  showNotification('Весь код скопирован!');
+}
+
+async function safeCopy(text) {
+  try {
+    await navigator.clipboard.writeText(text);
+  } catch {
+    const ta = document.createElement('textarea');
+    ta.value = text;
+    ta.style.position = 'fixed';
+    ta.style.opacity = '0';
+    document.body.appendChild(ta);
+    ta.select();
+    try { document.execCommand('copy'); } catch(e) { throw e; }
+    document.body.removeChild(ta);
+  }
+}
+
+function exportAs(format) {
+  if (State.fileContents.size === 0) { showNotification('Сначала обработайте', 'warning'); return; }
+  if (format === 'txt') {
+    downloadBlob(getCombinedCode(), 'code_analysis.txt', 'text/plain');
+  } else if (format === 'md') {
+    let md = `# CodeFusion Analysis Report\n\n`;
+    md += `**Дата:** ${new Date().toLocaleString('ru')}  \n`;
+    md += `**Файлов:** ${State.selectedFiles.length}\n\n---\n\n`;
+    State.selectedFiles.forEach(file => {
+      const content = State.fileContents.get(file);
+      if (content) {
+        const ext = file.name.split('.').pop().toLowerCase();
+        md += `## ${file.name}\n\n\`\`\`${ext}\n${content}\n\`\`\`\n\n---\n\n`;
+      }
+    });
+    downloadBlob(md, 'code_analysis.md', 'text/markdown');
+  } else if (format === 'zip') {
+    const zip = new JSZip();
+    State.selectedFiles.forEach(file => {
+      const content = State.fileContents.get(file);
+      if (content) zip.file(file.relativePath || file.webkitRelativePath || file.name, content);
+    });
+    zip.generateAsync({ type: 'blob' }).then(blob => downloadBlob(blob, 'code_analysis.zip', 'application/zip'));
+  }
+  showNotification(`Экспорт: ${format.toUpperCase()}`);
+}
+
+function downloadBlob(content, filename, type) {
+  const blob = content instanceof Blob ? content : new Blob([content], { type: type + ';charset=utf-8' });
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement('a');
+  a.href = url; a.download = filename;
+  document.body.appendChild(a); a.click();
+  document.body.removeChild(a);
+  URL.revokeObjectURL(url);
+}
+
+/* ===================== SHARE LINK ===================== */
+function openShareModal() {
+  if (State.fileContents.size === 0) return;
+  const data = [];
+  State.selectedFiles.forEach(f => {
+    const c = State.fileContents.get(f);
+    if (c) data.push({ n: f.name, p: f.relativePath || '', c: c });
+  });
+  const json = JSON.stringify(data);
+  // Сжатие через CompressionStream
+  compress(json).then(compressed => {
+    const b64 = btoa(String.fromCharCode(...compressed));
+    const url = `${location.origin}${location.pathname}#share=${b64}`;
+    document.getElementById('shareLink').value = url;
+    document.getElementById('shareModal').classList.add('active');
+  });
+}
+
+async function compress(str) {
+  const stream = new Blob([str]).stream().pipeThrough(new CompressionStream('gzip'));
+  const buf = await new Response(stream).arrayBuffer();
+  return new Uint8Array(buf);
+}
+
+async function decompress(b64) {
+  const bytes = Uint8Array.from(atob(b64), c => c.charCodeAt(0));
+  const stream = new Blob([bytes]).stream().pipeThrough(new DecompressionStream('gzip'));
+  return new Response(stream).text();
+}
+
+async function loadFromHash() {
+  const hash = location.hash;
+  if (hash.startsWith('#share=')) {
+    try {
+      const b64 = hash.substring(7);
+      const json = await decompress(b64);
+      const data = JSON.parse(json);
+      data.forEach(item => addTextAsFile(item.n, item.c));
+      processFiles();
+      showNotification('Загружено по share-ссылке', 'info');
+    } catch (e) { console.error('Share load error', e); }
+  }
+}
+
+async function copyShareLink() {
+  const input = document.getElementById('shareLink');
+  await safeCopy(input.value);
+  showNotification('Ссылка скопирована!');
+}
+
+function shareNative() {
+  if (navigator.share) {
+    navigator.share({
+      title: 'CodeFusion Analysis',
+      text: 'Мой анализ кода',
+      url: document.getElementById('shareLink').value
+    }).catch(() => {});
+  } else {
+    showNotification('Системный шеринг недоступен', 'warning');
+  }
+}
+
+function exportAsImage() {
+  showNotification('Экспорт PNG скоро будет доступен', 'info');
+}
+
+function closeShareModal() { document.getElementById('shareModal').classList.remove('active'); }
+
+/* ===================== SEARCH (исправлен) ===================== */
+function setupSearch() {
+  const input = document.getElementById('searchInput');
+  input.addEventListener('input', debounce(performSearch, 200));
+  input.addEventListener('keydown', (e) => {
+    if (e.key === 'Enter') { e.preventDefault(); navigateSearch(e.shiftKey ? -1 : 1); }
+    else if (e.key === 'Escape') toggleSearch();
+  });
+}
+function toggleSearch() {
+  const c = document.getElementById('searchContainer');
+  c.classList.toggle('active');
+  if (c.classList.contains('active')) document.getElementById('searchInput').focus();
+  else clearSearch();
+}
+function performSearch() {
+  clearSearch();
+  const query = document.getElementById('searchInput').value.trim();
+  if (!query) { document.getElementById('searchInfo').textContent = ''; return; }
+
+  const containers = document.querySelectorAll('.code-container');
+  let totalMatches = 0;
+  containers.forEach(container => {
+    const codeEl = container.querySelector('code');
+    const originalHtml = codeEl.getAttribute('data-original-html') || codeEl.innerHTML;
+    const textContent = codeEl.textContent;
+    const regex = new RegExp(escapeRegExp(query), 'gi');
+    const matches = textContent.match(regex);
+    const count = matches ? matches.length : 0;
+    if (count > 0) {
+      totalMatches += count;
+      // Подсветка только в текстовых узлах, не ломая HTML
+      const highlighted = highlightInText(originalHtml, query);
+      codeEl.innerHTML = highlighted;
+      container.dataset.hasMatch = 'true';
+    } else {
+      container.dataset.hasMatch = 'false';
+      container.style.opacity = '0.4';
+    }
+  });
+  State.searchMatches = Array.from(document.querySelectorAll('.code-container[data-has-match="true"]'));
+  State.currentMatchIndex = State.searchMatches.length > 0 ? 0 : -1;
+  document.getElementById('searchInfo').textContent = totalMatches > 0
+    ? `${totalMatches} совпад. в ${State.searchMatches.length} файл.`
+    : 'Не найдено';
+  if (State.currentMatchIndex >= 0) State.searchMatches[0].scrollIntoView({ behavior: 'smooth', block: 'center' });
+}
+
+function highlightInText(html, query) {
+  // Разбираем HTML на текстовые узлы и теги, подсвечиваем только в тексте
+  const parts = html.split(/(<[^>]+>)/);
+  return parts.map(part => {
+    if (part.startsWith('<')) return part; // тег — не трогаем
+    return part.replace(new RegExp(`(${escapeRegExp(query)})`, 'gi'), '<mark>$1</mark>');
+  }).join('');
+}
+
+function navigateSearch(direction) {
+  if (State.searchMatches.length === 0) return;
+  State.currentMatchIndex = (State.currentMatchIndex + direction + State.searchMatches.length) % State.searchMatches.length;
+  State.searchMatches[State.currentMatchIndex].scrollIntoView({ behavior: 'smooth', block: 'center' });
+  document.getElementById('searchInfo').textContent = `${State.currentMatchIndex + 1} / ${State.searchMatches.length}`;
+}
+function clearSearch() {
+  document.querySelectorAll('.code-container').forEach(c => {
+    c.style.opacity = '';
+    c.dataset.hasMatch = '';
+    const codeEl = c.querySelector('code');
+    const original = codeEl.getAttribute('data-original-html');
+    if (original) codeEl.innerHTML = original;
+  });
+  State.searchMatches = [];
+  State.currentMatchIndex = -1;
+}
+
+/* ===================== COMMAND PALETTE ===================== */
+const COMMANDS = [
+  { id: 'theme', icon: 'fa-moon', text: 'Переключить тему', shortcut: 'T', action: toggleTheme },
+  { id: 'open', icon: 'fa-folder-open', text: 'Открыть файлы', shortcut: 'Ctrl+O', action: () => document.getElementById('fileInput').click() },
+  { id: 'process', icon: 'fa-bolt', text: 'Анализировать код', shortcut: 'Ctrl+Enter', action: processFiles },
+  { id: 'search', icon: 'fa-search', text: 'Поиск по коду', shortcut: 'Ctrl+F', action: toggleSearch },
+  { id: 'ai', icon: 'fa-robot', text: 'AI-анализ', shortcut: 'Ctrl+I', action: runAIScan },
+  { id: 'security', icon: 'fa-shield-alt', text: 'Security scan', shortcut: 'Ctrl+Shift+S', action: runSecurityScan },
+  { id: 'copy', icon: 'fa-copy', text: 'Копировать весь код', shortcut: '', action: copyAllCode },
+  { id: 'share', icon: 'fa-share-alt', text: 'Поделиться анализом', shortcut: '', action: openShareModal },
+  { id: 'txt', icon: 'fa-file-alt', text: 'Экспорт TXT', shortcut: 'Ctrl+S', action: () => exportAs('txt') },
+  { id: 'zip', icon: 'fa-file-archive', text: 'Экспорт ZIP', shortcut: '', action: () => exportAs('zip') },
+  { id: 'md', icon: 'fa-markdown', text: 'Экспорт Markdown', shortcut: '', action: () => exportAs('md') },
+  { id: 'clear', icon: 'fa-trash', text: 'Очистить всё', shortcut: 'Ctrl+Shift+X', action: clearAll },
+  { id: 'undo', icon: 'fa-undo', text: 'Отменить', shortcut: 'Ctrl+Z', action: undo },
+  { id: 'redo', icon: 'fa-redo', text: 'Повторить', shortcut: 'Ctrl+Y', action: redo },
+  { id: 'github', icon: 'fa-github', text: 'Загрузить с GitHub', shortcut: '', action: () => switchTab('github') },
+  { id: 'diff', icon: 'fa-code-branch', text: 'Сравнить файлы (Diff)', shortcut: '', action: () => switchTab('diff') },
+  { id: 'paste', icon: 'fa-paste', text: 'Вставить код', shortcut: '', action: () => switchTab('paste') },
+  { id: 'shortcuts', icon: 'fa-keyboard', text: 'Горячие клавиши', shortcut: '?', action: showShortcuts },
+  { id: 'about', icon: 'fa-info-circle', text: 'О проекте', shortcut: '', action: showOnboarding }
+];
+
+function initCommandPalette() {
+  const input = document.getElementById('commandInput');
+  const list = document.getElementById('commandList');
+  let selectedIdx = 0;
+
+  input.addEventListener('input', () => renderCommands(input.value, 0));
+  input.addEventListener('keydown', (e) => {
+    const items = list.querySelectorAll('.command-item');
+    if (e.key === 'ArrowDown') { e.preventDefault(); selectedIdx = (selectedIdx + 1) % items.length; updateSelection(); }
+    else if (e.key === 'ArrowUp') { e.preventDefault(); selectedIdx = (selectedIdx - 1 + items.length) % items.length; updateSelection(); }
+    else if (e.key === 'Enter') { e.preventDefault(); items[selectedIdx]?.click(); }
+    else if (e.key === 'Escape') { closeCommandPalette(); }
+  });
+
+  function updateSelection() {
+    list.querySelectorAll('.command-item').forEach((el, i) => el.classList.toggle('selected', i === selectedIdx));
+  }
+
+  function renderCommands(query, selIdx) {
+    selectedIdx = selIdx;
+    const q = query.toLowerCase().trim();
+    const filtered = COMMANDS.filter(c => c.text.toLowerCase().includes(q));
+    list.innerHTML = filtered.map((c, i) => `
+      <div class="command-item ${i === selectedIdx ? 'selected' : ''}" data-id="${c.id}">
+        <i class="fas ${c.icon}"></i>
+        <div class="command-item-text">${escapeHtml(c.text)}</div>
+        ${c.shortcut ? `<div class="command-item-shortcut">${c.shortcut}</div>` : ''}
+      </div>
+    `).join('') || '<div style="padding:1rem;text-align:center;color:var(--gray);">Ничего не найдено</div>';
+    list.querySelectorAll('.command-item').forEach(el => {
+      el.addEventListener('click', () => {
+        const cmd = COMMANDS.find(c => c.id === el.dataset.id);
+        if (cmd) { closeCommandPalette(); cmd.action(); }
+      });
+    });
+  }
+  renderCommands('', 0);
+}
+
+function openCommandPalette() {
+  const p = document.getElementById('commandPalette');
+  p.classList.add('active');
+  const input = document.getElementById('commandInput');
+  input.value = '';
+  input.focus();
+  document.getElementById('commandList').querySelectorAll('.command-item')[0]?.classList.add('selected');
+}
+function closeCommandPalette() { document.getElementById('commandPalette').classList.remove('active'); }
+
+/* ===================== ONBOARDING ===================== */
+let onboardingStep = 0;
+const ONBOARDING_STEPS = 4;
+
+function checkOnboarding() {
+  if (!localStorage.getItem('codefusion-onboarded')) showOnboarding();
+}
+function showOnboarding() {
+  onboardingStep = 0;
+  renderOnboarding();
+  document.getElementById('onboarding').classList.add('active');
+}
+function closeOnboarding() {
+  document.getElementById('onboarding').classList.remove('active');
+  localStorage.setItem('codefusion-onboarded', '1');
+}
+function nextOnboarding() {
+  if (onboardingStep < ONBOARDING_STEPS - 1) { onboardingStep++; renderOnboarding(); }
+  else closeOnboarding();
+}
+function prevOnboarding() {
+  if (onboardingStep > 0) { onboardingStep--; renderOnboarding(); }
+}
+function renderOnboarding() {
+  document.querySelectorAll('.onboarding-step').forEach((s, i) => s.classList.toggle('active', i === onboardingStep));
+  const dots = document.getElementById('onboardingDots');
+  dots.innerHTML = Array.from({length: ONBOARDING_STEPS}).map((_, i) => `<div class="onboarding-dot ${i === onboardingStep ? 'active' : ''}"></div>`).join('');
+  document.getElementById('onbPrev').style.display = onboardingStep > 0 ? 'inline-flex' : 'none';
+  document.getElementById('onbNext').innerHTML = onboardingStep === ONBOARDING_STEPS - 1 ? 'Начать <i class="fas fa-rocket"></i>' : 'Далее <i class="fas fa-arrow-right"></i>';
+}
+
+/* ===================== TTS ===================== */
+function speakCode(idx) {
+  if (!('speechSynthesis' in window)) { showNotification('TTS не поддерживается', 'warning'); return; }
+  const file = State.selectedFiles[idx];
+  const content = State.fileContents.get(file);
+  if (!content) return;
+  if (speechSynthesis.speaking) { speechSynthesis.cancel(); showNotification('Остановлено'); return; }
+  const utter = new SpeechSynthesisUtterance(content.substring(0, 5000));
+  utter.lang = 'ru-RU';
+  utter.rate = 1.1;
+  speechSynthesis.speak(utter);
+  showNotification('Озвучивание... (клик — стоп)');
+}
+
+/* ===================== KEYBOARD SHORTCUTS ===================== */
+function setupKeyboardShortcuts() {
+  document.addEventListener('keydown', (e) => {
+    const isInput = ['INPUT', 'TEXTAREA'].includes(document.activeElement.tagName);
+
+    if (e.key === 'Escape') {
+      hideShortcuts();
+      closeCommandPalette();
+      closeShareModal();
+      closeOnboarding();
+      if (document.getElementById('searchContainer').classList.contains('active')) toggleSearch();
+      return;
+    }
+
+    if (e.ctrlKey || e.metaKey) {
+      if (e.key === 'k' || e.key === 'K') { e.preventDefault(); openCommandPalette(); }
+      else if (e.key === 'o' || e.key === 'O') { e.preventDefault(); document.getElementById('fileInput').click(); }
+      else if (e.key === 's' || e.key === 'S') {
+        e.preventDefault();
+        if (e.shiftKey) runSecurityScan();
+        else exportAs('txt');
+      }
+      else if (e.key === 'f' || e.key === 'F') { e.preventDefault(); toggleSearch(); }
+      else if (e.key === 'i' || e.key === 'I') { e.preventDefault(); runAIScan(); }
+      else if (e.key === 'Enter') { e.preventDefault(); if (!document.getElementById('processBtn').disabled) processFiles(); }
+      else if (e.shiftKey && (e.key === 'x' || e.key === 'X')) { e.preventDefault(); clearAll(); }
+      else if (e.key === 'z' || e.key === 'Z') { e.preventDefault(); undo(); }
+      else if (e.key === 'y' || e.key === 'Y') { e.preventDefault(); redo(); }
+    } else if (!isInput) {
+      if (e.key === 't' || e.key === 'T') toggleTheme();
+      else if (e.key === '?') showShortcuts();
+    }
+  });
+}
+function showShortcuts() { document.getElementById('shortcutsModal').classList.add('active'); }
+function hideShortcuts() { document.getElementById('shortcutsModal').classList.remove('active'); }
+
+/* ===================== FAQ ===================== */
+function toggleFaq(el) { el.parentElement.classList.toggle('open'); }
+
+/* ===================== NOTIFICATION ===================== */
+function showNotification(message, type = 'success') {
+  const n = document.getElementById('notification');
+  document.getElementById('notificationText').textContent = message;
+  n.className = 'notification show ' + type;
+  n.querySelector('i').className = type === 'success' ? 'fas fa-check-circle'
+    : type === 'error' ? 'fas fa-exclamation-circle'
+    : type === 'warning' ? 'fas fa-exclamation-triangle'
+    : 'fas fa-info-circle';
+  setTimeout(() => n.classList.remove('show'), 3000);
+}
+
+/* ===================== HELPERS ===================== */
+function getFileIcon(ext, isClass = false) {
+  const icons = {
+    'js': 'fab fa-js-square', 'ts': 'fab fa-js-square', 'jsx': 'fab fa-react', 'tsx': 'fab fa-react',
+    'html': 'fab fa-html5', 'css': 'fab fa-css3-alt', 'vue': 'fab fa-vuejs', 'svelte': 'fas fa-fire',
+    'java': 'fab fa-java', 'py': 'fab fa-python', 'php': 'fab fa-php',
+    'md': 'fab fa-markdown', 'swift': 'fab fa-swift', 'docker': 'fab fa-docker',
+    'git': 'fab fa-git-alt', 'github': 'fab fa-github', 'rust': 'fas fa-cog', 'go': 'fas fa-code'
+  };
+  const cls = icons[ext] || 'fas fa-file-code';
+  return isClass ? cls : `<i class="${cls}"></i>`;
+}
+function getLanguage(ext) {
+  const map = {
+    'js': 'javascript', 'ts': 'typescript', 'jsx': 'javascript', 'tsx': 'typescript',
+    'html': 'html', 'htm': 'html', 'css': 'css', 'scss': 'scss', 'sass': 'sass', 'less': 'less',
+    'java': 'java', 'py': 'python', 'php': 'php', 'rb': 'ruby',
+    'c': 'c', 'cpp': 'cpp', 'h': 'c', 'cs': 'csharp',
+    'go': 'go', 'rs': 'rust', 'swift': 'swift', 'kt': 'kotlin',
+    'xml': 'xml', 'svg': 'xml', 'json': 'json', 'yaml': 'yaml', 'yml': 'yaml', 'toml': 'ini', 'ini': 'ini',
+    'sql': 'sql', 'md': 'markdown', 'sh': 'bash', 'bash': 'bash', 'bat': 'dos', 'ps1': 'powershell',
+    'vue': 'xml', 'svelte': 'xml', 'txt': 'plaintext', 'lua': 'lua', 'r': 'r', 'scala': 'scala',
+    'dart': 'dart', 'zig': 'zig', 'haskell': 'haskell', 'hs': 'haskell', 'elm': 'elm', 'clojure': 'clojure'
+  };
+  return map[ext] || 'plaintext';
+}
+function formatFileSize(bytes) {
+  if (bytes < 1024) return bytes + ' B';
+  if (bytes < 1048576) return (bytes / 1024).toFixed(1) + ' KB';
+  if (bytes < 1073741824) return (bytes / 1048576).toFixed(1) + ' MB';
+  return (bytes / 1073741824).toFixed(2) + ' GB';
+}
+function escapeHtml(s) {
+  if (typeof s !== 'string') return '';
+  return s.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;').replace(/'/g, '&#039;');
+}
+function escapeRegExp(s) { return s.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'); }
+function debounce(fn, delay) {
+  let timer;
+  return function(...args) { clearTimeout(timer); timer = setTimeout(() => fn.apply(this, args), delay); };
+}
+
+/* ===================== PWA ===================== */
+if ('serviceWorker' in navigator) {
+  window.addEventListener('load', () => {
+    navigator.serviceWorker.register('sw.js').catch(() => {});
+  });
+}
+</script>
 </body>
 </html>

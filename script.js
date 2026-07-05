@@ -1,11 +1,103 @@
-// One1Game Platform - Working Version
+// One1Game Platform - Working Version with Smart Radio
 class One1GamePlatform {
   constructor() {
       this.clicks = 0;
       this.highScore = 0;
       this.isPlaying = false;
-      this.allArticles = window.allArticles || []; // ← ЭТА СТРОЧКА ДОБАВЛЕНА
+      this.allArticles = window.allArticles || [];
+      this.globalRadio = null;
+      
+      // Инициализируем глобальное радио ТОЛЬКО если это не архив
+      if (!this.isArchivePage()) {
+        this.initGlobalRadio();
+      }
       this.init();
+  }
+
+  // Проверяем, это архив или нет
+  isArchivePage() {
+    return window.location.pathname.includes('archive.html') || 
+           document.title.includes('Архив') ||
+           document.querySelector('.articles-container') !== null;
+  }
+
+  // Глобальное радио для всех страниц (кроме архива)
+  initGlobalRadio() {
+    // Проверяем, есть ли уже глобальное радио
+    if (window.One1GameRadio) {
+      this.globalRadio = window.One1GameRadio;
+      console.log('📻 Using existing global radio');
+      return;
+    }
+    
+    console.log('📻 Creating global radio player (not for archive)...');
+    
+    // Создаем скрытый аудио элемент для радио
+    let radioAudio = document.getElementById('radio-stream');
+    
+    // Если радио нет на странице, создаем скрытое
+    if (!radioAudio) {
+      radioAudio = document.createElement('audio');
+      radioAudio.id = 'radio-stream-global';
+      radioAudio.src = 'https://spritelayerradio.com/listen/classic/classic.mp3';
+      radioAudio.preload = 'metadata';
+      radioAudio.style.display = 'none';
+      document.body.appendChild(radioAudio);
+    }
+    
+    // Восстанавливаем состояние из localStorage
+    const savedVolume = localStorage.getItem('one1game_radio_volume');
+    const savedPaused = localStorage.getItem('one1game_radio_paused');
+    
+    if (savedVolume) {
+      radioAudio.volume = parseFloat(savedVolume);
+    }
+    
+    // Создаем глобальный объект радио
+    this.globalRadio = {
+      audio: radioAudio,
+      play: function() {
+        this.audio.play().catch(e => console.log('Auto-play blocked:', e));
+        localStorage.setItem('one1game_radio_paused', 'false');
+      },
+      pause: function() {
+        this.audio.pause();
+        localStorage.setItem('one1game_radio_paused', 'true');
+      },
+      toggle: function() {
+        if (this.audio.paused) {
+          this.play();
+        } else {
+          this.pause();
+        }
+      },
+      setVolume: function(vol) {
+        this.audio.volume = vol;
+        localStorage.setItem('one1game_radio_volume', vol);
+      },
+      isPlaying: function() {
+        return !this.audio.paused;
+      }
+    };
+    
+    // Сохраняем в глобальной области видимости
+    window.One1GameRadio = this.globalRadio;
+    
+    // Восстанавливаем состояние воспроизведения (только если не было паузы)
+    if (savedPaused !== 'true') {
+      setTimeout(() => {
+        this.globalRadio.audio.play().catch(e => {
+          console.log('Auto-play on init blocked');
+        });
+      }, 1000);
+    }
+    
+    // Сохраняем громкость при изменении
+    radioAudio.addEventListener('volumechange', () => {
+      localStorage.setItem('one1game_radio_volume', radioAudio.volume);
+    });
+    
+    console.log('✅ Global radio initialized (not for archive)');
   }
 
   init() {
@@ -24,26 +116,19 @@ class One1GamePlatform {
       // Проверяем наличие всех элементов
       this.checkElements();
       
-      this.loadRandomVideo();
-      this.setupClickerGame();
-      this.setupMusicPlayer();
+      // Загружаем контент в зависимости от страницы
+      this.loadPageContent();
+      
+      // Настраиваем видимые элементы радио, если они есть на странице
+      this.setupVisibleRadioControls();
+      
       this.setupEventListeners();
-      this.loadLatestArticles(); // ← ЭТА СТРОЧКА ДОБАВЛЕНА
       
       console.log('✅ One1Game Platform initialized successfully!');
   }
 
   checkElements() {
       const requiredElements = [
-          'video-container',
-          'clicker-target', 
-          'click-count',
-          'high-score',
-          'reset-game',
-          'play-pause',
-          'radio-stream',
-          'volume-slider',
-          'status-text',
           'latest-articles'
       ];
 
@@ -57,12 +142,130 @@ class One1GamePlatform {
       });
   }
 
-  // Latest Articles System
-  loadLatestArticles() {
-    console.log('📰 Loading latest articles...');
+  // Загрузка контента в зависимости от страницы
+  loadPageContent() {
+    if (this.isArchivePage()) {
+      console.log('📚 Archive page detected - NO RADIO');
+      // Для архива НЕ загружаем радио
+    } else {
+      console.log('🏠 Home page detected');
+      this.loadHomePageContent();
+    }
+  }
+
+  // Контент для главной страницы
+  loadHomePageContent() {
+    this.loadRandomVideo();
+    this.setupClickerGame();
+    this.loadLatestArticles();
+  }
+
+  // Настройка видимых элементов управления радио
+  setupVisibleRadioControls() {
+    const playBtn = document.getElementById('play-pause');
+    const volumeSlider = document.getElementById('volume-slider');
+    const statusText = document.getElementById('status-text');
     
-    // Берем 3 последние статьи
-    const latestArticles = window.allArticles.slice(0, 4);
+    // Если это архив или нет глобального радио - ничего не настраиваем
+    if (this.isArchivePage() || !this.globalRadio) {
+      console.log('📻 No radio controls for archive page');
+      return;
+    }
+    
+    if (!playBtn) {
+      console.log('📻 No visible radio controls on this page');
+      return;
+    }
+    
+    console.log('🎵 Setting up visible radio controls...');
+    
+    // Синхронизируем громкость
+    if (volumeSlider) {
+      volumeSlider.value = this.globalRadio.audio.volume;
+      
+      volumeSlider.addEventListener('input', (e) => {
+        const vol = parseFloat(e.target.value);
+        this.globalRadio.setVolume(vol);
+        this.updateVolumeIcon(vol);
+      });
+    }
+    
+    // Обновляем кнопку
+    this.updateRadioButton(playBtn);
+    
+    // Кнопка play/pause
+    playBtn.addEventListener('click', () => {
+      this.globalRadio.toggle();
+      this.updateRadioButton(playBtn);
+      
+      if (statusText) {
+        statusText.textContent = this.globalRadio.isPlaying() 
+          ? 'В эфире - 8-Bit Radio' 
+          : 'На паузе';
+      }
+    });
+    
+    // Обновляем статус
+    if (statusText) {
+      statusText.textContent = this.globalRadio.isPlaying() 
+        ? 'В эфире - 8-Bit Radio' 
+        : 'На паузе';
+    }
+    
+    // Визуализатор
+    this.setupVisualizer();
+    
+    // Слушаем события от радио
+    this.globalRadio.audio.addEventListener('play', () => {
+      this.updateRadioButton(playBtn);
+      if (statusText) statusText.textContent = 'В эфире - 8-Bit Radio';
+    });
+    
+    this.globalRadio.audio.addEventListener('pause', () => {
+      this.updateRadioButton(playBtn);
+      if (statusText) statusText.textContent = 'На паузе';
+    });
+    
+    console.log('✅ Visible radio controls setup complete');
+  }
+
+  updateRadioButton(button) {
+    const icon = button.querySelector('i');
+    if (!icon) return;
+    
+    const isPlaying = this.globalRadio ? this.globalRadio.isPlaying() : false;
+    icon.className = isPlaying ? 'fas fa-pause' : 'fas fa-play';
+    button.style.background = isPlaying ? '#00ff88' : '#00f3ff';
+  }
+
+  updateVolumeIcon(volume) {
+    const icon = document.querySelector('.volume-control i');
+    if (icon) {
+      if (volume == 0) {
+        icon.className = 'fas fa-volume-mute';
+      } else if (volume < 0.5) {
+        icon.className = 'fas fa-volume-down';
+      } else {
+        icon.className = 'fas fa-volume-up';
+      }
+    }
+  }
+
+  setupVisualizer() {
+    const bars = document.querySelectorAll('.visualizer .bar');
+    if (!bars.length) return;
+    
+    const isPlaying = this.globalRadio ? this.globalRadio.isPlaying() : false;
+    
+    bars.forEach(bar => {
+      bar.style.animationPlayState = isPlaying ? 'running' : 'paused';
+    });
+  }
+
+  // Latest Articles System - ОБНОВЛЕНО ДЛЯ ПОЛОСОК
+  loadLatestArticles() {
+    console.log('📰 Loading latest articles (strip format)...');
+    
     const container = document.getElementById('latest-articles');
     
     if (!container) {
@@ -70,327 +273,240 @@ class One1GamePlatform {
       return;
     }
     
-    container.innerHTML = latestArticles.map(article => `
-      <a href="${article.url}" class="article-preview-link">
-        <div class="article-preview">
-          <h4>${article.title}</h4>
-          <p>${article.excerpt}</p>
-          <div class="article-preview-meta">
-            <i class="far fa-calendar"></i> ${article.date} · 
-            <i class="far fa-clock"></i> ${article.readTime}
+    // Проверяем статьи
+    if (!window.allArticles || window.allArticles.length === 0) {
+      container.innerHTML = `
+        <div class="article-strip">
+          <h3>Статьи загружаются...</h3>
+          <p>Пожалуйста, подождите немного или обновите страницу.</p>
+          <div class="article-meta-strip">
+            <span><i class="far fa-clock"></i> 1 мин</span>
           </div>
+        </div>
+      `;
+      return;
+    }
+    
+    // Сортируем статьи по дате (новые первыми)
+    const sortedArticles = [...window.allArticles].sort((a, b) => {
+      return new Date(b.date || 0) - new Date(a.date || 0);
+    });
+    
+    // Берем только последние 5 статей
+    const latestArticles = sortedArticles.slice(0, 5);
+    
+    // Генерируем HTML для полосок статей
+    container.innerHTML = latestArticles.map(article => `
+      <a href="${article.url || '#'}" class="article-strip" ${article.url ? 'target="_blank"' : ''}>
+        <h3>${article.title || 'Без названия'}</h3>
+        <p>${article.excerpt || 'Описание отсутствует'}</p>
+        <div class="article-meta-strip">
+          <span><i class="far fa-calendar"></i> ${article.date || 'Не указано'}</span>
+          <span><i class="far fa-clock"></i> ${article.readTime || '5 мин'}</span>
+          ${article.category ? `<span class="category-badge"><i class="fas fa-tag"></i> ${article.category}</span>` : ''}
         </div>
       </a>
     `).join('');
     
-    console.log(`✅ Loaded ${latestArticles.length} latest articles`);
+    console.log(`✅ Loaded ${latestArticles.length} latest articles in strip format`);
   }
 
   // Video System
   async loadRandomVideo() {
-      try {
-          const videoContainer = document.getElementById('video-container');
-          if (!videoContainer) return;
+    const videoContainer = document.getElementById('video-container');
+    if (!videoContainer) {
+      console.log('📹 No video container on this page');
+      return;
+    }
 
-          const videos = [
-              "https://www.youtube.com/embed/bA3CwT1yy_U",
-              "https://www.youtube.com/embed/zlXKmLXKA8E", 
-              "https://www.youtube.com/embed/FbaI71tWi1Q",
-              "https://www.youtube.com/embed/29JZvl1sYKg",
-              "https://www.youtube.com/embed/Y4Xo-6zemAs"
-          ];
-          
-          const randomIndex = Math.floor(Math.random() * videos.length);
-          const videoUrl = videos[randomIndex] + '?autoplay=1&mute=1';
-          
-          videoContainer.innerHTML = `
-              <iframe src="${videoUrl}" 
-                      frameborder="0" 
-                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-                      allowfullscreen
-                      loading="lazy"></iframe>`;
-                      
-          console.log('📹 Video loaded successfully');
-      } catch (error) {
-          console.error('Video loading error:', error);
-      }
+    try {
+      const videos = [
+        "https://www.youtube.com/embed/bA3CwT1yy_U",
+        "https://www.youtube.com/embed/zlXKmLXKA8E", 
+        "https://www.youtube.com/embed/FbaI71tWi1Q",
+        "https://www.youtube.com/embed/29JZvl1sYKg",
+        "https://www.youtube.com/embed/Y4Xo-6zemAs"
+      ];
+      
+      const randomIndex = Math.floor(Math.random() * videos.length);
+      const videoUrl = videos[randomIndex] + '?autoplay=1&mute=1';
+      
+      videoContainer.innerHTML = `
+        <iframe src="${videoUrl}" 
+                frameborder="0" 
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                allowfullscreen
+                loading="lazy"></iframe>`;
+                
+      console.log('📹 Video loaded successfully');
+    } catch (error) {
+      console.error('Video loading error:', error);
+    }
   }
 
   // Clicker Game System
   setupClickerGame() {
-      console.log('🎮 Setting up clicker game...');
-      
-      // Load saved data
-      this.clicks = parseInt(localStorage.getItem('one1game_clicks')) || 0;
-      this.highScore = parseInt(localStorage.getItem('one1game_highscore')) || 0;
+    const clicker = document.getElementById('clicker-target');
+    if (!clicker) {
+      console.log('🎮 No clicker game on this page');
+      return;
+    }
 
-      // Update displays
-      this.updateGameDisplay();
+    console.log('🎮 Setting up clicker game...');
+    
+    // Load saved data
+    this.clicks = parseInt(localStorage.getItem('one1game_clicks')) || 0;
+    this.highScore = parseInt(localStorage.getItem('one1game_highscore')) || 0;
 
-      // Click handler
-      const clicker = document.getElementById('clicker-target');
-      if (!clicker) {
-          console.error('❌ Clicker target not found!');
-          return;
-      }
+    // Update displays
+    this.updateGameDisplay();
 
-      clicker.addEventListener('click', (e) => {
-          this.handleClick(e);
+    // Click handler
+    clicker.addEventListener('click', (e) => {
+      this.handleClick(e);
+    });
+
+    // Touch support
+    clicker.addEventListener('touchstart', (e) => {
+      e.preventDefault();
+      this.handleClick(e);
+    });
+
+    // Reset button
+    const resetBtn = document.getElementById('reset-game');
+    if (resetBtn) {
+      resetBtn.addEventListener('click', () => {
+        this.resetGame();
       });
+    }
 
-      // Touch support
-      clicker.addEventListener('touchstart', (e) => {
-          e.preventDefault();
-          this.handleClick(e);
-      });
-
-      // Reset button
-      const resetBtn = document.getElementById('reset-game');
-      if (resetBtn) {
-          resetBtn.addEventListener('click', () => {
-              this.resetGame();
-          });
-      }
-
-      console.log('✅ Clicker game setup complete');
+    console.log('✅ Clicker game setup complete');
   }
 
   handleClick(event) {
-      this.clicks++;
-      
-      // Update high score
-      if (this.clicks > this.highScore) {
-          this.highScore = this.clicks;
-          localStorage.setItem('one1game_highscore', this.highScore);
-      }
-      
-      // Save and update
-      localStorage.setItem('one1game_clicks', this.clicks);
-      this.updateGameDisplay();
-      
-      // Visual effects
-      this.createClickEffect(event);
-      this.animateCore();
+    this.clicks++;
+    
+    // Update high score
+    if (this.clicks > this.highScore) {
+      this.highScore = this.clicks;
+      localStorage.setItem('one1game_highscore', this.highScore);
+    }
+    
+    // Save and update
+    localStorage.setItem('one1game_clicks', this.clicks);
+    this.updateGameDisplay();
+    
+    // Visual effects
+    this.createClickEffect(event);
+    this.animateCore();
   }
 
   updateGameDisplay() {
-      const clickCount = document.getElementById('click-count');
-      const highScore = document.getElementById('high-score');
-      
-      if (clickCount) clickCount.textContent = this.formatNumber(this.clicks);
-      if (highScore) highScore.textContent = this.formatNumber(this.highScore);
+    const clickCount = document.getElementById('click-count');
+    const highScore = document.getElementById('high-score');
+    
+    if (clickCount) clickCount.textContent = this.formatNumber(this.clicks);
+    if (highScore) highScore.textContent = this.formatNumber(this.highScore);
   }
 
   animateCore() {
-      const core = document.getElementById('clicker-target');
-      if (core) {
-          core.style.transform = 'scale(0.95)';
-          
-          setTimeout(() => {
-              core.style.transform = 'scale(1)';
-          }, 100);
-      }
+    const core = document.getElementById('clicker-target');
+    if (core) {
+      core.style.transform = 'scale(0.95)';
+      
+      setTimeout(() => {
+        core.style.transform = 'scale(1)';
+      }, 100);
+    }
   }
 
   createClickEffect(event) {
-      const effect = document.createElement('div');
-      effect.className = 'click-effect';
-      effect.style.cssText = `
-          position: fixed;
-          width: 20px;
-          height: 20px;
-          background: radial-gradient(circle, #00ff88, transparent);
-          border-radius: 50%;
-          pointer-events: none;
-          left: ${event.clientX - 10}px;
-          top: ${event.clientY - 10}px;
-          z-index: 1000;
-      `;
-      
-      document.body.appendChild(effect);
-      
-      // Анимация через CSS
-      effect.animate([
-          { transform: 'scale(1)', opacity: 1 },
-          { transform: 'scale(3)', opacity: 0 }
-      ], {
-          duration: 600,
-          easing: 'ease-out'
-      }).onfinish = () => {
-          if (effect.parentNode) {
-              effect.parentNode.removeChild(effect);
-          }
-      };
+    const effect = document.createElement('div');
+    effect.className = 'click-effect';
+    effect.style.cssText = `
+      position: fixed;
+      width: 20px;
+      height: 20px;
+      background: radial-gradient(circle, #00ff88, transparent);
+      border-radius: 50%;
+      pointer-events: none;
+      left: ${event.clientX - 10}px;
+      top: ${event.clientY - 10}px;
+      z-index: 1000;
+    `;
+    
+    document.body.appendChild(effect);
+    
+    // Анимация через CSS
+    effect.animate([
+      { transform: 'scale(1)', opacity: 1 },
+      { transform: 'scale(3)', opacity: 0 }
+    ], {
+      duration: 600,
+      easing: 'ease-out'
+    }).onfinish = () => {
+      if (effect.parentNode) {
+        effect.parentNode.removeChild(effect);
+      }
+    };
   }
 
   resetGame() {
-      this.clicks = 0;
-      this.highScore = 0;
+    this.clicks = 0;
+    this.highScore = 0;
+    
+    localStorage.setItem('one1game_clicks', '0');
+    localStorage.setItem('one1game_highscore', '0');
+    
+    this.updateGameDisplay();
+    
+    // Visual feedback
+    const btn = document.getElementById('reset-game');
+    if (btn) {
+      const originalText = btn.innerHTML;
+      btn.innerHTML = '<i class="fas fa-check"></i> Прогресс сброшен!';
+      btn.style.background = 'rgba(0, 255, 136, 0.3)';
+      btn.style.borderColor = '#00ff88';
+      btn.style.color = '#00ff88';
       
-      localStorage.setItem('one1game_clicks', '0');
-      localStorage.setItem('one1game_highscore', '0');
-      
-      this.updateGameDisplay();
-      
-      // Visual feedback
-      const btn = document.getElementById('reset-game');
-      if (btn) {
-          const originalText = btn.innerHTML;
-          btn.innerHTML = '<i class="fas fa-check"></i> Прогресс сброшен!';
-          btn.style.background = 'rgba(0, 255, 136, 0.3)';
-          btn.style.borderColor = '#00ff88';
-          btn.style.color = '#00ff88';
-          
-          setTimeout(() => {
-              btn.innerHTML = originalText;
-              btn.style.background = '';
-              btn.style.borderColor = '#ff003c';
-              btn.style.color = '#ff003c';
-          }, 2000);
-      }
-  }
-
-  // Music Player System
-  setupMusicPlayer() {
-      console.log('🎵 Setting up music player...');
-      
-      const player = document.getElementById('radio-stream');
-      const playBtn = document.getElementById('play-pause');
-      const volumeSlider = document.getElementById('volume-slider');
-      const statusText = document.getElementById('status-text');
-      const bars = document.querySelectorAll('.visualizer .bar');
-
-      if (!player || !playBtn) {
-          console.error('❌ Music player elements not found!');
-          return;
-      }
-
-      // Set initial volume
-      player.volume = volumeSlider ? volumeSlider.value : 0.7;
-
-      // Play/Pause
-      playBtn.addEventListener('click', () => {
-          this.togglePlayback(player, playBtn, bars, statusText);
-      });
-
-      // Volume control
-      if (volumeSlider) {
-          volumeSlider.addEventListener('input', () => {
-              player.volume = volumeSlider.value;
-              this.updateVolumeIcon(volumeSlider.value);
-          });
-      }
-
-      // Player events
-      player.addEventListener('play', () => {
-          this.setPlaybackState(true, playBtn, bars, statusText);
-      });
-
-      player.addEventListener('pause', () => {
-          this.setPlaybackState(false, playBtn, bars, statusText);
-      });
-
-      player.addEventListener('ended', () => {
-          this.setPlaybackState(false, playBtn, bars, statusText);
-          if (statusText) {
-              statusText.textContent = 'Трансляция завершена';
-          }
-      });
-
-      player.addEventListener('error', (e) => {
-          console.error('Audio error:', e);
-          if (statusText) {
-              statusText.textContent = 'Ошибка подключения';
-              statusText.style.color = '#ff003c';
-          }
-      });
-
-      console.log('✅ Music player setup complete');
-  }
-
-  togglePlayback(player, button, bars, status) {
-      if (player.paused) {
-          player.play().catch(error => {
-              console.error('Playback error:', error);
-              if (status) {
-                  status.textContent = 'Ошибка воспроизведения';
-                  status.style.color = '#ff003c';
-              }
-          });
-      } else {
-          player.pause();
-      }
-  }
-
-  setPlaybackState(playing, button, bars, status) {
-      const icon = button.querySelector('i');
-      if (!icon) return;
-      
-      if (playing) {
-          icon.className = 'fas fa-pause';
-          if (status) {
-              status.textContent = 'В эфире - 8-Bit Radio';
-              status.style.color = '#00ff88';
-          }
-          if (bars && bars.length > 0) {
-              bars.forEach(bar => {
-                  bar.style.animationPlayState = 'running';
-              });
-          }
-          button.style.background = '#00ff88';
-      } else {
-          icon.className = 'fas fa-play';
-          if (status) {
-              status.textContent = 'На паузе';
-              status.style.color = '#b0b0b0';
-          }
-          if (bars && bars.length > 0) {
-              bars.forEach(bar => {
-                  bar.style.animationPlayState = 'paused';
-              });
-          }
-          button.style.background = '#00f3ff';
-      }
-  }
-
-  updateVolumeIcon(volume) {
-      const icon = document.querySelector('.volume-control i');
-      if (icon) {
-          if (volume == 0) {
-              icon.className = 'fas fa-volume-mute';
-          } else if (volume < 0.5) {
-              icon.className = 'fas fa-volume-down';
-          } else {
-              icon.className = 'fas fa-volume-up';
-          }
-      }
+      setTimeout(() => {
+        btn.innerHTML = originalText;
+        btn.style.background = '';
+        btn.style.borderColor = '#ff003c';
+        btn.style.color = '#ff003c';
+      }, 2000);
+    }
   }
 
   // Utility Methods
   formatNumber(num) {
-      return num.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+    return num.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
   }
 
   setupEventListeners() {
-      // Keyboard shortcuts
-      document.addEventListener('keydown', (e) => {
-          // Space - play/pause music
-          if (e.code === 'Space') {
-              e.preventDefault();
-              const playBtn = document.getElementById('play-pause');
-              if (playBtn) playBtn.click();
-          }
-          // R - reset game (without Ctrl для простоты)
-          if (e.code === 'KeyR') {
-              const resetBtn = document.getElementById('reset-game');
-              if (resetBtn && document.activeElement !== resetBtn) {
-                  e.preventDefault();
-                  this.resetGame();
-              }
-          }
-      });
+    // Keyboard shortcuts
+    document.addEventListener('keydown', (e) => {
+      // Space - play/pause music (только если есть кнопка на странице И есть радио)
+      if (e.code === 'Space') {
+        const playBtn = document.getElementById('play-pause');
+        if (playBtn && this.globalRadio) {
+          e.preventDefault();
+          this.globalRadio.toggle();
+          this.updateRadioButton(playBtn);
+        }
+      }
+      
+      // R - reset game (without Ctrl для простоты)
+      if (e.code === 'KeyR') {
+        const resetBtn = document.getElementById('reset-game');
+        if (resetBtn && document.activeElement !== resetBtn) {
+          e.preventDefault();
+          this.resetGame();
+        }
+      }
+    });
 
-      console.log('✅ Event listeners setup complete');
+    console.log('✅ Event listeners setup complete');
   }
 }
 

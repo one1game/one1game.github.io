@@ -2,8 +2,22 @@
 <html lang="ru">
 <head>
   <meta charset="UTF-8" />
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🎮</text></svg>">
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Статьи - One1Game</title>
+  
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-SZYYDYEC6T"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-SZYYDYEC6T');
+  </script>
+  
+  <title>Архив статей - One1Game</title>
+  <meta name="description" content="Архив игровых статей One1Game — обзоры, гайды, новости игровой индустрии. Все материалы в одном месте." />
+  <meta name="keywords" content="игровые статьи, обзоры игр, гайды, игровые новости, one1game, gaming articles" />
+  
   <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Rajdhani:wght@300;400;500;600&display=swap" rel="stylesheet" />
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet" />
   <link rel="stylesheet" href="styles.css" />
@@ -26,7 +40,24 @@
       padding: 25px;
       border-radius: 12px;
       border: 1px solid rgba(255, 193, 7, 0.3);
-      transition: all 0.3s ease;
+      transition: transform 0.3s ease, border-color 0.3s ease;
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .article-item::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(0, 255, 136, 0.1), transparent);
+      transition: left 0.6s ease;
+    }
+    
+    .article-item:hover::before {
+      left: 100%;
     }
     
     .article-link {
@@ -40,15 +71,29 @@
       transform: translateX(10px);
     }
     
-    .article-category {
-      display: inline-block;
-      padding: 4px 12px;
-      background: #8a2be2;
-      color: #000;
-      border-radius: 4px;
-      font-size: 0.8rem;
-      font-weight: 600;
+    .article-item h3 {
+      color: #00f3ff;
       margin-bottom: 10px;
+      font-size: 1.3rem;
+    }
+    
+    .article-item p {
+      color: #cccccc;
+      line-height: 1.6;
+    }
+    
+    .article-meta {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+      color: #b0b0b0;
+      font-size: 0.9rem;
+      margin-top: 15px;
+      flex-wrap: wrap;
+    }
+    
+    .article-meta i {
+      color: #00ff88;
     }
     
     .back-btn {
@@ -58,6 +103,15 @@
       margin-bottom: 30px;
       color: #00f3ff;
       text-decoration: none;
+      padding: 8px 16px;
+      border: 1px solid rgba(0, 243, 255, 0.3);
+      border-radius: 6px;
+      transition: all 0.3s ease;
+    }
+    
+    .back-btn:hover {
+      background: rgba(0, 243, 255, 0.1);
+      transform: translateX(-5px);
     }
 
     /* Пагинация */
@@ -73,35 +127,93 @@
     .page-btn {
       padding: 10px 16px;
       background: rgba(0, 0, 0, 0.6);
-      border: 1px solid var(--neon-cyan);
+      border: 1px solid #00f3ff;
       border-radius: 6px;
-      color: var(--text-primary);
+      color: #ffffff;
       cursor: pointer;
       transition: all 0.3s ease;
       font-family: 'Rajdhani', sans-serif;
       font-weight: 500;
+      min-width: 44px;
+      height: 44px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
     }
 
-    .page-btn:hover {
+    .page-btn:hover:not(.disabled) {
       background: rgba(0, 243, 255, 0.2);
       transform: translateY(-2px);
     }
 
     .page-btn.active {
-      background: var(--neon-cyan);
+      background: #00f3ff;
       color: #000;
       font-weight: 600;
-      box-shadow: 0 0 15px var(--neon-cyan);
+      box-shadow: 0 0 15px #00f3ff;
     }
 
     .page-btn.disabled {
       opacity: 0.5;
       cursor: not-allowed;
+      pointer-events: none;
     }
 
-    .page-btn.disabled:hover {
-      transform: none;
+    .dots {
+      padding: 10px;
+      color: #666;
+    }
+
+    /* Loading state */
+    .loading {
+      text-align: center;
+      padding: 40px;
+      color: #00f3ff;
+      font-size: 1.2rem;
+    }
+
+    /* Категории */
+    .category-filter {
+      display: flex;
+      gap: 10px;
+      margin-bottom: 25px;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+    
+    .category-btn {
+      padding: 8px 18px;
       background: rgba(0, 0, 0, 0.6);
+      border: 1px solid #8a2be2;
+      border-radius: 20px;
+      color: #b0b0b0;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      font-size: 0.95rem;
+      font-family: 'Rajdhani', sans-serif;
+      font-weight: 500;
+    }
+    
+    .category-btn.active {
+      background: #8a2be2;
+      color: #ffffff;
+      font-weight: 600;
+      box-shadow: 0 0 10px rgba(138, 43, 226, 0.5);
+    }
+    
+    .category-btn:hover:not(.active) {
+      background: rgba(138, 43, 226, 0.3);
+      transform: translateY(-2px);
+    }
+    
+    .no-articles {
+      text-align: center;
+      padding: 60px 20px;
+      color: #888;
+      font-size: 1.1rem;
+      background: rgba(16, 16, 26, 0.8);
+      border-radius: 12px;
+      border: 1px solid rgba(255, 193, 7, 0.1);
     }
   </style>
 </head>
@@ -109,60 +221,236 @@
   <div class="cyber-bg"></div>
   
   <div class="container">
-    <div class="articles-container">
-      <a href="index.html" class="back-btn">
-        <i class="fas fa-arrow-left"></i> На главную
-      </a>
-      
-      <h1 style="text-align: center; margin-bottom: 40px;">
-        <i class="fas fa-newspaper"></i> Игровые Статьи
-      </h1>
-      
-      <div class="article-list" id="articles-list">
-        <!-- Статьи будут загружаться через JavaScript -->
+    <!-- ШАПКА САЙТА (как в index.html) -->
+    <header class="main-header">
+      <div class="logo">
+        <h1 class="glitch" data-text="ONE1GAME">ONE1GAME</h1>
+        <p class="tagline">Ваш источник игровых новостей и обзоров</p>
       </div>
+    </header>
 
-      <!-- Пагинация -->
-      <div class="pagination" id="pagination">
-        <!-- Кнопки страниц будут генерироваться через JavaScript -->
+    <main class="main-content">
+      <!-- СОЦИАЛЬНЫЕ КНОПКИ (как в index.html) -->
+      <section class="social-section">
+        <div class="social-grid">
+          <a href="https://www.youtube.com/@one1game" class="social-btn youtube" target="_blank" rel="noopener">
+            <i class="fab fa-youtube"></i>
+            <span>YouTube</span>
+          </a>
+          <a href="https://vk.com/one1games" class="social-btn vk" target="_blank" rel="noopener">
+            <i class="fab fa-vk"></i>
+            <span>ВКонтакте</span>
+          </a>
+          <a href="/cyber-scanner/" class="social-btn scanner" target="_blank" rel="noopener">
+            <i class="fas fa-radar"></i>
+            <span>Cyber Scanner</span>
+          </a>
+          <a href="archive.html" class="social-btn articles">
+            <i class="fas fa-newspaper"></i>
+            <span>Статьи</span>
+          </a>
+        </div>
+      </section>
+
+      <!-- КОНТЕНТ АРХИВА (ваш существующий контент) -->
+      <div class="articles-container">
+        <a href="index.html" class="back-btn">
+          <i class="fas fa-arrow-left"></i> На главную
+        </a>
+        
+        <h1 style="text-align: center; margin-bottom: 40px;">
+          <i class="fas fa-newspaper"></i> Игровые Статьи
+        </h1>
+        
+        <!-- Фильтр по категориям -->
+        <div class="category-filter" id="category-filter">
+          <button class="category-btn active" data-category="all">Все статьи</button>
+          <!-- Категории будут добавлены динамически -->
+        </div>
+        
+        <!-- Список статей -->
+        <div class="article-list" id="articles-list">
+          <div class="loading">
+            <i class="fas fa-spinner fa-spin"></i> Загрузка статей...
+          </div>
+        </div>
+
+        <!-- Пагинация -->
+        <div class="pagination" id="pagination">
+          <!-- Кнопки страниц будут генерироваться через JavaScript -->
+        </div>
       </div>
-    </div>
+      
+      <!-- РАДИО УБРАНО -->
+      
+    </main>
+
+    <!-- ФУТЕР (как в index.html) -->
+    <footer class="main-footer">
+      <div class="footer-content">
+        <p>&copy; 2025 - 2026 One1Game — Игровое медиа. Все права защищены.</p>
+        <div class="footer-links">
+          <a href="#privacy">Политика</a>
+          <a href="#terms">Правила</a>
+          <a href="#contact">Реклама</a>
+        </div>
+      </div>
+    </footer>
   </div>
-
-  <!-- ПОДКЛЮЧАЕМ ФАЙЛ СО СТАТЬЯМИ -->
+  
+  <!-- СКРИПТЫ -->
   <script src="articles-data.js"></script>
+  <script src="script.js"></script>
   
   <script>
-    // Убираем массив статей отсюда, оставляем только логику пагинации
+    // Конфигурация
     const ARTICLES_PER_PAGE = 5;
     let currentPage = 1;
+    let currentCategory = 'all';
+    let filteredArticles = [];
+    let allArticles = [];
 
-    function displayArticles(page = 1) {
-      const articlesList = document.getElementById('articles-list');
-      const startIndex = (page - 1) * ARTICLES_PER_PAGE;
-      const endIndex = startIndex + ARTICLES_PER_PAGE;
+    // DOM элементы
+    const articlesList = document.getElementById('articles-list');
+    const pagination = document.getElementById('pagination');
+    const categoryFilter = document.getElementById('category-filter');
+
+    // Функция для получения всех уникальных категорий
+    function getAllCategories(articles) {
+      const categories = new Set();
+      categories.add('all'); // Добавляем категорию "все статьи"
+      articles.forEach(article => {
+        if (article.category && article.category.trim() !== '') {
+          categories.add(article.category);
+        }
+      });
+      return Array.from(categories);
+    }
+
+    // Инициализация фильтра по категориям
+    function initCategoryFilter(articles) {
+      const categories = getAllCategories(articles);
       
-      // Проверяем что статьи загрузились
-      if (!window.allArticles || window.allArticles.length === 0) {
-        articlesList.innerHTML = `
-          <div class="article-item">
-            <h3>Статьи загружаются...</h3>
-            <p>Пожалуйста, подождите</p>
-          </div>
-        `;
-        setTimeout(() => displayArticles(page), 500);
+      // Очищаем все кнопки
+      categoryFilter.innerHTML = '';
+      
+      // Сортируем категории, чтобы "all" была первой
+      const sortedCategories = categories.sort((a, b) => {
+        if (a === 'all') return -1;
+        if (b === 'all') return 1;
+        return a.localeCompare(b);
+      });
+      
+      sortedCategories.forEach(category => {
+        const btn = document.createElement('button');
+        btn.className = 'category-btn';
+        btn.textContent = category === 'all' ? 'Все статьи' : category;
+        btn.dataset.category = category;
+        btn.onclick = () => handleCategoryClick(category);
+        
+        if (category === 'all') {
+          btn.classList.add('active');
+        }
+        
+        categoryFilter.appendChild(btn);
+      });
+    }
+
+    // Обработчик клика по категории
+    function handleCategoryClick(category) {
+      // Если кликаем по текущей категории - ничего не делаем
+      if (category === currentCategory) return;
+      
+      // Обновляем текущую категорию
+      currentCategory = category;
+      currentPage = 1;
+      
+      // Обновляем активные кнопки
+      updateActiveCategoryButton();
+      
+      // Фильтруем статьи
+      filterArticles();
+      
+      // Отображаем статьи
+      displayArticles(currentPage);
+    }
+
+    // Обновление активной кнопки категории
+    function updateActiveCategoryButton() {
+      // Убираем active у всех кнопок
+      document.querySelectorAll('.category-btn').forEach(btn => {
+        btn.classList.remove('active');
+      });
+      
+      // Находим и активируем нужную кнопку
+      const activeBtn = document.querySelector(`.category-btn[data-category="${currentCategory}"]`);
+      if (activeBtn) {
+        activeBtn.classList.add('active');
+      } else {
+        // Если кнопка не найдена, активируем "Все статьи"
+        const allBtn = document.querySelector('.category-btn[data-category="all"]');
+        if (allBtn) {
+          allBtn.classList.add('active');
+          currentCategory = 'all';
+        }
+      }
+    }
+
+    // Фильтрация статей
+    function filterArticles() {
+      if (currentCategory === 'all') {
+        filteredArticles = [...allArticles];
+      } else {
+        filteredArticles = allArticles.filter(article => {
+          return article.category && article.category === currentCategory;
+        });
+      }
+    }
+
+    // Отображение статей
+    function displayArticles(page = 1) {
+      if (!allArticles || allArticles.length === 0) {
+        articlesList.innerHTML = '<div class="no-articles"><i class="fas fa-exclamation-triangle"></i> Статьи не найдены или не загружены</div>';
+        pagination.innerHTML = '';
         return;
       }
-      
-      const articlesToShow = window.allArticles.slice(startIndex, endIndex);
+
+      const startIndex = (page - 1) * ARTICLES_PER_PAGE;
+      const endIndex = startIndex + ARTICLES_PER_PAGE;
+      const articlesToShow = filteredArticles.slice(startIndex, endIndex);
+
+      if (articlesToShow.length === 0) {
+        articlesList.innerHTML = `
+          <div class="no-articles">
+            <i class="fas fa-search"></i><br><br>
+            В категории "${currentCategory === 'all' ? 'Все статьи' : currentCategory}" статьи не найдены
+            <br><br>
+            <button onclick="handleCategoryClick('all')" style="
+              padding: 8px 16px;
+              background: #8a2be2;
+              border: none;
+              border-radius: 6px;
+              color: white;
+              cursor: pointer;
+              font-family: 'Rajdhani', sans-serif;
+            ">
+              Показать все статьи
+            </button>
+          </div>
+        `;
+        pagination.innerHTML = '';
+        return;
+      }
 
       articlesList.innerHTML = articlesToShow.map(article => `
-        <a href="${article.url}" class="article-link">
+        <a href="${article.url || '#'}" class="article-link" aria-label="Читать статью: ${article.title}" ${article.url && article.url !== '#' ? 'target="_blank"' : ''}>
           <div class="article-item">
-            <h3>${article.title}</h3>
-            <p>${article.excerpt}</p>
-            <div style="color: #b0b0b0; font-size: 0.9rem; margin-top: 15px;">
-              <i class="far fa-calendar"></i> ${article.date} · <i class="far fa-clock"></i> ${article.readTime}
+            <h3>${article.title || 'Без названия'}</h3>
+            <p>${article.excerpt || 'Описание отсутствует'}</p>
+            <div class="article-meta">
+              <span><i class="far fa-calendar"></i> ${article.date || 'Не указано'}</span>
+              <span><i class="far fa-clock"></i> ${article.readTime || '5 мин'}</span>
+              ${article.category ? `<span style="color: #8a2be2;"><i class="fas fa-tag"></i> ${article.category}</span>` : ''}
             </div>
           </div>
         </a>
@@ -172,43 +460,62 @@
       updatePagination();
     }
 
+    // Обновление пагинации
     function updatePagination() {
-      const pagination = document.getElementById('pagination');
+      const totalPages = Math.ceil(filteredArticles.length / ARTICLES_PER_PAGE);
       
-      if (!window.allArticles) return;
-      
-      const totalPages = Math.ceil(window.allArticles.length / ARTICLES_PER_PAGE);
-      
+      if (totalPages <= 1) {
+        pagination.innerHTML = '';
+        return;
+      }
+
       let paginationHTML = '';
 
       // Кнопка "Назад"
       paginationHTML += `
         <button class="page-btn ${currentPage === 1 ? 'disabled' : ''}" 
                 onclick="changePage(${currentPage - 1})" 
-                ${currentPage === 1 ? 'disabled' : ''}>
+                ${currentPage === 1 ? 'disabled' : ''}
+                aria-label="Предыдущая страница">
           <i class="fas fa-chevron-left"></i>
         </button>
       `;
 
       // Номера страниц
-      for (let i = 1; i <= totalPages; i++) {
-        if (i === 1 || i === totalPages || (i >= currentPage - 1 && i <= currentPage + 1)) {
-          paginationHTML += `
-            <button class="page-btn ${i === currentPage ? 'active' : ''}" 
-                    onclick="changePage(${i})">
-              ${i}
-            </button>
-          `;
-        } else if (i === currentPage - 2 || i === currentPage + 2) {
-          paginationHTML += `<span class="page-btn disabled">...</span>`;
-        }
+      const maxVisiblePages = 5;
+      let startPage = Math.max(1, currentPage - Math.floor(maxVisiblePages / 2));
+      let endPage = Math.min(totalPages, startPage + maxVisiblePages - 1);
+
+      if (endPage - startPage + 1 < maxVisiblePages) {
+        startPage = Math.max(1, endPage - maxVisiblePages + 1);
+      }
+
+      if (startPage > 1) {
+        paginationHTML += `<button class="page-btn" onclick="changePage(1)">1</button>`;
+        if (startPage > 2) paginationHTML += `<span class="dots">...</span>`;
+      }
+
+      for (let i = startPage; i <= endPage; i++) {
+        paginationHTML += `
+          <button class="page-btn ${i === currentPage ? 'active' : ''}" 
+                  onclick="changePage(${i})"
+                  aria-label="Страница ${i}">
+            ${i}
+          </button>
+        `;
+      }
+
+      if (endPage < totalPages) {
+        if (endPage < totalPages - 1) paginationHTML += `<span class="dots">...</span>`;
+        paginationHTML += `<button class="page-btn" onclick="changePage(${totalPages})">${totalPages}</button>`;
       }
 
       // Кнопка "Вперед"
       paginationHTML += `
         <button class="page-btn ${currentPage === totalPages ? 'disabled' : ''}" 
                 onclick="changePage(${currentPage + 1})" 
-                ${currentPage === totalPages ? 'disabled' : ''}>
+                ${currentPage === totalPages ? 'disabled' : ''}
+                aria-label="Следующая страница">
           <i class="fas fa-chevron-right"></i>
         </button>
       `;
@@ -216,15 +523,44 @@
       pagination.innerHTML = paginationHTML;
     }
 
+    // Смена страницы
     function changePage(page) {
-      if (!window.allArticles) return;
-      if (page < 1 || page > Math.ceil(window.allArticles.length / ARTICLES_PER_PAGE)) return;
+      if (page < 1 || page > Math.ceil(filteredArticles.length / ARTICLES_PER_PAGE)) return;
       displayArticles(page);
       window.scrollTo({ top: 0, behavior: 'smooth' });
     }
 
-    // Инициализация
-    displayArticles(1);
+    // Инициализация статей
+    function initArticles() {
+      // Проверяем, есть ли статьи в window.allArticles
+      if (window.allArticles && window.allArticles.length > 0) {
+        allArticles = [...window.allArticles];
+        
+        // Фильтруем статьи (по умолчанию "все")
+        filterArticles();
+        
+        // Инициализируем фильтр категорий
+        initCategoryFilter(allArticles);
+        
+        // Отображаем статьи
+        displayArticles(1);
+      } else {
+        // Если файл articles-data.js не загружен
+        articlesList.innerHTML = '<div class="no-articles"><i class="fas fa-exclamation-triangle"></i> Файл со статьями не загружен</div>';
+      }
+    }
+
+    // Запуск при загрузке страницы
+    document.addEventListener('DOMContentLoaded', () => {
+      // Ждем немного, чтобы articles-data.js успел загрузиться
+      setTimeout(() => {
+        initArticles();
+      }, 100);
+    });
+
+    // Экспортируем функции для использования
+    window.changePage = changePage;
+    window.handleCategoryClick = handleCategoryClick;
   </script>
 </body>
 </html>
