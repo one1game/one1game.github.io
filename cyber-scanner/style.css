@@ -4,8 +4,6 @@
     box-sizing: border-box;
 }
 
-@import url('https://fonts.googleapis.com/css2?family=Share+Tech+Mono&family=Orbitron:wght@400;700&display=swap');
-
 :root {
     --neon-blue: #00f3ff;
     --neon-pink: #ff00ff;
@@ -18,7 +16,7 @@
 }
 
 body {
-    font-family: 'Share Tech Mono', monospace;
+    font-family: ui-monospace, 'Cascadia Code', Consolas, monospace;
     background: var(--dark-bg);
     color: var(--neon-blue);
     min-height: 100vh;
@@ -38,7 +36,7 @@ body {
 /* Глитч эффект для текста */
 .glitch-text {
     position: relative;
-    font-family: 'Orbitron', sans-serif;
+    font-family: ui-monospace, 'Cascadia Code', Consolas, monospace;
     font-weight: 700;
     font-size: 2.5em;
     text-transform: uppercase;

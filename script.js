@@ -311,37 +311,31 @@ class One1GamePlatform {
     console.log(`✅ Loaded ${latestArticles.length} latest articles in strip format`);
   }
 
-  // Video System
-  async loadRandomVideo() {
+  // Video System (lazy load)
+  loadRandomVideo() {
     const videoContainer = document.getElementById('video-container');
-    if (!videoContainer) {
-      console.log('📹 No video container on this page');
-      return;
-    }
+    if (!videoContainer) return;
 
-    try {
-      const videos = [
-        "https://www.youtube.com/embed/bA3CwT1yy_U",
-        "https://www.youtube.com/embed/zlXKmLXKA8E", 
-        "https://www.youtube.com/embed/FbaI71tWi1Q",
-        "https://www.youtube.com/embed/29JZvl1sYKg",
-        "https://www.youtube.com/embed/Y4Xo-6zemAs"
-      ];
-      
-      const randomIndex = Math.floor(Math.random() * videos.length);
-      const videoUrl = videos[randomIndex] + '?autoplay=1&mute=1';
-      
+    const videoId = videoContainer.dataset.videoId || 'bA3CwT1yy_U';
+    const thumb = document.getElementById('video-thumb');
+    const playBtn = document.getElementById('video-play-btn');
+    
+    // Set thumbnail from YouTube
+    thumb.src = `https://img.youtube.com/vi/${videoId}/hqdefault.jpg`;
+    thumb.onerror = () => { thumb.style.display = 'none'; };
+
+    // Load iframe on click
+    const loadVideo = () => {
       videoContainer.innerHTML = `
-        <iframe src="${videoUrl}" 
-                frameborder="0" 
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+        <iframe src="https://www.youtube.com/embed/${videoId}?autoplay=1&mute=1"
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                 allowfullscreen
-                loading="lazy"></iframe>`;
-                
-      console.log('📹 Video loaded successfully');
-    } catch (error) {
-      console.error('Video loading error:', error);
-    }
+                style="position:absolute;top:0;left:0;width:100%;height:100%;border:0;border-radius:8px;"></iframe>`;
+    };
+
+    playBtn.addEventListener('click', loadVideo);
+    thumb.addEventListener('click', loadVideo);
   }
 
   // Clicker Game System

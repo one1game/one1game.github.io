@@ -6,11 +6,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
   <title>Реклама - One1Game</title>
-  <meta name="description" content="Размещение рекламы на One1Game" />
-  
-  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Rajdhani:wght@300;400;500;600&display=swap" rel="stylesheet" />
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet" />
+  <meta name="description" content="Размещение рекламы на One1Game" />  <link href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/6.4.0/css/all.min.css" rel="stylesheet" />
   <link rel="stylesheet" href="styles.css" />
+
+  <!-- PWA -->
+  <link rel="manifest" href="manifest.json" />
+  <script>
+    if('serviceWorker' in navigator) navigator.serviceWorker.register('/sw.js');
+  </script>
 </head>
 <body>
   <div class="cyber-bg"></div>
@@ -60,7 +63,7 @@
         <article style="font-size: 1.1rem; line-height: 1.8; text-align: center;">
           
           <div style="margin-bottom: 40px;">
-            <h2 style="color: var(--neon-cyan); margin-bottom: 20px; font-family: 'Rajdhani', sans-serif; font-weight: 600;">
+            <h2 style="color: var(--neon-cyan); margin-bottom: 20px; font-family: system-ui, -apple-system, 'Segoe UI', sans-serif; font-weight: 600;">
               <i class="fas fa-bullhorn" style="margin-right: 10px;"></i>Хотите разместить рекламу?
             </h2>
             <p style="font-size: 1.2rem; margin-bottom: 20px;">Мы предлагаем различные варианты размещения рекламы на сайте One1Game</p>
@@ -72,7 +75,7 @@
             </h3>
             
             <div style="background: rgba(0, 0, 0, 0.4); padding: 20px; border-radius: 10px; margin: 20px 0; border: 1px solid var(--neon-cyan);">
-              <div style="font-size: 1.5rem; font-weight: bold; font-family: 'Orbitron', monospace; color: var(--neon-cyan); letter-spacing: 2px; margin-bottom: 10px;">
+              <div style="font-size: 1.5rem; font-weight: bold; font-family: ui-monospace, 'Cascadia Code', Consolas, monospace; color: var(--neon-cyan); letter-spacing: 2px; margin-bottom: 10px;">
                 @phpnodejsmsql
               </div>
               <div style="color: var(--text-secondary); font-size: 0.9rem;">

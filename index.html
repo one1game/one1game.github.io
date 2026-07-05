@@ -24,10 +24,10 @@
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://one1game.github.io" />
   <meta property="og:image" content="https://one1game.github.io/og-image.jpg" />
-  
-  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Rajdhani:wght@300;400;500;600&display=swap" rel="stylesheet" />
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet" />
+  <link href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css" rel="stylesheet" />
   <link rel="stylesheet" href="styles.css" />
+  <link rel="manifest" href="manifest.json" />
+  <meta name="theme-color" content="#00f3ff" />
   
   <script type="application/ld+json">
   {
@@ -43,6 +43,12 @@
       "query-input": "required name=search_term_string"
     }
   }
+  </script>
+
+  <!-- PWA -->
+  <link rel="manifest" href="manifest.json" />
+  <script>
+    if('serviceWorker' in navigator) navigator.serviceWorker.register('/sw.js');
   </script>
 </head>
 <body>
@@ -87,6 +93,17 @@
         </a>
       </section>
       
+      <section class="video-section">
+        <h2><i class="fas fa-play-circle"></i> Рекомендованное видео</h2>
+        <div class="video-preview" id="video-container" data-video-id="bA3CwT1yy_U">
+          <img class="video-thumb" src="" alt="Видео One1Game" loading="lazy" id="video-thumb" />
+          <button class="video-play-btn" id="video-play-btn">
+            <span class="play-icon">▶</span>
+          </button>
+          <span class="video-hint">Нажмите чтобы загрузить видео</span>
+        </div>
+      </section>
+
       <section class="music-section">
         <h2><i class="fas fa-broadcast-tower"></i> Игровое 8-Bit Радио</h2>
         <div class="music-player">
@@ -128,4 +145,7 @@
   <script src="articles-data.js"></script>
   <script src="script.js"></script>
 </body>
+<script>
+  if('serviceWorker' in navigator) navigator.serviceWorker.register('/sw.js');
+</script>
 </html>
