@@ -30,7 +30,12 @@ def generate():
         '<?xml version="1.0" encoding="UTF-8"?>',
         '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">',
         f'  <url><loc>{BASE_URL}/</loc><priority>1.0</priority></url>',
-        f'  <url><loc>{BASE_URL}/archive.html</loc><priority>0.8</priority></url>'
+        f'  <url><loc>{BASE_URL}/archive.html</loc><priority>0.8</priority></url>',
+        f'  <url><loc>{BASE_URL}/privacy.html</loc><priority>0.3</priority></url>',
+        f'  <url><loc>{BASE_URL}/terms.html</loc><priority>0.3</priority></url>',
+        f'  <url><loc>{BASE_URL}/advertising.html</loc><priority>0.3</priority></url>',
+        f'  <url><loc>{BASE_URL}/anal-code/</loc><priority>0.7</priority></url>',
+        f'  <url><loc>{BASE_URL}/cyber-scanner/</loc><priority>0.7</priority></url>'
     ]
 
     for url in urls:
