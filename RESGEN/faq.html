@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FAQ - CoreBox 3.0</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
+            color: #00ff88;
+            font-family: 'Courier New', monospace;
+            min-height: 100vh;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 3rem;
+            border-bottom: 2px solid #00ff88;
+            padding-bottom: 1rem;
+        }
+
+        .header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+            text-shadow: 0 0 10px #00ff88;
+        }
+
+        .header p {
+            color: #cccccc;
+            font-size: 1.1rem;
+        }
+
+        .back-button {
+            display: inline-block;
+            background: #00ff88;
+            color: #1a1a2e;
+            padding: 0.75rem 1.5rem;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            margin-bottom: 2rem;
+            transition: all 0.3s ease;
+        }
+
+        .back-button:hover {
+            background: #00cc6a;
+            transform: translateY(-2px);
+        }
+
+        .faq-section {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 10px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .faq-section h2 {
+            color: #00ff88;
+            margin-bottom: 1.5rem;
+            font-size: 1.5rem;
+            border-left: 4px solid #00ff88;
+            padding-left: 1rem;
+        }
+
+        .faq-item {
+            margin-bottom: 1.5rem;
+            border-left: 2px solid #00ff88;
+            padding-left: 1rem;
+        }
+
+        .faq-question {
+            color: #00ff88;
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+            font-size: 1.1rem;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .faq-question::before {
+            content: "❓";
+            font-size: 1.2rem;
+        }
+
+        .faq-answer {
+            color: #cccccc;
+            padding-left: 1.5rem;
+            border-left: 1px solid #00ff88;
+            margin-left: 0.5rem;
+        }
+
+        .faq-answer ul {
+            margin: 0.5rem 0;
+            padding-left: 1.5rem;
+        }
+
+        .faq-answer li {
+            margin-bottom: 0.25rem;
+        }
+
+        .warning {
+            color: #ff4444;
+            background: rgba(255, 68, 68, 0.1);
+            border: 1px solid #ff4444;
+            padding: 1rem;
+            border-radius: 5px;
+            margin: 1rem 0;
+        }
+
+        .tip {
+            color: #ffcc00;
+            background: rgba(255, 204, 0, 0.1);
+            border: 1px solid #ffcc00;
+            padding: 1rem;
+            border-radius: 5px;
+            margin: 1rem 0;
+        }
+
+        .success {
+            color: #00ff88;
+            background: rgba(0, 255, 136, 0.1);
+            border: 1px solid #00ff88;
+            padding: 1rem;
+            border-radius: 5px;
+            margin: 1rem 0;
+        }
+
+        .code-block {
+            background: rgba(0, 0, 0, 0.3);
+            border: 1px solid #00ff88;
+            border-radius: 5px;
+            padding: 1rem;
+            margin: 0.5rem 0;
+            font-family: 'Courier New', monospace;
+            color: #00ff88;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 1rem;
+            }
+            
+            .header h1 {
+                font-size: 2rem;
+            }
+            
+            .faq-section {
+                padding: 1rem;
+            }
+        }
+
+        .footer {
+            text-align: center;
+            margin-top: 3rem;
+            padding-top: 2rem;
+            border-top: 1px solid #00ff88;
+            color: #888;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🎮 FAQ - CoreBox 3.0</h1>
+            <p>Часто задаваемые вопросы по игре</p>
+        </div>
+
+        <a href="index.html" class="back-button">⬅ Назад к игре</a>
+
+        <!-- Основы игры -->
+        <div class="faq-section">
+            <h2>🎯 Основы игры</h2>
+            
+            <div class="faq-item">
+                <div class="faq-question">Как начать играть?</div>
+                <div class="faq-answer">
+                    <ul>
+                        <li>Введите логин и пароль (минимум 3 и 4 символа)</li>
+                        <li>Нажмите "Войти" или "Регистрация"</li>
+                        <li>Начните добывать ресурсы кнопкой "ИНИЦИИРОВАТЬ ДОБЫЧУ"</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">Как работает система добычи?</div>
+                <div class="faq-answer">
+                    Каждый клик дает шанс получить:
+                    <ul>
+                        <li>🪨 <strong>Уголь</strong> - для работы ТЭЦ</li>
+                        <li>♻️ <strong>Мусор</strong> - базовая валюта</li>
+                        <li>🎛️ <strong>Чипы</strong> - для улучшений (после квеста)</li>
+                        <li>⚡ <strong>Плазма</strong> - для защиты (после квеста)</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">Что такое автоклики?</div>
+                <div class="faq-answer">
+                    <div class="tip">
+                        💡 <strong>Совет:</strong> Удерживайте кнопку добычи 0.5 секунды для активации автокликов!
+                    </div>
+                    <ul>
+                        <li>Тратит вычислительную мощность</li>
+                        <li>Работает автоматически каждые 4 секунды</li>
+                        <li>Останавливается при нулевой мощности</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Ресурсы и экономика -->
+        <div class="faq-section">
+            <h2>💰 Ресурсы и экономика</h2>
+            
+            <div class="faq-item">
+                <div class="faq-question">Как получить тенге (валюту)?</div>
+                <div class="faq-answer">
+                    <ul>
+                        <li>Продавайте мусор в разделе "Торговля"</li>
+                        <li>Продавайте уголь, чипы и плазму</li>
+                        <li>Выполняйте квесты (награда в тенге)</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">Что покупать в первую очередь?</div>
+                <div class="faq-answer">
+                    <div class="success">
+                        ✅ <strong>Рекомендуется:</strong>
+                    </div>
+                    <ul>
+                        <li>Уголь для активации ТЭЦ</li>
+                        <li>Улучшения добычи в разделе "Модули"</li>
+                        <li>Активация системы защиты</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">Как разблокировать чипы и плазму?</div>
+                <div class="faq-answer">
+                    Выполняйте квесты по порядку:
+                    <ul>
+                        <li>Квест 4: "Электронные компоненты" → чипы</li>
+                        <li>Квест 5: "Энергетический прорыв" → плазма</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Система защиты -->
+        <div class="faq-section">
+            <h2>🛡️ Система защиты</h2>
+            
+            <div class="faq-item">
+                <div class="faq-question">Кто такие повстанцы?</div>
+                <div class="faq-answer">
+                    Враги, которые атакуют по ночам:
+                    <ul>
+                        <li>🌙 Появляются только ночью</li>
+                        <li>💀 Крадут ресурсы и отключают системы</li>
+                        <li>📈 Их активность растет без защиты</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">Как защититься от повстанцев?</div>
+                <div class="faq-answer">
+                    <div class="warning">
+                        ⚠️ <strong>Внимание:</strong> Активируйте защиту ДО наступления ночи!
+                    </div>
+                    <ul>
+                        <li>Активируйте систему защиты (требуется плазма)</li>
+                        <li>Улучшайте уровень защиты</li>
+                        <li>Держите ТЭЦ включенной для работы ИИ ночью</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Технические вопросы -->
+        <div class="faq-section">
+            <h2>🔧 Технические вопросы</h2>
+            
+            <div class="faq-item">
+                <div class="faq-question">Сохраняется ли мой прогресс?</div>
+                <div class="faq-answer">
+                    Да! Прогресс сохраняется автоматически:
+                    <ul>
+                        <li>📁 В localStorage браузера</li>
+                        <li>⏰ Каждые 30 секунд автосохранение</li>
+                        <li>🚪 При выходе из игры</li>
+                    </ul>
+                    <div class="warning">
+                        ⚠️ Очистка истории браузера удалит сохранения!
+                    </div>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">Можно ли играть на разных устройствах?</div>
+                <div class="faq-answer">
+                    <div class="warning">
+                        ❌ <strong>Нет</strong> - сохранения привязаны к браузеру и устройству
+                    </div>
+                    Для кроссплатформенной игры нужен сервер (в разработке).
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">Игра зависла/не работает</div>
+                <div class="faq-answer">
+                    Попробуйте:
+                    <ul>
+                        <li>🔄 Обновить страницу (F5)</li>
+                        <li>🧹 Очистить кэш браузера</li>
+                        <li>🔍 Проверить консоль на ошибки (F12)</li>
+                        <li>📧 Сообщить о проблеме разработчику</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Советы и стратегии -->
+        <div class="faq-section">
+            <h2>💡 Советы и стратегии</h2>
+            
+            <div class="faq-item">
+                <div class="faq-question">Оптимальная стратегия начала</div>
+                <div class="faq-answer">
+                    <div class="success">
+                        🏆 <strong>Проверенная стратегия:</strong>
+                    </div>
+                    <ol>
+                        <li>Добудьте 30+ ресурсов для первого квеста</li>
+                        <li>Активируйте ТЭЦ при наличии угля</li>
+                        <li>Переживите 3 ночи (второй квест)</li>
+                        <li>Накопите 50 угля (третий квест)</li>
+                        <li>Разблокируйте чипы и улучшения</li>
+                    </ol>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">Как эффективно использовать автоклики?</div>
+                <div class="faq-answer">
+                    <ul>
+                        <li>Активируйте когда нужно отойти от компьютера</li>
+                        <li>Следите за уровнем мощности</li>
+                        <li>Комбинируйте с ручной добычей для максимума</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer">
+            <p>CoreBox 3.0 • Постапокалиптическая стратегия • 2024</p>
+            <p>Нужна помощь? Обращайтесь к разработчику!</p>
+        </div>
+    </div>
+
+    <script>
+        // Простая анимация для FAQ
+        document.querySelectorAll('.faq-question').forEach(question => {
+            question.addEventListener('click', () => {
+                const answer = question.nextElementSibling;
+                answer.style.display = answer.style.display === 'none' ? 'block' : 'none';
+            });
+        });
+
+        // Сначала скрываем все ответы
+        document.querySelectorAll('.faq-answer').forEach(answer => {
+            answer.style.display = 'none';
+        });
+    </script>
+</body>
+</html>
