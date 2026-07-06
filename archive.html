@@ -128,6 +128,12 @@ const perPage = 6;
 document.addEventListener('DOMContentLoaded', () => {
   setTimeout(() => {
     allArticles = window.allArticles || [];
+    // Read ?category= from URL
+    const params = new URLSearchParams(window.location.search);
+    const catParam = params.get('category');
+    if (catParam) {
+      currentCategory = catParam;
+    }
     initFilters();
     filterAndDisplay();
     initSearch();
@@ -138,7 +144,7 @@ function initFilters() {
   const categories = ['all', ...new Set(allArticles.map(a => a.category))];
   const filterEl = document.getElementById('category-filter');
   filterEl.innerHTML = categories.map(c =>
-    `<button class="cat-pill${c === 'all' ? ' active' : ''}" data-category="${c}">${c === 'all' ? 'Все' : c}</button>`
+    `<button class="cat-pill${c === currentCategory ? ' active' : ''}" data-category="${c}">${c === 'all' ? 'Все' : c}</button>`
   ).join('');
 
   filterEl.addEventListener('click', e => {

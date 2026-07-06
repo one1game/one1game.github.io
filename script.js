@@ -300,16 +300,48 @@ class One1GamePlatform {
 
     container.innerHTML = cardHTML(featured, true) + rest.map(a => cardHTML(a, false)).join('');
 
-    // Update stats
-    const statsArt = document.getElementById('stat-articles');
-    const statsCat = document.getElementById('stat-categories');
-    const statsTime = document.getElementById('stat-readtime');
-    if (statsArt) statsArt.textContent = window.allArticles.length;
-    if (statsCat) statsCat.textContent = new Set(window.allArticles.map(a => a.category)).size;
-    if (statsTime) {
-      const totalMin = window.allArticles.reduce((s, a) => s + parseInt(a.readTime || '5'), 0);
-      statsTime.textContent = totalMin;
-    }
+    // Generate dynamic categories
+    this.loadCategories();
+  }
+
+  // Dynamic categories from articles
+  loadCategories() {
+    const row = document.getElementById('categories-row');
+    if (!row || !window.allArticles || window.allArticles.length === 0) return;
+
+    // Count articles per category
+    const catCount = {};
+    const categoryMap = {
+      'Технологии': 'cat-tech',
+      'Гайды': 'cat-guides',
+      'Консоли': 'cat-consoles',
+      'Аналитика': 'cat-analytics',
+      'Тренды': 'cat-trends'
+    };
+
+    window.allArticles.forEach(a => {
+      catCount[a.category] = (catCount[a.category] || 0) + 1;
+    });
+
+    // Category icons
+    const icons = {
+      'Технологии': 'fa-microchip',
+      'Гайды': 'fa-map',
+      'Консоли': 'fa-gamepad',
+      'Аналитика': 'fa-chart-line',
+      'Тренды': 'fa-fire'
+    };
+
+    const pills = Object.entries(catCount).map(([cat, count]) => {
+      const catClass = categoryMap[cat] || '';
+      const icon = icons[cat] || 'fa-folder';
+      const encoded = encodeURIComponent(cat);
+      return `<a href="archive.html?category=${encoded}" class="cat-pill ${catClass}">
+        <i class="fas ${icon}"></i> ${cat} <span class="cat-count">${count}</span>
+      </a>`;
+    }).join('');
+
+    row.innerHTML = pills;
   }
 
   // Video System (lazy load)
