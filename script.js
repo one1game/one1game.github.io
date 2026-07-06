@@ -287,13 +287,8 @@ class One1GamePlatform {
       return;
     }
     
-    // Сортируем статьи по дате (новые первыми)
-    const sortedArticles = [...window.allArticles].sort((a, b) => {
-      return new Date(b.date || 0) - new Date(a.date || 0);
-    });
-    
-    // Берем только последние 5 статей
-    const latestArticles = sortedArticles.slice(0, 5);
+    // Берем первые 5 статей (массив уже в порядке новизны)
+    const latestArticles = window.allArticles.slice(0, 5);
     
     // Генерируем HTML для полосок статей
     container.innerHTML = latestArticles.map(article => `
