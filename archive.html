@@ -4,8 +4,9 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <title>Архив статей - One1Game</title>
+  <title>Архив статей — гайды, обзоры, новости игровой индустрии | One1Game</title>
   <meta name="description" content="Архив игровых статей One1Game — обзоры, гайды, новости игровой индустрии. Все материалы в одном месте." />
+  <meta name="keywords" content="игровые статьи, гайды, обзоры игр, новости игровой индустрии, архив One1Game, видеоигры" />
 
   <!-- OpenGraph -->
   <meta property="og:title" content="Архив статей - One1Game" />
@@ -40,6 +41,22 @@
   <script>
     if('serviceWorker' in navigator) navigator.serviceWorker.register('/sw.js');
   </script>
+
+  <!-- JSON-LD CollectionPage -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "CollectionPage",
+    "name": "Архив статей One1Game",
+    "description": "Архив игровых статей One1Game — обзоры, гайды, новости игровой индустрии. Все материалы в одном месте.",
+    "url": "https://one1game.github.io/archive.html",
+    "isPartOf": {
+      "@type": "WebSite",
+      "name": "One1Game",
+      "url": "https://one1game.github.io"
+    }
+  }
+  </script>
 </head>
 <body>
 
@@ -56,10 +73,12 @@
   </div>
 </nav>
 
+<main>
 <div class="container">
 
   <section class="hero" style="padding: 40px 0 30px;">
     <h1>Архив <span class="highlight">статей</span></h1>
+    <h2 class="hero-sub">Гайды, обзоры, новости игровой индустрии</h2>
     <p class="hero-sub">Все игровые материалы One1Game — обзоры, гайды, аналитика и новости индустрии.</p>
   </section>
 
@@ -83,6 +102,8 @@
   <div class="pagination" id="pagination"></div>
 
 </div>
+
+</main>
 
 <!-- FOOTER -->
 <footer class="site-footer">
