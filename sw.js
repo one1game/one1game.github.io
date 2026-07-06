@@ -1,4 +1,4 @@
-const CACHE = 'one1game-v5';
+const CACHE = 'one1game-v6';
 
 self.addEventListener('install', e => {
   e.waitUntil(self.skipWaiting());
