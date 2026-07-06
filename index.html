@@ -4,6 +4,7 @@
   <meta charset="UTF-8" />
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🎮</text></svg>">
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="canonical" href="https://one1game.github.io" />
   
   <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-SZYYDYEC6T"></script>
@@ -26,7 +27,7 @@
   <meta property="og:image" content="https://one1game.github.io/og-image.jpg" />
   <link href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css" rel="stylesheet" />
   <link rel="stylesheet" href="styles.css" />
-  <link rel="manifest" href="manifest.json" />
+  <link rel="manifest" href="/manifest.json" />
   <meta name="theme-color" content="#00f3ff" />
   
   <script type="application/ld+json">
@@ -46,7 +47,7 @@
   </script>
 
   <!-- PWA -->
-  <link rel="manifest" href="manifest.json" />
+  <link rel="manifest" href="/manifest.json" />
   <script>
     if('serviceWorker' in navigator) navigator.serviceWorker.register('/sw.js');
   </script>
@@ -142,10 +143,7 @@
       </div>
     </footer>
   </div>
-  <script src="articles-data.js"></script>
-  <script src="script.js"></script>
+  <script src="articles-data.js" defer></script>
+  <script src="script.js" defer></script>
 </body>
-<script>
-  if('serviceWorker' in navigator) navigator.serviceWorker.register('/sw.js');
-</script>
 </html>
