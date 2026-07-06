@@ -262,48 +262,54 @@ class One1GamePlatform {
     });
   }
 
-  // Latest Articles System - ОБНОВЛЕНО ДЛЯ ПОЛОСОК
+  // Latest Articles System — обновлённый дизайн карточек
   loadLatestArticles() {
-    console.log('📰 Loading latest articles (strip format)...');
-    
     const container = document.getElementById('latest-articles');
-    
-    if (!container) {
-      console.error('❌ Latest articles container not found!');
-      return;
-    }
-    
-    // Проверяем статьи
+    if (!container) return;
+
     if (!window.allArticles || window.allArticles.length === 0) {
-      container.innerHTML = `
-        <div class="article-strip">
-          <h3>Статьи загружаются...</h3>
-          <p>Пожалуйста, подождите немного или обновите страницу.</p>
-          <div class="article-meta-strip">
-            <span><i class="far fa-clock"></i> 1 мин</span>
-          </div>
-        </div>
-      `;
+      container.innerHTML = '<div class="empty-state"><div class="empty-icon"><i class="fas fa-newspaper"></i></div><h3>Статьи загружаются...</h3><p>Пожалуйста, подождите или обновите страницу.</p></div>';
       return;
     }
-    
-    // Берем первые 5 статей (массив уже в порядке новизны)
+
+    const categoryMap = {
+      'Технологии': 'cat-tech',
+      'Гайды': 'cat-guides',
+      'Консоли': 'cat-consoles',
+      'Аналитика': 'cat-analytics',
+      'Тренды': 'cat-trends'
+    };
+
     const latestArticles = window.allArticles.slice(0, 5);
-    
-    // Генерируем HTML для полосок статей
-    container.innerHTML = latestArticles.map(article => `
-      <a href="${article.url || '#'}" class="article-strip" ${article.url ? 'target="_blank"' : ''}>
-        <h3>${article.title || 'Без названия'}</h3>
-        <p>${article.excerpt || 'Описание отсутствует'}</p>
-        <div class="article-meta-strip">
-          <span><i class="far fa-calendar"></i> ${article.date || 'Не указано'}</span>
+    const featured = latestArticles[0];
+    const rest = latestArticles.slice(1);
+
+    const cardHTML = (article, isFeatured) => {
+      const catClass = categoryMap[article.category] || '';
+      return `
+      <a href="${article.url}" class="article-card${isFeatured ? ' featured' : ''}">
+        ${article.category ? `<span class="card-category ${catClass}">${article.category}</span>` : ''}
+        <h3>${article.title}</h3>
+        <p class="card-excerpt">${article.excerpt || ''}</p>
+        <div class="card-meta">
+          <span><i class="far fa-calendar"></i> ${article.date || ''}</span>
           <span><i class="far fa-clock"></i> ${article.readTime || '5 мин'}</span>
-          ${article.category ? `<span class="category-badge"><i class="fas fa-tag"></i> ${article.category}</span>` : ''}
         </div>
-      </a>
-    `).join('');
-    
-    console.log(`✅ Loaded ${latestArticles.length} latest articles in strip format`);
+      </a>`;
+    };
+
+    container.innerHTML = cardHTML(featured, true) + rest.map(a => cardHTML(a, false)).join('');
+
+    // Update stats
+    const statsArt = document.getElementById('stat-articles');
+    const statsCat = document.getElementById('stat-categories');
+    const statsTime = document.getElementById('stat-readtime');
+    if (statsArt) statsArt.textContent = window.allArticles.length;
+    if (statsCat) statsCat.textContent = new Set(window.allArticles.map(a => a.category)).size;
+    if (statsTime) {
+      const totalMin = window.allArticles.reduce((s, a) => s + parseInt(a.readTime || '5'), 0);
+      statsTime.textContent = totalMin;
+    }
   }
 
   // Video System (lazy load)

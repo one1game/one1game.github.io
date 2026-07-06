@@ -10,41 +10,40 @@
   <meta name="robots" content="noindex, follow" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="canonical" href="https://one1game.github.io/404.html" />
-  <meta name="description" content="Страница не найдена. Вернитесь на главную One1Game — игровой портал с новостями и обзорами." /><title>404 — Страница не найдена | One1Game</title>
+  <meta name="description" content="Страница не найдена. Вернитесь на главную One1Game — игровой портал с новостями и обзорами." />
+  <title>404 — Страница не найдена | One1Game</title>
   <link href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css" rel="stylesheet" />
   <link rel="stylesheet" href="styles.css" />
-  <style>
-    .error-section { text-align: center; padding: 60px 20px; }
-    .error-code { font-family: ui-monospace, 'Cascadia Code', Consolas, monospace; font-size: 8rem; color: #00f3ff; text-shadow: 0 0 30px #00f3ff; line-height: 1; }
-    .error-sub { font-size: 1.3rem; color: #b0b0b0; margin: 20px 0 40px; }
-    .error-links { display: flex; gap: 15px; justify-content: center; flex-wrap: wrap; }
-    .error-link { padding: 12px 24px; background: rgba(0,243,255,0.1); border: 1px solid #00f3ff; border-radius: 8px; color: #00f3ff; text-decoration: none; font-weight: 500; transition: all 0.3s; }
-    .error-link:hover { background: rgba(0,243,255,0.2); box-shadow: 0 0 15px rgba(0,243,255,0.3); }
-  </style>
-
-  <!-- PWA -->
   <link rel="manifest" href="/manifest.json" />
   <script>
     if('serviceWorker' in navigator) navigator.serviceWorker.register('/sw.js');
   </script>
 </head>
 <body>
-  <div class="cyber-bg"></div>
-  <div class="container">
-    <header class="main-header">
-      <div class="logo">
-        <h1 class="glitch" data-text="ONE1GAME">ONE1GAME</h1>
-      </div>
-    </header>
-    <section class="error-section">
-      <div class="error-code">404</div>
-      <p class="error-sub">Страница не найдена — возможно, она была перемещена или удалена.</p>
-      <div class="error-links">
-        <a href="/" class="error-link"><i class="fas fa-home"></i> На главную</a>
-        <a href="archive.html" class="error-link"><i class="fas fa-newspaper"></i> Статьи</a>
-        <a href="/anal-code/" class="error-link"><i class="fas fa-code"></i> CodeFusion</a>
-      </div>
-    </section>
+
+<nav class="site-nav">
+  <div class="nav-inner">
+    <a href="/" class="nav-logo">ONE1GAME</a>
+    <div class="nav-links">
+      <a href="/" class="nav-link">Главная</a>
+      <a href="/archive.html" class="nav-link">Статьи</a>
+      <a href="/anal-code/" class="nav-link">CodeFusion</a>
+      <a href="/cyber-scanner/" class="nav-link">Scanner</a>
+    </div>
   </div>
+</nav>
+
+<div class="container">
+  <div class="error-page">
+    <div class="error-code">404</div>
+    <h2>Страница не найдена</h2>
+    <p>Возможно, она была перемещена или удалена.</p>
+    <div class="hero-actions" style="margin-top:24px;">
+      <a href="/" class="btn btn-primary"><i class="fas fa-home"></i> На главную</a>
+      <a href="/archive.html" class="btn btn-outline"><i class="fas fa-newspaper"></i> Статьи</a>
+    </div>
+  </div>
+</div>
+
 </body>
 </html>
