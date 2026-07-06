@@ -39,11 +39,13 @@ class One1GamePlatform {
     if (!radioAudio) {
       radioAudio = document.createElement('audio');
       radioAudio.id = 'radio-stream-global';
-      radioAudio.src = 'https://spritelayerradio.com/listen/classic/classic.mp3';
       radioAudio.preload = 'metadata';
       radioAudio.style.display = 'none';
       document.body.appendChild(radioAudio);
     }
+    
+    // Всегда задаём источник (на случай если элемент уже был в HTML без src)
+    radioAudio.src = 'https://radio.gamesboro.org/listen/gamesboro_radio/radio.mp3';
     
     // Восстанавливаем состояние из localStorage
     const savedVolume = localStorage.getItem('one1game_radio_volume');
@@ -162,70 +164,68 @@ class One1GamePlatform {
 
   // Настройка видимых элементов управления радио
   setupVisibleRadioControls() {
-    const playBtn = document.getElementById('play-pause');
-    const volumeSlider = document.getElementById('volume-slider');
-    const statusText = document.getElementById('status-text');
-    
-    // Если это архив или нет глобального радио - ничего не настраиваем
+    const playBtn = document.getElementById('radio-play');
+    const stopBtn = document.getElementById('radio-stop');
+    const statusText = document.getElementById('radio-status');
+
     if (this.isArchivePage() || !this.globalRadio) {
       console.log('📻 No radio controls for archive page');
       return;
     }
-    
+
     if (!playBtn) {
       console.log('📻 No visible radio controls on this page');
       return;
     }
-    
+
     console.log('🎵 Setting up visible radio controls...');
-    
-    // Синхронизируем громкость
-    if (volumeSlider) {
-      volumeSlider.value = this.globalRadio.audio.volume;
-      
-      volumeSlider.addEventListener('input', (e) => {
-        const vol = parseFloat(e.target.value);
-        this.globalRadio.setVolume(vol);
-        this.updateVolumeIcon(vol);
-      });
-    }
-    
+
     // Обновляем кнопку
     this.updateRadioButton(playBtn);
-    
+
     // Кнопка play/pause
     playBtn.addEventListener('click', () => {
       this.globalRadio.toggle();
       this.updateRadioButton(playBtn);
-      
+
       if (statusText) {
-        statusText.textContent = this.globalRadio.isPlaying() 
-          ? 'В эфире - 8-Bit Radio' 
-          : 'На паузе';
+        statusText.textContent = this.globalRadio.isPlaying()
+          ? 'В эфире - 8-Bit Radio'
+          : 'Остановлено';
       }
     });
-    
+
+    // Кнопка stop
+    if (stopBtn) {
+      stopBtn.addEventListener('click', () => {
+        this.globalRadio.audio.pause();
+        this.globalRadio.audio.currentTime = 0;
+        this.updateRadioButton(playBtn);
+        if (statusText) statusText.textContent = 'Остановлено';
+      });
+    }
+
     // Обновляем статус
     if (statusText) {
-      statusText.textContent = this.globalRadio.isPlaying() 
-        ? 'В эфире - 8-Bit Radio' 
-        : 'На паузе';
+      statusText.textContent = this.globalRadio.isPlaying()
+        ? 'В эфире - 8-Bit Radio'
+        : 'Остановлено';
     }
-    
+
     // Визуализатор
     this.setupVisualizer();
-    
+
     // Слушаем события от радио
     this.globalRadio.audio.addEventListener('play', () => {
       this.updateRadioButton(playBtn);
       if (statusText) statusText.textContent = 'В эфире - 8-Bit Radio';
     });
-    
+
     this.globalRadio.audio.addEventListener('pause', () => {
       this.updateRadioButton(playBtn);
-      if (statusText) statusText.textContent = 'На паузе';
+      if (statusText) statusText.textContent = 'Остановлено';
     });
-    
+
     console.log('✅ Visible radio controls setup complete');
   }
 
