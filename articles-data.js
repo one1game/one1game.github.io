@@ -1,6 +1,14 @@
 // articles-data.js
 window.allArticles = [
   {
+    "url": "/archive/xbox-gamepass-to-steam-saves-2026.html",
+    "title": "Как перенести сохранения из Xbox Game Pass в Steam в 2026 — полное руководство",
+    "excerpt": "Десятки часов в Game Pass, а игру купили в Steam? WGS-контейнеры, GPSaveConverter, ручной и автоматический перенос — всё, что нужно для сохранения прогресса...",
+    "date": "6 июля 2026",
+    "readTime": "9 мин",
+    "category": "Гайды"
+  },
+  {
     "url": "/archive/rdr2-secrets-2026.html",
     "title": "Все секреты Red Dead Redemption 2 — 150+ скрытых деталей, пасхалок и редких событий",
     "excerpt": "Более 150 скрытых деталей RDR2: призрачный поезд, вампир Сен-Дени, НЛО, гигант, дом робота и другие секреты, которые миллионы игроков никогда не видели...",
