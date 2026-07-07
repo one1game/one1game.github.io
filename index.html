@@ -23,7 +23,13 @@
   <link rel="canonical" href="https://one1game.github.io" />
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🎮</text></svg>">
 
+  <!-- Preconnect -->
+  <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin />
+  <link rel="preconnect" href="https://www.googletagmanager.com" crossorigin />
+  <link rel="dns-prefetch" href="https://www.google-analytics.com" />
+
   <link href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css" rel="stylesheet" />
+  <link rel="preload" href="styles.css" as="style" />
   <link rel="stylesheet" href="styles.css" />
   <link rel="manifest" href="/manifest.json" />
   <meta name="theme-color" content="#06060c" />
@@ -59,8 +65,10 @@
 </head>
 <body>
 
+<a href="#main-content" class="skip-link">Перейти к контенту</a>
+
 <!-- STICKY NAV -->
-<nav class="site-nav">
+<nav class="site-nav" aria-label="Главная навигация">
   <div class="nav-inner">
     <a href="/" class="nav-logo">ONE1GAME</a>
     <div class="nav-links">
@@ -76,7 +84,7 @@
   </div>
 </nav>
 
-<main>
+<main id="main-content">
 <div class="container">
 
   <!-- HERO -->
@@ -110,6 +118,9 @@
 
   <div class="articles-grid" id="latest-articles">
     <!-- Populated by JS -->
+    <div class="skeleton-card"></div>
+    <div class="skeleton-card"></div>
+    <div class="skeleton-card"></div>
   </div>
 
   <!-- RADIO -->

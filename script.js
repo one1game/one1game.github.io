@@ -7,6 +7,9 @@ class One1GamePlatform {
       this.allArticles = window.allArticles || [];
       this.globalRadio = null;
       
+      // Page transitions
+      this.setupPageTransitions();
+      
       // Инициализируем глобальное радио ТОЛЬКО если это не архив
       if (!this.isArchivePage()) {
         this.initGlobalRadio();
@@ -19,6 +22,28 @@ class One1GamePlatform {
     return window.location.pathname.includes('archive.html') || 
            document.title.includes('Архив') ||
            document.querySelector('.articles-container') !== null;
+  }
+
+  // Smooth page transitions on link clicks
+  setupPageTransitions() {
+    document.addEventListener('click', e => {
+      const link = e.target.closest('a');
+      if (!link) return;
+      // Skip external, anchor, noopener, download links
+      const href = link.getAttribute('href');
+      if (!href || href.startsWith('#') || href.startsWith('http') || href.startsWith('mailto') || link.hasAttribute('download') || link.target === '_blank') return;
+      
+      e.preventDefault();
+      // Fade out
+      document.body.style.opacity = '0';
+      document.body.style.transition = 'opacity 120ms ease';
+      
+      setTimeout(() => {
+        window.location.href = href;
+      }, 120);
+    });
+    // Fade in on arrival
+    document.body.style.transition = 'opacity 120ms ease';
   }
 
   // Глобальное радио для всех страниц (кроме архива)
