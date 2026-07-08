@@ -1,6 +1,14 @@
 // articles-data.js
 window.allArticles = [
   {
+    "url": "/archive/gta-6-polnyy-analiz-utechek-i-treylera.html",
+    "title": "GTA 6: Полный анализ утечек и трейлера — секреты, которые скрыли от всех",
+    "excerpt": "Глубокий анализ GTA 6: разбор трейлера, сравнение механик с GTA 5 и RDR2, прогноз пасхалок и скрытых деталей. То, о чем молчат все СМИ...",
+    "date": "8 июля 2026",
+    "readTime": "10 мин",
+    "category": "Аналитика"
+  },
+  {
     "url": "/archive/kak-uvelichit-fps-windows-11-optimizaciya.html",
     "title": "Как увеличить FPS в Windows 11: Секретный гайд 2026 года (Выжимаем максимум)",
     "excerpt": "Windows 11 режет FPS в играх? Полный гайд по оптимизации: отключение VBS, настройка HAGS, чистка телеметрии и скрытые фишки для буста фреймрейта до 30-40%...",
