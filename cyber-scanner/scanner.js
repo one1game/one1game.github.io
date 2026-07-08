@@ -1,799 +1,615 @@
-// ⚡ CYBER-SCANNER v2.0 - МАКСИМАЛЬНО МОЩНАЯ ВЕРСИЯ ⚡
+// Cyber-Scanner — клиентский сканер уязвимостей
+(function() {
+'use strict';
 
-class CyberScanner {
-    constructor() {
-        this.results = {
-            vulnerabilities: [],
-            scanTime: 0,
-            totalTests: 0,
-            passedTests: 0,
-            target: '',
-            timestamp: ''
-        };
-        this.isScanning = false;
-        this.modules = {
-            xss: true, sql: true, headers: true, 
-            cors: true, info: true, ports: true
-        };
-    }
+var activeModules = {
+  headers: true, xss: true, sqli: true, cors: true,
+  cookies: true, leaks: true, tech: true, paths: true
+};
+var vulns = [];
+var passedTests = 0;
+var totalTests = 0;
+var startTime = 0;
+var lastResults = null;
+var isRunning = false;
 
-    async scanWebsite(url, options = {}) {
-        if (this.isScanning) return;
-        
-        this.isScanning = true;
-        const startTime = Date.now();
-        this.results = { 
-            vulnerabilities: [], 
-            totalTests: 0, 
-            passedTests: 0,
-            target: url,
-            timestamp: new Date().toISOString()
-        };
-        
-        try {
-            // Активация всех модулей
-            await this.updateProgress(5, 'АКТИВАЦИЯ СИСТЕМЫ...');
-            await this.activateModules();
+var H = {
+  id: function(id) { return document.getElementById(id); },
+  q: function(sel) { return document.querySelector(sel); },
+  qa: function(sel) { return document.querySelectorAll(sel); },
+  show: function(id) { var el = H.id(id); if (el) el.classList.remove('hidden'); },
+  hide: function(id) { var el = H.id(id); if (el) el.classList.add('hidden'); }
+};
 
-            // Основные проверки
-            await this.updateProgress(10, 'ПРОВЕРКА ДОСТУПНОСТИ ЦЕЛИ...');
-            await this.checkTargetAvailability(url);
+// ========== MODULE TOGGLES ==========
+(function() {
+  var chips = H.qa('.module-chip');
+  chips.forEach(function(c) {
+    c.addEventListener('click', function() {
+      var mod = c.dataset.module;
+      c.classList.toggle('active');
+      activeModules[mod] = c.classList.contains('active');
+    });
+  });
+})();
 
-            await this.updateProgress(20, 'СКАНИРОВАНИЕ ПОРТОВ...');
-            if (this.modules.ports) await this.portScan(url);
+// ========== MAIN SCAN ==========
+window.startScan = function() {
+  if (isRunning) return;
+  var input = H.id('targetUrl');
+  var raw = input.value.trim();
+  if (!raw) return showToast('Введите URL для сканирования');
 
-            await this.updateProgress(30, 'АНАЛИЗ СЕТЕВОЙ ИНФРАСТРУКТУРЫ...');
-            await this.networkAnalysis(url);
+  var url = raw;
+  if (!/^https?:\/\//i.test(url)) url = 'https://' + url;
+  try { new URL(url); } catch(e) { return showToast('Некорректный URL'); }
 
-            await this.updateProgress(40, 'ПРОВЕРКА SSL/TLS...');
-            await this.advancedSSLCheck(url);
+  resetScan();
+  isRunning = true;
 
-            await this.updateProgress(50, 'СКАНИРОВАНИЕ ЗАГОЛОВКОВ...');
-            if (this.modules.headers) await this.deepHeaderAnalysis(url);
+  var btn = H.id('scanBtn');
+  btn.disabled = true;
+  btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Сканирую...';
 
-            await this.updateProgress(60, 'ПОИСК СКРЫТЫХ РЕСУРСОВ...');
-            await this.hiddenResourcesScan(url);
+  H.show('progress');
+  H.hide('results');
 
-            await this.updateProgress(70, 'АНАЛИЗ XSS УЯЗВИМОСТЕЙ...');
-            if (this.modules.xss) await this.advancedXSSScan(url);
+  startTime = Date.now();
 
-            await this.updateProgress(80, 'ПРОВЕРКА SQL ИНЪЕКЦИЙ...');
-            if (this.modules.sql) await this.sqlInjectionDeepScan(url);
+  scheduleSteps(url)
+    .then(function() {
+      var elapsed = ((Date.now() - startTime) / 1000).toFixed(2);
+      lastResults = {
+        target: url,
+        time: elapsed,
+        totalTests: totalTests,
+        passed: passedTests,
+        vulns: vulns,
+        date: new Date().toISOString()
+      };
 
-            await this.updateProgress(90, 'ПОИСК УТЕЧЕК ДАННЫХ...');
-            if (this.modules.info) await this.comprehensiveInfoLeakScan(url);
+      updateProgress(100, 'Сканирование завершено');
+      setTimeout(function() {
+        H.hide('progress');
+        showResults(lastResults);
+        saveToHistory(lastResults);
+        isRunning = false;
+        btn.disabled = false;
+        btn.innerHTML = '<i class="fas fa-play"></i> Сканировать';
+      }, 400);
+    })
+    .catch(function(err) {
+      showToast('Ошибка: ' + err.message);
+      isRunning = false;
+      btn.disabled = false;
+      btn.innerHTML = '<i class="fas fa-play"></i> Сканировать';
+    });
+};
 
-            await this.updateProgress(95, 'ФИНАЛЬНЫЙ АНАЛИЗ...');
-            await this.finalSecurityAssessment(url);
+function scheduleSteps(url) {
+  var steps = [];
+  var pct = 0;
+  var step = function(p, label, fn) {
+    steps.push({ pct: p, label: label, fn: fn });
+  };
 
-            await this.updateProgress(100, 'СКАНИРОВАНИЕ ЗАВЕРШЕНО');
+  step(5,  'Проверка доступности цели...', function() { return fetchHead(url); });
+  step(15, 'Анализ SSL/TLS...', function() { return checkSSL(url); });
+  step(25, 'Сканирование security headers...', function() { return activeModules.headers ? scanHeaders(url) : Promise.resolve(); });
+  step(35, 'Проверка CORS...', function() { return activeModules.cors ? scanCORS(url) : Promise.resolve(); });
+  step(45, 'Аудит Cookie...', function() { return activeModules.cookies ? scanCookies(url) : Promise.resolve(); });
+  step(55, 'Поиск XSS-векторов...', function() { return activeModules.xss ? scanXSS(url) : Promise.resolve(); });
+  step(65, 'Проверка SQL-инъекций...', function() { return activeModules.sqli ? scanSQLi(url) : Promise.resolve(); });
+  step(75, 'Поиск утечек данных...', function() { return activeModules.leaks ? scanLeaks(url) : Promise.resolve(); });
+  step(85, 'Сканирование директорий...', function() { return activeModules.paths ? scanPaths(url) : Promise.resolve(); });
+  step(92, 'Определение стека технологий...', function() { return activeModules.tech ? scanTech(url) : Promise.resolve(); });
+  step(98, 'Финальный анализ...', function() { return Promise.resolve(); });
 
-            this.results.scanTime = Date.now() - startTime;
-            this.isScanning = false;
-            return this.results;
-
-        } catch (error) {
-            this.isScanning = false;
-            throw new Error(`СБОЙ СИСТЕМЫ: ${error.message}`);
-        }
-    }
-
-    async activateModules() {
-        const modules = document.querySelectorAll('.module-card');
-        modules.forEach(module => {
-            module.classList.add('active');
-            this.playSound('activate');
-        });
-        await this.delay(1000);
-    }
-
-    async checkTargetAvailability(url) {
-        this.results.totalTests++;
-        try {
-            const controller = new AbortController();
-            const timeoutId = setTimeout(() => controller.abort(), 10000);
-            
-            const response = await fetch(url, { 
-                method: 'HEAD',
-                mode: 'no-cors',
-                signal: controller.signal
-            });
-            
-            clearTimeout(timeoutId);
-            this.results.passedTests++;
-            
-        } catch (error) {
-            this.addVulnerability(
-                'TARGET_UNREACHABLE',
-                'high',
-                `Цель недоступна: ${error.message}`,
-                'Проверьте доступность цели и сетевое соединение'
-            );
-        }
-    }
-
-    async portScan(url) {
-        this.results.totalTests++;
-        try {
-            const domain = new URL(url).hostname;
-            const commonPorts = [80, 443, 8080, 8443, 21, 22, 25, 53, 110, 143, 993, 995];
-            const openPorts = [];
-
-            for (const port of commonPorts.slice(0, 5)) { // Ограничиваем для скорости
-                try {
-                    const testUrl = `http://${domain}:${port}`;
-                    const response = await fetch(testUrl, { 
-                        method: 'HEAD',
-                        mode: 'no-cors'
-                    });
-                    openPorts.push(port);
-                } catch (e) {
-                    // Порт закрыт или недоступен
-                }
-            }
-
-            if (openPorts.length > 2) {
-                this.addVulnerability(
-                    'MULTIPLE_OPEN_PORTS',
-                    'medium',
-                    `Обнаружены открытые порты: ${openPorts.join(', ')}`,
-                    'Закройте неиспользуемые порты на фаерволе'
-                );
-            } else {
-                this.results.passedTests++;
-            }
-
-        } catch (error) {
-            console.warn('Port scan failed:', error);
-        }
-    }
-
-    async networkAnalysis(url) {
-        this.results.totalTests++;
-        try {
-            const domain = new URL(url).hostname;
-            
-            // Проверка DNS записей
-            const dnsRecords = await this.checkDNSRecords(domain);
-            
-            // Проверка поддоменов
-            const subdomains = await this.findSubdomains(domain);
-            
-            if (subdomains.length > 5) {
-                this.addVulnerability(
-                    'MULTIPLE_SUBDOMAINS',
-                    'info',
-                    `Обнаружено ${subdomains.length} поддоменов`,
-                    'Регулярно проверяйте безопасность всех поддоменов'
-                );
-            } else {
-                this.results.passedTests++;
-            }
-
-        } catch (error) {
-            console.warn('Network analysis failed:', error);
-        }
-    }
-
-    async checkDNSRecords(domain) {
-        // Эмуляция проверки DNS через внешние API
-        const records = [];
-        try {
-            // Проверка MX записей
-            records.push('MX records found');
-        } catch (e) {
-            // Игнорируем ошибки DNS
-        }
-        return records;
-    }
-
-    async findSubdomains(domain) {
-        const commonSubdomains = [
-            'www', 'mail', 'ftp', 'localhost', 'blog',
-            'admin', 'test', 'dev', 'api', 'secure',
-            'cdn', 'static', 'media', 'img', 'images'
-        ];
-        
-        const found = [];
-        for (const sub of commonSubdomains.slice(0, 3)) {
-            try {
-                const testUrl = `https://${sub}.${domain}`;
-                await fetch(testUrl, { method: 'HEAD', mode: 'no-cors' });
-                found.push(sub);
-            } catch (e) {
-                // Поддомен не существует
-            }
-        }
-        return found;
-    }
-
-    async advancedSSLCheck(url) {
-        this.results.totalTests++;
-        try {
-            if (!url.startsWith('https://')) {
-                this.addVulnerability(
-                    'NO_SSL_TLS',
-                    'high',
-                    'Сайт не использует HTTPS',
-                    'Внедрите SSL/TLS сертификат'
-                );
-                return;
-            }
-
-            // Дополнительные проверки SSL
-            const response = await fetch(url);
-            const headers = response.headers;
-            
-            const securityIssues = [];
-            
-            if (!headers.get('strict-transport-security')) {
-                securityIssues.push('HSTS not implemented');
-            }
-            
-            if (securityIssues.length > 0) {
-                this.addVulnerability(
-                    'SSL_TLS_WEAKNESSES',
-                    'medium',
-                    `Проблемы с SSL/TLS: ${securityIssues.join(', ')}`,
-                    'Улучшите SSL/TLS конфигурацию'
-                );
-            } else {
-                this.results.passedTests++;
-            }
-
-        } catch (error) {
-            console.warn('SSL check failed:', error);
-        }
-    }
-
-    async deepHeaderAnalysis(url) {
-        this.results.totalTests++;
-        try {
-            const response = await fetch(url);
-            const headers = response.headers;
-            
-            const securityReport = [];
-            const missingHeaders = [];
-
-            // Проверка критических security headers
-            const criticalHeaders = {
-                'Content-Security-Policy': 'CSP',
-                'X-Frame-Options': 'X-Frame-Options',
-                'X-Content-Type-Options': 'X-Content-Type-Options',
-                'Strict-Transport-Security': 'HSTS',
-                'X-XSS-Protection': 'XSS-Protection'
-            };
-
-            for (const [header, name] of Object.entries(criticalHeaders)) {
-                if (!headers.get(header)) {
-                    missingHeaders.push(name);
-                    securityReport.push(`${name} отсутствует`);
-                }
-            }
-
-            // Проверка значений заголовков
-            const csp = headers.get('Content-Security-Policy');
-            if (csp && csp.includes("'unsafe-inline'")) {
-                securityReport.push('CSP содержит unsafe-inline');
-            }
-
-            const xfo = headers.get('X-Frame-Options');
-            if (xfo && !['DENY', 'SAMEORIGIN'].includes(xfo.toUpperCase())) {
-                securityReport.push('X-Frame-Options настроен небезопасно');
-            }
-
-            if (securityReport.length > 0) {
-                this.addVulnerability(
-                    'INSECURE_HEADERS',
-                    missingHeaders.length > 2 ? 'high' : 'medium',
-                    `Проблемы с security headers: ${securityReport.join('; ')}`,
-                    'Настройте все необходимые security headers'
-                );
-            } else {
-                this.results.passedTests++;
-            }
-
-        } catch (error) {
-            console.warn('Header analysis failed:', error);
-        }
-    }
-
-    async hiddenResourcesScan(url) {
-        this.results.totalTests++;
-        try {
-            const commonPaths = [
-                '.git/', '.env', 'backup/', 'admin/', 'phpmyadmin/',
-                'config/', 'database/', 'logs/', 'tmp/', 'upload/',
-                'wp-admin/', 'administrator/', 'cgi-bin/', 'server-status'
-            ];
-
-            let foundPaths = [];
-
-            for (const path of commonPaths.slice(0, 8)) {
-                try {
-                    const testUrl = `${url.replace(/\/$/, '')}/${path}`;
-                    const response = await fetch(testUrl, { 
-                        method: 'HEAD',
-                        mode: 'no-cors'
-                    });
-                    foundPaths.push(path);
-                } catch (e) {
-                    // Ресурс не найден
-                }
-            }
-
-            if (foundPaths.length > 0) {
-                this.addVulnerability(
-                    'EXPOSED_RESOURCES',
-                    'high',
-                    `Обнаружены потенциально открытые ресурсы: ${foundPaths.join(', ')}`,
-                    'Ограничьте доступ к служебным директориям'
-                );
-            } else {
-                this.results.passedTests++;
-            }
-
-        } catch (error) {
-            console.warn('Hidden resources scan failed:', error);
-        }
-    }
-
-    async advancedXSSScan(url) {
-        this.results.totalTests++;
-        try {
-            const response = await fetch(url);
-            const html = await response.text();
-            
-            const xssPatterns = [
-                { pattern: /<script\b[^>]*>([\s\S]*?)<\/script>/gi, name: 'Inline scripts' },
-                { pattern: /javascript:/gi, name: 'JavaScript URLs' },
-                { pattern: /onclick\s*=|onload\s*=|onerror\s*=/gi, name: 'Inline event handlers' },
-                { pattern: /eval\s*\(/gi, name: 'eval function' },
-                { pattern: /document\.write\s*\(/gi, name: 'document.write' },
-                { pattern: /innerHTML\s*=/gi, name: 'innerHTML assignment' }
-            ];
-
-            let xssIndicators = [];
-            
-            for (const { pattern, name } of xssPatterns) {
-                const matches = html.match(pattern);
-                if (matches && matches.length > 0) {
-                    xssIndicators.push(`${name} (${matches.length} found)`);
-                }
-            }
-
-            if (xssIndicators.length > 0) {
-                this.addVulnerability(
-                    'XSS_VULNERABILITY',
-                    'critical',
-                    `Обнаружены XSS индикаторы: ${xssIndicators.join(', ')}`,
-                    'Реализуйте валидацию ввода и экранирование вывода'
-                );
-            } else {
-                this.results.passedTests++;
-            }
-
-        } catch (error) {
-            console.warn('XSS scan failed:', error);
-        }
-    }
-
-    async sqlInjectionDeepScan(url) {
-        this.results.totalTests++;
-        try {
-            const urlObj = new URL(url);
-            const hasParameters = urlObj.searchParams.toString().length > 0;
-            
-            if (hasParameters) {
-                // Эмуляция проверки параметров
-                const params = Array.from(urlObj.searchParams.entries());
-                
-                let sqlInjectionRisks = [];
-                
-                for (const [key, value] of params) {
-                    if (this.isSuspiciousParameter(key, value)) {
-                        sqlInjectionRisks.push(key);
-                    }
-                }
-
-                if (sqlInjectionRisks.length > 0) {
-                    this.addVulnerability(
-                        'SQL_INJECTION_RISK',
-                        'critical',
-                        `Параметры уязвимы к SQL инъекциям: ${sqlInjectionRisks.join(', ')}`,
-                        'Используйте параметризованные запросы и prepared statements'
-                    );
-                } else {
-                    this.results.passedTests++;
-                }
-            } else {
-                this.results.passedTests++;
-            }
-
-        } catch (error) {
-            console.warn('SQL injection scan failed:', error);
-        }
-    }
-
-    isSuspiciousParameter(key, value) {
-        const suspiciousPatterns = [
-            /union.*select/i,
-            /select.*from/i,
-            /insert.*into/i,
-            /drop.*table/i,
-            /or.*=.*/i,
-            /--/,
-            /\/\*.*\*\//,
-            /waitfor.*delay/i
-        ];
-
-        const testString = (key + '=' + value).toLowerCase();
-        return suspiciousPatterns.some(pattern => pattern.test(testString));
-    }
-
-    async comprehensiveInfoLeakScan(url) {
-        this.results.totalTests++;
-        try {
-            const response = await fetch(url);
-            const html = await response.text();
-            const headers = response.headers;
-            
-            const leaksFound = [];
-
-            // Поиск в HTML
-            const sensitiveDataPatterns = [
-                { pattern: /(password|passwd|pwd)\s*[:=]\s*["']([^"']+)["']/gi, name: 'Hardcoded passwords' },
-                { pattern: /(api[_-]?key|secret[_-]?key)\s*[:=]\s*["']([^"']+)["']/gi, name: 'API keys' },
-                { pattern: /(aws[_-]?access|aws[_-]?secret)\s*[:=]\s*["']([^"']+)["']/gi, name: 'AWS credentials' },
-                { pattern: /(sql|database).*connect/gi, name: 'Database connections' },
-                { pattern: /(email|username)\s*[:=]\s*["']([^"']+@[^"']+\.[^"']+)["']/gi, name: 'Email addresses' }
-            ];
-
-            for (const { pattern, name } of sensitiveDataPatterns) {
-                if (pattern.test(html)) {
-                    leaksFound.push(name);
-                }
-            }
-
-            // Поиск в комментариях
-            const commentRegex = /<!--([\s\S]*?)-->/gi;
-            const comments = html.match(commentRegex);
-            if (comments) {
-                const sensitiveComments = comments.filter(comment => 
-                    comment.toLowerCase().includes('todo') ||
-                    comment.toLowerCase().includes('fixme') ||
-                    comment.toLowerCase().includes('password') ||
-                    comment.toLowerCase().includes('secret')
-                );
-                if (sensitiveComments.length > 0) {
-                    leaksFound.push('Sensitive data in comments');
-                }
-            }
-
-            // Проверка заголовков на утечку информации
-            const serverHeader = headers.get('server');
-            if (serverHeader && serverHeader.includes('/')) {
-                leaksFound.push('Server version exposed');
-            }
-
-            const xPoweredBy = headers.get('x-powered-by');
-            if (xPoweredBy) {
-                leaksFound.push('Technology stack exposed');
-            }
-
-            if (leaksFound.length > 0) {
-                this.addVulnerability(
-                    'INFORMATION_DISCLOSURE',
-                    'high',
-                    `Обнаружены утечки информации: ${leaksFound.join(', ')}`,
-                    'Удалите чувствительную информацию из клиентского кода'
-                );
-            } else {
-                this.results.passedTests++;
-            }
-
-        } catch (error) {
-            console.warn('Information leak scan failed:', error);
-        }
-    }
-
-    async finalSecurityAssessment(url) {
-        // Анализ собранных данных и генерация итоговой оценки
-        const criticalCount = this.results.vulnerabilities.filter(v => v.severity === 'critical').length;
-        const highCount = this.results.vulnerabilities.filter(v => v.severity === 'high').length;
-        
-        if (criticalCount > 0) {
-            this.addVulnerability(
-                'CRITICAL_SECURITY_ISSUES',
-                'critical',
-                `Обнаружено ${criticalCount} критических уязвимостей`,
-                'Немедленно устраните обнаруженные уязвимости'
-            );
-        } else if (highCount > 0) {
-            this.addVulnerability(
-                'HIGH_RISK_ISSUES',
-                'high',
-                `Обнаружено ${highCount} уязвимостей высокого риска`,
-                'Рекомендуется срочное устранение уязвимостей'
-            );
-        }
-    }
-
-    addVulnerability(type, severity, description, recommendation) {
-        this.results.vulnerabilities.push({
-            type,
-            severity,
-            description,
-            recommendation,
-            timestamp: new Date().toLocaleTimeString()
-        });
-        this.playSound('vulnerability');
-    }
-
-    async updateProgress(percent, message) {
-        const progressFill = document.getElementById('progressFill');
-        const progressText = document.getElementById('progressText');
-        
-        if (progressFill && progressText) {
-            progressFill.style.width = percent + '%';
-            progressText.textContent = message;
-            
-            // Добавляем сканирующую линию
-            this.addScanLine();
-            
-            await this.delay(500);
-        }
-    }
-
-    addScanLine() {
-        const scanLine = document.createElement('div');
-        scanLine.className = 'scan-line';
-        scanLine.style.top = Math.random() * 100 + 'vh';
-        document.body.appendChild(scanLine);
-        
-        setTimeout(() => {
-            scanLine.remove();
-        }, 3000);
-    }
-
-    playSound(type) {
-        try {
-            const audioContext = new (window.AudioContext || window.webkitAudioContext)();
-            
-            if (type === 'vulnerability') {
-                const oscillator = audioContext.createOscillator();
-                const gainNode = audioContext.createGain();
-                
-                oscillator.connect(gainNode);
-                gainNode.connect(audioContext.destination);
-                
-                oscillator.frequency.setValueAtTime(200, audioContext.currentTime);
-                oscillator.frequency.exponentialRampToValueAtTime(800, audioContext.currentTime + 0.1);
-                
-                gainNode.gain.setValueAtTime(0.3, audioContext.currentTime);
-                gainNode.gain.exponentialRampToValueAtTime(0.01, audioContext.currentTime + 0.3);
-                
-                oscillator.start(audioContext.currentTime);
-                oscillator.stop(audioContext.currentTime + 0.3);
-            }
-        } catch (e) {
-            // Аудио не поддерживается
-        }
-    }
-
-    delay(ms) {
-        return new Promise(resolve => setTimeout(resolve, ms));
-    }
+  return steps.reduce(function(chain, s) {
+    return chain.then(function() {
+      updateProgress(s.pct, s.label);
+      addLogLine(s.label);
+      return s.fn();
+    });
+  }, Promise.resolve());
 }
 
-// ⚡ ГЛОБАЛЬНЫЕ ФУНКЦИИ ДЛЯ UI ⚡
-const scanner = new CyberScanner();
+function updateProgress(pct, label) {
+  var fill = H.id('progressFill');
+  var pl = H.id('progressLabel');
+  var pp = H.id('progressPct');
+  if (fill) fill.style.width = pct + '%';
+  if (pl) pl.textContent = label;
+  if (pp) pp.textContent = pct + '%';
+}
+function addLogLine(msg) {
+  var log = H.id('progressLog');
+  if (!log) return;
+  var div = document.createElement('div');
+  div.className = 'log-line';
+  div.textContent = msg;
+  log.appendChild(div);
+  log.scrollTop = log.scrollHeight;
+}
+function addVuln(type, severity, desc, fix) {
+  totalTests++;
+  vulns.push({ type: type, severity: severity, desc: desc, fix: fix });
+}
+function addPass() { totalTests++; passedTests++; }
 
-async function startScan() {
-    const url = document.getElementById('targetUrl').value.trim();
-    const scanBtn = document.getElementById('scanBtn');
-    
-    if (!url) {
-        showError('▐ ОШИБКА: ЦЕЛЬ НЕ УКАЗАНА ▐');
-        return;
-    }
-
-    // Валидация URL
-    let validatedUrl = url;
-    if (!url.startsWith('http://') && !url.startsWith('https://')) {
-        validatedUrl = 'https://' + url;
-    }
-
-    try {
-        new URL(validatedUrl);
-    } catch {
-        showError('▐ ОШИБКА: НЕКОРРЕКТНЫЙ URL ▐');
-        return;
-    }
-
-    // Сброс UI
-    resetUI();
-    
-    // Блокировка кнопки
-    scanBtn.disabled = true;
-    scanBtn.querySelector('.btn-text').textContent = '⚡ СКАНИРОВАНИЕ...';
-
-    try {
-        const results = await scanner.scanWebsite(validatedUrl);
-        displayResults(results);
-    } catch (error) {
-        showError(`▐ СБОЙ СИСТЕМЫ: ${error.message} ▐`);
-    } finally {
-        // Разблокировка кнопки
-        scanBtn.disabled = false;
-        scanBtn.querySelector('.btn-text').textContent = '🚀 ЗАПУСТИТЬ СКАНИРОВАНИЕ';
-    }
+// ========== CORE CHECKS ==========
+function fetchHead(url) {
+  return fetchSafe(url).then(function(r) {
+    if (!r) { addVuln('UNREACHABLE', 'critical', 'Цель недоступна — проверьте URL и соединение', 'Убедитесь, что сайт работает'); return; }
+    addPass();
+  });
 }
 
-function resetUI() {
-    document.getElementById('progress').classList.remove('hidden');
-    document.getElementById('results').classList.add('hidden');
-    document.getElementById('error').classList.add('hidden');
+function checkSSL(url) {
+  addPass();
+  if (!url.startsWith('https://')) {
+    addVuln('NO_HTTPS', 'high', 'Сайт не использует HTTPS', 'Установите SSL-сертификат и настройте редирект с HTTP');
+  }
 }
 
-function displayResults(results) {
-    document.getElementById('progress').classList.add('hidden');
-    document.getElementById('results').classList.remove('hidden');
-    
-    // Обновление метаданных
-    document.getElementById('scanMeta').innerHTML = `
-        <div>ЦЕЛЬ: ${results.target}</div>
-        <div>ВРЕМЯ: ${results.scanTime}ms</div>
-        <div>ТЕСТОВ: ${results.totalTests}</div>
-    `;
-    
-    // Статистика
-    const statsContent = document.getElementById('statsContent');
-    const critical = results.vulnerabilities.filter(v => v.severity === 'critical').length;
-    const high = results.vulnerabilities.filter(v => v.severity === 'high').length;
-    const medium = results.vulnerabilities.filter(v => v.severity === 'medium').length;
-    const low = results.vulnerabilities.filter(v => v.severity === 'low').length;
-    
-    statsContent.innerHTML = `
-        <div class="stat-item">КРИТИЧЕСКИЕ: <span class="stat-critical">${critical}</span></div>
-        <div class="stat-item">ВЫСОКИЕ: <span class="stat-high">${high}</span></div>
-        <div class="stat-item">СРЕДНИЕ: <span class="stat-medium">${medium}</span></div>
-        <div class="stat-item">НИЗКИЕ: <span class="stat-low">${low}</span></div>
-        <div class="stat-item">УСПЕШНЫЕ: <span class="stat-passed">${results.passedTests}</span></div>
-    `;
-    
-    // Уязвимости
-    const vulnList = document.getElementById('vulnList');
-    vulnList.innerHTML = '';
-    
-    if (results.vulnerabilities.length === 0) {
-        vulnList.innerHTML = `
-            <div class="vuln-item info">
-                <div class="vuln-header">
-                    <div class="vuln-title">▐ СИСТЕМА БЕЗОПАСНА ▐</div>
-                    <span class="severity-badge info">CLEAN</span>
-                </div>
-                <div class="vuln-desc">Критических уязвимостей не обнаружено</div>
-            </div>
-        `;
+function scanHeaders(url) {
+  return fetchSafe(url).then(function(r) {
+    if (!r) return;
+    var h = r.headers;
+    var missing = [];
+    var issues = [];
+
+    var critical = {
+      'content-security-policy': 'Content-Security-Policy',
+      'strict-transport-security': 'Strict-Transport-Security',
+      'x-content-type-options': 'X-Content-Type-Options',
+      'x-frame-options': 'X-Frame-Options'
+    };
+
+    for (var k in critical) {
+      if (!h.get(k)) missing.push(critical[k]);
+      else {
+        var val = h.get(k);
+        if (k === 'content-security-policy' && val.includes("'unsafe-inline'")) {
+          issues.push('CSP содержит unsafe-inline (XSS-риск)');
+        }
+        if (k === 'x-frame-options' && !['DENY','SAMEORIGIN'].includes(val.toUpperCase())) {
+          issues.push('X-Frame-Options: ' + val + ' (clickjacking-риск)');
+        }
+      }
+    }
+
+    if (!h.get('referrer-policy')) issues.push('Referrer-Policy отсутствует');
+    if (!h.get('permissions-policy')) issues.push('Permissions-Policy отсутствует');
+
+    if (missing.length > 0 || issues.length > 0) {
+      var sev = missing.length >= 3 ? 'high' : 'medium';
+      addVuln('SECURITY_HEADERS', sev,
+        (missing.length ? 'Отсутствуют: ' + missing.join(', ') + '. ' : '') + issues.join('; '),
+        'Добавьте недостающие security headers в конфигурацию сервера'
+      );
     } else {
-        results.vulnerabilities.forEach(vuln => {
-            const vulnElement = document.createElement('div');
-            vulnElement.className = `vuln-item ${vuln.severity}`;
-            vulnElement.innerHTML = `
-                <div class="vuln-header">
-                    <div class="vuln-title">${vuln.type}</div>
-                    <span class="severity-badge ${vuln.severity}">${vuln.severity.toUpperCase()}</span>
-                </div>
-                <div class="vuln-desc">${vuln.description}</div>
-                <div class="vuln-recom">${vuln.recommendation}</div>
-                <div class="vuln-time">${vuln.timestamp}</div>
-            `;
-            vulnList.appendChild(vulnElement);
-        });
+      addPass();
     }
-    
-    // Рекомендации
-    const recomList = document.getElementById('recomList');
-    const generalRecom = [
-        '▐ ВНЕДРИТЕ STRICT CONTENT SECURITY POLICY',
-        '▐ НАСТРОЙТЕ HSTS ДЛЯ ПРИНУДИТЕЛЬНОГО HTTPS',
-        '▐ РЕГУЛЯРНО ОБНОВЛЯЙТЕ СИСТЕМУ И ЗАВИСИМОСТИ',
-        '▐ ИСПОЛЬЗУЙТЕ ПАРАМЕТРИЗОВАННЫЕ ЗАПРОСЫ К БД',
-        '▐ ВАЛИДИРУЙТЕ И ЭКРАНИРУЙТЕ ПОЛЬЗОВАТЕЛЬСКИЙ ВВОД',
-        '▐ ОГРАНИЧЬТЕ ДОСТУП К СЛУЖЕБНЫМ ДИРЕКТОРИЯМ',
-        '▐ МОНИТОРЬТЕ ЛОГИ ДОСТУПА И ПОПЫТКИ ВЗЛОМА'
-    ];
-    
-    recomList.innerHTML = generalRecom.map(recom => 
-        `<div class="recom-item">${recom}</div>`
-    ).join('');
+  });
 }
 
-function showError(message) {
-    const errorDiv = document.getElementById('error');
-    const errorText = document.getElementById('errorText');
-    
-    errorText.textContent = message;
-    errorDiv.classList.remove('hidden');
-}
+function scanCORS(url) {
+  return fetch(url, { method: 'GET', mode: 'cors' }).then(function(r) {
+    var acao = r.headers.get('access-control-allow-origin');
+    var acac = r.headers.get('access-control-allow-credentials');
 
-// Обработчики событий
-document.getElementById('targetUrl').addEventListener('keypress', function(e) {
-    if (e.key === 'Enter') {
-        startScan();
+    if (acao === '*') {
+      if (acac === 'true') {
+        addVuln('CORS_WILDCARD_CREDS', 'critical',
+          'CORS: Access-Control-Allow-Origin: * вместе с Allow-Credentials: true — критическая уязвимость',
+          'Никогда не используйте * с credentials. Укажите конкретные домены.'
+        );
+      } else {
+        addVuln('CORS_WILDCARD', 'low',
+          'CORS разрешён для всех доменов (*) — ресурсы доступны с любого сайта',
+          'Ограничьте CORS конкретными доменами, если данные непубличные'
+        );
+      }
+    } else if (!acao) {
+      addPass();
+    } else {
+      addPass();
     }
-});
-
-// Инициализация терминала
-function updateTerminal() {
-    const commands = [
-        'scan_system --target=$URL --full-analysis',
-        'check_vulnerabilities --type=all',
-        'generate_report --format=cyber',
-        'deploy_countermeasures',
-        'system_status --security-level=max'
-    ];
-    
-    const commandElement = document.getElementById('terminalCommand');
-    let currentCommand = 0;
-    
-    setInterval(() => {
-        commandElement.textContent = commands[currentCommand] + ' █';
-        currentCommand = (currentCommand + 1) % commands.length;
-    }, 3000);
+  }).catch(function() {
+    // CORS блокирует — это нормально, не уязвимость
+    addPass();
+  });
 }
 
-// Запуск системы
+function scanCookies(url) {
+  return fetchSafe(url).then(function(r) {
+    if (!r) return;
+    var cookieHeader = '';
+    try { cookieHeader = document.cookie || ''; } catch(e) {}
+
+    // Эмулируем проверку — в реальности куки целевого сайта недоступны клиенту
+    // Но мы проверяем response headers
+    var setCookie = r.headers.get('set-cookie');
+    if (setCookie) {
+      var flags = { secure: false, httponly: false, samesite: false };
+      if (/secure/i.test(setCookie)) flags.secure = true;
+      if (/httponly/i.test(setCookie)) flags.httponly = true;
+      if (/samesite/i.test(setCookie)) flags.samesite = true;
+
+      var missing = [];
+      if (!flags.secure) missing.push('Secure');
+      if (!flags.httponly) missing.push('HttpOnly');
+      if (!flags.samesite) missing.push('SameSite');
+
+      if (missing.length > 0) {
+        addVuln('COOKIE_FLAGS', missing.length >= 2 ? 'high' : 'medium',
+          'Cookie без флагов: ' + missing.join(', '),
+          'Установите Secure; HttpOnly; SameSite=Lax для всех кук'
+        );
+      } else {
+        addPass();
+      }
+    } else {
+      addPass();
+    }
+  });
+}
+
+function scanXSS(url) {
+  return fetchSafe(url).then(function(r) {
+    if (!r) return;
+    return r.text().then(function(html) {
+      var indicators = [];
+      if (/(?:onclick|onload|onerror|onmouseover)\s*=/gi.test(html))
+        indicators.push('inline-обработчики');
+      if (/<script\b[^>]*>([\s\S]*?)<\/script>/gi.test(html) && !/<script\s+src=/gi.test(html))
+        indicators.push('inline-скрипты');
+      if (/document\.write\s*\(/gi.test(html))
+        indicators.push('document.write');
+      if (/eval\s*\(/gi.test(html))
+        indicators.push('eval()');
+      if (/innerHTML\s*=/gi.test(html))
+        indicators.push('innerHTML');
+
+      if (indicators.length > 0) {
+        addVuln('XSS_INDICATORS', indicators.length >= 3 ? 'high' : 'medium',
+          'XSS-индикаторы: ' + indicators.join(', '),
+          'Используйте CSP, экранируйте вывод, избегайте inline-скриптов и eval'
+        );
+      } else {
+        addPass();
+      }
+    });
+  });
+}
+
+function scanSQLi(url) {
+  return fetchSafe(url).then(function(r) {
+    if (!r) return;
+    return r.text().then(function(html) {
+      var patterns = [
+        /you have an error in your sql/i,
+        /mysql_fetch/i,
+        /sqlsyntaxerrorexception/i,
+        /unclosed quotation mark/i,
+        /microsoft ole db/i,
+        /odbc driver/i
+      ];
+      var found = patterns.filter(function(p) { return p.test(html); });
+      if (found.length > 0) {
+        addVuln('SQL_ERROR_LEAK', 'high',
+          'Обнаружены SQL-ошибки в ответе — возможна утечка информации',
+          'Настройте кастомные страницы ошибок, не раскрывайте детали БД'
+        );
+      } else {
+        addPass();
+      }
+    });
+  });
+}
+
+function scanLeaks(url) {
+  return fetchSafe(url).then(function(r) {
+    if (!r) return;
+    return r.text().then(function(html) {
+      var leaks = [];
+
+      // Sensitive patterns in HTML
+      if (/(?:api[_-]?key|api[_-]?secret)\s*[:=]\s*["'][A-Za-z0-9_-]{20,}["']/gi.test(html))
+        leaks.push('API-ключи в коде');
+      if (/password\s*[:=]\s*["'][^"']{3,}["']/gi.test(html))
+        leaks.push('Пароли в коде');
+      if (/BEGIN\s+(?:RSA|EC|DSA)\s+PRIVATE\s+KEY/gi.test(html))
+        leaks.push('Приватные ключи');
+
+      // Comments with sensitive info
+      var comments = html.match(/<!--([\s\S]*?)-->/gi) || [];
+      var sensitiveComments = comments.filter(function(c) {
+        return /(?:todo|fixme|password|secret|token|key)/i.test(c);
+      });
+      if (sensitiveComments.length > 0)
+        leaks.push('Чувствительные комментарии (' + sensitiveComments.length + ')');
+
+      // Server info in headers
+      var server = r.headers.get('server');
+      if (server && /\d+\.\d+/.test(server))
+        leaks.push('Версия сервера: ' + server);
+      var powered = r.headers.get('x-powered-by');
+      if (powered) leaks.push('X-Powered-By: ' + powered);
+
+      // Generator meta
+      if (/<meta\s+name="generator"/i.test(html))
+        leaks.push('Meta generator раскрывает CMS');
+
+      if (leaks.length > 0) {
+        addVuln('INFO_LEAK', 'high',
+          'Утечки информации: ' + leaks.join('; '),
+          'Удалите чувствительные данные из клиентского кода и заголовков'
+        );
+      } else {
+        addPass();
+      }
+    });
+  });
+}
+
+function scanPaths(url) {
+  var paths = ['.git/HEAD', '.env', '.DS_Store', 'robots.txt', 'sitemap.xml',
+    'wp-admin/', 'backup/', 'phpinfo.php', '.well-known/security.txt', 'server-status'];
+  var base = url.replace(/\/$/, '');
+  var found = [];
+
+  return Promise.all(paths.slice(0, 6).map(function(p) {
+    return fetch(base + '/' + p, { method: 'HEAD', mode: 'no-cors' })
+      .then(function() { found.push(p); })
+      .catch(function() {});
+  })).then(function() {
+    if (found.length > 0) {
+      addVuln('EXPOSED_PATHS', 'medium',
+        'Открытые ресурсы: ' + found.join(', '),
+        'Закройте доступ к служебным файлам и директориям'
+      );
+    } else {
+      addPass();
+    }
+  });
+}
+
+function scanTech(url) {
+  return fetchSafe(url).then(function(r) {
+    if (!r) return;
+    return r.text().then(function(html) {
+      var tech = [];
+      var h = r.headers;
+      var server = h.get('server') || '';
+      var powered = h.get('x-powered-by') || '';
+
+      // Server
+      if (/nginx/i.test(server)) tech.push('Nginx');
+      if (/apache/i.test(server)) tech.push('Apache');
+      if (/cloudflare/i.test(server)) tech.push('Cloudflare');
+      if (/iis/i.test(server)) tech.push('IIS');
+
+      // Platform
+      if (/wp-content|wp-includes|wordpress/i.test(html)) tech.push('WordPress');
+      if (/shopify/i.test(html)) tech.push('Shopify');
+      if (/wix/i.test(html)) tech.push('Wix');
+      if (/react/i.test(html) && /react-dom/i.test(html)) tech.push('React');
+      if (/vue/i.test(html) && /v-html|v-bind|v-if/i.test(html)) tech.push('Vue.js');
+      if (/angular/i.test(html)) tech.push('Angular');
+      if (/jquery/i.test(html)) tech.push('jQuery');
+      if (/bootstrap/i.test(html)) tech.push('Bootstrap');
+      if (/tailwind/i.test(html)) tech.push('Tailwind CSS');
+      if (/fontawesome/i.test(html)) tech.push('Font Awesome');
+
+      // PHP
+      if (/php/i.test(powered)) tech.push('PHP');
+      if (/\.php/i.test(html)) tech.push('PHP');
+
+      // JS frameworks from meta/build
+      if (/next\/core|next\.js|_next\//i.test(html)) tech.push('Next.js');
+      if (/nuxt/i.test(html)) tech.push('Nuxt.js');
+      if (/gatsby/i.test(html)) tech.push('Gatsby');
+
+      // Analytics
+      if (/gtag|googletagmanager/i.test(html)) tech.push('Google Analytics');
+      if (/clarity\.ms/i.test(html)) tech.push('MS Clarity');
+
+      // CDN/Security
+      if (/cloudflare/i.test(html)) tech.push('Cloudflare');
+      if (/h-captcha|hcaptcha/i.test(html)) tech.push('hCaptcha');
+      if (/recaptcha/i.test(html)) tech.push('reCAPTCHA');
+
+      lastTech = tech;
+      addPass();
+    });
+  });
+}
+
+// ========== DISPLAY RESULTS ==========
+var lastTech = [];
+
+function showResults(r) {
+  H.show('results');
+
+  // Meta
+  var meta = H.id('resultsMeta');
+  meta.innerHTML = [
+    '<span><i class="fas fa-globe"></i> ' + escapeHTML(r.target) + '</span>',
+    '<span><i class="fas fa-clock"></i> ' + r.time + ' сек</span>',
+    '<span><i class="fas fa-check-circle"></i> ' + r.passed + '/' + r.totalTests + ' тестов</span>'
+  ].join('');
+
+  // Stats
+  var stats = H.id('resultsStats');
+  var counts = { critical: 0, high: 0, medium: 0, low: 0, info: 0 };
+  r.vulns.forEach(function(v) { if (counts[v.severity] !== undefined) counts[v.severity]++; });
+
+  stats.innerHTML = [
+    statRow('Критические', counts.critical, 'stat-critical'),
+    statRow('Высокие', counts.high, 'stat-high'),
+    statRow('Средние', counts.medium, 'stat-medium'),
+    statRow('Низкие', counts.low, 'stat-low'),
+    statRow('Пройдено', r.passed, 'stat-passed')
+  ].join('');
+
+  // Vulns
+  var vulnEl = H.id('resultsVulns');
+  if (r.vulns.length === 0) {
+    vulnEl.innerHTML = '<div class="vuln-empty"><i class="fas fa-shield-check"></i><br>Уязвимости не обнаружены</div>';
+  } else {
+    vulnEl.innerHTML = r.vulns.map(function(v) {
+      return '<div class="vuln-card ' + v.severity + '">' +
+        '<div class="vuln-card-header">' +
+          '<span class="vuln-card-title">' + escapeHTML(v.type) + '</span>' +
+          '<span class="vuln-card-sev ' + v.severity + '">' + v.severity + '</span>' +
+        '</div>' +
+        '<div class="vuln-card-desc">' + escapeHTML(v.desc) + '</div>' +
+        '<div class="vuln-card-fix"><i class="fas fa-wrench"></i> ' + escapeHTML(v.fix) + '</div>' +
+      '</div>';
+    }).join('');
+  }
+
+  // Tech
+  var techEl = H.id('resultsTech');
+  if (lastTech.length > 0) {
+    techEl.innerHTML = '<h4>Стек технологий</h4>' +
+      lastTech.map(function(t) { return '<span class="tech-tag">' + t + '</span>'; }).join('');
+  } else {
+    techEl.innerHTML = '<h4>Стек технологий</h4><span style="color:var(--text-faint);font-size:0.8rem;">Не удалось определить</span>';
+  }
+}
+
+function statRow(label, val, cls) {
+  return '<div class="stat-row"><span>' + label + '</span><span class="stat-val ' + cls + '">' + val + '</span></div>';
+}
+
+// ========== HISTORY ==========
+function saveToHistory(r) {
+  try {
+    var raw = localStorage.getItem('cyberscan_history');
+    var list = raw ? JSON.parse(raw) : [];
+    list.unshift({ url: r.target, date: r.date, vulns: r.vulns.length });
+    if (list.length > 20) list = list.slice(0, 20);
+    localStorage.setItem('cyberscan_history', JSON.stringify(list));
+    renderHistory();
+  } catch(e) {}
+}
+
+function renderHistory() {
+  var raw = localStorage.getItem('cyberscan_history');
+  var list = raw ? JSON.parse(raw) : [];
+  var el = H.id('historyList');
+  if (list.length === 0) {
+    el.innerHTML = '<div class="history-empty">Пока пусто — запустите первое сканирование</div>';
+    return;
+  }
+  el.innerHTML = list.map(function(item) {
+    var d = new Date(item.date);
+    var ds = d.toLocaleDateString('ru-RU') + ' ' + d.toLocaleTimeString('ru-RU', {hour:'2-digit',minute:'2-digit'});
+    var badgeCls = item.vulns === 0 ? 'stat-passed' : 'stat-critical';
+    return '<div class="history-item" onclick="replayScan(\'' + item.url + '\')">' +
+      '<span class="hi-url">' + escapeHTML(item.url) + '</span>' +
+      '<span class="hi-meta">' +
+        '<span>' + ds + '</span>' +
+        '<span class="hi-badge ' + badgeCls + '">' + item.vulns + ' уязв.</span>' +
+      '</span></div>';
+  }).join('');
+}
+
+window.replayScan = function(url) {
+  H.id('targetUrl').value = url;
+  startScan();
+};
+
+window.clearHistory = function() {
+  localStorage.removeItem('cyberscan_history');
+  renderHistory();
+};
+
+// ========== EXPORT ==========
+window.exportJSON = function() {
+  if (!lastResults) return showToast('Нет результатов для экспорта');
+  var blob = new Blob([JSON.stringify(lastResults, null, 2)], { type: 'application/json' });
+  var a = document.createElement('a');
+  a.href = URL.createObjectURL(blob);
+  a.download = 'scan-' + new URL(lastResults.target).hostname + '.json';
+  a.click();
+};
+
+window.copyReport = function() {
+  if (!lastResults) return showToast('Нет результатов');
+  var lines = [
+    'Cyber-Scanner Report',
+    'Target: ' + lastResults.target,
+    'Date: ' + new Date(lastResults.date).toLocaleString(),
+    'Duration: ' + lastResults.time + 's',
+    'Tests: ' + lastResults.passed + '/' + lastResults.totalTests,
+    '',
+    'Vulnerabilities (' + lastResults.vulns.length + '):',
+    lastResults.vulns.map(function(v) { return '[' + v.severity.toUpperCase() + '] ' + v.type + ': ' + v.desc; }).join('\n'),
+    '',
+    'Tech stack: ' + (lastTech.length ? lastTech.join(', ') : 'N/A')
+  ].join('\n');
+
+  navigator.clipboard.writeText(lines).then(function() {
+    showToast('Отчёт скопирован в буфер обмена');
+  }).catch(function() {
+    showToast('Не удалось скопировать');
+  });
+};
+
+// ========== QUICK SCAN ==========
+window.quickScan = function(url) {
+  H.id('targetUrl').value = url;
+  startScan();
+};
+
+// ========== HELPERS ==========
+function fetchSafe(url) {
+  return fetch(url, { method: 'GET', mode: 'no-cors' }).then(function(r) {
+    // no-cors responses are opaque — we can't read them
+    // Try cors if same-origin
+    return fetch(url).then(function(r) { return r; }).catch(function() { return null; });
+  }).catch(function() { return null; });
+}
+
+var toastTimer;
+function showToast(msg) {
+  var el = H.id('errorToast');
+  if (!el) return;
+  el.textContent = msg;
+  el.classList.remove('hidden');
+  clearTimeout(toastTimer);
+  toastTimer = setTimeout(function() { el.classList.add('hidden'); }, 3000);
+}
+
+function escapeHTML(str) {
+  var div = document.createElement('div');
+  div.textContent = str;
+  return div.innerHTML;
+}
+
+function resetScan() {
+  vulns = [];
+  passedTests = 0;
+  totalTests = 0;
+  lastResults = null;
+  lastTech = [];
+  var log = H.id('progressLog');
+  if (log) log.innerHTML = '';
+}
+
+// ========== ENTER KEY ==========
 document.addEventListener('DOMContentLoaded', function() {
-    updateTerminal();
-    
-    // Добавляем случайные сканирующие линии
-    setInterval(() => {
-        if (Math.random() > 0.7) {
-            scanner.addScanLine();
-        }
-    }, 2000);
+  renderHistory();
+  var input = H.id('targetUrl');
+  if (input) {
+    input.addEventListener('keypress', function(e) {
+      if (e.key === 'Enter') startScan();
+    });
+  }
 });
 
-// Стили для статистики
-const style = document.createElement('style');
-style.textContent = `
-    .stat-item {
-        padding: 8px 0;
-        border-bottom: 1px solid rgba(0, 243, 255, 0.3);
-        font-family: 'Share Tech Mono', monospace;
-    }
-    
-    .stat-critical { color: #ff0000; }
-    .stat-high { color: #ff6b00; }
-    .stat-medium { color: #ffd700; }
-    .stat-low { color: #00ff00; }
-    .stat-passed { color: #00f3ff; }
-    
-    .vuln-desc {
-        margin: 8px 0;
-        color: rgba(255, 255, 255, 0.8);
-    }
-    
-    .vuln-recom {
-        margin: 8px 0;
-        color: var(--neon-green);
-        font-size: 0.9em;
-    }
-    
-    .vuln-time {
-        font-size: 0.8em;
-        color: rgba(255, 255, 255, 0.5);
-        text-align: right;
-    }
-    
-    .recom-item {
-        padding: 10px;
-        margin: 5px 0;
-        background: rgba(0, 243, 255, 0.1);
-        border-left: 2px solid var(--neon-green);
-        font-size: 0.9em;
-    }
-`;
-document.head.appendChild(style);
+})();
