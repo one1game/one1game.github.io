@@ -468,27 +468,66 @@ body::after{
 .social-btn.vk:hover{border-color:#0077ff;background:rgba(0,119,255,0.08);color:#3399ff;box-shadow:0 0 25px rgba(0,119,255,0.2)}
 
 /* =============================================
-   VK FEED
+   CONTENT ROW — MAIN + SIDEBAR
    ============================================= */
-.vk-feed-section {
+.content-row {
+  display: flex;
+  gap: 28px;
+  align-items: flex-start;
   margin-bottom: 52px;
 }
-.vk-feed-wrapper {
-  padding: 28px 28px 4px;
+.content-main {
+  flex: 1 1 0;
+  min-width: 0;
+}
+.content-sidebar {
+  flex: 0 0 350px;
+  position: sticky;
+  top: 72px;
+}
+
+/* =============================================
+   VK FEED WIDGET — SIDEBAR
+   ============================================= */
+.vk-feed-widget {
   background: var(--surface);
   border-radius: var(--radius);
   border: 1px solid var(--border);
+  overflow: hidden;
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
-  position: relative;
-  overflow: hidden;
 }
-.vk-feed-wrapper::before {
-  content: '';
-  position: absolute;
-  top: 0; left: 0; right: 0;
-  height: 3px;
-  background: linear-gradient(90deg, transparent, #0077ff, transparent);
+.vk-feed-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 16px 20px;
+  border-bottom: 1px solid var(--border);
+  font-weight: 700;
+  font-size: 0.95rem;
+  color: #fff;
+}
+.vk-feed-header .fab {
+  color: #0077ff;
+  font-size: 1.25rem;
+}
+.vk-feed-header .vk-subscribe {
+  margin-left: auto;
+  padding: 5px 14px;
+  border-radius: 50px;
+  background: #0077ff;
+  color: #fff;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: background 0.2s;
+}
+.vk-feed-header .vk-subscribe:hover {
+  background: #3399ff;
+}
+.vk-feed-body {
+  height: 700px;
+  overflow: hidden;
 }
 
 /* =============================================
@@ -723,7 +762,8 @@ body::after{
   .article-body{font-size:1.05rem}
   .category-filters{gap:6px}
   .cat-pill{padding:6px 15px;font-size:0.76rem}
-  .vk-feed-section{display:none}
+  .content-row{flex-direction:column}
+  .content-sidebar{display:none}
 }
 
 @media(max-width:480px){
