@@ -4,8 +4,8 @@
   "description": "Новости, статьи и обзоры видеоигр",
   "start_url": "/",
   "display": "standalone",
-  "background_color": "#0a0a0f",
-  "theme_color": "#00f3ff",
+  "background_color": "#06060c",
+  "theme_color": "#06060c",
   "icons": [
     { "src": "favicon.png", "sizes": "192x192", "type": "image/png" },
     { "src": "favicon.png", "sizes": "512x512", "type": "image/png" }

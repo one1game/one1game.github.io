@@ -23,9 +23,18 @@
   <meta name="description" content="Политика конфиденциальности игрового портала One1Game. Как мы используем данные и обеспечиваем безопасность пользователей." />
   <meta name="keywords" content="политика конфиденциальности, конфиденциальность One1Game, защита данных, обработка персональных данных" />
   <link href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css" rel="stylesheet" />
-  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="styles.css?v=2" />
   <link rel="manifest" href="/manifest.json" />
-  <script>if('serviceWorker' in navigator) navigator.serviceWorker.register('/sw.js');</script>
+  <meta name="theme-color" content="#06060c" />
+
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-SZYYDYEC6T"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-SZYYDYEC6T');
+  </script>
 
   <script type="application/ld+json">
   {
@@ -39,20 +48,6 @@
   </script>
 </head>
 <body>
-<a href="#main-content" class="skip-link">Перейти к контенту</a>
-
-<nav class="site-nav">
-  <div class="nav-inner">
-    <a href="/" class="nav-logo">ONE1GAME</a>
-    <div class="nav-links">
-      <a href="/" class="nav-link">Главная</a>
-      <a href="/archive.html" class="nav-link">Статьи</a>
-      <a href="/anal-code/" class="nav-link">CodeFusion</a>
-      <a href="/cyber-scanner/" class="nav-link">Scanner</a>
-    </div>
-  </div>
-</nav>
-
 <main id="main-content">
 <div class="container">
   <div class="page-content">
@@ -140,17 +135,6 @@
 </div>
 
 </main>
-
-<footer class="site-footer">
-  <div class="footer-content">
-    <span>&copy; 2025–2026 One1Game</span>
-    <div class="footer-links">
-      <a href="/privacy.html">Политика</a>
-      <a href="/terms.html">Правила</a>
-      <a href="/advertising.html">Реклама</a>
-    </div>
-  </div>
-</footer>
-
+<script src="/components.js" defer></script>
 </body>
 </html>
