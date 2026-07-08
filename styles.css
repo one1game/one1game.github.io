@@ -347,98 +347,62 @@ body::after{
 }
 
 /* =============================================
-   FREE GAMES GRID
+   TODAY IN GAMING HISTORY
    ============================================= */
-.free-games-grid{
-  display:grid;
-  grid-template-columns:repeat(auto-fill,minmax(180px,1fr));
-  gap:14px;
+#today-in-history{
   margin-bottom:38px;
 }
-.fg-card{
+.gh-card{
+  position:relative;
   background:var(--surface);
   border:1px solid var(--border);
   border-radius:var(--radius);
+  padding:24px;
   overflow:hidden;
-  text-decoration:none;
-  color:inherit;
-  transition:border 0.3s,transform 0.25s;
+  transition:border 0.3s;
 }
-.fg-card:hover{
-  border-color:var(--lime);
-  transform:translateY(-3px);
-  box-shadow:0 8px 24px rgba(57,255,20,0.1);
+.gh-card::before{
+  content:'';
+  position:absolute;top:0;left:0;right:0;height:2px;
+  background:linear-gradient(90deg,var(--cyan),var(--magenta));
+  opacity:0.6;
 }
-.fg-img{
-  position:relative;
-  aspect-ratio:16/9;
-  background:#000;
-  overflow:hidden;
+.gh-card:hover{
+  border-color:rgba(255,255,255,0.12);
 }
-.fg-img img{
-  width:100%;height:100%;
-  object-fit:cover;
-  transition:transform 0.4s;
-}
-.fg-card:hover .fg-img img{transform:scale(1.06);}
-.fg-badge{
-  position:absolute;top:8px;left:8px;
-  padding:3px 10px;border-radius:50px;
-  background:rgba(57,255,20,0.9);
-  color:#000;font-size:0.68rem;font-weight:800;
-  font-family:ui-monospace,'Cascadia Code','Fira Code',Consolas,monospace;
-  letter-spacing:0.04em;
-  backdrop-filter:blur(4px);
-}
-.fg-body{padding:12px;}
-.fg-genre{
-  display:block;
-  font-size:0.66rem;font-weight:700;text-transform:uppercase;
-  letter-spacing:0.06em;
-  color:var(--lime);margin-bottom:4px;
-}
-.fg-title{
-  display:block;
-  font-size:0.82rem;font-weight:700;color:#fff;
-  line-height:1.3;margin-bottom:4px;
-  display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;
-  overflow:hidden;
-}
-.fg-card:hover .fg-title{color:var(--lime);}
-.fg-desc{
-  display:block;
-  font-size:0.72rem;color:var(--text-faint);
-  line-height:1.4;
-}
-.fg-loading,.fg-empty{
-  grid-column:1/-1;
-  text-align:center;color:var(--text-faint);
-  font-size:0.85rem;padding:32px 0;
-}
-
-.fg-actions{
-  text-align:center;
-  margin-top:20px;
-}
-.fg-refresh-btn{
-  background:transparent;
-  border:1px solid var(--border);
+.gh-label{
+  display:inline-block;
+  font-size:0.62rem;font-weight:700;text-transform:uppercase;
+  letter-spacing:0.12em;
   color:var(--text-faint);
-  padding:8px 24px;
-  border-radius:20px;
-  font-size:0.8rem;
-  cursor:pointer;
-  transition:all 0.25s;
-  font-family:inherit;
+  margin-top:14px;
+  padding:4px 12px;border-radius:50px;
+  background:rgba(255,255,255,0.03);
+  border:1px solid var(--border);
 }
-.fg-refresh-btn:hover{
-  border-color:var(--lime);
-  color:var(--lime);
-  box-shadow:0 0 12px rgba(168,230,0,0.15);
+.gh-date{
+  font-size:0.75rem;font-weight:600;
+  text-transform:uppercase;letter-spacing:0.08em;
+  color:var(--cyan);
+  margin-bottom:6px;
 }
-.fg-refresh-btn:disabled{
-  opacity:0.5;
-  pointer-events:none;
+.gh-year{
+  font-size:3rem;font-weight:900;line-height:1;
+  background:linear-gradient(135deg,var(--cyan),var(--magenta));
+  -webkit-background-clip:text;-webkit-text-fill-color:transparent;
+  background-clip:text;
+  margin-bottom:10px;
+  font-family:ui-monospace,'Cascadia Code','Fira Code',Consolas,monospace;
+}
+.gh-title{
+  font-size:1.05rem;font-weight:750;
+  color:#fff;
+  margin-bottom:8px;
+  line-height:1.3;
+}
+.gh-desc{
+  font-size:0.85rem;color:var(--text-faint);
+  line-height:1.65;
 }
 
 /* =============================================
@@ -819,6 +783,28 @@ body::after{
 .article-body li{margin-bottom:10px;line-height:1.75}
 .article-body a{color:var(--cyan);border-bottom:1px solid transparent;transition:border-color 0.2s}
 .article-body a:hover{border-bottom-color:var(--cyan)}
+.article-body table.article-table{
+  width:100%;border-collapse:collapse;
+  margin:24px 0 32px;
+  font-size:0.9rem;
+}
+.article-body table.article-table thead th{
+  background:var(--surface);color:var(--text-faint);
+  font-weight:600;text-align:left;padding:10px 14px;
+  border-bottom:2px solid var(--border);
+  font-size:0.78rem;text-transform:uppercase;letter-spacing:0.04em;
+}
+.article-body table.article-table tbody td{
+  padding:10px 14px;
+  border-bottom:1px solid rgba(255,255,255,0.04);
+  color:var(--text);
+}
+.article-body table.article-table tbody tr:hover td{
+  background:rgba(0,229,255,0.03);
+}
+.article-body table.article-table tbody td:first-child{
+  color:var(--text-faint);
+}
 
 /* Share section */
 .share-section{

@@ -1,4 +1,4 @@
-const CACHE = 'one1game-v13';
+const CACHE = 'one1game-v15';
 const CDN_CACHE = 'one1game-cdn-v1';
 
 const SHELL = [
@@ -9,6 +9,7 @@ const SHELL = [
   '/script.js',
   '/articles-data.js',
   '/youtube-feed.js',
+  '/gaming-history.js',
   '/components.js',
   '/manifest.json',
   '/404.html'

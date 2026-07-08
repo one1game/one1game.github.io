@@ -31,7 +31,7 @@
 
   <link href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css" rel="stylesheet" />
   <link rel="preload" href="styles.css" as="style" />
-  <link rel="stylesheet" href="styles.css?v=6" />
+  <link rel="stylesheet" href="styles.css?v=7" />
   <link rel="manifest" href="/manifest.json" />
   <meta name="theme-color" content="#06060c" />
 
@@ -104,15 +104,12 @@
         <div class="skeleton-card"></div>
       </div>
 
-      <!-- FREE GAMES -->
+      <!-- TODAY IN GAMING HISTORY -->
       <div class="section-header">
-        <h2 class="section-title">Бесплатные игры</h2>
-        <span class="section-badge">Free</span>
+        <h2 class="section-title">Сегодня в истории игр</h2>
+        <span class="section-badge">History</span>
       </div>
-      <div class="free-games-grid" id="free-games-grid"></div>
-      <div class="fg-actions">
-        <button class="fg-refresh-btn" id="fg-refresh">Показать другие</button>
-      </div>
+      <div id="today-in-history"></div>
 
       <!-- RADIO -->
       <section class="radio-section">
@@ -165,11 +162,11 @@
 </div>
 
 </main>
-<script defer src="articles-data.js?v=5"></script>
+<script defer src="articles-data.js?v=6"></script>
 <script defer src="script.js?v=5"></script>
 <script async src="https://vk.com/js/api/openapi.js?169"></script>
 <script defer src="youtube-feed.js?v=5"></script>
-<script defer src="free-games.js?v=6"></script>
+<script defer src="gaming-history.js?v=1"></script>
 <script>
 (function checkVK() {
   if (typeof VK !== 'undefined' && VK.Widgets) {
