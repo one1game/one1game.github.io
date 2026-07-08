@@ -526,8 +526,7 @@ body::after{
   background: #3399ff;
 }
 .vk-feed-body {
-  height: 700px;
-  overflow: hidden;
+  min-height: 400px;
 }
 
 /* =============================================
