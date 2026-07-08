@@ -474,12 +474,21 @@ body::after{
   margin-bottom: 52px;
 }
 .vk-feed-wrapper {
+  padding: 28px 28px 4px;
   background: var(--surface);
   border-radius: var(--radius);
   border: 1px solid var(--border);
-  overflow: hidden;
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
+  position: relative;
+  overflow: hidden;
+}
+.vk-feed-wrapper::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, transparent, #0077ff, transparent);
 }
 
 /* =============================================
