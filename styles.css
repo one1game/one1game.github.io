@@ -337,6 +337,84 @@ body::after{
   background:var(--cyan);
   box-shadow:0 0 12px var(--cyan);
 }
+.section-badge{
+  font-family:ui-monospace,'Cascadia Code','Fira Code',Consolas,monospace;
+  font-size:0.72rem;font-weight:900;
+  padding:4px 12px;border-radius:50px;
+  background:rgba(57,255,20,0.12);
+  color:var(--lime);border:1px solid rgba(57,255,20,0.25);
+  letter-spacing:0.08em;
+}
+
+/* =============================================
+   FREE GAMES GRID
+   ============================================= */
+.free-games-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fill,minmax(180px,1fr));
+  gap:14px;
+  margin-bottom:38px;
+}
+.fg-card{
+  background:var(--surface);
+  border:1px solid var(--border);
+  border-radius:var(--radius);
+  overflow:hidden;
+  text-decoration:none;
+  color:inherit;
+  transition:border 0.3s,transform 0.25s;
+}
+.fg-card:hover{
+  border-color:var(--lime);
+  transform:translateY(-3px);
+  box-shadow:0 8px 24px rgba(57,255,20,0.1);
+}
+.fg-img{
+  position:relative;
+  aspect-ratio:16/9;
+  background:#000;
+  overflow:hidden;
+}
+.fg-img img{
+  width:100%;height:100%;
+  object-fit:cover;
+  transition:transform 0.4s;
+}
+.fg-card:hover .fg-img img{transform:scale(1.06);}
+.fg-badge{
+  position:absolute;top:8px;left:8px;
+  padding:3px 10px;border-radius:50px;
+  background:rgba(57,255,20,0.9);
+  color:#000;font-size:0.68rem;font-weight:800;
+  font-family:ui-monospace,'Cascadia Code','Fira Code',Consolas,monospace;
+  letter-spacing:0.04em;
+  backdrop-filter:blur(4px);
+}
+.fg-body{padding:12px;}
+.fg-genre{
+  display:block;
+  font-size:0.66rem;font-weight:700;text-transform:uppercase;
+  letter-spacing:0.06em;
+  color:var(--lime);margin-bottom:4px;
+}
+.fg-title{
+  display:block;
+  font-size:0.82rem;font-weight:700;color:#fff;
+  line-height:1.3;margin-bottom:4px;
+  display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;
+  overflow:hidden;
+}
+.fg-card:hover .fg-title{color:var(--lime);}
+.fg-desc{
+  display:block;
+  font-size:0.72rem;color:var(--text-faint);
+  line-height:1.4;
+}
+.fg-loading,.fg-empty{
+  grid-column:1/-1;
+  text-align:center;color:var(--text-faint);
+  font-size:0.85rem;padding:32px 0;
+}
 
 /* =============================================
    ARTICLES GRID — 3D CARDS
