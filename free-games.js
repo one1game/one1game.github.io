@@ -1,11 +1,39 @@
-// free-games.js — топ бесплатных игр с FreeToGame API
+// free-games.js — свежие бесплатные игры с FreeToGame API
 (function() {
   'use strict';
 
   var CONTAINER = 'free-games-grid';
   var CACHE_KEY = 'one1game_freegames';
-  var CACHE_TTL = 24 * 60 * 60 * 1000; // 24 часа
+  var CACHE_TTL = 6 * 60 * 60 * 1000; // 6 часов
   var GAME_COUNT = 6;
+
+  // Перевод жанров
+  var genreRU = {
+    'Shooter': 'Шутер',
+    'MMORPG': 'MMORPG',
+    'MOBA': 'MOBA',
+    'Battle Royale': 'Королевская битва',
+    'Strategy': 'Стратегия',
+    'Fighting': 'Файтинг',
+    'Racing': 'Гонки',
+    'Sports': 'Спорт',
+    'MMO': 'MMO',
+    'Social': 'Социальная',
+    'Card Game': 'Карточная',
+    'ARPG': 'Action RPG',
+    'Action RPG': 'Action RPG',
+    'MMOFPS': 'MMOFPS',
+    'Fantasy': 'Фэнтези',
+    'Action': 'Экшен',
+    'Survival': 'Выживание',
+    'Zombie': 'Зомби',
+    'Horror': 'Хоррор',
+    'Adventure': 'Приключения',
+    'Pixel': 'Пиксельная',
+    'Turn-Based': 'Пошаговая',
+    '2D': '2D',
+    '3D': '3D'
+  };
 
   var grid = document.getElementById(CONTAINER);
   if (!grid) return;
@@ -15,7 +43,7 @@
   var cached = getCache();
   if (cached) { render(cached); return; }
 
-  fetch('https://www.freetogame.com/api/games?platform=pc&sort-by=popularity')
+  fetch('https://www.freetogame.com/api/games?platform=pc&sort-by=release-date')
     .then(function(r) { return r.json(); })
     .then(function(games) {
       var top = games.slice(0, GAME_COUNT);
@@ -44,13 +72,14 @@
 
   function render(games) {
     grid.innerHTML = games.map(function(g) {
+      var genre = genreRU[g.genre] || g.genre;
       return '<a href="' + esc(g.freetogame_profile_url) + '" class="fg-card" target="_blank" rel="noopener">' +
         '<div class="fg-img">' +
         '  <img src="' + esc(g.thumbnail) + '" alt="" loading="lazy" />' +
         '  <span class="fg-badge">Бесплатно</span>' +
         '</div>' +
         '<div class="fg-body">' +
-        '  <span class="fg-genre">' + esc(g.genre) + '</span>' +
+        '  <span class="fg-genre">' + esc(genre) + '</span>' +
         '  <span class="fg-title">' + esc(g.title) + '</span>' +
         '  <span class="fg-desc">' + (g.short_description || '').substring(0, 80) + '…</span>' +
         '</div>' +
