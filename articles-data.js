@@ -1,6 +1,14 @@
 // articles-data.js
 window.allArticles = [
   {
+    "url": "/archive/kak-uvelichit-fps-windows-11-optimizaciya.html",
+    "title": "Как увеличить FPS в Windows 11: Секретный гайд 2026 года (Выжимаем максимум)",
+    "excerpt": "Windows 11 режет FPS в играх? Полный гайд по оптимизации: отключение VBS, настройка HAGS, чистка телеметрии и скрытые фишки для буста фреймрейта до 30-40%...",
+    "date": "8 июля 2026",
+    "readTime": "7 мин",
+    "category": "Гайды"
+  },
+  {
     "url": "/archive/xbox-gamepass-to-steam-saves-2026.html",
     "title": "Как перенести сохранения из Xbox Game Pass в Steam в 2026 — полное руководство",
     "excerpt": "Десятки часов в Game Pass, а игру купили в Steam? WGS-контейнеры, GPSaveConverter, ручной и автоматический перенос — всё, что нужно для сохранения прогресса...",
