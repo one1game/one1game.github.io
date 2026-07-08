@@ -293,7 +293,27 @@ body {
   gap: 8px;
 }
 .results-header-bar h3:before { content: '\f132'; font-family: 'Font Awesome 6 Free'; font-weight: 900; color: var(--cyan); font-size: 1.1rem; }
-.results-actions { display: flex; gap: 8px; }
+.results-actions { display: flex; gap: 8px; align-items: center; }
+
+/* Grade badge */
+.grade-badge {
+  width: 48px; height: 48px;
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 1.2rem; font-weight: 900;
+  font-family: var(--font-mono);
+  background: rgba(255,255,255,0.04);
+  border: 3px solid var(--border);
+  color: var(--text-faint);
+  transition: all 0.4s;
+  margin-right: 6px;
+}
+.grade-badge.Aplus, .grade-badge.A { border-color: #22c55e; color: #22c55e; box-shadow: 0 0 16px rgba(34,197,94,0.3); }
+.grade-badge.B { border-color: #a3e635; color: #a3e635; box-shadow: 0 0 12px rgba(163,230,53,0.2); }
+.grade-badge.C { border-color: #facc15; color: #facc15; box-shadow: 0 0 12px rgba(250,204,21,0.2); }
+.grade-badge.D { border-color: #f97316; color: #f97316; box-shadow: 0 0 14px rgba(249,115,22,0.25); }
+.grade-badge.F { border-color: #ef4444; color: #ef4444; box-shadow: 0 0 16px rgba(239,68,68,0.35); animation: pulse-grade 1.5s infinite; }
+@keyframes pulse-grade { 0%,100% { box-shadow: 0 0 16px rgba(239,68,68,0.35); } 50% { box-shadow: 0 0 28px rgba(239,68,68,0.6); } }
 
 .btn-sm {
   padding: 7px 16px;
