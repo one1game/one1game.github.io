@@ -130,6 +130,15 @@
         </div>
         <div class="vk-feed-body" id="vk_groups"></div>
       </div>
+
+      <div class="yt-feed-widget">
+        <div class="yt-feed-header">
+          <i class="fab fa-youtube"></i>
+          <span>YouTube</span>
+          <a href="https://www.youtube.com/@one1game" class="yt-subscribe" target="_blank" rel="noopener">Канал</a>
+        </div>
+        <div class="yt-feed-body" id="yt-feed"></div>
+      </div>
     </aside>
   </div>
 
@@ -149,6 +158,7 @@
 <script defer src="articles-data.js?v=3"></script>
 <script defer src="script.js?v=3"></script>
 <script async src="https://vk.com/js/api/openapi.js?169"></script>
+<script defer src="youtube-feed.js?v=3"></script>
 <script>
 (function checkVK() {
   if (typeof VK !== 'undefined' && VK.Widgets) {
