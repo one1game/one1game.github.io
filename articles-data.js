@@ -1,6 +1,14 @@
 // articles-data.js
 window.allArticles = [
   {
+    "url": "/archive/windows-11-july-2026-update-podgotovka.html",
+    "title": "Windows 11 July 2026 Update: Как подготовиться и избежать проблем (полный гайд)",
+    "excerpt": "14 июля 2026 выходит крупное обновление Windows 11 с Point-in-Time Restore и Unlimited Pause. Чек-лист из 7 шагов, разбор проблем 2026 года, инструкции по откату...",
+    "date": "9 июля 2026",
+    "readTime": "8 мин",
+    "category": "Гайды"
+  },
+  {
     "url": "/archive/rtx-5090-vs-rx-9070xt-sravnenie-2026.html",
     "title": "RTX 5090 vs RX 9070 XT: Честное сравнение 2026 — какую карту брать?",
     "excerpt": "Полный тест RTX 5090 и RX 9070 XT в 27 играх, 3 разрешениях и рабочих задачах. Цена/производительность, температуры, вердикт. Без рекламы — только факты...",
