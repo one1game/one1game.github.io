@@ -27,6 +27,7 @@
   <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin />
   <link rel="preconnect" href="https://www.googletagmanager.com" crossorigin />
   <link rel="dns-prefetch" href="https://www.google-analytics.com" />
+  <link rel="dns-prefetch" href="https://vk.com" />
 
   <link href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css" rel="stylesheet" />
   <link rel="preload" href="styles.css" as="style" />
@@ -114,6 +115,15 @@
     <audio id="radio-stream" preload="none" style="display:none;"></audio>
   </section>
 
+  <!-- VK FEED -->
+  <section class="vk-feed-section">
+    <div class="section-header">
+      <h2 class="section-title">Мы ВКонтакте</h2>
+      <a href="https://vk.com/one1games" class="btn btn-ghost" target="_blank" rel="noopener">Подписаться <i class="fas fa-arrow-right"></i></a>
+    </div>
+    <div class="vk-feed-wrapper" id="vk_groups"></div>
+  </section>
+
   <!-- YT + VK -->
   <div class="social-section">
     <a href="https://www.youtube.com/@one1game" class="social-btn yt" target="_blank" rel="noopener">
@@ -129,6 +139,23 @@
 </main>
 <script defer src="articles-data.js?v=2"></script>
 <script defer src="script.js?v=2"></script>
+<script async src="https://vk.com/js/api/openapi.js?169"></script>
+<script>
+(function checkVK() {
+  if (typeof VK !== 'undefined' && VK.Widgets) {
+    VK.Widgets.Group("vk_groups", {
+      mode: 4,
+      height: 600,
+      color1: '06060D',
+      color2: 'EDEFF5',
+      color3: '9090AA',
+      color4: '9090AA'
+    }, 222878205);
+  } else {
+    setTimeout(checkVK, 120);
+  }
+})();
+</script>
 
 <!-- Card mouse tracking (spotlight effect) -->
 <script>
