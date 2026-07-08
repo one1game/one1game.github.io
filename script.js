@@ -1,8 +1,6 @@
 // One1Game Platform - Working Version with Smart Radio
 class One1GamePlatform {
   constructor() {
-      this.clicks = 0;
-      this.highScore = 0;
       this.isPlaying = false;
       this.allArticles = window.allArticles || [];
       this.globalRadio = null;
@@ -183,7 +181,6 @@ class One1GamePlatform {
   // Контент для главной страницы
   loadHomePageContent() {
     this.loadRandomVideo();
-    this.setupClickerGame();
     this.loadLatestArticles();
   }
 
@@ -396,165 +393,16 @@ class One1GamePlatform {
     thumb.addEventListener('click', loadVideo);
   }
 
-  // Clicker Game System
-  setupClickerGame() {
-    const clicker = document.getElementById('clicker-target');
-    if (!clicker) {
-      console.log('🎮 No clicker game on this page');
-      return;
-    }
-
-    console.log('🎮 Setting up clicker game...');
-    
-    // Load saved data
-    this.clicks = parseInt(localStorage.getItem('one1game_clicks')) || 0;
-    this.highScore = parseInt(localStorage.getItem('one1game_highscore')) || 0;
-
-    // Update displays
-    this.updateGameDisplay();
-
-    // Click handler
-    clicker.addEventListener('click', (e) => {
-      this.handleClick(e);
-    });
-
-    // Touch support
-    clicker.addEventListener('touchstart', (e) => {
-      e.preventDefault();
-      this.handleClick(e);
-    });
-
-    // Reset button
-    const resetBtn = document.getElementById('reset-game');
-    if (resetBtn) {
-      resetBtn.addEventListener('click', () => {
-        this.resetGame();
-      });
-    }
-
-    console.log('✅ Clicker game setup complete');
-  }
-
-  handleClick(event) {
-    this.clicks++;
-    
-    // Update high score
-    if (this.clicks > this.highScore) {
-      this.highScore = this.clicks;
-      localStorage.setItem('one1game_highscore', this.highScore);
-    }
-    
-    // Save and update
-    localStorage.setItem('one1game_clicks', this.clicks);
-    this.updateGameDisplay();
-    
-    // Visual effects
-    this.createClickEffect(event);
-    this.animateCore();
-  }
-
-  updateGameDisplay() {
-    const clickCount = document.getElementById('click-count');
-    const highScore = document.getElementById('high-score');
-    
-    if (clickCount) clickCount.textContent = this.formatNumber(this.clicks);
-    if (highScore) highScore.textContent = this.formatNumber(this.highScore);
-  }
-
-  animateCore() {
-    const core = document.getElementById('clicker-target');
-    if (core) {
-      core.style.transform = 'scale(0.95)';
-      
-      setTimeout(() => {
-        core.style.transform = 'scale(1)';
-      }, 100);
-    }
-  }
-
-  createClickEffect(event) {
-    const effect = document.createElement('div');
-    effect.className = 'click-effect';
-    effect.style.cssText = `
-      position: fixed;
-      width: 20px;
-      height: 20px;
-      background: radial-gradient(circle, #00ff88, transparent);
-      border-radius: 50%;
-      pointer-events: none;
-      left: ${event.clientX - 10}px;
-      top: ${event.clientY - 10}px;
-      z-index: 1000;
-    `;
-    
-    document.body.appendChild(effect);
-    
-    // Анимация через CSS
-    effect.animate([
-      { transform: 'scale(1)', opacity: 1 },
-      { transform: 'scale(3)', opacity: 0 }
-    ], {
-      duration: 600,
-      easing: 'ease-out'
-    }).onfinish = () => {
-      if (effect.parentNode) {
-        effect.parentNode.removeChild(effect);
-      }
-    };
-  }
-
-  resetGame() {
-    this.clicks = 0;
-    this.highScore = 0;
-    
-    localStorage.setItem('one1game_clicks', '0');
-    localStorage.setItem('one1game_highscore', '0');
-    
-    this.updateGameDisplay();
-    
-    // Visual feedback
-    const btn = document.getElementById('reset-game');
-    if (btn) {
-      const originalText = btn.innerHTML;
-      btn.innerHTML = '<i class="fas fa-check"></i> Прогресс сброшен!';
-      btn.style.background = 'rgba(0, 255, 136, 0.3)';
-      btn.style.borderColor = '#00ff88';
-      btn.style.color = '#00ff88';
-      
-      setTimeout(() => {
-        btn.innerHTML = originalText;
-        btn.style.background = '';
-        btn.style.borderColor = '#ff003c';
-        btn.style.color = '#ff003c';
-      }, 2000);
-    }
-  }
-
-  // Utility Methods
-  formatNumber(num) {
-    return num.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
-  }
-
   setupEventListeners() {
     // Keyboard shortcuts
     document.addEventListener('keydown', (e) => {
-      // Space - play/pause music (только если есть кнопка на странице И есть радио)
-      if (e.code === 'Space') {
-        const playBtn = document.getElementById('play-pause');
-        if (playBtn && this.globalRadio) {
-          e.preventDefault();
-          this.globalRadio.toggle();
-          this.updateRadioButton(playBtn);
-        }
-      }
-      
-      // R - reset game (without Ctrl для простоты)
-      if (e.code === 'KeyR') {
-        const resetBtn = document.getElementById('reset-game');
-        if (resetBtn && document.activeElement !== resetBtn) {
-          e.preventDefault();
-          this.resetGame();
-        }
+      // Space — переключение радио
+      if (e.code === 'Space' && this.globalRadio) {
+        const activeEl = document.activeElement;
+        // Не перехватываем Space в полях ввода
+        if (activeEl && (activeEl.tagName === 'INPUT' || activeEl.tagName === 'TEXTAREA' || activeEl.isContentEditable)) return;
+        e.preventDefault();
+        this.globalRadio.toggle();
       }
     });
 

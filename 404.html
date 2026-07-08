@@ -23,6 +23,18 @@
   <link href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css" rel="stylesheet" />
   <link rel="stylesheet" href="styles.css" />
   <link rel="manifest" href="/manifest.json" />
+  <meta name="theme-color" content="#06060c" />
+
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-SZYYDYEC6T"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-SZYYDYEC6T');
+  </script>
+
+  <!-- PWA -->
   <script>
     if('serviceWorker' in navigator) navigator.serviceWorker.register('/sw.js');
   </script>
@@ -58,14 +70,11 @@
 
 <footer class="site-footer">
   <div class="footer-content">
-    <div class="footer-info">
-      <span class="footer-logo">ONE1GAME</span>
-      <span>&copy; 2026 One1Game. Все права защищены.</span>
-    </div>
+    <span>&copy; 2025–2026 One1Game</span>
     <div class="footer-links">
-      <a href="/privacy.html">Конфиденциальность</a>
-      <a href="/terms.html">Правила</a>
-      <a href="/advertising.html">Реклама</a>
+      <a href="privacy.html">Политика</a>
+      <a href="terms.html">Правила</a>
+      <a href="advertising.html">Реклама</a>
     </div>
   </div>
 </footer>

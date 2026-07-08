@@ -355,8 +355,6 @@ body::after{
   padding:28px;
   text-decoration:none;color:inherit;
   transition:all 0.35s var(--ease-out);
-  backdrop-filter:blur(12px);
-  -webkit-backdrop-filter:blur(12px);
   overflow:hidden;
   transform:translateY(0);
 }
