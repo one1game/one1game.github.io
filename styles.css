@@ -481,7 +481,7 @@ body::after{
   min-width: 0;
 }
 .content-sidebar {
-  flex: 0 0 350px;
+  flex: 0 0 300px;
   position: sticky;
   top: 72px;
 }
