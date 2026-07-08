@@ -416,6 +416,31 @@ body::after{
   font-size:0.85rem;padding:32px 0;
 }
 
+.fg-actions{
+  text-align:center;
+  margin-top:20px;
+}
+.fg-refresh-btn{
+  background:transparent;
+  border:1px solid var(--border);
+  color:var(--text-faint);
+  padding:8px 24px;
+  border-radius:20px;
+  font-size:0.8rem;
+  cursor:pointer;
+  transition:all 0.25s;
+  font-family:inherit;
+}
+.fg-refresh-btn:hover{
+  border-color:var(--lime);
+  color:var(--lime);
+  box-shadow:0 0 12px rgba(168,230,0,0.15);
+}
+.fg-refresh-btn:disabled{
+  opacity:0.5;
+  pointer-events:none;
+}
+
 /* =============================================
    ARTICLES GRID — 3D CARDS
    ============================================= */
