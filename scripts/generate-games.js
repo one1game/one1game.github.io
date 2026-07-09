@@ -137,7 +137,7 @@ function todayRuFull() {
   return `${d.getDate()} ${months[d.getMonth()]} ${d.getFullYear()}`;
 }
 
-function buildPage({ appid, slug, store, spy }) {
+function buildPage({ appid, slug, store, spy, editorVerdict = "" }) {
   const title = store.name;
   const pageTitle = `${title}: цена, отзывы и статистика игроков | One1Game`;
   const metaDesc = `${title} — актуальная цена, скидки, процент положительных отзывов и статистика игроков в Steam. Обновляется автоматически.`;
@@ -359,6 +359,13 @@ function buildPage({ appid, slug, store, spy }) {
         </a>
       </p>
 
+      <!-- editor-verdict -->
+      <div class="editor-verdict">
+        ${editorVerdict || `<h3>Обзор редакции</h3>
+        <p><em>Добавьте свой редакторский текст сюда — он сохранится при следующем обновлении страницы.</em></p>`}
+      </div>
+      <!-- /editor-verdict -->
+
       <p style="color: var(--text-faint); font-size: 13px; margin-top: 30px;">
         Данные о цене, отзывах и статистике обновляются автоматически на основе
         Steam Store API и SteamSpy.
@@ -465,6 +472,14 @@ function declineCookies() {
 `;
 }
 
+// Извлекает редакторский текст из существующей страницы (между <!-- editor-verdict --> и <!-- /editor-verdict -->)
+function extractEditorVerdict(filePath) {
+  if (!fs.existsSync(filePath)) return "";
+  const html = fs.readFileSync(filePath, "utf-8");
+  const match = html.match(/<!-- editor-verdict -->\s*([\s\S]*?)\s*<!-- \/editor-verdict -->/);
+  return match ? match[1].trim() : "";
+}
+
 async function main() {
   const archiveDir = path.resolve(process.cwd(), CONFIG.archiveDir);
   fs.mkdirSync(archiveDir, { recursive: true });
@@ -501,8 +516,10 @@ async function main() {
       await sleep(CONFIG.delayMs);
 
       const slug = `${slugify(store.name)}-${appid}`;
-      const html = buildPage({ appid, slug, store, spy });
-      fs.writeFileSync(path.join(archiveDir, `${slug}.html`), html, "utf-8");
+      const filePath = path.join(archiveDir, `${slug}.html`);
+      const editorVerdict = extractEditorVerdict(filePath);
+      const html = buildPage({ appid, slug, store, spy, editorVerdict });
+      fs.writeFileSync(filePath, html, "utf-8");
 
       newEntries.push({
         url: `/${CONFIG.archiveDir}/${slug}.html`,
