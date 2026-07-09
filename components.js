@@ -32,6 +32,7 @@
     '      <div class="nav-social">' +
     '        <a href="https://www.youtube.com/@one1game" target="_blank" rel="noopener" title="YouTube"><i class="fab fa-youtube"></i></a>' +
     '        <a href="https://vk.com/one1games" target="_blank" rel="noopener" title="ВКонтакте"><i class="fab fa-vk"></i></a>' +
+    '        <a href="https://t.me/one1game" target="_blank" rel="noopener" title="Telegram"><i class="fab fa-telegram-plane"></i></a>' +
     '      </div>' : '') +
     '    </div>' +
     '  </div>' +

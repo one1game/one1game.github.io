@@ -525,8 +525,8 @@ body::after{
    SOCIAL SECTION — YT + VK
    ============================================= */
 .social-section{
-  display:grid;grid-template-columns:1fr 1fr;gap:16px;
-  max-width:500px;margin:0 auto 52px;
+  display:grid;grid-template-columns:1fr 1fr 1fr;gap:16px;
+  max-width:640px;margin:0 auto 52px;
 }
 .social-btn{
   display:flex;align-items:center;justify-content:center;gap:10px;
@@ -541,6 +541,7 @@ body::after{
 }
 .social-btn.yt:hover{border-color:#ff0000;background:rgba(255,0,0,0.08);color:#ff4444;box-shadow:0 0 25px rgba(255,0,0,0.2)}
 .social-btn.vk:hover{border-color:#0077ff;background:rgba(0,119,255,0.08);color:#3399ff;box-shadow:0 0 25px rgba(0,119,255,0.2)}
+.social-btn.tg:hover{border-color:#2AABEE;background:rgba(42,171,238,0.08);color:#2AABEE;box-shadow:0 0 25px rgba(42,171,238,0.2)}
 
 /* =============================================
    CONTENT ROW — MAIN + SIDEBAR
