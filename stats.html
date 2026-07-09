@@ -320,6 +320,17 @@
     });
   }
 
+  // Запрос без dimensions — возвращает истинные тоталы по всему сайту
+  function fetchTotals(siteUrl, startDate, endDate) {
+    return api('sites/' + encodeURIComponent(siteUrl) + '/searchAnalytics/query', {
+      method: 'POST',
+      body: {
+        startDate: startDate,
+        endDate: endDate
+      }
+    });
+  }
+
   /* ===================================================
    *  ЗАГРУЗКА ДАННЫХ
    * =================================================== */
@@ -343,12 +354,16 @@
             });
         })
         .then(function(pack) {
-          if (pack.analytics) {
-            renderStats(pack.analytics.data, pack.analytics.siteUrl);
+          var result = pack.analytics;
+
+          // Успех — есть объект с queries
+          if (result && result.queries) {
+            renderStats(result);
             return;
           }
 
-          // Ни один сайт не вернул данные — показываем детальную диагностику
+          // Собрана диагностика — показываем детально по каждому сайту
+          var failures = result || [];
           var html = 'Не удалось получить данные ни по одному ресурсу Search Console.<br><br>';
 
           html += '<b>Сайты в Search Console (' + pack.allSites.length + '):</b><br>';
@@ -357,6 +372,13 @@
           });
 
           html += '<br><b>Совпадений с one1game.github.io: ' + pack.matched.length + '</b><br>';
+
+          if (failures.length) {
+            html += '<br><b>Причины по каждому совпадению:</b><br>';
+            failures.forEach(function(f) {
+              html += '<code>' + esc(f.site) + '</code> — ' + esc(f.reason) + '<br>';
+            });
+          }
 
           html += '<br><b>Возможные причины:</b><br>';
           html += '1. Ваш Google-аккаунт не добавлен как владелец сайта в <a href="https://search.google.com/search-console" target="_blank" style="color:var(--cyan)">Search Console</a><br>';
@@ -373,13 +395,20 @@
 
   function trySites(sites, startDate, endDate, idx, failures) {
     if (idx >= sites.length) {
-      return Promise.resolve(null);
+      return Promise.resolve(failures);
     }
 
     return fetchAnalytics(sites[idx], startDate, endDate)
-      .then(function(data) {
-        if (data.rows && data.rows.length) {
-          return { data: data, siteUrl: sites[idx] };
+      .then(function(queryData) {
+        if (queryData.rows && queryData.rows.length) {
+          // Нашли запросы — дозапрашиваем тоталы по всему сайту
+          return fetchTotals(sites[idx], startDate, endDate).then(function(totalsData) {
+            return {
+              queries: queryData,
+              totals: totalsData,
+              siteUrl: sites[idx]
+            };
+          });
         }
         failures.push({ site: sites[idx], reason: 'Нет данных (rows пуст)' });
         return trySites(sites, startDate, endDate, idx + 1, failures);
@@ -399,24 +428,26 @@
    *  ОТРИСОВКА
    * =================================================== */
 
-  function renderStats(data, siteUrl) {
-    var rows = data.rows || [];
+  function renderStats(result) {
+    var siteUrl = result.siteUrl;
 
-    if (!rows.length) {
+    // Тоталы по всему сайту (без dimensions — истинные агрегаты)
+    var totalsRows = (result.totals && result.totals.rows) || [];
+    var totalClicks = 0, totalImpressions = 0, totalCtr = 0, totalPos = 0;
+    if (totalsRows.length) {
+      totalClicks     = totalsRows[0].clicks || 0;
+      totalImpressions = totalsRows[0].impressions || 0;
+      totalCtr         = totalsRows[0].ctr || 0;
+      totalPos         = totalsRows[0].position || 0;
+    }
+
+    // Запросы для таблицы (dimensions: ['query'], топ-50 по кликам)
+    var rows = (result.queries && result.queries.rows) || [];
+
+    if (!rows.length && !totalsRows.length) {
       showError('Нет данных за выбранный период. Возможно, сайт ещё не проиндексирован.');
       return;
     }
-
-    // Агрегация
-    var totalClicks = 0, totalImpressions = 0, sumPos = 0;
-    rows.forEach(function(r) {
-      totalClicks     += r.clicks || 0;
-      totalImpressions += r.impressions || 0;
-      sumPos          += (r.position || 0) * (r.impressions || 0);
-    });
-
-    var avgPos = totalImpressions > 0 ? (sumPos / totalImpressions) : 0;
-    var ctr    = totalImpressions > 0 ? ((totalClicks / totalImpressions) * 100) : 0;
 
     var rangeLabels = { '7d': '7 дн', '30d': '30 дн', '90d': '90 дн' };
 
@@ -433,14 +464,14 @@
     });
     html += '</div>';
 
-    // Статистика
+    // Статистика — из тоталов (весь сайт)
     html += '<div class="stats-grid">' +
       '<div class="stat-box"><div class="stat-value">' + totalClicks.toLocaleString() + '</div><div class="stat-label">Кликов</div></div>' +
       '<div class="stat-box"><div class="stat-value">' + totalImpressions.toLocaleString() + '</div><div class="stat-label">Показов</div></div>' +
-      '<div class="stat-box"><div class="stat-value">' + ctr.toFixed(1) + '%</div><div class="stat-label">CTR</div></div>' +
-      '<div class="stat-box"><div class="stat-value">' + avgPos.toFixed(1) + '</div><div class="stat-label">Средняя позиция</div></div>' +
-      '<div class="stat-box"><div class="stat-value">' + rows.length + '</div><div class="stat-label">Запросов</div></div>' +
-      '<div class="stat-box"><div class="stat-value">' + (data.responseAggregationType || 'auto') + '</div><div class="stat-label">Аггрегация</div></div>' +
+      '<div class="stat-box"><div class="stat-value">' + (totalCtr * 100).toFixed(1) + '%</div><div class="stat-label">CTR</div></div>' +
+      '<div class="stat-box"><div class="stat-value">' + totalPos.toFixed(1) + '</div><div class="stat-label">Средняя позиция</div></div>' +
+      '<div class="stat-box"><div class="stat-value">' + rows.length + '</div><div class="stat-label">Запросов (топ-50)</div></div>' +
+      '<div class="stat-box"><div class="stat-value">' + (result.queries.responseAggregationType || 'auto') + '</div><div class="stat-label">Аггрегация</div></div>' +
     '</div>';
 
     // Таблица запросов
