@@ -1082,9 +1082,10 @@ body::after{
 
 /* Comments (utterances) */
 .comments-section {
-  margin: 40px 0 20px;
+  margin: 40px auto 20px;
   padding-top: 30px;
   border-top: 1px solid rgba(255, 255, 255, 0.08);
+  text-align: center;
 }
 .comments-section h4 {
   margin: 0 0 16px;
@@ -1092,12 +1093,14 @@ body::after{
   color: var(--text-base);
   display: flex;
   align-items: center;
+  justify-content: center;
   gap: 8px;
 }
 .comments-section h4 i {
   color: var(--cyan);
 }
 .comments-container {
-  max-width: 100%;
+  max-width: 720px;
+  margin: 0 auto;
   overflow: hidden;
 }

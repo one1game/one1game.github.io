@@ -53,7 +53,7 @@
   <!-- FontAwesome: один объединённый файл вместо трёх -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css" />
 
-  <link rel="stylesheet" href="/styles.css?v=8" />
+  <link rel="stylesheet" href="/styles.css?v=9" />
 
   <!-- BreadcrumbList Schema -->
   <script type="application/ld+json">
@@ -1486,16 +1486,6 @@
 
 <div id="reactions-section"></div>
 
-    <section class="share-section">
-      <h4>Поделиться</h4>
-      <p class="share-hint">Понравилась статья? Отправь другу — пусть тоже будет в курсе!</p>
-      <div class="share-buttons" id="share-buttons"></div>
-    </section>
-
-    <section class="related-section">
-      <h4>Похожие статьи</h4>
-      <div class="related-grid" id="related-container"></div>
-    </section>
     <section class="comments-section">
       <h4><i class="fas fa-comments" aria-hidden="true"></i> Комментарии</h4>
       <div class="comments-container" id="comments-container">
@@ -1508,6 +1498,17 @@
                 async>
         </script>
       </div>
+    </section>
+
+    <section class="share-section">
+      <h4>Поделиться</h4>
+      <p class="share-hint">Понравилась статья? Отправь другу — пусть тоже будет в курсе!</p>
+      <div class="share-buttons" id="share-buttons"></div>
+    </section>
+
+    <section class="related-section">
+      <h4>Похожие статьи</h4>
+      <div class="related-grid" id="related-container"></div>
     </section>
 </div>
 </div>
@@ -1527,13 +1528,7 @@
 </div>
 
 <script src="/cache-version.js"></script>
-<script>
-(function(){
-  var s = document.createElement('script');
-  s.src = '/articles-data.js?v=' + (window.CACHE_VER || '1');
-  document.head.appendChild(s);
-})();
-</script>
+<script>document.write('<script src="/articles-data.js?v='+(window.CACHE_VER||'1')+'"><\/script>');</script>
 <script>
 (function() {
   var path = window.location.pathname;
