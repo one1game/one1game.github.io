@@ -341,7 +341,8 @@ class One1GamePlatform {
       'Консоли': 'cat-consoles',
       'Аналитика': 'cat-analytics',
       'Тренды': 'cat-trends',
-      'Разработка': 'cat-dev'
+      'Разработка': 'cat-dev',
+      'Мнение': 'cat-opinion'
     };
 
     window.allArticles.forEach(a => {
