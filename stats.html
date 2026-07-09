@@ -38,6 +38,11 @@
       border-radius: 8px; padding: 16px 20px; color: var(--magenta);
       font-size: 0.85rem; margin-bottom: 20px;
     }
+    .stats-success {
+      background: rgba(57,255,20,0.06); border: 1px solid rgba(57,255,20,0.2);
+      border-radius: 8px; padding: 16px 20px; color: var(--lime);
+      font-size: 0.85rem; margin-bottom: 20px;
+    }
     .stats-grid {
       display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px;
       margin-bottom: 28px;
@@ -77,7 +82,7 @@
       padding-bottom: 8px; border-bottom: 1px solid var(--border);
     }
     .range-select {
-      display: flex; gap: 6px; flex-wrap: wrap;
+      display: flex; gap: 6px; flex-wrap: wrap; margin-bottom: 20px;
     }
     .range-btn {
       background: transparent; border: 1px solid var(--border);
@@ -89,6 +94,11 @@
       border-color: var(--cyan); color: var(--cyan);
     }
     .range-btn.active { background: rgba(0,229,255,0.08); }
+    .site-badge {
+      display: inline-block; padding: 3px 10px; border-radius: 4px;
+      background: rgba(0,229,255,0.08); color: var(--cyan);
+      font-size: 0.7rem; font-family: monospace; margin-bottom: 16px;
+    }
     @media (max-width: 600px) {
       .stats-grid { grid-template-columns: 1fr 1fr; }
       .stats-container { margin: 30px auto; padding: 0 12px; }
@@ -118,194 +128,279 @@
 (function() {
   'use strict';
 
+  /* ===================================================
+   *  КОНФИГУРАЦИЯ
+   * =================================================== */
+
   var CLIENT_ID = '317591594868-5k8h3ie4ck78sb7ouqghrgf46lirc9jo.apps.googleusercontent.com';
-  var SITE_URL = 'https://one1game.github.io';
   var SCOPE = 'https://www.googleapis.com/auth/webmasters.readonly';
+
+  // Жёстко заданный redirect_uri — должен совпадать с настройками в Google Cloud Console
+  var REDIRECT_URI = 'https://one1game.github.io/stats.html';
+
+  // Ищем сайт по этим шаблонам (domain-property и url-prefix)
+  var SITE_PATTERNS = [
+    'https://one1game.github.io/',
+    'sc-domain:one1game.github.io'
+  ];
+
   var currentRange = '30d';
-  var redirectUri = window.location.origin + window.location.pathname;
+
+  /* ===================================================
+   *  DOM
+   * =================================================== */
 
   var btnConnect = document.getElementById('btn-connect');
   var btnLogout = document.getElementById('btn-logout');
-  var content = document.getElementById('stats-content');
+  var contentEl  = document.getElementById('stats-content');
 
-  btnConnect.addEventListener('click', startAuth);
+  /* ===================================================
+   *  УТИЛИТЫ
+   * =================================================== */
 
-  btnLogout.addEventListener('click', function() {
-    sessionStorage.removeItem('sc_access_token');
-    updateUI(false);
-    content.innerHTML = '<div class="stats-loading">Нажмите «Подключить Google» для авторизации</div>';
-  });
+  function esc(str) {
+    var d = document.createElement('div');
+    d.textContent = str;
+    return d.innerHTML;
+  }
 
-  // Check for token in URL hash (implicit flow)
-  var hash = window.location.hash.substring(1);
-  if (hash) {
-    var hashParams = new URLSearchParams(hash);
-    var accessToken = hashParams.get('access_token');
-    if (accessToken) {
-      window.location.hash = '';
-      sessionStorage.setItem('sc_access_token', accessToken);
-      updateUI(true);
-      loadData();
-    } else {
-      var err = hashParams.get('error');
-      if (err) {
-        content.innerHTML = '<div class="stats-error">Ошибка: ' + err + '</div>';
-      }
-    }
-  } else {
-    var tok = sessionStorage.getItem('sc_access_token');
-    if (tok) { updateUI(true); loadData(); }
+  function showLoading(msg) {
+    contentEl.innerHTML = '<div class="stats-loading">' + esc(msg) + '</div>';
+  }
+
+  function showError(msg) {
+    contentEl.innerHTML = '<div class="stats-error">' + msg + '</div>';
+  }
+
+  function getToken() {
+    return sessionStorage.getItem('sc_access_token');
+  }
+
+  function setToken(token) {
+    if (token) sessionStorage.setItem('sc_access_token', token);
+    else sessionStorage.removeItem('sc_access_token');
+  }
+
+  /* ===================================================
+   *  UI: АВТОРИЗАЦИЯ
+   * =================================================== */
+
+  function updateUI(loggedIn) {
+    btnConnect.style.display = loggedIn ? 'none' : 'inline-block';
+    btnLogout.style.display = loggedIn ? 'inline-block' : 'none';
+    btnConnect.disabled = false;
+    btnConnect.textContent = 'Подключить Google';
   }
 
   function startAuth() {
-    var authUrl = 'https://accounts.google.com/o/oauth2/v2/auth' +
+    var authUrl =
+      'https://accounts.google.com/o/oauth2/v2/auth' +
       '?client_id=' + encodeURIComponent(CLIENT_ID) +
-      '&redirect_uri=' + encodeURIComponent(redirectUri) +
+      '&redirect_uri=' + encodeURIComponent(REDIRECT_URI) +
       '&response_type=token' +
-      '&scope=' + encodeURIComponent(SCOPE);
+      '&scope=' + encodeURIComponent(SCOPE) +
+      '&prompt=consent';
     window.location.href = authUrl;
   }
 
-  function updateUI(loggedIn) {
-    document.getElementById('btn-connect').style.display = loggedIn ? 'none' : 'inline-block';
-    document.getElementById('btn-logout').style.display = loggedIn ? 'inline-block' : 'none';
-    document.getElementById('btn-connect').disabled = false;
-    document.getElementById('btn-connect').textContent = 'Подключить Google';
+  function logout() {
+    setToken(null);
+    updateUI(false);
+    contentEl.innerHTML = '<div class="stats-loading">Нажмите «Подключить Google» для авторизации</div>';
   }
+
+  btnConnect.addEventListener('click', startAuth);
+  btnLogout.addEventListener('click', logout);
+
+  /* ===================================================
+   *  ОБРАБОТКА OAuth CALLBACK
+   * =================================================== */
+
+  function handleAuthCallback() {
+    var hash = window.location.hash.substring(1);
+    if (!hash) return false;
+
+    var params = new URLSearchParams(hash);
+    var token  = params.get('access_token');
+    var error  = params.get('error');
+
+    // Очищаем хеш из адресной строки
+    window.location.hash = '';
+
+    if (token) {
+      setToken(token);
+      updateUI(true);
+      loadData();
+      return true;
+    }
+
+    if (error) {
+      showError('Ошибка авторизации: ' + esc(error));
+      return true;
+    }
+
+    return false;
+  }
+
+  /* ===================================================
+   *  API: SEARCH CONSOLE
+   * =================================================== */
+
+  function api(path, opts) {
+    opts = opts || {};
+    var headers = {
+      'Authorization': 'Bearer ' + getToken()
+    };
+    if (opts.body) {
+      headers['Content-Type'] = 'application/json';
+    }
+    return fetch('https://www.googleapis.com/webmasters/v3/' + path, {
+      method: opts.method || 'GET',
+      headers: headers,
+      body: opts.body ? JSON.stringify(opts.body) : undefined
+    }).then(function(r) {
+      if (r.status === 401) {
+        setToken(null);
+        updateUI(false);
+        showError('Токен истёк. Нажмите «Подключить Google» заново.');
+        throw new Error('unauthenticated');
+      }
+      return r.json().then(function(data) {
+        if (data.error) throw new Error(data.error.message || 'Ошибка API');
+        return data;
+      });
+    });
+  }
+
+  function fetchSites() {
+    return api('sites').then(function(data) {
+      var entries = data.siteEntry || [];
+      var matched = [];
+
+      entries.forEach(function(entry) {
+        var url = entry.siteUrl || '';
+        SITE_PATTERNS.forEach(function(pattern) {
+          if (url === pattern) matched.push(url);
+        });
+      });
+
+      if (!matched.length) {
+        var list = entries.map(function(e) { return e.siteUrl; }).join(', ');
+        throw new Error(
+          'Сайт one1game.github.io не найден в Search Console.<br><br>' +
+          'Доступные сайты в аккаунте: ' + esc(list || 'нет') + '<br><br>' +
+          'Убедитесь, что сайт добавлен как <code>https://one1game.github.io/</code> ' +
+          '(URL-префикс) в Google Search Console.'
+        );
+      }
+
+      return matched;
+    });
+  }
+
+  function fetchAnalytics(siteUrl, startDate, endDate) {
+    return api('sites/' + encodeURIComponent(siteUrl) + '/searchAnalytics/query', {
+      method: 'POST',
+      body: {
+        startDate: startDate,
+        endDate: endDate,
+        dimensions: ['query'],
+        rowLimit: 50,
+        startRow: 0
+      }
+    });
+  }
+
+  /* ===================================================
+   *  ЗАГРУЗКА ДАННЫХ
+   * =================================================== */
 
   function loadData() {
-    var tok = sessionStorage.getItem('sc_access_token');
-    if (!tok) { updateUI(false); return; }
+    var token = getToken();
+    if (!token) { updateUI(false); return; }
+
     updateUI(true);
-    content.innerHTML = '<div class="stats-loading">Загрузка статистики...</div>';
+    showLoading('Загрузка статистики...');
 
     var endDate = new Date().toISOString().split('T')[0];
-    var startDate;
-    switch(currentRange) {
-      case '7d': startDate = new Date(Date.now() - 7*86400000).toISOString().split('T')[0]; break;
-      case '90d': startDate = new Date(Date.now() - 90*86400000).toISOString().split('T')[0]; break;
-      default: startDate = new Date(Date.now() - 30*86400000).toISOString().split('T')[0];
-    }
+    var days = currentRange === '7d' ? 7 : currentRange === '90d' ? 90 : 30;
+    var startDate = new Date(Date.now() - days * 86400000).toISOString().split('T')[0];
 
-    var body = {
-      startDate: startDate,
-      endDate: endDate,
-      dimensions: ['query'],
-      rowLimit: 20,
-      startRow: 0
-    };
-
-    // Try URL-prefix first, then domain-level property
-    // Debug: check token
-    fetch('https://www.googleapis.com/oauth2/v3/tokeninfo?access_token=' + encodeURIComponent(tok))
-    .then(function(r) { return r.json(); })
-    .then(function(info) {
-      var scopeRaw = info.scope || '';
-      if (scopeRaw.indexOf('webmasters') === -1) {
-        content.innerHTML = '<div class="stats-error">У токена нет доступа к Search Console. Scope: ' + esc(scopeRaw) + '<br>Нужно: https://www.googleapis.com/auth/webmasters.readonly</div>';
-        return;
-      }
-      fetchSites();
-    });
-
-    function fetchSites() {
-    fetch('https://www.googleapis.com/webmasters/v3/sites', {
-      headers: { 'Authorization': 'Bearer ' + tok }
-    })
-    .then(function(r) {
-      if (r.status === 401) {
-        sessionStorage.removeItem('sc_access_token');
-        updateUI(false);
-        content.innerHTML = '<div class="stats-error">Токен недействителен. Нажмите «Подключить Google» заново.</div>';
-        throw new Error('stop');
-      }
-      return r.json();
-    })
-    .then(function(listData) {
-      var siteEntries = listData.siteEntry || [];
-      var msg = 'StatCode: ' + (listData.error ? 'ERR:'+listData.error.message : 'OK') + ', Sites: ' + siteEntries.length;
-       var allSites = [];
-       siteEntries.forEach(function(e) {
-         if (e.siteUrl && e.siteUrl.indexOf('one1game.github.io') !== -1) allSites.push(e.siteUrl);
-       });
-       if (!allSites.length) {
-          content.innerHTML = '<div class="stats-error">Сайт one1game.github.io не найден в Search Console. [' + msg + ']</div>';
+    // 1. Получаем список сайтов
+    fetchSites()
+      .then(function(sites) {
+        // 2. Пробуем каждый совпавший сайт
+        return trySites(sites, startDate, endDate, 0);
+      })
+      .then(function(result) {
+        if (!result) {
+          showError('Нет данных ни по одному из ресурсов Search Console.');
           return;
         }
-        trySite(0, allSites);
-    })
-    .catch(function(err) {
-      if (err.message === 'stop') return;
-      content.innerHTML = '<div class="stats-error">Ошибка запроса sites.list: ' + err.message + '. Проверьте, включён ли Search Console API.</div>';
-    });
-
-    function trySite(idx, sites) {
-      if (idx >= sites.length) {
-        content.innerHTML = '<div class="stats-loading">Нет данных ни по одному ресурсу (' + (sites && sites.length || 0) + ' проверено). Проверьте Search Console.</div>';
-        return;
-      }
-      var site = sites[idx];
-      fetch('https://www.googleapis.com/webmasters/v3/sites/' + encodeURIComponent(site) + '/searchAnalytics/query', {
-        method: 'POST',
-        headers: {
-          'Authorization': 'Bearer ' + tok,
-          'Content-Type': 'application/json'
-        },
-        body: JSON.stringify(body)
-      })
-      .then(function(r) {
-        if (r.status === 401) {
-          sessionStorage.removeItem('sc_access_token');
-          updateUI(false);
-          throw new Error('unauthenticated');
-        }
-        if (r.status === 403) return trySite(idx + 1, sites);
-        return r.json();
-      })
-      .then(function(data) {
-        if (!data) return;
-        if (data.error) return trySite(idx + 1, sites);
-        if (!data.rows || !data.rows.length) return trySite(idx + 1, sites);
-        renderStats(data);
+        renderStats(result.data, result.siteUrl);
       })
       .catch(function(err) {
-        if (err.message === 'unauthenticated') {
-          content.innerHTML = '<div class="stats-loading">Сессия истекла. Нажмите «Подключить Google»</div>';
-          return;
-        }
-        content.innerHTML = '<div class="stats-error">Ошибка загрузки: ' + err.message + '</div>';
+        if (err.message === 'unauthenticated') return;
+        showError('Ошибка: ' + esc(err.message));
       });
-    }
-  }
   }
 
-  function renderStats(data) {
+  function trySites(sites, startDate, endDate, idx) {
+    if (idx >= sites.length) return Promise.resolve(null);
+
+    return fetchAnalytics(sites[idx], startDate, endDate)
+      .then(function(data) {
+        if (data.rows && data.rows.length) {
+          return { data: data, siteUrl: sites[idx] };
+        }
+        return trySites(sites, startDate, endDate, idx + 1);
+      })
+      .catch(function(err) {
+        if (err.message === 'unauthenticated') throw err;
+        // 403 — нет прав на этот ресурс, пробуем следующий
+        return trySites(sites, startDate, endDate, idx + 1);
+      });
+  }
+
+  /* ===================================================
+   *  ОТРИСОВКА
+   * =================================================== */
+
+  function renderStats(data, siteUrl) {
     var rows = data.rows || [];
+
     if (!rows.length) {
-      document.getElementById('stats-content').innerHTML =
-        '<div class="stats-loading">Нет данных за выбранный период. Возможно, сайт ещё не проиндексирован.</div>';
+      showError('Нет данных за выбранный период. Возможно, сайт ещё не проиндексирован.');
       return;
     }
 
-    var totalClicks = 0, totalImpressions = 0, totalPos = 0;
+    // Агрегация
+    var totalClicks = 0, totalImpressions = 0, sumPos = 0;
     rows.forEach(function(r) {
-      totalClicks += r.clicks || 0;
+      totalClicks     += r.clicks || 0;
       totalImpressions += r.impressions || 0;
-      totalPos += (r.position || 0) * (r.impressions || 0);
+      sumPos          += (r.position || 0) * (r.impressions || 0);
     });
-    var avgPos = totalImpressions > 0 ? (totalPos / totalImpressions) : 0;
-    var ctr = totalImpressions > 0 ? ((totalClicks / totalImpressions) * 100) : 0;
+
+    var avgPos = totalImpressions > 0 ? (sumPos / totalImpressions) : 0;
+    var ctr    = totalImpressions > 0 ? ((totalClicks / totalImpressions) * 100) : 0;
 
     var rangeLabels = { '7d': '7 дн', '30d': '30 дн', '90d': '90 дн' };
 
     var html = '';
+
+    // Сайт
+    html += '<div class="site-badge">' + esc(siteUrl) + '</div>';
+
+    // Кнопки диапазона
     html += '<div class="range-select">';
-    ['7d','30d','90d'].forEach(function(r) {
+    ['7d', '30d', '90d'].forEach(function(r) {
       html += '<button class="range-btn' + (currentRange === r ? ' active' : '') +
         '" data-range="' + r + '">' + rangeLabels[r] + '</button>';
     });
     html += '</div>';
 
+    // Статистика
     html += '<div class="stats-grid">' +
       '<div class="stat-box"><div class="stat-value">' + totalClicks.toLocaleString() + '</div><div class="stat-label">Кликов</div></div>' +
       '<div class="stat-box"><div class="stat-value">' + totalImpressions.toLocaleString() + '</div><div class="stat-label">Показов</div></div>' +
@@ -315,20 +410,19 @@
       '<div class="stat-box"><div class="stat-value">' + (data.responseAggregationType || 'auto') + '</div><div class="stat-label">Аггрегация</div></div>' +
     '</div>';
 
+    // Таблица запросов
     html += '<div class="section-title">Поисковые запросы</div>';
     html += '<table class="query-table"><thead><tr><th>Запрос</th><th>Клики</th><th>Показы</th><th>CTR</th><th>Позиция</th></tr></thead><tbody>';
 
-    // Sort by clicks descending
     rows.sort(function(a, b) { return (b.clicks || 0) - (a.clicks || 0); });
 
     rows.forEach(function(r) {
-      var keys = r.keys || [];
-      var query = keys[0] || '—';
-      var clicks = r.clicks || 0;
+      var query       = (r.keys || [])[0] || '—';
+      var clicks      = r.clicks || 0;
       var impressions = r.impressions || 0;
-      var pos = r.position || 0;
-      var ctrRow = impressions > 0 ? ((clicks / impressions) * 100) : 0;
-      var posClass = pos <= 3 ? 'pos' : (pos <= 10 ? 'pos low' : 'pos bad');
+      var pos         = r.position || 0;
+      var ctrRow      = impressions > 0 ? ((clicks / impressions) * 100) : 0;
+      var posClass    = pos <= 3 ? 'pos' : (pos <= 10 ? 'pos low' : 'pos bad');
 
       html += '<tr>' +
         '<td>' + esc(query) + '</td>' +
@@ -340,28 +434,30 @@
     });
 
     html += '</tbody></table>';
+    contentEl.innerHTML = html;
 
-    document.getElementById('stats-content').innerHTML = html;
-
-    // Range buttons
-    document.querySelectorAll('.range-btn').forEach(function(btn) {
-      btn.addEventListener('click', function() {
+    // Обработчики кнопок диапазона
+    var rangeBtns = contentEl.querySelectorAll('.range-btn');
+    for (var i = 0; i < rangeBtns.length; i++) {
+      rangeBtns[i].addEventListener('click', function() {
         currentRange = this.dataset.range;
         loadData();
       });
-    });
+    }
   }
 
-  function esc(str) {
-    var d = document.createElement('div');
-    d.textContent = str;
-    return d.innerHTML;
-  }
+  /* ===================================================
+   *  ИНИЦИАЛИЗАЦИЯ
+   * =================================================== */
 
-  // Check existing token
-  if (sessionStorage.getItem('sc_access_token')) {
-    updateUI(true);
-    loadData();
+  // Проверяем callback от OAuth
+  if (!handleAuthCallback()) {
+    // Нет коллбэка — проверяем сохранённый токен
+    var savedToken = getToken();
+    if (savedToken) {
+      updateUI(true);
+      loadData();
+    }
   }
 })();
 </script>
