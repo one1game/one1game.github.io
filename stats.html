@@ -123,9 +123,6 @@
   var SCOPE = 'https://www.googleapis.com/auth/webmasters.readonly';
   var currentRange = '30d';
 
-  var redirectUri = window.location.origin + window.location.pathname;
-
-  // Google Identity Services
   function loadGis() {
     var s = document.createElement('script');
     s.src = 'https://accounts.google.com/gsi/client';
@@ -136,63 +133,33 @@
   var tokenClient;
 
   function initButtons() {
-    tokenClient = google.accounts.oauth2.initCodeClient({
+    tokenClient = google.accounts.oauth2.initTokenClient({
       client_id: CLIENT_ID,
       scope: SCOPE,
-      ux_mode: 'popup',
       callback: function(resp) {
-        if (resp.code) {
-          exchangeCode(resp.code);
+        if (resp.error) {
+          document.getElementById('stats-content').innerHTML =
+            '<div class="stats-error">Ошибка: ' + (resp.error_description || resp.error) + '</div>';
+          updateUI(false);
+          return;
+        }
+        if (resp.access_token) {
+          sessionStorage.setItem('sc_access_token', resp.access_token);
+          updateUI(true);
+          loadData();
         }
       }
     });
 
     document.getElementById('btn-connect').addEventListener('click', function() {
-      tokenClient.requestCode();
+      tokenClient.requestAccessToken();
     });
 
     document.getElementById('btn-logout').addEventListener('click', function() {
-      var tok = google.accounts.oauth2.initCodeClient({
-        client_id: CLIENT_ID,
-        scope: SCOPE,
-        ux_mode: 'popup',
-        callback: function() {}
-      });
       sessionStorage.removeItem('sc_access_token');
-      sessionStorage.removeItem('sc_refresh_token');
       updateUI(false);
       document.getElementById('stats-content').innerHTML =
         '<div class="stats-loading">Нажмите «Подключить Google» для авторизации</div>';
-    });
-  }
-
-  function exchangeCode(code) {
-    document.getElementById('btn-connect').disabled = true;
-    document.getElementById('btn-connect').textContent = 'Подключение...';
-
-    var params = new URLSearchParams();
-    params.append('code', code);
-    params.append('client_id', CLIENT_ID);
-    params.append('redirect_uri', redirectUri);
-    params.append('grant_type', 'authorization_code');
-
-    fetch('https://oauth2.googleapis.com/token', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-      body: params.toString()
-    })
-    .then(function(r) { return r.json(); })
-    .then(function(data) {
-      if (data.error) throw new Error(data.error_description || data.error);
-      sessionStorage.setItem('sc_access_token', data.access_token);
-      updateUI(true);
-      loadData();
-    })
-    .catch(function(err) {
-      document.getElementById('stats-content').innerHTML =
-        '<div class="stats-error">Ошибка авторизации: ' + err.message + '</div>';
-      document.getElementById('btn-connect').disabled = false;
-      document.getElementById('btn-connect').textContent = 'Подключить Google';
     });
   }
 
