@@ -995,3 +995,42 @@ body::after{
   .categories-row .cat-pill{padding:6px 10px;font-size:0.72rem}
   .article-body{font-size:1rem}
 }
+
+/* Cookie-баннер */
+.cookie-banner {
+  position: fixed;
+  bottom: 20px;
+  left: 20px;
+  right: 20px;
+  max-width: 520px;
+  margin: 0 auto;
+  padding: 16px 20px;
+  background: rgba(20, 20, 30, 0.97);
+  border: 1px solid rgba(0, 200, 255, 0.3);
+  border-radius: 10px;
+  backdrop-filter: blur(10px);
+  z-index: 9998;
+  display: none;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
+  animation: cookieSlideUp 0.3s ease-out;
+}
+@keyframes cookieSlideUp {
+  from { transform: translateY(20px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+.cookie-banner.show { display: block; }
+.cookie-banner p { margin: 0 0 12px; font-size: 13px; color: var(--text-dim); line-height: 1.5; }
+.cookie-banner a { color: var(--cyan); }
+.cookie-buttons { display: flex; gap: 10px; flex-wrap: wrap; }
+.cookie-btn {
+  padding: 8px 16px;
+  border-radius: 6px;
+  border: none;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: opacity 0.2s;
+}
+.cookie-btn.primary { background: var(--cyan); color: #000; }
+.cookie-btn.secondary { background: transparent; color: var(--text-dim); border: 1px solid rgba(255, 255, 255, 0.2); }
+.cookie-btn:hover { opacity: 0.85; }

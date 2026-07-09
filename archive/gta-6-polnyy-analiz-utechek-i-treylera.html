@@ -28,10 +28,18 @@
 
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-SZYYDYEC6T"></script>
   <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-SZYYDYEC6T');
+    // GA запускается только после согласия пользователя (GDPR)
+    window.gaEnabled = false;
+    function enableGA() {
+      if (window.gaEnabled) return;
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      window.gtag = gtag;
+      gtag('js', new Date());
+      gtag('config', 'G-SZYYDYEC6T', { anonymize_ip: true });
+      window.gaEnabled = true;
+    }
+    if (localStorage.getItem('ga_consent') === 'yes') enableGA();
   </script>
   <link href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css" rel="stylesheet" />
   <link rel="stylesheet" href="/styles.css?v=7" />
@@ -65,6 +73,20 @@
   <link rel="manifest" href="/manifest.json" />
   <link rel="stylesheet" href="/reactions.css" />
 <style>
+  /* Skip-link для доступности */
+  .skip-link {
+    position: absolute;
+    top: -40px;
+    left: 0;
+    background: var(--cyan);
+    color: #000;
+    padding: 8px 16px;
+    z-index: 1000;
+    text-decoration: none;
+    font-weight: bold;
+    transition: top 0.2s;
+  }
+  .skip-link:focus { top: 0; }
   .article-header { margin-bottom: 30px; }
   .article-meta { color: #888; font-size: 14px; }
   .article-body p { line-height: 1.8; margin-bottom: 20px; }
@@ -75,6 +97,7 @@
 </style>
 </head>
 <body>
+<a href="#main-content" class="skip-link">Перейти к содержимому</a>
 <main id="main-content">
 <div class="container">
   <div class="article-page">
@@ -83,10 +106,19 @@
       <i class="fas fa-arrow-left"></i> К списку статей
     </a>
 
-    <nav class="breadcrumbs">
-      <a href="/">Главная</a> →
-      <a href="/archive.html">Статьи</a> →
-      <span>GTA 6: анализ</span>
+    <nav class="breadcrumbs" aria-label="Хлебные крошки" itemscope itemtype="https://schema.org/BreadcrumbList">
+      <span itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+        <a itemprop="item" href="/"><span itemprop="name">Главная</span></a>
+        <meta itemprop="position" content="1" />
+      </span> →
+      <span itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+        <a itemprop="item" href="/archive.html"><span itemprop="name">Статьи</span></a>
+        <meta itemprop="position" content="2" />
+      </span> →
+      <span itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+        <span itemprop="name" aria-current="page">GTA 6: анализ</span>
+        <meta itemprop="position" content="3" />
+      </span>
     </nav>
 
     <div class="article-header">
@@ -393,5 +425,33 @@
 </script>
 <script src="/components.js" defer></script>
 <script src="/reactions.js" defer></script>
+<!-- Cookie Banner -->
+<div class="cookie-banner" id="cookie-banner" role="dialog" aria-live="polite" aria-label="Согласие на использование cookies">
+  <p>Мы используем cookies для аналитики и улучшения сайта. Подробнее — в <a href="/privacy.html">политике конфиденциальности</a>.</p>
+  <div class="cookie-buttons">
+    <button class="cookie-btn primary" onclick="acceptCookies()">Принять</button>
+    <button class="cookie-btn secondary" onclick="declineCookies()">Только необходимые</button>
+  </div>
+</div>
+
+<script>
+// Cookie banner
+function acceptCookies() {
+  localStorage.setItem('ga_consent', 'yes');
+  if (typeof enableGA === 'function') enableGA();
+  document.getElementById('cookie-banner').classList.remove('show');
+}
+function declineCookies() {
+  localStorage.setItem('ga_consent', 'no');
+  document.getElementById('cookie-banner').classList.remove('show');
+}
+(function() {
+  if (!localStorage.getItem('ga_consent')) {
+    setTimeout(function() {
+      document.getElementById('cookie-banner').classList.add('show');
+    }, 1500);
+  }
+})();
+</script>
 </body>
 </html>
