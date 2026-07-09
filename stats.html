@@ -196,12 +196,35 @@
     };
 
     // Try URL-prefix first, then domain-level property
-    var sites = [SITE_URL, SITE_URL + '/', 'sc-domain:one1game.github.io'];
-    trySite(0);
+    // First list all sites to find the right one
+    fetch('https://www.googleapis.com/webmasters/v3/sites', {
+      headers: { 'Authorization': 'Bearer ' + tok }
+    })
+    .then(function(r) { return r.json(); })
+    .then(function(listData) {
+      var siteEntries = listData.siteEntry || [];
+      if (!siteEntries.length) {
+        content.innerHTML = '<div class="stats-error">Нет доступа ни к одному сайту в Search Console. Добавьте сайт в <a href="https://search.google.com/search-console" target="_blank">Search Console</a>.</div>';
+        return;
+      }
 
-    function trySite(idx) {
+      // Build list of site URLs from all entries
+      var allSites = [];
+      siteEntries.forEach(function(e) {
+        if (e.siteUrl) allSites.push(e.siteUrl);
+      });
+
+      // Try each available site
+      trySite(0, allSites);
+    })
+    .catch(function() {
+      // Fallback: try known formats
+      trySite(0, [SITE_URL, SITE_URL + '/', 'sc-domain:one1game.github.io']);
+    });
+
+    function trySite(idx, sites) {
       if (idx >= sites.length) {
-        content.innerHTML = '<div class="stats-loading">Нет данных ни по одному ресурсу. Проверьте Search Console.</div>';
+        content.innerHTML = '<div class="stats-loading">Нет данных ни по одному ресурсу (' + (sites && sites.length || 0) + ' проверено). Проверьте Search Console.</div>';
         return;
       }
       var site = sites[idx];
@@ -219,16 +242,13 @@
           updateUI(false);
           throw new Error('unauthenticated');
         }
-        if (r.status === 403) return trySite(idx + 1);
+        if (r.status === 403) return trySite(idx + 1, sites);
         return r.json();
       })
       .then(function(data) {
         if (!data) return;
-        if (data.error) {
-          console.log('Site ' + site + ' error:', data.error.message);
-          return trySite(idx + 1);
-        }
-        if (!data.rows || !data.rows.length) return trySite(idx + 1);
+        if (data.error) return trySite(idx + 1, sites);
+        if (!data.rows || !data.rows.length) return trySite(idx + 1, sites);
         renderStats(data);
       })
       .catch(function(err) {
