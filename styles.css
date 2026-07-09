@@ -318,6 +318,9 @@ body::after{
 .categories-row .cat-trends{background:rgba(179,107,255,0.05);color:var(--purple);border-color:rgba(179,107,255,0.2)}
 .categories-row .cat-trends:hover{background:rgba(179,107,255,0.12);border-color:var(--purple);box-shadow:0 0 16px rgba(179,107,255,0.15)}
 .categories-row .cat-trends .cat-count{background:rgba(179,107,255,0.12);color:var(--purple)}
+.categories-row .cat-dev{background:rgba(255,140,66,0.05);color:#ff8c42;border-color:rgba(255,140,66,0.2)}
+.categories-row .cat-dev:hover{background:rgba(255,140,66,0.12);border-color:#ff8c42;box-shadow:0 0 16px rgba(255,140,66,0.15)}
+.categories-row .cat-dev .cat-count{background:rgba(255,140,66,0.12);color:#ff8c42}
 
 /* =============================================
    SECTION HEADERS
@@ -451,6 +454,7 @@ body::after{
 .cat-consoles{background:rgba(255,45,123,0.08);color:var(--magenta);border:1px solid rgba(255,45,123,0.2)}
 .cat-analytics{background:rgba(255,215,64,0.08);color:var(--gold);border:1px solid rgba(255,215,64,0.2)}
 .cat-trends{background:rgba(179,107,255,0.08);color:var(--purple);border:1px solid rgba(179,107,255,0.2)}
+.cat-dev{background:rgba(255,140,66,0.08);color:#ff8c42;border:1px solid rgba(255,140,66,0.2)}
 
 .article-card h3{
   font-size:1.18rem;font-weight:700;line-height:1.4;

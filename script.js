@@ -299,7 +299,8 @@ class One1GamePlatform {
       'Гайды': 'cat-guides',
       'Консоли': 'cat-consoles',
       'Аналитика': 'cat-analytics',
-      'Тренды': 'cat-trends'
+      'Тренды': 'cat-trends',
+      'Разработка': 'cat-dev'
     };
 
     const latestArticles = window.allArticles.slice(0, 5);
@@ -351,7 +352,8 @@ class One1GamePlatform {
       'Гайды': 'fa-map',
       'Консоли': 'fa-gamepad',
       'Аналитика': 'fa-chart-line',
-      'Тренды': 'fa-fire'
+      'Тренды': 'fa-fire',
+      'Разработка': 'fa-code'
     };
 
     const pills = Object.entries(catCount).map(([cat, count]) => {
