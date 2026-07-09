@@ -9,16 +9,14 @@
   var SUPABASE_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InhuYnRpemRxaHB5dmFmZnRubGNiIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzYwODM3NTUsImV4cCI6MjA5MTY1OTc1NX0.9qrJJctl5o6q_stFSqMmtLbKyZzR8rrpiQppaG1f72o';
 
   var STORAGE_KEY = 'o1g_reacted_';
-
   var pageUrl = window.location.pathname.replace(/\/+$/, '') || '/';
 
   var EMOJIS = ['👍','🔥','😂','😍','💯','🎮','👾','💀'];
+  var LOCKED = false; // блокировка на время RPC
 
-  // Render
   container.innerHTML =
-    '<h3>Понравилась статья? Жми реакцию!</h3>' +
     '<div class="reactions-row" id="reactions-row">' +
-    '  <div class="reactions-loading">Загрузка...</div>' +
+    '  <div class="reactions-loading">...</div>' +
     '</div>' +
     '<div class="reactions-error" id="reactions-error" style="display:none"></div>';
 
@@ -54,7 +52,7 @@
       .then(function(res) {
         var row = document.getElementById('reactions-row');
         if (res.error) {
-          row.innerHTML = '<div class="reactions-error">Ошибка загрузки.</div>';
+          row.innerHTML = '<div class="reactions-error">Ошибка.</div>';
           return;
         }
         var data = res.data || [];
@@ -80,24 +78,41 @@
     var row = document.getElementById('reactions-row');
     row.addEventListener('click', function(e) {
       var btn = e.target.closest('.reaction-btn');
-      if (!btn) return;
+      if (!btn || LOCKED) return;
 
       var emoji = btn.getAttribute('data-emoji');
       var reacted = getReactedSet();
 
-      // Already reacted - undo
       if (reacted.has(emoji)) {
-        undoReaction(sb, emoji, btn);
+        LOCKED = true;
+        btn.classList.remove('active');
+        btn.style.pointerEvents = 'none';
+        removeReacted(emoji);
+
+        sb.rpc('decrement_reaction', {
+          p_page_url: pageUrl,
+          p_emoji: emoji
+        }).then(function(res) {
+          btn.style.pointerEvents = 'auto';
+          LOCKED = false;
+          if (res.error) {
+            btn.classList.add('active');
+            markReacted(emoji);
+            showError('Ошибка. Попробуйте позже.');
+            return;
+          }
+          var newCount = res.data || 0;
+          btn.querySelector('.count').textContent = String(newCount);
+        });
         return;
       }
 
-      // Check if already reacted any emoji on this page
       if (reacted.size > 0) {
         showError('Вы уже поставили реакцию! Можно только одну.');
         return;
       }
 
-      // Add reaction
+      LOCKED = true;
       btn.classList.add('active');
       btn.style.pointerEvents = 'none';
 
@@ -106,54 +121,17 @@
         p_emoji: emoji
       }).then(function(res) {
         btn.style.pointerEvents = 'auto';
+        LOCKED = false;
         if (res.error) {
           btn.classList.remove('active');
           showError('Ошибка. Попробуйте позже.');
           return;
         }
         var newCount = res.data || 0;
-        btn.querySelector('.count').textContent = newCount;
+        btn.querySelector('.count').textContent = String(newCount);
         markReacted(emoji);
       });
     });
-  }
-
-  function undoReaction(sb, emoji, btn) {
-    btn.classList.remove('active');
-    btn.style.pointerEvents = 'none';
-
-    // Decrement via RPC (we'll need a decrement function or just update directly)
-    // For simplicity, just remove from localStorage and reload
-    removeReacted(emoji);
-
-    // Decrement in DB
-    sb
-      .from('reactions')
-      .select('count')
-      .eq('page_url', pageUrl)
-      .eq('emoji', emoji)
-      .single()
-      .then(function(res) {
-        if (res.error || !res.data) { btn.style.pointerEvents = 'auto'; return; }
-        var newCount = Math.max(0, (res.data.count || 1) - 1);
-        if (newCount <= 0) {
-          sb.from('reactions').delete()
-            .eq('page_url', pageUrl)
-            .eq('emoji', emoji)
-            .then(function() {
-              btn.querySelector('.count').textContent = '0';
-              btn.style.pointerEvents = 'auto';
-            });
-        } else {
-          sb.from('reactions').update({ count: newCount })
-            .eq('page_url', pageUrl)
-            .eq('emoji', emoji)
-            .then(function() {
-              btn.querySelector('.count').textContent = String(newCount);
-              btn.style.pointerEvents = 'auto';
-            });
-        }
-      });
   }
 
   function getReactedSet() {

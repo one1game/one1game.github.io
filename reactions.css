@@ -3,37 +3,29 @@
    ============================================= */
 .reactions-section {
   max-width: 780px;
-  margin: 48px auto 0;
-  padding-top: 32px;
-  border-top: 1px solid var(--border);
-  text-align: center;
-}
-
-.reactions-section h3 {
-  font-size: 1.15rem;
-  font-weight: 600;
-  color: var(--text-dim);
-  margin-bottom: 16px;
+  margin: 0 auto;
+  padding-top: 20px;
 }
 
 .reactions-row {
   display: flex;
-  justify-content: center;
-  gap: 10px;
+  justify-content: flex-start;
+  gap: 6px;
   flex-wrap: wrap;
 }
 
 .reaction-btn {
-  display: flex;
+  display: inline-flex;
   align-items: center;
-  gap: 6px;
-  padding: 8px 16px;
-  font-size: 1.2rem;
+  gap: 4px;
+  padding: 4px 10px;
+  font-size: 0.95rem;
+  line-height: 1;
   background: rgba(255,255,255,0.03);
   border: 1px solid var(--border);
-  border-radius: 20px;
+  border-radius: 14px;
   cursor: pointer;
-  transition: all 0.2s;
+  transition: background 0.15s, border-color 0.15s, transform 0.15s;
   user-select: none;
   -webkit-user-select: none;
 }
@@ -41,7 +33,6 @@
 .reaction-btn:hover {
   background: rgba(255,255,255,0.06);
   border-color: var(--border-active);
-  transform: translateY(-2px);
 }
 
 .reaction-btn:active {
@@ -49,10 +40,10 @@
 }
 
 .reaction-btn .count {
-  font-size: 0.85rem;
+  font-size: 0.75rem;
   font-weight: 600;
-  color: var(--text-dim);
-  min-width: 16px;
+  color: var(--text-faint);
+  min-width: 14px;
   text-align: center;
 }
 
@@ -67,23 +58,11 @@
 
 .reactions-loading {
   color: var(--text-faint);
-  font-size: 0.85rem;
-  padding: 16px 0;
+  font-size: 0.8rem;
 }
 
 .reactions-error {
   color: var(--magenta);
-  font-size: 0.8rem;
-  padding: 8px 0;
-}
-
-/* ── Responsive ─────────────────────────── */
-@media (max-width: 480px) {
-  .reactions-row {
-    gap: 6px;
-  }
-  .reaction-btn {
-    padding: 6px 12px;
-    font-size: 1.1rem;
-  }
+  font-size: 0.75rem;
+  padding-top: 6px;
 }
