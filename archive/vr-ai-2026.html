@@ -205,7 +205,8 @@
 </main>
 
 
-<script src="/articles-data.js?v=8"></script>
+<script src="/cache-version.js"></script>
+<script>document.write('<script src="/articles-data.js?v='+(window.CACHE_VER||'1')+'"><\/script>');</script>
 <script>
 (function() {
   var path = window.location.pathname;
