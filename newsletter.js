@@ -8,7 +8,8 @@
     var form = event.target;
     var email = form.querySelector('input[type="email"]');
     var btn = form.querySelector('button[type="submit"]');
-    var msg = form.querySelector('.newsletter-msg');
+    var container = form.closest('.newsletter-box') || form.parentElement;
+    var msg = container ? container.querySelector('.newsletter-msg') : null;
     var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
     if (!emailRegex.test(email.value)) {
@@ -31,7 +32,7 @@
         'Content-Type': 'application/json'
       },
       body: JSON.stringify({
-        email: email.value,
+        email_address: email.value,
         tags: ['one1game-site']
       })
     })

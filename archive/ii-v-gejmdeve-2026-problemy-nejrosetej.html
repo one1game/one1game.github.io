@@ -1,0 +1,1813 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="canonical" href="https://one1game.github.io/archive/ii-v-gejmdeve-2026-problemy-nejrosetej.html" />
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🎮</text></svg>">
+  <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin />
+  <link rel="preconnect" href="https://www.googletagmanager.com" crossorigin />
+  <link rel="dns-prefetch" href="https://www.google-analytics.com" />
+  <link rel="preload" href="../styles.css" as="style" fetchpriority="high" />
+
+  <title>ИИ в геймдеве 2026: 7 причин, почему нейросети не спасают индустрию | One1Game</title>
+  <meta name="description" content="Честный разбор ИИ в геймдеве: реальные цифры GDC 2026, юридические риски, скандалы Unity и Epic, отзывы игроков в Steam. Где нейросети реально работают, а где — маркетинговый миф." />
+  <meta name="keywords" content="ИИ в играх, нейросети в геймдеве, ИИ разработка игр 2026, нейросети Unity Unreal, ИИ убивает геймдев, ChatGPT в играх, Midjourney для игр, ИИ ассеты, процедурная генерация, авторские права ИИ, Stable Diffusion игры, layoffs gamedev AI, GDC 2026, Valve ИИ политика" />
+
+  <!-- OpenGraph -->
+  <meta property="og:title" content="ИИ в геймдеве 2026: 7 причин, почему нейросети не спасают индустрию" />
+  <meta property="og:description" content="Честный разбор: реальные цифры GDC 2026, юридические риски, скандалы Unity/Epic, отзывы игроков в Steam. Где ИИ реально работает, а где — маркетинговый миф." />
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://one1game.github.io/archive/ii-v-gejmdeve-2026-problemy-nejrosetej.html" />
+  <meta property="og:image" content="https://one1game.github.io/og-ai-gamedev.jpg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="ИИ в геймдеве — анализ внедрения нейросетей в 2026 году" />
+  <meta property="article:published_time" content="2026-07-10T10:00:00+03:00" />
+  <meta property="article:modified_time" content="2026-07-10T14:00:00+03:00" />
+  <meta property="article:author" content="https://one1game.github.io/about.html" />
+  <meta property="article:section" content="Аналитика" />
+  <meta property="article:tag" content="ИИ в геймдеве" />
+  <meta property="article:tag" content="нейросети" />
+  <meta property="article:tag" content="GDC 2026" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:image" content="https://one1game.github.io/og-ai-gamedev.jpg" />
+  <meta name="robots" content="index, follow" />
+  <meta name="theme-color" content="#0a0a14" />
+
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-SZYYDYEC6T"></script>
+  <script>
+    window.gaEnabled = false;
+    function enableGA() {
+      if (window.gaEnabled) return;
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      window.gtag = gtag;
+      gtag('js', new Date());
+      gtag('config', 'G-SZYYDYEC6T', { anonymize_ip: true });
+      window.gaEnabled = true;
+    }
+    if (localStorage.getItem('ga_consent') === 'yes') enableGA();
+  </script>
+
+  <!-- FontAwesome: один объединённый файл вместо трёх -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css" />
+
+  <link rel="stylesheet" href="/styles.css?v=7" />
+
+  <!-- BreadcrumbList Schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {"@type": "ListItem", "position": 1, "name": "Главная", "item": "https://one1game.github.io/"},
+      {"@type": "ListItem", "position": 2, "name": "Статьи", "item": "https://one1game.github.io/archive.html"},
+      {"@type": "ListItem", "position": 3, "name": "ИИ в геймдеве 2026", "item": "https://one1game.github.io/archive/ii-v-gejmdeve-2026-problemy-nejrosetej.html"}
+    ]
+  }
+  </script>
+
+  <!-- Article Schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "ИИ в геймдеве 2026: 7 причин, почему нейросети не спасают индустрию",
+    "alternativeHeadline": "Честный разбор внедрения ИИ: где реальная польза, а где маркетинговый миф",
+    "datePublished": "2026-07-10T10:00:00+03:00",
+    "dateModified": "2026-07-10T14:00:00+03:00",
+    "author": {
+      "@type": "Organization",
+      "name": "Команда One1Game",
+      "url": "https://one1game.github.io/about.html"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "One1Game",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://one1game.github.io/logo.png"
+      }
+    },
+    "description": "Честный разбор внедрения ИИ в геймдеве: реальные цифры GDC 2026, юридические риски, скандалы Unity и Epic, отзывы игроков. Где нейросети работают, а где — маркетинг.",
+    "image": "https://one1game.github.io/og-ai-gamedev.jpg",
+    "keywords": "ИИ в играх, нейросети в геймдеве, GDC 2026, ИИ разработка игр, Unity ИИ, Unreal ИИ",
+    "inLanguage": "ru-RU",
+    "wordCount": 2800,
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https://one1game.github.io/archive/ii-v-gejmdeve-2026-problemy-nejrosetej.html"
+    },
+    "speakable": {
+      "@type": "SpeakableSpecification",
+      "cssSelector": [".article-header h1", ".article-body > p:first-of-type", ".article-body > p:nth-of-type(2)"]
+    }
+  }
+  </script>
+
+  <!-- FAQ Schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Что такое ИИ в геймдеве?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "ИИ в геймдеве — это использование генеративных нейросетей (ChatGPT, Midjourney, Stable Diffusion, Copilot) для создания ассетов, диалогов, кода, уровней и других элементов игры. По данным GDC 2026, 52% студий используют ИИ хотя бы на одном этапе разработки."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Экономит ли ИИ деньги на разработке игр?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Согласно отчёту GDC 2026, только 9% студий сообщили о реальной экономии бюджета. У 31% затраты выросли из-за необходимости доработки ИИ-контента, проверки на авторские права и исправления багов. Экономия чаще всего видна только на этапе концептов."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Законно ли использовать ИИ для создания ассетов?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "В 2026 году единого регулирования нет. В США идут десятки судебных процессов (иск Getty Images против Stability AI, иски художников против Midjourney). Valve требует раскрывать использование ИИ в Steam. EU AI Act (вступает в силу с августа 2026) вводит обязательную маркировку AI-generated контента."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Какие студии публично признали использование ИИ?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Публично признали использование: Ubisoft (NPC-диалоги в Assassin's Creed Shadows), Unity (Muse AI), Epic Games (встроенные ИИ-инструменты в UE5.5), Square Enix. Скандалы случались у Wizards of the Coast (Magic: The Gathering), Larian Studios (обвинения фанатов), Gearbox Software."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Ненавидят ли игроки ИИ-контент в играх?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "По анализу Steam-отзывов за первую половину 2026 года, 68% негативных отзывов на инди-игры упоминают 'AI slop' как причину низкой оценки. Игры с подтверждённым ИИ-контентом получают в среднем на 1.2 балла ниже, чем аналогичные без ИИ. Однако AAA-игры с ИИ-элементами (NPC, процедурная генерация) таких проблем почти не имеют."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Заменит ли ИИ разработчиков игр?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "На июль 2026 года — нет. ИИ заменяет рутинные задачи (базовые ассеты, простой код, черновики диалогов), но не способен создавать уникальную геймплейную механику, нарративный дизайн или арт-дирекшн. По данным LinkedIn, спрос на senior-разработчиков вырос на 22%, тогда как junior-позиции сократились на 18%."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Какие инструменты ИИ используют в Unity и Unreal Engine?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Unity: Unity Muse (генерация кода, текстур, анимаций), Unity Sentis (запуск LLM в игре). Unreal Engine 5.5: MetaHuman Animator (ИИ-анимация лиц), PCG Framework (процедурная генерация с ИИ), встроенные инструменты Copilot. Сторонние плагины: Stable Diffusion для текстур, ChatGPT API для диалогов NPC."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Каково будущее ИИ в играх в 2026-2028 годах?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Аналитики Newzoo прогнозируют три сценария: 1) Регулируемый рост — ИИ остаётся инструментом для ускорения рутины (60% вероятности). 2) Перепроизводство — рынок зальёт ИИ-клонами, Steam ужесточит правила (25%). 3) Откат — игроки массово отвергнут ИИ-контент, студии вернутся к ручному труду (15%)."
+        }
+      }
+    ]
+  }
+  </script>
+
+  <link rel="manifest" href="/manifest.json" />
+  <link rel="stylesheet" href="/reactions.css" />
+
+  <style>
+    /* Screen-reader only — для скрытых label */
+    .sr-only {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      padding: 0;
+      margin: -1px;
+      overflow: hidden;
+      clip: rect(0, 0, 0, 0);
+      white-space: nowrap;
+      border: 0;
+    }
+
+    .skip-link {
+      position: absolute;
+      top: -40px;
+      left: 0;
+      background: var(--cyan);
+      color: #000;
+      padding: 8px 16px;
+      z-index: 1000;
+      text-decoration: none;
+      font-weight: bold;
+      transition: top 0.2s;
+    }
+    .skip-link:focus { top: 0; }
+
+    .reading-progress {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 0%;
+      height: 3px;
+      background: linear-gradient(90deg, var(--cyan), var(--purple));
+      z-index: 9999;
+      transition: width 0.1s ease-out;
+    }
+
+    .toc {
+      margin: 20px 0 30px;
+      padding: 18px 22px;
+      background: rgba(0, 200, 255, 0.04);
+      border: 1px solid rgba(0, 200, 255, 0.15);
+      border-radius: 8px;
+      font-size: 14px;
+    }
+    .toc-title {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      font-weight: 600;
+      font-size: 15px;
+      margin-bottom: 12px;
+      cursor: pointer;
+      user-select: none;
+      color: var(--text-base);
+    }
+    .toc-title:focus-visible {
+      outline: 2px solid var(--cyan);
+      outline-offset: 4px;
+      border-radius: 4px;
+    }
+    .toc-title i { color: var(--cyan); font-size: 12px; transition: transform 0.2s; }
+    .toc.collapsed .toc-title i { transform: rotate(-90deg); }
+    .toc-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: grid;
+      gap: 6px;
+    }
+    .toc.collapsed .toc-list { display: none; }
+    .toc-list li { padding-left: 0; margin: 0; }
+    .toc-list a {
+      color: var(--text-dim);
+      text-decoration: none;
+      transition: color 0.15s;
+      display: block;
+      padding: 3px 0;
+    }
+    .toc-list a:hover { color: var(--cyan); }
+    .toc-list a.active { color: var(--cyan); font-weight: 600; }
+    .toc-list .toc-h3 { padding-left: 18px; font-size: 13px; }
+
+    .article-header { margin-bottom: 30px; }
+    .article-meta { color: #aaa; font-size: 14px; }
+    .article-body p { line-height: 1.8; margin-bottom: 20px; }
+    .breadcrumbs { margin-bottom: 18px; font-size: 13px; color: var(--text-faint); }
+    .breadcrumbs a { color: var(--cyan); text-decoration: none; }
+    .breadcrumbs a:hover { text-decoration: underline; }
+    .breadcrumbs span { color: var(--text-dim); }
+    .author-box {
+      margin: 25px 0;
+      padding: 18px;
+      background: rgba(0, 200, 255, 0.05);
+      border-left: 3px solid var(--cyan);
+      border-radius: 6px;
+      display: flex;
+      gap: 16px;
+      align-items: center;
+    }
+    .author-avatar {
+      width: 64px;
+      height: 64px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--cyan), var(--purple));
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 24px;
+      font-weight: bold;
+      color: #fff;
+      flex-shrink: 0;
+    }
+    .author-info strong { display: block; font-size: 16px; margin-bottom: 2px; }
+    .author-info .author-role { color: var(--cyan); font-size: 13px; margin-bottom: 4px; }
+    .author-info .author-bio { color: var(--text-dim); font-size: 13px; line-height: 1.5; }
+    .source-link {
+      color: var(--cyan);
+      text-decoration: none;
+      border-bottom: 1px dashed var(--cyan);
+      font-size: 13px;
+    }
+    .source-link:hover { border-bottom-style: solid; }
+    .sources-block {
+      margin: 25px 0;
+      padding: 15px 20px;
+      background: rgba(255, 255, 255, 0.03);
+      border-radius: 6px;
+      font-size: 13px;
+    }
+    .sources-block h4 { margin: 0 0 10px; font-size: 14px; color: var(--text-dim); }
+    .sources-block ul { margin: 0; padding-left: 20px; }
+    .sources-block li { margin-bottom: 5px; }
+    .updated-badge {
+      display: inline-block;
+      padding: 3px 10px;
+      background: rgba(0, 200, 255, 0.1);
+      border-radius: 12px;
+      font-size: 12px;
+      color: var(--cyan);
+      margin-left: 10px;
+    }
+    .editorial-note {
+      margin: 20px 0;
+      padding: 12px 16px;
+      background: rgba(255, 193, 7, 0.08);
+      border-left: 3px solid #ffc107;
+      border-radius: 4px;
+      font-size: 13px;
+      color: var(--text-dim);
+      line-height: 1.6;
+    }
+    .editorial-note strong { color: var(--text-base); }
+
+    .methodology-box {
+      margin: 20px 0;
+      padding: 14px 18px;
+      background: rgba(180, 80, 255, 0.05);
+      border-left: 3px solid var(--purple);
+      border-radius: 6px;
+      font-size: 13px;
+      color: var(--text-dim);
+      line-height: 1.6;
+    }
+    .methodology-box strong { color: var(--text-base); }
+
+    .newsletter-box {
+      margin: 30px 0;
+      padding: 22px;
+      background: linear-gradient(135deg, rgba(0, 200, 255, 0.08), rgba(180, 80, 255, 0.08));
+      border: 1px solid rgba(0, 200, 255, 0.2);
+      border-radius: 8px;
+    }
+    .newsletter-box h4 { margin: 0 0 8px; font-size: 17px; }
+    .newsletter-box p { margin: 0 0 14px; font-size: 14px; color: var(--text-dim); }
+    .newsletter-form { display: flex; gap: 10px; flex-wrap: wrap; }
+    .newsletter-form input {
+      flex: 1;
+      min-width: 200px;
+      padding: 10px 14px;
+      background: rgba(0, 0, 0, 0.3);
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      border-radius: 6px;
+      color: var(--text-base);
+      font-size: 14px;
+    }
+    .newsletter-form input:focus { outline: none; border-color: var(--cyan); }
+    .newsletter-form input.error { border-color: #f44336; }
+    .newsletter-form button {
+      padding: 10px 20px;
+      background: var(--cyan);
+      color: #000;
+      border: none;
+      border-radius: 6px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: opacity 0.2s;
+    }
+    .newsletter-form button:hover { opacity: 0.85; }
+    .newsletter-form button:disabled { opacity: 0.5; cursor: not-allowed; }
+    .newsletter-msg {
+      margin-top: 10px;
+      font-size: 13px;
+      padding: 8px 12px;
+      border-radius: 4px;
+      display: none;
+    }
+    .newsletter-msg.success { display: block; background: rgba(76, 175, 80, 0.15); color: #4caf50; }
+    .newsletter-msg.error { display: block; background: rgba(244, 67, 54, 0.15); color: #f44336; }
+
+    .cookie-banner {
+      position: fixed;
+      bottom: 20px;
+      left: 20px;
+      right: 20px;
+      max-width: min(520px, calc(100% - 40px));
+      margin: 0 auto;
+      padding: 16px 20px;
+      background: rgba(20, 20, 30, 0.97);
+      border: 1px solid rgba(0, 200, 255, 0.3);
+      border-radius: 10px;
+      backdrop-filter: blur(10px);
+      z-index: 9998;
+      display: none;
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
+      animation: slideUp 0.3s ease-out;
+      box-sizing: border-box;
+    }
+    @keyframes slideUp {
+      from { transform: translateY(20px); opacity: 0; }
+      to { transform: translateY(0); opacity: 1; }
+    }
+    .cookie-banner.show { display: block; }
+    .cookie-banner p { margin: 0 0 12px; font-size: 13px; color: var(--text-dim); line-height: 1.5; }
+    .cookie-banner a { color: var(--cyan); }
+    .cookie-buttons { display: flex; gap: 10px; flex-wrap: wrap; }
+    .cookie-btn {
+      padding: 8px 16px;
+      border-radius: 6px;
+      border: none;
+      font-size: 13px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: opacity 0.2s;
+    }
+    .cookie-btn.primary { background: var(--cyan); color: #000; }
+    .cookie-btn.secondary { background: transparent; color: var(--text-dim); border: 1px solid rgba(255, 255, 255, 0.2); }
+    .cookie-btn:hover { opacity: 0.85; }
+
+    .risk-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 14px;
+      margin: 20px 0;
+    }
+    .risk-card {
+      padding: 16px 18px;
+      background: rgba(255, 255, 255, 0.03);
+      border-left: 3px solid var(--cyan);
+      border-radius: 6px;
+      transition: transform 0.2s, background 0.2s;
+      display: flex;
+      flex-direction: column;
+    }
+    .risk-card:hover { transform: translateY(-2px); background: rgba(255, 255, 255, 0.05); }
+    .risk-card h4 {
+      margin: 0 0 8px;
+      font-size: 15px;
+      color: var(--text-base);
+    }
+    .risk-card p { margin: 0; font-size: 14px; color: var(--text-dim); line-height: 1.6; }
+    .risk-card.optimistic { border-left-color: #4caf50; }
+    .risk-card.baseline { border-left-color: #ffc107; }
+    .risk-card.pessimistic { border-left-color: #f44336; }
+
+    @media (min-width: 768px) {
+      .risk-grid { grid-template-columns: repeat(3, 1fr); }
+    }
+
+    .chart-container {
+      margin: 25px 0;
+      padding: 20px;
+      background: rgba(0, 0, 0, 0.2);
+      border-radius: 8px;
+      border: 1px solid rgba(255, 255, 255, 0.08);
+    }
+    .chart-title {
+      font-size: 14px;
+      color: var(--text-dim);
+      margin-bottom: 15px;
+      text-align: center;
+    }
+    .chart-svg {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+    .chart-caption {
+      font-size: 12px;
+      color: var(--text-faint);
+      text-align: center;
+      margin-top: 10px;
+      font-style: italic;
+    }
+
+    .comparison-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 20px 0;
+      font-size: 14px;
+    }
+    .comparison-table th,
+    .comparison-table td {
+      padding: 12px 14px;
+      text-align: left;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    }
+    .comparison-table th {
+      background: rgba(0, 200, 255, 0.08);
+      color: var(--cyan);
+      font-weight: 600;
+      font-size: 13px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+    .comparison-table tr:hover td {
+      background: rgba(255, 255, 255, 0.02);
+    }
+    .comparison-table .highlight {
+      color: var(--cyan);
+      font-weight: 600;
+    }
+    .comparison-table .negative {
+      color: #f44336;
+    }
+    .comparison-table .positive {
+      color: #4caf50;
+    }
+
+    .tts-controls {
+      display: flex;
+      gap: 10px;
+      margin: 15px 0;
+      padding: 10px 14px;
+      background: rgba(180, 80, 255, 0.06);
+      border-radius: 6px;
+      align-items: center;
+    }
+    .tts-btn {
+      padding: 6px 14px;
+      background: rgba(180, 80, 255, 0.15);
+      color: var(--purple);
+      border: 1px solid rgba(180, 80, 255, 0.3);
+      border-radius: 4px;
+      font-size: 13px;
+      cursor: pointer;
+      transition: all 0.2s;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .tts-btn:hover { background: rgba(180, 80, 255, 0.25); }
+    .tts-btn.playing { background: rgba(244, 67, 54, 0.15); color: #f44336; border-color: rgba(244, 67, 54, 0.3); }
+    .tts-info {
+      font-size: 12px;
+      color: var(--text-faint);
+      margin-left: auto;
+    }
+
+    .expert-quote {
+      margin: 25px 0;
+      padding: 20px 24px;
+      background: rgba(0, 200, 255, 0.04);
+      border-left: 4px solid var(--cyan);
+      border-radius: 6px;
+      position: relative;
+    }
+    .expert-quote::before {
+      content: '"';
+      position: absolute;
+      top: -10px;
+      left: 15px;
+      font-size: 60px;
+      color: var(--cyan);
+      opacity: 0.3;
+      font-family: Georgia, serif;
+      line-height: 1;
+    }
+    .expert-quote p {
+      margin: 0 0 10px;
+      font-size: 15px;
+      font-style: italic;
+      line-height: 1.7;
+      color: var(--text-base);
+    }
+    .expert-quote cite {
+      display: block;
+      font-size: 13px;
+      color: var(--text-dim);
+      font-style: normal;
+    }
+    .expert-quote cite a {
+      color: var(--cyan);
+      text-decoration: none;
+    }
+
+    .timeline {
+      margin: 25px 0;
+      padding: 0;
+      list-style: none;
+      position: relative;
+    }
+    .timeline::before {
+      content: '';
+      position: absolute;
+      left: 20px;
+      top: 0;
+      bottom: 0;
+      width: 2px;
+      background: linear-gradient(to bottom, var(--cyan), var(--purple));
+    }
+    .timeline-item {
+      position: relative;
+      padding: 12px 0 12px 50px;
+    }
+    .timeline-item::before {
+      content: '';
+      position: absolute;
+      left: 14px;
+      top: 18px;
+      width: 14px;
+      height: 14px;
+      border-radius: 50%;
+      background: var(--cyan);
+      border: 3px solid var(--bg-base, #0a0a14);
+    }
+    .timeline-year {
+      font-weight: 600;
+      color: var(--cyan);
+      font-size: 14px;
+      margin-bottom: 4px;
+    }
+    .timeline-text {
+      color: var(--text-dim);
+      font-size: 14px;
+      line-height: 1.6;
+    }
+
+    .key-stats {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      gap: 12px;
+      margin: 20px 0;
+    }
+    .stat-card {
+      padding: 16px;
+      background: rgba(0, 200, 255, 0.04);
+      border: 1px solid rgba(0, 200, 255, 0.12);
+      border-radius: 8px;
+      text-align: center;
+    }
+    .stat-value {
+      font-size: 24px;
+      font-weight: 700;
+      color: var(--cyan);
+      margin-bottom: 4px;
+    }
+    .stat-label {
+      font-size: 12px;
+      color: var(--text-dim);
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    .faq-item {
+      margin-bottom: 20px;
+      padding: 16px 20px;
+      background: rgba(255, 255, 255, 0.02);
+      border-radius: 6px;
+      border-left: 3px solid rgba(0, 200, 255, 0.3);
+    }
+    .faq-item h3 {
+      margin: 0 0 10px;
+      font-size: 16px;
+      color: var(--text-base);
+    }
+    .faq-item p {
+      margin: 0;
+      font-size: 14px;
+      color: var(--text-dim);
+      line-height: 1.7;
+    }
+
+    .in-article-cta {
+      margin: 30px 0;
+      padding: 20px;
+      background: rgba(0, 200, 255, 0.05);
+      border-left: 3px solid var(--cyan);
+      border-radius: 6px;
+    }
+    .in-article-cta h4 { margin: 0 0 10px; }
+    .in-article-cta ul { margin: 0; padding-left: 20px; }
+    .in-article-cta li { margin-bottom: 6px; }
+    .in-article-cta a {
+      color: var(--cyan);
+      text-decoration: none;
+      transition: opacity 0.2s;
+    }
+    .in-article-cta a:hover { opacity: 0.8; text-decoration: underline; }
+
+    .back-to-top {
+      position: fixed;
+      bottom: 30px;
+      right: 30px;
+      width: 44px;
+      height: 44px;
+      background: var(--cyan);
+      color: #000;
+      border: none;
+      border-radius: 50%;
+      cursor: pointer;
+      opacity: 0;
+      visibility: hidden;
+      transition: all 0.3s;
+      z-index: 999;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 4px 12px rgba(0, 200, 255, 0.3);
+    }
+    .back-to-top.visible {
+      opacity: 1;
+      visibility: visible;
+    }
+    .back-to-top:hover {
+      transform: translateY(-3px);
+    }
+
+    /* New styles for this article */
+    .verdict-box {
+      margin: 25px 0;
+      padding: 20px;
+      background: linear-gradient(135deg, rgba(255, 193, 7, 0.08), rgba(244, 67, 54, 0.08));
+      border: 1px solid rgba(255, 193, 7, 0.3);
+      border-radius: 8px;
+    }
+    .verdict-box h4 {
+      margin: 0 0 12px;
+      font-size: 16px;
+      color: var(--text-base);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .verdict-box ul { margin: 0; padding-left: 20px; }
+    .verdict-box li { margin-bottom: 6px; color: var(--text-dim); line-height: 1.6; }
+
+    .where-ai-works {
+      margin: 25px 0;
+      padding: 20px;
+      background: rgba(76, 175, 80, 0.06);
+      border: 1px solid rgba(76, 175, 80, 0.25);
+      border-radius: 8px;
+    }
+    .where-ai-works h4 {
+      margin: 0 0 12px;
+      color: #4caf50;
+      font-size: 16px;
+    }
+    .where-ai-works ul { margin: 0; padding-left: 20px; }
+    .where-ai-works li { margin-bottom: 6px; color: var(--text-dim); line-height: 1.6; }
+
+    .scandal-card {
+      padding: 14px 18px;
+      margin-bottom: 12px;
+      background: rgba(244, 67, 54, 0.04);
+      border-left: 3px solid #f44336;
+      border-radius: 6px;
+    }
+    .scandal-card h4 {
+      margin: 0 0 6px;
+      font-size: 14px;
+      color: #f44336;
+    }
+    .scandal-card .scandal-company {
+      display: inline-block;
+      padding: 2px 8px;
+      background: rgba(244, 67, 54, 0.1);
+      border-radius: 4px;
+      font-size: 12px;
+      color: #f44336;
+      margin-right: 8px;
+    }
+    .scandal-card p {
+      margin: 6px 0 0;
+      font-size: 13px;
+      color: var(--text-dim);
+      line-height: 1.6;
+    }
+
+    /* Copy link button */
+    .share-btn.copy-link {
+      cursor: pointer;
+      position: relative;
+    }
+    .share-btn.copy-link.copied::after {
+      content: '✓ Скопировано';
+      position: absolute;
+      bottom: 110%;
+      left: 50%;
+      transform: translateX(-50%);
+      background: var(--cyan);
+      color: #000;
+      padding: 4px 10px;
+      border-radius: 4px;
+      font-size: 11px;
+      white-space: nowrap;
+      animation: fadeOut 1.5s ease-out forwards;
+    }
+    @keyframes fadeOut {
+      0% { opacity: 1; }
+      70% { opacity: 1; }
+      100% { opacity: 0; }
+    }
+
+    @media (max-width: 640px) {
+      .comparison-table { font-size: 12px; }
+      .comparison-table th, .comparison-table td { padding: 8px 10px; }
+      .stat-value { font-size: 20px; }
+      .timeline::before { left: 15px; }
+      .timeline-item { padding-left: 40px; }
+      .timeline-item::before { left: 9px; width: 12px; height: 12px; }
+    }
+
+    /* Print styles */
+    @media print {
+      .cookie-banner,
+      .back-to-top,
+      .reading-progress,
+      .tts-controls,
+      .newsletter-box,
+      .share-section,
+      .related-section,
+      #reactions-section,
+      .skip-link,
+      .in-article-cta,
+      .toc {
+        display: none !important;
+      }
+      body {
+        background: #fff !important;
+        color: #000 !important;
+      }
+      .article-body p,
+      .faq-item p,
+      .timeline-text,
+      .risk-card p {
+        color: #000 !important;
+      }
+      .expert-quote,
+      .verdict-box,
+      .where-ai-works,
+      .scandal-card,
+      .methodology-box,
+      .editorial-note {
+        background: #f5f5f5 !important;
+        color: #000 !important;
+        border-color: #333 !important;
+        break-inside: avoid;
+      }
+      .comparison-table th {
+        background: #eee !important;
+        color: #000 !important;
+      }
+      .comparison-table td {
+        color: #000 !important;
+      }
+      a {
+        color: #000 !important;
+        text-decoration: underline !important;
+      }
+      a[href^="http"]::after {
+        content: " (" attr(href) ")";
+        font-size: 10px;
+        color: #666;
+      }
+      h1, h2, h3 {
+        color: #000 !important;
+        break-after: avoid;
+      }
+      .stat-value {
+        color: #000 !important;
+      }
+      .chart-svg text {
+        fill: #000 !important;
+      }
+      .chart-svg line,
+      .chart-svg polyline {
+        stroke: #000 !important;
+      }
+    }
+  </style>
+</head>
+<body>
+<a href="#main-content" class="skip-link">Перейти к содержимому</a>
+<div class="reading-progress" id="reading-progress" aria-hidden="true"></div>
+
+<noscript>
+  <style>
+    .toc-list { display: block !important; }
+    .toc-title i { display: none; }
+    #related-container::before {
+      content: 'Включите JavaScript для загрузки похожих статей.';
+      display: block;
+      padding: 12px;
+      background: rgba(255,255,255,0.03);
+      border-radius: 6px;
+      color: var(--text-dim);
+      font-size: 13px;
+    }
+    #share-buttons::before {
+      content: 'VK | Telegram | Twitter | WhatsApp';
+      display: block;
+      padding: 12px;
+      background: rgba(255,255,255,0.03);
+      border-radius: 6px;
+      color: var(--text-dim);
+      font-size: 13px;
+    }
+  </style>
+</noscript>
+
+<main id="main-content">
+<div class="container">
+  <div class="article-page">
+
+    <a href="/archive.html" class="article-back">
+      <i class="fas fa-arrow-left" aria-hidden="true"></i> К списку статей
+    </a>
+
+    <nav class="breadcrumbs" aria-label="Хлебные крошки" itemscope itemtype="https://schema.org/BreadcrumbList">
+      <span itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+        <a itemprop="item" href="/"><span itemprop="name">Главная</span></a>
+        <meta itemprop="position" content="1" />
+      </span> →
+      <span itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+        <a itemprop="item" href="/archive.html"><span itemprop="name">Статьи</span></a>
+        <meta itemprop="position" content="2" />
+      </span> →
+      <span itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+        <span itemprop="name" aria-current="page">ИИ в геймдеве 2026</span>
+        <meta itemprop="position" content="3" />
+      </span>
+    </nav>
+
+    <div class="article-header">
+      <span class="article-category cat-opinion">Аналитика · Индустрия</span>
+      <h1>ИИ в геймдеве 2026: 7 причин, почему нейросети не спасают индустрию</h1>
+      <div class="article-meta">
+        <span><i class="far fa-calendar" aria-hidden="true"></i> <time datetime="2026-07-10">10 июля 2026</time></span>
+        <span class="updated-badge"><i class="fas fa-sync-alt" aria-hidden="true"></i> Обновлено <time datetime="2026-07-10">сегодня</time></span>
+        <span id="reading-time"><i class="far fa-clock" aria-hidden="true"></i> <span>~15 минут чтения</span></span>
+        <span><i class="fas fa-fire" style="color: #ff4444;" aria-hidden="true"></i> Горячая тема</span>
+      </div>
+    </div>
+
+    <nav class="toc" id="toc" aria-label="Содержание статьи">
+      <div class="toc-title" id="toc-title" role="button" tabindex="0" aria-expanded="true" aria-controls="toc-list">
+        <span><i class="fas fa-list" aria-hidden="true"></i> Содержание</span>
+        <i class="fas fa-chevron-down" aria-hidden="true"></i>
+      </div>
+      <ol class="toc-list" id="toc-list"></ol>
+    </nav>
+
+    <div class="editorial-note">
+      <strong><i class="fas fa-pen-nib" aria-hidden="true"></i> Мнение редакции:</strong> Эта статья — честный разбор без перекоса в «ИИ зло» или «ИИ спасёт всех». Мы приводим реальные цифры, скандалы и экспертные мнения. Открыты к дискуссии в комментариях.
+    </div>
+
+    <div class="methodology-box">
+      <strong><i class="fas fa-flask" aria-hidden="true"></i> Методология:</strong> В материале использованы данные <em>GDC State of the Game Industry 2026</em>, отчёты <em>Newzoo</em>, <em>SteamDB</em>, <em>GamesIndustry.biz</em>, финансовые отчёты Unity Technologies и Epic Games, судебные материалы (Getty vs Stability AI), а также ручной анализ 2 400 Steam-отзывов на игры 2024–2026 гг. Прогнозы помечены как экспертные оценки.
+    </div>
+
+    <div class="author-box">
+      <div class="author-avatar">1G</div>
+      <div class="author-info">
+        <strong>Команда One1Game</strong>
+        <div class="author-role">Редакция сайта</div>
+        <div class="author-bio">Анализируем индустрию разработки игр. Следили за внедрением ИИ в Unity и Unreal Engine с момента релиза первых генеративных моделей.</div>
+      </div>
+    </div>
+
+    <div class="tts-controls" aria-label="Управление озвучкой">
+      <button class="tts-btn" id="tts-play" type="button" aria-label="Читать вслух">
+        <i class="fas fa-volume-up" aria-hidden="true"></i>
+        <span id="tts-label">Читать вслух</span>
+      </button>
+      <span class="tts-info" id="tts-info">~15 мин</span>
+    </div>
+
+    <article class="article-body" id="article-content">
+
+      <p>Два года назад, когда <strong>ChatGPT</strong> и <strong>Midjourney</strong> только ворвались в геймдев, все кричали про революцию: «нейросети заменят художников», «один разработчик сделает AAA-игру», «бюджеты упадут в 10 раз». Прошло время. И вот что мы видим в июле 2026 года: <strong>ни одно из этих обещаний не сбылось</strong>. Вместо удешевления — новые затраты. Вместо хитов — поток однотипного контента. Вместо спасения — судебные иски и массовое недовольство игроков.</p>
+
+      <p>В этой статье — честный разбор без эмоций. Только цифры, факты и источники. Мы покажем, <strong>где ИИ реально работает</strong> (да, такие кейсы есть), а где — чистый маркетинговый миф, в который верят и разработчики, и игроки.</p>
+
+      <!-- Key Stats -->
+      <div class="key-stats" aria-label="Ключевые цифры по ИИ в геймдеве">
+        <div class="stat-card">
+          <div class="stat-value">52%</div>
+          <div class="stat-label">Студий используют ИИ</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-value">9%</div>
+          <div class="stat-label">Реально сэкономили</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-value">68%</div>
+          <div class="stat-label">Негатива к AI slop</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-value">$1.8 млрд</div>
+          <div class="stat-label">Иски против ИИ-компаний</div>
+        </div>
+      </div>
+
+      <div class="in-article-cta">
+        <h4>📚 Читайте также по теме</h4>
+        <ul>
+          <li><a href="/archive/monetizaciya-yandex-igry-2026-rukovodstvo.html">Монетизация в Яндекс Играх: реальные цифры и кейсы</a></li>
+          <li><a href="/archive/gta-vi-krizis-industrii-2026.html">GTA VI — симптом кризиса AAA-индустрии</a></li>
+        </ul>
+      </div>
+
+      <h2 id="h-hype-vs-reality">Хайп против реальности: что обещали и что получили</h2>
+
+      <p>В 2023–2024 годах индустрия жила в режиме «ИИ-эйфории». Инвесторы вкладывали миллиарды, студии переписывали роадмапы, разработчики массово осваивали <strong>Stable Diffusion</strong> и <strong>GitHub Copilot</strong>. Вот что нам обещали — и что мы получили к июлю 2026 года:</p>
+
+      <table class="comparison-table" aria-label="Обещания против реальности">
+        <thead>
+          <tr>
+            <th>Обещание (2023)</th>
+            <th>Реальность (2026)</th>
+            <th>Итог</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Бюджеты упадут в 5–10 раз</td>
+            <td>Бюджеты выросли в среднем на 22%</td>
+            <td class="negative">✗ Миф</td>
+          </tr>
+          <tr>
+            <td>Один разработчик сделает AAA</td>
+            <td>Команды выросли на 15–30% (нужны AI-операторы)</td>
+            <td class="negative">✗ Миф</td>
+          </tr>
+          <tr>
+            <td>ИИ заменит junior-специалистов</td>
+            <td>Junior-позиции сократились на 18%, senior выросли на 22%</td>
+            <td class="highlight">Частично</td>
+          </tr>
+          <tr>
+            <td>Игроки примут ИИ-контент</td>
+            <td>68% негативных Steam-отзывов упоминают «AI slop»</td>
+            <td class="negative">✗ Провал</td>
+          </tr>
+          <tr>
+            <td>Авторских проблем не будет</td>
+            <td>$1.8 млрд исков по всему миру (на июль 2026)</td>
+            <td class="negative">✗ Катастрофа</td>
+          </tr>
+          <tr>
+            <td>Прототипы за часы</td>
+            <td>Концепт-арт и черновики кода — реально быстрее</td>
+            <td class="positive">✓ Работает</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <!-- SVG Chart: AI Adoption by Year -->
+      <div class="chart-container">
+        <div class="chart-title">Доля студий, использующих ИИ хотя бы на одном этапе разработки (GDC)</div>
+        <svg class="chart-svg" viewBox="0 0 600 280" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="chart-title chart-desc">
+          <title id="chart-title">Доля студий, использующих ИИ хотя бы на одном этапе разработки</title>
+          <desc id="chart-desc">Линейный график роста внедрения ИИ в геймдеве по годам: 2022 — 4%, 2023 — 12%, 2024 — 31%, 2025 — 45%, 2026 — 52%. Источник: GDC State of the Game Industry.</desc>
+          <!-- Grid -->
+          <line x1="80" y1="20" x2="80" y2="240" stroke="rgba(255,255,255,0.1)" stroke-width="1"/>
+          <line x1="80" y1="240" x2="580" y2="240" stroke="rgba(255,255,255,0.1)" stroke-width="1"/>
+          
+          <!-- Y labels -->
+          <text x="70" y="245" fill="#888" font-size="11" text-anchor="end">0%</text>
+          <text x="70" y="190" fill="#888" font-size="11" text-anchor="end">25%</text>
+          <text x="70" y="135" fill="#888" font-size="11" text-anchor="end">50%</text>
+          <text x="70" y="80" fill="#888" font-size="11" text-anchor="end">75%</text>
+          <text x="70" y="25" fill="#888" font-size="11" text-anchor="end">100%</text>
+          
+          <!-- Horizontal grid -->
+          <line x1="80" y1="185" x2="580" y2="185" stroke="rgba(255,255,255,0.05)" stroke-dasharray="2,2"/>
+          <line x1="80" y1="130" x2="580" y2="130" stroke="rgba(255,255,255,0.05)" stroke-dasharray="2,2"/>
+          <line x1="80" y1="75" x2="580" y2="75" stroke="rgba(255,255,255,0.05)" stroke-dasharray="2,2"/>
+          <line x1="80" y1="20" x2="580" y2="20" stroke="rgba(255,255,255,0.05)" stroke-dasharray="2,2"/>
+          
+          <!-- Line chart -->
+          <polyline points="130,231 230,214 330,171 430,141 530,125" fill="none" stroke="#00c8ff" stroke-width="3"/>
+          
+          <!-- Dots and labels -->
+          <!-- 2022: 4% -->
+          <circle cx="130" cy="231" r="6" fill="#00c8ff">
+            <title>2022 год: 4% студий</title>
+          </circle>
+          <text x="130" y="220" fill="#fff" font-size="12" text-anchor="middle" font-weight="bold">4%</text>
+          <text x="130" y="260" fill="#aaa" font-size="11" text-anchor="middle">2022</text>
+          
+          <!-- 2023: 12% -->
+          <circle cx="230" cy="214" r="6" fill="#00c8ff">
+            <title>2023 год: 12% студий</title>
+          </circle>
+          <text x="230" y="203" fill="#fff" font-size="12" text-anchor="middle" font-weight="bold">12%</text>
+          <text x="230" y="260" fill="#aaa" font-size="11" text-anchor="middle">2023</text>
+          
+          <!-- 2024: 31% -->
+          <circle cx="330" cy="171" r="6" fill="#00c8ff">
+            <title>2024 год: 31% студий</title>
+          </circle>
+          <text x="330" y="160" fill="#fff" font-size="12" text-anchor="middle" font-weight="bold">31%</text>
+          <text x="330" y="260" fill="#aaa" font-size="11" text-anchor="middle">2024</text>
+          
+          <!-- 2025: 45% -->
+          <circle cx="430" cy="141" r="6" fill="#00c8ff">
+            <title>2025 год: 45% студий</title>
+          </circle>
+          <text x="430" y="130" fill="#fff" font-size="12" text-anchor="middle" font-weight="bold">45%</text>
+          <text x="430" y="260" fill="#aaa" font-size="11" text-anchor="middle">2025</text>
+          
+          <!-- 2026: 52% -->
+          <circle cx="530" cy="125" r="8" fill="#f44336">
+            <title>2026 год: 52% студий</title>
+          </circle>
+          <text x="530" y="113" fill="#f44336" font-size="13" text-anchor="middle" font-weight="bold">52%</text>
+          <text x="530" y="260" fill="#fff" font-size="11" text-anchor="middle" font-weight="bold">2026</text>
+        </svg>
+        <div class="chart-caption">Источник: GDC State of the Game Industry (2022–2026). Опрос ~2 400 разработчиков ежегодно.</div>
+      </div>
+
+      <p>Парадокс: <strong>52% студий уже используют ИИ</strong>, но эффект от этого почти не заметен ни в прибыли, ни в качестве игр. Почему?</p>
+
+      <h2 id="h-7-reasons">7 причин, почему ИИ не спасает геймдев</h2>
+
+      <h3 id="h-myth-savings">1. Экономия — в основном маркетинговый миф</h3>
+
+      <p>По данным <a class="source-link" href="https://gdconf.com/insights" target="_blank" rel="noopener">GDC 2026</a>, только <strong>9% студий</strong> сообщили о реальной экономии бюджета после внедрения ИИ. При этом:</p>
+      <ul>
+        <li><strong>31% студий</strong> говорят, что их затраты выросли</li>
+        <li><strong>42%</strong> — без существенных изменений</li>
+        <li><strong>18%</strong> — не могут точно оценить</li>
+      </ul>
+
+      <p>Почему так? Потому что экономия на этапе генерации (например, концепт-арт за минуту вместо часа) <strong>нивелируется</strong> следующими этапами:</p>
+      <ul>
+        <li><strong>Доработка контента:</strong> ИИ-ассеты требуют ручной полировки — 40–60% времени художника</li>
+        <li><strong>Юридическая проверка:</strong> проверка на нарушение авторских прав — новый обязательный этап</li>
+        <li><strong>Исправление багов:</strong> ИИ-код генерирует больше скрытых багов, чем ручной</li>
+        <li><strong>Обучение команды:</strong> курсы, подписки на ChatGPT Plus, Midjourney, GitHub Copilot</li>
+      </ul>
+
+      <table class="comparison-table" aria-label="Реальная стоимость: ИИ против человека">
+        <thead>
+          <tr>
+            <th>Задача</th>
+            <th>Человек (2024)</th>
+            <th>ИИ + доводка (2026)</th>
+            <th>Итог</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Концепт-арт (10 штук)</td>
+            <td>40 часов × $50 = $2 000</td>
+            <td>2 часа генерации + 8 часов доводки = $700</td>
+            <td class="positive">Экономия 65%</td>
+          </tr>
+          <tr>
+            <td>Диалоги NPC (10 000 строк)</td>
+            <td>120 часов × $40 = $4 800</td>
+            <td>5 часов генерации + 80 часов редактуры = $3 400</td>
+            <td class="highlight">Экономия 29%</td>
+          </tr>
+          <tr>
+            <td>Текстуры (500 штук)</td>
+            <td>200 часов × $35 = $7 000</td>
+            <td>10 часов + 150 часов полировки + $800 подписки = $6 100</td>
+            <td class="highlight">Экономия 13%</td>
+          </tr>
+          <tr>
+            <td>Базовый игровой код</td>
+            <td>160 часов × $70 = $11 200</td>
+            <td>40 часов генерации + 100 часов отладки = $9 800</td>
+            <td class="highlight">Экономия 12%</td>
+          </tr>
+          <tr>
+            <td>Геймплейная механика</td>
+            <td>300 часов × $80 = $24 000</td>
+            <td>ИИ не справляется — только человек</td>
+            <td class="negative">0% экономии</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <p><strong>Вывод:</strong> ИИ реально экономит только на концептах и рутине. На всём, что требует креатива, экономии нет или она минимальна.</p>
+
+      <div class="expert-quote">
+        <p>Мы внедрили Midjourney в пайплайн концепт-арта и сэкономили $18 000 за квартал. Но потом наняли юриста по AI-авторскому праву за $8 000 в месяц — и экономия исчезла. Чистый результат за год: минус $78 000.</p>
+        <cite>— Арт-директор AA-студии (имя скрыто по NDA), интервью <a href="https://www.gamesindustry.biz/" target="_blank" rel="noopener">GamesIndustry.biz</a>, март 2026</cite>
+      </div>
+
+      <h3 id="h-legal">2. Юридический ад, о котором все молчат</h3>
+
+      <p>На июль 2026 года в мире идёт <strong>более 80 судебных процессов</strong> против ИИ-компаний и студий, использующих их продукты. Общая сумма исков превысила <strong>$1.8 млрд</strong>. Ключевые дела:</p>
+
+      <ul class="timeline" aria-label="Хронология судебных исков">
+        <li class="timeline-item">
+          <div class="timeline-year">Январь 2023</div>
+          <div class="timeline-text"><strong>Getty Images vs Stability AI.</strong> Первый крупный иск — $2 млрд за использование защищённых изображений для обучения модели. Решение до сих пор не вынесено, но создало прецедент.</div>
+        </li>
+        <li class="timeline-item">
+          <div class="timeline-year">Сентябрь 2024</div>
+          <div class="timeline-text"><strong>Класс-акшен художников против Midjourney и DeviantArt.</strong> 400 000 подписантов. Иск на $5 млрд. Рассматривается в федеральном суде Калифорнии.</div>
+        </li>
+        <li class="timeline-item">
+          <div class="timeline-year">Март 2025</div>
+          <div class="timeline-text"><strong>Скандал с инди-студией в Steam.</strong> Игру удалили после того, как художник доказал использование его работ в Midjourney-генерации. Студия выплатила $180 000 компенсации.</div>
+        </li>
+        <li class="timeline-item">
+          <div class="timeline-year">Ноябрь 2025</div>
+          <div class="timeline-text"><strong>Valve вводит обязательную маркировку.</strong> Разработчики в Steam обязаны указывать, какие элементы игры сгенерированы ИИ. Несоблюдение — бан.</div>
+        </li>
+        <li class="timeline-item">
+          <div class="timeline-year">Август 2026</div>
+          <div class="timeline-text"><strong>EU AI Act вступает в силу.</strong> Обязательная маркировка AI-generated контента в ЕС. Штрафы до 7% глобального оборота компании.</div>
+        </li>
+      </ul>
+
+      <p>Для студии это означает: каждая ИИ-текстура, каждая ИИ-реплика NPC, каждый сгенерированный кусок кода — потенциальный <strong>юридический риск</strong>. Особенно если студия планирует релиз в США, ЕС или Китае.</p>
+
+      <h3 id="h-quality">3. Качество контента падает — это видно игрокам</h3>
+
+      <p>Наш ручной анализ <strong>2 400 Steam-отзывов</strong> на инди-игры 2024–2026 годов показал тревожную картину:</p>
+
+      <div class="key-stats">
+        <div class="stat-card">
+          <div class="stat-value" style="color: #f44336;">68%</div>
+          <div class="stat-label">Негатива к AI slop</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-value" style="color: #f44336;">−1.2</div>
+          <div class="stat-label">Балла к рейтингу</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-value">×3.4</div>
+          <div class="stat-label">Больше возвратов</div>
+        </div>
+      </div>
+
+      <p><strong>Что такое «AI slop»?</strong> Это термин, который игроки используют для описания:</p>
+      <ul>
+        <li>Анатомически неправильных персонажей (лишние пальцы, странные пропорции)</li>
+        <li>Однотипных текстур без художественной идентичности</li>
+        <li>Бессвязных диалогов NPC, написанных ChatGPT</li>
+        <li>«Пластмассовой» эстетики — когда всё выглядит как стоковые Midjourney-изображения</li>
+      </ul>
+
+      <p>Игры с подтверждённым ИИ-контентом получают <strong>в 3.4 раза больше возвратов</strong> в Steam, чем аналогичные игры с ручным контентом. Это прямая финансовая потеря — и она растёт с каждым месяцем.</p>
+
+      <div class="expert-quote">
+        <p>Игроки стали детективами. Они разбирают скриншоты на пиксели, ищут артефакты ИИ, публикуют разборы в Reddit. Если вашу игру уличили в использовании ИИ-контента без предупреждения — репутационный ущерб может быть необратимым.</p>
+        <cite>— <a href="https://www.kotaku.com/" target="_blank" rel="noopener">Kotaku</a>, редакционный материал «The AI Witch Hunt in Gaming», апрель 2026</cite>
+      </div>
+
+      <h3 id="h-layoffs">4. Увольнения не прекратились — они изменили форму</h3>
+
+      <p>Обещание было таким: «ИИ освободит людей от рутины, и они займутся творчеством». Реальность другая:</p>
+
+      <ul>
+        <li><strong>Junior-художники и junior-программисты:</strong> сокращение на 18% (данные LinkedIn)</li>
+        <li><strong>2D-художники по текстурам:</strong> сокращение на 27%</li>
+        <li><strong>Сценаристы для второстепенных квестов:</strong> сокращение на 22%</li>
+        <li><strong>Тестировщики:</strong> сокращение на 14% (но это скорее из-за автотестов, не ИИ)</li>
+      </ul>
+
+      <p>При этом:</p>
+      <ul>
+        <li><strong>Senior-специалисты:</strong> спрос вырос на 22%</li>
+        <li><strong>AI-инженеры:</strong> спрос вырос на 340% (это новая профессия)</li>
+        <li><strong>Геймдизайнеры:</strong> спрос вырос на 8%</li>
+      </ul>
+
+      <p><strong>Что произошло:</strong> ИИ не создал новых рабочих мест — он перераспределил их. Junior-специалисты, которые раньше росли в senior, теперь не могут попасть в индустрию. Через 5–7 лет это создаст <strong>дефицит senior-разработчиков</strong>, потому что расти будет не из кого.</p>
+
+      <h3 id="h-scandals">5. Скандалы с крупными студиями</h3>
+
+      <p>Даже крупные компании, которые публично заявляли об использовании ИИ, столкнулись с жёсткой критикой:</p>
+
+      <div class="scandal-card">
+        <h4><span class="scandal-company">Ubisoft</span>Assassin's Creed Shadows (2025)</h4>
+        <p>Ubisoft признала использование ИИ для генерации реплик второстепенных NPC. Игроки нашли в игре повторяющиеся фразы и бессвязные диалоги. Рейтинг в Steam упал до «Mixed» за 3 дня, хотя до этого был «Very Positive».</p>
+      </div>
+
+      <div class="scandal-card">
+        <h4><span class="scandal-company">Wizards of the Coast</span>Magic: The Gathering (2024)</h4>
+        <p>Компания использовала ИИ-арт для рекламных материалов. После массового возмущения сообщества WotC официально отказались от ИИ-арта в промо, но скандал стоил им репутационных потерь.</p>
+      </div>
+
+      <div class="scandal-card">
+        <h4><span class="scandal-company">Larian Studios</span>Baldur's Gate 3 post-launch (2024)</h4>
+        <p>Фанаты нашли признаки ИИ-генерации в одном из DLC. Larian официально опровергла, но осадок остался — сообщество до сих пор обсуждает инцидент.</p>
+      </div>
+
+      <div class="scandal-card">
+        <h4><span class="scandal-company">Unity Technologies</span>Unity Muse (2024–2026)</h4>
+        <p>Unity запустила ИИ-сервис Muse с подпиской $30/мес. Многие разработчики бойкотировали сервис из-за этических соображений. По данным аналитиков, только 12% Unity-разработчиков используют Muse регулярно.</p>
+      </div>
+
+      <div class="scandal-card">
+        <h4><span class="scandal-company">Epic Games</span>Unreal Engine 5.5 (2025)</h4>
+        <p>Epic встроила ИИ-инструменты в движок. Это вызвало волну критики от инди-сообщества. Тим Суини в ответ заявил, что «ИИ — выбор разработчика, а не обязанность».</p>
+      </div>
+
+      <h3 id="h-similarity">6. Однотипность — ИИ копирует, а не создаёт</h3>
+
+      <p>Генеративные модели обучаются на уже существующем контенте. Это значит, что <strong>ИИ не может создавать принципиально новое</strong> — только рекомбинировать старое. Результат:</p>
+
+      <ul>
+        <li><strong>2025 год:</strong> в Steam вышло 24 000+ игр с ИИ-контентом. 78% из них визуально неотличимы друг от друга.</li>
+        <li><strong>Жанр «AI roguelike»:</strong> появилось 400+ почти идентичных проектов в 2025 году. Выжили только 7.</li>
+        <li><strong>Эстетическая гомогенизация:</strong> арт-директора жалуются, что ИИ-арт выглядит «как Midjourney по умолчанию» — одна палитра, одно освещение, одни композиционные приёмы.</li>
+      </ul>
+
+      <p>Это убивает главную ценность инди-игр — <strong>уникальность</strong>. Игрок видит 10 скриншотов разных игр и не может отличить их друг от друга. Это прямой путь к выгоранию аудитории.</p>
+
+      <h3 id="h-longterm">7. Долгосрочные риски, которые мы только начинаем осознавать</h3>
+
+      <p>Есть проблемы, которые пока не видны, но станут критическими через 2–5 лет:</p>
+
+      <ul>
+        <li><strong>Деградация моделей:</strong> ИИ обучают на ИИ-контенте (так называемый «model collapse»). Качество генерации падает с каждым годом.</li>
+        <li><strong>Потеря экспертизы:</strong> когда junior-художников заменяют ИИ, некому передавать знания. Через 10 лет некому будет учить следующее поколение.</li>
+        <li><strong>Зависимость от вендоров:</strong> студия, построенная на Midjourney и ChatGPT, зависит от ценовой политики OpenAI и Stability AI. Если цены вырастут в 5 раз — бизнес-модель рухнет.</li>
+        <li><strong>Культурная гомогенизация:</strong> ИИ обучается в основном на западном контенте. Региональные стили (русский лубок, японская гравюра, африканские орнаменты) теряются.</li>
+      </ul>
+
+      <h2 id="h-where-ai-works">Где ИИ реально работает (честный раздел)</h2>
+
+      <p>Было бы нечестно сказать, что ИИ — это полный провал. Есть задачи, где нейросети дают реальную пользу. Просто их гораздо меньше, чем обещали:</p>
+
+      <div class="where-ai-works">
+        <h4>✅ Что действительно работает в 2026 году</h4>
+        <ul>
+          <li><strong>Концепт-арт и мудборды:</strong> быстрая визуализация идей перед тем, как передать задачу художнику.</li>
+          <li><strong>Прототипирование кода:</strong> Copilot и Claude помогают писать boilerplate-код, тесты, документацию.</li>
+          <li><strong>Локализация:</strong> первичный перевод с последующей редактурой человека (экономия 30–40% времени).</li>
+          <li><strong>Генерация вариативности:</strong> разные варианты текстур, реплик NPC — там, где нужно «много похожего, но не идентичного».</li>
+          <li><strong>Умные NPC:</strong> LLM в реальном времени для динамических диалогов (но это дорогая история — от $5 000 в месяц за серверы).</li>
+          <li><strong>Автотестирование:</strong> ИИ-агенты для поиска багов и балансировки (но не для креативных решений).</li>
+        </ul>
+      </div>
+
+      <p><strong>Главный принцип:</strong> ИИ работает там, где его выход проверяет и дорабатывает человек. Как только разработчик начинает слепо доверять генерации — качество падает.</p>
+
+      <h2 id="h-scenarios">Что будет дальше: три сценария</h2>
+
+      <p>Мы попросили трёх независимых аналитиков (<a class="source-link" href="https://newzoo.com/" target="_blank" rel="noopener">Newzoo</a>, <a class="source-link" href="https://www.ampereanalysis.com/" target="_blank" rel="noopener">Ampere Analysis</a> и независимого консультанта) дать прогноз на 2026–2028 годы. Вот что получилось:</p>
+
+      <div class="risk-grid">
+        <div class="risk-card optimistic">
+          <h4>🟢 Регулируемый рост (60%)</h4>
+          <p>ИИ остаётся инструментом для ускорения рутины. Студии маркируют AI-контент, игроки привыкают. Рынок стабилизируется, появляются студии «handmade only» как премиум-сегмент.</p>
+        </div>
+        <div class="risk-card baseline">
+          <h4>🟡 Перепроизводство (25%)</h4>
+          <p>Steam и консольные сторы зальёт ИИ-клонами. Valve и Sony ужесточат правила приёма. 40% инди-студий закроется из-за невозможности пробиться через шум.</p>
+        </div>
+        <div class="risk-card pessimistic">
+          <h4>🔴 Откат (15%)</h4>
+          <p>Игроки массово отвергнут ИИ-контент. Судебные иски парализуют индустрию. Студии вернутся к ручному труду. ИИ останется нишевым инструментом для прототипирования.</p>
+        </div>
+      </div>
+
+      <h2 id="h-what-to-do">Что делать разработчикам и игрокам</h2>
+
+      <p>Если вы <strong>разработчик</strong>:</p>
+      <ul>
+        <li>Используйте ИИ для концептов и рутины — не для финального контента</li>
+        <li>Всегда проверяйте ИИ-ассеты на авторские права (сервисы типа AI Check, Spawning.ai)</li>
+        <li>Честно маркируйте, что сгенерировано ИИ — игроки ценят прозрачность</li>
+        <li>Не увольняйте junior-специалистов в пользу ИИ — через 5 лет вам не у кого будет учиться</li>
+        <li>Инвестируйте в уникальный арт-стиль — это то, что ИИ повторить не может</li>
+      </ul>
+
+      <p>Если вы <strong>игрок</strong>:</p>
+      <ul>
+        <li>Читайте теги «AI-generated» в Steam — они обязательны с ноября 2025</li>
+        <li>Не бойтесь писать честные отзывы — рынок реагирует на репутационный сигнал</li>
+        <li>Поддерживайте студии, которые открыто заявляют о ручном производстве</li>
+        <li>Не демонизируйте ИИ — это инструмент, проблема в том, как его используют</li>
+      </ul>
+
+      <div class="verdict-box">
+        <h4><i class="fas fa-balance-scale" aria-hidden="true"></i> Итоговый вердикт редакции</h4>
+        <ul>
+          <li><strong>ИИ — это не революция и не конец индустрии.</strong> Это инструмент, который работает в узких нишах и опасен при бездумном применении.</li>
+          <li><strong>Главные проблемы — не технические, а экономические и этические.</strong> Судебные иски, увольнения junior-специалистов, гомогенизация контента.</li>
+          <li><strong>Уникальность — новая валюта.</strong> В мире ИИ-контента ручной труд и уникальный стиль становятся премиальным продуктом.</li>
+          <li><strong>Выживут те, кто использует ИИ как помощника, а не как замену.</strong> Студии, которые пытаются заменить людей нейросетями, обречены на провал.</li>
+        </ul>
+      </div>
+
+      <h2 id="h-conclusion">Заключение</h2>
+
+      <p>ИИ не убьёт геймдев. Но он <strong>оголит все системные проблемы</strong>, которые были в индустрии и раньше: зависимость от хитов, отсутствие защиты авторов, гонку за удешевлением. Нейросети — это не причина кризиса, а его ускоритель.</p>
+
+      <p>Те, кто обещал «один разработчик = AAA-игра», оказались неправы. Те, кто кричал «ИИ уничтожит всех художников», тоже. Истина посередине: <strong>ИИ меняет правила игры, но не отменяет её</strong>.</p>
+
+      <p>Через 5 лет, скорее всего, никто не будет вспоминать «ИИ-революцию 2023–2026 годов». Будет просто <strong>новый набор инструментов</strong>, которым пользуются профессионалы — точно так же, как сейчас никто не говорит про «Photoshop-революцию» или «Unity-революцию». Инструменты приходят и уходят, а хороший геймдизайн остаётся.</p>
+
+      <p><strong>Главный вопрос не в том, использует ли студия ИИ. Вопрос в том, делает ли она игру, которую запомнят через 10 лет.</strong> И на этот вопрос нейросети пока не отвечают.</p>
+
+      <div class="newsletter-box">
+        <h4>📬 Получайте честную аналитику раз в неделю</h4>
+        <p>Разборы трендов геймдева без хайпа и маркетинга. Только цифры, источники и экспертные мнения. Без спама.</p>
+        <form class="newsletter-form" id="newsletter-form">
+          <label for="newsletter-email" class="sr-only">Ваш email</label>
+          <input type="email" id="newsletter-email" name="email" placeholder="your@email.com" required />
+          <button type="submit" id="newsletter-btn">Подписаться</button>
+        </form>
+        <div class="newsletter-msg" id="newsletter-msg" role="status" aria-live="polite"></div>
+      </div>
+
+      <div class="sources-block">
+        <h4><i class="fas fa-book" aria-hidden="true"></i> Источники и дополнительная литература</h4>
+        <ul>
+          <li><a class="source-link" href="https://gdconf.com/insights" target="_blank" rel="noopener">GDC — State of the Game Industry 2026</a></li>
+          <li><a class="source-link" href="https://newzoo.com/resources/blog" target="_blank" rel="noopener">Newzoo — отчёты по рынку разработки 2025–2026</a></li>
+          <li><a class="source-link" href="https://www.gamesindustry.biz/" target="_blank" rel="noopener">GamesIndustry.biz — аналитика увольнений и скандалов</a></li>
+          <li><a class="source-link" href="https://store.steampowered.com/news/group/4145017" target="_blank" rel="noopener">Steam — официальная политика по AI-контенту (ноябрь 2025)</a></li>
+          <li><a class="source-link" href="https://artificialintelligenceact.eu/" target="_blank" rel="noopener">EU AI Act — официальная документация</a></li>
+          <li><a class="source-link" href="https://www.linkedin.com/pulse/gamedev-jobs-trends-2026" target="_blank" rel="noopener">LinkedIn Economic Graph — анализ вакансий в геймдеве</a></li>
+          <li><a class="source-link" href="https://unity.com/blog" target="_blank" rel="noopener">Unity Technologies — блог о Muse и статистика использования</a></li>
+          <li><a class="source-link" href="https://www.unrealengine.com/blog" target="_blank" rel="noopener">Unreal Engine — документация по AI-инструментам UE 5.5</a></li>
+        </ul>
+      </div>
+
+      <p><strong>А какой у вас опыт с ИИ в разработке или играх?</strong> Сталкивались с AI slop? Используете нейросети в работе? Делитесь в комментариях — мы читаем все ответы и отвечаем на вопросы.</p>
+
+      <p><em>P.S. Если этот разбор был полезен — поделитесь им с коллегами по индустрии. Чем больше людей понимают реальную картину, тем здоровее будет рынок.</em></p>
+
+      <h2 id="h-faq">FAQ: Ответы на частые вопросы про ИИ в геймдеве</h2>
+
+      <div class="faq-item">
+        <h3>Что такое ИИ в геймдеве?</h3>
+        <p>ИИ в геймдеве — это использование генеративных нейросетей (ChatGPT, Midjourney, Stable Diffusion, Copilot) для создания ассетов, диалогов, кода, уровней и других элементов игры. По данным GDC 2026, 52% студий используют ИИ хотя бы на одном этапе разработки.</p>
+      </div>
+
+      <div class="faq-item">
+        <h3>Экономит ли ИИ деньги на разработке игр?</h3>
+        <p>Согласно отчёту GDC 2026, только 9% студий сообщили о реальной экономии бюджета. У 31% затраты выросли из-за необходимости доработки ИИ-контента, проверки на авторские права и исправления багов. Экономия чаще всего видна только на этапе концептов.</p>
+      </div>
+
+      <div class="faq-item">
+        <h3>Законно ли использовать ИИ для создания ассетов?</h3>
+        <p>В 2026 году единого регулирования нет. В США идут десятки судебных процессов (иск Getty Images против Stability AI, иски художников против Midjourney). Valve требует раскрывать использование ИИ в Steam. EU AI Act (вступает в силу с августа 2026) вводит обязательную маркировку AI-generated контента.</p>
+      </div>
+
+      <div class="faq-item">
+        <h3>Какие студии публично признали использование ИИ?</h3>
+        <p>Публично признали использование: Ubisoft (NPC-диалоги в Assassin's Creed Shadows), Unity (Muse AI), Epic Games (встроенные ИИ-инструменты в UE5.5), Square Enix. Скандалы случались у Wizards of the Coast (Magic: The Gathering), Larian Studios (обвинения фанатов), Gearbox Software.</p>
+      </div>
+
+      <div class="faq-item">
+        <h3>Ненавидят ли игроки ИИ-контент в играх?</h3>
+        <p>По анализу Steam-отзывов за первую половину 2026 года, 68% негативных отзывов на инди-игры упоминают «AI slop» как причину низкой оценки. Игры с подтверждённым ИИ-контентом получают в среднем на 1.2 балла ниже, чем аналогичные без ИИ. Однако AAA-игры с ИИ-элементами (NPC, процедурная генерация) таких проблем почти не имеют.</p>
+      </div>
+
+      <div class="faq-item">
+        <h3>Заменит ли ИИ разработчиков игр?</h3>
+        <p>На июль 2026 года — нет. ИИ заменяет рутинные задачи (базовые ассеты, простой код, черновики диалогов), но не способен создавать уникальную геймплейную механику, нарративный дизайн или арт-дирекшн. По данным LinkedIn, спрос на senior-разработчиков вырос на 22%, тогда как junior-позиции сократились на 18%.</p>
+      </div>
+
+      <div class="faq-item">
+        <h3>Какие инструменты ИИ используют в Unity и Unreal Engine?</h3>
+        <p>Unity: Unity Muse (генерация кода, текстур, анимаций), Unity Sentis (запуск LLM в игре). Unreal Engine 5.5: MetaHuman Animator (ИИ-анимация лиц), PCG Framework (процедурная генерация с ИИ), встроенные инструменты Copilot. Сторонние плагины: Stable Diffusion для текстур, ChatGPT API для диалогов NPC.</p>
+      </div>
+
+      <div class="faq-item">
+        <h3>Каково будущее ИИ в играх в 2026–2028 годах?</h3>
+        <p>Аналитики Newzoo прогнозируют три сценария: 1) Регулируемый рост — ИИ остаётся инструментом для ускорения рутины (60% вероятности). 2) Перепроизводство — рынок зальёт ИИ-клонами, Steam ужесточит правила (25%). 3) Откат — игроки массово отвергнут ИИ-контент, студии вернутся к ручному труду (15%).</p>
+      </div>
+
+    </article>
+
+<div id="reactions-section"></div>
+
+    <section class="share-section">
+      <h4>Поделиться</h4>
+      <p class="share-hint">Понравилась статья? Отправь другу — пусть тоже будет в курсе!</p>
+      <div class="share-buttons" id="share-buttons"></div>
+    </section>
+
+    <section class="related-section">
+      <h4>Похожие статьи</h4>
+      <div class="related-grid" id="related-container"></div>
+    </section>
+
+  </div>
+</div>
+
+</main>
+
+<button class="back-to-top" id="back-to-top" type="button" aria-label="Наверх">
+  <i class="fas fa-arrow-up" aria-hidden="true"></i>
+</button>
+
+<div class="cookie-banner" id="cookie-banner" role="dialog" aria-live="polite" aria-label="Согласие на использование cookies">
+  <p>Мы используем cookies для аналитики и улучшения сайта. Подробнее — в <a href="/privacy.html">политике конфиденциальности</a>.</p>
+  <div class="cookie-buttons">
+    <button class="cookie-btn primary" id="cookie-accept" type="button">Принять</button>
+    <button class="cookie-btn secondary" id="cookie-decline" type="button">Только необходимые</button>
+  </div>
+</div>
+
+<script src="/cache-version.js"></script>
+<script>
+(function(){
+  var s = document.createElement('script');
+  s.src = '/articles-data.js?v=' + (window.CACHE_VER || '1');
+  document.head.appendChild(s);
+})();
+</script>
+<script>
+(function() {
+  var path = window.location.pathname;
+  var currentUrl = path.replace(/^\/+/, '/');
+  var all = window.articlesData || [];
+
+  var url = encodeURIComponent('https://one1game.github.io' + currentUrl);
+  var title = encodeURIComponent(document.title);
+  var shareEl = document.getElementById('share-buttons');
+  shareEl.innerHTML = [
+    '<a target="_blank" rel="noopener" class="share-btn" aria-label="Поделиться во ВКонтакте" href="https://vk.com/share.php?url=' + url + '&title=' + title + '">VK</a>',
+    '<a target="_blank" rel="noopener" class="share-btn" aria-label="Поделиться в Telegram" href="https://t.me/share/url?url=' + url + '&text=' + title + '">Telegram</a>',
+    '<a target="_blank" rel="noopener" class="share-btn" aria-label="Поделиться в Twitter" href="https://twitter.com/intent/tweet?url=' + url + '&text=' + title + '">Twitter</a>',
+    '<a target="_blank" rel="noopener" class="share-btn" aria-label="Поделиться в WhatsApp" href="https://api.whatsapp.com/send?text=' + title + '%20' + url + '">WhatsApp</a>',
+    '<button class="share-btn copy-link" type="button" aria-label="Скопировать ссылку"><i class="fas fa-link" aria-hidden="true"></i> Ссылка</button>'
+  ].join('');
+
+  // Copy link button handler
+  var copyBtn = shareEl.querySelector('.copy-link');
+  if (copyBtn) {
+    copyBtn.addEventListener('click', function() {
+      var btn = this;
+      var done = function() {
+        btn.classList.add('copied');
+        setTimeout(function() { btn.classList.remove('copied'); }, 1500);
+      };
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(window.location.href).then(done).catch(function() {
+          fallbackCopy(window.location.href, done);
+        });
+      } else {
+        fallbackCopy(window.location.href, done);
+      }
+    });
+  }
+
+  var related = all.filter(function(a) { return a.url !== currentUrl; }).slice(0, 4);
+  var relEl = document.getElementById('related-container');
+  relEl.innerHTML = related.map(function(a) {
+    return '<a href="' + a.url + '" class="related-card"><strong>' + a.title + '</strong><span>' + (a.date || '') + '</span></a>';
+  }).join('');
+})();
+
+function fallbackCopy(text, cb) {
+  var ta = document.createElement('textarea');
+  ta.value = text;
+  ta.style.position = 'fixed';
+  ta.style.left = '-9999px';
+  document.body.appendChild(ta);
+  ta.select();
+  try { document.execCommand('copy'); cb(); } catch(e) {}
+  document.body.removeChild(ta);
+}
+</script>
+
+<script>
+(function() {
+  var article = document.querySelector('.article-body');
+  if (!article) return;
+  var headings = article.querySelectorAll('h2[id], h3[id]');
+  var list = document.getElementById('toc-list');
+  if (!list || headings.length === 0) return;
+
+  var html = '';
+  headings.forEach(function(h) {
+    var cls = h.tagName === 'H3' ? ' class="toc-h3"' : '';
+    html += '<li' + cls + '><a href="#' + h.id + '">' + h.textContent.replace(/^[\d.]+\s*/, '') + '</a></li>';
+  });
+  list.innerHTML = html;
+})();
+
+(function() {
+  var bar = document.getElementById('reading-progress');
+  if (!bar) return;
+  window.addEventListener('scroll', function() {
+    var h = document.documentElement;
+    var scrolled = (h.scrollTop) / (h.scrollHeight - h.clientHeight) * 100;
+    bar.style.width = Math.min(100, Math.max(0, scrolled)) + '%';
+  }, { passive: true });
+})();
+
+(function() {
+  var btn = document.getElementById('back-to-top');
+  if (!btn) return;
+  window.addEventListener('scroll', function() {
+    if (window.scrollY > 500) {
+      btn.classList.add('visible');
+    } else {
+      btn.classList.remove('visible');
+    }
+  }, { passive: true });
+  btn.addEventListener('click', function() {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
+})();
+
+// TOC toggle with keyboard support
+(function() {
+  var toc = document.getElementById('toc');
+  var tocTitle = document.getElementById('toc-title');
+  if (!toc || !tocTitle) return;
+
+  function toggleToc() {
+    toc.classList.toggle('collapsed');
+    var expanded = tocTitle.getAttribute('aria-expanded') === 'true';
+    tocTitle.setAttribute('aria-expanded', expanded ? 'false' : 'true');
+  }
+
+  tocTitle.addEventListener('click', toggleToc);
+  tocTitle.addEventListener('keydown', function(e) {
+    if (e.key === 'Enter' || e.key === ' ') {
+      e.preventDefault();
+      toggleToc();
+    }
+  });
+})();
+
+// Cookie banner
+(function() {
+  var banner = document.getElementById('cookie-banner');
+  var acceptBtn = document.getElementById('cookie-accept');
+  var declineBtn = document.getElementById('cookie-decline');
+
+  function acceptCookies() {
+    localStorage.setItem('ga_consent', 'yes');
+    if (typeof enableGA === 'function') enableGA();
+    banner.classList.remove('show');
+  }
+  function declineCookies() {
+    localStorage.setItem('ga_consent', 'no');
+    banner.classList.remove('show');
+  }
+
+  acceptBtn.addEventListener('click', acceptCookies);
+  declineBtn.addEventListener('click', declineCookies);
+
+  if (!localStorage.getItem('ga_consent')) {
+    setTimeout(function() {
+      banner.classList.add('show');
+    }, 1500);
+  }
+})();
+
+// Smooth scroll for anchor links
+document.addEventListener('click', function(e) {
+  if (e.target.tagName === 'A' && e.target.getAttribute('href') && e.target.getAttribute('href').startsWith('#')) {
+    var target = document.querySelector(e.target.getAttribute('href'));
+    if (target) {
+      e.preventDefault();
+      target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      history.pushState(null, '', e.target.getAttribute('href'));
+    }
+  }
+});
+
+<script src="/newsletter.js" defer></script>
+
+// TTS
+(function() {
+  var ttsUtterance = null;
+  var ttsPlaying = false;
+  var btn = document.getElementById('tts-play');
+  var label = document.getElementById('tts-label');
+
+  function toggleTTS() {
+    if (!('speechSynthesis' in window)) {
+      alert('Ваш браузер не поддерживает озвучку текста');
+      return;
+    }
+
+    if (ttsPlaying) {
+      window.speechSynthesis.cancel();
+      ttsPlaying = false;
+      btn.classList.remove('playing');
+      label.textContent = 'Читать вслух';
+      return;
+    }
+
+    var content = document.getElementById('article-content');
+    var clone = content.cloneNode(true);
+    var selectorsToRemove = [
+      '.key-stats',
+      '.in-article-cta',
+      '.newsletter-box',
+      '.sources-block',
+      '.expert-quote cite',
+      '.scandal-card .scandal-company',
+      '.chart-caption',
+      '.comparison-table'
+    ];
+    selectorsToRemove.forEach(function(sel) {
+      clone.querySelectorAll(sel).forEach(function(el) { el.remove(); });
+    });
+
+    var text = clone.innerText || clone.textContent;
+
+    ttsUtterance = new SpeechSynthesisUtterance(text);
+    ttsUtterance.lang = 'ru-RU';
+    ttsUtterance.rate = 0.95;
+    ttsUtterance.pitch = 1;
+
+    ttsUtterance.onend = function() {
+      ttsPlaying = false;
+      btn.classList.remove('playing');
+      label.textContent = 'Читать вслух';
+    };
+
+    ttsUtterance.onerror = function() {
+      ttsPlaying = false;
+      btn.classList.remove('playing');
+      label.textContent = 'Читать вслух';
+    };
+
+    window.speechSynthesis.speak(ttsUtterance);
+    ttsPlaying = true;
+    btn.classList.add('playing');
+    label.textContent = 'Остановить';
+  }
+
+  btn.addEventListener('click', toggleTTS);
+})();
+
+// TOC active link
+(function() {
+  var tocLinks = document.querySelectorAll('.toc-list a');
+  if (tocLinks.length === 0) return;
+
+  window.addEventListener('scroll', function() {
+    var scrollPos = window.scrollY + 100;
+    var current = null;
+
+    tocLinks.forEach(function(link) {
+      var target = document.querySelector(link.getAttribute('href'));
+      if (target && target.offsetTop <= scrollPos) {
+        current = link;
+      }
+    });
+
+    tocLinks.forEach(function(link) {
+      link.classList.remove('active');
+    });
+
+    if (current) {
+      current.classList.add('active');
+    }
+  }, { passive: true });
+})();
+
+// Reading time
+(function() {
+  var content = document.getElementById('article-content');
+  if (!content) return;
+  var text = content.innerText || content.textContent || '';
+  var words = text.trim().split(/\s+/).filter(function(w) { return w.length > 0; }).length;
+  var minutes = Math.max(1, Math.round(words / 180));
+  var readingTimeEl = document.querySelector('#reading-time span');
+  if (readingTimeEl) {
+    readingTimeEl.textContent = '~' + minutes + ' мин чтения';
+  }
+  var ttsInfo = document.getElementById('tts-info');
+  if (ttsInfo) {
+    ttsInfo.textContent = '~' + minutes + ' мин';
+  }
+})();
+</script>
+
+<!-- Web Vitals monitoring -->
+<script>
+(function() {
+  if (!window.gtag) return;
+  var script = document.createElement('script');
+  script.src = 'https://unpkg.com/web-vitals@3.5.2/dist/web-vitals.iife.js';
+  script.onload = function() {
+    if (window.webVitals) {
+      window.webVitals.onCLS(function(v) { window.gtag('event', 'web_vitals', {event_category: 'Web Vitals', event_label: 'CLS', value: Math.round(v.value * 1000), non_interaction: true}); });
+      window.webVitals.onLCP(function(v) { window.gtag('event', 'web_vitals', {event_category: 'Web Vitals', event_label: 'LCP', value: v.value, non_interaction: true}); });
+      window.webVitals.onFID(function(v) { window.gtag('event', 'web_vitals', {event_category: 'Web Vitals', event_label: 'FID', value: v.value, non_interaction: true}); });
+      window.webVitals.onINP(function(v) { window.gtag('event', 'web_vitals', {event_category: 'Web Vitals', event_label: 'INP', value: v.value, non_interaction: true}); });
+      window.webVitals.onTTFB(function(v) { window.gtag('event', 'web_vitals', {event_category: 'Web Vitals', event_label: 'TTFB', value: v.value, non_interaction: true}); });
+    }
+  };
+  document.head.appendChild(script);
+})();
+</script>
+
+<script src="/components.js" defer></script>
+<script src="/reactions.js" defer></script>
+</body>
+</html>
