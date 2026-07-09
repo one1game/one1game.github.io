@@ -196,7 +196,19 @@
     };
 
     // Try URL-prefix first, then domain-level property
-    // First list all sites to find the right one
+    // Debug: check token
+    fetch('https://www.googleapis.com/oauth2/v3/tokeninfo?access_token=' + encodeURIComponent(tok))
+    .then(function(r) { return r.json(); })
+    .then(function(info) {
+      var scopeRaw = info.scope || '';
+      if (scopeRaw.indexOf('webmasters') === -1) {
+        content.innerHTML = '<div class="stats-error">У токена нет доступа к Search Console. Scope: ' + esc(scopeRaw) + '<br>Нужно: https://www.googleapis.com/auth/webmasters.readonly</div>';
+        return;
+      }
+      fetchSites();
+    });
+
+    function fetchSites() {
     fetch('https://www.googleapis.com/webmasters/v3/sites', {
       headers: { 'Authorization': 'Bearer ' + tok }
     })
