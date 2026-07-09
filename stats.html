@@ -224,15 +224,15 @@
     .then(function(listData) {
       var siteEntries = listData.siteEntry || [];
       var msg = 'StatCode: ' + (listData.error ? 'ERR:'+listData.error.message : 'OK') + ', Sites: ' + siteEntries.length;
-      if (!siteEntries.length) {
-        content.innerHTML = '<div class="stats-error">Нет доступа ни к одному сайту. [' + msg + '] Добавьте сайт в <a href="https://search.google.com/search-console" target="_blank">Search Console</a> с этим Google-аккаунтом (igoralx9119@gmail.com).</div>';
-        return;
-      }
-      var allSites = [];
-      siteEntries.forEach(function(e) {
-        if (e.siteUrl) allSites.push(e.siteUrl);
-      });
-      trySite(0, allSites);
+       var allSites = [];
+       siteEntries.forEach(function(e) {
+         if (e.siteUrl && e.siteUrl.indexOf('one1game.github.io') !== -1) allSites.push(e.siteUrl);
+       });
+       if (!allSites.length) {
+          content.innerHTML = '<div class="stats-error">Сайт one1game.github.io не найден в Search Console. [' + msg + ']</div>';
+          return;
+        }
+        trySite(0, allSites);
     })
     .catch(function(err) {
       if (err.message === 'stop') return;
