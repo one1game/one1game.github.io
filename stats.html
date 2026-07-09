@@ -200,26 +200,31 @@
     fetch('https://www.googleapis.com/webmasters/v3/sites', {
       headers: { 'Authorization': 'Bearer ' + tok }
     })
-    .then(function(r) { return r.json(); })
+    .then(function(r) {
+      if (r.status === 401) {
+        sessionStorage.removeItem('sc_access_token');
+        updateUI(false);
+        content.innerHTML = '<div class="stats-error">Токен недействителен. Нажмите «Подключить Google» заново.</div>';
+        throw new Error('stop');
+      }
+      return r.json();
+    })
     .then(function(listData) {
       var siteEntries = listData.siteEntry || [];
+      var msg = 'StatCode: ' + (listData.error ? 'ERR:'+listData.error.message : 'OK') + ', Sites: ' + siteEntries.length;
       if (!siteEntries.length) {
-        content.innerHTML = '<div class="stats-error">Нет доступа ни к одному сайту в Search Console. Добавьте сайт в <a href="https://search.google.com/search-console" target="_blank">Search Console</a>.</div>';
+        content.innerHTML = '<div class="stats-error">Нет доступа ни к одному сайту. [' + msg + '] Добавьте сайт в <a href="https://search.google.com/search-console" target="_blank">Search Console</a> с этим Google-аккаунтом (igoralx9119@gmail.com).</div>';
         return;
       }
-
-      // Build list of site URLs from all entries
       var allSites = [];
       siteEntries.forEach(function(e) {
         if (e.siteUrl) allSites.push(e.siteUrl);
       });
-
-      // Try each available site
       trySite(0, allSites);
     })
-    .catch(function() {
-      // Fallback: try known formats
-      trySite(0, [SITE_URL, SITE_URL + '/', 'sc-domain:one1game.github.io']);
+    .catch(function(err) {
+      if (err.message === 'stop') return;
+      content.innerHTML = '<div class="stats-error">Ошибка запроса sites.list: ' + err.message + '. Проверьте, включён ли Search Console API.</div>';
     });
 
     function trySite(idx, sites) {
