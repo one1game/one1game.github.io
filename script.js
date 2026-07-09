@@ -339,7 +339,8 @@ class One1GamePlatform {
       'Гайды': 'cat-guides',
       'Консоли': 'cat-consoles',
       'Аналитика': 'cat-analytics',
-      'Тренды': 'cat-trends'
+      'Тренды': 'cat-trends',
+      'Разработка': 'cat-dev'
     };
 
     window.allArticles.forEach(a => {
@@ -356,7 +357,13 @@ class One1GamePlatform {
       'Разработка': 'fa-code'
     };
 
-    const pills = Object.entries(catCount).map(([cat, count]) => {
+    const catOrder = ['Технологии', 'Гайды', 'Консоли', 'Аналитика', 'Тренды', 'Разработка'];
+    const pills = Object.entries(catCount)
+      .sort(([a], [b]) => {
+        const ai = catOrder.indexOf(a), bi = catOrder.indexOf(b);
+        return (ai === -1 ? 99 : ai) - (bi === -1 ? 99 : bi);
+      })
+      .map(([cat, count]) => {
       const catClass = categoryMap[cat] || '';
       const icon = icons[cat] || 'fa-folder';
       const encoded = encodeURIComponent(cat);

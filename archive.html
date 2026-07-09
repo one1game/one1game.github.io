@@ -114,7 +114,12 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 function initFilters() {
-  const categories = ['all', ...new Set(allArticles.map(a => a.category))];
+  const catOrder = ['Технологии', 'Гайды', 'Консоли', 'Аналитика', 'Тренды', 'Разработка'];
+  const cats = [...new Set(allArticles.map(a => a.category))].sort((a, b) => {
+    const ai = catOrder.indexOf(a), bi = catOrder.indexOf(b);
+    return (ai === -1 ? 99 : ai) - (bi === -1 ? 99 : bi);
+  });
+  const categories = ['all', ...cats];
   const filterEl = document.getElementById('category-filter');
   filterEl.innerHTML = categories.map(c =>
     `<button class="cat-pill${c === currentCategory ? ' active' : ''}" data-category="${c}">${c === 'all' ? 'Все' : c}</button>`
