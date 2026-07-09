@@ -1079,3 +1079,25 @@ body::after{
 }
 .newsletter-msg.success { display: block; background: rgba(76, 175, 80, 0.15); color: #4caf50; }
 .newsletter-msg.error { display: block; background: rgba(244, 67, 54, 0.15); color: #f44336; }
+
+/* Comments (utterances) */
+.comments-section {
+  margin: 40px 0 20px;
+  padding-top: 30px;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+.comments-section h4 {
+  margin: 0 0 16px;
+  font-size: 17px;
+  color: var(--text-base);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.comments-section h4 i {
+  color: var(--cyan);
+}
+.comments-container {
+  max-width: 100%;
+  overflow: hidden;
+}
