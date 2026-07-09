@@ -177,10 +177,8 @@
     var tok = sessionStorage.getItem('sc_access_token');
     if (!tok) { updateUI(false); return; }
     updateUI(true);
-    document.getElementById('stats-content').innerHTML =
-      '<div class="stats-loading">Загрузка статистики...</div>';
+    content.innerHTML = '<div class="stats-loading">Загрузка статистики...</div>';
 
-    // Date range
     var endDate = new Date().toISOString().split('T')[0];
     var startDate;
     switch(currentRange) {
@@ -197,35 +195,50 @@
       startRow: 0
     };
 
-    fetch('https://www.googleapis.com/webmasters/v3/sites/' + encodeURIComponent(SITE_URL) + '/searchAnalytics/query', {
-      method: 'POST',
-      headers: {
-        'Authorization': 'Bearer ' + tok,
-        'Content-Type': 'application/json'
-      },
-      body: JSON.stringify(body)
-    })
-    .then(function(r) {
-      if (r.status === 401) {
-        sessionStorage.removeItem('sc_access_token');
-        updateUI(false);
-        throw new Error('unauthenticated');
-      }
-      return r.json();
-    })
-    .then(function(data) {
-      if (data.error) throw new Error(data.error.message);
-      renderStats(data);
-    })
-    .catch(function(err) {
-      if (err.message === 'unauthenticated') {
-        document.getElementById('stats-content').innerHTML =
-          '<div class="stats-loading">Сессия истекла. Нажмите «Подключить Google»</div>';
+    // Try URL-prefix first, then domain-level property
+    var sites = [SITE_URL, SITE_URL + '/', 'sc-domain:one1game.github.io'];
+    trySite(0);
+
+    function trySite(idx) {
+      if (idx >= sites.length) {
+        content.innerHTML = '<div class="stats-loading">Нет данных ни по одному ресурсу. Проверьте Search Console.</div>';
         return;
       }
-      document.getElementById('stats-content').innerHTML =
-        '<div class="stats-error">Ошибка загрузки: ' + err.message + '</div>';
-    });
+      var site = sites[idx];
+      fetch('https://www.googleapis.com/webmasters/v3/sites/' + encodeURIComponent(site) + '/searchAnalytics/query', {
+        method: 'POST',
+        headers: {
+          'Authorization': 'Bearer ' + tok,
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(body)
+      })
+      .then(function(r) {
+        if (r.status === 401) {
+          sessionStorage.removeItem('sc_access_token');
+          updateUI(false);
+          throw new Error('unauthenticated');
+        }
+        if (r.status === 403) return trySite(idx + 1);
+        return r.json();
+      })
+      .then(function(data) {
+        if (!data) return;
+        if (data.error) {
+          console.log('Site ' + site + ' error:', data.error.message);
+          return trySite(idx + 1);
+        }
+        if (!data.rows || !data.rows.length) return trySite(idx + 1);
+        renderStats(data);
+      })
+      .catch(function(err) {
+        if (err.message === 'unauthenticated') {
+          content.innerHTML = '<div class="stats-loading">Сессия истекла. Нажмите «Подключить Google»</div>';
+          return;
+        }
+        content.innerHTML = '<div class="stats-error">Ошибка загрузки: ' + err.message + '</div>';
+      });
+    }
   }
 
   function renderStats(data) {
