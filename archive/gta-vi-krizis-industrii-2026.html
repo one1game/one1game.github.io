@@ -340,51 +340,6 @@
     }
     .methodology-box strong { color: var(--text-base); }
 
-    /* Подписка */
-    .newsletter-box {
-      margin: 30px 0;
-      padding: 22px;
-      background: linear-gradient(135deg, rgba(0, 200, 255, 0.08), rgba(180, 80, 255, 0.08));
-      border: 1px solid rgba(0, 200, 255, 0.2);
-      border-radius: 8px;
-    }
-    .newsletter-box h4 { margin: 0 0 8px; font-size: 17px; }
-    .newsletter-box p { margin: 0 0 14px; font-size: 14px; color: var(--text-dim); }
-    .newsletter-form { display: flex; gap: 10px; flex-wrap: wrap; }
-    .newsletter-form input {
-      flex: 1;
-      min-width: 200px;
-      padding: 10px 14px;
-      background: rgba(0, 0, 0, 0.3);
-      border: 1px solid rgba(255, 255, 255, 0.15);
-      border-radius: 6px;
-      color: var(--text-base);
-      font-size: 14px;
-    }
-    .newsletter-form input:focus { outline: none; border-color: var(--cyan); }
-    .newsletter-form input.error { border-color: #f44336; }
-    .newsletter-form button {
-      padding: 10px 20px;
-      background: var(--cyan);
-      color: #000;
-      border: none;
-      border-radius: 6px;
-      font-weight: 600;
-      cursor: pointer;
-      transition: opacity 0.2s;
-    }
-    .newsletter-form button:hover { opacity: 0.85; }
-    .newsletter-form button:disabled { opacity: 0.5; cursor: not-allowed; }
-    .newsletter-msg {
-      margin-top: 10px;
-      font-size: 13px;
-      padding: 8px 12px;
-      border-radius: 4px;
-      display: none;
-    }
-    .newsletter-msg.success { display: block; background: rgba(76, 175, 80, 0.15); color: #4caf50; }
-    .newsletter-msg.error { display: block; background: rgba(244, 67, 54, 0.15); color: #f44336; }
-
     /* Cookie-баннер */
     .cookie-banner {
       position: fixed;
@@ -1131,11 +1086,11 @@
       <div class="newsletter-box">
         <h4>📬 Получайте такие разборы раз в неделю</h4>
         <p>Аналитика индустрии, редкие цифры и мнения, о которых не пишут в крупных СМИ. Без спама — только по делу.</p>
-        <form class="newsletter-form" id="newsletter-form" onsubmit="return handleNewsletter(event)">
-          <input type="email" id="newsletter-email" placeholder="your@email.com" required aria-label="Ваш email" />
-          <button type="submit" id="newsletter-btn">Подписаться</button>
+        <form class="newsletter-form">
+          <input type="email" placeholder="your@email.com" required aria-label="Ваш email" />
+          <button type="submit">Подписаться</button>
         </form>
-        <div class="newsletter-msg" id="newsletter-msg"></div>
+        <div class="newsletter-msg"></div>
       </div>
 
       <div class="sources-block">
@@ -1365,43 +1320,6 @@ document.addEventListener('click', function(e) {
   }
 });
 
-// Newsletter form
-function handleNewsletter(event) {
-  event.preventDefault();
-  var email = document.getElementById('newsletter-email');
-  var btn = document.getElementById('newsletter-btn');
-  var msg = document.getElementById('newsletter-msg');
-  
-  // Basic validation
-  var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-  if (!emailRegex.test(email.value)) {
-    email.classList.add('error');
-    msg.className = 'newsletter-msg error';
-    msg.textContent = 'Пожалуйста, введите корректный email';
-    return false;
-  }
-  
-  // Simulate submission
-  btn.disabled = true;
-  btn.textContent = 'Отправка...';
-  
-  setTimeout(function() {
-    email.classList.remove('error');
-    msg.className = 'newsletter-msg success';
-    msg.textContent = '✓ Спасибо! Проверьте почту для подтверждения подписки.';
-    btn.textContent = 'Подписаться';
-    btn.disabled = false;
-    email.value = '';
-    
-    // Hide message after 5 seconds
-    setTimeout(function() {
-      msg.className = 'newsletter-msg';
-    }, 5000);
-  }, 1000);
-  
-  return false;
-}
-
 // Text-to-Speech
 var ttsUtterance = null;
 var ttsPlaying = false;
@@ -1477,5 +1395,6 @@ function toggleTTS() {
 </script>
 <script src="/components.js" defer></script>
 <script src="/reactions.js" defer></script>
+<script src="/newsletter.js" defer></script>
 </body>
 </html>
