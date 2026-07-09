@@ -337,20 +337,33 @@
 
     fetchSites()
         .then(function(result) {
-          return trySites(result.matched, result.all, startDate, endDate, 0, []);
+          return trySites(result.matched, startDate, endDate, 0, [])
+            .then(function(analyticsResult) {
+              return { analytics: analyticsResult, allSites: result.all, matched: result.matched };
+            });
         })
-        .then(function(analyticsResult) {
-          if (!analyticsResult) {
-            showError(
-              'Не удалось получить данные ни по одному ресурсу Search Console.<br><br>' +
-              'Возможные причины:<br>' +
-              '1. Ваш Google-аккаунт не добавлен как владелец сайта в <a href="https://search.google.com/search-console" target="_blank" style="color:var(--cyan)">Search Console</a><br>' +
-              '2. У сайта ещё нет поисковых данных (не проиндексирован)<br>' +
-              '3. Выбранный период не содержит данных'
-            );
+        .then(function(pack) {
+          if (pack.analytics) {
+            renderStats(pack.analytics.data, pack.analytics.siteUrl);
             return;
           }
-          renderStats(analyticsResult.data, analyticsResult.siteUrl);
+
+          // Ни один сайт не вернул данные — показываем детальную диагностику
+          var html = 'Не удалось получить данные ни по одному ресурсу Search Console.<br><br>';
+
+          html += '<b>Сайты в Search Console (' + pack.allSites.length + '):</b><br>';
+          pack.allSites.forEach(function(u) {
+            html += '<code>' + esc(u) + '</code><br>';
+          });
+
+          html += '<br><b>Совпадений с one1game.github.io: ' + pack.matched.length + '</b><br>';
+
+          html += '<br><b>Возможные причины:</b><br>';
+          html += '1. Ваш Google-аккаунт не добавлен как владелец сайта в <a href="https://search.google.com/search-console" target="_blank" style="color:var(--cyan)">Search Console</a><br>';
+          html += '2. У сайта ещё нет поисковых данных (не проиндексирован)<br>';
+          html += '3. Выбранный период не содержит данных';
+
+          showError(html);
         })
       .catch(function(err) {
         if (err.message === 'unauthenticated') return;
@@ -358,20 +371,8 @@
       });
   }
 
-  function trySites(sites, allSites, startDate, endDate, idx, failures) {
+  function trySites(sites, startDate, endDate, idx, failures) {
     if (idx >= sites.length) {
-      if (failures.length) {
-        var parts = failures.map(function(f) {
-          return '<b>' + esc(f.site) + '</b>: ' + esc(f.reason);
-        });
-        showError(
-          'Не удалось получить данные. Совпадений: ' + sites.length + ' из ' + allSites.length + ' сайтов в аккаунте.<br><br>' +
-          parts.join('<br>') + '<br><br>' +
-          'Все сайты в Search Console:<br>' +
-          allSites.map(function(u) { return '<code>' + esc(u) + '</code>'; }).join('<br>') + '<br><br>' +
-          'Убедитесь, что аккаунт добавлен как владелец в <a href="https://search.google.com/search-console" target="_blank" style="color:var(--cyan)">Search Console</a>'
-        );
-      }
       return Promise.resolve(null);
     }
 
@@ -381,7 +382,7 @@
           return { data: data, siteUrl: sites[idx] };
         }
         failures.push({ site: sites[idx], reason: 'Нет данных (rows пуст)' });
-        return trySites(sites, allSites, startDate, endDate, idx + 1, failures);
+        return trySites(sites, startDate, endDate, idx + 1, failures);
       })
       .catch(function(err) {
         if (err.message === 'unauthenticated') throw err;
@@ -390,7 +391,7 @@
         } else {
           failures.push({ site: sites[idx], reason: err.message });
         }
-        return trySites(sites, allSites, startDate, endDate, idx + 1, failures);
+        return trySites(sites, startDate, endDate, idx + 1, failures);
       });
   }
 
