@@ -246,6 +246,8 @@
    *  API: SEARCH CONSOLE
    * =================================================== */
 
+  var apiLastStatus = 0;
+
   function api(path, opts) {
     opts = opts || {};
     var headers = {
@@ -259,11 +261,15 @@
       headers: headers,
       body: opts.body ? JSON.stringify(opts.body) : undefined
     }).then(function(r) {
+      apiLastStatus = r.status;
       if (r.status === 401) {
         setToken(null);
         updateUI(false);
         showError('Токен истёк. Нажмите «Подключить Google» заново.');
         throw new Error('unauthenticated');
+      }
+      if (r.status === 403) {
+        throw new Error('forbidden');
       }
       return r.json().then(function(data) {
         if (data.error) throw new Error(data.error.message || 'Ошибка API');
@@ -326,15 +332,19 @@
     var days = currentRange === '7d' ? 7 : currentRange === '90d' ? 90 : 30;
     var startDate = new Date(Date.now() - days * 86400000).toISOString().split('T')[0];
 
-    // 1. Получаем список сайтов
     fetchSites()
       .then(function(sites) {
-        // 2. Пробуем каждый совпавший сайт
-        return trySites(sites, startDate, endDate, 0);
+        return trySites(sites, startDate, endDate, 0, []);
       })
       .then(function(result) {
         if (!result) {
-          showError('Нет данных ни по одному из ресурсов Search Console.');
+          showError(
+            'Не удалось получить данные ни по одному ресурсу Search Console.<br><br>' +
+            'Возможные причины:<br>' +
+            '1. Ваш Google-аккаунт не добавлен как владелец сайта в <a href="https://search.google.com/search-console" target="_blank" style="color:var(--cyan)">Search Console</a><br>' +
+            '2. У сайта ещё нет поисковых данных (не проиндексирован)<br>' +
+            '3. Выбранный период не содержит данных'
+          );
           return;
         }
         renderStats(result.data, result.siteUrl);
@@ -345,20 +355,39 @@
       });
   }
 
-  function trySites(sites, startDate, endDate, idx) {
-    if (idx >= sites.length) return Promise.resolve(null);
+  function trySites(sites, startDate, endDate, idx, failures) {
+    if (idx >= sites.length) {
+      // Все сайты перебраны — собираем диагностику
+      if (failures.length) {
+        var parts = failures.map(function(f) {
+          return '<b>' + esc(f.site) + '</b>: ' + esc(f.reason);
+        });
+        var detail = parts.join('<br>') + '<br><br>';
+        showError(
+          'Не удалось получить данные. Проверено сайтов: ' + sites.length + '.<br><br>' +
+          detail +
+          'Убедитесь, что аккаунт добавлен как владелец в <a href="https://search.google.com/search-console" target="_blank" style="color:var(--cyan)">Search Console</a>'
+        );
+      }
+      return Promise.resolve(null);
+    }
 
     return fetchAnalytics(sites[idx], startDate, endDate)
       .then(function(data) {
         if (data.rows && data.rows.length) {
           return { data: data, siteUrl: sites[idx] };
         }
-        return trySites(sites, startDate, endDate, idx + 1);
+        failures.push({ site: sites[idx], reason: 'Нет данных (rows пуст)' });
+        return trySites(sites, startDate, endDate, idx + 1, failures);
       })
       .catch(function(err) {
         if (err.message === 'unauthenticated') throw err;
-        // 403 — нет прав на этот ресурс, пробуем следующий
-        return trySites(sites, startDate, endDate, idx + 1);
+        if (err.message === 'forbidden') {
+          failures.push({ site: sites[idx], reason: 'HTTP 403 — нет доступа к этому ресурсу' });
+        } else {
+          failures.push({ site: sites[idx], reason: err.message });
+        }
+        return trySites(sites, startDate, endDate, idx + 1, failures);
       });
   }
 
