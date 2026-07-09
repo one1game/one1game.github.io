@@ -62,8 +62,50 @@
   }
   </script>
 
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Какой ИИ-переводчик лучше всего подходит для игр в 2026 году?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Лучшим выбором остаётся комбинация DeepL для текстовых диалогов и локального RVC-модуля для озвучки. Обе технологии дают качество, близкое к официальной локализации, без задержек облачных сервисов."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Насколько безопасно использовать AI-переводчики для игр?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "При использовании локальных моделей (не облачных) данные не покидают ваш компьютер. Главное правило — скачивать инструменты только из официальных репозиториев и проверять SHA-256 хеши."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Забанят ли меня за использование AI-переводчика в онлайн-играх?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "В 2026 году оверлейные переводчики с локальным OCR работают на уровне скриншота и не вмешиваются в память игры. Valve, Riot и другие студии официально заявили, что такие инструменты не нарушают правила, если не модифицируют игровые файлы."
+        }
+      }
+    ]
+  }
+  </script>
+
   <link rel="manifest" href="/manifest.json" />
   <link rel="stylesheet" href="/reactions.css" />
+<style>
+  .article-header { margin-bottom: 30px; }
+  .article-meta { color: #888; font-size: 14px; }
+  .article-body p { line-height: 1.8; margin-bottom: 20px; }
+  .breadcrumbs { margin-bottom: 18px; font-size: 13px; color: var(--text-faint); }
+  .breadcrumbs a { color: var(--cyan); text-decoration: none; }
+  .breadcrumbs a:hover { text-decoration: underline; }
+  .breadcrumbs span { color: var(--text-dim); }
+</style>
 </head>
 <body>
 <main id="main-content">
@@ -73,6 +115,12 @@
     <a href="/archive.html" class="article-back">
       <i class="fas fa-arrow-left"></i> К списку статей
     </a>
+
+<nav class="breadcrumbs">
+  <a href="/">Главная</a> →
+  <a href="/archive.html">Статьи</a> →
+  <span>AI-переводчики для игр 2026</span>
+</nav>
 
     <div class="article-header">
       <span class="article-category cat-guides">Гайды</span>

@@ -63,6 +63,15 @@
 
   <link rel="manifest" href="/manifest.json" />
   <link rel="stylesheet" href="/reactions.css" />
+<style>
+  .article-header { margin-bottom: 30px; }
+  .article-meta { color: #888; font-size: 14px; }
+  .article-body p { line-height: 1.8; margin-bottom: 20px; }
+  .breadcrumbs { margin-bottom: 18px; font-size: 13px; color: var(--text-faint); }
+  .breadcrumbs a { color: var(--cyan); text-decoration: none; }
+  .breadcrumbs a:hover { text-decoration: underline; }
+  .breadcrumbs span { color: var(--text-dim); }
+</style>
 </head>
 <body>
 <main id="main-content">
@@ -72,6 +81,12 @@
     <a href="/archive.html" class="article-back">
       <i class="fas fa-arrow-left"></i> К списку статей
     </a>
+
+<nav class="breadcrumbs">
+  <a href="/">Главная</a> →
+  <a href="/archive.html">Статьи</a> →
+  <span>RTX 5090 vs RX 9070 XT</span>
+</nav>
 
     <div class="article-header">
       <span class="article-category cat-tech">Технологии</span>
@@ -92,7 +107,8 @@
 
       <h2>ТТХ в таблице: Смотрим на бумаге</h2>
 
-      <table class="article-table">
+      <table class="article-table" itemscope itemtype="https://schema.org/Table">
+  <caption itemprop="name">Сравнение RTX 5090 и RX 9070 XT</caption>
         <thead>
           <tr><th>Параметр</th><th>RTX 5090</th><th>RX 9070 XT</th></tr>
         </thead>

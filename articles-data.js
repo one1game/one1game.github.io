@@ -1,6 +1,14 @@
 // articles-data.js
 window.allArticles = [
   {
+    "url": "/archive/blood-of-dawnwalker-gajd-bildy-2026.html",
+    "title": "The Blood of Dawnwalker: гайд по лучшим билдам и скрытым механикам в 2026 году",
+    "excerpt": "Топ-3 рабочих билда, секрет легендарного оружия и разбор механики Кровавого экстаза. Основано на 60 часах личного прохождения...",
+    "date": "9 июля 2026",
+    "readTime": "8 мин",
+    "category": "Гайды"
+  },
+  {
     "url": "/archive/windows-11-july-2026-update-podgotovka.html",
     "title": "Windows 11 July 2026 Update: Как подготовиться и избежать проблем (полный гайд)",
     "excerpt": "14 июля 2026 выходит крупное обновление Windows 11 с Point-in-Time Restore и Unlimited Pause. Чек-лист из 7 шагов, разбор проблем 2026 года, инструкции по откату...",
