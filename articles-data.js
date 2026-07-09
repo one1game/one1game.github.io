@@ -1,6 +1,14 @@
 // articles-data.js
 window.allArticles = [
   {
+    "url": "/archive/monetizaciya-yandex-igry-2026-rukovodstvo.html",
+    "title": "Монетизация в Яндекс Играх 2026: полное руководство с цифрами и кейсами",
+    "excerpt": "Реальные цифры eCPM, рабочие стратегии для гиперказуалок и mid-core, разбор ошибок и кейсы с доходом от $500 до $15,000 в месяц...",
+    "date": "9 июля 2026",
+    "readTime": "12 мин",
+    "category": "Гайды"
+  },
+  {
     "url": "/archive/blood-of-dawnwalker-gajd-bildy-2026.html",
     "title": "The Blood of Dawnwalker: гайд по лучшим билдам и скрытым механикам в 2026 году",
     "excerpt": "Топ-3 рабочих билда, секрет легендарного оружия и разбор механики Кровавого экстаза. Основано на 60 часах личного прохождения...",
