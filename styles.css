@@ -464,16 +464,6 @@ body::after{
 .cat-opinion{background:rgba(255,171,64,0.08);color:#ffab40;border:1px solid rgba(255,171,64,0.2)}
 .cat-reviews{background:rgba(46,255,178,0.08);color:#2effb2;border:1px solid rgba(46,255,178,0.2)}
 
-.editor-verdict {
-  margin-top: 24px;
-  padding: 20px 22px;
-  background: rgba(46,255,178,0.04);
-  border-left: 3px solid #2effb2;
-  border-radius: 0 10px 10px 0;
-}
-.editor-verdict h3 { color: #2effb2; margin-top: 0; margin-bottom: 12px; }
-.editor-verdict p { color: #ccc; line-height: 1.7; }
-
 .article-card h3{
   font-size:1.18rem;font-weight:700;line-height:1.4;
   color:#fff;margin-bottom:10px;transition:color 0.3s;
