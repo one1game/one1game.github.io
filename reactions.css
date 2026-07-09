@@ -1,0 +1,89 @@
+/* =============================================
+   REACTIONS — One1Game × Supabase
+   ============================================= */
+.reactions-section {
+  max-width: 780px;
+  margin: 48px auto 0;
+  padding-top: 32px;
+  border-top: 1px solid var(--border);
+  text-align: center;
+}
+
+.reactions-section h3 {
+  font-size: 1.15rem;
+  font-weight: 600;
+  color: var(--text-dim);
+  margin-bottom: 16px;
+}
+
+.reactions-row {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.reaction-btn {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 16px;
+  font-size: 1.2rem;
+  background: rgba(255,255,255,0.03);
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  cursor: pointer;
+  transition: all 0.2s;
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+.reaction-btn:hover {
+  background: rgba(255,255,255,0.06);
+  border-color: var(--border-active);
+  transform: translateY(-2px);
+}
+
+.reaction-btn:active {
+  transform: scale(0.95);
+}
+
+.reaction-btn .count {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--text-dim);
+  min-width: 16px;
+  text-align: center;
+}
+
+.reaction-btn.active {
+  background: rgba(0,229,255,0.1);
+  border-color: var(--cyan);
+}
+
+.reaction-btn.active .count {
+  color: var(--cyan);
+}
+
+.reactions-loading {
+  color: var(--text-faint);
+  font-size: 0.85rem;
+  padding: 16px 0;
+}
+
+.reactions-error {
+  color: var(--magenta);
+  font-size: 0.8rem;
+  padding: 8px 0;
+}
+
+/* ── Responsive ─────────────────────────── */
+@media (max-width: 480px) {
+  .reactions-row {
+    gap: 6px;
+  }
+  .reaction-btn {
+    padding: 6px 12px;
+    font-size: 1.1rem;
+  }
+}
