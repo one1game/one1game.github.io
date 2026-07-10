@@ -115,7 +115,7 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 function initFilters() {
-  const catOrder = ['Технологии', 'Гайды', 'Консоли', 'Аналитика', 'Тренды', 'Разработка', 'Мнение'];
+  const catOrder = ['Технологии', 'Гайды', 'Консоли', 'Аналитика', 'Тренды', 'Разработка', 'Мнение', 'Во что поиграть?'];
   const cats = [...new Set(allArticles.map(a => a.category))].sort((a, b) => {
     const ai = catOrder.indexOf(a), bi = catOrder.indexOf(b);
     return (ai === -1 ? 99 : ai) - (bi === -1 ? 99 : bi);
@@ -152,6 +152,9 @@ function filterAndDisplay() {
 
   if (currentCategory !== 'all') {
     filtered = filtered.filter(a => a.category === currentCategory);
+  } else {
+    // В «Все» не показываем игры — они в отдельном разделе
+    filtered = filtered.filter(a => a.category !== 'Во что поиграть?');
   }
   if (query) {
     filtered = filtered.filter(a =>
@@ -167,7 +170,8 @@ function filterAndDisplay() {
 
   const categoryMap = {
     'Технологии': 'cat-tech', 'Гайды': 'cat-guides', 'Консоли': 'cat-consoles',
-    'Аналитика': 'cat-analytics', 'Тренды': 'cat-trends', 'Разработка': 'cat-dev', 'Мнение': 'cat-opinion'
+    'Аналитика': 'cat-analytics', 'Тренды': 'cat-trends', 'Разработка': 'cat-dev', 'Мнение': 'cat-opinion',
+    'Во что поиграть?': 'cat-play'
   };
 
   const container = document.getElementById('articles-list');

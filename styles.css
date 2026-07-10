@@ -324,9 +324,9 @@ body::after{
 .categories-row .cat-opinion{background:rgba(255,171,64,0.05);color:#ffab40;border-color:rgba(255,171,64,0.2)}
 .categories-row .cat-opinion:hover{background:rgba(255,171,64,0.12);border-color:#ffab40;box-shadow:0 0 16px rgba(255,171,64,0.15)}
 .categories-row .cat-opinion .cat-count{background:rgba(255,171,64,0.12);color:#ffab40}
-.categories-row .cat-reviews{background:rgba(46,255,178,0.05);color:#2effb2;border-color:rgba(46,255,178,0.2)}
-.categories-row .cat-reviews:hover{background:rgba(46,255,178,0.12);border-color:#2effb2;box-shadow:0 0 16px rgba(46,255,178,0.15)}
-.categories-row .cat-reviews .cat-count{background:rgba(46,255,178,0.12);color:#2effb2}
+.categories-row .cat-play{background:rgba(46,255,178,0.05);color:#2effb2;border-color:rgba(46,255,178,0.2)}
+.categories-row .cat-play:hover{background:rgba(46,255,178,0.12);border-color:#2effb2;box-shadow:0 0 16px rgba(46,255,178,0.15)}
+.categories-row .cat-play .cat-count{background:rgba(46,255,178,0.12);color:#2effb2}
 
 /* =============================================
    SECTION HEADERS
@@ -462,7 +462,7 @@ body::after{
 .cat-trends{background:rgba(179,107,255,0.08);color:var(--purple);border:1px solid rgba(179,107,255,0.2)}
 .cat-dev{background:rgba(255,110,64,0.08);color:var(--coral);border:1px solid rgba(255,110,64,0.2)}
 .cat-opinion{background:rgba(255,171,64,0.08);color:#ffab40;border:1px solid rgba(255,171,64,0.2)}
-.cat-reviews{background:rgba(46,255,178,0.08);color:#2effb2;border:1px solid rgba(46,255,178,0.2)}
+.cat-play{background:rgba(46,255,178,0.08);color:#2effb2;border:1px solid rgba(46,255,178,0.2)}
 
 .article-card h3{
   font-size:1.18rem;font-weight:700;line-height:1.4;

@@ -22,7 +22,7 @@ const CONFIG = {
   language: "russian",
   countryCode: "ru",
   categoryLabel: "Обзоры",
-  categoryClass: "cat-reviews",
+  categoryClass: "cat-play",
   gtagId: "G-SZYYDYEC6T",
   articlesDataPath: process.env.ARTICLES_DATA_PATH || "articles-data.js",
 };
