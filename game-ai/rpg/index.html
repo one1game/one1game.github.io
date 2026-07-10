@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<title>CHAOS REALM ∞ - Бесконечный Мемный Безумный Мир</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div id="loading">
+  <div class="loader"></div>
+  <p>ЗАГРУЗКА ХАОСА...</p>
+  <div class="status" id="loadStatus">Подключение к мультивселенной...</div>
+</div>
+
+<div id="intro" style="display:none;">
+  <h1>CHAOS REALM ∞</h1>
+  <p>Бесконечный мемный мир, где реальность сломалась.<br>
+  Исследуй процедурно-генерируемые биомы, сражайся с существами из API,<br>
+  собирай безумный лут, крафти абсурдное оружие и не теряй рассудок.<br><br>
+  ⚠️ ВНИМАНИЕ: Мир меняется. Иногда ломается. Всегда непредсказуем.</p>
+  <button class="btn" onclick="startGame()">ВОЙТИ В ХАОС</button>
+</div>
+
+<div id="game" style="display:none;">
+  <canvas id="bgCanvas"></canvas>
+  <canvas id="mainCanvas"></canvas>
+  <canvas id="fxCanvas"></canvas>
+  
+  <div id="ui">
+    <div id="topHud" class="hud">
+      <div class="panel">
+        <div style="font-size:12px; color:#ffaa00;">⚔️ ГЕРОЙ <span id="pClass">Хаосит</span> ур. <span id="pLvl">1</span></div>
+        <div class="bar hp"><div class="bar-fill" id="hpFill" style="width:100%"></div><div class="bar-text" id="hpText">100/100</div></div>
+        <div class="bar mp"><div class="bar-fill" id="mpFill" style="width:100%"></div><div class="bar-text" id="mpText">50/50</div></div>
+        <div class="bar xp"><div class="bar-fill" id="xpFill" style="width:0%"></div><div class="bar-text" id="xpText">0/100 XP</div></div>
+        <div class="bar sanity"><div class="bar-fill" id="sanFill" style="width:100%"></div><div class="bar-text" id="sanText">🧠 100%</div></div>
+        <div id="stats">
+          <div>💪 СИЛ: <span id="sStr">10</span></div>
+          <div>🏃 ЛОВ: <span id="sAgi">10</span></div>
+          <div>🧠 ИНТ: <span id="sInt">10</span></div>
+          <div>💰 <span id="sGold">0</span></div>
+          <div>💀 УБИТО: <span id="sKills">0</span></div>
+          <div>📍 <span id="sCoords">0,0</span></div>
+        </div>
+      </div>
+      <div class="panel" id="rightHud">
+        <div style="font-size:12px; color:#ffaa00; margin-bottom:4px;">📜 СОБЫТИЯ</div>
+        <div id="eventLog"></div>
+      </div>
+    </div>
+    
+    <div id="bossBar" class="hud">
+      <div id="bossName">БОСС</div>
+      <div class="bar hp"><div class="bar-fill" id="bossHpFill" style="width:100%"></div><div class="bar-text" id="bossHpText"></div></div>
+    </div>
+    
+    <div id="bottomHud" class="hud">
+      <div class="ability" data-ability="0"><span class="key">ЛКМ</span><span>⚔️</span><span class="name">Атака</span></div>
+      <div class="ability" data-ability="1"><span class="key">1</span><span>🔥</span><span class="name">Огонь</span></div>
+      <div class="ability" data-ability="2"><span class="key">2</span><span>❄️</span><span class="name">Лёд</span></div>
+      <div class="ability" data-ability="3"><span class="key">3</span><span>⚡</span><span class="name">Молния</span></div>
+      <div class="ability" data-ability="4"><span class="key">4</span><span>💚</span><span class="name">Хил</span></div>
+      <div class="ability" data-ability="5"><span class="key">5</span><span>🌀</span><span class="name">Ульта</span></div>
+      <div class="ability" data-ability="6"><span class="key">E</span><span>🎒</span><span class="name">Инв</span></div>
+      <div class="ability" data-ability="7"><span class="key">Q</span><span>💨</span><span class="name">Рывок</span></div>
+    </div>
+    
+    <div id="minimap" class="hud"><canvas id="mmCanvas"></canvas></div>
+    
+    <div id="controls">
+      <b>WASD</b> движение · <b>ЛКМ</b> атака · <b>1-5</b> магия · <b>E</b> инвентарь · <b>Q</b> рывок · <b>SHIFT</b> бег · <b>F</b> взаимодействие
+    </div>
+    
+    <div id="damageNumbers"></div>
+    <div id="achievement"><div class="title">🏆 ДОСТИЖЕНИЕ</div><div class="name" id="achName"></div></div>
+  </div>
+  
+  <div id="modal"><div class="modal-box" id="modalBox"></div></div>
+</div>
+
+<script src="js/core.js"></script>
+<script src="js/world.js"></script>
+<script src="js/entities.js"></script>
+<script src="js/audio.js"></script>
+<script src="js/player.js"></script>
+<script src="js/render.js"></script>
+<script src="js/ui.js"></script>
+<script src="js/api.js"></script>
+</body>
+</html>
