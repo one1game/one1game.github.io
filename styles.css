@@ -450,6 +450,16 @@ body::after{
 .article-card:hover::after{opacity:1}
 .article-card:hover h3{color:var(--cyan)}
 
+.card-image{
+  width:100%;height:180px;overflow:hidden;
+  border-radius:8px;margin-bottom:16px;
+}
+.card-image img{
+  width:100%;height:100%;object-fit:cover;
+  transition:transform 0.5s var(--ease-out);
+}
+.article-card:hover .card-image img{transform:scale(1.05)}
+
 .card-category{
   display:inline-block;padding:4px 12px;border-radius:4px;
   font-size:0.7rem;font-weight:750;text-transform:uppercase;

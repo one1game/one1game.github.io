@@ -186,6 +186,7 @@ function filterAndDisplay() {
     const isFirst = (currentPage === 1 && allArticles.indexOf(a) === 0);
     return `
     <a href="${a.url}" class="article-card${isFirst ? ' featured' : ''}">
+      ${a.image ? `<div class="card-image"><img src="${a.image}" alt="${a.title}" loading="lazy" width="1344" height="768"></div>` : ''}
       ${a.category ? `<span class="card-category ${catClass}">${a.category}</span>` : ''}
       <h3>${a.title}</h3>
       <p class="card-excerpt">${a.excerpt || ''}</p>
