@@ -11,14 +11,14 @@
   <link rel="preload" href="../styles.css" as="style" />
 
   <!-- SEO: Title с высокочастотными ключами -->
-  <title>Our Wonderland — обзор, цена, отзывы, визуальная новелла | One1Game</title>
+  <title>Our Wonderland в Steam: честный обзор, реальные цены и отзывы игроков | One1Game</title>
 
   <!-- SEO: Description с CTA и ключами -->
   <meta name="description" content="Our Wonderland: полный обзор, цена в Steam, отзывы и статистика игроков. Хоррор-фэнтези визуальная новелла о друзьях, попавших в исполняющий желания мир их юности. Выживут ли они?" />
   <meta name="keywords" content="Our Wonderland, скачать Our Wonderland, цена, отзывы, визуальная новелла, хоррор, фэнтези, Carrot, Project Ensō, Steam, бесплатно" />
   <meta name="author" content="Команда One1Game" />
 
-  <meta property="og:title" content="Our Wonderland — обзор, цена, отзывы, визуальная новелла" />
+  <meta property="og:title" content="Our Wonderland в Steam: честный обзор, реальные цены и отзывы игроков" />
   <meta property="og:description" content="Полный обзор Our Wonderland: бесплатная хоррор-фэнтези визуальная новелла от Carrot. Цена, отзывы и статистика игроков. Обновлено в июле 2026." />
   <meta property="og:type" content="article" />
   <meta property="og:url" content="https://one1game.github.io/archive/our-wonderland-4329100.html" />
@@ -34,7 +34,7 @@
   <meta property="article:tag" content="визуальная новелла" />
 
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Our Wonderland — обзор, цена, отзывы, визуальная новелла" />
+  <meta name="twitter:title" content="Our Wonderland в Steam: честный обзор, реальные цены и отзывы игроков" />
   <meta name="twitter:description" content="Бесплатная хоррор-фэнтези визуальная новелла: цена, отзывы и статистика игроков." />
   <meta name="twitter:image" content="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4329100/eed5116d379fdde4541137fbbc7fb699be13b0a4/header.jpg?t=1783617355" />
 
@@ -76,7 +76,7 @@
   {
     "@context": "https://schema.org",
     "@type": "Article",
-    "headline": "Our Wonderland — обзор, цена, отзывы, визуальная новелла",
+    "headline": "Our Wonderland в Steam: честный обзор, реальные цены и отзывы игроков",
     "description": "Полный обзор Our Wonderland: цена, дата выхода, отзывы и статистика игроков. Хоррор-фэнтези визуальная новелла.",
     "datePublished": "2026-07-09T10:00:00+03:00",
     "dateModified": "2026-07-10T09:00:00+03:00",
@@ -247,7 +247,7 @@
 
     <div class="article-header">
       <span class="article-category cat-play">Во что поиграть?</span>
-      <h1>Our Wonderland: обзор, цена, отзывы и статистика игроков</h1>
+      <h1>Our Wonderland в Steam: честный обзор, реальные цены и отзывы игроков</h1>
       <div class="article-meta">
         <span><i class="far fa-calendar"></i> Опубликовано: 9 июля 2026</span>
         <span><i class="fas fa-sync-alt"></i> Обновлено: <!-- STAT:UPDATED -->10 июля 2026<!-- /STAT:UPDATED --></span>
@@ -445,7 +445,7 @@
   ].join('');
 
   var current = all.find(function(a){ return a.url === currentUrl; });
-  var related = all.filter(function(a) { return a.url !== currentUrl; });
+  var related = all.filter(function(a) { return a.url !== currentUrl && a.category === 'Во что поиграть?'; });
   if (current && current.tags) {
     related.sort(function(a, b) {
       var aScore = (a.tags || []).filter(function(t){ return current.tags.indexOf(t) !== -1; }).length;

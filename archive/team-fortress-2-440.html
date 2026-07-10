@@ -11,14 +11,14 @@
   <link rel="preload" href="../styles.css" as="style" />
 
   <!-- SEO: Title с высокочастотными ключами -->
-  <title>Team Fortress 2 — обзор, цена, отзывы и статистика игроков 2026 | One1Game</title>
+  <title>Team Fortress 2 в Steam: честный обзор, реальные цены и отзывы игроков | One1Game</title>
 
   <!-- SEO: Description с CTA и ключами -->
   <meta name="description" content="Team Fortress 2: полный обзор культового командного шутера от Valve. 9 классов, шляпы, Free-to-Play. Актуальная цена, системные требования, отзывы и статистика игроков." />
   <meta name="keywords" content="Team Fortress 2, TF2, Team Fortress 2 обзор, TF2 цена, TF2 классы, TF2 шляпы, Valve, Steam, шутер, Free-to-Play, Манн против Машин" />
   <meta name="author" content="Команда One1Game" />
 
-  <meta property="og:title" content="Team Fortress 2 — обзор, цена, отзывы и статистика игроков 2026 | One1Game" />
+  <meta property="og:title" content="Team Fortress 2 в Steam: честный обзор, реальные цены и отзывы игроков" />
   <meta property="og:description" content="Полный обзор Team Fortress 2: 9 классов, экономика шляп, MvM-режим и бесконечные обновления. Цена, системные требования и отзывы." />
   <meta property="og:type" content="article" />
   <meta property="og:url" content="https://one1game.github.io/archive/team-fortress-2-440.html" />
@@ -34,7 +34,7 @@
   <meta property="article:tag" content="Мультиплеер" />
 
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Team Fortress 2 — обзор, цена, отзывы и статистика игроков 2026" />
+  <meta name="twitter:title" content="Team Fortress 2 в Steam: честный обзор, реальные цены и отзывы игроков" />
   <meta name="twitter:description" content="Культовый командный шутер Valve: 9 классов, шляпы и экономика предметов. Цена, системные требования, отзывы." />
   <meta name="twitter:image" content="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/440/header.jpg?t=1757348372" />
   <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large" />
@@ -75,7 +75,7 @@
   {
     "@context": "https://schema.org",
     "@type": "Article",
-    "headline": "Team Fortress 2 — обзор, цена, отзывы и статистика игроков 2026 | One1Game",
+    "headline": "Team Fortress 2 в Steam: честный обзор, реальные цены и отзывы игроков",
     "datePublished": "2026-07-09",
     "dateModified": "2026-07-10",
     "author": {"@type": "Person", "name": "Команда One1Game"},
@@ -244,7 +244,7 @@
 
     <div class="article-header">
       <span class="article-category cat-play">Во что поиграть?</span>
-      <h1>Team Fortress 2: обзор, цена, отзывы и статистика игроков</h1>
+      <h1>Team Fortress 2 в Steam: честный обзор, реальные цены и отзывы игроков</h1>
       <div class="article-meta">
         <span><i class="far fa-calendar"></i> 9 июля 2026</span>
         <span><i class="far fa-clock"></i> 7 минут чтения</span>
@@ -483,7 +483,7 @@
   ].join('');
 
   var current = all.find(function(a){ return a.url === currentUrl; });
-  var related = all.filter(function(a) { return a.url !== currentUrl; });
+  var related = all.filter(function(a) { return a.url !== currentUrl && a.category === 'Во что поиграть?'; });
   if (current && current.tags) {
     related.sort(function(a, b) {
       var aScore = (a.tags || []).filter(function(t){ return current.tags.indexOf(t) !== -1; }).length;

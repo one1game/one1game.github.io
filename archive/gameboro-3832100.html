@@ -10,12 +10,12 @@
   <link rel="dns-prefetch" href="https://www.google-analytics.com" />
   <link rel="preload" href="../styles.css" as="style" />
 
-  <title>GAMEBORO — обзор, цена, возможности: внутриигровой помощник | One1Game</title>
+  <title>GAMEBORO в Steam: честный обзор, реальные цены и отзывы игроков | One1Game</title>
   <meta name="description" content="GAMEBORO: обзор бесплатного внутриигрового оверлея-помощника от Studio Monolith. Работает в любой игре, показывает нужную информацию без Alt-Tab. Цена, возможности и отзывы." />
   <meta name="keywords" content="GAMEBORO, оверлей, внутриигровой помощник, бесплатно, Steam, Studio Monolith, гайды, информация в игре, утилита" />
   <meta name="author" content="Команда One1Game" />
 
-  <meta property="og:title" content="GAMEBORO — обзор, цена, возможности: внутриигровой помощник" />
+  <meta property="og:title" content="GAMEBORO в Steam: честный обзор, реальные цены и отзывы игроков" />
   <meta property="og:description" content="GAMEBORO: бесплатный внутриигровой оверлей. Узнавайте нужную информацию не выходя из игры — без Alt-Tab и отвлечений." />
   <meta property="og:type" content="article" />
   <meta property="og:url" content="https://one1game.github.io/archive/gameboro-3832100.html" />
@@ -31,7 +31,7 @@
   <meta property="article:tag" content="утилита" />
 
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="GAMEBORO — обзор, цена, возможности: внутриигровой помощник" />
+  <meta name="twitter:title" content="GAMEBORO в Steam: честный обзор, реальные цены и отзывы игроков" />
   <meta name="twitter:description" content="Бесплатный внутриигровой оверлей: информация в игре без Alt-Tab." />
   <meta name="twitter:image" content="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3832100/a1834a11974595a41b6928cd71260b992066a20c/header.jpg?t=1783620788" />
 
@@ -223,10 +223,10 @@
 
     <div class="article-header">
       <span class="article-category cat-play">Во что поиграть?</span>
-      <h1>GAMEBORO: цена, возможности и обзор внутриигрового помощника</h1>
+      <h1>GAMEBORO в Steam: честный обзор, реальные цены и отзывы игроков</h1>
       <div class="article-meta">
         <span><i class="far fa-calendar"></i> Опубликовано: 9 июля 2026</span>
-        <span><i class="fas fa-sync-alt"></i> Обновлено: 10 июля 2026</span>
+        <span><i class="fas fa-sync-alt"></i> Обновлено: <!-- STAT:UPDATED -->10 июля 2026<!-- /STAT:UPDATED --></span>
         <span><i class="far fa-clock"></i> 3 минуты чтения</span>
       </div>
     </div>
@@ -263,11 +263,11 @@
       <div class="game-stats-grid">
         <div class="game-stat-card">
           <div class="label">Цена</div>
-          <div class="value">Бесплатно</div>
+          <div class="value"><!-- STAT:PRICE -->Бесплатно<!-- /STAT:PRICE --></div>
         </div>
         <div class="game-stat-card">
           <div class="label">Дата выхода</div>
-          <div class="value">9 июля 2026</div>
+          <div class="value"><!-- STAT:RELEASE_DATE -->9 июля 2026<!-- /STAT:RELEASE_DATE --></div>
         </div>
         <div class="game-stat-card">
           <div class="label">Разработчик</div>
@@ -279,11 +279,11 @@
         </div>
         <div class="game-stat-card">
           <div class="label">Владельцев (оценка)</div>
-          <div class="value">0 – 20,000</div>
+          <div class="value"><!-- STAT:OWNERS -->0 – 20,000<!-- /STAT:OWNERS --></div>
         </div>
         <div class="game-stat-card">
           <div class="label">Среднее время использования</div>
-          <div class="value">нет данных</div>
+          <div class="value"><!-- STAT:PLAYTIME -->нет данных<!-- /STAT:PLAYTIME --></div>
         </div>
       </div>
 
@@ -326,7 +326,7 @@
 
       <p style="color: var(--text-faint); font-size: 13px; margin-top: 30px;">
         Данные о цене, отзывах и статистике обновляются автоматически на основе Steam Store API и SteamSpy.
-        Последнее обновление: 10 июля 2026.
+        Последнее обновление: <!-- STAT:UPDATED -->10 июля 2026<!-- /STAT:UPDATED -->.
       </p>
 
 <div class="newsletter-box">
@@ -392,7 +392,7 @@
   ].join('');
 
   var current = all.find(function(a){ return a.url === currentUrl; });
-  var related = all.filter(function(a) { return a.url !== currentUrl; });
+  var related = all.filter(function(a) { return a.url !== currentUrl && a.category === 'Во что поиграть?'; });
   if (current && current.tags) {
     related.sort(function(a, b) {
       var aScore = (a.tags || []).filter(function(t){ return current.tags.indexOf(t) !== -1; }).length;

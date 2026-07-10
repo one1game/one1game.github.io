@@ -3,7 +3,7 @@ window.allArticles = [
   {
     "url": "/archive/counter-strike-10.html",
     "title": "Counter-Strike: цена, отзывы и статистика игроков",
-    "excerpt": "Counter-Strike: актуальная цена (259.00 RUB), 97% положительных отзывов в Steam, статистика владельцев (10,000,000 – 20,000,000). Данные обновляются автоматически.",
+    "excerpt": "Counter-Strike — легендарный тактический шутер, изменивший игровую индустрию навсегда.",
     "date": "9 июля 2026",
     "readTime": "2 мин",
     "category": "Во что поиграть?"
@@ -11,7 +11,7 @@ window.allArticles = [
   {
     "url": "/archive/half-life-70.html",
     "title": "Half-Life: цена, отзывы и статистика игроков",
-    "excerpt": "Half-Life: актуальная цена (259.00 RUB), 97% положительных отзывов в Steam, статистика владельцев (10,000,000 – 20,000,000). Данные обновляются автоматически.",
+    "excerpt": "Half-Life — культовый научно-фантастический шутер от первого лица, разработанный компанией Valve и выпущенный 19 ноября 1998 года.",
     "date": "9 июля 2026",
     "readTime": "2 мин",
     "category": "Во что поиграть?"
@@ -19,7 +19,7 @@ window.allArticles = [
   {
     "url": "/archive/counter-strike-condition-zero-100.html",
     "title": "Counter-Strike: Condition Zero: цена, отзывы и статистика игроков",
-    "excerpt": "Counter-Strike: Condition Zero: актуальная цена (259.00 RUB), 90% положительных отзывов в Steam, статистика владельцев (10,000,000 – 20,000,000). Данные обновляются автоматически.",
+    "excerpt": "Counter-Strike: Condition Zero — уникальная часть серии, вышедшая в марте 2004 года.",
     "date": "9 июля 2026",
     "readTime": "2 мин",
     "category": "Во что поиграть?"
@@ -27,7 +27,7 @@ window.allArticles = [
   {
     "url": "/archive/half-life-2-220.html",
     "title": "Half-Life 2: цена, отзывы и статистика игроков",
-    "excerpt": "Half-Life 2: актуальная цена (385.00 RUB), 98% положительных отзывов в Steam, статистика владельцев (10,000,000 – 20,000,000). Данные обновляются автоматически.",
+    "excerpt": "Half-Life 2 — эпохальный научно-фантастический шутер от первого лица, выпущенный Valve 16 ноября 2004 года.",
     "date": "9 июля 2026",
     "readTime": "2 мин",
     "category": "Во что поиграть?"
@@ -35,7 +35,7 @@ window.allArticles = [
   {
     "url": "/archive/counter-strike-source-240.html",
     "title": "Counter-Strike: Source: цена, отзывы и статистика игроков",
-    "excerpt": "Counter-Strike: Source: актуальная цена (385.00 RUB), 96% положительных отзывов в Steam, статистика владельцев (10,000,000 – 20,000,000). Данные обновляются автоматически.",
+    "excerpt": "Counter-Strike: Source (CS:S) — первая версия CS на движке Source 1, выпущенная Valve в ноябре 2004 года одновременно с Half-Life 2.",
     "date": "9 июля 2026",
     "readTime": "2 мин",
     "category": "Во что поиграть?"
@@ -43,7 +43,7 @@ window.allArticles = [
   {
     "url": "/archive/half-life-2-deathmatch-320.html",
     "title": "Half-Life 2: Deathmatch: цена, отзывы и статистика игроков",
-    "excerpt": "Half-Life 2: Deathmatch: актуальная цена (цена не указана), 91% положительных отзывов в Steam, статистика владельцев (10,000,000 – 20,000,000). Данные обновляются автоматически.",
+    "excerpt": "Half-Life 2: Deathmatch (HL2DM) — бесплатный многопользовательский шутер от Valve, выпущенный 1 ноября 2004 года как дополнение к Half-Life 2.",
     "date": "9 июля 2026",
     "readTime": "2 мин",
     "category": "Во что поиграть?"
@@ -51,7 +51,7 @@ window.allArticles = [
   {
     "url": "/archive/half-life-2-lost-coast-340.html",
     "title": "Half-Life 2: Lost Coast: цена, отзывы и статистика игроков",
-    "excerpt": "Half-Life 2: Lost Coast: актуальная цена (цена не указана), 89% положительных отзывов в Steam, статистика владельцев (20,000,000 – 50,000,000). Данные обновляются автоматически.",
+    "excerpt": "Half-Life 2: Lost Coast — бесплатная технологическая демонстрация от Valve, выпущенная 27 октября 2005 года.",
     "date": "9 июля 2026",
     "readTime": "2 мин",
     "category": "Во что поиграть?"
@@ -59,7 +59,7 @@ window.allArticles = [
   {
     "url": "/archive/portal-400.html",
     "title": "Portal: цена, отзывы и статистика игроков",
-    "excerpt": "Portal: актуальная цена (385.00 RUB), 98% положительных отзывов в Steam, статистика владельцев (10,000,000 – 20,000,000). Данные обновляются автоматически.",
+    "excerpt": "Portal — гениальная головоломка от первого лица, выпущенная Valve 10 октября 2007 года в составе сборника The Orange Box.",
     "date": "9 июля 2026",
     "readTime": "2 мин",
     "category": "Во что поиграть?"
@@ -67,7 +67,7 @@ window.allArticles = [
   {
     "url": "/archive/team-fortress-2-440.html",
     "title": "Team Fortress 2: цена, отзывы и статистика игроков",
-    "excerpt": "Team Fortress 2: актуальная цена (Бесплатно), 90% положительных отзывов в Steam, статистика владельцев (50,000,000 – 100,000,000). Данные обновляются автоматически.",
+    "excerpt": "Team Fortress 2 (TF2) — культовый командный мультиплеерный шутер от Valve, вышедший 10 октября 2007 года в составе сборника The Orange Box.",
     "date": "9 июля 2026",
     "readTime": "2 мин",
     "category": "Во что поиграть?"
@@ -75,7 +75,7 @@ window.allArticles = [
   {
     "url": "/archive/left-4-dead-2-550.html",
     "title": "Left 4 Dead 2: цена, отзывы и статистика игроков",
-    "excerpt": "Left 4 Dead 2: актуальная цена (385.00 RUB), 98% положительных отзывов в Steam, статистика владельцев (50,000,000 – 100,000,000). Данные обновляются автоматически.",
+    "excerpt": "Left 4 Dead 2 (L4D2) — кооперативный зомби-шутер от первого лица, выпущенный Valve 16 ноября 2009 года.",
     "date": "9 июля 2026",
     "readTime": "2 мин",
     "category": "Во что поиграть?"
@@ -83,7 +83,7 @@ window.allArticles = [
   {
     "url": "/archive/counter-strike-2-730.html",
     "title": "Counter-Strike 2: цена, отзывы и статистика игроков",
-    "excerpt": "Counter-Strike 2: актуальная цена (Бесплатно), 87% положительных отзывов в Steam, статистика владельцев (100,000,000 – 200,000,000). Данные обновляются автоматически.",
+    "excerpt": "Counter-Strike 2 (CS2) — это долгожданное переосмысление легендарного тактического шутера от Valve, вышедшее 27 сентября 2023 года на движке Source 2.",
     "date": "9 июля 2026",
     "readTime": "2 мин",
     "category": "Во что поиграть?"
@@ -91,7 +91,7 @@ window.allArticles = [
   {
     "url": "/archive/garry-s-mod-4000.html",
     "title": "Garry's Mod: цена, отзывы и статистика игроков",
-    "excerpt": "Garry's Mod: актуальная цена (750.00 RUB), 97% положительных отзывов в Steam, статистика владельцев (20,000,000 – 50,000,000). Данные обновляются автоматически.",
+    "excerpt": "Garry's Mod (GMod) — легендарная физическая песочница, созданная Гарри Ньюманом (Facepunch Studios) и изданная Valve 29 ноября 2006 года.",
     "date": "9 июля 2026",
     "readTime": "2 мин",
     "category": "Во что поиграть?"
@@ -99,7 +99,7 @@ window.allArticles = [
   {
     "url": "/archive/borderlands-2-49520.html",
     "title": "Borderlands 2: цена, отзывы и статистика игроков",
-    "excerpt": "Borderlands 2: актуальная цена (цена не указана), 92% положительных отзывов в Steam, статистика владельцев (10,000,000 – 20,000,000). Данные обновляются автоматически.",
+    "excerpt": "Borderlands 2 — культовый лутер-шутер от Gearbox Software и издателя 2K, вышедший в сентябре 2012 года.",
     "date": "9 июля 2026",
     "readTime": "2 мин",
     "category": "Во что поиграть?"
@@ -107,7 +107,7 @@ window.allArticles = [
   {
     "url": "/archive/terraria-105600.html",
     "title": "Terraria: цена, отзывы и статистика игроков",
-    "excerpt": "Terraria: актуальная цена (385.00 RUB), 97% положительных отзывов в Steam, статистика владельцев (20,000,000 – 50,000,000). Данные обновляются автоматически.",
+    "excerpt": "Terraria — культовая 2D-песочница от Re-Logic, вышедшая в 2011 году и проданная тиражом более 30 миллионов копий.",
     "date": "9 июля 2026",
     "readTime": "2 мин",
     "category": "Во что поиграть?"
@@ -115,7 +115,7 @@ window.allArticles = [
   {
     "url": "/archive/corgi-survivor-4483200.html",
     "title": "Corgi Survivor: цена, отзывы и статистика игроков",
-    "excerpt": "Corgi Survivor: актуальная цена (174.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
+    "excerpt": "Corgi Survivor — это динамичный survival Doglite от студии Symbolic, где вы управляете очаровательным корги и сражаетесь с волнами насекомых и диких животных.",
     "date": "9 июля 2026",
     "readTime": "2 мин",
     "category": "Во что поиграть?"
@@ -123,7 +123,7 @@ window.allArticles = [
   {
     "url": "/archive/dice-rogues-4140190.html",
     "title": "Dice Rogues: цена, отзывы и статистика игроков",
-    "excerpt": "Dice Rogues: актуальная цена (111.74 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
+    "excerpt": "Dice Rogues — тактический roguelite от Pick Your Universe, где исход каждой битвы решает бросок кубиков.",
     "date": "9 июля 2026",
     "readTime": "2 мин",
     "category": "Во что поиграть?"
@@ -131,7 +131,7 @@ window.allArticles = [
   {
     "url": "/archive/a-game-about-leading-a-crowds-4806800.html",
     "title": "A Game About Leading A Crowds: цена, отзывы и статистика игроков",
-    "excerpt": "A Game About Leading A Crowds: актуальная цена (217.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
+    "excerpt": "A Game About Leading A Crowds — это короткая, простая и увлекательная инкрементальная стратегия от Jacobdev, вышедшая 9 июля 2026 года.",
     "date": "9 июля 2026",
     "readTime": "2 мин",
     "category": "Во что поиграть?"
@@ -139,7 +139,7 @@ window.allArticles = [
   {
     "url": "/archive/mora-s-cat-scratcher-plus-4866810.html",
     "title": "Mora's Cat Scratcher PLUS: цена, отзывы и статистика игроков",
-    "excerpt": "Mora's Cat Scratcher PLUS: актуальная цена (192.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
+    "excerpt": "Mora's Cat Scratcher PLUS — это уютный tap-and-collect симулятор от студии CatAndFoxStudios, дебютирующей в Steam со своей версией PLUS.",
     "date": "9 июля 2026",
     "readTime": "2 мин",
     "category": "Во что поиграть?"
@@ -147,7 +147,7 @@ window.allArticles = [
   {
     "url": "/archive/skulls-skulls-skulls-by-daniel-da-silva-4825510.html",
     "title": "Skulls Skulls Skulls by Daniel da Silva: цена, отзывы и статистика игроков",
-    "excerpt": "Skulls Skulls Skulls by Daniel da Silva: актуальная цена (79.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
+    "excerpt": "Skulls Skulls Skulls — это короткая активная инкрементальная игра от разработчика Daniel da Silva и издателя SmokeSomeFrogs.",
     "date": "9 июля 2026",
     "readTime": "2 мин",
     "category": "Во что поиграть?"
@@ -155,7 +155,7 @@ window.allArticles = [
   {
     "url": "/archive/alek-1511740.html",
     "title": "ALEK: цена, отзывы и статистика игроков",
-    "excerpt": "ALEK: актуальная цена (331.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
+    "excerpt": "ALEK — это российский инди-экшен от соло-разработчика Vitaly Pryadein, погружающий игрока в Тюмень середины 90-х.",
     "date": "9 июля 2026",
     "readTime": "2 мин",
     "category": "Во что поиграть?"
@@ -163,7 +163,7 @@ window.allArticles = [
   {
     "url": "/archive/ego-3692680.html",
     "title": "EGO: цена, отзывы и статистика игроков",
-    "excerpt": "EGO: актуальная цена (288.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
+    "excerpt": "EGO — 3D-игра в жанре «победи всех» от студии RAVAGE. В роли дымящегося волшебника вы сражаетесь с тысячами роботов одновременно на открытых уровнях.",
     "date": "9 июля 2026",
     "readTime": "2 мин",
     "category": "Во что поиграть?"
@@ -171,7 +171,7 @@ window.allArticles = [
   {
     "url": "/archive/bottom-squad-4068360.html",
     "title": "Bottom Squad: цена, отзывы и статистика игроков",
-    "excerpt": "Bottom Squad: актуальная цена (192.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
+    "excerpt": "Bottom Squad — это idle-стратегия в нижней части экрана от независимой студии Family Devs.",
     "date": "9 июля 2026",
     "readTime": "2 мин",
     "category": "Во что поиграть?"
@@ -179,7 +179,7 @@ window.allArticles = [
   {
     "url": "/archive/gameboro-3832100.html",
     "title": "GAMEBORO: цена, отзывы и статистика игроков",
-    "excerpt": "GAMEBORO: актуальная цена (Бесплатно), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
+    "excerpt": "GAMEBORO — это бесплатный внутриигровой оверлей-помощник от Studio Monolith. Он работает поверх любой игры и предоставляет нужную информацию без необходимости сворачивать игру или нажимать Alt-Tab.",
     "date": "9 июля 2026",
     "readTime": "2 мин",
     "category": "Во что поиграть?"
@@ -187,7 +187,7 @@ window.allArticles = [
   {
     "url": "/archive/kriticheskaya-nagruzka-4804750.html",
     "title": "Критическая Нагрузка: цена, отзывы и статистика игроков",
-    "excerpt": "Критическая Нагрузка: актуальная цена (201.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
+    "excerpt": "Критическая Нагрузка — романтическая визуальная новелла для взрослых от студии Creamhouse.",
     "date": "9 июля 2026",
     "readTime": "2 мин",
     "category": "Во что поиграть?"
@@ -195,7 +195,7 @@ window.allArticles = [
   {
     "url": "/archive/hell-clock-cursed-war-3774910.html",
     "title": "Hell Clock: Cursed War: цена, отзывы и статистика игроков",
-    "excerpt": "Hell Clock: Cursed War: актуальная цена (550.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
+    "excerpt": "Hell Clock: Cursed War — это ролевой экшен от студии Rogue Snail, изданный Mad Mushroom.",
     "date": "9 июля 2026",
     "readTime": "2 мин",
     "category": "Во что поиграть?"
@@ -203,7 +203,7 @@ window.allArticles = [
   {
     "url": "/archive/polytropos-a-tactical-odyssey-3227320.html",
     "title": "Polytropos: A Tactical Odyssey: цена, отзывы и статистика игроков",
-    "excerpt": "Polytropos: A Tactical Odyssey: актуальная цена (418.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
+    "excerpt": "Polytropos: A Tactical Odyssey — тактическая roguelite-RPG от Sea Panda Creative по мотивам греческой мифологии. Пошаговые бои, прокачка персонажа, процедурная генерация и встречи с богами Олимпа.",
     "date": "9 июля 2026",
     "readTime": "2 мин",
     "category": "Во что поиграть?"
@@ -211,7 +211,7 @@ window.allArticles = [
   {
     "url": "/archive/weird-water-world-4534300.html",
     "title": "Weird Water World: цена, отзывы и статистика игроков",
-    "excerpt": "Weird Water World: актуальная цена (105.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
+    "excerpt": "Weird Water World — это атмосферный симулятор рыбалки с элементами хоррора от студии Castle Golborg.",
     "date": "9 июля 2026",
     "readTime": "2 мин",
     "category": "Во что поиграть?"
@@ -219,7 +219,7 @@ window.allArticles = [
   {
     "url": "/archive/evil-thing-4373160.html",
     "title": "Evil Thing: цена, отзывы и статистика игроков",
-    "excerpt": "Evil Thing: актуальная цена (157.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
+    "excerpt": "Evil Thing — RPG-стратегия от китайского разработчика 穷B没钱做游戏 (QiongB), рассказывающая историю храма, где запечатан Лисья Дух.",
     "date": "9 июля 2026",
     "readTime": "2 мин",
     "category": "Во что поиграть?"
@@ -227,7 +227,7 @@ window.allArticles = [
   {
     "url": "/archive/cursed-companions-3265230.html",
     "title": "Cursed Companions: цена, отзывы и статистика игроков",
-    "excerpt": "Cursed Companions: актуальная цена (245.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
+    "excerpt": "Cursed Companions — голосовой кооперативный хоррор от Crimson Forge Studios, где ваши собственные слова могут убить друзей.",
     "date": "9 июля 2026",
     "readTime": "2 мин",
     "category": "Во что поиграть?"
@@ -235,7 +235,7 @@ window.allArticles = [
   {
     "url": "/archive/gray-trading-4596160.html",
     "title": "Gray Trading: цена, отзывы и статистика игроков",
-    "excerpt": "Gray Trading: актуальная цена (160.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
+    "excerpt": "Gray Trading — инкрементальная игра от Nedeey, в которой вы покупаете и продаёте акции, торгуете на форексе и погружаетесь в другие необычные рынки. Начинаете с грошей — заканчиваете миллиардами.",
     "date": "9 июля 2026",
     "readTime": "2 мин",
     "category": "Во что поиграть?"
@@ -243,7 +243,7 @@ window.allArticles = [
   {
     "url": "/archive/vape-store-miami-prologue-4849630.html",
     "title": "Vape Store Miami: Prologue: цена, отзывы и статистика игроков",
-    "excerpt": "Vape Store Miami: Prologue: актуальная цена (Бесплатно), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
+    "excerpt": "Vape Store Miami: Prologue — это бесплатный пролог кооперативного симулятора управления вейп-магазином от студии EXPERIMENT ONE.",
     "date": "9 июля 2026",
     "readTime": "2 мин",
     "category": "Во что поиграть?"
@@ -251,7 +251,7 @@ window.allArticles = [
   {
     "url": "/archive/elevator-avici-4790520.html",
     "title": "ELEVATOR: AVICI: цена, отзывы и статистика игроков",
-    "excerpt": "ELEVATOR: AVICI: актуальная цена (79.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
+    "excerpt": "ELEVATOR: AVICI — психологический хоррор от первого лица в lo-fi стиле ретро-Гонконга от студии Southern Cross. 2 часа ночи, вы — работник службы доставки.",
     "date": "9 июля 2026",
     "readTime": "2 мин",
     "category": "Во что поиграть?"
@@ -259,7 +259,7 @@ window.allArticles = [
   {
     "url": "/archive/sweet-running-4571590.html",
     "title": "Sweet Running: цена, отзывы и статистика игроков",
-    "excerpt": "Sweet Running: актуальная цена (45.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
+    "excerpt": "Sweet Running — это простая и красивая пазл-игра (jigsaw puzzle) от студии King Kong Gaming, в которой вам предстоит собирать изображения пяти симпатичных бегущих девушек после тренировки.",
     "date": "9 июля 2026",
     "readTime": "2 мин",
     "category": "Во что поиграть?"
@@ -267,7 +267,7 @@ window.allArticles = [
   {
     "url": "/archive/cyber-psychosis-1349930.html",
     "title": "Cyber Psychosis: цена, отзывы и статистика игроков",
-    "excerpt": "Cyber Psychosis: актуальная цена (120.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
+    "excerpt": "Cyber Psychosis — это псевдотрёхмерный динамичный шутер от первого лица в киберпанк-сеттинге, разработанный соло-разработчиком Uiop Xever.",
     "date": "9 июля 2026",
     "readTime": "2 мин",
     "category": "Во что поиграть?"
@@ -275,7 +275,7 @@ window.allArticles = [
   {
     "url": "/archive/our-wonderland-4329100.html",
     "title": "Our Wonderland: цена, отзывы и статистика игроков",
-    "excerpt": "Our Wonderland: актуальная цена (Бесплатно), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
+    "excerpt": "Our Wonderland — это хоррор-фэнтези визуальная новелла от студии Carrot и издателя Project Ensō.",
     "date": "9 июля 2026",
     "readTime": "2 мин",
     "category": "Во что поиграть?"
@@ -283,7 +283,7 @@ window.allArticles = [
   {
     "url": "/archive/cozy-tide-4809010.html",
     "title": "Cozy Tide: цена, отзывы и статистика игроков",
-    "excerpt": "Cozy Tide: актуальная цена (180.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
+    "excerpt": "Cozy Tide — уютная игра про рыбалку и строительство островов от студии breadcrumbs.",
     "date": "9 июля 2026",
     "readTime": "2 мин",
     "category": "Во что поиграть?"
@@ -291,7 +291,7 @@ window.allArticles = [
   {
     "url": "/archive/prince-of-vibe-code-4820270.html",
     "title": "Prince of Vibe Code: цена, отзывы и статистика игроков",
-    "excerpt": "Prince of Vibe Code: актуальная цена (90.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
+    "excerpt": "Prince of Vibe Code — это инкрементальная игра от PWCT Software, в которой вы становитесь самым успешным игровым разработчиком в мире.",
     "date": "9 июля 2026",
     "readTime": "2 мин",
     "category": "Во что поиграть?"
@@ -299,7 +299,7 @@ window.allArticles = [
   {
     "url": "/archive/idle-hands-4867060.html",
     "title": "Idle Hands: цена, отзывы и статистика игроков",
-    "excerpt": "Idle Hands: актуальная цена (192.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
+    "excerpt": "Idle Hands — греховно-увлекательный idle-кликер от Matula Games, где вы призываете демонов, спускаетесь через 9 кругов ада и играете в кости с самим Сатаной.",
     "date": "9 июля 2026",
     "readTime": "2 мин",
     "category": "Во что поиграть?"
@@ -307,7 +307,7 @@ window.allArticles = [
   {
     "url": "/archive/mesmalie-3534790.html",
     "title": "Mesmalie: цена, отзывы и статистика игроков",
-    "excerpt": "Mesmalie: актуальная цена (331.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
+    "excerpt": "Mesmalie (MESMALIE) — оккультная визуальная новелла с элементами point-and-click от независимого разработчика Rain (orbitaldot).",
     "date": "9 июля 2026",
     "readTime": "2 мин",
     "category": "Во что поиграть?"
@@ -315,7 +315,7 @@ window.allArticles = [
   {
     "url": "/archive/sondersoft-soccer-monkeys-vs-robots-4806090.html",
     "title": "SonderSoft Soccer: Monkeys VS Robots!: цена, отзывы и статистика игроков",
-    "excerpt": "SonderSoft Soccer: Monkeys VS Robots!: актуальная цена (Бесплатно), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
+    "excerpt": "SonderSoft Soccer: Monkeys VS Robots! — это, пожалуй, самый безумный футбольный симулятор в Steam.",
     "date": "9 июля 2026",
     "readTime": "2 мин",
     "category": "Во что поиграть?"
@@ -323,7 +323,7 @@ window.allArticles = [
   {
     "url": "/archive/dark-hollow-rpg-4867550.html",
     "title": "Dark Hollow RPG: цена, отзывы и статистика игроков",
-    "excerpt": "Dark Hollow RPG: актуальная цена (90.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
+    "excerpt": "Dark Hollow RPG — текстовая RPG в стиле классических терминальных приключений от Conor-PotPie (издатель GrimHandStudios).",
     "date": "9 июля 2026",
     "readTime": "2 мин",
     "category": "Во что поиграть?"
@@ -331,7 +331,7 @@ window.allArticles = [
   {
     "url": "/archive/capybara-bingo-4668040.html",
     "title": "Capybara Bingo: цена, отзывы и статистика игроков",
-    "excerpt": "Capybara Bingo: актуальная цена (150.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
+    "excerpt": "Capybara Bingo — это уютная вечеринка-бинго от студии Cozybara, рассчитанная на компанию от 1 до 8 игроков.",
     "date": "9 июля 2026",
     "readTime": "2 мин",
     "category": "Во что поиграть?"
@@ -339,7 +339,7 @@ window.allArticles = [
   {
     "url": "/archive/fleshbreak-nsfw-4924740.html",
     "title": "FLESHBREAK - NSFW: цена, отзывы и статистика игроков",
-    "excerpt": "FLESHBREAK - NSFW: актуальная цена (51.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
+    "excerpt": "FLESHBREAK - NSFW — взрослое DLC для хоррор-новеллы FLESHBREAK, разблокирующее полностью нецензурированный контент (fully uncensored adult content).",
     "date": "9 июля 2026",
     "readTime": "2 мин",
     "category": "Во что поиграть?"
@@ -347,7 +347,7 @@ window.allArticles = [
   {
     "url": "/archive/fleshbreak-4175650.html",
     "title": "FLESHBREAK: цена, отзывы и статистика игроков",
-    "excerpt": "FLESHBREAK: актуальная цена (180.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
+    "excerpt": "FLESHBREAK — story-driven survival visual novel от Horubrain Interactive (движок Hexapede Engine), вдохновлённая объектом SCP-610 «Плоть, которая ненавидит».",
     "date": "9 июля 2026",
     "readTime": "2 мин",
     "category": "Во что поиграть?"
@@ -355,7 +355,7 @@ window.allArticles = [
   {
     "url": "/archive/meccha-chameleon-4704690.html",
     "title": "MECCHA CHAMELEON: цена, отзывы и статистика игроков",
-    "excerpt": "MECCHA CHAMELEON: актуальная цена (290.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
+    "excerpt": "MECCHA CHAMELEON — вирусный хит от lemorion_1224, продавшийся тиражом более 10 миллионов копий с 89% положительных отзывов.",
     "date": "9 июля 2026",
     "readTime": "2 мин",
     "category": "Во что поиграть?"
@@ -363,7 +363,7 @@ window.allArticles = [
   {
     "url": "/archive/esports-manager-2026-2749950.html",
     "title": "Esports Manager 2026: цена, отзывы и статистика игроков",
-    "excerpt": "Esports Manager 2026: актуальная цена (568.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
+    "excerpt": "Esports Manager 2026 — это глубокая стратегия-симулятор управления киберспортивной организацией от студии Neurona Games (издатель — indie.io).",
     "date": "9 июля 2026",
     "readTime": "2 мин",
     "category": "Во что поиграть?"
@@ -371,7 +371,7 @@ window.allArticles = [
   {
     "url": "/archive/the-finals-season-11-ultimate-battle-pass-bundle-4835400.html",
     "title": "THE FINALS - Season 11 Ultimate Battle Pass Bundle: цена, отзывы и статистика игроков",
-    "excerpt": "THE FINALS - Season 11 Ultimate Battle Pass Bundle: актуальная цена (2415.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
+    "excerpt": "THE FINALS — это бесплатный командный шутер от первого лица от Embark Studios, студии, основанной выходцами из DICE (создатели Battlefield).",
     "date": "9 июля 2026",
     "readTime": "2 мин",
     "category": "Во что поиграть?"
@@ -379,7 +379,7 @@ window.allArticles = [
   {
     "url": "/archive/baldur-s-gate-3-1086940.html",
     "title": "Baldur's Gate 3: цена, отзывы и статистика игроков",
-    "excerpt": "Baldur's Gate 3: актуальная цена (1999.00 RUB), 97% положительных отзывов в Steam, статистика владельцев (20,000,000 – 50,000,000). Данные обновляются автоматически.",
+    "excerpt": "Baldur's Gate 3 (BG3) — ролевая игра от Larian Studios, вышедшая в августе 2023 года и мгновенно ставшая сенсацией.",
     "date": "9 июля 2026",
     "readTime": "2 мин",
     "category": "Во что поиграть?"
@@ -387,7 +387,7 @@ window.allArticles = [
   {
     "url": "/archive/cat-mail-co-4380490.html",
     "title": "Cat Mail Co.: цена, отзывы и статистика игроков",
-    "excerpt": "Cat Mail Co.: актуальная цена (561.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
+    "excerpt": "Cat Mail Co. — это уютный симулятор почтового отделения от студии Maracas Studio, действие которого разворачивается в мире, населённом дружелюбными котиками.",
     "date": "9 июля 2026",
     "readTime": "2 мин",
     "category": "Во что поиграть?"

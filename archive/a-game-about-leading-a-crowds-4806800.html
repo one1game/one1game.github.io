@@ -11,14 +11,14 @@
   <link rel="preload" href="../styles.css" as="style" />
 
   <!-- SEO: Title с высокочастотными ключами (до 60 символов) -->
-  <title>A Game About Leading A Crowds — обзор, цена, отзывы и статистика игроков | One1Game</title>
+  <title>A Game About Leading A Crowds в Steam: честный обзор, реальные цены и отзывы игроков | One1Game</title>
 
   <!-- SEO: Description с CTA и ключами (до 160 символов) -->
   <meta name="description" content="A Game About Leading A Crowds: полный обзор, цена в Steam, дата выхода, отзывы и статистика игроков. Инкрементальная стратегия про защиту замка толпой — разбираемся в механиках и особенностях." />
   <meta name="keywords" content="A Game About Leading A Crowds, цена, обзор, отзывы, статистика игроков, защита замка, инкрементальная стратегия, Steam, Jacobdev, казуальные игры, симуляторы, стратегии" />
   <meta name="author" content="Команда One1Game" />
 
-  <meta property="og:title" content="A Game About Leading A Crowds — обзор, цена, отзывы и статистика игроков" />
+  <meta property="og:title" content="A Game About Leading A Crowds в Steam: честный обзор, реальные цены и отзывы игроков" />
   <meta property="og:description" content="Полный обзор A Game About Leading A Crowds: цена, скидки, отзывы и статистика игроков. Обновлено в июле 2026." />
   <meta property="og:type" content="article" />
   <meta property="og:url" content="https://one1game.github.io/archive/a-game-about-leading-a-crowds-4806800.html" />
@@ -34,7 +34,7 @@
   <meta property="article:tag" content="инкрементальная игра" />
 
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="A Game About Leading A Crowds — обзор, цена, отзывы" />
+  <meta name="twitter:title" content="A Game About Leading A Crowds в Steam: честный обзор, реальные цены и отзывы игроков" />
   <meta name="twitter:description" content="Полный обзор A Game About Leading A Crowds: цена, геймплей, отзывы и статистика игроков." />
   <meta name="twitter:image" content="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4806800/5c9d9db1ade23f51208a4d556770ecb8962b4b3a/header.jpg?t=1783625978" />
 
@@ -78,7 +78,7 @@
   {
     "@context": "https://schema.org",
     "@type": "Article",
-    "headline": "A Game About Leading A Crowds — обзор, цена, отзывы и статистика игроков",
+    "headline": "A Game About Leading A Crowds в Steam: честный обзор, реальные цены и отзывы игроков",
     "description": "Полный обзор A Game About Leading A Crowds: цена, дата выхода, механики геймплея, отзывы и статистика игроков.",
     "datePublished": "2026-07-09T10:00:00+03:00",
     "dateModified": "2026-07-10T09:00:00+03:00",
@@ -254,7 +254,7 @@
 
     <div class="article-header">
       <span class="article-category cat-play">Во что поиграть?</span>
-      <h1>A Game About Leading A Crowds: цена, отзывы и статистика игроков</h1>
+      <h1>A Game About Leading A Crowds в Steam: честный обзор, реальные цены и отзывы игроков</h1>
       <div class="article-meta">
         <span><i class="far fa-calendar"></i> Опубликовано: 9 июля 2026</span>
         <span><i class="fas fa-sync-alt"></i> Обновлено: <!-- STAT:UPDATED -->10 июля 2026<!-- /STAT:UPDATED --></span>
@@ -485,7 +485,7 @@
 
   // Умная перелинковка: сначала по тегам/категориям, потом случайные
   var current = all.find(function(a){ return a.url === currentUrl; });
-  var related = all.filter(function(a) { return a.url !== currentUrl; });
+  var related = all.filter(function(a) { return a.url !== currentUrl && a.category === 'Во что поиграть?'; });
   if (current && current.tags) {
     related.sort(function(a, b) {
       var aScore = (a.tags || []).filter(function(t){ return current.tags.indexOf(t) !== -1; }).length;

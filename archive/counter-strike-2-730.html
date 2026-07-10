@@ -11,14 +11,14 @@
   <link rel="preload" href="../styles.css" as="style" />
 
   <!-- SEO: Title с высокочастотными ключами (до 60 символов) -->
-  <title>Counter-Strike 2 (CS2) — обзор, цена, системные требования, отзывы | One1Game</title>
+  <title>Counter-Strike 2 (CS2) в Steam: честный обзор, реальные цены и отзывы игроков | One1Game</title>
 
   <!-- SEO: Description с CTA и ключами (до 160 символов) -->
   <meta name="description" content="Counter-Strike 2: полный обзор, цена в Steam, системные требования, дата выхода, 87% положительных отзывов и статистика игроков. Чем CS2 отличается от CS:GO и стоит ли переходить — разбираемся." />
   <meta name="keywords" content="Counter-Strike 2, CS2, скачать CS2, системные требования CS2, цена CS2, отзывы CS2, CS2 vs CS:GO, статистика игроков, Steam, Valve, Source 2" />
   <meta name="author" content="Команда One1Game" />
 
-  <meta property="og:title" content="Counter-Strike 2 (CS2) — обзор, цена, системные требования, отзывы" />
+  <meta property="og:title" content="Counter-Strike 2 (CS2) в Steam: честный обзор, реальные цены и отзывы игроков" />
   <meta property="og:description" content="Полный обзор Counter-Strike 2: цена, скидки, системные требования, 87% положительных отзывов и статистика игроков. Обновлено в июле 2026." />
   <meta property="og:type" content="article" />
   <meta property="og:url" content="https://one1game.github.io/archive/counter-strike-2-730.html" />
@@ -34,7 +34,7 @@
   <meta property="article:tag" content="шутер" />
 
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Counter-Strike 2 (CS2) — обзор, цена, системные требования" />
+  <meta name="twitter:title" content="Counter-Strike 2 (CS2) в Steam: честный обзор, реальные цены и отзывы игроков" />
   <meta name="twitter:description" content="Полный обзор CS2: цена, системные требования, отзывы и статистика игроков." />
   <meta name="twitter:image" content="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/730/162664aa5da85f418105350c5d67ca565f6c3713/header.jpg?t=1780435263" />
 
@@ -78,7 +78,7 @@
   {
     "@context": "https://schema.org",
     "@type": "Article",
-    "headline": "Counter-Strike 2 (CS2) — обзор, цена, системные требования, отзывы",
+    "headline": "Counter-Strike 2 (CS2) в Steam: честный обзор, реальные цены и отзывы игроков",
     "description": "Полный обзор Counter-Strike 2: цена, системные требования, дата выхода, отзывы и статистика игроков.",
     "datePublished": "2026-07-09T10:00:00+03:00",
     "dateModified": "2026-07-10T09:00:00+03:00",
@@ -110,7 +110,7 @@
   {
     "@context": "https://schema.org",
     "@type": "VideoGame",
-    "name": "Counter-Strike 2",
+    "name": "Counter-Strike 2 (CS2)",
     "alternateName": ["CS2", "Counter-Strike 2"],
     "genre": ["Шутер", "Экшены", "Соревновательный", "Бесплатные"],
     "gamePlatform": ["Windows", "Linux"],
@@ -281,7 +281,7 @@
 
     <div class="article-header">
       <span class="article-category cat-play">Во что поиграть?</span>
-      <h1>Counter-Strike 2 (CS2): цена, системные требования, отзывы и статистика игроков</h1>
+      <h1>Counter-Strike 2 (CS2) в Steam: честный обзор, реальные цены и отзывы игроков</h1>
       <div class="article-meta">
         <span><i class="far fa-calendar"></i> Опубликовано: 9 июля 2026</span>
         <span><i class="fas fa-sync-alt"></i> Обновлено: <!-- STAT:UPDATED -->10 июля 2026<!-- /STAT:UPDATED --></span>
@@ -526,7 +526,7 @@
 
   // Умная перелинковка: сначала по тегам/категориям, потом случайные
   var current = all.find(function(a){ return a.url === currentUrl; });
-  var related = all.filter(function(a) { return a.url !== currentUrl; });
+  var related = all.filter(function(a) { return a.url !== currentUrl && a.category === 'Во что поиграть?'; });
   if (current && current.tags) {
     related.sort(function(a, b) {
       var aScore = (a.tags || []).filter(function(t){ return current.tags.indexOf(t) !== -1; }).length;
