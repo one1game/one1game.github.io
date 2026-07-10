@@ -6,7 +6,7 @@ window.allArticles = [
     "excerpt": "Counter-Strike: актуальная цена (259.00 RUB), 97% положительных отзывов в Steam, статистика владельцев (10,000,000 – 20,000,000). Данные обновляются автоматически.",
     "date": "9 июля 2026",
     "readTime": "2 мин",
-    "category": "Обзоры"
+    "category": "Во что поиграть?"
   },
   {
     "url": "/archive/half-life-70.html",
@@ -14,7 +14,7 @@ window.allArticles = [
     "excerpt": "Half-Life: актуальная цена (259.00 RUB), 97% положительных отзывов в Steam, статистика владельцев (10,000,000 – 20,000,000). Данные обновляются автоматически.",
     "date": "9 июля 2026",
     "readTime": "2 мин",
-    "category": "Обзоры"
+    "category": "Во что поиграть?"
   },
   {
     "url": "/archive/counter-strike-condition-zero-100.html",
@@ -22,7 +22,7 @@ window.allArticles = [
     "excerpt": "Counter-Strike: Condition Zero: актуальная цена (259.00 RUB), 90% положительных отзывов в Steam, статистика владельцев (10,000,000 – 20,000,000). Данные обновляются автоматически.",
     "date": "9 июля 2026",
     "readTime": "2 мин",
-    "category": "Обзоры"
+    "category": "Во что поиграть?"
   },
   {
     "url": "/archive/half-life-2-220.html",
@@ -30,7 +30,7 @@ window.allArticles = [
     "excerpt": "Half-Life 2: актуальная цена (385.00 RUB), 98% положительных отзывов в Steam, статистика владельцев (10,000,000 – 20,000,000). Данные обновляются автоматически.",
     "date": "9 июля 2026",
     "readTime": "2 мин",
-    "category": "Обзоры"
+    "category": "Во что поиграть?"
   },
   {
     "url": "/archive/counter-strike-source-240.html",
@@ -38,7 +38,7 @@ window.allArticles = [
     "excerpt": "Counter-Strike: Source: актуальная цена (385.00 RUB), 96% положительных отзывов в Steam, статистика владельцев (10,000,000 – 20,000,000). Данные обновляются автоматически.",
     "date": "9 июля 2026",
     "readTime": "2 мин",
-    "category": "Обзоры"
+    "category": "Во что поиграть?"
   },
   {
     "url": "/archive/half-life-2-deathmatch-320.html",
@@ -46,7 +46,7 @@ window.allArticles = [
     "excerpt": "Half-Life 2: Deathmatch: актуальная цена (цена не указана), 91% положительных отзывов в Steam, статистика владельцев (10,000,000 – 20,000,000). Данные обновляются автоматически.",
     "date": "9 июля 2026",
     "readTime": "2 мин",
-    "category": "Обзоры"
+    "category": "Во что поиграть?"
   },
   {
     "url": "/archive/half-life-2-lost-coast-340.html",
@@ -54,7 +54,7 @@ window.allArticles = [
     "excerpt": "Half-Life 2: Lost Coast: актуальная цена (цена не указана), 89% положительных отзывов в Steam, статистика владельцев (20,000,000 – 50,000,000). Данные обновляются автоматически.",
     "date": "9 июля 2026",
     "readTime": "2 мин",
-    "category": "Обзоры"
+    "category": "Во что поиграть?"
   },
   {
     "url": "/archive/portal-400.html",
@@ -62,7 +62,7 @@ window.allArticles = [
     "excerpt": "Portal: актуальная цена (385.00 RUB), 98% положительных отзывов в Steam, статистика владельцев (10,000,000 – 20,000,000). Данные обновляются автоматически.",
     "date": "9 июля 2026",
     "readTime": "2 мин",
-    "category": "Обзоры"
+    "category": "Во что поиграть?"
   },
   {
     "url": "/archive/team-fortress-2-440.html",
@@ -70,7 +70,7 @@ window.allArticles = [
     "excerpt": "Team Fortress 2: актуальная цена (Бесплатно), 90% положительных отзывов в Steam, статистика владельцев (50,000,000 – 100,000,000). Данные обновляются автоматически.",
     "date": "9 июля 2026",
     "readTime": "2 мин",
-    "category": "Обзоры"
+    "category": "Во что поиграть?"
   },
   {
     "url": "/archive/left-4-dead-2-550.html",
@@ -78,7 +78,7 @@ window.allArticles = [
     "excerpt": "Left 4 Dead 2: актуальная цена (385.00 RUB), 98% положительных отзывов в Steam, статистика владельцев (50,000,000 – 100,000,000). Данные обновляются автоматически.",
     "date": "9 июля 2026",
     "readTime": "2 мин",
-    "category": "Обзоры"
+    "category": "Во что поиграть?"
   },
   {
     "url": "/archive/counter-strike-2-730.html",
@@ -86,7 +86,7 @@ window.allArticles = [
     "excerpt": "Counter-Strike 2: актуальная цена (Бесплатно), 87% положительных отзывов в Steam, статистика владельцев (100,000,000 – 200,000,000). Данные обновляются автоматически.",
     "date": "9 июля 2026",
     "readTime": "2 мин",
-    "category": "Обзоры"
+    "category": "Во что поиграть?"
   },
   {
     "url": "/archive/garry-s-mod-4000.html",
@@ -94,7 +94,7 @@ window.allArticles = [
     "excerpt": "Garry's Mod: актуальная цена (750.00 RUB), 97% положительных отзывов в Steam, статистика владельцев (20,000,000 – 50,000,000). Данные обновляются автоматически.",
     "date": "9 июля 2026",
     "readTime": "2 мин",
-    "category": "Обзоры"
+    "category": "Во что поиграть?"
   },
   {
     "url": "/archive/borderlands-2-49520.html",
@@ -102,7 +102,7 @@ window.allArticles = [
     "excerpt": "Borderlands 2: актуальная цена (цена не указана), 92% положительных отзывов в Steam, статистика владельцев (10,000,000 – 20,000,000). Данные обновляются автоматически.",
     "date": "9 июля 2026",
     "readTime": "2 мин",
-    "category": "Обзоры"
+    "category": "Во что поиграть?"
   },
   {
     "url": "/archive/terraria-105600.html",
@@ -110,7 +110,7 @@ window.allArticles = [
     "excerpt": "Terraria: актуальная цена (385.00 RUB), 97% положительных отзывов в Steam, статистика владельцев (20,000,000 – 50,000,000). Данные обновляются автоматически.",
     "date": "9 июля 2026",
     "readTime": "2 мин",
-    "category": "Обзоры"
+    "category": "Во что поиграть?"
   },
   {
     "url": "/archive/corgi-survivor-4483200.html",
@@ -118,7 +118,7 @@ window.allArticles = [
     "excerpt": "Corgi Survivor: актуальная цена (174.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
     "date": "9 июля 2026",
     "readTime": "2 мин",
-    "category": "Обзоры"
+    "category": "Во что поиграть?"
   },
   {
     "url": "/archive/dice-rogues-4140190.html",
@@ -126,7 +126,7 @@ window.allArticles = [
     "excerpt": "Dice Rogues: актуальная цена (111.74 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
     "date": "9 июля 2026",
     "readTime": "2 мин",
-    "category": "Обзоры"
+    "category": "Во что поиграть?"
   },
   {
     "url": "/archive/a-game-about-leading-a-crowds-4806800.html",
@@ -134,7 +134,7 @@ window.allArticles = [
     "excerpt": "A Game About Leading A Crowds: актуальная цена (217.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
     "date": "9 июля 2026",
     "readTime": "2 мин",
-    "category": "Обзоры"
+    "category": "Во что поиграть?"
   },
   {
     "url": "/archive/mora-s-cat-scratcher-plus-4866810.html",
@@ -142,7 +142,7 @@ window.allArticles = [
     "excerpt": "Mora's Cat Scratcher PLUS: актуальная цена (192.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
     "date": "9 июля 2026",
     "readTime": "2 мин",
-    "category": "Обзоры"
+    "category": "Во что поиграть?"
   },
   {
     "url": "/archive/skulls-skulls-skulls-by-daniel-da-silva-4825510.html",
@@ -150,7 +150,7 @@ window.allArticles = [
     "excerpt": "Skulls Skulls Skulls by Daniel da Silva: актуальная цена (79.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
     "date": "9 июля 2026",
     "readTime": "2 мин",
-    "category": "Обзоры"
+    "category": "Во что поиграть?"
   },
   {
     "url": "/archive/alek-1511740.html",
@@ -158,7 +158,7 @@ window.allArticles = [
     "excerpt": "ALEK: актуальная цена (331.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
     "date": "9 июля 2026",
     "readTime": "2 мин",
-    "category": "Обзоры"
+    "category": "Во что поиграть?"
   },
   {
     "url": "/archive/ego-3692680.html",
@@ -166,7 +166,7 @@ window.allArticles = [
     "excerpt": "EGO: актуальная цена (288.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
     "date": "9 июля 2026",
     "readTime": "2 мин",
-    "category": "Обзоры"
+    "category": "Во что поиграть?"
   },
   {
     "url": "/archive/bottom-squad-4068360.html",
@@ -174,7 +174,7 @@ window.allArticles = [
     "excerpt": "Bottom Squad: актуальная цена (192.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
     "date": "9 июля 2026",
     "readTime": "2 мин",
-    "category": "Обзоры"
+    "category": "Во что поиграть?"
   },
   {
     "url": "/archive/gameboro-3832100.html",
@@ -182,7 +182,7 @@ window.allArticles = [
     "excerpt": "GAMEBORO: актуальная цена (Бесплатно), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
     "date": "9 июля 2026",
     "readTime": "2 мин",
-    "category": "Обзоры"
+    "category": "Во что поиграть?"
   },
   {
     "url": "/archive/kriticheskaya-nagruzka-4804750.html",
@@ -190,7 +190,7 @@ window.allArticles = [
     "excerpt": "Критическая Нагрузка: актуальная цена (201.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
     "date": "9 июля 2026",
     "readTime": "2 мин",
-    "category": "Обзоры"
+    "category": "Во что поиграть?"
   },
   {
     "url": "/archive/hell-clock-cursed-war-3774910.html",
@@ -198,7 +198,7 @@ window.allArticles = [
     "excerpt": "Hell Clock: Cursed War: актуальная цена (550.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
     "date": "9 июля 2026",
     "readTime": "2 мин",
-    "category": "Обзоры"
+    "category": "Во что поиграть?"
   },
   {
     "url": "/archive/polytropos-a-tactical-odyssey-3227320.html",
@@ -206,7 +206,7 @@ window.allArticles = [
     "excerpt": "Polytropos: A Tactical Odyssey: актуальная цена (418.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
     "date": "9 июля 2026",
     "readTime": "2 мин",
-    "category": "Обзоры"
+    "category": "Во что поиграть?"
   },
   {
     "url": "/archive/weird-water-world-4534300.html",
@@ -214,7 +214,7 @@ window.allArticles = [
     "excerpt": "Weird Water World: актуальная цена (105.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
     "date": "9 июля 2026",
     "readTime": "2 мин",
-    "category": "Обзоры"
+    "category": "Во что поиграть?"
   },
   {
     "url": "/archive/evil-thing-4373160.html",
@@ -222,7 +222,7 @@ window.allArticles = [
     "excerpt": "Evil Thing: актуальная цена (157.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
     "date": "9 июля 2026",
     "readTime": "2 мин",
-    "category": "Обзоры"
+    "category": "Во что поиграть?"
   },
   {
     "url": "/archive/cursed-companions-3265230.html",
@@ -230,7 +230,7 @@ window.allArticles = [
     "excerpt": "Cursed Companions: актуальная цена (245.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
     "date": "9 июля 2026",
     "readTime": "2 мин",
-    "category": "Обзоры"
+    "category": "Во что поиграть?"
   },
   {
     "url": "/archive/gray-trading-4596160.html",
@@ -238,7 +238,7 @@ window.allArticles = [
     "excerpt": "Gray Trading: актуальная цена (160.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
     "date": "9 июля 2026",
     "readTime": "2 мин",
-    "category": "Обзоры"
+    "category": "Во что поиграть?"
   },
   {
     "url": "/archive/vape-store-miami-prologue-4849630.html",
@@ -246,7 +246,7 @@ window.allArticles = [
     "excerpt": "Vape Store Miami: Prologue: актуальная цена (Бесплатно), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
     "date": "9 июля 2026",
     "readTime": "2 мин",
-    "category": "Обзоры"
+    "category": "Во что поиграть?"
   },
   {
     "url": "/archive/elevator-avici-4790520.html",
@@ -254,7 +254,7 @@ window.allArticles = [
     "excerpt": "ELEVATOR: AVICI: актуальная цена (79.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
     "date": "9 июля 2026",
     "readTime": "2 мин",
-    "category": "Обзоры"
+    "category": "Во что поиграть?"
   },
   {
     "url": "/archive/sweet-running-4571590.html",
@@ -262,7 +262,7 @@ window.allArticles = [
     "excerpt": "Sweet Running: актуальная цена (45.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
     "date": "9 июля 2026",
     "readTime": "2 мин",
-    "category": "Обзоры"
+    "category": "Во что поиграть?"
   },
   {
     "url": "/archive/cyber-psychosis-1349930.html",
@@ -270,7 +270,7 @@ window.allArticles = [
     "excerpt": "Cyber Psychosis: актуальная цена (120.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
     "date": "9 июля 2026",
     "readTime": "2 мин",
-    "category": "Обзоры"
+    "category": "Во что поиграть?"
   },
   {
     "url": "/archive/our-wonderland-4329100.html",
@@ -278,7 +278,7 @@ window.allArticles = [
     "excerpt": "Our Wonderland: актуальная цена (Бесплатно), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
     "date": "9 июля 2026",
     "readTime": "2 мин",
-    "category": "Обзоры"
+    "category": "Во что поиграть?"
   },
   {
     "url": "/archive/cozy-tide-4809010.html",
@@ -286,7 +286,7 @@ window.allArticles = [
     "excerpt": "Cozy Tide: актуальная цена (180.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
     "date": "9 июля 2026",
     "readTime": "2 мин",
-    "category": "Обзоры"
+    "category": "Во что поиграть?"
   },
   {
     "url": "/archive/prince-of-vibe-code-4820270.html",
@@ -294,7 +294,7 @@ window.allArticles = [
     "excerpt": "Prince of Vibe Code: актуальная цена (90.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
     "date": "9 июля 2026",
     "readTime": "2 мин",
-    "category": "Обзоры"
+    "category": "Во что поиграть?"
   },
   {
     "url": "/archive/idle-hands-4867060.html",
@@ -302,7 +302,7 @@ window.allArticles = [
     "excerpt": "Idle Hands: актуальная цена (192.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
     "date": "9 июля 2026",
     "readTime": "2 мин",
-    "category": "Обзоры"
+    "category": "Во что поиграть?"
   },
   {
     "url": "/archive/mesmalie-3534790.html",
@@ -310,7 +310,7 @@ window.allArticles = [
     "excerpt": "Mesmalie: актуальная цена (331.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
     "date": "9 июля 2026",
     "readTime": "2 мин",
-    "category": "Обзоры"
+    "category": "Во что поиграть?"
   },
   {
     "url": "/archive/sondersoft-soccer-monkeys-vs-robots-4806090.html",
@@ -318,7 +318,7 @@ window.allArticles = [
     "excerpt": "SonderSoft Soccer: Monkeys VS Robots!: актуальная цена (Бесплатно), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
     "date": "9 июля 2026",
     "readTime": "2 мин",
-    "category": "Обзоры"
+    "category": "Во что поиграть?"
   },
   {
     "url": "/archive/dark-hollow-rpg-4867550.html",
@@ -326,7 +326,7 @@ window.allArticles = [
     "excerpt": "Dark Hollow RPG: актуальная цена (90.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
     "date": "9 июля 2026",
     "readTime": "2 мин",
-    "category": "Обзоры"
+    "category": "Во что поиграть?"
   },
   {
     "url": "/archive/capybara-bingo-4668040.html",
@@ -334,7 +334,7 @@ window.allArticles = [
     "excerpt": "Capybara Bingo: актуальная цена (150.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
     "date": "9 июля 2026",
     "readTime": "2 мин",
-    "category": "Обзоры"
+    "category": "Во что поиграть?"
   },
   {
     "url": "/archive/fleshbreak-nsfw-4924740.html",
@@ -342,7 +342,7 @@ window.allArticles = [
     "excerpt": "FLESHBREAK - NSFW: актуальная цена (51.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
     "date": "9 июля 2026",
     "readTime": "2 мин",
-    "category": "Обзоры"
+    "category": "Во что поиграть?"
   },
   {
     "url": "/archive/fleshbreak-4175650.html",
@@ -350,7 +350,7 @@ window.allArticles = [
     "excerpt": "FLESHBREAK: актуальная цена (180.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
     "date": "9 июля 2026",
     "readTime": "2 мин",
-    "category": "Обзоры"
+    "category": "Во что поиграть?"
   },
   {
     "url": "/archive/meccha-chameleon-4704690.html",
@@ -358,7 +358,7 @@ window.allArticles = [
     "excerpt": "MECCHA CHAMELEON: актуальная цена (290.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
     "date": "9 июля 2026",
     "readTime": "2 мин",
-    "category": "Обзоры"
+    "category": "Во что поиграть?"
   },
   {
     "url": "/archive/esports-manager-2026-2749950.html",
@@ -366,7 +366,7 @@ window.allArticles = [
     "excerpt": "Esports Manager 2026: актуальная цена (568.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
     "date": "9 июля 2026",
     "readTime": "2 мин",
-    "category": "Обзоры"
+    "category": "Во что поиграть?"
   },
   {
     "url": "/archive/the-finals-season-11-ultimate-battle-pass-bundle-4835400.html",
@@ -374,7 +374,7 @@ window.allArticles = [
     "excerpt": "THE FINALS - Season 11 Ultimate Battle Pass Bundle: актуальная цена (2415.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
     "date": "9 июля 2026",
     "readTime": "2 мин",
-    "category": "Обзоры"
+    "category": "Во что поиграть?"
   },
   {
     "url": "/archive/baldur-s-gate-3-1086940.html",
@@ -382,7 +382,7 @@ window.allArticles = [
     "excerpt": "Baldur's Gate 3: актуальная цена (1999.00 RUB), 97% положительных отзывов в Steam, статистика владельцев (20,000,000 – 50,000,000). Данные обновляются автоматически.",
     "date": "9 июля 2026",
     "readTime": "2 мин",
-    "category": "Обзоры"
+    "category": "Во что поиграть?"
   },
   {
     "url": "/archive/cat-mail-co-4380490.html",
@@ -390,7 +390,7 @@ window.allArticles = [
     "excerpt": "Cat Mail Co.: актуальная цена (561.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
     "date": "9 июля 2026",
     "readTime": "2 мин",
-    "category": "Обзоры"
+    "category": "Во что поиграть?"
   },
   {
     "url": "/archive/ii-v-gejmdeve-2026-problemy-nejrosetej.html",

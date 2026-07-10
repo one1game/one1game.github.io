@@ -21,7 +21,7 @@ const CONFIG = {
   delayMs: parseInt(process.env.DELAY_MS || "1500", 10),
   language: "russian",
   countryCode: "ru",
-  categoryLabel: "Обзоры",
+  categoryLabel: "Во что поиграть?",
   categoryClass: "cat-play",
   gtagId: "G-SZYYDYEC6T",
   articlesDataPath: process.env.ARTICLES_DATA_PATH || "articles-data.js",
