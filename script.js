@@ -358,6 +358,7 @@ class One1GamePlatform {
       const catClass = categoryMap[game.category] || '';
       return `
       <a href="${game.url}" class="article-card">
+        ${game.image ? `<div class="card-image"><img src="${game.image}" alt="${game.title}" loading="lazy" width="1344" height="768"></div>` : ''}
         <span class="card-category ${catClass}">${game.category}</span>
         <h3>${game.title}</h3>
         <p class="card-excerpt">${game.excerpt || ''}</p>
