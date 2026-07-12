@@ -1,5 +1,6 @@
 // articles-data.js
-window.allArticles = [
+window.allArticles = 
+[
   {
     "url": "/archive/skrytye-lovushki-apgreyda-2026.html",
     "title": "Скрытые ловушки апгрейда в 2026: Почему ваш ПК «задушит» RTX 5090 и RX 9070 XT?",
@@ -14,7 +15,8 @@ window.allArticles = [
     "excerpt": "Qwerty's Quickies: актуальная цена (348.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
     "date": "12 июля 2026",
     "readTime": "2 мин",
-    "category": "Во что поиграть?"
+    "category": "Во что поиграть?",
+    "image": "/img/ai/output/qwerty_s_quickies_4859360.png"
   },
   {
     "url": "/archive/-4376780.html",
@@ -22,7 +24,8 @@ window.allArticles = [
     "excerpt": "砍价模拟器: актуальная цена (73.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
     "date": "12 июля 2026",
     "readTime": "2 мин",
-    "category": "Во что поиграть?"
+    "category": "Во что поиграть?",
+    "image": "/img/ai/output/_4376780.png"
   },
   {
     "url": "/archive/zombie-queen-4811410.html",
@@ -30,7 +33,8 @@ window.allArticles = [
     "excerpt": "Zombie Queen: актуальная цена (459.51 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
     "date": "12 июля 2026",
     "readTime": "2 мин",
-    "category": "Во что поиграть?"
+    "category": "Во что поиграть?",
+    "image": "/img/ai/output/zombie_queen_4811410.png"
   },
   {
     "url": "/archive/angels-fall-first-367270.html",
@@ -38,7 +42,8 @@ window.allArticles = [
     "excerpt": "Angels Fall First: актуальная цена (350.00 RUB), 82% положительных отзывов в Steam, статистика владельцев (100,000 – 200,000). Данные обновляются автоматически.",
     "date": "12 июля 2026",
     "readTime": "2 мин",
-    "category": "Во что поиграть?"
+    "category": "Во что поиграть?",
+    "image": "/img/ai/output/angels_fall_first_367270.png"
   },
   {
     "url": "/archive/blobbin-4736050.html",
@@ -46,7 +51,8 @@ window.allArticles = [
     "excerpt": "Blobbin: актуальная цена (127.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
     "date": "12 июля 2026",
     "readTime": "2 мин",
-    "category": "Во что поиграть?"
+    "category": "Во что поиграть?",
+    "image": "/img/ai/output/blobbin_4736050.png"
   },
   {
     "url": "/archive/hentai-flesh-4660300.html",
@@ -54,7 +60,8 @@ window.allArticles = [
     "excerpt": "Hentai Flesh: актуальная цена (79.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
     "date": "12 июля 2026",
     "readTime": "2 мин",
-    "category": "Во что поиграть?"
+    "category": "Во что поиграть?",
+    "image": "/img/ai/output/hentai_flesh_4660300.png"
   },
   {
     "url": "/archive/the-dungeon-persists-4819560.html",
@@ -62,7 +69,8 @@ window.allArticles = [
     "excerpt": "The Dungeon Persists: актуальная цена (192.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
     "date": "12 июля 2026",
     "readTime": "2 мин",
-    "category": "Во что поиграть?"
+    "category": "Во что поиграть?",
+    "image": "/img/ai/output/the_dungeon_persists_4819560.png"
   },
   {
     "url": "/archive/brandon-s-semiconductor-simulator-4864110.html",
@@ -70,7 +78,8 @@ window.allArticles = [
     "excerpt": "Brandon's Semiconductor Simulator: актуальная цена (192.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
     "date": "12 июля 2026",
     "readTime": "2 мин",
-    "category": "Во что поиграть?"
+    "category": "Во что поиграть?",
+    "image": "/img/ai/output/brandon_s_semiconductor_simulator_4864110.png"
   },
   {
     "url": "/archive/health-audit-simulator-4336300.html",
@@ -78,7 +87,8 @@ window.allArticles = [
     "excerpt": "Health Audit Simulator: актуальная цена (420.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
     "date": "12 июля 2026",
     "readTime": "2 мин",
-    "category": "Во что поиграть?"
+    "category": "Во что поиграть?",
+    "image": "/img/ai/output/health_audit_simulator_4336300.png"
   },
   {
     "url": "/archive/forever-virgin-simulator-4630060.html",
@@ -86,7 +96,8 @@ window.allArticles = [
     "excerpt": "Forever Virgin Simulator: актуальная цена (45.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
     "date": "12 июля 2026",
     "readTime": "2 мин",
-    "category": "Во что поиграть?"
+    "category": "Во что поиграть?",
+    "image": "/img/ai/output/forever_virgin_simulator_4630060.png"
   },
   {
     "url": "/archive/diagram-awesome-3983240.html",
@@ -94,7 +105,8 @@ window.allArticles = [
     "excerpt": "Diagram Awesome: актуальная цена (413.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
     "date": "12 июля 2026",
     "readTime": "2 мин",
-    "category": "Во что поиграть?"
+    "category": "Во что поиграть?",
+    "image": "/img/ai/output/diagram_awesome_3983240.png"
   },
   {
     "url": "/archive/abyrith-4839770.html",
@@ -102,7 +114,8 @@ window.allArticles = [
     "excerpt": "Abyrith: актуальная цена (240.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
     "date": "12 июля 2026",
     "readTime": "2 мин",
-    "category": "Во что поиграть?"
+    "category": "Во что поиграть?",
+    "image": "/img/ai/output/abyrith_4839770.png"
   },
   {
     "url": "/archive/diagnosis-room-101-4877160.html",
@@ -110,7 +123,8 @@ window.allArticles = [
     "excerpt": "Diagnosis: Room 101: актуальная цена (124.92 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
     "date": "12 июля 2026",
     "readTime": "2 мин",
-    "category": "Во что поиграть?"
+    "category": "Во что поиграть?",
+    "image": "/img/ai/output/diagnosis_room_101_4877160.png"
   },
   {
     "url": "/archive/megaboobs-4761320.html",
@@ -118,7 +132,8 @@ window.allArticles = [
     "excerpt": "MEGABOOBS 🔞: актуальная цена (346.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
     "date": "12 июля 2026",
     "readTime": "2 мин",
-    "category": "Во что поиграть?"
+    "category": "Во что поиграть?",
+    "image": "/img/ai/output/megaboobs_4761320.png"
   },
   {
     "url": "/archive/hentai-tales-7-days-cycle-4751360.html",
@@ -126,7 +141,8 @@ window.allArticles = [
     "excerpt": "Hentai Tales: 7 Days Cycle: актуальная цена (46.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
     "date": "12 июля 2026",
     "readTime": "2 мин",
-    "category": "Во что поиграть?"
+    "category": "Во что поиграть?",
+    "image": "/img/ai/output/hentai_tales_7_days_cycle_4751360.png"
   },
   {
     "url": "/archive/calculus-of-rot-4799150.html",
@@ -134,7 +150,8 @@ window.allArticles = [
     "excerpt": "Calculus of Rot: актуальная цена (144.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
     "date": "12 июля 2026",
     "readTime": "2 мин",
-    "category": "Во что поиграть?"
+    "category": "Во что поиграть?",
+    "image": "/img/ai/output/calculus_of_rot_4799150.png"
   },
   {
     "url": "/archive/clubbed-seal-4799110.html",
@@ -142,7 +159,8 @@ window.allArticles = [
     "excerpt": "Clubbed Seal: актуальная цена (144.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
     "date": "12 июля 2026",
     "readTime": "2 мин",
-    "category": "Во что поиграть?"
+    "category": "Во что поиграть?",
+    "image": "/img/ai/output/clubbed_seal_4799110.png"
   },
   {
     "url": "/archive/-4740600.html",
@@ -150,7 +168,8 @@ window.allArticles = [
     "excerpt": "咸鱼搬运工: актуальная цена (355.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
     "date": "12 июля 2026",
     "readTime": "2 мин",
-    "category": "Во что поиграть?"
+    "category": "Во что поиграть?",
+    "image": "/img/ai/output/_4740600.png"
   },
   {
     "url": "/archive/galaxy-defenders-classic-td-3807420.html",
@@ -158,7 +177,8 @@ window.allArticles = [
     "excerpt": "Galaxy Defenders (Classic TD): актуальная цена (51.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
     "date": "12 июля 2026",
     "readTime": "2 мин",
-    "category": "Во что поиграть?"
+    "category": "Во что поиграть?",
+    "image": "/img/ai/output/galaxy_defenders_classic_td_3807420.png"
   },
   {
     "url": "/archive/toonequest-2143690.html",
@@ -166,7 +186,8 @@ window.allArticles = [
     "excerpt": "TooneQuest: актуальная цена (199.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
     "date": "12 июля 2026",
     "readTime": "2 мин",
-    "category": "Во что поиграть?"
+    "category": "Во что поиграть?",
+    "image": "/img/ai/output/toonequest_2143690.png"
   },
   {
     "url": "/archive/dropper-factory-4746010.html",
@@ -174,7 +195,8 @@ window.allArticles = [
     "excerpt": "Dropper Factory: актуальная цена (72.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
     "date": "12 июля 2026",
     "readTime": "2 мин",
-    "category": "Во что поиграть?"
+    "category": "Во что поиграть?",
+    "image": "/img/ai/output/dropper_factory_4746010.png"
   },
   {
     "url": "/archive/accept-or-reject-4820200.html",
@@ -182,7 +204,8 @@ window.allArticles = [
     "excerpt": "Accept or Reject: актуальная цена (156.97 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
     "date": "12 июля 2026",
     "readTime": "2 мин",
-    "category": "Во что поиграть?"
+    "category": "Во что поиграть?",
+    "image": "/img/ai/output/accept_or_reject_4820200.png"
   },
   {
     "url": "/archive/touhou-russian-roulette-4877890.html",
@@ -190,7 +213,8 @@ window.allArticles = [
     "excerpt": "Touhou Russian Roulette: актуальная цена (135.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
     "date": "12 июля 2026",
     "readTime": "2 мин",
-    "category": "Во что поиграть?"
+    "category": "Во что поиграть?",
+    "image": "/img/ai/output/touhou_russian_roulette_4877890.png"
   },
   {
     "url": "/archive/m-bius-brides-4612020.html",
@@ -198,7 +222,8 @@ window.allArticles = [
     "excerpt": "刻命花嫁 Möbius Brides: актуальная цена (418.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
     "date": "12 июля 2026",
     "readTime": "2 мин",
-    "category": "Во что поиграть?"
+    "category": "Во что поиграть?",
+    "image": "/img/ai/output/m_bius_brides_4612020.png"
   },
   {
     "url": "/archive/the-mutiny-4412900.html",
@@ -206,7 +231,8 @@ window.allArticles = [
     "excerpt": "The Mutiny: актуальная цена (135.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
     "date": "12 июля 2026",
     "readTime": "2 мин",
-    "category": "Во что поиграть?"
+    "category": "Во что поиграть?",
+    "image": "/img/ai/output/the_mutiny_4412900.png"
   },
   {
     "url": "/archive/lostecho-4812230.html",
@@ -214,7 +240,8 @@ window.allArticles = [
     "excerpt": "LostEcho: актуальная цена (99.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
     "date": "12 июля 2026",
     "readTime": "2 мин",
-    "category": "Во что поиграть?"
+    "category": "Во что поиграть?",
+    "image": "/img/ai/output/lostecho_4812230.png"
   },
   {
     "url": "/archive/ascension-of-the-dead-3723580.html",
@@ -222,7 +249,8 @@ window.allArticles = [
     "excerpt": "Ascension of the Dead: актуальная цена (240.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
     "date": "12 июля 2026",
     "readTime": "2 мин",
-    "category": "Во что поиграть?"
+    "category": "Во что поиграть?",
+    "image": "/img/ai/output/ascension_of_the_dead_3723580.png"
   },
   {
     "url": "/archive/180-4566690.html",
@@ -230,7 +258,8 @@ window.allArticles = [
     "excerpt": "180°: актуальная цена (143.41 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
     "date": "12 июля 2026",
     "readTime": "2 мин",
-    "category": "Во что поиграть?"
+    "category": "Во что поиграть?",
+    "image": "/img/ai/output/180_4566690.png"
   },
   {
     "url": "/archive/soothe-4675330.html",
@@ -238,7 +267,8 @@ window.allArticles = [
     "excerpt": "Soothe: актуальная цена (99.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
     "date": "12 июля 2026",
     "readTime": "2 мин",
-    "category": "Во что поиграть?"
+    "category": "Во что поиграть?",
+    "image": "/img/ai/output/soothe_4675330.png"
   },
   {
     "url": "/archive/summer-days-in-the-joyful-countryside-3606380.html",
@@ -246,7 +276,8 @@ window.allArticles = [
     "excerpt": "Уютная визуальная новелла от Orcsoft: три племянницы в сельской глубинке, фарминг, отдых и романтика. Узнайте цену, отзывы игроков и пиковый онлайн в Steam 2026.",
     "date": "11 июля 2026",
     "readTime": "2 мин",
-    "category": "Во что поиграть?"
+    "category": "Во что поиграть?",
+    "image": "/img/ai/output/summer_days_in_the_joyful_countryside_3606380.png"
   },
   {
     "url": "/archive/-2943310.html",
@@ -254,7 +285,8 @@ window.allArticles = [
     "excerpt": "Бесплатная нуар-визуальная новелла: студент-медик, допросная, загадочная смерть хирурга. Атмосфера Огайо 2016 года. Узнайте отзывы и статистику Steam 2026.",
     "date": "11 июля 2026",
     "readTime": "2 мин",
-    "category": "Во что поиграть?"
+    "category": "Во что поиграть?",
+    "image": "/img/ai/output/_2943310.png"
   },
   {
     "url": "/archive/you-t-pes-4824530.html",
@@ -262,7 +294,8 @@ window.allArticles = [
     "excerpt": "Уникальный пазл-платформер с механикой клейкой ленты. Минималистичный стиль, нестандартные решения. Цена 200 RUB, отзывы и онлайн в Steam 2026.",
     "date": "11 июля 2026",
     "readTime": "2 мин",
-    "category": "Во что поиграть?"
+    "category": "Во что поиграть?",
+    "image": "/img/ai/output/you_t_pes_4824530.png"
   },
   {
     "url": "/archive/scourge-of-the-necromancer-4717680.html",
@@ -270,7 +303,8 @@ window.allArticles = [
     "excerpt": "Кооперативная тактическая RPG: 6 героев, некромант, гексагональное поле. Каждый воин убивает свой тип нежити. Цена 465 RUB — отзывы и статистика Steam 2026.",
     "date": "11 июля 2026",
     "readTime": "2 мин",
-    "category": "Во что поиграть?"
+    "category": "Во что поиграть?",
+    "image": "/img/ai/output/scourge_of_the_necromancer_4717680.png"
   },
   {
     "url": "/archive/hyperfist-3689210.html",
@@ -278,7 +312,8 @@ window.allArticles = [
     "excerpt": "Бесплатный FPS в стиле комиксов: круши роботов меха-кулаками. Студенческий проект CHIRALITY/DigiPen. Узнайте отзывы и статистику игроков в Steam 2026.",
     "date": "11 июля 2026",
     "readTime": "2 мин",
-    "category": "Во что поиграть?"
+    "category": "Во что поиграть?",
+    "image": "/img/ai/output/hyperfist_3689210.png"
   },
   {
     "url": "/archive/math-frenzy-3961580.html",
@@ -286,7 +321,8 @@ window.allArticles = [
     "excerpt": "Аркадная математика от Banuza: решай уравнения в уме, бей рекорды в трёх режимах. Цена 240 RUB. Отзывы и статистика игроков в Steam 2026.",
     "date": "11 июля 2026",
     "readTime": "2 мин",
-    "category": "Во что поиграть?"
+    "category": "Во что поиграть?",
+    "image": "/img/ai/output/math_frenzy_3961580.png"
   },
   {
     "url": "/archive/hivebreak-4858120.html",
@@ -294,7 +330,8 @@ window.allArticles = [
     "excerpt": "Напряжённый экшен-шутер: туннели улья, орды инопланетных насекомых, сай-фай хоррор. Узнайте цену, отзывы и статистику игроков Steam 2026.",
     "date": "11 июля 2026",
     "readTime": "2 мин",
-    "category": "Во что поиграть?"
+    "category": "Во что поиграть?",
+    "image": "/img/ai/output/hivebreak_4858120.png"
   },
   {
     "url": "/archive/fitblocks-wooden-block-puzzle-4850850.html",
@@ -302,7 +339,8 @@ window.allArticles = [
     "excerpt": "Медитативный пазл с деревянными блоками: размещай, очищай линии, отдыхай. Уютный стиль и простое управление. Цена, отзывы и онлайн в Steam 2026.",
     "date": "11 июля 2026",
     "readTime": "2 мин",
-    "category": "Во что поиграть?"
+    "category": "Во что поиграть?",
+    "image": "/img/ai/output/fitblocks_wooden_block_puzzle_4850850.png"
   },
   {
     "url": "/archive/save-the-kingdom-warrior-rising-4852880.html",
@@ -310,7 +348,8 @@ window.allArticles = [
     "excerpt": "Эпическая фэнтези-RPG: юный воин, монстры, драконы, перманентная смерть. Спаси королевство. Узнай цену, отзывы и статистику в Steam 2026.",
     "date": "11 июля 2026",
     "readTime": "2 мин",
-    "category": "Во что поиграть?"
+    "category": "Во что поиграть?",
+    "image": "/img/ai/output/save_the_kingdom_warrior_rising_4852880.png"
   },
   {
     "url": "/archive/waifu-discovered-3-cyberpunk-fantasy-3607040.html",
@@ -318,7 +357,8 @@ window.allArticles = [
     "excerpt": "Третья часть аниме-шутера: киберпанк, злые ИИ, 9 героинь, кооператив. Чем лучше играешь — тем больше контента. Цена, отзывы и онлайн в Steam 2026.",
     "date": "11 июля 2026",
     "readTime": "2 мин",
-    "category": "Во что поиграть?"
+    "category": "Во что поиграть?",
+    "image": "/img/ai/output/waifu_discovered_3_cyberpunk_fantasy_3607040.png"
   },
   {
     "url": "/archive/escape-this-4705520.html",
@@ -326,7 +366,8 @@ window.allArticles = [
     "excerpt": "Прецизионный платформер: 40+ уровней, перманентная смерть, красные блоки — не касаться. Встроенный редактор карт. Цена, отзывы и статистика Steam 2026.",
     "date": "11 июля 2026",
     "readTime": "2 мин",
-    "category": "Во что поиграть?"
+    "category": "Во что поиграть?",
+    "image": "/img/ai/output/escape_this_4705520.png"
   },
   {
     "url": "/archive/hentai-age-gym-4843730.html",
@@ -334,7 +375,8 @@ window.allArticles = [
     "excerpt": "Пиксельный аниме-симулятор: тренируй персонажей в фитнес-клубе с неоновой атмосферой. Цена, отзывы и онлайн в Steam 2026 — обновляется в реальном времени.",
     "date": "11 июля 2026",
     "readTime": "2 мин",
-    "category": "Во что поиграть?"
+    "category": "Во что поиграть?",
+    "image": "/img/ai/output/hentai_age_gym_4843730.png"
   },
   {
     "url": "/archive/wet-dream-succubus-4846190.html",
@@ -342,7 +384,8 @@ window.allArticles = [
     "excerpt": "Тёмная визуальная новелла: суккуб в готическом особняке, магия и соблазнение. Цена, отзывы и онлайн в Steam 2026 — обновляется в реальном времени.",
     "date": "11 июля 2026",
     "readTime": "2 мин",
-    "category": "Во что поиграть?"
+    "category": "Во что поиграть?",
+    "image": "/img/ai/output/wet_dream_succubus_4846190.png"
   },
   {
     "url": "/archive/dusk-of-war-4333240.html",
@@ -350,7 +393,8 @@ window.allArticles = [
     "excerpt": "Кликер-стратегия: стань военным министром, управляй армией и экономикой в сеттинге Первой мировой. Цена, отзывы и онлайн в Steam 2026.",
     "date": "11 июля 2026",
     "readTime": "2 мин",
-    "category": "Во что поиграть?"
+    "category": "Во что поиграть?",
+    "image": "/img/ai/output/dusk_of_war_4333240.png"
   },
   {
     "url": "/archive/sidedrop-4422940.html",
@@ -358,7 +402,8 @@ window.allArticles = [
     "excerpt": "Уникальный айдл-кликер: 5 типов шаров, древо прокачки, блоки поднимаются снизу. Цена, отзывы игроков и онлайн в Steam 2026.",
     "date": "11 июля 2026",
     "readTime": "2 мин",
-    "category": "Во что поиграть?"
+    "category": "Во что поиграть?",
+    "image": "/img/ai/output/sidedrop_4422940.png"
   },
   {
     "url": "/archive/no-escape-4825020.html",
@@ -366,7 +411,8 @@ window.allArticles = [
     "excerpt": "Хардкорный хоррор: 4 режима, 2 концовки. Собирай инструменты, убегай от НЕГО. $3.99. Отзывы и онлайн в Steam 2026.",
     "date": "11 июля 2026",
     "readTime": "2 мин",
-    "category": "Во что поиграть?"
+    "category": "Во что поиграть?",
+    "image": "/img/ai/output/no_escape_4825020.png"
   },
   {
     "url": "/archive/mushroots-2372400.html",
@@ -374,7 +420,8 @@ window.allArticles = [
     "excerpt": "RTS про разумные грибы: 2.5D-изометрия, мультиплеер, стратегическое планирование. Бесплатно. Отзывы и онлайн в Steam 2026.",
     "date": "11 июля 2026",
     "readTime": "2 мин",
-    "category": "Во что поиграть?"
+    "category": "Во что поиграть?",
+    "image": "/img/ai/output/mushroots_2372400.png"
   },
   {
     "url": "/archive/project-trash-4798760.html",
@@ -382,7 +429,8 @@ window.allArticles = [
     "excerpt": "Экологический симулятор: сортируй, перерабатывай, спасай планету. Яркая графика и позитивная атмосфера. Цена, отзывы и онлайн в Steam 2026.",
     "date": "11 июля 2026",
     "readTime": "2 мин",
-    "category": "Во что поиграть?"
+    "category": "Во что поиграть?",
+    "image": "/img/ai/output/project_trash_4798760.png"
   },
   {
     "url": "/archive/the-lost-mixtape-4012050.html",
@@ -390,7 +438,8 @@ window.allArticles = [
     "excerpt": "Атмосферная walking sim: енот с кассетным плеером, открытый мир, постапокалиптический молл. $3.99. Отзывы и онлайн в Steam 2026.",
     "date": "11 июля 2026",
     "readTime": "2 мин",
-    "category": "Во что поиграть?"
+    "category": "Во что поиграть?",
+    "image": "/img/ai/output/the_lost_mixtape_4012050.png"
   },
   {
     "url": "/archive/machinefall-3213120.html",
@@ -398,7 +447,8 @@ window.allArticles = [
     "excerpt": "RTS от соло-разработчика: глобальная карта, 4 эпохи, нашествие машин. $7.26 — вводная цена. Отзывы и онлайн в Steam 2026.",
     "date": "11 июля 2026",
     "readTime": "2 мин",
-    "category": "Во что поиграть?"
+    "category": "Во что поиграть?",
+    "image": "/img/ai/output/machinefall_3213120.png"
   },
   {
     "url": "/archive/step-lightly-4764810.html",
@@ -406,7 +456,8 @@ window.allArticles = [
     "excerpt": "Атмосферный стелс от первого лица: скрипучий пол, минималистичный хоррор, напряжение в каждом шаге. Цена, отзывы и онлайн в Steam 2026.",
     "date": "11 июля 2026",
     "readTime": "2 мин",
-    "category": "Во что поиграть?"
+    "category": "Во что поиграть?",
+    "image": "/img/ai/output/step_lightly_4764810.png"
   },
   {
     "url": "/archive/sex-club-4864530.html",
@@ -414,7 +465,8 @@ window.allArticles = [
     "excerpt": "Симулятор менеджмента: управляй ночным клубом, персоналом и атмосферой. Неоновая эстетика. Цена, отзывы и онлайн в Steam 2026.",
     "date": "11 июля 2026",
     "readTime": "2 мин",
-    "category": "Во что поиграть?"
+    "category": "Во что поиграть?",
+    "image": "/img/ai/output/sex_club_4864530.png"
   },
   {
     "url": "/archive/shrapnel-sentinel-3922610.html",
@@ -422,7 +474,8 @@ window.allArticles = [
     "excerpt": "Арена-FPS: 4 оружия, 6 секвенций, орды роботов. Защити Pillar of Reality и попади в топ лидеров. Цена, отзывы и онлайн Steam 2026.",
     "date": "11 июля 2026",
     "readTime": "2 мин",
-    "category": "Во что поиграть?"
+    "category": "Во что поиграть?",
+    "image": "/img/ai/output/shrapnel_sentinel_3922610.png"
   },
   {
     "url": "/archive/mybiz-pomodoro-desk-tycoon-4725000.html",
@@ -430,7 +483,8 @@ window.allArticles = [
     "excerpt": "Уютный Pomodoro-таймер + тайкун: строй офис, нанимай сотрудников, играй в мини-игры. Онлайн-встречи и 25 достижений. Цена, отзывы и онлайн Steam 2026.",
     "date": "11 июля 2026",
     "readTime": "2 мин",
-    "category": "Во что поиграть?"
+    "category": "Во что поиграть?",
+    "image": "/img/ai/output/mybiz_pomodoro_desk_tycoon_4725000.png"
   },
   {
     "url": "/archive/evil-spirit-hunter-3367100.html",
@@ -438,7 +492,8 @@ window.allArticles = [
     "excerpt": "Топ-даун арена-шутер: волны духов, roguelike-элементы, временные пауэр-апы. $5.99. Отзывы и онлайн в Steam 2026.",
     "date": "11 июля 2026",
     "readTime": "2 мин",
-    "category": "Во что поиграть?"
+    "category": "Во что поиграть?",
+    "image": "/img/ai/output/evil_spirit_hunter_3367100.png"
   },
   {
     "url": "/archive/mythopolis-4704960.html",
@@ -446,7 +501,8 @@ window.allArticles = [
     "excerpt": "Лоу-поли roguelike: мифические существа атакуют американский городок. Адаптивная стратегия, растущий хаос. $2.54. Отзывы и онлайн Steam 2026.",
     "date": "11 июля 2026",
     "readTime": "2 мин",
-    "category": "Во что поиграть?"
+    "category": "Во что поиграть?",
+    "image": "/img/ai/output/mythopolis_4704960.png"
   },
   {
     "url": "/archive/pinrogue-4465650.html",
@@ -454,7 +510,8 @@ window.allArticles = [
     "excerpt": "Уникальный гибрид пинбола и roguelike: бамперы, множители, прокачка и ломающие билды. $5.99. Отзывы и онлайн в Steam 2026.",
     "date": "11 июля 2026",
     "readTime": "2 мин",
-    "category": "Во что поиграть?"
+    "category": "Во что поиграть?",
+    "image": "/img/ai/output/pinrogue_4465650.png"
   },
   {
     "url": "/archive/anbar-4351590.html",
@@ -462,7 +519,8 @@ window.allArticles = [
     "excerpt": "Атмосферное приключение: арабский базар, пустынная магия, орнаментальная архитектура. Цена, отзывы и онлайн в Steam 2026.",
     "date": "11 июля 2026",
     "readTime": "2 мин",
-    "category": "Во что поиграть?"
+    "category": "Во что поиграть?",
+    "image": "/img/ai/output/anbar_4351590.png"
   },
   {
     "url": "/archive/akayo-therapy-2227870.html",
@@ -470,7 +528,8 @@ window.allArticles = [
     "excerpt": "Уютный симулятор: кабинет психотерапевта, исцеление пациентов, спокойная атмосфера. Цена, отзывы и онлайн в Steam 2026.",
     "date": "11 июля 2026",
     "readTime": "2 мин",
-    "category": "Во что поиграть?"
+    "category": "Во что поиграть?",
+    "image": "/img/ai/output/akayo_therapy_2227870.png"
   },
   {
     "url": "/archive/game-compressor-4339880.html",
@@ -478,7 +537,8 @@ window.allArticles = [
     "excerpt": "Утилита LZX-сжатия: экономь до 50% SSD, 0 FPS потерь, безопасно для VAC/Vanguard. Steam, Epic, GOG, Battle.net. Цена, отзывы и лицензия Steam 2026.",
     "date": "11 июля 2026",
     "readTime": "2 мин",
-    "category": "Во что поиграть?"
+    "category": "Во что поиграть?",
+    "image": "/img/ai/output/game_compressor_4339880.png"
   },
   {
     "url": "/archive/gothic-1-remake-1297900.html",
@@ -486,7 +546,8 @@ window.allArticles = [
     "excerpt": "Легендарная Готика возвращается: ремейк классической RPG, колония-тюрьма, тёмное средневековье. Цена 2699 RUB. Отзывы и онлайн в Steam 2026.",
     "date": "11 июля 2026",
     "readTime": "2 мин",
-    "category": "Во что поиграть?"
+    "category": "Во что поиграть?",
+    "image": "/img/ai/output/gothic_1_remake_1297900.png"
   },
   {
     "url": "/archive/educational-family-games-3178920.html",
@@ -495,7 +556,7 @@ window.allArticles = [
     "date": "10 июля 2026",
     "readTime": "5 мин",
     "category": "Во что поиграть?",
-    "image": "img/ai/output/educational_family_games.png"
+    "image": "/img/ai/output/gothic_1_remake_1297900.png"
   },
   {
     "url": "/archive/diamond-die-4821520.html",
@@ -1298,6 +1359,5 @@ window.allArticles = [
     "readTime": "8 мин",
     "category": "Гайды"
   }
+]
 ];
-
-window.articlesData = window.allArticles;
