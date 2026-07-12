@@ -860,8 +860,8 @@ window.allArticles = [
   },
   {
     "url": "/archive/skulls-skulls-skulls-by-daniel-da-silva-4825510.html",
-    "title": "Skulls Skulls Skulls в Steam: обзор, цена и отзывы — инкрементальная игра про черепа",
-    "excerpt": "Skulls Skulls Skulls — короткая активная инкрементальная игра от Daniel da Silva (издатель SmokeSomeFrogs). Собирайте черепа, открывайте улучшения и становитесь повелителем костяной армии в этом динамичном кликере.",
+    "title": "Skulls Skulls Skulls — инкрементальный кликер: магия, черепа, прокачка | Steam 2026",
+    "excerpt": "Активный инкрементальный кликер от Daniel da Silva: заклинания, тысячи черепов, глифы прокачки. 1.5 часа, 22 достижения. $1.59. Отзывы и онлайн Steam 2026.",
     "date": "9 июля 2026",
     "readTime": "5 мин",
     "category": "Во что поиграть?",
@@ -923,8 +923,8 @@ window.allArticles = [
   },
   {
     "url": "/archive/polytropos-a-tactical-odyssey-3227320.html",
-    "title": "Polytropos: A Tactical Odyssey в Steam: обзор, цена и отзывы — тактическая roguelite-RPG по мифам Греции",
-    "excerpt": "Polytropos: A Tactical Odyssey — тактическая roguelite-RPG от Sea Panda Creative по мотивам греческой мифологии. Пошаговые бои, прокачка персонажа, процедурная генерация и встречи с богами Олимпа.",
+    "title": "Polytropos: A Tactical Odyssey — тактическая roguelite-RPG о греческих богах в Steam",
+    "excerpt": "Roguelite-тактика: 6 богов Олимпа (Зевс, Аид, Афина), пошаговые битвы на гексагональном поле, 7 героев. Процедурная генерация от Sea Panda Creative. Цена, отзывы и онлайн Steam 2026.",
     "date": "9 июля 2026",
     "readTime": "5 мин",
     "category": "Во что поиграть?",
@@ -941,8 +941,8 @@ window.allArticles = [
   },
   {
     "url": "/archive/evil-thing-4373160.html",
-    "title": "Evil Thing в Steam: обзор, цена и отзывы — RPG-стратегия о Лисьем Духе",
-    "excerpt": "Evil Thing — RPG-стратегия от китайского разработчика QiongB, рассказывающая историю храма, где запечатан Лисья Дух. Исследуйте подземелья, собирайте ресурсы и раскройте тайны древнего проклятия.",
+    "title": "Evil Thing — хоррор-RPG: шаманка в проклятом лисьем храме | Steam 2026",
+    "excerpt": "Хоррор-RPG от первого лица: охраняй лисью святыню от тёмной коррупции, выживай ночью. Roguelike с перманентной смертью, 157 RUB. Отзывы и онлайн Steam 2026.",
     "date": "9 июля 2026",
     "readTime": "5 мин",
     "category": "Во что поиграть?",
@@ -1049,8 +1049,8 @@ window.allArticles = [
   },
   {
     "url": "/archive/sondersoft-soccer-monkeys-vs-robots-4806090.html",
-    "title": "SonderSoft Soccer: Monkeys VS Robots! в Steam: обзор, цена и отзывы — безумный футбол обезьян против роботов",
-    "excerpt": "SonderSoft Soccer: Monkeys VS Robots! — пожалуй, самый безумный футбольный симулятор в Steam. Обезьяны против роботов на поле: никаких правил, только хаос и веселье в этом уникальном спортивном экшене.",
+    "title": "SonderSoft Soccer: Monkeys VS Robots — бесплатный футбол обезьян против роботов | Steam 2026",
+    "excerpt": "Бесплатный футбольный симулятор: машинное обучение GAIL, 20 полей, обезьяны сражаются против роботов. 3D-графика, одиночная игра. Отзывы и онлайн Steam 2026.",
     "date": "9 июля 2026",
     "readTime": "5 мин",
     "category": "Во что поиграть?",
