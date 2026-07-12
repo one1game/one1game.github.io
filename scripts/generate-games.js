@@ -378,7 +378,6 @@ function buildPage({ appid, slug, store, spy }) {
 
       <p>${shortDesc}</p>
 
-      <!-- ★ Сетка со статистикой. Маркеры [STAT:KEY]...[/STAT:KEY] автоматически обновляются при ежедневном запуске. ВСЁ ОСТАЛЬНОЕ на странице (текст, SEO-теги, схемы) НЕ трогается. -->
       <div class="game-stats-grid">
         <div class="game-stat-card">
           <div class="label">Цена</div>
