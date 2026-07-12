@@ -1359,5 +1359,4 @@ window.allArticles =
     "readTime": "8 мин",
     "category": "Гайды"
   }
-]
 ];
