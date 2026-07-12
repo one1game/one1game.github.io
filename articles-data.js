@@ -1,6 +1,14 @@
 // articles-data.js
 window.allArticles = [
   {
+    "url": "/archive/skrytye-lovushki-apgreyda-2026.html",
+    "title": "Скрытые ловушки апгрейда в 2026: Почему ваш ПК «задушит» RTX 5090 и RX 9070 XT?",
+    "excerpt": "80% пользователей сталкиваются с тем, что их ПК не готов к новым GPU. Процессорные заторы, кабельный ад, иллюзия Frame Gen — разбираем скрытые расходы и требования.",
+    "readTime": "8 мин",
+    "category": "Гайды",
+    "image": "/img/ai/output/upgrade_traps_2026.png"
+  },
+  {
     "url": "/archive/qwerty-s-quickies-4859360.html",
     "title": "Qwerty's Quickies: цена, отзывы и статистика игроков",
     "excerpt": "Qwerty's Quickies: актуальная цена (348.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
