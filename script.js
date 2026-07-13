@@ -182,7 +182,6 @@ class One1GamePlatform {
   loadHomePageContent() {
     this.loadRandomVideo();
     this.loadLatestArticles();
-    this.loadGames();
   }
 
   // Настройка видимых элементов управления радио
@@ -302,13 +301,10 @@ class One1GamePlatform {
       'Аналитика': 'cat-analytics',
       'Тренды': 'cat-trends',
       'Разработка': 'cat-dev',
-      'Мнение': 'cat-opinion',
-      'Во что поиграть?': 'cat-play'
+      'Мнение': 'cat-opinion'
     };
 
-    // Показываем только статьи (не игры)
-    const articlesOnly = window.allArticles.filter(a => a.category !== 'Во что поиграть?');
-    const latestArticles = articlesOnly.slice(0, 5);
+    const latestArticles = window.allArticles.slice(0, 5);
     const featured = latestArticles[0];
     const rest = latestArticles.slice(1);
 
@@ -333,45 +329,6 @@ class One1GamePlatform {
     this.loadCategories();
   }
 
-  // Games section — только игры (категория "Во что поиграть?")
-  loadGames() {
-    const gamesGrid = document.getElementById('games-grid');
-    const allGamesLink = document.getElementById('all-games-link');
-    if (!gamesGrid || !window.allArticles || window.allArticles.length === 0) return;
-
-    const categoryMap = {
-      'Во что поиграть?': 'cat-play'
-    };
-
-    const games = window.allArticles.filter(a => a.category === 'Во что поиграть?').slice(0, 4);
-
-    if (allGamesLink) {
-      allGamesLink.href = 'archive.html?category=' + encodeURIComponent('Во что поиграть?');
-    }
-
-    if (games.length === 0) {
-      gamesGrid.innerHTML = '<div class="empty-state"><div class="empty-icon"><i class="fas fa-gamepad"></i></div><h3>Игры загружаются...</h3><p>Пожалуйста, подождите или обновите страницу.</p></div>';
-      return;
-    }
-
-    const cardHTML = (game) => {
-      const catClass = categoryMap[game.category] || '';
-      return `
-      <a href="${game.url}" class="article-card">
-        ${game.image ? `<div class="card-image"><img src="${game.image}" alt="${game.title}" loading="lazy" width="1344" height="768"></div>` : ''}
-        <span class="card-category ${catClass}">${game.category}</span>
-        <h3>${game.title}</h3>
-        <p class="card-excerpt">${game.excerpt || ''}</p>
-        <div class="card-meta">
-          <span><i class="far fa-calendar"></i> ${game.date || ''}</span>
-          <span><i class="far fa-clock"></i> ${game.readTime || '2 мин'}</span>
-        </div>
-      </a>`;
-    };
-
-    gamesGrid.innerHTML = games.map(cardHTML).join('');
-  }
-
   // Dynamic categories from articles
   loadCategories() {
     const row = document.getElementById('categories-row');
@@ -386,8 +343,7 @@ class One1GamePlatform {
       'Аналитика': 'cat-analytics',
       'Тренды': 'cat-trends',
       'Разработка': 'cat-dev',
-      'Мнение': 'cat-opinion',
-      'Во что поиграть?': 'cat-play'
+      'Мнение': 'cat-opinion'
     };
 
     window.allArticles.forEach(a => {
@@ -402,11 +358,10 @@ class One1GamePlatform {
       'Аналитика': 'fa-chart-line',
       'Тренды': 'fa-fire',
       'Разработка': 'fa-code',
-      'Мнение': 'fa-comment-dots',
-      'Во что поиграть?': 'fa-play-circle'
+      'Мнение': 'fa-comment-dots'
     };
 
-    const catOrder = ['Технологии', 'Гайды', 'Консоли', 'Аналитика', 'Тренды', 'Разработка', 'Мнение', 'Во что поиграть?'];
+    const catOrder = ['Технологии', 'Гайды', 'Консоли', 'Аналитика', 'Тренды', 'Разработка', 'Мнение'];
     const pills = Object.entries(catCount)
       .sort(([a], [b]) => {
         const ai = catOrder.indexOf(a), bi = catOrder.indexOf(b);
