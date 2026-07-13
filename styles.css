@@ -866,8 +866,10 @@ body::after{
   color:inherit;transition:all var(--ease-out);
 }
 .related-card:hover{border-color:var(--border-active);background:rgba(0,229,255,0.04);transform:translateY(-3px)}
-.related-card strong{display:block;color:#fff;font-size:0.9rem;margin-bottom:6px}
-.related-card span{font-size:0.75rem;color:var(--text-faint)}
+.related-img{width:100%;height:130px;overflow:hidden;border-radius:4px;margin-bottom:12px}
+.related-img img{width:100%;height:100%;object-fit:cover}
+.related-info .related-cat{display:inline-block;font-size:0.7rem;text-transform:uppercase;letter-spacing:0.5px;padding:2px 8px;border-radius:3px;margin-bottom:8px;font-weight:600}
+.related-info h5{font-size:0.88rem;color:#fff;margin:0;line-height:1.35;font-weight:600}
 
 /* =============================================
    SEARCH BAR
@@ -1012,43 +1014,7 @@ body::after{
 }
 
 /* Cookie-баннер */
-.cookie-banner {
-  position: fixed;
-  bottom: 20px;
-  left: 20px;
-  right: 20px;
-  max-width: 520px;
-  margin: 0 auto;
-  padding: 16px 20px;
-  background: rgba(20, 20, 30, 0.97);
-  border: 1px solid rgba(0, 200, 255, 0.3);
-  border-radius: 10px;
-  backdrop-filter: blur(10px);
-  z-index: 9998;
-  display: none;
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
-  animation: cookieSlideUp 0.3s ease-out;
-}
-@keyframes cookieSlideUp {
-  from { transform: translateY(20px); opacity: 0; }
-  to { transform: translateY(0); opacity: 1; }
-}
-.cookie-banner.show { display: block; }
-.cookie-banner p { margin: 0 0 12px; font-size: 13px; color: var(--text-dim); line-height: 1.5; }
-.cookie-banner a { color: var(--cyan); }
-.cookie-buttons { display: flex; gap: 10px; flex-wrap: wrap; }
-.cookie-btn {
-  padding: 8px 16px;
-  border-radius: 6px;
-  border: none;
-  font-size: 13px;
-  font-weight: 600;
-  cursor: pointer;
-  transition: opacity 0.2s;
-}
-.cookie-btn.primary { background: var(--cyan); color: #000; }
-.cookie-btn.secondary { background: transparent; color: var(--text-dim); border: 1px solid rgba(255, 255, 255, 0.2); }
-.cookie-btn:hover { opacity: 0.85; }
+/* Cookie banner — стили в HTML inline для каждой страницы */
 
 /* Подписка (Newsletter) */
 .newsletter-box {
