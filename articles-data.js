@@ -2,6 +2,15 @@
 window.allArticles = 
 [
   {
+    "url": "/archive/stalker-2-skrytye-mekhaniki-tenevye-pravila-2026.html",
+    "title": "S.T.A.L.K.E.R. 2: 7 мифов о скрытых механиках — правда или вымысел?",
+    "excerpt": "Разбираем 7 самых популярных мифов и теорий о скрытых механиках S.T.A.L.K.E.R. 2: теневая экономика, множители урона, секретные локации. Что из этого правда?",
+    "date": "13 июля 2026",
+    "readTime": "10 мин",
+    "category": "Гайды",
+    "image": "/img/ai/output/stalker2_hidden_mechanics.png"
+  },
+  {
     "url": "/archive/skrytye-lovushki-apgreyda-2026.html",
     "title": "Скрытые ловушки апгрейда в 2026: Почему ваш ПК «задушит» RTX 5090 и RX 9070 XT?",
     "excerpt": "80% пользователей сталкиваются с тем, что их ПК не готов к новым GPU. Процессорные заторы, кабельный ад, иллюзия Frame Gen — разбираем скрытые расходы и требования.",
