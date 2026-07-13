@@ -1,12 +1,14 @@
 // articles-data.js
-window.allArticles = [
+window.allArticles = 
+[
   {
     "url": "/archive/drident-4806100.html",
     "title": "Drident: цена, отзывы и статистика игроков",
     "excerpt": "Drident: актуальная цена (160.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
     "date": "13 июля 2026",
     "readTime": "2 мин",
-    "category": "Во что поиграть?"
+    "category": "Во что поиграть?",
+    "image": "/img/ai/output/drident-4806100.png"
   },
   {
     "url": "/archive/metalmuters-4287050.html",
@@ -14,7 +16,8 @@ window.allArticles = [
     "excerpt": "MetalMuters: актуальная цена (150.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
     "date": "13 июля 2026",
     "readTime": "2 мин",
-    "category": "Во что поиграть?"
+    "category": "Во что поиграть?",
+    "image": "/img/ai/output/metalmuters-4287050.png"
   },
   {
     "url": "/archive/neko-station-4141710.html",
@@ -22,7 +25,8 @@ window.allArticles = [
     "excerpt": "Neko Station: актуальная цена (239.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
     "date": "13 июля 2026",
     "readTime": "2 мин",
-    "category": "Во что поиграть?"
+    "category": "Во что поиграть?",
+    "image": "/img/ai/output/neko-station-4141710.png"
   },
   {
     "url": "/archive/seabell-supper-4435470.html",
@@ -30,7 +34,8 @@ window.allArticles = [
     "excerpt": "Seabell Supper: актуальная цена (180.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
     "date": "13 июля 2026",
     "readTime": "2 мин",
-    "category": "Во что поиграть?"
+    "category": "Во что поиграть?",
+    "image": "/img/ai/output/seabell-supper-4435470.png"
   },
   {
     "url": "/archive/purrrfect-spa-3755850.html",
@@ -38,7 +43,8 @@ window.allArticles = [
     "excerpt": "Purrrfect Spa: актуальная цена (148.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
     "date": "13 июля 2026",
     "readTime": "2 мин",
-    "category": "Во что поиграть?"
+    "category": "Во что поиграть?",
+    "image": "/img/ai/output/purrrfect-spa-3755850.png"
   },
   {
     "url": "/archive/healthy-competition-3575530.html",
@@ -46,7 +52,8 @@ window.allArticles = [
     "excerpt": "Healthy Competition: актуальная цена (82.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
     "date": "13 июля 2026",
     "readTime": "2 мин",
-    "category": "Во что поиграть?"
+    "category": "Во что поиграть?",
+    "image": "/img/ai/output/healthy-competition-3575530.png"
   },
   {
     "url": "/archive/cog-foo-3072500.html",
@@ -54,7 +61,8 @@ window.allArticles = [
     "excerpt": "Cog Foo: актуальная цена (820.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
     "date": "13 июля 2026",
     "readTime": "2 мин",
-    "category": "Во что поиграть?"
+    "category": "Во что поиграть?",
+    "image": "/img/ai/output/cog-foo-3072500.png"
   },
   {
     "url": "/archive/orpheus-to-hell-and-back-4145130.html",
@@ -62,7 +70,8 @@ window.allArticles = [
     "excerpt": "ORPHEUS: TO HELL AND BACK: актуальная цена (150.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
     "date": "13 июля 2026",
     "readTime": "2 мин",
-    "category": "Во что поиграть?"
+    "category": "Во что поиграть?",
+    "image": "/img/ai/output/orpheus-to-hell-and-back-4145130.png"
   },
   {
     "url": "/archive/-4485620.html",
@@ -70,7 +79,8 @@ window.allArticles = [
     "excerpt": "アルテスノート: актуальная цена (Бесплатно), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
     "date": "13 июля 2026",
     "readTime": "2 мин",
-    "category": "Во что поиграть?"
+    "category": "Во что поиграть?",
+    "image": "/img/ai/output/4485620.png"
   },
   {
     "url": "/archive/custom-pinball-4838900.html",
@@ -78,7 +88,8 @@ window.allArticles = [
     "excerpt": "Custom Pinball: актуальная цена (200.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
     "date": "13 июля 2026",
     "readTime": "2 мин",
-    "category": "Во что поиграть?"
+    "category": "Во что поиграть?",
+    "image": "/img/ai/output/custom-pinball-4838900.png"
   },
   {
     "url": "/archive/kvga-4474500.html",
@@ -86,7 +97,8 @@ window.allArticles = [
     "excerpt": "Kvga: актуальная цена (327.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
     "date": "13 июля 2026",
     "readTime": "2 мин",
-    "category": "Во что поиграть?"
+    "category": "Во что поиграть?",
+    "image": "/img/ai/output/kvga-4474500.png"
   },
   {
     "url": "/archive/echolink-recursion-4474430.html",
@@ -94,7 +106,8 @@ window.allArticles = [
     "excerpt": "EchoLink: Recursion: актуальная цена (301.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
     "date": "13 июля 2026",
     "readTime": "2 мин",
-    "category": "Во что поиграть?"
+    "category": "Во что поиграть?",
+    "image": "/img/ai/output/echolink-recursion-4474430.png"
   },
   {
     "url": "/archive/fu-fu-chan-way-up-4568980.html",
@@ -102,7 +115,8 @@ window.allArticles = [
     "excerpt": "Fu-Fu-Chan -way up!-: актуальная цена (299.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
     "date": "13 июля 2026",
     "readTime": "2 мин",
-    "category": "Во что поиграть?"
+    "category": "Во что поиграть?",
+    "image": "/img/ai/output/fu-fu-chan-way-up-4568980.png"
   },
   {
     "url": "/archive/svidanie-sudnogo-dnya-4809570.html",
@@ -110,7 +124,8 @@ window.allArticles = [
     "excerpt": "Свидание Судного дня: актуальная цена (201.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
     "date": "13 июля 2026",
     "readTime": "2 мин",
-    "category": "Во что поиграть?"
+    "category": "Во что поиграть?",
+    "image": "/img/ai/output/svidanie-sudnogo-dnya-4809570.png"
   },
   {
     "url": "/archive/village-survivors-4834200.html",
@@ -118,7 +133,8 @@ window.allArticles = [
     "excerpt": "Village Survivors: актуальная цена (192.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
     "date": "13 июля 2026",
     "readTime": "2 мин",
-    "category": "Во что поиграть?"
+    "category": "Во что поиграть?",
+    "image": "/img/ai/output/village-survivors-4834200.png"
   },
   {
     "url": "/archive/the-living-graveyard-4822800.html",
@@ -126,7 +142,8 @@ window.allArticles = [
     "excerpt": "The Living Graveyard: актуальная цена (279.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
     "date": "13 июля 2026",
     "readTime": "2 мин",
-    "category": "Во что поиграть?"
+    "category": "Во что поиграть?",
+    "image": "/img/ai/output/the-living-graveyard-4822800.png"
   },
   {
     "url": "/archive/almost-a-ghost-4349660.html",
@@ -134,7 +151,8 @@ window.allArticles = [
     "excerpt": "Almost A Ghost: актуальная цена (308.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
     "date": "13 июля 2026",
     "readTime": "2 мин",
-    "category": "Во что поиграть?"
+    "category": "Во что поиграть?",
+    "image": "/img/ai/output/almost-a-ghost-4349660.png"
   },
   {
     "url": "/archive/octal-of-course-they-are-linked-4271750.html",
@@ -142,7 +160,8 @@ window.allArticles = [
     "excerpt": "Octal: Of Course They Are Linked: актуальная цена (242.08 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
     "date": "13 июля 2026",
     "readTime": "2 мин",
-    "category": "Во что поиграть?"
+    "category": "Во что поиграть?",
+    "image": "/img/ai/output/octal-of-course-they-are-linked-4271750.png"
   },
   {
     "url": "/archive/booox-4549870.html",
@@ -150,7 +169,8 @@ window.allArticles = [
     "excerpt": "Booox: актуальная цена (160.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
     "date": "13 июля 2026",
     "readTime": "2 мин",
-    "category": "Во что поиграть?"
+    "category": "Во что поиграть?",
+    "image": "/img/ai/output/booox-4549870.png"
   },
   {
     "url": "/archive/swordless-4451820.html",
@@ -158,7 +178,8 @@ window.allArticles = [
     "excerpt": "Swordless: актуальная цена (160.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
     "date": "13 июля 2026",
     "readTime": "2 мин",
-    "category": "Во что поиграть?"
+    "category": "Во что поиграть?",
+    "image": "/img/ai/output/swordless-4451820.png"
   },
   {
     "url": "/archive/3d-magical-girl-sweetheart-3d-4886100.html",
@@ -166,7 +187,8 @@ window.allArticles = [
     "excerpt": "魔法少女甜心3D Magical Girl Sweetheart 3D: актуальная цена (40.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
     "date": "13 июля 2026",
     "readTime": "2 мин",
-    "category": "Во что поиграть?"
+    "category": "Во что поиграть?",
+    "image": "/img/ai/output/3d-magical-girl-sweetheart-3d-4886100.png"
   },
   {
     "url": "/archive/pore-cleaning-simulator-4876150.html",
@@ -174,7 +196,8 @@ window.allArticles = [
     "excerpt": "Pore Cleaning Simulator: актуальная цена (35.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
     "date": "13 июля 2026",
     "readTime": "2 мин",
-    "category": "Во что поиграть?"
+    "category": "Во что поиграть?",
+    "image": "/img/ai/output/pore-cleaning-simulator-4876150.png"
   },
   {
     "url": "/archive/ocean-rush-4885620.html",
@@ -182,7 +205,8 @@ window.allArticles = [
     "excerpt": "Ocean Rush: актуальная цена (30.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
     "date": "13 июля 2026",
     "readTime": "2 мин",
-    "category": "Во что поиграть?"
+    "category": "Во что поиграть?",
+    "image": "/img/ai/output/ocean-rush-4885620.png"
   },
   {
     "url": "/archive/goblin-camp-2431980.html",
@@ -190,7 +214,8 @@ window.allArticles = [
     "excerpt": "Goblin Camp: актуальная цена (426.00 RUB), 93% положительных отзывов в Steam, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
     "date": "13 июля 2026",
     "readTime": "2 мин",
-    "category": "Во что поиграть?"
+    "category": "Во что поиграть?",
+    "image": "/img/ai/output/goblin-camp-2431980.png"
   },
   {
     "url": "/archive/baff-c-4895370.html",
@@ -198,7 +223,8 @@ window.allArticles = [
     "excerpt": "BAFF C: актуальная цена (59.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
     "date": "13 июля 2026",
     "readTime": "2 мин",
-    "category": "Во что поиграть?"
+    "category": "Во что поиграть?",
+    "image": "/img/ai/output/baff-c-4895370.png"
   },
   {
     "url": "/archive/elysium-blue-den-mansion-4828690.html",
@@ -206,7 +232,8 @@ window.allArticles = [
     "excerpt": "ELYSIUM : Blue Den Mansion: актуальная цена (99.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
     "date": "13 июля 2026",
     "readTime": "2 мин",
-    "category": "Во что поиграть?"
+    "category": "Во что поиграть?",
+    "image": "/img/ai/output/elysium-blue-den-mansion-4828690.png"
   },
   {
     "url": "/archive/urban-rangers-arcade-2-4863520.html",
@@ -214,7 +241,8 @@ window.allArticles = [
     "excerpt": "Urban Rangers Arcade 2: актуальная цена (465.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
     "date": "13 июля 2026",
     "readTime": "2 мин",
-    "category": "Во что поиграть?"
+    "category": "Во что поиграть?",
+    "image": "/img/ai/output/urban-rangers-arcade-2-4863520.png"
   },
   {
     "url": "/archive/sill-cats-letniy-dekorativnyy-nabor-4890950.html",
@@ -222,7 +250,8 @@ window.allArticles = [
     "excerpt": "Sill Cats - Летний декоративный набор: актуальная цена (89.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
     "date": "13 июля 2026",
     "readTime": "2 мин",
-    "category": "Во что поиграть?"
+    "category": "Во что поиграть?",
+    "image": "/img/ai/output/sill-cats-letniy-dekorativnyy-nabor-4890950.png"
   },
   {
     "url": "/archive/life-memoirs-4798150.html",
@@ -230,7 +259,8 @@ window.allArticles = [
     "excerpt": "人生记事簿：Life Memoirs: актуальная цена (160.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
     "date": "13 июля 2026",
     "readTime": "2 мин",
-    "category": "Во что поиграть?"
+    "category": "Во что поиграть?",
+    "image": "/img/ai/output/life-memoirs-4798150.png"
   },
   {
     "url": "/archive/skrytye-lovushki-apgreyda-2026.html",
@@ -796,7 +826,7 @@ window.allArticles = [
     "date": "10 июля 2026",
     "readTime": "5 мин",
     "category": "Во что поиграть?",
-    "image": "img/ai/output/diamond_die.png"
+    "image": "/img/ai/output/diamond_die.png"
   },
   {
     "url": "/archive/snapcats-4851630.html",
@@ -805,7 +835,7 @@ window.allArticles = [
     "date": "10 июля 2026",
     "readTime": "5 мин",
     "category": "Во что поиграть?",
-    "image": "img/ai/output/snapcats.png"
+    "image": "/img/ai/output/snapcats.png"
   },
   {
     "url": "/archive/-4740460.html",
@@ -814,7 +844,7 @@ window.allArticles = [
     "date": "10 июля 2026",
     "readTime": "5 мин",
     "category": "Во что поиграть?",
-    "image": "img/ai/output/shimi_baoshuang_chaobian.png"
+    "image": "/img/ai/output/shimi_baoshuang_chaobian.png"
   },
   {
     "url": "/archive/palworld-1623730.html",
@@ -823,7 +853,7 @@ window.allArticles = [
     "date": "10 июля 2026",
     "readTime": "7 мин",
     "category": "Во что поиграть?",
-    "image": "img/ai/output/palworld.png"
+    "image": "/img/ai/output/palworld.png"
   },
   {
     "url": "/archive/8am-the-subway-4111600.html",
@@ -832,7 +862,7 @@ window.allArticles = [
     "date": "10 июля 2026",
     "readTime": "5 мин",
     "category": "Во что поиграть?",
-    "image": "img/ai/output/8am_the_subway.png"
+    "image": "/img/ai/output/8am_the_subway.png"
   },
   {
     "url": "/archive/-4375120.html",
@@ -841,7 +871,7 @@ window.allArticles = [
     "date": "10 июля 2026",
     "readTime": "5 мин",
     "category": "Во что поиграть?",
-    "image": "img/ai/output/jigokuraku_paradise_battle.png"
+    "image": "/img/ai/output/jigokuraku_paradise_battle.png"
   },
   {
     "url": "/archive/-4042330.html",
@@ -850,7 +880,7 @@ window.allArticles = [
     "date": "10 июля 2026",
     "readTime": "5 мин",
     "category": "Во что поиграть?",
-    "image": "img/ai/output/be_missed_and_remembered.png"
+    "image": "/img/ai/output/be_missed_and_remembered.png"
   },
   {
     "url": "/archive/paper-baseball-4827680.html",
@@ -859,7 +889,7 @@ window.allArticles = [
     "date": "10 июля 2026",
     "readTime": "5 мин",
     "category": "Во что поиграть?",
-    "image": "img/ai/output/paper_baseball.png"
+    "image": "/img/ai/output/paper_baseball.png"
   },
   {
     "url": "/archive/gigabash-ultraman-zero-dlc-4744900.html",
@@ -868,7 +898,7 @@ window.allArticles = [
     "date": "10 июля 2026",
     "readTime": "5 мин",
     "category": "Во что поиграть?",
-    "image": "img/ai/output/gigabash_ultraman_zero.png"
+    "image": "/img/ai/output/gigabash_ultraman_zero.png"
   },
   {
     "url": "/archive/dark-reaper-shoots-2-4345150.html",
@@ -877,7 +907,7 @@ window.allArticles = [
     "date": "10 июля 2026",
     "readTime": "5 мин",
     "category": "Во что поиграть?",
-    "image": "img/ai/output/dark_reaper_shoots_2.png"
+    "image": "/img/ai/output/dark_reaper_shoots_2.png"
   },
   {
     "url": "/archive/operation-darkside-dx-2962400.html",
@@ -886,7 +916,7 @@ window.allArticles = [
     "date": "10 июля 2026",
     "readTime": "5 мин",
     "category": "Во что поиграть?",
-    "image": "img/ai/output/operation_darkside_dx.png"
+    "image": "/img/ai/output/operation_darkside_dx.png"
   },
   {
     "url": "/archive/i-am-the-demon-king-stop-sun-wukong-4785810.html",
@@ -895,7 +925,7 @@ window.allArticles = [
     "date": "10 июля 2026",
     "readTime": "5 мин",
     "category": "Во что поиграть?",
-    "image": "img/ai/output/i_am_demon_king_sun_wukong.png"
+    "image": "/img/ai/output/i_am_demon_king_sun_wukong.png"
   },
   {
     "url": "/archive/ghost-exorcist-4868110.html",
@@ -904,7 +934,7 @@ window.allArticles = [
     "date": "10 июля 2026",
     "readTime": "5 мин",
     "category": "Во что поиграть?",
-    "image": "img/ai/output/ghost_exorcist.png"
+    "image": "/img/ai/output/ghost_exorcist.png"
   },
   {
     "url": "/archive/evergarden-4542060.html",
@@ -913,7 +943,7 @@ window.allArticles = [
     "date": "10 июля 2026",
     "readTime": "5 мин",
     "category": "Во что поиграть?",
-    "image": "img/ai/output/evergarden.png"
+    "image": "/img/ai/output/evergarden.png"
   },
   {
     "url": "/archive/-4560290.html",
@@ -922,7 +952,7 @@ window.allArticles = [
     "date": "10 июля 2026",
     "readTime": "5 мин",
     "category": "Во что поиграть?",
-    "image": "img/ai/output/sweet_dance_xinwu.png"
+    "image": "/img/ai/output/sweet_dance_xinwu.png"
   },
   {
     "url": "/archive/malenkiy-slaym-i-korona-4781620.html",
@@ -931,7 +961,7 @@ window.allArticles = [
     "date": "10 июля 2026",
     "readTime": "5 мин",
     "category": "Во что поиграть?",
-    "image": "img/ai/output/malenkiy_slaym_i_korona.png"
+    "image": "/img/ai/output/malenkiy_slaym_i_korona.png"
   },
   {
     "url": "/archive/tetrogue-4871260.html",
@@ -940,7 +970,7 @@ window.allArticles = [
     "date": "10 июля 2026",
     "readTime": "5 мин",
     "category": "Во что поиграть?",
-    "image": "img/ai/output/tetrogue.png"
+    "image": "/img/ai/output/tetrogue.png"
   },
   {
     "url": "/archive/heroes-of-might-and-magic-olden-era-3105440.html",
@@ -949,7 +979,7 @@ window.allArticles = [
     "date": "10 июля 2026",
     "readTime": "6 мин",
     "category": "Во что поиграть?",
-    "image": "img/ai/output/heroes_of_might_and_magic_olden_era.png"
+    "image": "/img/ai/output/heroes_of_might_and_magic_olden_era.png"
   },
   {
     "url": "/archive/escape-from-umbra-4830970.html",
@@ -958,7 +988,7 @@ window.allArticles = [
     "date": "10 июля 2026",
     "readTime": "5 мин",
     "category": "Во что поиграть?",
-    "image": "img/ai/output/escape_from_umbra.png"
+    "image": "/img/ai/output/escape_from_umbra.png"
   },
   {
     "url": "/archive/gyro-4822290.html",
@@ -967,7 +997,7 @@ window.allArticles = [
     "date": "10 июля 2026",
     "readTime": "5 мин",
     "category": "Во что поиграть?",
-    "image": "img/ai/output/gyro.png"
+    "image": "/img/ai/output/gyro.png"
   },
   {
     "url": "/archive/hollowforge-3281810.html",
@@ -976,7 +1006,7 @@ window.allArticles = [
     "date": "10 июля 2026",
     "readTime": "5 мин",
     "category": "Во что поиграть?",
-    "image": "img/ai/output/hollowforge.png"
+    "image": "/img/ai/output/hollowforge.png"
   },
   {
     "url": "/archive/carrot-catcher-3186990.html",
@@ -985,7 +1015,7 @@ window.allArticles = [
     "date": "10 июля 2026",
     "readTime": "5 мин",
     "category": "Во что поиграть?",
-    "image": "img/ai/output/carrot_catcher.png"
+    "image": "/img/ai/output/carrot_catcher.png"
   },
   {
     "url": "/archive/goblin-solitaire-4854700.html",
@@ -994,7 +1024,7 @@ window.allArticles = [
     "date": "10 июля 2026",
     "readTime": "5 мин",
     "category": "Во что поиграть?",
-    "image": "img/ai/output/goblin_solitaire.png"
+    "image": "/img/ai/output/goblin_solitaire.png"
   },
   {
     "url": "/archive/counter-strike-10.html",
@@ -1003,7 +1033,7 @@ window.allArticles = [
     "date": "9 июля 2026",
     "readTime": "6 мин",
     "category": "Во что поиграть?",
-    "image": "img/ai/output/counter_strike_1.png"
+    "image": "/img/ai/output/counter_strike_1.png"
   },
   {
     "url": "/archive/half-life-70.html",
@@ -1012,7 +1042,7 @@ window.allArticles = [
     "date": "9 июля 2026",
     "readTime": "6 мин",
     "category": "Во что поиграть?",
-    "image": "img/ai/output/half_life_1.png"
+    "image": "/img/ai/output/half_life_1.png"
   },
   {
     "url": "/archive/counter-strike-condition-zero-100.html",
@@ -1021,7 +1051,7 @@ window.allArticles = [
     "date": "9 июля 2026",
     "readTime": "6 мин",
     "category": "Во что поиграть?",
-    "image": "img/ai/output/counter_strike_condition_zero.png"
+    "image": "/img/ai/output/counter_strike_condition_zero.png"
   },
   {
     "url": "/archive/half-life-2-220.html",
@@ -1030,7 +1060,7 @@ window.allArticles = [
     "date": "9 июля 2026",
     "readTime": "7 мин",
     "category": "Во что поиграть?",
-    "image": "img/ai/output/half_life_2.png"
+    "image": "/img/ai/output/half_life_2.png"
   },
   {
     "url": "/archive/counter-strike-source-240.html",
@@ -1039,7 +1069,7 @@ window.allArticles = [
     "date": "9 июля 2026",
     "readTime": "7 мин",
     "category": "Во что поиграть?",
-    "image": "img/ai/output/counter_strike_source.png"
+    "image": "/img/ai/output/counter_strike_source.png"
   },
   {
     "url": "/archive/half-life-2-deathmatch-320.html",
@@ -1048,7 +1078,7 @@ window.allArticles = [
     "date": "9 июля 2026",
     "readTime": "5 мин",
     "category": "Во что поиграть?",
-    "image": "img/ai/output/half_life_2_deathmatch.png"
+    "image": "/img/ai/output/half_life_2_deathmatch.png"
   },
   {
     "url": "/archive/half-life-2-lost-coast-340.html",
@@ -1057,7 +1087,7 @@ window.allArticles = [
     "date": "9 июля 2026",
     "readTime": "5 мин",
     "category": "Во что поиграть?",
-    "image": "img/ai/output/half_life_2_lost_coast.png"
+    "image": "/img/ai/output/half_life_2_lost_coast.png"
   },
   {
     "url": "/archive/portal-400.html",
@@ -1066,7 +1096,7 @@ window.allArticles = [
     "date": "9 июля 2026",
     "readTime": "6 мин",
     "category": "Во что поиграть?",
-    "image": "img/ai/output/portal.png"
+    "image": "/img/ai/output/portal.png"
   },
   {
     "url": "/archive/team-fortress-2-440.html",
@@ -1075,7 +1105,7 @@ window.allArticles = [
     "date": "9 июля 2026",
     "readTime": "7 мин",
     "category": "Во что поиграть?",
-    "image": "img/ai/output/team_fortress_2.png"
+    "image": "/img/ai/output/team_fortress_2.png"
   },
   {
     "url": "/archive/left-4-dead-2-550.html",
@@ -1084,7 +1114,7 @@ window.allArticles = [
     "date": "9 июля 2026",
     "readTime": "7 мин",
     "category": "Во что поиграть?",
-    "image": "img/ai/output/left_4_dead_2.png"
+    "image": "/img/ai/output/left_4_dead_2.png"
   },
   {
     "url": "/archive/counter-strike-2-730.html",
@@ -1093,7 +1123,7 @@ window.allArticles = [
     "date": "9 июля 2026",
     "readTime": "7 мин",
     "category": "Во что поиграть?",
-    "image": "img/ai/output/counter_strike_2.png"
+    "image": "/img/ai/output/counter_strike_2.png"
   },
   {
     "url": "/archive/garry-s-mod-4000.html",
@@ -1102,7 +1132,7 @@ window.allArticles = [
     "date": "9 июля 2026",
     "readTime": "7 мин",
     "category": "Во что поиграть?",
-    "image": "img/ai/output/garrys_mod.png"
+    "image": "/img/ai/output/garrys_mod.png"
   },
   {
     "url": "/archive/borderlands-2-49520.html",
@@ -1111,7 +1141,7 @@ window.allArticles = [
     "date": "9 июля 2026",
     "readTime": "7 мин",
     "category": "Во что поиграть?",
-    "image": "img/ai/output/borderlands_2.png"
+    "image": "/img/ai/output/borderlands_2.png"
   },
   {
     "url": "/archive/terraria-105600.html",
@@ -1120,7 +1150,7 @@ window.allArticles = [
     "date": "9 июля 2026",
     "readTime": "7 мин",
     "category": "Во что поиграть?",
-    "image": "img/ai/output/terraria.png"
+    "image": "/img/ai/output/terraria.png"
   },
   {
     "url": "/archive/corgi-survivor-4483200.html",
@@ -1129,7 +1159,7 @@ window.allArticles = [
     "date": "9 июля 2026",
     "readTime": "5 мин",
     "category": "Во что поиграть?",
-    "image": "img/ai/output/corgi_survivor.png"
+    "image": "/img/ai/output/corgi_survivor.png"
   },
   {
     "url": "/archive/dice-rogues-4140190.html",
@@ -1138,7 +1168,7 @@ window.allArticles = [
     "date": "9 июля 2026",
     "readTime": "5 мин",
     "category": "Во что поиграть?",
-    "image": "img/ai/output/dice_rogues.png"
+    "image": "/img/ai/output/dice_rogues.png"
   },
   {
     "url": "/archive/a-game-about-leading-a-crowds-4806800.html",
@@ -1147,7 +1177,7 @@ window.allArticles = [
     "date": "9 июля 2026",
     "readTime": "5 мин",
     "category": "Во что поиграть?",
-    "image": "img/ai/output/a_game_about_leading_a_crowds.png"
+    "image": "/img/ai/output/a_game_about_leading_a_crowds.png"
   },
   {
     "url": "/archive/mora-s-cat-scratcher-plus-4866810.html",
@@ -1156,7 +1186,7 @@ window.allArticles = [
     "date": "9 июля 2026",
     "readTime": "5 мин",
     "category": "Во что поиграть?",
-    "image": "img/ai/output/moras_cat_scratcher_plus.png"
+    "image": "/img/ai/output/moras_cat_scratcher_plus.png"
   },
   {
     "url": "/archive/skulls-skulls-skulls-by-daniel-da-silva-4825510.html",
@@ -1165,7 +1195,7 @@ window.allArticles = [
     "date": "9 июля 2026",
     "readTime": "5 мин",
     "category": "Во что поиграть?",
-    "image": "img/ai/output/skulls_skulls_skulls.png"
+    "image": "/img/ai/output/skulls_skulls_skulls.png"
   },
   {
     "url": "/archive/alek-1511740.html",
@@ -1174,7 +1204,7 @@ window.allArticles = [
     "date": "9 июля 2026",
     "readTime": "5 мин",
     "category": "Во что поиграть?",
-    "image": "img/ai/output/alek.png"
+    "image": "/img/ai/output/alek.png"
   },
   {
     "url": "/archive/ego-3692680.html",
@@ -1183,7 +1213,7 @@ window.allArticles = [
     "date": "9 июля 2026",
     "readTime": "5 мин",
     "category": "Во что поиграть?",
-    "image": "img/ai/output/ego.png"
+    "image": "/img/ai/output/ego.png"
   },
   {
     "url": "/archive/bottom-squad-4068360.html",
@@ -1192,7 +1222,7 @@ window.allArticles = [
     "date": "9 июля 2026",
     "readTime": "5 мин",
     "category": "Во что поиграть?",
-    "image": "img/ai/output/bottom_squad.png"
+    "image": "/img/ai/output/bottom_squad.png"
   },
   {
     "url": "/archive/gameboro-3832100.html",
@@ -1201,7 +1231,7 @@ window.allArticles = [
     "date": "9 июля 2026",
     "readTime": "5 мин",
     "category": "Во что поиграть?",
-    "image": "img/ai/output/gameboro.png"
+    "image": "/img/ai/output/gameboro.png"
   },
   {
     "url": "/archive/kriticheskaya-nagruzka-4804750.html",
@@ -1210,7 +1240,7 @@ window.allArticles = [
     "date": "9 июля 2026",
     "readTime": "5 мин",
     "category": "Во что поиграть?",
-    "image": "img/ai/output/kriticheskaya_nagruzka.png"
+    "image": "/img/ai/output/kriticheskaya_nagruzka.png"
   },
   {
     "url": "/archive/hell-clock-cursed-war-3774910.html",
@@ -1219,7 +1249,7 @@ window.allArticles = [
     "date": "9 июля 2026",
     "readTime": "5 мин",
     "category": "Во что поиграть?",
-    "image": "img/ai/output/hell_clock_cursed_war.png"
+    "image": "/img/ai/output/hell_clock_cursed_war.png"
   },
   {
     "url": "/archive/polytropos-a-tactical-odyssey-3227320.html",
@@ -1228,7 +1258,7 @@ window.allArticles = [
     "date": "9 июля 2026",
     "readTime": "5 мин",
     "category": "Во что поиграть?",
-    "image": "img/ai/output/polytropos_tactical_odyssey.png"
+    "image": "/img/ai/output/polytropos_tactical_odyssey.png"
   },
   {
     "url": "/archive/weird-water-world-4534300.html",
@@ -1237,7 +1267,7 @@ window.allArticles = [
     "date": "9 июля 2026",
     "readTime": "5 мин",
     "category": "Во что поиграть?",
-    "image": "img/ai/output/weird_water_world.png"
+    "image": "/img/ai/output/weird_water_world.png"
   },
   {
     "url": "/archive/evil-thing-4373160.html",
@@ -1246,7 +1276,7 @@ window.allArticles = [
     "date": "9 июля 2026",
     "readTime": "5 мин",
     "category": "Во что поиграть?",
-    "image": "img/ai/output/evil_thing.png"
+    "image": "/img/ai/output/evil_thing.png"
   },
   {
     "url": "/archive/cursed-companions-3265230.html",
@@ -1255,7 +1285,7 @@ window.allArticles = [
     "date": "9 июля 2026",
     "readTime": "5 мин",
     "category": "Во что поиграть?",
-    "image": "img/ai/output/cursed_companions.png"
+    "image": "/img/ai/output/cursed_companions.png"
   },
   {
     "url": "/archive/gray-trading-4596160.html",
@@ -1264,7 +1294,7 @@ window.allArticles = [
     "date": "9 июля 2026",
     "readTime": "5 мин",
     "category": "Во что поиграть?",
-    "image": "img/ai/output/gray_trading.png"
+    "image": "/img/ai/output/gray_trading.png"
   },
   {
     "url": "/archive/vape-store-miami-prologue-4849630.html",
@@ -1273,7 +1303,7 @@ window.allArticles = [
     "date": "9 июля 2026",
     "readTime": "5 мин",
     "category": "Во что поиграть?",
-    "image": "img/ai/output/vape_store_miami.png"
+    "image": "/img/ai/output/vape_store_miami.png"
   },
   {
     "url": "/archive/elevator-avici-4790520.html",
@@ -1282,7 +1312,7 @@ window.allArticles = [
     "date": "9 июля 2026",
     "readTime": "5 мин",
     "category": "Во что поиграть?",
-    "image": "img/ai/output/elevator_avici.png"
+    "image": "/img/ai/output/elevator_avici.png"
   },
   {
     "url": "/archive/sweet-running-4571590.html",
@@ -1291,7 +1321,7 @@ window.allArticles = [
     "date": "9 июля 2026",
     "readTime": "5 мин",
     "category": "Во что поиграть?",
-    "image": "img/ai/output/sweet_running.png"
+    "image": "/img/ai/output/sweet_running.png"
   },
   {
     "url": "/archive/cyber-psychosis-1349930.html",
@@ -1300,7 +1330,7 @@ window.allArticles = [
     "date": "9 июля 2026",
     "readTime": "5 мин",
     "category": "Во что поиграть?",
-    "image": "img/ai/output/cyber_psychosis.png"
+    "image": "/img/ai/output/cyber_psychosis.png"
   },
   {
     "url": "/archive/our-wonderland-4329100.html",
@@ -1309,7 +1339,7 @@ window.allArticles = [
     "date": "9 июля 2026",
     "readTime": "5 мин",
     "category": "Во что поиграть?",
-    "image": "img/ai/output/our_wonderland.png"
+    "image": "/img/ai/output/our_wonderland.png"
   },
   {
     "url": "/archive/cozy-tide-4809010.html",
@@ -1318,7 +1348,7 @@ window.allArticles = [
     "date": "9 июля 2026",
     "readTime": "5 мин",
     "category": "Во что поиграть?",
-    "image": "img/ai/output/cozy_tide.png"
+    "image": "/img/ai/output/cozy_tide.png"
   },
   {
     "url": "/archive/prince-of-vibe-code-4820270.html",
@@ -1327,7 +1357,7 @@ window.allArticles = [
     "date": "9 июля 2026",
     "readTime": "5 мин",
     "category": "Во что поиграть?",
-    "image": "img/ai/output/prince_of_vibe_code.png"
+    "image": "/img/ai/output/prince_of_vibe_code.png"
   },
   {
     "url": "/archive/idle-hands-4867060.html",
@@ -1336,7 +1366,7 @@ window.allArticles = [
     "date": "9 июля 2026",
     "readTime": "5 мин",
     "category": "Во что поиграть?",
-    "image": "img/ai/output/idle_hands.png"
+    "image": "/img/ai/output/idle_hands.png"
   },
   {
     "url": "/archive/mesmalie-3534790.html",
@@ -1345,7 +1375,7 @@ window.allArticles = [
     "date": "9 июля 2026",
     "readTime": "5 мин",
     "category": "Во что поиграть?",
-    "image": "img/ai/output/mesmalie.png"
+    "image": "/img/ai/output/mesmalie.png"
   },
   {
     "url": "/archive/sondersoft-soccer-monkeys-vs-robots-4806090.html",
@@ -1354,7 +1384,7 @@ window.allArticles = [
     "date": "9 июля 2026",
     "readTime": "5 мин",
     "category": "Во что поиграть?",
-    "image": "img/ai/output/sondersoft_soccer_monkeys_vs_robots.png"
+    "image": "/img/ai/output/sondersoft_soccer_monkeys_vs_robots.png"
   },
   {
     "url": "/archive/dark-hollow-rpg-4867550.html",
@@ -1363,7 +1393,7 @@ window.allArticles = [
     "date": "9 июля 2026",
     "readTime": "5 мин",
     "category": "Во что поиграть?",
-    "image": "img/ai/output/dark_hollow_rpg.png"
+    "image": "/img/ai/output/dark_hollow_rpg.png"
   },
   {
     "url": "/archive/capybara-bingo-4668040.html",
@@ -1372,7 +1402,7 @@ window.allArticles = [
     "date": "9 июля 2026",
     "readTime": "5 мин",
     "category": "Во что поиграть?",
-    "image": "img/ai/output/capybara_bingo.png"
+    "image": "/img/ai/output/capybara_bingo.png"
   },
   {
     "url": "/archive/fleshbreak-nsfw-4924740.html",
@@ -1381,7 +1411,7 @@ window.allArticles = [
     "date": "9 июля 2026",
     "readTime": "5 мин",
     "category": "Во что поиграть?",
-    "image": "img/ai/output/fleshbreak_nsfw.png"
+    "image": "/img/ai/output/fleshbreak_nsfw.png"
   },
   {
     "url": "/archive/fleshbreak-4175650.html",
@@ -1390,7 +1420,7 @@ window.allArticles = [
     "date": "9 июля 2026",
     "readTime": "5 мин",
     "category": "Во что поиграть?",
-    "image": "img/ai/output/fleshbreak.png"
+    "image": "/img/ai/output/fleshbreak.png"
   },
   {
     "url": "/archive/meccha-chameleon-4704690.html",
@@ -1399,7 +1429,7 @@ window.allArticles = [
     "date": "9 июля 2026",
     "readTime": "5 мин",
     "category": "Во что поиграть?",
-    "image": "img/ai/output/meccha_chameleon.png"
+    "image": "/img/ai/output/meccha_chameleon.png"
   },
   {
     "url": "/archive/esports-manager-2026-2749950.html",
@@ -1408,7 +1438,7 @@ window.allArticles = [
     "date": "9 июля 2026",
     "readTime": "6 мин",
     "category": "Во что поиграть?",
-    "image": "img/ai/output/esports_manager_2026.png"
+    "image": "/img/ai/output/esports_manager_2026.png"
   },
   {
     "url": "/archive/the-finals-season-11-ultimate-battle-pass-bundle-4835400.html",
@@ -1417,7 +1447,7 @@ window.allArticles = [
     "date": "9 июля 2026",
     "readTime": "5 мин",
     "category": "Во что поиграть?",
-    "image": "img/ai/output/the_finals_season_11.png"
+    "image": "/img/ai/output/the_finals_season_11.png"
   },
   {
     "url": "/archive/baldur-s-gate-3-1086940.html",
@@ -1426,7 +1456,7 @@ window.allArticles = [
     "date": "9 июля 2026",
     "readTime": "9 мин",
     "category": "Во что поиграть?",
-    "image": "img/ai/output/baldurs_gate_3.png"
+    "image": "/img/ai/output/baldurs_gate_3.png"
   },
   {
     "url": "/archive/cat-mail-co-4380490.html",
@@ -1435,13 +1465,13 @@ window.allArticles = [
     "date": "9 июля 2026",
     "readTime": "5 мин",
     "category": "Во что поиграть?",
-    "image": "img/ai/output/cat_mail_co.png"
+    "image": "/img/ai/output/cat_mail_co.png"
   },
   {
     "url": "/archive/ii-v-gejmdeve-2026-problemy-nejrosetej.html",
     "title": "ИИ в геймдеве 2026: 7 причин, почему нейросети не спасают индустрию",
     "excerpt": "Честный разбор: реальные цифры GDC 2026, юридические риски, скандалы Unity/Epic, отзывы игроков в Steam. Где ИИ реально работает, а где — маркетинговый миф...",
-    "image": "img/ai/output/ii_v_gejmdeve_2026.png",
+    "image": "/img/ai/output/ii_v_gejmdeve_2026.png",
     "date": "10 июля 2026",
     "readTime": "15 мин",
     "category": "Аналитика"
@@ -1450,7 +1480,7 @@ window.allArticles = [
     "url": "/archive/gta-vi-krizis-industrii-2026.html",
     "title": "GTA VI — не спасение, а симптом кризиса AAA-индустрии",
     "excerpt": "Почему бюджет в $2 млрд — это не достижение, а симптом болезни. Разбор увольнений, закрытия студий и смерти старой AAA-модели...",
-    "image": "img/ai/output/gta_vi_krizis_industrii.png",
+    "image": "/img/ai/output/gta_vi_krizis_industrii.png",
     "date": "9 июля 2026",
     "readTime": "14 мин",
     "category": "Мнение"
@@ -1459,7 +1489,7 @@ window.allArticles = [
     "url": "/archive/monetizaciya-yandex-igry-2026-rukovodstvo.html",
     "title": "Монетизация в Яндекс Играх 2026: полное руководство с цифрами и кейсами",
     "excerpt": "Реальные цифры eCPM, рабочие стратегии для гиперказуалок и mid-core, разбор ошибок и кейсы с доходом от $500 до $15,000 в месяц...",
-    "image": "img/ai/output/monetizaciya_yandex_igry_2026.png",
+    "image": "/img/ai/output/monetizaciya_yandex_igry_2026.png",
     "date": "9 июля 2026",
     "readTime": "12 мин",
     "category": "Разработка"
@@ -1468,7 +1498,7 @@ window.allArticles = [
     "url": "/archive/blood-of-dawnwalker-gajd-bildy-2026.html",
     "title": "The Blood of Dawnwalker: гайд по лучшим билдам и скрытым механикам в 2026 году",
     "excerpt": "Топ-3 рабочих билда, секрет легендарного оружия и разбор механики Кровавого экстаза. Основано на 60 часах личного прохождения...",
-    "image": "img/ai/output/blood_of_dawnwalker_guide_2026.png",
+    "image": "/img/ai/output/blood_of_dawnwalker_guide_2026.png",
     "date": "9 июля 2026",
     "readTime": "8 мин",
     "category": "Гайды"
@@ -1477,7 +1507,7 @@ window.allArticles = [
     "url": "/archive/windows-11-july-2026-update-podgotovka.html",
     "title": "Windows 11 July 2026 Update: Как подготовиться и избежать проблем (полный гайд)",
     "excerpt": "14 июля 2026 выходит крупное обновление Windows 11 с Point-in-Time Restore и Unlimited Pause. Чек-лист из 7 шагов, разбор проблем 2026 года, инструкции по откату...",
-    "image": "img/ai/output/windows_11_july_2026_update.png",
+    "image": "/img/ai/output/windows_11_july_2026_update.png",
     "date": "9 июля 2026",
     "readTime": "8 мин",
     "category": "Гайды"
@@ -1486,7 +1516,7 @@ window.allArticles = [
     "url": "/archive/rtx-5090-vs-rx-9070xt-sravnenie-2026.html",
     "title": "RTX 5090 vs RX 9070 XT: Честное сравнение 2026 — какую карту брать?",
     "excerpt": "Полный тест RTX 5090 и RX 9070 XT в 27 играх, 3 разрешениях и рабочих задачах. Цена/производительность, температуры, вердикт. Без рекламы — только факты...",
-    "image": "img/ai/output/rtx_5090_vs_rx_9070xt.png",
+    "image": "/img/ai/output/rtx_5090_vs_rx_9070xt.png",
     "date": "9 июля 2026",
     "readTime": "10 мин",
     "category": "Технологии"
@@ -1495,7 +1525,7 @@ window.allArticles = [
     "url": "/archive/gta-6-polnyy-analiz-utechek-i-treylera.html",
     "title": "GTA 6: Полный анализ утечек и трейлера — секреты, которые скрыли от всех",
     "excerpt": "Глубокий анализ GTA 6: разбор трейлера, сравнение механик с GTA 5 и RDR2, прогноз пасхалок и скрытых деталей. То, о чем молчат все СМИ...",
-    "image": "img/ai/output/gta_6_analiz_utechek.png",
+    "image": "/img/ai/output/gta_6_analiz_utechek.png",
     "date": "8 июля 2026",
     "readTime": "10 мин",
     "category": "Аналитика"
@@ -1504,7 +1534,7 @@ window.allArticles = [
     "url": "/archive/kak-uvelichit-fps-windows-11-optimizaciya.html",
     "title": "Как увеличить FPS в Windows 11: Секретный гайд 2026 года (Выжимаем максимум)",
     "excerpt": "Windows 11 режет FPS в играх? Полный гайд по оптимизации: отключение VBS, настройка HAGS, чистка телеметрии и скрытые фишки для буста фреймрейта до 30-40%...",
-    "image": "img/ai/output/kak_uvelichit_fps_windows_11.png",
+    "image": "/img/ai/output/kak_uvelichit_fps_windows_11.png",
     "date": "8 июля 2026",
     "readTime": "7 мин",
     "category": "Гайды"
@@ -1513,7 +1543,7 @@ window.allArticles = [
     "url": "/archive/xbox-gamepass-to-steam-saves-2026.html",
     "title": "Как перенести сохранения из Xbox Game Pass в Steam в 2026 — полное руководство",
     "excerpt": "Десятки часов в Game Pass, а игру купили в Steam? WGS-контейнеры, GPSaveConverter, ручной и автоматический перенос — всё, что нужно для сохранения прогресса...",
-    "image": "img/ai/output/xbox_gamepass_to_steam_saves.png",
+    "image": "/img/ai/output/xbox_gamepass_to_steam_saves.png",
     "date": "6 июля 2026",
     "readTime": "9 мин",
     "category": "Гайды"
@@ -1522,7 +1552,7 @@ window.allArticles = [
     "url": "/archive/rdr2-secrets-2026.html",
     "title": "Все секреты Red Dead Redemption 2 — 150+ скрытых деталей, пасхалок и редких событий",
     "excerpt": "Более 150 скрытых деталей RDR2: призрачный поезд, вампир Сен-Дени, НЛО, гигант, дом робота и другие секреты, которые миллионы игроков никогда не видели...",
-    "image": "img/ai/output/rdr2_secrets_2026.png",
+    "image": "/img/ai/output/rdr2_secrets_2026.png",
     "date": "22 января 2026",
     "readTime": "8 мин",
     "category": "Гайды"
@@ -1531,7 +1561,7 @@ window.allArticles = [
     "url": "/archive/nintendo-switch-2-russia-2026.html",
     "title": "Nintendo Switch 2 в России 2026: полный гайд",
     "excerpt": "Как купить, настроить eShop и играть в старые игры на новой консоли. Все о параллельном импорте, обратной совместимости и способах оплаты для российских геймеров...",
-    "image": "img/ai/output/nintendo_switch_2_russia.png",
+    "image": "/img/ai/output/nintendo_switch_2_russia.png",
     "date": "20 января 2026",
     "readTime": "10 мин",
     "category": "Консоли"
@@ -1540,7 +1570,7 @@ window.allArticles = [
     "url": "/archive/vr-ai-2026.html",
     "title": "VR + AI 2026: Что реально работает сегодня",
     "excerpt": "Адаптивные NPC, динамические миры и персонализированные сценарии — как искусственный интеллект делает виртуальную реальность по-настоящему живой в 2026 году...",
-    "image": "img/ai/output/vr_ai_2026.png",
+    "image": "/img/ai/output/vr_ai_2026.png",
     "date": "21 января 2026",
     "readTime": "10 мин",
     "category": "Разработка"
@@ -1549,7 +1579,7 @@ window.allArticles = [
     "url": "/archive/metaverses-ai-2026.html",
     "title": "Существуют ли реальные AI-метавселенные в 2026?",
     "excerpt": "В 2026 году AI-метавселенные существуют, но не так, как обещают маркетологи. Разбор работающих проектов с живыми NPC, динамическими квестами и реагирующим миром...",
-    "image": "img/ai/output/metaverses_ai_2026.png",
+    "image": "/img/ai/output/metaverses_ai_2026.png",
     "date": "21 января 2026",
     "readTime": "10 мин",
     "category": "Технологии"
@@ -1558,7 +1588,7 @@ window.allArticles = [
     "url": "/archive/game-design-ai-2026.html",
     "title": "AI-геймдизайн 2026: как ИИ стал стандартом разработки",
     "excerpt": "В 2026 году искусственный интеллект стал стандартным инструментом геймдизайна. Как ИИ ускоряет прототипирование, балансировку и создание NPC без замены разработчиков...",
-    "image": "img/ai/output/game_design_ai_2026.png",
+    "image": "/img/ai/output/game_design_ai_2026.png",
     "date": "21 января 2026",
     "readTime": "9 мин",
     "category": "Разработка"
@@ -1567,7 +1597,7 @@ window.allArticles = [
     "url": "/archive/ai-comics-2026.html",
     "title": "Нейросетевые комиксы 2026: как ИИ стал инструментом автора",
     "excerpt": "Как нейросети изменили создание графических историй в 2026 году — от черновых панелей до целых визуальных новелл. Почему ИИ не заменил авторов, а усилил их...",
-    "image": "img/ai/output/ai_comics_2026.png",
+    "image": "/img/ai/output/ai_comics_2026.png",
     "date": "21 января 2026",
     "readTime": "9 мин",
     "category": "Тренды"
@@ -1576,7 +1606,7 @@ window.allArticles = [
     "url": "/archive/aa-games-trend-2026.html",
     "title": "AA-игры 2026 — как средний бюджет стал главным форматом индустрии",
     "excerpt": "Почему AAA-модель трещит по швам, а среднебюджетные AA-проекты стали новой точкой равновесия между качеством, риском и прибылью в 2026 году...",
-    "image": "img/ai/output/aa_games_trend_2026.png",
+    "image": "/img/ai/output/aa_games_trend_2026.png",
     "date": "20 января 2026",
     "readTime": "7 мин",
     "category": "Разработка"
@@ -1585,7 +1615,7 @@ window.allArticles = [
     "url": "/archive/ai-game-translators-2026-guide.html",
     "title": "Как играть в любую новинку 2026 без русской локализации? Гайд по AI-переводчикам",
     "excerpt": "Гайд по AI-переводчикам 2026: играем в Monster Hunter Wilds, Judas и GTA VI без русской локализации. LunaTranslator 2.0, GPT-4o, DeepL и локальные LLM.",
-    "image": "img/ai/output/ai_game_translators_2026_guide.png",
+    "image": "/img/ai/output/ai_game_translators_2026_guide.png",
     "date": "20 января 2026",
     "readTime": "8 мин",
     "category": "Гайды"
