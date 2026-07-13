@@ -216,8 +216,7 @@ function buildPage({ appid, slug, store, spy }) {
   const genres = store.genres?.map((g) => g.description).join(", ") || "не указаны";
   const developers = store.developers?.join(", ") || "не указаны";
   const publishers = store.publishers?.join(", ") || "не указаны";
-  const headerImg = `${CONFIG.siteUrl}/img/ai/output/${slug}.png`;
-  const aiImagePath = `/img/ai/output/${slug}.png`;
+  const headerImg = store.header_image || `${CONFIG.siteUrl}/og-image.jpg`;
   const shortDesc = (store.short_description || "").replace(/"/g, "'");
 
   return `<!DOCTYPE html>
@@ -241,8 +240,8 @@ function buildPage({ appid, slug, store, spy }) {
   <meta property="og:type" content="article" />
   <meta property="og:url" content="${url}" />
   <meta property="og:image" content="${headerImg}" />
-  <meta property="og:image:width" content="1344" />
-  <meta property="og:image:height" content="768" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:image" content="${headerImg}" />
   <meta name="robots" content="index, follow" />
