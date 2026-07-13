@@ -162,7 +162,6 @@ window.allArticles =
     "readTime": "8 мин",
     "category": "Гайды"
   }
-]
 ];
 
 window.articlesData = window.allArticles;
