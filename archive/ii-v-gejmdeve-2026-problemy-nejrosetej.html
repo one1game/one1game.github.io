@@ -1526,8 +1526,8 @@
 <div class="cookie-banner" id="cookie-banner" role="dialog" aria-live="polite" aria-label="Согласие на использование cookies">
   <p>Мы используем cookies для аналитики и улучшения сайта. Подробнее — в <a href="/privacy.html">политике конфиденциальности</a>.</p>
   <div class="cookie-buttons">
-    <button class="cookie-btn primary" id="cookie-accept" type="button">Принять</button>
-    <button class="cookie-btn secondary" id="cookie-decline" type="button">Только необходимые</button>
+    <button class="cookie-btn primary" onclick="acceptCookies()">Принять</button>
+    <button class="cookie-btn secondary" onclick="declineCookies()">Только необходимые</button>
   </div>
 </div>
 
@@ -1651,27 +1651,20 @@ function fallbackCopy(text, cb) {
 })();
 
 // Cookie banner
+function acceptCookies() {
+  localStorage.setItem('ga_consent', 'yes');
+  if (typeof enableGA === 'function') enableGA();
+  document.getElementById('cookie-banner').classList.remove('show');
+}
+function declineCookies() {
+  localStorage.setItem('ga_consent', 'no');
+  document.getElementById('cookie-banner').classList.remove('show');
+}
+
 (function() {
-  var banner = document.getElementById('cookie-banner');
-  var acceptBtn = document.getElementById('cookie-accept');
-  var declineBtn = document.getElementById('cookie-decline');
-
-  function acceptCookies() {
-    localStorage.setItem('ga_consent', 'yes');
-    if (typeof enableGA === 'function') enableGA();
-    banner.classList.remove('show');
-  }
-  function declineCookies() {
-    localStorage.setItem('ga_consent', 'no');
-    banner.classList.remove('show');
-  }
-
-  acceptBtn.addEventListener('click', acceptCookies);
-  declineBtn.addEventListener('click', declineCookies);
-
   if (!localStorage.getItem('ga_consent')) {
     setTimeout(function() {
-      banner.classList.add('show');
+      document.getElementById('cookie-banner').classList.add('show');
     }, 1500);
   }
 })();

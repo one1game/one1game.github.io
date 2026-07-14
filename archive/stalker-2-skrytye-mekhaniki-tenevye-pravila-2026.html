@@ -599,6 +599,7 @@
           <input type="email" placeholder="your@email.com" required aria-label="Ваш email" />
           <button type="submit">Подписаться</button>
         </form>
+        <div class="newsletter-msg"></div>
       </div>
 
     </article>
@@ -691,8 +692,8 @@
 <div class="cookie-banner" id="cookie-banner" role="dialog" aria-live="polite" aria-label="Согласие на использование cookies">
   <p>Мы используем cookies для аналитики и улучшения сайта. Подробнее — в <a href="/privacy.html">политике конфиденциальности</a>.</p>
   <div class="cookie-buttons">
-    <button id="cookie-accept" class="cookie-btn primary">Принять</button>
-    <button id="cookie-decline" class="cookie-btn secondary">Только необходимые</button>
+    <button class="cookie-btn primary" onclick="acceptCookies()">Принять</button>
+    <button class="cookie-btn secondary" onclick="declineCookies()">Только необходимые</button>
   </div>
 </div>
 
@@ -715,19 +716,6 @@ document.addEventListener('DOMContentLoaded', function() {
     }, 1500);
   }
 
-  var acceptBtn = document.getElementById('cookie-accept');
-  var declineBtn = document.getElementById('cookie-decline');
-  if (acceptBtn) acceptBtn.addEventListener('click', acceptCookies);
-  if (declineBtn) declineBtn.addEventListener('click', declineCookies);
-
-  var newsletterForm = document.getElementById('newsletter-form');
-  if (newsletterForm) {
-    newsletterForm.addEventListener('submit', function(e) {
-      e.preventDefault();
-      alert('Спасибо за подписку! (Демо)');
-      this.reset();
-    });
-  }
 });
 </script>
 <script src="/newsletter.js?v=2" defer></script>
