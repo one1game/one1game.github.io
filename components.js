@@ -72,38 +72,79 @@
       return;
     }
 
-    var kwMeta = document.querySelector('meta[name="keywords"]');
-    var keywords = kwMeta ? kwMeta.getAttribute('content').toLowerCase().split(/,\s*/) : [];
+    // Current article data
     var canon = document.querySelector('link[rel="canonical"]');
     var currentUrl = canon ? new URL(canon.href).pathname : '';
+    var currentArticle = null;
 
-    var scored = [];
+    // Find current article
     for (var i = 0; i < window.allArticles.length; i++) {
       var a = window.allArticles[i];
-      if (a.url === currentUrl) continue;
-      if (a.url === ('/' + a.url.replace(/^\//, ''))) continue;
-      if (a.url === currentUrl.replace('/archive/', '/')) continue;
+      var aPath = new URL(a.url, 'https://one1game.github.io').pathname;
+      if (aPath === currentUrl) { currentArticle = a; break; }
+    }
+
+    var currentCat = currentArticle ? currentArticle.category : '';
+    var currentTitle = currentArticle ? (currentArticle.title || '').toLowerCase() : '';
+
+    // Collect words to match: keywords + title words > 2 chars
+    var kwMeta = document.querySelector('meta[name="keywords"]');
+    var rawKeywords = kwMeta ? kwMeta.getAttribute('content').toLowerCase().split(/,\s*/) : [];
+    var matchWords = [];
+
+    // Add cleaned keywords
+    for (var k = 0; k < rawKeywords.length; k++) {
+      var w = rawKeywords[k].trim();
+      if (w.length >= 2) matchWords.push(w);
+    }
+
+    // Add words from title (split by non-alpha)
+    var titleWords = currentTitle.split(/[^a-zа-яё0-9]/);
+    for (var tw = 0; tw < titleWords.length; tw++) {
+      var twc = titleWords[tw].trim();
+      if (twc.length >= 3) matchWords.push(twc);
+    }
+
+    // Deduplicate
+    var uniqueWords = [];
+    for (var uw = 0; uw < matchWords.length; uw++) {
+      if (uniqueWords.indexOf(matchWords[uw]) === -1) uniqueWords.push(matchWords[uw]);
+    }
+
+    // Score all articles
+    var scored = [];
+    for (var j = 0; j < window.allArticles.length; j++) {
+      var b = window.allArticles[j];
+      var bPath = new URL(b.url, 'https://one1game.github.io').pathname;
+      if (bPath === currentUrl) continue;
 
       var score = 0;
-      var aTitle = (a.title || '').toLowerCase();
-      var aExcerpt = (a.excerpt || '').toLowerCase();
-      var aText = aTitle + ' ' + aExcerpt;
+      // Same category bonus
+      if (b.category === currentCat) score += 3;
 
-      for (var k = 0; k < keywords.length; k++) {
-        var kw = keywords[k].trim();
-        if (kw.length < 3) continue;
-        if (aText.indexOf(kw) !== -1) score += 2;
+      var bText = ((b.title || '') + ' ' + (b.excerpt || '')).toLowerCase();
+
+      // Match words from current article
+      for (var m = 0; m < uniqueWords.length; m++) {
+        var mw = uniqueWords[m];
+        if (mw.length < 2) continue;
+        if (bText.indexOf(mw) !== -1) score += 2;
       }
 
-      if (score > 0) scored.push({ article: a, score: score });
+      scored.push({ article: b, score: score });
     }
 
     scored.sort(function(x, y) { return y.score - x.score; });
-    var top = scored.slice(0, 4);
 
+    // Take top 4 that have at least minimal relevance (score > 0)
+    var top = [];
+    for (var t = 0; t < scored.length && top.length < 4; t++) {
+      if (scored[t].score > 0) top.push(scored[t]);
+    }
+
+    // Fallback: if nothing found, use recent articles
     if (!top.length) {
-      container.innerHTML = '';
-      return;
+      top = scored.slice(0, 4);
     }
 
     var catClass = function(cat) {
@@ -114,8 +155,8 @@
     };
 
     var html = '';
-    for (var t = 0; t < top.length; t++) {
-      var art = top[t].article;
+    for (var r = 0; r < top.length; r++) {
+      var art = top[r].article;
       var img = art.image ? '<img src="' + art.image + '" alt="' + art.title + '" loading="lazy" width="1344" height="768">' : '';
       html +=
         '<a href="' + art.url + '" class="related-card">' +
