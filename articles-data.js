@@ -2,6 +2,15 @@
 window.allArticles = 
 [
   {
+    "url": "/archive/stalker-2-nevozmozhnye-tayniki-i-artefakty.html",
+    "title": "S.T.A.L.K.E.R. 2: 5 «невозможных» тайников и артефактов, которые не могут найти игроки",
+    "excerpt": "Нашли ключ, но не видите дверь? Артефакт не спавнится? Разбираем самые проблемные тайники и легендарные артефакты S.T.A.L.K.E.R. 2, которые игроки массово не могут найти, и даем рабочие решения.",
+    "date": "15 июля 2026",
+    "readTime": "8 мин",
+    "category": "Гайды",
+    "image": "/img/ai/output/stalker2_hidden_stashes.png"
+  },
+  {
     "url": "/archive/operation-darkside-dx-optimal-guide.html",
     "title": "Operation: Darkside DX — Гайд по оптимизации гринда и получению всех концовок",
     "excerpt": "Реальный гайд по Operation: Darkside DX. Как обойти гринд, использовать новые QoL-функции из патча 2.7 и получить все варианты концовок без потери времени.",
