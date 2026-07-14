@@ -2,6 +2,15 @@
 window.allArticles = 
 [
   {
+    "url": "/archive/elevator-avici-vse-koncovki-sekrety.html",
+    "title": "ELEVATOR: AVICI — Полный гайд на все 3 концовки и скрытые предметы",
+    "excerpt": "Единственный полный гайд на русском: как получить все 3 концовки в ELEVATOR: AVICI. Раскрываем секретный файл разработчика, локации скрытых предметов и точки невозврата.",
+    "date": "14 июля 2026",
+    "readTime": "9 мин",
+    "category": "Гайды",
+    "image": "/img/ai/output/elevator_avici_endings.png"
+  },
+  {
     "url": "/archive/stalker-2-skrytye-mekhaniki-tenevye-pravila-2026.html",
     "title": "S.T.A.L.K.E.R. 2: 7 мифов о скрытых механиках — правда или вымысел?",
     "excerpt": "Разбираем 7 самых популярных мифов и теорий о скрытых механиках S.T.A.L.K.E.R. 2: теневая экономика, множители урона, секретные локации. Что из этого правда?",
