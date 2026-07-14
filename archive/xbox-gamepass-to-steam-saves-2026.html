@@ -1,367 +1,369 @@
-<!DOCTYPE html>
-<html lang="ru">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="canonical" href="https://one1game.github.io/archive/xbox-gamepass-to-steam-saves-2026.html" />
-  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🎮</text></svg>">
-  <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin />
-  <link rel="preconnect" href="https://www.googletagmanager.com" crossorigin />
-  <link rel="dns-prefetch" href="https://www.google-analytics.com" />
-  <link rel="preload" href="../styles.css" as="style" />
-
-  <title>Как перенести сохранения из Xbox Game Pass в Steam в 2026 — полное руководство | One1Game</title>
-  <meta name="description" content="Полное руководство: как перенести сохранения из Xbox Game Pass в Steam. Автоматический и ручной перенос, совместимые игры, извлечение из контейнеров WGS." />
-  <meta name="keywords" content="перенос сохранений Xbox Game Pass в Steam, Xbox Game Pass сохранения Steam, WGS контейнер, GPSaveConverter, WGS Inspector, Game Pass save transfer" />
-
-  <!-- OpenGraph -->
-  <meta property="og:title" content="Как перенести сохранения из Xbox Game Pass в Steam в 2026 — полное руководство" />
-  <meta property="og:description" content="Как перенести десятки часов прогресса из Game Pass в Steam. WGS-контейнеры, автоматический экспорт и ручной перенос." />
-  <meta property="og:type" content="article" />
-  <meta property="og:url" content="https://one1game.github.io/archive/xbox-gamepass-to-steam-saves-2026.html" />
-  <meta property="article:tag" content="Гайды" />
-  <meta property="article:tag" content="Xbox" />
-  <meta property="article:tag" content="Steam" />
-  <meta property="og:image" content="https://one1game.github.io/img/ai/output/xbox_gamepass_to_steam_saves.png" />
-  K44" />
-  ~8" />
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:image" content="https://one1game.github.io/img/ai/output/xbox_gamepass_to_steam_saves.png" />
-  <meta name="robots" content="index, follow" />
-
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-SZYYDYEC6T"></script>
-  <script>
-    // GA запускается только после согласия пользователя (GDPR)
-    window.gaEnabled = false;
-    function enableGA() {
-      if (window.gaEnabled) return;
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      window.gtag = gtag;
-      gtag('js', new Date());
-      gtag('config', 'G-SZYYDYEC6T', { anonymize_ip: true });
-      window.gaEnabled = true;
-    }
-    if (localStorage.getItem('ga_consent') === 'yes') enableGA();
-  </script>
-  <link href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css" rel="stylesheet" />
-  <link rel="stylesheet" href="../styles.css?v=5" />
-
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "BreadcrumbList",
-    "itemListElement": [
-      {"@type": "ListItem", "position": 1, "name": "Главная", "item": "https://one1game.github.io/"},
-      {"@type": "ListItem", "position": 2, "name": "Статьи", "item": "https://one1game.github.io/archive.html"},
-      {"@type": "ListItem", "position": 3, "name": "Перенос сохранений Xbox Game Pass в Steam", "item": "https://one1game.github.io/archive/xbox-gamepass-to-steam-saves-2026.html"}
-    ]
-  }
-  </script>
-
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "Article",
-    "headline": "Как перенести сохранения из Xbox Game Pass в Steam в 2026 году — полное руководство",
-    "datePublished": "2026-07-06",
-    "dateModified": "2026-07-06",
-    "author": {"@type": "Person", "name": "Команда One1Game"},
-    "publisher": {"@type": "Organization", "name": "One1Game", "logo": {"@type": "ImageObject", "url": "https://one1game.github.io/logo.png"}},
-    "description": "Полное руководство по переносу сохранений из Xbox Game Pass в Steam: автоматический и ручной способы, WGS-контейнеры, совместимые игры.",
-    "image": "https://one1game.github.io/og-image.jpg"
-  }
-  </script>
-
-  <link rel="manifest" href="/manifest.json" />
-  <link rel="stylesheet" href="/reactions.css" />
-<style>
-  /* Skip-link для доступности */
-  .skip-link {
-    position: absolute;
-    top: -40px;
-    left: 0;
-    background: var(--cyan);
-    color: #000;
-    padding: 8px 16px;
-    z-index: 1000;
-    text-decoration: none;
-    font-weight: bold;
-    transition: top 0.2s;
-  }
-  .skip-link:focus { top: 0; }
-  .article-header { margin-bottom: 30px; }
-  .article-meta { color: #888; font-size: 14px; }
-  .article-body p { line-height: 1.8; margin-bottom: 20px; }
-  .breadcrumbs { margin-bottom: 18px; font-size: 13px; color: var(--text-faint); }
-  .breadcrumbs a { color: var(--cyan); text-decoration: none; }
-  .breadcrumbs a:hover { text-decoration: underline; }
-  .breadcrumbs span { color: var(--text-dim); }
-</style>
-</head>
-<body>
-<a href="#main-content" class="skip-link">Перейти к содержимому</a>
-<main id="main-content">
-<div class="container">
-  <div class="article-page">
-
-    <a href="/archive.html" class="article-back">
-      <i class="fas fa-arrow-left"></i> К списку статей
-    </a>
-
-    <nav class="breadcrumbs" aria-label="Хлебные крошки" itemscope itemtype="https://schema.org/BreadcrumbList">
-      <span itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
-        <a itemprop="item" href="/"><span itemprop="name">Главная</span></a>
-        <meta itemprop="position" content="1" />
-      </span> →
-      <span itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
-        <a itemprop="item" href="/archive.html"><span itemprop="name">Статьи</span></a>
-        <meta itemprop="position" content="2" />
-      </span> →
-      <span itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
-        <span itemprop="name" aria-current="page">Xbox Game Pass → Steam</span>
-        <meta itemprop="position" content="3" />
-      </span>
-    </nav>
-
-    <div class="article-header">
-      <span class="article-category cat-guides">Гайды</span>
-      <h1>Как перенести сохранения из Xbox Game Pass в Steam в 2026 году — полное руководство</h1>
-      <div class="article-meta">
-        <span><i class="far fa-calendar"></i> 6 июля 2026</span>
-        <span><i class="far fa-clock"></i> 9 мин</span>
-        <span><i class="fas fa-tag"></i> Гайды</span>
-      </div>
-    </div>
-
-<figure class="article-hero"><img src="../img/ai/output/xbox_gamepass_to_steam_saves.png" alt="Как перенести сохранения из Xbox Game Pass в Steam в 2026" width="1344" height="768" loading="eager" fetchpriority="high" style="width:100%;height:auto;border-radius:12px;margin-bottom:24px;"></figure>
-
-    <article class="article-body">
-
-      <p><strong>Потратили десятки или сотни часов в версии игры из Xbox Game Pass, а теперь решили купить её в Steam?</strong> Во многих случаях прогресс можно сохранить, но универсального способа не существует. Одни игры позволяют просто скопировать файлы, другие используют контейнеры Windows Game Save (WGS), а некоторые вообще несовместимы между версиями.</p>
-
-      <p>В этом руководстве мы разберем:</p>
-      <ul>
-        <li>когда перенос действительно работает;</li>
-        <li>как автоматически извлечь сохранения;</li>
-        <li>как выполнить перенос вручную;</li>
-        <li>какие игры поддерживают перенос;</li>
-        <li>почему некоторые сохранения не загружаются даже после успешного копирования.</li>
-      </ul>
-
-      <h2>Можно ли перенести сохранения из Xbox Game Pass в Steam?</h2>
-
-      <p><strong>Короткий ответ — да, но не всегда.</strong></p>
-
-      <p>Результат зависит не от Steam или Xbox, а от того, как разработчики реализовали систему сохранений.</p>
-
-      <p>Можно выделить три варианта:</p>
-
-      <h3>Полностью совместимые</h3>
-      <p>Steam и Game Pass используют одинаковый формат файлов. Достаточно перенести сохранение.</p>
-
-      <h3>Частично совместимые</h3>
-      <p>Файлы можно извлечь, но потребуется изменить их название, структуру или воспользоваться специальным инструментом.</p>
-
-      <h3>Несовместимые</h3>
-      <p>Разработчики используют разные форматы сохранений. Даже если файл успешно скопирован, Steam-версия игры его не распознает. Это ограничение самой игры, а не Windows или Steam.</p>
-
-      <h2>Способ №1 — Автоматический перенос (рекомендуется)</h2>
-
-      <p>Если игра использует стандартные контейнеры Windows Game Save, удобнее воспользоваться специализированными инструментами.</p>
-
-      <p>Наиболее известные проекты:</p>
-      <ul>
-        <li>WGS Inspector;</li>
-        <li>GPSaveConverter;</li>
-        <li>XGP Save Tools.</li>
-      </ul>
-
-      <p>Они автоматически находят контейнеры WGS, извлекают данные и помогают экспортировать файлы в формат, который ожидает Steam-версия (если для игры поддерживается соответствующий профиль).</p>
-
-      <h3>Порядок действий</h3>
-      <ol>
-        <li>Запустите игру через Xbox Game Pass и сохранитесь.</li>
-        <li>Закройте игру.</li>
-        <li>Запустите инструмент экспорта.</li>
-        <li>Выберите нужную игру.</li>
-        <li>Экспортируйте сохранения.</li>
-        <li>Установите Steam-версию.</li>
-        <li>Создайте новое сохранение.</li>
-        <li>Закройте игру.</li>
-        <li>Замените созданные файлы экспортированными.</li>
-        <li>На первый запуск отключите Steam Cloud, чтобы облако не восстановило старые данные.</li>
-      </ol>
-
-      <h2>Способ №2 — Ручной перенос</h2>
-
-      <p>Если для игры нет готового экспортера, перенос иногда можно выполнить самостоятельно.</p>
-
-      <h3>Шаг 1. Найдите сохранения Game Pass</h3>
-
-      <p>Обычно они находятся здесь:</p>
-      <pre><code>%LOCALAPPDATA%\Packages\</code></pre>
-
-      <p>Затем откройте папку нужной игры:</p>
-      <pre><code>SystemAppData\wgs</code></pre>
-
-      <p>Внутри находятся контейнеры Windows Game Save. Имена файлов выглядят как случайный набор символов. Определить нужный файл проще всего по времени последнего изменения.</p>
-
-      <h3>Шаг 2. Найдите сохранения Steam</h3>
-
-      <p>Самые распространённые пути:</p>
-      <pre><code>Steam\userdata\Ваш_ID\ID_игры\remote</code></pre>
-
-      <p>или:</p>
-      <pre><code>AppData\Local</code></pre>
-
-      <p>или:</p>
-      <pre><code>Documents\My Games</code></pre>
-
-      <p>Точное расположение зависит от конкретной игры.</p>
-
-      <h3>Шаг 3. Создайте резервную копию</h3>
-
-      <p>Перед заменой файлов обязательно сохраните оригинальные сохранения Steam. Если перенос окажется несовместимым, вы сможете восстановить прогресс за несколько секунд.</p>
-
-      <h3>Шаг 4. Замените сохранения</h3>
-
-      <p>В некоторых играх достаточно заменить файл. В других потребуется переименовать его так же, как называется сохранение Steam. После этого можно запускать игру.</p>
-
-      <h2>Почему сохранение не работает?</h2>
-
-      <p>Самые частые причины:</p>
-      <ul>
-        <li>разные версии игры;</li>
-        <li>разные форматы сохранений;</li>
-        <li>несовместимые DLC;</li>
-        <li>облачная синхронизация Steam восстановила старый файл;</li>
-        <li>игра использует собственное шифрование.</li>
-      </ul>
-
-      <p>Даже при правильном переносе некоторые проекты не смогут открыть сохранение — это известное ограничение отдельных игр.</p>
-
-      <h2>Часто задаваемые вопросы</h2>
-
-      <h3>Перенесутся ли достижения Steam?</h3>
-      <p>Нет. Перенос сохранения не означает автоматическую разблокировку достижений.</p>
-
-      <h3>Можно ли перенести сохранения обратно?</h3>
-      <p>Если игра использует совместимый формат и поддерживается соответствующим инструментом, обратный перенос возможен не всегда и зависит от конкретного проекта.</p>
-
-      <h2>Итоги</h2>
-
-      <p>В большинстве случаев перенос сохранений между Xbox Game Pass и Steam возможен, но успех зависит от реализации конкретной игры. Если для неё существует профиль в специализированных инструментах, процесс занимает несколько минут. Если нет — остается ручной перенос, который работает только при совместимости форматов.</p>
-
-      <p>Перед любыми изменениями обязательно создайте резервную копию сохранений и отключите облачную синхронизацию Steam до первого успешного запуска.</p>
-
-<!-- Подписка -->
-<div class="newsletter-box">
-  <h4>📬 Получайте такие разборы раз в неделю</h4>
-  <p>Аналитика индустрии, редкие цифры и мнения, о которых не пишут в крупных СМИ. Без спама — только по делу.</p>
-  <form class="newsletter-form">
-    <input type="email" placeholder="your@email.com" required aria-label="Ваш email" />
-    <button type="submit">Подписаться</button>
-  </form>
-  <div class="newsletter-msg"></div>
-</div>
-
-    </article>
-
-<div id="reactions-section"></div>
-
-<section class="comments-section">
-      <h4><i class="fas fa-comments" aria-hidden="true"></i> Комментарии</h4>
-      <div class="comments-container" id="comments-container">
-        <script src="https://utteranc.es/client.js"
-                repo="one1game/one1game.github.io"
-                issue-term="pathname"
-                label="комментарии"
-                theme="github-dark"
-                crossorigin="anonymous"
-                async>
-        </script>
-      </div>
-    </section>
-
-    <!-- Share -->
-    <section class="share-section">
-      <h4>Поделиться</h4>
-      <p class="share-hint">Понравилась статья? Отправь другу — пусть тоже будет в курсе!</p>
-      <div class="share-buttons" id="share-buttons"></div>
-    </section>
-
-    <!-- Related -->
-    <section class="related-section">
-      <h4>Похожие статьи</h4>
-      <div class="related-grid" id="related-container"></div></section>
-    
-
-
-  </div>
-</div>
-
-</main>
-
-
-<script src="/cache-version.js"></script>
-<script>document.write('<script src="../articles-data.js?v='+(window.CACHE_VER||'1')+'"><\/script>');</script>
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="canonical" href="https://one1game.github.io/archive/xbox-gamepass-to-steam-saves-2026.html" />
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>рџЋ®</text></svg>">
+  <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin />
+  <link rel="preconnect" href="https://www.googletagmanager.com" crossorigin />
+  <link rel="dns-prefetch" href="https://www.google-analytics.com" />
+  <link rel="preload" href="../styles.css" as="style" />
+
+  <title>РљР°Рє РїРµСЂРµРЅРµСЃС‚Рё СЃРѕС…СЂР°РЅРµРЅРёСЏ РёР· Xbox Game Pass РІ Steam РІ 2026 вЂ” РїРѕР»РЅРѕРµ СЂСѓРєРѕРІРѕРґСЃС‚РІРѕ | One1Game</title>
+  <meta name="description" content="РџРѕР»РЅРѕРµ СЂСѓРєРѕРІРѕРґСЃС‚РІРѕ: РєР°Рє РїРµСЂРµРЅРµСЃС‚Рё СЃРѕС…СЂР°РЅРµРЅРёСЏ РёР· Xbox Game Pass РІ Steam. РђРІС‚РѕРјР°С‚РёС‡РµСЃРєРёР№ Рё СЂСѓС‡РЅРѕР№ РїРµСЂРµРЅРѕСЃ, СЃРѕРІРјРµСЃС‚РёРјС‹Рµ РёРіСЂС‹, РёР·РІР»РµС‡РµРЅРёРµ РёР· РєРѕРЅС‚РµР№РЅРµСЂРѕРІ WGS." />
+  <meta name="keywords" content="РїРµСЂРµРЅРѕСЃ СЃРѕС…СЂР°РЅРµРЅРёР№ Xbox Game Pass РІ Steam, Xbox Game Pass СЃРѕС…СЂР°РЅРµРЅРёСЏ Steam, WGS РєРѕРЅС‚РµР№РЅРµСЂ, GPSaveConverter, WGS Inspector, Game Pass save transfer" />
+
+  <!-- OpenGraph -->
+  <meta property="og:title" content="РљР°Рє РїРµСЂРµРЅРµСЃС‚Рё СЃРѕС…СЂР°РЅРµРЅРёСЏ РёР· Xbox Game Pass РІ Steam РІ 2026 вЂ” РїРѕР»РЅРѕРµ СЂСѓРєРѕРІРѕРґСЃС‚РІРѕ" />
+  <meta property="og:description" content="РљР°Рє РїРµСЂРµРЅРµСЃС‚Рё РґРµСЃСЏС‚РєРё С‡Р°СЃРѕРІ РїСЂРѕРіСЂРµСЃСЃР° РёР· Game Pass РІ Steam. WGS-РєРѕРЅС‚РµР№РЅРµСЂС‹, Р°РІС‚РѕРјР°С‚РёС‡РµСЃРєРёР№ СЌРєСЃРїРѕСЂС‚ Рё СЂСѓС‡РЅРѕР№ РїРµСЂРµРЅРѕСЃ." />
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://one1game.github.io/archive/xbox-gamepass-to-steam-saves-2026.html" />
+  <meta property="article:tag" content="Р“Р°Р№РґС‹" />
+  <meta property="article:tag" content="Xbox" />
+  <meta property="article:tag" content="Steam" />
+  <meta property="og:image" content="https://one1game.github.io/img/ai/output/xbox_gamepass_to_steam_saves.png" />
+  K44" />
+  ~8" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:image" content="https://one1game.github.io/img/ai/output/xbox_gamepass_to_steam_saves.png" />
+  <meta name="robots" content="index, follow" />
+
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-SZYYDYEC6T"></script>
+  <script>
+    // GA Р·Р°РїСѓСЃРєР°РµС‚СЃСЏ С‚РѕР»СЊРєРѕ РїРѕСЃР»Рµ СЃРѕРіР»Р°СЃРёСЏ РїРѕР»СЊР·РѕРІР°С‚РµР»СЏ (GDPR)
+    window.gaEnabled = false;
+    function enableGA() {
+      if (window.gaEnabled) return;
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      window.gtag = gtag;
+      gtag('js', new Date());
+      gtag('config', 'G-SZYYDYEC6T', { anonymize_ip: true });
+      window.gaEnabled = true;
+    }
+    if (localStorage.getItem('ga_consent') === 'yes') enableGA();
+  </script>
+  <link href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="../styles.css?v=5" />
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {"@type": "ListItem", "position": 1, "name": "Р“Р»Р°РІРЅР°СЏ", "item": "https://one1game.github.io/"},
+      {"@type": "ListItem", "position": 2, "name": "РЎС‚Р°С‚СЊРё", "item": "https://one1game.github.io/archive.html"},
+      {"@type": "ListItem", "position": 3, "name": "РџРµСЂРµРЅРѕСЃ СЃРѕС…СЂР°РЅРµРЅРёР№ Xbox Game Pass РІ Steam", "item": "https://one1game.github.io/archive/xbox-gamepass-to-steam-saves-2026.html"}
+    ]
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "РљР°Рє РїРµСЂРµРЅРµСЃС‚Рё СЃРѕС…СЂР°РЅРµРЅРёСЏ РёР· Xbox Game Pass РІ Steam РІ 2026 РіРѕРґСѓ вЂ” РїРѕР»РЅРѕРµ СЂСѓРєРѕРІРѕРґСЃС‚РІРѕ",
+    "datePublished": "2026-07-06",
+    "dateModified": "2026-07-06",
+    "author": {"@type": "Person", "name": "РљРѕРјР°РЅРґР° One1Game"},
+    "publisher": {"@type": "Organization", "name": "One1Game", "logo": {"@type": "ImageObject", "url": "https://one1game.github.io/logo.png"}},
+    "description": "РџРѕР»РЅРѕРµ СЂСѓРєРѕРІРѕРґСЃС‚РІРѕ РїРѕ РїРµСЂРµРЅРѕСЃСѓ СЃРѕС…СЂР°РЅРµРЅРёР№ РёР· Xbox Game Pass РІ Steam: Р°РІС‚РѕРјР°С‚РёС‡РµСЃРєРёР№ Рё СЂСѓС‡РЅРѕР№ СЃРїРѕСЃРѕР±С‹, WGS-РєРѕРЅС‚РµР№РЅРµСЂС‹, СЃРѕРІРјРµСЃС‚РёРјС‹Рµ РёРіСЂС‹.",
+    "image": "https://one1game.github.io/og-image.jpg"
+  }
+  </script>
+
+  <link rel="manifest" href="/manifest.json" />
+  <link rel="stylesheet" href="/reactions.css" />
+<style>
+  /* Skip-link РґР»СЏ РґРѕСЃС‚СѓРїРЅРѕСЃС‚Рё */
+  .skip-link {
+    position: absolute;
+    top: -40px;
+    left: 0;
+    background: var(--cyan);
+    color: #000;
+    padding: 8px 16px;
+    z-index: 1000;
+    text-decoration: none;
+    font-weight: bold;
+    transition: top 0.2s;
+  }
+  .skip-link:focus { top: 0; }
+  .article-header { margin-bottom: 30px; }
+  .article-meta { color: #888; font-size: 14px; }
+  .article-body p { line-height: 1.8; margin-bottom: 20px; }
+  .breadcrumbs { margin-bottom: 18px; font-size: 13px; color: var(--text-faint); }
+  .breadcrumbs a { color: var(--cyan); text-decoration: none; }
+  .breadcrumbs a:hover { text-decoration: underline; }
+  .breadcrumbs span { color: var(--text-dim); }
+</style>
+</head>
+<body>
+<a href="#main-content" class="skip-link">РџРµСЂРµР№С‚Рё Рє СЃРѕРґРµСЂР¶РёРјРѕРјСѓ</a>
+<main id="main-content">
+<div class="container">
+  <div class="article-page">
+
+    <a href="/archive.html" class="article-back">
+      <i class="fas fa-arrow-left"></i> Рљ СЃРїРёСЃРєСѓ СЃС‚Р°С‚РµР№
+    </a>
+
+    <nav class="breadcrumbs" aria-label="РҐР»РµР±РЅС‹Рµ РєСЂРѕС€РєРё" itemscope itemtype="https://schema.org/BreadcrumbList">
+      <span itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+        <a itemprop="item" href="/"><span itemprop="name">Р“Р»Р°РІРЅР°СЏ</span></a>
+        <meta itemprop="position" content="1" />
+      </span> в†’
+      <span itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+        <a itemprop="item" href="/archive.html"><span itemprop="name">РЎС‚Р°С‚СЊРё</span></a>
+        <meta itemprop="position" content="2" />
+      </span> в†’
+      <span itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+        <span itemprop="name" aria-current="page">Xbox Game Pass в†’ Steam</span>
+        <meta itemprop="position" content="3" />
+      </span>
+    </nav>
+
+    <div class="article-header">
+      <span class="article-category cat-guides">Р“Р°Р№РґС‹</span>
+      <h1>РљР°Рє РїРµСЂРµРЅРµСЃС‚Рё СЃРѕС…СЂР°РЅРµРЅРёСЏ РёР· Xbox Game Pass РІ Steam РІ 2026 РіРѕРґСѓ вЂ” РїРѕР»РЅРѕРµ СЂСѓРєРѕРІРѕРґСЃС‚РІРѕ</h1>
+      <div class="article-meta">
+        <span><i class="far fa-calendar"></i> 6 РёСЋР»СЏ 2026</span>
+        <span><i class="far fa-clock"></i> 9 РјРёРЅ</span>
+        <span><i class="fas fa-tag"></i> Р“Р°Р№РґС‹</span>
+      </div>
+    </div>
+
+<figure class="article-hero"><img src="../img/ai/output/xbox_gamepass_to_steam_saves.png" alt="РљР°Рє РїРµСЂРµРЅРµСЃС‚Рё СЃРѕС…СЂР°РЅРµРЅРёСЏ РёР· Xbox Game Pass РІ Steam РІ 2026" width="1344" height="768" loading="eager" fetchpriority="high" style="width:100%;height:auto;border-radius:12px;margin-bottom:24px;"></figure>
+
+    <article class="article-body">
+
+      <p><strong>РџРѕС‚СЂР°С‚РёР»Рё РґРµСЃСЏС‚РєРё РёР»Рё СЃРѕС‚РЅРё С‡Р°СЃРѕРІ РІ РІРµСЂСЃРёРё РёРіСЂС‹ РёР· Xbox Game Pass, Р° С‚РµРїРµСЂСЊ СЂРµС€РёР»Рё РєСѓРїРёС‚СЊ РµС‘ РІ Steam?</strong> Р’Рѕ РјРЅРѕРіРёС… СЃР»СѓС‡Р°СЏС… РїСЂРѕРіСЂРµСЃСЃ РјРѕР¶РЅРѕ СЃРѕС…СЂР°РЅРёС‚СЊ, РЅРѕ СѓРЅРёРІРµСЂСЃР°Р»СЊРЅРѕРіРѕ СЃРїРѕСЃРѕР±Р° РЅРµ СЃСѓС‰РµСЃС‚РІСѓРµС‚. РћРґРЅРё РёРіСЂС‹ РїРѕР·РІРѕР»СЏСЋС‚ РїСЂРѕСЃС‚Рѕ СЃРєРѕРїРёСЂРѕРІР°С‚СЊ С„Р°Р№Р»С‹, РґСЂСѓРіРёРµ РёСЃРїРѕР»СЊР·СѓСЋС‚ РєРѕРЅС‚РµР№РЅРµСЂС‹ Windows Game Save (WGS), Р° РЅРµРєРѕС‚РѕСЂС‹Рµ РІРѕРѕР±С‰Рµ РЅРµСЃРѕРІРјРµСЃС‚РёРјС‹ РјРµР¶РґСѓ РІРµСЂСЃРёСЏРјРё.</p>
+
+      <p>Р’ СЌС‚РѕРј СЂСѓРєРѕРІРѕРґСЃС‚РІРµ РјС‹ СЂР°Р·Р±РµСЂРµРј:</p>
+      <ul>
+        <li>РєРѕРіРґР° РїРµСЂРµРЅРѕСЃ РґРµР№СЃС‚РІРёС‚РµР»СЊРЅРѕ СЂР°Р±РѕС‚Р°РµС‚;</li>
+        <li>РєР°Рє Р°РІС‚РѕРјР°С‚РёС‡РµСЃРєРё РёР·РІР»РµС‡СЊ СЃРѕС…СЂР°РЅРµРЅРёСЏ;</li>
+        <li>РєР°Рє РІС‹РїРѕР»РЅРёС‚СЊ РїРµСЂРµРЅРѕСЃ РІСЂСѓС‡РЅСѓСЋ;</li>
+        <li>РєР°РєРёРµ РёРіСЂС‹ РїРѕРґРґРµСЂР¶РёРІР°СЋС‚ РїРµСЂРµРЅРѕСЃ;</li>
+        <li>РїРѕС‡РµРјСѓ РЅРµРєРѕС‚РѕСЂС‹Рµ СЃРѕС…СЂР°РЅРµРЅРёСЏ РЅРµ Р·Р°РіСЂСѓР¶Р°СЋС‚СЃСЏ РґР°Р¶Рµ РїРѕСЃР»Рµ СѓСЃРїРµС€РЅРѕРіРѕ РєРѕРїРёСЂРѕРІР°РЅРёСЏ.</li>
+      </ul>
+
+      <h2>РњРѕР¶РЅРѕ Р»Рё РїРµСЂРµРЅРµСЃС‚Рё СЃРѕС…СЂР°РЅРµРЅРёСЏ РёР· Xbox Game Pass РІ Steam?</h2>
+
+      <p><strong>РљРѕСЂРѕС‚РєРёР№ РѕС‚РІРµС‚ вЂ” РґР°, РЅРѕ РЅРµ РІСЃРµРіРґР°.</strong></p>
+
+      <p>Р РµР·СѓР»СЊС‚Р°С‚ Р·Р°РІРёСЃРёС‚ РЅРµ РѕС‚ Steam РёР»Рё Xbox, Р° РѕС‚ С‚РѕРіРѕ, РєР°Рє СЂР°Р·СЂР°Р±РѕС‚С‡РёРєРё СЂРµР°Р»РёР·РѕРІР°Р»Рё СЃРёСЃС‚РµРјСѓ СЃРѕС…СЂР°РЅРµРЅРёР№.</p>
+
+      <p>РњРѕР¶РЅРѕ РІС‹РґРµР»РёС‚СЊ С‚СЂРё РІР°СЂРёР°РЅС‚Р°:</p>
+
+      <h3>РџРѕР»РЅРѕСЃС‚СЊСЋ СЃРѕРІРјРµСЃС‚РёРјС‹Рµ</h3>
+      <p>Steam Рё Game Pass РёСЃРїРѕР»СЊР·СѓСЋС‚ РѕРґРёРЅР°РєРѕРІС‹Р№ С„РѕСЂРјР°С‚ С„Р°Р№Р»РѕРІ. Р”РѕСЃС‚Р°С‚РѕС‡РЅРѕ РїРµСЂРµРЅРµСЃС‚Рё СЃРѕС…СЂР°РЅРµРЅРёРµ.</p>
+
+      <h3>Р§Р°СЃС‚РёС‡РЅРѕ СЃРѕРІРјРµСЃС‚РёРјС‹Рµ</h3>
+      <p>Р¤Р°Р№Р»С‹ РјРѕР¶РЅРѕ РёР·РІР»РµС‡СЊ, РЅРѕ РїРѕС‚СЂРµР±СѓРµС‚СЃСЏ РёР·РјРµРЅРёС‚СЊ РёС… РЅР°Р·РІР°РЅРёРµ, СЃС‚СЂСѓРєС‚СѓСЂСѓ РёР»Рё РІРѕСЃРїРѕР»СЊР·РѕРІР°С‚СЊСЃСЏ СЃРїРµС†РёР°Р»СЊРЅС‹Рј РёРЅСЃС‚СЂСѓРјРµРЅС‚РѕРј.</p>
+
+      <h3>РќРµСЃРѕРІРјРµСЃС‚РёРјС‹Рµ</h3>
+      <p>Р Р°Р·СЂР°Р±РѕС‚С‡РёРєРё РёСЃРїРѕР»СЊР·СѓСЋС‚ СЂР°Р·РЅС‹Рµ С„РѕСЂРјР°С‚С‹ СЃРѕС…СЂР°РЅРµРЅРёР№. Р”Р°Р¶Рµ РµСЃР»Рё С„Р°Р№Р» СѓСЃРїРµС€РЅРѕ СЃРєРѕРїРёСЂРѕРІР°РЅ, Steam-РІРµСЂСЃРёСЏ РёРіСЂС‹ РµРіРѕ РЅРµ СЂР°СЃРїРѕР·РЅР°РµС‚. Р­С‚Рѕ РѕРіСЂР°РЅРёС‡РµРЅРёРµ СЃР°РјРѕР№ РёРіСЂС‹, Р° РЅРµ Windows РёР»Рё Steam.</p>
+
+      <h2>РЎРїРѕСЃРѕР± в„–1 вЂ” РђРІС‚РѕРјР°С‚РёС‡РµСЃРєРёР№ РїРµСЂРµРЅРѕСЃ (СЂРµРєРѕРјРµРЅРґСѓРµС‚СЃСЏ)</h2>
+
+      <p>Р•СЃР»Рё РёРіСЂР° РёСЃРїРѕР»СЊР·СѓРµС‚ СЃС‚Р°РЅРґР°СЂС‚РЅС‹Рµ РєРѕРЅС‚РµР№РЅРµСЂС‹ Windows Game Save, СѓРґРѕР±РЅРµРµ РІРѕСЃРїРѕР»СЊР·РѕРІР°С‚СЊСЃСЏ СЃРїРµС†РёР°Р»РёР·РёСЂРѕРІР°РЅРЅС‹РјРё РёРЅСЃС‚СЂСѓРјРµРЅС‚Р°РјРё.</p>
+
+      <p>РќР°РёР±РѕР»РµРµ РёР·РІРµСЃС‚РЅС‹Рµ РїСЂРѕРµРєС‚С‹:</p>
+      <ul>
+        <li>WGS Inspector;</li>
+        <li>GPSaveConverter;</li>
+        <li>XGP Save Tools.</li>
+      </ul>
+
+      <p>РћРЅРё Р°РІС‚РѕРјР°С‚РёС‡РµСЃРєРё РЅР°С…РѕРґСЏС‚ РєРѕРЅС‚РµР№РЅРµСЂС‹ WGS, РёР·РІР»РµРєР°СЋС‚ РґР°РЅРЅС‹Рµ Рё РїРѕРјРѕРіР°СЋС‚ СЌРєСЃРїРѕСЂС‚РёСЂРѕРІР°С‚СЊ С„Р°Р№Р»С‹ РІ С„РѕСЂРјР°С‚, РєРѕС‚РѕСЂС‹Р№ РѕР¶РёРґР°РµС‚ Steam-РІРµСЂСЃРёСЏ (РµСЃР»Рё РґР»СЏ РёРіСЂС‹ РїРѕРґРґРµСЂР¶РёРІР°РµС‚СЃСЏ СЃРѕРѕС‚РІРµС‚СЃС‚РІСѓСЋС‰РёР№ РїСЂРѕС„РёР»СЊ).</p>
+
+      <h3>РџРѕСЂСЏРґРѕРє РґРµР№СЃС‚РІРёР№</h3>
+      <ol>
+        <li>Р—Р°РїСѓСЃС‚РёС‚Рµ РёРіСЂСѓ С‡РµСЂРµР· Xbox Game Pass Рё СЃРѕС…СЂР°РЅРёС‚РµСЃСЊ.</li>
+        <li>Р—Р°РєСЂРѕР№С‚Рµ РёРіСЂСѓ.</li>
+        <li>Р—Р°РїСѓСЃС‚РёС‚Рµ РёРЅСЃС‚СЂСѓРјРµРЅС‚ СЌРєСЃРїРѕСЂС‚Р°.</li>
+        <li>Р’С‹Р±РµСЂРёС‚Рµ РЅСѓР¶РЅСѓСЋ РёРіСЂСѓ.</li>
+        <li>Р­РєСЃРїРѕСЂС‚РёСЂСѓР№С‚Рµ СЃРѕС…СЂР°РЅРµРЅРёСЏ.</li>
+        <li>РЈСЃС‚Р°РЅРѕРІРёС‚Рµ Steam-РІРµСЂСЃРёСЋ.</li>
+        <li>РЎРѕР·РґР°Р№С‚Рµ РЅРѕРІРѕРµ СЃРѕС…СЂР°РЅРµРЅРёРµ.</li>
+        <li>Р—Р°РєСЂРѕР№С‚Рµ РёРіСЂСѓ.</li>
+        <li>Р—Р°РјРµРЅРёС‚Рµ СЃРѕР·РґР°РЅРЅС‹Рµ С„Р°Р№Р»С‹ СЌРєСЃРїРѕСЂС‚РёСЂРѕРІР°РЅРЅС‹РјРё.</li>
+        <li>РќР° РїРµСЂРІС‹Р№ Р·Р°РїСѓСЃРє РѕС‚РєР»СЋС‡РёС‚Рµ Steam Cloud, С‡С‚РѕР±С‹ РѕР±Р»Р°РєРѕ РЅРµ РІРѕСЃСЃС‚Р°РЅРѕРІРёР»Рѕ СЃС‚Р°СЂС‹Рµ РґР°РЅРЅС‹Рµ.</li>
+      </ol>
+
+      <h2>РЎРїРѕСЃРѕР± в„–2 вЂ” Р СѓС‡РЅРѕР№ РїРµСЂРµРЅРѕСЃ</h2>
+
+      <p>Р•СЃР»Рё РґР»СЏ РёРіСЂС‹ РЅРµС‚ РіРѕС‚РѕРІРѕРіРѕ СЌРєСЃРїРѕСЂС‚РµСЂР°, РїРµСЂРµРЅРѕСЃ РёРЅРѕРіРґР° РјРѕР¶РЅРѕ РІС‹РїРѕР»РЅРёС‚СЊ СЃР°РјРѕСЃС‚РѕСЏС‚РµР»СЊРЅРѕ.</p>
+
+      <h3>РЁР°Рі 1. РќР°Р№РґРёС‚Рµ СЃРѕС…СЂР°РЅРµРЅРёСЏ Game Pass</h3>
+
+      <p>РћР±С‹С‡РЅРѕ РѕРЅРё РЅР°С…РѕРґСЏС‚СЃСЏ Р·РґРµСЃСЊ:</p>
+      <pre><code>%LOCALAPPDATA%\Packages\</code></pre>
+
+      <p>Р—Р°С‚РµРј РѕС‚РєСЂРѕР№С‚Рµ РїР°РїРєСѓ РЅСѓР¶РЅРѕР№ РёРіСЂС‹:</p>
+      <pre><code>SystemAppData\wgs</code></pre>
+
+      <p>Р’РЅСѓС‚СЂРё РЅР°С…РѕРґСЏС‚СЃСЏ РєРѕРЅС‚РµР№РЅРµСЂС‹ Windows Game Save. РРјРµРЅР° С„Р°Р№Р»РѕРІ РІС‹РіР»СЏРґСЏС‚ РєР°Рє СЃР»СѓС‡Р°Р№РЅС‹Р№ РЅР°Р±РѕСЂ СЃРёРјРІРѕР»РѕРІ. РћРїСЂРµРґРµР»РёС‚СЊ РЅСѓР¶РЅС‹Р№ С„Р°Р№Р» РїСЂРѕС‰Рµ РІСЃРµРіРѕ РїРѕ РІСЂРµРјРµРЅРё РїРѕСЃР»РµРґРЅРµРіРѕ РёР·РјРµРЅРµРЅРёСЏ.</p>
+
+      <h3>РЁР°Рі 2. РќР°Р№РґРёС‚Рµ СЃРѕС…СЂР°РЅРµРЅРёСЏ Steam</h3>
+
+      <p>РЎР°РјС‹Рµ СЂР°СЃРїСЂРѕСЃС‚СЂР°РЅС‘РЅРЅС‹Рµ РїСѓС‚Рё:</p>
+      <pre><code>Steam\userdata\Р’Р°С€_ID\ID_РёРіСЂС‹\remote</code></pre>
+
+      <p>РёР»Рё:</p>
+      <pre><code>AppData\Local</code></pre>
+
+      <p>РёР»Рё:</p>
+      <pre><code>Documents\My Games</code></pre>
+
+      <p>РўРѕС‡РЅРѕРµ СЂР°СЃРїРѕР»РѕР¶РµРЅРёРµ Р·Р°РІРёСЃРёС‚ РѕС‚ РєРѕРЅРєСЂРµС‚РЅРѕР№ РёРіСЂС‹.</p>
+
+      <h3>РЁР°Рі 3. РЎРѕР·РґР°Р№С‚Рµ СЂРµР·РµСЂРІРЅСѓСЋ РєРѕРїРёСЋ</h3>
+
+      <p>РџРµСЂРµРґ Р·Р°РјРµРЅРѕР№ С„Р°Р№Р»РѕРІ РѕР±СЏР·Р°С‚РµР»СЊРЅРѕ СЃРѕС…СЂР°РЅРёС‚Рµ РѕСЂРёРіРёРЅР°Р»СЊРЅС‹Рµ СЃРѕС…СЂР°РЅРµРЅРёСЏ Steam. Р•СЃР»Рё РїРµСЂРµРЅРѕСЃ РѕРєР°Р¶РµС‚СЃСЏ РЅРµСЃРѕРІРјРµСЃС‚РёРјС‹Рј, РІС‹ СЃРјРѕР¶РµС‚Рµ РІРѕСЃСЃС‚Р°РЅРѕРІРёС‚СЊ РїСЂРѕРіСЂРµСЃСЃ Р·Р° РЅРµСЃРєРѕР»СЊРєРѕ СЃРµРєСѓРЅРґ.</p>
+
+      <h3>РЁР°Рі 4. Р—Р°РјРµРЅРёС‚Рµ СЃРѕС…СЂР°РЅРµРЅРёСЏ</h3>
+
+      <p>Р’ РЅРµРєРѕС‚РѕСЂС‹С… РёРіСЂР°С… РґРѕСЃС‚Р°С‚РѕС‡РЅРѕ Р·Р°РјРµРЅРёС‚СЊ С„Р°Р№Р». Р’ РґСЂСѓРіРёС… РїРѕС‚СЂРµР±СѓРµС‚СЃСЏ РїРµСЂРµРёРјРµРЅРѕРІР°С‚СЊ РµРіРѕ С‚Р°Рє Р¶Рµ, РєР°Рє РЅР°Р·С‹РІР°РµС‚СЃСЏ СЃРѕС…СЂР°РЅРµРЅРёРµ Steam. РџРѕСЃР»Рµ СЌС‚РѕРіРѕ РјРѕР¶РЅРѕ Р·Р°РїСѓСЃРєР°С‚СЊ РёРіСЂСѓ.</p>
+
+      <h2>РџРѕС‡РµРјСѓ СЃРѕС…СЂР°РЅРµРЅРёРµ РЅРµ СЂР°Р±РѕС‚Р°РµС‚?</h2>
+
+      <p>РЎР°РјС‹Рµ С‡Р°СЃС‚С‹Рµ РїСЂРёС‡РёРЅС‹:</p>
+      <ul>
+        <li>СЂР°Р·РЅС‹Рµ РІРµСЂСЃРёРё РёРіСЂС‹;</li>
+        <li>СЂР°Р·РЅС‹Рµ С„РѕСЂРјР°С‚С‹ СЃРѕС…СЂР°РЅРµРЅРёР№;</li>
+        <li>РЅРµСЃРѕРІРјРµСЃС‚РёРјС‹Рµ DLC;</li>
+        <li>РѕР±Р»Р°С‡РЅР°СЏ СЃРёРЅС…СЂРѕРЅРёР·Р°С†РёСЏ Steam РІРѕСЃСЃС‚Р°РЅРѕРІРёР»Р° СЃС‚Р°СЂС‹Р№ С„Р°Р№Р»;</li>
+        <li>РёРіСЂР° РёСЃРїРѕР»СЊР·СѓРµС‚ СЃРѕР±СЃС‚РІРµРЅРЅРѕРµ С€РёС„СЂРѕРІР°РЅРёРµ.</li>
+      </ul>
+
+      <p>Р”Р°Р¶Рµ РїСЂРё РїСЂР°РІРёР»СЊРЅРѕРј РїРµСЂРµРЅРѕСЃРµ РЅРµРєРѕС‚РѕСЂС‹Рµ РїСЂРѕРµРєС‚С‹ РЅРµ СЃРјРѕРіСѓС‚ РѕС‚РєСЂС‹С‚СЊ СЃРѕС…СЂР°РЅРµРЅРёРµ вЂ” СЌС‚Рѕ РёР·РІРµСЃС‚РЅРѕРµ РѕРіСЂР°РЅРёС‡РµРЅРёРµ РѕС‚РґРµР»СЊРЅС‹С… РёРіСЂ.</p>
+
+      <h2>Р§Р°СЃС‚Рѕ Р·Р°РґР°РІР°РµРјС‹Рµ РІРѕРїСЂРѕСЃС‹</h2>
+
+      <h3>РџРµСЂРµРЅРµСЃСѓС‚СЃСЏ Р»Рё РґРѕСЃС‚РёР¶РµРЅРёСЏ Steam?</h3>
+      <p>РќРµС‚. РџРµСЂРµРЅРѕСЃ СЃРѕС…СЂР°РЅРµРЅРёСЏ РЅРµ РѕР·РЅР°С‡Р°РµС‚ Р°РІС‚РѕРјР°С‚РёС‡РµСЃРєСѓСЋ СЂР°Р·Р±Р»РѕРєРёСЂРѕРІРєСѓ РґРѕСЃС‚РёР¶РµРЅРёР№.</p>
+
+      <h3>РњРѕР¶РЅРѕ Р»Рё РїРµСЂРµРЅРµСЃС‚Рё СЃРѕС…СЂР°РЅРµРЅРёСЏ РѕР±СЂР°С‚РЅРѕ?</h3>
+      <p>Р•СЃР»Рё РёРіСЂР° РёСЃРїРѕР»СЊР·СѓРµС‚ СЃРѕРІРјРµСЃС‚РёРјС‹Р№ С„РѕСЂРјР°С‚ Рё РїРѕРґРґРµСЂР¶РёРІР°РµС‚СЃСЏ СЃРѕРѕС‚РІРµС‚СЃС‚РІСѓСЋС‰РёРј РёРЅСЃС‚СЂСѓРјРµРЅС‚РѕРј, РѕР±СЂР°С‚РЅС‹Р№ РїРµСЂРµРЅРѕСЃ РІРѕР·РјРѕР¶РµРЅ РЅРµ РІСЃРµРіРґР° Рё Р·Р°РІРёСЃРёС‚ РѕС‚ РєРѕРЅРєСЂРµС‚РЅРѕРіРѕ РїСЂРѕРµРєС‚Р°.</p>
+
+      <h2>РС‚РѕРіРё</h2>
+
+      <p>Р’ Р±РѕР»СЊС€РёРЅСЃС‚РІРµ СЃР»СѓС‡Р°РµРІ РїРµСЂРµРЅРѕСЃ СЃРѕС…СЂР°РЅРµРЅРёР№ РјРµР¶РґСѓ Xbox Game Pass Рё Steam РІРѕР·РјРѕР¶РµРЅ, РЅРѕ СѓСЃРїРµС… Р·Р°РІРёСЃРёС‚ РѕС‚ СЂРµР°Р»РёР·Р°С†РёРё РєРѕРЅРєСЂРµС‚РЅРѕР№ РёРіСЂС‹. Р•СЃР»Рё РґР»СЏ РЅРµС‘ СЃСѓС‰РµСЃС‚РІСѓРµС‚ РїСЂРѕС„РёР»СЊ РІ СЃРїРµС†РёР°Р»РёР·РёСЂРѕРІР°РЅРЅС‹С… РёРЅСЃС‚СЂСѓРјРµРЅС‚Р°С…, РїСЂРѕС†РµСЃСЃ Р·Р°РЅРёРјР°РµС‚ РЅРµСЃРєРѕР»СЊРєРѕ РјРёРЅСѓС‚. Р•СЃР»Рё РЅРµС‚ вЂ” РѕСЃС‚Р°РµС‚СЃСЏ СЂСѓС‡РЅРѕР№ РїРµСЂРµРЅРѕСЃ, РєРѕС‚РѕСЂС‹Р№ СЂР°Р±РѕС‚Р°РµС‚ С‚РѕР»СЊРєРѕ РїСЂРё СЃРѕРІРјРµСЃС‚РёРјРѕСЃС‚Рё С„РѕСЂРјР°С‚РѕРІ.</p>
+
+      <p>РџРµСЂРµРґ Р»СЋР±С‹РјРё РёР·РјРµРЅРµРЅРёСЏРјРё РѕР±СЏР·Р°С‚РµР»СЊРЅРѕ СЃРѕР·РґР°Р№С‚Рµ СЂРµР·РµСЂРІРЅСѓСЋ РєРѕРїРёСЋ СЃРѕС…СЂР°РЅРµРЅРёР№ Рё РѕС‚РєР»СЋС‡РёС‚Рµ РѕР±Р»Р°С‡РЅСѓСЋ СЃРёРЅС…СЂРѕРЅРёР·Р°С†РёСЋ Steam РґРѕ РїРµСЂРІРѕРіРѕ СѓСЃРїРµС€РЅРѕРіРѕ Р·Р°РїСѓСЃРєР°.</p>
+
+<!-- РџРѕРґРїРёСЃРєР° -->
+  <p>РђРЅР°Р»РёС‚РёРєР° РёРЅРґСѓСЃС‚СЂРёРё, СЂРµРґРєРёРµ С†РёС„СЂС‹ Рё РјРЅРµРЅРёСЏ, Рѕ РєРѕС‚РѕСЂС‹С… РЅРµ РїРёС€СѓС‚ РІ РєСЂСѓРїРЅС‹С… РЎРњР. Р‘РµР· СЃРїР°РјР° вЂ” С‚РѕР»СЊРєРѕ РїРѕ РґРµР»Сѓ.</p>
+  <form class="newsletter-form">
+    <input type="email" placeholder="your@email.com" required aria-label="Р’Р°С€ email" />
+    <button type="submit">РџРѕРґРїРёСЃР°С‚СЊСЃСЏ</button>
+  </form>
+  <div class="newsletter-msg"></div>
+</div>
+
+    
+</article>
+
+<div id="reactions-section"></div>
+
+<section class="comments-section">
+      <h4><i class="fas fa-comments" aria-hidden="true"></i> РљРѕРјРјРµРЅС‚Р°СЂРёРё</h4>
+      <div class="comments-container" id="comments-container">
+        <script src="https://utteranc.es/client.js"
+                repo="one1game/one1game.github.io"
+                issue-term="pathname"
+                label="РєРѕРјРјРµРЅС‚Р°СЂРёРё"
+                theme="github-dark"
+                crossorigin="anonymous"
+                async>
+        </script>
+      </div>
+    </section>
+
+    <!-- Share -->
+    <section class="share-section">
+      <h4>РџРѕРґРµР»РёС‚СЊСЃСЏ</h4>
+      <p class="share-hint">РџРѕРЅСЂР°РІРёР»Р°СЃСЊ СЃС‚Р°С‚СЊСЏ? РћС‚РїСЂР°РІСЊ РґСЂСѓРіСѓ вЂ” РїСѓСЃС‚СЊ С‚РѕР¶Рµ Р±СѓРґРµС‚ РІ РєСѓСЂСЃРµ!</p>
+      <div class="share-buttons" id="share-buttons"></div>
+    </section>
+
+    <!-- Related -->
+    <section class="related-section">
+      <h4>РџРѕС…РѕР¶РёРµ СЃС‚Р°С‚СЊРё</h4>
+      <div class="related-grid" id="related-container"></div></section>
+    
+  </div>
+</div>
+
+</main>
+
+<script src="/cache-version.js"></script>
+<script>document.write('<script src="../articles-data.js?v='+(window.CACHE_VER||'1')+'"><\/script>');</script>
+<script>
+(function() {
+  var path = window.location.pathname;
+  var currentUrl = path.replace(/^\/+/, '/');
+  var all = window.articlesData || [];
+
+  // Share buttons
+  var url = encodeURIComponent('https://one1game.github.io' + currentUrl);
+  var title = encodeURIComponent(document.title);
+  var shareEl = document.getElementById('share-buttons');
+  shareEl.innerHTML = [
+    '<a target="_blank" rel="noopener" class="share-btn" href="https://vk.com/share.php?url=' + url + '&title=' + title + '">VK</a>',
+    '<a target="_blank" rel="noopener" class="share-btn" href="https://t.me/share/url?url=' + url + '&text=' + title + '">Telegram</a>',
+    '<a target="_blank" rel="noopener" class="share-btn" href="https://twitter.com/intent/tweet?url=' + url + '&text=' + title + '">Twitter</a>',
+    '<a target="_blank" rel="noopener" class="share-btn" href="https://api.whatsapp.com/send?text=' + title + '%20' + url + '">WhatsApp</a>'
+  ].join('');
+
+  // Related articles
+  var filtered = all.filter(function(a) { return a.url !== currentUrl; });
+  if (filtered.length > 3) filtered.length = 3;
+  var relEl = document.getElementById('related-container');
+  filtered.forEach(function(a) {
+    relEl.innerHTML += '<a href="' + a.url + '" class="related-card"><strong>' + a.title + '</strong><span>' + a.date + '</span></a>';
+  });
+})();
+</script>
+<script src="../components.js?v=15" defer></script>
+<script src="/reactions.js" defer></script>
+<!-- Cookie Banner -->
+<div class="cookie-banner" id="cookie-banner" role="dialog" aria-live="polite" aria-label="РЎРѕРіР»Р°СЃРёРµ РЅР° РёСЃРїРѕР»СЊР·РѕРІР°РЅРёРµ cookies">
+  <p>РњС‹ РёСЃРїРѕР»СЊР·СѓРµРј cookies РґР»СЏ Р°РЅР°Р»РёС‚РёРєРё Рё СѓР»СѓС‡С€РµРЅРёСЏ СЃР°Р№С‚Р°. РџРѕРґСЂРѕР±РЅРµРµ вЂ” РІ <a href="/privacy.html">РїРѕР»РёС‚РёРєРµ РєРѕРЅС„РёРґРµРЅС†РёР°Р»СЊРЅРѕСЃС‚Рё</a>.</p>
+  <div class="cookie-buttons">
+    <button id="cookie-accept" class="cookie-btn primary">РџСЂРёРЅСЏС‚СЊ</button>
+    <button id="cookie-decline" class="cookie-btn secondary">РўРѕР»СЊРєРѕ РЅРµРѕР±С…РѕРґРёРјС‹Рµ</button>
+  </div>
+</div>
+
 <script>
-(function() {
-  var path = window.location.pathname;
-  var currentUrl = path.replace(/^\/+/, '/');
-  var all = window.articlesData || [];
-
-  // Share buttons
-  var url = encodeURIComponent('https://one1game.github.io' + currentUrl);
-  var title = encodeURIComponent(document.title);
-  var shareEl = document.getElementById('share-buttons');
-  shareEl.innerHTML = [
-    '<a target="_blank" rel="noopener" class="share-btn" href="https://vk.com/share.php?url=' + url + '&title=' + title + '">VK</a>',
-    '<a target="_blank" rel="noopener" class="share-btn" href="https://t.me/share/url?url=' + url + '&text=' + title + '">Telegram</a>',
-    '<a target="_blank" rel="noopener" class="share-btn" href="https://twitter.com/intent/tweet?url=' + url + '&text=' + title + '">Twitter</a>',
-    '<a target="_blank" rel="noopener" class="share-btn" href="https://api.whatsapp.com/send?text=' + title + '%20' + url + '">WhatsApp</a>'
-  ].join('');
-
-  // Related articles
-  var filtered = all.filter(function(a) { return a.url !== currentUrl; });
-  if (filtered.length > 3) filtered.length = 3;
-  var relEl = document.getElementById('related-container');
-  filtered.forEach(function(a) {
-    relEl.innerHTML += '<a href="' + a.url + '" class="related-card"><strong>' + a.title + '</strong><span>' + a.date + '</span></a>';
-  });
-})();
-</script>
-<script src="../components.js?v=15" defer></script>
-<script src="/reactions.js" defer></script>
-<!-- Cookie Banner -->
-<div class="cookie-banner" id="cookie-banner" role="dialog" aria-live="polite" aria-label="Согласие на использование cookies">
-  <p>Мы используем cookies для аналитики и улучшения сайта. Подробнее — в <a href="/privacy.html">политике конфиденциальности</a>.</p>
-  <div class="cookie-buttons">
-    <button class="cookie-btn primary" onclick="acceptCookies()">Принять</button>
-    <button class="cookie-btn secondary" onclick="declineCookies()">Только необходимые</button>
-  </div>
-</div>
-
-<script>
-// Cookie banner
 function acceptCookies() {
   localStorage.setItem('ga_consent', 'yes');
   if (typeof enableGA === 'function') enableGA();
   document.getElementById('cookie-banner').classList.remove('show');
 }
+
 function declineCookies() {
   localStorage.setItem('ga_consent', 'no');
   document.getElementById('cookie-banner').classList.remove('show');
 }
-(function() {
+
+document.addEventListener('DOMContentLoaded', function() {
   if (!localStorage.getItem('ga_consent')) {
     setTimeout(function() {
       document.getElementById('cookie-banner').classList.add('show');
     }, 1500);
   }
-})();
-</script>
-<script src="/newsletter.js?v=2" defer></script>
-</body>
-</html>
+
+  var acceptBtn = document.getElementById('cookie-accept');
+  var declineBtn = document.getElementById('cookie-decline');
+  if (acceptBtn) acceptBtn.addEventListener('click', acceptCookies);
+  if (declineBtn) declineBtn.addEventListener('click', declineCookies);
+});
+</script>
+<script src="/newsletter.js?v=2" defer></script>
+</body>
+</html>
