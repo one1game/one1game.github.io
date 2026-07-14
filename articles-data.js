@@ -2,6 +2,15 @@
 window.allArticles = 
 [
   {
+    "url": "/archive/operation-darkside-dx-optimal-guide.html",
+    "title": "Operation: Darkside DX — Гайд по оптимизации гринда и получению всех концовок",
+    "excerpt": "Реальный гайд по Operation: Darkside DX. Как обойти гринд, использовать новые QoL-функции из патча 2.7 и получить все варианты концовок без потери времени.",
+    "date": "15 июля 2026",
+    "readTime": "10 мин",
+    "category": "Гайды",
+    "image": "/img/ai/output/operation_darkside_dx_guide.png"
+  },
+  {
     "url": "/archive/elevator-avici-vse-koncovki-sekrety.html",
     "title": "ELEVATOR: AVICI — Полный гайд на все 3 концовки и скрытые предметы",
     "excerpt": "Единственный полный гайд на русском: как получить все 3 концовки в ELEVATOR: AVICI. Раскрываем секретный файл разработчика, локации скрытых предметов и точки невозврата.",
