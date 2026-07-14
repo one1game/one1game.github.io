@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="ru">
 <head>
   <meta charset="UTF-8" />
@@ -44,7 +44,7 @@
     if (localStorage.getItem('ga_consent') === 'yes') enableGA();
   </script>
   <link href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css" rel="stylesheet" />
-  <link rel="stylesheet" href="/styles.css?v=7" />
+  <link rel="stylesheet" href="/styles.css?v=9" />
 
   <script type="application/ld+json">
   {
@@ -457,7 +457,7 @@
 (function() {
   var path = window.location.pathname;
   var currentUrl = path.replace(/^\/+/, '/');
-  var all = window.articlesData || [];
+  var all = window.allArticles || [];
 
   var url = encodeURIComponent('https://one1game.github.io' + currentUrl);
   var title = encodeURIComponent(document.title);

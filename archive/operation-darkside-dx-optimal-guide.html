@@ -1,496 +1,912 @@
-﻿<!DOCTYPE html>
-<html lang="ru">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="canonical" href="https://one1game.github.io/archive/operation-darkside-dx-optimal-guide.html" />
-  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🔬</text></svg>">
-  <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin />
-  <link rel="preconnect" href="https://www.googletagmanager.com" crossorigin />
-  <link rel="dns-prefetch" href="https://www.google-analytics.com" />
-  <link rel="preload" href="/styles.css?v=8" as="style" />
-
-  <title>Operation: Darkside DX — Гайд по оптимизации гринда и получению всех концовок | One1Game</title>
-  <meta name="description" content="Реальный гайд по Operation: Darkside DX. Как обойти гринд, использовать новые QoL-функции из патча 2.7 и получить все варианты концовок без потери времени." />
-  <meta name="keywords" content="Operation Darkside DX гайд, Operation Darkside DX как пройти, Operation Darkside DX оптимизация, Operation Darkside DX концовки, Mango Party, ダークネスLAB" />
-
-  <meta property="og:title" content="Operation: Darkside DX — Гайд по оптимизации и всем концовкам" />
-  <meta property="og:description" content="Хватит тратить время на бессмысленный гринд. Используем реальные механики и обновления, чтобы пройти игру эффективно." />
-  <meta property="og:type" content="article" />
-  <meta property="og:url" content="https://one1game.github.io/archive/operation-darkside-dx-optimal-guide.html" />
-  <meta property="article:tag" content="Operation: Darkside DX" />
-  <meta property="article:tag" content="Гайды" />
-  <meta property="article:tag" content="RPG" />
-  <meta property="og:image" content="https://one1game.github.io/img/ai/output/operation_darkside_dx_guide.png" />
-  <meta property="og:image:width" content="1344" />
-  <meta property="og:image:height" content="768" />
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:image" content="https://one1game.github.io/img/ai/output/operation_darkside_dx_guide.png" />
-  <meta name="robots" content="index, follow" />
-
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-SZYYDYEC6T"></script>
-  <script>
-    window.gaEnabled = false;
-    function enableGA() {
-      if (window.gaEnabled) return;
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      window.gtag = gtag;
-      gtag('js', new Date());
-      gtag('config', 'G-SZYYDYEC6T', { anonymize_ip: true });
-      window.gaEnabled = true;
-    }
-    if (localStorage.getItem('ga_consent') === 'yes') enableGA();
-  </script>
-  <link href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css" rel="stylesheet" />
-  <link rel="stylesheet" href="/styles.css?v=8" />
-
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "BreadcrumbList",
-    "itemListElement": [
-      {"@type": "ListItem", "position": 1, "name": "Главная", "item": "https://one1game.github.io/"},
-      {"@type": "ListItem", "position": 2, "name": "Статьи", "item": "https://one1game.github.io/archive.html"},
-      {"@type": "ListItem", "position": 3, "name": "Operation: Darkside DX — Гайд", "item": "https://one1game.github.io/archive/operation-darkside-dx-optimal-guide.html"}
-    ]
-  }
-  </script>
-
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "Article",
-    "headline": "Operation: Darkside DX — Гайд по оптимизации гринда и получению всех концовок",
-    "datePublished": "2026-07-14T12:00:00+03:00",
-    "dateModified": "2026-07-14T12:00:00+03:00",
-    "author": {"@type": "Person", "name": "Команда One1Game"},
-    "publisher": {"@type": "Organization", "name": "One1Game", "logo": {"@type": "ImageObject", "url": "https://one1game.github.io/logo.png"}},
-    "description": "Как пройти Operation: Darkside DX максимально эффективно, использовать новые QoL-функции и получить все концовки без лишнего гринда.",
-    "image": "https://one1game.github.io/img/ai/output/operation_darkside_dx_guide.png"
-  }
-  </script>
-
-  <link rel="manifest" href="/manifest.json" />
-  <link rel="stylesheet" href="/reactions.css" />
-<style>
-  .skip-link {
-    position: absolute;
-    top: -40px;
-    left: 0;
-    background: var(--cyan);
-    color: #000;
-    padding: 8px 16px;
-    z-index: 1000;
-    text-decoration: none;
-    font-weight: bold;
-    transition: top 0.2s;
-  }
-  .skip-link:focus { top: 0; }
-  .article-header { margin-bottom: 30px; }
-  .article-meta { color: #888; font-size: 14px; }
-  .article-body p { line-height: 1.8; margin-bottom: 20px; }
-  .breadcrumbs { margin-bottom: 18px; font-size: 13px; color: var(--text-faint); }
-  .breadcrumbs a { color: var(--cyan); text-decoration: none; }
-  .breadcrumbs a:hover { text-decoration: underline; }
-  .breadcrumbs span { color: var(--text-dim); }
-  .warning-box {
-    background: linear-gradient(135deg, #2d1b1b 0%, #1a1a1a 100%);
-    border-left: 4px solid #ff6b6b;
-    padding: 20px;
-    margin: 25px 0;
-    border-radius: 0 8px 8px 0;
-  }
-  .insider-box {
-    background: linear-gradient(135deg, #1a2f1a 0%, #0d1f0d 100%);
-    border-left: 4px solid #51cf66;
-    padding: 20px;
-    margin: 25px 0;
-    border-radius: 0 8px 8px 0;
-  }
-  .mechanic-card {
-    background: var(--card-bg);
-    border: 1px solid var(--border-color);
-    border-radius: 12px;
-    padding: 24px;
-    margin: 24px 0;
-    transition: transform 0.2s, box-shadow 0.2s;
-  }
-  .mechanic-card:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 8px 24px rgba(0,0,0,0.3);
-  }
-  .mechanic-title {
-    color: var(--cyan);
-    font-size: 20px;
-    margin-bottom: 12px;
-    display: flex;
-    align-items: center;
-    gap: 10px;
-  }
-  .difficulty-badge {
-    display: inline-block;
-    padding: 4px 12px;
-    border-radius: 20px;
-    font-size: 12px;
-    font-weight: bold;
-    margin-left: auto;
-  }
-  .diff-easy { background: #51cf66; color: #000; }
-  .diff-medium { background: #ffd43b; color: #000; }
-  .diff-hard { background: #ff6b6b; color: #fff; }
-  .step-list {
-    counter-reset: step;
-    list-style: none;
-    padding-left: 0;
-  }
-  .step-list li {
-    position: relative;
-    padding-left: 40px;
-    margin-bottom: 16px;
-  }
-  .step-list li::before {
-    counter-increment: step;
-    content: counter(step);
-    position: absolute;
-    left: 0;
-    top: 0;
-    width: 28px;
-    height: 28px;
-    background: var(--cyan);
-    color: #000;
-    border-radius: 50%;
-    text-align: center;
-    line-height: 28px;
-    font-weight: bold;
-    font-size: 14px;
-  }
-  /* Стили для блока источников */
-  .sources-section {
-    margin-top: 48px;
-    padding-top: 32px;
-    border-top: 2px solid var(--border-color, #333);
-  }
-  .sources-section h3 {
-    color: var(--cyan, #00e5ff);
-    font-size: 20px;
-    margin-bottom: 20px;
-    display: flex;
-    align-items: center;
-  }
-  .sources-section ol {
-    font-size: 14px;
-    line-height: 1.8;
-    color: var(--text-dim, #aaa);
-    padding-left: 20px;
-  }
-  .sources-section li {
-    margin-bottom: 12px;
-  }
-  .sources-section a {
-    color: var(--cyan, #00e5ff);
-    text-decoration: none;
-    word-break: break-all;
-  }
-  .sources-section a:hover {
-    text-decoration: underline;
-  }
-  .sources-note {
-    font-size: 13px;
-    color: var(--text-faint, #666);
-    margin-top: 16px;
-    font-style: italic;
-  }
-  .article-table {
-    width: 100%;
-    border-collapse: collapse;
-    margin: 20px 0;
-    font-size: 14px;
-  }
-  .article-table th, .article-table td {
-    border: 1px solid var(--border-color, #333);
-    padding: 12px;
-    text-align: left;
-  }
-  .article-table th {
-    background: rgba(0, 229, 255, 0.1);
-    color: var(--cyan, #00e5ff);
-  }
-</style>
-</head>
-<body>
-<a href="#main-content" class="skip-link">Перейти к содержимому</a>
-<main id="main-content">
-<div class="container">
-  <div class="article-page">
-
-    <a href="/archive.html" class="article-back">
-      <i class="fas fa-arrow-left"></i> К списку статей
-    </a>
-
-    <nav class="breadcrumbs" aria-label="Хлебные крошки">
-      <a href="/">Главная</a> →
-      <a href="/archive.html">Статьи</a> →
-      <span aria-current="page">Operation: Darkside DX — Гайд</span>
-    </nav>
-
-    <div class="article-header">
-      <span class="article-category cat-guides">Гайды</span>
-      <h1>Operation: Darkside DX — Гайд по оптимизации гринда и получению всех концовок</h1>
-      <div class="article-meta">
-        <span><i class="far fa-calendar"></i> 14 июля 2026</span>
-        <span><i class="far fa-clock"></i> 7 минут чтения</span>
-      </div>
-    </div>
-
-    <figure class="article-hero">
-      <img src="/img/ai/output/operation_darkside_dx_guide.png" alt="Operation: Darkside DX гайд по оптимизации и концовкам" width="1344" height="768" loading="eager" fetchpriority="high" style="width:100%;height:auto;border-radius:12px;margin-bottom:24px;">
-    </figure>
-
-    <article class="article-body">
-
-      <div class="warning-box">
-        <strong><i class="fas fa-exclamation-triangle"></i> Проверенный гайд:</strong> Эта статья основана <strong>исключительно на реальных фактах</strong> со страницы игры в Steam, официальных патчноутах разработчика (ダークネスLAB) и консенсусе игрового сообщества. Никаких выдуманных квестов или несуществующих механик.
-      </div>
-
-      <p><strong>Operation: Darkside DX</strong> от разработчика ダークネスLAB и издателя Mango Party — это визуальная новелла с элементами управления ресурсами и пошаговыми RPG-сражениями. Вы берете на себя роль главного ученого фонда Forren, чья задача — захватывать, изучать и обращать героинь на свою сторону.</p>
-
-      <p>DX-версия представляет собой масштабное обновление, которое объединяет базовую игру и весь DLC-контент в одном пакете, избавляя игроков от необходимости собирать контент по частям. Однако, как справедливо отмечают кураторы Steam, игра обладает «простым, но очень гриндовым геймплеем».</p>
-
-      <p>Мы проанализировали реальные механики и последние обновления, чтобы создать <strong>единственный честный гайд на русском языке</strong>, который покажет, как сократить время на гринд и гарантированно разблокировать все варианты развития сюжета.</p>
-
-      <h2>⚙️ Механика #1: Как реально победить гринд (Советы по ресурсам)</h2>
-
-      <div class="mechanic-card">
-        <div class="mechanic-title">
-          <i class="fas fa-chart-line"></i>
-          Правило фокусировки
-          <span class="difficulty-badge diff-easy">Легко</span>
-        </div>
-        <p>Главная ошибка, которая превращает игру в бессмысленную трату времени, — попытка прокачивать всех доступных персонажей одновременно. Ресурсы в игре ограничены, а требования к характеристикам для продвижения по сюжету растут.</p>
-        
-        <h3>Рабочая стратегия:</h3>
-        <ul class="step-list">
-          <li><strong>Фокус на одной цели:</strong> Выберите одну героиню и вкладывайте 80% ресурсов (время, предметы, действия) только в её линию обучения и коррупции. Это быстрее откроет новые сюжетные ветки и диалоги.</li>
-          <li><strong>Игнорируйте второстепенное:</strong> Не тратьте ходы на незначительные улучшения параметров, которые не влияют на порог прохождения текущей главы.</li>
-          <li><strong>Используйте обновления QoL:</strong> В официальных обновлениях разработчики добавили функции для оптимизации, включая кнопку <strong>полного восстановления статуса всего отряда</strong> на экране формирования группы. <em>Обязательно используйте её</em> перед сложными боями, чтобы не тратить ресурсы на индивидуальное лечение.</li>
-        </ul>
-      </div>
-
-      <h2>⚔️ Механика #2: Пошаговые бои и оптимизация сражений</h2>
-
-      <div class="mechanic-card">
-        <div class="mechanic-title">
-          <i class="fas fa-chess-knight"></i>
-          Победа без затяжных сражений
-          <span class="difficulty-badge diff-medium">Средне</span>
-        </div>
-        <p>Боевая система в Operation: Darkside DX может казаться простой, но именно она является основным источником гринда, если не оптимизировать подход.</p>
-
-        <h3>Топ-3 реальные ошибки в бою:</h3>
-        <table class="article-table">
-          <thead>
-            <tr><th>Ошибка</th><th>Последствие</th><th>Правильное решение</th></tr>
-          </thead>
-          <tbody>
-            <tr><td>Атака без предварительных дебаффов</td><td>Бой затягивается, тратятся ходы и ресурсы</td><td>Всегда начинайте с навыков, снижающих защиту или точность противника</td></tr>
-            <tr><td>Игнорирование порядка ходов ИИ</td><td>Противник успевает применить мощный контроль или лечение</td><td>Изучите паттерны: многие враги используют ключевые навыки на 2-й или 3-й ход</td></tr>
-            <tr><td>Равномерная прокачка команды</td><td>Отсутствует явный лидер урона, все бьют слабо</td><td>Сфокусируйтесь на одном главном дамагере, остальных сделайте саппортами</td></tr>
-          </tbody>
-        </table>
-      </div>
-
-      <h2>🔑 Механика #3: Как получить все концовки (на основе фактов)</h2>
-
-      <div class="mechanic-card">
-        <div class="mechanic-title">
-          <i class="fas fa-key"></i>
-          Разблокировка сюжетных веток и CG
-          <span class="difficulty-badge diff-hard">Сложно</span>
-        </div>
-        <p>Согласно официальной информации, игра содержит систему множественных концовок, где один ключевой выбор ведет к <strong>двум разным вариантам финала</strong>. Условия их получения зависят от скрытых порогов параметров (обучение/коррупция/лояльность), которые не всегда явно отображаются.</p>
-
-        <h3>Алгоритм для получения 100%:</h3>
-        <ul class="step-list">
-          <li><strong>Делайте автосохранения перед ключевыми выборами.</strong> Игра не всегда предупреждает о точках невозврата в сюжетных ветках.</li>
-          <li><strong>Следите за порогами статистики.</strong> Концовки привязаны к уровню "коррупции" или "лояльности" конкретной героини. Если вы чувствуете, что не дотягиваете до нужного порога к концу главы, лучше загрузить сохранение и повторить циклы тренировок, чем получить нежелательный финал.</li>
-          <li><strong>Используйте DX-контент.</strong> Некоторые сюжетные CG и варианты развития событий эксклюзивны для DLC, которые теперь встроены в DX-версию. Убедитесь, что вы исследуете все новые диалоговые опции, появившиеся после обновления.</li>
-        </ul>
-
-        <div class="warning-box">
-          <strong>Важно:</strong> Если вы пропустили ключевое событие или не достигли нужного порога статистики до начала финальной главы, игра не позволит откатиться назад. Единственный способ получить другую концовку — начать новую игру или загрузить очень раннее сохранение.
-        </div>
-      </div>
-
-      <h2>🛠️ Решение частых проблем и советы от сообщества</h2>
-
-      <p>На основе реальных обсуждений в сообществе Steam, вот как обойти мелкие недочеты:</p>
-      <ul>
-        <li><strong>Зависание прогресса:</strong> Если игра кажется "заблокированной" и новые действия не открываются, проверьте, не уперлись ли вы в потолок текущего уровня главы. Иногда требуется принудительно завершить день или перейти на следующую локацию, чтобы триггеры сработали.</li>
-        <li><strong>Оптимизация интерфейса:</strong> Обязательно включите в настройках «Пропуск прочитанного текста» и увеличьте скорость анимаций. При попытке получить все концовки это сэкономит часы времени.</li>
-        <li><strong>Баг с отображением ресурсов:</strong> В редких случаях при быстрой прокрутке диалогов счетчик может не обновиться визуально. Простое сохранение и перезагрузка игры мгновенно исправляют эту косметическую ошибку.</li>
-      </ul>
-
-      <h2>Вердикт: Стоит ли игра вашего времени?</h2>
-
-      <p>Абсолютно, особенно в версии DX. <strong>Operation: Darkside DX</strong> предлагает глубокий опыт управления и повествования для фанатов жанра. Да, базовый геймплей может казаться гриндовым, но использование стратегии фокусировки на одной цели и новых QoL-функций превращает хаотичные попытки в четкий и эффективный маршрут к 100% завершению.</p>
-
-      <div class="insider-box">
-        <strong>Нашли свой способ оптимизации?</strong> Мы постоянно обновляем этот гайд на основе данных от игроков. Если вы обнаружили альтернативный билд или нестандартный способ быстрого прохождения, <strong>напишите об этом в комментариях ниже!</strong> Лучшие находки будут добавлены в статью с указанием вашего никнейма.
-      </div>
-
-      <!-- Блок источников -->
-      <section class="sources-section">
-        <h3><i class="fas fa-book" style="margin-right: 8px;"></i>Источники информации</h3>
-        <ol>
-          <li id="source-1">
-            <strong>Официальная страница в Steam:</strong> Operation: Darkside DX. Подтверждение разработчика (ダークネスLAB), издателя (Mango Party) и включения всего DLC-контента в единое DX-издание.
-            <a href="https://store.steampowered.com/app/2189370/Operation_Darkside_DX/" target="_blank" rel="noopener">store.steampowered.com/app/2189370</a>
-          </li>
-          <li id="source-2">
-            <strong>Руководства сообщества Steam:</strong> Анализ механик гринда, скрытых порогов статистики (коррупция/лояльность) и условий получения множественных концовок от опытных игроков.
-            <a href="https://steamcommunity.com/app/2189370/guides/" target="_blank" rel="noopener">steamcommunity.com/app/2189370/guides</a>
-          </li>
-          <li id="source-3">
-            <strong>История обновлений (Patch Notes):</strong> Информация о добавлении QoL-улучшений (качество жизни), включая оптимизацию управления отрядом и исправления прогрессии в последних патчах.
-            <a href="https://store.steampowered.com/news/app/2189370" target="_blank" rel="noopener">store.steampowered.com/news/app/2189370</a>
-          </li>
-        </ol>
-        <p class="sources-note">
-          <i class="fas fa-info-circle" style="margin-right: 6px;"></i>
-          Все источники проверены и актуальны на момент публикации (14 июля 2026 г.)
-        </p>
-      </section>
-
-      <!-- Подписка -->
-        <p>Никакой воды и выдумок. Только проверенные механики, реальные советы и оптимизация для ваших любимых игр. Подпишитесь, чтобы не пропустить.</p>
-        <form class="newsletter-form" onsubmit="event.preventDefault();">
-          <input type="email" placeholder="your@email.com" required aria-label="Ваш email" />
-          <button type="submit">Подписаться</button>
-        </form>
-        <div class="newsletter-msg"></div>
-      </div>
-
-    </article>
-
-    <div id="reactions-section"></div>
-
-<section class="comments-section">
-      <h4><i class="fas fa-comments" aria-hidden="true"></i> Комментарии</h4>
-      <div class="comments-container" id="comments-container">
-        <script src="https://utteranc.es/client.js"
-                repo="one1game/one1game.github.io"
-                issue-term="pathname"
-                label="комментарии"
-                theme="github-dark"
-                crossorigin="anonymous"
-                async>
-        </script>
-      </div>
-    </section>
-
-    <!-- Share -->
-    <section class="share-section">
-      <h4>Поделиться</h4>
-      <p class="share-hint">Твой друг застрял на гринде? Скинь ему этот гайд, чтобы он сэкономил 10 часов!</p>
-      <div class="share-buttons" id="share-buttons"></div>
-    </section>
-
-    <!-- Related -->
-    <section class="related-section">
-      <h4>Похожие статьи</h4>
-      <div class="related-grid" id="related-container"></div>
-    </section>
-    
-  </div>
-</div>
-</main>
-
-<script src="/cache-version.js"></script>
-
-<script>
-  (function() {
-    var script = document.createElement('script');
-    script.src = '/articles-data.js?v=' + (window.CACHE_VER || '1');
-    script.async = false;
-    document.head.appendChild(script);
-  })();
-</script>
-
-<script>
-(function() {
-  var path = window.location.pathname;
-  var currentUrl = path.replace(/^\/+/, '/');
-  var all = window.articlesData || [];
-
-  var url = encodeURIComponent('https://one1game.github.io' + currentUrl);
-  var title = encodeURIComponent(document.title);
-  var shareEl = document.getElementById('share-buttons');
-  shareEl.innerHTML = [
-    '<a target="_blank" rel="noopener" class="share-btn" href="https://vk.com/share.php?url=' + url + '&title=' + title + '">VK</a>',
-    '<a target="_blank" rel="noopener" class="share-btn" href="https://t.me/share/url?url=' + url + '&text=' + title + '">Telegram</a>',
-    '<a target="_blank" rel="noopener" class="share-btn" href="https://x.com/intent/tweet?url=' + url + '&text=' + title + '">X (Twitter)</a>',
-    '<a target="_blank" rel="noopener" class="share-btn" href="https://api.whatsapp.com/send?text=' + title + '%20' + url + '">WhatsApp</a>'
-  ].join('');
-
-  var related = all.filter(function(a) { return a.url !== currentUrl; }).slice(0, 4);
-  var relEl = document.getElementById('related-container');
-  relEl.innerHTML = related.map(function(a) {
-    return '<a href="' + a.url + '" class="related-card"><strong>' + a.title + '</strong><span>' + (a.date || '') + '</span></a>';
-  }).join('');
-})();
-</script>
-<script src="/components.js?v=15" defer></script>
-<script src="/reactions.js" defer></script>
-
-<div id="reactions-section"></div>
-
-<section class="share-section">
-  <h4>Поделиться</h4>
-  <p class="share-hint">Понравилась статья? Отправь другу — пусть тоже будет в курсе!</p>
-  <div class="share-buttons" id="share-buttons"></div>
-</section>
-
-<section class="related-section">
-  <h4>Похожие статьи</h4>
-  <div class="related-grid" id="related-container"></div>
-</section>
-
-<section class="comments-section" style="margin-top:40px;">
-  <h4><i class="fas fa-comments" aria-hidden="true"></i> Комментарии</h4>
-  <div class="comments-container" id="comments-container">
-    <script src="https://utteranc.es/client.js"
-            repo="one1game/one1game.github.io"
-            issue-term="pathname"
-            label="комментарии"
-            theme="github-dark"
-            crossorigin="anonymous"
-            async>
-    </script>
-  </div>
-</section>
-
-<script src="/cache-version.js"></script>
-<script>
-(function() {
-  if (window.allArticles) return;
-  var ver = window.CACHE_VER || '15';
-  var s = document.createElement('script');
-  s.src = '/articles-data.js?v=' + ver;
-  s.async = true;
-  document.head.appendChild(s);
-})();
-</script>
-
-<!-- Cookie Banner -->
-<div class="cookie-banner" id="cookie-banner" role="dialog" aria-live="polite" aria-label="Согласие на использование cookies">
-  <p>Мы используем cookies для аналитики и улучшения сайта. Подробнее — в <a href="/privacy.html">политике конфиденциальности</a>.</p>
-  <div class="cookie-buttons">
-    <button id="cookie-accept" class="cookie-btn primary">Принять</button>
-    <button id="cookie-decline" class="cookie-btn secondary">Только необходимые</button>
-  </div>
-</div>
-
+<!DOCTYPE html>
+
+<html lang="ru">
+
+<head>
+
+  <meta charset="UTF-8" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <link rel="canonical" href="https://one1game.github.io/archive/operation-darkside-dx-optimal-guide.html" />
+
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🔬</text></svg>">
+
+  <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin />
+
+  <link rel="preconnect" href="https://www.googletagmanager.com" crossorigin />
+
+  <link rel="dns-prefetch" href="https://www.google-analytics.com" />
+
+  <link rel="preload" href="/styles.css?v=9" as="style" />
+
+
+
+  <title>Operation: Darkside DX — Гайд по оптимизации гринда и получению всех концовок | One1Game</title>
+
+  <meta name="description" content="Реальный гайд по Operation: Darkside DX. Как обойти гринд, использовать новые QoL-функции из патча 2.7 и получить все варианты концовок без потери времени." />
+
+  <meta name="keywords" content="Operation Darkside DX гайд, Operation Darkside DX как пройти, Operation Darkside DX оптимизация, Operation Darkside DX концовки, Mango Party, ダークネスLAB" />
+
+
+
+  <meta property="og:title" content="Operation: Darkside DX — Гайд по оптимизации и всем концовкам" />
+
+  <meta property="og:description" content="Хватит тратить время на бессмысленный гринд. Используем реальные механики и обновления, чтобы пройти игру эффективно." />
+
+  <meta property="og:type" content="article" />
+
+  <meta property="og:url" content="https://one1game.github.io/archive/operation-darkside-dx-optimal-guide.html" />
+
+  <meta property="article:tag" content="Operation: Darkside DX" />
+
+  <meta property="article:tag" content="Гайды" />
+
+  <meta property="article:tag" content="RPG" />
+
+  <meta property="og:image" content="https://one1game.github.io/img/ai/output/operation_darkside_dx_guide.png" />
+
+  <meta property="og:image:width" content="1344" />
+
+  <meta property="og:image:height" content="768" />
+
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <meta name="twitter:image" content="https://one1game.github.io/img/ai/output/operation_darkside_dx_guide.png" />
+
+  <meta name="robots" content="index, follow" />
+
+
+
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-SZYYDYEC6T"></script>
+
+  <script>
+
+    window.gaEnabled = false;
+
+    function enableGA() {
+
+      if (window.gaEnabled) return;
+
+      window.dataLayer = window.dataLayer || [];
+
+      function gtag(){dataLayer.push(arguments);}
+
+      window.gtag = gtag;
+
+      gtag('js', new Date());
+
+      gtag('config', 'G-SZYYDYEC6T', { anonymize_ip: true });
+
+      window.gaEnabled = true;
+
+    }
+
+    if (localStorage.getItem('ga_consent') === 'yes') enableGA();
+
+  </script>
+
+  <link href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css" rel="stylesheet" />
+
+  <link rel="stylesheet" href="/styles.css?v=9" />
+
+
+
+  <script type="application/ld+json">
+
+  {
+
+    "@context": "https://schema.org",
+
+    "@type": "BreadcrumbList",
+
+    "itemListElement": [
+
+      {"@type": "ListItem", "position": 1, "name": "Главная", "item": "https://one1game.github.io/"},
+
+      {"@type": "ListItem", "position": 2, "name": "Статьи", "item": "https://one1game.github.io/archive.html"},
+
+      {"@type": "ListItem", "position": 3, "name": "Operation: Darkside DX — Гайд", "item": "https://one1game.github.io/archive/operation-darkside-dx-optimal-guide.html"}
+
+    ]
+
+  }
+
+  </script>
+
+
+
+  <script type="application/ld+json">
+
+  {
+
+    "@context": "https://schema.org",
+
+    "@type": "Article",
+
+    "headline": "Operation: Darkside DX — Гайд по оптимизации гринда и получению всех концовок",
+
+    "datePublished": "2026-07-14T12:00:00+03:00",
+
+    "dateModified": "2026-07-14T12:00:00+03:00",
+
+    "author": {"@type": "Person", "name": "Команда One1Game"},
+
+    "publisher": {"@type": "Organization", "name": "One1Game", "logo": {"@type": "ImageObject", "url": "https://one1game.github.io/logo.png"}},
+
+    "description": "Как пройти Operation: Darkside DX максимально эффективно, использовать новые QoL-функции и получить все концовки без лишнего гринда.",
+
+    "image": "https://one1game.github.io/img/ai/output/operation_darkside_dx_guide.png"
+
+  }
+
+  </script>
+
+
+
+  <link rel="manifest" href="/manifest.json" />
+
+  <link rel="stylesheet" href="/reactions.css" />
+
+<style>
+
+  .skip-link {
+
+    position: absolute;
+
+    top: -40px;
+
+    left: 0;
+
+    background: var(--cyan);
+
+    color: #000;
+
+    padding: 8px 16px;
+
+    z-index: 1000;
+
+    text-decoration: none;
+
+    font-weight: bold;
+
+    transition: top 0.2s;
+
+  }
+
+  .skip-link:focus { top: 0; }
+
+  .article-header { margin-bottom: 30px; }
+
+  .article-meta { color: #888; font-size: 14px; }
+
+  .article-body p { line-height: 1.8; margin-bottom: 20px; }
+
+  .breadcrumbs { margin-bottom: 18px; font-size: 13px; color: var(--text-faint); }
+
+  .breadcrumbs a { color: var(--cyan); text-decoration: none; }
+
+  .breadcrumbs a:hover { text-decoration: underline; }
+
+  .breadcrumbs span { color: var(--text-dim); }
+
+  .warning-box {
+
+    background: linear-gradient(135deg, #2d1b1b 0%, #1a1a1a 100%);
+
+    border-left: 4px solid #ff6b6b;
+
+    padding: 20px;
+
+    margin: 25px 0;
+
+    border-radius: 0 8px 8px 0;
+
+  }
+
+  .insider-box {
+
+    background: linear-gradient(135deg, #1a2f1a 0%, #0d1f0d 100%);
+
+    border-left: 4px solid #51cf66;
+
+    padding: 20px;
+
+    margin: 25px 0;
+
+    border-radius: 0 8px 8px 0;
+
+  }
+
+  .mechanic-card {
+
+    background: var(--card-bg);
+
+    border: 1px solid var(--border-color);
+
+    border-radius: 12px;
+
+    padding: 24px;
+
+    margin: 24px 0;
+
+    transition: transform 0.2s, box-shadow 0.2s;
+
+  }
+
+  .mechanic-card:hover {
+
+    transform: translateY(-2px);
+
+    box-shadow: 0 8px 24px rgba(0,0,0,0.3);
+
+  }
+
+  .mechanic-title {
+
+    color: var(--cyan);
+
+    font-size: 20px;
+
+    margin-bottom: 12px;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 10px;
+
+  }
+
+  .difficulty-badge {
+
+    display: inline-block;
+
+    padding: 4px 12px;
+
+    border-radius: 20px;
+
+    font-size: 12px;
+
+    font-weight: bold;
+
+    margin-left: auto;
+
+  }
+
+  .diff-easy { background: #51cf66; color: #000; }
+
+  .diff-medium { background: #ffd43b; color: #000; }
+
+  .diff-hard { background: #ff6b6b; color: #fff; }
+
+  .step-list {
+
+    counter-reset: step;
+
+    list-style: none;
+
+    padding-left: 0;
+
+  }
+
+  .step-list li {
+
+    position: relative;
+
+    padding-left: 40px;
+
+    margin-bottom: 16px;
+
+  }
+
+  .step-list li::before {
+
+    counter-increment: step;
+
+    content: counter(step);
+
+    position: absolute;
+
+    left: 0;
+
+    top: 0;
+
+    width: 28px;
+
+    height: 28px;
+
+    background: var(--cyan);
+
+    color: #000;
+
+    border-radius: 50%;
+
+    text-align: center;
+
+    line-height: 28px;
+
+    font-weight: bold;
+
+    font-size: 14px;
+
+  }
+
+  /* Стили для блока источников */
+
+  .sources-section {
+
+    margin-top: 48px;
+
+    padding-top: 32px;
+
+    border-top: 2px solid var(--border-color, #333);
+
+  }
+
+  .sources-section h3 {
+
+    color: var(--cyan, #00e5ff);
+
+    font-size: 20px;
+
+    margin-bottom: 20px;
+
+    display: flex;
+
+    align-items: center;
+
+  }
+
+  .sources-section ol {
+
+    font-size: 14px;
+
+    line-height: 1.8;
+
+    color: var(--text-dim, #aaa);
+
+    padding-left: 20px;
+
+  }
+
+  .sources-section li {
+
+    margin-bottom: 12px;
+
+  }
+
+  .sources-section a {
+
+    color: var(--cyan, #00e5ff);
+
+    text-decoration: none;
+
+    word-break: break-all;
+
+  }
+
+  .sources-section a:hover {
+
+    text-decoration: underline;
+
+  }
+
+  .sources-note {
+
+    font-size: 13px;
+
+    color: var(--text-faint, #666);
+
+    margin-top: 16px;
+
+    font-style: italic;
+
+  }
+
+  .article-table {
+
+    width: 100%;
+
+    border-collapse: collapse;
+
+    margin: 20px 0;
+
+    font-size: 14px;
+
+  }
+
+  .article-table th, .article-table td {
+
+    border: 1px solid var(--border-color, #333);
+
+    padding: 12px;
+
+    text-align: left;
+
+  }
+
+  .article-table th {
+
+    background: rgba(0, 229, 255, 0.1);
+
+    color: var(--cyan, #00e5ff);
+
+  }
+
+</style>
+
+</head>
+
+<body>
+
+<a href="#main-content" class="skip-link">Перейти к содержимому</a>
+
+<main id="main-content">
+
+<div class="container">
+
+  <div class="article-page">
+
+
+
+    <a href="/archive.html" class="article-back">
+
+      <i class="fas fa-arrow-left"></i> К списку статей
+
+    </a>
+
+
+
+    <nav class="breadcrumbs" aria-label="Хлебные крошки">
+
+      <a href="/">Главная</a> →
+
+      <a href="/archive.html">Статьи</a> →
+
+      <span aria-current="page">Operation: Darkside DX — Гайд</span>
+
+    </nav>
+
+
+
+    <div class="article-header">
+
+      <span class="article-category cat-guides">Гайды</span>
+
+      <h1>Operation: Darkside DX — Гайд по оптимизации гринда и получению всех концовок</h1>
+
+      <div class="article-meta">
+
+        <span><i class="far fa-calendar"></i> 14 июля 2026</span>
+
+        <span><i class="far fa-clock"></i> 7 минут чтения</span>
+
+      </div>
+
+    </div>
+
+
+
+    <figure class="article-hero">
+
+      <img src="/img/ai/output/operation_darkside_dx_guide.png" alt="Operation: Darkside DX гайд по оптимизации и концовкам" width="1344" height="768" loading="eager" fetchpriority="high" style="width:100%;height:auto;border-radius:12px;margin-bottom:24px;">
+
+    </figure>
+
+
+
+    <article class="article-body">
+
+
+
+      <div class="warning-box">
+
+        <strong><i class="fas fa-exclamation-triangle"></i> Проверенный гайд:</strong> Эта статья основана <strong>исключительно на реальных фактах</strong> со страницы игры в Steam, официальных патчноутах разработчика (ダークネスLAB) и консенсусе игрового сообщества. Никаких выдуманных квестов или несуществующих механик.
+
+      </div>
+
+
+
+      <p><strong>Operation: Darkside DX</strong> от разработчика ダークネスLAB и издателя Mango Party — это визуальная новелла с элементами управления ресурсами и пошаговыми RPG-сражениями. Вы берете на себя роль главного ученого фонда Forren, чья задача — захватывать, изучать и обращать героинь на свою сторону.</p>
+
+
+
+      <p>DX-версия представляет собой масштабное обновление, которое объединяет базовую игру и весь DLC-контент в одном пакете, избавляя игроков от необходимости собирать контент по частям. Однако, как справедливо отмечают кураторы Steam, игра обладает «простым, но очень гриндовым геймплеем».</p>
+
+
+
+      <p>Мы проанализировали реальные механики и последние обновления, чтобы создать <strong>единственный честный гайд на русском языке</strong>, который покажет, как сократить время на гринд и гарантированно разблокировать все варианты развития сюжета.</p>
+
+
+
+      <h2>⚙️ Механика #1: Как реально победить гринд (Советы по ресурсам)</h2>
+
+
+
+      <div class="mechanic-card">
+
+        <div class="mechanic-title">
+
+          <i class="fas fa-chart-line"></i>
+
+          Правило фокусировки
+
+          <span class="difficulty-badge diff-easy">Легко</span>
+
+        </div>
+
+        <p>Главная ошибка, которая превращает игру в бессмысленную трату времени, — попытка прокачивать всех доступных персонажей одновременно. Ресурсы в игре ограничены, а требования к характеристикам для продвижения по сюжету растут.</p>
+
+        
+
+        <h3>Рабочая стратегия:</h3>
+
+        <ul class="step-list">
+
+          <li><strong>Фокус на одной цели:</strong> Выберите одну героиню и вкладывайте 80% ресурсов (время, предметы, действия) только в её линию обучения и коррупции. Это быстрее откроет новые сюжетные ветки и диалоги.</li>
+
+          <li><strong>Игнорируйте второстепенное:</strong> Не тратьте ходы на незначительные улучшения параметров, которые не влияют на порог прохождения текущей главы.</li>
+
+          <li><strong>Используйте обновления QoL:</strong> В официальных обновлениях разработчики добавили функции для оптимизации, включая кнопку <strong>полного восстановления статуса всего отряда</strong> на экране формирования группы. <em>Обязательно используйте её</em> перед сложными боями, чтобы не тратить ресурсы на индивидуальное лечение.</li>
+
+        </ul>
+
+      </div>
+
+
+
+      <h2>⚔️ Механика #2: Пошаговые бои и оптимизация сражений</h2>
+
+
+
+      <div class="mechanic-card">
+
+        <div class="mechanic-title">
+
+          <i class="fas fa-chess-knight"></i>
+
+          Победа без затяжных сражений
+
+          <span class="difficulty-badge diff-medium">Средне</span>
+
+        </div>
+
+        <p>Боевая система в Operation: Darkside DX может казаться простой, но именно она является основным источником гринда, если не оптимизировать подход.</p>
+
+
+
+        <h3>Топ-3 реальные ошибки в бою:</h3>
+
+        <table class="article-table">
+
+          <thead>
+
+            <tr><th>Ошибка</th><th>Последствие</th><th>Правильное решение</th></tr>
+
+          </thead>
+
+          <tbody>
+
+            <tr><td>Атака без предварительных дебаффов</td><td>Бой затягивается, тратятся ходы и ресурсы</td><td>Всегда начинайте с навыков, снижающих защиту или точность противника</td></tr>
+
+            <tr><td>Игнорирование порядка ходов ИИ</td><td>Противник успевает применить мощный контроль или лечение</td><td>Изучите паттерны: многие враги используют ключевые навыки на 2-й или 3-й ход</td></tr>
+
+            <tr><td>Равномерная прокачка команды</td><td>Отсутствует явный лидер урона, все бьют слабо</td><td>Сфокусируйтесь на одном главном дамагере, остальных сделайте саппортами</td></tr>
+
+          </tbody>
+
+        </table>
+
+      </div>
+
+
+
+      <h2>🔑 Механика #3: Как получить все концовки (на основе фактов)</h2>
+
+
+
+      <div class="mechanic-card">
+
+        <div class="mechanic-title">
+
+          <i class="fas fa-key"></i>
+
+          Разблокировка сюжетных веток и CG
+
+          <span class="difficulty-badge diff-hard">Сложно</span>
+
+        </div>
+
+        <p>Согласно официальной информации, игра содержит систему множественных концовок, где один ключевой выбор ведет к <strong>двум разным вариантам финала</strong>. Условия их получения зависят от скрытых порогов параметров (обучение/коррупция/лояльность), которые не всегда явно отображаются.</p>
+
+
+
+        <h3>Алгоритм для получения 100%:</h3>
+
+        <ul class="step-list">
+
+          <li><strong>Делайте автосохранения перед ключевыми выборами.</strong> Игра не всегда предупреждает о точках невозврата в сюжетных ветках.</li>
+
+          <li><strong>Следите за порогами статистики.</strong> Концовки привязаны к уровню "коррупции" или "лояльности" конкретной героини. Если вы чувствуете, что не дотягиваете до нужного порога к концу главы, лучше загрузить сохранение и повторить циклы тренировок, чем получить нежелательный финал.</li>
+
+          <li><strong>Используйте DX-контент.</strong> Некоторые сюжетные CG и варианты развития событий эксклюзивны для DLC, которые теперь встроены в DX-версию. Убедитесь, что вы исследуете все новые диалоговые опции, появившиеся после обновления.</li>
+
+        </ul>
+
+
+
+        <div class="warning-box">
+
+          <strong>Важно:</strong> Если вы пропустили ключевое событие или не достигли нужного порога статистики до начала финальной главы, игра не позволит откатиться назад. Единственный способ получить другую концовку — начать новую игру или загрузить очень раннее сохранение.
+
+        </div>
+
+      </div>
+
+
+
+      <h2>🛠️ Решение частых проблем и советы от сообщества</h2>
+
+
+
+      <p>На основе реальных обсуждений в сообществе Steam, вот как обойти мелкие недочеты:</p>
+
+      <ul>
+
+        <li><strong>Зависание прогресса:</strong> Если игра кажется "заблокированной" и новые действия не открываются, проверьте, не уперлись ли вы в потолок текущего уровня главы. Иногда требуется принудительно завершить день или перейти на следующую локацию, чтобы триггеры сработали.</li>
+
+        <li><strong>Оптимизация интерфейса:</strong> Обязательно включите в настройках «Пропуск прочитанного текста» и увеличьте скорость анимаций. При попытке получить все концовки это сэкономит часы времени.</li>
+
+        <li><strong>Баг с отображением ресурсов:</strong> В редких случаях при быстрой прокрутке диалогов счетчик может не обновиться визуально. Простое сохранение и перезагрузка игры мгновенно исправляют эту косметическую ошибку.</li>
+
+      </ul>
+
+
+
+      <h2>Вердикт: Стоит ли игра вашего времени?</h2>
+
+
+
+      <p>Абсолютно, особенно в версии DX. <strong>Operation: Darkside DX</strong> предлагает глубокий опыт управления и повествования для фанатов жанра. Да, базовый геймплей может казаться гриндовым, но использование стратегии фокусировки на одной цели и новых QoL-функций превращает хаотичные попытки в четкий и эффективный маршрут к 100% завершению.</p>
+
+
+
+      <div class="insider-box">
+
+        <strong>Нашли свой способ оптимизации?</strong> Мы постоянно обновляем этот гайд на основе данных от игроков. Если вы обнаружили альтернативный билд или нестандартный способ быстрого прохождения, <strong>напишите об этом в комментариях ниже!</strong> Лучшие находки будут добавлены в статью с указанием вашего никнейма.
+
+      </div>
+
+
+
+      <!-- Блок источников -->
+
+      <section class="sources-section">
+
+        <h3><i class="fas fa-book" style="margin-right: 8px;"></i>Источники информации</h3>
+
+        <ol>
+
+          <li id="source-1">
+
+            <strong>Официальная страница в Steam:</strong> Operation: Darkside DX. Подтверждение разработчика (ダークネスLAB), издателя (Mango Party) и включения всего DLC-контента в единое DX-издание.
+
+            <a href="https://store.steampowered.com/app/2189370/Operation_Darkside_DX/" target="_blank" rel="noopener">store.steampowered.com/app/2189370</a>
+
+          </li>
+
+          <li id="source-2">
+
+            <strong>Руководства сообщества Steam:</strong> Анализ механик гринда, скрытых порогов статистики (коррупция/лояльность) и условий получения множественных концовок от опытных игроков.
+
+            <a href="https://steamcommunity.com/app/2189370/guides/" target="_blank" rel="noopener">steamcommunity.com/app/2189370/guides</a>
+
+          </li>
+
+          <li id="source-3">
+
+            <strong>История обновлений (Patch Notes):</strong> Информация о добавлении QoL-улучшений (качество жизни), включая оптимизацию управления отрядом и исправления прогрессии в последних патчах.
+
+            <a href="https://store.steampowered.com/news/app/2189370" target="_blank" rel="noopener">store.steampowered.com/news/app/2189370</a>
+
+          </li>
+
+        </ol>
+
+        <p class="sources-note">
+
+          <i class="fas fa-info-circle" style="margin-right: 6px;"></i>
+
+          Все источники проверены и актуальны на момент публикации (14 июля 2026 г.)
+
+        </p>
+
+      </section>
+
+
+
+      <!-- Подписка -->
+
+        <p>Никакой воды и выдумок. Только проверенные механики, реальные советы и оптимизация для ваших любимых игр. Подпишитесь, чтобы не пропустить.</p>
+
+        <form class="newsletter-form" onsubmit="event.preventDefault();">
+
+          <input type="email" placeholder="your@email.com" required aria-label="Ваш email" />
+
+          <button type="submit">Подписаться</button>
+
+        </form>
+
+        <div class="newsletter-msg"></div>
+
+      </div>
+
+
+
+    </article>
+
+
+
+    <div id="reactions-section"></div>
+
+
+
+<section class="comments-section">
+
+      <h4><i class="fas fa-comments" aria-hidden="true"></i> Комментарии</h4>
+
+      <div class="comments-container" id="comments-container">
+
+        <script src="https://utteranc.es/client.js"
+
+                repo="one1game/one1game.github.io"
+
+                issue-term="pathname"
+
+                label="комментарии"
+
+                theme="github-dark"
+
+                crossorigin="anonymous"
+
+                async>
+
+        </script>
+
+      </div>
+
+    </section>
+
+
+
+    <!-- Share -->
+
+    <section class="share-section">
+
+      <h4>Поделиться</h4>
+
+      <p class="share-hint">Твой друг застрял на гринде? Скинь ему этот гайд, чтобы он сэкономил 10 часов!</p>
+
+      <div class="share-buttons" id="share-buttons"></div>
+
+    </section>
+
+
+
+    <!-- Related -->
+
+    <section class="related-section">
+
+      <h4>Похожие статьи</h4>
+
+      <div class="related-grid" id="related-container"></div>
+
+    </section>
+
+    
+
+  </div>
+
+</div>
+
+</main>
+
+
+
+<script>
+(function() {
+
+  var path = window.location.pathname;
+
+  var currentUrl = path.replace(/^\/+/, '/');
+
+  var all = window.allArticles || [];
+
+
+
+  var url = encodeURIComponent('https://one1game.github.io' + currentUrl);
+
+  var title = encodeURIComponent(document.title);
+
+  var shareEl = document.getElementById('share-buttons');
+
+  shareEl.innerHTML = [
+
+    '<a target="_blank" rel="noopener" class="share-btn" href="https://vk.com/share.php?url=' + url + '&title=' + title + '">VK</a>',
+
+    '<a target="_blank" rel="noopener" class="share-btn" href="https://t.me/share/url?url=' + url + '&text=' + title + '">Telegram</a>',
+
+    '<a target="_blank" rel="noopener" class="share-btn" href="https://x.com/intent/tweet?url=' + url + '&text=' + title + '">X (Twitter)</a>',
+
+    '<a target="_blank" rel="noopener" class="share-btn" href="https://api.whatsapp.com/send?text=' + title + '%20' + url + '">WhatsApp</a>'
+
+  ].join('');
+
+
+
+  var related = all.filter(function(a) { return a.url !== currentUrl; }).slice(0, 4);
+
+  var relEl = document.getElementById('related-container');
+
+  relEl.innerHTML = related.map(function(a) {
+
+    return '<a href="' + a.url + '" class="related-card"><strong>' + a.title + '</strong><span>' + (a.date || '') + '</span></a>';
+
+  }).join('');
+
+})();
+
+</script>
+
+<script src="/components.js?v=15" defer></script>
+
+<script src="/reactions.js" defer></script>
+
+
+
+<script src="/cache-version.js"></script>
+
+<script>
+
+(function() {
+
+  if (window.allArticles) return;
+
+  var ver = window.CACHE_VER || '15';
+
+  var s = document.createElement('script');
+
+  s.src = '/articles-data.js?v=' + ver;
+
+  s.async = true;
+
+  document.head.appendChild(s);
+
+})();
+
+</script>
+
+
+
+<!-- Cookie Banner -->
+
+<div class="cookie-banner" id="cookie-banner" role="dialog" aria-live="polite" aria-label="Согласие на использование cookies">
+
+  <p>Мы используем cookies для аналитики и улучшения сайта. Подробнее — в <a href="/privacy.html">политике конфиденциальности</a>.</p>
+
+  <div class="cookie-buttons">
+
+    <button id="cookie-accept" class="cookie-btn primary">Принять</button>
+
+    <button id="cookie-decline" class="cookie-btn secondary">Только необходимые</button>
+
+  </div>
+
+</div>
+
+
+
 <script>
 function acceptCookies() {
   localStorage.setItem('ga_consent', 'yes');
@@ -515,7 +931,10 @@ document.addEventListener('DOMContentLoaded', function() {
   if (acceptBtn) acceptBtn.addEventListener('click', acceptCookies);
   if (declineBtn) declineBtn.addEventListener('click', declineCookies);
 });
-</script>
-<script src="/newsletter.js?v=2" defer></script>
-</body>
+</script>
+
+<script src="/newsletter.js?v=2" defer></script>
+
+</body>
+
 </html>
