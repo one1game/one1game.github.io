@@ -165,6 +165,17 @@
     .footer-links a{color:var(--text-dim);text-decoration:none;transition:color 0.25s}
     .footer-links a:hover{color:#fff}
 
+    /* SHARE */
+    .share-section{margin:60px 0;text-align:center}
+    .share-hashtags{color:var(--text-faint);font-size:0.82rem;margin-bottom:20px;line-height:1.7}
+    .share-buttons{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+    .share-btn{display:inline-flex;align-items:center;gap:8px;padding:12px 24px;border-radius:50px;font-size:0.88rem;font-weight:600;text-decoration:none;transition:all var(--ease-out);border:1px solid var(--border);color:var(--text-dim)}
+    .share-btn:hover{transform:translateY(-2px);color:#fff}
+    .share-vk:hover{background:#0077FF;border-color:#0077FF}
+    .share-tg:hover{background:#0088cc;border-color:#0088cc}
+    .share-tw:hover{background:#1DA1F2;border-color:#1DA1F2}
+    .share-wa:hover{background:#25D366;border-color:#25D366}
+
     @media(max-width:768px){
       .container{padding:0 18px}
       .hero{padding:40px 0 24px}
@@ -353,6 +364,28 @@
       </div>
     </section>
 
+    <!-- SOCIAL SHARE -->
+    <section class="share-section">
+      <div class="section-header">
+        <h2 class="section-title">Поделиться игрой</h2>
+      </div>
+      <p class="share-hashtags">#TelegramИгры #MiniApp #ИгрыВТелеграм #ТелеграмБот #ИграБезСкачивания #WebGame #НоваяИграВТелеграм #ТопИгрТелеграм</p>
+      <div class="share-buttons" id="share-buttons">
+        <a class="share-btn share-vk" href="#" target="_blank" rel="noopener" title="Поделиться ВКонтакте">
+          <i class="fab fa-vk"></i> ВКонтакте
+        </a>
+        <a class="share-btn share-tg" href="#" target="_blank" rel="noopener" title="Поделиться в Telegram">
+          <i class="fab fa-telegram-plane"></i> Telegram
+        </a>
+        <a class="share-btn share-tw" href="#" target="_blank" rel="noopener" title="Поделиться в Twitter">
+          <i class="fab fa-twitter"></i> Twitter
+        </a>
+        <a class="share-btn share-wa" href="#" target="_blank" rel="noopener" title="Поделиться в WhatsApp">
+          <i class="fab fa-whatsapp"></i> WhatsApp
+        </a>
+      </div>
+    </section>
+
   </main>
 
   <!-- FOOTER -->
@@ -397,6 +430,21 @@
       el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
       observer.observe(el);
     });
+
+    // Share URLs with hashtags
+    (function initShare() {
+      const url = encodeURIComponent('https://one1game.github.io/triad-duel.html');
+      const title = encodeURIComponent('Triad Duel — Тактическая карточная PvP-битва в Telegram. Играй бесплатно!');
+      const hashtags = '#TelegramИгры #MiniApp #ИгрыВТелеграм #ТелеграмБот #ИграБезСкачивания #WebGame #НоваяИграВТелеграм #ТопИгрТелеграм';
+      const hashEnc = encodeURIComponent(hashtags);
+      const textEnc = encodeURIComponent(title + ' ' + hashtags);
+      const twHashtags = 'TelegramИгры,MiniApp,ИгрыВТелеграм,ТелеграмБот,ИграБезСкачивания,WebGame,НоваяИграВТелеграм,ТопИгрТелеграм';
+
+      document.querySelector('.share-vk').href = 'https://vk.com/share.php?url=' + url + '&title=' + textEnc;
+      document.querySelector('.share-tg').href = 'https://t.me/share/url?url=' + url + '&text=' + textEnc;
+      document.querySelector('.share-tw').href = 'https://twitter.com/intent/tweet?url=' + url + '&text=' + title + '&hashtags=' + twHashtags;
+      document.querySelector('.share-wa').href = 'https://wa.me/?text=' + textEnc + '%20' + url;
+    })();
   </script>
 </body>
 </html>
