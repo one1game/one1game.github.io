@@ -2,6 +2,60 @@
 window.allArticles = 
 [
   {
+    "url": "/archive/igry-v-telegram-bez-skachivaniya-triad-duel.html",
+    "title": "Игры в Telegram без скачивания: Как Triad Duel меняет правила мобильного гейминга",
+    "excerpt": "Забудьте про APK на 3 ГБ. Разбираем феномен Telegram Mini Apps на примере Triad Duel: тактическая PvP-игра, которая запускается за 1 секунду без установки.",
+    "date": "23 июля 2026",
+    "readTime": "5 мин",
+    "category": "Тренды",
+    "image": "/img/ai/output/triad_duel_miniapp.png"
+  },
+  {
+    "url": "/archive/gaid-triad-duel-meta-kolody-2026.html",
+    "title": "Гайд по Triad Duel: Топ-3 мета-колоды и скрытые синергии 2026 года",
+    "excerpt": "Полный разбор механик Triad Duel: 21 уникальная карта, 3 класса, рабочие синергии танков, ассасинов и магов. Забирай 100 Remains на старте.",
+    "date": "23 июля 2026",
+    "readTime": "7 мин",
+    "category": "Гайды",
+    "image": "/img/ai/output/triad_duel_guide.png"
+  },
+  {
+    "url": "/archive/konec-epohi-pay-to-win-triad-duel.html",
+    "title": "Конец эпохи Pay-to-Win: Почему геймеры массово переходят в Telegram Mini Apps",
+    "excerpt": "Устали от доната и рандома в ККИ? Разбираем феномен Triad Duel — тактической PvP-игры в Telegram, где побеждает скилл, а не толщина кошелька.",
+    "date": "23 июля 2026",
+    "readTime": "6 мин",
+    "category": "Мнения",
+    "image": "/img/ai/output/triad_duel_p2w.png"
+  },
+  {
+    "url": "/archive/top-igr-v-telegram-2026-triad-duel.html",
+    "title": "Топ игр в Telegram 2026: во что поиграть без скачивания (Обзор Triad Duel)",
+    "excerpt": "Забудьте про примитивные кликер. Представляем Triad Duel — лучшую тактическую PvP игру в Telegram Mini Apps 2026 года. Запуск за 1 секунду, без доната и скачивания.",
+    "date": "23 июля 2026",
+    "readTime": "5 мин",
+    "category": "Тренды",
+    "image": "/img/ai/output/telegram_mini_apps_top.png"
+  },
+  {
+    "url": "/archive/luchshie-kartochnye-igry-na-android-2026.html",
+    "title": "Лучшие карточные игры на андроид 2026: альтернативы Marvel Snap без доната",
+    "excerpt": "Ищете достойные аналоги Marvel Snap и Hearthstone? Обзор Triad Duel — тактической ККИ на телефон, где решает скилл, а не рандом. 3 карты, 21 герой, 0 Pay-to-Win.",
+    "date": "23 июля 2026",
+    "readTime": "7 мин",
+    "category": "Гайды",
+    "image": "/img/ai/output/best_card_games_android.png"
+  },
+  {
+    "url": "/archive/chestnye-pvp-igry-bez-donata-2026.html",
+    "title": "Честные PvP игры на телефон: где реально решает скилл, а не донат (Разбор Triad Duel)",
+    "excerpt": "Устали от Pay-to-Win? Разбираем Triad Duel — мобильную PvP игру, где донат не дает преимущества в бою. Честная экономика, тактика и бонус 100 Remains на старте.",
+    "date": "23 июля 2026",
+    "readTime": "6 мин",
+    "category": "Мнения",
+    "image": "/img/ai/output/fair_pvp_games.png"
+  },
+  {
     "url": "/archive/stalker-2-nevozmozhnye-tayniki-i-artefakty.html",
     "title": "S.T.A.L.K.E.R. 2: 5 «невозможных» тайников и артефактов, которые не могут найти игроки",
     "excerpt": "Нашли ключ, но не видите дверь? Артефакт не спавнится? Разбираем самые проблемные тайники и легендарные артефакты S.T.A.L.K.E.R. 2, которые игроки массово не могут найти, и даем рабочие решения.",
