@@ -163,6 +163,22 @@
   .form-footer-link a{ color: var(--gold); transition: color .2s; }
   .form-footer-link a:hover{ color: var(--gold-bright); }
 
+  .download-banner{
+    display:flex; align-items:center; gap:.7rem;
+    background:linear-gradient(160deg, rgba(184,147,62,0.08), rgba(184,147,62,0.03));
+    border:1px solid var(--hairline);
+    border-radius:4px;
+    padding:.9rem 1.2rem;
+    margin-bottom:1.6rem;
+    font-size:.88rem;
+    color:var(--parchment);
+    text-decoration:none;
+    transition:border-color .25s, box-shadow .25s;
+  }
+  .download-banner:hover{ border-color:var(--gold); box-shadow:0 4px 16px rgba(184,147,62,0.10); }
+  .download-icon{ font-size:1.1rem; }
+  .download-hint{ margin-left:auto; font-size:.72rem; color:var(--muted); font-family:'JetBrains Mono',monospace; }
+
   .footer{
     text-align:center; padding: 2.5rem 1.5rem 3rem;
     font-size: .78rem; color: var(--muted);
@@ -249,6 +265,12 @@
   <p class="eyebrow">Создание аккаунта</p>
   <h1>Регистрация</h1>
   <p class="page-desc">Пароль придёт на указанный email.</p>
+
+  <a href="https://drive.google.com/file/d/1757mYyDXl0U3I3McKK1cuJ7tlhfACuSH/view" target="_blank" rel="noopener" class="download-banner">
+    <span class="download-icon" aria-hidden="true">⬇</span>
+    <span>Скачать клиент — Gracia Epilogue (H5, протокол 152)</span>
+    <span class="download-hint">Google Диск</span>
+  </a>
 
   <form class="form-card" id="reg-form" novalidate>
     <div class="field">
