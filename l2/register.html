@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Регистрация — L2 x3 DUO PLAY</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Yeseva+One&family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink: #0a0b0e;
+    --panel: #15171d;
+    --panel-raised: #1c1f27;
+    --hairline: rgba(184,147,62,0.22);
+    --gold: #b8933e;
+    --gold-bright: #e6c56d;
+    --blood: #7a1b26;
+    --blood-bright: #b8384a;
+    --parchment: #cdc7b8;
+    --parchment-dim: #8e8a7d;
+    --muted: #5c5f6a;
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  html{scroll-behavior:smooth;}
+  body{
+    background:
+      radial-gradient(ellipse 900px 500px at 15% -10%, rgba(184,147,62,0.07), transparent 60%),
+      radial-gradient(ellipse 700px 500px at 85% 10%, rgba(122,27,38,0.10), transparent 55%),
+      var(--ink);
+    color: var(--parchment);
+    font-family: 'Inter', sans-serif;
+    line-height: 1.6;
+    overflow-x: hidden;
+  }
+  a{ color:inherit; text-decoration:none; }
+
+  .eyebrow{
+    font-family:'JetBrains Mono', monospace;
+    font-size: .72rem;
+    letter-spacing: .32em;
+    text-transform: uppercase;
+    color: var(--gold);
+    display:flex; align-items:center; gap:.7em;
+    justify-content:center;
+  }
+  .eyebrow::before, .eyebrow::after{
+    content:''; height:1px; width:28px; background: var(--hairline);
+  }
+
+  .topbar{
+    position: sticky; top:0; z-index: 50;
+    display:flex; align-items:center; justify-content:space-between;
+    padding: 1.1rem 4vw;
+    background: rgba(10,11,14,0.72);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--hairline);
+  }
+  .logo{ font-family:'Yeseva One', serif; font-size:1.25rem; color: var(--parchment); letter-spacing:.02em;}
+  .logo span{ color: var(--gold);}
+  .nav-links{ display:flex; gap:2rem; font-size:.88rem; color: var(--parchment-dim);}
+  .nav-links a{ transition: color .2s; }
+  .nav-links a:hover{ color: var(--gold-bright); }
+
+  .page-section{
+    position:relative;
+    max-width: 520px;
+    margin: 0 auto;
+    padding: 5rem 1.5rem 4rem;
+    text-align:center;
+  }
+  .page-section::before, .page-section::after{
+    content:''; position:absolute; width:26px; height:26px;
+    border: 1px solid var(--hairline);
+    top: 1.4rem;
+  }
+  .page-section::before{ left:.4rem; border-right:none; border-bottom:none; }
+  .page-section::after{ right:.4rem; border-left:none; border-bottom:none; }
+
+  .page-section h1{
+    font-family:'Yeseva One', serif;
+    font-size: clamp(1.8rem, 4vw, 2.8rem);
+    line-height: 1.15;
+    color: var(--parchment);
+    margin: 1.3rem 0 .6rem;
+    text-shadow: 0 0 30px rgba(184,147,62,0.12);
+  }
+  .page-desc{
+    color: var(--parchment-dim);
+    font-size: .93rem;
+    margin-bottom: 2.4rem;
+  }
+
+  .form-card{ max-width: 400px; margin: 0 auto; }
+  .field{ margin-bottom: 1.2rem; text-align:left; }
+  .field label{
+    display: block;
+    font-family:'JetBrains Mono', monospace;
+    font-size: .72rem;
+    letter-spacing: .08em;
+    text-transform: uppercase;
+    color: var(--parchment-dim);
+    margin-bottom: .45rem;
+  }
+  .field input, .field select{
+    width: 100%;
+    background: var(--panel);
+    border: 1px solid var(--hairline);
+    border-radius: 3px;
+    padding: .8rem 1rem;
+    color: var(--parchment);
+    font-size: .93rem;
+    font-family: 'JetBrains Mono', monospace;
+    transition: border-color .2s, box-shadow .2s;
+    outline: none;
+  }
+  .field input:focus{
+    border-color: var(--gold);
+    box-shadow: 0 0 0 3px rgba(184,147,62,0.08);
+  }
+  .field input.input-error{ border-color: var(--blood-bright); }
+  .field-hint{
+    display: block;
+    font-size: .74rem;
+    margin-top: .35rem;
+    min-height: 1.1em;
+    color: var(--muted);
+    transition: color .2s;
+  }
+  .field-hint.error{ color: var(--blood-bright); }
+
+  .btn{
+    padding: .85rem 1.8rem;
+    font-size: .92rem;
+    font-weight:600;
+    border-radius: 3px;
+    border: 1px solid transparent;
+    cursor:pointer;
+    transition: transform .18s, box-shadow .18s, background .18s;
+    display:inline-block;
+    width: 100%;
+  }
+  .btn-primary{
+    background: linear-gradient(160deg, var(--gold-bright), var(--gold));
+    color: #191307;
+  }
+  .btn-primary:hover{ transform: translateY(-2px); box-shadow: 0 8px 24px rgba(184,147,62,0.28); }
+  .btn-primary:disabled{ opacity: .5; cursor: not-allowed; transform: none; box-shadow: none; }
+
+  .form-msg{
+    margin-top: 1rem;
+    text-align: center;
+    font-size: .84rem;
+    padding: .75rem 1rem;
+    border-radius: 3px;
+    line-height: 1.5;
+  }
+  .form-msg.success{ background: rgba(184,147,62,0.08); color: var(--gold-bright); }
+  .form-msg.error{ background: rgba(122,27,38,0.12); color: var(--blood-bright); }
+  .form-msg small{ display:inline-block; margin-top:.3rem; opacity:.7; }
+
+  .form-footer-link{ text-align:center; margin-top:1.5rem; font-size:.84rem; color: var(--parchment-dim); }
+  .form-footer-link a{ color: var(--gold); transition: color .2s; }
+  .form-footer-link a:hover{ color: var(--gold-bright); }
+
+  .footer{
+    text-align:center; padding: 2.5rem 1.5rem 3rem;
+    font-size: .78rem; color: var(--muted);
+    border-top: 1px solid var(--hairline);
+  }
+
+  /* AdminVPS banner */
+  .sponsor-banner{
+    display:block;
+    max-width:480px; margin:2.5rem auto 0;
+    background:linear-gradient(160deg, var(--panel), var(--panel-raised));
+    border:1px solid var(--hairline);
+    border-radius:8px;
+    padding:1.5rem 1.6rem;
+    text-decoration:none;
+    transition:border-color .25s, box-shadow .25s;
+  }
+  .sponsor-banner:hover{
+    border-color:var(--gold);
+    box-shadow:0 8px 28px rgba(184,147,62,0.10);
+  }
+  .sponsor-header{
+    display:flex; align-items:center; gap:.6rem; flex-wrap:wrap; margin-bottom:.8rem;
+  }
+  .sponsor-badge{
+    font-family:'JetBrains Mono',monospace;
+    font-size:.66rem; font-weight:700;
+    letter-spacing:.08em;
+    text-transform:uppercase;
+    background:rgba(184,147,62,0.12);
+    color:var(--gold-bright);
+    padding:.3rem .7rem;
+    border-radius:3px;
+    border:1px solid var(--hairline);
+  }
+  .sponsor-title{
+    font-family:'Yeseva One',serif;
+    font-size:1.08rem;
+    color:var(--parchment);
+    margin:0;
+  }
+  .sponsor-desc{
+    font-size:.82rem; color:var(--parchment-dim);
+    margin:0 0 .9rem; line-height:1.55;
+  }
+  .sponsor-tags{
+    display:flex; flex-wrap:wrap; gap:.4rem; margin-bottom:.9rem;
+  }
+  .sponsor-tag{
+    font-size:.7rem; font-weight:500;
+    background:rgba(184,147,62,0.07);
+    color:var(--parchment-dim);
+    padding:.3rem .7rem;
+    border-radius:3px;
+    border:1px solid var(--hairline);
+  }
+  .sponsor-cta{
+    display:block; text-align:center;
+    font-family:'JetBrains Mono',monospace;
+    font-size:.8rem; font-weight:600;
+    background:linear-gradient(160deg, var(--gold-bright), var(--gold));
+    color:#191307;
+    padding:.65rem 1rem;
+    border-radius:3px;
+    transition:transform .18s,box-shadow .18s;
+  }
+  .sponsor-banner:hover .sponsor-cta{
+    transform:translateY(-1px);
+    box-shadow:0 6px 20px rgba(184,147,62,0.20);
+  }
+</style>
+</head>
+<body>
+
+<nav class="topbar">
+  <a href="index.html" class="logo">L2<span>·</span>Server</a>
+  <div class="nav-links">
+    <a href="index.html">Главная</a>
+    <a href="register.html">Регистрация</a>
+  </div>
+</nav>
+
+<section class="page-section">
+  <p class="eyebrow">Создание аккаунта</p>
+  <h1>Регистрация</h1>
+  <p class="page-desc">Пароль придёт на указанный email.</p>
+
+  <form class="form-card" id="reg-form" novalidate>
+    <div class="field">
+      <label for="reg-login">Логин</label>
+      <input type="text" id="reg-login" placeholder="От 3 до 16 символов" minlength="3" maxlength="16" autocomplete="username" required>
+      <span class="field-hint" id="hint-login"></span>
+    </div>
+    <div class="field">
+      <label for="reg-email">Email</label>
+      <input type="email" id="reg-email" placeholder="example@mail.com" autocomplete="email" required>
+      <span class="field-hint" id="hint-email"></span>
+    </div>
+    <button type="submit" class="btn btn-primary" id="reg-btn">Зарегистрироваться</button>
+    <div class="form-msg" id="reg-msg"></div>
+  </form>
+
+  <p class="form-footer-link"><a href="recover.html">Забыли пароль?</a></p>
+
+  <a href="https://my.adminvps.ru/aff.php?aff=31864" target="_blank" rel="noopener noreferrer" class="sponsor-banner">
+    <div class="sponsor-header">
+      <span class="sponsor-badge">Выгодно</span>
+      <h3 class="sponsor-title">VPS/VDS от 299 ₽/мес</h3>
+    </div>
+    <p class="sponsor-desc">NVMe-диски, CPU до 5.0 ГГц, бесплатное администрирование. Для сайтов, ботов, Docker и AI.</p>
+    <div class="sponsor-tags">
+      <span class="sponsor-tag">NVMe</span>
+      <span class="sponsor-tag">24/7</span>
+      <span class="sponsor-tag">Мир</span>
+    </div>
+    <span class="sponsor-cta">Попробовать AdminVPS</span>
+  </a>
+
+</section>
+
+<footer class="footer">
+  <p>Lineage 2 — зарегистрированный товарный знак NCSoft Corporation. Неофициальный проект.</p>
+</footer>
+
+<script>
+const API = 'https://l2advps.duckdns.org';
+
+function showHint(id, text, error) {
+  const el = document.getElementById(id);
+  if (!el) return;
+  el.textContent = text;
+  el.className = 'field-hint' + (error ? ' error' : '');
+}
+
+const regForm = document.getElementById('reg-form');
+const regLogin = document.getElementById('reg-login');
+const regEmail = document.getElementById('reg-email');
+const regMsg = document.getElementById('reg-msg');
+const regBtn = document.getElementById('reg-btn');
+
+regLogin.addEventListener('input', () => {
+  const v = regLogin.value.trim();
+  if (!v) showHint('hint-login', '', false);
+  else if (v.length < 3) showHint('hint-login', 'Минимум 3 символа', true);
+  else if (v.length > 16) showHint('hint-login', 'Максимум 16 символов', true);
+  else if (!/^[a-zA-Z0-9_]+$/.test(v)) showHint('hint-login', 'Только латиница, цифры и _', true);
+  else showHint('hint-login', 'OK', false);
+});
+
+regEmail.addEventListener('input', () => {
+  const v = regEmail.value.trim();
+  if (!v) { showHint('hint-email', '', false); return; }
+  if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v)) showHint('hint-email', 'Некорректный email', true);
+  else showHint('hint-email', 'OK', false);
+});
+
+regForm.addEventListener('submit', async (e) => {
+  e.preventDefault();
+  const login = regLogin.value.trim();
+  const email = regEmail.value.trim();
+
+  let errors = false;
+  if (login.length < 3) { showHint('hint-login', 'Минимум 3 символа', true); errors = true; }
+  if (!/^[a-zA-Z0-9_]+$/.test(login)) { showHint('hint-login', 'Только латиница, цифры и _', true); errors = true; }
+  if (!email) { showHint('hint-email', 'Email обязателен', true); errors = true; }
+  else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) { showHint('hint-email', 'Некорректный email', true); errors = true; }
+  if (errors) return;
+
+  regMsg.className = 'form-msg';
+  regMsg.textContent = '';
+  regBtn.disabled = true;
+  regBtn.textContent = 'Отправка...';
+
+  try {
+    const resp = await fetch(`${API}/api/register`, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ login, email })
+    });
+    const data = await resp.json();
+    if (data.success) {
+      regMsg.className = 'form-msg success';
+      regMsg.innerHTML = data.message + '<br><small>Проверьте папку «Спам», если письма нет во Входящих.</small>';
+      regForm.reset();
+      document.querySelectorAll('.field-hint').forEach(el => { el.textContent = ''; el.className = 'field-hint'; });
+    } else {
+      regMsg.className = 'form-msg error';
+      regMsg.textContent = data.error || 'Ошибка регистрации';
+    }
+  } catch(err) {
+    regMsg.className = 'form-msg error';
+    regMsg.textContent = 'Сервер временно недоступен. Попробуйте позже.';
+  }
+  regBtn.disabled = false;
+  regBtn.textContent = 'Зарегистрироваться';
+});
+</script>
+
+</body>
+</html>
