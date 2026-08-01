@@ -2,6 +2,15 @@
 window.allArticles = 
 [
   {
+    "url": "/archive/video-game-movies-2027-guide.html",
+    "title": "Фильмы по играм 2027 — даты выхода, трейлеры, актеры и все экранизации",
+    "excerpt": "Полный гид по экранизациям видеоигр 2027 года: Соник, Зельда, Майнкрафт, Helldivers. Проверенные даты выхода, каст, бюджеты и новости со съемок.",
+    "date": "1 августа 2026",
+    "readTime": "8 мин",
+    "category": "Кино и игры",
+    "image": "/img/video-game-movies-2027.webp"
+  },
+  {
     "url": "/archive/operation-darkside-dx-guide-2026.html",
     "title": "Operation Darkside DX (2026): Гайд по прохождению, системные требования и советы по фарму",
     "excerpt": "Полный гайд по Operation Darkside DX: системные требования, решение проблем с вылетами, советы по фарму ресурсов, обзор DX Edition и ответы на частые вопросы игроков.",
