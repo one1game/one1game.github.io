@@ -56,6 +56,15 @@ window.allArticles =
     "image": "/img/ai/output/fair_pvp_games.png"
   },
   {
+    "url": "/archive/operation-darkside-dx-guide-2026.html",
+    "title": "Operation Darkside DX (2026): Гайд по прохождению, системные требования и советы по фарму",
+    "excerpt": "Полный гайд по Operation Darkside DX: системные требования, решение проблем с вылетами, советы по фарму ресурсов, обзор DX Edition и ответы на частые вопросы игроков.",
+    "date": "31 июля 2026",
+    "readTime": "8 мин",
+    "category": "Гайды",
+    "image": "/img/ai/output/operation_darkside_dx.png"
+  },
+  {
     "url": "/archive/stalker-2-nevozmozhnye-tayniki-i-artefakty.html",
     "title": "S.T.A.L.K.E.R. 2: 5 «невозможных» тайников и артефактов, которые не могут найти игроки",
     "excerpt": "Нашли ключ, но не видите дверь? Артефакт не спавнится? Разбираем самые проблемные тайники и легендарные артефакты S.T.A.L.K.E.R. 2, которые игроки массово не могут найти, и даем рабочие решения.",
