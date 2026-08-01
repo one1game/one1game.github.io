@@ -301,7 +301,8 @@ class One1GamePlatform {
       'Аналитика': 'cat-analytics',
       'Тренды': 'cat-trends',
       'Разработка': 'cat-dev',
-      'Мнение': 'cat-opinion'
+      'Мнение': 'cat-opinion',
+      'Мнения': 'cat-opinion'
     };
 
     const latestArticles = window.allArticles.slice(0, 5);
@@ -361,7 +362,7 @@ class One1GamePlatform {
       'Мнение': 'fa-comment-dots'
     };
 
-    const catOrder = ['Технологии', 'Гайды', 'Консоли', 'Аналитика', 'Тренды', 'Разработка', 'Мнение'];
+    const catOrder = ['Технологии', 'Гайды', 'Консоли', 'Аналитика', 'Тренды', 'Разработка', 'Мнение', 'Мнения'];
     const pills = Object.entries(catCount)
       .sort(([a], [b]) => {
         const ai = catOrder.indexOf(a), bi = catOrder.indexOf(b);

@@ -250,6 +250,43 @@ body::after{
 .ad-banner-wrap a:hover img{filter:brightness(1.05) saturate(1)}
 
 /* =============================================
+   AD VPS (AdminVPS sponsor card)
+   ============================================= */
+.ad-vps-wrap{margin:0 0 28px}
+.ad-vps-card{
+  display:block;
+  background:linear-gradient(160deg, rgba(14,14,30,0.65), rgba(20,20,42,0.5));
+  border:1px solid var(--border);
+  border-radius:var(--radius);
+  padding:22px 26px;
+  text-decoration:none;
+  transition:border-color .3s,box-shadow .3s;
+  position:relative;overflow:hidden;
+}
+.ad-vps-card::before{content:'';position:absolute;top:-60%;right:-30%;width:240px;height:240px;background:radial-gradient(circle,rgba(255,215,64,0.07),transparent 70%);pointer-events:none}
+.ad-vps-card:hover{border-color:rgba(255,215,64,0.45);box-shadow:0 8px 30px rgba(255,215,64,0.10)}
+.ad-vps-header{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin-bottom:8px}
+.ad-vps-badge{
+  font-family:ui-monospace,'Cascadia Code',monospace;
+  font-size:.66rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;
+  background:rgba(255,215,64,0.12);color:var(--gold);
+  padding:4px 10px;border-radius:50px;border:1px solid rgba(255,215,64,0.3);
+}
+.ad-vps-title{font-family:ui-monospace,'Cascadia Code',monospace;font-size:1.08rem;font-weight:700;color:#fff;margin:0}
+.ad-vps-desc{font-size:.88rem;color:var(--text-dim);margin:0 0 12px;line-height:1.55}
+.ad-vps-tags{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:14px}
+.ad-vps-tag{font-size:.7rem;font-weight:500;background:rgba(255,255,255,0.04);color:var(--text-dim);padding:3px 10px;border-radius:50px;border:1px solid var(--border)}
+.ad-vps-cta{
+  display:block;text-align:center;
+  font-family:ui-monospace,'Cascadia Code',monospace;
+  font-size:.8rem;font-weight:700;
+  background:linear-gradient(135deg,var(--gold),#ff9d00);color:#000;
+  padding:10px 16px;border-radius:50px;
+  transition:transform .18s,box-shadow .18s;
+}
+.ad-vps-card:hover .ad-vps-cta{transform:translateY(-1px);box-shadow:0 6px 20px rgba(255,215,64,0.25)}
+
+/* =============================================
    FEATURED BANNER (Pinned Card)
    ============================================= */
 .featured-banner{margin:0 0 24px}
