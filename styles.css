@@ -246,7 +246,8 @@ body::after{
 .ad-banner-wrap{margin:0 0 28px}
 .ad-banner-wrap a{display:block;border-radius:var(--radius);overflow:hidden;border:1px solid var(--border);transition:border-color 0.3s,box-shadow 0.3s}
 .ad-banner-wrap a:hover{border-color:var(--border-active);box-shadow:var(--glow-cyan)}
-.ad-banner-wrap img{width:100%;height:auto;display:block}
+.ad-banner-wrap img{width:100%;height:auto;display:block;filter:brightness(0.55) saturate(0.75);transition:filter 0.35s ease}
+.ad-banner-wrap a:hover img{filter:brightness(1.05) saturate(1)}
 
 /* =============================================
    FEATURED BANNER (Pinned Card)
