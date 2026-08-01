@@ -28,6 +28,7 @@
     '      <a href="/archive.html" class="nav-link' + active(isArchive) + '">Статьи</a>' +
     '      <a href="/anal-code/" class="nav-link' + active(isCodeFusion) + '">CodeFusion</a>' +
     '      <a href="/cyber-scanner/" class="nav-link' + active(isScanner) + '">Scanner</a>' +
+    '      <a href="/l2/" class="nav-link' + active(path.includes('/l2')) + '">L2 Server</a>' +
     (isHome ?
     '      <div class="nav-social">' +
     '        <a href="https://www.youtube.com/@one1game" target="_blank" rel="noopener" title="YouTube"><i class="fab fa-youtube"></i></a>' +

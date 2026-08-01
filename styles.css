@@ -241,6 +241,14 @@ body::after{
 .hero-actions{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
 
 /* =============================================
+   AD BANNER
+   ============================================= */
+.ad-banner-wrap{margin:0 0 28px}
+.ad-banner-wrap a{display:block;border-radius:var(--radius);overflow:hidden;border:1px solid var(--border);transition:border-color 0.3s,box-shadow 0.3s}
+.ad-banner-wrap a:hover{border-color:var(--border-active);box-shadow:var(--glow-cyan)}
+.ad-banner-wrap img{width:100%;height:auto;display:block}
+
+/* =============================================
    FEATURED BANNER (Pinned Card)
    ============================================= */
 .featured-banner{margin:0 0 24px}
