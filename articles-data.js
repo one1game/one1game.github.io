@@ -2,6 +2,15 @@
 window.allArticles = 
 [
   {
+    "url": "/archive/operation-darkside-dx-guide-2026.html",
+    "title": "Operation Darkside DX (2026): Гайд по прохождению, системные требования и советы по фарму",
+    "excerpt": "Полный гайд по Operation Darkside DX: системные требования, решение проблем с вылетами, советы по фарму ресурсов, обзор DX Edition и ответы на частые вопросы игроков.",
+    "date": "31 июля 2026",
+    "readTime": "8 мин",
+    "category": "Гайды",
+    "image": "/img/ai/output/operation_darkside_dx_guide.png"
+  },
+  {
     "url": "/archive/igry-v-telegram-bez-skachivaniya-triad-duel.html",
     "title": "Игры в Telegram без скачивания: Как Triad Duel меняет правила мобильного гейминга",
     "excerpt": "Забудьте про APK на 3 ГБ. Разбираем феномен Telegram Mini Apps на примере Triad Duel: тактическая PvP-игра, которая запускается за 1 секунду без установки.",
@@ -54,15 +63,6 @@ window.allArticles =
     "readTime": "6 мин",
     "category": "Мнения",
     "image": "/img/ai/output/fair_pvp_games.png"
-  },
-  {
-    "url": "/archive/operation-darkside-dx-guide-2026.html",
-    "title": "Operation Darkside DX (2026): Гайд по прохождению, системные требования и советы по фарму",
-    "excerpt": "Полный гайд по Operation Darkside DX: системные требования, решение проблем с вылетами, советы по фарму ресурсов, обзор DX Edition и ответы на частые вопросы игроков.",
-    "date": "31 июля 2026",
-    "readTime": "8 мин",
-    "category": "Гайды",
-    "image": "/img/ai/output/operation_darkside_dx.png"
   },
   {
     "url": "/archive/stalker-2-nevozmozhnye-tayniki-i-artefakty.html",
