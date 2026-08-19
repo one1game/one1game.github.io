@@ -35,7 +35,7 @@ class One1GamePlatform {
       w = canvas.width = window.innerWidth;
       h = canvas.height = window.innerHeight;
       cols = Math.floor(w / fontSize);
-      drops = Array.from({length: cols}, () => Math.floor(Math.random() * -80));
+      drops = Array.from({length: cols}, () => Math.random() * (h / fontSize));
     };
     resize();
     window.addEventListener('resize', resize);
@@ -48,8 +48,8 @@ class One1GamePlatform {
         const alpha = 0.15 + Math.random() * 0.85;
         ctx.fillStyle = 'rgba(57,255,20,' + alpha.toFixed(2) + ')';
         ctx.fillText(ch, i * fontSize, drops[i] * fontSize);
-        if (drops[i] * fontSize > h && Math.random() > 0.992) drops[i] = 0;
-        drops[i] += 0.15;
+        if (drops[i] * fontSize < -fontSize * 2 && Math.random() > 0.992) drops[i] = h / fontSize + 2;
+        drops[i] -= 0.12;
       }
       requestAnimationFrame(draw);
     };
