@@ -551,6 +551,28 @@ a:focus-visible,button:focus-visible,.cat-pill:focus-visible{
 .article-card.featured .card-excerpt{-webkit-line-clamp:3}
 .article-card.featured::before{opacity:0.5}
 
+/* Top article под радио — растягивается на всю ширину */
+#top-article{
+  width:100%;
+}
+#top-article .article-card{
+  width:100%;
+  max-width:100%;
+  flex-direction:row;
+  align-items:center;
+  gap:30px;
+  padding:36px;
+}
+#top-article .article-card .card-image{
+  flex:0 0 52%;
+  margin-bottom:0;
+}
+#top-article .article-card h3{font-size:1.7rem}
+@media(max-width:768px){
+  #top-article .article-card{flex-direction:column;gap:16px;padding:24px}
+  #top-article .article-card .card-image{flex:1 1 auto;width:100%;margin-bottom:0}
+}
+
 /* =============================================
    RADIO — FAB PLAY BUTTON
    ============================================= */
