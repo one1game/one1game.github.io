@@ -1063,6 +1063,28 @@ body::after{
 .article-card:nth-child(4){animation-delay:0.18s}
 .article-card:nth-child(5){animation-delay:0.24s}
 
+/* Home page — gentle entrance animations */
+.page-home .hero{animation:fadeInUp 0.7s var(--ease-out) forwards}
+.page-home .featured-banner{animation:fadeInUp 0.7s var(--ease-out) 0.15s both}
+.page-home .categories-row{animation:fadeInUp 0.7s var(--ease-out) 0.25s both}
+.page-home .content-main .section-header{animation:fadeInUp 0.7s var(--ease-out) 0.35s both}
+.page-home .articles-grid{animation:fadeInUp 0.7s var(--ease-out) 0.4s both}
+.page-home .ad-vps-wrap,.page-home .ad-banner-wrap{animation:fadeInUp 0.7s var(--ease-out) 0.5s both}
+.page-home #today-in-history{animation:fadeInUp 0.7s var(--ease-out) 0.6s both}
+.page-home .content-sidebar > *{animation:fadeInUp 0.7s var(--ease-out) 0.45s both}
+
+@media (prefers-reduced-motion: reduce){
+  .page-home .hero,
+  .page-home .featured-banner,
+  .page-home .categories-row,
+  .page-home .content-main .section-header,
+  .page-home .articles-grid,
+  .page-home .ad-vps-wrap,
+  .page-home .ad-banner-wrap,
+  .page-home #today-in-history,
+  .page-home .content-sidebar > *{animation:none}
+}
+
 @keyframes fadeIn{
   from{opacity:0}to{opacity:1}
 }
