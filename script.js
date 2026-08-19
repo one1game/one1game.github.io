@@ -247,7 +247,6 @@ class One1GamePlatform {
     playBtn.addEventListener('click', () => {
       this.globalRadio.toggle();
       this.updateRadioButton(playBtn);
-      this.ensureRadioBeat(); // создаём AudioContext только после клика (user gesture)
     });
 
     // Визуализатор
@@ -265,55 +264,6 @@ class One1GamePlatform {
     });
 
     console.log('✅ Visible radio controls setup complete');
-  }
-
-  // Создаём AudioContext + analyser только после клика (user gesture)
-  ensureRadioBeat() {
-    const btn = document.getElementById('radio-play');
-    if (!btn || !this.globalRadio) return;
-    const audio = this.globalRadio.audio;
-
-    let ctx = window.__radioCtx;
-    if (!ctx) {
-      ctx = new (window.AudioContext || window.webkitAudioContext)();
-      window.__radioCtx = ctx;
-    }
-    let analyser = window.__radioAnalyser;
-    if (!analyser && audio.src) {
-      try {
-        analyser = ctx.createAnalyser();
-        analyser.fftSize = 256;
-        analyser.smoothingTimeConstant = 0.8;
-        const src = ctx.createMediaElementSource(audio);
-        src.connect(analyser);
-        analyser.connect(ctx.destination);
-        window.__radioAnalyser = analyser;
-      } catch (e) {
-        console.log('📻 Beat analyser skipped:', e);
-        return;
-      }
-    }
-    if (!window.__radioAnalyser) return;
-    if (window.__radioBeatLoop) return;
-    analyser = window.__radioAnalyser;
-
-    const data = new Uint8Array(analyser.frequencyBinCount);
-    const draw = () => {
-      window.__radioBeatLoop = requestAnimationFrame(draw);
-      if (ctx.state === 'suspended') ctx.resume().catch(() => {});
-      if (audio.paused || audio.readyState < 2) {
-        btn.style.transform = '';
-        btn.style.boxShadow = '';
-        return;
-      }
-      analyser.getByteFrequencyData(data);
-      let sum = 0;
-      for (let i = 0; i < data.length; i++) sum += data[i];
-      const k = (sum / data.length) / 255;
-      btn.style.transform = 'scale(' + (1 + k * 0.16) + ')';
-      btn.style.boxShadow = '0 0 ' + (18 + k * 70) + 'px rgba(0,255,160,' + (0.35 + k * 0.65).toFixed(2) + ')';
-    };
-    draw();
   }
 
   updateRadioButton(button) {
