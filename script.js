@@ -22,6 +22,40 @@ class One1GamePlatform {
            document.querySelector('.articles-container') !== null;
   }
 
+  initMatrixRain() {
+    if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+    const canvas = document.createElement('canvas');
+    canvas.id = 'matrix-bg';
+    document.body.appendChild(canvas);
+    const ctx = canvas.getContext('2d');
+    const chars = 'アイウエオカキクケコサシスセソ0123456789ABCDEF<>[]{}|/\\';
+    const fontSize = 16;
+    let w, h, cols, drops;
+    const resize = () => {
+      w = canvas.width = window.innerWidth;
+      h = canvas.height = window.innerHeight;
+      cols = Math.floor(w / fontSize);
+      drops = Array.from({length: cols}, () => Math.floor(Math.random() * -80));
+    };
+    resize();
+    window.addEventListener('resize', resize);
+    const draw = () => {
+      ctx.fillStyle = 'rgba(6,6,13,0.07)';
+      ctx.fillRect(0, 0, w, h);
+      ctx.font = fontSize + 'px monospace';
+      for (let i = 0; i < cols; i++) {
+        const ch = chars[Math.floor(Math.random() * chars.length)];
+        const alpha = 0.15 + Math.random() * 0.85;
+        ctx.fillStyle = 'rgba(57,255,20,' + alpha.toFixed(2) + ')';
+        ctx.fillText(ch, i * fontSize, drops[i] * fontSize);
+        if (drops[i] * fontSize > h && Math.random() > 0.975) drops[i] = 0;
+        drops[i]++;
+      }
+      requestAnimationFrame(draw);
+    };
+    requestAnimationFrame(draw);
+  }
+
   // Smooth page transitions on link clicks
   setupPageTransitions() {
     document.addEventListener('click', e => {
@@ -137,6 +171,9 @@ class One1GamePlatform {
 
   initializePlatform() {
       console.log('🚀 Initializing One1Game Platform...');
+
+      // Matrix rain background
+      this.initMatrixRain();
       
       // Проверяем наличие всех элементов
       this.checkElements();

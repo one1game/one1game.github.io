@@ -48,35 +48,9 @@ body{
   -webkit-font-smoothing:antialiased;
   -moz-osx-font-smoothing:grayscale;
 }
-/* Animated neon aurora + cyber grid backdrop */
-body::before{
-  content:'';position:fixed;inset:-20%;z-index:-1;pointer-events:none;
-  background:
-    radial-gradient(40% 40% at 20% 25%,rgba(0,229,255,0.22),transparent 70%),
-    radial-gradient(35% 35% at 80% 20%,rgba(255,45,123,0.18),transparent 70%),
-    radial-gradient(45% 45% at 70% 80%,rgba(179,107,255,0.18),transparent 70%),
-    radial-gradient(35% 35% at 25% 75%,rgba(57,255,20,0.10),transparent 70%);
-  animation:aurora-drift 22s ease-in-out infinite alternate;
-}
-@keyframes aurora-drift{
-  0%{transform:translate(0,0) rotate(0deg)}
-  50%{transform:translate(2%,-2%) rotate(2deg)}
-  100%{transform:translate(-2%,2%) rotate(-2deg)}
-}
-body::after{
-  content:'';position:fixed;inset:0;z-index:-1;pointer-events:none;
-  background:
-    linear-gradient(rgba(0,229,255,0.10) 1px,transparent 1px),
-    linear-gradient(90deg,rgba(0,229,255,0.10) 1px,transparent 1px);
-  background-size:56px 56px;
-  -webkit-mask-image:radial-gradient(ellipse 80% 70% at 50% 35%,#000 30%,transparent 100%);
-  mask-image:radial-gradient(ellipse 80% 70% at 50% 35%,#000 30%,transparent 100%);
-  animation:grid-pulse 9s ease-in-out infinite;
-}
-@keyframes grid-pulse{
-  0%,100%{opacity:0.6}
-  50%{opacity:1}
-}
+/* Matrix rain backdrop (canvas, injected by script.js) */
+#matrix-bg{position:fixed;inset:0;z-index:-1;pointer-events:none;opacity:0.5}
+@media (prefers-reduced-motion: reduce){#matrix-bg{display:none}}
 
 /* =============================================
    ACCESSIBILITY — SKIP LINK + FOCUS
