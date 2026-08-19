@@ -33,7 +33,7 @@
 
   <link href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css" rel="stylesheet" />
   <link rel="preload" href="styles.css" as="style" />
-  <link rel="stylesheet" href="styles.css?v=9" />
+  <link rel="stylesheet" href="styles.css?v=10" />
   <link rel="manifest" href="/manifest.json" />
   <meta name="theme-color" content="#06060c" />
 
@@ -70,14 +70,12 @@
   <!-- HERO -->
   <section class="hero">
     <section class="radio-section">
-      <div class="radio-visual"><i class="fas fa-broadcast-tower"></i></div>
+      <button class="radio-toggle" id="radio-play" title="Включить / выключить" aria-label="Включить / выключить радио">
+        <i class="fas fa-play"></i>
+      </button>
       <div class="radio-info">
-        <h3>Игровое 8-Bit Радио</h3>
+        <span class="radio-label"><i class="fas fa-broadcast-tower"></i> 8-Bit Radio</span>
         <span class="radio-status" id="radio-status">Остановлено</span>
-      </div>
-      <div class="radio-controls">
-        <button class="radio-btn" id="radio-play" title="Play/Pause"><i class="fas fa-play"></i></button>
-        <button class="radio-btn" id="radio-stop" title="Stop"><i class="fas fa-stop"></i></button>
       </div>
       <audio id="radio-stream" preload="none" style="display:none;"></audio>
     </section>

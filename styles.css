@@ -220,8 +220,7 @@ a:focus-visible,button:focus-visible,.cat-pill:focus-visible{
   line-height:1.6;
 }
 .hero-actions{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
-.hero .radio-section{max-width:640px;margin:0 auto 22px;padding:18px 26px;text-align:left}
-.hero .radio-visual{width:52px;height:52px;font-size:1.3rem}
+.hero .radio-section{margin:0 auto 22px}
 
 /* =============================================
    AD BANNER
@@ -553,43 +552,45 @@ a:focus-visible,button:focus-visible,.cat-pill:focus-visible{
 .article-card.featured::before{opacity:0.5}
 
 /* =============================================
-   RADIO SECTION — COMPACT CYBERPUNK
+   RADIO — MINIMAL NEON PLAYER
    ============================================= */
 .radio-section{
+  display:inline-flex;align-items:center;gap:14px;
   background:var(--surface);
-  border:1px solid var(--border);
-  border-radius:var(--radius-lg);
-  padding:28px 34px;
-  margin-bottom:52px;
+  border:1px solid var(--border-active);
+  border-radius:50px;
+  padding:8px 22px 8px 8px;
   backdrop-filter:blur(12px);
   -webkit-backdrop-filter:blur(12px);
-  display:flex;align-items:center;gap:24px;flex-wrap:wrap;
+  box-shadow:var(--glow-cyan);
+  max-width:100%;
 }
-.radio-visual{
-  width:60px;height:60px;border-radius:50%;
-  background:linear-gradient(135deg,var(--magenta),var(--purple));
+.radio-toggle{
+  width:48px;height:48px;border-radius:50%;flex-shrink:0;
+  border:none;cursor:pointer;
+  background:linear-gradient(135deg,var(--cyan),var(--magenta));
+  color:#000;font-size:1rem;
   display:flex;align-items:center;justify-content:center;
-  font-size:1.5rem;flex-shrink:0;
-  box-shadow:var(--glow-magenta);
-  animation:radio-wave 2s ease-in-out infinite;
+  transition:transform 0.18s ease,box-shadow 0.18s ease;
+  box-shadow:0 0 18px rgba(0,229,255,0.35);
+  -webkit-tap-highlight-color:transparent;
 }
-@keyframes radio-wave{
-  0%,100%{box-shadow:0 0 0 0 rgba(255,45,123,0.4)}
-  50%{box-shadow:0 0 0 14px rgba(255,45,123,0)}
+.radio-toggle:hover{transform:scale(1.06)}
+.radio-toggle:active{transform:scale(0.94)}
+.radio-info{display:flex;flex-direction:column;gap:2px;min-width:0;text-align:left}
+.radio-label{
+  display:inline-flex;align-items:center;gap:7px;
+  font-family:ui-monospace,'Cascadia Code','Fira Code',monospace;
+  font-size:0.85rem;font-weight:700;color:#fff;
+  letter-spacing:0.04em;white-space:nowrap;
 }
-.radio-info{flex:1;min-width:200px}
-.radio-info h3{font-size:1.05rem;font-weight:600;color:#fff;margin-bottom:4px}
-.radio-status{font-size:0.8rem;color:var(--text-faint)}
-.radio-controls{display:flex;gap:10px;align-items:center}
-.radio-btn{
-  width:46px;height:46px;border-radius:50%;
-  border:2px solid rgba(255,255,255,0.12);
-  background:transparent;color:#fff;font-size:1rem;
-  cursor:pointer;transition:all var(--ease-out);
-  display:flex;align-items:center;justify-content:center;
+.radio-label i{color:var(--cyan)}
+.radio-status{font-size:0.7rem;color:var(--text-faint);white-space:nowrap}
+@media(max-width:420px){
+  .radio-section{padding:6px 16px 6px 6px;gap:11px}
+  .radio-toggle{width:44px;height:44px}
+  .radio-label{font-size:0.78rem}
 }
-.radio-btn:hover{border-color:var(--magenta);background:rgba(255,45,123,0.08);box-shadow:var(--glow-magenta)}
-.radio-btn.playing{border-color:var(--magenta);background:var(--magenta);color:#fff}
 
 /* =============================================
    SOCIAL SECTION — YT + VK
