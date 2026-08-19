@@ -399,10 +399,12 @@ class One1GamePlatform {
       'Аналитика': 'fa-chart-line',
       'Тренды': 'fa-fire',
       'Разработка': 'fa-code',
-      'Мнение': 'fa-comment-dots'
+      'Мнение': 'fa-comment-dots',
+      'Мнения': 'fa-comment-dots',
+      'Кино и игры': 'fa-clapperboard'
     };
 
-    const catOrder = ['Технологии', 'Гайды', 'Консоли', 'Аналитика', 'Тренды', 'Разработка', 'Мнение', 'Мнения'];
+    const catOrder = ['Технологии', 'Гайды', 'Консоли', 'Аналитика', 'Тренды', 'Разработка', 'Мнение', 'Мнения', 'Кино и игры'];
     const pills = Object.entries(catCount)
       .sort(([a], [b]) => {
         const ai = catOrder.indexOf(a), bi = catOrder.indexOf(b);
