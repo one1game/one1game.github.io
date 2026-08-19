@@ -71,10 +71,18 @@
   <section class="hero">
     <div class="hero-badge">Игровое медиа #1</div>
     <h1>ONE1<span class="highlight">GAME</span></h1>
-    <p class="hero-sub">
-      Проводник в мир видеоигр. Новости, обзоры, гайды и аналитика —
-      всё, что нужно знать геймеру в 2026 году.
-    </p>
+    <section class="radio-section">
+      <div class="radio-visual"><i class="fas fa-broadcast-tower"></i></div>
+      <div class="radio-info">
+        <h3>Игровое 8-Bit Радио</h3>
+        <span class="radio-status" id="radio-status">Остановлено</span>
+      </div>
+      <div class="radio-controls">
+        <button class="radio-btn" id="radio-play" title="Play/Pause"><i class="fas fa-play"></i></button>
+        <button class="radio-btn" id="radio-stop" title="Stop"><i class="fas fa-stop"></i></button>
+      </div>
+      <audio id="radio-stream" preload="none" style="display:none;"></audio>
+    </section>
     <div class="hero-actions">
       <a href="archive.html" class="btn btn-primary">
         <i class="fas fa-newspaper"></i> Читать статьи
@@ -139,20 +147,6 @@
         <span class="section-badge">History</span>
       </div>
       <div id="today-in-history"></div>
-
-      <!-- RADIO -->
-      <section class="radio-section">
-        <div class="radio-visual"><i class="fas fa-broadcast-tower"></i></div>
-        <div class="radio-info">
-          <h3>Игровое 8-Bit Радио</h3>
-          <span class="radio-status" id="radio-status">Остановлено</span>
-        </div>
-        <div class="radio-controls">
-          <button class="radio-btn" id="radio-play" title="Play/Pause"><i class="fas fa-play"></i></button>
-          <button class="radio-btn" id="radio-stop" title="Stop"><i class="fas fa-stop"></i></button>
-        </div>
-        <audio id="radio-stream" preload="none" style="display:none;"></audio>
-      </section>
 
     </div>
 

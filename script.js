@@ -302,7 +302,8 @@ class One1GamePlatform {
       'Тренды': 'cat-trends',
       'Разработка': 'cat-dev',
       'Мнение': 'cat-opinion',
-      'Мнения': 'cat-opinion'
+      'Мнения': 'cat-opinion',
+      'Кино и игры': 'cat-movies'
     };
 
     const latestArticles = window.allArticles.slice(0, 5);
@@ -361,7 +362,9 @@ class One1GamePlatform {
       'Аналитика': 'cat-analytics',
       'Тренды': 'cat-trends',
       'Разработка': 'cat-dev',
-      'Мнение': 'cat-opinion'
+      'Мнение': 'cat-opinion',
+      'Мнения': 'cat-opinion',
+      'Кино и игры': 'cat-movies'
     };
 
     window.allArticles.forEach(a => {
