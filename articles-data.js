@@ -200,11 +200,11 @@ window.allArticles =
   },
   {
     "url": "/archive/xbox-gamepass-to-steam-saves-2026.html",
-    "title": "Как перенести сохранения из Xbox Game Pass в Steam в 2026 — полное руководство",
-    "excerpt": "Десятки часов в Game Pass, а игру купили в Steam? WGS-контейнеры, GPSaveConverter, ручной и автоматический перенос — всё, что нужно для сохранения прогресса...",
+    "title": "Как добавить сохранения из Game Pass PC? Перенос сейвов без потери прогресса",
+    "excerpt": "Сохранения из PC Game Pass не всегда там, где ожидаешь. Облачная синхронизация, ручной поиск, перенос Game Pass → Steam и бэкапы без потери прогресса.",
     "image": "/img/ai/output/xbox_gamepass_to_steam_saves.png",
     "date": "6 июля 2026",
-    "readTime": "9 мин",
+    "readTime": "7 мин",
     "category": "Гайды"
   },
   {
