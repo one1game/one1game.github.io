@@ -4,10 +4,10 @@
    ============================================= */
 
 :root {
-  --bg: #06060d;
-  --bg-elevated: #0d0d1a;
-  --surface: rgba(14, 14, 30, 0.65);
-  --surface-hover: rgba(20, 20, 42, 0.8);
+  --bg: #040408;
+  --bg-elevated: #08080f;
+  --surface: rgba(6, 6, 12, 0.88);
+  --surface-hover: rgba(10, 10, 18, 0.94);
   --text: #edeff5;
   --text-dim: #9090aa;
   --text-faint: #555570;
