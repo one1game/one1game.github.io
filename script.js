@@ -247,30 +247,8 @@ class One1GamePlatform {
     playBtn.addEventListener('click', () => {
       this.globalRadio.toggle();
       this.updateRadioButton(playBtn);
-
-      if (statusText) {
-        statusText.textContent = this.globalRadio.isPlaying()
-          ? 'В эфире - 8-Bit Radio'
-          : 'Остановлено';
-      }
+      this.ensureRadioBeat(); // создаём AudioContext только после клика (user gesture)
     });
-
-    // Кнопка stop
-    if (stopBtn) {
-      stopBtn.addEventListener('click', () => {
-        this.globalRadio.audio.pause();
-        this.globalRadio.audio.currentTime = 0;
-        this.updateRadioButton(playBtn);
-        if (statusText) statusText.textContent = 'Остановлено';
-      });
-    }
-
-    // Обновляем статус
-    if (statusText) {
-      statusText.textContent = this.globalRadio.isPlaying()
-        ? 'В эфире - 8-Bit Radio'
-        : 'Остановлено';
-    }
 
     // Визуализатор
     this.setupVisualizer();
@@ -287,12 +265,10 @@ class One1GamePlatform {
     });
 
     console.log('✅ Visible radio controls setup complete');
-
-    // Пульсация кнопки в такт музыке
-    this.setupRadioBeat();
   }
 
-  setupRadioBeat() {
+  // Создаём AudioContext + analyser только после клика (user gesture)
+  ensureRadioBeat() {
     const btn = document.getElementById('radio-play');
     if (!btn || !this.globalRadio) return;
     const audio = this.globalRadio.audio;
@@ -318,15 +294,16 @@ class One1GamePlatform {
       }
     }
     if (!window.__radioAnalyser) return;
+    if (window.__radioBeatLoop) return;
     analyser = window.__radioAnalyser;
 
     const data = new Uint8Array(analyser.frequencyBinCount);
     const draw = () => {
-      requestAnimationFrame(draw);
+      window.__radioBeatLoop = requestAnimationFrame(draw);
       if (ctx.state === 'suspended') ctx.resume().catch(() => {});
       if (audio.paused || audio.readyState < 2) {
         btn.style.transform = '';
-        btn.style.boxShadow = '0 0 18px rgba(0,229,255,0.35)';
+        btn.style.boxShadow = '';
         return;
       }
       analyser.getByteFrequencyData(data);
@@ -334,7 +311,7 @@ class One1GamePlatform {
       for (let i = 0; i < data.length; i++) sum += data[i];
       const k = (sum / data.length) / 255;
       btn.style.transform = 'scale(' + (1 + k * 0.16) + ')';
-      btn.style.boxShadow = '0 0 ' + (18 + k * 70) + 'px rgba(0,229,255,' + (0.35 + k * 0.65).toFixed(2) + ')';
+      btn.style.boxShadow = '0 0 ' + (18 + k * 70) + 'px rgba(0,255,160,' + (0.35 + k * 0.65).toFixed(2) + ')';
     };
     draw();
   }
@@ -345,7 +322,7 @@ class One1GamePlatform {
     
     const isPlaying = this.globalRadio ? this.globalRadio.isPlaying() : false;
     icon.className = isPlaying ? 'fas fa-pause' : 'fas fa-play';
-    button.style.background = isPlaying ? '#00ff88' : '#00f3ff';
+    button.classList.toggle('playing', isPlaying);
   }
 
   updateVolumeIcon(volume) {
