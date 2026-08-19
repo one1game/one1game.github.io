@@ -253,6 +253,8 @@ body::after{
    AD VPS (AdminVPS sponsor card)
    ============================================= */
 .ad-vps-wrap{margin:0 0 28px}
+.articles-grid .ad-vps-wrap{display:flex;margin:0}
+.articles-grid .ad-vps-card{width:100%}
 .ad-vps-card{
   display:block;
   background:linear-gradient(160deg, rgba(14,14,30,0.65), rgba(20,20,42,0.5));

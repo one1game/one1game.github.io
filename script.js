@@ -324,7 +324,24 @@ class One1GamePlatform {
       </a>`;
     };
 
-    container.innerHTML = cardHTML(featured, true) + rest.map(a => cardHTML(a, false)).join('');
+    const adminVpsHTML = () => `
+      <div class="ad-vps-wrap grid-ad">
+        <a href="https://my.adminvps.ru/aff.php?aff=31864" target="_blank" rel="noopener noreferrer" class="ad-vps-card">
+          <div class="ad-vps-header">
+            <span class="ad-vps-badge">Выгодно</span>
+            <h3 class="ad-vps-title">VPS/VDS от 299 ₽/мес</h3>
+          </div>
+          <p class="ad-vps-desc">NVMe-диски, CPU до 5.0 ГГц, бесплатное администрирование. Для сайтов, ботов, Docker и AI.</p>
+          <div class="ad-vps-tags">
+            <span class="ad-vps-tag">NVMe</span>
+            <span class="ad-vps-tag">24/7</span>
+            <span class="ad-vps-tag">Мир</span>
+          </div>
+          <span class="ad-vps-cta">Попробовать AdminVPS</span>
+        </a>
+      </div>`;
+
+    container.innerHTML = cardHTML(featured, true) + adminVpsHTML() + rest.map(a => cardHTML(a, false)).join('');
 
     // Generate dynamic categories
     this.loadCategories();
