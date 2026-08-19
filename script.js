@@ -29,6 +29,7 @@ class One1GamePlatform {
     document.body.appendChild(canvas);
     const ctx = canvas.getContext('2d');
     const chars = 'アイウエオカキクケコサシスセソ0123456789ABCDEF<>[]{}|/\\';
+    const palette = ['255,215,64', '255,171,64', '255,138,64', '212,175,255'];
     const fontSize = 16;
     let w, h, cols, drops;
     const resize = () => {
@@ -45,11 +46,11 @@ class One1GamePlatform {
       ctx.font = fontSize + 'px monospace';
       for (let i = 0; i < cols; i++) {
         const ch = chars[Math.floor(Math.random() * chars.length)];
-        const alpha = 0.15 + Math.random() * 0.85;
-        ctx.fillStyle = 'rgba(57,255,20,' + alpha.toFixed(2) + ')';
+        const alpha = 0.2 + Math.random() * 0.8;
+        ctx.fillStyle = 'rgba(' + palette[i % palette.length] + ',' + alpha.toFixed(2) + ')';
         ctx.fillText(ch, i * fontSize, drops[i] * fontSize);
         if (drops[i] * fontSize < -fontSize * 2 && Math.random() > 0.992) drops[i] = h / fontSize + 2;
-        drops[i] -= 0.12;
+        drops[i] -= 0.05;
       }
       requestAnimationFrame(draw);
     };
