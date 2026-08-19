@@ -130,29 +130,6 @@ a:focus-visible,button:focus-visible,.cat-pill:focus-visible{
 }
 
 /* =============================================
-   ANIMATED BG – MULTI-LAYER
-   ============================================= */
-body::before{
-  content:'';
-  position:fixed;inset:0;z-index:0;pointer-events:none;
-  background:
-    /* Subtle grid */
-    repeating-linear-gradient(0deg,transparent,transparent 60px,rgba(0,229,255,0.015) 60px,rgba(0,229,255,0.015) 61px),
-    repeating-linear-gradient(90deg,transparent,transparent 60px,rgba(0,229,255,0.015) 60px,rgba(0,229,255,0.015) 61px),
-    /* Radial glows */
-    radial-gradient(ellipse 70% 50% at 20% 10%,rgba(0,229,255,0.06),transparent 60%),
-    radial-gradient(ellipse 60% 40% at 80% 80%,rgba(255,45,123,0.05),transparent 60%),
-    radial-gradient(ellipse 50% 35% at 50% 50%,rgba(179,107,255,0.03),transparent 60%);
-}
-
-/* Scanlines (subtle CRT feel) */
-body::after{
-  content:'';
-  position:fixed;inset:0;z-index:0;pointer-events:none;
-  background:repeating-linear-gradient(0deg,transparent,transparent 2px,rgba(0,0,0,0.025) 2px,rgba(0,0,0,0.025) 4px);
-}
-
-/* =============================================
    LAYOUT
    ============================================= */
 .container{
