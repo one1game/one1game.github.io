@@ -50,7 +50,7 @@ class One1GamePlatform {
         ctx.fillStyle = 'rgba(' + palette[i % palette.length] + ',' + alpha.toFixed(2) + ')';
         ctx.fillText(ch, i * fontSize, drops[i] * fontSize);
         if (drops[i] * fontSize < -fontSize * 2 && Math.random() > 0.992) drops[i] = h / fontSize + 2;
-        drops[i] -= 0.05;
+        drops[i] -= 0.017;
       }
       requestAnimationFrame(draw);
     };
