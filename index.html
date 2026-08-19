@@ -81,24 +81,10 @@
     </div>
   </section>
 
-  <!-- LATEST ARTICLES -->
-  <div class="section-header">
-    <h2 class="section-title">Последние статьи</h2>
-    <a href="archive.html" class="btn btn-ghost">Все статьи <i class="fas fa-arrow-right"></i></a>
-  </div>
-
-  <div class="articles-grid" id="latest-articles">
+  <!-- TOP ARTICLE: первая новость под радио -->
+  <div id="top-article">
     <!-- Populated by JS -->
     <div class="skeleton-card"></div>
-    <div class="skeleton-card"></div>
-    <div class="skeleton-card"></div>
-  </div>
-
-  <!-- AD BANNER -->
-  <div class="ad-banner-wrap">
-    <a href="https://bosslike.ru/?ref=7248523" target="_blank" rel="noopener noreferrer" title="Bosslike — накрутка подписчиков, лайков и просмотров">
-      <img src="/img/baner/baner1.webp?v=3" alt="Bosslike — сервис накрутки подписчиков и лайков" width="2272" height="464" loading="lazy">
-    </a>
   </div>
 
   <!-- FEATURED: Triad Duel -->
@@ -126,6 +112,25 @@
   <!-- LATEST ARTICLES + VK SIDEBAR -->
   <div class="content-row">
     <div class="content-main">
+
+      <div class="section-header">
+        <h2 class="section-title">Последние статьи</h2>
+        <a href="archive.html" class="btn btn-ghost">Все статьи <i class="fas fa-arrow-right"></i></a>
+      </div>
+
+      <div class="articles-grid" id="latest-articles">
+        <!-- Populated by JS -->
+        <div class="skeleton-card"></div>
+        <div class="skeleton-card"></div>
+        <div class="skeleton-card"></div>
+      </div>
+
+      <!-- AD BANNER -->
+      <div class="ad-banner-wrap">
+        <a href="https://bosslike.ru/?ref=7248523" target="_blank" rel="noopener noreferrer" title="Bosslike — накрутка подписчиков, лайков и просмотров">
+          <img src="/img/baner/baner1.webp?v=3" alt="Bosslike — сервис накрутки подписчиков и лайков" width="2272" height="464" loading="lazy">
+        </a>
+      </div>
 
       <!-- TODAY IN GAMING HISTORY -->
       <div class="section-header">
@@ -176,7 +181,7 @@
 </main>
 <script src="/cache-version.js"></script>
 <script>document.write('<script defer src="articles-data.js?v='+(window.CACHE_VER||'1')+'"><\/script>');</script>
-<script defer src="script.js?v=13"></script>
+<script defer src="script.js?v=14"></script>
 <script async src="https://vk.com/js/api/openapi.js?169"></script>
 <script defer src="youtube-feed.js?v=5"></script>
 <script defer src="gaming-history.js?v=1"></script>

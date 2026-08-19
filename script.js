@@ -357,7 +357,12 @@ class One1GamePlatform {
         </a>
       </div>`;
 
-    container.innerHTML = cardHTML(featured, true) + adminVpsHTML() + rest.map(a => cardHTML(a, false)).join('');
+    // Первая новость — отдельно под радио
+    const top = document.getElementById('top-article');
+    if (top) top.innerHTML = cardHTML(featured, true);
+
+    // Остальные + реклама AdminVPS — в блог
+    container.innerHTML = adminVpsHTML() + rest.map(a => cardHTML(a, false)).join('');
 
     // Generate dynamic categories
     this.loadCategories();
