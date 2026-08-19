@@ -48,8 +48,8 @@ class One1GamePlatform {
         const alpha = 0.15 + Math.random() * 0.85;
         ctx.fillStyle = 'rgba(57,255,20,' + alpha.toFixed(2) + ')';
         ctx.fillText(ch, i * fontSize, drops[i] * fontSize);
-        if (drops[i] * fontSize > h && Math.random() > 0.975) drops[i] = 0;
-        drops[i]++;
+        if (drops[i] * fontSize > h && Math.random() > 0.992) drops[i] = 0;
+        drops[i] += 0.15;
       }
       requestAnimationFrame(draw);
     };
