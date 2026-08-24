@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1344" height="768" viewBox="0 0 1344 768" role="img" aria-labelledby="title desc">
+  <title id="title">Переход Sony от дисков к цифровым играм</title>
+  <desc id="desc">Игровой диск переходит в цифровую сеть на темном неоновом фоне</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#080b18"/><stop offset="1" stop-color="#142b48"/></linearGradient>
+    <linearGradient id="cyan" x1="0" y1="0" x2="1" y2="0"><stop stop-color="#00d4ff"/><stop offset="1" stop-color="#7cf5ff"/></linearGradient>
+    <linearGradient id="violet" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#a855f7"/><stop offset="1" stop-color="#4338ca"/></linearGradient>
+    <filter id="glow"><feGaussianBlur stdDeviation="12" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+  </defs>
+  <rect width="1344" height="768" fill="url(#bg)"/>
+  <circle cx="1090" cy="170" r="230" fill="#00d4ff" opacity=".08"/><circle cx="270" cy="610" r="300" fill="#8b5cf6" opacity=".09"/>
+  <g opacity=".28" stroke="#00d4ff" fill="none"><path d="M0 590h430l130-132h170"/><path d="M900 160h150l95 95h199"/><path d="M70 170h180l62 62h160"/></g>
+  <g transform="translate(175 210)" filter="url(#glow)"><circle cx="180" cy="180" r="158" fill="#111827" stroke="url(#cyan)" stroke-width="8"/><circle cx="180" cy="180" r="52" fill="#070b15" stroke="#67e8f9" stroke-width="5"/><circle cx="180" cy="180" r="16" fill="#00d4ff"/><path d="M180 22a158 158 0 0 1 150 108" stroke="#fff" stroke-width="3" opacity=".5" fill="none"/><text x="180" y="385" fill="#b9f7ff" font-family="Arial, sans-serif" font-size="24" text-anchor="middle" letter-spacing="5">PHYSICAL</text></g>
+  <g transform="translate(820 190)" filter="url(#glow)"><rect x="0" y="0" width="290" height="360" rx="24" fill="#111827" stroke="url(#violet)" stroke-width="8"/><rect x="34" y="38" width="222" height="150" rx="12" fill="#0b1224" stroke="#00d4ff" stroke-width="3"/><path d="M67 270h156M94 310h102" stroke="#a5f3fc" stroke-width="8" stroke-linecap="round"/><circle cx="145" cy="114" r="38" fill="none" stroke="#00d4ff" stroke-width="5"/><path d="M145 93v42M124 114h42" stroke="#fff" stroke-width="5" stroke-linecap="round"/><text x="145" y="405" fill="#e9d5ff" font-family="Arial, sans-serif" font-size="24" text-anchor="middle" letter-spacing="5">DIGITAL</text></g>
+  <path d="M490 390 C620 290 705 290 835 390" fill="none" stroke="url(#cyan)" stroke-width="8" stroke-dasharray="18 18" filter="url(#glow)"/><path d="M790 366l48 24-48 24" fill="none" stroke="#fff" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>
+  <text x="672" y="650" fill="#fff" font-family="Arial, sans-serif" font-size="42" font-weight="700" text-anchor="middle">КОНЕЦ ЭРЫ КОЛЛЕКЦИОНИРОВАНИЯ?</text>
+  <text x="672" y="700" fill="#9ca3af" font-family="Arial, sans-serif" font-size="22" text-anchor="middle">Как цифровая модель меняет правила игры</text>
+</svg>
