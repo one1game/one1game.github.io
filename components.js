@@ -18,8 +18,10 @@
   function active(state) { return state ? ' active' : ''; }
 
   // ── Nav ────────────────────────────────────────────
+  var skipLink = document.querySelector('.skip-link') ? '' :
+    '<a href="#main-content" class="skip-link">Перейти к контенту</a>';
   var nav =
-    '<a href="#main-content" class="skip-link">Перейти к контенту</a>' +
+    skipLink +
     '<nav class="site-nav" aria-label="Главная навигация">' +
     '  <div class="nav-inner">' +
     '    <a href="/" class="nav-logo">ONE1GAME</a>' +
@@ -155,16 +157,25 @@
       return map[cat] || '';
     };
 
+    function escapeHTML(value) {
+      return String(value == null ? '' : value).replace(/[&<>"']/g, function(ch) {
+        return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[ch];
+      });
+    }
+
     var html = '';
     for (var r = 0; r < top.length; r++) {
       var art = top[r].article;
-      var img = art.image ? '<img src="' + art.image + '" alt="' + art.title + '" loading="lazy" width="1344" height="768">' : '';
+      var safeUrl = escapeHTML(art.url || '#');
+      var safeTitle = escapeHTML(art.title || '');
+      var safeCategory = escapeHTML(art.category || '');
+      var img = art.image ? '<img src="' + escapeHTML(art.image) + '" alt="' + safeTitle + '" loading="lazy" width="1344" height="768">' : '';
       html +=
-        '<a href="' + art.url + '" class="related-card">' +
+        '<a href="' + safeUrl + '" class="related-card">' +
           (img ? '<div class="related-img">' + img + '</div>' : '') +
           '<div class="related-info">' +
-            '<span class="related-cat ' + catClass(art.category) + '">' + (art.category || '') + '</span>' +
-            '<h5>' + art.title + '</h5>' +
+            '<span class="related-cat ' + catClass(art.category) + '">' + safeCategory + '</span>' +
+            '<h5>' + safeTitle + '</h5>' +
           '</div>' +
         '</a>';
     }

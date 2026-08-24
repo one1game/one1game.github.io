@@ -1127,7 +1127,7 @@ a:focus-visible,button:focus-visible,.cat-pill:focus-visible{
   background: rgba(0, 0, 0, 0.3);
   border: 1px solid rgba(255, 255, 255, 0.15);
   border-radius: 6px;
-  color: var(--text-base);
+  color: var(--text);
   font-size: 14px;
 }
 .newsletter-form input:focus { outline: none; border-color: var(--cyan); }
@@ -1164,7 +1164,7 @@ a:focus-visible,button:focus-visible,.cat-pill:focus-visible{
 .comments-section h4 {
   margin: 0 0 16px;
   font-size: 17px;
-  color: var(--text-base);
+  color: var(--text);
   display: flex;
   align-items: center;
   justify-content: center;

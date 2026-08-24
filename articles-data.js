@@ -122,6 +122,7 @@ window.allArticles =
     "url": "/archive/skrytye-lovushki-apgreyda-2026.html",
     "title": "Скрытые ловушки апгрейда в 2026: Почему ваш ПК «задушит» RTX 5090 и RX 9070 XT?",
     "excerpt": "80% пользователей сталкиваются с тем, что их ПК не готов к новым GPU. Процессорные заторы, кабельный ад, иллюзия Frame Gen — разбираем скрытые расходы и требования.",
+    "date": "10 июля 2026",
     "readTime": "8 мин",
     "category": "Гайды",
     "image": "/img/ai/output/upgrade_traps_2026.png"

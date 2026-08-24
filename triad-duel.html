@@ -311,31 +311,31 @@
       </div>
       
       <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
-        <button class="faq-question" onclick="this.parentElement.classList.toggle('active')">
+        <button class="faq-question" type="button" aria-expanded="false" aria-controls="faq-answer-1" onclick="const active = this.parentElement.classList.toggle('active'); this.setAttribute('aria-expanded', String(active));">
           <span itemprop="name">Нужно ли скачивать Triad Duel на телефон?</span>
-          <span>+</span>
+          <span aria-hidden="true">+</span>
         </button>
-        <div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+        <div id="faq-answer-1" class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
           <div itemprop="text">Нет, игра является Telegram Mini App. Она запускается прямо внутри мессенджера Telegram по ссылке, не занимая память устройства и не требуя установки APK или IPA файлов.</div>
         </div>
       </div>
 
       <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
-        <button class="faq-question" onclick="this.parentElement.classList.toggle('active')">
+        <button class="faq-question" type="button" aria-expanded="false" aria-controls="faq-answer-2" onclick="const active = this.parentElement.classList.toggle('active'); this.setAttribute('aria-expanded', String(active));">
           <span itemprop="name">Как получить бонус 100 Remains?</span>
-          <span>+</span>
+          <span aria-hidden="true">+</span>
         </button>
-        <div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+        <div id="faq-answer-2" class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
           <div itemprop="text">Перейдите по реферальной ссылке, запустите игру и выиграйте свой первый бой (PvP или PvE). После этого бонус в 100 Remains автоматически начислится и вам, и игроку, чью ссылку вы использовали.</div>
         </div>
       </div>
 
       <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
-        <button class="faq-question" onclick="this.parentElement.classList.toggle('active')">
+        <button class="faq-question" type="button" aria-expanded="false" aria-controls="faq-answer-3" onclick="const active = this.parentElement.classList.toggle('active'); this.setAttribute('aria-expanded', String(active));">
           <span itemprop="name">Есть ли в игре Pay-to-Win (победа за деньги)?</span>
-          <span>+</span>
+          <span aria-hidden="true">+</span>
         </button>
-        <div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+        <div id="faq-answer-3" class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
           <div itemprop="text">Нет. Премиум-аккаунт за 149 Telegram Stars дает только ускорение прокачки (x2 золота за победу), но не увеличивает характеристики карт в бою. Исход PvP-сражения зависит исключительно от вашей тактики и собранной колоды.</div>
         </div>
       </div>
@@ -353,7 +353,7 @@
         <br>
         
         <div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap;">
-          <a href="https://t.me/triad_duel_bot/triad_duel?startapp=ref8292691540" target="_blank" rel="noopener noreferrer" class="btn btn-gold" onclick="gtag('event', 'click_play', {event_category: 'game', event_label: 'cta'})">
+          <a href="https://t.me/triad_duel_bot/triad_duel?startapp=ref8292691540" target="_blank" rel="noopener noreferrer" class="btn btn-gold" onclick="trackEvent('click_play', {event_category: 'game', event_label: 'cta'})">
             🚀 Запустить игру в Telegram
           </a>
           <button class="btn btn-outline" onclick="copyRefLink()">
@@ -403,6 +403,10 @@
 
   <!-- JS для интерактива -->
   <script>
+    function trackEvent(name, params) {
+      if (typeof window.gtag === 'function') window.gtag('event', name, params);
+    }
+
     function copyRefLink() {
       const link = document.getElementById('refLink').innerText.trim();
       navigator.clipboard.writeText(link).then(() => {
@@ -410,7 +414,7 @@
         msg.style.opacity = '1';
         setTimeout(() => { msg.style.opacity = '0'; }, 2500);
       });
-      gtag('event', 'click_copy_link', {event_category: 'game', event_label: 'cta'});
+      trackEvent('click_copy_link', {event_category: 'game', event_label: 'cta'});
     }
 
     // Плавное появление элементов при скролле
@@ -433,17 +437,18 @@
 
     // Share URLs with hashtags
     (function initShare() {
-      const url = encodeURIComponent('https://one1game.github.io/triad-duel.html');
-      const title = encodeURIComponent('Triad Duel — Тактическая карточная PvP-битва в Telegram. Играй бесплатно!');
+      const pageUrl = 'https://one1game.github.io/triad-duel.html';
+      const url = encodeURIComponent(pageUrl);
+      const shareTitle = 'Triad Duel — Тактическая карточная PvP-битва в Telegram. Играй бесплатно!';
       const hashtags = '#TelegramИгры #MiniApp #ИгрыВТелеграм #ТелеграмБот #ИграБезСкачивания #WebGame #НоваяИграВТелеграм #ТопИгрТелеграм';
-      const hashEnc = encodeURIComponent(hashtags);
-      const textEnc = encodeURIComponent(title + ' ' + hashtags);
-      const twHashtags = 'TelegramИгры,MiniApp,ИгрыВТелеграм,ТелеграмБот,ИграБезСкачивания,WebGame,НоваяИграВТелеграм,ТопИгрТелеграм';
+      const textEnc = encodeURIComponent(shareTitle + ' ' + hashtags);
+      const titleEnc = encodeURIComponent(shareTitle);
+      const twHashtags = encodeURIComponent('TelegramИгры,MiniApp,ИгрыВТелеграм,ТелеграмБот,ИграБезСкачивания,WebGame,НоваяИграВТелеграм,ТопИгрТелеграм');
 
       document.querySelector('.share-vk').href = 'https://vk.com/share.php?url=' + url + '&title=' + textEnc;
       document.querySelector('.share-tg').href = 'https://t.me/share/url?url=' + url + '&text=' + textEnc;
-      document.querySelector('.share-tw').href = 'https://twitter.com/intent/tweet?url=' + url + '&text=' + title + '&hashtags=' + twHashtags;
-      document.querySelector('.share-wa').href = 'https://wa.me/?text=' + textEnc + '%20' + url;
+      document.querySelector('.share-tw').href = 'https://twitter.com/intent/tweet?url=' + url + '&text=' + titleEnc + '&hashtags=' + twHashtags;
+      document.querySelector('.share-wa').href = 'https://wa.me/?text=' + encodeURIComponent(shareTitle + ' ' + hashtags + ' ' + pageUrl);
     })();
   </script>
 </body>
