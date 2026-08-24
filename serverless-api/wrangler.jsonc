@@ -1,0 +1,10 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "one1game-api",
+  "main": "worker.js",
+  "compatibility_date": "2026-08-24",
+  "workers_dev": true,
+  "vars": {
+    "ALLOWED_ORIGIN": "https://one1game.github.io"
+  }
+}

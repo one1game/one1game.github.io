@@ -32,18 +32,10 @@
   <link rel="stylesheet" href="styles.css?v=5" />
   <link rel="manifest" href="/manifest.json" />
   <meta name="theme-color" content="#06060c" />
+  <!-- Google Analytics loads only after explicit consent -->
+  <script defer src="/analytics-consent.js?v=1"></script>
 
-  <!-- Google Analytics -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-SZYYDYEC6T"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-SZYYDYEC6T');
-  </script>
-
-
-  <!-- JSON-LD CollectionPage -->
+<!-- JSON-LD CollectionPage -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -92,6 +84,7 @@
 
 </main>
 <script src="/cache-version.js"></script>
+<script defer src="/analytics-consent.js?v=1"></script>
 <script>document.write('<script defer src="articles-data.js?v='+(window.CACHE_VER||'1')+'"><\/script>');</script>
 <script>
 // === ARCHIVE PAGE LOGIC ===
@@ -99,6 +92,18 @@ let allArticles = [];
 let currentCategory = 'all';
 let currentPage = 1;
 const perPage = 6;
+
+function escapeHTML(value) {
+  const div = document.createElement('div');
+  div.textContent = value == null ? '' : String(value);
+  return div.innerHTML;
+}
+
+function trackArchiveEvent(name, params) {
+  if (window.One1GameAnalytics && typeof window.One1GameAnalytics.track === 'function') {
+    window.One1GameAnalytics.track(name, params || {});
+  }
+}
 
 document.addEventListener('DOMContentLoaded', () => {
   setTimeout(() => {
@@ -123,9 +128,11 @@ function initFilters() {
   });
   const categories = ['all', ...cats];
   const filterEl = document.getElementById('category-filter');
-  filterEl.innerHTML = categories.map(c =>
-    `<button class="cat-pill${c === currentCategory ? ' active' : ''}" data-category="${c}">${c === 'all' ? 'Все' : c}</button>`
-  ).join('');
+  filterEl.innerHTML = categories.map(c => {
+    const safeCategory = escapeHTML(c);
+    const label = c === 'all' ? 'Все' : safeCategory;
+    return `<button type="button" class="cat-pill${c === currentCategory ? ' active' : ''}" data-category="${safeCategory}" aria-pressed="${c === currentCategory}">${label}</button>`;
+  }).join('');
 
   filterEl.addEventListener('click', e => {
     if (e.target.classList.contains('cat-pill')) {
@@ -133,6 +140,8 @@ function initFilters() {
       e.target.classList.add('active');
       currentCategory = e.target.dataset.category;
       currentPage = 1;
+      filterEl.querySelectorAll('.cat-pill').forEach(b => b.setAttribute('aria-pressed', String(b === e.target)));
+      trackArchiveEvent('archive_filter', { category: currentCategory });
       filterAndDisplay();
     }
   });
@@ -143,6 +152,7 @@ function initSearch() {
   if (!input) return;
   input.addEventListener('input', () => {
     currentPage = 1;
+    trackArchiveEvent('archive_search', { has_query: Boolean(input.value.trim()) });
     filterAndDisplay();
   });
 }
@@ -185,15 +195,22 @@ function filterAndDisplay() {
   container.innerHTML = pageArticles.map(a => {
     const catClass = categoryMap[a.category] || '';
     const isFirst = (currentPage === 1 && allArticles.indexOf(a) === 0);
+    const safeUrl = escapeHTML(a.url || '#');
+    const safeImage = escapeHTML(a.image || '');
+    const safeTitle = escapeHTML(a.title || '');
+    const safeCategory = escapeHTML(a.category || '');
+    const safeExcerpt = escapeHTML(a.excerpt || '');
+    const safeDate = escapeHTML(a.date || '');
+    const safeReadTime = escapeHTML(a.readTime || '5 мин');
     return `
-    <a href="${a.url}" class="article-card${isFirst ? ' featured' : ''}">
-      ${a.image ? `<div class="card-image"><img src="${a.image}" alt="${a.title}" loading="lazy" width="1344" height="768"></div>` : ''}
-      ${a.category ? `<span class="card-category ${catClass}">${a.category}</span>` : ''}
-      <h3>${a.title}</h3>
-      <p class="card-excerpt">${a.excerpt || ''}</p>
+    <a href="${safeUrl}" class="article-card${isFirst ? ' featured' : ''}">
+      ${safeImage ? `<div class="card-image"><img src="${safeImage}" alt="${safeTitle}" loading="${isFirst ? 'eager' : 'lazy'}" fetchpriority="${isFirst ? 'high' : 'auto'}" width="1344" height="768"></div>` : ''}
+      ${safeCategory ? `<span class="card-category ${catClass}">${safeCategory}</span>` : ''}
+      <h3>${safeTitle}</h3>
+      <p class="card-excerpt">${safeExcerpt}</p>
       <div class="card-meta">
-        <span><i class="far fa-calendar"></i> ${a.date || ''}</span>
-        <span><i class="far fa-clock"></i> ${a.readTime || '5 мин'}</span>
+        <span><i class="far fa-calendar" aria-hidden="true"></i> ${safeDate}</span>
+        <span><i class="far fa-clock" aria-hidden="true"></i> ${safeReadTime}</span>
       </div>
     </a>`;
   }).join('');
@@ -208,7 +225,8 @@ function filterAndDisplay() {
   pagEl.innerHTML = pagHTML;
   pagEl.querySelectorAll('.page-btn').forEach(btn => {
     btn.addEventListener('click', () => {
-      currentPage = parseInt(btn.dataset.page);
+      currentPage = parseInt(btn.dataset.page, 10);
+      trackArchiveEvent('archive_page', { page: currentPage });
       filterAndDisplay();
       window.scrollTo({ top: 300, behavior: 'smooth' });
     });

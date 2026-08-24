@@ -29,27 +29,10 @@
   <meta name="robots" content="index, follow" />
 
   <!-- Скрипт аналитики загружается динамически только после согласия (GDPR) -->
-  <script>
-    window.gaEnabled = false;
-    function enableGA() {
-      if (window.gaEnabled) return;
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      window.gtag = gtag;
-      gtag('js', new Date());
-      gtag('config', 'G-SZYYDYEC6T', { anonymize_ip: true });
-      
-      if (!document.getElementById('ga-script')) {
-        var script = document.createElement('script');
-        script.id = 'ga-script';
-        script.async = true;
-        script.src = 'https://www.googletagmanager.com/gtag/js?id=G-SZYYDYEC6T';
-        document.head.appendChild(script);
-      }
-      window.gaEnabled = true;
-    }
-    if (localStorage.getItem('ga_consent') === 'yes') enableGA();
-  </script>
+  <!-- Google Analytics loads only after explicit consent -->
+  <script defer src="/analytics-consent.js?v=1"></script>
+
+
   
   <link href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css" rel="stylesheet" />
   <link rel="stylesheet" href="/styles.css?v=13" />
@@ -485,6 +468,7 @@ function declineCookies() {
   }
 })();
 </script>
+<script defer src="/api-config.js?v=1"></script>
 <script src="/newsletter.js?v=2" defer></script>
 </body>
 </html>

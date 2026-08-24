@@ -2,3 +2,8 @@
 /img/ai/*
 # Но картинки в output/ — пушим (они нужны статьям)
 !/img/ai/output/
+
+# Serverless API secrets and local tooling
+serverless-api/.dev.vars
+serverless-api/.env*
+serverless-api/node_modules/

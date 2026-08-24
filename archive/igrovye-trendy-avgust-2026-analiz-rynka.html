@@ -47,20 +47,10 @@
   <meta name="twitter:image" content="https://one1game.github.io/img/igrovye-trendy-2026.webp" />
 
   <!-- Analytics -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-SZYYDYEC6T"></script>
-  <script>
-    window.gaEnabled = false;
-    function enableGA() {
-      if (window.gaEnabled) return;
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      window.gtag = gtag;
-      gtag('js', new Date());
-      gtag('config', 'G-SZYYDYEC6T', { anonymize_ip: true });
-      window.gaEnabled = true;
-    }
-    if (localStorage.getItem('ga_consent') === 'yes') enableGA();
-  </script>
+  <!-- Google Analytics loads only after explicit consent -->
+  <script defer src="/analytics-consent.js?v=1"></script>
+
+
   <noscript>
     <img src="https://www.google-analytics.com/collect?v=1&tid=G-SZYYDYEC6T&cid=anon&t=event&ec=NoScript&ea=View" alt="" style="display:none;" />
   </noscript>

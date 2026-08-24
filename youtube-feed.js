@@ -1,100 +1,134 @@
-// youtube-feed.js — лента последних видео YouTube через API с кэшем
+// youtube-feed.js — лента последних видео через защищённый serverless endpoint
 (function() {
   'use strict';
 
   var CONTAINER_ID = 'yt-feed';
-  var API_KEY = 'AIzaSyAZmC4iYKyT6KUfV2hgTiK_rAw6KgS-U6U';
-  var CHANNEL_ID = 'UChR3kvItnDlJ8vn2_sBmTiQ';
+  var API_BASE = String(window.ONE1GAME_API_BASE || '').replace(/\/$/, '');
   var MAX_RESULTS = 6;
   var CACHE_KEY = 'one1game_yt_cache';
-  var CACHE_TTL = 60 * 60 * 1000; // 1 час
+  var CACHE_TTL = 60 * 60 * 1000;
 
   var container = document.getElementById(CONTAINER_ID);
   if (!container) return;
 
-  // Показываем скелетон
-  container.innerHTML = '<div class="yt-loading">Загрузка видео...</div>';
+  container.innerHTML = '<div class="yt-loading" role="status" aria-live="polite">Загрузка видео...</div>';
 
-  // Проверяем кэш
   var cached = getCache();
   if (cached) {
     render(cached);
     return;
   }
 
-  // Запрашиваем API
-  var url = 'https://www.googleapis.com/youtube/v3/search' +
-    '?part=snippet' +
-    '&channelId=' + CHANNEL_ID +
-    '&order=date' +
-    '&maxResults=' + MAX_RESULTS +
-    '&type=video' +
-    '&key=' + API_KEY;
+  var feedUrl = API_BASE ? API_BASE + '/api/youtube-feed' : '/youtube-feed-fallback.json';
 
-  fetch(url)
-    .then(function(r) { return r.json(); })
-    .then(function(data) {
-      if (!data.items || data.items.length === 0) {
-        container.innerHTML = '<div class="yt-empty">Нет видео</div>';
+  fetch(feedUrl, {
+    headers: { 'Accept': 'application/json' }
+  })
+    .then(function(response) {
+      return response.json().catch(function() { return {}; }).then(function(data) {
+        if (!response.ok || !data.ok || !Array.isArray(data.items)) {
+          throw new Error('feed_unavailable');
+        }
+        return data.items.slice(0, MAX_RESULTS);
+      });
+    })
+    .then(function(items) {
+      if (!items.length) {
+        container.innerHTML = '<div class="yt-empty" role="status">Нет видео</div>';
         return;
       }
-      setCache(data.items);
-      render(data.items);
+      setCache(items);
+      render(items);
     })
     .catch(function() {
-      // Fallback: пробуем кэш даже просроченный
       var stale = getCache(true);
-      if (stale) {
-        render(stale);
-      } else {
-        container.innerHTML = '<div class="yt-error">Не удалось загрузить видео</div>';
-      }
+      if (stale) render(stale);
+      else showError();
     });
+
+  function showError() {
+    container.innerHTML = '<div class="yt-error" role="status">Не удалось загрузить видео</div>';
+  }
 
   function getCache(ignoreTTL) {
     try {
       var raw = localStorage.getItem(CACHE_KEY);
       if (!raw) return null;
       var entry = JSON.parse(raw);
+      if (!entry || !Array.isArray(entry.data)) return null;
+      if (!entry.data.every(function(item) {
+        return item && item.videoId && item.title && item.thumbnail;
+      })) return null;
       if (!ignoreTTL && Date.now() - entry.ts > CACHE_TTL) return null;
       return entry.data;
-    } catch(e) { return null; }
+    } catch (error) {
+      return null;
+    }
   }
 
   function setCache(items) {
     try {
       localStorage.setItem(CACHE_KEY, JSON.stringify({ ts: Date.now(), data: items }));
-    } catch(e) {}
+    } catch (error) {}
   }
 
   function render(items) {
-    var html = '';
-    items.forEach(function(item, i) {
-      var vid = item.id.videoId;
-      var title = item.snippet.title;
-      var thumb = item.snippet.thumbnails.medium.url;
-      var date = new Date(item.snippet.publishedAt).toLocaleDateString('ru-RU', {
-        day: 'numeric', month: 'long', year: 'numeric'
-      });
+    var fragment = document.createDocumentFragment();
 
-      html +=
-        '<a href="https://www.youtube.com/watch?v=' + vid + '" class="yt-card" target="_blank" rel="noopener">' +
-        '  <div class="yt-thumb">' +
-        '    <img src="' + thumb + '" alt="" loading="lazy" />' +
-        '    <span class="yt-play"><i class="fab fa-youtube"></i></span>' +
-        '  </div>' +
-        '  <div class="yt-info">' +
-        '    <span class="yt-title">' + escapeHTML(title) + '</span>' +
-        '    <span class="yt-date">' + date + '</span>' +
-        '  </div>' +
-        '</a>';
+    items.forEach(function(item) {
+      if (!item || !item.videoId || !item.thumbnail) return;
+
+      var card = document.createElement('a');
+      card.href = 'https://www.youtube.com/watch?v=' + encodeURIComponent(item.videoId);
+      card.className = 'yt-card';
+      card.target = '_blank';
+      card.rel = 'noopener noreferrer';
+
+      var imageBox = document.createElement('div');
+      imageBox.className = 'yt-thumb';
+
+      var image = document.createElement('img');
+      image.src = item.thumbnail;
+      image.alt = item.title || 'Видео One1Game';
+      image.loading = 'lazy';
+      image.width = 320;
+      image.height = 180;
+      imageBox.appendChild(image);
+
+      var play = document.createElement('span');
+      play.className = 'yt-play';
+      play.setAttribute('aria-hidden', 'true');
+      play.innerHTML = '<i class="fab fa-youtube"></i>';
+      imageBox.appendChild(play);
+
+      var info = document.createElement('div');
+      info.className = 'yt-info';
+
+      var title = document.createElement('span');
+      title.className = 'yt-title';
+      title.textContent = item.title || '';
+      info.appendChild(title);
+
+      var date = document.createElement('span');
+      date.className = 'yt-date';
+      date.textContent = formatDate(item.publishedAt);
+      info.appendChild(date);
+
+      card.appendChild(imageBox);
+      card.appendChild(info);
+      fragment.appendChild(card);
     });
-    container.innerHTML = html;
+
+    container.replaceChildren(fragment);
   }
 
-  function escapeHTML(str) {
-    var div = document.createElement('div');
-    div.textContent = str;
-    return div.innerHTML;
+  function formatDate(value) {
+    var parsed = new Date(value);
+    if (Number.isNaN(parsed.getTime())) return '';
+    return parsed.toLocaleDateString('ru-RU', {
+      day: 'numeric',
+      month: 'long',
+      year: 'numeric'
+    });
   }
 })();

@@ -33,21 +33,10 @@
   <meta name="twitter:image" content="https://one1game.github.io/img/ai/output/ii_v_gejmdeve_2026.png" />
   <meta name="robots" content="index, follow" />
   <meta name="theme-color" content="#0a0a14" />
+  <!-- Google Analytics loads only after explicit consent -->
+  <script defer src="/analytics-consent.js?v=1"></script>
 
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-SZYYDYEC6T"></script>
-  <script>
-    window.gaEnabled = false;
-    function enableGA() {
-      if (window.gaEnabled) return;
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      window.gtag = gtag;
-      gtag('js', new Date());
-      gtag('config', 'G-SZYYDYEC6T', { anonymize_ip: true });
-      window.gaEnabled = true;
-    }
-    if (localStorage.getItem('ga_consent') === 'yes') enableGA();
-  </script>
+
 
   <!-- FontAwesome: один объединённый файл вместо трёх -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css" />
@@ -1675,6 +1664,7 @@ document.addEventListener('click', function(e) {
   }
 });
 </script>
+<script defer src="/api-config.js?v=1"></script>
 <script src="/newsletter.js?v=2" defer></script>
 
 <script>

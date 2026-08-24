@@ -1,4 +1,10 @@
 // One1Game Platform - Working Version with Smart Radio
+window.One1GameAnalytics = window.One1GameAnalytics || {
+  track: function(name, params) {
+    if (typeof window.gtag === 'function') window.gtag('event', name, params || {});
+  }
+};
+
 class One1GamePlatform {
   constructor() {
       this.isPlaying = false;
@@ -41,7 +47,8 @@ class One1GamePlatform {
     resize();
     window.addEventListener('resize', resize);
     const draw = () => {
-      ctx.fillStyle = 'rgba(6,6,13,0.07)';
+      if (!document.hidden) {
+        ctx.fillStyle = 'rgba(6,6,13,0.07)';
       ctx.fillRect(0, 0, w, h);
       ctx.font = fontSize + 'px monospace';
       for (let i = 0; i < cols; i++) {
@@ -51,6 +58,7 @@ class One1GamePlatform {
         ctx.fillText(ch, i * fontSize, drops[i] * fontSize);
         if (drops[i] * fontSize < -fontSize * 2 && Math.random() > 0.992) drops[i] = h / fontSize + 2;
         drops[i] -= 0.017;
+        }
       }
       requestAnimationFrame(draw);
     };
@@ -66,6 +74,11 @@ class One1GamePlatform {
       const href = link.getAttribute('href');
       if (!href || href.startsWith('#') || href.startsWith('http') || href.startsWith('mailto') || link.hasAttribute('download') || link.target === '_blank') return;
       
+      if (window.One1GameAnalytics) {
+        window.One1GameAnalytics.track('internal_link_click', {
+          destination: new URL(href, window.location.href).pathname
+        });
+      }
       e.preventDefault();
       // Fade out
       document.body.style.opacity = '0';
@@ -173,8 +186,10 @@ class One1GamePlatform {
   initializePlatform() {
       console.log('🚀 Initializing One1Game Platform...');
 
-      // Matrix rain background
-      this.initMatrixRain();
+      // Matrix rain is a decorative home-page effect; avoid spending CPU on articles and tools.
+      if (document.body.classList.contains('page-home')) {
+        this.initMatrixRain();
+      }
       
       // Проверяем наличие всех элементов
       this.checkElements();
@@ -247,6 +262,11 @@ class One1GamePlatform {
     playBtn.addEventListener('click', () => {
       this.globalRadio.toggle();
       this.updateRadioButton(playBtn);
+      if (window.One1GameAnalytics) {
+        window.One1GameAnalytics.track('radio_toggle', {
+          state: this.globalRadio.isPlaying() ? 'playing' : 'paused'
+        });
+      }
     });
 
     // Визуализатор
@@ -273,6 +293,12 @@ class One1GamePlatform {
     const isPlaying = this.globalRadio ? this.globalRadio.isPlaying() : false;
     icon.className = isPlaying ? 'fas fa-pause' : 'fas fa-play';
     button.classList.toggle('playing', isPlaying);
+  }
+
+  escapeHTML(value) {
+    const div = document.createElement('div');
+    div.textContent = value == null ? '' : String(value);
+    return div.innerHTML;
   }
 
   updateVolumeIcon(volume) {
@@ -327,15 +353,22 @@ class One1GamePlatform {
 
     const cardHTML = (article, isFeatured) => {
       const catClass = categoryMap[article.category] || '';
+      const safeUrl = this.escapeHTML(article.url || '#');
+      const safeImage = this.escapeHTML(article.image || '');
+      const safeTitle = this.escapeHTML(article.title || '');
+      const safeCategory = this.escapeHTML(article.category || '');
+      const safeExcerpt = this.escapeHTML(article.excerpt || '');
+      const safeDate = this.escapeHTML(article.date || '');
+      const safeReadTime = this.escapeHTML(article.readTime || '5 мин');
       return `
-      <a href="${article.url}" class="article-card${isFeatured ? ' featured' : ''}">
-        ${article.image ? `<div class="card-image"><img src="${article.image}" alt="${article.title}" loading="lazy" width="1344" height="768"></div>` : ''}
-        ${article.category ? `<span class="card-category ${catClass}">${article.category}</span>` : ''}
-        <h3>${article.title}</h3>
-        <p class="card-excerpt">${article.excerpt || ''}</p>
+      <a href="${safeUrl}" class="article-card${isFeatured ? ' featured' : ''}">
+        ${safeImage ? `<div class="card-image"><img src="${safeImage}" alt="${safeTitle}" loading="${isFeatured ? 'eager' : 'lazy'}" fetchpriority="${isFeatured ? 'high' : 'auto'}" width="1344" height="768"></div>` : ''}
+        ${safeCategory ? `<span class="card-category ${catClass}">${safeCategory}</span>` : ''}
+        <h3>${safeTitle}</h3>
+        <p class="card-excerpt">${safeExcerpt}</p>
         <div class="card-meta">
-          <span><i class="far fa-calendar"></i> ${article.date || ''}</span>
-          <span><i class="far fa-clock"></i> ${article.readTime || '5 мин'}</span>
+          <span><i class="far fa-calendar" aria-hidden="true"></i> ${safeDate}</span>
+          <span><i class="far fa-clock" aria-hidden="true"></i> ${safeReadTime}</span>
         </div>
       </a>`;
     };
@@ -414,8 +447,9 @@ class One1GamePlatform {
       const catClass = categoryMap[cat] || '';
       const icon = icons[cat] || 'fa-folder';
       const encoded = encodeURIComponent(cat);
+      const safeCat = this.escapeHTML(cat);
       return `<a href="archive.html?category=${encoded}" class="cat-pill ${catClass}">
-        <i class="fas ${icon}"></i> ${cat} <span class="cat-count">${count}</span>
+        <i class="fas ${icon}" aria-hidden="true"></i> ${safeCat} <span class="cat-count">${count}</span>
       </a>`;
     }).join('');
 
@@ -427,7 +461,8 @@ class One1GamePlatform {
     const videoContainer = document.getElementById('video-container');
     if (!videoContainer) return;
 
-    const videoId = videoContainer.dataset.videoId || 'bA3CwT1yy_U';
+    const requestedVideoId = videoContainer.dataset.videoId || 'bA3CwT1yy_U';
+    const videoId = /^[A-Za-z0-9_-]{6,20}$/.test(requestedVideoId) ? requestedVideoId : 'bA3CwT1yy_U';
     const thumb = document.getElementById('video-thumb');
     const playBtn = document.getElementById('video-play-btn');
     
@@ -437,8 +472,10 @@ class One1GamePlatform {
 
     // Load iframe on click
     const loadVideo = () => {
+      if (window.One1GameAnalytics) window.One1GameAnalytics.track('video_play', { video_id: videoId });
       videoContainer.innerHTML = `
         <iframe src="https://www.youtube.com/embed/${videoId}?autoplay=1&mute=1"
+                title="Видео One1Game"
                 frameborder="0"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                 allowfullscreen
@@ -459,6 +496,26 @@ class One1GamePlatform {
         if (activeEl && (activeEl.tagName === 'INPUT' || activeEl.tagName === 'TEXTAREA' || activeEl.isContentEditable)) return;
         e.preventDefault();
         this.globalRadio.toggle();
+        if (window.One1GameAnalytics) {
+          window.One1GameAnalytics.track('radio_keyboard_toggle', {
+            state: this.globalRadio.isPlaying() ? 'playing' : 'paused'
+          });
+        }
+      }
+    });
+
+    document.addEventListener('click', (e) => {
+      const article = e.target.closest('.article-card');
+      if (article && window.One1GameAnalytics) {
+        window.One1GameAnalytics.track('article_click', {
+          destination: new URL(article.href, window.location.href).pathname
+        });
+      }
+      const category = e.target.closest('.cat-pill');
+      if (category && window.One1GameAnalytics) {
+        window.One1GameAnalytics.track('category_click', {
+          category: new URL(category.href, window.location.href).searchParams.get('category') || ''
+        });
       }
     });
 

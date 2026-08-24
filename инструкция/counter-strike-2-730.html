@@ -41,21 +41,10 @@
   <meta name="googlebot" content="index, follow" />
   <link rel="alternate" hreflang="ru" href="https://one1game.github.io/archive/counter-strike-2-730.html" />
   <link rel="alternate" hreflang="x-default" href="https://one1game.github.io/archive/counter-strike-2-730.html" />
+  <!-- Google Analytics loads only after explicit consent -->
+  <script defer src="/analytics-consent.js?v=1"></script>
 
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-SZYYDYEC6T"></script>
-  <script>
-    window.gaEnabled = false;
-    function enableGA() {
-      if (window.gaEnabled) return;
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      window.gtag = gtag;
-      gtag('js', new Date());
-      gtag('config', 'G-SZYYDYEC6T', { anonymize_ip: true });
-      window.gaEnabled = true;
-    }
-    if (localStorage.getItem('ga_consent') === 'yes') enableGA();
-  </script>
+
   <link href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css" rel="stylesheet" />
   <link rel="stylesheet" href="/styles.css?v=8" />
 
@@ -569,6 +558,7 @@ function declineCookies() {
   }
 })();
 </script>
+<script defer src="/api-config.js?v=1"></script>
 <script src="/newsletter.js?v=2" defer></script>
 </body>
 </html>

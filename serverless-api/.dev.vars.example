@@ -1,0 +1,4 @@
+# Copy to .dev.vars for local-only development.
+# Never commit .dev.vars or real values.
+BUTTONDOWN_API_KEY="replace-with-a-new-buttondown-key"
+YOUTUBE_API_KEY="replace-with-a-new-youtube-key"

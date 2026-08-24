@@ -1,7 +1,14 @@
-// newsletter.js — подписка через Buttondown API
+// newsletter.js — подписка через защищённый serverless endpoint
 (function() {
-  var API_KEY = 'a1846c71-2bb9-407f-9cbb-52dcde3693a8';
-  var API_URL = 'https://api.buttondown.email/v1/subscribers';
+  'use strict';
+
+  var API_BASE = String(window.ONE1GAME_API_BASE || '').replace(/\/$/, '');
+
+  function setMessage(msg, className, text) {
+    if (!msg) return;
+    msg.className = 'newsletter-msg ' + className;
+    msg.textContent = text;
+  }
 
   function handleNewsletter(event) {
     event.preventDefault();
@@ -11,67 +18,70 @@
     var container = form.closest('.newsletter-box') || form.parentElement;
     var msg = container ? container.querySelector('.newsletter-msg') : null;
     var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    var value = email ? email.value.trim().toLowerCase() : '';
 
-    if (!emailRegex.test(email.value)) {
-      email.classList.add('error');
-      if (msg) {
-        msg.className = 'newsletter-msg error';
-        msg.textContent = 'Пожалуйста, введите корректный email';
-      }
+    if (!email || !emailRegex.test(value) || value.length > 254) {
+      if (email) email.classList.add('error');
+      setMessage(msg, 'error', 'Пожалуйста, введите корректный email');
+      return false;
+    }
+
+    if (!API_BASE) {
+      setMessage(msg, 'error', 'Подписка временно недоступна. Попробуйте позже.');
       return false;
     }
 
     email.classList.remove('error');
-    btn.disabled = true;
-    btn.textContent = 'Отправка...';
+    if (btn) {
+      btn.disabled = true;
+      btn.textContent = 'Отправка...';
+    }
 
-    fetch(API_URL, {
+    fetch(API_BASE + '/api/newsletter', {
       method: 'POST',
       headers: {
-        'Authorization': 'Token ' + API_KEY,
-        'Content-Type': 'application/json'
+        'Content-Type': 'application/json',
+        'Accept': 'application/json'
       },
       body: JSON.stringify({
-        email_address: email.value,
-        tags: ['one1game-site']
+        email: value,
+        website: ''
       })
     })
-    .then(function(res) {
-      if (!res.ok) {
-        return res.json().then(function(err) {
-          throw new Error(err.detail || 'Ошибка сервера');
+      .then(function(res) {
+        return res.json().catch(function() { return {}; }).then(function(data) {
+          if (!res.ok || !data.ok) {
+            var error = new Error(data.error || 'subscription_failed');
+            error.status = res.status;
+            throw error;
+          }
+          return data;
         });
-      }
-      return res.json();
-    })
-    .then(function() {
-      if (msg) {
-        msg.className = 'newsletter-msg success';
-        msg.textContent = '✓ Спасибо! Проверьте почту для подтверждения подписки.';
-      }
-      email.value = '';
-    })
-    .catch(function(err) {
-      if (msg) {
-        msg.className = 'newsletter-msg error';
-        if (err.message && err.message.indexOf('already subscribed') !== -1) {
-          msg.textContent = 'Вы уже подписаны!';
+      })
+      .then(function() {
+        setMessage(msg, 'success', 'Спасибо! Проверьте почту для подтверждения подписки.');
+        email.value = '';
+      })
+      .catch(function(error) {
+        if (error && error.status === 409) {
+          setMessage(msg, 'error', 'Этот email уже подписан или не может быть добавлен.');
+        } else if (error && error.status === 429) {
+          setMessage(msg, 'error', 'Слишком много запросов. Попробуйте через минуту.');
         } else {
-          msg.textContent = 'Ошибка: ' + (err.message || 'попробуйте позже');
+          setMessage(msg, 'error', 'Не удалось оформить подписку. Попробуйте позже.');
         }
-      }
-    })
-    .finally(function() {
-      btn.disabled = false;
-      btn.textContent = 'Подписаться';
-    });
+      })
+      .finally(function() {
+        if (btn) {
+          btn.disabled = false;
+          btn.textContent = 'Подписаться';
+        }
+      });
 
     return false;
   }
 
-  // Attach to all newsletter forms on the page
-  var forms = document.querySelectorAll('.newsletter-form');
-  forms.forEach(function(form) {
+  document.querySelectorAll('.newsletter-form').forEach(function(form) {
     form.addEventListener('submit', handleNewsletter);
   });
 })();

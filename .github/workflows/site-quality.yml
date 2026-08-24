@@ -1,0 +1,56 @@
+name: Site quality
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  audit:
+    name: Static site audit
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+
+      - name: Audit HTML and local resources
+        run: python3 scripts/site_audit.py
+
+      - name: Check first-party JavaScript syntax
+        shell: bash
+        run: |
+          set -euo pipefail
+          mapfile -d '' files < <(find . -type f -name '*.js' \
+            -not -path './.git/*' \
+            -not -path './ot/assets/*' \
+            -not -path './triaddual/node_modules/*' \
+            -not -path './node_modules/*' \
+            -print0)
+          for file in "${files[@]}"; do
+            node --check "$file"
+          done
+
+      - name: Scan source for known leaked credential patterns
+        shell: bash
+        run: |
+          set -euo pipefail
+          if grep -RInE --exclude-dir=.git --exclude-dir=node_modules --exclude-dir=ot/assets \
+            'AIzaSy[A-Za-z0-9_-]{20,}|Authorization[[:space:]]*[:=].{0,40}Token[[:space:]]+[A-Za-z0-9]' .; then
+            echo 'Potential credential pattern detected.'
+            exit 1
+          fi
