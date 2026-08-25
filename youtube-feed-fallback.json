@@ -2,6 +2,12 @@
   "ok": true,
   "items": [
     {
+      "videoId": "0NZhwoGeh2s",
+      "title": "стрим номер 478 #rdr2 #reddeadredemption2",
+      "publishedAt": "2026-08-25T12:00:18+00:00",
+      "thumbnail": "https://i1.ytimg.com/vi/0NZhwoGeh2s/hqdefault.jpg"
+    },
+    {
       "videoId": "fsbWq-mjAMk",
       "title": "общения печенья #rdr2 #reddeadredemption2",
       "publishedAt": "2026-08-10T08:51:37+00:00",
@@ -30,12 +36,6 @@
       "title": "передряга в #reddeadredemption2 #rdr2",
       "publishedAt": "2026-08-01T18:11:45+00:00",
       "thumbnail": "https://i2.ytimg.com/vi/YDKJEnQeqWM/hqdefault.jpg"
-    },
-    {
-      "videoId": "IzK4zRTxp0s",
-      "title": "дядя деда",
-      "publishedAt": "2026-07-31T18:06:41+00:00",
-      "thumbnail": "https://i2.ytimg.com/vi/IzK4zRTxp0s/hqdefault.jpg"
     }
   ]
 }
