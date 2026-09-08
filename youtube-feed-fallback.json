@@ -2,6 +2,12 @@
   "ok": true,
   "items": [
     {
+      "videoId": "yZ24PjfVQ2Y",
+      "title": "Бродяга в #rdr2 #reddeadredemption2",
+      "publishedAt": "2026-09-08T08:00:08+00:00",
+      "thumbnail": "https://i2.ytimg.com/vi/yZ24PjfVQ2Y/hqdefault.jpg"
+    },
+    {
       "videoId": "duE3HkF2_i8",
       "title": "Голова лошадиная #rdr2 #reddeadredemption2",
       "publishedAt": "2026-09-05T07:23:24+00:00",
@@ -30,12 +36,6 @@
       "title": "лодочник #reddeadredemption2 #rdr2",
       "publishedAt": "2026-08-29T18:12:53+00:00",
       "thumbnail": "https://i1.ytimg.com/vi/0qNKuUvDxWk/hqdefault.jpg"
-    },
-    {
-      "videoId": "D1mpt4QcyTo",
-      "title": "прохождения #rdr2 часть 678 фото охота #reddeadredemption2",
-      "publishedAt": "2026-08-29T14:16:03+00:00",
-      "thumbnail": "https://i1.ytimg.com/vi/D1mpt4QcyTo/hqdefault.jpg"
     }
   ]
 }
