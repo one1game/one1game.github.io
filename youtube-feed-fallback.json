@@ -2,6 +2,18 @@
   "ok": true,
   "items": [
     {
+      "videoId": "n5aX_r8vMH0",
+      "title": "поиск нпц #rdr2 #reddeadredemption2",
+      "publishedAt": "2026-09-10T09:05:41+00:00",
+      "thumbnail": "https://i3.ytimg.com/vi/n5aX_r8vMH0/hqdefault.jpg"
+    },
+    {
+      "videoId": "PM3l1e0upgs",
+      "title": "наглый чел #rdr2 #reddeadredemption2",
+      "publishedAt": "2026-09-10T05:08:17+00:00",
+      "thumbnail": "https://i1.ytimg.com/vi/PM3l1e0upgs/hqdefault.jpg"
+    },
+    {
       "videoId": "31_GNWChCpI",
       "title": "прогулка в #rdr2 #reddeadredemption2",
       "publishedAt": "2026-09-09T18:41:18+00:00",
@@ -24,18 +36,6 @@
       "title": "осмотр поезда #rdr2 #reddeadredemption2",
       "publishedAt": "2026-09-08T16:13:02+00:00",
       "thumbnail": "https://i4.ytimg.com/vi/37iJGpU_C90/hqdefault.jpg"
-    },
-    {
-      "videoId": "_okh3_Q69E4",
-      "title": "Лошадина #rdr2 #reddeadredemption2",
-      "publishedAt": "2026-09-08T12:11:50+00:00",
-      "thumbnail": "https://i4.ytimg.com/vi/_okh3_Q69E4/hqdefault.jpg"
-    },
-    {
-      "videoId": "yZ24PjfVQ2Y",
-      "title": "Бродяга в #rdr2 #reddeadredemption2",
-      "publishedAt": "2026-09-08T08:00:08+00:00",
-      "thumbnail": "https://i2.ytimg.com/vi/yZ24PjfVQ2Y/hqdefault.jpg"
     }
   ]
 }
