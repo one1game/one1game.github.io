@@ -2,6 +2,18 @@
   "ok": true,
   "items": [
     {
+      "videoId": "3NtNib61h4A",
+      "title": "пещера #rdr2 #reddeadredemption2",
+      "publishedAt": "2026-09-11T09:12:54+00:00",
+      "thumbnail": "https://i4.ytimg.com/vi/3NtNib61h4A/hqdefault.jpg"
+    },
+    {
+      "videoId": "NJsUeChnyUk",
+      "title": "панда пума #rdr2 #reddeadredemption2",
+      "publishedAt": "2026-09-11T06:07:39+00:00",
+      "thumbnail": "https://i3.ytimg.com/vi/NJsUeChnyUk/hqdefault.jpg"
+    },
+    {
       "videoId": "2pjk_FFsfWs",
       "title": "Толстый в #sod3 #zombi #зомбиигра #зомбимутант",
       "publishedAt": "2026-09-10T15:24:09+00:00",
@@ -24,18 +36,6 @@
       "title": "поиск нпц #rdr2 #reddeadredemption2",
       "publishedAt": "2026-09-10T09:05:41+00:00",
       "thumbnail": "https://i3.ytimg.com/vi/n5aX_r8vMH0/hqdefault.jpg"
-    },
-    {
-      "videoId": "PM3l1e0upgs",
-      "title": "наглый чел #rdr2 #reddeadredemption2",
-      "publishedAt": "2026-09-10T05:08:17+00:00",
-      "thumbnail": "https://i1.ytimg.com/vi/PM3l1e0upgs/hqdefault.jpg"
-    },
-    {
-      "videoId": "31_GNWChCpI",
-      "title": "прогулка в #rdr2 #reddeadredemption2",
-      "publishedAt": "2026-09-09T18:41:18+00:00",
-      "thumbnail": "https://i4.ytimg.com/vi/31_GNWChCpI/hqdefault.jpg"
     }
   ]
 }
