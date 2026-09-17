@@ -2,6 +2,18 @@
   "ok": true,
   "items": [
     {
+      "videoId": "WyNrDeQyB0Y",
+      "title": "новая рубрика: Сделал игру за 5 минут #1",
+      "publishedAt": "2026-09-17T06:37:43+00:00",
+      "thumbnail": "https://i4.ytimg.com/vi/WyNrDeQyB0Y/hqdefault.jpg"
+    },
+    {
+      "videoId": "SUjXlGALUXQ",
+      "title": "Сделал игру за 5 минут #1gamedev #разработкаигр #ai",
+      "publishedAt": "2026-09-17T05:35:00+00:00",
+      "thumbnail": "https://i4.ytimg.com/vi/SUjXlGALUXQ/hqdefault.jpg"
+    },
+    {
       "videoId": "lC_Qt62QStc",
       "title": "легендарное видео #rdr2 #reddeadredemption2",
       "publishedAt": "2026-09-15T11:01:25+00:00",
@@ -24,18 +36,6 @@
       "title": "вагонетка #rdr2 #reddeadredemption2",
       "publishedAt": "2026-09-12T08:13:40+00:00",
       "thumbnail": "https://i2.ytimg.com/vi/QZA8mL9j5G4/hqdefault.jpg"
-    },
-    {
-      "videoId": "-F3CwM_Fx8E",
-      "title": "дорога к мяснику #rdr2 #reddeadredemption2",
-      "publishedAt": "2026-09-11T17:07:15+00:00",
-      "thumbnail": "https://i2.ytimg.com/vi/-F3CwM_Fx8E/hqdefault.jpg"
-    },
-    {
-      "videoId": "3NtNib61h4A",
-      "title": "пещера #rdr2 #reddeadredemption2",
-      "publishedAt": "2026-09-11T09:12:54+00:00",
-      "thumbnail": "https://i4.ytimg.com/vi/3NtNib61h4A/hqdefault.jpg"
     }
   ]
 }
