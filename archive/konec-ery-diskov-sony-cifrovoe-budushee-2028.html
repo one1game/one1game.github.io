@@ -29,7 +29,7 @@
   <meta name="twitter:image" content="https://one1game.github.io/img/sony-digital-discs-2028.svg" />
   <script defer src="/analytics-consent.js?v=1"></script>
   <link href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css" rel="stylesheet" />
-  <link rel="stylesheet" href="/styles.css?v=15" />
+  <link rel="stylesheet" href="/styles.css?v=16" />
   <link rel="stylesheet" href="/reactions.css" />
   <style>
     .reading-progress-container{position:fixed;top:0;left:0;width:100%;height:4px;z-index:10000}.reading-progress-bar{height:100%;background:var(--cyan,#00d4ff);width:0;transition:width .1s}
@@ -100,5 +100,5 @@ window.addEventListener('scroll',()=>{const y=document.documentElement.scrollTop
 function showToast(m){const t=document.getElementById('toast');t.textContent=m;t.classList.add('show');setTimeout(()=>t.classList.remove('show'),3000)}
 (function(){const currentUrl=window.location.pathname.replace(/^\/+/,'/'),all=window.allArticles||[],article=all.find(a=>a.url===currentUrl),url=encodeURIComponent('https://one1game.github.io'+currentUrl),title=encodeURIComponent(document.title);document.getElementById('share-buttons').innerHTML=['<a target="_blank" rel="nofollow noopener noreferrer" class="share-btn" href="https://vk.com/share.php?url='+url+'&title='+title+'">VK</a>','<a target="_blank" rel="nofollow noopener noreferrer" class="share-btn" href="https://t.me/share/url?url='+url+'&text='+title+'">Telegram</a>','<a target="_blank" rel="nofollow noopener noreferrer" class="share-btn" href="https://x.com/intent/tweet?url='+url+'&text='+title+'">X (Twitter)</a>'].join('');const related=all.filter(a=>a.url!==currentUrl&&(a.category==='Консоли'||(article&&a.tags&&article.tags&&a.tags.some(t=>article.tags.includes(t))))).slice(0,5);document.getElementById('related-container').innerHTML=(related.length?related:all.filter(a=>a.url!==currentUrl).slice(0,5)).map(a=>'<a href="'+a.url+'" class="related-card"><strong>'+a.title+'</strong><span>'+a.date+'</span></a>').join('')})()
 </script>
-<script src="/components.js?v=15" defer></script><script src="/reactions.js" defer></script>
+<script src="/components.js?v=16" defer></script><script src="/reactions.js" defer></script>
 </body></html>
