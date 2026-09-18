@@ -139,7 +139,7 @@
 
   // ── Inject ─────────────────────────────────────────
   body.insertAdjacentHTML('afterbegin', nav + dock + sheet + searchModal);
-  if (hasRadio) body.classList.add('has-dock');
+  body.classList.add('has-dock');
 
   var main = doc.querySelector('main#main-content');
   if (main) {
@@ -320,6 +320,12 @@
     if (!searchResults) return;
     var list = window.allArticles || [];
     var q = (searchInput ? searchInput.value : '').toLowerCase().trim();
+
+    if (!list.length) {
+      searchResults.innerHTML = '<div class="search-empty">' +
+        (dataState === 'ready' ? 'Материалы не найдены.' : 'Загрузка…') + '</div>';
+      return;
+    }
 
     var hits = [];
     if (!q) {
@@ -627,6 +633,15 @@
     } catch (e) {
       root.classList.remove('js-anim');
       return;
+    }
+
+    function show(el) {
+      if (el.dataset.shown) return;
+      el.dataset.shown = '1';
+      el.classList.add('in');
+      if (io) io.unobserve(el);
+      // Снимаем reveal-классы после анимации, чтобы не ломать hover-трансформы
+      setTimeout(function () { el.classList.remove('reveal', 'in'); }, 700);
     }
 
     function register(node) {

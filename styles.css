@@ -233,6 +233,7 @@ button, input, select, textarea { font: inherit; color: inherit; }
   0%, 100% { opacity: 1; transform: scale(1); }
   50% { opacity: 0.55; transform: scale(1.14); }
 }
+.dock-item[hidden] { display: none; }
 .dock-hidden { display: none !important; }
 
 /* =============================================================
@@ -564,12 +565,17 @@ button, input, select, textarea { font: inherit; color: inherit; }
 .card-image {
   position: relative; overflow: hidden;
   margin: -18px -18px 16px; border-radius: 0;
-  aspect-ratio: 16 / 9; background: var(--bg-soft);
+  aspect-ratio: 16 / 9; background-color: var(--bg-soft);
+  background-size: cover; background-position: center;
 }
 .card-image img {
   width: 100%; height: 100%; object-fit: cover; display: block;
   transition: transform 0.6s var(--ease-out), opacity 0.45s;
 }
+/* Процедурная обложка-заглушка, пока грузится настоящая картинка.
+   Если JS не отработал — класс covers-on не ставится, картинки видны сразу. */
+.covers-on .card-image img { opacity: 0; }
+.covers-on .card-image img.is-loaded { opacity: 1; }
 .card-image::after {
   content: ''; position: absolute; inset: 0; pointer-events: none;
   background: linear-gradient(180deg, rgba(5, 5, 10, 0.06) 40%, rgba(5, 5, 10, 0.55));
@@ -1033,12 +1039,7 @@ body.has-dock .cookie-banner { bottom: calc(var(--dock-h) + env(safe-area-inset-
 @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
 @keyframes fadeInUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
 
-.js-anim .reveal { opacity: 0; transform: translateY(16px); transition: opacity 0.55s var(--ease-out), transform 0.55s var(--ease-out); }
-.js-anim .reveal.in { opacity: 1; transform: none; }
-
-@media (prefers-reduced-motion: reduce) {
-  .js-anim .reveal { opacity: 1; transform: none; }
-}
+.js-anim .reveal.in { animation: fadeInUp 0.5s var(--ease-out) both; }
 
 /* =============================================================
    24. DESKTOP (mobile-first → апгрейд)
