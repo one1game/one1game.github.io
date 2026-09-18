@@ -29,8 +29,8 @@
   <script defer src="/analytics-consent.js?v=1"></script>
 
 
-  <link href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css" rel="stylesheet" />
-  <link rel="stylesheet" href="/styles.css?v=16" />
+  <link rel="preload" as="style" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css" onload="this.rel='stylesheet';this.removeAttribute('onload')" /><noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css" /></noscript>
+  <link rel="stylesheet" href="/styles.css?v=18" />
 
   <script type="application/ld+json">
   {
@@ -118,7 +118,7 @@
       </div>
     </div>
 
-    <figure class="article-hero"><img src="../img/ai/output/gta_6_analiz_utechek.png" alt="GTA 6: Полный анализ утечек и трейлера" width="1344" height="768" loading="eager" fetchpriority="high" style="width:100%;height:auto;border-radius:12px;margin-bottom:24px;"></figure>
+    <figure class="article-hero"><img src="../img/ai/output/gta_6_analiz_utechek.webp" alt="GTA 6: Полный анализ утечек и трейлера" width="1344" height="768" loading="eager" fetchpriority="high" style="width:100%;height:auto;border-radius:12px;margin-bottom:24px;"></figure>
 
     <article class="article-body">
 
@@ -418,7 +418,7 @@
 </main>
 
 <script src="/cache-version.js"></script>
-<script>document.write('<script src="/articles-data.js?v='+(window.CACHE_VER||'1')+'"><\/script>');</script>
+<script defer src="/articles-data.js?v=18"></script>
 <script>
 (function() {
   var path = window.location.pathname;
@@ -442,7 +442,7 @@
   }).join('');
 })();
 </script>
-<script src="/components.js?v=16" defer></script>
+<script src="/components.js?v=18" defer></script>
 <script src="/reactions.js" defer></script>
 <!-- Cookie Banner -->
 <div class="cookie-banner" id="cookie-banner" role="dialog" aria-live="polite" aria-label="Согласие на использование cookies">

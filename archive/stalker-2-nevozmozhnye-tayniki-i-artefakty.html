@@ -34,8 +34,8 @@
 
 
   
-  <link href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css" rel="stylesheet" />
-  <link rel="stylesheet" href="/styles.css?v=16" />
+  <link rel="preload" as="style" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css" onload="this.rel='stylesheet';this.removeAttribute('onload')" /><noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css" /></noscript>
+  <link rel="stylesheet" href="/styles.css?v=18" />
 
   <script type="application/ld+json">
   {
@@ -203,18 +203,16 @@
 
     <figure class="article-hero">
       <picture>
-        <source srcset="/img/ai/output/stalker2_hidden_stashes.avif" type="image/avif">
         <source srcset="/img/ai/output/stalker2_hidden_stashes.webp" type="image/webp">
         <img 
-          src="/img/ai/output/stalker2_hidden_stashes.png" 
+          src="/img/ai/output/stalker2_hidden_stashes.webp" 
           alt="S.T.A.L.K.E.R. 2 скрытые тайники и артефакты гайд" 
           width="1344" 
           height="768" 
           loading="eager" 
           fetchpriority="high" 
-          srcset="/img/ai/output/stalker2_hidden_stashes-480w.png 480w, 
-                  /img/ai/output/stalker2_hidden_stashes-800w.png 800w, 
-                  /img/ai/output/stalker2_hidden_stashes-1344w.png 1344w"
+          srcset="/img/ai/output/stalker2_hidden_stashes-800.webp 800w, 
+                  /img/ai/output/stalker2_hidden_stashes.webp 1344w"
           sizes="(max-width: 600px) 480px, (max-width: 1024px) 800px, 1344px"
           style="width:100%; height:auto; border-radius:12px; margin-bottom:24px;"
         >
@@ -438,7 +436,7 @@
   }
 })();
 </script>
-<script src="/components.js?v=16" defer></script>
+<script src="/components.js?v=18" defer></script>
 <script src="/reactions.js" defer></script>
 
 <!-- Cookie Banner -->

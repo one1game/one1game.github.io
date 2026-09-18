@@ -66,7 +66,7 @@
     '    <div class="nav-links">' + navLinks + '</div>' +
     '    <div class="nav-actions">' +
     '      <button type="button" class="icon-btn" id="search-btn" aria-label="Поиск по статьям"><i class="fas fa-magnifying-glass" aria-hidden="true"></i></button>' +
-    '      <button type="button" class="icon-btn icon-radio" id="radio-play" aria-label="Радио: включить или выключить"><i class="fas fa-play" aria-hidden="true"></i></button>' +
+    '      <button type="button" class="icon-btn icon-radio" id="radio-play"' + (hasRadio ? '' : ' hidden') + ' aria-label="Радио: включить или выключить"><i class="fas fa-play" aria-hidden="true"></i></button>' +
     '      <button type="button" class="icon-btn" id="sfx-toggle" aria-label="Звуки интерфейса" aria-pressed="false"><i class="fas fa-volume-xmark" aria-hidden="true"></i></button>' +
     '    </div>' +
     '  </div>' +

@@ -79,7 +79,6 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   -webkit-tap-highlight-color: transparent;
-  text-rendering: optimizeLegibility;
 }
 
 /* Space for the mobile dock */
@@ -103,9 +102,6 @@ body::after {
   background-size: 140px 140px;
 }
 @media (prefers-reduced-motion: reduce) { body::after { display: none; } }
-
-#matrix-bg { position: fixed; inset: 0; z-index: -1; pointer-events: none; opacity: 0.16; }
-@media (prefers-reduced-motion: reduce) { #matrix-bg { display: none; } }
 
 img { max-width: 100%; }
 button, input, select, textarea { font: inherit; color: inherit; }
@@ -151,10 +147,17 @@ button, input, select, textarea { font: inherit; color: inherit; }
    ============================================================= */
 .site-nav {
   position: sticky; top: 0; z-index: 300;
-  background: rgba(5, 5, 10, 0.72);
-  -webkit-backdrop-filter: blur(20px) saturate(180%);
-  backdrop-filter: blur(20px) saturate(180%);
+  /* На мобильных — плотный фон без backdrop-filter:
+     размытие подложки при скролле сильно грузит GPU слабых устройств. */
+  background: rgba(5, 5, 10, 0.96);
   border-bottom: 1px solid var(--line);
+}
+@media (min-width: 900px) {
+  .site-nav {
+    background: rgba(5, 5, 10, 0.74);
+    -webkit-backdrop-filter: blur(20px) saturate(180%);
+    backdrop-filter: blur(20px) saturate(180%);
+  }
 }
 .nav-inner {
   max-width: 1220px; margin: 0 auto; padding: 0 var(--pad);
@@ -193,6 +196,8 @@ button, input, select, textarea { font: inherit; color: inherit; }
 .icon-btn:hover { color: #fff; background: var(--surface-hi); border-color: var(--line); }
 .icon-btn:active { transform: scale(0.92); }
 .icon-btn.is-on { color: var(--cyan); border-color: var(--accent-line); background: var(--accent-soft); }
+.icon-btn.playing { color: var(--lime); border-color: rgba(57, 255, 20, 0.3); background: rgba(57, 255, 20, 0.08); }
+.icon-btn[hidden] { display: none; }
 .icon-radio { display: none; }
 
 /* =============================================================
@@ -203,9 +208,7 @@ button, input, select, textarea { font: inherit; color: inherit; }
   display: flex; align-items: stretch;
   height: calc(var(--dock-h) + env(safe-area-inset-bottom, 0px));
   padding-bottom: env(safe-area-inset-bottom, 0px);
-  background: rgba(6, 6, 12, 0.86);
-  -webkit-backdrop-filter: blur(22px) saturate(180%);
-  backdrop-filter: blur(22px) saturate(180%);
+  background: rgba(6, 6, 12, 0.97);
   border-top: 1px solid var(--line);
 }
 .dock-item {
@@ -348,6 +351,8 @@ button, input, select, textarea { font: inherit; color: inherit; }
   background: linear-gradient(180deg, rgba(5, 5, 10, 0.30) 0%, rgba(5, 5, 10, 0.62) 55%, var(--bg) 100%);
 }
 .hero-inner { position: relative; z-index: 2; }
+/* Любой контент hero (в т.ч. страницы без .hero-inner) — выше градиентной подложки */
+.hero > *:not(.hero-canvas) { position: relative; z-index: 2; }
 .hero-badge {
   display: inline-flex; align-items: center; gap: 8px;
   padding: 6px 14px; margin-bottom: 16px;
@@ -429,9 +434,7 @@ button, input, select, textarea { font: inherit; color: inherit; }
 .cat-rail {
   position: sticky; top: var(--nav-h); z-index: 250;
   margin: 0 0 26px;
-  background: rgba(5, 5, 10, 0.82);
-  -webkit-backdrop-filter: blur(18px) saturate(160%);
-  backdrop-filter: blur(18px) saturate(160%);
+  background: rgba(5, 5, 10, 0.97);
   border-bottom: 1px solid var(--line);
 }
 .categories-row {
@@ -464,24 +467,30 @@ button, input, select, textarea { font: inherit; color: inherit; }
   font-family: var(--mono); font-size: 0.66rem; font-weight: 700;
   background: rgba(255, 255, 255, 0.07); color: var(--text-dim);
 }
-.cat-tech { color: var(--cyan); border-color: rgba(0, 229, 255, 0.2); background: rgba(0, 229, 255, 0.05); }
+/* Цвета категорий. Селекторы составные, чтобы перебивать базовые стили
+   пилюль в рельсе, на карточке, в шапке статьи и в блоке related. */
+.categories-row .cat-pill.cat-tech, .card-category.cat-tech, .article-header .article-category.cat-tech, .related-info .related-cat.cat-tech { color: var(--cyan); border-color: rgba(0, 229, 255, 0.22); background: rgba(0, 229, 255, 0.07); }
 .cat-tech .cat-count { background: rgba(0, 229, 255, 0.14); color: var(--cyan); }
-.cat-guides { color: var(--lime); border-color: rgba(57, 255, 20, 0.2); background: rgba(57, 255, 20, 0.045); }
+.categories-row .cat-pill.cat-guides, .card-category.cat-guides, .article-header .article-category.cat-guides, .related-info .related-cat.cat-guides { color: var(--lime); border-color: rgba(57, 255, 20, 0.22); background: rgba(57, 255, 20, 0.06); }
 .cat-guides .cat-count { background: rgba(57, 255, 20, 0.12); color: var(--lime); }
-.cat-consoles { color: var(--magenta); border-color: rgba(255, 45, 123, 0.2); background: rgba(255, 45, 123, 0.045); }
+.categories-row .cat-pill.cat-consoles, .card-category.cat-consoles, .article-header .article-category.cat-consoles, .related-info .related-cat.cat-consoles { color: var(--magenta); border-color: rgba(255, 45, 123, 0.22); background: rgba(255, 45, 123, 0.06); }
 .cat-consoles .cat-count { background: rgba(255, 45, 123, 0.12); color: var(--magenta); }
-.cat-analytics { color: var(--gold); border-color: rgba(255, 215, 64, 0.2); background: rgba(255, 215, 64, 0.045); }
+.categories-row .cat-pill.cat-analytics, .card-category.cat-analytics, .article-header .article-category.cat-analytics, .related-info .related-cat.cat-analytics { color: var(--gold); border-color: rgba(255, 215, 64, 0.22); background: rgba(255, 215, 64, 0.06); }
 .cat-analytics .cat-count { background: rgba(255, 215, 64, 0.12); color: var(--gold); }
-.cat-trends { color: var(--purple); border-color: rgba(179, 107, 255, 0.2); background: rgba(179, 107, 255, 0.045); }
+.categories-row .cat-pill.cat-trends, .card-category.cat-trends, .article-header .article-category.cat-trends, .related-info .related-cat.cat-trends { color: var(--purple); border-color: rgba(179, 107, 255, 0.22); background: rgba(179, 107, 255, 0.06); }
 .cat-trends .cat-count { background: rgba(179, 107, 255, 0.12); color: var(--purple); }
-.cat-dev { color: var(--coral); border-color: rgba(255, 110, 64, 0.2); background: rgba(255, 110, 64, 0.045); }
+.categories-row .cat-pill.cat-dev, .card-category.cat-dev, .article-header .article-category.cat-dev, .related-info .related-cat.cat-dev { color: var(--coral); border-color: rgba(255, 110, 64, 0.22); background: rgba(255, 110, 64, 0.06); }
 .cat-dev .cat-count { background: rgba(255, 110, 64, 0.12); color: var(--coral); }
-.cat-opinion { color: #ffab40; border-color: rgba(255, 171, 64, 0.2); background: rgba(255, 171, 64, 0.045); }
+.categories-row .cat-pill.cat-opinion, .card-category.cat-opinion, .article-header .article-category.cat-opinion, .related-info .related-cat.cat-opinion { color: #ffab40; border-color: rgba(255, 171, 64, 0.22); background: rgba(255, 171, 64, 0.06); }
 .cat-opinion .cat-count { background: rgba(255, 171, 64, 0.12); color: #ffab40; }
-.cat-movies { color: var(--cyan); border-color: rgba(0, 229, 255, 0.2); background: rgba(0, 229, 255, 0.05); }
+.categories-row .cat-pill.cat-movies, .card-category.cat-movies, .article-header .article-category.cat-movies, .related-info .related-cat.cat-movies { color: var(--cyan); border-color: rgba(0, 229, 255, 0.22); background: rgba(0, 229, 255, 0.07); }
 .cat-movies .cat-count { background: rgba(0, 229, 255, 0.14); color: var(--cyan); }
-.cat-play { color: #2effb2; border-color: rgba(46, 255, 178, 0.2); background: rgba(46, 255, 178, 0.045); }
+.categories-row .cat-pill.cat-play, .card-category.cat-play, .article-header .article-category.cat-play, .related-info .related-cat.cat-play { color: #2effb2; border-color: rgba(46, 255, 178, 0.22); background: rgba(46, 255, 178, 0.06); }
 .cat-play .cat-count { background: rgba(46, 255, 178, 0.12); color: #2effb2; }
+.categories-row .cat-pill.cat-rpg, .card-category.cat-rpg, .article-header .article-category.cat-rpg, .related-info .related-cat.cat-rpg { color: #7aa2ff; border-color: rgba(122, 162, 255, 0.22); background: rgba(122, 162, 255, 0.06); }
+.cat-rpg .cat-count { background: rgba(122, 162, 255, 0.12); color: #7aa2ff; }
+.categories-row .cat-pill.cat-reviews, .card-category.cat-reviews, .article-header .article-category.cat-reviews, .related-info .related-cat.cat-reviews { color: #ff9de2; border-color: rgba(255, 157, 226, 0.22); background: rgba(255, 157, 226, 0.06); }
+.cat-reviews .cat-count { background: rgba(255, 157, 226, 0.12); color: #ff9de2; }
 
 /* =============================================================
    10. SECTION HEADERS
@@ -847,6 +856,7 @@ button, input, select, textarea { font: inherit; color: inherit; }
 .article-header .article-category {
   display: inline-block; padding: 5px 13px; margin-bottom: 16px;
   border-radius: var(--radius-pill);
+  background: var(--surface); border: 1px solid var(--line); color: var(--text-dim);
   font-family: var(--mono); font-size: 0.62rem; font-weight: 700;
   letter-spacing: 0.1em; text-transform: uppercase;
 }

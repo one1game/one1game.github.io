@@ -39,9 +39,9 @@
 
 
   <!-- FontAwesome: один объединённый файл вместо трёх -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css" />
+  <link rel="preload" as="style" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css" onload="this.rel='stylesheet';this.removeAttribute('onload')" /><noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css" /></noscript>
 
-  <link rel="stylesheet" href="/styles.css?v=16" />
+  <link rel="stylesheet" href="/styles.css?v=18" />
 
   <!-- BreadcrumbList Schema -->
   <script type="application/ld+json">
@@ -933,7 +933,7 @@
       </div>
     </div>
 
-    <figure class="article-hero"><img src="../img/ai/output/ii_v_gejmdeve_2026.png" alt="ИИ в геймдеве 2026: 7 причин, почему нейросети не спасают индустрию" width="1344" height="768" loading="eager" fetchpriority="high" style="width:100%;height:auto;border-radius:12px;margin-bottom:24px;"></figure>
+    <figure class="article-hero"><img src="../img/ai/output/ii_v_gejmdeve_2026.webp" alt="ИИ в геймдеве 2026: 7 причин, почему нейросети не спасают индустрию" width="1344" height="768" loading="eager" fetchpriority="high" style="width:100%;height:auto;border-radius:12px;margin-bottom:24px;"></figure>
 
     <nav class="toc" id="toc" aria-label="Содержание статьи">
       <div class="toc-title" id="toc-title" role="button" tabindex="0" aria-expanded="true" aria-controls="toc-list">
@@ -1508,7 +1508,7 @@
 </div>
 
 <script src="/cache-version.js"></script>
-<script>document.write('<script src="/articles-data.js?v='+(window.CACHE_VER||'1')+'"><\/script>');</script>
+<script defer src="/articles-data.js?v=18"></script>
 <script>
 (function() {
   var path = window.location.pathname;
@@ -1794,7 +1794,7 @@ document.addEventListener('click', function(e) {
 })();
 </script>
 
-<script src="/components.js?v=16" defer></script>
+<script src="/components.js?v=18" defer></script>
 <script src="/reactions.js" defer></script>
 </body>
 </html>

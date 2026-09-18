@@ -30,8 +30,8 @@
   <link rel="preconnect" href="https://www.googletagmanager.com" crossorigin />
   <link rel="dns-prefetch" href="https://www.google-analytics.com" />
 
-  <link href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css" rel="stylesheet" />
-  <link rel="stylesheet" href="styles.css?v=16" />
+  <link rel="preload" as="style" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css" onload="this.rel='stylesheet';this.removeAttribute('onload')" /><noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css" /></noscript>
+  <link rel="stylesheet" href="styles.css?v=18" />
   <link rel="manifest" href="/manifest.json" />
   <meta name="theme-color" content="#05050a" />
 
@@ -103,7 +103,7 @@
       <a href="/triad-duel.html" class="featured-link">
         <div class="featured-card">
           <div class="featured-image">
-            <img src="/img/og-triad-duel.jpg" alt="Triad Duel — карточная игра в Telegram" width="600" height="315" loading="lazy">
+            <img src="/img/og-triad-duel-800.webp" srcset="/img/og-triad-duel-800.webp 800w, /img/og-triad-duel.webp 1200w" sizes="(min-width: 900px) 480px, 100vw" alt="Triad Duel — карточная игра в Telegram" width="600" height="315" loading="lazy" decoding="async">
           </div>
           <div class="featured-info">
             <span class="featured-badge">Проект</span>
@@ -149,9 +149,9 @@
 </main>
 
 <script src="/cache-version.js"></script>
-<script>document.write('<script defer src="articles-data.js?v='+(window.CACHE_VER||'1')+'"><\/script>');</script>
-<script defer src="/components.js?v=16"></script>
-<script defer src="script.js?v=16"></script>
+<script defer src="articles-data.js?v=18"></script>
+<script defer src="/components.js?v=18"></script>
+<script defer src="script.js?v=18"></script>
 <script defer src="/api-config.js?v=1"></script>
 <script defer src="gaming-history.js?v=1"></script>
 

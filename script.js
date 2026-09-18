@@ -28,68 +28,26 @@ class One1GamePlatform {
            document.querySelector('.articles-container') !== null;
   }
 
-  initMatrixRain() {
-    if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
-    const canvas = document.createElement('canvas');
-    canvas.id = 'matrix-bg';
-    document.body.appendChild(canvas);
-    const ctx = canvas.getContext('2d');
-    const chars = 'アイウエオカキクケコサシスセソ0123456789ABCDEF<>[]{}|/\\';
-    const palette = ['255,215,64', '255,171,64', '255,138,64', '212,175,255'];
-    const fontSize = 16;
-    let w, h, cols, drops;
-    const resize = () => {
-      w = canvas.width = window.innerWidth;
-      h = canvas.height = window.innerHeight;
-      cols = Math.floor(w / fontSize);
-      drops = Array.from({length: cols}, () => Math.random() * (h / fontSize));
-    };
-    resize();
-    window.addEventListener('resize', resize);
-    const draw = () => {
-      if (!document.hidden) {
-        ctx.fillStyle = 'rgba(6,6,13,0.07)';
-      ctx.fillRect(0, 0, w, h);
-      ctx.font = fontSize + 'px monospace';
-      for (let i = 0; i < cols; i++) {
-        const ch = chars[Math.floor(Math.random() * chars.length)];
-        const alpha = 0.2 + Math.random() * 0.8;
-        ctx.fillStyle = 'rgba(' + palette[i % palette.length] + ',' + alpha.toFixed(2) + ')';
-        ctx.fillText(ch, i * fontSize, drops[i] * fontSize);
-        if (drops[i] * fontSize < -fontSize * 2 && Math.random() > 0.992) drops[i] = h / fontSize + 2;
-        drops[i] -= 0.017;
-        }
-      }
-      requestAnimationFrame(draw);
-    };
-    requestAnimationFrame(draw);
-  }
-
-  // Smooth page transitions on link clicks
+  // Аналитика внутренних переходов.
+  // Раньше здесь был fade-out body перед навигацией: он тормозил переход
+  // и оставлял страницу прозрачной при возврате из bfcache.
   setupPageTransitions() {
+    window.addEventListener('pageshow', () => {
+      document.body.style.opacity = '';
+    });
     document.addEventListener('click', e => {
       const link = e.target.closest('a');
       if (!link) return;
       // Skip external, anchor, noopener, download links
       const href = link.getAttribute('href');
       if (!href || href.startsWith('#') || href.startsWith('http') || href.startsWith('mailto') || link.hasAttribute('download') || link.target === '_blank') return;
-      
+
       if (window.One1GameAnalytics) {
         window.One1GameAnalytics.track('internal_link_click', {
           destination: new URL(href, window.location.href).pathname
         });
       }
-      e.preventDefault();
-      // Fade out
-      document.body.style.opacity = '0';
-      document.body.style.transition = 'opacity 120ms ease';
-      
-      setTimeout(() => {
-        window.location.href = href;
-      }, 120);
     });
-    // Fade in on arrival
-    document.body.style.transition = 'opacity 120ms ease';
   }
 
   // Глобальное радио для всех страниц (кроме архива)
@@ -110,7 +68,8 @@ class One1GamePlatform {
     if (!radioAudio) {
       radioAudio = document.createElement('audio');
       radioAudio.id = 'radio-stream-global';
-      radioAudio.preload = 'metadata';
+      // preload none: поток не дёргается, пока пользователь не нажал play
+      radioAudio.preload = 'none';
       radioAudio.style.display = 'none';
       document.body.appendChild(radioAudio);
     }
@@ -156,8 +115,9 @@ class One1GamePlatform {
     // Сохраняем в глобальной области видимости
     window.One1GameRadio = this.globalRadio;
     
-    // Восстанавливаем состояние воспроизведения (только если не было паузы)
-    if (savedPaused !== 'true') {
+    // Автовосстановление только если пользователь сам включал радио раньше.
+    // Иначе браузер всё равно блокирует autoplay, но успевает дёрнуть поток.
+    if (savedPaused === 'false') {
       setTimeout(() => {
         this.globalRadio.audio.play().catch(e => {
           console.log('Auto-play on init blocked');
@@ -186,11 +146,6 @@ class One1GamePlatform {
   initializePlatform() {
       console.log('🚀 Initializing One1Game Platform...');
 
-      // Matrix rain is a decorative home-page effect; avoid spending CPU on articles and tools.
-      if (document.body.classList.contains('page-home')) {
-        this.initMatrixRain();
-      }
-      
       // Проверяем наличие всех элементов
       this.checkElements();
       
@@ -351,6 +306,17 @@ class One1GamePlatform {
     const featured = latestArticles[0];
     const rest = latestArticles.slice(1);
 
+    // Производные WebP-варианты (генерируются скриптом оптимизации картинок):
+    // -800.webp весит в разы меньше и достаточен для сетки карточек.
+    const srcsetAttr = (src, isLead) => {
+      if (!/\.webp$/i.test(src)) return '';
+      const small = src.replace(/\.webp$/i, '-800.webp');
+      const sizes = isLead
+        ? '(min-width: 900px) 1100px, 100vw'
+        : '(min-width: 1220px) 400px, (min-width: 640px) 45vw, 100vw';
+      return ` srcset="${small} 800w, ${src} 1344w" sizes="${sizes}"`;
+    };
+
     const cardHTML = (article, isFeatured) => {
       const catClass = categoryMap[article.category] || '';
       const safeUrl = this.escapeHTML(article.url || '#');
@@ -362,7 +328,7 @@ class One1GamePlatform {
       const safeReadTime = this.escapeHTML(article.readTime || '5 мин');
       return `
       <a href="${safeUrl}" class="article-card${isFeatured ? ' featured' : ''}">
-        ${safeImage ? `<div class="card-image"><img src="${safeImage}" alt="${safeTitle}" loading="${isFeatured ? 'eager' : 'lazy'}" fetchpriority="${isFeatured ? 'high' : 'auto'}" width="1344" height="768"></div>` : ''}
+        ${safeImage ? `<div class="card-image"><img src="${safeImage}" alt="${safeTitle}" loading="${isFeatured ? 'eager' : 'lazy'}" fetchpriority="${isFeatured ? 'high' : 'auto'}" decoding="async" width="1344" height="768"${srcsetAttr(safeImage, isFeatured)}></div>` : ''}
         ${safeCategory ? `<span class="card-category ${catClass}">${safeCategory}</span>` : ''}
         <h3>${safeTitle}</h3>
         <p class="card-excerpt">${safeExcerpt}</p>

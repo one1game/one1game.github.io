@@ -8,7 +8,7 @@ window.allArticles =
     "date": "25 августа 2026",
     "readTime": "7 мин",
     "category": "Аналитика",
-    "image": "/img/ai-worlds-architect-2026.png",
+    "image": "/img/ai-worlds-architect-2026.webp",
     "tags": ["ИИ", "Геймдев", "Игровые технологии", "NPC", "LLM"]
   },
   {
@@ -46,7 +46,7 @@ window.allArticles =
     "date": "31 июля 2026",
     "readTime": "8 мин",
     "category": "Гайды",
-    "image": "/img/ai/output/operation_darkside_dx_guide.png"
+    "image": "/img/ai/output/operation_darkside_dx_guide.webp"
   },
   {
     "url": "/archive/igry-v-telegram-bez-skachivaniya-triad-duel.html",
@@ -55,7 +55,7 @@ window.allArticles =
     "date": "23 июля 2026",
     "readTime": "5 мин",
     "category": "Тренды",
-    "image": "/img/ai/output/triad_duel_miniapp.png"
+    "image": "/img/ai/output/triad_duel_miniapp.webp"
   },
   {
     "url": "/archive/gaid-triad-duel-meta-kolody-2026.html",
@@ -64,7 +64,7 @@ window.allArticles =
     "date": "23 июля 2026",
     "readTime": "7 мин",
     "category": "Гайды",
-    "image": "/img/ai/output/triad_duel_guide.png"
+    "image": "/img/ai/output/triad_duel_guide.webp"
   },
   {
     "url": "/archive/konec-epohi-pay-to-win-triad-duel.html",
@@ -73,7 +73,7 @@ window.allArticles =
     "date": "23 июля 2026",
     "readTime": "6 мин",
     "category": "Мнения",
-    "image": "/img/ai/output/triad_duel_p2w.png"
+    "image": "/img/ai/output/triad_duel_p2w.webp"
   },
   {
     "url": "/archive/top-igr-v-telegram-2026-triad-duel.html",
@@ -82,7 +82,7 @@ window.allArticles =
     "date": "23 июля 2026",
     "readTime": "5 мин",
     "category": "Тренды",
-    "image": "/img/ai/output/telegram_mini_apps_top.png"
+    "image": "/img/ai/output/telegram_mini_apps_top.webp"
   },
   {
     "url": "/archive/luchshie-kartochnye-igry-na-android-2026.html",
@@ -91,7 +91,7 @@ window.allArticles =
     "date": "23 июля 2026",
     "readTime": "7 мин",
     "category": "Гайды",
-    "image": "/img/ai/output/best_card_games_android.png"
+    "image": "/img/ai/output/best_card_games_android.webp"
   },
   {
     "url": "/archive/chestnye-pvp-igry-bez-donata-2026.html",
@@ -100,7 +100,7 @@ window.allArticles =
     "date": "23 июля 2026",
     "readTime": "6 мин",
     "category": "Мнения",
-    "image": "/img/ai/output/fair_pvp_games.png"
+    "image": "/img/ai/output/fair_pvp_games.webp"
   },
   {
     "url": "/archive/stalker-2-nevozmozhnye-tayniki-i-artefakty.html",
@@ -109,7 +109,7 @@ window.allArticles =
     "date": "15 июля 2026",
     "readTime": "8 мин",
     "category": "Гайды",
-    "image": "/img/ai/output/stalker2_hidden_stashes.png"
+    "image": "/img/ai/output/stalker2_hidden_stashes.webp"
   },
   {
     "url": "/archive/operation-darkside-dx-optimal-guide.html",
@@ -118,7 +118,7 @@ window.allArticles =
     "date": "15 июля 2026",
     "readTime": "10 мин",
     "category": "Гайды",
-    "image": "/img/ai/output/operation_darkside_dx_guide.png"
+    "image": "/img/ai/output/operation_darkside_dx_guide.webp"
   },
   {
     "url": "/archive/elevator-avici-vse-koncovki-sekrety.html",
@@ -127,7 +127,7 @@ window.allArticles =
     "date": "14 июля 2026",
     "readTime": "9 мин",
     "category": "Гайды",
-    "image": "/img/ai/output/elevator_avici_endings.png"
+    "image": "/img/ai/output/elevator_avici_endings.webp"
   },
   {
     "url": "/archive/stalker-2-skrytye-mekhaniki-tenevye-pravila-2026.html",
@@ -136,7 +136,7 @@ window.allArticles =
     "date": "13 июля 2026",
     "readTime": "10 мин",
     "category": "Гайды",
-    "image": "/img/ai/output/stalker2_hidden_mechanics.png"
+    "image": "/img/ai/output/stalker2_hidden_mechanics.webp"
   },
   {
     "url": "/archive/skrytye-lovushki-apgreyda-2026.html",
@@ -145,13 +145,13 @@ window.allArticles =
     "date": "10 июля 2026",
     "readTime": "8 мин",
     "category": "Гайды",
-    "image": "/img/ai/output/upgrade_traps_2026.png"
+    "image": "/img/ai/output/upgrade_traps_2026.webp"
   },
   {
     "url": "/archive/ii-v-gejmdeve-2026-problemy-nejrosetej.html",
     "title": "ИИ в геймдеве 2026: 7 причин, почему нейросети не спасают индустрию",
     "excerpt": "Честный разбор: реальные цифры GDC 2026, юридические риски, скандалы Unity/Epic, отзывы игроков в Steam. Где ИИ реально работает, а где — маркетинговый миф...",
-    "image": "/img/ai/output/ii_v_gejmdeve_2026.png",
+    "image": "/img/ai/output/ii_v_gejmdeve_2026.webp",
     "date": "10 июля 2026",
     "readTime": "15 мин",
     "category": "Аналитика"
@@ -160,7 +160,7 @@ window.allArticles =
     "url": "/archive/gta-vi-krizis-industrii-2026.html",
     "title": "GTA VI — не спасение, а симптом кризиса AAA-индустрии",
     "excerpt": "Почему бюджет в $2 млрд — это не достижение, а симптом болезни. Разбор увольнений, закрытия студий и смерти старой AAA-модели...",
-    "image": "/img/ai/output/gta_vi_krizis_industrii.png",
+    "image": "/img/ai/output/gta_vi_krizis_industrii.webp",
     "date": "9 июля 2026",
     "readTime": "14 мин",
     "category": "Мнение"
@@ -169,7 +169,7 @@ window.allArticles =
     "url": "/archive/monetizaciya-yandex-igry-2026-rukovodstvo.html",
     "title": "Монетизация в Яндекс Играх 2026: полное руководство с цифрами и кейсами",
     "excerpt": "Реальные цифры eCPM, рабочие стратегии для гиперказуалок и mid-core, разбор ошибок и кейсы с доходом от $500 до $15,000 в месяц...",
-    "image": "/img/ai/output/monetizaciya_yandex_igry_2026.png",
+    "image": "/img/ai/output/monetizaciya_yandex_igry_2026.webp",
     "date": "9 июля 2026",
     "readTime": "12 мин",
     "category": "Разработка"
@@ -178,7 +178,7 @@ window.allArticles =
     "url": "/archive/blood-of-dawnwalker-gajd-bildy-2026.html",
     "title": "The Blood of Dawnwalker: гайд по лучшим билдам и скрытым механикам в 2026 году",
     "excerpt": "Топ-3 рабочих билда, секрет легендарного оружия и разбор механики Кровавого экстаза. Основано на 60 часах личного прохождения...",
-    "image": "/img/ai/output/blood_of_dawnwalker_guide_2026.png",
+    "image": "/img/ai/output/blood_of_dawnwalker_guide_2026.webp",
     "date": "9 июля 2026",
     "readTime": "8 мин",
     "category": "Гайды"
@@ -187,7 +187,7 @@ window.allArticles =
     "url": "/archive/windows-11-july-2026-update-podgotovka.html",
     "title": "Windows 11 July 2026 Update: Как подготовиться и избежать проблем (полный гайд)",
     "excerpt": "14 июля 2026 выходит крупное обновление Windows 11 с Point-in-Time Restore и Unlimited Pause. Чек-лист из 7 шагов, разбор проблем 2026 года, инструкции по откату...",
-    "image": "/img/ai/output/windows_11_july_2026_update.png",
+    "image": "/img/ai/output/windows_11_july_2026_update.webp",
     "date": "9 июля 2026",
     "readTime": "8 мин",
     "category": "Гайды"
@@ -196,7 +196,7 @@ window.allArticles =
     "url": "/archive/rtx-5090-vs-rx-9070xt-sravnenie-2026.html",
     "title": "RTX 5090 vs RX 9070 XT: Честное сравнение 2026 — какую карту брать?",
     "excerpt": "Полный тест RTX 5090 и RX 9070 XT в 27 играх, 3 разрешениях и рабочих задачах. Цена/производительность, температуры, вердикт. Без рекламы — только факты...",
-    "image": "/img/ai/output/rtx_5090_vs_rx_9070xt.png",
+    "image": "/img/ai/output/rtx_5090_vs_rx_9070xt.webp",
     "date": "9 июля 2026",
     "readTime": "10 мин",
     "category": "Технологии"
@@ -205,7 +205,7 @@ window.allArticles =
     "url": "/archive/gta-6-polnyy-analiz-utechek-i-treylera.html",
     "title": "GTA 6: Полный анализ утечек и трейлера — секреты, которые скрыли от всех",
     "excerpt": "Глубокий анализ GTA 6: разбор трейлера, сравнение механик с GTA 5 и RDR2, прогноз пасхалок и скрытых деталей. То, о чем молчат все СМИ...",
-    "image": "/img/ai/output/gta_6_analiz_utechek.png",
+    "image": "/img/ai/output/gta_6_analiz_utechek.webp",
     "date": "8 июля 2026",
     "readTime": "10 мин",
     "category": "Аналитика"
@@ -214,7 +214,7 @@ window.allArticles =
     "url": "/archive/kak-uvelichit-fps-windows-11-optimizaciya.html",
     "title": "Как увеличить FPS в Windows 11: Секретный гайд 2026 года (Выжимаем максимум)",
     "excerpt": "Windows 11 режет FPS в играх? Полный гайд по оптимизации: отключение VBS, настройка HAGS, чистка телеметрии и скрытые фишки для буста фреймрейта до 30-40%...",
-    "image": "/img/ai/output/kak_uvelichit_fps_windows_11.png",
+    "image": "/img/ai/output/kak_uvelichit_fps_windows_11.webp",
     "date": "8 июля 2026",
     "readTime": "7 мин",
     "category": "Гайды"
@@ -223,7 +223,7 @@ window.allArticles =
     "url": "/archive/xbox-gamepass-to-steam-saves-2026.html",
     "title": "Как добавить сохранения из Game Pass PC? Перенос сейвов без потери прогресса",
     "excerpt": "Сохранения из PC Game Pass не всегда там, где ожидаешь. Облачная синхронизация, ручной поиск, перенос Game Pass → Steam и бэкапы без потери прогресса.",
-    "image": "/img/ai/output/xbox_gamepass_to_steam_saves.png",
+    "image": "/img/ai/output/xbox_gamepass_to_steam_saves.webp",
     "date": "6 июля 2026",
     "readTime": "7 мин",
     "category": "Гайды"
@@ -232,7 +232,7 @@ window.allArticles =
     "url": "/archive/rdr2-secrets-2026.html",
     "title": "Все секреты Red Dead Redemption 2 — 150+ скрытых деталей, пасхалок и редких событий",
     "excerpt": "Более 150 скрытых деталей RDR2: призрачный поезд, вампир Сен-Дени, НЛО, гигант, дом робота и другие секреты, которые миллионы игроков никогда не видели...",
-    "image": "/img/ai/output/rdr2_secrets_2026.png",
+    "image": "/img/ai/output/rdr2_secrets_2026.webp",
     "date": "22 января 2026",
     "readTime": "8 мин",
     "category": "Гайды"
@@ -241,7 +241,7 @@ window.allArticles =
     "url": "/archive/nintendo-switch-2-russia-2026.html",
     "title": "Nintendo Switch 2 в России 2026: полный гайд",
     "excerpt": "Как купить, настроить eShop и играть в старые игры на новой консоли. Все о параллельном импорте, обратной совместимости и способах оплаты для российских геймеров...",
-    "image": "/img/ai/output/nintendo_switch_2_russia.png",
+    "image": "/img/ai/output/nintendo_switch_2_russia.webp",
     "date": "20 января 2026",
     "readTime": "10 мин",
     "category": "Консоли"
@@ -250,7 +250,7 @@ window.allArticles =
     "url": "/archive/vr-ai-2026.html",
     "title": "VR + AI 2026: Что реально работает сегодня",
     "excerpt": "Адаптивные NPC, динамические миры и персонализированные сценарии — как искусственный интеллект делает виртуальную реальность по-настоящему живой в 2026 году...",
-    "image": "/img/ai/output/vr_ai_2026.png",
+    "image": "/img/ai/output/vr_ai_2026.webp",
     "date": "21 января 2026",
     "readTime": "10 мин",
     "category": "Разработка"
@@ -259,7 +259,7 @@ window.allArticles =
     "url": "/archive/metaverses-ai-2026.html",
     "title": "Существуют ли реальные AI-метавселенные в 2026?",
     "excerpt": "В 2026 году AI-метавселенные существуют, но не так, как обещают маркетологи. Разбор работающих проектов с живыми NPC, динамическими квестами и реагирующим миром...",
-    "image": "/img/ai/output/metaverses_ai_2026.png",
+    "image": "/img/ai/output/metaverses_ai_2026.webp",
     "date": "21 января 2026",
     "readTime": "10 мин",
     "category": "Технологии"
@@ -268,7 +268,7 @@ window.allArticles =
     "url": "/archive/game-design-ai-2026.html",
     "title": "AI-геймдизайн 2026: как ИИ стал стандартом разработки",
     "excerpt": "В 2026 году искусственный интеллект стал стандартным инструментом геймдизайна. Как ИИ ускоряет прототипирование, балансировку и создание NPC без замены разработчиков...",
-    "image": "/img/ai/output/game_design_ai_2026.png",
+    "image": "/img/ai/output/game_design_ai_2026.webp",
     "date": "21 января 2026",
     "readTime": "9 мин",
     "category": "Разработка"
@@ -277,7 +277,7 @@ window.allArticles =
     "url": "/archive/ai-comics-2026.html",
     "title": "Нейросетевые комиксы 2026: как ИИ стал инструментом автора",
     "excerpt": "Как нейросети изменили создание графических историй в 2026 году — от черновых панелей до целых визуальных новелл. Почему ИИ не заменил авторов, а усилил их...",
-    "image": "/img/ai/output/ai_comics_2026.png",
+    "image": "/img/ai/output/ai_comics_2026.webp",
     "date": "21 января 2026",
     "readTime": "9 мин",
     "category": "Тренды"
@@ -286,7 +286,7 @@ window.allArticles =
     "url": "/archive/aa-games-trend-2026.html",
     "title": "AA-игры 2026 — как средний бюджет стал главным форматом индустрии",
     "excerpt": "Почему AAA-модель трещит по швам, а среднебюджетные AA-проекты стали новой точкой равновесия между качеством, риском и прибылью в 2026 году...",
-    "image": "/img/ai/output/aa_games_trend_2026.png",
+    "image": "/img/ai/output/aa_games_trend_2026.webp",
     "date": "20 января 2026",
     "readTime": "7 мин",
     "category": "Разработка"
@@ -295,7 +295,7 @@ window.allArticles =
     "url": "/archive/ai-game-translators-2026-guide.html",
     "title": "Как играть в любую новинку 2026 без русской локализации? Гайд по AI-переводчикам",
     "excerpt": "Гайд по AI-переводчикам 2026: играем в Monster Hunter Wilds, Judas и GTA VI без русской локализации. LunaTranslator 2.0, GPT-4o, DeepL и локальные LLM.",
-    "image": "/img/ai/output/ai_game_translators_2026_guide.png",
+    "image": "/img/ai/output/ai_game_translators_2026_guide.webp",
     "date": "20 января 2026",
     "readTime": "8 мин",
     "category": "Гайды"

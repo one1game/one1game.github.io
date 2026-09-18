@@ -7,7 +7,7 @@
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🎮</text></svg>">
   
   <!-- Icons & Theme -->
-  <link rel="apple-touch-icon" href="/favicon.png" />
+  <link rel="apple-touch-icon" href="/img/apple-touch-icon.png" />
   <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#00d4ff" />
   <meta name="theme-color" content="#00d4ff" />
   <meta name="color-scheme" content="dark light" />
@@ -55,8 +55,8 @@
     <img src="https://www.google-analytics.com/collect?v=1&tid=G-SZYYDYEC6T&cid=anon&t=event&ec=NoScript&ea=View" alt="" style="display:none;" />
   </noscript>
 
-  <link href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css" rel="stylesheet" />
-  <link rel="stylesheet" href="/styles.css?v=16" />
+  <link rel="preload" as="style" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css" onload="this.rel='stylesheet';this.removeAttribute('onload')" /><noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css" /></noscript>
+  <link rel="stylesheet" href="/styles.css?v=18" />
 
   <!-- ЕДИНЫЙ ГРАФ SCHEMA.ORG -->
   <script type="application/ld+json">
@@ -233,11 +233,7 @@
   <link rel="stylesheet" href="/reactions.css" />
   
   <style>
-    @font-face {
-      font-family: 'CustomFont';
-      src: url('/fonts/custom.woff2') format('woff2');
-      font-display: swap;
-    }
+    
     
     .reading-progress-container { position: fixed; top: 0; left: 0; width: 100%; height: 4px; background: transparent; z-index: 10000; }
     .reading-progress-bar { height: 100%; background: var(--cyan, #00d4ff); width: 0%; transition: width 0.1s ease-out; }
@@ -554,7 +550,7 @@
 </button>
 
 <script src="/cache-version.js"></script>
-<script>document.write('<script src="/articles-data.js?v='+(window.CACHE_VER||'1')+'"><\/script>');</script>
+<script defer src="/articles-data.js?v=18"></script>
 <script>
   // Reading Progress Bar & Back to Top
   window.addEventListener('scroll', () => {
@@ -641,7 +637,7 @@
     }
   })();
 </script>
-<script src="/components.js?v=16" defer></script>
+<script src="/components.js?v=18" defer></script>
 <script src="/reactions.js" defer></script>
 
 <!-- Cookie Banner -->

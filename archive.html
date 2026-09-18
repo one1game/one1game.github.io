@@ -28,8 +28,8 @@
   <link rel="preconnect" href="https://www.googletagmanager.com" crossorigin />
   <link rel="dns-prefetch" href="https://www.google-analytics.com" />
   
-  <link href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css" rel="stylesheet" />
-  <link rel="stylesheet" href="styles.css?v=16" />
+  <link rel="preload" as="style" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css" onload="this.rel='stylesheet';this.removeAttribute('onload')" /><noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css" /></noscript>
+  <link rel="stylesheet" href="styles.css?v=18" />
   <link rel="manifest" href="/manifest.json" />
   <meta name="theme-color" content="#06060c" />
   <!-- Google Analytics loads only after explicit consent -->
@@ -84,8 +84,7 @@
 
 </main>
 <script src="/cache-version.js"></script>
-<script defer src="/analytics-consent.js?v=1"></script>
-<script>document.write('<script defer src="articles-data.js?v='+(window.CACHE_VER||'1')+'"><\/script>');</script>
+<script defer src="articles-data.js?v=18"></script>
 <script>
 // === ARCHIVE PAGE LOGIC ===
 let allArticles = [];
@@ -192,6 +191,16 @@ function filterAndDisplay() {
     return;
   }
 
+  // Производные WebP-варианты: -800.webp достаточно для сетки карточек
+  const srcsetAttr = (src, isLead) => {
+    if (!/\.webp$/i.test(src)) return '';
+    const small = src.replace(/\.webp$/i, '-800.webp');
+    const sizes = isLead
+      ? '(min-width: 900px) 1100px, 100vw'
+      : '(min-width: 1220px) 400px, (min-width: 640px) 45vw, 100vw';
+    return ` srcset="${small} 800w, ${src} 1344w" sizes="${sizes}"`;
+  };
+
   container.innerHTML = pageArticles.map(a => {
     const catClass = categoryMap[a.category] || '';
     const isFirst = (currentPage === 1 && allArticles.indexOf(a) === 0);
@@ -204,7 +213,7 @@ function filterAndDisplay() {
     const safeReadTime = escapeHTML(a.readTime || '5 мин');
     return `
     <a href="${safeUrl}" class="article-card${isFirst ? ' featured' : ''}">
-      ${safeImage ? `<div class="card-image"><img src="${safeImage}" alt="${safeTitle}" loading="${isFirst ? 'eager' : 'lazy'}" fetchpriority="${isFirst ? 'high' : 'auto'}" width="1344" height="768"></div>` : ''}
+      ${safeImage ? `<div class="card-image"><img src="${safeImage}" alt="${safeTitle}" loading="${isFirst ? 'eager' : 'lazy'}" fetchpriority="${isFirst ? 'high' : 'auto'}" decoding="async" width="1344" height="768"${srcsetAttr(safeImage, isFirst)}></div>` : ''}
       ${safeCategory ? `<span class="card-category ${catClass}">${safeCategory}</span>` : ''}
       <h3>${safeTitle}</h3>
       <p class="card-excerpt">${safeExcerpt}</p>
@@ -246,6 +255,6 @@ document.addEventListener('mouseover', e => {
   card.style.setProperty('--mouse-y', y + '%');
 });
 </script>
-<script src="/components.js?v=16" defer></script>
+<script src="/components.js?v=18" defer></script>
 </body>
 </html>

@@ -37,11 +37,11 @@
 
 
   <!-- Оптимизированный Font Awesome: только solid + regular -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/solid.min.css" />
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/regular.min.css" />
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/fontawesome.min.css" />
+  <link rel="preload" as="style" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css" onload="this.rel='stylesheet';this.removeAttribute('onload')" /><noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css" /></noscript>
+  <link rel="preload" as="style" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css" onload="this.rel='stylesheet';this.removeAttribute('onload')" /><noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css" /></noscript>
+  <link rel="preload" as="style" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css" onload="this.rel='stylesheet';this.removeAttribute('onload')" /><noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css" /></noscript>
 
-  <link rel="stylesheet" href="/styles.css?v=16" />
+  <link rel="stylesheet" href="/styles.css?v=18" />
 
   <!-- BreadcrumbList Schema -->
   <script type="application/ld+json">
@@ -707,7 +707,7 @@
       </div>
     </div>
 
-    <figure class="article-hero"><img src="../img/ai/output/gta_vi_krizis_industrii.png" alt="GTA VI — не спасение, а симптом кризиса AAA-индустрии" width="1344" height="768" loading="eager" fetchpriority="high" style="width:100%;height:auto;border-radius:12px;margin-bottom:24px;"></figure>
+    <figure class="article-hero"><img src="../img/ai/output/gta_vi_krizis_industrii.webp" alt="GTA VI — не спасение, а симптом кризиса AAA-индустрии" width="1344" height="768" loading="eager" fetchpriority="high" style="width:100%;height:auto;border-radius:12px;margin-bottom:24px;"></figure>
 
     <!-- Table of Contents -->
     <nav class="toc" id="toc" aria-label="Содержание статьи">
@@ -1226,7 +1226,7 @@
 </div>
 
 <script src="/cache-version.js"></script>
-<script>document.write('<script src="/articles-data.js?v='+(window.CACHE_VER||'1')+'"><\/script>');</script>
+<script defer src="/articles-data.js?v=18"></script>
 <script>
 (function() {
   var path = window.location.pathname;
@@ -1407,7 +1407,7 @@ function toggleTTS() {
   }, { passive: true });
 })();
 </script>
-<script src="/components.js?v=16" defer></script>
+<script src="/components.js?v=18" defer></script>
 <script src="/reactions.js" defer></script>
 <script defer src="/api-config.js?v=1"></script>
 <script src="/newsletter.js?v=2" defer></script>
