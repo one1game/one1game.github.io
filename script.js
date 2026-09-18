@@ -290,60 +290,54 @@ class One1GamePlatform {
       return;
     }
 
-    const categoryMap = {
-      'Технологии': 'cat-tech',
-      'Гайды': 'cat-guides',
-      'Консоли': 'cat-consoles',
-      'Аналитика': 'cat-analytics',
-      'Тренды': 'cat-trends',
-      'Разработка': 'cat-dev',
-      'Мнение': 'cat-opinion',
-      'Мнения': 'cat-opinion',
-      'Кино и игры': 'cat-movies'
-    };
-
-    const latestArticles = window.allArticles.slice(0, 5);
+    const latestArticles = window.allArticles.slice(0, 6);
     const featured = latestArticles[0];
     const rest = latestArticles.slice(1);
 
     // Производные WebP-варианты (генерируются скриптом оптимизации картинок):
-    // -800.webp весит в разы меньше и достаточен для сетки карточек.
+    // -800.webp весит в разы меньше и достаточен для ленты.
     const srcsetAttr = (src, isLead) => {
       if (!/\.webp$/i.test(src)) return '';
       const small = src.replace(/\.webp$/i, '-800.webp');
       const sizes = isLead
         ? '(min-width: 900px) 1100px, 100vw'
-        : '(min-width: 1220px) 400px, (min-width: 640px) 45vw, 100vw';
+        : '(min-width: 1220px) 190px, (min-width: 640px) 140px, 92px';
       return ` srcset="${small} 800w, ${src} 1344w" sizes="${sizes}"`;
     };
 
-    const cardHTML = (article, isFeatured) => {
-      const catClass = categoryMap[article.category] || '';
+    const pad3 = n => String(n).padStart(3, '0');
+
+    // Запись ленты: номер · превью · текст
+    const entryHTML = (article, index, isLead) => {
       const safeUrl = this.escapeHTML(article.url || '#');
       const safeImage = this.escapeHTML(article.image || '');
       const safeTitle = this.escapeHTML(article.title || '');
       const safeCategory = this.escapeHTML(article.category || '');
       const safeExcerpt = this.escapeHTML(article.excerpt || '');
       const safeDate = this.escapeHTML(article.date || '');
-      const safeReadTime = this.escapeHTML(article.readTime || '5 мин');
+      const safeReadTime = this.escapeHTML(article.readTime || '');
+      const meta = [safeDate, safeReadTime].filter(Boolean).join(' · ');
       return `
-      <a href="${safeUrl}" class="article-card${isFeatured ? ' featured' : ''}">
-        ${safeImage ? `<div class="card-image"><img src="${safeImage}" alt="${safeTitle}" loading="${isFeatured ? 'eager' : 'lazy'}" fetchpriority="${isFeatured ? 'high' : 'auto'}" decoding="async" width="1344" height="768"${srcsetAttr(safeImage, isFeatured)}></div>` : ''}
-        ${safeCategory ? `<span class="card-category ${catClass}">${safeCategory}</span>` : ''}
-        <h3>${safeTitle}</h3>
-        <p class="card-excerpt">${safeExcerpt}</p>
-        <div class="card-meta">
-          <span><i class="far fa-calendar" aria-hidden="true"></i> ${safeDate}</span>
-          <span><i class="far fa-clock" aria-hidden="true"></i> ${safeReadTime}</span>
-        </div>
+      <a href="${safeUrl}" class="entry${isLead ? ' entry--lead' : ''}">
+        <span class="entry-no">${pad3(index)}</span>
+        ${safeImage ? `<span class="entry-thumb fx"><img src="${safeImage}" alt="${safeTitle}" loading="${isLead ? 'eager' : 'lazy'}" fetchpriority="${isLead ? 'high' : 'auto'}" decoding="async" width="1344" height="768"${srcsetAttr(safeImage, isLead)}></span>` : '<span class="entry-thumb fx"></span>'}
+        <span class="entry-main">
+          <span class="entry-top">
+            ${safeCategory ? `<span class="entry-cat">#${safeCategory.toLowerCase()}</span>` : ''}
+            ${meta ? `<span class="entry-meta">${meta}</span>` : ''}
+          </span>
+          <span class="entry-title">${safeTitle}</span>
+          ${safeExcerpt ? `<span class="entry-excerpt">${safeExcerpt}</span>` : ''}
+          ${isLead ? '<span class="entry-open">открыть материал</span>' : ''}
+        </span>
       </a>`;
     };
 
     const adminVpsHTML = () => `
-      <div class="ad-vps-wrap grid-ad">
+      <div class="ad-vps-wrap">
         <a href="https://my.adminvps.ru/aff.php?aff=31864" target="_blank" rel="noopener noreferrer" class="ad-vps-card">
           <div class="ad-vps-header">
-            <span class="ad-vps-badge">Выгодно</span>
+            <span class="ad-vps-badge">выгодно</span>
             <h3 class="ad-vps-title">VPS/VDS от 299 ₽/мес</h3>
           </div>
           <p class="ad-vps-desc">NVMe-диски, CPU до 5.0 ГГц, бесплатное администрирование. Для сайтов, ботов, Docker и AI.</p>
@@ -356,12 +350,14 @@ class One1GamePlatform {
         </a>
       </div>`;
 
-    // Первая новость — отдельно под радио
+    // Ведущая запись — отдельным блоком, остальные идут лентой
     const top = document.getElementById('top-article');
-    if (top) top.innerHTML = cardHTML(featured, true);
+    if (top) top.innerHTML = entryHTML(featured, 1, true);
 
-    // Остальные + реклама AdminVPS — в блог
-    container.innerHTML = adminVpsHTML() + rest.map(a => cardHTML(a, false)).join('');
+    // Лента: две записи, спонсорский блок, затем остальные
+    const head = rest.slice(0, 2).map((a, i) => entryHTML(a, i + 2, false)).join('');
+    const tail = rest.slice(2).map((a, i) => entryHTML(a, i + 4, false)).join('');
+    container.innerHTML = head + adminVpsHTML() + tail;
 
     // Generate dynamic categories
     this.loadCategories();

@@ -23,7 +23,7 @@
   <meta name="robots" content="index, follow" />
 
   <link rel="canonical" href="https://one1game.github.io" />
-  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🎮</text></svg>">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><rect width=%22100%22 height=%22100%22 fill=%22%2304060a%22/><text x=%2250%22 y=%2272%22 font-size=%2264%22 text-anchor=%22middle%22 fill=%22%237dff9b%22 font-family=%22monospace%22>%3E_%3C/text></svg>">
 
   <!-- Preconnect -->
   <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin />
@@ -31,9 +31,9 @@
   <link rel="dns-prefetch" href="https://www.google-analytics.com" />
 
   <link rel="preload" as="style" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css" onload="this.rel='stylesheet';this.removeAttribute('onload')" /><noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css" /></noscript>
-  <link rel="stylesheet" href="styles.css?v=18" />
+  <link rel="stylesheet" href="styles.css?v=22" />
   <link rel="manifest" href="/manifest.json" />
-  <meta name="theme-color" content="#05050a" />
+  <meta name="theme-color" content="#04060a" />
 
   <!-- Google Analytics loads only after explicit consent -->
   <script defer src="/analytics-consent.js?v=1"></script>
@@ -57,40 +57,47 @@
 
 <main id="main-content">
 
-  <!-- HERO -->
-  <section class="hero">
+  <!-- HERO: терминал + интерактивная 3D-сцена -->
+  <section class="hero" id="hero">
     <canvas class="hero-canvas" id="hero-canvas" aria-hidden="true"></canvas>
+    <canvas class="hero-3d" id="hero-3d" aria-hidden="true"></canvas>
+    <button type="button" class="hero-3d-status" id="hero-3d-status" aria-label="3D-сцена портала">
+      <span class="hero-3d-dot" aria-hidden="true"></span><span id="hero-3d-status-text">3D</span>
+    </button>
+    <div class="hero-tip" id="hero-tip" aria-hidden="true"></div>
+
     <div class="hero-inner container">
-      <span class="hero-badge"><span class="hero-dot"></span> Игровой портал · 2026</span>
-      <h1>Игровые новости,<br><span class="highlight">обзоры и гайды</span></h1>
+      <p class="boot" id="boot-log">&gt; one1game://uplink ......... <b>ok</b></p>
+      <h1>Игровые новости, <span class="highlight">обзоры и гайды</span><span class="caret" aria-hidden="true"></span></h1>
       <p class="hero-sub">Честные разборы новинок, аналитика рынка и руководства, которые экономят часы. Без воды, кликбейта и пустых обещаний.</p>
       <div class="hero-actions">
-        <a href="archive.html" class="btn btn-primary">Читать статьи <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
-        <a href="/triad-duel.html" class="btn btn-outline"><i class="fas fa-gamepad" aria-hidden="true"></i> Triad Duel</a>
+        <a href="archive.html" class="btn btn-primary">Читать статьи</a>
+        <a href="/triad-duel.html" class="btn btn-outline">Triad Duel</a>
       </div>
       <div class="hero-stats">
-        <span id="stat-articles-wrap"><b id="stat-articles">—</b> материалов</span>
-        <span><b>8</b> категорий</span>
-        <span>обновляется <b>каждый день</b></span>
+        <span>материалов <b id="stat-articles">—</b></span>
+        <span>разделов <b>8</b></span>
+        <span>апдейт <b>ежедневно</b></span>
       </div>
+      <p class="hero-hint"><i class="fas fa-hand-pointer" aria-hidden="true"></i> наведи и кликни по карточке в 3D · сцена слушает курсор и скролл · звук — кнопкой <i class="fas fa-volume-xmark" aria-hidden="true"></i> в шапке</p>
     </div>
   </section>
 
-  <!-- CATEGORY RAIL (JS-populated) -->
+  <!-- РЕЛЬС РАЗДЕЛОВ (JS-populated) -->
   <div class="cat-rail">
-    <div class="categories-row" id="categories-row" aria-label="Категории статей"></div>
+    <div class="categories-row" id="categories-row" aria-label="Разделы статей"></div>
   </div>
 
   <div class="container">
 
-    <!-- LEAD STORY: первая статья -->
+    <!-- ВЕДУЩАЯ ЗАПИСЬ -->
     <div id="top-article">
       <div class="skeleton-card"></div>
     </div>
 
-    <!-- AD #1 -->
+    <!-- СПОНСОР -->
     <div class="ad-slot">
-      <span class="ad-label">Реклама</span>
+      <span class="ad-label">реклама</span>
       <div class="ad-banner-wrap">
         <a href="https://bosslike.ru/?ref=7248523" target="_blank" rel="noopener noreferrer" title="Bosslike — накрутка подписчиков, лайков и просмотров">
           <img src="/img/baner/baner1.webp?v=3" alt="Bosslike — сервис накрутки подписчиков и лайков" width="2272" height="464" loading="lazy">
@@ -98,38 +105,38 @@
       </div>
     </div>
 
-    <!-- FEATURED: Triad Duel -->
+    <!-- ЗАКРЕПЛЁННЫЙ ПРОЕКТ -->
     <div class="featured-banner">
       <a href="/triad-duel.html" class="featured-link">
         <div class="featured-card">
-          <div class="featured-image">
-            <img src="/img/og-triad-duel-800.webp" srcset="/img/og-triad-duel-800.webp 800w, /img/og-triad-duel.webp 1200w" sizes="(min-width: 900px) 480px, 100vw" alt="Triad Duel — карточная игра в Telegram" width="600" height="315" loading="lazy" decoding="async">
+          <div class="featured-image fx">
+            <img src="/img/og-triad-duel-800.webp" srcset="/img/og-triad-duel-800.webp 800w, /img/og-triad-duel.webp 1200w" sizes="(min-width: 900px) 460px, 100vw" alt="Triad Duel — карточная игра в Telegram" width="600" height="315" loading="lazy" decoding="async">
           </div>
           <div class="featured-info">
-            <span class="featured-badge">Проект</span>
+            <span class="featured-badge">проект</span>
             <h2 class="featured-title">Triad Duel — тактическая карточная PvP в Telegram</h2>
             <p class="featured-desc">Собирай колоду, сражайся в PvP и получай 100 Remains бонусом. Без скачивания, прямо в мессенджере.</p>
-            <span class="featured-cta">Играть бесплатно <i class="fas fa-arrow-right" aria-hidden="true"></i></span>
+            <span class="featured-cta">играть бесплатно</span>
           </div>
         </div>
       </a>
     </div>
 
-    <!-- LATEST ARTICLES -->
+    <!-- ЛЕНТА ЗАПИСЕЙ -->
     <div class="section-header">
       <h2 class="section-title">Последние статьи</h2>
-      <a href="archive.html" class="btn btn-ghost">Все статьи <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
+      <a href="archive.html" class="btn btn-ghost">все записи</a>
     </div>
 
-    <div class="articles-grid" id="latest-articles">
+    <div class="feed" id="latest-articles">
       <div class="skeleton-card"></div>
       <div class="skeleton-card"></div>
       <div class="skeleton-card"></div>
     </div>
 
-    <!-- AD #2 -->
+    <!-- СПОНСОР -->
     <div class="ad-slot">
-      <span class="ad-label">Реклама</span>
+      <span class="ad-label">реклама</span>
       <div class="ad-banner-wrap">
         <a href="https://bosslike.ru/?ref=7248523" target="_blank" rel="noopener noreferrer" title="Bosslike — продвижение и накрутка для соцсетей">
           <img src="/img/baner/baner2.webp?v=3" alt="Bosslike — продвижение в социальных сетях" width="2272" height="464" loading="lazy">
@@ -137,10 +144,10 @@
       </div>
     </div>
 
-    <!-- TODAY IN GAMING HISTORY -->
+    <!-- ИСТОРИЯ -->
     <div class="section-header">
       <h2 class="section-title">Сегодня в истории игр</h2>
-      <span class="section-badge">History</span>
+      <span class="section-badge">архив данных</span>
     </div>
     <div id="today-in-history"></div>
 
@@ -149,22 +156,20 @@
 </main>
 
 <script src="/cache-version.js"></script>
-<script defer src="articles-data.js?v=18"></script>
-<script defer src="/components.js?v=18"></script>
-<script defer src="script.js?v=18"></script>
+<script defer src="articles-data.js?v=22"></script>
+<script defer src="/components.js?v=22"></script>
+<script defer src="/babylon-hero.js?v=22"></script>
+<script defer src="script.js?v=22"></script>
 <script defer src="/api-config.js?v=1"></script>
 <script defer src="gaming-history.js?v=1"></script>
 
-<!-- Card mouse tracking (spotlight effect) -->
 <script>
-document.addEventListener('mouseover', e => {
-  const card = e.target.closest('.article-card');
-  if (!card) return;
-  const rect = card.getBoundingClientRect();
-  const x = ((e.clientX - rect.left) / rect.width) * 100;
-  const y = ((e.clientY - rect.top) / rect.height) * 100;
-  card.style.setProperty('--mouse-x', x + '%');
-  card.style.setProperty('--mouse-y', y + '%');
+document.addEventListener('mouseover', function (e) {
+  var entry = e.target.closest ? e.target.closest('.entry, .article-card') : null;
+  if (!entry) return;
+  var r = entry.getBoundingClientRect();
+  entry.style.setProperty('--mx', (((e.clientX - r.left) / r.width) * 100).toFixed(1) + '%');
+  entry.style.setProperty('--my', (((e.clientY - r.top) / r.height) * 100).toFixed(1) + '%');
 });
 </script>
 </body>

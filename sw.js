@@ -1,4 +1,4 @@
-const CACHE = 'one1game-v18';
+const CACHE = 'one1game-v22';
 const CDN_CACHE = 'one1game-cdn-v1';
 
 const SHELL = [
@@ -10,6 +10,7 @@ const SHELL = [
   '/articles-data.js',
   '/gaming-history.js',
   '/components.js',
+  '/babylon-hero.js',
   '/manifest.json',
   '/404.html'
 ];
@@ -37,7 +38,10 @@ self.addEventListener('activate', e => {
   );
 });
 
-// Fetch — stale-while-revalidate: быстро из кэша + свежее в фоне
+// Fetch
+// Навигация — network-first: свежий HTML всегда приоритетнее кэша,
+// иначе правки дизайна не видны до второго захода.
+// Остальное — stale-while-revalidate: быстро из кэша + свежее в фоне.
 self.addEventListener('fetch', e => {
   if (e.request.method !== 'GET') return;
   if (e.request.url.startsWith('chrome-extension://')) return;
@@ -45,7 +49,19 @@ self.addEventListener('fetch', e => {
   const url = new URL(e.request.url);
   const isCDN = CDN_HOSTS.some(h => url.hostname.includes(h));
 
-  // Stale-while-revalidate: отдаём кэш сразу, обновляем в фоне
+  if (e.request.mode === 'navigate') {
+    e.respondWith(
+      fetch(e.request).then(response => {
+        if (response && response.ok) {
+          const clone = response.clone();
+          caches.open(CACHE).then(c => c.put(e.request, clone));
+        }
+        return response;
+      }).catch(() => caches.match(e.request).then(hit => hit || caches.match('/index.html')))
+    );
+    return;
+  }
+
   e.respondWith(
     caches.match(e.request).then(cached => {
       const fetched = fetch(e.request).then(response => {

@@ -183,23 +183,84 @@
       o.stop(t + dur + 0.03);
     }
 
+    // ── Эмбиент: процедурный гул для 3D-сцены (без внешних файлов) ──
+    var ambNodes = null;
+
+    function ambientOn() {
+      var c = ensure();
+      if (!c || ambNodes) return;
+      if (c.state === 'suspended') c.resume();
+      // Если играет радио — не наслаиваемся
+      if (window.One1GameRadio && window.One1GameRadio.audio && !window.One1GameRadio.audio.paused) return;
+
+      var t0 = c.currentTime;
+      var master = c.createGain();
+      master.gain.setValueAtTime(0.0001, t0);
+      master.gain.exponentialRampToValueAtTime(0.05, t0 + 4);
+
+      var filter = c.createBiquadFilter();
+      filter.type = 'lowpass';
+      filter.frequency.value = 320;
+      filter.Q.value = 0.8;
+
+      var a = c.createOscillator(); a.type = 'sawtooth'; a.frequency.value = 55;    // A1
+      var b = c.createOscillator(); b.type = 'sawtooth'; b.frequency.value = 55.45; // лёгкий детюн
+      var d = c.createOscillator(); d.type = 'sine';     d.frequency.value = 110;   // октава
+
+      var lfo = c.createOscillator(); lfo.type = 'sine'; lfo.frequency.value = 0.05;
+      var lfoGain = c.createGain(); lfoGain.gain.value = 110;
+      lfo.connect(lfoGain);
+      lfoGain.connect(filter.frequency);
+
+      a.connect(filter); b.connect(filter); d.connect(filter);
+      filter.connect(master);
+      master.connect(c.destination);
+      a.start(); b.start(); d.start(); lfo.start();
+
+      ambNodes = { master: master, nodes: [a, b, d, lfo] };
+    }
+
+    function ambientOff() {
+      if (!ambNodes) return;
+      var c = ctx;
+      var master = ambNodes.master;
+      var nodes = ambNodes.nodes;
+      ambNodes = null;
+      try {
+        var now = c.currentTime;
+        master.gain.cancelScheduledValues(now);
+        master.gain.setValueAtTime(Math.max(0.0001, master.gain.value), now);
+        master.gain.exponentialRampToValueAtTime(0.0001, now + 0.9);
+      } catch (e) { /* гасим жёстко ниже */ }
+      setTimeout(function () {
+        for (var i = 0; i < nodes.length; i++) { try { nodes[i].stop(); } catch (e) {} }
+      }, 1100);
+    }
+
     return {
       enabled: function () { return on; },
       set: function (v) {
         on = !!v;
         try { localStorage.setItem(KEY, on ? '1' : '0'); } catch (e) {}
       },
+      ambient: function (want) {
+        if (want) ambientOn(); else ambientOff();
+      },
+      isAmbient: function () { return !!ambNodes; },
       play: function (kind) {
         if (!on) return;
         try {
           if (kind === 'open') { tone(420, 0.16, 'sine', 0.05, 880); }
           else if (kind === 'close') { tone(700, 0.14, 'sine', 0.04, 320); }
           else if (kind === 'on') { tone(523, 0.30, 'sine', 0.05); tone(784, 0.34, 'sine', 0.035); tone(1046, 0.28, 'triangle', 0.02); }
+          else if (kind === 'hover') { tone(1560, 0.035, 'sine', 0.012, 1980); }
           else { tone(1180, 0.045, 'triangle', 0.035, 1560); }
         } catch (e) {}
       }
     };
   })();
+
+  window.One1Sfx = Sfx;
 
   var sfxBtn = doc.getElementById('sfx-toggle');
   function paintSfx() {
@@ -210,12 +271,25 @@
     var icon = sfxBtn.querySelector('i');
     if (icon) icon.className = isOn ? 'fas fa-volume-high' : 'fas fa-volume-xmark';
   }
+  // Звук привязан к состоянию 3D-сцены: гул включается вместе с ней
+  var heroLive = false;
+  function syncAmbient() {
+    Sfx.ambient(!!(Sfx.enabled() && heroLive && !doc.hidden));
+  }
+  doc.addEventListener('one1hero:ready', function () {
+    heroLive = true;
+    root.classList.add('hero3d-on');
+    syncAmbient();
+  });
+  doc.addEventListener('visibilitychange', syncAmbient);
+
   if (sfxBtn) {
     paintSfx();
     sfxBtn.addEventListener('click', function () {
       Sfx.set(!Sfx.enabled());
       paintSfx();
       if (Sfx.enabled()) Sfx.play('on');
+      syncAmbient();
     });
   }
 
@@ -248,6 +322,9 @@
         };
         radio.audio.addEventListener('play', sync);
         radio.audio.addEventListener('pause', sync);
+        // Радио и эмбиент не звучат одновременно
+        radio.audio.addEventListener('play', function () { Sfx.ambient(false); });
+        radio.audio.addEventListener('pause', function () { syncAmbient(); });
         sync();
         return;
       }
@@ -414,7 +491,7 @@
 
     var SCALE = 0.5;
     var w = 0, h = 0, glows = [], sweep = 0, raf = null, inView = true, run = false, skip = 0;
-    var palette = [[0, 229, 255], [255, 45, 123], [179, 107, 255], [255, 215, 64]];
+    var palette = [[125, 255, 155], [96, 190, 130], [157, 178, 168], [255, 192, 97]];
 
     function resize() {
       var rect = canvas.getBoundingClientRect();
@@ -487,6 +564,12 @@
 
     doc.addEventListener('visibilitychange', function () { if (doc.hidden) stop(); else start(); });
 
+    // Когда включается 3D-сцена — 2D-подложка замирает и уходит на второй план
+    doc.addEventListener('one1hero:ready', function () {
+      stop();
+      canvas.classList.add('is-behind');
+    });
+
     start();
   })();
 
@@ -505,38 +588,285 @@
   })();
 
   /* ============================================================
+     Терминальный движок: загрузочный лог в hero
+     ============================================================ */
+  (function bootLog() {
+    var el = doc.getElementById('boot-log');
+    if (!el) return;
+
+    var n = (window.allArticles || []).length;
+    var lines = [
+      '> one1game://uplink .......... ok',
+      '> индекс материалов ......... ' + (n ? n + ' записей' : 'нет данных'),
+      '> разделы и фильтры ......... ok',
+      '> статус .................... в сети'
+    ];
+
+    function markup(arr) {
+      return arr.map(function (s) {
+        return s
+          .replace(/ok\b|в сети/g, '<b>$&</b>')
+          .replace(/\.{3,}/g, '<i>$&</i>');
+      }).join('\n');
+    }
+
+    if (reduceMotion) { el.innerHTML = markup(lines); return; }
+
+    el.textContent = '';
+    var i = 0, j = 0, done = [];
+    (function step() {
+      if (i >= lines.length) { el.innerHTML = markup(lines); return; }
+      var partial = lines[i].slice(0, ++j);
+      el.textContent = done.concat([partial]).join('\n');
+      if (j >= lines[i].length) { done.push(lines[i]); i++; j = 0; setTimeout(step, 150); }
+      else setTimeout(step, 11);
+    })();
+  })();
+
+  /* ============================================================
+     Приёмы из топа: прогресс-линия, монтажные метки, HUD, клавиши
+     ============================================================ */
+  (function shellExtras() {
+    function p3(n) { return n < 10 ? '00' + n : (n < 100 ? '0' + n : String(n)); }
+
+    // Прогресс чтения: анимируется CSS scroll-driven, JS не участвует
+    var line = doc.createElement('div');
+    line.className = 'scroll-line';
+    line.setAttribute('aria-hidden', 'true');
+    doc.body.appendChild(line);
+
+    // Монтажные метки «производственного кадра»
+    var marks = doc.createElement('div');
+    marks.className = 'marks';
+    marks.setAttribute('aria-hidden', 'true');
+    marks.innerHTML = '<i></i><i></i><i></i><i></i>';
+    doc.body.appendChild(marks);
+
+    hud();
+    keyboard();
+    decodeHeadline();
+
+    // ── HUD: телеметрия портала (только десктоп) ──
+    function hud() {
+      if (!window.matchMedia('(min-width: 900px)').matches) return;
+
+      var el = doc.createElement('div');
+      el.className = 'hud';
+      el.setAttribute('aria-hidden', 'true');
+      el.innerHTML =
+        '<span>scroll <b id="hud-scroll">000%</b></span>' +
+        '<span>section <b id="hud-sec">01</b></span>' +
+        '<span>render <b id="hud-fps">--</b></span>' +
+        '<span>time <b id="hud-clock">--:--:--</b></span>';
+      doc.body.appendChild(el);
+
+      var sScroll = doc.getElementById('hud-scroll');
+      var sSec = doc.getElementById('hud-sec');
+      var sFps = doc.getElementById('hud-fps');
+      var sClock = doc.getElementById('hud-clock');
+      var secs = [];
+
+      function collect() { secs = [].slice.call(doc.querySelectorAll('.section-header, .sec')); }
+
+      function update() {
+        var max = doc.documentElement.scrollHeight - window.innerHeight;
+        var p = max > 0 ? Math.max(0, Math.min(1, (window.scrollY || 0) / max)) : 0;
+        sScroll.textContent = p3(Math.round(p * 100)) + '%';
+
+        var probe = (window.scrollY || 0) + window.innerHeight * 0.35;
+        var n = 1;
+        for (var i = 0; i < secs.length; i++) if (secs[i].offsetTop <= probe) n = i + 1;
+        sSec.textContent = p3(n);
+      }
+
+      var queued = false;
+      window.addEventListener('scroll', function () {
+        if (queued) return;
+        queued = true;
+        requestAnimationFrame(function () { queued = false; update(); });
+      }, { passive: true });
+      window.addEventListener('resize', function () { collect(); update(); });
+
+      function clock() {
+        var d = new Date();
+        sClock.textContent = p3(d.getHours()).slice(1) + ':' + p3(d.getMinutes()).slice(1) + ':' + p3(d.getSeconds()).slice(1);
+      }
+
+      collect();
+      update();
+      clock();
+      setInterval(clock, 1000);
+
+      var frames = 0, last = performance.now();
+      (function loop(now) {
+        frames++;
+        if (now - last >= 1000) {
+          sFps.textContent = String(Math.round((frames * 1000) / (now - last)));
+          frames = 0;
+          last = now;
+        }
+        requestAnimationFrame(loop);
+      })(last);
+    }
+
+    // ── Клавиатурная навигация ──
+    function keyboard() {
+      var current = null;
+
+      var modal = doc.createElement('div');
+      modal.className = 'keys-modal';
+      modal.setAttribute('role', 'dialog');
+      modal.setAttribute('aria-label', 'Горячие клавиши');
+      modal.innerHTML =
+        '<div class="keys-panel">' +
+        '  <h3>управление</h3>' +
+        '  <dl>' +
+        '    <dt>j / k</dt><dd>следующая / предыдущая запись</dd>' +
+        '    <dt>enter</dt><dd>открыть выбранную</dd>' +
+        '    <dt>esc</dt><dd>сбросить выбор</dd>' +
+        '    <dt>/ · ctrl+k</dt><dd>поиск по материалам</dd>' +
+        '    <dt>s</dt><dd>звук интерфейса вкл/выкл</dd>' +
+        '    <dt>?</dt><dd>эта подсказка</dd>' +
+        '  </dl>' +
+        '  <button type="button" class="keys-close">закрыть</button>' +
+        '</div>';
+      doc.body.appendChild(modal);
+
+      function closeKeys() {
+        modal.classList.remove('open');
+        lockScroll(false);
+      }
+      function openKeys() {
+        modal.classList.add('open');
+        lockScroll(true);
+        Sfx.play('open');
+      }
+      modal.addEventListener('click', function (e) {
+        if (e.target === modal || (e.target.closest && e.target.closest('.keys-close'))) closeKeys();
+      });
+
+      function items() {
+        return [].slice.call(doc.querySelectorAll('.entry, .related-card, .featured-link, .social-btn'));
+      }
+
+      function setCurrent(el) {
+        if (current && current.classList) current.classList.remove('is-cursor');
+        current = el;
+        if (!current) return;
+        current.classList.add('is-cursor');
+        current.scrollIntoView({ block: 'center', behavior: reduceMotion ? 'auto' : 'smooth' });
+        Sfx.play('hover');
+      }
+
+      function move(step) {
+        var list = items();
+        if (!list.length) return;
+        var i = current ? list.indexOf(current) : -1;
+        if (i < 0) i = step > 0 ? 0 : list.length - 1;
+        else i = (i + step + list.length) % list.length;
+        setCurrent(list[i]);
+      }
+
+      doc.addEventListener('keydown', function (e) {
+        var t = e.target;
+        if (t && (t.tagName === 'INPUT' || t.tagName === 'TEXTAREA' || t.isContentEditable)) return;
+        if (e.ctrlKey || e.metaKey || e.altKey) return;
+
+        if (e.key === 'j' || e.key === 'J') { e.preventDefault(); move(1); return; }
+        if (e.key === 'k' || e.key === 'K') { e.preventDefault(); move(-1); return; }
+        if (e.key === 'Enter' && current) {
+          e.preventDefault();
+          current.click();
+          return;
+        }
+        if (e.key === 'Escape') {
+          if (modal.classList.contains('open')) { closeKeys(); return; }
+          if (current) { setCurrent(null); }
+          return;
+        }
+        if (e.key === '?') { e.preventDefault(); openKeys(); return; }
+        if (e.key === 's' || e.key === 'S') { if (sfxBtn) { e.preventDefault(); sfxBtn.click(); } }
+      });
+    }
+
+    // ── Kinetic typography: декодирование заголовка ──
+    function decodeHeadline() {
+      var h1 = doc.querySelector('.hero h1');
+      if (!h1 || reduceMotion) return;
+
+      var nodes = [];
+      (function walk(n) {
+        for (var i = 0; i < n.childNodes.length; i++) {
+          var c = n.childNodes[i];
+          if (c.nodeType === 3 && c.nodeValue.trim()) nodes.push(c);
+          else if (c.nodeType === 1 && !c.classList.contains('caret')) walk(c);
+        }
+      })(h1);
+      if (!nodes.length) return;
+
+      var orig = nodes.map(function (n) { return n.nodeValue; });
+      var glyphs = '#@%$&*+=<>/\\|_01';
+      var dur = 620, t0 = null;
+
+      function restore() {
+        for (var k = 0; k < nodes.length; k++) nodes[k].nodeValue = orig[k];
+      }
+      // Страховка: если кадры не приходят, текст всё равно вернётся
+      setTimeout(restore, dur + 600);
+
+      requestAnimationFrame(function frame(ts) {
+        if (!t0) t0 = ts;
+        var p = Math.min(1, (ts - t0) / dur);
+        for (var i = 0; i < nodes.length; i++) {
+          var src = orig[i], out = '', keep = Math.floor(src.length * p);
+          for (var j = 0; j < src.length; j++) {
+            out += j < keep || src[j] === ' ' ? src[j] : glyphs[(Math.random() * glyphs.length) | 0];
+          }
+          nodes[i].nodeValue = out;
+        }
+        if (p < 1) requestAnimationFrame(frame); else restore();
+      });
+    }
+  })();
+
+  /* ============================================================
      Процедурные обложки — детерминированный арт под каждую статью
      ============================================================ */
   (function covers() {
     var COVER_W = 320, COVER_H = 180;
 
-    function makeCover(seed) {
-      var h = 2166136261;
+    // Рисует процедурную «обложку» и возвращает canvas.
+    // Используется и как плейсхолдер карточек, и как текстура 3D-сцены.
+    function coverCanvas(seed, w, h) {
+      w = Math.max(16, w || COVER_W);
+      h = Math.max(16, h || COVER_H);
+
+      var hash = 2166136261;
       var str = String(seed || 'one1game');
       for (var i = 0; i < str.length; i++) {
-        h ^= str.charCodeAt(i);
-        h = Math.imul(h, 16777619);
+        hash ^= str.charCodeAt(i);
+        hash = Math.imul(hash, 16777619);
       }
       function rnd() {
-        h ^= h << 13; h ^= h >>> 17; h ^= h << 5;
-        return ((h >>> 0) % 10000) / 10000;
+        hash ^= hash << 13; hash ^= hash >>> 17; hash ^= hash << 5;
+        return ((hash >>> 0) % 10000) / 10000;
       }
-      var pal = [[0, 229, 255], [255, 45, 123], [179, 107, 255], [255, 215, 64], [57, 255, 20]];
+      var pal = [[125, 255, 155], [96, 190, 130], [157, 178, 168], [255, 192, 97], [72, 120, 96]];
       var a = pal[Math.floor(rnd() * pal.length)];
       var b = pal[Math.floor(rnd() * pal.length)];
 
       var c = doc.createElement('canvas');
-      c.width = COVER_W; c.height = COVER_H;
+      c.width = w; c.height = h;
       var g = c.getContext('2d');
-      if (!g) return '';
+      if (!g) return c;
 
       g.fillStyle = '#08080f';
-      g.fillRect(0, 0, COVER_W, COVER_H);
+      g.fillRect(0, 0, w, h);
 
       var cols = [a, b];
       for (var k = 0; k < 3; k++) {
         var col = cols[k % 2];
-        var x = rnd() * COVER_W, y = rnd() * COVER_H, r = (0.4 + rnd() * 0.5) * COVER_W;
+        var x = rnd() * w, y = rnd() * h, r = (0.4 + rnd() * 0.5) * w;
         var gr = g.createRadialGradient(x, y, 0, x, y, r);
         gr.addColorStop(0, 'rgba(' + col.join(',') + ',0.34)');
         gr.addColorStop(1, 'rgba(' + col.join(',') + ',0)');
@@ -549,16 +879,22 @@
       g.strokeStyle = '#ffffff';
       g.lineWidth = 1;
       var step = 14 + Math.floor(rnd() * 10);
-      for (var x2 = -COVER_H; x2 < COVER_W; x2 += step) {
+      for (var x2 = -h; x2 < w; x2 += step) {
         g.beginPath();
-        g.moveTo(x2, COVER_H);
-        g.lineTo(x2 + COVER_H, 0);
+        g.moveTo(x2, h);
+        g.lineTo(x2 + h, 0);
         g.stroke();
       }
       g.globalAlpha = 1;
 
-      try { return c.toDataURL('image/jpeg', 0.72); } catch (e) { return ''; }
+      return c;
     }
+
+    function coverURL(seed) {
+      try { return coverCanvas(seed, COVER_W, COVER_H).toDataURL('image/jpeg', 0.72); } catch (e) { return ''; }
+    }
+
+    window.One1Cover = { canvas: coverCanvas, url: coverURL };
 
     function apply(img) {
       if (!img || img.dataset.pl) return;
@@ -566,8 +902,8 @@
       var box = img.parentElement;
       if (!box) return;
       var seed = (img.getAttribute('alt') || '') + (img.getAttribute('src') || '');
-      var url = makeCover(seed);
-      if (url && box.classList.contains('card-image')) {
+      var url = coverURL(seed);
+      if (url && box && (box.classList.contains('card-image') || box.classList.contains('entry-thumb') || box.classList.contains('fx'))) {
         box.style.backgroundImage = 'url(' + url + ')';
         box.style.backgroundSize = 'cover';
         box.style.backgroundPosition = 'center';
@@ -580,17 +916,19 @@
       }
     }
 
+    // Обложки живут и в ленте (.entry-thumb), и в старых плитках (.card-image)
+    var IMG_SEL = '.card-image img, .entry-thumb img, .fx img';
+
+    function boxOf(img) {
+      var b = img.parentElement;
+      return b && (b.classList.contains('card-image') || b.classList.contains('entry-thumb') || b.classList.contains('fx')) ? b : null;
+    }
+
     function scan(node) {
       if (!node || node.nodeType !== 1) return;
-      if (node.classList && node.classList.contains('card-image')) {
-        var im = node.querySelector('img');
-        if (im) apply(im);
-      }
-      if (node.tagName === 'IMG' && node.parentElement && node.parentElement.classList.contains('card-image')) {
-        apply(node);
-      }
+      if (node.tagName === 'IMG' && boxOf(node)) { apply(node); return; }
       if (node.querySelectorAll) {
-        var imgs = node.querySelectorAll('.card-image img');
+        var imgs = node.querySelectorAll(IMG_SEL);
         for (var i = 0; i < imgs.length; i++) apply(imgs[i]);
       }
     }
@@ -608,7 +946,7 @@
       }
       // Страховка: если что-то пошло не так — показать все картинки
       setTimeout(function () {
-        var imgs = doc.querySelectorAll('.card-image img');
+        var imgs = doc.querySelectorAll(IMG_SEL);
         for (var i = 0; i < imgs.length; i++) imgs[i].classList.add('is-loaded');
       }, 3000);
     } catch (e) {

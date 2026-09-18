@@ -29,7 +29,7 @@
   <link rel="dns-prefetch" href="https://www.google-analytics.com" />
   
   <link rel="preload" as="style" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css" onload="this.rel='stylesheet';this.removeAttribute('onload')" /><noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css" /></noscript>
-  <link rel="stylesheet" href="styles.css?v=18" />
+  <link rel="stylesheet" href="styles.css?v=22" />
   <link rel="manifest" href="/manifest.json" />
   <meta name="theme-color" content="#06060c" />
   <!-- Google Analytics loads only after explicit consent -->
@@ -55,10 +55,20 @@
 <main id="main-content">
 <div class="container">
 
-  <section class="hero" style="padding: 40px 0 30px;">
-    <h1>Архив <span class="highlight">статей</span></h1>
-    <h2 class="hero-sub">Гайды, обзоры, новости игровой индустрии</h2>
-    <p class="hero-sub">Все игровые материалы One1Game — обзоры, гайды, аналитика и новости индустрии.</p>
+  <section class="hero hero--compact" id="hero" style="padding: 44px 0 40px;">
+    <canvas class="hero-canvas" id="hero-canvas" aria-hidden="true"></canvas>
+    <canvas class="hero-3d" id="hero-3d" data-scene="compact" aria-hidden="true"></canvas>
+    <button type="button" class="hero-3d-status" id="hero-3d-status" aria-label="3D-сцена портала">
+      <span class="hero-3d-dot" aria-hidden="true"></span><span id="hero-3d-status-text">3D</span>
+    </button>
+    <div class="hero-tip" id="hero-tip" aria-hidden="true"></div>
+
+    <div class="hero-inner container">
+      <p class="boot">&gt; one1game://archive ......... <b>ok</b> · полный индекс материалов</p>
+      <h1>Архив <span class="highlight">статей</span><span class="caret" aria-hidden="true"></span></h1>
+      <p class="hero-sub">Все игровые материалы One1Game — обзоры, гайды, аналитика и новости индустрии.</p>
+      <p class="hero-hint"><i class="fas fa-hand-pointer" aria-hidden="true"></i> кликни по карточке в 3D — откроется материал</p>
+    </div>
   </section>
 
   <!-- SEARCH -->
@@ -72,8 +82,8 @@
     <button class="cat-pill active" data-category="all">Все</button>
   </div>
 
-  <!-- ARTICLES GRID -->
-  <div class="articles-grid" id="articles-list">
+  <!-- ЛЕНТА ЗАПИСЕЙ -->
+  <div class="feed" id="articles-list">
     <!-- Populated by JS -->
   </div>
 
@@ -84,7 +94,7 @@
 
 </main>
 <script src="/cache-version.js"></script>
-<script defer src="articles-data.js?v=18"></script>
+<script defer src="articles-data.js?v=22"></script>
 <script>
 // === ARCHIVE PAGE LOGIC ===
 let allArticles = [];
@@ -178,12 +188,6 @@ function filterAndDisplay() {
   const start = (currentPage - 1) * perPage;
   const pageArticles = filtered.slice(start, start + perPage);
 
-  const categoryMap = {
-    'Технологии': 'cat-tech', 'Гайды': 'cat-guides', 'Консоли': 'cat-consoles',
-    'Аналитика': 'cat-analytics', 'Тренды': 'cat-trends', 'Разработка': 'cat-dev', 'Мнение': 'cat-opinion',
-    'Во что поиграть?': 'cat-play'
-  };
-
   const container = document.getElementById('articles-list');
   if (pageArticles.length === 0) {
     container.innerHTML = '<div class="empty-state"><div class="empty-icon"><i class="fas fa-search"></i></div><h3>Ничего не найдено</h3><p>Попробуйте изменить запрос или категорию.</p></div>';
@@ -191,36 +195,41 @@ function filterAndDisplay() {
     return;
   }
 
-  // Производные WebP-варианты: -800.webp достаточно для сетки карточек
+  // Производные WebP-варианты: -800.webp достаточно для ленты
   const srcsetAttr = (src, isLead) => {
     if (!/\.webp$/i.test(src)) return '';
     const small = src.replace(/\.webp$/i, '-800.webp');
     const sizes = isLead
       ? '(min-width: 900px) 1100px, 100vw'
-      : '(min-width: 1220px) 400px, (min-width: 640px) 45vw, 100vw';
+      : '(min-width: 1220px) 190px, (min-width: 640px) 140px, 92px';
     return ` srcset="${small} 800w, ${src} 1344w" sizes="${sizes}"`;
   };
 
-  container.innerHTML = pageArticles.map(a => {
-    const catClass = categoryMap[a.category] || '';
-    const isFirst = (currentPage === 1 && allArticles.indexOf(a) === 0);
+  const pad3 = n => String(n).padStart(3, '0');
+
+  container.innerHTML = pageArticles.map((a, idx) => {
+    const isFirst = (currentPage === 1 && idx === 0);
     const safeUrl = escapeHTML(a.url || '#');
     const safeImage = escapeHTML(a.image || '');
     const safeTitle = escapeHTML(a.title || '');
     const safeCategory = escapeHTML(a.category || '');
     const safeExcerpt = escapeHTML(a.excerpt || '');
     const safeDate = escapeHTML(a.date || '');
-    const safeReadTime = escapeHTML(a.readTime || '5 мин');
+    const safeReadTime = escapeHTML(a.readTime || '');
+    const meta = [safeDate, safeReadTime].filter(Boolean).join(' · ');
     return `
-    <a href="${safeUrl}" class="article-card${isFirst ? ' featured' : ''}">
-      ${safeImage ? `<div class="card-image"><img src="${safeImage}" alt="${safeTitle}" loading="${isFirst ? 'eager' : 'lazy'}" fetchpriority="${isFirst ? 'high' : 'auto'}" decoding="async" width="1344" height="768"${srcsetAttr(safeImage, isFirst)}></div>` : ''}
-      ${safeCategory ? `<span class="card-category ${catClass}">${safeCategory}</span>` : ''}
-      <h3>${safeTitle}</h3>
-      <p class="card-excerpt">${safeExcerpt}</p>
-      <div class="card-meta">
-        <span><i class="far fa-calendar" aria-hidden="true"></i> ${safeDate}</span>
-        <span><i class="far fa-clock" aria-hidden="true"></i> ${safeReadTime}</span>
-      </div>
+    <a href="${safeUrl}" class="entry${isFirst ? ' entry--lead' : ''}">
+      <span class="entry-no">${pad3(start + idx + 1)}</span>
+      ${safeImage ? `<span class="entry-thumb fx"><img src="${safeImage}" alt="${safeTitle}" loading="${isFirst ? 'eager' : 'lazy'}" fetchpriority="${isFirst ? 'high' : 'auto'}" decoding="async" width="1344" height="768"${srcsetAttr(safeImage, isFirst)}></span>` : '<span class="entry-thumb fx"></span>'}
+      <span class="entry-main">
+        <span class="entry-top">
+          ${safeCategory ? `<span class="entry-cat">#${safeCategory.toLowerCase()}</span>` : ''}
+          ${meta ? `<span class="entry-meta">${meta}</span>` : ''}
+        </span>
+        <span class="entry-title">${safeTitle}</span>
+        ${safeExcerpt ? `<span class="entry-excerpt">${safeExcerpt}</span>` : ''}
+        ${isFirst ? '<span class="entry-open">открыть материал</span>' : ''}
+      </span>
     </a>`;
   }).join('');
 
@@ -255,6 +264,7 @@ document.addEventListener('mouseover', e => {
   card.style.setProperty('--mouse-y', y + '%');
 });
 </script>
-<script src="/components.js?v=18" defer></script>
+<script defer src="/babylon-hero.js?v=22"></script>
+<script src="/components.js?v=22" defer></script>
 </body>
 </html>
