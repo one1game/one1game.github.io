@@ -124,6 +124,7 @@
     '    <a href="/" class="footer-brand">ONE1<span>GAME</span></a>' +
     '    <div class="footer-links">' +
     '      <a href="/archive.html">Статьи</a>' +
+    '      <a href="/cyber-scanner/">Проверка безопасности</a>' +
     '      <a href="/advertising.html">Реклама</a>' +
     '      <a href="/privacy.html">Политика</a>' +
     '      <a href="/terms.html">Правила</a>' +

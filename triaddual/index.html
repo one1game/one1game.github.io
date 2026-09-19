@@ -786,7 +786,7 @@
   </div>
   <div class="shop-header">
     <div class="section-title" id="shopTabTitle">Склеп</div>
-    <div class="gold-display"><img src="img/game/Remains_icon.webp" alt=""> <span id="shopGold">100</span></div>
+    <div class="gold-display"><img src="img/game/Remains_icon.png" alt=""> <span id="shopGold">100</span></div>
   </div>
   <div id="shopGrid" class="card-grid"></div>
   <div class="shop-footer">
@@ -1047,7 +1047,7 @@ function renderShop(){
   upBBtn();
 }
 function renderShopGrid(){
-  el('shopGrid').innerHTML=shopCards.map(c=>{const rc=c.type==='mage'?'#b8a8c8':c.type==='tank'?'#8ab87a':'#d08070';const rt=c.type==='mage'?'Маг':c.type==='tank'?'Танк':'Убийца';const canBuy=playerGold>=c.price;return `<div class="shop-card" onclick="showCardDetail('${c.id}')"><img class="shop-card-img" src="${IMG_BASE}${c.id}.png" alt="${c.name}"><span class="atk-badge">⚔ ${c.atk}</span><span class="card-role" style="color:${rc}">${rt}</span><div class="hp-bar-wrap"><div class="hp-bar healthy" style="width:100%"></div></div><span class="hp-text">${c.hp}/${c.hp}</span><span class="shop-card-name">${c.name}</span><span class="shop-card-passive">${c.passive||''}</span><div class="shop-card-price"><img src="img/game/Remains_icon.webp" alt="">${c.price}</div>${canBuy?`<button class="shop-card-buy" onclick="event.stopPropagation();buyCard('${c.id}')">Купить</button>`:`<button class="shop-card-buy" disabled>Купить</button>`}</div>`}).join('');
+  el('shopGrid').innerHTML=shopCards.map(c=>{const rc=c.type==='mage'?'#b8a8c8':c.type==='tank'?'#8ab87a':'#d08070';const rt=c.type==='mage'?'Маг':c.type==='tank'?'Танк':'Убийца';const canBuy=playerGold>=c.price;return `<div class="shop-card" onclick="showCardDetail('${c.id}')"><img class="shop-card-img" src="${IMG_BASE}${c.id}.png" alt="${c.name}"><span class="atk-badge">⚔ ${c.atk}</span><span class="card-role" style="color:${rc}">${rt}</span><div class="hp-bar-wrap"><div class="hp-bar healthy" style="width:100%"></div></div><span class="hp-text">${c.hp}/${c.hp}</span><span class="shop-card-name">${c.name}</span><span class="shop-card-passive">${c.passive||''}</span><div class="shop-card-price"><img src="img/game/Remains_icon.png" alt="">${c.price}</div>${canBuy?`<button class="shop-card-buy" onclick="event.stopPropagation();buyCard('${c.id}')">Купить</button>`:`<button class="shop-card-buy" disabled>Купить</button>`}</div>`}).join('');
 }
 function renderColGrid(){
   const g=el('shopGrid');
@@ -1093,9 +1093,9 @@ function renderChaosGrid(){
         <span class="chaos-card-class" style="color:${rc}">${rt}</span>
         <span class="chaos-card-passive">${c.passive||''}</span>
         <div class="chaos-upgrades">
-          <button class="chaos-upg-btn${playerGold<hpCost?' locked':''}" data-stat="hp" data-tip="❤ +1 HP • ${hpCost} R" onclick="event.stopPropagation();doUpgrade('${c.id}','hp')"><img src="img/game/upg_hp.webp" class="chaos-upg-icon"></button>
-          <button class="chaos-upg-btn${playerGold<atkCost?' locked':''}" data-stat="atk" data-tip="⚔ +1 ATK • ${atkCost} R" onclick="event.stopPropagation();doUpgrade('${c.id}','atk')"><img src="img/game/upg_atk.webp" class="chaos-upg-icon"></button>
-          <button class="chaos-upg-btn${(playerGold<manaCost||maxMana)?' locked':''}" data-stat="mana" data-tip="💠 +1 Мана • ${manaCost} R" onclick="event.stopPropagation();doUpgrade('${c.id}','mana')"><img src="img/game/upg_mana.webp" class="chaos-upg-icon"></button>
+          <button class="chaos-upg-btn${playerGold<hpCost?' locked':''}" data-stat="hp" data-tip="❤ +1 HP • ${hpCost} R" onclick="event.stopPropagation();doUpgrade('${c.id}','hp')"><img src="img/game/upg_hp.png" class="chaos-upg-icon"></button>
+          <button class="chaos-upg-btn${playerGold<atkCost?' locked':''}" data-stat="atk" data-tip="⚔ +1 ATK • ${atkCost} R" onclick="event.stopPropagation();doUpgrade('${c.id}','atk')"><img src="img/game/upg_atk.png" class="chaos-upg-icon"></button>
+          <button class="chaos-upg-btn${(playerGold<manaCost||maxMana)?' locked':''}" data-stat="mana" data-tip="💠 +1 Мана • ${manaCost} R" onclick="event.stopPropagation();doUpgrade('${c.id}','mana')"><img src="img/game/upg_mana.png" class="chaos-upg-icon"></button>
         </div>
       </div>
     </div>`;
@@ -1103,7 +1103,7 @@ function renderChaosGrid(){
 }
 function showToast(msg,needed){
   const t=el('shopToast');
-  t.innerHTML=`<img src="img/game/Remains_icon.webp"> ${msg}${needed?' • нужно ещё '+needed+' R':''}`;
+  t.innerHTML=`<img src="img/game/Remains_icon.png"> ${msg}${needed?' • нужно ещё '+needed+' R':''}`;
   t.classList.add('show');
   clearTimeout(t._timeout);
   t._timeout=setTimeout(()=>t.classList.remove('show'),2000);
@@ -1898,10 +1898,10 @@ function checkEnd(){
     setTimeout(()=>{el('resultOverlay').classList.add('show');
       if(!eAlive){
         el('resultText').textContent='Победа!';el('resultText').className='result-text win';
-        const g=40+Math.floor(Math.random()*40);playerGold+=g;el('resultGold').innerHTML=`<span class="gold-display"><img src="img/game/Remains_icon.webp" alt=""> +${g}</span>`;log(`<span class="log-victory">⚔ Все враги пали! +${g} золота</span>`);sfx.victory();
+        const g=40+Math.floor(Math.random()*40);playerGold+=g;el('resultGold').innerHTML=`<span class="gold-display"><img src="img/game/Remains_icon.png" alt=""> +${g}</span>`;log(`<span class="log-victory">⚔ Все враги пали! +${g} золота</span>`);sfx.victory();
       }else{
         el('resultText').textContent='Поражение';el('resultText').className='result-text lose';
-        const g=10+Math.floor(Math.random()*10);playerGold+=g;el('resultGold').innerHTML=`<span class="gold-display"><img src="img/game/Remains_icon.webp" alt=""> +${g}</span>`;log(`<span class="log-defeat">☠ Ваш отряд уничтожен... +${g} золота</span>`);sfx.defeat();
+        const g=10+Math.floor(Math.random()*10);playerGold+=g;el('resultGold').innerHTML=`<span class="gold-display"><img src="img/game/Remains_icon.png" alt=""> +${g}</span>`;log(`<span class="log-defeat">☠ Ваш отряд уничтожен... +${g} золота</span>`);sfx.defeat();
       }
     },700);return true}
   return false;

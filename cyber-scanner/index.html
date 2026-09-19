@@ -6,39 +6,88 @@
   <link rel="canonical" href="https://one1game.github.io/cyber-scanner/" />
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🛡️</text></svg>">
   <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin />
-  <link rel="preconnect" href="https://www.googletagmanager.com" crossorigin />
+  <link rel="preconnect" href="https://cloudflare-dns.com" crossorigin />
 
-  <title>Cyber-Scanner — Бесплатный Сканер Уязвимостей Сайта Онлайн | One1Game</title>
-  <meta name="description" content="Проверь любой сайт на XSS, SQL-инъекции, CORS, утечки данных и 20+ уязвимостей. 100% в браузере, без регистрации. Бесплатный онлайн-сканер безопасности." />
-  <meta name="keywords" content="сканер уязвимостей, проверка сайта, XSS, SQL injection, CORS, security headers, кибербезопасность, бесплатный сканер" />
+  <title>Cyber-Scanner — проверить SPF, DMARC, DKIM, CSP и JWT без регистрации</title>
+  <meta name="description" content="Проверить SPF, DMARC, DKIM и DNS домена, аудит CSP и заголовков безопасности, разбор JWT с проверкой подписи, анализ фишинговых ссылок, проверка пароля на утечку, хеши SHA-256 и TOTP. Считает браузер — данные не уходят на сервер, регистрация не нужна." />
+  <meta name="keywords" content="проверить spf, проверка dmarc, dkim селектор проверить, проверить mx записи, проверка заголовков безопасности, csp аудит, jwt decode онлайн, проверить подпись jwt, проверить ссылку на фишинг, punycode проверка, проверка пароля на утечку, генератор паролей онлайн, sha256 онлайн, totp генератор, проверить csp сайта, аудит безопасности сайта онлайн, mxtoolbox аналог, альтернатива securityheaders, проверить spf без регистрации, void lookups, проверка безопасности без отправки данных" />
   <meta name="robots" content="index, follow" />
+  <meta name="author" content="One1Game" />
+  <meta name="theme-color" content="#04060a" />
 
   <!-- OpenGraph -->
-  <meta property="og:title" content="Cyber-Scanner — Бесплатный Сканер Уязвимостей Сайта Онлайн" />
-  <meta property="og:description" content="XSS, SQLi, CORS, headers, утечки — всё за 30 секунд. Полностью в браузере." />
+  <meta property="og:title" content="Cyber-Scanner — проверка SPF, DMARC, CSP и JWT без отправки данных" />
+  <meta property="og:description" content="Семь инструментов безопасности в браузере: DNS-почта, заголовки и CSP, JWT, фишинговые ссылки, пароли, HTML-код, крипто. Данные не уходят на сервер, регистрация не нужна." />
   <meta property="og:url" content="https://one1game.github.io/cyber-scanner/" />
   <meta property="og:type" content="website" />
   <meta property="og:image" content="https://one1game.github.io/og-image.jpg" />
+  <meta property="og:locale" content="ru_RU" />
+  <meta property="og:site_name" content="One1Game" />
   <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Cyber-Scanner — проверка SPF, DMARC, CSP и JWT онлайн" />
+  <meta name="twitter:description" content="Семь инструментов безопасности, которые работают прямо в браузере: DNS-почта, CSP и заголовки, JWT, фишинг, пароли, HTML, крипто." />
   <!-- Google Analytics loads only after explicit consent -->
   <script defer src="/analytics-consent.js?v=1"></script>
-
-
 
   <script type="application/ld+json">
   {
     "@context":"https://schema.org",
     "@type":"SoftwareApplication",
     "name":"Cyber-Scanner",
+    "alternateName":"Онлайн-проверка безопасности One1Game",
     "applicationCategory":"SecurityApplication",
     "operatingSystem":"All",
-    "offers":{"@type":"Offer","price":"0"},
-    "description":"Бесплатный клиентский сканер безопасности сайтов. XSS, SQLi, CORS, headers, утечки данных."
+    "url":"https://one1game.github.io/cyber-scanner/",
+    "inLanguage":"ru",
+    "isAccessibleForFree":true,
+    "offers":{"@type":"Offer","price":"0","priceCurrency":"RUB"},
+    "featureList":[
+      "Проверка SPF, DMARC, DKIM, MX, CAA и DNSSEC домена через DNS-over-HTTPS",
+      "Рекурсивный подсчёт DNS-запросов в SPF и поиск пустых (void) запросов по RFC 7208",
+      "Аудит заголовков безопасности и разбор Content-Security-Policy",
+      "Разбор JWT и проверка подписи HMAC (HS), RSA (RS, PS) и ECDSA (ES)",
+      "Анализ ссылок на фишинг: гомоглифы, punycode, обман через @",
+      "Проверка стойкости пароля и поиск его в утечках по k-анонимному протоколу",
+      "Статический анализ HTML: XSS-стоки, секреты, скрипты без SRI",
+      "Крипто-утилиты: MD5, SHA-1/256/384/512, HMAC, AES-GCM, TOTP, кодировки",
+      "Все данные считаются в браузере и не отправляются на сервер"
+    ],
+    "description":"Клиентский тулкит безопасности: анализ стойкости и утечек паролей, проверка SPF/DMARC/DKIM, аудит JWT и CSP, анализ фишинговых ссылок, крипто-утилиты.",
+    "publisher":{"@type":"Organization","name":"One1Game","url":"https://one1game.github.io/"}
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"FAQPage",
+    "mainEntity":[
+      {"@type":"Question","name":"Это безопасно — вводить сюда пароль или токен?","acceptedAnswer":{"@type":"Answer","text":"Да. Ни один символ не уходит на наш сервер: анализатор пароля, разбор JWT и крипто-утилиты работают на JavaScript внутри вашей вкладки. Единственная проверка с сетью — поиск пароля в утечках: по протоколу k-анонимности отправляются только первые 5 символов SHA-1-хеша, сам пароль не передаётся никогда."}},
+      {"@type":"Question","name":"Почему нельзя проверить заголовки чужого сайта по ссылке?","acceptedAnswer":{"@type":"Answer","text":"По правилам браузера страница не может читать заголовки ответа другого домена: Set-Cookie и Access-Control-Allow-Origin вообще скрыты от JavaScript. Поэтому инструмент принимает вставленный ответ сервера — из curl -sI https://site или из DevTools → Network → Headers."}},
+      {"@type":"Question","name":"Как проверить SPF, DMARC и DKIM домена?","acceptedAnswer":{"@type":"Answer","text":"Введите домен во вкладке «Почта и DNS». Инструмент делает настоящие DNS-запросы через DNS-over-HTTPS Cloudflare и разбирает SPF (включая redirect= и include), DMARC-политику, DKIM по селекторам, MX, CAA, DNSSEC, MTA-STS и TLS-RPT. Можно вставить и адрес вида user@domain.ru — домен будет взят из адреса."}},
+      {"@type":"Question","name":"Что показывает оценка и грейд A+ … F?","acceptedAnswer":{"@type":"Answer","text":"Каждая находка имеет вес: критичная — 25 баллов, высокая — 14, средняя — 7, низкая — 3. Оценка начинается со 100 и уменьшается на вес найденных проблем: 95+ это A+, 85+ A, 70+ B, 55+ C, 40+ D, ниже — F."}},
+      {"@type":"Question","name":"Определяет ли инструмент фишинговую ссылку точно?","acceptedAnswer":{"@type":"Answer","text":"Он находит технические признаки: подмену букв (гомоглифы), punycode-двойники, бренд в поддомене, опечатки в домене, обман через @, невидимые символы, открытые редиректы, опасные расширения и http. Репутация домена, возраст регистрации и блок-листы так не проверяются — это локальные эвристики, а не приговор."}},
+      {"@type":"Question","name":"Нужна ли регистрация или установка?","acceptedAnswer":{"@type":"Answer","text":"Нет. Открывайте страницу и пользуйтесь: регистрации, лимитов и установки нет. История последних проверок хранится только в вашем браузере (localStorage) и очищается одной кнопкой."}},
+      {"@type":"Question","name":"Куда именно уходят мои данные?","acceptedAnswer":{"@type":"Answer","text":"Из семи инструментов в сеть обращаются только два. Проверка утечек отправляет на api.pwnedpasswords.com первые 5 символов SHA-1-хеша пароля — восстановить по ним пароль невозможно, это стандартный протокол k-анонимности. Проверка домена отправляет имя домена в DNS-over-HTTPS Cloudflare. Остальное — JWT, ссылки, вставленные заголовки, HTML-код, хеши и шифрование — считается на JavaScript внутри вкладки и не передаётся никуда, включая наш сервер: его просто нет."}},
+      {"@type":"Question","name":"Чем это отличается от MXToolbox или SecurityHeaders.com?","acceptedAnswer":{"@type":"Answer","text":"Не «лучше», а иначе. Серверные чекеры умеют то, чего браузер не может: сами сходить по URL, посмотреть сертификат, репутацию IP и блок-листы. Зато они получают ваш домен, URL или токен и хранят историю проверок. Здесь ничего не уходит на чужой сервер — считает ваш браузер. Плюс есть то, чего у многих нет: рекурсивный подсчёт SPF-запросов вместе с пустыми (void) и проверка подписи JWT алгоритмами HS, RS, PS и ES."}}
+    ]
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"BreadcrumbList",
+    "itemListElement":[
+      {"@type":"ListItem","position":1,"name":"One1Game","item":"https://one1game.github.io/"},
+      {"@type":"ListItem","position":2,"name":"Cyber-Scanner","item":"https://one1game.github.io/cyber-scanner/"}
+    ]
   }
   </script>
 
   <link rel="preload" as="style" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css" onload="this.rel='stylesheet';this.removeAttribute('onload')" /><noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css" /></noscript>
-  <link rel="stylesheet" href="style.css?v=1" />
+  <link rel="stylesheet" href="/styles.css?v=23" />
+  <link rel="stylesheet" href="style.css?v=6" />
   <link rel="manifest" href="/manifest.json" />
 </head>
 <body>
@@ -47,87 +96,391 @@
 
   <a href="/" class="back-link"><i class="fas fa-arrow-left"></i> На главную</a>
 
+  <noscript>
+    <div class="card">
+      <h2 class="card-title">Нужен JavaScript</h2>
+      <div class="out-note">Все проверки считаются прямо в браузере, без сервера, — поэтому без JavaScript инструмент не работает. Включите его и обновите страницу.</div>
+    </div>
+  </noscript>
+
   <!-- HEADER -->
-  <section class="scanner-hero">
+  <header class="scanner-hero">
     <div class="hero-icon"><i class="fas fa-shield-halved"></i></div>
     <h1>Cyber-Scanner</h1>
-    <p class="hero-sub">Бесплатный сканер уязвимостей — всё в браузере, ничего на сервер</p>
+    <p class="hero-sub">Проверка SPF, DMARC, DKIM и DNS домена, аудит CSP и заголовков безопасности, разбор JWT, анализ фишинговых ссылок, проверка пароля на утечку, хеши и TOTP. Всё считается в браузере — на сервер не уходит ничего.</p>
     <div class="hero-badges">
-      <span><i class="fas fa-check-circle"></i> 20+ проверок</span>
-      <span><i class="fas fa-bolt"></i> Мгновенно</span>
-      <span><i class="fas fa-lock"></i> Приватно</span>
+      <span><i class="fas fa-toolbox"></i> 7 инструментов</span>
+      <span><i class="fas fa-lock"></i> Данные не уходят на сервер</span>
+      <span><i class="fas fa-code"></i> Без регистрации и лимитов</span>
     </div>
-  </section>
+  </header>
 
-  <!-- INPUT -->
-  <section class="scan-input-section">
-    <div class="input-row">
-      <div class="input-wrapper">
-        <i class="fas fa-globe input-icon"></i>
-        <input type="url" id="targetUrl" placeholder="https://example.com" class="scan-input" autocomplete="off" />
+  <div class="privacy" role="note" aria-label="Что уходит в сеть">
+    <span><i class="fas fa-shield-halved"></i> Пароль и JWT-токен <b>не покидают браузер</b></span>
+    <span><i class="fas fa-fingerprint"></i> В базу утечек уходят <b>5 символов хеша</b>, а не пароль</span>
+    <span><i class="fas fa-file-code"></i> HTML-код и заголовки <b>никуда не отправляются</b></span>
+    <span><i class="fas fa-cloud"></i> В сеть — только <b>DNS-запросы к Cloudflare</b></span>
+  </div>
+
+  <!-- TABS -->
+  <nav class="tool-tabs" id="toolTabs" role="tablist">
+    <button class="tool-tab active" role="tab" data-tool="pass"><i class="fas fa-key"></i> Пароли</button>
+    <button class="tool-tab" role="tab" data-tool="dns"><i class="fas fa-envelope-circle-check"></i> Почта и DNS</button>
+    <button class="tool-tab" role="tab" data-tool="jwt"><i class="fas fa-id-card-clip"></i> JWT</button>
+    <button class="tool-tab" role="tab" data-tool="url"><i class="fas fa-link"></i> Ссылки</button>
+    <button class="tool-tab" role="tab" data-tool="hdr"><i class="fas fa-heading"></i> Заголовки</button>
+    <button class="tool-tab" role="tab" data-tool="html"><i class="fas fa-file-code"></i> HTML-код</button>
+    <button class="tool-tab" role="tab" data-tool="crypto"><i class="fas fa-fingerprint"></i> Крипто</button>
+  </nav>
+
+  <!-- ============ 1. ПАРОЛИ ============ -->
+  <section class="tool-panel active" id="tool-pass" role="tabpanel">
+    <div class="tool-head">
+      <h2 class="tool-title"><i class="fas fa-key"></i> Анализ и генерация паролей</h2>
+      <p class="tool-hint">Энтропия, поиск паттернов и словарных основ считается локально. Проверка утечек идёт по k-анонимному протоколу: уходит только первые 5 символов SHA-1.</p>
+    </div>
+
+    <div class="card">
+      <label class="field-label" for="pwInput">Проверить пароль</label>
+      <div class="field-row">
+        <div class="input-wrapper">
+          <i class="fas fa-key input-icon"></i>
+          <input type="password" id="pwInput" class="scan-input" autocomplete="off" spellcheck="false" placeholder="введите пароль" />
+        </div>
+        <button class="btn-sm" id="pwToggle" type="button" title="Показать"><i class="fas fa-eye"></i></button>
+        <button class="btn-sm" id="pwClear" type="button" title="Очистить"><i class="fas fa-eraser"></i></button>
       </div>
-      <button id="scanBtn" class="scan-btn" onclick="startScan()">
-        <i class="fas fa-play"></i> Сканировать
-      </button>
+
+      <div class="meter"><div class="meter-fill" id="pwFill"></div></div>
+      <div class="meter-legend">
+        <span id="pwVerdict">—</span>
+        <span id="pwEntropy">0 бит</span>
+      </div>
+
+      <div class="metrics" id="pwMetrics"></div>
+      <div class="crack-table" id="pwCrack"></div>
+      <div class="field-row" style="margin-top:12px">
+        <button class="btn-sm btn-primary" id="pwBreachBtn" type="button"><i class="fas fa-triangle-exclamation"></i> Проверить утечки</button>
+      </div>
+      <div id="pwBreachOut"></div>
     </div>
-    <div class="quick-scans">
-      <span>Быстрые примеры:</span>
-      <button onclick="quickScan('https://example.com')">example.com</button>
-      <button onclick="quickScan('https://httpbin.org')">httpbin.org</button>
-      <button onclick="quickScan('https://one1game.github.io')">one1game</button>
+
+    <div class="card">
+      <h3 class="card-title">Генератор</h3>
+      <div class="opt-grid">
+        <label class="opt"><input type="checkbox" id="genUpper" checked /> A-Z</label>
+        <label class="opt"><input type="checkbox" id="genLower" checked /> a-z</label>
+        <label class="opt"><input type="checkbox" id="genDigits" checked /> 0-9</label>
+        <label class="opt"><input type="checkbox" id="genSymbols" checked /> !@#$%^&amp;*</label>
+        <label class="opt"><input type="checkbox" id="genNoAmb" /> без похожих (l1IO0)</label>
+      </div>
+      <div class="range-row">
+        <label class="field-label" for="genLen">Длина</label>
+        <input type="range" id="genLen" min="8" max="128" value="20" />
+        <output id="genLenVal" class="mono">20</output>
+      </div>
+      <div class="field-row">
+        <button class="btn-sm btn-primary" id="genBtn" type="button"><i class="fas fa-dice"></i> Сгенерировать</button>
+        <button class="btn-sm" id="genCopy" type="button"><i class="fas fa-copy"></i> Копировать</button>
+      </div>
+      <div class="out-box mono" id="genOut">—</div>
+      <div class="out-note" id="genEntropy"></div>
+
+      <h3 class="card-title" style="margin-top:18px">Парольная фраза</h3>
+      <div class="range-row">
+        <label class="field-label" for="genWords">Слов</label>
+        <input type="range" id="genWords" min="3" max="8" value="4" />
+        <output id="genWordsVal" class="mono">4</output>
+      </div>
+      <div class="opt-grid">
+        <label class="opt"><input type="checkbox" id="genCap" checked /> С заглавной</label>
+        <label class="opt"><input type="checkbox" id="genDigit" checked /> Добавить цифру</label>
+        <label class="opt"><input type="text" id="genSep" value="-" size="2" class="sep-input" /> разделитель</label>
+      </div>
+      <div class="field-row">
+        <button class="btn-sm btn-primary" id="genPassBtn" type="button"><i class="fas fa-dice"></i> Собрать фразу</button>
+        <button class="btn-sm" id="genPassCopy" type="button"><i class="fas fa-copy"></i> Копировать</button>
+      </div>
+      <div class="out-box mono" id="genPassOut">—</div>
     </div>
   </section>
 
-  <!-- MODULES -->
-  <section class="modules-section" id="modulesSection">
-    <h3 class="section-label">Модули сканирования</h3>
-    <div class="modules-grid" id="modulesGrid">
-      <label class="module-chip active" data-module="headers"><i class="fas fa-heading"></i> Headers</label>
-      <label class="module-chip active" data-module="xss"><i class="fas fa-code"></i> XSS</label>
-      <label class="module-chip active" data-module="cors"><i class="fas fa-globe"></i> CORS</label>
-      <label class="module-chip active" data-module="cookies"><i class="fas fa-cookie-bite"></i> Cookies</label>
-      <label class="module-chip active" data-module="leaks"><i class="fas fa-eye"></i> Утечки</label>
-      <label class="module-chip active" data-module="mixed"><i class="fas fa-link-slash"></i> Mixed Content</label>
-      <label class="module-chip active" data-module="csrf"><i class="fas fa-shield"></i> CSRF</label>
-      <label class="module-chip active" data-module="meta"><i class="fas fa-tags"></i> Meta-теги</label>
-      <label class="module-chip active" data-module="deprecated"><i class="fas fa-triangle-exclamation"></i> Устаревшее</label>
-      <label class="module-chip active" data-module="debug"><i class="fas fa-bug"></i> Отладка</label>
-      <label class="module-chip active" data-module="reflected"><i class="fas fa-arrows-spin"></i> Reflected</label>
-      <label class="module-chip active" data-module="emails"><i class="fas fa-envelope"></i> Email</label>
-      <label class="module-chip active" data-module="tech"><i class="fas fa-microchip"></i> Стек</label>
+  <!-- ============ 2. DNS / ПОЧТА ============ -->
+  <section class="tool-panel" id="tool-dns" role="tabpanel">
+    <div class="tool-head">
+      <h2 class="tool-title"><i class="fas fa-envelope-circle-check"></i> Почта и DNS</h2>
+      <p class="tool-hint">Реальные DNS-запросы через DNS-over-HTTPS (Cloudflare). Проверяются SPF, DMARC, DKIM, MX, CAA, DNSSEC и служебные записи.</p>
     </div>
+
+    <div class="card">
+      <div class="field-row">
+        <div class="input-wrapper">
+          <i class="fas fa-globe input-icon"></i>
+          <input type="text" id="dnsDomain" class="scan-input" autocomplete="off" spellcheck="false" placeholder="example.com — или вставьте email@example.com" />
+        </div>
+        <button class="btn-sm btn-primary" id="dnsBtn" type="button"><i class="fas fa-satellite-dish"></i> Проверить</button>
+        <button class="btn-sm" id="dnsSample" type="button"><i class="fas fa-flask"></i> Пример</button>
+      </div>
+      <div class="field-row" style="margin-top:8px">
+        <div class="input-wrapper">
+          <i class="fas fa-at input-icon"></i>
+          <input type="text" id="dnsSelectors" class="scan-input" autocomplete="off" spellcheck="false" placeholder="DKIM-селекторы через запятую (необязательно): google, s1, k1" />
+        </div>
+      </div>
+      <div class="out-note">DNS-over-HTTPS — единственный способ делать такие проверки прямо из браузера, и он реальный: ответы приходят от Cloudflare, а не от нас.</div>
+    </div>
+
+    <div id="dnsOut"></div>
   </section>
 
-  <!-- PROGRESS -->
-  <section class="progress-section hidden" id="progress">
-    <div class="progress-header">
-      <span class="progress-label" id="progressLabel">Инициализация...</span>
-      <span class="progress-pct" id="progressPct">0%</span>
+  <!-- ============ 3. JWT ============ -->
+  <section class="tool-panel" id="tool-jwt" role="tabpanel">
+    <div class="tool-head">
+      <h2 class="tool-title"><i class="fas fa-id-card-clip"></i> Разбор и аудит JWT</h2>
+      <p class="tool-hint">Декодирование, проверка опасных параметров и проверка подписи HMAC/RSA/ECDSA через WebCrypto — без библиотек и без отправки токена куда-либо.</p>
     </div>
-    <div class="progress-track">
-      <div class="progress-fill" id="progressFill"></div>
-      <div class="progress-scanline"></div>
-    </div>
-    <div class="progress-log" id="progressLog"></div>
-  </section>
 
-  <!-- RESULTS -->
-  <section class="results-section hidden" id="results">
-    <div class="results-header-bar">
-      <h3>Результаты сканирования</h3>
-      <div class="results-actions">
-        <div class="grade-badge" id="gradeBadge">—</div>
-        <button class="btn-sm" onclick="exportJSON()"><i class="fas fa-download"></i> JSON</button>
-        <button class="btn-sm" onclick="copyReport()"><i class="fas fa-copy"></i> Копия</button>
+    <div class="card">
+      <label class="field-label" for="jwtInput">Токен</label>
+      <textarea id="jwtInput" class="scan-input code-area" rows="4" spellcheck="false" placeholder="eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9..."></textarea>
+      <div class="field-row" style="margin-top:10px">
+        <button class="btn-sm btn-primary" id="jwtBtn" type="button"><i class="fas fa-magnifying-glass-chart"></i> Разобрать</button>
+        <button class="btn-sm" id="jwtSample" type="button"><i class="fas fa-flask"></i> Пример</button>
       </div>
     </div>
-    <div class="results-meta" id="resultsMeta"></div>
 
-    <div class="results-layout">
-      <div class="results-stats" id="resultsStats"></div>
-      <div class="results-vulns" id="resultsVulns"></div>
-      <div class="results-tech" id="resultsTech"></div>
+    <div id="jwtOut"></div>
+
+    <div class="card" id="jwtVerifyCard" style="display:none">
+      <h3 class="card-title">Проверка подписи</h3>
+      <label class="field-label" for="jwtSecret">Секрет (для HS256/384/512)</label>
+      <input type="password" id="jwtSecret" class="scan-input" autocomplete="off" spellcheck="false" placeholder="секрет из конфига" />
+      <label class="field-label" for="jwtKey" style="margin-top:10px">Публичный ключ PEM (для RS/ES/PS)</label>
+      <textarea id="jwtKey" class="scan-input code-area" rows="4" spellcheck="false" placeholder="-----BEGIN PUBLIC KEY-----"></textarea>
+      <div class="field-row" style="margin-top:10px">
+        <button class="btn-sm btn-primary" id="jwtVerifyBtn" type="button"><i class="fas fa-signature"></i> Проверить подпись</button>
+      </div>
+      <div id="jwtVerifyOut"></div>
     </div>
+  </section>
+
+  <!-- ============ 4. ССЫЛКИ ============ -->
+  <section class="tool-panel" id="tool-url" role="tabpanel">
+    <div class="tool-head">
+      <h2 class="tool-title"><i class="fas fa-link"></i> Анализ ссылок</h2>
+      <p class="tool-hint">Разбирает URL на составляющие и ищет приёмы фишинга: подмену букв, punycode-двойники, обман через @, подозрительные TLD, короткие ссылки, открытые редиректы.</p>
+    </div>
+
+    <div class="card">
+      <div class="field-row">
+        <div class="input-wrapper">
+          <i class="fas fa-link input-icon"></i>
+          <input type="text" id="urlInput" class="scan-input" autocomplete="off" spellcheck="false" placeholder="https://example.com/redirect?next=..." />
+        </div>
+        <button class="btn-sm btn-primary" id="urlBtn" type="button"><i class="fas fa-radar"></i> Анализировать</button>
+        <button class="btn-sm" id="urlSample" type="button"><i class="fas fa-flask"></i> Пример</button>
+      </div>
+    </div>
+
+    <div id="urlOut"></div>
+  </section>
+
+  <!-- ============ 5. ЗАГОЛОВКИ ============ -->
+  <section class="tool-panel" id="tool-hdr" role="tabpanel">
+    <div class="tool-head">
+      <h2 class="tool-title"><i class="fas fa-heading"></i> Аудит заголовков и CSP</h2>
+      <p class="tool-hint">Браузер не даёт читать заголовки чужого сайта — это запрет браузера, а не наша недоработка. Поэтому вставь ответ сервера: <span class="mono">curl -sI https://site</span> или копию из DevTools → Network.</p>
+    </div>
+
+    <div class="card">
+      <label class="field-label" for="hdrInput">Заголовки, CSP или Set-Cookie</label>
+      <textarea id="hdrInput" class="scan-input code-area" rows="8" spellcheck="false" placeholder="HTTP/2 200
+content-security-policy: default-src 'self'
+strict-transport-security: max-age=31536000
+x-content-type-options: nosniff
+set-cookie: sid=abc; Secure; HttpOnly; SameSite=Lax"></textarea>
+      <div class="field-row" style="margin-top:10px">
+        <button class="btn-sm btn-primary" id="hdrBtn" type="button"><i class="fas fa-clipboard-check"></i> Проверить</button>
+        <button class="btn-sm" id="hdrSample" type="button"><i class="fas fa-flask"></i> Пример</button>
+      </div>
+    </div>
+
+    <div id="hdrOut"></div>
+  </section>
+
+  <!-- ============ 6. HTML ============ -->
+  <section class="tool-panel" id="tool-html" role="tabpanel">
+    <div class="tool-head">
+      <h2 class="tool-title"><i class="fas fa-file-code"></i> Статический анализ HTML</h2>
+      <p class="tool-hint">Ищет опасные приёмы в разметке и скриптах с указанием строк: XSS-стоки, инлайн-обработчики, секреты, сторонние скрипты без SRI, формы без защиты. Вставь исходник страницы (Ctrl+U).</p>
+    </div>
+
+    <div class="card">
+      <label class="field-label" for="htmlInput">Исходный код страницы</label>
+      <textarea id="htmlInput" class="scan-input code-area" rows="8" spellcheck="false" placeholder="&lt;!DOCTYPE html&gt; ..."></textarea>
+      <div class="field-row" style="margin-top:10px">
+        <button class="btn-sm btn-primary" id="htmlBtn" type="button"><i class="fas fa-bug"></i> Анализировать</button>
+        <label class="btn-sm" for="htmlFile"><i class="fas fa-file-import"></i> Файл</label>
+        <input type="file" id="htmlFile" accept=".html,.htm,.txt,.js" hidden />
+      </div>
+    </div>
+
+    <div id="htmlOut"></div>
+  </section>
+
+  <!-- ============ 7. КРИПТО ============ -->
+  <section class="tool-panel" id="tool-crypto" role="tabpanel">
+    <div class="tool-head">
+      <h2 class="tool-title"><i class="fas fa-fingerprint"></i> Крипто-утилиты</h2>
+      <p class="tool-hint">Хеши, HMAC, AES-GCM, TOTP, кодировки. Всё через WebCrypto, кроме MD5 — он реализован вручную для совместимости с легаси-контрольными суммами.</p>
+    </div>
+
+    <div class="card">
+      <h3 class="card-title">Хеши</h3>
+      <textarea id="hashInput" class="scan-input code-area" rows="3" spellcheck="false" placeholder="текст для хеширования"></textarea>
+      <div class="field-row" style="margin-top:10px">
+        <button class="btn-sm btn-primary" id="hashBtn" type="button"><i class="fas fa-hashtag"></i> Посчитать</button>
+        <label class="btn-sm" for="hashFile"><i class="fas fa-file-shield"></i> Файл</label>
+        <input type="file" id="hashFile" hidden />
+      </div>
+      <div id="hashOut"></div>
+      <div class="field-row" style="margin-top:10px">
+        <div class="input-wrapper">
+          <i class="fas fa-key input-icon"></i>
+          <input type="text" id="hmacKey" class="scan-input" autocomplete="off" placeholder="ключ HMAC-SHA256" />
+        </div>
+      </div>
+      <div id="hmacOut"></div>
+      <div class="field-row" style="margin-top:10px">
+        <div class="input-wrapper">
+          <i class="fas fa-fingerprint input-icon"></i>
+          <input type="text" id="hashDetect" class="scan-input" autocomplete="off" spellcheck="false" placeholder="вставь хеш — определю тип" />
+        </div>
+      </div>
+      <div id="hashDetectOut"></div>
+    </div>
+
+    <div class="card">
+      <h3 class="card-title">Кодировки</h3>
+      <textarea id="encInput" class="scan-input code-area" rows="3" spellcheck="false" placeholder="текст, base64 или hex"></textarea>
+      <div class="field-row" style="margin-top:10px">
+        <button class="btn-sm btn-primary" id="encBtn" type="button"><i class="fas fa-right-left"></i> Преобразовать</button>
+      </div>
+      <div id="encOut"></div>
+    </div>
+
+    <div class="card">
+      <h3 class="card-title">AES-GCM</h3>
+      <div class="field-row">
+        <input type="password" id="aesPass" class="scan-input" autocomplete="off" placeholder="пароль шифрования" />
+        <select id="aesMode" class="scan-input select-inline">
+          <option value="enc">Зашифровать</option>
+          <option value="dec">Расшифровать</option>
+        </select>
+      </div>
+      <textarea id="aesText" class="scan-input code-area" rows="3" spellcheck="false" placeholder="текст или результат в base64" style="margin-top:10px"></textarea>
+      <div class="field-row" style="margin-top:10px">
+        <button class="btn-sm btn-primary" id="aesBtn" type="button"><i class="fas fa-lock"></i> Выполнить</button>
+      </div>
+      <div id="aesOut"></div>
+      <div class="out-note">Ключ выводится из пароля через PBKDF2-SHA256, 250 000 итераций, случайная соль и IV — как в стандартных схемах.</div>
+    </div>
+
+    <div class="card">
+      <h3 class="card-title">TOTP (RFC 6238)</h3>
+      <div class="field-row">
+        <input type="text" id="totpSecret" class="scan-input" autocomplete="off" spellcheck="false" placeholder="base32-секрет (JBSWY3DPEHPK3PXP)" />
+        <button class="btn-sm btn-primary" id="totpBtn" type="button"><i class="fas fa-clock"></i> Код</button>
+      </div>
+      <div id="totpOut"></div>
+      <div class="field-row" style="margin-top:10px">
+        <input type="text" id="randBits" class="scan-input" autocomplete="off" placeholder="сколько бит энтропии? (128/256)" />
+        <button class="btn-sm" id="randBtn" type="button"><i class="fas fa-shuffle"></i> Сгенерировать</button>
+      </div>
+      <div id="randOut"></div>
+    </div>
+  </section>
+
+  <!-- СПРАВКА / SEO-ТЕКСТ -->
+  <section class="about">
+    <h2 class="about-title">Что такое Cyber-Scanner</h2>
+    <p>Cyber-Scanner — семь инструментов проверки безопасности, которые работают прямо в браузере: проверка паролей и поиск их в утечках, разбор почтовых DNS-записей домена (SPF, DMARC, DKIM), аудит JWT, анализ фишинговых ссылок, разбор заголовков безопасности и CSP, статический анализ HTML-кода и крипто-утилиты. Регистрация не нужна, установка не нужна, ничего не отправляется на сторонний сервер.</p>
+
+    <h2 class="about-title">Кому это нужно</h2>
+    <ul class="about-list">
+      <li><b>Веб-разработчикам и DevOps</b> — проверить CSP и заголовки безопасности, разобрать JWT, поймать XSS-стоки и утёкшие ключи в разметке до релиза.</li>
+      <li><b>Администраторам почты и маркетологам</b> — убедиться, что SPF, DMARC и DKIM настроены, до запуска рассылки: чаще всего письма уходят в спам именно из-за них.</li>
+      <li><b>Владельцам сайтов и блогов</b> — увидеть, каких заголовков безопасности не хватает, и понять, что просить у хостинга.</li>
+      <li><b>Специалистам по ИБ и пентестерам</b> — быстрые локальные проверки без установки софта и без выгрузки данных на чужой сервис.</li>
+      <li><b>Поддержке и аналитикам</b> — разобрать подозрительную ссылку из письма, определить тип хеша или проверить токен из логов.</li>
+      <li><b>Новичкам в безопасности</b> — увидеть своими глазами, как выглядит фишинговый домен, слабый пароль и JWT с alg=none.</li>
+    </ul>
+
+    <h2 class="about-title">Почему проверки идут в браузере</h2>
+    <p>Пароль, токен и исходный код страницы не покидают вашу вкладку: всё считает JavaScript через WebCrypto. Во внешнюю сеть уходят ровно два вида запросов, и оба не содержат ваших данных — диапазон SHA-1-хеша в базу утечек (k-анонимность: передаются только первые 5 символов хеша) и DNS-запросы через DNS-over-HTTPS Cloudflare. Заголовки чужого сайта браузер читать запрещает, поэтому вместо ссылки вставляется ответ сервера — из <span class="mono">curl -sI</span> или DevTools → Network.</p>
+
+    <h2 class="about-title">Что уходит в сеть</h2>
+    <div class="cmp-wrap">
+      <table class="cmp">
+        <thead><tr><th>Инструмент</th><th>Уходит в сеть</th><th>Остаётся у вас</th></tr></thead>
+        <tbody>
+          <tr><td>Пароли</td><td>5 символов SHA-1-хеша (k-анонимность HIBP)</td><td>Сам пароль, энтропия, разбор паттернов</td></tr>
+          <tr><td>Почта и DNS</td><td>Имя домена в DNS-запрос Cloudflare</td><td>Ничего, кроме домена</td></tr>
+          <tr><td>JWT</td><td class="yes">Ничего</td><td>Токен, payload, секрет и публичный ключ</td></tr>
+          <tr><td>Ссылки</td><td class="yes">Ничего</td><td>Полный разбор адреса</td></tr>
+          <tr><td>Заголовки и CSP</td><td class="yes">Ничего</td><td>Вставленный ответ сервера</td></tr>
+          <tr><td>HTML-код</td><td class="yes">Ничего</td><td>Исходник страницы и найденные секреты</td></tr>
+          <tr><td>Крипто</td><td class="yes">Ничего</td><td>Текст, файлы, пароли шифрования</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p>У сервиса нет собственного бэкенда: страница — статика, её можно открыть с выключенной сетью (кроме DNS-проверок) и убедиться в этом через DevTools → Network. Нет аналитики содержимого, нет логов с вашими данными, нет регистрации — есть только браузер и WebCrypto.</p>
+
+    <h2 class="about-title">Чем отличается от MXToolbox, EasyDMARC и SecurityHeaders</h2>
+    <p>Большие чекеры (MXToolbox, EasyDMARC, Red Sift, securityheaders.com, Mozilla Observatory) работают через свой сервер: вы отдаёте им домен или URL, они делают запрос и хранят историю. Здесь наоборот — считает ваш браузер, и это единственное, но принципиальное отличие.</p>
+    <div class="cmp-wrap">
+      <table class="cmp">
+        <thead><tr><th>Критерий</th><th>Cyber-Scanner</th><th>Серверные чекеры</th></tr></thead>
+        <tbody>
+          <tr><td>Куда уходят данные</td><td class="yes">ничего, кроме DNS-запроса</td><td class="no">на чужой сервер</td></tr>
+          <tr><td>Регистрация и лимиты</td><td class="yes">нет</td><td class="no">часто есть</td></tr>
+          <tr><td>Рекурсивный подсчёт SPF-запросов</td><td class="yes">есть, вместе с void lookups</td><td>есть у лучших</td></tr>
+          <tr><td>Проверка подписи JWT</td><td class="yes">есть: HS, RS, PS, ES</td><td class="no">обычно только декодирование</td></tr>
+          <tr><td>Чтение заголовков сайта по ссылке</td><td class="no">нет — вставьте ответ curl</td><td class="yes">есть</td></tr>
+          <tr><td>Репутация IP, блок-листы, TLS-сертификат</td><td class="no">нет</td><td class="yes">есть</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p>Разумная схема: приватное — пароль, токен, исходник, вставленные заголовки — проверяйте здесь; репутацию IP, блок-листы и сертификаты — серверными сервисами. Инструмент не притворяется, что умеет то, чего браузер сделать не может.</p>
+
+    <h2 class="about-title">Частые вопросы</h2>
+    <details class="acc"><summary>Это безопасно — вводить сюда пароль или токен?</summary>
+      <p>Да. Ни один символ не уходит на наш сервер: анализатор пароля, разбор JWT и крипто-утилиты работают на JavaScript внутри вашей вкладки. Единственная проверка с сетью — поиск пароля в утечках: по протоколу k-анонимности отправляются только первые 5 символов SHA-1-хеша, сам пароль не передаётся никогда.</p>
+    </details>
+    <details class="acc"><summary>Почему нельзя проверить заголовки чужого сайта по ссылке?</summary>
+      <p>По правилам браузера страница не может читать заголовки ответа другого домена: Set-Cookie и Access-Control-Allow-Origin вообще скрыты от JavaScript. Поэтому инструмент принимает вставленный ответ сервера — из curl -sI https://site или из DevTools → Network → Headers.</p>
+    </details>
+    <details class="acc"><summary>Как проверить SPF, DMARC и DKIM домена?</summary>
+      <p>Введите домен во вкладке «Почта и DNS». Инструмент делает настоящие DNS-запросы через DNS-over-HTTPS Cloudflare и разбирает SPF (включая redirect= и include), DMARC-политику, DKIM по селекторам, MX, CAA, DNSSEC, MTA-STS и TLS-RPT. Можно вставить и адрес вида user@domain.ru — домен будет взят из адреса.</p>
+    </details>
+    <details class="acc"><summary>Что показывает оценка и грейд A+ … F?</summary>
+      <p>Каждая находка имеет вес: критичная — 25 баллов, высокая — 14, средняя — 7, низкая — 3. Оценка начинается со 100 и уменьшается на вес найденных проблем: 95+ это A+, 85+ A, 70+ B, 55+ C, 40+ D, ниже — F.</p>
+    </details>
+    <details class="acc"><summary>Определяет ли инструмент фишинговую ссылку точно?</summary>
+      <p>Он находит технические признаки: подмену букв (гомоглифы), punycode-двойники, бренд в поддомене, опечатки в домене, обман через @, невидимые символы, открытые редиректы, опасные расширения и http. Репутация домена, возраст регистрации и блок-листы так не проверяются — это локальные эвристики, а не приговор.</p>
+    </details>
+    <details class="acc"><summary>Нужна ли регистрация или установка?</summary>
+      <p>Нет. Открывайте страницу и пользуйтесь: регистрации, лимитов и установки нет. История последних проверок хранится только в вашем браузере (localStorage) и очищается одной кнопкой.</p>
+    </details>
+
+    <details class="acc"><summary>Куда именно уходят мои данные?</summary>
+      <p>Из семи инструментов в сеть обращаются только два. Проверка утечек отправляет на api.pwnedpasswords.com первые 5 символов SHA-1-хеша пароля — восстановить по ним пароль невозможно, это стандартный протокол k-анонимности. Проверка домена отправляет имя домена в DNS-over-HTTPS Cloudflare. Остальное — JWT, ссылки, вставленные заголовки, HTML-код, хеши и шифрование — считается на JavaScript внутри вкладки и не передаётся никуда, включая наш сервер: его просто нет.</p>
+    </details>
+    <details class="acc"><summary>Чем это отличается от MXToolbox или SecurityHeaders.com?</summary>
+      <p>Не «лучше», а иначе. Серверные чекеры умеют то, чего браузер не может: сами сходить по URL, посмотреть сертификат, репутацию IP и блок-листы. Зато они получают ваш домен, URL или токен и хранят историю проверок. Здесь ничего не уходит на чужой сервер — считает ваш браузер. Плюс есть то, чего у многих нет: рекурсивный подсчёт SPF-запросов вместе с пустыми (void) и проверка подписи JWT алгоритмами HS, RS, PS и ES.</p>
+    </details>
+
+    <p class="about-note">Смотрите также: <a href="/">главная One1Game</a> · <a href="/archive.html">архив статей</a> · <a href="/anal-code/">CodeFusion</a></p>
   </section>
 
   <!-- ERROR -->
@@ -136,18 +489,18 @@
   <!-- HISTORY -->
   <section class="history-section" id="historySection">
     <div class="history-header">
-      <h3 class="section-label">История сканирований</h3>
-      <button class="btn-sm btn-ghost" onclick="clearHistory()">Очистить</button>
+      <h3 class="section-label">Последние проверки</h3>
+      <button class="btn-sm btn-ghost" id="histClear" type="button">Очистить</button>
     </div>
     <div class="history-list" id="historyList">
-      <div class="history-empty">Пока пусто — запустите первое сканирование</div>
+      <div class="history-empty">Пока пусто</div>
     </div>
   </section>
 
 </div>
 </main>
 
-<script src="/components.js?v=22" defer></script>
-<script src="scanner.js?v=1" defer></script>
+<script src="/components.js?v=23" defer></script>
+<script src="scanner.js?v=9" defer></script>
 </body>
 </html>

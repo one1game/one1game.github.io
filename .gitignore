@@ -7,3 +7,9 @@
 serverless-api/.dev.vars
 serverless-api/.env*
 serverless-api/node_modules/
+
+# Зависимости и мусор ОС
+node_modules/
+.DS_Store
+Thumbs.db
+desktop.ini
