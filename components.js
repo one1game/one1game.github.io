@@ -22,6 +22,7 @@
   var isScanner = path.includes('/cyber-scanner');
   var isL2 = path.includes('/l2');
   var isTriad = path.includes('/triad-duel');
+  var isGo = path === '/go' || path.indexOf('/go/') === 0;
 
   function active(state) { return state ? ' active' : ''; }
 
@@ -36,6 +37,7 @@
     scanner: 'fa-shield-halved',
     server: 'fa-server',
     game: 'fa-gamepad',
+    online: 'fa-dice',
     tg: 'fa-telegram',
     vk: 'fa-vk',
     yt: 'fa-youtube',
@@ -52,6 +54,7 @@
 
   var navLinks =
     '<a href="/" class="nav-link' + active(isHome) + '">Главная</a>' +
+    '<a href="/go/" class="nav-link' + active(isGo) + '">Игры онлайн</a>' +
     '<a href="/archive.html" class="nav-link' + active(isArchive) + '">Статьи</a>' +
     '<a href="/triad-duel.html" class="nav-link' + active(isTriad) + '">Triad Duel</a>' +
     '<a href="/anal-code/" class="nav-link' + active(isCodeFusion) + '">CodeFusion</a>' +
@@ -89,6 +92,7 @@
     '  <div class="sheet-handle" aria-hidden="true"></div>' +
     '  <p class="sheet-title">Разделы</p>' +
     '  <div class="sheet-links">' +
+    '    <a href="/go/" class="sheet-link' + active(isGo) + '"><i class="fas ' + I.online + '" aria-hidden="true"></i> Игры онлайн</a>' +
     '    <a href="/archive.html" class="sheet-link' + active(isArchive) + '"><i class="fas ' + I.articles + '" aria-hidden="true"></i> Все статьи</a>' +
     '    <a href="/triad-duel.html" class="sheet-link' + active(isTriad) + '"><i class="fas ' + I.game + '" aria-hidden="true"></i> Triad Duel</a>' +
     '    <a href="/anal-code/" class="sheet-link' + active(isCodeFusion) + '"><i class="fas ' + I.code + '" aria-hidden="true"></i> CodeFusion</a>' +

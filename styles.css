@@ -1021,6 +1021,12 @@ body.has-dock .cookie-banner { bottom: calc(var(--dock-h) + env(safe-area-inset-
   .ad-vps-card { padding: 18px; }
 }
 
+/* Семь ссылок в шапке не помещаются в узком десктопе:
+   до 1060px навигацию берут на себя док и шторка */
+@media (min-width: 900px) and (max-width: 1059px) {
+  .nav-links { display: none; }
+}
+
 @media (min-width: 1100px) {
   .entry:hover { background: linear-gradient(90deg, var(--acid-soft), transparent 60%); }
 }
