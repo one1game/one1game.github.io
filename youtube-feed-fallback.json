@@ -2,6 +2,12 @@
   "ok": true,
   "items": [
     {
+      "videoId": "MGLfuV_eUBs",
+      "title": "lofi 🎮 a new game every track #lofi #pixelart",
+      "publishedAt": "2026-09-20T17:55:34+00:00",
+      "thumbnail": "https://i2.ytimg.com/vi/MGLfuV_eUBs/hqdefault.jpg"
+    },
+    {
       "videoId": "ZzeX2PXyki0",
       "title": "сделал игру за 5 минут, утиный помет, смотри полное на канале играй по ссылке",
       "publishedAt": "2026-09-18T06:20:18+00:00",
@@ -30,12 +36,6 @@
       "title": "легендарное видео #rdr2 #reddeadredemption2",
       "publishedAt": "2026-09-15T11:01:25+00:00",
       "thumbnail": "https://i1.ytimg.com/vi/lC_Qt62QStc/hqdefault.jpg"
-    },
-    {
-      "videoId": "f-EoGHV7EVI",
-      "title": "расчехлил бандосов #rdr2 #reddeadredemption2",
-      "publishedAt": "2026-09-15T07:37:40+00:00",
-      "thumbnail": "https://i3.ytimg.com/vi/f-EoGHV7EVI/hqdefault.jpg"
     }
   ]
 }
