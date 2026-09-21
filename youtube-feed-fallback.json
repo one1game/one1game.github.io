@@ -2,6 +2,12 @@
   "ok": true,
   "items": [
     {
+      "videoId": "bDCAy7t7hZI",
+      "title": "lo-fi radio from the street camera archive feed",
+      "publishedAt": "2026-09-21T16:29:23+00:00",
+      "thumbnail": "https://i3.ytimg.com/vi/bDCAy7t7hZI/hqdefault.jpg"
+    },
+    {
       "videoId": "xCpKdWFUUPE",
       "title": "сделал игру за 5 минут #3 Рыбалка по кайфу",
       "publishedAt": "2026-09-21T11:01:21+00:00",
@@ -30,12 +36,6 @@
       "title": "Сделал игру за 5 минут #2 ОХОТА НА КАКАЮЩИХ УТОК!",
       "publishedAt": "2026-09-18T05:15:13+00:00",
       "thumbnail": "https://i2.ytimg.com/vi/EdVcaQkRox4/hqdefault.jpg"
-    },
-    {
-      "videoId": "WyNrDeQyB0Y",
-      "title": "новая рубрика: Сделал игру за 5 минут #1",
-      "publishedAt": "2026-09-17T06:37:43+00:00",
-      "thumbnail": "https://i4.ytimg.com/vi/WyNrDeQyB0Y/hqdefault.jpg"
     }
   ]
 }
