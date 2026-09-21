@@ -2,9 +2,21 @@
   "ok": true,
   "items": [
     {
+      "videoId": "xCpKdWFUUPE",
+      "title": "сделал игру за 5 минут #3 Рыбалка по кайфу",
+      "publishedAt": "2026-09-21T11:01:21+00:00",
+      "thumbnail": "https://i1.ytimg.com/vi/xCpKdWFUUPE/hqdefault.jpg"
+    },
+    {
+      "videoId": "NNaBlAWvRq0",
+      "title": "Сделал игра за 5 минут #3 Рыбалка по кайфу.",
+      "publishedAt": "2026-09-21T06:59:05+00:00",
+      "thumbnail": "https://i3.ytimg.com/vi/NNaBlAWvRq0/hqdefault.jpg"
+    },
+    {
       "videoId": "MGLfuV_eUBs",
       "title": "lofi 🎮 a new game every track #lofi #pixelart",
-      "publishedAt": "2026-09-20T17:55:34+00:00",
+      "publishedAt": "2026-09-21T00:40:02+00:00",
       "thumbnail": "https://i2.ytimg.com/vi/MGLfuV_eUBs/hqdefault.jpg"
     },
     {
@@ -24,18 +36,6 @@
       "title": "новая рубрика: Сделал игру за 5 минут #1",
       "publishedAt": "2026-09-17T06:37:43+00:00",
       "thumbnail": "https://i4.ytimg.com/vi/WyNrDeQyB0Y/hqdefault.jpg"
-    },
-    {
-      "videoId": "SUjXlGALUXQ",
-      "title": "Сделал игру за 5 минут #1 #gamedev #разработкаигр #ai",
-      "publishedAt": "2026-09-17T05:35:00+00:00",
-      "thumbnail": "https://i4.ytimg.com/vi/SUjXlGALUXQ/hqdefault.jpg"
-    },
-    {
-      "videoId": "lC_Qt62QStc",
-      "title": "легендарное видео #rdr2 #reddeadredemption2",
-      "publishedAt": "2026-09-15T11:01:25+00:00",
-      "thumbnail": "https://i1.ytimg.com/vi/lC_Qt62QStc/hqdefault.jpg"
     }
   ]
 }
