@@ -2,9 +2,27 @@
   "ok": true,
   "items": [
     {
+      "videoId": "Q_5t0Oyb5rw",
+      "title": "фруктовая сантуха #1",
+      "publishedAt": "2026-09-22T07:19:01+00:00",
+      "thumbnail": "https://i2.ytimg.com/vi/Q_5t0Oyb5rw/hqdefault.jpg"
+    },
+    {
+      "videoId": "AdSNQrYgKPs",
+      "title": "генератор отмазок",
+      "publishedAt": "2026-09-22T06:49:19+00:00",
+      "thumbnail": "https://i2.ytimg.com/vi/AdSNQrYgKPs/hqdefault.jpg"
+    },
+    {
+      "videoId": "ZJsgHeNO-nk",
+      "title": "генерация музыки и визуала кодом в реальном времени #1",
+      "publishedAt": "2026-09-22T06:22:54+00:00",
+      "thumbnail": "https://i3.ytimg.com/vi/ZJsgHeNO-nk/hqdefault.jpg"
+    },
+    {
       "videoId": "bDCAy7t7hZI",
       "title": "lo-fi radio from the street camera archive feed",
-      "publishedAt": "2026-09-21T16:29:23+00:00",
+      "publishedAt": "2026-09-21T22:40:12+00:00",
       "thumbnail": "https://i3.ytimg.com/vi/bDCAy7t7hZI/hqdefault.jpg"
     },
     {
@@ -18,24 +36,6 @@
       "title": "Сделал игра за 5 минут #3 Рыбалка по кайфу.",
       "publishedAt": "2026-09-21T06:59:05+00:00",
       "thumbnail": "https://i3.ytimg.com/vi/NNaBlAWvRq0/hqdefault.jpg"
-    },
-    {
-      "videoId": "MGLfuV_eUBs",
-      "title": "lofi 🎮 a new game every track #lofi #pixelart",
-      "publishedAt": "2026-09-21T00:40:02+00:00",
-      "thumbnail": "https://i2.ytimg.com/vi/MGLfuV_eUBs/hqdefault.jpg"
-    },
-    {
-      "videoId": "ZzeX2PXyki0",
-      "title": "сделал игру за 5 минут, утиный помет, смотри полное на канале играй по ссылке",
-      "publishedAt": "2026-09-18T06:20:18+00:00",
-      "thumbnail": "https://i3.ytimg.com/vi/ZzeX2PXyki0/hqdefault.jpg"
-    },
-    {
-      "videoId": "EdVcaQkRox4",
-      "title": "Сделал игру за 5 минут #2 ОХОТА НА КАКАЮЩИХ УТОК!",
-      "publishedAt": "2026-09-18T05:15:13+00:00",
-      "thumbnail": "https://i2.ytimg.com/vi/EdVcaQkRox4/hqdefault.jpg"
     }
   ]
 }
