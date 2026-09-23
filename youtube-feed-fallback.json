@@ -2,6 +2,18 @@
   "ok": true,
   "items": [
     {
+      "videoId": "FPq1ez7ZSUA",
+      "title": "это что было в #rdr2 #reddeadredemption2",
+      "publishedAt": "2026-09-23T14:20:07+00:00",
+      "thumbnail": "https://i3.ytimg.com/vi/FPq1ez7ZSUA/hqdefault.jpg"
+    },
+    {
+      "videoId": "b3kWu_EhOmI",
+      "title": "бил вонючая нога #rdr2 #reddeadredemption2",
+      "publishedAt": "2026-09-23T12:54:01+00:00",
+      "thumbnail": "https://i3.ytimg.com/vi/b3kWu_EhOmI/hqdefault.jpg"
+    },
+    {
       "videoId": "_TQau1rWJto",
       "title": "Почему в Red Dead Redemption 2 играют в 2026 году?",
       "publishedAt": "2026-09-23T05:00:11+00:00",
@@ -24,18 +36,6 @@
       "title": "генерация музыки и визуала кодом в реальном времени #1",
       "publishedAt": "2026-09-22T06:22:54+00:00",
       "thumbnail": "https://i3.ytimg.com/vi/ZJsgHeNO-nk/hqdefault.jpg"
-    },
-    {
-      "videoId": "bDCAy7t7hZI",
-      "title": "lo-fi radio from the street camera archive feed",
-      "publishedAt": "2026-09-21T22:40:12+00:00",
-      "thumbnail": "https://i3.ytimg.com/vi/bDCAy7t7hZI/hqdefault.jpg"
-    },
-    {
-      "videoId": "xCpKdWFUUPE",
-      "title": "сделал игру за 5 минут #3 Рыбалка по кайфу",
-      "publishedAt": "2026-09-21T11:01:21+00:00",
-      "thumbnail": "https://i1.ytimg.com/vi/xCpKdWFUUPE/hqdefault.jpg"
     }
   ]
 }
