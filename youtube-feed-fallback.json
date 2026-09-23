@@ -2,6 +2,12 @@
   "ok": true,
   "items": [
     {
+      "videoId": "_TQau1rWJto",
+      "title": "Почему в Red Dead Redemption 2 играют в 2026 году?",
+      "publishedAt": "2026-09-23T05:00:11+00:00",
+      "thumbnail": "https://i4.ytimg.com/vi/_TQau1rWJto/hqdefault.jpg"
+    },
+    {
       "videoId": "Q_5t0Oyb5rw",
       "title": "фруктовая сантуха #1",
       "publishedAt": "2026-09-22T07:19:01+00:00",
@@ -30,12 +36,6 @@
       "title": "сделал игру за 5 минут #3 Рыбалка по кайфу",
       "publishedAt": "2026-09-21T11:01:21+00:00",
       "thumbnail": "https://i1.ytimg.com/vi/xCpKdWFUUPE/hqdefault.jpg"
-    },
-    {
-      "videoId": "NNaBlAWvRq0",
-      "title": "Сделал игра за 5 минут #3 Рыбалка по кайфу.",
-      "publishedAt": "2026-09-21T06:59:05+00:00",
-      "thumbnail": "https://i3.ytimg.com/vi/NNaBlAWvRq0/hqdefault.jpg"
     }
   ]
 }
