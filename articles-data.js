@@ -1,6 +1,166 @@
 // articles-data.js
 window.allArticles = [
   {
+    "url": "/archive/rpg-5230220.html",
+    "title": "言葉遠征 ~~ 日语学习RPG ~~: цена, отзывы и статистика игроков",
+    "excerpt": "言葉遠征 ~~ 日语学习RPG ~~: актуальная цена (429.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
+    "date": "25 сентября 2026",
+    "readTime": "2 мин",
+    "category": "Обзоры"
+  },
+  {
+    "url": "/archive/assassin-of-werewolf-5236010.html",
+    "title": "Assassin Of Werewolf: цена, отзывы и статистика игроков",
+    "excerpt": "Assassin Of Werewolf: актуальная цена (108.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
+    "date": "25 сентября 2026",
+    "readTime": "2 мин",
+    "category": "Обзоры"
+  },
+  {
+    "url": "/archive/300-5206350.html",
+    "title": "高三最后300天: цена, отзывы и статистика игроков",
+    "excerpt": "高三最后300天: актуальная цена (192.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
+    "date": "25 сентября 2026",
+    "readTime": "2 мин",
+    "category": "Обзоры"
+  },
+  {
+    "url": "/archive/goblins-and-gunslingers-4557390.html",
+    "title": "Goblins and Gunslingers: цена, отзывы и статистика игроков",
+    "excerpt": "Goblins and Gunslingers: актуальная цена (Бесплатно), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
+    "date": "25 сентября 2026",
+    "readTime": "2 мин",
+    "category": "Обзоры"
+  },
+  {
+    "url": "/archive/triple-pairing-4710010.html",
+    "title": "Triple Pairing: цена, отзывы и статистика игроков",
+    "excerpt": "Triple Pairing: актуальная цена (1014.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
+    "date": "25 сентября 2026",
+    "readTime": "2 мин",
+    "category": "Обзоры"
+  },
+  {
+    "url": "/archive/virtual-skies-fpv-vr-5090850.html",
+    "title": "Virtual Skies FPV VR: цена, отзывы и статистика игроков",
+    "excerpt": "Virtual Skies FPV VR: актуальная цена (174.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
+    "date": "25 сентября 2026",
+    "readTime": "2 мин",
+    "category": "Обзоры"
+  },
+  {
+    "url": "/archive/best-puppy-certificate-4366980.html",
+    "title": "最佳小狗证 Best Puppy Certificate: цена, отзывы и статистика игроков",
+    "excerpt": "最佳小狗证 Best Puppy Certificate: актуальная цена (127.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
+    "date": "25 сентября 2026",
+    "readTime": "2 мин",
+    "category": "Обзоры"
+  },
+  {
+    "url": "/archive/a-transfer-student-from-chang-an-4128680.html",
+    "title": "高考移民：常安转校生 A Transfer Student from Chang'an: цена, отзывы и статистика игроков",
+    "excerpt": "高考移民：常安转校生 A Transfer Student from Chang'an: актуальная цена (207.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
+    "date": "25 сентября 2026",
+    "readTime": "2 мин",
+    "category": "Обзоры"
+  },
+  {
+    "url": "/archive/pixel-planet-survivor-5125780.html",
+    "title": "Pixel Planet Survivor: цена, отзывы и статистика игроков",
+    "excerpt": "Pixel Planet Survivor: актуальная цена (74.92 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
+    "date": "25 сентября 2026",
+    "readTime": "2 мин",
+    "category": "Обзоры"
+  },
+  {
+    "url": "/archive/death-momotaro-5119790.html",
+    "title": "Death Momotaro: цена, отзывы и статистика игроков",
+    "excerpt": "Death Momotaro: актуальная цена (180.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
+    "date": "25 сентября 2026",
+    "readTime": "2 мин",
+    "category": "Обзоры"
+  },
+  {
+    "url": "/archive/abandoned-gameshop-5080530.html",
+    "title": "Abandoned Gameshop: цена, отзывы и статистика игроков",
+    "excerpt": "Abandoned Gameshop: актуальная цена (152.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
+    "date": "25 сентября 2026",
+    "readTime": "2 мин",
+    "category": "Обзоры"
+  },
+  {
+    "url": "/archive/den-ko-senka-4744850.html",
+    "title": "DEN KO SENKA: цена, отзывы и статистика игроков",
+    "excerpt": "DEN KO SENKA: актуальная цена (Бесплатно), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
+    "date": "25 сентября 2026",
+    "readTime": "2 мин",
+    "category": "Обзоры"
+  },
+  {
+    "url": "/archive/combat-conductor-4744840.html",
+    "title": "Combat Conductor: цена, отзывы и статистика игроков",
+    "excerpt": "Combat Conductor: актуальная цена (Бесплатно), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
+    "date": "25 сентября 2026",
+    "readTime": "2 мин",
+    "category": "Обзоры"
+  },
+  {
+    "url": "/archive/ganbleyd-reyndzher-3702140.html",
+    "title": "Ганблейд-Рейнджер: цена, отзывы и статистика игроков",
+    "excerpt": "Ганблейд-Рейнджер: актуальная цена (204.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
+    "date": "25 сентября 2026",
+    "readTime": "2 мин",
+    "category": "Обзоры"
+  },
+  {
+    "url": "/archive/magic-realm-3183450.html",
+    "title": "魔法之境 Magic Realm: цена, отзывы и статистика игроков",
+    "excerpt": "魔法之境 Magic Realm: актуальная цена (308.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
+    "date": "25 сентября 2026",
+    "readTime": "2 мин",
+    "category": "Обзоры"
+  },
+  {
+    "url": "/archive/abandoned-hospital-patrol-4744810.html",
+    "title": "Abandoned Hospital Patrol: цена, отзывы и статистика игроков",
+    "excerpt": "Abandoned Hospital Patrol: актуальная цена (Бесплатно), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
+    "date": "25 сентября 2026",
+    "readTime": "2 мин",
+    "category": "Обзоры"
+  },
+  {
+    "url": "/archive/marine-slalom-4744790.html",
+    "title": "Marine♡Slalom: цена, отзывы и статистика игроков",
+    "excerpt": "Marine♡Slalom: актуальная цена (Бесплатно), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
+    "date": "25 сентября 2026",
+    "readTime": "2 мин",
+    "category": "Обзоры"
+  },
+  {
+    "url": "/archive/onigotchi-4184190.html",
+    "title": "Onigotchi: цена, отзывы и статистика игроков",
+    "excerpt": "Onigotchi: актуальная цена (140.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
+    "date": "25 сентября 2026",
+    "readTime": "2 мин",
+    "category": "Обзоры"
+  },
+  {
+    "url": "/archive/dark-souls-remastered-570940.html",
+    "title": "DARK SOULS™: REMASTERED: цена, отзывы и статистика игроков",
+    "excerpt": "DARK SOULS™: REMASTERED: актуальная цена (1199.00 RUB), 92% положительных отзывов в Steam, статистика владельцев (2,000,000 – 5,000,000). Данные обновляются автоматически.",
+    "date": "25 сентября 2026",
+    "readTime": "2 мин",
+    "category": "Обзоры"
+  },
+  {
+    "url": "/archive/american-truck-simulator-south-dakota-3749870.html",
+    "title": "American Truck Simulator - South Dakota: цена, отзывы и статистика игроков",
+    "excerpt": "American Truck Simulator - South Dakota: актуальная цена (749.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
+    "date": "25 сентября 2026",
+    "readTime": "2 мин",
+    "category": "Обзоры"
+  },
+  {
     "url": "/archive/garfield-escape-from-monday-3932790.html",
     "title": "Garfield - Escape from Monday: цена, отзывы и статистика игроков",
     "excerpt": "Garfield - Escape from Monday: актуальная цена (1817.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
