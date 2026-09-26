@@ -1,6 +1,198 @@
 // articles-data.js
 window.allArticles = [
   {
+    "url": "/archive/the-handler-of-dragons-1172730.html",
+    "title": "The Handler of Dragons: цена, отзывы и статистика игроков",
+    "excerpt": "The Handler of Dragons: актуальная цена (240.00 RUB), 67% положительных отзывов в Steam, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
+    "date": "26 сентября 2026",
+    "readTime": "2 мин",
+    "category": "Обзоры"
+  },
+  {
+    "url": "/archive/-4948400.html",
+    "title": "잭팟 던전: цена, отзывы и статистика игроков",
+    "excerpt": "잭팟 던전: актуальная цена (110.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
+    "date": "26 сентября 2026",
+    "readTime": "2 мин",
+    "category": "Обзоры"
+  },
+  {
+    "url": "/archive/sector-13-haunted-woods-4244040.html",
+    "title": "Sector 13: Haunted Woods: цена, отзывы и статистика игроков",
+    "excerpt": "Sector 13: Haunted Woods: актуальная цена (346.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
+    "date": "26 сентября 2026",
+    "readTime": "2 мин",
+    "category": "Обзоры"
+  },
+  {
+    "url": "/archive/surrounded-by-scrunchies-5228310.html",
+    "title": "Surrounded by Scrunchies: цена, отзывы и статистика игроков",
+    "excerpt": "Surrounded by Scrunchies: актуальная цена (592.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
+    "date": "26 сентября 2026",
+    "readTime": "2 мин",
+    "category": "Обзоры"
+  },
+  {
+    "url": "/archive/dark-hunter-kuro-4150170.html",
+    "title": "DARK HUNTER KURO: цена, отзывы и статистика игроков",
+    "excerpt": "DARK HUNTER KURO: актуальная цена (639.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
+    "date": "26 сентября 2026",
+    "readTime": "2 мин",
+    "category": "Обзоры"
+  },
+  {
+    "url": "/archive/stranded-with-you-4260270.html",
+    "title": "Stranded with You: цена, отзывы и статистика игроков",
+    "excerpt": "Stranded with You: актуальная цена (372.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
+    "date": "26 сентября 2026",
+    "readTime": "2 мин",
+    "category": "Обзоры"
+  },
+  {
+    "url": "/archive/lexilotl-crossword-puzzle-run-4735750.html",
+    "title": "Lexilotl: Crossword Puzzle Run: цена, отзывы и статистика игроков",
+    "excerpt": "Lexilotl: Crossword Puzzle Run: актуальная цена (240.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
+    "date": "26 сентября 2026",
+    "readTime": "2 мин",
+    "category": "Обзоры"
+  },
+  {
+    "url": "/archive/hentai-age-cat-5234460.html",
+    "title": "Hentai Age Cat: цена, отзывы и статистика игроков",
+    "excerpt": "Hentai Age Cat: актуальная цена (40.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
+    "date": "26 сентября 2026",
+    "readTime": "2 мин",
+    "category": "Обзоры"
+  },
+  {
+    "url": "/archive/loki-s-revenge-2936750.html",
+    "title": "Loki's Revenge: цена, отзывы и статистика игроков",
+    "excerpt": "Loki's Revenge: актуальная цена (46.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
+    "date": "26 сентября 2026",
+    "readTime": "2 мин",
+    "category": "Обзоры"
+  },
+  {
+    "url": "/archive/killdozer-4909940.html",
+    "title": "Killdozer: цена, отзывы и статистика игроков",
+    "excerpt": "Killdozer: актуальная цена (180.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
+    "date": "26 сентября 2026",
+    "readTime": "2 мин",
+    "category": "Обзоры"
+  },
+  {
+    "url": "/archive/afk-army-for-keyboard-5194330.html",
+    "title": "AFK - Army For Keyboard: цена, отзывы и статистика игроков",
+    "excerpt": "AFK - Army For Keyboard: актуальная цена (135.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
+    "date": "26 сентября 2026",
+    "readTime": "2 мин",
+    "category": "Обзоры"
+  },
+  {
+    "url": "/archive/mmo-massive-mommy-orgy-4949180.html",
+    "title": "MMO: Massive Mommy Orgy: цена, отзывы и статистика игроков",
+    "excerpt": "MMO: Massive Mommy Orgy: актуальная цена (479.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
+    "date": "26 сентября 2026",
+    "readTime": "2 мин",
+    "category": "Обзоры"
+  },
+  {
+    "url": "/archive/hockey-fire-5089520.html",
+    "title": "Hockey Fire: цена, отзывы и статистика игроков",
+    "excerpt": "Hockey Fire: актуальная цена (232.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
+    "date": "26 сентября 2026",
+    "readTime": "2 мин",
+    "category": "Обзоры"
+  },
+  {
+    "url": "/archive/traffic-stop-anomaly-4408710.html",
+    "title": "Traffic Stop Anomaly: цена, отзывы и статистика игроков",
+    "excerpt": "Traffic Stop Anomaly: актуальная цена (232.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
+    "date": "26 сентября 2026",
+    "readTime": "2 мин",
+    "category": "Обзоры"
+  },
+  {
+    "url": "/archive/overdeveloped-requiem-3321770.html",
+    "title": "Overdeveloped: Requiem: цена, отзывы и статистика игроков",
+    "excerpt": "Overdeveloped: Requiem: актуальная цена (82.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
+    "date": "26 сентября 2026",
+    "readTime": "2 мин",
+    "category": "Обзоры"
+  },
+  {
+    "url": "/archive/dungeon-forge-5080420.html",
+    "title": "Dungeon Forge: цена, отзывы и статистика игроков",
+    "excerpt": "Dungeon Forge: актуальная цена (120.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
+    "date": "26 сентября 2026",
+    "readTime": "2 мин",
+    "category": "Обзоры"
+  },
+  {
+    "url": "/archive/glass-masquerade-4-constellations-tarots-5285480.html",
+    "title": "Glass Masquerade 4: Constellations - Tarots: цена, отзывы и статистика игроков",
+    "excerpt": "Glass Masquerade 4: Constellations - Tarots: актуальная цена (99.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
+    "date": "26 сентября 2026",
+    "readTime": "2 мин",
+    "category": "Обзоры"
+  },
+  {
+    "url": "/archive/anna-chapter-2-4375800.html",
+    "title": "Anna - Chapter 2: цена, отзывы и статистика игроков",
+    "excerpt": "Anna - Chapter 2: актуальная цена (658.24 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
+    "date": "26 сентября 2026",
+    "readTime": "2 мин",
+    "category": "Обзоры"
+  },
+  {
+    "url": "/archive/smoke-keeper-5115860.html",
+    "title": "Smoke Keeper: цена, отзывы и статистика игроков",
+    "excerpt": "Smoke Keeper: актуальная цена (261.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
+    "date": "26 сентября 2026",
+    "readTime": "2 мин",
+    "category": "Обзоры"
+  },
+  {
+    "url": "/archive/ctrl-esc-4323690.html",
+    "title": "CTRL+ESC: цена, отзывы и статистика игроков",
+    "excerpt": "CTRL+ESC: актуальная цена (135.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
+    "date": "26 сентября 2026",
+    "readTime": "2 мин",
+    "category": "Обзоры"
+  },
+  {
+    "url": "/archive/sumo-fumble-physics-party-4357300.html",
+    "title": "Sumo Fumble: Physics Party: цена, отзывы и статистика игроков",
+    "excerpt": "Sumo Fumble: Physics Party: актуальная цена (192.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
+    "date": "26 сентября 2026",
+    "readTime": "2 мин",
+    "category": "Обзоры"
+  },
+  {
+    "url": "/archive/pixel-cross-stitch-toys-miniatures-pack-5103610.html",
+    "title": "Pixel Cross Stitch - Toys Miniatures Pack: цена, отзывы и статистика игроков",
+    "excerpt": "Pixel Cross Stitch - Toys Miniatures Pack: актуальная цена (Бесплатно), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
+    "date": "26 сентября 2026",
+    "readTime": "2 мин",
+    "category": "Обзоры"
+  },
+  {
+    "url": "/archive/nightmare-horror-investigation-5215920.html",
+    "title": "Nightmare Horror Investigation: цена, отзывы и статистика игроков",
+    "excerpt": "Nightmare Horror Investigation: актуальная цена (200.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
+    "date": "26 сентября 2026",
+    "readTime": "2 мин",
+    "category": "Обзоры"
+  },
+  {
+    "url": "/archive/hentai-femboy-secretary-5207580.html",
+    "title": "Hentai Femboy Secretary: цена, отзывы и статистика игроков",
+    "excerpt": "Hentai Femboy Secretary: актуальная цена (124.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
+    "date": "26 сентября 2026",
+    "readTime": "2 мин",
+    "category": "Обзоры"
+  },
+  {
     "url": "/archive/rpg-5230220.html",
     "title": "言葉遠征 ~~ 日语学习RPG ~~: цена, отзывы и статистика игроков",
     "excerpt": "言葉遠征 ~~ 日语学习RPG ~~: актуальная цена (429.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
