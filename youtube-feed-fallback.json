@@ -2,6 +2,18 @@
   "ok": true,
   "items": [
     {
+      "videoId": "UF5mtVSMu8k",
+      "title": "по ковбойски #rdr2 #reddeadredemption2",
+      "publishedAt": "2026-09-27T11:46:29+00:00",
+      "thumbnail": "https://i2.ytimg.com/vi/UF5mtVSMu8k/hqdefault.jpg"
+    },
+    {
+      "videoId": "OLeoRIrrbSw",
+      "title": "медленно #rdr2 #reddeadredemption2",
+      "publishedAt": "2026-09-27T08:44:34+00:00",
+      "thumbnail": "https://i4.ytimg.com/vi/OLeoRIrrbSw/hqdefault.jpg"
+    },
+    {
       "videoId": "NFne-5h_1ZE",
       "title": "сейф в #rdr2 #reddeadredemption2",
       "publishedAt": "2026-09-26T15:29:51+00:00",
@@ -24,18 +36,6 @@
       "title": "долгая тема 2 в #rdr2 #reddeadredemption2",
       "publishedAt": "2026-09-25T16:31:21+00:00",
       "thumbnail": "https://i4.ytimg.com/vi/sOTTeEIulQM/hqdefault.jpg"
-    },
-    {
-      "videoId": "oLjSq_S-AnM",
-      "title": "долгий тип в #rdr2 #reddeadredemption2",
-      "publishedAt": "2026-09-25T12:47:51+00:00",
-      "thumbnail": "https://i4.ytimg.com/vi/oLjSq_S-AnM/hqdefault.jpg"
-    },
-    {
-      "videoId": "FPq1ez7ZSUA",
-      "title": "это что было в #rdr2 #reddeadredemption2",
-      "publishedAt": "2026-09-23T14:20:07+00:00",
-      "thumbnail": "https://i3.ytimg.com/vi/FPq1ez7ZSUA/hqdefault.jpg"
     }
   ]
 }
