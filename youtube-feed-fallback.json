@@ -2,6 +2,12 @@
   "ok": true,
   "items": [
     {
+      "videoId": "ksnMG4Poe80",
+      "title": "игра lineage 2, сервер флаурон",
+      "publishedAt": "2026-09-28T05:47:20+00:00",
+      "thumbnail": "https://i4.ytimg.com/vi/ksnMG4Poe80/hqdefault.jpg"
+    },
+    {
       "videoId": "UF5mtVSMu8k",
       "title": "по ковбойски #rdr2 #reddeadredemption2",
       "publishedAt": "2026-09-27T11:46:29+00:00",
@@ -30,12 +36,6 @@
       "title": "дилемма в #rdr2 #reddeadredemption2",
       "publishedAt": "2026-09-26T05:00:35+00:00",
       "thumbnail": "https://i2.ytimg.com/vi/MgUGmXo3Tro/hqdefault.jpg"
-    },
-    {
-      "videoId": "sOTTeEIulQM",
-      "title": "долгая тема 2 в #rdr2 #reddeadredemption2",
-      "publishedAt": "2026-09-25T16:31:21+00:00",
-      "thumbnail": "https://i4.ytimg.com/vi/sOTTeEIulQM/hqdefault.jpg"
     }
   ]
 }
