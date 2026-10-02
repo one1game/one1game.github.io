@@ -1,6 +1,262 @@
 // articles-data.js
 window.allArticles = [
   {
+    "url": "/archive/idle-am-lofi-idle-mmo-5233680.html",
+    "title": "idle.am - lofi idle mmo: цена, отзывы и статистика игроков",
+    "excerpt": "idle.am - lofi idle mmo: актуальная цена (Бесплатно), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
+    "date": "2 октября 2026",
+    "readTime": "2 мин",
+    "category": "Обзоры"
+  },
+  {
+    "url": "/archive/puke-and-seek-5118740.html",
+    "title": "Puke and Seek: цена, отзывы и статистика игроков",
+    "excerpt": "Puke and Seek: актуальная цена (308.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
+    "date": "2 октября 2026",
+    "readTime": "2 мин",
+    "category": "Обзоры"
+  },
+  {
+    "url": "/archive/wind-s-road-5241100.html",
+    "title": "Wind's Road: цена, отзывы и статистика игроков",
+    "excerpt": "Wind's Road: актуальная цена (45.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
+    "date": "2 октября 2026",
+    "readTime": "2 мин",
+    "category": "Обзоры"
+  },
+  {
+    "url": "/archive/hyperfrag-4271950.html",
+    "title": "HYPERFRAG: цена, отзывы и статистика игроков",
+    "excerpt": "HYPERFRAG: актуальная цена (Бесплатно), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
+    "date": "2 октября 2026",
+    "readTime": "2 мин",
+    "category": "Обзоры"
+  },
+  {
+    "url": "/archive/strip-memory-milfy-librarians-5117300.html",
+    "title": "Strip Memory: Milfy Librarians: цена, отзывы и статистика игроков",
+    "excerpt": "Strip Memory: Milfy Librarians: актуальная цена (216.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
+    "date": "2 октября 2026",
+    "readTime": "2 мин",
+    "category": "Обзоры"
+  },
+  {
+    "url": "/archive/monster-nursery-4819510.html",
+    "title": "Monster Nursery: цена, отзывы и статистика игроков",
+    "excerpt": "Monster Nursery: актуальная цена (306.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
+    "date": "2 октября 2026",
+    "readTime": "2 мин",
+    "category": "Обзоры"
+  },
+  {
+    "url": "/archive/anthem-of-limbo-3968820.html",
+    "title": "ANTHEM OF LIMBO: цена, отзывы и статистика игроков",
+    "excerpt": "ANTHEM OF LIMBO: актуальная цена (Бесплатно), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
+    "date": "2 октября 2026",
+    "readTime": "2 мин",
+    "category": "Обзоры"
+  },
+  {
+    "url": "/archive/chalk-paper-scissors-4956970.html",
+    "title": "Chalk Paper Scissors: цена, отзывы и статистика игроков",
+    "excerpt": "Chalk Paper Scissors: актуальная цена (Бесплатно), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
+    "date": "2 октября 2026",
+    "readTime": "2 мин",
+    "category": "Обзоры"
+  },
+  {
+    "url": "/archive/ballad-5011870.html",
+    "title": "Ballad: цена, отзывы и статистика игроков",
+    "excerpt": "Ballad: актуальная цена (Бесплатно), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
+    "date": "2 октября 2026",
+    "readTime": "2 мин",
+    "category": "Обзоры"
+  },
+  {
+    "url": "/archive/beer-league-hockey-5096560.html",
+    "title": "Beer League Hockey: цена, отзывы и статистика игроков",
+    "excerpt": "Beer League Hockey: актуальная цена (290.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
+    "date": "2 октября 2026",
+    "readTime": "2 мин",
+    "category": "Обзоры"
+  },
+  {
+    "url": "/archive/sengoku-rance-3867170.html",
+    "title": "Sengoku Rance: цена, отзывы и статистика игроков",
+    "excerpt": "Sengoku Rance: актуальная цена (520.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
+    "date": "2 октября 2026",
+    "readTime": "2 мин",
+    "category": "Обзоры"
+  },
+  {
+    "url": "/archive/taru-s-infernal-pledge-3916080.html",
+    "title": "Taru's Infernal Pledge: цена, отзывы и статистика игроков",
+    "excerpt": "Taru's Infernal Pledge: актуальная цена (350.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
+    "date": "2 октября 2026",
+    "readTime": "2 мин",
+    "category": "Обзоры"
+  },
+  {
+    "url": "/archive/kot-shpion-kodovoe-imya-wu-4762810.html",
+    "title": "Кот-шпион: Кодовое имя Wu: цена, отзывы и статистика игроков",
+    "excerpt": "Кот-шпион: Кодовое имя Wu: актуальная цена (395.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
+    "date": "2 октября 2026",
+    "readTime": "2 мин",
+    "category": "Обзоры"
+  },
+  {
+    "url": "/archive/dark-are-the-crypts-the-lost-idea-4974810.html",
+    "title": "Dark Are The Crypts: The Lost Idea: цена, отзывы и статистика игроков",
+    "excerpt": "Dark Are The Crypts: The Lost Idea: актуальная цена (418.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
+    "date": "2 октября 2026",
+    "readTime": "2 мин",
+    "category": "Обзоры"
+  },
+  {
+    "url": "/archive/-5158840.html",
+    "title": "电子绿植: цена, отзывы и статистика игроков",
+    "excerpt": "电子绿植: актуальная цена (30.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
+    "date": "2 октября 2026",
+    "readTime": "2 мин",
+    "category": "Обзоры"
+  },
+  {
+    "url": "/archive/nova-slash-5149410.html",
+    "title": "Nova Slash: цена, отзывы и статистика игроков",
+    "excerpt": "Nova Slash: актуальная цена (130.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
+    "date": "2 октября 2026",
+    "readTime": "2 мин",
+    "category": "Обзоры"
+  },
+  {
+    "url": "/archive/one-thought-immortal-4977250.html",
+    "title": "One Thought Immortal / 一念修仙: цена, отзывы и статистика игроков",
+    "excerpt": "One Thought Immortal / 一念修仙: актуальная цена (385.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
+    "date": "2 октября 2026",
+    "readTime": "2 мин",
+    "category": "Обзоры"
+  },
+  {
+    "url": "/archive/five-hearts-under-one-roof-season2-winter-trip-dlc-4745180.html",
+    "title": "Five Hearts Under One Roof season2 : Winter Trip DLC: цена, отзывы и статистика игроков",
+    "excerpt": "Five Hearts Under One Roof season2 : Winter Trip DLC: актуальная цена (562.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
+    "date": "2 октября 2026",
+    "readTime": "2 мин",
+    "category": "Обзоры"
+  },
+  {
+    "url": "/archive/hentai-tales-this-mesu-serves-me-now-4976310.html",
+    "title": "Hentai Tales: This Mesu Serves Me Now: цена, отзывы и статистика игроков",
+    "excerpt": "Hentai Tales: This Mesu Serves Me Now: актуальная цена (46.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
+    "date": "2 октября 2026",
+    "readTime": "2 мин",
+    "category": "Обзоры"
+  },
+  {
+    "url": "/archive/slaughter-for-the-gods-5254710.html",
+    "title": "Slaughter for the Gods: цена, отзывы и статистика игроков",
+    "excerpt": "Slaughter for the Gods: актуальная цена (561.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
+    "date": "2 октября 2026",
+    "readTime": "2 мин",
+    "category": "Обзоры"
+  },
+  {
+    "url": "/archive/-5026630.html",
+    "title": "オピポピ: цена, отзывы и статистика игроков",
+    "excerpt": "オピポピ: актуальная цена (Бесплатно), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
+    "date": "2 октября 2026",
+    "readTime": "2 мин",
+    "category": "Обзоры"
+  },
+  {
+    "url": "/archive/lucid-rumination-5023450.html",
+    "title": "Lucid Rumination: цена, отзывы и статистика игроков",
+    "excerpt": "Lucid Rumination: актуальная цена (Бесплатно), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
+    "date": "2 октября 2026",
+    "readTime": "2 мин",
+    "category": "Обзоры"
+  },
+  {
+    "url": "/archive/pumpkin-patch-3779090.html",
+    "title": "Pumpkin & Patch: цена, отзывы и статистика игроков",
+    "excerpt": "Pumpkin & Patch: актуальная цена (468.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
+    "date": "2 октября 2026",
+    "readTime": "2 мин",
+    "category": "Обзоры"
+  },
+  {
+    "url": "/archive/simple-squares-4611290.html",
+    "title": "Simple Squares: цена, отзывы и статистика игроков",
+    "excerpt": "Simple Squares: актуальная цена (240.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
+    "date": "2 октября 2026",
+    "readTime": "2 мин",
+    "category": "Обзоры"
+  },
+  {
+    "url": "/archive/smart-translator-4987360.html",
+    "title": "Smart Translator: цена, отзывы и статистика игроков",
+    "excerpt": "Smart Translator: актуальная цена (279.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
+    "date": "2 октября 2026",
+    "readTime": "2 мин",
+    "category": "Обзоры"
+  },
+  {
+    "url": "/archive/pinched-4906170.html",
+    "title": "Pinched: цена, отзывы и статистика игроков",
+    "excerpt": "Pinched: актуальная цена (315.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
+    "date": "2 октября 2026",
+    "readTime": "2 мин",
+    "category": "Обзоры"
+  },
+  {
+    "url": "/archive/arcana-gas-waterworks-inc-4476220.html",
+    "title": "Arcana, Gas & Waterworks Inc.: цена, отзывы и статистика игроков",
+    "excerpt": "Arcana, Gas & Waterworks Inc.: актуальная цена (144.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
+    "date": "2 октября 2026",
+    "readTime": "2 мин",
+    "category": "Обзоры"
+  },
+  {
+    "url": "/archive/rebelote-belote-coinche-5183310.html",
+    "title": "Rebelote : Belote & Coinche: цена, отзывы и статистика игроков",
+    "excerpt": "Rebelote : Belote & Coinche: актуальная цена (192.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
+    "date": "2 октября 2026",
+    "readTime": "2 мин",
+    "category": "Обзоры"
+  },
+  {
+    "url": "/archive/battle-simulator-counter-zombie-reborn-4831090.html",
+    "title": "Battle Simulator: Counter Zombie REBORN: цена, отзывы и статистика игроков",
+    "excerpt": "Battle Simulator: Counter Zombie REBORN: актуальная цена (180.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
+    "date": "2 октября 2026",
+    "readTime": "2 мин",
+    "category": "Обзоры"
+  },
+  {
+    "url": "/archive/the-outlast-trials-1304930.html",
+    "title": "The Outlast Trials: цена, отзывы и статистика игроков",
+    "excerpt": "The Outlast Trials: актуальная цена (130.00 RUB), 93% положительных отзывов в Steam, статистика владельцев (2,000,000 – 5,000,000). Данные обновляются автоматически.",
+    "date": "2 октября 2026",
+    "readTime": "2 мин",
+    "category": "Обзоры"
+  },
+  {
+    "url": "/archive/atomic-heart-668580.html",
+    "title": "Atomic Heart: цена, отзывы и статистика игроков",
+    "excerpt": "Atomic Heart: актуальная цена (499.00 RUB), 82% положительных отзывов в Steam, статистика владельцев (1,000,000 – 2,000,000). Данные обновляются автоматически.",
+    "date": "2 октября 2026",
+    "readTime": "2 мин",
+    "category": "Обзоры"
+  },
+  {
+    "url": "/archive/arc-raiders-1808500.html",
+    "title": "ARC Raiders: цена, отзывы и статистика игроков",
+    "excerpt": "ARC Raiders: актуальная цена (1610.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
+    "date": "2 октября 2026",
+    "readTime": "2 мин",
+    "category": "Обзоры"
+  },
+  {
     "url": "/archive/lustworld-4253390.html",
     "title": "LustWorld: цена, отзывы и статистика игроков",
     "excerpt": "LustWorld: актуальная цена (Бесплатно), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
