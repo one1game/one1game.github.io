@@ -1,6 +1,254 @@
 // articles-data.js
 window.allArticles = [
   {
+    "url": "/archive/timos-4934110.html",
+    "title": "TimoS: цена, отзывы и статистика игроков",
+    "excerpt": "TimoS: актуальная цена (1882.36 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
+    "date": "3 октября 2026",
+    "readTime": "2 мин",
+    "category": "Обзоры"
+  },
+  {
+    "url": "/archive/dreamspring-3231480.html",
+    "title": "Dreamspring: цена, отзывы и статистика игроков",
+    "excerpt": "Dreamspring: актуальная цена (562.00 RUB), 95% положительных отзывов в Steam, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
+    "date": "3 октября 2026",
+    "readTime": "2 мин",
+    "category": "Обзоры"
+  },
+  {
+    "url": "/archive/general-idler-3200810.html",
+    "title": "GENERAL IDLER: цена, отзывы и статистика игроков",
+    "excerpt": "GENERAL IDLER: актуальная цена (216.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
+    "date": "3 октября 2026",
+    "readTime": "2 мин",
+    "category": "Обзоры"
+  },
+  {
+    "url": "/archive/simrace-publisher-studio-5219510.html",
+    "title": "SimRace Publisher Studio: цена, отзывы и статистика игроков",
+    "excerpt": "SimRace Publisher Studio: актуальная цена (1170.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
+    "date": "3 октября 2026",
+    "readTime": "2 мин",
+    "category": "Обзоры"
+  },
+  {
+    "url": "/archive/tunnel-escape-fates-entwined-4285110.html",
+    "title": "Tunnel Escape Fates Entwined: цена, отзывы и статистика игроков",
+    "excerpt": "Tunnel Escape Fates Entwined: актуальная цена (684.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
+    "date": "3 октября 2026",
+    "readTime": "2 мин",
+    "category": "Обзоры"
+  },
+  {
+    "url": "/archive/spaceman-s-luck-4706030.html",
+    "title": "Spaceman's Luck: цена, отзывы и статистика игроков",
+    "excerpt": "Spaceman's Luck: актуальная цена (325.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
+    "date": "3 октября 2026",
+    "readTime": "2 мин",
+    "category": "Обзоры"
+  },
+  {
+    "url": "/archive/in-these-hallowed-halls-4875320.html",
+    "title": "In These Hallowed Halls: цена, отзывы и статистика игроков",
+    "excerpt": "In These Hallowed Halls: актуальная цена (385.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
+    "date": "3 октября 2026",
+    "readTime": "2 мин",
+    "category": "Обзоры"
+  },
+  {
+    "url": "/archive/stick-cards-rng-4611600.html",
+    "title": "Stick Cards RNG: цена, отзывы и статистика игроков",
+    "excerpt": "Stick Cards RNG: актуальная цена (Бесплатно), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
+    "date": "3 октября 2026",
+    "readTime": "2 мин",
+    "category": "Обзоры"
+  },
+  {
+    "url": "/archive/your-first-half-orc-a-fantasy-gay-sex-encounter-in-vr-4739740.html",
+    "title": "Your First Half-Orc: A Fantasy Gay Sex Encounter in VR: цена, отзывы и статистика игроков",
+    "excerpt": "Your First Half-Orc: A Fantasy Gay Sex Encounter in VR: актуальная цена (465.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
+    "date": "3 октября 2026",
+    "readTime": "2 мин",
+    "category": "Обзоры"
+  },
+  {
+    "url": "/archive/birb-4364930.html",
+    "title": "Birb: цена, отзывы и статистика игроков",
+    "excerpt": "Birb: актуальная цена (159.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
+    "date": "3 октября 2026",
+    "readTime": "2 мин",
+    "category": "Обзоры"
+  },
+  {
+    "url": "/archive/rorasuketo-4401480.html",
+    "title": "Rorasuketo: цена, отзывы и статистика игроков",
+    "excerpt": "Rorasuketo: актуальная цена (123.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
+    "date": "3 октября 2026",
+    "readTime": "2 мин",
+    "category": "Обзоры"
+  },
+  {
+    "url": "/archive/major-mutt-4408990.html",
+    "title": "Major Mutt: цена, отзывы и статистика игроков",
+    "excerpt": "Major Mutt: актуальная цена (Бесплатно), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
+    "date": "3 октября 2026",
+    "readTime": "2 мин",
+    "category": "Обзоры"
+  },
+  {
+    "url": "/archive/deer-hunting-the-season-2-5158320.html",
+    "title": "Deer Hunting - The Season 2: цена, отзывы и статистика игроков",
+    "excerpt": "Deer Hunting - The Season 2: актуальная цена (840.34 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
+    "date": "3 октября 2026",
+    "readTime": "2 мин",
+    "category": "Обзоры"
+  },
+  {
+    "url": "/archive/factorized-5230410.html",
+    "title": "Factorized: цена, отзывы и статистика игроков",
+    "excerpt": "Factorized: актуальная цена (Бесплатно), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
+    "date": "3 октября 2026",
+    "readTime": "2 мин",
+    "category": "Обзоры"
+  },
+  {
+    "url": "/archive/get-to-orbit-5130440.html",
+    "title": "Get To Orbit: цена, отзывы и статистика игроков",
+    "excerpt": "Get To Orbit: актуальная цена (180.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
+    "date": "3 октября 2026",
+    "readTime": "2 мин",
+    "category": "Обзоры"
+  },
+  {
+    "url": "/archive/gyrogue-4548340.html",
+    "title": "GYROGUE: цена, отзывы и статистика игроков",
+    "excerpt": "GYROGUE: актуальная цена (261.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
+    "date": "3 октября 2026",
+    "readTime": "2 мин",
+    "category": "Обзоры"
+  },
+  {
+    "url": "/archive/the-vessel-5228590.html",
+    "title": "The Vessel: цена, отзывы и статистика игроков",
+    "excerpt": "The Vessel: актуальная цена (120.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
+    "date": "3 октября 2026",
+    "readTime": "2 мин",
+    "category": "Обзоры"
+  },
+  {
+    "url": "/archive/manaphore-5242820.html",
+    "title": "Manaphore: цена, отзывы и статистика игроков",
+    "excerpt": "Manaphore: актуальная цена (Бесплатно), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
+    "date": "3 октября 2026",
+    "readTime": "2 мин",
+    "category": "Обзоры"
+  },
+  {
+    "url": "/archive/dream-simulators-4820100.html",
+    "title": "Dream Simulators: цена, отзывы и статистика игроков",
+    "excerpt": "Dream Simulators: актуальная цена (Бесплатно), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
+    "date": "3 октября 2026",
+    "readTime": "2 мин",
+    "category": "Обзоры"
+  },
+  {
+    "url": "/archive/monster-museum-tidy-up-the-collection-4998990.html",
+    "title": "Monster Museum: Tidy Up the collection!: цена, отзывы и статистика игроков",
+    "excerpt": "Monster Museum: Tidy Up the collection!: актуальная цена (261.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
+    "date": "3 октября 2026",
+    "readTime": "2 мин",
+    "category": "Обзоры"
+  },
+  {
+    "url": "/archive/mane-tekel-fares-5246800.html",
+    "title": "Mane, Tekel, Fares: цена, отзывы и статистика игроков",
+    "excerpt": "Mane, Tekel, Fares: актуальная цена (180.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
+    "date": "3 октября 2026",
+    "readTime": "2 мин",
+    "category": "Обзоры"
+  },
+  {
+    "url": "/archive/sandcastle-battle-5179130.html",
+    "title": "Sandcastle Battle: цена, отзывы и статистика игроков",
+    "excerpt": "Sandcastle Battle: актуальная цена (120.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
+    "date": "3 октября 2026",
+    "readTime": "2 мин",
+    "category": "Обзоры"
+  },
+  {
+    "url": "/archive/clickore-station-5209210.html",
+    "title": "Clickore Station: цена, отзывы и статистика игроков",
+    "excerpt": "Clickore Station: актуальная цена (216.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
+    "date": "3 октября 2026",
+    "readTime": "2 мин",
+    "category": "Обзоры"
+  },
+  {
+    "url": "/archive/game-keeper-somebody-messed-up-my-shop-5186690.html",
+    "title": "Game Keeper: Somebody Messed Up My Shop!: цена, отзывы и статистика игроков",
+    "excerpt": "Game Keeper: Somebody Messed Up My Shop!: актуальная цена (359.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
+    "date": "3 октября 2026",
+    "readTime": "2 мин",
+    "category": "Обзоры"
+  },
+  {
+    "url": "/archive/obstacle-overdrive-3412490.html",
+    "title": "Obstacle Overdrive: цена, отзывы и статистика игроков",
+    "excerpt": "Obstacle Overdrive: актуальная цена (495.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
+    "date": "3 октября 2026",
+    "readTime": "2 мин",
+    "category": "Обзоры"
+  },
+  {
+    "url": "/archive/godspeed-5119800.html",
+    "title": "GODSPEED: цена, отзывы и статистика игроков",
+    "excerpt": "GODSPEED: актуальная цена (301.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
+    "date": "3 октября 2026",
+    "readTime": "2 мин",
+    "category": "Обзоры"
+  },
+  {
+    "url": "/archive/keepshore-5083090.html",
+    "title": "Keepshore: цена, отзывы и статистика игроков",
+    "excerpt": "Keepshore: актуальная цена (Бесплатно), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
+    "date": "3 октября 2026",
+    "readTime": "2 мин",
+    "category": "Обзоры"
+  },
+  {
+    "url": "/archive/tidy-up-the-flower-shop-5221510.html",
+    "title": "Tidy Up the Flower Shop: цена, отзывы и статистика игроков",
+    "excerpt": "Tidy Up the Flower Shop: актуальная цена (261.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
+    "date": "3 октября 2026",
+    "readTime": "2 мин",
+    "category": "Обзоры"
+  },
+  {
+    "url": "/archive/from-beyond-arcade-edition-4803460.html",
+    "title": "From Beyond: Arcade Edition: цена, отзывы и статистика игроков",
+    "excerpt": "From Beyond: Arcade Edition: актуальная цена (124.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
+    "date": "3 октября 2026",
+    "readTime": "2 мин",
+    "category": "Обзоры"
+  },
+  {
+    "url": "/archive/same-time-tomorrow-5059400.html",
+    "title": "Same Time Tomorrow: цена, отзывы и статистика игроков",
+    "excerpt": "Same Time Tomorrow: актуальная цена (99.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
+    "date": "3 октября 2026",
+    "readTime": "2 мин",
+    "category": "Обзоры"
+  },
+  {
+    "url": "/archive/warhammer-40-000-space-marine-2-2183900.html",
+    "title": "Warhammer 40,000: Space Marine 2: цена, отзывы и статистика игроков",
+    "excerpt": "Warhammer 40,000: Space Marine 2: актуальная цена (799.00 RUB), 83% положительных отзывов в Steam, статистика владельцев (5,000,000 – 10,000,000). Данные обновляются автоматически.",
+    "date": "3 октября 2026",
+    "readTime": "2 мин",
+    "category": "Обзоры"
+  },
+  {
     "url": "/archive/idle-am-lofi-idle-mmo-5233680.html",
     "title": "idle.am - lofi idle mmo: цена, отзывы и статистика игроков",
     "excerpt": "idle.am - lofi idle mmo: актуальная цена (Бесплатно), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
