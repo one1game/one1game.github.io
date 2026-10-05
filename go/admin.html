@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="robots" content="noindex,nofollow">
+<meta name="theme-color" content="#08090d">
+<title>Админка — игры</title>
+<link rel="icon" href="assets/icon.svg">
+<style>
+:root{
+  --bg:#08090d; --bg-soft:#0d0f15; --card:#14161f; --card-hi:#1b1e2a;
+  --txt:#f3f5fa; --dim:#8b90a0; --line:rgba(255,255,255,.09);
+  --acc:#5b8cff; --acc-soft:rgba(91,140,255,.16); --ok:#22d3a6; --warn:#ff6b6b;
+  --safe-t:env(safe-area-inset-top,0px); --safe-b:env(safe-area-inset-bottom,0px);
+}
+@media (prefers-color-scheme:light){
+  :root{--bg:#f5f6fa;--bg-soft:#eceef5;--card:#fff;--card-hi:#f2f4f9;--txt:#111319;--dim:#6b7280;--line:rgba(0,0,0,.08);--acc:#3b6fe0;--acc-soft:rgba(59,111,224,.12);}
+}
+*{margin:0;padding:0;box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+[hidden]{display:none!important}
+body{background:var(--bg);color:var(--txt);font:15px/1.4 -apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Arial,sans-serif;padding-bottom:calc(var(--safe-b) + 40px)}
+button,input,textarea,select{font:inherit;color:inherit}
+button{background:none;border:0;cursor:pointer}
+.wrap{max-width:760px;margin:0 auto;padding:0 14px}
+h1{font-size:20px;font-weight:800;display:flex;align-items:center;gap:9px}
+h1 .dot{width:30px;height:30px;border-radius:10px;background:linear-gradient(135deg,var(--acc),#22d3a6);display:grid;place-items:center;font-size:16px}
+h2{font-size:15px;font-weight:750;margin:22px 0 10px;display:flex;align-items:center;gap:8px}
+h2 .n{color:var(--dim);font-weight:600;font-size:13px}
+header{position:sticky;top:0;z-index:20;padding-top:var(--safe-t);background:color-mix(in srgb,var(--bg) 80%,transparent);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border-bottom:1px solid var(--line)}
+.head{display:flex;align-items:center;gap:10px;padding:12px 0;flex-wrap:wrap}
+.head h1{flex:1;min-width:140px}
+.head .sp{flex:1}
+.btn{height:42px;padding:0 14px;border-radius:13px;border:1px solid var(--line);background:var(--card);font-size:14px;font-weight:650;display:inline-flex;align-items:center;justify-content:center;gap:7px}
+.btn:active{transform:scale(.97)}
+.btn.primary{background:var(--acc);border-color:transparent;color:#fff}
+.btn.ok{background:var(--ok);border-color:transparent;color:#04140f}
+.btn.danger{color:var(--warn)}
+.btn.wide{width:100%}
+.cardbox{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:14px;margin-bottom:12px}
+.field{margin-bottom:11px}
+.field label{display:block;font-size:12.5px;color:var(--dim);font-weight:650;margin-bottom:5px}
+.field input,.field textarea,.field select{
+  width:100%;background:var(--bg-soft);border:1px solid var(--line);border-radius:12px;
+  padding:11px 12px;font-size:15px;outline:none;transition:border-color .18s;
+}
+.field input:focus,.field textarea:focus{border-color:var(--acc)}
+.field textarea{min-height:64px;resize:vertical}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.hint{font-size:12px;color:var(--dim);margin-top:4px}
+input[type=color]{height:44px;padding:4px;background:var(--bg-soft)}
+.check{display:flex;align-items:center;gap:9px;font-size:14px;font-weight:600;padding:4px 0}
+.check input{width:20px;height:20px;accent-color:var(--acc)}
+.row-acts{display:flex;gap:8px;flex-wrap:wrap}
+.preview{display:flex;gap:12px;align-items:center;background:var(--bg-soft);border:1px dashed var(--line);border-radius:14px;padding:10px;margin-top:4px}
+.preview .cv{width:60px;height:60px;border-radius:14px;display:grid;place-items:center;font-size:28px;flex:0 0 auto}
+.preview b{display:block}
+.preview small{color:var(--dim)}
+.item{display:flex;align-items:center;gap:10px;padding:10px;border:1px solid var(--line);border-radius:14px;background:var(--card);margin-bottom:8px}
+.item .cv{width:44px;height:44px;border-radius:12px;display:grid;place-items:center;font-size:22px;flex:0 0 auto}
+.item .txt{flex:1;min-width:0}
+.item .txt b{display:block;font-size:14.5px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.item .txt small{color:var(--dim);font-size:12px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;display:block}
+.item .ops{display:flex;gap:4px}
+.item .ops button{width:34px;height:34px;border-radius:10px;border:1px solid var(--line);background:var(--bg-soft);display:grid;place-items:center;font-size:15px}
+.item.sel{outline:2px solid var(--acc);opacity:.6}
+code,pre{font-family:ui-monospace,Menlo,Consolas,monospace}
+pre{background:var(--bg-soft);border:1px solid var(--line);border-radius:14px;padding:12px;font-size:12px;overflow:auto;max-height:280px;white-space:pre}
+.toast{position:fixed;left:50%;bottom:calc(var(--safe-b) + 20px);transform:translate(-50%,10px);background:var(--txt);color:var(--bg);padding:10px 16px;border-radius:12px;font-size:13.5px;font-weight:650;opacity:0;pointer-events:none;transition:all .2s;z-index:50}
+.toast.show{opacity:1;transform:translate(-50%,0)}
+#gate{position:fixed;inset:0;background:var(--bg);z-index:60;display:grid;place-items:center;padding:20px}
+#gate .box{width:100%;max-width:360px;text-align:center}
+#gate input{width:100%;text-align:center;letter-spacing:3px;margin:14px 0 10px}
+.steps{font-size:13.5px;color:var(--dim);line-height:1.6}
+.steps b{color:var(--txt)}
+.steps code{background:var(--bg-soft);border:1px solid var(--line);border-radius:6px;padding:1px 5px;font-size:12.5px}
+</style>
+</head>
+<body>
+
+<div id="gate">
+  <div class="box">
+    <h1 style="justify-content:center"><span class="dot">🔒</span>Админка</h1>
+    <input id="pass" type="password" inputmode="text" placeholder="пароль" aria-label="Пароль">
+    <button class="btn primary wide" id="enter">Войти</button>
+    <p class="hint">Пароль меняется в <code>admin.html</code> → <code>const PASS</code></p>
+  </div>
+</div>
+
+<header hidden id="topbar">
+  <div class="wrap head">
+    <h1><span class="dot">🛠</span>Игры</h1>
+    <span class="sp"></span>
+    <button class="btn" id="open-site">Открыть сайт</button>
+    <button class="btn primary" id="open-draft">Предпросмотр</button>
+  </div>
+</header>
+
+<main class="wrap" hidden id="app">
+
+  <h2>Новая игра <span class="n" id="mode">добавление</span></h2>
+  <div class="cardbox">
+    <div class="field">
+      <label>Название</label>
+      <input id="f-title" placeholder="Утки" autocomplete="off">
+    </div>
+    <div class="two">
+      <div class="field">
+        <label>Ссылка на игру</label>
+        <input id="f-url" placeholder="games/mygame/" autocomplete="off" spellcheck="false">
+        <div class="hint">папка игры в репозитории или ссылка https://…</div>
+      </div>
+      <div class="field">
+        <label>Слаг (id, адрес)</label>
+        <input id="f-slug" placeholder="utki" autocomplete="off" spellcheck="false">
+        <div class="hint">можно оставить пустым</div>
+      </div>
+    </div>
+    <div class="two">
+      <div class="field">
+        <label>Облик (эмодзи)</label>
+        <input id="f-cover" placeholder="🦆" maxlength="4" autocomplete="off">
+      </div>
+      <div class="field">
+        <label>Фон игры</label>
+        <input id="f-bg" type="color" value="#0b0d12">
+        <div class="hint">под него красится обёртка и полоса браузера</div>
+      </div>
+    </div>
+    <div class="two">
+      <div class="field">
+        <label>Цвет 1 (превью и кнопки)</label>
+        <input id="f-c1" type="color" value="#5b8cff">
+      </div>
+      <div class="field">
+        <label>Цвет 2 (превью и кнопки)</label>
+        <input id="f-c2" type="color" value="#22d3a6">
+      </div>
+    </div>
+    <div class="field">
+      <label>Теги (через запятую)</label>
+      <input id="f-tags" placeholder="аркада, шутер" autocomplete="off">
+    </div>
+    <div class="field">
+      <label>Описание</label>
+      <textarea id="f-desc" placeholder="Пара слов о игре"></textarea>
+    </div>
+    <div class="two">
+      <div class="field">
+        <label>Дата</label>
+        <input id="f-date" type="date">
+      </div>
+      <label class="check"><input id="f-pin" type="checkbox"> Закрепить сверху (NEW)</label>
+    </div>
+
+    <div class="preview">
+      <div class="cv" id="p-cv">🦆</div>
+      <div><b id="p-title">Название</b><small id="p-sub">теги</small></div>
+    </div>
+
+    <div class="row-acts" style="margin-top:12px">
+      <button class="btn primary" id="save">Добавить игру</button>
+      <button class="btn" id="cancel" hidden>Отмена</button>
+      <button class="btn" id="autofill">Заполнить из файла</button>
+    </div>
+    <p class="hint">«Заполнить из файла» — возьмёт название из тега <code>&lt;title&gt;</code>, сделает слаг и подставит ссылку <code>games/слаг/</code>.</p>
+  </div>
+
+  <h2>Список игр <span class="n" id="cnt"></span></h2>
+  <div id="list"></div>
+  <div class="row-acts" style="margin:12px 0 4px">
+    <button class="btn" id="up">&uarr;</button>
+    <button class="btn" id="down">&darr;</button>
+    <button class="btn" id="del" hidden>Удалить</button>
+  </div>
+  <p class="hint">Выбери игру в списке — стрелки меняют порядок (закреплённые всегда сверху).</p>
+
+  <h2>Выгрузка</h2>
+  <div class="cardbox">
+    <div class="row-acts" style="margin-bottom:12px">
+      <button class="btn primary" id="download">Скачать games.js</button>
+      <button class="btn" id="copy">Скопировать код</button>
+      <button class="btn" id="import">Вставить games.js</button>
+      <button class="btn danger" id="reset">Сброс к репозиторию</button>
+    </div>
+    <pre id="out"></pre>
+    <p class="hint">Текущий черновик хранится только в этом браузере (localStorage). Чтобы изменения увидели все — скачай <code>games.js</code> и замени его в репозитории GitHub.</p>
+  </div>
+
+  <h2>Как добавить игру</h2>
+  <div class="cardbox steps">
+    <b>1.</b> Заведи в репозитории папку <code>games/имя-игры/</code> и положи туда <code>index.html</code> (GitHub → <b>Add file → Upload files</b>).<br>
+    <b>2.</b> Здесь заполни форму → <b>Добавить игру</b>.<br>
+    <b>3.</b> <b>Скачать games.js</b> → замени одноимённый файл в репозитории.<br>
+    <b>4.</b> Через минуту игра появится на сайте со своей ссылкой: <code>адрес-сайта/games/имя-игры/</code>.<br>
+    <span style="display:block;margin-top:8px">Индекс сайта сам вшивает превью, поиск и статистику запусков — в самой игре ничего править не нужно.</span>
+  </div>
+</main>
+
+<div class="toast" id="toast"></div>
+
+<input id="filepick" type="file" accept=".html,.htm" hidden>
+
+<script src="games.js"></script>
+<script>
+(function () {
+  'use strict';
+
+  /* ПАРОЛЬ (поменяй на свой) */
+  const PASS = 'utki';
+
+  /* ── Общие утилиты ────────────────────────────────── */
+  const $ = s => document.querySelector(s);
+  const KEY = 'hubdraft';
+  const fromRepo = Array.isArray(window.GAMES) ? window.GAMES.slice() : [];
+  const store = {
+    get(k, d) { try { const v = JSON.parse(localStorage.getItem('hub.' + k)); return v === null ? d : v; } catch (e) { return d; } },
+    set(k, v) { try { localStorage.setItem('hub.' + k, JSON.stringify(v)); } catch (e) {} },
+    del(k) { try { localStorage.removeItem('hub.' + k); } catch (e) {} }
+  };
+
+  let games = store.get(KEY, null) || fromRepo.slice();
+  let editIndex = -1;
+  let selected = -1;
+
+  const TR = { а:'a',б:'b',в:'v',г:'g',д:'d',е:'e',ё:'e',ж:'zh',з:'z',и:'i',й:'y',к:'k',л:'l',м:'m',н:'n',о:'o',п:'p',р:'r',с:'s',т:'t',у:'u',ф:'f',х:'h',ц:'c',ч:'ch',ш:'sh',щ:'sch',ъ:'',ы:'y',ь:'',э:'e',ю:'yu',я:'ya' };
+  const slugify = s => s.toLowerCase().split('').map(c => TR[c] !== undefined ? TR[c] : c).join('')
+    .replace(/[^a-z0-9]+/g, '-').replace(/^-+|-+$/g, '').slice(0, 40);
+
+  function toast(t) {
+    const el = $('#toast'); el.textContent = t; el.classList.add('show');
+    clearTimeout(toast._t); toast._t = setTimeout(() => el.classList.remove('show'), 1700);
+  }
+
+  /* ── Гейт ─────────────────────────────────────────── */
+  function unlock() {
+    if (sessionStorage.getItem('hubadmin') === '1' && !$('#app').hidden) return;
+    sessionStorage.setItem('hubadmin', '1');
+    $('#gate').hidden = true;
+    $('#topbar').hidden = false;
+    $('#app').hidden = false;
+    boot();
+  }
+  if (sessionStorage.getItem('hubadmin') === '1') unlock();
+  $('#enter').addEventListener('click', () => {
+    if ($('#pass').value.trim() === PASS) unlock(); else toast('Неверный пароль');
+  });
+  $('#pass').addEventListener('keydown', e => { if (e.key === 'Enter') $('#enter').click(); });
+  $('#open-site').addEventListener('click', () => window.open('index.html', '_blank'));
+  $('#open-draft').addEventListener('click', () => window.open('index.html?draft=1', '_blank'));
+
+  /* ── Форма ────────────────────────────────────────── */
+  function formData() {
+    const title = $('#f-title').value.trim();
+    return {
+      title: title,
+      slug: ($('#f-slug').value.trim() || slugify(title)) || 'game',
+      url: $('#f-url').value.trim(),
+      cover: $('#f-cover').value.trim() || '🎮',
+      tags: $('#f-tags').value.split(',').map(t => t.trim()).filter(Boolean),
+      colors: [$('#f-c1').value, $('#f-c2').value],
+      desc: $('#f-desc').value.trim(),
+      date: $('#f-date').value || new Date().toISOString().slice(0, 10),
+      pinned: $('#f-pin').checked
+    };
+  }
+
+  function fillForm(g) {
+    $('#f-title').value = g.title || '';
+    $('#f-slug').value = g.slug || '';
+    $('#f-url').value = g.url || '';
+    $('#f-cover').value = g.cover || '';
+    $('#f-bg').value = g.bg || '#0b0d12';
+    $('#f-tags').value = (g.tags || []).join(', ');
+    $('#f-desc').value = g.desc || '';
+    $('#f-date').value = g.date || new Date().toISOString().slice(0, 10);
+    $('#f-pin').checked = !!g.pinned;
+    $('#f-c1').value = (g.colors && g.colors[0]) || '#5b8cff';
+    $('#f-c2').value = (g.colors && g.colors[1]) || '#22d3a6';
+    preview();
+  }
+
+  function preview() {
+    const d = formData();
+    $('#p-cv').textContent = d.cover;
+    $('#p-cv').style.background = 'linear-gradient(140deg,' + d.colors[0] + ',' + d.colors[1] + ')';
+    $('#p-title').textContent = d.title || 'Название';
+    $('#p-sub').textContent = (d.tags.join(' · ') || 'игра') + '  →  ' + (d.url || 'файл не указан');
+  }
+  ['f-title','f-slug','f-url','f-cover','f-tags','f-c1','f-c2'].forEach(id =>
+    document.getElementById(id).addEventListener('input', preview));
+
+  $('#f-title').addEventListener('input', () => {
+    if (editIndex < 0 && !$('#f-slug').dataset.touched) $('#f-slug').value = slugify($('#f-title').value);
+  });
+  $('#f-slug').addEventListener('input', e => { e.target.dataset.touched = '1'; });
+
+  function resetForm() {
+    editIndex = -1;
+    fillForm({ date: new Date().toISOString().slice(0, 10), colors: ['#5b8cff', '#22d3a6'] });
+    $('#f-slug').dataset.touched = '';
+    $('#mode').textContent = 'добавление';
+    $('#save').textContent = 'Добавить игру';
+    $('#cancel').hidden = true;
+    selected = -1;
+    renderList();
+  }
+
+  $('#save').addEventListener('click', () => {
+    const g = formData();
+    if (!g.title) return toast('Нужно название');
+    if (!g.url) return toast('Нужен файл игры (url)');
+    if (games.some((x, i) => x.slug === g.slug && i !== editIndex)) return toast('Такой слаг уже есть');
+    if (editIndex < 0) { games.push(g); toast('Игра добавлена'); }
+    else { games[editIndex] = g; toast('Сохранено'); }
+    save();
+    resetForm();
+  });
+  $('#cancel').addEventListener('click', resetForm);
+
+  $('#autofill').addEventListener('click', () => $('#filepick').click());
+  $('#filepick').addEventListener('change', e => {
+    const f = e.target.files && e.target.files[0];
+    if (!f) return;
+    const r = new FileReader();
+    r.onload = () => {
+      const m = /<title[^>]*>([\s\S]*?)<\/title>/i.exec(String(r.result));
+      const title = (m && m[1].trim()) || f.name.replace(/\.html?$/i, '');
+      if (!$('#f-title').value) $('#f-title').value = title;
+      if (!$('#f-slug').dataset.touched) $('#f-slug').value = slugify(title);
+      $('#f-url').value = 'games/' + ($('#f-slug').value || 'game') + '/';
+      preview();
+      toast('Подтянуто из файла');
+    };
+    r.readAsText(f);
+    e.target.value = '';
+  });
+
+  /* ── Список ───────────────────────────────────────── */
+  function renderList() {
+    $('#cnt').textContent = games.length;
+    $('#list').innerHTML = games.map((g, i) =>
+      '<div class="item' + (i === selected ? ' sel' : '') + '" data-i="' + i + '">' +
+        '<div class="cv" style="background:linear-gradient(140deg,' + (g.colors ? g.colors[0] : '#5b8cff') + ',' + (g.colors ? g.colors[1] : '#22d3a6') + ')">' + (g.cover || '🎮') + '</div>' +
+        '<div class="txt"><b>' + (g.pinned ? '📌 ' : '') + g.title + '</b><small>' + g.url + '  ·  /' + g.slug + '</small></div>' +
+        '<div class="ops"><button data-op="edit" title="Изменить">✏️</button><button data-op="del" title="Удалить">🗑</button></div>' +
+      '</div>').join('') || '<p class="hint">Список пуст</p>';
+    $('#del').hidden = selected < 0;
+  }
+
+  $('#list').addEventListener('click', e => {
+    const item = e.target.closest('.item');
+    if (!item) return;
+    const i = +item.dataset.i;
+    const op = e.target.closest('[data-op]');
+    if (op && op.dataset.op === 'edit') {
+      selected = i; editIndex = i;
+      fillForm(games[i]);
+      $('#mode').textContent = 'изменение';
+      $('#save').textContent = 'Сохранить';
+      $('#cancel').hidden = false;
+      renderList();
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+      return;
+    }
+    if (op && op.dataset.op === 'del') {
+      if (!confirm('Удалить «' + games[i].title + '»?')) return;
+      games.splice(i, 1); selected = -1; editIndex = -1;
+      save(); resetForm();
+      return;
+    }
+    selected = (selected === i) ? -1 : i;
+    renderList();
+  });
+
+  function move(dir) {
+    if (selected < 0) return toast('Выбери игру в списке');
+    const j = selected + dir;
+    if (j < 0 || j >= games.length) return;
+    const t = games[selected]; games[selected] = games[j]; games[j] = t;
+    selected = j;
+    save(); renderList();
+  }
+  $('#up').addEventListener('click', () => move(-1));
+  $('#down').addEventListener('click', () => move(1));
+  $('#del').addEventListener('click', () => {
+    if (selected < 0) return;
+    if (!confirm('Удалить «' + games[selected].title + '»?')) return;
+    games.splice(selected, 1); selected = -1; editIndex = -1;
+    save(); resetForm();
+  });
+
+  /* ── Экспорт ──────────────────────────────────────── */
+  function serialize() {
+    const body = games.map(g => '  ' + JSON.stringify(g, null, 2).split('\n').join('\n  ')).join(',\n');
+    return '/* Список игр. Добавлять проще всего через admin.html */\nwindow.GAMES = [\n' + body + '\n];\n';
+  }
+  function save() {
+    store.set(KEY, games);
+    $('#out').textContent = serialize();
+  }
+  function download(name, text) {
+    const a = document.createElement('a');
+    a.href = URL.createObjectURL(new Blob([text], { type: 'text/javascript;charset=utf-8' }));
+    a.download = name;
+    a.click();
+    setTimeout(() => URL.revokeObjectURL(a.href), 1000);
+  }
+  $('#download').addEventListener('click', () => { download('games.js', serialize()); toast('games.js скачан'); });
+  $('#copy').addEventListener('click', async () => {
+    try { await navigator.clipboard.writeText(serialize()); toast('Код скопирован'); }
+    catch (e) { toast('Скопируй вручную из окна ниже'); }
+  });
+  $('#import').addEventListener('click', () => {
+    const raw = prompt('Вставь содержимое games.js целиком:');
+    if (!raw) return;
+    const m = /\[\s*([\s\S]*)\s*\]/.exec(raw);
+    try {
+      const parsed = JSON.parse('[' + (m ? m[1] : raw) + ']');
+      if (!Array.isArray(parsed) || !parsed.length) throw 0;
+      games = parsed;
+      save(); resetForm();
+      toast('Импортировано: ' + parsed.length);
+    } catch (e) { toast('Не разобрал — проверь код'); }
+  });
+  $('#reset').addEventListener('click', () => {
+    if (!confirm('Вернуть список из games.js репозитория?')) return;
+    store.del(KEY);
+    games = fromRepo.slice();
+    save(); resetForm();
+    toast('Сброшено');
+  });
+
+  /* ── Старт ────────────────────────────────────────── */
+  function boot() {
+    resetForm();
+    save();
+  }
+})();
+</script>
+</body>
+</html>

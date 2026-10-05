@@ -1,0 +1,1204 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no,viewport-fit=cover">
+<title>Утки</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box;touch-action:none;user-select:none;-webkit-tap-highlight-color:transparent}
+body{overflow:hidden;background:#050810;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Arial,sans-serif;overscroll-behavior:none}
+canvas{display:block}
+
+#hud{
+  position:fixed;
+  top:env(safe-area-inset-top,0);
+  left:env(safe-area-inset-left,0);
+  right:env(safe-area-inset-right,0);
+  padding:10px 14px;
+  display:flex;
+  justify-content:space-between;
+  align-items:flex-start;
+  pointer-events:none;
+  z-index:5;
+  font-variant-numeric:tabular-nums;
+}
+
+.hud-pill{
+  background:rgba(8,12,24,.72);
+  border:1.5px solid rgba(120,180,255,.35);
+  border-radius:12px;
+  padding:6px 12px;
+  color:#fff;
+  font-size:15px;
+  font-weight:700;
+  text-shadow:0 2px 6px rgba(0,0,0,.9);
+  display:flex;
+  align-items:center;
+  gap:6px;
+  min-width:78px;
+  justify-content:center;
+}
+.hud-pill .icon{font-size:15px;line-height:1}
+.hud-pill .val{min-width:28px;text-align:center;color:#fff}
+#hud-score .val{color:#ffd54a}
+#hud-level .val{color:#5fd3ff}
+
+.hud-pill.bump{animation:bump .35s ease-out}
+@keyframes bump{0%{transform:scale(1)}40%{transform:scale(1.18)}100%{transform:scale(1)}}
+
+.lives-bar{display:flex;gap:3px;margin-top:5px;padding:0 4px}
+.lives-bar .seg{
+  width:14px;height:4px;border-radius:2px;
+  background:#ff6b6b;
+  box-shadow:0 0 6px rgba(255,107,107,.7);
+  transition:background .3s, box-shadow .3s;
+}
+.lives-bar .seg.empty{background:rgba(255,255,255,.12);box-shadow:none}
+
+#hud-left{display:flex;flex-direction:column;align-items:center}
+
+#level-banner{
+  position:fixed;
+  top:50%;left:50%;
+  transform:translate(-50%,-50%) scale(.5);
+  color:#fff;
+  font-size:clamp(32px,7vw,64px);
+  font-weight:900;
+  letter-spacing:3px;
+  pointer-events:none;
+  z-index:20;
+  opacity:0;
+  visibility:hidden;
+  text-align:center;
+  text-shadow:0 0 20px #ff6b35,0 0 40px #ff6b35,0 4px 12px rgba(0,0,0,.9);
+  white-space:nowrap;
+}
+#level-banner.show{visibility:visible;animation:levelPop 1.6s cubic-bezier(.2,1.2,.4,1) forwards}
+@keyframes levelPop{
+  0%{opacity:0;transform:translate(-50%,-50%) scale(.4)}
+  20%{opacity:1;transform:translate(-50%,-50%) scale(1.15)}
+  35%{transform:translate(-50%,-50%) scale(1)}
+  75%{opacity:1;transform:translate(-50%,-50%) scale(1)}
+  100%{opacity:0;transform:translate(-50%,-50%) scale(1.4)}
+}
+#level-banner .sub{
+  display:block;
+  font-size:clamp(14px,3vw,22px);
+  letter-spacing:6px;
+  margin-top:4px;
+  color:#ffd54a;
+  text-shadow:0 0 12px #ffd54a,0 2px 6px #000;
+}
+
+.screen{
+  position:fixed;inset:0;
+  display:flex;flex-direction:column;
+  align-items:center;justify-content:center;
+  background:radial-gradient(ellipse at center,rgba(20,35,70,.95) 0%,rgba(5,8,16,.98) 100%);
+  color:#fff;text-align:center;
+  z-index:100;padding:20px;gap:8px;
+}
+.screen.hidden{display:none}
+.screen h1{
+  font-size:clamp(36px,9vw,64px);
+  font-weight:900;letter-spacing:2px;
+  background:linear-gradient(180deg,#fff 0%,#ff6b35 100%);
+  -webkit-background-clip:text;background-clip:text;
+  -webkit-text-fill-color:transparent;
+  filter:drop-shadow(0 0 24px rgba(255,107,53,.7));
+  margin-bottom:6px;
+}
+.screen button{
+  padding:15px 48px;font-size:19px;font-weight:800;letter-spacing:1px;
+  border:0;border-radius:14px;
+  background:linear-gradient(180deg,#ff8a4a 0%,#ff6b35 100%);
+  color:#fff;cursor:pointer;
+  box-shadow:0 6px 0 #b8401a,0 8px 24px rgba(255,107,53,.5);
+  transition:transform .08s,box-shadow .08s;
+  touch-action:manipulation;
+}
+.screen button:active{
+  transform:translateY(4px);
+  box-shadow:0 2px 0 #b8401a,0 4px 12px rgba(255,107,53,.5);
+}
+.screen .stats{display:flex;gap:16px;margin:10px 0 18px;flex-wrap:wrap;justify-content:center}
+.screen .stat{
+  background:rgba(255,255,255,.06);
+  border:1px solid rgba(255,255,255,.12);
+  border-radius:12px;padding:10px 18px;min-width:90px;
+}
+.screen .stat .label{font-size:12px;color:rgba(255,255,255,.6);text-transform:uppercase;letter-spacing:1px}
+.screen .stat .value{font-size:26px;font-weight:800;color:#ffd54a;margin-top:2px}
+
+#gameover h1{
+  background:linear-gradient(180deg,#fff 0%,#ff3030 100%);
+  -webkit-background-clip:text;background-clip:text;
+  -webkit-text-fill-color:transparent;
+  filter:drop-shadow(0 0 24px rgba(255,48,48,.7));
+}
+#gameover .stat .value{color:#ff6b6b}
+
+#rotate-hint{
+  position:fixed;inset:0;
+  display:none;flex-direction:column;
+  align-items:center;justify-content:center;
+  background:#050810;color:#fff;
+  z-index:200;gap:16px;text-align:center;padding:20px;
+}
+@media (orientation:portrait){
+  #rotate-hint{display:flex}
+  #hud,.screen{display:none!important}
+}
+#rotate-hint .ico{font-size:64px;animation:rotAnim 2s ease-in-out infinite}
+@keyframes rotAnim{0%,30%{transform:rotate(0)}60%,100%{transform:rotate(90deg)}}
+#rotate-hint h2{color:#ff6b35;font-size:22px}
+#rotate-hint p{color:rgba(255,255,255,.6);font-size:14px}
+</style>
+</head>
+<body>
+
+<div id="rotate-hint">
+  <div class="ico">📱</div>
+  <h2>Поверни телефон</h2>
+  <p>Игра работает горизонтально</p>
+</div>
+
+<canvas id="c"></canvas>
+
+<div id="hud">
+  <div id="hud-left">
+    <div class="hud-pill" id="hud-score">
+      <span class="icon">🎯</span><span class="val" id="s">0</span>
+    </div>
+    <div class="lives-bar" id="lives-bar">
+      <div class="seg"></div><div class="seg"></div><div class="seg"></div>
+    </div>
+  </div>
+  <div>
+    <div class="hud-pill" id="hud-level">
+      <span class="icon">🌊</span><span class="val" id="lv">1</span>
+    </div>
+  </div>
+</div>
+
+<div id="level-banner"></div>
+
+<div id="start" class="screen">
+  <h1>🦆 УТКИ 💩</h1>
+  <button id="play" style="margin-top:20px">ИГРАТЬ</button>
+</div>
+
+<div id="gameover" class="screen hidden">
+  <h1>💩 ОБКАКАЛИ</h1>
+  <div class="stats">
+    <div class="stat">
+      <div class="label">Убито</div>
+      <div class="value" id="fs">0</div>
+    </div>
+    <div class="stat">
+      <div class="label">Уровень</div>
+      <div class="value" id="fl">1</div>
+    </div>
+  </div>
+  <button id="rb">ЗАНОВО</button>
+</div>
+
+<script>
+const cv=document.getElementById('c'),ctx=cv.getContext('2d',{alpha:false,desynchronized:true});
+// Слабое устройство (тач + мало ядер/памяти): режем разрешение, эффекты и частоту рендера
+const LE=((navigator.hardwareConcurrency||4)<=4||(navigator.deviceMemory||4)<=2)&&matchMedia('(pointer:coarse)').matches;
+const $s=document.getElementById('s');
+const $lv=document.getElementById('lv');
+const $scorePill=document.getElementById('hud-score');
+const $levelPill=document.getElementById('hud-level');
+const $livesBar=document.getElementById('lives-bar');
+const $banner=document.getElementById('level-banner');
+const $start=document.getElementById('start');
+const $play=document.getElementById('play');
+const $go=document.getElementById('gameover');
+const $fs=document.getElementById('fs');
+const $fl=document.getElementById('fl');
+const $rb=document.getElementById('rb');
+
+let W,H,T=0;
+// aberration (ctx.drawImage(cv,…) — рисование канваса в себя) убран: это readback всего
+// буфера, в полном экране пикселей вдвое больше и fps проваливался
+const CINE={vignette:.55,grain:.06,bloom:.4};
+
+// Темп игры (шагов логики в секунду). 60 — родной темп, к которому подогнаны все числа.
+const TICK=Math.max(30,Math.min(180,parseInt(new URLSearchParams(location.search).get('tick'),10)||60));
+let lastDraw=0,lastQAt=0,lastScaleAt=0;
+
+// ── Оптимизация: спрайты вместо градиентов, создаваемых каждый кадр ──
+const spriteCache=new Map();
+function radialSprite(key,stops){
+  let c=spriteCache.get(key);
+  if(c)return c;
+  const S=64;c=document.createElement('canvas');c.width=S;c.height=S;
+  const x=c.getContext('2d'),g=x.createRadialGradient(S/2,S/2,0,S/2,S/2,S/2);
+  for(const st of stops)g.addColorStop(st[0],st[1]);
+  x.fillStyle=g;x.fillRect(0,0,S,S);
+  spriteCache.set(key,c);return c;
+}
+// Масштаб рендера: снижаем, если кадры не успевают
+let baseD=1,RSCALE=1;
+let vigGrad=null,bloomGrad=null;      // полноэкранные эффекты — пересоздаём только при resize
+const fireGrads={};
+let poopGrad=null;
+let camShake=0,camX=0,camY=0;
+let score=0,lives=3,running=true,level=1,nextLevelAt=20;
+
+const AMMO_COOLDOWN=500;
+let ammoReadyAt=0;
+let ammoProgress=1;
+
+// ============ АУДИО ============
+let AC=null,masterGain=null,musicGain=null,sfxGain=null;
+let musicPlaying=false,musicTimer=null,audioReady=false;
+
+function initAudio(){
+  if(AC)return;
+  try {
+    AC=new (window.AudioContext||window.webkitAudioContext)();
+    masterGain=AC.createGain();masterGain.gain.value=.9;
+    const comp=AC.createDynamicsCompressor();
+    comp.threshold.value=-20;comp.knee.value=25;comp.ratio.value=4;
+    comp.attack.value=.005;comp.release.value=.3;
+    const lp=AC.createBiquadFilter();lp.type='lowpass';lp.frequency.value=8000;lp.Q.value=.3;
+    masterGain.connect(comp);comp.connect(lp);lp.connect(AC.destination);
+    musicGain=AC.createGain();musicGain.gain.value=.22;
+    const mlp=AC.createBiquadFilter();mlp.type='lowpass';mlp.frequency.value=3000;mlp.Q.value=.5;
+    musicGain.connect(mlp);mlp.connect(masterGain);
+    sfxGain=AC.createGain();sfxGain.gain.value=.6;sfxGain.connect(masterGain);
+    audioReady=true;
+  } catch(e) { console.warn('Audio init failed:', e); }
+}
+function makePanner(x){
+  if(!AC) return null;
+  const p=AC.createPanner();
+  p.panningModel='equalpower';p.distanceModel='linear';
+  p.refDistance=200;p.maxDistance=1500;p.rolloffFactor=.6;
+  const nx=(x/W)*2-1;
+  p.positionX.value=nx*1.5;p.positionY.value=0;p.positionZ.value=1;
+  return p;
+}
+function quack(pitch=1,dur=.16,pan=0){
+  if(!AC||!audioReady)return;
+  const now=AC.currentTime;
+  const o1=AC.createOscillator(),o2=AC.createOscillator(),sub=AC.createOscillator();
+  const g=AC.createGain(),f=AC.createBiquadFilter(),p=makePanner(pan*W/2+W/2);
+  if(!p)return;
+  f.type='bandpass';f.frequency.value=700*pitch;f.Q.value=5;
+  o1.type='triangle';o2.type='sine';sub.type='sine';
+  o1.frequency.setValueAtTime(380*pitch,now);
+  o1.frequency.linearRampToValueAtTime(480*pitch,now+.045);
+  o1.frequency.exponentialRampToValueAtTime(230*pitch,now+dur);
+  o2.frequency.setValueAtTime(760*pitch,now);
+  o2.frequency.linearRampToValueAtTime(920*pitch,now+.045);
+  o2.frequency.exponentialRampToValueAtTime(460*pitch,now+dur);
+  sub.frequency.setValueAtTime(180*pitch,now);
+  sub.frequency.exponentialRampToValueAtTime(120*pitch,now+dur);
+  const subG=AC.createGain();subG.gain.value=.3;sub.connect(subG);
+  const lfo=AC.createOscillator(),lfoG=AC.createGain();
+  lfo.frequency.value=14;lfoG.gain.value=18;lfo.connect(lfoG);lfoG.connect(o1.frequency);
+  g.gain.setValueAtTime(.001,now);g.gain.exponentialRampToValueAtTime(.28,now+.015);
+  g.gain.exponentialRampToValueAtTime(.14,now+dur*.55);g.gain.exponentialRampToValueAtTime(.001,now+dur);
+  o1.connect(f);o2.connect(f);subG.connect(f);f.connect(g);g.connect(p);p.connect(sfxGain);
+  o1.start(now);o2.start(now);sub.start(now);lfo.start(now);
+  o1.stop(now+dur);o2.stop(now+dur);sub.stop(now+dur);lfo.stop(now+dur);
+}
+// 🐑 Блеяние овцы
+function bleat(pan=0){
+  if(!AC||!audioReady)return;
+  const now=AC.currentTime;
+  const p=makePanner(pan*W/2+W/2);
+  if(!p)return;
+  // Основной тон "бэ-э-э" с вибрато
+  const o=AC.createOscillator();
+  const g=AC.createGain();
+  const f=AC.createBiquadFilter();
+  f.type='bandpass';f.frequency.value=800;f.Q.value=3;
+  o.type='sawtooth';
+  o.frequency.setValueAtTime(320,now);
+  o.frequency.linearRampToValueAtTime(280,now+.15);
+  o.frequency.exponentialRampToValueAtTime(180,now+.5);
+  
+  const lfo=AC.createOscillator(),lfoG=AC.createGain();
+  lfo.frequency.value=22;lfoG.gain.value=25; // быстрое "дрожание" — характерно для овцы
+  lfo.connect(lfoG);lfoG.connect(o.frequency);
+  
+  g.gain.setValueAtTime(.001,now);
+  g.gain.linearRampToValueAtTime(.12,now+.05);
+  g.gain.linearRampToValueAtTime(.1,now+.35);
+  g.gain.exponentialRampToValueAtTime(.001,now+.5);
+  
+  o.connect(f);f.connect(g);g.connect(p);p.connect(sfxGain);
+  o.start(now);lfo.start(now);
+  o.stop(now+.5);lfo.stop(now+.5);
+}
+// Шумовые буферы делаем один раз и переиспользуем — иначе на каждый выстрел
+// генерируется массив сэмплов (GC + рывок)
+const noiseBufs={};
+function noise(dur,exp){
+  const k=dur+'|'+exp;
+  let b=noiseBufs[k];
+  if(b)return b;
+  const n=Math.max(1,Math.floor(AC.sampleRate*dur));
+  b=AC.createBuffer(1,n,AC.sampleRate);
+  const d=b.getChannelData(0);
+  for(let i=0;i<n;i++)d[i]=(Math.random()*2-1)*Math.pow(1-i/n,exp);
+  noiseBufs[k]=b;
+  return b;
+}
+function shootSfx(){
+  if(!AC||!audioReady)return;
+  const now=AC.currentTime;
+  const o=AC.createOscillator(),og=AC.createGain(),olp=AC.createBiquadFilter();
+  olp.type='lowpass';olp.frequency.value=250;o.type='sine';
+  o.frequency.setValueAtTime(140,now);o.frequency.exponentialRampToValueAtTime(45,now+.12);
+  og.gain.setValueAtTime(.001,now);og.gain.exponentialRampToValueAtTime(.5,now+.008);
+  og.gain.exponentialRampToValueAtTime(.001,now+.18);
+  o.connect(olp);olp.connect(og);og.connect(sfxGain);o.start(now);o.stop(now+.18);
+  const src=AC.createBufferSource();src.buffer=noise(.15,2);
+  const f=AC.createBiquadFilter();f.type='bandpass';
+  f.frequency.setValueAtTime(1200,now);f.frequency.exponentialRampToValueAtTime(500,now+.15);f.Q.value=1;
+  const ng=AC.createGain();ng.gain.setValueAtTime(.35,now);ng.gain.exponentialRampToValueAtTime(.001,now+.2);
+  src.connect(f);f.connect(ng);ng.connect(sfxGain);src.start(now);
+}
+function hitSfx(x){
+  if(!AC||!audioReady)return;
+  const now=AC.currentTime,p=makePanner(x||W/2);
+  if(!p)return;
+  const o=AC.createOscillator(),g=AC.createGain();
+  o.type='sine';o.frequency.setValueAtTime(500,now);o.frequency.exponentialRampToValueAtTime(180,now+.18);
+  g.gain.setValueAtTime(.35,now);g.gain.exponentialRampToValueAtTime(.001,now+.28);
+  o.connect(g);g.connect(p);p.connect(sfxGain);o.start(now);o.stop(now+.28);
+  setTimeout(()=>quack(1.5+Math.random()*.4,.22,x),60);
+  setTimeout(()=>quack(.8+Math.random()*.2,.32,x),170);
+}
+function poopSfx(x){
+  if(!AC||!audioReady)return;
+  const now=AC.currentTime,p=makePanner(x||W/2);
+  if(!p)return;
+  const src=AC.createBufferSource();src.buffer=noise(.25,1.5);
+  const f=AC.createBiquadFilter();f.type='bandpass';
+  f.frequency.setValueAtTime(600,now);f.frequency.linearRampToValueAtTime(300,now+.2);f.Q.value=2;
+  const ng=AC.createGain();ng.gain.setValueAtTime(.001,now);ng.gain.linearRampToValueAtTime(.25,now+.03);
+  ng.gain.exponentialRampToValueAtTime(.001,now+.25);
+  src.connect(f);f.connect(ng);ng.connect(p);p.connect(sfxGain);src.start(now);
+  const o=AC.createOscillator(),og=AC.createGain();
+  o.type='sine';o.frequency.setValueAtTime(200,now);o.frequency.exponentialRampToValueAtTime(60,now+.15);
+  og.gain.setValueAtTime(.001,now);og.gain.linearRampToValueAtTime(.3,now+.02);
+  og.gain.exponentialRampToValueAtTime(.001,now+.18);
+  o.connect(og);og.connect(p);p.connect(sfxGain);o.start(now);o.stop(now+.18);
+}
+function splatSfx(){
+  if(!AC||!audioReady)return;
+  const now=AC.currentTime;
+  const src=AC.createBufferSource();src.buffer=noise(.3,2);
+  const f=AC.createBiquadFilter();f.type='lowpass';
+  f.frequency.setValueAtTime(800,now);f.frequency.exponentialRampToValueAtTime(150,now+.3);
+  const ng=AC.createGain();ng.gain.setValueAtTime(.5,now);ng.gain.exponentialRampToValueAtTime(.001,now+.3);
+  src.connect(f);f.connect(ng);ng.connect(sfxGain);src.start(now);
+  const o=AC.createOscillator(),og=AC.createGain();
+  o.type='sine';o.frequency.setValueAtTime(250,now);o.frequency.exponentialRampToValueAtTime(60,now+.25);
+  og.gain.setValueAtTime(.5,now);og.gain.exponentialRampToValueAtTime(.001,now+.3);
+  o.connect(og);og.connect(sfxGain);o.start(now);o.stop(now+.3);
+  setTimeout(()=>quack(.6,.4),200);
+}
+function levelUpSfx(){
+  if(!AC||!audioReady)return;
+  const now=AC.currentTime;
+  [392,523,659,784,1047].forEach((freq,i)=>{
+    const o=AC.createOscillator(),g=AC.createGain();
+    o.type='triangle';o.frequency.value=freq;
+    const t=now+i*.09;
+    g.gain.setValueAtTime(.001,t);g.gain.linearRampToValueAtTime(.2,t+.02);
+    g.gain.exponentialRampToValueAtTime(.001,t+.4);
+    o.connect(g);g.connect(sfxGain);o.start(t);o.stop(t+.4);
+  });
+  const o=AC.createOscillator(),g=AC.createGain();
+  o.type='sine';o.frequency.setValueAtTime(100,now);o.frequency.exponentialRampToValueAtTime(50,now+.5);
+  g.gain.setValueAtTime(.3,now);g.gain.exponentialRampToValueAtTime(.001,now+.6);
+  o.connect(g);g.connect(sfxGain);o.start(now);o.stop(now+.6);
+}
+
+const melody=[[392,.5],[440,.5],[523,1],[587,1],[523,1],[494,1],[440,1],[392,1],[349,.5],[392,.5],[440,1],[494,1],[523,2],[440,1],[392,1],[523,.5],[587,.5],[659,1],[587,.5],[523,.5],[494,1],[523,.5],[587,.5],[523,1],[440,1],[392,2],[440,.5],[494,.5],[523,.5],[587,.5],[659,2],[587,1],[523,1],[392,2]];
+const bassLine=[131,131,131,131,131,131,131,131,174,174,174,174,174,174,131,131,131,131,131,131,174,174,174,174,196,196,196,196,131,131,131,131];
+const chordProgression=[[261.63,329.63,392],[261.63,329.63,392],[349.23,440,523.25],[349.23,440,523.25],[261.63,329.63,392],[349.23,440,523.25],[392,493.88,587.33],[261.63,329.63,392]];
+let melodyIdx=0,noteStartTime=0,chordIdx=0;const NOTE_DUR=.32;
+function playNote(freq,dur,t){
+  const o=AC.createOscillator(),o2=AC.createOscillator(),g=AC.createGain(),f=AC.createBiquadFilter();
+  f.type='lowpass';f.frequency.setValueAtTime(1800,t);f.frequency.exponentialRampToValueAtTime(900,t+dur);f.Q.value=.5;
+  o.type='triangle';o.frequency.value=freq;o2.type='sine';o2.frequency.value=freq*2;
+  const g2=AC.createGain();g2.gain.value=.15;o2.connect(g2);
+  g.gain.setValueAtTime(.001,t);g.gain.linearRampToValueAtTime(.13,t+.04);
+  g.gain.exponentialRampToValueAtTime(.001,t+dur*.85);
+  o.connect(f);g2.connect(f);f.connect(g);g.connect(musicGain);
+  o.start(t);o2.start(t);o.stop(t+dur);o2.stop(t+dur);
+}
+function playBass(freq,dur,t){
+  const o=AC.createOscillator(),g=AC.createGain(),f=AC.createBiquadFilter();
+  f.type='lowpass';f.frequency.value=400;o.type='sine';o.frequency.value=freq;
+  g.gain.setValueAtTime(.001,t);g.gain.linearRampToValueAtTime(.12,t+.03);
+  g.gain.exponentialRampToValueAtTime(.001,t+dur*.9);
+  o.connect(f);f.connect(g);g.connect(musicGain);o.start(t);o.stop(t+dur);
+}
+function playChord(freqs,dur,t){
+  freqs.forEach(freq=>{
+    const o=AC.createOscillator(),g=AC.createGain(),f=AC.createBiquadFilter();
+    f.type='lowpass';f.frequency.value=1500;o.type='sine';o.frequency.value=freq;
+    g.gain.setValueAtTime(.001,t);g.gain.linearRampToValueAtTime(.025,t+.15);
+    g.gain.linearRampToValueAtTime(.02,t+dur*.6);g.gain.exponentialRampToValueAtTime(.001,t+dur);
+    o.connect(f);f.connect(g);g.connect(musicGain);o.start(t);o.stop(t+dur);
+  });
+}
+function scheduleMusic(){
+  if(!musicPlaying||!AC||!audioReady)return;
+  const now=AC.currentTime;
+  if(noteStartTime<now)noteStartTime=now+.15;   // не «догоняем» пачку нот после паузы
+  while(noteStartTime<now+.6){
+    const [freq,beats]=melody[melodyIdx%melody.length];
+    const dur=beats*NOTE_DUR;
+    playNote(freq,dur,noteStartTime);
+    for(let b=0;b<beats;b++)playBass(bassLine[(melodyIdx*2+b)%bassLine.length],NOTE_DUR,noteStartTime+b*NOTE_DUR);
+    if(melodyIdx%4===0){playChord(chordProgression[chordIdx%chordProgression.length],NOTE_DUR*4,noteStartTime);chordIdx++;}
+    if(melodyIdx%16===0&&Math.random()<.4){
+      const delay=(noteStartTime-now)*1000;
+      setTimeout(()=>quack(1.05+Math.random()*.15,.06),Math.max(0,delay));
+    }
+    noteStartTime+=dur;melodyIdx++;
+  }
+  musicTimer=setTimeout(scheduleMusic,250);
+}
+function startMusic(){if(musicPlaying)return;musicPlaying=true;melodyIdx=0;chordIdx=0;noteStartTime=AC.currentTime+.15;scheduleMusic();}
+function stopMusic(){musicPlaying=false;if(musicTimer){clearTimeout(musicTimer);musicTimer=null;}}
+
+// Свёрнутая вкладка/погашенный экран: гасим музыку и усыпляем звук,
+// иначе в фоне продолжали создаваться аудио-узлы и грелась батарея
+document.addEventListener('visibilitychange',()=>{
+  if(!AC)return;
+  try{
+    if(document.hidden){
+      stopMusic();
+      if(AC.state==='running')AC.suspend().catch(()=>{});
+    }else{
+      if(AC.state==='suspended')AC.resume().catch(()=>{});
+      if(audioReady&&!$start.classList.contains('hidden'))startMusic();
+    }
+  }catch(e){}
+});
+
+$play.addEventListener('click', (e) => {
+  e.preventDefault();e.stopPropagation();
+  initAudio();if(AC&&AC.state==='suspended')AC.resume();
+  if(AC&&audioReady)startMusic();
+  $start.classList.add('hidden');
+});
+$play.addEventListener('touchstart', (e) => {
+  e.preventDefault();e.stopPropagation();
+  initAudio();if(AC&&AC.state==='suspended')AC.resume();
+  if(AC&&audioReady)startMusic();
+  $start.classList.add('hidden');
+}, {passive: false});
+
+// ============ СЛОЖНОСТЬ ============
+const BASE={spawnInterval:140,duckSpeedMin:1.0,duckSpeedMax:1.8,poopChance:0.15,poopIntervalMin:180,poopIntervalMax:360};
+const PER_LEVEL={spawnIntervalMul:0.85,speedMul:1.15,poopChanceAdd:0.12,poopIntervalMul:0.88};
+const P={...BASE};
+function recalcDifficulty(){
+  P.spawnInterval=Math.max(30,BASE.spawnInterval*Math.pow(PER_LEVEL.spawnIntervalMul,level-1));
+  P.duckSpeedMin=BASE.duckSpeedMin*Math.pow(PER_LEVEL.speedMul,level-1);
+  P.duckSpeedMax=BASE.duckSpeedMax*Math.pow(PER_LEVEL.speedMul,level-1);
+  P.poopChance=Math.min(0.9,BASE.poopChance+PER_LEVEL.poopChanceAdd*(level-1));
+  P.poopIntervalMin=Math.max(40,BASE.poopIntervalMin*Math.pow(PER_LEVEL.poopIntervalMul,level-1));
+  P.poopIntervalMax=Math.max(80,BASE.poopIntervalMax*Math.pow(PER_LEVEL.poopIntervalMul,level-1));
+}
+function levelUp(){
+  level++;
+  recalcDifficulty();
+  $lv.textContent=level;
+  $levelPill.classList.remove('bump');void $levelPill.offsetWidth;$levelPill.classList.add('bump');
+  $banner.innerHTML=`УРОВЕНЬ ${level}<span class="sub">УМНЕЕ</span>`;
+  $banner.classList.remove('show');void $banner.offsetWidth;$banner.classList.add('show');
+  levelUpSfx();
+}
+
+// ============ 🐑 ОВЦЫ (антураж фона) ============
+class Sheep{
+  constructor(x,y){
+    this.x = x;
+    this.baseY = y;
+    this.y = y;
+    // Случайная скорость — от 0.15 до 0.35 px/кадр (медленно пасутся)
+    this.vx = (Math.random() < 0.5 ? 1 : -1) * (0.15 + Math.random() * 0.2);
+    this.w = 22 + Math.random() * 6; // размер
+    this.wp = 0; // фаза для подпрыгивания
+    this.legPhase = Math.random() * 6.28;
+    this.grazeTimer = 200 + Math.random() * 400; // сколько кадров до смены поведения
+    this.grazing = false; // сейчас кушает?
+    this.grazePhase = 0;
+    this.alive = true;
+    // Редко блеет
+    this.bleatTimer = 300 + Math.random() * 900;
+  }
+  update(){
+    if(this.grazing){
+      // Стоит и кушает траву
+      this.grazePhase += 0.1;
+      this.grazeTimer--;
+      if(this.grazeTimer <= 0){
+        this.grazing = false;
+        this.grazeTimer = 200 + Math.random() * 300;
+        // Меняем направление
+        this.vx = (Math.random() < 0.5 ? 1 : -1) * (0.15 + Math.random() * 0.2);
+      }
+    } else {
+      // Ходит
+      this.x += this.vx;
+      this.legPhase += Math.abs(this.vx) * 0.25;
+      this.grazeTimer--;
+      if(this.grazeTimer <= 0){
+        this.grazing = true;
+        this.grazeTimer = 80 + Math.random() * 200;
+        this.grazePhase = 0;
+      }
+      // Разворот на границе участка (левая/правая треть экрана)
+      if(this.x < W * 0.05){ this.x = W * 0.05; this.vx = Math.abs(this.vx); }
+      if(this.x > W * 0.95){ this.x = W * 0.95; this.vx = -Math.abs(this.vx); }
+    }
+    
+    // Блеяние (редко, случайно)
+    this.bleatTimer--;
+    if(this.bleatTimer <= 0){
+      this.bleatTimer = 600 + Math.random() * 1200;
+      if(Math.random() < 0.5) bleat(this.x / W * 2 - 1);
+    }
+  }
+  draw(){
+    const s = this.w / 22; // масштаб
+    const facing = this.vx > 0 ? 1 : -1;
+    const bob = this.grazing ? Math.sin(this.grazePhase) * 0.5 : Math.abs(Math.sin(this.legPhase)) * 1.2;
+    const headDrop = this.grazing ? 3 * s : 0;
+    
+    ctx.save();
+    ctx.translate(this.x, this.y - bob);
+    ctx.scale(facing, 1);
+    
+    // Тень под овцой
+    ctx.fillStyle = 'rgba(0,0,0,.25)';
+    ctx.beginPath();
+    ctx.ellipse(0, 2 * s + bob, 14 * s, 3 * s, 0, 0, 6.28);
+    ctx.fill();
+    
+    // НОГИ (4 тонкие линии)
+    ctx.strokeStyle = '#3a2a1e';
+    ctx.lineWidth = 1.5 * s;
+    ctx.lineCap = 'round';
+    const legSwing = this.grazing ? 0 : Math.sin(this.legPhase) * 3;
+    const legSwing2 = this.grazing ? 0 : Math.sin(this.legPhase + Math.PI) * 3;
+    // Задние ноги
+    ctx.beginPath(); ctx.moveTo(-7*s, 0); ctx.lineTo(-7*s + legSwing, 9*s); ctx.stroke();
+    ctx.beginPath(); ctx.moveTo(-3*s, 0); ctx.lineTo(-3*s + legSwing2, 9*s); ctx.stroke();
+    // Передние
+    ctx.beginPath(); ctx.moveTo(5*s, 0); ctx.lineTo(5*s + legSwing2, 9*s); ctx.stroke();
+    ctx.beginPath(); ctx.moveTo(8*s, 0); ctx.lineTo(8*s + legSwing, 9*s); ctx.stroke();
+    
+    // ТЕЛО (пушистое облако)
+    const bodyGrad = ctx.createRadialGradient(-3*s, -3*s, 2*s, 0, 0, 14*s);
+    bodyGrad.addColorStop(0, '#ffffff');
+    bodyGrad.addColorStop(.6, '#f0eee8');
+    bodyGrad.addColorStop(1, '#d8d4c8');
+    ctx.fillStyle = bodyGrad;
+    // Несколько кругов для "пушистости"
+    ctx.beginPath();
+    ctx.arc(-8*s, -2*s, 6*s, 0, 6.28);
+    ctx.arc(-3*s, -6*s, 7*s, 0, 6.28);
+    ctx.arc(3*s, -6*s, 7*s, 0, 6.28);
+    ctx.arc(7*s, -2*s, 6*s, 0, 6.28);
+    ctx.arc(0, 0, 8*s, 0, 6.28);
+    ctx.fill();
+    // Обводка контура
+    ctx.strokeStyle = 'rgba(120,110,90,.4)';
+    ctx.lineWidth = .8 * s;
+    ctx.stroke();
+    
+    // ГОЛОВА (тёмная мордочка)
+    const headX = 10*s;
+    const headY = -6*s + headDrop;
+    // Мордочка
+    ctx.fillStyle = '#2a2018';
+    ctx.beginPath();
+    ctx.ellipse(headX, headY, 4*s, 3.5*s, 0, 0, 6.28);
+    ctx.fill();
+    // Уши
+    ctx.beginPath();
+    ctx.ellipse(headX - 2*s, headY - 2*s, 2.5*s, 1.2*s, -0.5, 0, 6.28);
+    ctx.fill();
+    // Глаз (белая точка)
+    if(!this.grazing){
+      ctx.fillStyle = '#fff';
+      ctx.beginPath();
+      ctx.arc(headX + 1*s, headY - 0.5*s, 0.8*s, 0, 6.28);
+      ctx.fill();
+    }
+    // Пушистая шапка на голове
+    ctx.fillStyle = '#f0eee8';
+    ctx.beginPath();
+    ctx.arc(headX - 1*s, headY - 2.5*s, 3*s, 0, 6.28);
+    ctx.fill();
+    
+    ctx.restore();
+  }
+}
+
+// Инициализация овец
+const sheep = [];
+function initSheep(){
+  sheep.length = 0;
+  const count = 3 + Math.floor(Math.random() * 2); // 3-4 овцы
+  for(let i = 0; i < count; i++){
+    // Позиция на лугу: между H*0.78 и H*0.88 (на холме)
+    sheep.push(new Sheep(
+      W * 0.1 + Math.random() * W * 0.8,
+      H * 0.79 + Math.random() * H * 0.07
+    ));
+  }
+}
+
+// ============ ИГРА ============
+const gun={x:0,h:25,recoil:0,hitFlash:0};
+const joy={bx:0,by:0,r:35,kr:17,kx:0,ky:0,on:false,id:null,v:0};
+const fire={x:0,y:0,r:26,id:null,on:false,flash:0};
+let spawnT=0;
+const ducks=[],bullets=[],parts=[],smoke=[],stars=[],poops=[],splats=[];
+
+// Бюджет пикселей: в полном экране не раздуваем буфер, иначе падает fps.
+// На слабых устройствах бюджет и плотность пикселей ниже — меньше нагрев и расход батареи
+const PIX_BUDGET=LE?1.1e6:2e6;
+const DPR_CAP=LE?1.25:2;
+function setBuffer(){
+  const d=baseD*RSCALE;
+  cv.width=Math.max(1,Math.round(W*d));cv.height=Math.max(1,Math.round(H*d));
+  cv.style.width=W+'px';cv.style.height=H+'px';
+  ctx.setTransform(d,0,0,d,0,0);
+}
+function applyResize(){
+  if(W===innerWidth&&H===innerHeight)return;   // размер тот же — не пересобираем фон и звёзды
+  const dpr=window.devicePixelRatio||1;
+  W=innerWidth;H=innerHeight;
+  baseD=Math.min(dpr,DPR_CAP,Math.max(1,Math.sqrt(PIX_BUDGET/Math.max(1,W*H))));
+  RSCALE=1;
+  buildBG();       // фон пересобираем только при смене размера, не при смене RSCALE
+  setBuffer();
+  joy.bx=30+joy.r;joy.by=H-30-joy.r;joy.kx=joy.bx;joy.ky=joy.by;
+  fire.x=W-30-fire.r;fire.y=H-30-fire.r;
+  if(!gun.x)gun.x=W/2;
+  gun.x=Math.max(25,Math.min(W-25,gun.x));
+  stars.length=0;
+  for(let i=0;i<80;i++)stars.push({x:Math.random()*W,y:Math.random()*H*.6,r:Math.random()*1.2+.2,b:Math.random()*.7+.3,s:Math.random()*.02+.005,p:Math.random()*6.28});
+  initSheep(); // 🐑 Пересоздаём овец при изменении размера
+}
+// Мобильные браузеры дёргают resize на каждое появление/скрытие адресной строки —
+// без этого фон, звёзды и овцы пересобирались бы десятки раз подряд (нагрев, батарея)
+let rzT=null;
+function resize(){clearTimeout(rzT);rzT=setTimeout(applyResize,200);}
+addEventListener('resize',resize);
+
+class Duck{
+  constructor(){
+    this.w=27;this.h=22;
+    const L=Math.random()<.5;
+    this.x=L?-this.w:W+this.w;
+    this.y=35+Math.random()*(H*.32);
+    const spd=P.duckSpeedMin+Math.random()*(P.duckSpeedMax-P.duckSpeedMin);
+    this.vx=(L?1:-1)*spd;
+    this.wp=Math.random()*6.28;this.dead=false;this.vy=0;this.rot=0;this.gone=false;
+    const hues=[[30,55,20],[60,40,15],[15,45,30],[45,35,10]];
+    this.body=hues[Math.floor(Math.random()*hues.length)];
+    this.willPoop=Math.random()<P.poopChance;
+    this.poopTimer=P.poopIntervalMin+Math.random()*(P.poopIntervalMax-P.poopIntervalMin);
+    this.smartness = Math.random() < 0.3 ? (0.2+Math.random()*0.2) : (0.5+Math.random()*0.3);
+    this.aiming = false;
+    this.aimFrames = 0;
+    this.pooped = false;
+  }
+  
+  predictHit(){
+    const fallTime = Math.sqrt(2 * (H - this.y) / 0.25);
+    const predictedX = this.x + this.vx * fallTime * 0.5;
+    const dx = Math.abs(predictedX - gun.x);
+    return dx < 35;
+  }
+  
+  update(){
+    this.wp+=.35;
+    if(!this.dead){
+      this.x+=this.vx;this.y+=Math.sin(this.wp)*.5;
+      
+      if(this.willPoop && !this.pooped){
+        this.poopTimer--;
+        let poopedNow = false;
+        
+        if(this.smartness > 0.4){
+          const near = Math.abs(this.x - gun.x) < 100;
+          if(near && !this.aiming){this.aiming = true; this.aimFrames = 0;}
+          if(this.aiming){
+            this.aimFrames++;
+            if(this.aimFrames > 5 && this.predictHit()){this.poop(); poopedNow = true;}
+            if(this.aimFrames > 40)this.aiming = false;
+          }
+        }
+        if(!poopedNow && this.poopTimer <= 0)this.poop();
+      }
+      
+      if(this.x>W+50||this.x<-50)this.gone=true;
+    }else{
+      this.vy+=.6;this.y+=this.vy;this.rot+=.25;
+      if(this.y>H+50)this.gone=true;
+    }
+  }
+  
+  poop(){
+    if(this.pooped) return;
+    this.pooped = true;
+    let offset = 0;
+    if(this.smartness < 0.4) offset = (Math.random()-.5) * 60 * (1 - this.smartness * 2);
+    poops.push(new Poop(this.x + offset, this.y + this.h*.3));
+    poopSfx(this.x);
+  }
+  
+  // Градиенты зависят только от цвета утки и флага dead — строим один раз
+  buildGrads(){
+    const [h,s,l]=this.body,d=this.dead;
+    const body=ctx.createRadialGradient(-3,-4,2,0,0,this.w*.5);
+    body.addColorStop(0,d?`hsl(${h},20%,55%)`:`hsl(${h},${s}%,${l+25}%)`);
+    body.addColorStop(1,d?`hsl(${h},15%,35%)`:`hsl(${h},${s}%,${l-5}%)`);
+    const wing=ctx.createLinearGradient(-8,-5,-8,5);
+    wing.addColorStop(0,d?`hsl(${h},20%,50%)`:`hsl(${h},${s+10}%,${l+15}%)`);
+    wing.addColorStop(1,d?`hsl(${h},15%,35%)`:`hsl(${h},${s}%,${l-10}%)`);
+    const neck=ctx.createLinearGradient(this.w*.2,-this.h*.15,this.w*.4,-this.h*.2);
+    neck.addColorStop(0,d?`hsl(${h},15%,45%)`:`hsl(${h},${s}%,${l+5}%)`);
+    neck.addColorStop(1,d?`hsl(${h},15%,35%)`:`hsl(${h},${s}%,${l-5}%)`);
+    const head=ctx.createRadialGradient(this.w*.35,-this.h*.22,1,this.w*.35,-this.h*.15,this.h*.3);
+    head.addColorStop(0,d?`hsl(${h},18%,50%)`:`hsl(${h},${s}%,${l+18}%)`);
+    head.addColorStop(1,d?`hsl(${h},15%,35%)`:`hsl(${h},${s}%,${l-5}%)`);
+    const beak=ctx.createLinearGradient(this.w*.5,-this.h*.15,this.w*.75,-this.h*.1);
+    beak.addColorStop(0,'#ffcc33');beak.addColorStop(1,'#ff8800');
+    this.gBody=body;this.gWing=wing;this.gNeck=neck;this.gHead=head;this.gBeak=beak;
+    this.cOutline=d?'rgba(60,40,20,.6)':`hsla(${h},${s}%,${l-15}%,.8)`;
+    this.cTail=d?`hsl(${h},15%,40%)`:`hsl(${h},${s}%,${l-8}%)`;
+    this._gd=!!d;
+  }
+  draw(){
+    if(!this.gBody||this._gd!==!!this.dead)this.buildGrads();
+    ctx.save();ctx.translate(this.x,this.y);ctx.rotate(this.rot);ctx.scale(this.vx>0?1:-1,1);
+    ctx.fillStyle=this.gBody;ctx.beginPath();ctx.ellipse(0,0,this.w*.45,this.h*.36,0,0,6.28);ctx.fill();
+    ctx.strokeStyle=this.cOutline;ctx.lineWidth=1;ctx.stroke();
+    ctx.fillStyle=this.cTail;
+    ctx.beginPath();ctx.moveTo(-this.w*.35,0);ctx.lineTo(-this.w*.55,-this.h*.15);ctx.lineTo(-this.w*.5,0);ctx.lineTo(-this.w*.55,this.h*.12);ctx.closePath();ctx.fill();
+    const wy=Math.sin(this.wp)*5,wr=-.4+Math.sin(this.wp)*.15;
+    ctx.fillStyle=this.gWing;ctx.beginPath();ctx.ellipse(-3,-3+wy,this.w*.32,this.h*.2,wr,0,6.28);ctx.fill();
+    ctx.fillStyle=this.gNeck;ctx.beginPath();ctx.ellipse(this.w*.28,-this.h*.12,this.w*.12,this.h*.18,-.3,0,6.28);ctx.fill();
+    ctx.fillStyle=this.gHead;ctx.beginPath();ctx.arc(this.w*.35,-this.h*.15,this.h*.28,0,6.28);ctx.fill();
+    ctx.fillStyle=this.dead?'#996633':this.gBeak;
+    ctx.beginPath();ctx.moveTo(this.w*.48,-this.h*.18);ctx.quadraticCurveTo(this.w*.65,-this.h*.16,this.w*.72,-this.h*.1);ctx.quadraticCurveTo(this.w*.65,-this.h*.06,this.w*.48,-this.h*.08);ctx.closePath();ctx.fill();
+    if(!this.dead){
+      ctx.fillStyle='#fff';ctx.beginPath();ctx.arc(this.w*.38,-this.h*.22,1.8,0,6.28);ctx.fill();
+      ctx.fillStyle='#000';ctx.beginPath();ctx.arc(this.w*.41,-this.h*.22,1,0,6.28);ctx.fill();
+      ctx.fillStyle='rgba(255,255,255,.9)';ctx.beginPath();ctx.arc(this.w*.43,-this.h*.24,.5,0,6.28);ctx.fill();
+    }else{
+      ctx.strokeStyle='#000';ctx.lineWidth=1.5;
+      ctx.beginPath();ctx.moveTo(this.w*.33,-this.h*.28);ctx.lineTo(this.w*.43,-this.h*.18);ctx.moveTo(this.w*.43,-this.h*.28);ctx.lineTo(this.w*.33,-this.h*.18);ctx.stroke();
+    }
+    ctx.restore();
+  }
+}
+class Poop{
+  constructor(x,y){this.x=x;this.y=y;this.vy=0;this.r=5;this.gone=false;this.rot=Math.random()*6.28;this.vr=(Math.random()-.5)*.2;this.wobble=Math.random()*6.28;this.baseX=x;}
+  update(){this.vy+=.25;if(this.vy>7)this.vy=7;this.y+=this.vy;this.x=this.baseX+Math.sin(this.wobble)*2;this.wobble+=.08;this.rot+=this.vr;if(this.y>H+20)this.gone=true;}  draw(){
+    ctx.save();ctx.translate(this.x,this.y);ctx.rotate(this.rot);
+    ctx.fillStyle='rgba(0,0,0,.2)';ctx.beginPath();ctx.ellipse(0,this.r+2,this.r*.8,this.r*.3,0,0,6.28);ctx.fill();
+    if(!poopGrad){poopGrad=ctx.createRadialGradient(-2,-2,1,0,0,this.r);poopGrad.addColorStop(0,'#8b5a2b');poopGrad.addColorStop(1,'#4a2c12');}
+    ctx.fillStyle=poopGrad;ctx.beginPath();ctx.ellipse(0,0,this.r,this.r*1.1,0,0,6.28);ctx.fill();
+    ctx.strokeStyle='#2a1808';ctx.lineWidth=1;ctx.stroke();
+    ctx.fillStyle='rgba(255,220,180,.4)';ctx.beginPath();ctx.ellipse(-this.r*.3,-this.r*.35,this.r*.35,this.r*.25,-.5,0,6.28);ctx.fill();
+    ctx.fillStyle='#4a2c12';ctx.beginPath();ctx.moveTo(-this.r*.15,-this.r);ctx.quadraticCurveTo(0,-this.r*1.4,this.r*.2,-this.r);ctx.closePath();ctx.fill();
+    ctx.restore();
+  }
+}
+class Splat{
+  constructor(x,y){this.x=x;this.y=y;this.life=1;this.r=15+Math.random()*10;this.rot=Math.random()*6.28;this.points=[];for(let i=0;i<8;i++){const a=(i/8)*6.28,r=this.r*(.7+Math.random()*.5);this.points.push({a,r});}
+    // брызги считаем один раз — раньше Math.random() крутился каждый кадр
+    this.dots=[];for(let i=0;i<6;i++){const a=(i/6)*6.28+.5,d=this.r*(1.1+Math.random()*.4);this.dots.push({x:Math.cos(a)*d,y:Math.sin(a)*d,r:2+Math.random()*3});}}
+  update(){this.life-=.003;}
+  draw(){
+    ctx.save();ctx.globalAlpha=Math.max(0,this.life*.7);ctx.translate(this.x,this.y);ctx.rotate(this.rot);
+    ctx.fillStyle='#6b3d1a';ctx.beginPath();
+    for(let i=0;i<this.points.length;i++){const p=this.points[i],x=Math.cos(p.a)*p.r,y=Math.sin(p.a)*p.r;if(i===0)ctx.moveTo(x,y);else ctx.lineTo(x,y);}
+    ctx.closePath();ctx.fill();
+    ctx.fillStyle='#4a2810';for(const dt of this.dots){ctx.beginPath();ctx.arc(dt.x,dt.y,dt.r,0,6.28);ctx.fill();}
+    ctx.globalAlpha=1;ctx.restore();
+  }
+}
+class Bullet{
+  constructor(x,y){this.x=x;this.y=y;this.vy=-14;this.r=3;this.trail=[];this.gone=false;}
+  update(){this.trail.push({x:this.x,y:this.y});if(this.trail.length>8)this.trail.shift();this.y+=this.vy;if(this.y<-20)this.gone=true;}
+  draw(){
+    for(let i=0;i<this.trail.length;i++){const t=this.trail[i],a=i/this.trail.length;ctx.fillStyle=`rgba(255,${180+a*75},${50+a*100},${a*.7})`;ctx.beginPath();ctx.arc(t.x,t.y,this.r*a*.9,0,6.28);ctx.fill();}
+    const spr=radialSprite('bulletGlow',[[0,'rgba(255,255,200,1)'],[.5,'rgba(255,200,50,.6)'],[1,'rgba(255,100,0,0)']]);
+    ctx.drawImage(spr,this.x-this.r*3,this.y-this.r*3,this.r*6,this.r*6);
+    ctx.fillStyle='#fffbe0';ctx.beginPath();ctx.arc(this.x,this.y,this.r*.6,0,6.28);ctx.fill();
+  }
+}
+class Part{
+  constructor(x,y,dead){this.x=x;this.y=y;this.vx=(Math.random()-.5)*5;this.vy=(Math.random()-.5)*5-1.5;this.life=1;this.size=2+Math.random()*2.5;this.rot=Math.random()*6.28;this.vr=(Math.random()-.5)*.3;this.color=dead?`hsl(${20+Math.random()*30},30%,${40+Math.random()*20}%)`:`hsl(${20+Math.random()*30},45%,${35+Math.random()*25}%)`;}
+  update(){this.x+=this.vx;this.y+=this.vy;this.vx*=.99;this.vy+=.2;this.rot+=this.vr;this.life-=.018;}
+  draw(){ctx.save();ctx.globalAlpha=Math.max(0,this.life);ctx.translate(this.x,this.y);ctx.rotate(this.rot);ctx.fillStyle=this.color;ctx.beginPath();ctx.ellipse(0,0,this.size,this.size*.4,0,0,6.28);ctx.fill();ctx.restore();ctx.globalAlpha=1;}
+}
+class Smoke{
+  constructor(x,y,color){this.x=x;this.y=y;this.vx=(Math.random()-.5)*2;this.vy=-1-Math.random()*2;this.life=1;this.size=5+Math.random()*7;this.color=color||'rgba(255,200,100,.8)';}
+  update(){this.x+=this.vx;this.y+=this.vy;this.vy*=.96;this.size+=.6;this.life-=.025;}
+  draw(){
+    const spr=radialSprite('smoke:'+this.color,[[0,this.color],[1,'rgba(255,100,0,0)']]);
+    ctx.globalAlpha=Math.max(0,this.life*.4);
+    ctx.drawImage(spr,this.x-this.size,this.y-this.size,this.size*2,this.size*2);
+    ctx.globalAlpha=1;
+  }
+}
+
+function shoot(){
+  if(!running)return;
+  if(Date.now()<ammoReadyAt)return;
+  ammoReadyAt=Date.now()+AMMO_COOLDOWN;
+  bullets.push(new Bullet(gun.x,H-gun.h-15));
+  gun.recoil=6;fire.flash=1;camShake=4;shootSfx();
+  for(let i=0;i<4;i++)if(smoke.length<80)smoke.push(new Smoke(gun.x+(Math.random()-.5)*6,H-gun.h-15));
+}
+
+function hit(px,py,cx,cy,r){const dx=px-cx,dy=py-cy;return dx*dx+dy*dy<=r*r;}
+
+function bumpScore(){
+  $s.textContent=score;
+  if($scorePill.animate)$scorePill.animate([{transform:'scale(1)'},{transform:'scale(1.18)'},{transform:'scale(1)'}],{duration:350,easing:'ease-out'});
+  else{$scorePill.classList.remove('bump');void $scorePill.offsetWidth;$scorePill.classList.add('bump');}
+}
+function updateLives(){
+  const segs=$livesBar.querySelectorAll('.seg');
+  segs.forEach((seg,i)=>{
+    if(i<lives)seg.classList.remove('empty');
+    else seg.classList.add('empty');
+  });
+}
+function loseLife(){
+  lives--;
+  updateLives();
+  gun.hitFlash=1;camShake=10;
+  if(lives<=0){
+    running=false;
+    $fs.textContent=score;
+    $fl.textContent=level;
+    $go.classList.remove('hidden');
+  }
+}
+
+function start(e){
+  e.preventDefault();if(!running)return;
+  for(const t of e.changedTouches){
+    const x=t.clientX,y=t.clientY;
+    if(fire.id===null&&hit(x,y,fire.x,fire.y,fire.r+22)){fire.id=t.identifier;fire.on=true;shoot();continue;}
+    if(joy.id===null&&x<W*.6){joy.id=t.identifier;joy.on=true;joy.bx=x;joy.by=y;joy.kx=x;joy.ky=y;joy.v=0;}
+  }
+}
+function move(e){
+  e.preventDefault();
+  for(const t of e.changedTouches){
+    if(t.identifier!==joy.id)continue;
+    let dx=t.clientX-joy.bx,dy=t.clientY-joy.by;const d=Math.hypot(dx,dy);
+    if(d>joy.r){dx=dx/d*joy.r;dy=dy/d*joy.r;}
+    joy.kx=joy.bx+dx;joy.ky=joy.by+dy;joy.v=dx/joy.r;
+  }
+}
+function end(e){
+  e.preventDefault();
+  for(const t of e.changedTouches){
+    if(t.identifier===joy.id){joy.id=null;joy.on=false;joy.v=0;joy.kx=joy.bx;joy.ky=joy.by;}
+    if(t.identifier===fire.id){fire.id=null;fire.on=false;}
+  }
+}
+cv.addEventListener('touchstart',start,{passive:false});
+cv.addEventListener('touchmove',move,{passive:false});
+cv.addEventListener('touchend',end,{passive:false});
+cv.addEventListener('touchcancel',end,{passive:false});
+
+let mJ=false,mF=false;
+cv.addEventListener('mousedown',e=>{
+  if(!running)return;const x=e.clientX,y=e.clientY;
+  if(hit(x,y,fire.x,fire.y,fire.r+22)){mF=true;fire.on=true;shoot();return;}
+  if(x<W*.6){mJ=true;joy.on=true;joy.bx=x;joy.by=y;joy.kx=x;joy.ky=y;}
+});
+cv.addEventListener('mousemove',e=>{
+  if(!mJ)return;
+  let dx=e.clientX-joy.bx,dy=e.clientY-joy.by;const d=Math.hypot(dx,dy);
+  if(d>joy.r){dx=dx/d*joy.r;dy=dy/d*joy.r;}
+  joy.kx=joy.bx+dx;joy.ky=joy.by+dy;joy.v=dx/joy.r;
+});
+addEventListener('mouseup',()=>{
+  if(mJ){mJ=false;joy.on=false;joy.v=0;joy.kx=joy.bx;joy.ky=joy.by;}
+  if(mF){mF=false;fire.on=false;}
+});
+
+function update(){
+  T+=STEP/1000;   // реальные секунды, а не «кадры по 16 мс»
+  const now=Date.now();
+  const remaining=ammoReadyAt-now;
+  if(remaining>0)ammoProgress=1-remaining/AMMO_COOLDOWN;
+  else ammoProgress=1;
+
+  // 🐑 Обновляем овец (всегда, даже в game over)
+  for(const s of sheep) s.update();
+
+  if(running){
+    if(joy.v)gun.x+=joy.v*9;
+    gun.x=Math.max(25,Math.min(W-25,gun.x));
+    if(gun.recoil>0)gun.recoil*=.85;
+    if(fire.flash>0)fire.flash*=.85;
+    if(gun.hitFlash>0)gun.hitFlash*=.92;
+    if(fire.on)shoot();
+    if(camShake>0){camShake*=.85;camX=(Math.random()-.5)*camShake;camY=(Math.random()-.5)*camShake;}
+    else{camX=camY=0;}
+    if(++spawnT>=P.spawnInterval){spawnT=0;if(ducks.length<14)ducks.push(new Duck());}
+  }
+  for(const d of ducks)d.update();
+  for(const b of bullets)b.update();
+  for(const p of parts)p.update();
+  for(const s of smoke)s.update();
+  for(const p of poops)p.update();
+  for(const s of splats)s.update();
+
+  for(const b of bullets){
+    if(b.gone)continue;
+    for(const d of ducks){
+      if(d.gone||d.dead)continue;
+      if(b.x>d.x-d.w/2&&b.x<d.x+d.w/2&&b.y>d.y-d.h/2&&b.y<d.y+d.h/2){
+        b.gone=d.dead=true;d.vy=-3;
+        score++;bumpScore();camShake=5;hitSfx(d.x);
+        for(let i=0;i<14;i++)if(parts.length<160)parts.push(new Part(d.x,d.y,true));
+        for(let i=0;i<5;i++)if(smoke.length<80)smoke.push(new Smoke(d.x,d.y));
+        if(score>=nextLevelAt){nextLevelAt+=20;levelUp();}
+        break;
+      }
+    }
+  }
+  const gx=gun.x,gy=H-25,gr=30;
+  for(const p of poops){
+    if(p.gone)continue;
+    if(p.y>H-60){
+      const dx=p.x-gx,dy=p.y-gy;
+      if(dx*dx+dy*dy<(gr+p.r)*(gr+p.r)){
+        p.gone=true;
+        splatSfx();
+        for(let i=0;i<5;i++)if(splats.length<24)splats.push(new Splat(gx+(Math.random()-.5)*40,H-30+(Math.random()-.5)*30));
+        loseLife();
+      }
+    }
+  }
+  for(let i=ducks.length-1;i>=0;i--)if(ducks[i].gone)ducks.splice(i,1);
+  for(let i=bullets.length-1;i>=0;i--)if(bullets[i].gone)bullets.splice(i,1);
+  for(let i=parts.length-1;i>=0;i--)if(parts[i].life<=0)parts.splice(i,1);
+  for(let i=smoke.length-1;i>=0;i--)if(smoke[i].life<=0)smoke.splice(i,1);
+  for(let i=poops.length-1;i>=0;i--)if(poops[i].gone)poops.splice(i,1);
+  for(let i=splats.length-1;i>=0;i--)if(splats[i].life<=0)splats.splice(i,1);
+}
+
+// ── Статичный фон (небо, луна, холмы, луг) рисуем один раз в offscreen ──
+const bgLayer=document.createElement('canvas');
+const bgx=bgLayer.getContext('2d');
+function buildBG(){
+  const d=baseD;
+  bgLayer.width=Math.max(1,Math.round(W*d));bgLayer.height=Math.max(1,Math.round(H*d));
+  bgx.setTransform(d,0,0,d,0,0);
+  // Небо
+  const g=bgx.createLinearGradient(0,0,0,H);
+  g.addColorStop(0,'#0a1530');g.addColorStop(.4,'#1e3a6b');g.addColorStop(.7,'#4a6fa5');g.addColorStop(1,'#7ba0c9');
+  bgx.fillStyle=g;bgx.fillRect(0,0,W,H);
+  // Луна
+  const mx=W*.85,my=H*.18;
+  const mg=bgx.createRadialGradient(mx,my,6,mx,my,45);
+  mg.addColorStop(0,'rgba(255,250,220,.4)');mg.addColorStop(1,'rgba(255,250,220,0)');
+  bgx.fillStyle=mg;bgx.beginPath();bgx.arc(mx,my,45,0,6.28);bgx.fill();
+  const mg2=bgx.createRadialGradient(mx-4,my-4,2,mx,my,16);
+  mg2.addColorStop(0,'#fffef0');mg2.addColorStop(1,'#e8dca8');
+  bgx.fillStyle=mg2;bgx.beginPath();bgx.arc(mx,my,16,0,6.28);bgx.fill();
+  // Дальние холмы
+  bgx.fillStyle='#1a2840';bgx.beginPath();bgx.moveTo(0,H*.72);
+  for(let x=0;x<=W;x+=40)bgx.lineTo(x,H*.72+Math.sin(x*.01)*15);
+  bgx.lineTo(W,H);bgx.lineTo(0,H);bgx.fill();
+  // Ближний холм
+  bgx.fillStyle='#0f1a2e';bgx.beginPath();bgx.moveTo(0,H*.82);
+  for(let x=0;x<=W;x+=40)bgx.lineTo(x,H*.82+Math.cos(x*.013)*12);
+  bgx.lineTo(W,H);bgx.lineTo(0,H);bgx.fill();
+  // 🌿 ЗЕМЛЯ (луг) с травой
+  const eg=bgx.createLinearGradient(0,H-25,0,H);
+  eg.addColorStop(0,'#3a2810');eg.addColorStop(1,'#1a1005');
+  bgx.fillStyle=eg;bgx.fillRect(0,H-25,W,25);
+  // Полноэкранные эффекты и градиент кнопки — тоже пересоздаём только тут
+  vigGrad=ctx.createRadialGradient(W/2,H/2,Math.min(W,H)*.4,W/2,H/2,Math.max(W,H)*.75);
+  vigGrad.addColorStop(0,'rgba(0,0,0,0)');vigGrad.addColorStop(1,`rgba(0,0,0,${CINE.vignette})`);
+  bloomGrad=ctx.createRadialGradient(W/2,H/2,0,W/2,H/2,Math.max(W,H)*.7);
+  bloomGrad.addColorStop(0,'rgba(255,220,150,.3)');bloomGrad.addColorStop(1,'rgba(0,0,0,0)');
+  for(const k in fireGrads)delete fireGrads[k];
+}
+
+function draw(){
+  ctx.save();ctx.translate(camX|0,camY|0);   // целые пиксели — без ресемплинга всей картинки при тряске
+  // Фон — одним блитом вместо градиентов и путей каждый кадр
+  if(bgLayer.width)ctx.drawImage(bgLayer,0,0,W,H);
+  // Звёзды (мерцают)
+  ctx.fillStyle='#fff';
+  for(const s of stars){const tw=.6+Math.sin(T*3+s.p)*.4;ctx.globalAlpha=Math.max(0,s.b*tw);ctx.fillRect(s.x,s.y,s.r*2,s.r*2);}
+  ctx.globalAlpha=1;
+  
+  // 🐑 ОВЦЫ (рисуем ПЕРЕД холмом, но ЗА игровыми объектами)
+  for(const s of sheep) s.draw();
+  
+  const gx=gun.x,gy=H-gun.h+gun.recoil;
+  ctx.fillStyle='rgba(0,0,0,.4)';ctx.beginPath();ctx.ellipse(gx,H-6,22,5,0,0,6.28);ctx.fill();
+  const baseg=ctx.createLinearGradient(gx-18,gy,gx+18,H);
+  baseg.addColorStop(0,'#2a2a30');baseg.addColorStop(.5,'#4a4a55');baseg.addColorStop(1,'#1a1a20');
+  ctx.fillStyle=baseg;ctx.beginPath();ctx.moveTo(gx-18,H);ctx.lineTo(gx+18,H);ctx.lineTo(gx+12,gy+3);ctx.lineTo(gx-12,gy+3);ctx.closePath();ctx.fill();
+  ctx.strokeStyle='#0a0a10';ctx.lineWidth=1.5;ctx.stroke();
+  const barrelg=ctx.createLinearGradient(gx-6,0,gx+6,0);
+  barrelg.addColorStop(0,'#3a3a45');barrelg.addColorStop(.3,'#8888a0');barrelg.addColorStop(.5,'#c0c0d0');barrelg.addColorStop(.7,'#8888a0');barrelg.addColorStop(1,'#3a3a45');
+  ctx.fillStyle=barrelg;ctx.fillRect(gx-5,gy-16,10,18);
+  ctx.strokeStyle='#0a0a10';ctx.lineWidth=1.5;ctx.strokeRect(gx-5,gy-16,10,18);
+  ctx.fillStyle='#000';ctx.beginPath();ctx.ellipse(gx,gy-16,4,2,0,0,6.28);ctx.fill();
+  if(gun.hitFlash>.05){ctx.fillStyle=`rgba(255,40,40,${gun.hitFlash*.6})`;ctx.beginPath();ctx.arc(gx,gy,35,0,6.28);ctx.fill();}
+  if(fire.flash>.1){
+    const flashR=22*fire.flash,fg2=ctx.createRadialGradient(gx,gy-16,0,gx,gy-16,flashR);
+    fg2.addColorStop(0,`rgba(255,255,200,${fire.flash})`);fg2.addColorStop(.4,`rgba(255,180,50,${fire.flash*.7})`);fg2.addColorStop(1,'rgba(255,80,0,0)');
+    ctx.fillStyle=fg2;ctx.beginPath();ctx.arc(gx,gy-16,flashR,0,6.28);ctx.fill();
+  }
+  const domg=ctx.createRadialGradient(gx-4,gy-2,2,gx,gy,14);
+  domg.addColorStop(0,'#8a8a9a');domg.addColorStop(.7,'#4a4a55');domg.addColorStop(1,'#252530');
+  ctx.fillStyle=domg;ctx.beginPath();ctx.arc(gx,gy+2,14,Math.PI,0);ctx.fill();
+  ctx.strokeStyle='#0a0a10';ctx.lineWidth=1.5;ctx.stroke();
+  for(const s of splats)s.draw();
+  for(const s of smoke)s.draw();
+  for(const p of parts)p.draw();
+  for(const d of ducks)d.draw();
+  for(const p of poops)p.draw();
+  for(const b of bullets)b.draw();
+  const a=joy.on?.6:.3;
+  const jg=ctx.createRadialGradient(joy.bx,joy.by,joy.r*.3,joy.bx,joy.by,joy.r);
+  jg.addColorStop(0,`rgba(30,40,70,${a*.5})`);jg.addColorStop(1,`rgba(10,15,30,${a*.7})`);
+  ctx.fillStyle=jg;ctx.beginPath();ctx.arc(joy.bx,joy.by,joy.r,0,6.28);ctx.fill();
+  ctx.strokeStyle=`rgba(100,180,255,${a})`;ctx.lineWidth=2;ctx.stroke();
+  ctx.strokeStyle=`rgba(100,180,255,${a*.5})`;ctx.lineWidth=1;ctx.beginPath();ctx.arc(joy.bx,joy.by,joy.r*.7,0,6.28);ctx.stroke();
+  ctx.strokeStyle=`rgba(100,180,255,${a*.4})`;
+  ctx.beginPath();ctx.moveTo(joy.bx-joy.r*.5,joy.by);ctx.lineTo(joy.bx+joy.r*.5,joy.by);ctx.moveTo(joy.bx,joy.by-joy.r*.5);ctx.lineTo(joy.bx,joy.by+joy.r*.5);ctx.stroke();
+  const kg=ctx.createRadialGradient(joy.kx-4,joy.ky-4,1,joy.kx,joy.ky,joy.kr);
+  kg.addColorStop(0,'rgba(180,230,255,1)');kg.addColorStop(.5,'rgba(80,160,255,.9)');kg.addColorStop(1,'rgba(20,60,150,.8)');
+  ctx.fillStyle=kg;ctx.beginPath();ctx.arc(joy.kx,joy.ky,joy.kr,0,6.28);ctx.fill();
+  const glow=ctx.createRadialGradient(joy.kx,joy.ky,joy.kr*.8,joy.kx,joy.ky,joy.kr*1.6);
+  glow.addColorStop(0,'rgba(100,180,255,.4)');glow.addColorStop(1,'rgba(100,180,255,0)');
+  ctx.fillStyle=glow;ctx.beginPath();ctx.arc(joy.kx,joy.ky,joy.kr*1.6,0,6.28);ctx.fill();
+  ctx.fillStyle='rgba(255,255,255,.6)';ctx.beginPath();ctx.arc(joy.kx-5,joy.ky-5,joy.kr*.3,0,6.28);ctx.fill();
+  ctx.strokeStyle=`rgba(200,240,255,${joy.on?.9:.5})`;ctx.lineWidth=1.5;ctx.stroke();
+
+  const ready=Date.now()>=ammoReadyAt;
+  const fr=fire.r*(fire.on?.92:1);
+  const frk=Math.round(fr);
+  if(fire.on){
+    let fg3=fireGrads['glow'+frk];
+    if(!fg3){fg3=ctx.createRadialGradient(fire.x,fire.y,fr,fire.x,fire.y,fr+18);fg3.addColorStop(0,'rgba(255,120,0,.6)');fg3.addColorStop(1,'rgba(255,60,0,0)');fireGrads['glow'+frk]=fg3;}
+    ctx.fillStyle=fg3;ctx.beginPath();ctx.arc(fire.x,fire.y,fr+18,0,6.28);ctx.fill();
+  }
+  ctx.fillStyle='rgba(0,0,0,.5)';ctx.beginPath();ctx.arc(fire.x,fire.y+3,fr,0,6.28);ctx.fill();
+  const bkey=(ready?'r':'n')+(fire.on?'1':'0')+frk;
+  let btn=fireGrads[bkey];
+  if(!btn){
+    btn=ctx.createRadialGradient(fire.x-fr*.3,fire.y-fr*.3,fr*.1,fire.x,fire.y,fr);
+    if(ready){
+      btn.addColorStop(0,fire.on?'#ffdd66':'#ff9944');btn.addColorStop(.5,fire.on?'#ff7700':'#ee5522');btn.addColorStop(1,fire.on?'#aa2200':'#881100');
+    }else{
+      btn.addColorStop(0,'#666');btn.addColorStop(.5,'#444');btn.addColorStop(1,'#222');
+    }
+    fireGrads[bkey]=btn;
+  }
+  ctx.fillStyle=btn;ctx.beginPath();ctx.arc(fire.x,fire.y,fr,0,6.28);ctx.fill();
+  ctx.strokeStyle=ready?(fire.on?'#ffff99':'#ffbb66'):'#777';ctx.lineWidth=2;ctx.stroke();
+  if(!ready){
+    ctx.strokeStyle='#5fd3ff';
+    ctx.lineWidth=3;
+    ctx.beginPath();
+    ctx.arc(fire.x,fire.y,fr-4,-Math.PI/2,-Math.PI/2+6.28*ammoProgress);
+    ctx.stroke();
+  }
+  ctx.fillStyle='rgba(255,255,255,.5)';ctx.beginPath();ctx.ellipse(fire.x-fr*.3,fire.y-fr*.4,fr*.4,fr*.2,-.5,0,6.28);ctx.fill();
+  ctx.fillStyle=ready?'#fff':'#888';ctx.font=`bold ${fr*.7}px Arial`;ctx.textAlign='center';ctx.textBaseline='middle';
+  ctx.shadowColor='rgba(0,0,0,.6)';ctx.shadowBlur=3;ctx.fillText('🔥',fire.x,fire.y+1);ctx.shadowBlur=0;
+  ctx.restore();
+  if(vigGrad){ctx.fillStyle=vigGrad;ctx.fillRect(0,0,W,H);}
+  if(CINE.grain>0&&FX>0){ctx.globalAlpha=CINE.grain*FX;for(let i=0;i<60;i++){ctx.fillStyle=Math.random()<.5?'#fff':'#000';ctx.fillRect(Math.random()*W,Math.random()*H,1,1);}ctx.globalAlpha=1;}
+  if(CINE.bloom>0&&bloomGrad){ctx.globalCompositeOperation='screen';ctx.globalAlpha=CINE.bloom*Math.max(.35,FX)*.12;ctx.fillStyle=bloomGrad;ctx.fillRect(0,0,W,H);ctx.globalAlpha=1;ctx.globalCompositeOperation='source-over';}
+}
+// ── Фиксированный шаг: логика идёт ровно TICK раз в секунду на любой частоте экрана ──
+// Все числа в игре (скорости уток, пуль, время жизни частиц) рассчитаны на 60 шагов/с.
+// На 180 Гц игра раньше гоняла 180 шагов = втрое быстрее задуманного, а в полном экране
+// падала до честных 60 — отсюда «в фуллскрине медленнее». Рендер не чаще шага логики.
+const STEP=1000/TICK;
+// Рендер реже логики: на слабых устройствах 30 кадров вместо 60 — вдвое меньше
+// работы GPU и заметно меньше нагрев/расход батареи, скорость игры не меняется
+const RENDER_HZ=LE?30:60;
+let FX=LE?0:1,acc=0,prevT=performance.now(),lastFrameAt=0;
+
+function loop(){
+  const now=performance.now();
+  let dt=now-prevT;prevT=now;
+  if(dt>200)dt=STEP;                 // вернулись из свёрнутой вкладки — не догоняем пачку кадров
+  acc+=dt;
+  let steps=0;
+  // допуск: интервал экрана должен давать ровно один шаг, иначе из-за микро-погрешности
+  // кадры проваливаются до 2/3 частоты
+  while(acc>=STEP-1.5&&steps<5){update();acc-=STEP;steps++;}
+  if(steps&&now-lastFrameAt>=1000/RENDER_HZ-2){
+    lastFrameAt=now;
+    const t0=performance.now();
+    draw();
+    lastDraw=lastDraw*.8+(performance.now()-t0)*.2;
+  }
+
+  // Авто-качество по реальной стоимости рендера (не зависит от частоты экрана)
+  if(now-lastQAt>=1000){
+    lastQAt=now;
+    if(lastDraw>13){                       // кадр не влезает в 60 fps
+      if(FX>0)FX=Math.max(0,FX-.5);
+      else if(RSCALE>0.6&&now-lastScaleAt>1500){RSCALE=Math.max(0.6,Math.round((RSCALE-.1)*100)/100);lastScaleAt=now;setBuffer();}
+    }else if(lastDraw<6){                  // запас есть — возвращаем качество
+      if(FX<1)FX=Math.min(1,FX+.34);
+      else if(RSCALE<1&&now-lastScaleAt>1500){RSCALE=Math.min(1,Math.round((RSCALE+.05)*100)/100);lastScaleAt=now;setBuffer();}
+    }
+  }
+
+  requestAnimationFrame(loop);
+}
+
+$rb.onclick=()=>{
+  score=0;lives=3;running=true;level=1;nextLevelAt=20;
+  ducks.length=0;bullets.length=0;parts.length=0;smoke.length=0;poops.length=0;splats.length=0;
+  spawnT=0;ammoReadyAt=0;ammoProgress=1;
+  recalcDifficulty();
+  $s.textContent=0;$lv.textContent=1;
+  updateLives();
+  $go.classList.add('hidden');
+  gun.x=W/2;
+};
+
+recalcDifficulty();
+applyResize();
+updateLives();
+loop();
+</script>
+</body>
+</html>
