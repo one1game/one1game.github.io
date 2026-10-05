@@ -112,6 +112,38 @@
     }
     .game-stat-card .label { font-size: 12px; color: var(--text-faint); text-transform: uppercase; }
     .game-stat-card .value { font-size: 20px; font-weight: bold; margin-top: 4px; }
+    .game-shots {
+      display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+      gap: 12px; margin: 20px 0;
+    }
+    .game-shot {
+      display: block; border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 8px; overflow: hidden;
+    }
+    .game-shot img { display: block; width: 100%; height: auto; }
+    .game-movies { display: grid; gap: 16px; margin: 20px 0; }
+    .game-movie { margin: 0; }
+    .game-movie video {
+      display: block; width: 100%; height: auto;
+      border-radius: 8px; background: #000;
+    }
+    .game-movie figcaption { margin-top: 6px; font-size: 13px; color: var(--text-faint); }
+    .game-video {
+      position: relative; cursor: pointer; overflow: hidden;
+      border-radius: 8px; background: #000; aspect-ratio: 16 / 9;
+    }
+    .game-video img { display: block; width: 100%; height: 100%; object-fit: cover; }
+    .game-video-play { position: absolute; inset: 0; display: grid; place-items: center; }
+    .game-video-play::before {
+      content: ''; width: 58px; height: 58px; border-radius: 50%;
+      background: rgba(0,0,0,0.5); border: 2px solid rgba(255,255,255,0.75);
+    }
+    .game-video-play::after {
+      content: ''; position: absolute; margin-left: 5px;
+      border-style: solid; border-width: 11px 0 11px 18px;
+      border-color: transparent transparent transparent #fff;
+    }
+    .game-video-el { display: block; width: 100%; height: 100%; background: #000; }
   </style>
 </head>
 <body>
@@ -166,10 +198,6 @@
           <div class="label">Владельцев (оценка)</div>
           <div class="value">0 – 20,000</div>
         </div>
-        <div class="game-stat-card">
-          <div class="label">Среднее время игры</div>
-          <div class="value">нет данных</div>
-        </div>
       </div>
 
       <h2>Об игре</h2>
@@ -183,7 +211,28 @@
         </a>
       </p>
 
-      <p style="color: var(--text-faint); font-size: 13px; margin-top: 30px;">
+            <h2>Скриншоты</h2>
+      <div class="game-shots">
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3484100/9d91643a5515783e6f49aff0bf5e1e88ccfb67d8/ss_9d91643a5515783e6f49aff0bf5e1e88ccfb67d8.1920x1080.jpg?t=1790132415" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3484100/9d91643a5515783e6f49aff0bf5e1e88ccfb67d8/ss_9d91643a5515783e6f49aff0bf5e1e88ccfb67d8.600x338.jpg?t=1790132415" alt="Bait Soul — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3484100/66e60c5b9e8c21f9b8070e2fd807be99b5420975/ss_66e60c5b9e8c21f9b8070e2fd807be99b5420975.1920x1080.jpg?t=1790132415" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3484100/66e60c5b9e8c21f9b8070e2fd807be99b5420975/ss_66e60c5b9e8c21f9b8070e2fd807be99b5420975.600x338.jpg?t=1790132415" alt="Bait Soul — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3484100/25f42d526e6a8f72495c62782052e9d0eaf6be1b/ss_25f42d526e6a8f72495c62782052e9d0eaf6be1b.1920x1080.jpg?t=1790132415" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3484100/25f42d526e6a8f72495c62782052e9d0eaf6be1b/ss_25f42d526e6a8f72495c62782052e9d0eaf6be1b.600x338.jpg?t=1790132415" alt="Bait Soul — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3484100/f03af19515ba63c1ee69dba23fe69bfb5ab50c4a/ss_f03af19515ba63c1ee69dba23fe69bfb5ab50c4a.1920x1080.jpg?t=1790132415" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3484100/f03af19515ba63c1ee69dba23fe69bfb5ab50c4a/ss_f03af19515ba63c1ee69dba23fe69bfb5ab50c4a.600x338.jpg?t=1790132415" alt="Bait Soul — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3484100/f27c6bf366456e62576ca9d8a2b169dd3a4f77c8/ss_f27c6bf366456e62576ca9d8a2b169dd3a4f77c8.1920x1080.jpg?t=1790132415" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3484100/f27c6bf366456e62576ca9d8a2b169dd3a4f77c8/ss_f27c6bf366456e62576ca9d8a2b169dd3a4f77c8.600x338.jpg?t=1790132415" alt="Bait Soul — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3484100/1a9f7f9f1488ad2e4d7f971f27d9883ff572e51a/ss_1a9f7f9f1488ad2e4d7f971f27d9883ff572e51a.1920x1080.jpg?t=1790132415" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3484100/1a9f7f9f1488ad2e4d7f971f27d9883ff572e51a/ss_1a9f7f9f1488ad2e4d7f971f27d9883ff572e51a.600x338.jpg?t=1790132415" alt="Bait Soul — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3484100/88bb702991457b86fcf13642e82ca7884a4f7df7/ss_88bb702991457b86fcf13642e82ca7884a4f7df7.1920x1080.jpg?t=1790132415" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3484100/88bb702991457b86fcf13642e82ca7884a4f7df7/ss_88bb702991457b86fcf13642e82ca7884a4f7df7.600x338.jpg?t=1790132415" alt="Bait Soul — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3484100/18efc68f487adcc2ee97f1755f303af10bed27a0/ss_18efc68f487adcc2ee97f1755f303af10bed27a0.1920x1080.jpg?t=1790132415" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3484100/18efc68f487adcc2ee97f1755f303af10bed27a0/ss_18efc68f487adcc2ee97f1755f303af10bed27a0.600x338.jpg?t=1790132415" alt="Bait Soul — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3484100/b7b191ddf2fbe65a9e3e99c922cafc63ad798e0f/ss_b7b191ddf2fbe65a9e3e99c922cafc63ad798e0f.1920x1080.jpg?t=1790132415" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3484100/b7b191ddf2fbe65a9e3e99c922cafc63ad798e0f/ss_b7b191ddf2fbe65a9e3e99c922cafc63ad798e0f.600x338.jpg?t=1790132415" alt="Bait Soul — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3484100/3d711aa9c0e782f910f6ab490659cbdc1d300c47/ss_3d711aa9c0e782f910f6ab490659cbdc1d300c47.1920x1080.jpg?t=1790132415" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3484100/3d711aa9c0e782f910f6ab490659cbdc1d300c47/ss_3d711aa9c0e782f910f6ab490659cbdc1d300c47.600x338.jpg?t=1790132415" alt="Bait Soul — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3484100/4837819b5122dc4fa83a5fe4fa13b478fecbe2c4/ss_4837819b5122dc4fa83a5fe4fa13b478fecbe2c4.1920x1080.jpg?t=1790132415" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3484100/4837819b5122dc4fa83a5fe4fa13b478fecbe2c4/ss_4837819b5122dc4fa83a5fe4fa13b478fecbe2c4.600x338.jpg?t=1790132415" alt="Bait Soul — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3484100/75e47229310e5d6ba9be48d3c98c58a2e938e043/ss_75e47229310e5d6ba9be48d3c98c58a2e938e043.1920x1080.jpg?t=1790132415" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3484100/75e47229310e5d6ba9be48d3c98c58a2e938e043/ss_75e47229310e5d6ba9be48d3c98c58a2e938e043.600x338.jpg?t=1790132415" alt="Bait Soul — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+      </div>
+
+      <h2>Геймплей</h2>
+      <div class="game-movies">
+        <figure class="game-movie"><div class="game-video" data-hls="https://video.akamai.steamstatic.com/store_trailers/3484100/340301151/6636bb06e1ec6031b2f11dd7944098a245af4d32/1788095187/hls_264_master.m3u8?t=1788096910" data-poster="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257261001/8e876f2884dae35c30ecaaa8edc516fb6083e627/movie_600x337.jpg?t=1788096910" role="button" tabindex="0" aria-label="Смотреть геймплей: Bait Soul pv"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257261001/8e876f2884dae35c30ecaaa8edc516fb6083e627/movie_600x337.jpg?t=1788096910" alt="" loading="lazy" width="480" height="270" /><span class="game-video-play" aria-hidden="true"></span></div></figure>
+      </div>
+
+<p style="color: var(--text-faint); font-size: 13px; margin-top: 30px;">
         Данные о цене, отзывах и статистике обновляются автоматически на основе
         Steam Store API и SteamSpy.
       </p>
@@ -284,5 +333,6 @@ function declineCookies() {
 })();
 </script>
 <script src="/newsletter.js?v=2" defer></script>
+<script defer src="/game-media.js?v=1"></script>
 </body>
 </html>

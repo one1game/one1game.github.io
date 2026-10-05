@@ -108,6 +108,38 @@
     }
     .game-stat-card .label { font-size: 12px; color: var(--text-faint); text-transform: uppercase; }
     .game-stat-card .value { font-size: 20px; font-weight: bold; margin-top: 4px; }
+    .game-shots {
+      display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+      gap: 12px; margin: 20px 0;
+    }
+    .game-shot {
+      display: block; border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 8px; overflow: hidden;
+    }
+    .game-shot img { display: block; width: 100%; height: auto; }
+    .game-movies { display: grid; gap: 16px; margin: 20px 0; }
+    .game-movie { margin: 0; }
+    .game-movie video {
+      display: block; width: 100%; height: auto;
+      border-radius: 8px; background: #000;
+    }
+    .game-movie figcaption { margin-top: 6px; font-size: 13px; color: var(--text-faint); }
+    .game-video {
+      position: relative; cursor: pointer; overflow: hidden;
+      border-radius: 8px; background: #000; aspect-ratio: 16 / 9;
+    }
+    .game-video img { display: block; width: 100%; height: 100%; object-fit: cover; }
+    .game-video-play { position: absolute; inset: 0; display: grid; place-items: center; }
+    .game-video-play::before {
+      content: ''; width: 58px; height: 58px; border-radius: 50%;
+      background: rgba(0,0,0,0.5); border: 2px solid rgba(255,255,255,0.75);
+    }
+    .game-video-play::after {
+      content: ''; position: absolute; margin-left: 5px;
+      border-style: solid; border-width: 11px 0 11px 18px;
+      border-color: transparent transparent transparent #fff;
+    }
+    .game-video-el { display: block; width: 100%; height: 100%; background: #000; }
   </style>
 </head>
 <body>
@@ -146,7 +178,7 @@
 
     <article class="article-body">
 
-      <p>A calm 3D island town-builder spanning nine ages, from stone huts to electric streets. Raise workshops, wire production chains, work a living market, and grow a town that keeps producing while you're away. Settle a new island to advance the age — every shore you leave sends tribute home forever.</p>
+      
 
       <div class="game-stats-grid">
         <div class="game-stat-card">
@@ -162,10 +194,6 @@
           <div class="label">Владельцев (оценка)</div>
           <div class="value">0 – 20,000</div>
         </div>
-        <div class="game-stat-card">
-          <div class="label">Среднее время игры</div>
-          <div class="value">нет данных</div>
-        </div>
       </div>
 
       <h2>Об игре</h2>
@@ -179,7 +207,28 @@
         </a>
       </p>
 
-      <p style="color: var(--text-faint); font-size: 13px; margin-top: 30px;">
+            <h2>Скриншоты</h2>
+      <div class="game-shots">
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5083090/910b76d18cc5a4461b54f6da4f27edad1d665fb0/ss_910b76d18cc5a4461b54f6da4f27edad1d665fb0.1920x1080.jpg?t=1790959502" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5083090/910b76d18cc5a4461b54f6da4f27edad1d665fb0/ss_910b76d18cc5a4461b54f6da4f27edad1d665fb0.600x338.jpg?t=1790959502" alt="Keepshore — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5083090/0ad59f373fa00aeb688125e75bcec7a3d2e07d9f/ss_0ad59f373fa00aeb688125e75bcec7a3d2e07d9f.1920x1080.jpg?t=1790959502" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5083090/0ad59f373fa00aeb688125e75bcec7a3d2e07d9f/ss_0ad59f373fa00aeb688125e75bcec7a3d2e07d9f.600x338.jpg?t=1790959502" alt="Keepshore — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5083090/8a265037720b87539fbacb36b69c1a70cd4bf9f7/ss_8a265037720b87539fbacb36b69c1a70cd4bf9f7.1920x1080.jpg?t=1790959502" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5083090/8a265037720b87539fbacb36b69c1a70cd4bf9f7/ss_8a265037720b87539fbacb36b69c1a70cd4bf9f7.600x338.jpg?t=1790959502" alt="Keepshore — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5083090/b66886c0b3d1622ba1e50b77270e55859687d6f4/ss_b66886c0b3d1622ba1e50b77270e55859687d6f4.1920x1080.jpg?t=1790959502" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5083090/b66886c0b3d1622ba1e50b77270e55859687d6f4/ss_b66886c0b3d1622ba1e50b77270e55859687d6f4.600x338.jpg?t=1790959502" alt="Keepshore — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5083090/0a073872558b8582c2a54235ed9a7cd59264244c/ss_0a073872558b8582c2a54235ed9a7cd59264244c.1920x1080.jpg?t=1790959502" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5083090/0a073872558b8582c2a54235ed9a7cd59264244c/ss_0a073872558b8582c2a54235ed9a7cd59264244c.600x338.jpg?t=1790959502" alt="Keepshore — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5083090/3518a92672d53525efd1a9317c6e7f370c5d05dd/ss_3518a92672d53525efd1a9317c6e7f370c5d05dd.1920x1080.jpg?t=1790959502" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5083090/3518a92672d53525efd1a9317c6e7f370c5d05dd/ss_3518a92672d53525efd1a9317c6e7f370c5d05dd.600x338.jpg?t=1790959502" alt="Keepshore — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5083090/08a82db011da2c7f2abc3813d1ea4cf8311fa98e/ss_08a82db011da2c7f2abc3813d1ea4cf8311fa98e.1920x1080.jpg?t=1790959502" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5083090/08a82db011da2c7f2abc3813d1ea4cf8311fa98e/ss_08a82db011da2c7f2abc3813d1ea4cf8311fa98e.600x338.jpg?t=1790959502" alt="Keepshore — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5083090/fae54d99ae8bd2990a2df8307d2f2123302a8ea0/ss_fae54d99ae8bd2990a2df8307d2f2123302a8ea0.1920x1080.jpg?t=1790959502" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5083090/fae54d99ae8bd2990a2df8307d2f2123302a8ea0/ss_fae54d99ae8bd2990a2df8307d2f2123302a8ea0.600x338.jpg?t=1790959502" alt="Keepshore — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5083090/361af82a0ceaf475d225fcca24e34fa5387e980f/ss_361af82a0ceaf475d225fcca24e34fa5387e980f.1920x1080.jpg?t=1790959502" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5083090/361af82a0ceaf475d225fcca24e34fa5387e980f/ss_361af82a0ceaf475d225fcca24e34fa5387e980f.600x338.jpg?t=1790959502" alt="Keepshore — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5083090/53224ca90ee2c443823e9020d977afba56608c26/ss_53224ca90ee2c443823e9020d977afba56608c26.1920x1080.jpg?t=1790959502" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5083090/53224ca90ee2c443823e9020d977afba56608c26/ss_53224ca90ee2c443823e9020d977afba56608c26.600x338.jpg?t=1790959502" alt="Keepshore — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5083090/125d18848cda4537a2c259c99bdd7fbcaeb80304/ss_125d18848cda4537a2c259c99bdd7fbcaeb80304.1920x1080.jpg?t=1790959502" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5083090/125d18848cda4537a2c259c99bdd7fbcaeb80304/ss_125d18848cda4537a2c259c99bdd7fbcaeb80304.600x338.jpg?t=1790959502" alt="Keepshore — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5083090/12eba743ad3cb2aa022ee055b183eb89a259a2bd/ss_12eba743ad3cb2aa022ee055b183eb89a259a2bd.1920x1080.jpg?t=1790959502" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5083090/12eba743ad3cb2aa022ee055b183eb89a259a2bd/ss_12eba743ad3cb2aa022ee055b183eb89a259a2bd.600x338.jpg?t=1790959502" alt="Keepshore — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+      </div>
+
+      <h2>Геймплей</h2>
+      <div class="game-movies">
+        <figure class="game-movie"><div class="game-video" data-hls="https://video.akamai.steamstatic.com/store_trailers/5083090/2017069378/e8e793163e1f7252d4cb3286910e0df6b4d3714c/1787412014/hls_264_master.m3u8?t=1787415489" data-poster="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257405540/bc71d49741053935a6b572d78932a1b61a8c0b9b/movie_600x337.jpg?t=1787415489" role="button" tabindex="0" aria-label="Смотреть геймплей: Gameplay"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257405540/bc71d49741053935a6b572d78932a1b61a8c0b9b/movie_600x337.jpg?t=1787415489" alt="" loading="lazy" width="480" height="270" /><span class="game-video-play" aria-hidden="true"></span></div></figure>
+      </div>
+
+<p style="color: var(--text-faint); font-size: 13px; margin-top: 30px;">
         Данные о цене, отзывах и статистике обновляются автоматически на основе
         Steam Store API и SteamSpy.
       </p>
@@ -280,5 +329,6 @@ function declineCookies() {
 })();
 </script>
 <script src="/newsletter.js?v=2" defer></script>
+<script defer src="/game-media.js?v=1"></script>
 </body>
 </html>

@@ -112,6 +112,38 @@
     }
     .game-stat-card .label { font-size: 12px; color: var(--text-faint); text-transform: uppercase; }
     .game-stat-card .value { font-size: 20px; font-weight: bold; margin-top: 4px; }
+    .game-shots {
+      display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+      gap: 12px; margin: 20px 0;
+    }
+    .game-shot {
+      display: block; border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 8px; overflow: hidden;
+    }
+    .game-shot img { display: block; width: 100%; height: auto; }
+    .game-movies { display: grid; gap: 16px; margin: 20px 0; }
+    .game-movie { margin: 0; }
+    .game-movie video {
+      display: block; width: 100%; height: auto;
+      border-radius: 8px; background: #000;
+    }
+    .game-movie figcaption { margin-top: 6px; font-size: 13px; color: var(--text-faint); }
+    .game-video {
+      position: relative; cursor: pointer; overflow: hidden;
+      border-radius: 8px; background: #000; aspect-ratio: 16 / 9;
+    }
+    .game-video img { display: block; width: 100%; height: 100%; object-fit: cover; }
+    .game-video-play { position: absolute; inset: 0; display: grid; place-items: center; }
+    .game-video-play::before {
+      content: ''; width: 58px; height: 58px; border-radius: 50%;
+      background: rgba(0,0,0,0.5); border: 2px solid rgba(255,255,255,0.75);
+    }
+    .game-video-play::after {
+      content: ''; position: absolute; margin-left: 5px;
+      border-style: solid; border-width: 11px 0 11px 18px;
+      border-color: transparent transparent transparent #fff;
+    }
+    .game-video-el { display: block; width: 100%; height: 100%; background: #000; }
   </style>
 </head>
 <body>
@@ -150,7 +182,7 @@
 
     <article class="article-body">
 
-      <p>In this survival game, you are stranded on an tropical island with your lovely friend Mitsuki. Explore your surroundings together, build a small shelter, and hunt for supplies. Have fun keeping up with all the heat!</p>
+      
 
       <div class="game-stats-grid">
         <div class="game-stat-card">
@@ -166,10 +198,6 @@
           <div class="label">Владельцев (оценка)</div>
           <div class="value">0 – 20,000</div>
         </div>
-        <div class="game-stat-card">
-          <div class="label">Среднее время игры</div>
-          <div class="value">нет данных</div>
-        </div>
       </div>
 
       <h2>Об игре</h2>
@@ -183,7 +211,23 @@
         </a>
       </p>
 
-      <p style="color: var(--text-faint); font-size: 13px; margin-top: 30px;">
+            <h2>Скриншоты</h2>
+      <div class="game-shots">
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4260270/b4843e98c4ddfa56dc61fa6224f4e42d29953e78/ss_b4843e98c4ddfa56dc61fa6224f4e42d29953e78.1920x1080.jpg?t=1790391557" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4260270/b4843e98c4ddfa56dc61fa6224f4e42d29953e78/ss_b4843e98c4ddfa56dc61fa6224f4e42d29953e78.600x338.jpg?t=1790391557" alt="Stranded with You — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4260270/5c1b7f5dbb2aa46969d69674cb55ade193eeb6d8/ss_5c1b7f5dbb2aa46969d69674cb55ade193eeb6d8.1920x1080.jpg?t=1790391557" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4260270/5c1b7f5dbb2aa46969d69674cb55ade193eeb6d8/ss_5c1b7f5dbb2aa46969d69674cb55ade193eeb6d8.600x338.jpg?t=1790391557" alt="Stranded with You — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4260270/cde8677f2f2786bd1170d12ddc237602b0901b9b/ss_cde8677f2f2786bd1170d12ddc237602b0901b9b.1920x1080.jpg?t=1790391557" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4260270/cde8677f2f2786bd1170d12ddc237602b0901b9b/ss_cde8677f2f2786bd1170d12ddc237602b0901b9b.600x338.jpg?t=1790391557" alt="Stranded with You — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4260270/7d34aba985a02ab157e4db0bd917330955915e48/ss_7d34aba985a02ab157e4db0bd917330955915e48.1920x1080.jpg?t=1790391557" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4260270/7d34aba985a02ab157e4db0bd917330955915e48/ss_7d34aba985a02ab157e4db0bd917330955915e48.600x338.jpg?t=1790391557" alt="Stranded with You — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4260270/a43058adc86cca49749d4b1a487806ce4f8d209e/ss_a43058adc86cca49749d4b1a487806ce4f8d209e.1920x1080.jpg?t=1790391557" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4260270/a43058adc86cca49749d4b1a487806ce4f8d209e/ss_a43058adc86cca49749d4b1a487806ce4f8d209e.600x338.jpg?t=1790391557" alt="Stranded with You — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4260270/e024c6d7ce37662dd7e99a40aea92540a4841478/ss_e024c6d7ce37662dd7e99a40aea92540a4841478.1920x1080.jpg?t=1790391557" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4260270/e024c6d7ce37662dd7e99a40aea92540a4841478/ss_e024c6d7ce37662dd7e99a40aea92540a4841478.600x338.jpg?t=1790391557" alt="Stranded with You — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4260270/0bcb0e2c96e7639ac3ed7098195ce9b60ad5c2b6/ss_0bcb0e2c96e7639ac3ed7098195ce9b60ad5c2b6.1920x1080.jpg?t=1790391557" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4260270/0bcb0e2c96e7639ac3ed7098195ce9b60ad5c2b6/ss_0bcb0e2c96e7639ac3ed7098195ce9b60ad5c2b6.600x338.jpg?t=1790391557" alt="Stranded with You — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+      </div>
+
+      <h2>Геймплей</h2>
+      <div class="game-movies">
+        <figure class="game-movie"><div class="game-video" data-hls="https://video.akamai.steamstatic.com/store_trailers/4260270/297152057/9b170cf9eb128a62ece57831e5db995f9d6c14f4/1788915310/hls_264_master.m3u8?t=1788917148" data-poster="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257414115/7bc0c32a32e16ca1bc59bfd4382aa482cbb3b497/movie_600x337.jpg?t=1788917148" role="button" tabindex="0" aria-label="Смотреть геймплей: ENR"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257414115/7bc0c32a32e16ca1bc59bfd4382aa482cbb3b497/movie_600x337.jpg?t=1788917148" alt="" loading="lazy" width="480" height="270" /><span class="game-video-play" aria-hidden="true"></span></div></figure>
+      </div>
+
+<p style="color: var(--text-faint); font-size: 13px; margin-top: 30px;">
         Данные о цене, отзывах и статистике обновляются автоматически на основе
         Steam Store API и SteamSpy.
       </p>
@@ -284,5 +328,6 @@ function declineCookies() {
 })();
 </script>
 <script src="/newsletter.js?v=2" defer></script>
+<script defer src="/game-media.js?v=1"></script>
 </body>
 </html>

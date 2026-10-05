@@ -112,6 +112,38 @@
     }
     .game-stat-card .label { font-size: 12px; color: var(--text-faint); text-transform: uppercase; }
     .game-stat-card .value { font-size: 20px; font-weight: bold; margin-top: 4px; }
+    .game-shots {
+      display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+      gap: 12px; margin: 20px 0;
+    }
+    .game-shot {
+      display: block; border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 8px; overflow: hidden;
+    }
+    .game-shot img { display: block; width: 100%; height: auto; }
+    .game-movies { display: grid; gap: 16px; margin: 20px 0; }
+    .game-movie { margin: 0; }
+    .game-movie video {
+      display: block; width: 100%; height: auto;
+      border-radius: 8px; background: #000;
+    }
+    .game-movie figcaption { margin-top: 6px; font-size: 13px; color: var(--text-faint); }
+    .game-video {
+      position: relative; cursor: pointer; overflow: hidden;
+      border-radius: 8px; background: #000; aspect-ratio: 16 / 9;
+    }
+    .game-video img { display: block; width: 100%; height: 100%; object-fit: cover; }
+    .game-video-play { position: absolute; inset: 0; display: grid; place-items: center; }
+    .game-video-play::before {
+      content: ''; width: 58px; height: 58px; border-radius: 50%;
+      background: rgba(0,0,0,0.5); border: 2px solid rgba(255,255,255,0.75);
+    }
+    .game-video-play::after {
+      content: ''; position: absolute; margin-left: 5px;
+      border-style: solid; border-width: 11px 0 11px 18px;
+      border-color: transparent transparent transparent #fff;
+    }
+    .game-video-el { display: block; width: 100%; height: 100%; background: #000; }
   </style>
 </head>
 <body>
@@ -166,10 +198,6 @@
           <div class="label">Владельцев (оценка)</div>
           <div class="value">0 – 20,000</div>
         </div>
-        <div class="game-stat-card">
-          <div class="label">Среднее время игры</div>
-          <div class="value">нет данных</div>
-        </div>
       </div>
 
       <h2>Об игре</h2>
@@ -183,7 +211,24 @@
         </a>
       </p>
 
-      <p style="color: var(--text-faint); font-size: 13px; margin-top: 30px;">
+            <h2>Скриншоты</h2>
+      <div class="game-shots">
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5197660/c2a60e304fedefdab3531977891c5c0c2674dbff/ss_c2a60e304fedefdab3531977891c5c0c2674dbff.1920x1080.jpg?t=1790098988" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5197660/c2a60e304fedefdab3531977891c5c0c2674dbff/ss_c2a60e304fedefdab3531977891c5c0c2674dbff.600x338.jpg?t=1790098988" alt="MAGNET — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5197660/25b08fc233f6aaa5e348c661ccc75b3374fa0437/ss_25b08fc233f6aaa5e348c661ccc75b3374fa0437.1920x1080.jpg?t=1790098988" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5197660/25b08fc233f6aaa5e348c661ccc75b3374fa0437/ss_25b08fc233f6aaa5e348c661ccc75b3374fa0437.600x338.jpg?t=1790098988" alt="MAGNET — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5197660/996482d167de1016759746b0a2a243018f078a5f/ss_996482d167de1016759746b0a2a243018f078a5f.1920x1080.jpg?t=1790098988" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5197660/996482d167de1016759746b0a2a243018f078a5f/ss_996482d167de1016759746b0a2a243018f078a5f.600x338.jpg?t=1790098988" alt="MAGNET — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5197660/f7f43a8cb9a227acb7266ffcc1dcfb4b936dd279/ss_f7f43a8cb9a227acb7266ffcc1dcfb4b936dd279.1920x1080.jpg?t=1790098988" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5197660/f7f43a8cb9a227acb7266ffcc1dcfb4b936dd279/ss_f7f43a8cb9a227acb7266ffcc1dcfb4b936dd279.600x338.jpg?t=1790098988" alt="MAGNET — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5197660/1e896d8bc72d56575e1a8385d5b90f495d876bc4/ss_1e896d8bc72d56575e1a8385d5b90f495d876bc4.1920x1080.jpg?t=1790098988" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5197660/1e896d8bc72d56575e1a8385d5b90f495d876bc4/ss_1e896d8bc72d56575e1a8385d5b90f495d876bc4.600x338.jpg?t=1790098988" alt="MAGNET — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5197660/4cc5bb711012ba8803f1fcea4294068acf9c810e/ss_4cc5bb711012ba8803f1fcea4294068acf9c810e.1920x1080.jpg?t=1790098988" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5197660/4cc5bb711012ba8803f1fcea4294068acf9c810e/ss_4cc5bb711012ba8803f1fcea4294068acf9c810e.600x338.jpg?t=1790098988" alt="MAGNET — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5197660/2dcf8ae58c380ea6f93ccbd8d10e2c03c00d6e96/ss_2dcf8ae58c380ea6f93ccbd8d10e2c03c00d6e96.1920x1080.jpg?t=1790098988" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5197660/2dcf8ae58c380ea6f93ccbd8d10e2c03c00d6e96/ss_2dcf8ae58c380ea6f93ccbd8d10e2c03c00d6e96.600x338.jpg?t=1790098988" alt="MAGNET — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5197660/dfb35939640172d886a9b38fb17e0a1b807318f4/ss_dfb35939640172d886a9b38fb17e0a1b807318f4.1920x1080.jpg?t=1790098988" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5197660/dfb35939640172d886a9b38fb17e0a1b807318f4/ss_dfb35939640172d886a9b38fb17e0a1b807318f4.600x338.jpg?t=1790098988" alt="MAGNET — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+      </div>
+
+      <h2>Геймплей</h2>
+      <div class="game-movies">
+        <figure class="game-movie"><div class="game-video" data-hls="https://video.akamai.steamstatic.com/store_trailers/5197660/1492967988/2c7eb334da5020105f2c0d2d88ea98025d56520e/1788372392/hls_264_master.m3u8?t=1788545241" data-poster="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257415899/d8418d05d027377497cd9e1994f174b18f80de83/movie_600x337.jpg?t=1788545241" role="button" tabindex="0" aria-label="Смотреть геймплей: trailer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257415899/d8418d05d027377497cd9e1994f174b18f80de83/movie_600x337.jpg?t=1788545241" alt="" loading="lazy" width="480" height="270" /><span class="game-video-play" aria-hidden="true"></span></div></figure>
+      </div>
+
+<p style="color: var(--text-faint); font-size: 13px; margin-top: 30px;">
         Данные о цене, отзывах и статистике обновляются автоматически на основе
         Steam Store API и SteamSpy.
       </p>
@@ -284,5 +329,6 @@ function declineCookies() {
 })();
 </script>
 <script src="/newsletter.js?v=2" defer></script>
+<script defer src="/game-media.js?v=1"></script>
 </body>
 </html>

@@ -10,12 +10,12 @@
   <link rel="dns-prefetch" href="https://www.google-analytics.com" />
   <link rel="preload" href="../styles.css" as="style" />
 
-  <title>Chamele-Guess: цена, отзывы и статистика игроков | One1Game</title>
-  <meta name="description" content="Chamele-Guess — актуальная цена, скидки, процент положительных отзывов и статистика игроков в Steam. Обновляется автоматически." />
+  <title>Chamele-Guess: весёлая партия на 2-8 игроков | One1Game</title>
+  <meta name="description" content="Chamele-Guess — казуальная игра, где нужно изобразить слово телом. Угадайте задумку друзей в дуэлях на подиумах. Идеально для компании из 2-8 человек." />
   <meta name="keywords" content="Chamele-Guess, цена, отзывы, скидка, статистика игроков, Steam" />
 
-  <meta property="og:title" content="Chamele-Guess: цена, отзывы и статистика игроков | One1Game" />
-  <meta property="og:description" content="Chamele-Guess — актуальная цена, скидки, процент положительных отзывов и статистика игроков в Steam. Обновляется автоматически." />
+  <meta property="og:title" content="Chamele-Guess: весёлая партия на 2-8 игроков | One1Game" />
+  <meta property="og:description" content="Chamele-Guess — казуальная игра, где нужно изобразить слово телом. Угадайте задумку друзей в дуэлях на подиумах. Идеально для компании из 2-8 человек." />
   <meta property="og:type" content="article" />
   <meta property="og:url" content="https://one1game.github.io/archive/chamele-guess-5142570.html" />
   <meta property="og:image" content="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5142570/386cdeb8b6b661d1ad342a8ba1d719fe0e7585e5/header.jpg?t=1791172639" />
@@ -58,12 +58,12 @@
   {
     "@context": "https://schema.org",
     "@type": "Article",
-    "headline": "Chamele-Guess: цена, отзывы и статистика игроков | One1Game",
+    "headline": "Chamele-Guess: весёлая партия на 2-8 игроков | One1Game",
     "datePublished": "2026-10-05",
     "dateModified": "2026-10-05",
     "author": {"@type": "Person", "name": "Команда One1Game"},
     "publisher": {"@type": "Organization", "name": "One1Game", "logo": {"@type": "ImageObject", "url": "https://one1game.github.io/logo.png"}},
-    "description": "Chamele-Guess — актуальная цена, скидки, процент положительных отзывов и статистика игроков в Steam. Обновляется автоматически.",
+    "description": "Chamele-Guess — казуальная игра, где нужно изобразить слово телом. Угадайте задумку друзей в дуэлях на подиумах. Идеально для компании из 2-8 человек.",
     "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5142570/386cdeb8b6b661d1ad342a8ba1d719fe0e7585e5/header.jpg?t=1791172639"
   }
   </script>
@@ -112,6 +112,34 @@
     }
     .game-stat-card .label { font-size: 12px; color: var(--text-faint); text-transform: uppercase; }
     .game-stat-card .value { font-size: 20px; font-weight: bold; margin-top: 4px; }
+    .game-shots {
+      display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+      gap: 12px; margin: 20px 0;
+    }
+    .game-shot {
+      display: block; border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 8px; overflow: hidden;
+    }
+    .game-shot img { display: block; width: 100%; height: auto; }
+    .game-movies { display: grid; gap: 16px; margin: 20px 0; }
+    .game-movie { margin: 0; }
+    .game-video {
+      position: relative; cursor: pointer; overflow: hidden;
+      border-radius: 8px; background: #000; aspect-ratio: 16 / 9;
+    }
+    .game-video img { display: block; width: 100%; height: 100%; object-fit: cover; }
+    .game-video-play { position: absolute; inset: 0; display: grid; place-items: center; }
+    .game-video-play::before {
+      content: ''; width: 58px; height: 58px; border-radius: 50%;
+      background: rgba(0,0,0,0.5); border: 2px solid rgba(255,255,255,0.75);
+    }
+    .game-video-play::after {
+      content: ''; position: absolute; margin-left: 5px;
+      border-style: solid; border-width: 11px 0 11px 18px;
+      border-color: transparent transparent transparent #fff;
+    }
+    .game-video-el { display: block; width: 100%; height: 100%; background: #000; }
+    .game-movie figcaption { margin-top: 6px; font-size: 13px; color: var(--text-faint); }
   </style>
 </head>
 <body>
@@ -141,7 +169,7 @@
 
     <div class="article-header">
       <span class="article-category cat-reviews">Обзоры</span>
-      <h1>Chamele-Guess: цена, отзывы и статистика игроков</h1>
+      <h1>Chamele-Guess: весёлая партия на 2-8 игроков</h1>
       <div class="article-meta">
         <span><i class="far fa-calendar"></i> 5 октября 2026</span>
         <span><i class="far fa-clock"></i> 2 минуты чтения</span>
@@ -150,7 +178,9 @@
 
     <article class="article-body">
 
-      <p>One player gets a secret word, then poses, clones, and paints their own body to build it while friends shout guesses. Duel head-to-head on twin podiums, judge the reveals, and discover your friends cannot sculpt. A silly party game for 2-8 players.</p>
+      <p>Chamele-Guess превращает угадывание слов в физический перформанс. Здесь нельзя говорить — только поза, жесты и имитация, чтобы победить противника.</p>
+
+      
 
       <div class="game-stats-grid">
         <div class="game-stat-card">
@@ -166,13 +196,11 @@
           <div class="label">Владельцев (оценка)</div>
           <div class="value">0 – 20,000</div>
         </div>
-        <div class="game-stat-card">
-          <div class="label">Среднее время игры</div>
-          <div class="value">нет данных</div>
-        </div>
       </div>
 
       <h2>Об игре</h2>
+      <p>Это социальная игра для 2-8 игроков, где один участник получает секретное слово и пытается «слепить» его собственным телом. Друзья кричат свои догадки, пока вы демонстрируете образ на двойных подиумах. Механика построена на дуэлях и оценке результатов, что делает процесс весёлым и непредсказуемым.</p>
+
       <p><strong>Жанры:</strong> Казуальные игры<br/>
       <strong>Разработчик:</strong> Friendslop Studios<br/>
       <strong>Издатель:</strong> Friendslop Studios</p>
@@ -183,6 +211,23 @@
         </a>
       </p>
 
+      <h2>Скриншоты</h2>
+      <div class="game-shots">
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5142570/3e5ebd7f7318902de2ae6a137a91ae80790bc8fd/ss_3e5ebd7f7318902de2ae6a137a91ae80790bc8fd.1920x1080.jpg?t=1791172639" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5142570/3e5ebd7f7318902de2ae6a137a91ae80790bc8fd/ss_3e5ebd7f7318902de2ae6a137a91ae80790bc8fd.600x338.jpg?t=1791172639" alt="Chamele-Guess — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5142570/a02ca048f8afa0dd612d666da0d6cae89d9b29ee/ss_a02ca048f8afa0dd612d666da0d6cae89d9b29ee.1920x1080.jpg?t=1791172639" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5142570/a02ca048f8afa0dd612d666da0d6cae89d9b29ee/ss_a02ca048f8afa0dd612d666da0d6cae89d9b29ee.600x338.jpg?t=1791172639" alt="Chamele-Guess — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5142570/0db6324279602577c3ba252c325715bc7d37da0b/ss_0db6324279602577c3ba252c325715bc7d37da0b.1920x1080.jpg?t=1791172639" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5142570/0db6324279602577c3ba252c325715bc7d37da0b/ss_0db6324279602577c3ba252c325715bc7d37da0b.600x338.jpg?t=1791172639" alt="Chamele-Guess — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5142570/ddef935d0e21324c1a669aa09dfcae487e80a1f7/ss_ddef935d0e21324c1a669aa09dfcae487e80a1f7.1920x1080.jpg?t=1791172639" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5142570/ddef935d0e21324c1a669aa09dfcae487e80a1f7/ss_ddef935d0e21324c1a669aa09dfcae487e80a1f7.600x338.jpg?t=1791172639" alt="Chamele-Guess — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5142570/a1dd95343b9bfb36cb44d7c7188fec95e0f8a13f/ss_a1dd95343b9bfb36cb44d7c7188fec95e0f8a13f.1920x1080.jpg?t=1791172639" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5142570/a1dd95343b9bfb36cb44d7c7188fec95e0f8a13f/ss_a1dd95343b9bfb36cb44d7c7188fec95e0f8a13f.600x338.jpg?t=1791172639" alt="Chamele-Guess — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5142570/9bff27c337d244f9494e53459a35dffca4f86a7c/ss_9bff27c337d244f9494e53459a35dffca4f86a7c.1920x1080.jpg?t=1791172639" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5142570/9bff27c337d244f9494e53459a35dffca4f86a7c/ss_9bff27c337d244f9494e53459a35dffca4f86a7c.600x338.jpg?t=1791172639" alt="Chamele-Guess — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5142570/5f9d1cd74cb875566acb2f182f146a48452eca77/ss_5f9d1cd74cb875566acb2f182f146a48452eca77.1920x1080.jpg?t=1791172639" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5142570/5f9d1cd74cb875566acb2f182f146a48452eca77/ss_5f9d1cd74cb875566acb2f182f146a48452eca77.600x338.jpg?t=1791172639" alt="Chamele-Guess — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5142570/4ea4b8ac72ec2924270c437b39e283b41d103162/ss_4ea4b8ac72ec2924270c437b39e283b41d103162.1920x1080.jpg?t=1791172639" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5142570/4ea4b8ac72ec2924270c437b39e283b41d103162/ss_4ea4b8ac72ec2924270c437b39e283b41d103162.600x338.jpg?t=1791172639" alt="Chamele-Guess — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5142570/c80db8e14a3e8faca0875c6c4f8cbb648d30f8c4/ss_c80db8e14a3e8faca0875c6c4f8cbb648d30f8c4.1920x1080.jpg?t=1791172639" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5142570/c80db8e14a3e8faca0875c6c4f8cbb648d30f8c4/ss_c80db8e14a3e8faca0875c6c4f8cbb648d30f8c4.600x338.jpg?t=1791172639" alt="Chamele-Guess — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+      </div>
+
+      <h2>Геймплей</h2>
+      <div class="game-movies">
+        <figure class="game-movie"><div class="game-video" data-hls="https://video.akamai.steamstatic.com/store_trailers/5142570/1197660965/d8856803a6d84a083858cfd2f927c716a6feb772/1788828338/hls_264_master.m3u8?t=1788831348" data-poster="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257419426/85ca0bcbd46cfc495230be74c07cfc919120fb46/movie_600x337.jpg?t=1788831348" role="button" tabindex="0" aria-label="Смотреть геймплей"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257419426/85ca0bcbd46cfc495230be74c07cfc919120fb46/movie_600x337.jpg?t=1788831348" alt="" loading="lazy" width="480" height="270" /><span class="game-video-play" aria-hidden="true"></span></div></figure>
+      </div>
       <p style="color: var(--text-faint); font-size: 13px; margin-top: 30px;">
         Данные о цене, отзывах и статистике обновляются автоматически на основе
         Steam Store API и SteamSpy.
@@ -284,5 +329,6 @@ function declineCookies() {
 })();
 </script>
 <script src="/newsletter.js?v=2" defer></script>
+<script defer src="/game-media.js?v=1"></script>
 </body>
 </html>

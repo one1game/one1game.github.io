@@ -112,6 +112,38 @@
     }
     .game-stat-card .label { font-size: 12px; color: var(--text-faint); text-transform: uppercase; }
     .game-stat-card .value { font-size: 20px; font-weight: bold; margin-top: 4px; }
+    .game-shots {
+      display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+      gap: 12px; margin: 20px 0;
+    }
+    .game-shot {
+      display: block; border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 8px; overflow: hidden;
+    }
+    .game-shot img { display: block; width: 100%; height: auto; }
+    .game-movies { display: grid; gap: 16px; margin: 20px 0; }
+    .game-movie { margin: 0; }
+    .game-movie video {
+      display: block; width: 100%; height: auto;
+      border-radius: 8px; background: #000;
+    }
+    .game-movie figcaption { margin-top: 6px; font-size: 13px; color: var(--text-faint); }
+    .game-video {
+      position: relative; cursor: pointer; overflow: hidden;
+      border-radius: 8px; background: #000; aspect-ratio: 16 / 9;
+    }
+    .game-video img { display: block; width: 100%; height: 100%; object-fit: cover; }
+    .game-video-play { position: absolute; inset: 0; display: grid; place-items: center; }
+    .game-video-play::before {
+      content: ''; width: 58px; height: 58px; border-radius: 50%;
+      background: rgba(0,0,0,0.5); border: 2px solid rgba(255,255,255,0.75);
+    }
+    .game-video-play::after {
+      content: ''; position: absolute; margin-left: 5px;
+      border-style: solid; border-width: 11px 0 11px 18px;
+      border-color: transparent transparent transparent #fff;
+    }
+    .game-video-el { display: block; width: 100%; height: 100%; background: #000; }
   </style>
 </head>
 <body>
@@ -150,7 +182,7 @@
 
     <article class="article-body">
 
-      <p>Explore mystical lands, hatch spirit beasts, and master the Five Elements in this single-player cultivation RPG. Brew elixirs, forge gear, merge bloodlines, and ascend through five cultivation realms. Choose when to press on or retreat with your loot, then challenge four sects and the final boss.</p>
+      
 
       <div class="game-stats-grid">
         <div class="game-stat-card">
@@ -166,10 +198,6 @@
           <div class="label">Владельцев (оценка)</div>
           <div class="value">0 – 20,000</div>
         </div>
-        <div class="game-stat-card">
-          <div class="label">Среднее время игры</div>
-          <div class="value">нет данных</div>
-        </div>
       </div>
 
       <h2>Об игре</h2>
@@ -183,7 +211,26 @@
         </a>
       </p>
 
-      <p style="color: var(--text-faint); font-size: 13px; margin-top: 30px;">
+            <h2>Скриншоты</h2>
+      <div class="game-shots">
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5234170/4e615fc9e0ceac9eb09164438cdd658dff21f18b/ss_4e615fc9e0ceac9eb09164438cdd658dff21f18b.1920x1080.jpg?t=1791100085" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5234170/4e615fc9e0ceac9eb09164438cdd658dff21f18b/ss_4e615fc9e0ceac9eb09164438cdd658dff21f18b.600x338.jpg?t=1791100085" alt="灵兽问道-MythicalBeast — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5234170/bbf8e37f668d076c4e95b8cc3581d1ed1103806a/ss_bbf8e37f668d076c4e95b8cc3581d1ed1103806a.1920x1080.jpg?t=1791100085" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5234170/bbf8e37f668d076c4e95b8cc3581d1ed1103806a/ss_bbf8e37f668d076c4e95b8cc3581d1ed1103806a.600x338.jpg?t=1791100085" alt="灵兽问道-MythicalBeast — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5234170/22d87406d1be02480e4b8030aace74f69ce63a27/ss_22d87406d1be02480e4b8030aace74f69ce63a27.1920x1080.jpg?t=1791100085" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5234170/22d87406d1be02480e4b8030aace74f69ce63a27/ss_22d87406d1be02480e4b8030aace74f69ce63a27.600x338.jpg?t=1791100085" alt="灵兽问道-MythicalBeast — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5234170/3028a6aabdfc3c9fa22737be6f7f0cd2291c3ed0/ss_3028a6aabdfc3c9fa22737be6f7f0cd2291c3ed0.1920x1080.jpg?t=1791100085" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5234170/3028a6aabdfc3c9fa22737be6f7f0cd2291c3ed0/ss_3028a6aabdfc3c9fa22737be6f7f0cd2291c3ed0.600x338.jpg?t=1791100085" alt="灵兽问道-MythicalBeast — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5234170/89e39526c5ff32f8c8aeabe73ac108b886e08c2a/ss_89e39526c5ff32f8c8aeabe73ac108b886e08c2a.1920x1080.jpg?t=1791100085" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5234170/89e39526c5ff32f8c8aeabe73ac108b886e08c2a/ss_89e39526c5ff32f8c8aeabe73ac108b886e08c2a.600x338.jpg?t=1791100085" alt="灵兽问道-MythicalBeast — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5234170/46c75609bb09f261a3e49869ba4d9c4643104936/ss_46c75609bb09f261a3e49869ba4d9c4643104936.1920x1080.jpg?t=1791100085" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5234170/46c75609bb09f261a3e49869ba4d9c4643104936/ss_46c75609bb09f261a3e49869ba4d9c4643104936.600x338.jpg?t=1791100085" alt="灵兽问道-MythicalBeast — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5234170/14ffcf4d918793186b1d9ee2f863d3cd2053d745/ss_14ffcf4d918793186b1d9ee2f863d3cd2053d745.1920x1080.jpg?t=1791100085" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5234170/14ffcf4d918793186b1d9ee2f863d3cd2053d745/ss_14ffcf4d918793186b1d9ee2f863d3cd2053d745.600x338.jpg?t=1791100085" alt="灵兽问道-MythicalBeast — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5234170/f6b6711ce9d3f620cd360e2d1b7d4faa5fc82909/ss_f6b6711ce9d3f620cd360e2d1b7d4faa5fc82909.1920x1080.jpg?t=1791100085" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5234170/f6b6711ce9d3f620cd360e2d1b7d4faa5fc82909/ss_f6b6711ce9d3f620cd360e2d1b7d4faa5fc82909.600x338.jpg?t=1791100085" alt="灵兽问道-MythicalBeast — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5234170/e38d7fac01d1651c63a1ee0b5e7583e77bfec829/ss_e38d7fac01d1651c63a1ee0b5e7583e77bfec829.1920x1080.jpg?t=1791100085" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5234170/e38d7fac01d1651c63a1ee0b5e7583e77bfec829/ss_e38d7fac01d1651c63a1ee0b5e7583e77bfec829.600x338.jpg?t=1791100085" alt="灵兽问道-MythicalBeast — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+      </div>
+
+      <h2>Геймплей</h2>
+      <div class="game-movies">
+        <figure class="game-movie"><div class="game-video" data-hls="https://video.akamai.steamstatic.com/store_trailers/5234170/303709049/d367bf6a35d233c3afc30a945f4d7a9ff6ad9f66/1788838988/hls_264_master.m3u8?t=1789892938" data-poster="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257419512/c987d746fcb6b45103f87977ed196a852bc161d9/movie_600x337.jpg?t=1789892938" role="button" tabindex="0" aria-label="Смотреть геймплей: Video"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257419512/c987d746fcb6b45103f87977ed196a852bc161d9/movie_600x337.jpg?t=1789892938" alt="" loading="lazy" width="480" height="270" /><span class="game-video-play" aria-hidden="true"></span></div></figure>
+        <figure class="game-movie"><div class="game-video" data-hls="https://video.akamai.steamstatic.com/store_trailers/5234170/654557136/127f8c21fc3c10985afb54d6347ec464b908f231/1788837818/hls_264_master.m3u8?t=1789892939" data-poster="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257419494/bbf8e37f668d076c4e95b8cc3581d1ed1103806a/movie_600x337.jpg?t=1789892939" role="button" tabindex="0" aria-label="Смотреть геймплей: 基础视频"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257419494/bbf8e37f668d076c4e95b8cc3581d1ed1103806a/movie_600x337.jpg?t=1789892939" alt="" loading="lazy" width="480" height="270" /><span class="game-video-play" aria-hidden="true"></span></div></figure>
+      </div>
+
+<p style="color: var(--text-faint); font-size: 13px; margin-top: 30px;">
         Данные о цене, отзывах и статистике обновляются автоматически на основе
         Steam Store API и SteamSpy.
       </p>
@@ -284,5 +331,6 @@ function declineCookies() {
 })();
 </script>
 <script src="/newsletter.js?v=2" defer></script>
+<script defer src="/game-media.js?v=1"></script>
 </body>
 </html>

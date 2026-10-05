@@ -28,10 +28,18 @@ jobs:
           DELAY_MS: "1500"
         run: node scripts/generate-games.js
 
+      - name: Установка Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Пересборка sitemap.xml
+        run: python generate-sitemap.py
+
       - name: Коммит и пуш изменений
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add archive/ articles-data.js
+          git add archive/ articles-data.js sitemap.xml
           git diff --quiet --cached || git commit -m "Автообновление страниц игр: $(date -u +'%Y-%m-%d')"
           git push

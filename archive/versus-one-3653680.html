@@ -108,6 +108,38 @@
     }
     .game-stat-card .label { font-size: 12px; color: var(--text-faint); text-transform: uppercase; }
     .game-stat-card .value { font-size: 20px; font-weight: bold; margin-top: 4px; }
+    .game-shots {
+      display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+      gap: 12px; margin: 20px 0;
+    }
+    .game-shot {
+      display: block; border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 8px; overflow: hidden;
+    }
+    .game-shot img { display: block; width: 100%; height: auto; }
+    .game-movies { display: grid; gap: 16px; margin: 20px 0; }
+    .game-movie { margin: 0; }
+    .game-movie video {
+      display: block; width: 100%; height: auto;
+      border-radius: 8px; background: #000;
+    }
+    .game-movie figcaption { margin-top: 6px; font-size: 13px; color: var(--text-faint); }
+    .game-video {
+      position: relative; cursor: pointer; overflow: hidden;
+      border-radius: 8px; background: #000; aspect-ratio: 16 / 9;
+    }
+    .game-video img { display: block; width: 100%; height: 100%; object-fit: cover; }
+    .game-video-play { position: absolute; inset: 0; display: grid; place-items: center; }
+    .game-video-play::before {
+      content: ''; width: 58px; height: 58px; border-radius: 50%;
+      background: rgba(0,0,0,0.5); border: 2px solid rgba(255,255,255,0.75);
+    }
+    .game-video-play::after {
+      content: ''; position: absolute; margin-left: 5px;
+      border-style: solid; border-width: 11px 0 11px 18px;
+      border-color: transparent transparent transparent #fff;
+    }
+    .game-video-el { display: block; width: 100%; height: 100%; background: #000; }
   </style>
 </head>
 <body>
@@ -146,7 +178,7 @@
 
     <article class="article-body">
 
-      <p>Play as giant monsters or as heroes attempting to defeat them in this asymmetric two-player local co-op VR fighting game. Send forth minions and swing massive weapons or rocket jump around the stage and strike at them as they attempt to take you down!</p>
+      
 
       <div class="game-stats-grid">
         <div class="game-stat-card">
@@ -162,10 +194,6 @@
           <div class="label">Владельцев (оценка)</div>
           <div class="value">0 – 20,000</div>
         </div>
-        <div class="game-stat-card">
-          <div class="label">Среднее время игры</div>
-          <div class="value">нет данных</div>
-        </div>
       </div>
 
       <h2>Об игре</h2>
@@ -179,7 +207,28 @@
         </a>
       </p>
 
-      <p style="color: var(--text-faint); font-size: 13px; margin-top: 30px;">
+            <h2>Скриншоты</h2>
+      <div class="game-shots">
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3653680/5d323418d6209cb7ea88e03894d91044770ff349/ss_5d323418d6209cb7ea88e03894d91044770ff349.1920x1080.jpg?t=1790432518" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3653680/5d323418d6209cb7ea88e03894d91044770ff349/ss_5d323418d6209cb7ea88e03894d91044770ff349.600x338.jpg?t=1790432518" alt="Versus One — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3653680/87a8883bd3108426bef033818f0ac686ec8ae938/ss_87a8883bd3108426bef033818f0ac686ec8ae938.1920x1080.jpg?t=1790432518" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3653680/87a8883bd3108426bef033818f0ac686ec8ae938/ss_87a8883bd3108426bef033818f0ac686ec8ae938.600x338.jpg?t=1790432518" alt="Versus One — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3653680/071f8406778051ecc1033bed7d882843bfc291cb/ss_071f8406778051ecc1033bed7d882843bfc291cb.1920x1080.jpg?t=1790432518" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3653680/071f8406778051ecc1033bed7d882843bfc291cb/ss_071f8406778051ecc1033bed7d882843bfc291cb.600x338.jpg?t=1790432518" alt="Versus One — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3653680/92459c4a60d84ee1288399a8c15d9a579d597fb4/ss_92459c4a60d84ee1288399a8c15d9a579d597fb4.1920x1080.jpg?t=1790432518" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3653680/92459c4a60d84ee1288399a8c15d9a579d597fb4/ss_92459c4a60d84ee1288399a8c15d9a579d597fb4.600x338.jpg?t=1790432518" alt="Versus One — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3653680/922816caf585d229499e86c837a35806326656c6/ss_922816caf585d229499e86c837a35806326656c6.1920x1080.jpg?t=1790432518" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3653680/922816caf585d229499e86c837a35806326656c6/ss_922816caf585d229499e86c837a35806326656c6.600x338.jpg?t=1790432518" alt="Versus One — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3653680/562d2a5f3b7b8079f3fa8e8b3259ae567fa16561/ss_562d2a5f3b7b8079f3fa8e8b3259ae567fa16561.1920x1080.jpg?t=1790432518" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3653680/562d2a5f3b7b8079f3fa8e8b3259ae567fa16561/ss_562d2a5f3b7b8079f3fa8e8b3259ae567fa16561.600x338.jpg?t=1790432518" alt="Versus One — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3653680/5c7f3e90ab143aecdd84262c4bca8e03f81f5474/ss_5c7f3e90ab143aecdd84262c4bca8e03f81f5474.1920x1080.jpg?t=1790432518" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3653680/5c7f3e90ab143aecdd84262c4bca8e03f81f5474/ss_5c7f3e90ab143aecdd84262c4bca8e03f81f5474.600x338.jpg?t=1790432518" alt="Versus One — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3653680/2f8262e9080073a37cce1c9b439abbe39d4b4be1/ss_2f8262e9080073a37cce1c9b439abbe39d4b4be1.1920x1080.jpg?t=1790432518" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3653680/2f8262e9080073a37cce1c9b439abbe39d4b4be1/ss_2f8262e9080073a37cce1c9b439abbe39d4b4be1.600x338.jpg?t=1790432518" alt="Versus One — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3653680/5e8ca8614fae5ea45054ab3ec9bfa84c9e7a59f8/ss_5e8ca8614fae5ea45054ab3ec9bfa84c9e7a59f8.1920x1080.jpg?t=1790432518" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3653680/5e8ca8614fae5ea45054ab3ec9bfa84c9e7a59f8/ss_5e8ca8614fae5ea45054ab3ec9bfa84c9e7a59f8.600x338.jpg?t=1790432518" alt="Versus One — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3653680/e76dd8deee0ffddf9b1554b2d6429ac3705a5754/ss_e76dd8deee0ffddf9b1554b2d6429ac3705a5754.1920x1080.jpg?t=1790432518" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3653680/e76dd8deee0ffddf9b1554b2d6429ac3705a5754/ss_e76dd8deee0ffddf9b1554b2d6429ac3705a5754.600x338.jpg?t=1790432518" alt="Versus One — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3653680/bf84627f38ddd3c1cf48650e85ec6063997242b5/ss_bf84627f38ddd3c1cf48650e85ec6063997242b5.1920x1080.jpg?t=1790432518" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3653680/bf84627f38ddd3c1cf48650e85ec6063997242b5/ss_bf84627f38ddd3c1cf48650e85ec6063997242b5.600x338.jpg?t=1790432518" alt="Versus One — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3653680/dc326738d74025290707d0eda73878ddad9de115/ss_dc326738d74025290707d0eda73878ddad9de115.1920x1080.jpg?t=1790432518" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3653680/dc326738d74025290707d0eda73878ddad9de115/ss_dc326738d74025290707d0eda73878ddad9de115.600x338.jpg?t=1790432518" alt="Versus One — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+      </div>
+
+      <h2>Геймплей</h2>
+      <div class="game-movies">
+        <figure class="game-movie"><div class="game-video" data-hls="https://video.akamai.steamstatic.com/store_trailers/3653680/429513775/28919f915743679d6d0da908d139ed1614ceb7e5/1788000685/hls_264_master.m3u8?t=1788071414" data-poster="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257412018/47f1f2df277deea84d296b75f5f7bccbdb8bc1a5/movie_600x337.jpg?t=1788071414" role="button" tabindex="0" aria-label="Смотреть геймплей: Versus One Trailer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257412018/47f1f2df277deea84d296b75f5f7bccbdb8bc1a5/movie_600x337.jpg?t=1788071414" alt="" loading="lazy" width="480" height="270" /><span class="game-video-play" aria-hidden="true"></span></div></figure>
+      </div>
+
+<p style="color: var(--text-faint); font-size: 13px; margin-top: 30px;">
         Данные о цене, отзывах и статистике обновляются автоматически на основе
         Steam Store API и SteamSpy.
       </p>
@@ -280,5 +329,6 @@ function declineCookies() {
 })();
 </script>
 <script src="/newsletter.js?v=2" defer></script>
+<script defer src="/game-media.js?v=1"></script>
 </body>
 </html>

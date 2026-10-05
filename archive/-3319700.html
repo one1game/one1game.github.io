@@ -112,6 +112,38 @@
     }
     .game-stat-card .label { font-size: 12px; color: var(--text-faint); text-transform: uppercase; }
     .game-stat-card .value { font-size: 20px; font-weight: bold; margin-top: 4px; }
+    .game-shots {
+      display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+      gap: 12px; margin: 20px 0;
+    }
+    .game-shot {
+      display: block; border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 8px; overflow: hidden;
+    }
+    .game-shot img { display: block; width: 100%; height: auto; }
+    .game-movies { display: grid; gap: 16px; margin: 20px 0; }
+    .game-movie { margin: 0; }
+    .game-movie video {
+      display: block; width: 100%; height: auto;
+      border-radius: 8px; background: #000;
+    }
+    .game-movie figcaption { margin-top: 6px; font-size: 13px; color: var(--text-faint); }
+    .game-video {
+      position: relative; cursor: pointer; overflow: hidden;
+      border-radius: 8px; background: #000; aspect-ratio: 16 / 9;
+    }
+    .game-video img { display: block; width: 100%; height: 100%; object-fit: cover; }
+    .game-video-play { position: absolute; inset: 0; display: grid; place-items: center; }
+    .game-video-play::before {
+      content: ''; width: 58px; height: 58px; border-radius: 50%;
+      background: rgba(0,0,0,0.5); border: 2px solid rgba(255,255,255,0.75);
+    }
+    .game-video-play::after {
+      content: ''; position: absolute; margin-left: 5px;
+      border-style: solid; border-width: 11px 0 11px 18px;
+      border-color: transparent transparent transparent #fff;
+    }
+    .game-video-el { display: block; width: 100%; height: 100%; background: #000; }
   </style>
 </head>
 <body>
@@ -150,7 +182,7 @@
 
     <article class="article-body">
 
-      <p>这是一款双人合作类的互动影游。两位玩家分别扮演「秘密特工」与「商界之女」，经历一场充满挑战与救赎的冒险。1941年的上海孤岛，金融界的血案，各怀鬼胎的多方势力。你们的选择将共同影响故事走向，一起开启专属你们的乱世迷局。</p>
+      
 
       <div class="game-stats-grid">
         <div class="game-stat-card">
@@ -166,10 +198,6 @@
           <div class="label">Владельцев (оценка)</div>
           <div class="value">0 – 20,000</div>
         </div>
-        <div class="game-stat-card">
-          <div class="label">Среднее время игры</div>
-          <div class="value">нет данных</div>
-        </div>
       </div>
 
       <h2>Об игре</h2>
@@ -183,7 +211,28 @@
         </a>
       </p>
 
-      <p style="color: var(--text-faint); font-size: 13px; margin-top: 30px;">
+            <h2>Скриншоты</h2>
+      <div class="game-shots">
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3319700/0351f05e04c546a2751985750479869b6df6e742/ss_0351f05e04c546a2751985750479869b6df6e742.1920x1080.jpg?t=1790682910" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3319700/0351f05e04c546a2751985750479869b6df6e742/ss_0351f05e04c546a2751985750479869b6df6e742.600x338.jpg?t=1790682910" alt="新世界：暗影成双 — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3319700/1aa4b858e5ed9680275d9b014136029f58f4417b/ss_1aa4b858e5ed9680275d9b014136029f58f4417b.1920x1080.jpg?t=1790682910" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3319700/1aa4b858e5ed9680275d9b014136029f58f4417b/ss_1aa4b858e5ed9680275d9b014136029f58f4417b.600x338.jpg?t=1790682910" alt="新世界：暗影成双 — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3319700/97388dd7f420fb7eaa3e6e4a18847edbe5857438/ss_97388dd7f420fb7eaa3e6e4a18847edbe5857438.1920x1080.jpg?t=1790682910" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3319700/97388dd7f420fb7eaa3e6e4a18847edbe5857438/ss_97388dd7f420fb7eaa3e6e4a18847edbe5857438.600x338.jpg?t=1790682910" alt="新世界：暗影成双 — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3319700/71c98be3383df5f0a496925022348b6b58e74b3d/ss_71c98be3383df5f0a496925022348b6b58e74b3d.1920x1080.jpg?t=1790682910" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3319700/71c98be3383df5f0a496925022348b6b58e74b3d/ss_71c98be3383df5f0a496925022348b6b58e74b3d.600x338.jpg?t=1790682910" alt="新世界：暗影成双 — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3319700/22c18f0f75ddccd6ff78bfe1e06b37a86cd04098/ss_22c18f0f75ddccd6ff78bfe1e06b37a86cd04098.1920x1080.jpg?t=1790682910" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3319700/22c18f0f75ddccd6ff78bfe1e06b37a86cd04098/ss_22c18f0f75ddccd6ff78bfe1e06b37a86cd04098.600x338.jpg?t=1790682910" alt="新世界：暗影成双 — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3319700/62a7bb0d77b88cd42cb0c4f01f28966c0c62e209/ss_62a7bb0d77b88cd42cb0c4f01f28966c0c62e209.1920x1080.jpg?t=1790682910" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3319700/62a7bb0d77b88cd42cb0c4f01f28966c0c62e209/ss_62a7bb0d77b88cd42cb0c4f01f28966c0c62e209.600x338.jpg?t=1790682910" alt="新世界：暗影成双 — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3319700/08aeb0c349698eaeb9f2b6370c17009bdbec0959/ss_08aeb0c349698eaeb9f2b6370c17009bdbec0959.1920x1080.jpg?t=1790682910" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3319700/08aeb0c349698eaeb9f2b6370c17009bdbec0959/ss_08aeb0c349698eaeb9f2b6370c17009bdbec0959.600x338.jpg?t=1790682910" alt="新世界：暗影成双 — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3319700/72ae5edfa9dd2c5983f4c1cc9f56e4044681a855/ss_72ae5edfa9dd2c5983f4c1cc9f56e4044681a855.1920x1080.jpg?t=1790682910" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3319700/72ae5edfa9dd2c5983f4c1cc9f56e4044681a855/ss_72ae5edfa9dd2c5983f4c1cc9f56e4044681a855.600x338.jpg?t=1790682910" alt="新世界：暗影成双 — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3319700/f7b905cb1b8cb9c879bd7d20a9453cc050c75e6c/ss_f7b905cb1b8cb9c879bd7d20a9453cc050c75e6c.1920x1080.jpg?t=1790682910" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3319700/f7b905cb1b8cb9c879bd7d20a9453cc050c75e6c/ss_f7b905cb1b8cb9c879bd7d20a9453cc050c75e6c.600x338.jpg?t=1790682910" alt="新世界：暗影成双 — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3319700/9b1f5feaff0ccc95dc1ddbf4681a27e95f1791e3/ss_9b1f5feaff0ccc95dc1ddbf4681a27e95f1791e3.1920x1080.jpg?t=1790682910" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3319700/9b1f5feaff0ccc95dc1ddbf4681a27e95f1791e3/ss_9b1f5feaff0ccc95dc1ddbf4681a27e95f1791e3.600x338.jpg?t=1790682910" alt="新世界：暗影成双 — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3319700/bb29a53b41e196693e774aff97be2671f48a1687/ss_bb29a53b41e196693e774aff97be2671f48a1687.1920x1080.jpg?t=1790682910" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3319700/bb29a53b41e196693e774aff97be2671f48a1687/ss_bb29a53b41e196693e774aff97be2671f48a1687.600x338.jpg?t=1790682910" alt="新世界：暗影成双 — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+      </div>
+
+      <h2>Геймплей</h2>
+      <div class="game-movies">
+        <figure class="game-movie"><div class="game-video" data-hls="https://video.akamai.steamstatic.com/store_trailers/3319700/1650575737/d36c11376f05390f269ac0c2852248ece3e06893/1790099912/hls_264_master.m3u8?t=1790676231" data-poster="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257431867/0351f05e04c546a2751985750479869b6df6e742/movie_600x337.jpg?t=1790676231" role="button" tabindex="0" aria-label="Смотреть геймплей: 上线PV"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257431867/0351f05e04c546a2751985750479869b6df6e742/movie_600x337.jpg?t=1790676231" alt="" loading="lazy" width="480" height="270" /><span class="game-video-play" aria-hidden="true"></span></div></figure>
+        <figure class="game-movie"><div class="game-video" data-hls="https://video.akamai.steamstatic.com/store_trailers/3319700/1561587338/e0c673123cf1df72ad4178704d3668640bba621b/1790098982/hls_264_master.m3u8?t=1790101360" data-poster="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257431854/2041f78195a3c27f504a2d1d85d223afac372178/movie_600x337.jpg?t=1790101360" role="button" tabindex="0" aria-label="Смотреть геймплей: 定档PV"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257431854/2041f78195a3c27f504a2d1d85d223afac372178/movie_600x337.jpg?t=1790101360" alt="" loading="lazy" width="480" height="270" /><span class="game-video-play" aria-hidden="true"></span></div></figure>
+      </div>
+
+<p style="color: var(--text-faint); font-size: 13px; margin-top: 30px;">
         Данные о цене, отзывах и статистике обновляются автоматически на основе
         Steam Store API и SteamSpy.
       </p>
@@ -284,5 +333,6 @@ function declineCookies() {
 })();
 </script>
 <script src="/newsletter.js?v=2" defer></script>
+<script defer src="/game-media.js?v=1"></script>
 </body>
 </html>

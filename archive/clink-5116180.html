@@ -112,6 +112,38 @@
     }
     .game-stat-card .label { font-size: 12px; color: var(--text-faint); text-transform: uppercase; }
     .game-stat-card .value { font-size: 20px; font-weight: bold; margin-top: 4px; }
+    .game-shots {
+      display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+      gap: 12px; margin: 20px 0;
+    }
+    .game-shot {
+      display: block; border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 8px; overflow: hidden;
+    }
+    .game-shot img { display: block; width: 100%; height: auto; }
+    .game-movies { display: grid; gap: 16px; margin: 20px 0; }
+    .game-movie { margin: 0; }
+    .game-movie video {
+      display: block; width: 100%; height: auto;
+      border-radius: 8px; background: #000;
+    }
+    .game-movie figcaption { margin-top: 6px; font-size: 13px; color: var(--text-faint); }
+    .game-video {
+      position: relative; cursor: pointer; overflow: hidden;
+      border-radius: 8px; background: #000; aspect-ratio: 16 / 9;
+    }
+    .game-video img { display: block; width: 100%; height: 100%; object-fit: cover; }
+    .game-video-play { position: absolute; inset: 0; display: grid; place-items: center; }
+    .game-video-play::before {
+      content: ''; width: 58px; height: 58px; border-radius: 50%;
+      background: rgba(0,0,0,0.5); border: 2px solid rgba(255,255,255,0.75);
+    }
+    .game-video-play::after {
+      content: ''; position: absolute; margin-left: 5px;
+      border-style: solid; border-width: 11px 0 11px 18px;
+      border-color: transparent transparent transparent #fff;
+    }
+    .game-video-el { display: block; width: 100%; height: 100%; background: #000; }
   </style>
 </head>
 <body>
@@ -166,10 +198,6 @@
           <div class="label">Владельцев (оценка)</div>
           <div class="value">0 – 20,000</div>
         </div>
-        <div class="game-stat-card">
-          <div class="label">Среднее время игры</div>
-          <div class="value">нет данных</div>
-        </div>
       </div>
 
       <h2>Об игре</h2>
@@ -183,7 +211,28 @@
         </a>
       </p>
 
-      <p style="color: var(--text-faint); font-size: 13px; margin-top: 30px;">
+            <h2>Скриншоты</h2>
+      <div class="game-shots">
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5116180/00f99538f25f8f0bc13f09e32ce63760f7d951ac/ss_00f99538f25f8f0bc13f09e32ce63760f7d951ac.1920x1080.jpg?t=1790736709" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5116180/00f99538f25f8f0bc13f09e32ce63760f7d951ac/ss_00f99538f25f8f0bc13f09e32ce63760f7d951ac.600x338.jpg?t=1790736709" alt="CLINK — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5116180/c2d71ffc0773ba61beada29f9074c7d368ea7ef7/ss_c2d71ffc0773ba61beada29f9074c7d368ea7ef7.1920x1080.jpg?t=1790736709" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5116180/c2d71ffc0773ba61beada29f9074c7d368ea7ef7/ss_c2d71ffc0773ba61beada29f9074c7d368ea7ef7.600x338.jpg?t=1790736709" alt="CLINK — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5116180/1c6b097ca8efd609bddde47eae8ae00a1d71e58d/ss_1c6b097ca8efd609bddde47eae8ae00a1d71e58d.1920x1080.jpg?t=1790736709" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5116180/1c6b097ca8efd609bddde47eae8ae00a1d71e58d/ss_1c6b097ca8efd609bddde47eae8ae00a1d71e58d.600x338.jpg?t=1790736709" alt="CLINK — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5116180/7fbcec626496b3497eb3f53da205846eb22cf447/ss_7fbcec626496b3497eb3f53da205846eb22cf447.1920x1080.jpg?t=1790736709" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5116180/7fbcec626496b3497eb3f53da205846eb22cf447/ss_7fbcec626496b3497eb3f53da205846eb22cf447.600x338.jpg?t=1790736709" alt="CLINK — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5116180/1b819fcaacc561e25df2d57a7bca258de5f7a1c3/ss_1b819fcaacc561e25df2d57a7bca258de5f7a1c3.1920x1080.jpg?t=1790736709" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5116180/1b819fcaacc561e25df2d57a7bca258de5f7a1c3/ss_1b819fcaacc561e25df2d57a7bca258de5f7a1c3.600x338.jpg?t=1790736709" alt="CLINK — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5116180/44eccbe04f5e719be574c780239dca02fab077dc/ss_44eccbe04f5e719be574c780239dca02fab077dc.1920x1080.jpg?t=1790736709" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5116180/44eccbe04f5e719be574c780239dca02fab077dc/ss_44eccbe04f5e719be574c780239dca02fab077dc.600x338.jpg?t=1790736709" alt="CLINK — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5116180/6f533513d8ca98d8d538cdbf28d95d303825f22b/ss_6f533513d8ca98d8d538cdbf28d95d303825f22b.1920x1080.jpg?t=1790736709" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5116180/6f533513d8ca98d8d538cdbf28d95d303825f22b/ss_6f533513d8ca98d8d538cdbf28d95d303825f22b.600x338.jpg?t=1790736709" alt="CLINK — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5116180/521a8a3ae9251a10ecb1b91f8da7c96089d59ff2/ss_521a8a3ae9251a10ecb1b91f8da7c96089d59ff2.1920x1080.jpg?t=1790736709" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5116180/521a8a3ae9251a10ecb1b91f8da7c96089d59ff2/ss_521a8a3ae9251a10ecb1b91f8da7c96089d59ff2.600x338.jpg?t=1790736709" alt="CLINK — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5116180/8fc4c0eb8b6aa92e2e968c44537edeeacaf823a9/ss_8fc4c0eb8b6aa92e2e968c44537edeeacaf823a9.1920x1080.jpg?t=1790736709" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5116180/8fc4c0eb8b6aa92e2e968c44537edeeacaf823a9/ss_8fc4c0eb8b6aa92e2e968c44537edeeacaf823a9.600x338.jpg?t=1790736709" alt="CLINK — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5116180/412a336aa6d1f28b24a6beef7c458b0fd49555e9/ss_412a336aa6d1f28b24a6beef7c458b0fd49555e9.1920x1080.jpg?t=1790736709" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5116180/412a336aa6d1f28b24a6beef7c458b0fd49555e9/ss_412a336aa6d1f28b24a6beef7c458b0fd49555e9.600x338.jpg?t=1790736709" alt="CLINK — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5116180/1f9d864138dee3cb676335c5eb3149592451376d/ss_1f9d864138dee3cb676335c5eb3149592451376d.1920x1080.jpg?t=1790736709" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5116180/1f9d864138dee3cb676335c5eb3149592451376d/ss_1f9d864138dee3cb676335c5eb3149592451376d.600x338.jpg?t=1790736709" alt="CLINK — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5116180/1a425bf36fd4c0ee0dc1d85b2f0614ded192e5ea/ss_1a425bf36fd4c0ee0dc1d85b2f0614ded192e5ea.1920x1080.jpg?t=1790736709" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5116180/1a425bf36fd4c0ee0dc1d85b2f0614ded192e5ea/ss_1a425bf36fd4c0ee0dc1d85b2f0614ded192e5ea.600x338.jpg?t=1790736709" alt="CLINK — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+      </div>
+
+      <h2>Геймплей</h2>
+      <div class="game-movies">
+        <figure class="game-movie"><div class="game-video" data-hls="https://video.akamai.steamstatic.com/store_trailers/5116180/1899829218/69c8bb55a8e0a1d55d4ecd91a9f2dba8488484ec/1786843170/hls_264_master.m3u8?t=1787275055" data-poster="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257400478/de8014c82da27b7472bb6b018b2e94158979ebe0/movie_600x337.jpg?t=1787275055" role="button" tabindex="0" aria-label="Смотреть геймплей: Trailer1 "><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257400478/de8014c82da27b7472bb6b018b2e94158979ebe0/movie_600x337.jpg?t=1787275055" alt="" loading="lazy" width="480" height="270" /><span class="game-video-play" aria-hidden="true"></span></div></figure>
+      </div>
+
+<p style="color: var(--text-faint); font-size: 13px; margin-top: 30px;">
         Данные о цене, отзывах и статистике обновляются автоматически на основе
         Steam Store API и SteamSpy.
       </p>
@@ -284,5 +333,6 @@ function declineCookies() {
 })();
 </script>
 <script src="/newsletter.js?v=2" defer></script>
+<script defer src="/game-media.js?v=1"></script>
 </body>
 </html>

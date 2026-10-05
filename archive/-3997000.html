@@ -112,6 +112,38 @@
     }
     .game-stat-card .label { font-size: 12px; color: var(--text-faint); text-transform: uppercase; }
     .game-stat-card .value { font-size: 20px; font-weight: bold; margin-top: 4px; }
+    .game-shots {
+      display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+      gap: 12px; margin: 20px 0;
+    }
+    .game-shot {
+      display: block; border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 8px; overflow: hidden;
+    }
+    .game-shot img { display: block; width: 100%; height: auto; }
+    .game-movies { display: grid; gap: 16px; margin: 20px 0; }
+    .game-movie { margin: 0; }
+    .game-movie video {
+      display: block; width: 100%; height: auto;
+      border-radius: 8px; background: #000;
+    }
+    .game-movie figcaption { margin-top: 6px; font-size: 13px; color: var(--text-faint); }
+    .game-video {
+      position: relative; cursor: pointer; overflow: hidden;
+      border-radius: 8px; background: #000; aspect-ratio: 16 / 9;
+    }
+    .game-video img { display: block; width: 100%; height: 100%; object-fit: cover; }
+    .game-video-play { position: absolute; inset: 0; display: grid; place-items: center; }
+    .game-video-play::before {
+      content: ''; width: 58px; height: 58px; border-radius: 50%;
+      background: rgba(0,0,0,0.5); border: 2px solid rgba(255,255,255,0.75);
+    }
+    .game-video-play::after {
+      content: ''; position: absolute; margin-left: 5px;
+      border-style: solid; border-width: 11px 0 11px 18px;
+      border-color: transparent transparent transparent #fff;
+    }
+    .game-video-el { display: block; width: 100%; height: 100%; background: #000; }
   </style>
 </head>
 <body>
@@ -150,7 +182,7 @@
 
     <article class="article-body">
 
-      <p>After the revolution, Kikoku is plunged into chaos. Takekosen joins the secret organization Hiseido, facing her final trial. She must abandon her name, wear the mask, and forge her path through fate. A fantasy visual novel set in an ancient Eastern world.</p>
+      
 
       <div class="game-stats-grid">
         <div class="game-stat-card">
@@ -166,10 +198,6 @@
           <div class="label">Владельцев (оценка)</div>
           <div class="value">0 – 20,000</div>
         </div>
-        <div class="game-stat-card">
-          <div class="label">Среднее время игры</div>
-          <div class="value">нет данных</div>
-        </div>
       </div>
 
       <h2>Об игре</h2>
@@ -183,7 +211,22 @@
         </a>
       </p>
 
-      <p style="color: var(--text-faint); font-size: 13px; margin-top: 30px;">
+            <h2>Скриншоты</h2>
+      <div class="game-shots">
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3997000/a179079ce482db26fc9fc9bd66408e4e8e8c14bb/ss_a179079ce482db26fc9fc9bd66408e4e8e8c14bb.1920x1080.jpg?t=1790990547" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3997000/a179079ce482db26fc9fc9bd66408e4e8e8c14bb/ss_a179079ce482db26fc9fc9bd66408e4e8e8c14bb.600x338.jpg?t=1790990547" alt="The Dagger of Hisei — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3997000/257333a59faaf7dae89f179c037933e300a59341/ss_257333a59faaf7dae89f179c037933e300a59341.1920x1080.jpg?t=1790990547" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3997000/257333a59faaf7dae89f179c037933e300a59341/ss_257333a59faaf7dae89f179c037933e300a59341.600x338.jpg?t=1790990547" alt="The Dagger of Hisei — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3997000/fa033e2b0964301c5c7119a22c8e1a8d1a7d7dd8/ss_fa033e2b0964301c5c7119a22c8e1a8d1a7d7dd8.1920x1080.jpg?t=1790990547" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3997000/fa033e2b0964301c5c7119a22c8e1a8d1a7d7dd8/ss_fa033e2b0964301c5c7119a22c8e1a8d1a7d7dd8.600x338.jpg?t=1790990547" alt="The Dagger of Hisei — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3997000/20d9caee5f4a6d95ae2bef17e180fccfff3f76ec/ss_20d9caee5f4a6d95ae2bef17e180fccfff3f76ec.1920x1080.jpg?t=1790990547" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3997000/20d9caee5f4a6d95ae2bef17e180fccfff3f76ec/ss_20d9caee5f4a6d95ae2bef17e180fccfff3f76ec.600x338.jpg?t=1790990547" alt="The Dagger of Hisei — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3997000/128c100ac5ed6b6bf73fd4fa672b43cfb28018d9/ss_128c100ac5ed6b6bf73fd4fa672b43cfb28018d9.1920x1080.jpg?t=1790990547" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3997000/128c100ac5ed6b6bf73fd4fa672b43cfb28018d9/ss_128c100ac5ed6b6bf73fd4fa672b43cfb28018d9.600x338.jpg?t=1790990547" alt="The Dagger of Hisei — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3997000/536b35c67240e3a112bf8c2d6fc6580df19b615a/ss_536b35c67240e3a112bf8c2d6fc6580df19b615a.1920x1080.jpg?t=1790990547" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3997000/536b35c67240e3a112bf8c2d6fc6580df19b615a/ss_536b35c67240e3a112bf8c2d6fc6580df19b615a.600x338.jpg?t=1790990547" alt="The Dagger of Hisei — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+      </div>
+
+      <h2>Геймплей</h2>
+      <div class="game-movies">
+        <figure class="game-movie"><div class="game-video" data-hls="https://video.akamai.steamstatic.com/store_trailers/3997000/347311925/7c23b881d6f0ae5f7485927674d6a0c63ec66be4/1787365543/hls_264_master.m3u8?t=1787367539" data-poster="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257249806/d430b1fefd93501a36fa507f6b683c0f57a832a2/movie_600x337.jpg?t=1787367539" role="button" tabindex="0" aria-label="Смотреть геймплей: Gameplay 01 EN"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257249806/d430b1fefd93501a36fa507f6b683c0f57a832a2/movie_600x337.jpg?t=1787367539" alt="" loading="lazy" width="480" height="270" /><span class="game-video-play" aria-hidden="true"></span></div></figure>
+      </div>
+
+<p style="color: var(--text-faint); font-size: 13px; margin-top: 30px;">
         Данные о цене, отзывах и статистике обновляются автоматически на основе
         Steam Store API и SteamSpy.
       </p>
@@ -284,5 +327,6 @@ function declineCookies() {
 })();
 </script>
 <script src="/newsletter.js?v=2" defer></script>
+<script defer src="/game-media.js?v=1"></script>
 </body>
 </html>

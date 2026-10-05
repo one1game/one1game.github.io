@@ -108,6 +108,38 @@
     }
     .game-stat-card .label { font-size: 12px; color: var(--text-faint); text-transform: uppercase; }
     .game-stat-card .value { font-size: 20px; font-weight: bold; margin-top: 4px; }
+    .game-shots {
+      display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+      gap: 12px; margin: 20px 0;
+    }
+    .game-shot {
+      display: block; border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 8px; overflow: hidden;
+    }
+    .game-shot img { display: block; width: 100%; height: auto; }
+    .game-movies { display: grid; gap: 16px; margin: 20px 0; }
+    .game-movie { margin: 0; }
+    .game-movie video {
+      display: block; width: 100%; height: auto;
+      border-radius: 8px; background: #000;
+    }
+    .game-movie figcaption { margin-top: 6px; font-size: 13px; color: var(--text-faint); }
+    .game-video {
+      position: relative; cursor: pointer; overflow: hidden;
+      border-radius: 8px; background: #000; aspect-ratio: 16 / 9;
+    }
+    .game-video img { display: block; width: 100%; height: 100%; object-fit: cover; }
+    .game-video-play { position: absolute; inset: 0; display: grid; place-items: center; }
+    .game-video-play::before {
+      content: ''; width: 58px; height: 58px; border-radius: 50%;
+      background: rgba(0,0,0,0.5); border: 2px solid rgba(255,255,255,0.75);
+    }
+    .game-video-play::after {
+      content: ''; position: absolute; margin-left: 5px;
+      border-style: solid; border-width: 11px 0 11px 18px;
+      border-color: transparent transparent transparent #fff;
+    }
+    .game-video-el { display: block; width: 100%; height: 100%; background: #000; }
   </style>
 </head>
 <body>
@@ -146,7 +178,7 @@
 
     <article class="article-body">
 
-      <p>Fight through different rooms, meet and talk to helpful companions, and merge weapons to create new ones. When you die, you get the chance to keep some things for yourself and everything else is lost forever.</p>
+      
 
       <div class="game-stats-grid">
         <div class="game-stat-card">
@@ -162,10 +194,6 @@
           <div class="label">Владельцев (оценка)</div>
           <div class="value">0 – 20,000</div>
         </div>
-        <div class="game-stat-card">
-          <div class="label">Среднее время игры</div>
-          <div class="value">нет данных</div>
-        </div>
       </div>
 
       <h2>Об игре</h2>
@@ -179,7 +207,23 @@
         </a>
       </p>
 
-      <p style="color: var(--text-faint); font-size: 13px; margin-top: 30px;">
+            <h2>Скриншоты</h2>
+      <div class="game-shots">
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5023450/fb5f41068dbf813cdce943da2ac96e75594c67ec/ss_fb5f41068dbf813cdce943da2ac96e75594c67ec.1920x1080.jpg?t=1790895243" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5023450/fb5f41068dbf813cdce943da2ac96e75594c67ec/ss_fb5f41068dbf813cdce943da2ac96e75594c67ec.600x338.jpg?t=1790895243" alt="Lucid Rumination — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5023450/af7f77b84f34e68d55d8bffa6879cd92b2bb5e3d/ss_af7f77b84f34e68d55d8bffa6879cd92b2bb5e3d.1920x1080.jpg?t=1790895243" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5023450/af7f77b84f34e68d55d8bffa6879cd92b2bb5e3d/ss_af7f77b84f34e68d55d8bffa6879cd92b2bb5e3d.600x338.jpg?t=1790895243" alt="Lucid Rumination — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5023450/2649b7e798e71742996fa68cfad90eaa6ebe4d40/ss_2649b7e798e71742996fa68cfad90eaa6ebe4d40.1920x1080.jpg?t=1790895243" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5023450/2649b7e798e71742996fa68cfad90eaa6ebe4d40/ss_2649b7e798e71742996fa68cfad90eaa6ebe4d40.600x338.jpg?t=1790895243" alt="Lucid Rumination — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5023450/fbcd7cb52a9c83bbfe519165732ba6f1495a59a9/ss_fbcd7cb52a9c83bbfe519165732ba6f1495a59a9.1920x1080.jpg?t=1790895243" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5023450/fbcd7cb52a9c83bbfe519165732ba6f1495a59a9/ss_fbcd7cb52a9c83bbfe519165732ba6f1495a59a9.600x338.jpg?t=1790895243" alt="Lucid Rumination — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5023450/5eb555eff42eee2004f2f1b04929db0d1e7925ab/ss_5eb555eff42eee2004f2f1b04929db0d1e7925ab.1920x1080.jpg?t=1790895243" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5023450/5eb555eff42eee2004f2f1b04929db0d1e7925ab/ss_5eb555eff42eee2004f2f1b04929db0d1e7925ab.600x338.jpg?t=1790895243" alt="Lucid Rumination — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5023450/7366129643f2b05a1289e8f7f53953ec83dbcf27/ss_7366129643f2b05a1289e8f7f53953ec83dbcf27.1920x1080.jpg?t=1790895243" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5023450/7366129643f2b05a1289e8f7f53953ec83dbcf27/ss_7366129643f2b05a1289e8f7f53953ec83dbcf27.600x338.jpg?t=1790895243" alt="Lucid Rumination — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5023450/da6e19f73f8dcc1921d327fb76a8cf68359d7979/ss_da6e19f73f8dcc1921d327fb76a8cf68359d7979.1920x1080.jpg?t=1790895243" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5023450/da6e19f73f8dcc1921d327fb76a8cf68359d7979/ss_da6e19f73f8dcc1921d327fb76a8cf68359d7979.600x338.jpg?t=1790895243" alt="Lucid Rumination — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+      </div>
+
+      <h2>Геймплей</h2>
+      <div class="game-movies">
+        <figure class="game-movie"><div class="game-video" data-hls="https://video.akamai.steamstatic.com/store_trailers/5023450/1564724364/2122e8701e97cdf51ac818b64b79153339119536/1785193255/hls_264_master.m3u8?t=1789425023" data-poster="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257386247/ab68b5f4cb3390c1cf93764761ffd18d1e5af16a/movie_600x337.jpg?t=1789425023" role="button" tabindex="0" aria-label="Смотреть геймплей: GameplayTrailer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257386247/ab68b5f4cb3390c1cf93764761ffd18d1e5af16a/movie_600x337.jpg?t=1789425023" alt="" loading="lazy" width="480" height="270" /><span class="game-video-play" aria-hidden="true"></span></div></figure>
+      </div>
+
+<p style="color: var(--text-faint); font-size: 13px; margin-top: 30px;">
         Данные о цене, отзывах и статистике обновляются автоматически на основе
         Steam Store API и SteamSpy.
       </p>
@@ -280,5 +324,6 @@ function declineCookies() {
 })();
 </script>
 <script src="/newsletter.js?v=2" defer></script>
+<script defer src="/game-media.js?v=1"></script>
 </body>
 </html>

@@ -112,6 +112,38 @@
     }
     .game-stat-card .label { font-size: 12px; color: var(--text-faint); text-transform: uppercase; }
     .game-stat-card .value { font-size: 20px; font-weight: bold; margin-top: 4px; }
+    .game-shots {
+      display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+      gap: 12px; margin: 20px 0;
+    }
+    .game-shot {
+      display: block; border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 8px; overflow: hidden;
+    }
+    .game-shot img { display: block; width: 100%; height: auto; }
+    .game-movies { display: grid; gap: 16px; margin: 20px 0; }
+    .game-movie { margin: 0; }
+    .game-movie video {
+      display: block; width: 100%; height: auto;
+      border-radius: 8px; background: #000;
+    }
+    .game-movie figcaption { margin-top: 6px; font-size: 13px; color: var(--text-faint); }
+    .game-video {
+      position: relative; cursor: pointer; overflow: hidden;
+      border-radius: 8px; background: #000; aspect-ratio: 16 / 9;
+    }
+    .game-video img { display: block; width: 100%; height: 100%; object-fit: cover; }
+    .game-video-play { position: absolute; inset: 0; display: grid; place-items: center; }
+    .game-video-play::before {
+      content: ''; width: 58px; height: 58px; border-radius: 50%;
+      background: rgba(0,0,0,0.5); border: 2px solid rgba(255,255,255,0.75);
+    }
+    .game-video-play::after {
+      content: ''; position: absolute; margin-left: 5px;
+      border-style: solid; border-width: 11px 0 11px 18px;
+      border-color: transparent transparent transparent #fff;
+    }
+    .game-video-el { display: block; width: 100%; height: 100%; background: #000; }
   </style>
 </head>
 <body>
@@ -150,7 +182,7 @@
 
     <article class="article-body">
 
-      <p>Enjoy a relaxing puzzle adventure at your own pace, completing challenges to reveal stunning girl illustrations. With calming gameplay, no time limits, and vibrant artwork, every puzzle offers peaceful entertainment.</p>
+      
 
       <div class="game-stats-grid">
         <div class="game-stat-card">
@@ -166,10 +198,6 @@
           <div class="label">Владельцев (оценка)</div>
           <div class="value">0 – 20,000</div>
         </div>
-        <div class="game-stat-card">
-          <div class="label">Среднее время игры</div>
-          <div class="value">нет данных</div>
-        </div>
       </div>
 
       <h2>Об игре</h2>
@@ -183,7 +211,22 @@
         </a>
       </p>
 
-      <p style="color: var(--text-faint); font-size: 13px; margin-top: 30px;">
+            <h2>Скриншоты</h2>
+      <div class="game-shots">
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5234460/6270e297e2d5f163a284d0da33cf49dc9924944d/ss_6270e297e2d5f163a284d0da33cf49dc9924944d.1920x1080.jpg?t=1790377661" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5234460/6270e297e2d5f163a284d0da33cf49dc9924944d/ss_6270e297e2d5f163a284d0da33cf49dc9924944d.600x338.jpg?t=1790377661" alt="Hentai Age Cat — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5234460/04fd06c90f649be10cbc56a7105c46d33f8738f7/ss_04fd06c90f649be10cbc56a7105c46d33f8738f7.1920x1080.jpg?t=1790377661" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5234460/04fd06c90f649be10cbc56a7105c46d33f8738f7/ss_04fd06c90f649be10cbc56a7105c46d33f8738f7.600x338.jpg?t=1790377661" alt="Hentai Age Cat — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5234460/66b874578068ba5cf759fc3f30b3572814ee0797/ss_66b874578068ba5cf759fc3f30b3572814ee0797.1920x1080.jpg?t=1790377661" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5234460/66b874578068ba5cf759fc3f30b3572814ee0797/ss_66b874578068ba5cf759fc3f30b3572814ee0797.600x338.jpg?t=1790377661" alt="Hentai Age Cat — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5234460/a2c6fa8424c8f5310cf09c70fea12c51905a6a24/ss_a2c6fa8424c8f5310cf09c70fea12c51905a6a24.1920x1080.jpg?t=1790377661" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5234460/a2c6fa8424c8f5310cf09c70fea12c51905a6a24/ss_a2c6fa8424c8f5310cf09c70fea12c51905a6a24.600x338.jpg?t=1790377661" alt="Hentai Age Cat — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5234460/8c8ae011afab7e20a095c9f360cc4de3e4417e1b/ss_8c8ae011afab7e20a095c9f360cc4de3e4417e1b.1920x1080.jpg?t=1790377661" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5234460/8c8ae011afab7e20a095c9f360cc4de3e4417e1b/ss_8c8ae011afab7e20a095c9f360cc4de3e4417e1b.600x338.jpg?t=1790377661" alt="Hentai Age Cat — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5234460/555f927341a1e1d21577a733bd436097b10c9724/ss_555f927341a1e1d21577a733bd436097b10c9724.1920x1080.jpg?t=1790377661" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5234460/555f927341a1e1d21577a733bd436097b10c9724/ss_555f927341a1e1d21577a733bd436097b10c9724.600x338.jpg?t=1790377661" alt="Hentai Age Cat — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+      </div>
+
+      <h2>Геймплей</h2>
+      <div class="game-movies">
+        <figure class="game-movie"><div class="game-video" data-hls="https://video.akamai.steamstatic.com/store_trailers/5234460/879416936/6234c07048672d093a133c26a8392e87e928b684/1788753371/hls_264_master.m3u8?t=1789097008" data-poster="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257418754/b2e9a355a71a8e7595547fafcb6e7badc1b8c2e1/movie_600x337.jpg?t=1789097008" role="button" tabindex="0" aria-label="Смотреть геймплей: Trailer 1"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257418754/b2e9a355a71a8e7595547fafcb6e7badc1b8c2e1/movie_600x337.jpg?t=1789097008" alt="" loading="lazy" width="480" height="270" /><span class="game-video-play" aria-hidden="true"></span></div></figure>
+      </div>
+
+<p style="color: var(--text-faint); font-size: 13px; margin-top: 30px;">
         Данные о цене, отзывах и статистике обновляются автоматически на основе
         Steam Store API и SteamSpy.
       </p>
@@ -284,5 +327,6 @@ function declineCookies() {
 })();
 </script>
 <script src="/newsletter.js?v=2" defer></script>
+<script defer src="/game-media.js?v=1"></script>
 </body>
 </html>

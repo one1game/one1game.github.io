@@ -112,6 +112,38 @@
     }
     .game-stat-card .label { font-size: 12px; color: var(--text-faint); text-transform: uppercase; }
     .game-stat-card .value { font-size: 20px; font-weight: bold; margin-top: 4px; }
+    .game-shots {
+      display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+      gap: 12px; margin: 20px 0;
+    }
+    .game-shot {
+      display: block; border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 8px; overflow: hidden;
+    }
+    .game-shot img { display: block; width: 100%; height: auto; }
+    .game-movies { display: grid; gap: 16px; margin: 20px 0; }
+    .game-movie { margin: 0; }
+    .game-movie video {
+      display: block; width: 100%; height: auto;
+      border-radius: 8px; background: #000;
+    }
+    .game-movie figcaption { margin-top: 6px; font-size: 13px; color: var(--text-faint); }
+    .game-video {
+      position: relative; cursor: pointer; overflow: hidden;
+      border-radius: 8px; background: #000; aspect-ratio: 16 / 9;
+    }
+    .game-video img { display: block; width: 100%; height: 100%; object-fit: cover; }
+    .game-video-play { position: absolute; inset: 0; display: grid; place-items: center; }
+    .game-video-play::before {
+      content: ''; width: 58px; height: 58px; border-radius: 50%;
+      background: rgba(0,0,0,0.5); border: 2px solid rgba(255,255,255,0.75);
+    }
+    .game-video-play::after {
+      content: ''; position: absolute; margin-left: 5px;
+      border-style: solid; border-width: 11px 0 11px 18px;
+      border-color: transparent transparent transparent #fff;
+    }
+    .game-video-el { display: block; width: 100%; height: 100%; background: #000; }
   </style>
 </head>
 <body>
@@ -150,7 +182,7 @@
 
     <article class="article-body">
 
-      <p>EMOJI JACKPOT: Word Finder. Drag. Spell. Cash out. Word search reinvented as a pixel-art slot machine.</p>
+      
 
       <div class="game-stats-grid">
         <div class="game-stat-card">
@@ -166,10 +198,6 @@
           <div class="label">Владельцев (оценка)</div>
           <div class="value">0 – 20,000</div>
         </div>
-        <div class="game-stat-card">
-          <div class="label">Среднее время игры</div>
-          <div class="value">нет данных</div>
-        </div>
       </div>
 
       <h2>Об игре</h2>
@@ -183,7 +211,21 @@
         </a>
       </p>
 
-      <p style="color: var(--text-faint); font-size: 13px; margin-top: 30px;">
+            <h2>Скриншоты</h2>
+      <div class="game-shots">
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3131810/7b3241312bd6c784e17933b09a32a9f215ae0618/ss_7b3241312bd6c784e17933b09a32a9f215ae0618.1920x1080.jpg?t=1790700906" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3131810/7b3241312bd6c784e17933b09a32a9f215ae0618/ss_7b3241312bd6c784e17933b09a32a9f215ae0618.600x338.jpg?t=1790700906" alt="EMOJI JACKPOT: Word Finder — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3131810/7eef4e17c4241a1d790a18577e0ee15244e3a261/ss_7eef4e17c4241a1d790a18577e0ee15244e3a261.1920x1080.jpg?t=1790700906" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3131810/7eef4e17c4241a1d790a18577e0ee15244e3a261/ss_7eef4e17c4241a1d790a18577e0ee15244e3a261.600x338.jpg?t=1790700906" alt="EMOJI JACKPOT: Word Finder — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3131810/10d4d0dc774d9ea0b94728561a7a0a241f985daf/ss_10d4d0dc774d9ea0b94728561a7a0a241f985daf.1920x1080.jpg?t=1790700906" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3131810/10d4d0dc774d9ea0b94728561a7a0a241f985daf/ss_10d4d0dc774d9ea0b94728561a7a0a241f985daf.600x338.jpg?t=1790700906" alt="EMOJI JACKPOT: Word Finder — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3131810/e47f3a66a61d34bcf462b3859c8e705fa853b24b/ss_e47f3a66a61d34bcf462b3859c8e705fa853b24b.1920x1080.jpg?t=1790700906" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3131810/e47f3a66a61d34bcf462b3859c8e705fa853b24b/ss_e47f3a66a61d34bcf462b3859c8e705fa853b24b.600x338.jpg?t=1790700906" alt="EMOJI JACKPOT: Word Finder — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3131810/a582c7d6db291a1c7a22eedfff629c3ba7cb7aa1/ss_a582c7d6db291a1c7a22eedfff629c3ba7cb7aa1.1920x1080.jpg?t=1790700906" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3131810/a582c7d6db291a1c7a22eedfff629c3ba7cb7aa1/ss_a582c7d6db291a1c7a22eedfff629c3ba7cb7aa1.600x338.jpg?t=1790700906" alt="EMOJI JACKPOT: Word Finder — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+      </div>
+
+      <h2>Геймплей</h2>
+      <div class="game-movies">
+        <figure class="game-movie"><div class="game-video" data-hls="https://video.akamai.steamstatic.com/store_trailers/3131810/2015213237/7d1d7317b338b9bfd9ac8fceb3570691e842cdbb/1787865833/hls_264_master.m3u8?t=1790104404" data-poster="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257409811/1032c60a4338455ba9362c7b83219286cb2a6819/movie_600x337.jpg?t=1790104404" role="button" tabindex="0" aria-label="Смотреть геймплей: EMOJI JACKPOT: WORD FINDER Trailer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257409811/1032c60a4338455ba9362c7b83219286cb2a6819/movie_600x337.jpg?t=1790104404" alt="" loading="lazy" width="480" height="270" /><span class="game-video-play" aria-hidden="true"></span></div></figure>
+      </div>
+
+<p style="color: var(--text-faint); font-size: 13px; margin-top: 30px;">
         Данные о цене, отзывах и статистике обновляются автоматически на основе
         Steam Store API и SteamSpy.
       </p>
@@ -284,5 +326,6 @@ function declineCookies() {
 })();
 </script>
 <script src="/newsletter.js?v=2" defer></script>
+<script defer src="/game-media.js?v=1"></script>
 </body>
 </html>

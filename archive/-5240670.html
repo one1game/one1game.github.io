@@ -10,12 +10,12 @@
   <link rel="dns-prefetch" href="https://www.google-analytics.com" />
   <link rel="preload" href="../styles.css" as="style" />
 
-  <title>尸海防线: цена, отзывы и статистика игроков | One1Game</title>
-  <meta name="description" content="尸海防线 — актуальная цена, скидки, процент положительных отзывов и статистика игроков в Steam. Обновляется автоматически." />
+  <title>Обзор игры 尸海防线 | One1Game</title>
+  <meta name="description" content="Игра 尸海防线 — это аркадный шутер с видом сверху, где нужно защищаться от орд зомби. Подходит для любителей экшена и казуальных игр." />
   <meta name="keywords" content="尸海防线, цена, отзывы, скидка, статистика игроков, Steam" />
 
-  <meta property="og:title" content="尸海防线: цена, отзывы и статистика игроков | One1Game" />
-  <meta property="og:description" content="尸海防线 — актуальная цена, скидки, процент положительных отзывов и статистика игроков в Steam. Обновляется автоматически." />
+  <meta property="og:title" content="Обзор игры 尸海防线 | One1Game" />
+  <meta property="og:description" content="Игра 尸海防线 — это аркадный шутер с видом сверху, где нужно защищаться от орд зомби. Подходит для любителей экшена и казуальных игр." />
   <meta property="og:type" content="article" />
   <meta property="og:url" content="https://one1game.github.io/archive/-5240670.html" />
   <meta property="og:image" content="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5240670/eed9962cb06ff54e2e36b2d08b0759fa739a9969/header.jpg?t=1791131545" />
@@ -58,12 +58,12 @@
   {
     "@context": "https://schema.org",
     "@type": "Article",
-    "headline": "尸海防线: цена, отзывы и статистика игроков | One1Game",
+    "headline": "Обзор игры 尸海防线 | One1Game",
     "datePublished": "2026-10-05",
     "dateModified": "2026-10-05",
     "author": {"@type": "Person", "name": "Команда One1Game"},
     "publisher": {"@type": "Organization", "name": "One1Game", "logo": {"@type": "ImageObject", "url": "https://one1game.github.io/logo.png"}},
-    "description": "尸海防线 — актуальная цена, скидки, процент положительных отзывов и статистика игроков в Steam. Обновляется автоматически.",
+    "description": "Игра 尸海防线 — это аркадный шутер с видом сверху, где нужно защищаться от орд зомби. Подходит для любителей экшена и казуальных игр.",
     "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5240670/eed9962cb06ff54e2e36b2d08b0759fa739a9969/header.jpg?t=1791131545"
   }
   </script>
@@ -112,6 +112,34 @@
     }
     .game-stat-card .label { font-size: 12px; color: var(--text-faint); text-transform: uppercase; }
     .game-stat-card .value { font-size: 20px; font-weight: bold; margin-top: 4px; }
+    .game-shots {
+      display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+      gap: 12px; margin: 20px 0;
+    }
+    .game-shot {
+      display: block; border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 8px; overflow: hidden;
+    }
+    .game-shot img { display: block; width: 100%; height: auto; }
+    .game-movies { display: grid; gap: 16px; margin: 20px 0; }
+    .game-movie { margin: 0; }
+    .game-video {
+      position: relative; cursor: pointer; overflow: hidden;
+      border-radius: 8px; background: #000; aspect-ratio: 16 / 9;
+    }
+    .game-video img { display: block; width: 100%; height: 100%; object-fit: cover; }
+    .game-video-play { position: absolute; inset: 0; display: grid; place-items: center; }
+    .game-video-play::before {
+      content: ''; width: 58px; height: 58px; border-radius: 50%;
+      background: rgba(0,0,0,0.5); border: 2px solid rgba(255,255,255,0.75);
+    }
+    .game-video-play::after {
+      content: ''; position: absolute; margin-left: 5px;
+      border-style: solid; border-width: 11px 0 11px 18px;
+      border-color: transparent transparent transparent #fff;
+    }
+    .game-video-el { display: block; width: 100%; height: 100%; background: #000; }
+    .game-movie figcaption { margin-top: 6px; font-size: 13px; color: var(--text-faint); }
   </style>
 </head>
 <body>
@@ -141,7 +169,7 @@
 
     <div class="article-header">
       <span class="article-category cat-reviews">Обзоры</span>
-      <h1>尸海防线: цена, отзывы и статистика игроков</h1>
+      <h1>Обзор игры 尸海防线</h1>
       <div class="article-meta">
         <span><i class="far fa-calendar"></i> 5 октября 2026</span>
         <span><i class="far fa-clock"></i> 2 минуты чтения</span>
@@ -150,7 +178,9 @@
 
     <article class="article-body">
 
-      <p>A top-down arcade zombie shooter. Unlock and upgrade weapons through combos, and defend your personal space with firepower in hand. Play solo or local split-screen co-op across multiple battlefields against endless hordes.</p>
+      <p>Игра 尸海防线 представляет собой аркадный шутер с видом сверху. Ваша задача — защищать своё пространство от бесконечных орд зомби.</p>
+
+      
 
       <div class="game-stats-grid">
         <div class="game-stat-card">
@@ -166,13 +196,11 @@
           <div class="label">Владельцев (оценка)</div>
           <div class="value">0 – 20,000</div>
         </div>
-        <div class="game-stat-card">
-          <div class="label">Среднее время игры</div>
-          <div class="value">нет данных</div>
-        </div>
       </div>
 
       <h2>Об игре</h2>
+      <p>В 尸海防线 игроки могут разблокировать и улучшать оружие, используя комбо-атаки. Игра поддерживает как одиночный режим, так и локальный сплит-скрин кооператив. Это отличный выбор для тех, кто любит динамичные и простые в освоении игры. В 尸海防线 нет сложных механик, что делает её доступной для широкой аудитории.</p>
+
       <p><strong>Жанры:</strong> Экшены, Казуальные игры, Инди<br/>
       <strong>Разработчик:</strong> 异变方格<br/>
       <strong>Издатель:</strong> 异变方格</p>
@@ -183,6 +211,20 @@
         </a>
       </p>
 
+      <h2>Скриншоты</h2>
+      <div class="game-shots">
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5240670/3036577d25ac3c68a20eaa9be330dc751dd469c8/ss_3036577d25ac3c68a20eaa9be330dc751dd469c8.1920x1080.jpg?t=1791131545" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5240670/3036577d25ac3c68a20eaa9be330dc751dd469c8/ss_3036577d25ac3c68a20eaa9be330dc751dd469c8.600x338.jpg?t=1791131545" alt="尸海防线 — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5240670/2924aa9bbfb75e7efdf6ce2ec60ff417c823e314/ss_2924aa9bbfb75e7efdf6ce2ec60ff417c823e314.1920x1080.jpg?t=1791131545" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5240670/2924aa9bbfb75e7efdf6ce2ec60ff417c823e314/ss_2924aa9bbfb75e7efdf6ce2ec60ff417c823e314.600x338.jpg?t=1791131545" alt="尸海防线 — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5240670/5ab127f8d6a29baa0d85a7aa03053f4786cc8a83/ss_5ab127f8d6a29baa0d85a7aa03053f4786cc8a83.1920x1080.jpg?t=1791131545" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5240670/5ab127f8d6a29baa0d85a7aa03053f4786cc8a83/ss_5ab127f8d6a29baa0d85a7aa03053f4786cc8a83.600x338.jpg?t=1791131545" alt="尸海防线 — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5240670/2d861aba8acad9e794d0503aac6e7203ad50049c/ss_2d861aba8acad9e794d0503aac6e7203ad50049c.1920x1080.jpg?t=1791131545" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5240670/2d861aba8acad9e794d0503aac6e7203ad50049c/ss_2d861aba8acad9e794d0503aac6e7203ad50049c.600x338.jpg?t=1791131545" alt="尸海防线 — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5240670/2e1f1bfd95da727d6ece4b02ae116bf072fe4dc0/ss_2e1f1bfd95da727d6ece4b02ae116bf072fe4dc0.1920x1080.jpg?t=1791131545" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5240670/2e1f1bfd95da727d6ece4b02ae116bf072fe4dc0/ss_2e1f1bfd95da727d6ece4b02ae116bf072fe4dc0.600x338.jpg?t=1791131545" alt="尸海防线 — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5240670/4bbd31241d57ae25ea801361ffc92f0556c1cbc1/ss_4bbd31241d57ae25ea801361ffc92f0556c1cbc1.1920x1080.jpg?t=1791131545" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5240670/4bbd31241d57ae25ea801361ffc92f0556c1cbc1/ss_4bbd31241d57ae25ea801361ffc92f0556c1cbc1.600x338.jpg?t=1791131545" alt="尸海防线 — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+      </div>
+
+      <h2>Геймплей</h2>
+      <div class="game-movies">
+        <figure class="game-movie"><div class="game-video" data-hls="https://video.akamai.steamstatic.com/store_trailers/5240670/1790374755/9798bd70d172b29dd8402fa0dc8b72f1bcaf6cd3/1789489820/hls_264_master.m3u8?t=1790652506" data-poster="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257425836/8d1319b490a6d6ac9650ee38a97fbb7ccda10828/movie_600x337.jpg?t=1790652506" role="button" tabindex="0" aria-label="Смотреть геймплей"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257425836/8d1319b490a6d6ac9650ee38a97fbb7ccda10828/movie_600x337.jpg?t=1790652506" alt="" loading="lazy" width="480" height="270" /><span class="game-video-play" aria-hidden="true"></span></div></figure>
+      </div>
       <p style="color: var(--text-faint); font-size: 13px; margin-top: 30px;">
         Данные о цене, отзывах и статистике обновляются автоматически на основе
         Steam Store API и SteamSpy.
@@ -284,5 +326,6 @@ function declineCookies() {
 })();
 </script>
 <script src="/newsletter.js?v=2" defer></script>
+<script defer src="/game-media.js?v=1"></script>
 </body>
 </html>

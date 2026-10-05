@@ -112,6 +112,38 @@
     }
     .game-stat-card .label { font-size: 12px; color: var(--text-faint); text-transform: uppercase; }
     .game-stat-card .value { font-size: 20px; font-weight: bold; margin-top: 4px; }
+    .game-shots {
+      display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+      gap: 12px; margin: 20px 0;
+    }
+    .game-shot {
+      display: block; border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 8px; overflow: hidden;
+    }
+    .game-shot img { display: block; width: 100%; height: auto; }
+    .game-movies { display: grid; gap: 16px; margin: 20px 0; }
+    .game-movie { margin: 0; }
+    .game-movie video {
+      display: block; width: 100%; height: auto;
+      border-radius: 8px; background: #000;
+    }
+    .game-movie figcaption { margin-top: 6px; font-size: 13px; color: var(--text-faint); }
+    .game-video {
+      position: relative; cursor: pointer; overflow: hidden;
+      border-radius: 8px; background: #000; aspect-ratio: 16 / 9;
+    }
+    .game-video img { display: block; width: 100%; height: 100%; object-fit: cover; }
+    .game-video-play { position: absolute; inset: 0; display: grid; place-items: center; }
+    .game-video-play::before {
+      content: ''; width: 58px; height: 58px; border-radius: 50%;
+      background: rgba(0,0,0,0.5); border: 2px solid rgba(255,255,255,0.75);
+    }
+    .game-video-play::after {
+      content: ''; position: absolute; margin-left: 5px;
+      border-style: solid; border-width: 11px 0 11px 18px;
+      border-color: transparent transparent transparent #fff;
+    }
+    .game-video-el { display: block; width: 100%; height: 100%; background: #000; }
   </style>
 </head>
 <body>
@@ -150,7 +182,7 @@
 
     <article class="article-body">
 
-      <p>Duola Mage is a fast-paced roguelike action game: multiple characters × hundreds of weapons × randomized builds = a fresh mowing experience every run. Climb the roguelike ladder floor by floor, each layer more exhilarating. Out-of-run progression: level-60 cap + stat allocation + equipment forging!</p>
+      
 
       <div class="game-stats-grid">
         <div class="game-stat-card">
@@ -166,10 +198,6 @@
           <div class="label">Владельцев (оценка)</div>
           <div class="value">0 – 20,000</div>
         </div>
-        <div class="game-stat-card">
-          <div class="label">Среднее время игры</div>
-          <div class="value">нет данных</div>
-        </div>
       </div>
 
       <h2>Об игре</h2>
@@ -183,7 +211,30 @@
         </a>
       </p>
 
-      <p style="color: var(--text-faint); font-size: 13px; margin-top: 30px;">
+            <h2>Скриншоты</h2>
+      <div class="game-shots">
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4133550/2224078a2922492da889d1dea0b703fda28d3008/ss_2224078a2922492da889d1dea0b703fda28d3008.1920x1080.jpg?t=1790864355" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4133550/2224078a2922492da889d1dea0b703fda28d3008/ss_2224078a2922492da889d1dea0b703fda28d3008.600x338.jpg?t=1790864355" alt="Duola Mage — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4133550/f31f5cf4ce4e7bd8e36fe835d8beb7d0ed44b7c4/ss_f31f5cf4ce4e7bd8e36fe835d8beb7d0ed44b7c4.1920x1080.jpg?t=1790864355" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4133550/f31f5cf4ce4e7bd8e36fe835d8beb7d0ed44b7c4/ss_f31f5cf4ce4e7bd8e36fe835d8beb7d0ed44b7c4.600x338.jpg?t=1790864355" alt="Duola Mage — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4133550/5732a54ab0bd4cc691e57eeb109216a00e74598e/ss_5732a54ab0bd4cc691e57eeb109216a00e74598e.1920x1080.jpg?t=1790864355" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4133550/5732a54ab0bd4cc691e57eeb109216a00e74598e/ss_5732a54ab0bd4cc691e57eeb109216a00e74598e.600x338.jpg?t=1790864355" alt="Duola Mage — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4133550/91af0e5de6fdf756563bb7389fb28f74e893b500/ss_91af0e5de6fdf756563bb7389fb28f74e893b500.1920x1080.jpg?t=1790864355" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4133550/91af0e5de6fdf756563bb7389fb28f74e893b500/ss_91af0e5de6fdf756563bb7389fb28f74e893b500.600x338.jpg?t=1790864355" alt="Duola Mage — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4133550/69d87ed9630191695a65cc16b65a4cd67a05786a/ss_69d87ed9630191695a65cc16b65a4cd67a05786a.1920x1080.jpg?t=1790864355" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4133550/69d87ed9630191695a65cc16b65a4cd67a05786a/ss_69d87ed9630191695a65cc16b65a4cd67a05786a.600x338.jpg?t=1790864355" alt="Duola Mage — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4133550/b89b549a729c416ecb1b0ad2fb06fcabc1700582/ss_b89b549a729c416ecb1b0ad2fb06fcabc1700582.1920x1080.jpg?t=1790864355" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4133550/b89b549a729c416ecb1b0ad2fb06fcabc1700582/ss_b89b549a729c416ecb1b0ad2fb06fcabc1700582.600x338.jpg?t=1790864355" alt="Duola Mage — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4133550/9e4ce3e7670f6c54da7ed61343238d653d54225f/ss_9e4ce3e7670f6c54da7ed61343238d653d54225f.1920x1080.jpg?t=1790864355" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4133550/9e4ce3e7670f6c54da7ed61343238d653d54225f/ss_9e4ce3e7670f6c54da7ed61343238d653d54225f.600x338.jpg?t=1790864355" alt="Duola Mage — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4133550/2113bd2296ac024ee10b63e5456e5124e06c9152/ss_2113bd2296ac024ee10b63e5456e5124e06c9152.1920x1080.jpg?t=1790864355" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4133550/2113bd2296ac024ee10b63e5456e5124e06c9152/ss_2113bd2296ac024ee10b63e5456e5124e06c9152.600x338.jpg?t=1790864355" alt="Duola Mage — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4133550/1999597b6184ad02d1750044d442ccf90d1de8b7/ss_1999597b6184ad02d1750044d442ccf90d1de8b7.1920x1080.jpg?t=1790864355" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4133550/1999597b6184ad02d1750044d442ccf90d1de8b7/ss_1999597b6184ad02d1750044d442ccf90d1de8b7.600x338.jpg?t=1790864355" alt="Duola Mage — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4133550/9357f5fe5dba0524044d6f2ed0b23db3062e46e6/ss_9357f5fe5dba0524044d6f2ed0b23db3062e46e6.1920x1080.jpg?t=1790864355" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4133550/9357f5fe5dba0524044d6f2ed0b23db3062e46e6/ss_9357f5fe5dba0524044d6f2ed0b23db3062e46e6.600x338.jpg?t=1790864355" alt="Duola Mage — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4133550/557e566c0ea2638330b3719c5140dd89c4670296/ss_557e566c0ea2638330b3719c5140dd89c4670296.1920x1080.jpg?t=1790864355" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4133550/557e566c0ea2638330b3719c5140dd89c4670296/ss_557e566c0ea2638330b3719c5140dd89c4670296.600x338.jpg?t=1790864355" alt="Duola Mage — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4133550/39f7bece76902a8ecc8c23142948e3e4c96901dc/ss_39f7bece76902a8ecc8c23142948e3e4c96901dc.1920x1080.jpg?t=1790864355" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4133550/39f7bece76902a8ecc8c23142948e3e4c96901dc/ss_39f7bece76902a8ecc8c23142948e3e4c96901dc.600x338.jpg?t=1790864355" alt="Duola Mage — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+      </div>
+
+      <h2>Геймплей</h2>
+      <div class="game-movies">
+        <figure class="game-movie"><div class="game-video" data-hls="https://video.akamai.steamstatic.com/store_trailers/4133550/1986761083/11d78b6535e985f958f0e5f15751f951228a3d12/1790176143/hls_264_master.m3u8?t=1790177808" data-poster="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257432767/78355658125d42f2f4fab071d4ea925967f9bbd9/movie_600x337.jpg?t=1790177808" role="button" tabindex="0" aria-label="Смотреть геймплей: PV"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257432767/78355658125d42f2f4fab071d4ea925967f9bbd9/movie_600x337.jpg?t=1790177808" alt="" loading="lazy" width="480" height="270" /><span class="game-video-play" aria-hidden="true"></span></div></figure>
+        <figure class="game-movie"><div class="game-video" data-hls="https://video.akamai.steamstatic.com/store_trailers/4133550/2127464925/a26976ec1b1300d814728be043a1f20b8c79d3d3/1788153688/hls_264_master.m3u8?t=1788162184" data-poster="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257413284/550e436642423228aa741d36d124263a7ee2d96c/movie_600x337.jpg?t=1788162184" role="button" tabindex="0" aria-label="Смотреть геймплей: Real Gameplay"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257413284/550e436642423228aa741d36d124263a7ee2d96c/movie_600x337.jpg?t=1788162184" alt="" loading="lazy" width="480" height="270" /><span class="game-video-play" aria-hidden="true"></span></div></figure>
+        <figure class="game-movie"><div class="game-video" data-hls="https://video.akamai.steamstatic.com/store_trailers/4133550/104548406/d125a458710518c0a86a1713b33d3cf7a1880c28/1787823052/hls_264_master.m3u8?t=1787926820" data-poster="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257410077/550e436642423228aa741d36d124263a7ee2d96c/movie_600x337.jpg?t=1787926820" role="button" tabindex="0" aria-label="Смотреть геймплей: Duola"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257410077/550e436642423228aa741d36d124263a7ee2d96c/movie_600x337.jpg?t=1787926820" alt="" loading="lazy" width="480" height="270" /><span class="game-video-play" aria-hidden="true"></span></div></figure>
+      </div>
+
+<p style="color: var(--text-faint); font-size: 13px; margin-top: 30px;">
         Данные о цене, отзывах и статистике обновляются автоматически на основе
         Steam Store API и SteamSpy.
       </p>
@@ -284,5 +335,6 @@ function declineCookies() {
 })();
 </script>
 <script src="/newsletter.js?v=2" defer></script>
+<script defer src="/game-media.js?v=1"></script>
 </body>
 </html>

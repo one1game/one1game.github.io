@@ -112,6 +112,38 @@
     }
     .game-stat-card .label { font-size: 12px; color: var(--text-faint); text-transform: uppercase; }
     .game-stat-card .value { font-size: 20px; font-weight: bold; margin-top: 4px; }
+    .game-shots {
+      display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+      gap: 12px; margin: 20px 0;
+    }
+    .game-shot {
+      display: block; border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 8px; overflow: hidden;
+    }
+    .game-shot img { display: block; width: 100%; height: auto; }
+    .game-movies { display: grid; gap: 16px; margin: 20px 0; }
+    .game-movie { margin: 0; }
+    .game-movie video {
+      display: block; width: 100%; height: auto;
+      border-radius: 8px; background: #000;
+    }
+    .game-movie figcaption { margin-top: 6px; font-size: 13px; color: var(--text-faint); }
+    .game-video {
+      position: relative; cursor: pointer; overflow: hidden;
+      border-radius: 8px; background: #000; aspect-ratio: 16 / 9;
+    }
+    .game-video img { display: block; width: 100%; height: 100%; object-fit: cover; }
+    .game-video-play { position: absolute; inset: 0; display: grid; place-items: center; }
+    .game-video-play::before {
+      content: ''; width: 58px; height: 58px; border-radius: 50%;
+      background: rgba(0,0,0,0.5); border: 2px solid rgba(255,255,255,0.75);
+    }
+    .game-video-play::after {
+      content: ''; position: absolute; margin-left: 5px;
+      border-style: solid; border-width: 11px 0 11px 18px;
+      border-color: transparent transparent transparent #fff;
+    }
+    .game-video-el { display: block; width: 100%; height: 100%; background: #000; }
   </style>
 </head>
 <body>
@@ -166,10 +198,6 @@
           <div class="label">Владельцев (оценка)</div>
           <div class="value">0 – 20,000</div>
         </div>
-        <div class="game-stat-card">
-          <div class="label">Среднее время игры</div>
-          <div class="value">нет данных</div>
-        </div>
       </div>
 
       <h2>Об игре</h2>
@@ -183,7 +211,28 @@
         </a>
       </p>
 
-      <p style="color: var(--text-faint); font-size: 13px; margin-top: 30px;">
+            <h2>Скриншоты</h2>
+      <div class="game-shots">
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5039680/a7dffabb0f5010783fc08000b32d646c8ec12ba5/ss_a7dffabb0f5010783fc08000b32d646c8ec12ba5.1920x1080.jpg?t=1790744764" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5039680/a7dffabb0f5010783fc08000b32d646c8ec12ba5/ss_a7dffabb0f5010783fc08000b32d646c8ec12ba5.600x338.jpg?t=1790744764" alt="Crawler 3D — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5039680/e1c23ef1b3d8901865b4bf4dadc405a600bc40b9/ss_e1c23ef1b3d8901865b4bf4dadc405a600bc40b9.1920x1080.jpg?t=1790744764" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5039680/e1c23ef1b3d8901865b4bf4dadc405a600bc40b9/ss_e1c23ef1b3d8901865b4bf4dadc405a600bc40b9.600x338.jpg?t=1790744764" alt="Crawler 3D — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5039680/981123d607d9970ed4a6b88ff07d292a2a22d2dc/ss_981123d607d9970ed4a6b88ff07d292a2a22d2dc.1920x1080.jpg?t=1790744764" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5039680/981123d607d9970ed4a6b88ff07d292a2a22d2dc/ss_981123d607d9970ed4a6b88ff07d292a2a22d2dc.600x338.jpg?t=1790744764" alt="Crawler 3D — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5039680/6b2f6632286c71736b93872b780055092c00e592/ss_6b2f6632286c71736b93872b780055092c00e592.1920x1080.jpg?t=1790744764" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5039680/6b2f6632286c71736b93872b780055092c00e592/ss_6b2f6632286c71736b93872b780055092c00e592.600x338.jpg?t=1790744764" alt="Crawler 3D — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5039680/05ea2d434e72e172308e2e7f592d20245cc11a05/ss_05ea2d434e72e172308e2e7f592d20245cc11a05.1920x1080.jpg?t=1790744764" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5039680/05ea2d434e72e172308e2e7f592d20245cc11a05/ss_05ea2d434e72e172308e2e7f592d20245cc11a05.600x338.jpg?t=1790744764" alt="Crawler 3D — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5039680/3d1b14c9c16f9b542425ef65fe9899f824b23750/ss_3d1b14c9c16f9b542425ef65fe9899f824b23750.1920x1080.jpg?t=1790744764" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5039680/3d1b14c9c16f9b542425ef65fe9899f824b23750/ss_3d1b14c9c16f9b542425ef65fe9899f824b23750.600x338.jpg?t=1790744764" alt="Crawler 3D — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5039680/e8963272b5efce7c803e4061bde8a3e647249783/ss_e8963272b5efce7c803e4061bde8a3e647249783.1920x1080.jpg?t=1790744764" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5039680/e8963272b5efce7c803e4061bde8a3e647249783/ss_e8963272b5efce7c803e4061bde8a3e647249783.600x338.jpg?t=1790744764" alt="Crawler 3D — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5039680/1258a2d5909d8454f5dbd583044916596c90b523/ss_1258a2d5909d8454f5dbd583044916596c90b523.1920x1080.jpg?t=1790744764" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5039680/1258a2d5909d8454f5dbd583044916596c90b523/ss_1258a2d5909d8454f5dbd583044916596c90b523.600x338.jpg?t=1790744764" alt="Crawler 3D — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5039680/bc84638a54f599f0c39ac9d9b860e77538d095e0/ss_bc84638a54f599f0c39ac9d9b860e77538d095e0.1920x1080.jpg?t=1790744764" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5039680/bc84638a54f599f0c39ac9d9b860e77538d095e0/ss_bc84638a54f599f0c39ac9d9b860e77538d095e0.600x338.jpg?t=1790744764" alt="Crawler 3D — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5039680/25eeeab3219e32fc1e79bffc117cdb8e0378ca72/ss_25eeeab3219e32fc1e79bffc117cdb8e0378ca72.1920x1080.jpg?t=1790744764" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5039680/25eeeab3219e32fc1e79bffc117cdb8e0378ca72/ss_25eeeab3219e32fc1e79bffc117cdb8e0378ca72.600x338.jpg?t=1790744764" alt="Crawler 3D — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5039680/d5ca1dc3a9518bf19ba0d39c7d995e28707feb24/ss_d5ca1dc3a9518bf19ba0d39c7d995e28707feb24.1920x1080.jpg?t=1790744764" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5039680/d5ca1dc3a9518bf19ba0d39c7d995e28707feb24/ss_d5ca1dc3a9518bf19ba0d39c7d995e28707feb24.600x338.jpg?t=1790744764" alt="Crawler 3D — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5039680/8bb6a6e404e532e22d18b2ea8bff73761f28895a/ss_8bb6a6e404e532e22d18b2ea8bff73761f28895a.1920x1080.jpg?t=1790744764" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5039680/8bb6a6e404e532e22d18b2ea8bff73761f28895a/ss_8bb6a6e404e532e22d18b2ea8bff73761f28895a.600x338.jpg?t=1790744764" alt="Crawler 3D — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+      </div>
+
+      <h2>Геймплей</h2>
+      <div class="game-movies">
+        <figure class="game-movie"><div class="game-video" data-hls="https://video.akamai.steamstatic.com/store_trailers/5039680/1486339671/c5bb374e991d6370dfabea66685e93a8ee50ae75/1787887823/hls_264_master.m3u8?t=1787888099" data-poster="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257409728/c5dcc3832fecba003a161289003ddec8d1005a53/movie_600x337.jpg?t=1787888099" role="button" tabindex="0" aria-label="Смотреть геймплей: Gameplay Trailer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257409728/c5dcc3832fecba003a161289003ddec8d1005a53/movie_600x337.jpg?t=1787888099" alt="" loading="lazy" width="480" height="270" /><span class="game-video-play" aria-hidden="true"></span></div></figure>
+      </div>
+
+<p style="color: var(--text-faint); font-size: 13px; margin-top: 30px;">
         Данные о цене, отзывах и статистике обновляются автоматически на основе
         Steam Store API и SteamSpy.
       </p>
@@ -284,5 +333,6 @@ function declineCookies() {
 })();
 </script>
 <script src="/newsletter.js?v=2" defer></script>
+<script defer src="/game-media.js?v=1"></script>
 </body>
 </html>

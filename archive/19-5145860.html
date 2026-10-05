@@ -112,6 +112,38 @@
     }
     .game-stat-card .label { font-size: 12px; color: var(--text-faint); text-transform: uppercase; }
     .game-stat-card .value { font-size: 20px; font-weight: bold; margin-top: 4px; }
+    .game-shots {
+      display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+      gap: 12px; margin: 20px 0;
+    }
+    .game-shot {
+      display: block; border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 8px; overflow: hidden;
+    }
+    .game-shot img { display: block; width: 100%; height: auto; }
+    .game-movies { display: grid; gap: 16px; margin: 20px 0; }
+    .game-movie { margin: 0; }
+    .game-movie video {
+      display: block; width: 100%; height: auto;
+      border-radius: 8px; background: #000;
+    }
+    .game-movie figcaption { margin-top: 6px; font-size: 13px; color: var(--text-faint); }
+    .game-video {
+      position: relative; cursor: pointer; overflow: hidden;
+      border-radius: 8px; background: #000; aspect-ratio: 16 / 9;
+    }
+    .game-video img { display: block; width: 100%; height: 100%; object-fit: cover; }
+    .game-video-play { position: absolute; inset: 0; display: grid; place-items: center; }
+    .game-video-play::before {
+      content: ''; width: 58px; height: 58px; border-radius: 50%;
+      background: rgba(0,0,0,0.5); border: 2px solid rgba(255,255,255,0.75);
+    }
+    .game-video-play::after {
+      content: ''; position: absolute; margin-left: 5px;
+      border-style: solid; border-width: 11px 0 11px 18px;
+      border-color: transparent transparent transparent #fff;
+    }
+    .game-video-el { display: block; width: 100%; height: 100%; background: #000; }
   </style>
 </head>
 <body>
@@ -166,10 +198,6 @@
           <div class="label">Владельцев (оценка)</div>
           <div class="value">0 – 20,000</div>
         </div>
-        <div class="game-stat-card">
-          <div class="label">Среднее время игры</div>
-          <div class="value">нет данных</div>
-        </div>
       </div>
 
       <h2>Об игре</h2>
@@ -183,7 +211,28 @@
         </a>
       </p>
 
-      <p style="color: var(--text-faint); font-size: 13px; margin-top: 30px;">
+            <h2>Скриншоты</h2>
+      <div class="game-shots">
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5145860/e58fbf83206c7c316b9567792962a96b2979c144/ss_e58fbf83206c7c316b9567792962a96b2979c144.1920x1080.jpg?t=1789963271" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5145860/e58fbf83206c7c316b9567792962a96b2979c144/ss_e58fbf83206c7c316b9567792962a96b2979c144.600x338.jpg?t=1789963271" alt="Hibiki &amp; Kanon&#x27;s Go 19x19 Complete Beginner’s Course — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5145860/047fa621531b9c761527e75da047f2d67401a087/ss_047fa621531b9c761527e75da047f2d67401a087.1920x1080.jpg?t=1789963271" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5145860/047fa621531b9c761527e75da047f2d67401a087/ss_047fa621531b9c761527e75da047f2d67401a087.600x338.jpg?t=1789963271" alt="Hibiki &amp; Kanon&#x27;s Go 19x19 Complete Beginner’s Course — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5145860/dadca3ead157de9f6ebc4a101189cb64c31778a7/ss_dadca3ead157de9f6ebc4a101189cb64c31778a7.1920x1080.jpg?t=1789963271" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5145860/dadca3ead157de9f6ebc4a101189cb64c31778a7/ss_dadca3ead157de9f6ebc4a101189cb64c31778a7.600x338.jpg?t=1789963271" alt="Hibiki &amp; Kanon&#x27;s Go 19x19 Complete Beginner’s Course — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5145860/f876cc1f8905516e4727800645fe2fbb8606fd23/ss_f876cc1f8905516e4727800645fe2fbb8606fd23.1920x1080.jpg?t=1789963271" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5145860/f876cc1f8905516e4727800645fe2fbb8606fd23/ss_f876cc1f8905516e4727800645fe2fbb8606fd23.600x338.jpg?t=1789963271" alt="Hibiki &amp; Kanon&#x27;s Go 19x19 Complete Beginner’s Course — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5145860/41e372826ab3ccffb1a303a6e8e889e7179eee38/ss_41e372826ab3ccffb1a303a6e8e889e7179eee38.1920x1080.jpg?t=1789963271" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5145860/41e372826ab3ccffb1a303a6e8e889e7179eee38/ss_41e372826ab3ccffb1a303a6e8e889e7179eee38.600x338.jpg?t=1789963271" alt="Hibiki &amp; Kanon&#x27;s Go 19x19 Complete Beginner’s Course — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5145860/92bdee46b8e73a6b5dda5a999912b4a4499e9232/ss_92bdee46b8e73a6b5dda5a999912b4a4499e9232.1920x1080.jpg?t=1789963271" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5145860/92bdee46b8e73a6b5dda5a999912b4a4499e9232/ss_92bdee46b8e73a6b5dda5a999912b4a4499e9232.600x338.jpg?t=1789963271" alt="Hibiki &amp; Kanon&#x27;s Go 19x19 Complete Beginner’s Course — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5145860/2b062e58d5473a728d62453695d5f13b5ed0b68b/ss_2b062e58d5473a728d62453695d5f13b5ed0b68b.1920x1080.jpg?t=1789963271" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5145860/2b062e58d5473a728d62453695d5f13b5ed0b68b/ss_2b062e58d5473a728d62453695d5f13b5ed0b68b.600x338.jpg?t=1789963271" alt="Hibiki &amp; Kanon&#x27;s Go 19x19 Complete Beginner’s Course — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5145860/af2640b2489b6f4cfe656d910fad65675c19fb8b/ss_af2640b2489b6f4cfe656d910fad65675c19fb8b.1920x1080.jpg?t=1789963271" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5145860/af2640b2489b6f4cfe656d910fad65675c19fb8b/ss_af2640b2489b6f4cfe656d910fad65675c19fb8b.600x338.jpg?t=1789963271" alt="Hibiki &amp; Kanon&#x27;s Go 19x19 Complete Beginner’s Course — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5145860/7cca31042fbbb005763d01e3b2966c17bf58ca30/ss_7cca31042fbbb005763d01e3b2966c17bf58ca30.1920x1080.jpg?t=1789963271" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5145860/7cca31042fbbb005763d01e3b2966c17bf58ca30/ss_7cca31042fbbb005763d01e3b2966c17bf58ca30.600x338.jpg?t=1789963271" alt="Hibiki &amp; Kanon&#x27;s Go 19x19 Complete Beginner’s Course — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5145860/62dd3b1c3b8667289ce6035d0fdf5b48b1d19d93/ss_62dd3b1c3b8667289ce6035d0fdf5b48b1d19d93.1920x1080.jpg?t=1789963271" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5145860/62dd3b1c3b8667289ce6035d0fdf5b48b1d19d93/ss_62dd3b1c3b8667289ce6035d0fdf5b48b1d19d93.600x338.jpg?t=1789963271" alt="Hibiki &amp; Kanon&#x27;s Go 19x19 Complete Beginner’s Course — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5145860/77e06c3c32472460455f9d4048b5302f1f97a6a7/ss_77e06c3c32472460455f9d4048b5302f1f97a6a7.1920x1080.jpg?t=1789963271" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5145860/77e06c3c32472460455f9d4048b5302f1f97a6a7/ss_77e06c3c32472460455f9d4048b5302f1f97a6a7.600x338.jpg?t=1789963271" alt="Hibiki &amp; Kanon&#x27;s Go 19x19 Complete Beginner’s Course — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5145860/29e657d945254edfe968ff17fde8fa019403f74d/ss_29e657d945254edfe968ff17fde8fa019403f74d.1920x1080.jpg?t=1789963271" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5145860/29e657d945254edfe968ff17fde8fa019403f74d/ss_29e657d945254edfe968ff17fde8fa019403f74d.600x338.jpg?t=1789963271" alt="Hibiki &amp; Kanon&#x27;s Go 19x19 Complete Beginner’s Course — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+      </div>
+
+      <h2>Геймплей</h2>
+      <div class="game-movies">
+        <figure class="game-movie"><div class="game-video" data-hls="https://video.akamai.steamstatic.com/store_trailers/5145860/1539021936/94490495c45f4501708f07361d5b2453ef849294/1787473395/hls_264_master.m3u8?t=1787803307" data-poster="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257404078/4a97497533b5dff4ad3a26c1cabb69506162bb8f/movie_600x337.jpg?t=1787803307" role="button" tabindex="0" aria-label="Смотреть геймплей: PV"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257404078/4a97497533b5dff4ad3a26c1cabb69506162bb8f/movie_600x337.jpg?t=1787803307" alt="" loading="lazy" width="480" height="270" /><span class="game-video-play" aria-hidden="true"></span></div></figure>
+      </div>
+
+<p style="color: var(--text-faint); font-size: 13px; margin-top: 30px;">
         Данные о цене, отзывах и статистике обновляются автоматически на основе
         Steam Store API и SteamSpy.
       </p>
@@ -284,5 +333,6 @@ function declineCookies() {
 })();
 </script>
 <script src="/newsletter.js?v=2" defer></script>
+<script defer src="/game-media.js?v=1"></script>
 </body>
 </html>

@@ -112,6 +112,38 @@
     }
     .game-stat-card .label { font-size: 12px; color: var(--text-faint); text-transform: uppercase; }
     .game-stat-card .value { font-size: 20px; font-weight: bold; margin-top: 4px; }
+    .game-shots {
+      display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+      gap: 12px; margin: 20px 0;
+    }
+    .game-shot {
+      display: block; border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 8px; overflow: hidden;
+    }
+    .game-shot img { display: block; width: 100%; height: auto; }
+    .game-movies { display: grid; gap: 16px; margin: 20px 0; }
+    .game-movie { margin: 0; }
+    .game-movie video {
+      display: block; width: 100%; height: auto;
+      border-radius: 8px; background: #000;
+    }
+    .game-movie figcaption { margin-top: 6px; font-size: 13px; color: var(--text-faint); }
+    .game-video {
+      position: relative; cursor: pointer; overflow: hidden;
+      border-radius: 8px; background: #000; aspect-ratio: 16 / 9;
+    }
+    .game-video img { display: block; width: 100%; height: 100%; object-fit: cover; }
+    .game-video-play { position: absolute; inset: 0; display: grid; place-items: center; }
+    .game-video-play::before {
+      content: ''; width: 58px; height: 58px; border-radius: 50%;
+      background: rgba(0,0,0,0.5); border: 2px solid rgba(255,255,255,0.75);
+    }
+    .game-video-play::after {
+      content: ''; position: absolute; margin-left: 5px;
+      border-style: solid; border-width: 11px 0 11px 18px;
+      border-color: transparent transparent transparent #fff;
+    }
+    .game-video-el { display: block; width: 100%; height: 100%; background: #000; }
   </style>
 </head>
 <body>
@@ -166,10 +198,6 @@
           <div class="label">Владельцев (оценка)</div>
           <div class="value">0 – 20,000</div>
         </div>
-        <div class="game-stat-card">
-          <div class="label">Среднее время игры</div>
-          <div class="value">нет данных</div>
-        </div>
       </div>
 
       <h2>Об игре</h2>
@@ -183,7 +211,26 @@
         </a>
       </p>
 
-      <p style="color: var(--text-faint); font-size: 13px; margin-top: 30px;">
+            <h2>Скриншоты</h2>
+      <div class="game-shots">
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4165370/df8bb57d42e2b795e4c7ac0a73b0b4f85eb47cd5/ss_df8bb57d42e2b795e4c7ac0a73b0b4f85eb47cd5.1920x1080.jpg?t=1790772096" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4165370/df8bb57d42e2b795e4c7ac0a73b0b4f85eb47cd5/ss_df8bb57d42e2b795e4c7ac0a73b0b4f85eb47cd5.600x338.jpg?t=1790772096" alt="Match 3 Labyrinth — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4165370/b790a0586eccd744895407ec0910a8406df6e143/ss_b790a0586eccd744895407ec0910a8406df6e143.1920x1080.jpg?t=1790772096" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4165370/b790a0586eccd744895407ec0910a8406df6e143/ss_b790a0586eccd744895407ec0910a8406df6e143.600x338.jpg?t=1790772096" alt="Match 3 Labyrinth — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4165370/fca26083b303707f301ef5d7c2d2829517ad282f/ss_fca26083b303707f301ef5d7c2d2829517ad282f.1920x1080.jpg?t=1790772096" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4165370/fca26083b303707f301ef5d7c2d2829517ad282f/ss_fca26083b303707f301ef5d7c2d2829517ad282f.600x338.jpg?t=1790772096" alt="Match 3 Labyrinth — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4165370/b373988ee3f387a750619abc99fcba75ea928504/ss_b373988ee3f387a750619abc99fcba75ea928504.1920x1080.jpg?t=1790772096" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4165370/b373988ee3f387a750619abc99fcba75ea928504/ss_b373988ee3f387a750619abc99fcba75ea928504.600x338.jpg?t=1790772096" alt="Match 3 Labyrinth — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4165370/3e6b151c9b2bf745d01e97bb66d8805ef2b3af13/ss_3e6b151c9b2bf745d01e97bb66d8805ef2b3af13.1920x1080.jpg?t=1790772096" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4165370/3e6b151c9b2bf745d01e97bb66d8805ef2b3af13/ss_3e6b151c9b2bf745d01e97bb66d8805ef2b3af13.600x338.jpg?t=1790772096" alt="Match 3 Labyrinth — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4165370/a57df94332ad23c3b4502f5eb7dd584c71cb0d89/ss_a57df94332ad23c3b4502f5eb7dd584c71cb0d89.1920x1080.jpg?t=1790772096" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4165370/a57df94332ad23c3b4502f5eb7dd584c71cb0d89/ss_a57df94332ad23c3b4502f5eb7dd584c71cb0d89.600x338.jpg?t=1790772096" alt="Match 3 Labyrinth — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4165370/6f0e29858f1cacf8d9b5d4ea7ac4233b8f4838fa/ss_6f0e29858f1cacf8d9b5d4ea7ac4233b8f4838fa.1920x1080.jpg?t=1790772096" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4165370/6f0e29858f1cacf8d9b5d4ea7ac4233b8f4838fa/ss_6f0e29858f1cacf8d9b5d4ea7ac4233b8f4838fa.600x338.jpg?t=1790772096" alt="Match 3 Labyrinth — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4165370/11dda59cca617cd63f35860438ff34ce0ad0b369/ss_11dda59cca617cd63f35860438ff34ce0ad0b369.1920x1080.jpg?t=1790772096" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4165370/11dda59cca617cd63f35860438ff34ce0ad0b369/ss_11dda59cca617cd63f35860438ff34ce0ad0b369.600x338.jpg?t=1790772096" alt="Match 3 Labyrinth — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4165370/b51b0b21f5da739bf13f7a4075362cb1eda23d06/ss_b51b0b21f5da739bf13f7a4075362cb1eda23d06.1920x1080.jpg?t=1790772096" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4165370/b51b0b21f5da739bf13f7a4075362cb1eda23d06/ss_b51b0b21f5da739bf13f7a4075362cb1eda23d06.600x338.jpg?t=1790772096" alt="Match 3 Labyrinth — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4165370/fca23aa6816f9d621eb8c7d5b5f6cdcb7d07783a/ss_fca23aa6816f9d621eb8c7d5b5f6cdcb7d07783a.1920x1080.jpg?t=1790772096" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4165370/fca23aa6816f9d621eb8c7d5b5f6cdcb7d07783a/ss_fca23aa6816f9d621eb8c7d5b5f6cdcb7d07783a.600x338.jpg?t=1790772096" alt="Match 3 Labyrinth — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+      </div>
+
+      <h2>Геймплей</h2>
+      <div class="game-movies">
+        <figure class="game-movie"><div class="game-video" data-hls="https://video.akamai.steamstatic.com/store_trailers/4165370/1782082696/1f1cbb1f09c0ca84242944dc96edb37c49fbd7fd/1790696628/hls_264_master.m3u8?t=1790697114" data-poster="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257439983/27732e7547a63063cb87df6809f693b512615b9f/movie_600x337.jpg?t=1790697114" role="button" tabindex="0" aria-label="Смотреть геймплей: pv_02"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257439983/27732e7547a63063cb87df6809f693b512615b9f/movie_600x337.jpg?t=1790697114" alt="" loading="lazy" width="480" height="270" /><span class="game-video-play" aria-hidden="true"></span></div></figure>
+      </div>
+
+<p style="color: var(--text-faint); font-size: 13px; margin-top: 30px;">
         Данные о цене, отзывах и статистике обновляются автоматически на основе
         Steam Store API и SteamSpy.
       </p>
@@ -284,5 +331,6 @@ function declineCookies() {
 })();
 </script>
 <script src="/newsletter.js?v=2" defer></script>
+<script defer src="/game-media.js?v=1"></script>
 </body>
 </html>

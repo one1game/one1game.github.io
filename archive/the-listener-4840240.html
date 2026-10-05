@@ -10,12 +10,12 @@
   <link rel="dns-prefetch" href="https://www.google-analytics.com" />
   <link rel="preload" href="../styles.css" as="style" />
 
-  <title>The Listener: цена, отзывы и статистика игроков | One1Game</title>
-  <meta name="description" content="The Listener — актуальная цена, скидки, процент положительных отзывов и статистика игроков в Steam. Обновляется автоматически." />
+  <title>The Listener: обзор игры-расследования | One1Game</title>
+  <meta name="description" content="The Listener — бесплатная симуляция, где вы выступаете югославским радиолюбителем в эпоху холодной войны. Перехватывайте сигналы и раскрывайте тайный заговор." />
   <meta name="keywords" content="The Listener, цена, отзывы, скидка, статистика игроков, Steam" />
 
-  <meta property="og:title" content="The Listener: цена, отзывы и статистика игроков | One1Game" />
-  <meta property="og:description" content="The Listener — актуальная цена, скидки, процент положительных отзывов и статистика игроков в Steam. Обновляется автоматически." />
+  <meta property="og:title" content="The Listener: обзор игры-расследования | One1Game" />
+  <meta property="og:description" content="The Listener — бесплатная симуляция, где вы выступаете югославским радиолюбителем в эпоху холодной войны. Перехватывайте сигналы и раскрывайте тайный заговор." />
   <meta property="og:type" content="article" />
   <meta property="og:url" content="https://one1game.github.io/archive/the-listener-4840240.html" />
   <meta property="og:image" content="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4840240/315c5740939f867247fbaaefd46d58e67098f581/header.jpg?t=1791185592" />
@@ -58,12 +58,12 @@
   {
     "@context": "https://schema.org",
     "@type": "Article",
-    "headline": "The Listener: цена, отзывы и статистика игроков | One1Game",
+    "headline": "The Listener: обзор игры-расследования | One1Game",
     "datePublished": "2026-10-05",
     "dateModified": "2026-10-05",
     "author": {"@type": "Person", "name": "Команда One1Game"},
     "publisher": {"@type": "Organization", "name": "One1Game", "logo": {"@type": "ImageObject", "url": "https://one1game.github.io/logo.png"}},
-    "description": "The Listener — актуальная цена, скидки, процент положительных отзывов и статистика игроков в Steam. Обновляется автоматически.",
+    "description": "The Listener — бесплатная симуляция, где вы выступаете югославским радиолюбителем в эпоху холодной войны. Перехватывайте сигналы и раскрывайте тайный заговор.",
     "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4840240/315c5740939f867247fbaaefd46d58e67098f581/header.jpg?t=1791185592"
   }
   </script>
@@ -108,6 +108,34 @@
     }
     .game-stat-card .label { font-size: 12px; color: var(--text-faint); text-transform: uppercase; }
     .game-stat-card .value { font-size: 20px; font-weight: bold; margin-top: 4px; }
+    .game-shots {
+      display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+      gap: 12px; margin: 20px 0;
+    }
+    .game-shot {
+      display: block; border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 8px; overflow: hidden;
+    }
+    .game-shot img { display: block; width: 100%; height: auto; }
+    .game-movies { display: grid; gap: 16px; margin: 20px 0; }
+    .game-movie { margin: 0; }
+    .game-video {
+      position: relative; cursor: pointer; overflow: hidden;
+      border-radius: 8px; background: #000; aspect-ratio: 16 / 9;
+    }
+    .game-video img { display: block; width: 100%; height: 100%; object-fit: cover; }
+    .game-video-play { position: absolute; inset: 0; display: grid; place-items: center; }
+    .game-video-play::before {
+      content: ''; width: 58px; height: 58px; border-radius: 50%;
+      background: rgba(0,0,0,0.5); border: 2px solid rgba(255,255,255,0.75);
+    }
+    .game-video-play::after {
+      content: ''; position: absolute; margin-left: 5px;
+      border-style: solid; border-width: 11px 0 11px 18px;
+      border-color: transparent transparent transparent #fff;
+    }
+    .game-video-el { display: block; width: 100%; height: 100%; background: #000; }
+    .game-movie figcaption { margin-top: 6px; font-size: 13px; color: var(--text-faint); }
   </style>
 </head>
 <body>
@@ -137,7 +165,7 @@
 
     <div class="article-header">
       <span class="article-category cat-reviews">Обзоры</span>
-      <h1>The Listener: цена, отзывы и статистика игроков</h1>
+      <h1>The Listener: обзор игры-расследования</h1>
       <div class="article-meta">
         <span><i class="far fa-calendar"></i> 5 октября 2026</span>
         <span><i class="far fa-clock"></i> 2 минуты чтения</span>
@@ -146,7 +174,9 @@
 
     <article class="article-body">
 
-      <p>&quot;The Listener is a first-person investigation game. Play as a Yugoslav radio amateur at the height of the Cold War. Use your equipment to pick up mysterious transmissions, analyze cryptic messages, and gather hidden clues to uncover a sinister conspiracy&quot;</p>
+      <p>Погрузитесь в атмосферу холодной войны, став югославским радиолюбителем. Ваша задача — использовать профессиональное оборудование для перехвата таинственных передач. Каждое сообщение скрывает фрагменты крупной заговоры.</p>
+
+      
 
       <div class="game-stats-grid">
         <div class="game-stat-card">
@@ -162,13 +192,11 @@
           <div class="label">Владельцев (оценка)</div>
           <div class="value">0 – 20,000</div>
         </div>
-        <div class="game-stat-card">
-          <div class="label">Среднее время игры</div>
-          <div class="value">нет данных</div>
-        </div>
       </div>
 
       <h2>Об игре</h2>
+      <p>The Listener представляет собой квест от первого лица с элементами детектива. Игрок анализирует зашифрованные данные и собирает улики, чтобы разоблачить скрытую угрозу. Проект сочетает спокойный геймплей с напряженным сюжетом, предлагая глубокое погружение в историю и механику радиосвязи.</p>
+
       <p><strong>Жанры:</strong> Казуальные игры, Симуляторы, Бесплатные<br/>
       <strong>Разработчик:</strong> False Start<br/>
       <strong>Издатель:</strong> ARTFX - GAME	</p>
@@ -179,6 +207,23 @@
         </a>
       </p>
 
+      <h2>Скриншоты</h2>
+      <div class="game-shots">
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4840240/00826bc0125a206817a6776d8236114e605f6e33/ss_00826bc0125a206817a6776d8236114e605f6e33.1920x1080.jpg?t=1791185592" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4840240/00826bc0125a206817a6776d8236114e605f6e33/ss_00826bc0125a206817a6776d8236114e605f6e33.600x338.jpg?t=1791185592" alt="The Listener — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4840240/b394bdea2530792b309fdfac72273f6ecd6c0f97/ss_b394bdea2530792b309fdfac72273f6ecd6c0f97.1920x1080.jpg?t=1791185592" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4840240/b394bdea2530792b309fdfac72273f6ecd6c0f97/ss_b394bdea2530792b309fdfac72273f6ecd6c0f97.600x338.jpg?t=1791185592" alt="The Listener — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4840240/c2d54c9348d8623b8b48b13debda894eec4818ea/ss_c2d54c9348d8623b8b48b13debda894eec4818ea.1920x1080.jpg?t=1791185592" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4840240/c2d54c9348d8623b8b48b13debda894eec4818ea/ss_c2d54c9348d8623b8b48b13debda894eec4818ea.600x338.jpg?t=1791185592" alt="The Listener — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4840240/482427b712db0fb6ca37d29301dbaea26ff4571e/ss_482427b712db0fb6ca37d29301dbaea26ff4571e.1920x1080.jpg?t=1791185592" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4840240/482427b712db0fb6ca37d29301dbaea26ff4571e/ss_482427b712db0fb6ca37d29301dbaea26ff4571e.600x338.jpg?t=1791185592" alt="The Listener — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4840240/a8194f07a8b21fa108bcff57df8982d3ae121eb9/ss_a8194f07a8b21fa108bcff57df8982d3ae121eb9.1920x1080.jpg?t=1791185592" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4840240/a8194f07a8b21fa108bcff57df8982d3ae121eb9/ss_a8194f07a8b21fa108bcff57df8982d3ae121eb9.600x338.jpg?t=1791185592" alt="The Listener — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4840240/919ad54823699dc490588c20c3de65aa9cf56118/ss_919ad54823699dc490588c20c3de65aa9cf56118.1920x1080.jpg?t=1791185592" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4840240/919ad54823699dc490588c20c3de65aa9cf56118/ss_919ad54823699dc490588c20c3de65aa9cf56118.600x338.jpg?t=1791185592" alt="The Listener — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4840240/ce181834ca695d82a3f83a9aa395788b3158d6f8/ss_ce181834ca695d82a3f83a9aa395788b3158d6f8.1920x1080.jpg?t=1791185592" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4840240/ce181834ca695d82a3f83a9aa395788b3158d6f8/ss_ce181834ca695d82a3f83a9aa395788b3158d6f8.600x338.jpg?t=1791185592" alt="The Listener — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4840240/9fa146106e872b255def44379a8a6bc76b2b97f5/ss_9fa146106e872b255def44379a8a6bc76b2b97f5.1920x1080.jpg?t=1791185592" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4840240/9fa146106e872b255def44379a8a6bc76b2b97f5/ss_9fa146106e872b255def44379a8a6bc76b2b97f5.600x338.jpg?t=1791185592" alt="The Listener — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4840240/f778998eb6fb4501139a2dbad0b2f5bd84ae217c/ss_f778998eb6fb4501139a2dbad0b2f5bd84ae217c.1920x1080.jpg?t=1791185592" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4840240/f778998eb6fb4501139a2dbad0b2f5bd84ae217c/ss_f778998eb6fb4501139a2dbad0b2f5bd84ae217c.600x338.jpg?t=1791185592" alt="The Listener — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+      </div>
+
+      <h2>Геймплей</h2>
+      <div class="game-movies">
+        <figure class="game-movie"><div class="game-video" data-hls="https://video.akamai.steamstatic.com/store_trailers/4840240/900797835/7081b0f77248c49db60b03a3bd4e191f9cc37ce5/1782200998/hls_264_master.m3u8?t=1788435699" data-poster="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257364058/e63d793c4ac4e4a43b4a14623a129fb5bd2d2468/movie_600x337.jpg?t=1788435699" role="button" tabindex="0" aria-label="Смотреть геймплей"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257364058/e63d793c4ac4e4a43b4a14623a129fb5bd2d2468/movie_600x337.jpg?t=1788435699" alt="" loading="lazy" width="480" height="270" /><span class="game-video-play" aria-hidden="true"></span></div></figure>
+      </div>
       <p style="color: var(--text-faint); font-size: 13px; margin-top: 30px;">
         Данные о цене, отзывах и статистике обновляются автоматически на основе
         Steam Store API и SteamSpy.
@@ -280,5 +325,6 @@ function declineCookies() {
 })();
 </script>
 <script src="/newsletter.js?v=2" defer></script>
+<script defer src="/game-media.js?v=1"></script>
 </body>
 </html>

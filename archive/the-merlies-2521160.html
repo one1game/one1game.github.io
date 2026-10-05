@@ -112,6 +112,38 @@
     }
     .game-stat-card .label { font-size: 12px; color: var(--text-faint); text-transform: uppercase; }
     .game-stat-card .value { font-size: 20px; font-weight: bold; margin-top: 4px; }
+    .game-shots {
+      display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+      gap: 12px; margin: 20px 0;
+    }
+    .game-shot {
+      display: block; border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 8px; overflow: hidden;
+    }
+    .game-shot img { display: block; width: 100%; height: auto; }
+    .game-movies { display: grid; gap: 16px; margin: 20px 0; }
+    .game-movie { margin: 0; }
+    .game-movie video {
+      display: block; width: 100%; height: auto;
+      border-radius: 8px; background: #000;
+    }
+    .game-movie figcaption { margin-top: 6px; font-size: 13px; color: var(--text-faint); }
+    .game-video {
+      position: relative; cursor: pointer; overflow: hidden;
+      border-radius: 8px; background: #000; aspect-ratio: 16 / 9;
+    }
+    .game-video img { display: block; width: 100%; height: 100%; object-fit: cover; }
+    .game-video-play { position: absolute; inset: 0; display: grid; place-items: center; }
+    .game-video-play::before {
+      content: ''; width: 58px; height: 58px; border-radius: 50%;
+      background: rgba(0,0,0,0.5); border: 2px solid rgba(255,255,255,0.75);
+    }
+    .game-video-play::after {
+      content: ''; position: absolute; margin-left: 5px;
+      border-style: solid; border-width: 11px 0 11px 18px;
+      border-color: transparent transparent transparent #fff;
+    }
+    .game-video-el { display: block; width: 100%; height: 100%; background: #000; }
   </style>
 </head>
 <body>
@@ -150,7 +182,7 @@
 
     <article class="article-body">
 
-      <p>Meet the Merlies, a tiny birds community trying to find harmony in a cute post-apocalyptic world filled with the remains of a long forgotten civilization. Gather your birdies, explore this wild world with your tiny bird squad and complete your village out of collected scraps!</p>
+      
 
       <div class="game-stats-grid">
         <div class="game-stat-card">
@@ -166,10 +198,6 @@
           <div class="label">Владельцев (оценка)</div>
           <div class="value">0 – 20,000</div>
         </div>
-        <div class="game-stat-card">
-          <div class="label">Среднее время игры</div>
-          <div class="value">нет данных</div>
-        </div>
       </div>
 
       <h2>Об игре</h2>
@@ -183,7 +211,28 @@
         </a>
       </p>
 
-      <p style="color: var(--text-faint); font-size: 13px; margin-top: 30px;">
+            <h2>Скриншоты</h2>
+      <div class="game-shots">
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2521160/1a3b4bfed32bbb07f2be9ba4baffdafcacb6c7dc/ss_1a3b4bfed32bbb07f2be9ba4baffdafcacb6c7dc.1920x1080.jpg?t=1790702090" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2521160/1a3b4bfed32bbb07f2be9ba4baffdafcacb6c7dc/ss_1a3b4bfed32bbb07f2be9ba4baffdafcacb6c7dc.600x338.jpg?t=1790702090" alt="The Merlies — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2521160/3e7a4e4db60491964dbbba0930454f6b133285cf/ss_3e7a4e4db60491964dbbba0930454f6b133285cf.1920x1080.jpg?t=1790702090" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2521160/3e7a4e4db60491964dbbba0930454f6b133285cf/ss_3e7a4e4db60491964dbbba0930454f6b133285cf.600x338.jpg?t=1790702090" alt="The Merlies — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2521160/c16a2844c2ce55c2bef9af629cd9fb1ab2ff2825/ss_c16a2844c2ce55c2bef9af629cd9fb1ab2ff2825.1920x1080.jpg?t=1790702090" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2521160/c16a2844c2ce55c2bef9af629cd9fb1ab2ff2825/ss_c16a2844c2ce55c2bef9af629cd9fb1ab2ff2825.600x338.jpg?t=1790702090" alt="The Merlies — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2521160/e772d3e304f558b73e3deeed52cedd349e120f16/ss_e772d3e304f558b73e3deeed52cedd349e120f16.1920x1080.jpg?t=1790702090" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2521160/e772d3e304f558b73e3deeed52cedd349e120f16/ss_e772d3e304f558b73e3deeed52cedd349e120f16.600x338.jpg?t=1790702090" alt="The Merlies — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2521160/63ca736feaf1cfe537a4462ce7ec39da212c2e70/ss_63ca736feaf1cfe537a4462ce7ec39da212c2e70.1920x1080.jpg?t=1790702090" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2521160/63ca736feaf1cfe537a4462ce7ec39da212c2e70/ss_63ca736feaf1cfe537a4462ce7ec39da212c2e70.600x338.jpg?t=1790702090" alt="The Merlies — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2521160/44107d32d8ffac78aa9833cbad031e5b256853ee/ss_44107d32d8ffac78aa9833cbad031e5b256853ee.1920x1080.jpg?t=1790702090" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2521160/44107d32d8ffac78aa9833cbad031e5b256853ee/ss_44107d32d8ffac78aa9833cbad031e5b256853ee.600x338.jpg?t=1790702090" alt="The Merlies — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2521160/e6ea0a1b71d1215f2f28f540acc38b81456dfcb8/ss_e6ea0a1b71d1215f2f28f540acc38b81456dfcb8.1920x1080.jpg?t=1790702090" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2521160/e6ea0a1b71d1215f2f28f540acc38b81456dfcb8/ss_e6ea0a1b71d1215f2f28f540acc38b81456dfcb8.600x338.jpg?t=1790702090" alt="The Merlies — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2521160/72cf4fe0a0dbe097eb1977596d2bb75743bf66be/ss_72cf4fe0a0dbe097eb1977596d2bb75743bf66be.1920x1080.jpg?t=1790702090" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2521160/72cf4fe0a0dbe097eb1977596d2bb75743bf66be/ss_72cf4fe0a0dbe097eb1977596d2bb75743bf66be.600x338.jpg?t=1790702090" alt="The Merlies — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2521160/fae17f4e2037a2a8f8c72f7957def1e0468bee48/ss_fae17f4e2037a2a8f8c72f7957def1e0468bee48.1920x1080.jpg?t=1790702090" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2521160/fae17f4e2037a2a8f8c72f7957def1e0468bee48/ss_fae17f4e2037a2a8f8c72f7957def1e0468bee48.600x338.jpg?t=1790702090" alt="The Merlies — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2521160/c4835ee628af4d13f14a3dd816b4cd76f02f97a6/ss_c4835ee628af4d13f14a3dd816b4cd76f02f97a6.1920x1080.jpg?t=1790702090" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2521160/c4835ee628af4d13f14a3dd816b4cd76f02f97a6/ss_c4835ee628af4d13f14a3dd816b4cd76f02f97a6.600x338.jpg?t=1790702090" alt="The Merlies — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+      </div>
+
+      <h2>Геймплей</h2>
+      <div class="game-movies">
+        <figure class="game-movie"><div class="game-video" data-hls="https://video.akamai.steamstatic.com/store_trailers/2521160/1061944296/71f656205a6f1e6bb14a3ac176c4528d43aabf56/1786461743/hls_264_master.m3u8?t=1790670986" data-poster="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257396629/7b46ea43932e4d8af1ed5e379f8339a5b018ade9/movie_600x337.jpg?t=1790670986" role="button" tabindex="0" aria-label="Смотреть геймплей: The Merlies - release trailer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257396629/7b46ea43932e4d8af1ed5e379f8339a5b018ade9/movie_600x337.jpg?t=1790670986" alt="" loading="lazy" width="480" height="270" /><span class="game-video-play" aria-hidden="true"></span></div></figure>
+        <figure class="game-movie"><div class="game-video" data-hls="https://video.akamai.steamstatic.com/store_trailers/2521160/839050204/61e9768b82ab7e54ecb1f56ba549cc946d2b7c33/1788858669/hls_264_master.m3u8?t=1788945367" data-poster="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257419734/b24038b3f90ce1f0e31c6bd50ddaf546d72b5644/movie_600x337.jpg?t=1788945367" role="button" tabindex="0" aria-label="Смотреть геймплей: The Merlies - Release date teaser"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257419734/b24038b3f90ce1f0e31c6bd50ddaf546d72b5644/movie_600x337.jpg?t=1788945367" alt="" loading="lazy" width="480" height="270" /><span class="game-video-play" aria-hidden="true"></span></div></figure>
+        <figure class="game-movie"><div class="game-video" data-hls="https://video.akamai.steamstatic.com/store_trailers/2521160/1637638146/a2c5dbe3880f2892f152c54c79c6e7efe872a8d9/1776418926/hls_264_master.m3u8?t=1788945372" data-poster="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257321373/b0b9743750627572c80fb479a4cdeb3cb591a0cf/movie_600x337.jpg?t=1788945372" role="button" tabindex="0" aria-label="Смотреть геймплей: The Merlies - New content trailer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257321373/b0b9743750627572c80fb479a4cdeb3cb591a0cf/movie_600x337.jpg?t=1788945372" alt="" loading="lazy" width="480" height="270" /><span class="game-video-play" aria-hidden="true"></span></div></figure>
+      </div>
+
+<p style="color: var(--text-faint); font-size: 13px; margin-top: 30px;">
         Данные о цене, отзывах и статистике обновляются автоматически на основе
         Steam Store API и SteamSpy.
       </p>
@@ -284,5 +333,6 @@ function declineCookies() {
 })();
 </script>
 <script src="/newsletter.js?v=2" defer></script>
+<script defer src="/game-media.js?v=1"></script>
 </body>
 </html>

@@ -112,6 +112,38 @@
     }
     .game-stat-card .label { font-size: 12px; color: var(--text-faint); text-transform: uppercase; }
     .game-stat-card .value { font-size: 20px; font-weight: bold; margin-top: 4px; }
+    .game-shots {
+      display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+      gap: 12px; margin: 20px 0;
+    }
+    .game-shot {
+      display: block; border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 8px; overflow: hidden;
+    }
+    .game-shot img { display: block; width: 100%; height: auto; }
+    .game-movies { display: grid; gap: 16px; margin: 20px 0; }
+    .game-movie { margin: 0; }
+    .game-movie video {
+      display: block; width: 100%; height: auto;
+      border-radius: 8px; background: #000;
+    }
+    .game-movie figcaption { margin-top: 6px; font-size: 13px; color: var(--text-faint); }
+    .game-video {
+      position: relative; cursor: pointer; overflow: hidden;
+      border-radius: 8px; background: #000; aspect-ratio: 16 / 9;
+    }
+    .game-video img { display: block; width: 100%; height: 100%; object-fit: cover; }
+    .game-video-play { position: absolute; inset: 0; display: grid; place-items: center; }
+    .game-video-play::before {
+      content: ''; width: 58px; height: 58px; border-radius: 50%;
+      background: rgba(0,0,0,0.5); border: 2px solid rgba(255,255,255,0.75);
+    }
+    .game-video-play::after {
+      content: ''; position: absolute; margin-left: 5px;
+      border-style: solid; border-width: 11px 0 11px 18px;
+      border-color: transparent transparent transparent #fff;
+    }
+    .game-video-el { display: block; width: 100%; height: 100%; background: #000; }
   </style>
 </head>
 <body>
@@ -150,7 +182,7 @@
 
     <article class="article-body">
 
-      <p>&quot;Ved: Recure&quot; is a fast-paced action roguelite where you find yourself trapped inside the 1000th game you bought but never played. You’ll wield fully customizable buff chains to face off against formidable foes and strategic builds to conquer this 1000th game and make your way back to reality.</p>
+      
 
       <div class="game-stats-grid">
         <div class="game-stat-card">
@@ -166,10 +198,6 @@
           <div class="label">Владельцев (оценка)</div>
           <div class="value">0 – 20,000</div>
         </div>
-        <div class="game-stat-card">
-          <div class="label">Среднее время игры</div>
-          <div class="value">нет данных</div>
-        </div>
       </div>
 
       <h2>Об игре</h2>
@@ -183,7 +211,27 @@
         </a>
       </p>
 
-      <p style="color: var(--text-faint); font-size: 13px; margin-top: 30px;">
+            <h2>Скриншоты</h2>
+      <div class="game-shots">
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3255500/6d2e48afe6c71c7834aedaec8f761380a18f623c/ss_6d2e48afe6c71c7834aedaec8f761380a18f623c.1920x1080.jpg?t=1790757915" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3255500/6d2e48afe6c71c7834aedaec8f761380a18f623c/ss_6d2e48afe6c71c7834aedaec8f761380a18f623c.600x338.jpg?t=1790757915" alt="Ved: Recure — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3255500/deef6576595695cb4ad15491dcf727b3f9833213/ss_deef6576595695cb4ad15491dcf727b3f9833213.1920x1080.jpg?t=1790757915" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3255500/deef6576595695cb4ad15491dcf727b3f9833213/ss_deef6576595695cb4ad15491dcf727b3f9833213.600x338.jpg?t=1790757915" alt="Ved: Recure — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3255500/2d67f3d740eb6639ec36753084046aec5ff7dc24/ss_2d67f3d740eb6639ec36753084046aec5ff7dc24.1920x1080.jpg?t=1790757915" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3255500/2d67f3d740eb6639ec36753084046aec5ff7dc24/ss_2d67f3d740eb6639ec36753084046aec5ff7dc24.600x338.jpg?t=1790757915" alt="Ved: Recure — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3255500/a4dc8effd6cf51caab1f73d6e6009bdcc41938c0/ss_a4dc8effd6cf51caab1f73d6e6009bdcc41938c0.1920x1080.jpg?t=1790757915" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3255500/a4dc8effd6cf51caab1f73d6e6009bdcc41938c0/ss_a4dc8effd6cf51caab1f73d6e6009bdcc41938c0.600x338.jpg?t=1790757915" alt="Ved: Recure — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3255500/7f55d1e880f9c03cfd0102c8614ca7aca238ca89/ss_7f55d1e880f9c03cfd0102c8614ca7aca238ca89.1920x1080.jpg?t=1790757915" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3255500/7f55d1e880f9c03cfd0102c8614ca7aca238ca89/ss_7f55d1e880f9c03cfd0102c8614ca7aca238ca89.600x338.jpg?t=1790757915" alt="Ved: Recure — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3255500/98c48710cf90e9d198fdef6266f49e8cf2e34bed/ss_98c48710cf90e9d198fdef6266f49e8cf2e34bed.1920x1080.jpg?t=1790757915" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3255500/98c48710cf90e9d198fdef6266f49e8cf2e34bed/ss_98c48710cf90e9d198fdef6266f49e8cf2e34bed.600x338.jpg?t=1790757915" alt="Ved: Recure — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3255500/9c6134cda167e51f09d9dd045ba2f7d03ed8a32a/ss_9c6134cda167e51f09d9dd045ba2f7d03ed8a32a.1920x1080.jpg?t=1790757915" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3255500/9c6134cda167e51f09d9dd045ba2f7d03ed8a32a/ss_9c6134cda167e51f09d9dd045ba2f7d03ed8a32a.600x338.jpg?t=1790757915" alt="Ved: Recure — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3255500/d390e924d4224596b6dc59a99f60164ee52cc444/ss_d390e924d4224596b6dc59a99f60164ee52cc444.1920x1080.jpg?t=1790757915" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3255500/d390e924d4224596b6dc59a99f60164ee52cc444/ss_d390e924d4224596b6dc59a99f60164ee52cc444.600x338.jpg?t=1790757915" alt="Ved: Recure — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3255500/710e084d363961dcde15c1015457042b121520b9/ss_710e084d363961dcde15c1015457042b121520b9.1920x1080.jpg?t=1790757915" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3255500/710e084d363961dcde15c1015457042b121520b9/ss_710e084d363961dcde15c1015457042b121520b9.600x338.jpg?t=1790757915" alt="Ved: Recure — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+      </div>
+
+      <h2>Геймплей</h2>
+      <div class="game-movies">
+        <figure class="game-movie"><div class="game-video" data-hls="https://video.akamai.steamstatic.com/store_trailers/3255500/1458297146/22dc1b9363b593320700545544f67fd28839c3ec/1790055931/hls_264_master.m3u8?t=1790095619" data-poster="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257431236/8af96c3edfcc9a4f8ae01272edf4b843bf669066/movie_600x337.jpg?t=1790095619" role="button" tabindex="0" aria-label="Смотреть геймплей: Ved: Recure Launch Trailer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257431236/8af96c3edfcc9a4f8ae01272edf4b843bf669066/movie_600x337.jpg?t=1790095619" alt="" loading="lazy" width="480" height="270" /><span class="game-video-play" aria-hidden="true"></span></div></figure>
+        <figure class="game-movie"><div class="game-video" data-hls="https://video.akamai.steamstatic.com/store_trailers/3255500/2035311803/eab90280256d0971b3e63cbba04d97689ac80fec/1780992689/hls_264_master.m3u8?t=1780993816" data-poster="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257354060/fe179f59fb1b410e9d2d01149be00c2276637658/movie_600x337.jpg?t=1780993816" role="button" tabindex="0" aria-label="Смотреть геймплей: Ved: Recure TGS"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257354060/fe179f59fb1b410e9d2d01149be00c2276637658/movie_600x337.jpg?t=1780993816" alt="" loading="lazy" width="480" height="270" /><span class="game-video-play" aria-hidden="true"></span></div></figure>
+        <figure class="game-movie"><div class="game-video" data-hls="https://video.akamai.steamstatic.com/store_trailers/3255500/774557/2fc45c9e582fe7b2a21524d06f9cdaf3ccf727a2/1750885080/hls_264_master.m3u8?t=1780993817" data-poster="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257066875/06fbf316fec3dd3fd412251c34ba0381d5367e13/movie_600x337.jpg?t=1780993817" role="button" tabindex="0" aria-label="Смотреть геймплей: Ved: Recure"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257066875/06fbf316fec3dd3fd412251c34ba0381d5367e13/movie_600x337.jpg?t=1780993817" alt="" loading="lazy" width="480" height="270" /><span class="game-video-play" aria-hidden="true"></span></div></figure>
+      </div>
+
+<p style="color: var(--text-faint); font-size: 13px; margin-top: 30px;">
         Данные о цене, отзывах и статистике обновляются автоматически на основе
         Steam Store API и SteamSpy.
       </p>
@@ -284,5 +332,6 @@ function declineCookies() {
 })();
 </script>
 <script src="/newsletter.js?v=2" defer></script>
+<script defer src="/game-media.js?v=1"></script>
 </body>
 </html>

@@ -112,6 +112,38 @@
     }
     .game-stat-card .label { font-size: 12px; color: var(--text-faint); text-transform: uppercase; }
     .game-stat-card .value { font-size: 20px; font-weight: bold; margin-top: 4px; }
+    .game-shots {
+      display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+      gap: 12px; margin: 20px 0;
+    }
+    .game-shot {
+      display: block; border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 8px; overflow: hidden;
+    }
+    .game-shot img { display: block; width: 100%; height: auto; }
+    .game-movies { display: grid; gap: 16px; margin: 20px 0; }
+    .game-movie { margin: 0; }
+    .game-movie video {
+      display: block; width: 100%; height: auto;
+      border-radius: 8px; background: #000;
+    }
+    .game-movie figcaption { margin-top: 6px; font-size: 13px; color: var(--text-faint); }
+    .game-video {
+      position: relative; cursor: pointer; overflow: hidden;
+      border-radius: 8px; background: #000; aspect-ratio: 16 / 9;
+    }
+    .game-video img { display: block; width: 100%; height: 100%; object-fit: cover; }
+    .game-video-play { position: absolute; inset: 0; display: grid; place-items: center; }
+    .game-video-play::before {
+      content: ''; width: 58px; height: 58px; border-radius: 50%;
+      background: rgba(0,0,0,0.5); border: 2px solid rgba(255,255,255,0.75);
+    }
+    .game-video-play::after {
+      content: ''; position: absolute; margin-left: 5px;
+      border-style: solid; border-width: 11px 0 11px 18px;
+      border-color: transparent transparent transparent #fff;
+    }
+    .game-video-el { display: block; width: 100%; height: 100%; background: #000; }
   </style>
 </head>
 <body>
@@ -150,7 +182,7 @@
 
     <article class="article-body">
 
-      <p>TRUCK TITANS is a high-octane monster truck racing game with 9+ levels of intense action. Customize your truck, pick sponsors, and compete in score attacks and races across city arenas, deserts, and night tracks. Nail stunts, crush obstacles, and become a monster truck legend.</p>
+      
 
       <div class="game-stats-grid">
         <div class="game-stat-card">
@@ -166,10 +198,6 @@
           <div class="label">Владельцев (оценка)</div>
           <div class="value">0 – 20,000</div>
         </div>
-        <div class="game-stat-card">
-          <div class="label">Среднее время игры</div>
-          <div class="value">нет данных</div>
-        </div>
       </div>
 
       <h2>Об игре</h2>
@@ -183,7 +211,30 @@
         </a>
       </p>
 
-      <p style="color: var(--text-faint); font-size: 13px; margin-top: 30px;">
+            <h2>Скриншоты</h2>
+      <div class="game-shots">
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3939990/9358d0af4136d38470eeccfb1535ab7c7de622a9/ss_9358d0af4136d38470eeccfb1535ab7c7de622a9.1920x1080.jpg?t=1790435485" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3939990/9358d0af4136d38470eeccfb1535ab7c7de622a9/ss_9358d0af4136d38470eeccfb1535ab7c7de622a9.600x338.jpg?t=1790435485" alt="Truck Titans — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3939990/14509af12d80ba18338f14cb45e41c9e26b96ae9/ss_14509af12d80ba18338f14cb45e41c9e26b96ae9.1920x1080.jpg?t=1790435485" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3939990/14509af12d80ba18338f14cb45e41c9e26b96ae9/ss_14509af12d80ba18338f14cb45e41c9e26b96ae9.600x338.jpg?t=1790435485" alt="Truck Titans — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3939990/c2cb5914e71c7abe1148da63b4967c28a19ce7de/ss_c2cb5914e71c7abe1148da63b4967c28a19ce7de.1920x1080.jpg?t=1790435485" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3939990/c2cb5914e71c7abe1148da63b4967c28a19ce7de/ss_c2cb5914e71c7abe1148da63b4967c28a19ce7de.600x338.jpg?t=1790435485" alt="Truck Titans — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3939990/fc803e70363efb4b20520743cde014f2b1ebc809/ss_fc803e70363efb4b20520743cde014f2b1ebc809.1920x1080.jpg?t=1790435485" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3939990/fc803e70363efb4b20520743cde014f2b1ebc809/ss_fc803e70363efb4b20520743cde014f2b1ebc809.600x338.jpg?t=1790435485" alt="Truck Titans — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3939990/29246e687f4dd6da837ab5095ce54beb5e6e1520/ss_29246e687f4dd6da837ab5095ce54beb5e6e1520.1920x1080.jpg?t=1790435485" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3939990/29246e687f4dd6da837ab5095ce54beb5e6e1520/ss_29246e687f4dd6da837ab5095ce54beb5e6e1520.600x338.jpg?t=1790435485" alt="Truck Titans — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3939990/9c8c253a80b037d9416ed88943b1bfb765f99faf/ss_9c8c253a80b037d9416ed88943b1bfb765f99faf.1920x1080.jpg?t=1790435485" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3939990/9c8c253a80b037d9416ed88943b1bfb765f99faf/ss_9c8c253a80b037d9416ed88943b1bfb765f99faf.600x338.jpg?t=1790435485" alt="Truck Titans — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3939990/a0511842c387517fd409722d4dadc6a945be2f90/ss_a0511842c387517fd409722d4dadc6a945be2f90.1920x1080.jpg?t=1790435485" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3939990/a0511842c387517fd409722d4dadc6a945be2f90/ss_a0511842c387517fd409722d4dadc6a945be2f90.600x338.jpg?t=1790435485" alt="Truck Titans — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3939990/036373b83da664673d5c0ec5821d37999b4a7312/ss_036373b83da664673d5c0ec5821d37999b4a7312.1920x1080.jpg?t=1790435485" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3939990/036373b83da664673d5c0ec5821d37999b4a7312/ss_036373b83da664673d5c0ec5821d37999b4a7312.600x338.jpg?t=1790435485" alt="Truck Titans — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3939990/7bb4ee3396e57768bb78de24ad6fdfa68906f03c/ss_7bb4ee3396e57768bb78de24ad6fdfa68906f03c.1920x1080.jpg?t=1790435485" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3939990/7bb4ee3396e57768bb78de24ad6fdfa68906f03c/ss_7bb4ee3396e57768bb78de24ad6fdfa68906f03c.600x338.jpg?t=1790435485" alt="Truck Titans — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3939990/81d9b64b869be04918d00a130d6a41d411894fc8/ss_81d9b64b869be04918d00a130d6a41d411894fc8.1920x1080.jpg?t=1790435485" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3939990/81d9b64b869be04918d00a130d6a41d411894fc8/ss_81d9b64b869be04918d00a130d6a41d411894fc8.600x338.jpg?t=1790435485" alt="Truck Titans — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3939990/df58a964b4d539bd76b7f81f995d33ad941d8acd/ss_df58a964b4d539bd76b7f81f995d33ad941d8acd.1920x1080.jpg?t=1790435485" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3939990/df58a964b4d539bd76b7f81f995d33ad941d8acd/ss_df58a964b4d539bd76b7f81f995d33ad941d8acd.600x338.jpg?t=1790435485" alt="Truck Titans — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3939990/21a3066c82749759a414a8f5ada052df6659cbfd/ss_21a3066c82749759a414a8f5ada052df6659cbfd.1920x1080.jpg?t=1790435485" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3939990/21a3066c82749759a414a8f5ada052df6659cbfd/ss_21a3066c82749759a414a8f5ada052df6659cbfd.600x338.jpg?t=1790435485" alt="Truck Titans — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+      </div>
+
+      <h2>Геймплей</h2>
+      <div class="game-movies">
+        <figure class="game-movie"><div class="game-video" data-hls="https://video.akamai.steamstatic.com/store_trailers/3939990/1404102013/a353defed8a2584d61ab66b82d4ef36a745745e1/1778212506/hls_264_master.m3u8?t=1778213304" data-poster="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257333235/c8e4494a90a83d7769363f81574b52cd18ad414a/movie_600x337.jpg?t=1778213304" role="button" tabindex="0" aria-label="Смотреть геймплей: New Ta"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257333235/c8e4494a90a83d7769363f81574b52cd18ad414a/movie_600x337.jpg?t=1778213304" alt="" loading="lazy" width="480" height="270" /><span class="game-video-play" aria-hidden="true"></span></div></figure>
+        <figure class="game-movie"><div class="game-video" data-hls="https://video.akamai.steamstatic.com/store_trailers/3939990/547785124/aaea20472423fa2e64d81cbae59ee47b6da1ac03/1756922706/hls_264_master.m3u8?t=1756923769" data-poster="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257192764/b08ed89cb34882b151d1dd51ceb64e4d56aee9e8/movie_600x337.jpg?t=1756923769" role="button" tabindex="0" aria-label="Смотреть геймплей: Summer Trailer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257192764/b08ed89cb34882b151d1dd51ceb64e4d56aee9e8/movie_600x337.jpg?t=1756923769" alt="" loading="lazy" width="480" height="270" /><span class="game-video-play" aria-hidden="true"></span></div></figure>
+        <figure class="game-movie"><div class="game-video" data-hls="https://video.akamai.steamstatic.com/store_trailers/3939990/2048216128/f5e457aa4c8bedaeb44cbf897c28eb0c24a29a87/1754588671/hls_264_master.m3u8?t=1755624832" data-poster="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257179928/d7109ec1ed06946371931bd6230ded1ab57e093e/movie_600x337.jpg?t=1755624832" role="button" tabindex="0" aria-label="Смотреть геймплей: Mods"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257179928/d7109ec1ed06946371931bd6230ded1ab57e093e/movie_600x337.jpg?t=1755624832" alt="" loading="lazy" width="480" height="270" /><span class="game-video-play" aria-hidden="true"></span></div></figure>
+      </div>
+
+<p style="color: var(--text-faint); font-size: 13px; margin-top: 30px;">
         Данные о цене, отзывах и статистике обновляются автоматически на основе
         Steam Store API и SteamSpy.
       </p>
@@ -284,5 +335,6 @@ function declineCookies() {
 })();
 </script>
 <script src="/newsletter.js?v=2" defer></script>
+<script defer src="/game-media.js?v=1"></script>
 </body>
 </html>

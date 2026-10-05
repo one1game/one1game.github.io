@@ -112,6 +112,38 @@
     }
     .game-stat-card .label { font-size: 12px; color: var(--text-faint); text-transform: uppercase; }
     .game-stat-card .value { font-size: 20px; font-weight: bold; margin-top: 4px; }
+    .game-shots {
+      display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+      gap: 12px; margin: 20px 0;
+    }
+    .game-shot {
+      display: block; border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 8px; overflow: hidden;
+    }
+    .game-shot img { display: block; width: 100%; height: auto; }
+    .game-movies { display: grid; gap: 16px; margin: 20px 0; }
+    .game-movie { margin: 0; }
+    .game-movie video {
+      display: block; width: 100%; height: auto;
+      border-radius: 8px; background: #000;
+    }
+    .game-movie figcaption { margin-top: 6px; font-size: 13px; color: var(--text-faint); }
+    .game-video {
+      position: relative; cursor: pointer; overflow: hidden;
+      border-radius: 8px; background: #000; aspect-ratio: 16 / 9;
+    }
+    .game-video img { display: block; width: 100%; height: 100%; object-fit: cover; }
+    .game-video-play { position: absolute; inset: 0; display: grid; place-items: center; }
+    .game-video-play::before {
+      content: ''; width: 58px; height: 58px; border-radius: 50%;
+      background: rgba(0,0,0,0.5); border: 2px solid rgba(255,255,255,0.75);
+    }
+    .game-video-play::after {
+      content: ''; position: absolute; margin-left: 5px;
+      border-style: solid; border-width: 11px 0 11px 18px;
+      border-color: transparent transparent transparent #fff;
+    }
+    .game-video-el { display: block; width: 100%; height: 100%; background: #000; }
   </style>
 </head>
 <body>
@@ -166,10 +198,6 @@
           <div class="label">Владельцев (оценка)</div>
           <div class="value">0 – 20,000</div>
         </div>
-        <div class="game-stat-card">
-          <div class="label">Среднее время игры</div>
-          <div class="value">нет данных</div>
-        </div>
       </div>
 
       <h2>Об игре</h2>
@@ -183,7 +211,28 @@
         </a>
       </p>
 
-      <p style="color: var(--text-faint); font-size: 13px; margin-top: 30px;">
+            <h2>Скриншоты</h2>
+      <div class="game-shots">
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4753960/6d86c3a68b796cd70d3f07f207ef54be69004e1b/ss_6d86c3a68b796cd70d3f07f207ef54be69004e1b.1920x1080.jpg?t=1790777809" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4753960/6d86c3a68b796cd70d3f07f207ef54be69004e1b/ss_6d86c3a68b796cd70d3f07f207ef54be69004e1b.600x338.jpg?t=1790777809" alt="Meow Squad: Incremental Fishing — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4753960/56ad7904f427170be19f09fb76835a37afda0a01/ss_56ad7904f427170be19f09fb76835a37afda0a01.1920x1080.jpg?t=1790777809" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4753960/56ad7904f427170be19f09fb76835a37afda0a01/ss_56ad7904f427170be19f09fb76835a37afda0a01.600x338.jpg?t=1790777809" alt="Meow Squad: Incremental Fishing — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4753960/b2170f7510d4626096bed33be9225c6d84a7707b/ss_b2170f7510d4626096bed33be9225c6d84a7707b.1920x1080.jpg?t=1790777809" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4753960/b2170f7510d4626096bed33be9225c6d84a7707b/ss_b2170f7510d4626096bed33be9225c6d84a7707b.600x338.jpg?t=1790777809" alt="Meow Squad: Incremental Fishing — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4753960/c053b4d18e097e7d4258e5728ae30123c3fb80cb/ss_c053b4d18e097e7d4258e5728ae30123c3fb80cb.1920x1080.jpg?t=1790777809" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4753960/c053b4d18e097e7d4258e5728ae30123c3fb80cb/ss_c053b4d18e097e7d4258e5728ae30123c3fb80cb.600x338.jpg?t=1790777809" alt="Meow Squad: Incremental Fishing — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4753960/def072b897f95e5101865797a3063b784057df0e/ss_def072b897f95e5101865797a3063b784057df0e.1920x1080.jpg?t=1790777809" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4753960/def072b897f95e5101865797a3063b784057df0e/ss_def072b897f95e5101865797a3063b784057df0e.600x338.jpg?t=1790777809" alt="Meow Squad: Incremental Fishing — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4753960/c3e4bbc2d1131298f90f2281dd5aa863f51719e6/ss_c3e4bbc2d1131298f90f2281dd5aa863f51719e6.1920x1080.jpg?t=1790777809" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4753960/c3e4bbc2d1131298f90f2281dd5aa863f51719e6/ss_c3e4bbc2d1131298f90f2281dd5aa863f51719e6.600x338.jpg?t=1790777809" alt="Meow Squad: Incremental Fishing — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4753960/270f632a7274c90479cb927e191d7e35eb627006/ss_270f632a7274c90479cb927e191d7e35eb627006.1920x1080.jpg?t=1790777809" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4753960/270f632a7274c90479cb927e191d7e35eb627006/ss_270f632a7274c90479cb927e191d7e35eb627006.600x338.jpg?t=1790777809" alt="Meow Squad: Incremental Fishing — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4753960/6ae786565e783e1be6c318150c8bd6c2fdbe9c34/ss_6ae786565e783e1be6c318150c8bd6c2fdbe9c34.1920x1080.jpg?t=1790777809" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4753960/6ae786565e783e1be6c318150c8bd6c2fdbe9c34/ss_6ae786565e783e1be6c318150c8bd6c2fdbe9c34.600x338.jpg?t=1790777809" alt="Meow Squad: Incremental Fishing — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4753960/5f15fc538fc731eb293ff1c534fc613a8b537788/ss_5f15fc538fc731eb293ff1c534fc613a8b537788.1920x1080.jpg?t=1790777809" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4753960/5f15fc538fc731eb293ff1c534fc613a8b537788/ss_5f15fc538fc731eb293ff1c534fc613a8b537788.600x338.jpg?t=1790777809" alt="Meow Squad: Incremental Fishing — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4753960/74307a1e04aa292e6965135b349842e51751f68e/ss_74307a1e04aa292e6965135b349842e51751f68e.1920x1080.jpg?t=1790777809" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4753960/74307a1e04aa292e6965135b349842e51751f68e/ss_74307a1e04aa292e6965135b349842e51751f68e.600x338.jpg?t=1790777809" alt="Meow Squad: Incremental Fishing — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4753960/bad2376044bbf48593ac4e01b842a1b3b6c38aee/ss_bad2376044bbf48593ac4e01b842a1b3b6c38aee.1920x1080.jpg?t=1790777809" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4753960/bad2376044bbf48593ac4e01b842a1b3b6c38aee/ss_bad2376044bbf48593ac4e01b842a1b3b6c38aee.600x338.jpg?t=1790777809" alt="Meow Squad: Incremental Fishing — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4753960/f20bbf89667da5f3cdc00def498c83ea741abbcf/ss_f20bbf89667da5f3cdc00def498c83ea741abbcf.1920x1080.jpg?t=1790777809" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4753960/f20bbf89667da5f3cdc00def498c83ea741abbcf/ss_f20bbf89667da5f3cdc00def498c83ea741abbcf.600x338.jpg?t=1790777809" alt="Meow Squad: Incremental Fishing — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+      </div>
+
+      <h2>Геймплей</h2>
+      <div class="game-movies">
+        <figure class="game-movie"><div class="game-video" data-hls="https://video.akamai.steamstatic.com/store_trailers/4753960/567617265/43ba82459e4747dce397776328df6e9e433cd963/1787651178/hls_264_master.m3u8?t=1787802484" data-poster="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257407975/fa7247926bb11bc8b1b1c2353e58406a8a817f9b/movie_600x337.jpg?t=1787802484" role="button" tabindex="0" aria-label="Смотреть геймплей: Meow Squad: Incremental Fishing"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257407975/fa7247926bb11bc8b1b1c2353e58406a8a817f9b/movie_600x337.jpg?t=1787802484" alt="" loading="lazy" width="480" height="270" /><span class="game-video-play" aria-hidden="true"></span></div></figure>
+      </div>
+
+<p style="color: var(--text-faint); font-size: 13px; margin-top: 30px;">
         Данные о цене, отзывах и статистике обновляются автоматически на основе
         Steam Store API и SteamSpy.
       </p>
@@ -284,5 +333,6 @@ function declineCookies() {
 })();
 </script>
 <script src="/newsletter.js?v=2" defer></script>
+<script defer src="/game-media.js?v=1"></script>
 </body>
 </html>

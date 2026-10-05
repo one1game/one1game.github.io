@@ -112,6 +112,38 @@
     }
     .game-stat-card .label { font-size: 12px; color: var(--text-faint); text-transform: uppercase; }
     .game-stat-card .value { font-size: 20px; font-weight: bold; margin-top: 4px; }
+    .game-shots {
+      display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+      gap: 12px; margin: 20px 0;
+    }
+    .game-shot {
+      display: block; border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 8px; overflow: hidden;
+    }
+    .game-shot img { display: block; width: 100%; height: auto; }
+    .game-movies { display: grid; gap: 16px; margin: 20px 0; }
+    .game-movie { margin: 0; }
+    .game-movie video {
+      display: block; width: 100%; height: auto;
+      border-radius: 8px; background: #000;
+    }
+    .game-movie figcaption { margin-top: 6px; font-size: 13px; color: var(--text-faint); }
+    .game-video {
+      position: relative; cursor: pointer; overflow: hidden;
+      border-radius: 8px; background: #000; aspect-ratio: 16 / 9;
+    }
+    .game-video img { display: block; width: 100%; height: 100%; object-fit: cover; }
+    .game-video-play { position: absolute; inset: 0; display: grid; place-items: center; }
+    .game-video-play::before {
+      content: ''; width: 58px; height: 58px; border-radius: 50%;
+      background: rgba(0,0,0,0.5); border: 2px solid rgba(255,255,255,0.75);
+    }
+    .game-video-play::after {
+      content: ''; position: absolute; margin-left: 5px;
+      border-style: solid; border-width: 11px 0 11px 18px;
+      border-color: transparent transparent transparent #fff;
+    }
+    .game-video-el { display: block; width: 100%; height: 100%; background: #000; }
   </style>
 </head>
 <body>
@@ -150,7 +182,7 @@
 
     <article class="article-body">
 
-      <p>Loki’s Revenge is a short survivors-like roguelite where you play as Norse gods fighting Loki’s army of monsters! Level up to gain powerful upgrades and explore a hand-crafted map to find secrets. Build the ultimate overpowered god with permanent upgrades and master each god’s signature ability.</p>
+      
 
       <div class="game-stats-grid">
         <div class="game-stat-card">
@@ -166,10 +198,6 @@
           <div class="label">Владельцев (оценка)</div>
           <div class="value">0 – 20,000</div>
         </div>
-        <div class="game-stat-card">
-          <div class="label">Среднее время игры</div>
-          <div class="value">нет данных</div>
-        </div>
       </div>
 
       <h2>Об игре</h2>
@@ -183,7 +211,25 @@
         </a>
       </p>
 
-      <p style="color: var(--text-faint); font-size: 13px; margin-top: 30px;">
+            <h2>Скриншоты</h2>
+      <div class="game-shots">
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2936750/d034a96ab94ed1d4a097d5745c78de8b436923ed/ss_d034a96ab94ed1d4a097d5745c78de8b436923ed.1920x1080.jpg?t=1790376154" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2936750/d034a96ab94ed1d4a097d5745c78de8b436923ed/ss_d034a96ab94ed1d4a097d5745c78de8b436923ed.600x338.jpg?t=1790376154" alt="Loki&#x27;s Revenge — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2936750/120619dcf280e976d971dedb8dc9c94c2958b8d8/ss_120619dcf280e976d971dedb8dc9c94c2958b8d8.1920x1080.jpg?t=1790376154" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2936750/120619dcf280e976d971dedb8dc9c94c2958b8d8/ss_120619dcf280e976d971dedb8dc9c94c2958b8d8.600x338.jpg?t=1790376154" alt="Loki&#x27;s Revenge — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2936750/663f1efa220f0c20e5c4c667d6d089c975501a76/ss_663f1efa220f0c20e5c4c667d6d089c975501a76.1920x1080.jpg?t=1790376154" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2936750/663f1efa220f0c20e5c4c667d6d089c975501a76/ss_663f1efa220f0c20e5c4c667d6d089c975501a76.600x338.jpg?t=1790376154" alt="Loki&#x27;s Revenge — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2936750/689dfd616f76c36415de270048b78d9d7a83917e/ss_689dfd616f76c36415de270048b78d9d7a83917e.1920x1080.jpg?t=1790376154" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2936750/689dfd616f76c36415de270048b78d9d7a83917e/ss_689dfd616f76c36415de270048b78d9d7a83917e.600x338.jpg?t=1790376154" alt="Loki&#x27;s Revenge — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2936750/5264900e2e74e6512a2ec94e1ac9f59785f4f068/ss_5264900e2e74e6512a2ec94e1ac9f59785f4f068.1920x1080.jpg?t=1790376154" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2936750/5264900e2e74e6512a2ec94e1ac9f59785f4f068/ss_5264900e2e74e6512a2ec94e1ac9f59785f4f068.600x338.jpg?t=1790376154" alt="Loki&#x27;s Revenge — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2936750/edd9d0ab66059bd5f69cebed9de9ae8cea0927f2/ss_edd9d0ab66059bd5f69cebed9de9ae8cea0927f2.1920x1080.jpg?t=1790376154" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2936750/edd9d0ab66059bd5f69cebed9de9ae8cea0927f2/ss_edd9d0ab66059bd5f69cebed9de9ae8cea0927f2.600x338.jpg?t=1790376154" alt="Loki&#x27;s Revenge — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2936750/85e955041ca0fea0ce052e37e50f8dc97849d4a9/ss_85e955041ca0fea0ce052e37e50f8dc97849d4a9.1920x1080.jpg?t=1790376154" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2936750/85e955041ca0fea0ce052e37e50f8dc97849d4a9/ss_85e955041ca0fea0ce052e37e50f8dc97849d4a9.600x338.jpg?t=1790376154" alt="Loki&#x27;s Revenge — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2936750/154cf666d0f495de06c68e22cf624a0fb3529368/ss_154cf666d0f495de06c68e22cf624a0fb3529368.1920x1080.jpg?t=1790376154" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2936750/154cf666d0f495de06c68e22cf624a0fb3529368/ss_154cf666d0f495de06c68e22cf624a0fb3529368.600x338.jpg?t=1790376154" alt="Loki&#x27;s Revenge — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2936750/bb5d0cea0bada85f9f00ec7dfcccf298001803e9/ss_bb5d0cea0bada85f9f00ec7dfcccf298001803e9.1920x1080.jpg?t=1790376154" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2936750/bb5d0cea0bada85f9f00ec7dfcccf298001803e9/ss_bb5d0cea0bada85f9f00ec7dfcccf298001803e9.600x338.jpg?t=1790376154" alt="Loki&#x27;s Revenge — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+      </div>
+
+      <h2>Геймплей</h2>
+      <div class="game-movies">
+        <figure class="game-movie"><div class="game-video" data-hls="https://video.akamai.steamstatic.com/store_trailers/2936750/1567772938/b5f6bc3a0bcc9cf3c6c652560e64c2003e1c505d/1790373912/hls_264_master.m3u8?t=1790376134" data-poster="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257435458/226471a9efd0a5259c0ea584a56596609d08d9df/movie_600x337.jpg?t=1790376134" role="button" tabindex="0" aria-label="Смотреть геймплей: 1.0 Release Trailer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257435458/226471a9efd0a5259c0ea584a56596609d08d9df/movie_600x337.jpg?t=1790376134" alt="" loading="lazy" width="480" height="270" /><span class="game-video-play" aria-hidden="true"></span></div></figure>
+      </div>
+
+<p style="color: var(--text-faint); font-size: 13px; margin-top: 30px;">
         Данные о цене, отзывах и статистике обновляются автоматически на основе
         Steam Store API и SteamSpy.
       </p>
@@ -284,5 +330,6 @@ function declineCookies() {
 })();
 </script>
 <script src="/newsletter.js?v=2" defer></script>
+<script defer src="/game-media.js?v=1"></script>
 </body>
 </html>

@@ -108,6 +108,38 @@
     }
     .game-stat-card .label { font-size: 12px; color: var(--text-faint); text-transform: uppercase; }
     .game-stat-card .value { font-size: 20px; font-weight: bold; margin-top: 4px; }
+    .game-shots {
+      display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+      gap: 12px; margin: 20px 0;
+    }
+    .game-shot {
+      display: block; border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 8px; overflow: hidden;
+    }
+    .game-shot img { display: block; width: 100%; height: auto; }
+    .game-movies { display: grid; gap: 16px; margin: 20px 0; }
+    .game-movie { margin: 0; }
+    .game-movie video {
+      display: block; width: 100%; height: auto;
+      border-radius: 8px; background: #000;
+    }
+    .game-movie figcaption { margin-top: 6px; font-size: 13px; color: var(--text-faint); }
+    .game-video {
+      position: relative; cursor: pointer; overflow: hidden;
+      border-radius: 8px; background: #000; aspect-ratio: 16 / 9;
+    }
+    .game-video img { display: block; width: 100%; height: 100%; object-fit: cover; }
+    .game-video-play { position: absolute; inset: 0; display: grid; place-items: center; }
+    .game-video-play::before {
+      content: ''; width: 58px; height: 58px; border-radius: 50%;
+      background: rgba(0,0,0,0.5); border: 2px solid rgba(255,255,255,0.75);
+    }
+    .game-video-play::after {
+      content: ''; position: absolute; margin-left: 5px;
+      border-style: solid; border-width: 11px 0 11px 18px;
+      border-color: transparent transparent transparent #fff;
+    }
+    .game-video-el { display: block; width: 100%; height: 100%; background: #000; }
   </style>
 </head>
 <body>
@@ -146,7 +178,7 @@
 
     <article class="article-body">
 
-      <p>Ballad is a toy box for melodies: pick one, tweak it or write your own, then get mesmerized by what it looks like, play it, fiddle with it, and share a clip if you want. Compose, visualize, play, record.</p>
+      
 
       <div class="game-stats-grid">
         <div class="game-stat-card">
@@ -162,10 +194,6 @@
           <div class="label">Владельцев (оценка)</div>
           <div class="value">0 – 20,000</div>
         </div>
-        <div class="game-stat-card">
-          <div class="label">Среднее время игры</div>
-          <div class="value">нет данных</div>
-        </div>
       </div>
 
       <h2>Об игре</h2>
@@ -179,7 +207,24 @@
         </a>
       </p>
 
-      <p style="color: var(--text-faint); font-size: 13px; margin-top: 30px;">
+            <h2>Скриншоты</h2>
+      <div class="game-shots">
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5011870/4bc25538c57472cdda1a39d8f82d07c97afa054c/ss_4bc25538c57472cdda1a39d8f82d07c97afa054c.1920x1080.jpg?t=1790922403" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5011870/4bc25538c57472cdda1a39d8f82d07c97afa054c/ss_4bc25538c57472cdda1a39d8f82d07c97afa054c.600x338.jpg?t=1790922403" alt="Ballad — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5011870/1ab49dc548cf8d1c03b9c13ad5bf5a2670b9a623/ss_1ab49dc548cf8d1c03b9c13ad5bf5a2670b9a623.1920x1080.jpg?t=1790922403" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5011870/1ab49dc548cf8d1c03b9c13ad5bf5a2670b9a623/ss_1ab49dc548cf8d1c03b9c13ad5bf5a2670b9a623.600x338.jpg?t=1790922403" alt="Ballad — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5011870/06f72921465eb635ef83aafe2e42cee0245092b6/ss_06f72921465eb635ef83aafe2e42cee0245092b6.1920x1080.jpg?t=1790922403" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5011870/06f72921465eb635ef83aafe2e42cee0245092b6/ss_06f72921465eb635ef83aafe2e42cee0245092b6.600x338.jpg?t=1790922403" alt="Ballad — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5011870/799a71233a0d10d037b42ad841850a8bec787e1a/ss_799a71233a0d10d037b42ad841850a8bec787e1a.1920x1080.jpg?t=1790922403" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5011870/799a71233a0d10d037b42ad841850a8bec787e1a/ss_799a71233a0d10d037b42ad841850a8bec787e1a.600x338.jpg?t=1790922403" alt="Ballad — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5011870/9daf0d266e42a0e00626728463307eefca6d0364/ss_9daf0d266e42a0e00626728463307eefca6d0364.1920x1080.jpg?t=1790922403" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5011870/9daf0d266e42a0e00626728463307eefca6d0364/ss_9daf0d266e42a0e00626728463307eefca6d0364.600x338.jpg?t=1790922403" alt="Ballad — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5011870/6da2758a2517f3fd9fe719104f86e9799033e85c/ss_6da2758a2517f3fd9fe719104f86e9799033e85c.1920x1080.jpg?t=1790922403" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5011870/6da2758a2517f3fd9fe719104f86e9799033e85c/ss_6da2758a2517f3fd9fe719104f86e9799033e85c.600x338.jpg?t=1790922403" alt="Ballad — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5011870/84318656644d4db2073f894de8ee20be2e84beb9/ss_84318656644d4db2073f894de8ee20be2e84beb9.1920x1080.jpg?t=1790922403" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5011870/84318656644d4db2073f894de8ee20be2e84beb9/ss_84318656644d4db2073f894de8ee20be2e84beb9.600x338.jpg?t=1790922403" alt="Ballad — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5011870/65b06749ec33e88888f25a9fc4b5316c37782bd9/ss_65b06749ec33e88888f25a9fc4b5316c37782bd9.1920x1080.jpg?t=1790922403" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5011870/65b06749ec33e88888f25a9fc4b5316c37782bd9/ss_65b06749ec33e88888f25a9fc4b5316c37782bd9.600x338.jpg?t=1790922403" alt="Ballad — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+      </div>
+
+      <h2>Геймплей</h2>
+      <div class="game-movies">
+        <figure class="game-movie"><div class="game-video" data-hls="https://video.akamai.steamstatic.com/store_trailers/5011870/2003987629/666ae84d7050907e93619d165e32caa3dc1aaffe/1788882039/hls_264_master.m3u8?t=1789364848" data-poster="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257420002/07e06354c64e74bc205c208c9635564635e7478e/movie_600x337.jpg?t=1789364848" role="button" tabindex="0" aria-label="Смотреть геймплей: Trailer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257420002/07e06354c64e74bc205c208c9635564635e7478e/movie_600x337.jpg?t=1789364848" alt="" loading="lazy" width="480" height="270" /><span class="game-video-play" aria-hidden="true"></span></div></figure>
+      </div>
+
+<p style="color: var(--text-faint); font-size: 13px; margin-top: 30px;">
         Данные о цене, отзывах и статистике обновляются автоматически на основе
         Steam Store API и SteamSpy.
       </p>
@@ -280,5 +325,6 @@ function declineCookies() {
 })();
 </script>
 <script src="/newsletter.js?v=2" defer></script>
+<script defer src="/game-media.js?v=1"></script>
 </body>
 </html>

@@ -112,6 +112,38 @@
     }
     .game-stat-card .label { font-size: 12px; color: var(--text-faint); text-transform: uppercase; }
     .game-stat-card .value { font-size: 20px; font-weight: bold; margin-top: 4px; }
+    .game-shots {
+      display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+      gap: 12px; margin: 20px 0;
+    }
+    .game-shot {
+      display: block; border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 8px; overflow: hidden;
+    }
+    .game-shot img { display: block; width: 100%; height: auto; }
+    .game-movies { display: grid; gap: 16px; margin: 20px 0; }
+    .game-movie { margin: 0; }
+    .game-movie video {
+      display: block; width: 100%; height: auto;
+      border-radius: 8px; background: #000;
+    }
+    .game-movie figcaption { margin-top: 6px; font-size: 13px; color: var(--text-faint); }
+    .game-video {
+      position: relative; cursor: pointer; overflow: hidden;
+      border-radius: 8px; background: #000; aspect-ratio: 16 / 9;
+    }
+    .game-video img { display: block; width: 100%; height: 100%; object-fit: cover; }
+    .game-video-play { position: absolute; inset: 0; display: grid; place-items: center; }
+    .game-video-play::before {
+      content: ''; width: 58px; height: 58px; border-radius: 50%;
+      background: rgba(0,0,0,0.5); border: 2px solid rgba(255,255,255,0.75);
+    }
+    .game-video-play::after {
+      content: ''; position: absolute; margin-left: 5px;
+      border-style: solid; border-width: 11px 0 11px 18px;
+      border-color: transparent transparent transparent #fff;
+    }
+    .game-video-el { display: block; width: 100%; height: 100%; background: #000; }
   </style>
 </head>
 <body>
@@ -150,7 +182,7 @@
 
     <article class="article-body">
 
-      <p>BuGarden is a cozy flower garden that lives at the bottom of your screen! Plant seeds, water and fertilise them at your own pace, harvest cute fruits and flowers, and swat some pesky bugs. No stress, no mess. A friendly companion moving at a snail’s pace.</p>
+      
 
       <div class="game-stats-grid">
         <div class="game-stat-card">
@@ -166,10 +198,6 @@
           <div class="label">Владельцев (оценка)</div>
           <div class="value">0 – 20,000</div>
         </div>
-        <div class="game-stat-card">
-          <div class="label">Среднее время игры</div>
-          <div class="value">нет данных</div>
-        </div>
       </div>
 
       <h2>Об игре</h2>
@@ -183,7 +211,26 @@
         </a>
       </p>
 
-      <p style="color: var(--text-faint); font-size: 13px; margin-top: 30px;">
+            <h2>Скриншоты</h2>
+      <div class="game-shots">
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4289410/99b779ef4400ecb7f4ae4e9412ca34ad95dea34a/ss_99b779ef4400ecb7f4ae4e9412ca34ad95dea34a.1920x1080.jpg?t=1790050993" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4289410/99b779ef4400ecb7f4ae4e9412ca34ad95dea34a/ss_99b779ef4400ecb7f4ae4e9412ca34ad95dea34a.600x338.jpg?t=1790050993" alt="BuGarden — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4289410/2862bfb39b3e1b4ffa8ffbbec9b1d989ee4966a1/ss_2862bfb39b3e1b4ffa8ffbbec9b1d989ee4966a1.1920x1080.jpg?t=1790050993" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4289410/2862bfb39b3e1b4ffa8ffbbec9b1d989ee4966a1/ss_2862bfb39b3e1b4ffa8ffbbec9b1d989ee4966a1.600x338.jpg?t=1790050993" alt="BuGarden — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4289410/103555223a508bdd24a1ad87e07fb5185c20d1ba/ss_103555223a508bdd24a1ad87e07fb5185c20d1ba.1920x1080.jpg?t=1790050993" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4289410/103555223a508bdd24a1ad87e07fb5185c20d1ba/ss_103555223a508bdd24a1ad87e07fb5185c20d1ba.600x338.jpg?t=1790050993" alt="BuGarden — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4289410/f83e2b83bd0a9928a3e6b98fc481e3a0f92864ec/ss_f83e2b83bd0a9928a3e6b98fc481e3a0f92864ec.1920x1080.jpg?t=1790050993" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4289410/f83e2b83bd0a9928a3e6b98fc481e3a0f92864ec/ss_f83e2b83bd0a9928a3e6b98fc481e3a0f92864ec.600x338.jpg?t=1790050993" alt="BuGarden — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4289410/504117c3fd5b66612e87ee1767eb69026838eac9/ss_504117c3fd5b66612e87ee1767eb69026838eac9.1920x1080.jpg?t=1790050993" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4289410/504117c3fd5b66612e87ee1767eb69026838eac9/ss_504117c3fd5b66612e87ee1767eb69026838eac9.600x338.jpg?t=1790050993" alt="BuGarden — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4289410/a33c9ef2e7158e03530b608422988ff490657df5/ss_a33c9ef2e7158e03530b608422988ff490657df5.1920x1080.jpg?t=1790050993" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4289410/a33c9ef2e7158e03530b608422988ff490657df5/ss_a33c9ef2e7158e03530b608422988ff490657df5.600x338.jpg?t=1790050993" alt="BuGarden — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4289410/36714ce54d2c769ba8634a2714bae224db0991cc/ss_36714ce54d2c769ba8634a2714bae224db0991cc.1920x1080.jpg?t=1790050993" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4289410/36714ce54d2c769ba8634a2714bae224db0991cc/ss_36714ce54d2c769ba8634a2714bae224db0991cc.600x338.jpg?t=1790050993" alt="BuGarden — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4289410/ecb37e35cfbb74e22f8b9d163a4181ecc7a1fe9b/ss_ecb37e35cfbb74e22f8b9d163a4181ecc7a1fe9b.1920x1080.jpg?t=1790050993" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4289410/ecb37e35cfbb74e22f8b9d163a4181ecc7a1fe9b/ss_ecb37e35cfbb74e22f8b9d163a4181ecc7a1fe9b.600x338.jpg?t=1790050993" alt="BuGarden — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4289410/02a699c43195f27b7c8e554470320e8f8acf5112/ss_02a699c43195f27b7c8e554470320e8f8acf5112.1920x1080.jpg?t=1790050993" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4289410/02a699c43195f27b7c8e554470320e8f8acf5112/ss_02a699c43195f27b7c8e554470320e8f8acf5112.600x338.jpg?t=1790050993" alt="BuGarden — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+      </div>
+
+      <h2>Геймплей</h2>
+      <div class="game-movies">
+        <figure class="game-movie"><div class="game-video" data-hls="https://video.akamai.steamstatic.com/store_trailers/4289410/310320842/0e13726849a179917c64bafc10eb1be8c09e22bd/1790047381/hls_264_master.m3u8?t=1790050991" data-poster="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257431168/29791f32be7c90e249b5ccf9222e2133de2c534e/movie_600x337.jpg?t=1790050991" role="button" tabindex="0" aria-label="Смотреть геймплей: Release PV"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257431168/29791f32be7c90e249b5ccf9222e2133de2c534e/movie_600x337.jpg?t=1790050991" alt="" loading="lazy" width="480" height="270" /><span class="game-video-play" aria-hidden="true"></span></div></figure>
+        <figure class="game-movie"><div class="game-video" data-hls="https://video.akamai.steamstatic.com/store_trailers/4289410/1324460973/9aa6b2f54744380a8d14cb920612f81bb24d0b52/1785213745/hls_264_master.m3u8?t=1785214146" data-poster="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257266190/4a932dac08ca34cb5ecf3fffcd5e60637bf41fc9/movie_600x337.jpg?t=1785214146" role="button" tabindex="0" aria-label="Смотреть геймплей: 公布版本pv"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257266190/4a932dac08ca34cb5ecf3fffcd5e60637bf41fc9/movie_600x337.jpg?t=1785214146" alt="" loading="lazy" width="480" height="270" /><span class="game-video-play" aria-hidden="true"></span></div></figure>
+      </div>
+
+<p style="color: var(--text-faint); font-size: 13px; margin-top: 30px;">
         Данные о цене, отзывах и статистике обновляются автоматически на основе
         Steam Store API и SteamSpy.
       </p>
@@ -284,5 +331,6 @@ function declineCookies() {
 })();
 </script>
 <script src="/newsletter.js?v=2" defer></script>
+<script defer src="/game-media.js?v=1"></script>
 </body>
 </html>

@@ -112,6 +112,38 @@
     }
     .game-stat-card .label { font-size: 12px; color: var(--text-faint); text-transform: uppercase; }
     .game-stat-card .value { font-size: 20px; font-weight: bold; margin-top: 4px; }
+    .game-shots {
+      display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+      gap: 12px; margin: 20px 0;
+    }
+    .game-shot {
+      display: block; border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 8px; overflow: hidden;
+    }
+    .game-shot img { display: block; width: 100%; height: auto; }
+    .game-movies { display: grid; gap: 16px; margin: 20px 0; }
+    .game-movie { margin: 0; }
+    .game-movie video {
+      display: block; width: 100%; height: auto;
+      border-radius: 8px; background: #000;
+    }
+    .game-movie figcaption { margin-top: 6px; font-size: 13px; color: var(--text-faint); }
+    .game-video {
+      position: relative; cursor: pointer; overflow: hidden;
+      border-radius: 8px; background: #000; aspect-ratio: 16 / 9;
+    }
+    .game-video img { display: block; width: 100%; height: 100%; object-fit: cover; }
+    .game-video-play { position: absolute; inset: 0; display: grid; place-items: center; }
+    .game-video-play::before {
+      content: ''; width: 58px; height: 58px; border-radius: 50%;
+      background: rgba(0,0,0,0.5); border: 2px solid rgba(255,255,255,0.75);
+    }
+    .game-video-play::after {
+      content: ''; position: absolute; margin-left: 5px;
+      border-style: solid; border-width: 11px 0 11px 18px;
+      border-color: transparent transparent transparent #fff;
+    }
+    .game-video-el { display: block; width: 100%; height: 100%; background: #000; }
   </style>
 </head>
 <body>
@@ -150,7 +182,7 @@
 
     <article class="article-body">
 
-      <p>A young boy visits a forest with his father to catch rhinoceros beetles. As he wanders through the night forest, an eerie presence gradually begins to reveal itself in this short horror game.</p>
+      
 
       <div class="game-stats-grid">
         <div class="game-stat-card">
@@ -166,10 +198,6 @@
           <div class="label">Владельцев (оценка)</div>
           <div class="value">0 – 20,000</div>
         </div>
-        <div class="game-stat-card">
-          <div class="label">Среднее время игры</div>
-          <div class="value">нет данных</div>
-        </div>
       </div>
 
       <h2>Об игре</h2>
@@ -183,7 +211,28 @@
         </a>
       </p>
 
-      <p style="color: var(--text-faint); font-size: 13px; margin-top: 30px;">
+            <h2>Скриншоты</h2>
+      <div class="game-shots">
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5121040/495a0fab22b166bf7dc9239b030d0df3c4888eec/ss_495a0fab22b166bf7dc9239b030d0df3c4888eec.1920x1080.jpg?t=1790604054" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5121040/495a0fab22b166bf7dc9239b030d0df3c4888eec/ss_495a0fab22b166bf7dc9239b030d0df3c4888eec.600x338.jpg?t=1790604054" alt="Beetle Forest — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5121040/b156510216f5b0962e3127e15f91df3c27ef3428/ss_b156510216f5b0962e3127e15f91df3c27ef3428.1920x1080.jpg?t=1790604054" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5121040/b156510216f5b0962e3127e15f91df3c27ef3428/ss_b156510216f5b0962e3127e15f91df3c27ef3428.600x338.jpg?t=1790604054" alt="Beetle Forest — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5121040/30946398e92093c67045c164a7275d9c420f1b67/ss_30946398e92093c67045c164a7275d9c420f1b67.1920x1080.jpg?t=1790604054" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5121040/30946398e92093c67045c164a7275d9c420f1b67/ss_30946398e92093c67045c164a7275d9c420f1b67.600x338.jpg?t=1790604054" alt="Beetle Forest — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5121040/0ef672c4bb0defdcd92d844fafddf154f964cecc/ss_0ef672c4bb0defdcd92d844fafddf154f964cecc.1920x1080.jpg?t=1790604054" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5121040/0ef672c4bb0defdcd92d844fafddf154f964cecc/ss_0ef672c4bb0defdcd92d844fafddf154f964cecc.600x338.jpg?t=1790604054" alt="Beetle Forest — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5121040/8d61f059a99ac3a98147909dd1c0a0a1628ed6f9/ss_8d61f059a99ac3a98147909dd1c0a0a1628ed6f9.1920x1080.jpg?t=1790604054" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5121040/8d61f059a99ac3a98147909dd1c0a0a1628ed6f9/ss_8d61f059a99ac3a98147909dd1c0a0a1628ed6f9.600x338.jpg?t=1790604054" alt="Beetle Forest — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5121040/495b327b7c4ecf2aed04ee8ff378877a7415f6a3/ss_495b327b7c4ecf2aed04ee8ff378877a7415f6a3.1920x1080.jpg?t=1790604054" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5121040/495b327b7c4ecf2aed04ee8ff378877a7415f6a3/ss_495b327b7c4ecf2aed04ee8ff378877a7415f6a3.600x338.jpg?t=1790604054" alt="Beetle Forest — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5121040/124ebfe2514f57a30ddc6ae4735e3f1881037766/ss_124ebfe2514f57a30ddc6ae4735e3f1881037766.1920x1080.jpg?t=1790604054" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5121040/124ebfe2514f57a30ddc6ae4735e3f1881037766/ss_124ebfe2514f57a30ddc6ae4735e3f1881037766.600x338.jpg?t=1790604054" alt="Beetle Forest — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5121040/10da663d9ec91aca6c0e25999420631a41716db9/ss_10da663d9ec91aca6c0e25999420631a41716db9.1920x1080.jpg?t=1790604054" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5121040/10da663d9ec91aca6c0e25999420631a41716db9/ss_10da663d9ec91aca6c0e25999420631a41716db9.600x338.jpg?t=1790604054" alt="Beetle Forest — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5121040/c24c71f3e16109c65acabf1eb4ba223dac30ca3d/ss_c24c71f3e16109c65acabf1eb4ba223dac30ca3d.1920x1080.jpg?t=1790604054" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5121040/c24c71f3e16109c65acabf1eb4ba223dac30ca3d/ss_c24c71f3e16109c65acabf1eb4ba223dac30ca3d.600x338.jpg?t=1790604054" alt="Beetle Forest — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5121040/b84df6151a4f05b90c8c71345119f3b6f2eeacbc/ss_b84df6151a4f05b90c8c71345119f3b6f2eeacbc.1920x1080.jpg?t=1790604054" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5121040/b84df6151a4f05b90c8c71345119f3b6f2eeacbc/ss_b84df6151a4f05b90c8c71345119f3b6f2eeacbc.600x338.jpg?t=1790604054" alt="Beetle Forest — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+      </div>
+
+      <h2>Геймплей</h2>
+      <div class="game-movies">
+        <figure class="game-movie"><div class="game-video" data-hls="https://video.akamai.steamstatic.com/store_trailers/5121040/1274133193/ab3f72632a5ceb19a7b77c6036dac0f947e8494b/1790603387/hls_264_master.m3u8?t=1790603561" data-poster="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257438575/974645587ff2fd8becbb4e3db1f94e0f3598fa07/movie_600x337.jpg?t=1790603561" role="button" tabindex="0" aria-label="Смотреть геймплей: PV3"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257438575/974645587ff2fd8becbb4e3db1f94e0f3598fa07/movie_600x337.jpg?t=1790603561" alt="" loading="lazy" width="480" height="270" /><span class="game-video-play" aria-hidden="true"></span></div></figure>
+        <figure class="game-movie"><div class="game-video" data-hls="https://video.akamai.steamstatic.com/store_trailers/5121040/865818943/11bd8c74c38ab80656fa41a40d69d94e7c95e3ea/1790601017/hls_264_master.m3u8?t=1790603562" data-poster="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257438523/c1682207b730e14c373d456be45e58870fb83984/movie_600x337.jpg?t=1790603562" role="button" tabindex="0" aria-label="Смотреть геймплей: playmovie"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257438523/c1682207b730e14c373d456be45e58870fb83984/movie_600x337.jpg?t=1790603562" alt="" loading="lazy" width="480" height="270" /><span class="game-video-play" aria-hidden="true"></span></div></figure>
+        <figure class="game-movie"><div class="game-video" data-hls="https://video.akamai.steamstatic.com/store_trailers/5121040/1421698136/b873646db9031c760bf9cb038f8d5ad521b48160/1789825257/hls_264_master.m3u8?t=1789832113" data-poster="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257409176/6f300864c40fd8578614cfbe94e752044a89b225/movie_600x337.jpg?t=1789832113" role="button" tabindex="0" aria-label="Смотреть геймплей: PV2"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257409176/6f300864c40fd8578614cfbe94e752044a89b225/movie_600x337.jpg?t=1789832113" alt="" loading="lazy" width="480" height="270" /><span class="game-video-play" aria-hidden="true"></span></div></figure>
+      </div>
+
+<p style="color: var(--text-faint); font-size: 13px; margin-top: 30px;">
         Данные о цене, отзывах и статистике обновляются автоматически на основе
         Steam Store API и SteamSpy.
       </p>
@@ -284,5 +333,6 @@ function declineCookies() {
 })();
 </script>
 <script src="/newsletter.js?v=2" defer></script>
+<script defer src="/game-media.js?v=1"></script>
 </body>
 </html>

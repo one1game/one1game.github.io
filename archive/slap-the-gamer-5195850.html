@@ -112,6 +112,38 @@
     }
     .game-stat-card .label { font-size: 12px; color: var(--text-faint); text-transform: uppercase; }
     .game-stat-card .value { font-size: 20px; font-weight: bold; margin-top: 4px; }
+    .game-shots {
+      display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+      gap: 12px; margin: 20px 0;
+    }
+    .game-shot {
+      display: block; border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 8px; overflow: hidden;
+    }
+    .game-shot img { display: block; width: 100%; height: auto; }
+    .game-movies { display: grid; gap: 16px; margin: 20px 0; }
+    .game-movie { margin: 0; }
+    .game-movie video {
+      display: block; width: 100%; height: auto;
+      border-radius: 8px; background: #000;
+    }
+    .game-movie figcaption { margin-top: 6px; font-size: 13px; color: var(--text-faint); }
+    .game-video {
+      position: relative; cursor: pointer; overflow: hidden;
+      border-radius: 8px; background: #000; aspect-ratio: 16 / 9;
+    }
+    .game-video img { display: block; width: 100%; height: 100%; object-fit: cover; }
+    .game-video-play { position: absolute; inset: 0; display: grid; place-items: center; }
+    .game-video-play::before {
+      content: ''; width: 58px; height: 58px; border-radius: 50%;
+      background: rgba(0,0,0,0.5); border: 2px solid rgba(255,255,255,0.75);
+    }
+    .game-video-play::after {
+      content: ''; position: absolute; margin-left: 5px;
+      border-style: solid; border-width: 11px 0 11px 18px;
+      border-color: transparent transparent transparent #fff;
+    }
+    .game-video-el { display: block; width: 100%; height: 100%; background: #000; }
   </style>
 </head>
 <body>
@@ -150,7 +182,7 @@
 
     <article class="article-body">
 
-      <p>Slap an obnoxious gamer, rack up an absurd slap count, unlock achievements, and endure increasingly annoying taunts in this deliberately stupid arcade clicker inspired by the chaotic spirit of classic Flash games.</p>
+      
 
       <div class="game-stats-grid">
         <div class="game-stat-card">
@@ -166,10 +198,6 @@
           <div class="label">Владельцев (оценка)</div>
           <div class="value">0 – 20,000</div>
         </div>
-        <div class="game-stat-card">
-          <div class="label">Среднее время игры</div>
-          <div class="value">нет данных</div>
-        </div>
       </div>
 
       <h2>Об игре</h2>
@@ -183,7 +211,23 @@
         </a>
       </p>
 
-      <p style="color: var(--text-faint); font-size: 13px; margin-top: 30px;">
+            <h2>Скриншоты</h2>
+      <div class="game-shots">
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5195850/3db3d9fab29e7b2881924bc8deddc407dd77a269/ss_3db3d9fab29e7b2881924bc8deddc407dd77a269.1920x1080.jpg?t=1789867436" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5195850/3db3d9fab29e7b2881924bc8deddc407dd77a269/ss_3db3d9fab29e7b2881924bc8deddc407dd77a269.600x338.jpg?t=1789867436" alt="Slap the Gamer — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5195850/089500230b8d8c1330b8d81568c1be39bf481a45/ss_089500230b8d8c1330b8d81568c1be39bf481a45.1920x1080.jpg?t=1789867436" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5195850/089500230b8d8c1330b8d81568c1be39bf481a45/ss_089500230b8d8c1330b8d81568c1be39bf481a45.600x338.jpg?t=1789867436" alt="Slap the Gamer — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5195850/053c3b1726755f4761fc7be779434c84e4b09904/ss_053c3b1726755f4761fc7be779434c84e4b09904.1920x1080.jpg?t=1789867436" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5195850/053c3b1726755f4761fc7be779434c84e4b09904/ss_053c3b1726755f4761fc7be779434c84e4b09904.600x338.jpg?t=1789867436" alt="Slap the Gamer — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5195850/50761b0fef9e87106ad920237aecb0f5c22b925d/ss_50761b0fef9e87106ad920237aecb0f5c22b925d.1920x1080.jpg?t=1789867436" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5195850/50761b0fef9e87106ad920237aecb0f5c22b925d/ss_50761b0fef9e87106ad920237aecb0f5c22b925d.600x338.jpg?t=1789867436" alt="Slap the Gamer — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5195850/7e210d171c0208e516a02a48b6fef0710118513a/ss_7e210d171c0208e516a02a48b6fef0710118513a.1920x1080.jpg?t=1789867436" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5195850/7e210d171c0208e516a02a48b6fef0710118513a/ss_7e210d171c0208e516a02a48b6fef0710118513a.600x338.jpg?t=1789867436" alt="Slap the Gamer — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5195850/9797e145a5d5bc0c666b70ad386f593719734273/ss_9797e145a5d5bc0c666b70ad386f593719734273.1920x1080.jpg?t=1789867436" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5195850/9797e145a5d5bc0c666b70ad386f593719734273/ss_9797e145a5d5bc0c666b70ad386f593719734273.600x338.jpg?t=1789867436" alt="Slap the Gamer — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5195850/8451e4a3b66720c6d2796fb14a54a157a1ddf85c/ss_8451e4a3b66720c6d2796fb14a54a157a1ddf85c.1920x1080.jpg?t=1789867436" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5195850/8451e4a3b66720c6d2796fb14a54a157a1ddf85c/ss_8451e4a3b66720c6d2796fb14a54a157a1ddf85c.600x338.jpg?t=1789867436" alt="Slap the Gamer — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+      </div>
+
+      <h2>Геймплей</h2>
+      <div class="game-movies">
+        <figure class="game-movie"><div class="game-video" data-hls="https://video.akamai.steamstatic.com/store_trailers/5195850/247624250/2c700e85b54ee2402bfed917d5c73b42c001acb2/1789866657/hls_264_master.m3u8?t=1789867435" data-poster="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257412348/d30f62d9f1f782a09e68973a31c3b10d2b7a0940/movie_600x337.jpg?t=1789867435" role="button" tabindex="0" aria-label="Смотреть геймплей: Gamer Correction Initiative Trailer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257412348/d30f62d9f1f782a09e68973a31c3b10d2b7a0940/movie_600x337.jpg?t=1789867435" alt="" loading="lazy" width="480" height="270" /><span class="game-video-play" aria-hidden="true"></span></div></figure>
+      </div>
+
+<p style="color: var(--text-faint); font-size: 13px; margin-top: 30px;">
         Данные о цене, отзывах и статистике обновляются автоматически на основе
         Steam Store API и SteamSpy.
       </p>
@@ -284,5 +328,6 @@ function declineCookies() {
 })();
 </script>
 <script src="/newsletter.js?v=2" defer></script>
+<script defer src="/game-media.js?v=1"></script>
 </body>
 </html>

@@ -117,6 +117,38 @@
     }
     .game-stat-card .label { font-size: 12px; color: var(--text-faint); text-transform: uppercase; }
     .game-stat-card .value { font-size: 20px; font-weight: bold; margin-top: 4px; }
+    .game-shots {
+      display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+      gap: 12px; margin: 20px 0;
+    }
+    .game-shot {
+      display: block; border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 8px; overflow: hidden;
+    }
+    .game-shot img { display: block; width: 100%; height: auto; }
+    .game-movies { display: grid; gap: 16px; margin: 20px 0; }
+    .game-movie { margin: 0; }
+    .game-movie video {
+      display: block; width: 100%; height: auto;
+      border-radius: 8px; background: #000;
+    }
+    .game-movie figcaption { margin-top: 6px; font-size: 13px; color: var(--text-faint); }
+    .game-video {
+      position: relative; cursor: pointer; overflow: hidden;
+      border-radius: 8px; background: #000; aspect-ratio: 16 / 9;
+    }
+    .game-video img { display: block; width: 100%; height: 100%; object-fit: cover; }
+    .game-video-play { position: absolute; inset: 0; display: grid; place-items: center; }
+    .game-video-play::before {
+      content: ''; width: 58px; height: 58px; border-radius: 50%;
+      background: rgba(0,0,0,0.5); border: 2px solid rgba(255,255,255,0.75);
+    }
+    .game-video-play::after {
+      content: ''; position: absolute; margin-left: 5px;
+      border-style: solid; border-width: 11px 0 11px 18px;
+      border-color: transparent transparent transparent #fff;
+    }
+    .game-video-el { display: block; width: 100%; height: 100%; background: #000; }
   </style>
 </head>
 <body>
@@ -174,10 +206,6 @@
           <div class="label">Владельцев (оценка)</div>
           <div class="value">0 – 20,000</div>
         </div>
-        <div class="game-stat-card">
-          <div class="label">Среднее время игры</div>
-          <div class="value">нет данных</div>
-        </div>
       </div>
 
       <h2>Об игре</h2>
@@ -191,7 +219,29 @@
         </a>
       </p>
 
-      <p style="color: var(--text-faint); font-size: 13px; margin-top: 30px;">
+            <h2>Скриншоты</h2>
+      <div class="game-shots">
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2429930/88eb1a3b1bc1370a893ee14816cd55639e1b8cab/ss_88eb1a3b1bc1370a893ee14816cd55639e1b8cab.1920x1080.jpg?t=1790752101" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2429930/88eb1a3b1bc1370a893ee14816cd55639e1b8cab/ss_88eb1a3b1bc1370a893ee14816cd55639e1b8cab.600x338.jpg?t=1790752101" alt="Power Network Tycoon — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2429930/a10774e2973d509c03feb5925785634754de3296/ss_a10774e2973d509c03feb5925785634754de3296.1920x1080.jpg?t=1790752101" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2429930/a10774e2973d509c03feb5925785634754de3296/ss_a10774e2973d509c03feb5925785634754de3296.600x338.jpg?t=1790752101" alt="Power Network Tycoon — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2429930/69daaf81436a17bf24b252c6a5f6c3c4078418e0/ss_69daaf81436a17bf24b252c6a5f6c3c4078418e0.1920x1080.jpg?t=1790752101" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2429930/69daaf81436a17bf24b252c6a5f6c3c4078418e0/ss_69daaf81436a17bf24b252c6a5f6c3c4078418e0.600x338.jpg?t=1790752101" alt="Power Network Tycoon — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2429930/4811ca7e65d823b30c0e7d268c25f5ee8ca6f18e/ss_4811ca7e65d823b30c0e7d268c25f5ee8ca6f18e.1920x1080.jpg?t=1790752101" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2429930/4811ca7e65d823b30c0e7d268c25f5ee8ca6f18e/ss_4811ca7e65d823b30c0e7d268c25f5ee8ca6f18e.600x338.jpg?t=1790752101" alt="Power Network Tycoon — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2429930/6d5c98fd8eb2356db73a1f5ce20b853b30c576e3/ss_6d5c98fd8eb2356db73a1f5ce20b853b30c576e3.1920x1080.jpg?t=1790752101" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2429930/6d5c98fd8eb2356db73a1f5ce20b853b30c576e3/ss_6d5c98fd8eb2356db73a1f5ce20b853b30c576e3.600x338.jpg?t=1790752101" alt="Power Network Tycoon — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2429930/4f3c57934a811b83c260d475d947eb98c7a0faca/ss_4f3c57934a811b83c260d475d947eb98c7a0faca.1920x1080.jpg?t=1790752101" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2429930/4f3c57934a811b83c260d475d947eb98c7a0faca/ss_4f3c57934a811b83c260d475d947eb98c7a0faca.600x338.jpg?t=1790752101" alt="Power Network Tycoon — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2429930/c08ea6f8e80d16734db12a5dd477545662d64f80/ss_c08ea6f8e80d16734db12a5dd477545662d64f80.1920x1080.jpg?t=1790752101" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2429930/c08ea6f8e80d16734db12a5dd477545662d64f80/ss_c08ea6f8e80d16734db12a5dd477545662d64f80.600x338.jpg?t=1790752101" alt="Power Network Tycoon — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2429930/d25e59c2708dce22e57e661d5e623be56ea90b04/ss_d25e59c2708dce22e57e661d5e623be56ea90b04.1920x1080.jpg?t=1790752101" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2429930/d25e59c2708dce22e57e661d5e623be56ea90b04/ss_d25e59c2708dce22e57e661d5e623be56ea90b04.600x338.jpg?t=1790752101" alt="Power Network Tycoon — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2429930/f7c84719ed5539f52af91ae67c77309540457c43/ss_f7c84719ed5539f52af91ae67c77309540457c43.1920x1080.jpg?t=1790752101" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2429930/f7c84719ed5539f52af91ae67c77309540457c43/ss_f7c84719ed5539f52af91ae67c77309540457c43.600x338.jpg?t=1790752101" alt="Power Network Tycoon — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2429930/5b2a4185ed87fab08b59d82443df505dc1fb251e/ss_5b2a4185ed87fab08b59d82443df505dc1fb251e.1920x1080.jpg?t=1790752101" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2429930/5b2a4185ed87fab08b59d82443df505dc1fb251e/ss_5b2a4185ed87fab08b59d82443df505dc1fb251e.600x338.jpg?t=1790752101" alt="Power Network Tycoon — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2429930/ss_06d8df627190bacc2b87843962ce2c7fa7c733b6.1920x1080.jpg?t=1790752101" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2429930/ss_06d8df627190bacc2b87843962ce2c7fa7c733b6.600x338.jpg?t=1790752101" alt="Power Network Tycoon — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2429930/fdd12bd335a7e7f50507faf6cf31bf541b66d3cb/ss_fdd12bd335a7e7f50507faf6cf31bf541b66d3cb.1920x1080.jpg?t=1790752101" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2429930/fdd12bd335a7e7f50507faf6cf31bf541b66d3cb/ss_fdd12bd335a7e7f50507faf6cf31bf541b66d3cb.600x338.jpg?t=1790752101" alt="Power Network Tycoon — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+      </div>
+
+      <h2>Геймплей</h2>
+      <div class="game-movies">
+        <figure class="game-movie"><div class="game-video" data-hls="https://video.akamai.steamstatic.com/store_trailers/2429930/273822809/e9827c43c9fe03a74a77c2497a9880c47ae01572/1790749519/hls_264_master.m3u8?t=1790749905" data-poster="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257108094/a9ef5e9e1ad0280ba9718c1b260ee1541f5d0a97/movie_600x337.jpg?t=1790749905" role="button" tabindex="0" aria-label="Смотреть геймплей: V1.0 Pre-Release Trailer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257108094/a9ef5e9e1ad0280ba9718c1b260ee1541f5d0a97/movie_600x337.jpg?t=1790749905" alt="" loading="lazy" width="480" height="270" /><span class="game-video-play" aria-hidden="true"></span></div></figure>
+        <figure class="game-movie"><div class="game-video" data-hls="https://video.akamai.steamstatic.com/store_trailers/2429930/1699579973/579cf076f87a48009fe0c885b918343704b37acf/1790500725/hls_264_master.m3u8?t=1790507565" data-poster="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/256995613/57b0d6f61296290e3722457650474c7aaa9c0701/movie_600x337.jpg?t=1790507565" role="button" tabindex="0" aria-label="Смотреть геймплей: Gameplay Trailer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/256995613/57b0d6f61296290e3722457650474c7aaa9c0701/movie_600x337.jpg?t=1790507565" alt="" loading="lazy" width="480" height="270" /><span class="game-video-play" aria-hidden="true"></span></div></figure>
+      </div>
+
+<p style="color: var(--text-faint); font-size: 13px; margin-top: 30px;">
         Данные о цене, отзывах и статистике обновляются автоматически на основе
         Steam Store API и SteamSpy.
       </p>
@@ -292,5 +342,6 @@ function declineCookies() {
 })();
 </script>
 <script src="/newsletter.js?v=2" defer></script>
+<script defer src="/game-media.js?v=1"></script>
 </body>
 </html>

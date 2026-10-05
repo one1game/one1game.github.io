@@ -112,6 +112,38 @@
     }
     .game-stat-card .label { font-size: 12px; color: var(--text-faint); text-transform: uppercase; }
     .game-stat-card .value { font-size: 20px; font-weight: bold; margin-top: 4px; }
+    .game-shots {
+      display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+      gap: 12px; margin: 20px 0;
+    }
+    .game-shot {
+      display: block; border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 8px; overflow: hidden;
+    }
+    .game-shot img { display: block; width: 100%; height: auto; }
+    .game-movies { display: grid; gap: 16px; margin: 20px 0; }
+    .game-movie { margin: 0; }
+    .game-movie video {
+      display: block; width: 100%; height: auto;
+      border-radius: 8px; background: #000;
+    }
+    .game-movie figcaption { margin-top: 6px; font-size: 13px; color: var(--text-faint); }
+    .game-video {
+      position: relative; cursor: pointer; overflow: hidden;
+      border-radius: 8px; background: #000; aspect-ratio: 16 / 9;
+    }
+    .game-video img { display: block; width: 100%; height: 100%; object-fit: cover; }
+    .game-video-play { position: absolute; inset: 0; display: grid; place-items: center; }
+    .game-video-play::before {
+      content: ''; width: 58px; height: 58px; border-radius: 50%;
+      background: rgba(0,0,0,0.5); border: 2px solid rgba(255,255,255,0.75);
+    }
+    .game-video-play::after {
+      content: ''; position: absolute; margin-left: 5px;
+      border-style: solid; border-width: 11px 0 11px 18px;
+      border-color: transparent transparent transparent #fff;
+    }
+    .game-video-el { display: block; width: 100%; height: 100%; background: #000; }
   </style>
 </head>
 <body>
@@ -150,7 +182,7 @@
 
     <article class="article-body">
 
-      <p>Late at night in an office tower, you are trapped in floors that keep repeating. Some of them have let in things that don't belong to this decade, as if something would rather you stayed. Spot the anomalies, keep going down, and find out what this building really is.</p>
+      
 
       <div class="game-stats-grid">
         <div class="game-stat-card">
@@ -166,10 +198,6 @@
           <div class="label">Владельцев (оценка)</div>
           <div class="value">0 – 20,000</div>
         </div>
-        <div class="game-stat-card">
-          <div class="label">Среднее время игры</div>
-          <div class="value">нет данных</div>
-        </div>
       </div>
 
       <h2>Об игре</h2>
@@ -183,7 +211,21 @@
         </a>
       </p>
 
-      <p style="color: var(--text-faint); font-size: 13px; margin-top: 30px;">
+            <h2>Скриншоты</h2>
+      <div class="game-shots">
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5136120/9269479a3502cec304a79edabc8ccf76ada5015c/ss_9269479a3502cec304a79edabc8ccf76ada5015c.1920x1080.jpg?t=1790215315" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5136120/9269479a3502cec304a79edabc8ccf76ada5015c/ss_9269479a3502cec304a79edabc8ccf76ada5015c.600x338.jpg?t=1790215315" alt="Off the Clock: 13/F — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5136120/a449903633bdc9444975d2f2a937773fbd8eecf8/ss_a449903633bdc9444975d2f2a937773fbd8eecf8.1920x1080.jpg?t=1790215315" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5136120/a449903633bdc9444975d2f2a937773fbd8eecf8/ss_a449903633bdc9444975d2f2a937773fbd8eecf8.600x338.jpg?t=1790215315" alt="Off the Clock: 13/F — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5136120/4eefd5f09e761b52b9653882aceb909ab0c03e3f/ss_4eefd5f09e761b52b9653882aceb909ab0c03e3f.1920x1080.jpg?t=1790215315" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5136120/4eefd5f09e761b52b9653882aceb909ab0c03e3f/ss_4eefd5f09e761b52b9653882aceb909ab0c03e3f.600x338.jpg?t=1790215315" alt="Off the Clock: 13/F — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5136120/9627132c3a12ab7fe8996a96b235673d0f340967/ss_9627132c3a12ab7fe8996a96b235673d0f340967.1920x1080.jpg?t=1790215315" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5136120/9627132c3a12ab7fe8996a96b235673d0f340967/ss_9627132c3a12ab7fe8996a96b235673d0f340967.600x338.jpg?t=1790215315" alt="Off the Clock: 13/F — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5136120/3f384aed8bef743b93df090728b2f38c6b308f9b/ss_3f384aed8bef743b93df090728b2f38c6b308f9b.1920x1080.jpg?t=1790215315" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5136120/3f384aed8bef743b93df090728b2f38c6b308f9b/ss_3f384aed8bef743b93df090728b2f38c6b308f9b.600x338.jpg?t=1790215315" alt="Off the Clock: 13/F — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+      </div>
+
+      <h2>Геймплей</h2>
+      <div class="game-movies">
+        <figure class="game-movie"><div class="game-video" data-hls="https://video.akamai.steamstatic.com/store_trailers/5136120/1354197193/b981172fbbccfc9168e6e518fef4e4c865b4116e/1787728430/hls_264_master.m3u8?t=1788681085" data-poster="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257408815/b9ddb99376e4032ef179acb42839cfc1bb1ae933/movie_600x337.jpg?t=1788681085" role="button" tabindex="0" aria-label="Смотреть геймплей: Gameplay Trailer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257408815/b9ddb99376e4032ef179acb42839cfc1bb1ae933/movie_600x337.jpg?t=1788681085" alt="" loading="lazy" width="480" height="270" /><span class="game-video-play" aria-hidden="true"></span></div></figure>
+      </div>
+
+<p style="color: var(--text-faint); font-size: 13px; margin-top: 30px;">
         Данные о цене, отзывах и статистике обновляются автоматически на основе
         Steam Store API и SteamSpy.
       </p>
@@ -284,5 +326,6 @@ function declineCookies() {
 })();
 </script>
 <script src="/newsletter.js?v=2" defer></script>
+<script defer src="/game-media.js?v=1"></script>
 </body>
 </html>

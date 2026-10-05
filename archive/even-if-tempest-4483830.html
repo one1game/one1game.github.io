@@ -112,6 +112,38 @@
     }
     .game-stat-card .label { font-size: 12px; color: var(--text-faint); text-transform: uppercase; }
     .game-stat-card .value { font-size: 20px; font-weight: bold; margin-top: 4px; }
+    .game-shots {
+      display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+      gap: 12px; margin: 20px 0;
+    }
+    .game-shot {
+      display: block; border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 8px; overflow: hidden;
+    }
+    .game-shot img { display: block; width: 100%; height: auto; }
+    .game-movies { display: grid; gap: 16px; margin: 20px 0; }
+    .game-movie { margin: 0; }
+    .game-movie video {
+      display: block; width: 100%; height: auto;
+      border-radius: 8px; background: #000;
+    }
+    .game-movie figcaption { margin-top: 6px; font-size: 13px; color: var(--text-faint); }
+    .game-video {
+      position: relative; cursor: pointer; overflow: hidden;
+      border-radius: 8px; background: #000; aspect-ratio: 16 / 9;
+    }
+    .game-video img { display: block; width: 100%; height: 100%; object-fit: cover; }
+    .game-video-play { position: absolute; inset: 0; display: grid; place-items: center; }
+    .game-video-play::before {
+      content: ''; width: 58px; height: 58px; border-radius: 50%;
+      background: rgba(0,0,0,0.5); border: 2px solid rgba(255,255,255,0.75);
+    }
+    .game-video-play::after {
+      content: ''; position: absolute; margin-left: 5px;
+      border-style: solid; border-width: 11px 0 11px 18px;
+      border-color: transparent transparent transparent #fff;
+    }
+    .game-video-el { display: block; width: 100%; height: 100%; background: #000; }
   </style>
 </head>
 <body>
@@ -150,7 +182,7 @@
 
     <article class="article-body">
 
-      <p>Raging flames sear her flesh as scolding laughter weighs her down as lead. She dies with naught but regret, and is granted the Fatal Rewind. &quot;This time, I will transform into the ideal version of myself.&quot; Yet this resolve will only lead to further misfortune.</p>
+      
 
       <div class="game-stats-grid">
         <div class="game-stat-card">
@@ -166,10 +198,6 @@
           <div class="label">Владельцев (оценка)</div>
           <div class="value">0 – 20,000</div>
         </div>
-        <div class="game-stat-card">
-          <div class="label">Среднее время игры</div>
-          <div class="value">нет данных</div>
-        </div>
       </div>
 
       <h2>Об игре</h2>
@@ -183,7 +211,22 @@
         </a>
       </p>
 
-      <p style="color: var(--text-faint); font-size: 13px; margin-top: 30px;">
+            <h2>Скриншоты</h2>
+      <div class="game-shots">
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4483830/2d8fe4ec589a2608de94643ae11c9678c5da982e/ss_2d8fe4ec589a2608de94643ae11c9678c5da982e.1920x1080.jpg?t=1790314049" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4483830/2d8fe4ec589a2608de94643ae11c9678c5da982e/ss_2d8fe4ec589a2608de94643ae11c9678c5da982e.600x338.jpg?t=1790314049" alt="even if TEMPEST — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4483830/6f7f51baf5751290c3754f3f51a9165ef406cf33/ss_6f7f51baf5751290c3754f3f51a9165ef406cf33.1920x1080.jpg?t=1790314049" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4483830/6f7f51baf5751290c3754f3f51a9165ef406cf33/ss_6f7f51baf5751290c3754f3f51a9165ef406cf33.600x338.jpg?t=1790314049" alt="even if TEMPEST — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4483830/0296859fc00a2e19d04bf130968c7f7c7dc86736/ss_0296859fc00a2e19d04bf130968c7f7c7dc86736.1920x1080.jpg?t=1790314049" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4483830/0296859fc00a2e19d04bf130968c7f7c7dc86736/ss_0296859fc00a2e19d04bf130968c7f7c7dc86736.600x338.jpg?t=1790314049" alt="even if TEMPEST — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4483830/fbce5ef4c39885229b2a70e6c5fb17fb99e27c76/ss_fbce5ef4c39885229b2a70e6c5fb17fb99e27c76.1920x1080.jpg?t=1790314049" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4483830/fbce5ef4c39885229b2a70e6c5fb17fb99e27c76/ss_fbce5ef4c39885229b2a70e6c5fb17fb99e27c76.600x338.jpg?t=1790314049" alt="even if TEMPEST — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4483830/ea68e5d03cd7931b2aef8e130c626fa508f54cb2/ss_ea68e5d03cd7931b2aef8e130c626fa508f54cb2.1920x1080.jpg?t=1790314049" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4483830/ea68e5d03cd7931b2aef8e130c626fa508f54cb2/ss_ea68e5d03cd7931b2aef8e130c626fa508f54cb2.600x338.jpg?t=1790314049" alt="even if TEMPEST — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4483830/235149c600f9cd89fc36650b69fa7906aaae45ac/ss_235149c600f9cd89fc36650b69fa7906aaae45ac.1920x1080.jpg?t=1790314049" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4483830/235149c600f9cd89fc36650b69fa7906aaae45ac/ss_235149c600f9cd89fc36650b69fa7906aaae45ac.600x338.jpg?t=1790314049" alt="even if TEMPEST — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+      </div>
+
+      <h2>Геймплей</h2>
+      <div class="game-movies">
+        <figure class="game-movie"><div class="game-video" data-hls="https://video.akamai.steamstatic.com/store_trailers/4483830/1708566363/17e0666563b086a3671b131bae835fcb00a9803e/1779070942/hls_264_master.m3u8?t=1785995946" data-poster="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257338522/face45269dd7e5c4efe44639ed3c8eb31f6a4deb/movie_600x337.jpg?t=1785995946" role="button" tabindex="0" aria-label="Смотреть геймплей: tempest_OP_EN"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257338522/face45269dd7e5c4efe44639ed3c8eb31f6a4deb/movie_600x337.jpg?t=1785995946" alt="" loading="lazy" width="480" height="270" /><span class="game-video-play" aria-hidden="true"></span></div></figure>
+      </div>
+
+<p style="color: var(--text-faint); font-size: 13px; margin-top: 30px;">
         Данные о цене, отзывах и статистике обновляются автоматически на основе
         Steam Store API и SteamSpy.
       </p>
@@ -284,5 +327,6 @@ function declineCookies() {
 })();
 </script>
 <script src="/newsletter.js?v=2" defer></script>
+<script defer src="/game-media.js?v=1"></script>
 </body>
 </html>

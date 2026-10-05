@@ -112,6 +112,38 @@
     }
     .game-stat-card .label { font-size: 12px; color: var(--text-faint); text-transform: uppercase; }
     .game-stat-card .value { font-size: 20px; font-weight: bold; margin-top: 4px; }
+    .game-shots {
+      display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+      gap: 12px; margin: 20px 0;
+    }
+    .game-shot {
+      display: block; border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 8px; overflow: hidden;
+    }
+    .game-shot img { display: block; width: 100%; height: auto; }
+    .game-movies { display: grid; gap: 16px; margin: 20px 0; }
+    .game-movie { margin: 0; }
+    .game-movie video {
+      display: block; width: 100%; height: auto;
+      border-radius: 8px; background: #000;
+    }
+    .game-movie figcaption { margin-top: 6px; font-size: 13px; color: var(--text-faint); }
+    .game-video {
+      position: relative; cursor: pointer; overflow: hidden;
+      border-radius: 8px; background: #000; aspect-ratio: 16 / 9;
+    }
+    .game-video img { display: block; width: 100%; height: 100%; object-fit: cover; }
+    .game-video-play { position: absolute; inset: 0; display: grid; place-items: center; }
+    .game-video-play::before {
+      content: ''; width: 58px; height: 58px; border-radius: 50%;
+      background: rgba(0,0,0,0.5); border: 2px solid rgba(255,255,255,0.75);
+    }
+    .game-video-play::after {
+      content: ''; position: absolute; margin-left: 5px;
+      border-style: solid; border-width: 11px 0 11px 18px;
+      border-color: transparent transparent transparent #fff;
+    }
+    .game-video-el { display: block; width: 100%; height: 100%; background: #000; }
   </style>
 </head>
 <body>
@@ -166,10 +198,6 @@
           <div class="label">Владельцев (оценка)</div>
           <div class="value">0 – 20,000</div>
         </div>
-        <div class="game-stat-card">
-          <div class="label">Среднее время игры</div>
-          <div class="value">нет данных</div>
-        </div>
       </div>
 
       <h2>Об игре</h2>
@@ -183,7 +211,28 @@
         </a>
       </p>
 
-      <p style="color: var(--text-faint); font-size: 13px; margin-top: 30px;">
+            <h2>Скриншоты</h2>
+      <div class="game-shots">
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5135630/7e90cd921771f5fe9bccc22be1dbc966c6a7163a/ss_7e90cd921771f5fe9bccc22be1dbc966c6a7163a.1920x1080.jpg?t=1790495186" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5135630/7e90cd921771f5fe9bccc22be1dbc966c6a7163a/ss_7e90cd921771f5fe9bccc22be1dbc966c6a7163a.600x338.jpg?t=1790495186" alt="WPG Ravelin — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5135630/ccbb99e515ff22e29fa65fd9af1b531e96095c4d/ss_ccbb99e515ff22e29fa65fd9af1b531e96095c4d.1920x1080.jpg?t=1790495186" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5135630/ccbb99e515ff22e29fa65fd9af1b531e96095c4d/ss_ccbb99e515ff22e29fa65fd9af1b531e96095c4d.600x338.jpg?t=1790495186" alt="WPG Ravelin — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5135630/b6668aa6505be72d8602b9cbf9dc77730abf3513/ss_b6668aa6505be72d8602b9cbf9dc77730abf3513.1920x1080.jpg?t=1790495186" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5135630/b6668aa6505be72d8602b9cbf9dc77730abf3513/ss_b6668aa6505be72d8602b9cbf9dc77730abf3513.600x338.jpg?t=1790495186" alt="WPG Ravelin — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5135630/b507eda88d61261252fb1765067930978a2a2e24/ss_b507eda88d61261252fb1765067930978a2a2e24.1920x1080.jpg?t=1790495186" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5135630/b507eda88d61261252fb1765067930978a2a2e24/ss_b507eda88d61261252fb1765067930978a2a2e24.600x338.jpg?t=1790495186" alt="WPG Ravelin — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5135630/592eb1543e8a3241ac18a5fdb99c90dadf4d6ec2/ss_592eb1543e8a3241ac18a5fdb99c90dadf4d6ec2.1920x1080.jpg?t=1790495186" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5135630/592eb1543e8a3241ac18a5fdb99c90dadf4d6ec2/ss_592eb1543e8a3241ac18a5fdb99c90dadf4d6ec2.600x338.jpg?t=1790495186" alt="WPG Ravelin — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5135630/f3d9cb5b6081a3c127f1132a84ae75edbb509a3d/ss_f3d9cb5b6081a3c127f1132a84ae75edbb509a3d.1920x1080.jpg?t=1790495186" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5135630/f3d9cb5b6081a3c127f1132a84ae75edbb509a3d/ss_f3d9cb5b6081a3c127f1132a84ae75edbb509a3d.600x338.jpg?t=1790495186" alt="WPG Ravelin — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5135630/6e240e19014061a2af76641bba68a2fc45bffda0/ss_6e240e19014061a2af76641bba68a2fc45bffda0.1920x1080.jpg?t=1790495186" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5135630/6e240e19014061a2af76641bba68a2fc45bffda0/ss_6e240e19014061a2af76641bba68a2fc45bffda0.600x338.jpg?t=1790495186" alt="WPG Ravelin — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5135630/97c69081afe6537ba3f5ce9d485fc7d2e34826b9/ss_97c69081afe6537ba3f5ce9d485fc7d2e34826b9.1920x1080.jpg?t=1790495186" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5135630/97c69081afe6537ba3f5ce9d485fc7d2e34826b9/ss_97c69081afe6537ba3f5ce9d485fc7d2e34826b9.600x338.jpg?t=1790495186" alt="WPG Ravelin — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5135630/f980938506920cc2b12c42ddab29bdff44ae22f8/ss_f980938506920cc2b12c42ddab29bdff44ae22f8.1920x1080.jpg?t=1790495186" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5135630/f980938506920cc2b12c42ddab29bdff44ae22f8/ss_f980938506920cc2b12c42ddab29bdff44ae22f8.600x338.jpg?t=1790495186" alt="WPG Ravelin — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5135630/44c1e29e1a27b1026ddde37a3c1393eb2b1eb979/ss_44c1e29e1a27b1026ddde37a3c1393eb2b1eb979.1920x1080.jpg?t=1790495186" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5135630/44c1e29e1a27b1026ddde37a3c1393eb2b1eb979/ss_44c1e29e1a27b1026ddde37a3c1393eb2b1eb979.600x338.jpg?t=1790495186" alt="WPG Ravelin — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5135630/045ce7acc170f1e487ee5285f14b923fb4252fea/ss_045ce7acc170f1e487ee5285f14b923fb4252fea.1920x1080.jpg?t=1790495186" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5135630/045ce7acc170f1e487ee5285f14b923fb4252fea/ss_045ce7acc170f1e487ee5285f14b923fb4252fea.600x338.jpg?t=1790495186" alt="WPG Ravelin — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5135630/f907f26de30fe29fcda3c316df7f9c85c5aa9f36/ss_f907f26de30fe29fcda3c316df7f9c85c5aa9f36.1920x1080.jpg?t=1790495186" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5135630/f907f26de30fe29fcda3c316df7f9c85c5aa9f36/ss_f907f26de30fe29fcda3c316df7f9c85c5aa9f36.600x338.jpg?t=1790495186" alt="WPG Ravelin — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+      </div>
+
+      <h2>Геймплей</h2>
+      <div class="game-movies">
+        <figure class="game-movie"><div class="game-video" data-hls="https://video.akamai.steamstatic.com/store_trailers/5135630/203226168/a904175d01e2ec2fafb9b2083ae5d07b2fb0180f/1790392752/hls_264_master.m3u8?t=1790393840" data-poster="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257422654/8bbd497533b8935cb76ae2857c6dc903b30f0d38/movie_600x337.jpg?t=1790393840" role="button" tabindex="0" aria-label="Смотреть геймплей: FPS Tower Defense Gameplay"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257422654/8bbd497533b8935cb76ae2857c6dc903b30f0d38/movie_600x337.jpg?t=1790393840" alt="" loading="lazy" width="480" height="270" /><span class="game-video-play" aria-hidden="true"></span></div></figure>
+      </div>
+
+<p style="color: var(--text-faint); font-size: 13px; margin-top: 30px;">
         Данные о цене, отзывах и статистике обновляются автоматически на основе
         Steam Store API и SteamSpy.
       </p>
@@ -284,5 +333,6 @@ function declineCookies() {
 })();
 </script>
 <script src="/newsletter.js?v=2" defer></script>
+<script defer src="/game-media.js?v=1"></script>
 </body>
 </html>

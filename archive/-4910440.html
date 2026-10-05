@@ -108,6 +108,38 @@
     }
     .game-stat-card .label { font-size: 12px; color: var(--text-faint); text-transform: uppercase; }
     .game-stat-card .value { font-size: 20px; font-weight: bold; margin-top: 4px; }
+    .game-shots {
+      display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+      gap: 12px; margin: 20px 0;
+    }
+    .game-shot {
+      display: block; border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 8px; overflow: hidden;
+    }
+    .game-shot img { display: block; width: 100%; height: auto; }
+    .game-movies { display: grid; gap: 16px; margin: 20px 0; }
+    .game-movie { margin: 0; }
+    .game-movie video {
+      display: block; width: 100%; height: auto;
+      border-radius: 8px; background: #000;
+    }
+    .game-movie figcaption { margin-top: 6px; font-size: 13px; color: var(--text-faint); }
+    .game-video {
+      position: relative; cursor: pointer; overflow: hidden;
+      border-radius: 8px; background: #000; aspect-ratio: 16 / 9;
+    }
+    .game-video img { display: block; width: 100%; height: 100%; object-fit: cover; }
+    .game-video-play { position: absolute; inset: 0; display: grid; place-items: center; }
+    .game-video-play::before {
+      content: ''; width: 58px; height: 58px; border-radius: 50%;
+      background: rgba(0,0,0,0.5); border: 2px solid rgba(255,255,255,0.75);
+    }
+    .game-video-play::after {
+      content: ''; position: absolute; margin-left: 5px;
+      border-style: solid; border-width: 11px 0 11px 18px;
+      border-color: transparent transparent transparent #fff;
+    }
+    .game-video-el { display: block; width: 100%; height: 100%; background: #000; }
   </style>
 </head>
 <body>
@@ -146,7 +178,7 @@
 
     <article class="article-body">
 
-      <p>AI opened the Ghost Gate to the Netherworld, revealing bizarre entities. To conquer it, fight with charming female companions, deepen bonds through Dual Cultivation, and build your harem in a Cyber-Eastern world!</p>
+      
 
       <div class="game-stats-grid">
         <div class="game-stat-card">
@@ -162,10 +194,6 @@
           <div class="label">Владельцев (оценка)</div>
           <div class="value">0 – 20,000</div>
         </div>
-        <div class="game-stat-card">
-          <div class="label">Среднее время игры</div>
-          <div class="value">нет данных</div>
-        </div>
       </div>
 
       <h2>Об игре</h2>
@@ -179,7 +207,23 @@
         </a>
       </p>
 
-      <p style="color: var(--text-faint); font-size: 13px; margin-top: 30px;">
+            <h2>Скриншоты</h2>
+      <div class="game-shots">
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4910440/29ce362d1a2c0bb8a899cf0b2f8998bd2a82513e/ss_29ce362d1a2c0bb8a899cf0b2f8998bd2a82513e.1920x1080.jpg?t=1790299822" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4910440/29ce362d1a2c0bb8a899cf0b2f8998bd2a82513e/ss_29ce362d1a2c0bb8a899cf0b2f8998bd2a82513e.600x338.jpg?t=1790299822" alt="The S.I.N. Phantom — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4910440/cd18616a220b78804c144e231c98c94120f1a909/ss_cd18616a220b78804c144e231c98c94120f1a909.1920x1080.jpg?t=1790299822" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4910440/cd18616a220b78804c144e231c98c94120f1a909/ss_cd18616a220b78804c144e231c98c94120f1a909.600x338.jpg?t=1790299822" alt="The S.I.N. Phantom — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4910440/67ed3e609698c36a589bde120c780707b0341e0d/ss_67ed3e609698c36a589bde120c780707b0341e0d.1920x1080.jpg?t=1790299822" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4910440/67ed3e609698c36a589bde120c780707b0341e0d/ss_67ed3e609698c36a589bde120c780707b0341e0d.600x338.jpg?t=1790299822" alt="The S.I.N. Phantom — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4910440/296d6d6e1eb8af46c54673618aa65a9770cad7f4/ss_296d6d6e1eb8af46c54673618aa65a9770cad7f4.1920x1080.jpg?t=1790299822" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4910440/296d6d6e1eb8af46c54673618aa65a9770cad7f4/ss_296d6d6e1eb8af46c54673618aa65a9770cad7f4.600x338.jpg?t=1790299822" alt="The S.I.N. Phantom — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4910440/a2208d0979a542e9a6b151919f2f40e9efd234c6/ss_a2208d0979a542e9a6b151919f2f40e9efd234c6.1920x1080.jpg?t=1790299822" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4910440/a2208d0979a542e9a6b151919f2f40e9efd234c6/ss_a2208d0979a542e9a6b151919f2f40e9efd234c6.600x338.jpg?t=1790299822" alt="The S.I.N. Phantom — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4910440/0cbbe9397c661ec94ec3d114f22b7b166f459f54/ss_0cbbe9397c661ec94ec3d114f22b7b166f459f54.1920x1080.jpg?t=1790299822" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4910440/0cbbe9397c661ec94ec3d114f22b7b166f459f54/ss_0cbbe9397c661ec94ec3d114f22b7b166f459f54.600x338.jpg?t=1790299822" alt="The S.I.N. Phantom — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4910440/f512447247bcf489902f28fcbc84777b96e37681/ss_f512447247bcf489902f28fcbc84777b96e37681.1920x1080.jpg?t=1790299822" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4910440/f512447247bcf489902f28fcbc84777b96e37681/ss_f512447247bcf489902f28fcbc84777b96e37681.600x338.jpg?t=1790299822" alt="The S.I.N. Phantom — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+      </div>
+
+      <h2>Геймплей</h2>
+      <div class="game-movies">
+        <figure class="game-movie"><div class="game-video" data-hls="https://video.akamai.steamstatic.com/store_trailers/4910440/889333163/b044cf65d7d0197f30bc7edc79e5c3c741ebf884/1783653486/hls_264_master.m3u8?t=1784201143" data-poster="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257374242/a58abf3fea72b2d425cbd29563778a9468f1c17c/movie_600x337.jpg?t=1784201143" role="button" tabindex="0" aria-label="Смотреть геймплей: The S.I.N. Phantom"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257374242/a58abf3fea72b2d425cbd29563778a9468f1c17c/movie_600x337.jpg?t=1784201143" alt="" loading="lazy" width="480" height="270" /><span class="game-video-play" aria-hidden="true"></span></div></figure>
+      </div>
+
+<p style="color: var(--text-faint); font-size: 13px; margin-top: 30px;">
         Данные о цене, отзывах и статистике обновляются автоматически на основе
         Steam Store API и SteamSpy.
       </p>
@@ -280,5 +324,6 @@ function declineCookies() {
 })();
 </script>
 <script src="/newsletter.js?v=2" defer></script>
+<script defer src="/game-media.js?v=1"></script>
 </body>
 </html>

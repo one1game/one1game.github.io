@@ -112,6 +112,38 @@
     }
     .game-stat-card .label { font-size: 12px; color: var(--text-faint); text-transform: uppercase; }
     .game-stat-card .value { font-size: 20px; font-weight: bold; margin-top: 4px; }
+    .game-shots {
+      display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+      gap: 12px; margin: 20px 0;
+    }
+    .game-shot {
+      display: block; border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 8px; overflow: hidden;
+    }
+    .game-shot img { display: block; width: 100%; height: auto; }
+    .game-movies { display: grid; gap: 16px; margin: 20px 0; }
+    .game-movie { margin: 0; }
+    .game-movie video {
+      display: block; width: 100%; height: auto;
+      border-radius: 8px; background: #000;
+    }
+    .game-movie figcaption { margin-top: 6px; font-size: 13px; color: var(--text-faint); }
+    .game-video {
+      position: relative; cursor: pointer; overflow: hidden;
+      border-radius: 8px; background: #000; aspect-ratio: 16 / 9;
+    }
+    .game-video img { display: block; width: 100%; height: 100%; object-fit: cover; }
+    .game-video-play { position: absolute; inset: 0; display: grid; place-items: center; }
+    .game-video-play::before {
+      content: ''; width: 58px; height: 58px; border-radius: 50%;
+      background: rgba(0,0,0,0.5); border: 2px solid rgba(255,255,255,0.75);
+    }
+    .game-video-play::after {
+      content: ''; position: absolute; margin-left: 5px;
+      border-style: solid; border-width: 11px 0 11px 18px;
+      border-color: transparent transparent transparent #fff;
+    }
+    .game-video-el { display: block; width: 100%; height: 100%; background: #000; }
   </style>
 </head>
 <body>
@@ -150,7 +182,7 @@
 
     <article class="article-body">
 
-      <p>SteamOS coming soon! Operate your Windows PC in VR with only your head. Built for people who can't use controllers, but useful to those who can! Go hands free in more casual experiences. Gaze-and-dwell cursor, radial menu, on-screen keyboard, for the SteamVR dashboard and your Windows desktop.</p>
+      
 
       <div class="game-stats-grid">
         <div class="game-stat-card">
@@ -166,10 +198,6 @@
           <div class="label">Владельцев (оценка)</div>
           <div class="value">0 – 20,000</div>
         </div>
-        <div class="game-stat-card">
-          <div class="label">Среднее время игры</div>
-          <div class="value">нет данных</div>
-        </div>
       </div>
 
       <h2>Об игре</h2>
@@ -183,7 +211,21 @@
         </a>
       </p>
 
-      <p style="color: var(--text-faint); font-size: 13px; margin-top: 30px;">
+            <h2>Скриншоты</h2>
+      <div class="game-shots">
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4934110/40d415b2c9fedcca6a5e16309ade2a2b387bb889/ss_40d415b2c9fedcca6a5e16309ade2a2b387bb889.1920x1080.jpg?t=1791015192" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4934110/40d415b2c9fedcca6a5e16309ade2a2b387bb889/ss_40d415b2c9fedcca6a5e16309ade2a2b387bb889.600x338.jpg?t=1791015192" alt="TimoS — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4934110/68ede628717bf83491b21b01702c17db5057135b/ss_68ede628717bf83491b21b01702c17db5057135b.1920x1080.jpg?t=1791015192" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4934110/68ede628717bf83491b21b01702c17db5057135b/ss_68ede628717bf83491b21b01702c17db5057135b.600x338.jpg?t=1791015192" alt="TimoS — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4934110/7722e5056fde894ddcf816998652cdcffbe2e45c/ss_7722e5056fde894ddcf816998652cdcffbe2e45c.1920x1080.jpg?t=1791015192" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4934110/7722e5056fde894ddcf816998652cdcffbe2e45c/ss_7722e5056fde894ddcf816998652cdcffbe2e45c.600x338.jpg?t=1791015192" alt="TimoS — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4934110/b09f36695370769cc516bbd4661a7a695e5bb030/ss_b09f36695370769cc516bbd4661a7a695e5bb030.1920x1080.jpg?t=1791015192" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4934110/b09f36695370769cc516bbd4661a7a695e5bb030/ss_b09f36695370769cc516bbd4661a7a695e5bb030.600x338.jpg?t=1791015192" alt="TimoS — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4934110/003452684d03e87627c2f6ebb7b2ef1136259d67/ss_003452684d03e87627c2f6ebb7b2ef1136259d67.1920x1080.jpg?t=1791015192" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4934110/003452684d03e87627c2f6ebb7b2ef1136259d67/ss_003452684d03e87627c2f6ebb7b2ef1136259d67.600x338.jpg?t=1791015192" alt="TimoS — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+      </div>
+
+      <h2>Геймплей</h2>
+      <div class="game-movies">
+        <figure class="game-movie"><div class="game-video" data-hls="https://video.akamai.steamstatic.com/store_trailers/4934110/445058284/9e19f8fcd1126dd8f8a2b72c5a6b25c748baf7b8/1788870669/hls_264_master.m3u8?t=1789829842" data-poster="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257419871/01350500f89d1eb08c495beabdd25b2368132941/movie_600x337.jpg?t=1789829842" role="button" tabindex="0" aria-label="Смотреть геймплей: TimoS Pitch"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257419871/01350500f89d1eb08c495beabdd25b2368132941/movie_600x337.jpg?t=1789829842" alt="" loading="lazy" width="480" height="270" /><span class="game-video-play" aria-hidden="true"></span></div></figure>
+      </div>
+
+<p style="color: var(--text-faint); font-size: 13px; margin-top: 30px;">
         Данные о цене, отзывах и статистике обновляются автоматически на основе
         Steam Store API и SteamSpy.
       </p>
@@ -284,5 +326,6 @@ function declineCookies() {
 })();
 </script>
 <script src="/newsletter.js?v=2" defer></script>
+<script defer src="/game-media.js?v=1"></script>
 </body>
 </html>

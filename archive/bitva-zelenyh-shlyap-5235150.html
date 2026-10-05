@@ -112,6 +112,38 @@
     }
     .game-stat-card .label { font-size: 12px; color: var(--text-faint); text-transform: uppercase; }
     .game-stat-card .value { font-size: 20px; font-weight: bold; margin-top: 4px; }
+    .game-shots {
+      display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+      gap: 12px; margin: 20px 0;
+    }
+    .game-shot {
+      display: block; border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 8px; overflow: hidden;
+    }
+    .game-shot img { display: block; width: 100%; height: auto; }
+    .game-movies { display: grid; gap: 16px; margin: 20px 0; }
+    .game-movie { margin: 0; }
+    .game-movie video {
+      display: block; width: 100%; height: auto;
+      border-radius: 8px; background: #000;
+    }
+    .game-movie figcaption { margin-top: 6px; font-size: 13px; color: var(--text-faint); }
+    .game-video {
+      position: relative; cursor: pointer; overflow: hidden;
+      border-radius: 8px; background: #000; aspect-ratio: 16 / 9;
+    }
+    .game-video img { display: block; width: 100%; height: 100%; object-fit: cover; }
+    .game-video-play { position: absolute; inset: 0; display: grid; place-items: center; }
+    .game-video-play::before {
+      content: ''; width: 58px; height: 58px; border-radius: 50%;
+      background: rgba(0,0,0,0.5); border: 2px solid rgba(255,255,255,0.75);
+    }
+    .game-video-play::after {
+      content: ''; position: absolute; margin-left: 5px;
+      border-style: solid; border-width: 11px 0 11px 18px;
+      border-color: transparent transparent transparent #fff;
+    }
+    .game-video-el { display: block; width: 100%; height: 100%; background: #000; }
   </style>
 </head>
 <body>
@@ -166,10 +198,6 @@
           <div class="label">Владельцев (оценка)</div>
           <div class="value">0 – 20,000</div>
         </div>
-        <div class="game-stat-card">
-          <div class="label">Среднее время игры</div>
-          <div class="value">нет данных</div>
-        </div>
       </div>
 
       <h2>Об игре</h2>
@@ -183,7 +211,22 @@
         </a>
       </p>
 
-      <p style="color: var(--text-faint); font-size: 13px; margin-top: 30px;">
+            <h2>Скриншоты</h2>
+      <div class="game-shots">
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5235150/6ae41ee3ca68d84f8093ed8730d00ae122aef960/ss_6ae41ee3ca68d84f8093ed8730d00ae122aef960.1920x1080.jpg?t=1790752351" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5235150/6ae41ee3ca68d84f8093ed8730d00ae122aef960/ss_6ae41ee3ca68d84f8093ed8730d00ae122aef960.600x338.jpg?t=1790752351" alt="Green Hat Battle — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5235150/3c9a430c01f7f9d43fe6ce04bdc29c9532c9528d/ss_3c9a430c01f7f9d43fe6ce04bdc29c9532c9528d.1920x1080.jpg?t=1790752351" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5235150/3c9a430c01f7f9d43fe6ce04bdc29c9532c9528d/ss_3c9a430c01f7f9d43fe6ce04bdc29c9532c9528d.600x338.jpg?t=1790752351" alt="Green Hat Battle — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5235150/549aef10c8f4d309c0b5f948b2c05b74ec8aed71/ss_549aef10c8f4d309c0b5f948b2c05b74ec8aed71.1920x1080.jpg?t=1790752351" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5235150/549aef10c8f4d309c0b5f948b2c05b74ec8aed71/ss_549aef10c8f4d309c0b5f948b2c05b74ec8aed71.600x338.jpg?t=1790752351" alt="Green Hat Battle — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5235150/883d97837a403aa66cf51127dd8a7a0209038dbe/ss_883d97837a403aa66cf51127dd8a7a0209038dbe.1920x1080.jpg?t=1790752351" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5235150/883d97837a403aa66cf51127dd8a7a0209038dbe/ss_883d97837a403aa66cf51127dd8a7a0209038dbe.600x338.jpg?t=1790752351" alt="Green Hat Battle — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5235150/eccb6232dcd7bbc704c30d5425011055a022ba06/ss_eccb6232dcd7bbc704c30d5425011055a022ba06.1920x1080.jpg?t=1790752351" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5235150/eccb6232dcd7bbc704c30d5425011055a022ba06/ss_eccb6232dcd7bbc704c30d5425011055a022ba06.600x338.jpg?t=1790752351" alt="Green Hat Battle — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5235150/b4f998c1c72a016516c86b58f552f9d2e1d92b92/ss_b4f998c1c72a016516c86b58f552f9d2e1d92b92.1920x1080.jpg?t=1790752351" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5235150/b4f998c1c72a016516c86b58f552f9d2e1d92b92/ss_b4f998c1c72a016516c86b58f552f9d2e1d92b92.600x338.jpg?t=1790752351" alt="Green Hat Battle — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+      </div>
+
+      <h2>Геймплей</h2>
+      <div class="game-movies">
+        <figure class="game-movie"><div class="game-video" data-hls="https://video.akamai.steamstatic.com/store_trailers/5235150/767729292/c50c93ba626b40bd82e243430bcbf15a584019c5/1790751919/hls_264_master.m3u8?t=1790752163" data-poster="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257419506/ccc7bc9b3842862570d7847b995f148dd92bf69d/movie_600x337.jpg?t=1790752163" role="button" tabindex="0" aria-label="Смотреть геймплей: pv"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257419506/ccc7bc9b3842862570d7847b995f148dd92bf69d/movie_600x337.jpg?t=1790752163" alt="" loading="lazy" width="480" height="270" /><span class="game-video-play" aria-hidden="true"></span></div></figure>
+      </div>
+
+<p style="color: var(--text-faint); font-size: 13px; margin-top: 30px;">
         Данные о цене, отзывах и статистике обновляются автоматически на основе
         Steam Store API и SteamSpy.
       </p>
@@ -284,5 +327,6 @@ function declineCookies() {
 })();
 </script>
 <script src="/newsletter.js?v=2" defer></script>
+<script defer src="/game-media.js?v=1"></script>
 </body>
 </html>

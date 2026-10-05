@@ -108,6 +108,38 @@
     }
     .game-stat-card .label { font-size: 12px; color: var(--text-faint); text-transform: uppercase; }
     .game-stat-card .value { font-size: 20px; font-weight: bold; margin-top: 4px; }
+    .game-shots {
+      display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+      gap: 12px; margin: 20px 0;
+    }
+    .game-shot {
+      display: block; border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 8px; overflow: hidden;
+    }
+    .game-shot img { display: block; width: 100%; height: auto; }
+    .game-movies { display: grid; gap: 16px; margin: 20px 0; }
+    .game-movie { margin: 0; }
+    .game-movie video {
+      display: block; width: 100%; height: auto;
+      border-radius: 8px; background: #000;
+    }
+    .game-movie figcaption { margin-top: 6px; font-size: 13px; color: var(--text-faint); }
+    .game-video {
+      position: relative; cursor: pointer; overflow: hidden;
+      border-radius: 8px; background: #000; aspect-ratio: 16 / 9;
+    }
+    .game-video img { display: block; width: 100%; height: 100%; object-fit: cover; }
+    .game-video-play { position: absolute; inset: 0; display: grid; place-items: center; }
+    .game-video-play::before {
+      content: ''; width: 58px; height: 58px; border-radius: 50%;
+      background: rgba(0,0,0,0.5); border: 2px solid rgba(255,255,255,0.75);
+    }
+    .game-video-play::after {
+      content: ''; position: absolute; margin-left: 5px;
+      border-style: solid; border-width: 11px 0 11px 18px;
+      border-color: transparent transparent transparent #fff;
+    }
+    .game-video-el { display: block; width: 100%; height: 100%; background: #000; }
   </style>
 </head>
 <body>
@@ -162,10 +194,6 @@
           <div class="label">Владельцев (оценка)</div>
           <div class="value">0 – 20,000</div>
         </div>
-        <div class="game-stat-card">
-          <div class="label">Среднее время игры</div>
-          <div class="value">нет данных</div>
-        </div>
       </div>
 
       <h2>Об игре</h2>
@@ -179,7 +207,22 @@
         </a>
       </p>
 
-      <p style="color: var(--text-faint); font-size: 13px; margin-top: 30px;">
+            <h2>Скриншоты</h2>
+      <div class="game-shots">
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5233680/3c96818c57daac769d12057dc2aad52248e3161a/ss_3c96818c57daac769d12057dc2aad52248e3161a.1920x1080.jpg?t=1790928776" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5233680/3c96818c57daac769d12057dc2aad52248e3161a/ss_3c96818c57daac769d12057dc2aad52248e3161a.600x338.jpg?t=1790928776" alt="idle.am - lofi idle mmo — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5233680/d0dae22b4799ece9bfb74e83070c5dbbb498ca76/ss_d0dae22b4799ece9bfb74e83070c5dbbb498ca76.1920x1080.jpg?t=1790928776" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5233680/d0dae22b4799ece9bfb74e83070c5dbbb498ca76/ss_d0dae22b4799ece9bfb74e83070c5dbbb498ca76.600x338.jpg?t=1790928776" alt="idle.am - lofi idle mmo — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5233680/47b90aa4b583c884c9796ea18cc5f6978dd7a113/ss_47b90aa4b583c884c9796ea18cc5f6978dd7a113.1920x1080.jpg?t=1790928776" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5233680/47b90aa4b583c884c9796ea18cc5f6978dd7a113/ss_47b90aa4b583c884c9796ea18cc5f6978dd7a113.600x338.jpg?t=1790928776" alt="idle.am - lofi idle mmo — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5233680/d2636aa724a18f8033ca2ca637b40364ca72ef5e/ss_d2636aa724a18f8033ca2ca637b40364ca72ef5e.1920x1080.jpg?t=1790928776" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5233680/d2636aa724a18f8033ca2ca637b40364ca72ef5e/ss_d2636aa724a18f8033ca2ca637b40364ca72ef5e.600x338.jpg?t=1790928776" alt="idle.am - lofi idle mmo — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5233680/1b2ea22d8daed0f272840a2666654cd1857156dc/ss_1b2ea22d8daed0f272840a2666654cd1857156dc.1920x1080.jpg?t=1790928776" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5233680/1b2ea22d8daed0f272840a2666654cd1857156dc/ss_1b2ea22d8daed0f272840a2666654cd1857156dc.600x338.jpg?t=1790928776" alt="idle.am - lofi idle mmo — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5233680/1eee8f0a36ccb09e128c94e0e4a73901683f57f4/ss_1eee8f0a36ccb09e128c94e0e4a73901683f57f4.1920x1080.jpg?t=1790928776" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5233680/1eee8f0a36ccb09e128c94e0e4a73901683f57f4/ss_1eee8f0a36ccb09e128c94e0e4a73901683f57f4.600x338.jpg?t=1790928776" alt="idle.am - lofi idle mmo — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+      </div>
+
+      <h2>Геймплей</h2>
+      <div class="game-movies">
+        <figure class="game-movie"><div class="game-video" data-hls="https://video.akamai.steamstatic.com/store_trailers/5233680/267636015/fa04245c7950c92c2d4a59f0012a2b3322771fcd/1790464424/hls_264_master.m3u8?t=1790464733" data-poster="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257420348/b933a359b373cdc5bff9e9aad0eac28750035644/movie_600x337.jpg?t=1790464733" role="button" tabindex="0" aria-label="Смотреть геймплей: official trailer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257420348/b933a359b373cdc5bff9e9aad0eac28750035644/movie_600x337.jpg?t=1790464733" alt="" loading="lazy" width="480" height="270" /><span class="game-video-play" aria-hidden="true"></span></div></figure>
+      </div>
+
+<p style="color: var(--text-faint); font-size: 13px; margin-top: 30px;">
         Данные о цене, отзывах и статистике обновляются автоматически на основе
         Steam Store API и SteamSpy.
       </p>
@@ -280,5 +323,6 @@ function declineCookies() {
 })();
 </script>
 <script src="/newsletter.js?v=2" defer></script>
+<script defer src="/game-media.js?v=1"></script>
 </body>
 </html>

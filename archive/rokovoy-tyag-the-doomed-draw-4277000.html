@@ -112,6 +112,38 @@
     }
     .game-stat-card .label { font-size: 12px; color: var(--text-faint); text-transform: uppercase; }
     .game-stat-card .value { font-size: 20px; font-weight: bold; margin-top: 4px; }
+    .game-shots {
+      display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+      gap: 12px; margin: 20px 0;
+    }
+    .game-shot {
+      display: block; border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 8px; overflow: hidden;
+    }
+    .game-shot img { display: block; width: 100%; height: auto; }
+    .game-movies { display: grid; gap: 16px; margin: 20px 0; }
+    .game-movie { margin: 0; }
+    .game-movie video {
+      display: block; width: 100%; height: auto;
+      border-radius: 8px; background: #000;
+    }
+    .game-movie figcaption { margin-top: 6px; font-size: 13px; color: var(--text-faint); }
+    .game-video {
+      position: relative; cursor: pointer; overflow: hidden;
+      border-radius: 8px; background: #000; aspect-ratio: 16 / 9;
+    }
+    .game-video img { display: block; width: 100%; height: 100%; object-fit: cover; }
+    .game-video-play { position: absolute; inset: 0; display: grid; place-items: center; }
+    .game-video-play::before {
+      content: ''; width: 58px; height: 58px; border-radius: 50%;
+      background: rgba(0,0,0,0.5); border: 2px solid rgba(255,255,255,0.75);
+    }
+    .game-video-play::after {
+      content: ''; position: absolute; margin-left: 5px;
+      border-style: solid; border-width: 11px 0 11px 18px;
+      border-color: transparent transparent transparent #fff;
+    }
+    .game-video-el { display: block; width: 100%; height: 100%; background: #000; }
   </style>
 </head>
 <body>
@@ -166,10 +198,6 @@
           <div class="label">Владельцев (оценка)</div>
           <div class="value">0 – 20,000</div>
         </div>
-        <div class="game-stat-card">
-          <div class="label">Среднее время игры</div>
-          <div class="value">нет данных</div>
-        </div>
       </div>
 
       <h2>Об игре</h2>
@@ -183,7 +211,22 @@
         </a>
       </p>
 
-      <p style="color: var(--text-faint); font-size: 13px; margin-top: 30px;">
+            <h2>Скриншоты</h2>
+      <div class="game-shots">
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4277000/14882563b99d9876bb89e699b314bcbe8ca94c23/ss_14882563b99d9876bb89e699b314bcbe8ca94c23.1920x1080.jpg?t=1790123356" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4277000/14882563b99d9876bb89e699b314bcbe8ca94c23/ss_14882563b99d9876bb89e699b314bcbe8ca94c23.600x338.jpg?t=1790123356" alt="The Doomed Draw (大凶) — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4277000/8a77f01fdf8468614546fcd44467fd9a2eb99d54/ss_8a77f01fdf8468614546fcd44467fd9a2eb99d54.1920x1080.jpg?t=1790123356" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4277000/8a77f01fdf8468614546fcd44467fd9a2eb99d54/ss_8a77f01fdf8468614546fcd44467fd9a2eb99d54.600x338.jpg?t=1790123356" alt="The Doomed Draw (大凶) — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4277000/2f353ad2ac36c79b684500f61e62326a43f3804f/ss_2f353ad2ac36c79b684500f61e62326a43f3804f.1920x1080.jpg?t=1790123356" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4277000/2f353ad2ac36c79b684500f61e62326a43f3804f/ss_2f353ad2ac36c79b684500f61e62326a43f3804f.600x338.jpg?t=1790123356" alt="The Doomed Draw (大凶) — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4277000/b8abf68dff16f0efa326f35d61a1b32ecaa4e665/ss_b8abf68dff16f0efa326f35d61a1b32ecaa4e665.1920x1080.jpg?t=1790123356" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4277000/b8abf68dff16f0efa326f35d61a1b32ecaa4e665/ss_b8abf68dff16f0efa326f35d61a1b32ecaa4e665.600x338.jpg?t=1790123356" alt="The Doomed Draw (大凶) — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4277000/3cf94d967de1569b3b9a69d70d4644e99f0d834a/ss_3cf94d967de1569b3b9a69d70d4644e99f0d834a.1920x1080.jpg?t=1790123356" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4277000/3cf94d967de1569b3b9a69d70d4644e99f0d834a/ss_3cf94d967de1569b3b9a69d70d4644e99f0d834a.600x338.jpg?t=1790123356" alt="The Doomed Draw (大凶) — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4277000/7dc693772a83ae6f0c22b0291c705607346af92f/ss_7dc693772a83ae6f0c22b0291c705607346af92f.1920x1080.jpg?t=1790123356" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4277000/7dc693772a83ae6f0c22b0291c705607346af92f/ss_7dc693772a83ae6f0c22b0291c705607346af92f.600x338.jpg?t=1790123356" alt="The Doomed Draw (大凶) — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+      </div>
+
+      <h2>Геймплей</h2>
+      <div class="game-movies">
+        <figure class="game-movie"><div class="game-video" data-hls="https://video.akamai.steamstatic.com/store_trailers/4277000/558503899/2fd89db5e28001d4e1a53d723b4088444c234dfe/1786263199/hls_264_master.m3u8?t=1786777623" data-poster="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257394847/3d04075dc4ad406e3dd9937675cb479369b40c41/movie_600x337.jpg?t=1786777623" role="button" tabindex="0" aria-label="Смотреть геймплей: 大凶 - The Doomed Draw"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257394847/3d04075dc4ad406e3dd9937675cb479369b40c41/movie_600x337.jpg?t=1786777623" alt="" loading="lazy" width="480" height="270" /><span class="game-video-play" aria-hidden="true"></span></div></figure>
+      </div>
+
+<p style="color: var(--text-faint); font-size: 13px; margin-top: 30px;">
         Данные о цене, отзывах и статистике обновляются автоматически на основе
         Steam Store API и SteamSpy.
       </p>
@@ -284,5 +327,6 @@ function declineCookies() {
 })();
 </script>
 <script src="/newsletter.js?v=2" defer></script>
+<script defer src="/game-media.js?v=1"></script>
 </body>
 </html>

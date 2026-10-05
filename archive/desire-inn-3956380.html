@@ -108,6 +108,38 @@
     }
     .game-stat-card .label { font-size: 12px; color: var(--text-faint); text-transform: uppercase; }
     .game-stat-card .value { font-size: 20px; font-weight: bold; margin-top: 4px; }
+    .game-shots {
+      display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+      gap: 12px; margin: 20px 0;
+    }
+    .game-shot {
+      display: block; border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 8px; overflow: hidden;
+    }
+    .game-shot img { display: block; width: 100%; height: auto; }
+    .game-movies { display: grid; gap: 16px; margin: 20px 0; }
+    .game-movie { margin: 0; }
+    .game-movie video {
+      display: block; width: 100%; height: auto;
+      border-radius: 8px; background: #000;
+    }
+    .game-movie figcaption { margin-top: 6px; font-size: 13px; color: var(--text-faint); }
+    .game-video {
+      position: relative; cursor: pointer; overflow: hidden;
+      border-radius: 8px; background: #000; aspect-ratio: 16 / 9;
+    }
+    .game-video img { display: block; width: 100%; height: 100%; object-fit: cover; }
+    .game-video-play { position: absolute; inset: 0; display: grid; place-items: center; }
+    .game-video-play::before {
+      content: ''; width: 58px; height: 58px; border-radius: 50%;
+      background: rgba(0,0,0,0.5); border: 2px solid rgba(255,255,255,0.75);
+    }
+    .game-video-play::after {
+      content: ''; position: absolute; margin-left: 5px;
+      border-style: solid; border-width: 11px 0 11px 18px;
+      border-color: transparent transparent transparent #fff;
+    }
+    .game-video-el { display: block; width: 100%; height: 100%; background: #000; }
   </style>
 </head>
 <body>
@@ -162,10 +194,6 @@
           <div class="label">Владельцев (оценка)</div>
           <div class="value">0 – 20,000</div>
         </div>
-        <div class="game-stat-card">
-          <div class="label">Среднее время игры</div>
-          <div class="value">нет данных</div>
-        </div>
       </div>
 
       <h2>Об игре</h2>
@@ -179,7 +207,28 @@
         </a>
       </p>
 
-      <p style="color: var(--text-faint); font-size: 13px; margin-top: 30px;">
+            <h2>Скриншоты</h2>
+      <div class="game-shots">
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3956380/973bca5e8ab6abac98035d137388a6ceda01a4e2/ss_973bca5e8ab6abac98035d137388a6ceda01a4e2.1920x1080.jpg?t=1789826149" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3956380/973bca5e8ab6abac98035d137388a6ceda01a4e2/ss_973bca5e8ab6abac98035d137388a6ceda01a4e2.600x338.jpg?t=1789826149" alt="Desire Inn — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3956380/34c5c6c7e14cac3d5c8ace2dd5224f6288d947de/ss_34c5c6c7e14cac3d5c8ace2dd5224f6288d947de.1920x1080.jpg?t=1789826149" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3956380/34c5c6c7e14cac3d5c8ace2dd5224f6288d947de/ss_34c5c6c7e14cac3d5c8ace2dd5224f6288d947de.600x338.jpg?t=1789826149" alt="Desire Inn — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3956380/9d3268d8a4d3679424bed5b1c84df2e234f0e568/ss_9d3268d8a4d3679424bed5b1c84df2e234f0e568.1920x1080.jpg?t=1789826149" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3956380/9d3268d8a4d3679424bed5b1c84df2e234f0e568/ss_9d3268d8a4d3679424bed5b1c84df2e234f0e568.600x338.jpg?t=1789826149" alt="Desire Inn — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3956380/199a2bee5eeb13aa9ae437f1c9a10b8a7d7b8542/ss_199a2bee5eeb13aa9ae437f1c9a10b8a7d7b8542.1920x1080.jpg?t=1789826149" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3956380/199a2bee5eeb13aa9ae437f1c9a10b8a7d7b8542/ss_199a2bee5eeb13aa9ae437f1c9a10b8a7d7b8542.600x338.jpg?t=1789826149" alt="Desire Inn — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3956380/637c164be10709bdc0f224790b4d339afd54ffed/ss_637c164be10709bdc0f224790b4d339afd54ffed.1920x1080.jpg?t=1789826149" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3956380/637c164be10709bdc0f224790b4d339afd54ffed/ss_637c164be10709bdc0f224790b4d339afd54ffed.600x338.jpg?t=1789826149" alt="Desire Inn — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3956380/b31969c7be20391ed052abbf8740f5fbc8d52b66/ss_b31969c7be20391ed052abbf8740f5fbc8d52b66.1920x1080.jpg?t=1789826149" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3956380/b31969c7be20391ed052abbf8740f5fbc8d52b66/ss_b31969c7be20391ed052abbf8740f5fbc8d52b66.600x338.jpg?t=1789826149" alt="Desire Inn — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3956380/8495e72bb60cf815202979448014d6d0f7f80ff5/ss_8495e72bb60cf815202979448014d6d0f7f80ff5.1920x1080.jpg?t=1789826149" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3956380/8495e72bb60cf815202979448014d6d0f7f80ff5/ss_8495e72bb60cf815202979448014d6d0f7f80ff5.600x338.jpg?t=1789826149" alt="Desire Inn — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3956380/2fcbf9c69b37ebd514a102ad742a9762df28f561/ss_2fcbf9c69b37ebd514a102ad742a9762df28f561.1920x1080.jpg?t=1789826149" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3956380/2fcbf9c69b37ebd514a102ad742a9762df28f561/ss_2fcbf9c69b37ebd514a102ad742a9762df28f561.600x338.jpg?t=1789826149" alt="Desire Inn — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3956380/87fb90205d9f418098088a7fdb06ac4870f61b82/ss_87fb90205d9f418098088a7fdb06ac4870f61b82.1920x1080.jpg?t=1789826149" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3956380/87fb90205d9f418098088a7fdb06ac4870f61b82/ss_87fb90205d9f418098088a7fdb06ac4870f61b82.600x338.jpg?t=1789826149" alt="Desire Inn — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3956380/162dfb0e74441169b33429ccf4ca3c5e99d262af/ss_162dfb0e74441169b33429ccf4ca3c5e99d262af.1920x1080.jpg?t=1789826149" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3956380/162dfb0e74441169b33429ccf4ca3c5e99d262af/ss_162dfb0e74441169b33429ccf4ca3c5e99d262af.600x338.jpg?t=1789826149" alt="Desire Inn — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3956380/13fc922d6405319f2400c5bc56c81e7c1a7e66e7/ss_13fc922d6405319f2400c5bc56c81e7c1a7e66e7.1920x1080.jpg?t=1789826149" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3956380/13fc922d6405319f2400c5bc56c81e7c1a7e66e7/ss_13fc922d6405319f2400c5bc56c81e7c1a7e66e7.600x338.jpg?t=1789826149" alt="Desire Inn — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3956380/10507fe9e03151ebf999bb89187674714daf72db/ss_10507fe9e03151ebf999bb89187674714daf72db.1920x1080.jpg?t=1789826149" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3956380/10507fe9e03151ebf999bb89187674714daf72db/ss_10507fe9e03151ebf999bb89187674714daf72db.600x338.jpg?t=1789826149" alt="Desire Inn — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+      </div>
+
+      <h2>Геймплей</h2>
+      <div class="game-movies">
+        <figure class="game-movie"><div class="game-video" data-hls="https://video.akamai.steamstatic.com/store_trailers/3956380/635782666/0980ea3a2c8958e75187240a418b6b88cf041693/1789825706/hls_264_master.m3u8?t=1789826100" data-poster="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257184319/59363ea9bba5b8ca22aefbe39071ee03421f36b3/movie_600x337.jpg?t=1789826100" role="button" tabindex="0" aria-label="Смотреть геймплей: Main"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257184319/59363ea9bba5b8ca22aefbe39071ee03421f36b3/movie_600x337.jpg?t=1789826100" alt="" loading="lazy" width="480" height="270" /><span class="game-video-play" aria-hidden="true"></span></div></figure>
+      </div>
+
+<p style="color: var(--text-faint); font-size: 13px; margin-top: 30px;">
         Данные о цене, отзывах и статистике обновляются автоматически на основе
         Steam Store API и SteamSpy.
       </p>
@@ -280,5 +329,6 @@ function declineCookies() {
 })();
 </script>
 <script src="/newsletter.js?v=2" defer></script>
+<script defer src="/game-media.js?v=1"></script>
 </body>
 </html>

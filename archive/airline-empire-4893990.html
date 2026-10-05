@@ -112,6 +112,38 @@
     }
     .game-stat-card .label { font-size: 12px; color: var(--text-faint); text-transform: uppercase; }
     .game-stat-card .value { font-size: 20px; font-weight: bold; margin-top: 4px; }
+    .game-shots {
+      display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+      gap: 12px; margin: 20px 0;
+    }
+    .game-shot {
+      display: block; border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 8px; overflow: hidden;
+    }
+    .game-shot img { display: block; width: 100%; height: auto; }
+    .game-movies { display: grid; gap: 16px; margin: 20px 0; }
+    .game-movie { margin: 0; }
+    .game-movie video {
+      display: block; width: 100%; height: auto;
+      border-radius: 8px; background: #000;
+    }
+    .game-movie figcaption { margin-top: 6px; font-size: 13px; color: var(--text-faint); }
+    .game-video {
+      position: relative; cursor: pointer; overflow: hidden;
+      border-radius: 8px; background: #000; aspect-ratio: 16 / 9;
+    }
+    .game-video img { display: block; width: 100%; height: 100%; object-fit: cover; }
+    .game-video-play { position: absolute; inset: 0; display: grid; place-items: center; }
+    .game-video-play::before {
+      content: ''; width: 58px; height: 58px; border-radius: 50%;
+      background: rgba(0,0,0,0.5); border: 2px solid rgba(255,255,255,0.75);
+    }
+    .game-video-play::after {
+      content: ''; position: absolute; margin-left: 5px;
+      border-style: solid; border-width: 11px 0 11px 18px;
+      border-color: transparent transparent transparent #fff;
+    }
+    .game-video-el { display: block; width: 100%; height: 100%; background: #000; }
   </style>
 </head>
 <body>
@@ -166,10 +198,6 @@
           <div class="label">Владельцев (оценка)</div>
           <div class="value">0 – 20,000</div>
         </div>
-        <div class="game-stat-card">
-          <div class="label">Среднее время игры</div>
-          <div class="value">нет данных</div>
-        </div>
       </div>
 
       <h2>Об игре</h2>
@@ -183,7 +211,28 @@
         </a>
       </p>
 
-      <p style="color: var(--text-faint); font-size: 13px; margin-top: 30px;">
+            <h2>Скриншоты</h2>
+      <div class="game-shots">
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4893990/232148bbf7f60e9987073819fb257ac38e48a602/ss_232148bbf7f60e9987073819fb257ac38e48a602.1920x1080.jpg?t=1791024618" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4893990/232148bbf7f60e9987073819fb257ac38e48a602/ss_232148bbf7f60e9987073819fb257ac38e48a602.600x338.jpg?t=1791024618" alt="Airline Empire — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4893990/dccd1bbdfc7faa641264ed00e12b49e78f562f79/ss_dccd1bbdfc7faa641264ed00e12b49e78f562f79.1920x1080.jpg?t=1791024618" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4893990/dccd1bbdfc7faa641264ed00e12b49e78f562f79/ss_dccd1bbdfc7faa641264ed00e12b49e78f562f79.600x338.jpg?t=1791024618" alt="Airline Empire — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4893990/252e2a7d3dbb35863cffebed2aa7528ad4611c4e/ss_252e2a7d3dbb35863cffebed2aa7528ad4611c4e.1920x1080.jpg?t=1791024618" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4893990/252e2a7d3dbb35863cffebed2aa7528ad4611c4e/ss_252e2a7d3dbb35863cffebed2aa7528ad4611c4e.600x338.jpg?t=1791024618" alt="Airline Empire — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4893990/b05a558b7d428d8c5c7c7e15bab0d15cfc8c7401/ss_b05a558b7d428d8c5c7c7e15bab0d15cfc8c7401.1920x1080.jpg?t=1791024618" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4893990/b05a558b7d428d8c5c7c7e15bab0d15cfc8c7401/ss_b05a558b7d428d8c5c7c7e15bab0d15cfc8c7401.600x338.jpg?t=1791024618" alt="Airline Empire — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4893990/75d09d650c9e289f843322c21452a9cb51b65207/ss_75d09d650c9e289f843322c21452a9cb51b65207.1920x1080.jpg?t=1791024618" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4893990/75d09d650c9e289f843322c21452a9cb51b65207/ss_75d09d650c9e289f843322c21452a9cb51b65207.600x338.jpg?t=1791024618" alt="Airline Empire — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4893990/f3454f82b16ef5c08d3d32d783fb318d571f2dbb/ss_f3454f82b16ef5c08d3d32d783fb318d571f2dbb.1920x1080.jpg?t=1791024618" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4893990/f3454f82b16ef5c08d3d32d783fb318d571f2dbb/ss_f3454f82b16ef5c08d3d32d783fb318d571f2dbb.600x338.jpg?t=1791024618" alt="Airline Empire — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4893990/c9c89673979d5ae0dd9e690cfffbf72b7e9f4de8/ss_c9c89673979d5ae0dd9e690cfffbf72b7e9f4de8.1920x1080.jpg?t=1791024618" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4893990/c9c89673979d5ae0dd9e690cfffbf72b7e9f4de8/ss_c9c89673979d5ae0dd9e690cfffbf72b7e9f4de8.600x338.jpg?t=1791024618" alt="Airline Empire — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4893990/4f851a5a977066d9042fa203711bc318bd7db81b/ss_4f851a5a977066d9042fa203711bc318bd7db81b.1920x1080.jpg?t=1791024618" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4893990/4f851a5a977066d9042fa203711bc318bd7db81b/ss_4f851a5a977066d9042fa203711bc318bd7db81b.600x338.jpg?t=1791024618" alt="Airline Empire — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4893990/ac070b4c8d634a4b852ff16c0f5b0b5711879912/ss_ac070b4c8d634a4b852ff16c0f5b0b5711879912.1920x1080.jpg?t=1791024618" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4893990/ac070b4c8d634a4b852ff16c0f5b0b5711879912/ss_ac070b4c8d634a4b852ff16c0f5b0b5711879912.600x338.jpg?t=1791024618" alt="Airline Empire — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4893990/e268beea1b648858cc5ea61f7c2807afec15a4ba/ss_e268beea1b648858cc5ea61f7c2807afec15a4ba.1920x1080.jpg?t=1791024618" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4893990/e268beea1b648858cc5ea61f7c2807afec15a4ba/ss_e268beea1b648858cc5ea61f7c2807afec15a4ba.600x338.jpg?t=1791024618" alt="Airline Empire — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4893990/0aa4a93fb1d9d4dfa4082796a1ab109a7d00d6b8/ss_0aa4a93fb1d9d4dfa4082796a1ab109a7d00d6b8.1920x1080.jpg?t=1791024618" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4893990/0aa4a93fb1d9d4dfa4082796a1ab109a7d00d6b8/ss_0aa4a93fb1d9d4dfa4082796a1ab109a7d00d6b8.600x338.jpg?t=1791024618" alt="Airline Empire — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4893990/fecb0c8f6d3c97816750031cf50bff134a409841/ss_fecb0c8f6d3c97816750031cf50bff134a409841.1920x1080.jpg?t=1791024618" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4893990/fecb0c8f6d3c97816750031cf50bff134a409841/ss_fecb0c8f6d3c97816750031cf50bff134a409841.600x338.jpg?t=1791024618" alt="Airline Empire — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+      </div>
+
+      <h2>Геймплей</h2>
+      <div class="game-movies">
+        <figure class="game-movie"><div class="game-video" data-hls="https://video.akamai.steamstatic.com/store_trailers/4893990/1182363354/17c37533b7076245716b85a9b793554a7ad1fe90/1784295589/hls_264_master.m3u8?t=1784296435" data-poster="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257379161/8afa1e6aa222a339497fe681d420aab4289e462c/movie_600x337.jpg?t=1784296435" role="button" tabindex="0" aria-label="Смотреть геймплей: airline empire"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257379161/8afa1e6aa222a339497fe681d420aab4289e462c/movie_600x337.jpg?t=1784296435" alt="" loading="lazy" width="480" height="270" /><span class="game-video-play" aria-hidden="true"></span></div></figure>
+      </div>
+
+<p style="color: var(--text-faint); font-size: 13px; margin-top: 30px;">
         Данные о цене, отзывах и статистике обновляются автоматически на основе
         Steam Store API и SteamSpy.
       </p>
@@ -284,5 +333,6 @@ function declineCookies() {
 })();
 </script>
 <script src="/newsletter.js?v=2" defer></script>
+<script defer src="/game-media.js?v=1"></script>
 </body>
 </html>

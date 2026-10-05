@@ -112,6 +112,38 @@
     }
     .game-stat-card .label { font-size: 12px; color: var(--text-faint); text-transform: uppercase; }
     .game-stat-card .value { font-size: 20px; font-weight: bold; margin-top: 4px; }
+    .game-shots {
+      display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+      gap: 12px; margin: 20px 0;
+    }
+    .game-shot {
+      display: block; border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 8px; overflow: hidden;
+    }
+    .game-shot img { display: block; width: 100%; height: auto; }
+    .game-movies { display: grid; gap: 16px; margin: 20px 0; }
+    .game-movie { margin: 0; }
+    .game-movie video {
+      display: block; width: 100%; height: auto;
+      border-radius: 8px; background: #000;
+    }
+    .game-movie figcaption { margin-top: 6px; font-size: 13px; color: var(--text-faint); }
+    .game-video {
+      position: relative; cursor: pointer; overflow: hidden;
+      border-radius: 8px; background: #000; aspect-ratio: 16 / 9;
+    }
+    .game-video img { display: block; width: 100%; height: 100%; object-fit: cover; }
+    .game-video-play { position: absolute; inset: 0; display: grid; place-items: center; }
+    .game-video-play::before {
+      content: ''; width: 58px; height: 58px; border-radius: 50%;
+      background: rgba(0,0,0,0.5); border: 2px solid rgba(255,255,255,0.75);
+    }
+    .game-video-play::after {
+      content: ''; position: absolute; margin-left: 5px;
+      border-style: solid; border-width: 11px 0 11px 18px;
+      border-color: transparent transparent transparent #fff;
+    }
+    .game-video-el { display: block; width: 100%; height: 100%; background: #000; }
   </style>
 </head>
 <body>
@@ -150,7 +182,7 @@
 
     <article class="article-body">
 
-      <p>Arcane Eclipse is a fast-paced gothic survivors-like auto-shooter. Face endless hordes of demonic creatures, combine lethal arcane weapons, unlock powerful synergies, and survive the dark eclipse!</p>
+      
 
       <div class="game-stats-grid">
         <div class="game-stat-card">
@@ -166,10 +198,6 @@
           <div class="label">Владельцев (оценка)</div>
           <div class="value">0 – 20,000</div>
         </div>
-        <div class="game-stat-card">
-          <div class="label">Среднее время игры</div>
-          <div class="value">нет данных</div>
-        </div>
       </div>
 
       <h2>Об игре</h2>
@@ -183,7 +211,23 @@
         </a>
       </p>
 
-      <p style="color: var(--text-faint); font-size: 13px; margin-top: 30px;">
+            <h2>Скриншоты</h2>
+      <div class="game-shots">
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5159390/b31c4f46ae6650c2e16118bf437820b4d5b88128/ss_b31c4f46ae6650c2e16118bf437820b4d5b88128.1920x1080.jpg?t=1790633025" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5159390/b31c4f46ae6650c2e16118bf437820b4d5b88128/ss_b31c4f46ae6650c2e16118bf437820b4d5b88128.600x338.jpg?t=1790633025" alt="Arcane Eclipse: Survivors — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5159390/ede7b73363fe537945cf46d0e32abc6e51e12e2f/ss_ede7b73363fe537945cf46d0e32abc6e51e12e2f.1920x1080.jpg?t=1790633025" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5159390/ede7b73363fe537945cf46d0e32abc6e51e12e2f/ss_ede7b73363fe537945cf46d0e32abc6e51e12e2f.600x338.jpg?t=1790633025" alt="Arcane Eclipse: Survivors — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5159390/20350c9271c69e5b5d0d05c30211e9762597c210/ss_20350c9271c69e5b5d0d05c30211e9762597c210.1920x1080.jpg?t=1790633025" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5159390/20350c9271c69e5b5d0d05c30211e9762597c210/ss_20350c9271c69e5b5d0d05c30211e9762597c210.600x338.jpg?t=1790633025" alt="Arcane Eclipse: Survivors — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5159390/f2b21e281f4755be79d3e5235cfaac9f125843d0/ss_f2b21e281f4755be79d3e5235cfaac9f125843d0.1920x1080.jpg?t=1790633025" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5159390/f2b21e281f4755be79d3e5235cfaac9f125843d0/ss_f2b21e281f4755be79d3e5235cfaac9f125843d0.600x338.jpg?t=1790633025" alt="Arcane Eclipse: Survivors — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5159390/2b02243a9dbd1979a94b437f9d3a7bf1b433303c/ss_2b02243a9dbd1979a94b437f9d3a7bf1b433303c.1920x1080.jpg?t=1790633025" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5159390/2b02243a9dbd1979a94b437f9d3a7bf1b433303c/ss_2b02243a9dbd1979a94b437f9d3a7bf1b433303c.600x338.jpg?t=1790633025" alt="Arcane Eclipse: Survivors — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5159390/44aa2b21afcdbb9e2ce2f2cbc54932869ea5ba58/ss_44aa2b21afcdbb9e2ce2f2cbc54932869ea5ba58.1920x1080.jpg?t=1790633025" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5159390/44aa2b21afcdbb9e2ce2f2cbc54932869ea5ba58/ss_44aa2b21afcdbb9e2ce2f2cbc54932869ea5ba58.600x338.jpg?t=1790633025" alt="Arcane Eclipse: Survivors — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5159390/4ea7afb9bbfd2011af7a8ceacf3f93534bddfe68/ss_4ea7afb9bbfd2011af7a8ceacf3f93534bddfe68.1920x1080.jpg?t=1790633025" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5159390/4ea7afb9bbfd2011af7a8ceacf3f93534bddfe68/ss_4ea7afb9bbfd2011af7a8ceacf3f93534bddfe68.600x338.jpg?t=1790633025" alt="Arcane Eclipse: Survivors — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+      </div>
+
+      <h2>Геймплей</h2>
+      <div class="game-movies">
+        <figure class="game-movie"><div class="game-video" data-hls="https://video.akamai.steamstatic.com/store_trailers/5159390/1821280721/b089f7e8f1db2190280f014daef0c4d4bb05c418/1787426234/hls_264_master.m3u8?t=1788682495" data-poster="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257406028/91c3985ac0748d4dc5bd14d9a26cc4502da35940/movie_600x337.jpg?t=1788682495" role="button" tabindex="0" aria-label="Смотреть геймплей: Arcane Eclipse - Gameplay Teaser"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257406028/91c3985ac0748d4dc5bd14d9a26cc4502da35940/movie_600x337.jpg?t=1788682495" alt="" loading="lazy" width="480" height="270" /><span class="game-video-play" aria-hidden="true"></span></div></figure>
+      </div>
+
+<p style="color: var(--text-faint); font-size: 13px; margin-top: 30px;">
         Данные о цене, отзывах и статистике обновляются автоматически на основе
         Steam Store API и SteamSpy.
       </p>
@@ -284,5 +328,6 @@ function declineCookies() {
 })();
 </script>
 <script src="/newsletter.js?v=2" defer></script>
+<script defer src="/game-media.js?v=1"></script>
 </body>
 </html>

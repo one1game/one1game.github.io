@@ -112,6 +112,38 @@
     }
     .game-stat-card .label { font-size: 12px; color: var(--text-faint); text-transform: uppercase; }
     .game-stat-card .value { font-size: 20px; font-weight: bold; margin-top: 4px; }
+    .game-shots {
+      display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+      gap: 12px; margin: 20px 0;
+    }
+    .game-shot {
+      display: block; border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 8px; overflow: hidden;
+    }
+    .game-shot img { display: block; width: 100%; height: auto; }
+    .game-movies { display: grid; gap: 16px; margin: 20px 0; }
+    .game-movie { margin: 0; }
+    .game-movie video {
+      display: block; width: 100%; height: auto;
+      border-radius: 8px; background: #000;
+    }
+    .game-movie figcaption { margin-top: 6px; font-size: 13px; color: var(--text-faint); }
+    .game-video {
+      position: relative; cursor: pointer; overflow: hidden;
+      border-radius: 8px; background: #000; aspect-ratio: 16 / 9;
+    }
+    .game-video img { display: block; width: 100%; height: 100%; object-fit: cover; }
+    .game-video-play { position: absolute; inset: 0; display: grid; place-items: center; }
+    .game-video-play::before {
+      content: ''; width: 58px; height: 58px; border-radius: 50%;
+      background: rgba(0,0,0,0.5); border: 2px solid rgba(255,255,255,0.75);
+    }
+    .game-video-play::after {
+      content: ''; position: absolute; margin-left: 5px;
+      border-style: solid; border-width: 11px 0 11px 18px;
+      border-color: transparent transparent transparent #fff;
+    }
+    .game-video-el { display: block; width: 100%; height: 100%; background: #000; }
   </style>
 </head>
 <body>
@@ -150,7 +182,7 @@
 
     <article class="article-body">
 
-      <p>A pirate platformer with a big heart... and a bigger skull.</p>
+      
 
       <div class="game-stats-grid">
         <div class="game-stat-card">
@@ -166,10 +198,6 @@
           <div class="label">Владельцев (оценка)</div>
           <div class="value">0 – 20,000</div>
         </div>
-        <div class="game-stat-card">
-          <div class="label">Среднее время игры</div>
-          <div class="value">нет данных</div>
-        </div>
       </div>
 
       <h2>Об игре</h2>
@@ -183,7 +211,28 @@
         </a>
       </p>
 
-      <p style="color: var(--text-faint); font-size: 13px; margin-top: 30px;">
+            <h2>Скриншоты</h2>
+      <div class="game-shots">
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5235210/4eaeeafd7084e53044b26e73c4b60247cf949e27/ss_4eaeeafd7084e53044b26e73c4b60247cf949e27.1920x1080.jpg?t=1791108361" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5235210/4eaeeafd7084e53044b26e73c4b60247cf949e27/ss_4eaeeafd7084e53044b26e73c4b60247cf949e27.600x338.jpg?t=1791108361" alt="Jolly Roger Jam: Cathraul&#x27;s Curse — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5235210/1a816ec00baac91197c82c66458536900f20f417/ss_1a816ec00baac91197c82c66458536900f20f417.1920x1080.jpg?t=1791108361" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5235210/1a816ec00baac91197c82c66458536900f20f417/ss_1a816ec00baac91197c82c66458536900f20f417.600x338.jpg?t=1791108361" alt="Jolly Roger Jam: Cathraul&#x27;s Curse — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5235210/ac321e96ff782f9bb728d5c6b53b07e4d9c1230d/ss_ac321e96ff782f9bb728d5c6b53b07e4d9c1230d.1920x1080.jpg?t=1791108361" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5235210/ac321e96ff782f9bb728d5c6b53b07e4d9c1230d/ss_ac321e96ff782f9bb728d5c6b53b07e4d9c1230d.600x338.jpg?t=1791108361" alt="Jolly Roger Jam: Cathraul&#x27;s Curse — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5235210/c4eb94d084d91f6cb45b46c5e6598bf19efc9b83/ss_c4eb94d084d91f6cb45b46c5e6598bf19efc9b83.1920x1080.jpg?t=1791108361" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5235210/c4eb94d084d91f6cb45b46c5e6598bf19efc9b83/ss_c4eb94d084d91f6cb45b46c5e6598bf19efc9b83.600x338.jpg?t=1791108361" alt="Jolly Roger Jam: Cathraul&#x27;s Curse — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5235210/2c80db213edae5df41208420d69a1615c821f258/ss_2c80db213edae5df41208420d69a1615c821f258.1920x1080.jpg?t=1791108361" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5235210/2c80db213edae5df41208420d69a1615c821f258/ss_2c80db213edae5df41208420d69a1615c821f258.600x338.jpg?t=1791108361" alt="Jolly Roger Jam: Cathraul&#x27;s Curse — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5235210/87f7cc0dff39846d9c958340eb30e4dde1df7610/ss_87f7cc0dff39846d9c958340eb30e4dde1df7610.1920x1080.jpg?t=1791108361" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5235210/87f7cc0dff39846d9c958340eb30e4dde1df7610/ss_87f7cc0dff39846d9c958340eb30e4dde1df7610.600x338.jpg?t=1791108361" alt="Jolly Roger Jam: Cathraul&#x27;s Curse — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5235210/8dbcf5f93991b22bd48445ecf821be5cbb89cba0/ss_8dbcf5f93991b22bd48445ecf821be5cbb89cba0.1920x1080.jpg?t=1791108361" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5235210/8dbcf5f93991b22bd48445ecf821be5cbb89cba0/ss_8dbcf5f93991b22bd48445ecf821be5cbb89cba0.600x338.jpg?t=1791108361" alt="Jolly Roger Jam: Cathraul&#x27;s Curse — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5235210/f1c951e3a4b4ff3a805053b658cfadc6b3e641ad/ss_f1c951e3a4b4ff3a805053b658cfadc6b3e641ad.1920x1080.jpg?t=1791108361" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5235210/f1c951e3a4b4ff3a805053b658cfadc6b3e641ad/ss_f1c951e3a4b4ff3a805053b658cfadc6b3e641ad.600x338.jpg?t=1791108361" alt="Jolly Roger Jam: Cathraul&#x27;s Curse — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5235210/402dd400d65916aededa4f81cef9eef95760fe53/ss_402dd400d65916aededa4f81cef9eef95760fe53.1920x1080.jpg?t=1791108361" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5235210/402dd400d65916aededa4f81cef9eef95760fe53/ss_402dd400d65916aededa4f81cef9eef95760fe53.600x338.jpg?t=1791108361" alt="Jolly Roger Jam: Cathraul&#x27;s Curse — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5235210/9a8fe04faf8ff894bc45e3b99ca75f5a743a5c03/ss_9a8fe04faf8ff894bc45e3b99ca75f5a743a5c03.1920x1080.jpg?t=1791108361" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5235210/9a8fe04faf8ff894bc45e3b99ca75f5a743a5c03/ss_9a8fe04faf8ff894bc45e3b99ca75f5a743a5c03.600x338.jpg?t=1791108361" alt="Jolly Roger Jam: Cathraul&#x27;s Curse — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5235210/a4560d065df3c5b8183f79ce9846e8815a022cf7/ss_a4560d065df3c5b8183f79ce9846e8815a022cf7.1920x1080.jpg?t=1791108361" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5235210/a4560d065df3c5b8183f79ce9846e8815a022cf7/ss_a4560d065df3c5b8183f79ce9846e8815a022cf7.600x338.jpg?t=1791108361" alt="Jolly Roger Jam: Cathraul&#x27;s Curse — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5235210/ea0811a7997579b2c549e388f2937d01968c4bbc/ss_ea0811a7997579b2c549e388f2937d01968c4bbc.1920x1080.jpg?t=1791108361" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5235210/ea0811a7997579b2c549e388f2937d01968c4bbc/ss_ea0811a7997579b2c549e388f2937d01968c4bbc.600x338.jpg?t=1791108361" alt="Jolly Roger Jam: Cathraul&#x27;s Curse — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+      </div>
+
+      <h2>Геймплей</h2>
+      <div class="game-movies">
+        <figure class="game-movie"><div class="game-video" data-hls="https://video.akamai.steamstatic.com/store_trailers/5235210/636069505/643981ed68fc016fb78bd65426bdd100f46e1b5d/1788948910/hls_264_master.m3u8?t=1789505998" data-poster="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257420739/ecf504d6f9bd8c1493df2895a46b295215ce1f3f/movie_600x337.jpg?t=1789505998" role="button" tabindex="0" aria-label="Смотреть геймплей: Jolly Roger Jam: Cathraul&#x27;s Curse - Teaser Trailer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257420739/ecf504d6f9bd8c1493df2895a46b295215ce1f3f/movie_600x337.jpg?t=1789505998" alt="" loading="lazy" width="480" height="270" /><span class="game-video-play" aria-hidden="true"></span></div></figure>
+      </div>
+
+<p style="color: var(--text-faint); font-size: 13px; margin-top: 30px;">
         Данные о цене, отзывах и статистике обновляются автоматически на основе
         Steam Store API и SteamSpy.
       </p>
@@ -284,5 +333,6 @@ function declineCookies() {
 })();
 </script>
 <script src="/newsletter.js?v=2" defer></script>
+<script defer src="/game-media.js?v=1"></script>
 </body>
 </html>

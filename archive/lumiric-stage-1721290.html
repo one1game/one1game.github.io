@@ -112,6 +112,38 @@
     }
     .game-stat-card .label { font-size: 12px; color: var(--text-faint); text-transform: uppercase; }
     .game-stat-card .value { font-size: 20px; font-weight: bold; margin-top: 4px; }
+    .game-shots {
+      display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+      gap: 12px; margin: 20px 0;
+    }
+    .game-shot {
+      display: block; border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 8px; overflow: hidden;
+    }
+    .game-shot img { display: block; width: 100%; height: auto; }
+    .game-movies { display: grid; gap: 16px; margin: 20px 0; }
+    .game-movie { margin: 0; }
+    .game-movie video {
+      display: block; width: 100%; height: auto;
+      border-radius: 8px; background: #000;
+    }
+    .game-movie figcaption { margin-top: 6px; font-size: 13px; color: var(--text-faint); }
+    .game-video {
+      position: relative; cursor: pointer; overflow: hidden;
+      border-radius: 8px; background: #000; aspect-ratio: 16 / 9;
+    }
+    .game-video img { display: block; width: 100%; height: 100%; object-fit: cover; }
+    .game-video-play { position: absolute; inset: 0; display: grid; place-items: center; }
+    .game-video-play::before {
+      content: ''; width: 58px; height: 58px; border-radius: 50%;
+      background: rgba(0,0,0,0.5); border: 2px solid rgba(255,255,255,0.75);
+    }
+    .game-video-play::after {
+      content: ''; position: absolute; margin-left: 5px;
+      border-style: solid; border-width: 11px 0 11px 18px;
+      border-color: transparent transparent transparent #fff;
+    }
+    .game-video-el { display: block; width: 100%; height: 100%; background: #000; }
   </style>
 </head>
 <body>
@@ -150,7 +182,7 @@
 
     <article class="article-body">
 
-      <p>Create piano videos, tutorials, and livestreams with real-time MIDI visuals. Align notes to your piano from any camera angle, customize effects and Stages, and record videos ready to publish.</p>
+      
 
       <div class="game-stats-grid">
         <div class="game-stat-card">
@@ -166,10 +198,6 @@
           <div class="label">Владельцев (оценка)</div>
           <div class="value">0 – 20,000</div>
         </div>
-        <div class="game-stat-card">
-          <div class="label">Среднее время игры</div>
-          <div class="value">нет данных</div>
-        </div>
       </div>
 
       <h2>Об игре</h2>
@@ -183,7 +211,25 @@
         </a>
       </p>
 
-      <p style="color: var(--text-faint); font-size: 13px; margin-top: 30px;">
+            <h2>Скриншоты</h2>
+      <div class="game-shots">
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1721290/54c80b16e964382cb1c6357e40dc2af170620e2d/ss_54c80b16e964382cb1c6357e40dc2af170620e2d.1920x1080.jpg?t=1789955791" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1721290/54c80b16e964382cb1c6357e40dc2af170620e2d/ss_54c80b16e964382cb1c6357e40dc2af170620e2d.600x338.jpg?t=1789955791" alt="Lumiric Stage — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1721290/e8945efaa06d787a9551ea2266fdc980edd2925a/ss_e8945efaa06d787a9551ea2266fdc980edd2925a.1920x1080.jpg?t=1789955791" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1721290/e8945efaa06d787a9551ea2266fdc980edd2925a/ss_e8945efaa06d787a9551ea2266fdc980edd2925a.600x338.jpg?t=1789955791" alt="Lumiric Stage — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1721290/b820179b86f416a986e7916ae044932790f2c6a3/ss_b820179b86f416a986e7916ae044932790f2c6a3.1920x1080.jpg?t=1789955791" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1721290/b820179b86f416a986e7916ae044932790f2c6a3/ss_b820179b86f416a986e7916ae044932790f2c6a3.600x338.jpg?t=1789955791" alt="Lumiric Stage — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1721290/2c6a7d0866f7559db2927fab43ad10b675cd453a/ss_2c6a7d0866f7559db2927fab43ad10b675cd453a.1920x1080.jpg?t=1789955791" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1721290/2c6a7d0866f7559db2927fab43ad10b675cd453a/ss_2c6a7d0866f7559db2927fab43ad10b675cd453a.600x338.jpg?t=1789955791" alt="Lumiric Stage — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1721290/b2bcdc08e986a2fb447d2fee2c3842bce7e91244/ss_b2bcdc08e986a2fb447d2fee2c3842bce7e91244.1920x1080.jpg?t=1789955791" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1721290/b2bcdc08e986a2fb447d2fee2c3842bce7e91244/ss_b2bcdc08e986a2fb447d2fee2c3842bce7e91244.600x338.jpg?t=1789955791" alt="Lumiric Stage — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1721290/cb73f8a36905b0a346549435882db2bb3bae1bc9/ss_cb73f8a36905b0a346549435882db2bb3bae1bc9.1920x1080.jpg?t=1789955791" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1721290/cb73f8a36905b0a346549435882db2bb3bae1bc9/ss_cb73f8a36905b0a346549435882db2bb3bae1bc9.600x338.jpg?t=1789955791" alt="Lumiric Stage — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1721290/2f7b5e8bec16be4941af88cadbb1c74a7e2c57c8/ss_2f7b5e8bec16be4941af88cadbb1c74a7e2c57c8.1920x1080.jpg?t=1789955791" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1721290/2f7b5e8bec16be4941af88cadbb1c74a7e2c57c8/ss_2f7b5e8bec16be4941af88cadbb1c74a7e2c57c8.600x338.jpg?t=1789955791" alt="Lumiric Stage — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+      </div>
+
+      <h2>Геймплей</h2>
+      <div class="game-movies">
+        <figure class="game-movie"><div class="game-video" data-hls="https://video.akamai.steamstatic.com/store_trailers/1721290/30097069/fa960f87d6dfad85ce47e64bbd7a05a79324cdcb/1788156988/hls_264_master.m3u8?t=1788157600" data-poster="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257413317/a216951aa76301ee370703cc09b6e6bd8723d527/movie_600x337.jpg?t=1788157600" role="button" tabindex="0" aria-label="Смотреть геймплей: Magic Piano - Demo"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257413317/a216951aa76301ee370703cc09b6e6bd8723d527/movie_600x337.jpg?t=1788157600" alt="" loading="lazy" width="480" height="270" /><span class="game-video-play" aria-hidden="true"></span></div></figure>
+        <figure class="game-movie"><div class="game-video" data-hls="https://video.akamai.steamstatic.com/store_trailers/1721290/770282835/4f41ba4d3c796b41df0b042581b1ee1b774b5e72/1789941779/hls_264_master.m3u8?t=1789942272" data-poster="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257430136/258bb46ecc85d19ee0da815fecdaa056feb96ce3/movie_600x337.jpg?t=1789942272" role="button" tabindex="0" aria-label="Смотреть геймплей: Magic Piano Tutorial"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257430136/258bb46ecc85d19ee0da815fecdaa056feb96ce3/movie_600x337.jpg?t=1789942272" alt="" loading="lazy" width="480" height="270" /><span class="game-video-play" aria-hidden="true"></span></div></figure>
+        <figure class="game-movie"><div class="game-video" data-hls="https://video.akamai.steamstatic.com/store_trailers/1721290/1755541899/3ede82f0de86be5eefb5d3d84793a22a64de3d7b/1789913668/hls_264_master.m3u8?t=1789915996" data-poster="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257429932/76ad027fd50889c191671680a67baaf3c1ed682e/movie_600x337.jpg?t=1789915996" role="button" tabindex="0" aria-label="Смотреть геймплей: UICinema"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257429932/76ad027fd50889c191671680a67baaf3c1ed682e/movie_600x337.jpg?t=1789915996" alt="" loading="lazy" width="480" height="270" /><span class="game-video-play" aria-hidden="true"></span></div></figure>
+      </div>
+
+<p style="color: var(--text-faint); font-size: 13px; margin-top: 30px;">
         Данные о цене, отзывах и статистике обновляются автоматически на основе
         Steam Store API и SteamSpy.
       </p>
@@ -284,5 +330,6 @@ function declineCookies() {
 })();
 </script>
 <script src="/newsletter.js?v=2" defer></script>
+<script defer src="/game-media.js?v=1"></script>
 </body>
 </html>

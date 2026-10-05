@@ -112,6 +112,38 @@
     }
     .game-stat-card .label { font-size: 12px; color: var(--text-faint); text-transform: uppercase; }
     .game-stat-card .value { font-size: 20px; font-weight: bold; margin-top: 4px; }
+    .game-shots {
+      display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+      gap: 12px; margin: 20px 0;
+    }
+    .game-shot {
+      display: block; border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 8px; overflow: hidden;
+    }
+    .game-shot img { display: block; width: 100%; height: auto; }
+    .game-movies { display: grid; gap: 16px; margin: 20px 0; }
+    .game-movie { margin: 0; }
+    .game-movie video {
+      display: block; width: 100%; height: auto;
+      border-radius: 8px; background: #000;
+    }
+    .game-movie figcaption { margin-top: 6px; font-size: 13px; color: var(--text-faint); }
+    .game-video {
+      position: relative; cursor: pointer; overflow: hidden;
+      border-radius: 8px; background: #000; aspect-ratio: 16 / 9;
+    }
+    .game-video img { display: block; width: 100%; height: 100%; object-fit: cover; }
+    .game-video-play { position: absolute; inset: 0; display: grid; place-items: center; }
+    .game-video-play::before {
+      content: ''; width: 58px; height: 58px; border-radius: 50%;
+      background: rgba(0,0,0,0.5); border: 2px solid rgba(255,255,255,0.75);
+    }
+    .game-video-play::after {
+      content: ''; position: absolute; margin-left: 5px;
+      border-style: solid; border-width: 11px 0 11px 18px;
+      border-color: transparent transparent transparent #fff;
+    }
+    .game-video-el { display: block; width: 100%; height: 100%; background: #000; }
   </style>
 </head>
 <body>
@@ -150,7 +182,7 @@
 
     <article class="article-body">
 
-      <p>Five people on one computer, really? Yes, this fast-action arcade-style multiplayer game is for the whole family! Shoot balloons with your lasers to score points – but the beams will often bounce off mirrors, creating interesting and complex shots. The more complex, the greater the score!</p>
+      
 
       <div class="game-stats-grid">
         <div class="game-stat-card">
@@ -166,10 +198,6 @@
           <div class="label">Владельцев (оценка)</div>
           <div class="value">0 – 20,000</div>
         </div>
-        <div class="game-stat-card">
-          <div class="label">Среднее время игры</div>
-          <div class="value">нет данных</div>
-        </div>
       </div>
 
       <h2>Об игре</h2>
@@ -183,7 +211,21 @@
         </a>
       </p>
 
-      <p style="color: var(--text-faint); font-size: 13px; margin-top: 30px;">
+            <h2>Скриншоты</h2>
+      <div class="game-shots">
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3223460/81457215af3d1463614d72a57f91ffb85f62de81/ss_81457215af3d1463614d72a57f91ffb85f62de81.1920x1080.jpg?t=1790512883" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3223460/81457215af3d1463614d72a57f91ffb85f62de81/ss_81457215af3d1463614d72a57f91ffb85f62de81.600x338.jpg?t=1790512883" alt="Hall of Mirrors — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3223460/a183921fa15e5e2d45503aa2e1d27207e3dcb583/ss_a183921fa15e5e2d45503aa2e1d27207e3dcb583.1920x1080.jpg?t=1790512883" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3223460/a183921fa15e5e2d45503aa2e1d27207e3dcb583/ss_a183921fa15e5e2d45503aa2e1d27207e3dcb583.600x338.jpg?t=1790512883" alt="Hall of Mirrors — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3223460/418a14eb0f0363320db1a3de30f3a97cd9ca6f06/ss_418a14eb0f0363320db1a3de30f3a97cd9ca6f06.1920x1080.jpg?t=1790512883" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3223460/418a14eb0f0363320db1a3de30f3a97cd9ca6f06/ss_418a14eb0f0363320db1a3de30f3a97cd9ca6f06.600x338.jpg?t=1790512883" alt="Hall of Mirrors — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3223460/ea61770587f423a8643e17f04443dbe802a0c4fe/ss_ea61770587f423a8643e17f04443dbe802a0c4fe.1920x1080.jpg?t=1790512883" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3223460/ea61770587f423a8643e17f04443dbe802a0c4fe/ss_ea61770587f423a8643e17f04443dbe802a0c4fe.600x338.jpg?t=1790512883" alt="Hall of Mirrors — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3223460/9fbfc7f4dc5cf2b16041e54afc379ac650fdacd7/ss_9fbfc7f4dc5cf2b16041e54afc379ac650fdacd7.1920x1080.jpg?t=1790512883" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3223460/9fbfc7f4dc5cf2b16041e54afc379ac650fdacd7/ss_9fbfc7f4dc5cf2b16041e54afc379ac650fdacd7.600x338.jpg?t=1790512883" alt="Hall of Mirrors — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+      </div>
+
+      <h2>Геймплей</h2>
+      <div class="game-movies">
+        <figure class="game-movie"><div class="game-video" data-hls="https://video.akamai.steamstatic.com/store_trailers/3223460/1123405120/52ce3c0b8f7128b517548bb3832f3ee7a18ea85a/1788451473/hls_264_master.m3u8?t=1788455562" data-poster="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257383472/a5e0fe735afbdafaec9ca7d39886dc7b1e25983d/movie_600x337.jpg?t=1788455562" role="button" tabindex="0" aria-label="Смотреть геймплей: Hall of Mirrors"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257383472/a5e0fe735afbdafaec9ca7d39886dc7b1e25983d/movie_600x337.jpg?t=1788455562" alt="" loading="lazy" width="480" height="270" /><span class="game-video-play" aria-hidden="true"></span></div></figure>
+      </div>
+
+<p style="color: var(--text-faint); font-size: 13px; margin-top: 30px;">
         Данные о цене, отзывах и статистике обновляются автоматически на основе
         Steam Store API и SteamSpy.
       </p>
@@ -284,5 +326,6 @@ function declineCookies() {
 })();
 </script>
 <script src="/newsletter.js?v=2" defer></script>
+<script defer src="/game-media.js?v=1"></script>
 </body>
 </html>

@@ -112,6 +112,38 @@
     }
     .game-stat-card .label { font-size: 12px; color: var(--text-faint); text-transform: uppercase; }
     .game-stat-card .value { font-size: 20px; font-weight: bold; margin-top: 4px; }
+    .game-shots {
+      display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+      gap: 12px; margin: 20px 0;
+    }
+    .game-shot {
+      display: block; border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 8px; overflow: hidden;
+    }
+    .game-shot img { display: block; width: 100%; height: auto; }
+    .game-movies { display: grid; gap: 16px; margin: 20px 0; }
+    .game-movie { margin: 0; }
+    .game-movie video {
+      display: block; width: 100%; height: auto;
+      border-radius: 8px; background: #000;
+    }
+    .game-movie figcaption { margin-top: 6px; font-size: 13px; color: var(--text-faint); }
+    .game-video {
+      position: relative; cursor: pointer; overflow: hidden;
+      border-radius: 8px; background: #000; aspect-ratio: 16 / 9;
+    }
+    .game-video img { display: block; width: 100%; height: 100%; object-fit: cover; }
+    .game-video-play { position: absolute; inset: 0; display: grid; place-items: center; }
+    .game-video-play::before {
+      content: ''; width: 58px; height: 58px; border-radius: 50%;
+      background: rgba(0,0,0,0.5); border: 2px solid rgba(255,255,255,0.75);
+    }
+    .game-video-play::after {
+      content: ''; position: absolute; margin-left: 5px;
+      border-style: solid; border-width: 11px 0 11px 18px;
+      border-color: transparent transparent transparent #fff;
+    }
+    .game-video-el { display: block; width: 100%; height: 100%; background: #000; }
   </style>
 </head>
 <body>
@@ -150,7 +182,7 @@
 
     <article class="article-body">
 
-      <p>Run a cosy little travel agency, one letter at a time. Travellers write in and tell you what they are hoping for. Plan the journey that gives it to them, card by card, and watch it unfold. Satisfy them, and they may write back...</p>
+      
 
       <div class="game-stats-grid">
         <div class="game-stat-card">
@@ -166,10 +198,6 @@
           <div class="label">Владельцев (оценка)</div>
           <div class="value">0 – 20,000</div>
         </div>
-        <div class="game-stat-card">
-          <div class="label">Среднее время игры</div>
-          <div class="value">нет данных</div>
-        </div>
       </div>
 
       <h2>Об игре</h2>
@@ -183,7 +211,22 @@
         </a>
       </p>
 
-      <p style="color: var(--text-faint); font-size: 13px; margin-top: 30px;">
+            <h2>Скриншоты</h2>
+      <div class="game-shots">
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4172110/50eecffd68a24486de2b65b878441ed81ddedbf4/ss_50eecffd68a24486de2b65b878441ed81ddedbf4.1920x1080.jpg?t=1789912805" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4172110/50eecffd68a24486de2b65b878441ed81ddedbf4/ss_50eecffd68a24486de2b65b878441ed81ddedbf4.600x338.jpg?t=1789912805" alt="Dear Journey... — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4172110/c1282a1c06d0c2ca218d824122910d440f3713aa/ss_c1282a1c06d0c2ca218d824122910d440f3713aa.1920x1080.jpg?t=1789912805" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4172110/c1282a1c06d0c2ca218d824122910d440f3713aa/ss_c1282a1c06d0c2ca218d824122910d440f3713aa.600x338.jpg?t=1789912805" alt="Dear Journey... — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4172110/9248c8599af59a1bd65aace7d43ea71031801f00/ss_9248c8599af59a1bd65aace7d43ea71031801f00.1920x1080.jpg?t=1789912805" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4172110/9248c8599af59a1bd65aace7d43ea71031801f00/ss_9248c8599af59a1bd65aace7d43ea71031801f00.600x338.jpg?t=1789912805" alt="Dear Journey... — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4172110/ea4cf8f8234df450bb0093f559ff2a799227e5ad/ss_ea4cf8f8234df450bb0093f559ff2a799227e5ad.1920x1080.jpg?t=1789912805" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4172110/ea4cf8f8234df450bb0093f559ff2a799227e5ad/ss_ea4cf8f8234df450bb0093f559ff2a799227e5ad.600x338.jpg?t=1789912805" alt="Dear Journey... — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4172110/35197a37d65d6be5bf6cc835e1c523507864f95e/ss_35197a37d65d6be5bf6cc835e1c523507864f95e.1920x1080.jpg?t=1789912805" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4172110/35197a37d65d6be5bf6cc835e1c523507864f95e/ss_35197a37d65d6be5bf6cc835e1c523507864f95e.600x338.jpg?t=1789912805" alt="Dear Journey... — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+      </div>
+
+      <h2>Геймплей</h2>
+      <div class="game-movies">
+        <figure class="game-movie"><div class="game-video" data-hls="https://video.akamai.steamstatic.com/store_trailers/4172110/798592634/b42fe18d23f68cc85847f2440c6bdf820bf29be2/1788401282/hls_264_master.m3u8?t=1789347957" data-poster="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257416126/b8ad7bed0905e39a4bd2e946cb64466a41327078/movie_600x337.jpg?t=1789347957" role="button" tabindex="0" aria-label="Смотреть геймплей: Full trailer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257416126/b8ad7bed0905e39a4bd2e946cb64466a41327078/movie_600x337.jpg?t=1789347957" alt="" loading="lazy" width="480" height="270" /><span class="game-video-play" aria-hidden="true"></span></div></figure>
+        <figure class="game-movie"><div class="game-video" data-hls="https://video.akamai.steamstatic.com/store_trailers/4172110/1071335601/6ecf49aea40572be4f34856ca37ac87e9ddb61eb/1788401283/hls_264_master.m3u8?t=1788401977" data-poster="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257416127/abec91e2afc513d4c73262b9872f8af991f09405/movie_600x337.jpg?t=1788401977" role="button" tabindex="0" aria-label="Смотреть геймплей: Short Trailer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257416127/abec91e2afc513d4c73262b9872f8af991f09405/movie_600x337.jpg?t=1788401977" alt="" loading="lazy" width="480" height="270" /><span class="game-video-play" aria-hidden="true"></span></div></figure>
+      </div>
+
+<p style="color: var(--text-faint); font-size: 13px; margin-top: 30px;">
         Данные о цене, отзывах и статистике обновляются автоматически на основе
         Steam Store API и SteamSpy.
       </p>
@@ -284,5 +327,6 @@ function declineCookies() {
 })();
 </script>
 <script src="/newsletter.js?v=2" defer></script>
+<script defer src="/game-media.js?v=1"></script>
 </body>
 </html>

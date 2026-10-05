@@ -112,6 +112,38 @@
     }
     .game-stat-card .label { font-size: 12px; color: var(--text-faint); text-transform: uppercase; }
     .game-stat-card .value { font-size: 20px; font-weight: bold; margin-top: 4px; }
+    .game-shots {
+      display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+      gap: 12px; margin: 20px 0;
+    }
+    .game-shot {
+      display: block; border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 8px; overflow: hidden;
+    }
+    .game-shot img { display: block; width: 100%; height: auto; }
+    .game-movies { display: grid; gap: 16px; margin: 20px 0; }
+    .game-movie { margin: 0; }
+    .game-movie video {
+      display: block; width: 100%; height: auto;
+      border-radius: 8px; background: #000;
+    }
+    .game-movie figcaption { margin-top: 6px; font-size: 13px; color: var(--text-faint); }
+    .game-video {
+      position: relative; cursor: pointer; overflow: hidden;
+      border-radius: 8px; background: #000; aspect-ratio: 16 / 9;
+    }
+    .game-video img { display: block; width: 100%; height: 100%; object-fit: cover; }
+    .game-video-play { position: absolute; inset: 0; display: grid; place-items: center; }
+    .game-video-play::before {
+      content: ''; width: 58px; height: 58px; border-radius: 50%;
+      background: rgba(0,0,0,0.5); border: 2px solid rgba(255,255,255,0.75);
+    }
+    .game-video-play::after {
+      content: ''; position: absolute; margin-left: 5px;
+      border-style: solid; border-width: 11px 0 11px 18px;
+      border-color: transparent transparent transparent #fff;
+    }
+    .game-video-el { display: block; width: 100%; height: 100%; background: #000; }
   </style>
 </head>
 <body>
@@ -150,7 +182,7 @@
 
     <article class="article-body">
 
-      <p>Infinite Three Kingdoms is a Three Kingdoms-themed idle RPG. In a relaxed AFK pace, you’ll recruit iconic Three Kingdoms generals, build diverse lineups, push through stages and wage campaigns as you vie for dominance across the Central Plains.</p>
+      
 
       <div class="game-stats-grid">
         <div class="game-stat-card">
@@ -166,10 +198,6 @@
           <div class="label">Владельцев (оценка)</div>
           <div class="value">0 – 20,000</div>
         </div>
-        <div class="game-stat-card">
-          <div class="label">Среднее время игры</div>
-          <div class="value">нет данных</div>
-        </div>
       </div>
 
       <h2>Об игре</h2>
@@ -183,7 +211,29 @@
         </a>
       </p>
 
-      <p style="color: var(--text-faint); font-size: 13px; margin-top: 30px;">
+            <h2>Скриншоты</h2>
+      <div class="game-shots">
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5075340/cb7f6097734f63fe59e2236cb84553eb91273074/ss_cb7f6097734f63fe59e2236cb84553eb91273074.1920x1080.jpg?t=1790560828" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5075340/cb7f6097734f63fe59e2236cb84553eb91273074/ss_cb7f6097734f63fe59e2236cb84553eb91273074.600x338.jpg?t=1790560828" alt="Infinite Three Kingdoms — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5075340/1b98bd6d501a1f1f23880fa1b80504fc3232a8f3/ss_1b98bd6d501a1f1f23880fa1b80504fc3232a8f3.1920x1080.jpg?t=1790560828" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5075340/1b98bd6d501a1f1f23880fa1b80504fc3232a8f3/ss_1b98bd6d501a1f1f23880fa1b80504fc3232a8f3.600x338.jpg?t=1790560828" alt="Infinite Three Kingdoms — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5075340/64fec863eb433455f005d1dff48b13eff057a744/ss_64fec863eb433455f005d1dff48b13eff057a744.1920x1080.jpg?t=1790560828" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5075340/64fec863eb433455f005d1dff48b13eff057a744/ss_64fec863eb433455f005d1dff48b13eff057a744.600x338.jpg?t=1790560828" alt="Infinite Three Kingdoms — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5075340/07df2035ba5c83e01afa37937ca9f9ce98392e5a/ss_07df2035ba5c83e01afa37937ca9f9ce98392e5a.1920x1080.jpg?t=1790560828" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5075340/07df2035ba5c83e01afa37937ca9f9ce98392e5a/ss_07df2035ba5c83e01afa37937ca9f9ce98392e5a.600x338.jpg?t=1790560828" alt="Infinite Three Kingdoms — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5075340/8eb7882411cf4c240fe807ecfd554655b57ddac8/ss_8eb7882411cf4c240fe807ecfd554655b57ddac8.1920x1080.jpg?t=1790560828" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5075340/8eb7882411cf4c240fe807ecfd554655b57ddac8/ss_8eb7882411cf4c240fe807ecfd554655b57ddac8.600x338.jpg?t=1790560828" alt="Infinite Three Kingdoms — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5075340/504f735dd38e4d3a7a6f3bd11275af3b53dac5bc/ss_504f735dd38e4d3a7a6f3bd11275af3b53dac5bc.1920x1080.jpg?t=1790560828" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5075340/504f735dd38e4d3a7a6f3bd11275af3b53dac5bc/ss_504f735dd38e4d3a7a6f3bd11275af3b53dac5bc.600x338.jpg?t=1790560828" alt="Infinite Three Kingdoms — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5075340/b6f7ca36bbff85811c4894964ac55d264470f1c8/ss_b6f7ca36bbff85811c4894964ac55d264470f1c8.1920x1080.jpg?t=1790560828" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5075340/b6f7ca36bbff85811c4894964ac55d264470f1c8/ss_b6f7ca36bbff85811c4894964ac55d264470f1c8.600x338.jpg?t=1790560828" alt="Infinite Three Kingdoms — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5075340/27faa10fcc01d250da96ee451cbec293bdb7f32d/ss_27faa10fcc01d250da96ee451cbec293bdb7f32d.1920x1080.jpg?t=1790560828" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5075340/27faa10fcc01d250da96ee451cbec293bdb7f32d/ss_27faa10fcc01d250da96ee451cbec293bdb7f32d.600x338.jpg?t=1790560828" alt="Infinite Three Kingdoms — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5075340/279c1b77c2cd5366ca558ef1bcdb17f693d04524/ss_279c1b77c2cd5366ca558ef1bcdb17f693d04524.1920x1080.jpg?t=1790560828" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5075340/279c1b77c2cd5366ca558ef1bcdb17f693d04524/ss_279c1b77c2cd5366ca558ef1bcdb17f693d04524.600x338.jpg?t=1790560828" alt="Infinite Three Kingdoms — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5075340/983ded1832590def3402a6e21a7125644fbf2e4f/ss_983ded1832590def3402a6e21a7125644fbf2e4f.1920x1080.jpg?t=1790560828" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5075340/983ded1832590def3402a6e21a7125644fbf2e4f/ss_983ded1832590def3402a6e21a7125644fbf2e4f.600x338.jpg?t=1790560828" alt="Infinite Three Kingdoms — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5075340/b30385aba8aee38d8f7ea80cc7fec2b3eae8306b/ss_b30385aba8aee38d8f7ea80cc7fec2b3eae8306b.1920x1080.jpg?t=1790560828" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5075340/b30385aba8aee38d8f7ea80cc7fec2b3eae8306b/ss_b30385aba8aee38d8f7ea80cc7fec2b3eae8306b.600x338.jpg?t=1790560828" alt="Infinite Three Kingdoms — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5075340/958a2695fb654be83b88c9075eea4a04dc459899/ss_958a2695fb654be83b88c9075eea4a04dc459899.1920x1080.jpg?t=1790560828" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5075340/958a2695fb654be83b88c9075eea4a04dc459899/ss_958a2695fb654be83b88c9075eea4a04dc459899.600x338.jpg?t=1790560828" alt="Infinite Three Kingdoms — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+      </div>
+
+      <h2>Геймплей</h2>
+      <div class="game-movies">
+        <figure class="game-movie"><div class="game-video" data-hls="https://video.akamai.steamstatic.com/store_trailers/5075340/1427523420/282c02be78163e6f3e843029c5e2f693bc18eb7b/1786094476/hls_264_master.m3u8?t=1789365332" data-poster="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257393566/f2ffbb809cff0068be5e07388ca1ef55e704b6b0/movie_600x337.jpg?t=1789365332" role="button" tabindex="0" aria-label="Смотреть геймплей: 游戏玩法展示"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257393566/f2ffbb809cff0068be5e07388ca1ef55e704b6b0/movie_600x337.jpg?t=1789365332" alt="" loading="lazy" width="480" height="270" /><span class="game-video-play" aria-hidden="true"></span></div></figure>
+        <figure class="game-movie"><div class="game-video" data-hls="https://video.akamai.steamstatic.com/store_trailers/5075340/1487879218/2c6c1a4d4891e716f3fbdc340f3214f4b837cfe8/1786093996/hls_264_master.m3u8?t=1789365333" data-poster="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257393558/ca592e9df7592e140bd9b5488f851576920e63f5/movie_600x337.jpg?t=1789365333" role="button" tabindex="0" aria-label="Смотреть геймплей: 游戏玩法展示"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257393558/ca592e9df7592e140bd9b5488f851576920e63f5/movie_600x337.jpg?t=1789365333" alt="" loading="lazy" width="480" height="270" /><span class="game-video-play" aria-hidden="true"></span></div></figure>
+      </div>
+
+<p style="color: var(--text-faint); font-size: 13px; margin-top: 30px;">
         Данные о цене, отзывах и статистике обновляются автоматически на основе
         Steam Store API и SteamSpy.
       </p>
@@ -284,5 +334,6 @@ function declineCookies() {
 })();
 </script>
 <script src="/newsletter.js?v=2" defer></script>
+<script defer src="/game-media.js?v=1"></script>
 </body>
 </html>

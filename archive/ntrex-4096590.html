@@ -112,6 +112,38 @@
     }
     .game-stat-card .label { font-size: 12px; color: var(--text-faint); text-transform: uppercase; }
     .game-stat-card .value { font-size: 20px; font-weight: bold; margin-top: 4px; }
+    .game-shots {
+      display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+      gap: 12px; margin: 20px 0;
+    }
+    .game-shot {
+      display: block; border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 8px; overflow: hidden;
+    }
+    .game-shot img { display: block; width: 100%; height: auto; }
+    .game-movies { display: grid; gap: 16px; margin: 20px 0; }
+    .game-movie { margin: 0; }
+    .game-movie video {
+      display: block; width: 100%; height: auto;
+      border-radius: 8px; background: #000;
+    }
+    .game-movie figcaption { margin-top: 6px; font-size: 13px; color: var(--text-faint); }
+    .game-video {
+      position: relative; cursor: pointer; overflow: hidden;
+      border-radius: 8px; background: #000; aspect-ratio: 16 / 9;
+    }
+    .game-video img { display: block; width: 100%; height: 100%; object-fit: cover; }
+    .game-video-play { position: absolute; inset: 0; display: grid; place-items: center; }
+    .game-video-play::before {
+      content: ''; width: 58px; height: 58px; border-radius: 50%;
+      background: rgba(0,0,0,0.5); border: 2px solid rgba(255,255,255,0.75);
+    }
+    .game-video-play::after {
+      content: ''; position: absolute; margin-left: 5px;
+      border-style: solid; border-width: 11px 0 11px 18px;
+      border-color: transparent transparent transparent #fff;
+    }
+    .game-video-el { display: block; width: 100%; height: 100%; background: #000; }
   </style>
 </head>
 <body>
@@ -150,7 +182,7 @@
 
     <article class="article-body">
 
-      <p>In this adulterous adventure game by Vincent, a wife hiding an enormous debt from her husband pays the only way she can: with her body!</p>
+      
 
       <div class="game-stats-grid">
         <div class="game-stat-card">
@@ -166,10 +198,6 @@
           <div class="label">Владельцев (оценка)</div>
           <div class="value">0 – 20,000</div>
         </div>
-        <div class="game-stat-card">
-          <div class="label">Среднее время игры</div>
-          <div class="value">нет данных</div>
-        </div>
       </div>
 
       <h2>Об игре</h2>
@@ -183,7 +211,27 @@
         </a>
       </p>
 
-      <p style="color: var(--text-faint); font-size: 13px; margin-top: 30px;">
+            <h2>Скриншоты</h2>
+      <div class="game-shots">
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4096590/7faf74e2f3876a370778b17ffac7ba9c43ab3845/ss_7faf74e2f3876a370778b17ffac7ba9c43ab3845.1920x1080.jpg?t=1790842903" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4096590/7faf74e2f3876a370778b17ffac7ba9c43ab3845/ss_7faf74e2f3876a370778b17ffac7ba9c43ab3845.600x338.jpg?t=1790842903" alt="NTREX — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4096590/3cf660443a50f3965f72294a46ba7b102df439ca/ss_3cf660443a50f3965f72294a46ba7b102df439ca.1920x1080.jpg?t=1790842903" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4096590/3cf660443a50f3965f72294a46ba7b102df439ca/ss_3cf660443a50f3965f72294a46ba7b102df439ca.600x338.jpg?t=1790842903" alt="NTREX — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4096590/f69a390c0e6f709d906d2348d3a6d40c9bd9e1bb/ss_f69a390c0e6f709d906d2348d3a6d40c9bd9e1bb.1920x1080.jpg?t=1790842903" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4096590/f69a390c0e6f709d906d2348d3a6d40c9bd9e1bb/ss_f69a390c0e6f709d906d2348d3a6d40c9bd9e1bb.600x338.jpg?t=1790842903" alt="NTREX — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4096590/98a8ce697249c843e66e23c604471e7c3fc7756f/ss_98a8ce697249c843e66e23c604471e7c3fc7756f.1920x1080.jpg?t=1790842903" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4096590/98a8ce697249c843e66e23c604471e7c3fc7756f/ss_98a8ce697249c843e66e23c604471e7c3fc7756f.600x338.jpg?t=1790842903" alt="NTREX — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4096590/5ef930ed33477f6e48bd0344dc850aee5a00b7e3/ss_5ef930ed33477f6e48bd0344dc850aee5a00b7e3.1920x1080.jpg?t=1790842903" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4096590/5ef930ed33477f6e48bd0344dc850aee5a00b7e3/ss_5ef930ed33477f6e48bd0344dc850aee5a00b7e3.600x338.jpg?t=1790842903" alt="NTREX — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4096590/93a1e0a44cc12601e7aa4e24386a086112f98bdf/ss_93a1e0a44cc12601e7aa4e24386a086112f98bdf.1920x1080.jpg?t=1790842903" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4096590/93a1e0a44cc12601e7aa4e24386a086112f98bdf/ss_93a1e0a44cc12601e7aa4e24386a086112f98bdf.600x338.jpg?t=1790842903" alt="NTREX — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4096590/0344fd575805ff767590c8742de7130b0f6216c8/ss_0344fd575805ff767590c8742de7130b0f6216c8.1920x1080.jpg?t=1790842903" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4096590/0344fd575805ff767590c8742de7130b0f6216c8/ss_0344fd575805ff767590c8742de7130b0f6216c8.600x338.jpg?t=1790842903" alt="NTREX — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4096590/1de8a619d09778aaf4af5ef0d88a245d71e82480/ss_1de8a619d09778aaf4af5ef0d88a245d71e82480.1920x1080.jpg?t=1790842903" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4096590/1de8a619d09778aaf4af5ef0d88a245d71e82480/ss_1de8a619d09778aaf4af5ef0d88a245d71e82480.600x338.jpg?t=1790842903" alt="NTREX — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4096590/ddc8f1abd5d95bd76b8a137b348c6b4083a08a23/ss_ddc8f1abd5d95bd76b8a137b348c6b4083a08a23.1920x1080.jpg?t=1790842903" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4096590/ddc8f1abd5d95bd76b8a137b348c6b4083a08a23/ss_ddc8f1abd5d95bd76b8a137b348c6b4083a08a23.600x338.jpg?t=1790842903" alt="NTREX — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4096590/d9bc77e5c257a7c349962c0ab614d27d9a778ed9/ss_d9bc77e5c257a7c349962c0ab614d27d9a778ed9.1920x1080.jpg?t=1790842903" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4096590/d9bc77e5c257a7c349962c0ab614d27d9a778ed9/ss_d9bc77e5c257a7c349962c0ab614d27d9a778ed9.600x338.jpg?t=1790842903" alt="NTREX — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+      </div>
+
+      <h2>Геймплей</h2>
+      <div class="game-movies">
+        <figure class="game-movie"><div class="game-video" data-hls="https://video.akamai.steamstatic.com/store_trailers/4096590/441341963/24d5f5944a7978716b4b09153d9cf2565bd5f79a/1760504394/hls_264_master.m3u8?t=1769475517" data-poster="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257218088/f910d858ce65910e49bf80c48fb21070ccb7a723/movie_600x337.jpg?t=1769475517" role="button" tabindex="0" aria-label="Смотреть геймплей: Trailer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257218088/f910d858ce65910e49bf80c48fb21070ccb7a723/movie_600x337.jpg?t=1769475517" alt="" loading="lazy" width="480" height="270" /><span class="game-video-play" aria-hidden="true"></span></div></figure>
+        <figure class="game-movie"><div class="game-video" data-hls="https://video.akamai.steamstatic.com/store_trailers/4096590/1966118754/dd0a9d8880575f2b2fd7d6024d8fc1877f2644ff/1787824071/hls_264_master.m3u8?t=1789523309" data-poster="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257410098/ad50e1c4f29d343013a45987c8302da7b14d2621/movie_600x337.jpg?t=1789523309" role="button" tabindex="0" aria-label="Смотреть геймплей: NTREX Gameplay"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257410098/ad50e1c4f29d343013a45987c8302da7b14d2621/movie_600x337.jpg?t=1789523309" alt="" loading="lazy" width="480" height="270" /><span class="game-video-play" aria-hidden="true"></span></div></figure>
+      </div>
+
+<p style="color: var(--text-faint); font-size: 13px; margin-top: 30px;">
         Данные о цене, отзывах и статистике обновляются автоматически на основе
         Steam Store API и SteamSpy.
       </p>
@@ -284,5 +332,6 @@ function declineCookies() {
 })();
 </script>
 <script src="/newsletter.js?v=2" defer></script>
+<script defer src="/game-media.js?v=1"></script>
 </body>
 </html>

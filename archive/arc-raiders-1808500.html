@@ -112,6 +112,38 @@
     }
     .game-stat-card .label { font-size: 12px; color: var(--text-faint); text-transform: uppercase; }
     .game-stat-card .value { font-size: 20px; font-weight: bold; margin-top: 4px; }
+    .game-shots {
+      display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+      gap: 12px; margin: 20px 0;
+    }
+    .game-shot {
+      display: block; border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 8px; overflow: hidden;
+    }
+    .game-shot img { display: block; width: 100%; height: auto; }
+    .game-movies { display: grid; gap: 16px; margin: 20px 0; }
+    .game-movie { margin: 0; }
+    .game-movie video {
+      display: block; width: 100%; height: auto;
+      border-radius: 8px; background: #000;
+    }
+    .game-movie figcaption { margin-top: 6px; font-size: 13px; color: var(--text-faint); }
+    .game-video {
+      position: relative; cursor: pointer; overflow: hidden;
+      border-radius: 8px; background: #000; aspect-ratio: 16 / 9;
+    }
+    .game-video img { display: block; width: 100%; height: 100%; object-fit: cover; }
+    .game-video-play { position: absolute; inset: 0; display: grid; place-items: center; }
+    .game-video-play::before {
+      content: ''; width: 58px; height: 58px; border-radius: 50%;
+      background: rgba(0,0,0,0.5); border: 2px solid rgba(255,255,255,0.75);
+    }
+    .game-video-play::after {
+      content: ''; position: absolute; margin-left: 5px;
+      border-style: solid; border-width: 11px 0 11px 18px;
+      border-color: transparent transparent transparent #fff;
+    }
+    .game-video-el { display: block; width: 100%; height: 100%; background: #000; }
   </style>
 </head>
 <body>
@@ -166,10 +198,6 @@
           <div class="label">Владельцев (оценка)</div>
           <div class="value">0 – 20,000</div>
         </div>
-        <div class="game-stat-card">
-          <div class="label">Среднее время игры</div>
-          <div class="value">нет данных</div>
-        </div>
       </div>
 
       <h2>Об игре</h2>
@@ -183,7 +211,24 @@
         </a>
       </p>
 
-      <p style="color: var(--text-faint); font-size: 13px; margin-top: 30px;">
+            <h2>Скриншоты</h2>
+      <div class="game-shots">
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1808500/1763664f3ea80080867eafa751685b7feec950c8/ss_1763664f3ea80080867eafa751685b7feec950c8.1920x1080.jpg?t=1791204373" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1808500/1763664f3ea80080867eafa751685b7feec950c8/ss_1763664f3ea80080867eafa751685b7feec950c8.600x338.jpg?t=1791204373" alt="ARC Raiders — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1808500/5188aa2b07920afe9753409ea9fe3d1324cfc294/ss_5188aa2b07920afe9753409ea9fe3d1324cfc294.1920x1080.jpg?t=1791204373" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1808500/5188aa2b07920afe9753409ea9fe3d1324cfc294/ss_5188aa2b07920afe9753409ea9fe3d1324cfc294.600x338.jpg?t=1791204373" alt="ARC Raiders — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1808500/155fc161a45949e61f41e473282f9ed7ec221efe/ss_155fc161a45949e61f41e473282f9ed7ec221efe.1920x1080.jpg?t=1791204373" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1808500/155fc161a45949e61f41e473282f9ed7ec221efe/ss_155fc161a45949e61f41e473282f9ed7ec221efe.600x338.jpg?t=1791204373" alt="ARC Raiders — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1808500/cb49dfbcd7175c86e297b35ffc54cf779708f0ae/ss_cb49dfbcd7175c86e297b35ffc54cf779708f0ae.1920x1080.jpg?t=1791204373" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1808500/cb49dfbcd7175c86e297b35ffc54cf779708f0ae/ss_cb49dfbcd7175c86e297b35ffc54cf779708f0ae.600x338.jpg?t=1791204373" alt="ARC Raiders — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1808500/0b1fa1294fa269633112be2c3d8758df42baebe1/ss_0b1fa1294fa269633112be2c3d8758df42baebe1.1920x1080.jpg?t=1791204373" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1808500/0b1fa1294fa269633112be2c3d8758df42baebe1/ss_0b1fa1294fa269633112be2c3d8758df42baebe1.600x338.jpg?t=1791204373" alt="ARC Raiders — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1808500/c411b8fa5b7bc12943e73a4818edb98c3c7c2fae/ss_c411b8fa5b7bc12943e73a4818edb98c3c7c2fae.1920x1080.jpg?t=1791204373" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1808500/c411b8fa5b7bc12943e73a4818edb98c3c7c2fae/ss_c411b8fa5b7bc12943e73a4818edb98c3c7c2fae.600x338.jpg?t=1791204373" alt="ARC Raiders — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+      </div>
+
+      <h2>Геймплей</h2>
+      <div class="game-movies">
+        <figure class="game-movie"><div class="game-video" data-hls="https://video.akamai.steamstatic.com/store_trailers/1808500/1688567022/8ecb330fb51867a492cf9436054ef4a9ed45a3af/1762957801/hls_264_master.m3u8?t=1764583045" data-poster="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257230049/5e5ff0f6856abe9b4a8200dfae19d6ec5ff6e67d/movie_600x337.jpg?t=1764583045" role="button" tabindex="0" aria-label="Смотреть геймплей: ABC Trailer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257230049/5e5ff0f6856abe9b4a8200dfae19d6ec5ff6e67d/movie_600x337.jpg?t=1764583045" alt="" loading="lazy" width="480" height="270" /><span class="game-video-play" aria-hidden="true"></span></div></figure>
+        <figure class="game-movie"><div class="game-video" data-hls="https://video.akamai.steamstatic.com/store_trailers/1808500/159162886/1f12d12eb75f32b678f4cc9b684071e2898ea274/1761814349/hls_264_master.m3u8?t=1761816180" data-poster="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257224552/983c41d91f62ef4ae539b4eba21ada421b149c98/movie_600x337.jpg?t=1761816180" role="button" tabindex="0" aria-label="Смотреть геймплей: Play now!"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257224552/983c41d91f62ef4ae539b4eba21ada421b149c98/movie_600x337.jpg?t=1761816180" alt="" loading="lazy" width="480" height="270" /><span class="game-video-play" aria-hidden="true"></span></div></figure>
+        <figure class="game-movie"><div class="game-video" data-hls="https://video.akamai.steamstatic.com/store_trailers/1808500/1859597024/b04573d53d13967dd683f61a265b92657d974e82/1758559603/hls_264_master.m3u8?t=1761022590" data-poster="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257204152/5ef76eb0b759cf6cb35f5658f7725c29e3847979/movie_600x337.jpg?t=1761022590" role="button" tabindex="0" aria-label="Смотреть геймплей: Pre-order now!"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257204152/5ef76eb0b759cf6cb35f5658f7725c29e3847979/movie_600x337.jpg?t=1761022590" alt="" loading="lazy" width="480" height="270" /><span class="game-video-play" aria-hidden="true"></span></div></figure>
+      </div>
+
+<p style="color: var(--text-faint); font-size: 13px; margin-top: 30px;">
         Данные о цене, отзывах и статистике обновляются автоматически на основе
         Steam Store API и SteamSpy.
       </p>
@@ -284,5 +329,6 @@ function declineCookies() {
 })();
 </script>
 <script src="/newsletter.js?v=2" defer></script>
+<script defer src="/game-media.js?v=1"></script>
 </body>
 </html>

@@ -112,6 +112,38 @@
     }
     .game-stat-card .label { font-size: 12px; color: var(--text-faint); text-transform: uppercase; }
     .game-stat-card .value { font-size: 20px; font-weight: bold; margin-top: 4px; }
+    .game-shots {
+      display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+      gap: 12px; margin: 20px 0;
+    }
+    .game-shot {
+      display: block; border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 8px; overflow: hidden;
+    }
+    .game-shot img { display: block; width: 100%; height: auto; }
+    .game-movies { display: grid; gap: 16px; margin: 20px 0; }
+    .game-movie { margin: 0; }
+    .game-movie video {
+      display: block; width: 100%; height: auto;
+      border-radius: 8px; background: #000;
+    }
+    .game-movie figcaption { margin-top: 6px; font-size: 13px; color: var(--text-faint); }
+    .game-video {
+      position: relative; cursor: pointer; overflow: hidden;
+      border-radius: 8px; background: #000; aspect-ratio: 16 / 9;
+    }
+    .game-video img { display: block; width: 100%; height: 100%; object-fit: cover; }
+    .game-video-play { position: absolute; inset: 0; display: grid; place-items: center; }
+    .game-video-play::before {
+      content: ''; width: 58px; height: 58px; border-radius: 50%;
+      background: rgba(0,0,0,0.5); border: 2px solid rgba(255,255,255,0.75);
+    }
+    .game-video-play::after {
+      content: ''; position: absolute; margin-left: 5px;
+      border-style: solid; border-width: 11px 0 11px 18px;
+      border-color: transparent transparent transparent #fff;
+    }
+    .game-video-el { display: block; width: 100%; height: 100%; background: #000; }
   </style>
 </head>
 <body>
@@ -150,7 +182,7 @@
 
     <article class="article-body">
 
-      <p>Reflection Witch is a new rougelike spin on classic brick-breaking games. Join a witch on her journey to uncover the secrets of the arcane, fighting brick-laden baddies by drawing lines to reflect and enchant your Magic Ball with powerful spells while simultaneously blocking incoming enemy attacks.</p>
+      
 
       <div class="game-stats-grid">
         <div class="game-stat-card">
@@ -166,10 +198,6 @@
           <div class="label">Владельцев (оценка)</div>
           <div class="value">0 – 20,000</div>
         </div>
-        <div class="game-stat-card">
-          <div class="label">Среднее время игры</div>
-          <div class="value">нет данных</div>
-        </div>
       </div>
 
       <h2>Об игре</h2>
@@ -183,7 +211,29 @@
         </a>
       </p>
 
-      <p style="color: var(--text-faint); font-size: 13px; margin-top: 30px;">
+            <h2>Скриншоты</h2>
+      <div class="game-shots">
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2626560/043ec2623f78e49d329d13275fe2184513971ba0/ss_043ec2623f78e49d329d13275fe2184513971ba0.1920x1080.jpg?t=1790218934" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2626560/043ec2623f78e49d329d13275fe2184513971ba0/ss_043ec2623f78e49d329d13275fe2184513971ba0.600x338.jpg?t=1790218934" alt="Reflection Witch — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2626560/37ffe10c4c375d1f7fa8ec02a50ecbb2b7f12269/ss_37ffe10c4c375d1f7fa8ec02a50ecbb2b7f12269.1920x1080.jpg?t=1790218934" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2626560/37ffe10c4c375d1f7fa8ec02a50ecbb2b7f12269/ss_37ffe10c4c375d1f7fa8ec02a50ecbb2b7f12269.600x338.jpg?t=1790218934" alt="Reflection Witch — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2626560/588ff8bac1d8589064e126a386d7e4754911eab9/ss_588ff8bac1d8589064e126a386d7e4754911eab9.1920x1080.jpg?t=1790218934" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2626560/588ff8bac1d8589064e126a386d7e4754911eab9/ss_588ff8bac1d8589064e126a386d7e4754911eab9.600x338.jpg?t=1790218934" alt="Reflection Witch — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2626560/51ed07baec51a968a7f04e5966970f830903d3e2/ss_51ed07baec51a968a7f04e5966970f830903d3e2.1920x1080.jpg?t=1790218934" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2626560/51ed07baec51a968a7f04e5966970f830903d3e2/ss_51ed07baec51a968a7f04e5966970f830903d3e2.600x338.jpg?t=1790218934" alt="Reflection Witch — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2626560/9dac16b6a6410edb9c241453b92087bc9993cbc5/ss_9dac16b6a6410edb9c241453b92087bc9993cbc5.1920x1080.jpg?t=1790218934" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2626560/9dac16b6a6410edb9c241453b92087bc9993cbc5/ss_9dac16b6a6410edb9c241453b92087bc9993cbc5.600x338.jpg?t=1790218934" alt="Reflection Witch — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2626560/70f9f6859453418fbd1f11d104535005836b85a6/ss_70f9f6859453418fbd1f11d104535005836b85a6.1920x1080.jpg?t=1790218934" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2626560/70f9f6859453418fbd1f11d104535005836b85a6/ss_70f9f6859453418fbd1f11d104535005836b85a6.600x338.jpg?t=1790218934" alt="Reflection Witch — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2626560/f4838977d291475cfc1605b212fc5d5ea45327ea/ss_f4838977d291475cfc1605b212fc5d5ea45327ea.1920x1080.jpg?t=1790218934" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2626560/f4838977d291475cfc1605b212fc5d5ea45327ea/ss_f4838977d291475cfc1605b212fc5d5ea45327ea.600x338.jpg?t=1790218934" alt="Reflection Witch — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2626560/4de61cf4eabe379a7eb23abc1e33fcd1984736cf/ss_4de61cf4eabe379a7eb23abc1e33fcd1984736cf.1920x1080.jpg?t=1790218934" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2626560/4de61cf4eabe379a7eb23abc1e33fcd1984736cf/ss_4de61cf4eabe379a7eb23abc1e33fcd1984736cf.600x338.jpg?t=1790218934" alt="Reflection Witch — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2626560/613e7e48dae851f32e69b575bf1ca9738cd2d755/ss_613e7e48dae851f32e69b575bf1ca9738cd2d755.1920x1080.jpg?t=1790218934" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2626560/613e7e48dae851f32e69b575bf1ca9738cd2d755/ss_613e7e48dae851f32e69b575bf1ca9738cd2d755.600x338.jpg?t=1790218934" alt="Reflection Witch — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2626560/58daf44c9ca8ebef19f17d6f883d8a858a9133d3/ss_58daf44c9ca8ebef19f17d6f883d8a858a9133d3.1920x1080.jpg?t=1790218934" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2626560/58daf44c9ca8ebef19f17d6f883d8a858a9133d3/ss_58daf44c9ca8ebef19f17d6f883d8a858a9133d3.600x338.jpg?t=1790218934" alt="Reflection Witch — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2626560/a72e0133c34a6e04af211da82dce5746e50b4f8b/ss_a72e0133c34a6e04af211da82dce5746e50b4f8b.1920x1080.jpg?t=1790218934" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2626560/a72e0133c34a6e04af211da82dce5746e50b4f8b/ss_a72e0133c34a6e04af211da82dce5746e50b4f8b.600x338.jpg?t=1790218934" alt="Reflection Witch — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2626560/9338b8eaad6be411bc994156ab9e0b4aea521d60/ss_9338b8eaad6be411bc994156ab9e0b4aea521d60.1920x1080.jpg?t=1790218934" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2626560/9338b8eaad6be411bc994156ab9e0b4aea521d60/ss_9338b8eaad6be411bc994156ab9e0b4aea521d60.600x338.jpg?t=1790218934" alt="Reflection Witch — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+      </div>
+
+      <h2>Геймплей</h2>
+      <div class="game-movies">
+        <figure class="game-movie"><div class="game-video" data-hls="https://video.akamai.steamstatic.com/store_trailers/2626560/721870750/d8a7358fdf7b472924af7108d084179f19433e4d/1788685900/hls_264_master.m3u8?t=1788687138" data-poster="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257418242/c84e47001baa9dbdfea783ab14879cfcd4e35320/movie_600x337.jpg?t=1788687138" role="button" tabindex="0" aria-label="Смотреть геймплей: Reflection Witch Trailer 2"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257418242/c84e47001baa9dbdfea783ab14879cfcd4e35320/movie_600x337.jpg?t=1788687138" alt="" loading="lazy" width="480" height="270" /><span class="game-video-play" aria-hidden="true"></span></div></figure>
+        <figure class="game-movie"><div class="game-video" data-hls="https://video.akamai.steamstatic.com/store_trailers/2626560/616189/058ac4a458e0e9bb6739c34517982f9bbb6854cd/1750937469/hls_264_master.m3u8?t=1788687139" data-poster="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/256974483/movie.293x165.jpg?t=1788687139" role="button" tabindex="0" aria-label="Смотреть геймплей: Reflection Witch Trailer 1"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/256974483/movie.293x165.jpg?t=1788687139" alt="" loading="lazy" width="480" height="270" /><span class="game-video-play" aria-hidden="true"></span></div></figure>
+      </div>
+
+<p style="color: var(--text-faint); font-size: 13px; margin-top: 30px;">
         Данные о цене, отзывах и статистике обновляются автоматически на основе
         Steam Store API и SteamSpy.
       </p>
@@ -284,5 +334,6 @@ function declineCookies() {
 })();
 </script>
 <script src="/newsletter.js?v=2" defer></script>
+<script defer src="/game-media.js?v=1"></script>
 </body>
 </html>

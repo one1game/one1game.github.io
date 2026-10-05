@@ -112,6 +112,38 @@
     }
     .game-stat-card .label { font-size: 12px; color: var(--text-faint); text-transform: uppercase; }
     .game-stat-card .value { font-size: 20px; font-weight: bold; margin-top: 4px; }
+    .game-shots {
+      display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+      gap: 12px; margin: 20px 0;
+    }
+    .game-shot {
+      display: block; border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 8px; overflow: hidden;
+    }
+    .game-shot img { display: block; width: 100%; height: auto; }
+    .game-movies { display: grid; gap: 16px; margin: 20px 0; }
+    .game-movie { margin: 0; }
+    .game-movie video {
+      display: block; width: 100%; height: auto;
+      border-radius: 8px; background: #000;
+    }
+    .game-movie figcaption { margin-top: 6px; font-size: 13px; color: var(--text-faint); }
+    .game-video {
+      position: relative; cursor: pointer; overflow: hidden;
+      border-radius: 8px; background: #000; aspect-ratio: 16 / 9;
+    }
+    .game-video img { display: block; width: 100%; height: 100%; object-fit: cover; }
+    .game-video-play { position: absolute; inset: 0; display: grid; place-items: center; }
+    .game-video-play::before {
+      content: ''; width: 58px; height: 58px; border-radius: 50%;
+      background: rgba(0,0,0,0.5); border: 2px solid rgba(255,255,255,0.75);
+    }
+    .game-video-play::after {
+      content: ''; position: absolute; margin-left: 5px;
+      border-style: solid; border-width: 11px 0 11px 18px;
+      border-color: transparent transparent transparent #fff;
+    }
+    .game-video-el { display: block; width: 100%; height: 100%; background: #000; }
   </style>
 </head>
 <body>
@@ -166,10 +198,6 @@
           <div class="label">Владельцев (оценка)</div>
           <div class="value">0 – 20,000</div>
         </div>
-        <div class="game-stat-card">
-          <div class="label">Среднее время игры</div>
-          <div class="value">нет данных</div>
-        </div>
       </div>
 
       <h2>Об игре</h2>
@@ -183,7 +211,22 @@
         </a>
       </p>
 
-      <p style="color: var(--text-faint); font-size: 13px; margin-top: 30px;">
+            <h2>Скриншоты</h2>
+      <div class="game-shots">
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3882410/24e888c97cc6961a2ad059ccee94fd59ffb76206/ss_24e888c97cc6961a2ad059ccee94fd59ffb76206.1920x1080.jpg?t=1790211878" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3882410/24e888c97cc6961a2ad059ccee94fd59ffb76206/ss_24e888c97cc6961a2ad059ccee94fd59ffb76206.600x338.jpg?t=1790211878" alt="Qliphah in Providence&#x27;s Shadow — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3882410/02439aee5dd7e5c6dcaa416c24fbe200abd6c667/ss_02439aee5dd7e5c6dcaa416c24fbe200abd6c667.1920x1080.jpg?t=1790211878" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3882410/02439aee5dd7e5c6dcaa416c24fbe200abd6c667/ss_02439aee5dd7e5c6dcaa416c24fbe200abd6c667.600x338.jpg?t=1790211878" alt="Qliphah in Providence&#x27;s Shadow — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3882410/54701ccdac7e41ed5c303856aef53ea2944895bb/ss_54701ccdac7e41ed5c303856aef53ea2944895bb.1920x1080.jpg?t=1790211878" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3882410/54701ccdac7e41ed5c303856aef53ea2944895bb/ss_54701ccdac7e41ed5c303856aef53ea2944895bb.600x338.jpg?t=1790211878" alt="Qliphah in Providence&#x27;s Shadow — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3882410/11be25c1009239d91768b7b93a3af57cf7542d41/ss_11be25c1009239d91768b7b93a3af57cf7542d41.1920x1080.jpg?t=1790211878" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3882410/11be25c1009239d91768b7b93a3af57cf7542d41/ss_11be25c1009239d91768b7b93a3af57cf7542d41.600x338.jpg?t=1790211878" alt="Qliphah in Providence&#x27;s Shadow — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3882410/c48224d5d04612e5a110c99088a83fec84cc94f4/ss_c48224d5d04612e5a110c99088a83fec84cc94f4.1920x1080.jpg?t=1790211878" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3882410/c48224d5d04612e5a110c99088a83fec84cc94f4/ss_c48224d5d04612e5a110c99088a83fec84cc94f4.600x338.jpg?t=1790211878" alt="Qliphah in Providence&#x27;s Shadow — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+      </div>
+
+      <h2>Геймплей</h2>
+      <div class="game-movies">
+        <figure class="game-movie"><div class="game-video" data-hls="https://video.akamai.steamstatic.com/store_trailers/3882410/1251566014/040240f56869ad03969a59bef98f6737b92d3b4b/1787729360/hls_264_master.m3u8?t=1787730233" data-poster="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257408834/5709ccc0cc368e6f4c8006aad78b26786dc532df/movie_600x337.jpg?t=1787730233" role="button" tabindex="0" aria-label="Смотреть геймплей: Trailer_1_EN"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257408834/5709ccc0cc368e6f4c8006aad78b26786dc532df/movie_600x337.jpg?t=1787730233" alt="" loading="lazy" width="480" height="270" /><span class="game-video-play" aria-hidden="true"></span></div></figure>
+        <figure class="game-movie"><div class="game-video" data-hls="https://video.akamai.steamstatic.com/store_trailers/3882410/1341212411/27d2b74a35ffdc0601f3b0ea69276e5f0675638c/1787729360/hls_264_master.m3u8?t=1787730235" data-poster="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257408833/72130b2ab3172cc775295a256bdf74f2e754c4f9/movie_600x337.jpg?t=1787730235" role="button" tabindex="0" aria-label="Смотреть геймплей: Trailer_1"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257408833/72130b2ab3172cc775295a256bdf74f2e754c4f9/movie_600x337.jpg?t=1787730235" alt="" loading="lazy" width="480" height="270" /><span class="game-video-play" aria-hidden="true"></span></div></figure>
+      </div>
+
+<p style="color: var(--text-faint); font-size: 13px; margin-top: 30px;">
         Данные о цене, отзывах и статистике обновляются автоматически на основе
         Steam Store API и SteamSpy.
       </p>
@@ -284,5 +327,6 @@ function declineCookies() {
 })();
 </script>
 <script src="/newsletter.js?v=2" defer></script>
+<script defer src="/game-media.js?v=1"></script>
 </body>
 </html>

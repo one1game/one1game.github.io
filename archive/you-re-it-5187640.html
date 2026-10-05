@@ -112,6 +112,38 @@
     }
     .game-stat-card .label { font-size: 12px; color: var(--text-faint); text-transform: uppercase; }
     .game-stat-card .value { font-size: 20px; font-weight: bold; margin-top: 4px; }
+    .game-shots {
+      display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+      gap: 12px; margin: 20px 0;
+    }
+    .game-shot {
+      display: block; border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 8px; overflow: hidden;
+    }
+    .game-shot img { display: block; width: 100%; height: auto; }
+    .game-movies { display: grid; gap: 16px; margin: 20px 0; }
+    .game-movie { margin: 0; }
+    .game-movie video {
+      display: block; width: 100%; height: auto;
+      border-radius: 8px; background: #000;
+    }
+    .game-movie figcaption { margin-top: 6px; font-size: 13px; color: var(--text-faint); }
+    .game-video {
+      position: relative; cursor: pointer; overflow: hidden;
+      border-radius: 8px; background: #000; aspect-ratio: 16 / 9;
+    }
+    .game-video img { display: block; width: 100%; height: 100%; object-fit: cover; }
+    .game-video-play { position: absolute; inset: 0; display: grid; place-items: center; }
+    .game-video-play::before {
+      content: ''; width: 58px; height: 58px; border-radius: 50%;
+      background: rgba(0,0,0,0.5); border: 2px solid rgba(255,255,255,0.75);
+    }
+    .game-video-play::after {
+      content: ''; position: absolute; margin-left: 5px;
+      border-style: solid; border-width: 11px 0 11px 18px;
+      border-color: transparent transparent transparent #fff;
+    }
+    .game-video-el { display: block; width: 100%; height: 100%; background: #000; }
   </style>
 </head>
 <body>
@@ -150,7 +182,7 @@
 
     <article class="article-body">
 
-      <p>A fast 2.5D multiplayer tag game where up to eight blobs grapple, wall-jump, dodge, and shove through 40 wild arenas, passing an explosive glow before time runs out.</p>
+      
 
       <div class="game-stats-grid">
         <div class="game-stat-card">
@@ -166,10 +198,6 @@
           <div class="label">Владельцев (оценка)</div>
           <div class="value">0 – 20,000</div>
         </div>
-        <div class="game-stat-card">
-          <div class="label">Среднее время игры</div>
-          <div class="value">нет данных</div>
-        </div>
       </div>
 
       <h2>Об игре</h2>
@@ -183,7 +211,28 @@
         </a>
       </p>
 
-      <p style="color: var(--text-faint); font-size: 13px; margin-top: 30px;">
+            <h2>Скриншоты</h2>
+      <div class="game-shots">
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5187640/1ce0dd3288f4467607aabd168a055dce9f357f9c/ss_1ce0dd3288f4467607aabd168a055dce9f357f9c.1920x1080.jpg?t=1790569516" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5187640/1ce0dd3288f4467607aabd168a055dce9f357f9c/ss_1ce0dd3288f4467607aabd168a055dce9f357f9c.600x338.jpg?t=1790569516" alt="You&#x27;re It! — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5187640/016a7ec6f3727728bb26f9fb2d1f787d0bb55d7e/ss_016a7ec6f3727728bb26f9fb2d1f787d0bb55d7e.1920x1080.jpg?t=1790569516" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5187640/016a7ec6f3727728bb26f9fb2d1f787d0bb55d7e/ss_016a7ec6f3727728bb26f9fb2d1f787d0bb55d7e.600x338.jpg?t=1790569516" alt="You&#x27;re It! — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5187640/c9cfdee825ddbdc56e7ebb9c5b12d304104019e2/ss_c9cfdee825ddbdc56e7ebb9c5b12d304104019e2.1920x1080.jpg?t=1790569516" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5187640/c9cfdee825ddbdc56e7ebb9c5b12d304104019e2/ss_c9cfdee825ddbdc56e7ebb9c5b12d304104019e2.600x338.jpg?t=1790569516" alt="You&#x27;re It! — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5187640/38bde5056b143ee6bcd9271fbf527bb7584d7fe9/ss_38bde5056b143ee6bcd9271fbf527bb7584d7fe9.1920x1080.jpg?t=1790569516" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5187640/38bde5056b143ee6bcd9271fbf527bb7584d7fe9/ss_38bde5056b143ee6bcd9271fbf527bb7584d7fe9.600x338.jpg?t=1790569516" alt="You&#x27;re It! — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5187640/d2d331a6a3689c79181b9bf9abd05aa0af300d92/ss_d2d331a6a3689c79181b9bf9abd05aa0af300d92.1920x1080.jpg?t=1790569516" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5187640/d2d331a6a3689c79181b9bf9abd05aa0af300d92/ss_d2d331a6a3689c79181b9bf9abd05aa0af300d92.600x338.jpg?t=1790569516" alt="You&#x27;re It! — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5187640/4ee4f7d43c582bf876f3a08cc0ab7d3750282b3e/ss_4ee4f7d43c582bf876f3a08cc0ab7d3750282b3e.1920x1080.jpg?t=1790569516" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5187640/4ee4f7d43c582bf876f3a08cc0ab7d3750282b3e/ss_4ee4f7d43c582bf876f3a08cc0ab7d3750282b3e.600x338.jpg?t=1790569516" alt="You&#x27;re It! — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5187640/f66eb3b0b1caf0a00e334295b5aaf6834d207a2a/ss_f66eb3b0b1caf0a00e334295b5aaf6834d207a2a.1920x1080.jpg?t=1790569516" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5187640/f66eb3b0b1caf0a00e334295b5aaf6834d207a2a/ss_f66eb3b0b1caf0a00e334295b5aaf6834d207a2a.600x338.jpg?t=1790569516" alt="You&#x27;re It! — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5187640/8ff39fbf2c86ceff6f82874dd106ad9e070c36fa/ss_8ff39fbf2c86ceff6f82874dd106ad9e070c36fa.1920x1080.jpg?t=1790569516" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5187640/8ff39fbf2c86ceff6f82874dd106ad9e070c36fa/ss_8ff39fbf2c86ceff6f82874dd106ad9e070c36fa.600x338.jpg?t=1790569516" alt="You&#x27;re It! — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5187640/b07ce07975803211d932f50244d27907bac0b9e1/ss_b07ce07975803211d932f50244d27907bac0b9e1.1920x1080.jpg?t=1790569516" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5187640/b07ce07975803211d932f50244d27907bac0b9e1/ss_b07ce07975803211d932f50244d27907bac0b9e1.600x338.jpg?t=1790569516" alt="You&#x27;re It! — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5187640/5a388faab67447c05204af18aaf5b4828a3844da/ss_5a388faab67447c05204af18aaf5b4828a3844da.1920x1080.jpg?t=1790569516" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5187640/5a388faab67447c05204af18aaf5b4828a3844da/ss_5a388faab67447c05204af18aaf5b4828a3844da.600x338.jpg?t=1790569516" alt="You&#x27;re It! — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5187640/042613298b22cab410bff7817b9c2888092c7253/ss_042613298b22cab410bff7817b9c2888092c7253.1920x1080.jpg?t=1790569516" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5187640/042613298b22cab410bff7817b9c2888092c7253/ss_042613298b22cab410bff7817b9c2888092c7253.600x338.jpg?t=1790569516" alt="You&#x27;re It! — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+      </div>
+
+      <h2>Геймплей</h2>
+      <div class="game-movies">
+        <figure class="game-movie"><div class="game-video" data-hls="https://video.akamai.steamstatic.com/store_trailers/5187640/752177363/56404b934af88a4f7920c2beedd656d7dd385094/1789774225/hls_264_master.m3u8?t=1789776177" data-poster="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257428877/ddb70232f8ff2773f732f6991e04ac5acfc27300/movie_600x337.jpg?t=1789776177" role="button" tabindex="0" aria-label="Смотреть геймплей: You&#x27;re It! - Gameplay Trailer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257428877/ddb70232f8ff2773f732f6991e04ac5acfc27300/movie_600x337.jpg?t=1789776177" alt="" loading="lazy" width="480" height="270" /><span class="game-video-play" aria-hidden="true"></span></div></figure>
+        <figure class="game-movie"><div class="game-video" data-hls="https://video.akamai.steamstatic.com/store_trailers/5187640/1200445400/55a60e4aab89baf75f935f50e44bb04f272acde0/1789358328/hls_264_master.m3u8?t=1789776178" data-poster="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257424353/28f3c99d5201604769a48d1980eab9cd2135f0d0/movie_600x337.jpg?t=1789776178" role="button" tabindex="0" aria-label="Смотреть геймплей: You&#x27;re It! - Official Teaser Trailer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257424353/28f3c99d5201604769a48d1980eab9cd2135f0d0/movie_600x337.jpg?t=1789776178" alt="" loading="lazy" width="480" height="270" /><span class="game-video-play" aria-hidden="true"></span></div></figure>
+      </div>
+
+<p style="color: var(--text-faint); font-size: 13px; margin-top: 30px;">
         Данные о цене, отзывах и статистике обновляются автоматически на основе
         Steam Store API и SteamSpy.
       </p>
@@ -284,5 +333,6 @@ function declineCookies() {
 })();
 </script>
 <script src="/newsletter.js?v=2" defer></script>
+<script defer src="/game-media.js?v=1"></script>
 </body>
 </html>

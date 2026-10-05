@@ -112,6 +112,38 @@
     }
     .game-stat-card .label { font-size: 12px; color: var(--text-faint); text-transform: uppercase; }
     .game-stat-card .value { font-size: 20px; font-weight: bold; margin-top: 4px; }
+    .game-shots {
+      display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+      gap: 12px; margin: 20px 0;
+    }
+    .game-shot {
+      display: block; border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 8px; overflow: hidden;
+    }
+    .game-shot img { display: block; width: 100%; height: auto; }
+    .game-movies { display: grid; gap: 16px; margin: 20px 0; }
+    .game-movie { margin: 0; }
+    .game-movie video {
+      display: block; width: 100%; height: auto;
+      border-radius: 8px; background: #000;
+    }
+    .game-movie figcaption { margin-top: 6px; font-size: 13px; color: var(--text-faint); }
+    .game-video {
+      position: relative; cursor: pointer; overflow: hidden;
+      border-radius: 8px; background: #000; aspect-ratio: 16 / 9;
+    }
+    .game-video img { display: block; width: 100%; height: 100%; object-fit: cover; }
+    .game-video-play { position: absolute; inset: 0; display: grid; place-items: center; }
+    .game-video-play::before {
+      content: ''; width: 58px; height: 58px; border-radius: 50%;
+      background: rgba(0,0,0,0.5); border: 2px solid rgba(255,255,255,0.75);
+    }
+    .game-video-play::after {
+      content: ''; position: absolute; margin-left: 5px;
+      border-style: solid; border-width: 11px 0 11px 18px;
+      border-color: transparent transparent transparent #fff;
+    }
+    .game-video-el { display: block; width: 100%; height: 100%; background: #000; }
   </style>
 </head>
 <body>
@@ -166,10 +198,6 @@
           <div class="label">Владельцев (оценка)</div>
           <div class="value">0 – 20,000</div>
         </div>
-        <div class="game-stat-card">
-          <div class="label">Среднее время игры</div>
-          <div class="value">нет данных</div>
-        </div>
       </div>
 
       <h2>Об игре</h2>
@@ -183,7 +211,26 @@
         </a>
       </p>
 
-      <p style="color: var(--text-faint); font-size: 13px; margin-top: 30px;">
+            <h2>Скриншоты</h2>
+      <div class="game-shots">
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4831090/c48afa64d48a45a46ad2f1168721551e602f1a77/ss_c48afa64d48a45a46ad2f1168721551e602f1a77.1920x1080.jpg?t=1790883849" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4831090/c48afa64d48a45a46ad2f1168721551e602f1a77/ss_c48afa64d48a45a46ad2f1168721551e602f1a77.600x338.jpg?t=1790883849" alt="Battle Simulator: Counter Zombie REBORN — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4831090/105d6092cdf5d1f1294877fb61ccb739f7d08081/ss_105d6092cdf5d1f1294877fb61ccb739f7d08081.1920x1080.jpg?t=1790883849" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4831090/105d6092cdf5d1f1294877fb61ccb739f7d08081/ss_105d6092cdf5d1f1294877fb61ccb739f7d08081.600x338.jpg?t=1790883849" alt="Battle Simulator: Counter Zombie REBORN — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4831090/57315c1d1456f3dafe5cc27ded97238f738633a0/ss_57315c1d1456f3dafe5cc27ded97238f738633a0.1920x1080.jpg?t=1790883849" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4831090/57315c1d1456f3dafe5cc27ded97238f738633a0/ss_57315c1d1456f3dafe5cc27ded97238f738633a0.600x338.jpg?t=1790883849" alt="Battle Simulator: Counter Zombie REBORN — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4831090/e1f4a8b28101b30e435725d1c986b376ae03eed6/ss_e1f4a8b28101b30e435725d1c986b376ae03eed6.1920x1080.jpg?t=1790883849" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4831090/e1f4a8b28101b30e435725d1c986b376ae03eed6/ss_e1f4a8b28101b30e435725d1c986b376ae03eed6.600x338.jpg?t=1790883849" alt="Battle Simulator: Counter Zombie REBORN — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4831090/0ea330e829a5d2d8e437d7505a1c50f838a13c58/ss_0ea330e829a5d2d8e437d7505a1c50f838a13c58.1920x1080.jpg?t=1790883849" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4831090/0ea330e829a5d2d8e437d7505a1c50f838a13c58/ss_0ea330e829a5d2d8e437d7505a1c50f838a13c58.600x338.jpg?t=1790883849" alt="Battle Simulator: Counter Zombie REBORN — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4831090/ffafc6ac00acf17db42044a38f1518fe656a3c2a/ss_ffafc6ac00acf17db42044a38f1518fe656a3c2a.1920x1080.jpg?t=1790883849" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4831090/ffafc6ac00acf17db42044a38f1518fe656a3c2a/ss_ffafc6ac00acf17db42044a38f1518fe656a3c2a.600x338.jpg?t=1790883849" alt="Battle Simulator: Counter Zombie REBORN — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4831090/203fe9a9f4ff95f41a772baa6a21bd0fff4a0cfb/ss_203fe9a9f4ff95f41a772baa6a21bd0fff4a0cfb.1920x1080.jpg?t=1790883849" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4831090/203fe9a9f4ff95f41a772baa6a21bd0fff4a0cfb/ss_203fe9a9f4ff95f41a772baa6a21bd0fff4a0cfb.600x338.jpg?t=1790883849" alt="Battle Simulator: Counter Zombie REBORN — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4831090/3e3abb8ef20710640138bf61530d0eb1365a9a0e/ss_3e3abb8ef20710640138bf61530d0eb1365a9a0e.1920x1080.jpg?t=1790883849" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4831090/3e3abb8ef20710640138bf61530d0eb1365a9a0e/ss_3e3abb8ef20710640138bf61530d0eb1365a9a0e.600x338.jpg?t=1790883849" alt="Battle Simulator: Counter Zombie REBORN — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4831090/657edf3d29b48b72c3ad75e00bb1511e768a715d/ss_657edf3d29b48b72c3ad75e00bb1511e768a715d.1920x1080.jpg?t=1790883849" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4831090/657edf3d29b48b72c3ad75e00bb1511e768a715d/ss_657edf3d29b48b72c3ad75e00bb1511e768a715d.600x338.jpg?t=1790883849" alt="Battle Simulator: Counter Zombie REBORN — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4831090/9a2612de3600c1814879714b0147bcd1c9f1a6ff/ss_9a2612de3600c1814879714b0147bcd1c9f1a6ff.1920x1080.jpg?t=1790883849" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4831090/9a2612de3600c1814879714b0147bcd1c9f1a6ff/ss_9a2612de3600c1814879714b0147bcd1c9f1a6ff.600x338.jpg?t=1790883849" alt="Battle Simulator: Counter Zombie REBORN — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+      </div>
+
+      <h2>Геймплей</h2>
+      <div class="game-movies">
+        <figure class="game-movie"><div class="game-video" data-hls="https://video.akamai.steamstatic.com/store_trailers/4831090/2136732917/8e7e0276444d26046870ffb3e3a81afbf68377c2/1786736308/hls_264_master.m3u8?t=1788512364" data-poster="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257399681/dfd55ccc7a253efd0f16e38b5aa0217814e84d44/movie_600x337.jpg?t=1788512364" role="button" tabindex="0" aria-label="Смотреть геймплей: Gameplay Trailer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257399681/dfd55ccc7a253efd0f16e38b5aa0217814e84d44/movie_600x337.jpg?t=1788512364" alt="" loading="lazy" width="480" height="270" /><span class="game-video-play" aria-hidden="true"></span></div></figure>
+      </div>
+
+<p style="color: var(--text-faint); font-size: 13px; margin-top: 30px;">
         Данные о цене, отзывах и статистике обновляются автоматически на основе
         Steam Store API и SteamSpy.
       </p>
@@ -284,5 +331,6 @@ function declineCookies() {
 })();
 </script>
 <script src="/newsletter.js?v=2" defer></script>
+<script defer src="/game-media.js?v=1"></script>
 </body>
 </html>

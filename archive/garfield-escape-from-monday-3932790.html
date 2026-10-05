@@ -112,6 +112,38 @@
     }
     .game-stat-card .label { font-size: 12px; color: var(--text-faint); text-transform: uppercase; }
     .game-stat-card .value { font-size: 20px; font-weight: bold; margin-top: 4px; }
+    .game-shots {
+      display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+      gap: 12px; margin: 20px 0;
+    }
+    .game-shot {
+      display: block; border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 8px; overflow: hidden;
+    }
+    .game-shot img { display: block; width: 100%; height: auto; }
+    .game-movies { display: grid; gap: 16px; margin: 20px 0; }
+    .game-movie { margin: 0; }
+    .game-movie video {
+      display: block; width: 100%; height: auto;
+      border-radius: 8px; background: #000;
+    }
+    .game-movie figcaption { margin-top: 6px; font-size: 13px; color: var(--text-faint); }
+    .game-video {
+      position: relative; cursor: pointer; overflow: hidden;
+      border-radius: 8px; background: #000; aspect-ratio: 16 / 9;
+    }
+    .game-video img { display: block; width: 100%; height: 100%; object-fit: cover; }
+    .game-video-play { position: absolute; inset: 0; display: grid; place-items: center; }
+    .game-video-play::before {
+      content: ''; width: 58px; height: 58px; border-radius: 50%;
+      background: rgba(0,0,0,0.5); border: 2px solid rgba(255,255,255,0.75);
+    }
+    .game-video-play::after {
+      content: ''; position: absolute; margin-left: 5px;
+      border-style: solid; border-width: 11px 0 11px 18px;
+      border-color: transparent transparent transparent #fff;
+    }
+    .game-video-el { display: block; width: 100%; height: 100%; background: #000; }
   </style>
 </head>
 <body>
@@ -166,10 +198,6 @@
           <div class="label">Владельцев (оценка)</div>
           <div class="value">0 – 20,000</div>
         </div>
-        <div class="game-stat-card">
-          <div class="label">Среднее время игры</div>
-          <div class="value">нет данных</div>
-        </div>
       </div>
 
       <h2>Об игре</h2>
@@ -183,7 +211,23 @@
         </a>
       </p>
 
-      <p style="color: var(--text-faint); font-size: 13px; margin-top: 30px;">
+            <h2>Скриншоты</h2>
+      <div class="game-shots">
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3932790/97169eb35a2dc880748b3f1a9433c8dd565e2ee5/ss_97169eb35a2dc880748b3f1a9433c8dd565e2ee5.1920x1080.jpg?t=1790262085" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3932790/97169eb35a2dc880748b3f1a9433c8dd565e2ee5/ss_97169eb35a2dc880748b3f1a9433c8dd565e2ee5.600x338.jpg?t=1790262085" alt="Garfield - Escape from Monday — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3932790/2d9d000bb13846cb4b91e6f3bac78d840c060adb/ss_2d9d000bb13846cb4b91e6f3bac78d840c060adb.1920x1080.jpg?t=1790262085" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3932790/2d9d000bb13846cb4b91e6f3bac78d840c060adb/ss_2d9d000bb13846cb4b91e6f3bac78d840c060adb.600x338.jpg?t=1790262085" alt="Garfield - Escape from Monday — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3932790/57ede91e1064efcca5fab77701dc260e864a8cb4/ss_57ede91e1064efcca5fab77701dc260e864a8cb4.1920x1080.jpg?t=1790262085" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3932790/57ede91e1064efcca5fab77701dc260e864a8cb4/ss_57ede91e1064efcca5fab77701dc260e864a8cb4.600x338.jpg?t=1790262085" alt="Garfield - Escape from Monday — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3932790/36f112c0edc8c6eb1f366f5486eb1e759813a419/ss_36f112c0edc8c6eb1f366f5486eb1e759813a419.1920x1080.jpg?t=1790262085" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3932790/36f112c0edc8c6eb1f366f5486eb1e759813a419/ss_36f112c0edc8c6eb1f366f5486eb1e759813a419.600x338.jpg?t=1790262085" alt="Garfield - Escape from Monday — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3932790/d1de02eee19a71968f1767d47bfb9a39fbc9bc02/ss_d1de02eee19a71968f1767d47bfb9a39fbc9bc02.1920x1080.jpg?t=1790262085" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3932790/d1de02eee19a71968f1767d47bfb9a39fbc9bc02/ss_d1de02eee19a71968f1767d47bfb9a39fbc9bc02.600x338.jpg?t=1790262085" alt="Garfield - Escape from Monday — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3932790/8d23720eb9398d0d82f83cc80651854f12f15e39/ss_8d23720eb9398d0d82f83cc80651854f12f15e39.1920x1080.jpg?t=1790262085" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3932790/8d23720eb9398d0d82f83cc80651854f12f15e39/ss_8d23720eb9398d0d82f83cc80651854f12f15e39.600x338.jpg?t=1790262085" alt="Garfield - Escape from Monday — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+      </div>
+
+      <h2>Геймплей</h2>
+      <div class="game-movies">
+        <figure class="game-movie"><div class="game-video" data-hls="https://video.akamai.steamstatic.com/store_trailers/3932790/1190917305/b9df683c84cd79656269ab7f21c4eaf86bb990f9/1789993380/hls_264_master.m3u8?t=1790262083" data-poster="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257430608/bfeecdff99b0d0863db9cdabba32341f7cdd8c19/movie_600x337.jpg?t=1790262083" role="button" tabindex="0" aria-label="Смотреть геймплей: Garfield - Escape from Monday - Launch Trailer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257430608/bfeecdff99b0d0863db9cdabba32341f7cdd8c19/movie_600x337.jpg?t=1790262083" alt="" loading="lazy" width="480" height="270" /><span class="game-video-play" aria-hidden="true"></span></div></figure>
+        <figure class="game-movie"><div class="game-video" data-hls="https://video.akamai.steamstatic.com/store_trailers/3932790/20804087/defb430bac56c5b9fb15f20843577126cfd14a4d/1781859975/hls_264_master.m3u8?t=1781881401" data-poster="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257362267/debc53566491ac248e247a222114fc62c0f81bdc/movie_600x337.jpg?t=1781881401" role="button" tabindex="0" aria-label="Смотреть геймплей: Garfield - Escape from Monday - Reveal Teaser"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257362267/debc53566491ac248e247a222114fc62c0f81bdc/movie_600x337.jpg?t=1781881401" alt="" loading="lazy" width="480" height="270" /><span class="game-video-play" aria-hidden="true"></span></div></figure>
+      </div>
+
+<p style="color: var(--text-faint); font-size: 13px; margin-top: 30px;">
         Данные о цене, отзывах и статистике обновляются автоматически на основе
         Steam Store API и SteamSpy.
       </p>
@@ -284,5 +328,6 @@ function declineCookies() {
 })();
 </script>
 <script src="/newsletter.js?v=2" defer></script>
+<script defer src="/game-media.js?v=1"></script>
 </body>
 </html>

@@ -112,6 +112,38 @@
     }
     .game-stat-card .label { font-size: 12px; color: var(--text-faint); text-transform: uppercase; }
     .game-stat-card .value { font-size: 20px; font-weight: bold; margin-top: 4px; }
+    .game-shots {
+      display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+      gap: 12px; margin: 20px 0;
+    }
+    .game-shot {
+      display: block; border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 8px; overflow: hidden;
+    }
+    .game-shot img { display: block; width: 100%; height: auto; }
+    .game-movies { display: grid; gap: 16px; margin: 20px 0; }
+    .game-movie { margin: 0; }
+    .game-movie video {
+      display: block; width: 100%; height: auto;
+      border-radius: 8px; background: #000;
+    }
+    .game-movie figcaption { margin-top: 6px; font-size: 13px; color: var(--text-faint); }
+    .game-video {
+      position: relative; cursor: pointer; overflow: hidden;
+      border-radius: 8px; background: #000; aspect-ratio: 16 / 9;
+    }
+    .game-video img { display: block; width: 100%; height: 100%; object-fit: cover; }
+    .game-video-play { position: absolute; inset: 0; display: grid; place-items: center; }
+    .game-video-play::before {
+      content: ''; width: 58px; height: 58px; border-radius: 50%;
+      background: rgba(0,0,0,0.5); border: 2px solid rgba(255,255,255,0.75);
+    }
+    .game-video-play::after {
+      content: ''; position: absolute; margin-left: 5px;
+      border-style: solid; border-width: 11px 0 11px 18px;
+      border-color: transparent transparent transparent #fff;
+    }
+    .game-video-el { display: block; width: 100%; height: 100%; background: #000; }
   </style>
 </head>
 <body>
@@ -150,7 +182,7 @@
 
     <article class="article-body">
 
-      <p>Make your way through a crumbling, zombie-infested building. Each floor is different. Every decision matters. If you can escape...</p>
+      
 
       <div class="game-stats-grid">
         <div class="game-stat-card">
@@ -166,10 +198,6 @@
           <div class="label">Владельцев (оценка)</div>
           <div class="value">0 – 20,000</div>
         </div>
-        <div class="game-stat-card">
-          <div class="label">Среднее время игры</div>
-          <div class="value">нет данных</div>
-        </div>
       </div>
 
       <h2>Об игре</h2>
@@ -183,7 +211,24 @@
         </a>
       </p>
 
-      <p style="color: var(--text-faint); font-size: 13px; margin-top: 30px;">
+            <h2>Скриншоты</h2>
+      <div class="game-shots">
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4549090/22e4263899b8cb0178aacd3df344b26930481738/ss_22e4263899b8cb0178aacd3df344b26930481738.1920x1080.jpg?t=1790969058" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4549090/22e4263899b8cb0178aacd3df344b26930481738/ss_22e4263899b8cb0178aacd3df344b26930481738.600x338.jpg?t=1790969058" alt="Escape From Z — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4549090/99cabc60ab3d96b7ac47182bb55b3dce29b65080/ss_99cabc60ab3d96b7ac47182bb55b3dce29b65080.1920x1080.jpg?t=1790969058" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4549090/99cabc60ab3d96b7ac47182bb55b3dce29b65080/ss_99cabc60ab3d96b7ac47182bb55b3dce29b65080.600x338.jpg?t=1790969058" alt="Escape From Z — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4549090/8e8048343e3236ed9810f7604b765f9bf6744566/ss_8e8048343e3236ed9810f7604b765f9bf6744566.1920x1080.jpg?t=1790969058" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4549090/8e8048343e3236ed9810f7604b765f9bf6744566/ss_8e8048343e3236ed9810f7604b765f9bf6744566.600x338.jpg?t=1790969058" alt="Escape From Z — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4549090/6367803e36476977a9b6a5b3fcfcf0ec6b1a3d95/ss_6367803e36476977a9b6a5b3fcfcf0ec6b1a3d95.1920x1080.jpg?t=1790969058" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4549090/6367803e36476977a9b6a5b3fcfcf0ec6b1a3d95/ss_6367803e36476977a9b6a5b3fcfcf0ec6b1a3d95.600x338.jpg?t=1790969058" alt="Escape From Z — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4549090/2fb2fcfd64d1938fc0b34dd7b07319e957f86af2/ss_2fb2fcfd64d1938fc0b34dd7b07319e957f86af2.1920x1080.jpg?t=1790969058" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4549090/2fb2fcfd64d1938fc0b34dd7b07319e957f86af2/ss_2fb2fcfd64d1938fc0b34dd7b07319e957f86af2.600x338.jpg?t=1790969058" alt="Escape From Z — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4549090/395609ee50bed5d0c1761b392e0c775eac898df9/ss_395609ee50bed5d0c1761b392e0c775eac898df9.1920x1080.jpg?t=1790969058" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4549090/395609ee50bed5d0c1761b392e0c775eac898df9/ss_395609ee50bed5d0c1761b392e0c775eac898df9.600x338.jpg?t=1790969058" alt="Escape From Z — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4549090/b1e02a46b914eab0bb0dee6a37d5f8e492830863/ss_b1e02a46b914eab0bb0dee6a37d5f8e492830863.1920x1080.jpg?t=1790969058" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4549090/b1e02a46b914eab0bb0dee6a37d5f8e492830863/ss_b1e02a46b914eab0bb0dee6a37d5f8e492830863.600x338.jpg?t=1790969058" alt="Escape From Z — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4549090/6a2cce9b36547b8646bcc1f5c9f5310c9bbdcb8a/ss_6a2cce9b36547b8646bcc1f5c9f5310c9bbdcb8a.1920x1080.jpg?t=1790969058" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4549090/6a2cce9b36547b8646bcc1f5c9f5310c9bbdcb8a/ss_6a2cce9b36547b8646bcc1f5c9f5310c9bbdcb8a.600x338.jpg?t=1790969058" alt="Escape From Z — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+      </div>
+
+      <h2>Геймплей</h2>
+      <div class="game-movies">
+        <figure class="game-movie"><div class="game-video" data-hls="https://video.akamai.steamstatic.com/store_trailers/4549090/1791388292/e44ef742ed1c5c2a3a1653058580e42021b32cca/1776356765/hls_264_master.m3u8?t=1776357348" data-poster="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257320945/1dd4537972f3ef6f70c0a8f429e7cef092f364cd/movie_600x337.jpg?t=1776357348" role="button" tabindex="0" aria-label="Смотреть геймплей: Escape From Z Trailer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257320945/1dd4537972f3ef6f70c0a8f429e7cef092f364cd/movie_600x337.jpg?t=1776357348" alt="" loading="lazy" width="480" height="270" /><span class="game-video-play" aria-hidden="true"></span></div></figure>
+      </div>
+
+<p style="color: var(--text-faint); font-size: 13px; margin-top: 30px;">
         Данные о цене, отзывах и статистике обновляются автоматически на основе
         Steam Store API и SteamSpy.
       </p>
@@ -284,5 +329,6 @@ function declineCookies() {
 })();
 </script>
 <script src="/newsletter.js?v=2" defer></script>
+<script defer src="/game-media.js?v=1"></script>
 </body>
 </html>

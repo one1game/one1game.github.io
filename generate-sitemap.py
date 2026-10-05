@@ -35,7 +35,8 @@ def generate():
         f'  <url><loc>{BASE_URL}/terms.html</loc><priority>0.3</priority></url>',
         f'  <url><loc>{BASE_URL}/advertising.html</loc><priority>0.3</priority></url>',
         f'  <url><loc>{BASE_URL}/anal-code/</loc><priority>0.7</priority></url>',
-        f'  <url><loc>{BASE_URL}/cyber-scanner/</loc><priority>0.7</priority></url>'
+        f'  <url><loc>{BASE_URL}/cyber-scanner/</loc><priority>0.7</priority></url>',
+        f'  <url><loc>{BASE_URL}/go/</loc><priority>0.7</priority></url>'
     ]
 
     for url in urls:

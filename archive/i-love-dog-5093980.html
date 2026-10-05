@@ -108,6 +108,38 @@
     }
     .game-stat-card .label { font-size: 12px; color: var(--text-faint); text-transform: uppercase; }
     .game-stat-card .value { font-size: 20px; font-weight: bold; margin-top: 4px; }
+    .game-shots {
+      display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+      gap: 12px; margin: 20px 0;
+    }
+    .game-shot {
+      display: block; border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 8px; overflow: hidden;
+    }
+    .game-shot img { display: block; width: 100%; height: auto; }
+    .game-movies { display: grid; gap: 16px; margin: 20px 0; }
+    .game-movie { margin: 0; }
+    .game-movie video {
+      display: block; width: 100%; height: auto;
+      border-radius: 8px; background: #000;
+    }
+    .game-movie figcaption { margin-top: 6px; font-size: 13px; color: var(--text-faint); }
+    .game-video {
+      position: relative; cursor: pointer; overflow: hidden;
+      border-radius: 8px; background: #000; aspect-ratio: 16 / 9;
+    }
+    .game-video img { display: block; width: 100%; height: 100%; object-fit: cover; }
+    .game-video-play { position: absolute; inset: 0; display: grid; place-items: center; }
+    .game-video-play::before {
+      content: ''; width: 58px; height: 58px; border-radius: 50%;
+      background: rgba(0,0,0,0.5); border: 2px solid rgba(255,255,255,0.75);
+    }
+    .game-video-play::after {
+      content: ''; position: absolute; margin-left: 5px;
+      border-style: solid; border-width: 11px 0 11px 18px;
+      border-color: transparent transparent transparent #fff;
+    }
+    .game-video-el { display: block; width: 100%; height: 100%; background: #000; }
   </style>
 </head>
 <body>
@@ -146,7 +178,7 @@
 
     <article class="article-body">
 
-      <p>Explore, find the dogs, expand your territory by jumping on trampolines, and discover the secret of this mysterious island.</p>
+      
 
       <div class="game-stats-grid">
         <div class="game-stat-card">
@@ -162,10 +194,6 @@
           <div class="label">Владельцев (оценка)</div>
           <div class="value">0 – 20,000</div>
         </div>
-        <div class="game-stat-card">
-          <div class="label">Среднее время игры</div>
-          <div class="value">нет данных</div>
-        </div>
       </div>
 
       <h2>Об игре</h2>
@@ -179,7 +207,21 @@
         </a>
       </p>
 
-      <p style="color: var(--text-faint); font-size: 13px; margin-top: 30px;">
+            <h2>Скриншоты</h2>
+      <div class="game-shots">
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5093980/bd41c2865fac867285984751746b314c56770a8d/ss_bd41c2865fac867285984751746b314c56770a8d.1920x1080.jpg?t=1791206300" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5093980/bd41c2865fac867285984751746b314c56770a8d/ss_bd41c2865fac867285984751746b314c56770a8d.600x338.jpg?t=1791206300" alt="I Love Dog — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5093980/8cd057be7914e63b672d84c61b97f58a93821aac/ss_8cd057be7914e63b672d84c61b97f58a93821aac.1920x1080.jpg?t=1791206300" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5093980/8cd057be7914e63b672d84c61b97f58a93821aac/ss_8cd057be7914e63b672d84c61b97f58a93821aac.600x338.jpg?t=1791206300" alt="I Love Dog — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5093980/f1b68c6ed4669c60acd088963f356ec640e2b663/ss_f1b68c6ed4669c60acd088963f356ec640e2b663.1920x1080.jpg?t=1791206300" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5093980/f1b68c6ed4669c60acd088963f356ec640e2b663/ss_f1b68c6ed4669c60acd088963f356ec640e2b663.600x338.jpg?t=1791206300" alt="I Love Dog — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5093980/0d3c5148d53f3e616337436e6eca82ad7a2f24c6/ss_0d3c5148d53f3e616337436e6eca82ad7a2f24c6.1920x1080.jpg?t=1791206300" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5093980/0d3c5148d53f3e616337436e6eca82ad7a2f24c6/ss_0d3c5148d53f3e616337436e6eca82ad7a2f24c6.600x338.jpg?t=1791206300" alt="I Love Dog — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5093980/a6ea183b1495e2ef7ccd247b8c5d7f59c85cc43b/ss_a6ea183b1495e2ef7ccd247b8c5d7f59c85cc43b.1920x1080.jpg?t=1791206300" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5093980/a6ea183b1495e2ef7ccd247b8c5d7f59c85cc43b/ss_a6ea183b1495e2ef7ccd247b8c5d7f59c85cc43b.600x338.jpg?t=1791206300" alt="I Love Dog — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+      </div>
+
+      <h2>Геймплей</h2>
+      <div class="game-movies">
+        <figure class="game-movie"><div class="game-video" data-hls="https://video.akamai.steamstatic.com/store_trailers/5093980/446517156/0fbae1be008ab987858d19bf2ead5bdd57fce6ec/1787127815/hls_264_master.m3u8?t=1788393379" data-poster="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257402966/a521f172feb1548c852f092bb2a6ef5bd9fb4140/movie_600x337.jpg?t=1788393379" role="button" tabindex="0" aria-label="Смотреть геймплей: Official Release Trailer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257402966/a521f172feb1548c852f092bb2a6ef5bd9fb4140/movie_600x337.jpg?t=1788393379" alt="" loading="lazy" width="480" height="270" /><span class="game-video-play" aria-hidden="true"></span></div></figure>
+      </div>
+
+<p style="color: var(--text-faint); font-size: 13px; margin-top: 30px;">
         Данные о цене, отзывах и статистике обновляются автоматически на основе
         Steam Store API и SteamSpy.
       </p>
@@ -280,5 +322,6 @@ function declineCookies() {
 })();
 </script>
 <script src="/newsletter.js?v=2" defer></script>
+<script defer src="/game-media.js?v=1"></script>
 </body>
 </html>

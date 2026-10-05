@@ -112,6 +112,38 @@
     }
     .game-stat-card .label { font-size: 12px; color: var(--text-faint); text-transform: uppercase; }
     .game-stat-card .value { font-size: 20px; font-weight: bold; margin-top: 4px; }
+    .game-shots {
+      display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+      gap: 12px; margin: 20px 0;
+    }
+    .game-shot {
+      display: block; border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 8px; overflow: hidden;
+    }
+    .game-shot img { display: block; width: 100%; height: auto; }
+    .game-movies { display: grid; gap: 16px; margin: 20px 0; }
+    .game-movie { margin: 0; }
+    .game-movie video {
+      display: block; width: 100%; height: auto;
+      border-radius: 8px; background: #000;
+    }
+    .game-movie figcaption { margin-top: 6px; font-size: 13px; color: var(--text-faint); }
+    .game-video {
+      position: relative; cursor: pointer; overflow: hidden;
+      border-radius: 8px; background: #000; aspect-ratio: 16 / 9;
+    }
+    .game-video img { display: block; width: 100%; height: 100%; object-fit: cover; }
+    .game-video-play { position: absolute; inset: 0; display: grid; place-items: center; }
+    .game-video-play::before {
+      content: ''; width: 58px; height: 58px; border-radius: 50%;
+      background: rgba(0,0,0,0.5); border: 2px solid rgba(255,255,255,0.75);
+    }
+    .game-video-play::after {
+      content: ''; position: absolute; margin-left: 5px;
+      border-style: solid; border-width: 11px 0 11px 18px;
+      border-color: transparent transparent transparent #fff;
+    }
+    .game-video-el { display: block; width: 100%; height: 100%; background: #000; }
   </style>
 </head>
 <body>
@@ -150,7 +182,7 @@
 
     <article class="article-body">
 
-      <p>A cooking shop sim on a tropical island. Take over your dad's kebab shop, serve orders, manage supplies and upgrade the place. Get an order wrong and customers turn nasty (there's a bat behind the counter).</p>
+      
 
       <div class="game-stats-grid">
         <div class="game-stat-card">
@@ -166,10 +198,6 @@
           <div class="label">Владельцев (оценка)</div>
           <div class="value">0 – 20,000</div>
         </div>
-        <div class="game-stat-card">
-          <div class="label">Среднее время игры</div>
-          <div class="value">нет данных</div>
-        </div>
       </div>
 
       <h2>Об игре</h2>
@@ -183,7 +211,25 @@
         </a>
       </p>
 
-      <p style="color: var(--text-faint); font-size: 13px; margin-top: 30px;">
+            <h2>Скриншоты</h2>
+      <div class="game-shots">
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5148830/c5f71a620c9da02dccfbf4ad033564e4ca5cbd17/ss_c5f71a620c9da02dccfbf4ad033564e4ca5cbd17.1920x1080.jpg?t=1790018504" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5148830/c5f71a620c9da02dccfbf4ad033564e4ca5cbd17/ss_c5f71a620c9da02dccfbf4ad033564e4ca5cbd17.600x338.jpg?t=1790018504" alt="Kebab Shop Simulator — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5148830/a1377a124d668ca73634fe37837bdc6a161b993c/ss_a1377a124d668ca73634fe37837bdc6a161b993c.1920x1080.jpg?t=1790018504" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5148830/a1377a124d668ca73634fe37837bdc6a161b993c/ss_a1377a124d668ca73634fe37837bdc6a161b993c.600x338.jpg?t=1790018504" alt="Kebab Shop Simulator — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5148830/1f350d2db22a7fd9f51869b10bed8814d74540cc/ss_1f350d2db22a7fd9f51869b10bed8814d74540cc.1920x1080.jpg?t=1790018504" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5148830/1f350d2db22a7fd9f51869b10bed8814d74540cc/ss_1f350d2db22a7fd9f51869b10bed8814d74540cc.600x338.jpg?t=1790018504" alt="Kebab Shop Simulator — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5148830/2a31f2b8df0513faa0c8280a9ea3b0023bee70db/ss_2a31f2b8df0513faa0c8280a9ea3b0023bee70db.1920x1080.jpg?t=1790018504" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5148830/2a31f2b8df0513faa0c8280a9ea3b0023bee70db/ss_2a31f2b8df0513faa0c8280a9ea3b0023bee70db.600x338.jpg?t=1790018504" alt="Kebab Shop Simulator — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5148830/cc6421d20320ab075754c387c537cde954a9cd08/ss_cc6421d20320ab075754c387c537cde954a9cd08.1920x1080.jpg?t=1790018504" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5148830/cc6421d20320ab075754c387c537cde954a9cd08/ss_cc6421d20320ab075754c387c537cde954a9cd08.600x338.jpg?t=1790018504" alt="Kebab Shop Simulator — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5148830/b53ef58504f0b2adfa828ca5e10a8e3a24b2dada/ss_b53ef58504f0b2adfa828ca5e10a8e3a24b2dada.1920x1080.jpg?t=1790018504" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5148830/b53ef58504f0b2adfa828ca5e10a8e3a24b2dada/ss_b53ef58504f0b2adfa828ca5e10a8e3a24b2dada.600x338.jpg?t=1790018504" alt="Kebab Shop Simulator — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5148830/db1b36351bda88993db5d26bea88c95e4cbc287a/ss_db1b36351bda88993db5d26bea88c95e4cbc287a.1920x1080.jpg?t=1790018504" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5148830/db1b36351bda88993db5d26bea88c95e4cbc287a/ss_db1b36351bda88993db5d26bea88c95e4cbc287a.600x338.jpg?t=1790018504" alt="Kebab Shop Simulator — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5148830/d68245d792f0616e62609fae7b99776ac7b60f91/ss_d68245d792f0616e62609fae7b99776ac7b60f91.1920x1080.jpg?t=1790018504" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5148830/d68245d792f0616e62609fae7b99776ac7b60f91/ss_d68245d792f0616e62609fae7b99776ac7b60f91.600x338.jpg?t=1790018504" alt="Kebab Shop Simulator — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5148830/688008cd9ab8964fa3816c4c37aea6a31bb5a4d1/ss_688008cd9ab8964fa3816c4c37aea6a31bb5a4d1.1920x1080.jpg?t=1790018504" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5148830/688008cd9ab8964fa3816c4c37aea6a31bb5a4d1/ss_688008cd9ab8964fa3816c4c37aea6a31bb5a4d1.600x338.jpg?t=1790018504" alt="Kebab Shop Simulator — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+      </div>
+
+      <h2>Геймплей</h2>
+      <div class="game-movies">
+        <figure class="game-movie"><div class="game-video" data-hls="https://video.akamai.steamstatic.com/store_trailers/5148830/2012987467/5ab50222b70517543c8c01c3aef679229eca01ae/1789410199/hls_264_master.m3u8?t=1789410619" data-poster="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257424958/96fa9b9c0b30afb58a5e91f11220ecb370b9c94d/movie_600x337.jpg?t=1789410619" role="button" tabindex="0" aria-label="Смотреть геймплей: Reveal Trailer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257424958/96fa9b9c0b30afb58a5e91f11220ecb370b9c94d/movie_600x337.jpg?t=1789410619" alt="" loading="lazy" width="480" height="270" /><span class="game-video-play" aria-hidden="true"></span></div></figure>
+      </div>
+
+<p style="color: var(--text-faint); font-size: 13px; margin-top: 30px;">
         Данные о цене, отзывах и статистике обновляются автоматически на основе
         Steam Store API и SteamSpy.
       </p>
@@ -284,5 +330,6 @@ function declineCookies() {
 })();
 </script>
 <script src="/newsletter.js?v=2" defer></script>
+<script defer src="/game-media.js?v=1"></script>
 </body>
 </html>

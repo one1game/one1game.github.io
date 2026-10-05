@@ -108,6 +108,38 @@
     }
     .game-stat-card .label { font-size: 12px; color: var(--text-faint); text-transform: uppercase; }
     .game-stat-card .value { font-size: 20px; font-weight: bold; margin-top: 4px; }
+    .game-shots {
+      display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+      gap: 12px; margin: 20px 0;
+    }
+    .game-shot {
+      display: block; border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 8px; overflow: hidden;
+    }
+    .game-shot img { display: block; width: 100%; height: auto; }
+    .game-movies { display: grid; gap: 16px; margin: 20px 0; }
+    .game-movie { margin: 0; }
+    .game-movie video {
+      display: block; width: 100%; height: auto;
+      border-radius: 8px; background: #000;
+    }
+    .game-movie figcaption { margin-top: 6px; font-size: 13px; color: var(--text-faint); }
+    .game-video {
+      position: relative; cursor: pointer; overflow: hidden;
+      border-radius: 8px; background: #000; aspect-ratio: 16 / 9;
+    }
+    .game-video img { display: block; width: 100%; height: 100%; object-fit: cover; }
+    .game-video-play { position: absolute; inset: 0; display: grid; place-items: center; }
+    .game-video-play::before {
+      content: ''; width: 58px; height: 58px; border-radius: 50%;
+      background: rgba(0,0,0,0.5); border: 2px solid rgba(255,255,255,0.75);
+    }
+    .game-video-play::after {
+      content: ''; position: absolute; margin-left: 5px;
+      border-style: solid; border-width: 11px 0 11px 18px;
+      border-color: transparent transparent transparent #fff;
+    }
+    .game-video-el { display: block; width: 100%; height: 100%; background: #000; }
   </style>
 </head>
 <body>
@@ -162,10 +194,6 @@
           <div class="label">Владельцев (оценка)</div>
           <div class="value">0 – 20,000</div>
         </div>
-        <div class="game-stat-card">
-          <div class="label">Среднее время игры</div>
-          <div class="value">нет данных</div>
-        </div>
       </div>
 
       <h2>Об игре</h2>
@@ -179,7 +207,22 @@
         </a>
       </p>
 
-      <p style="color: var(--text-faint); font-size: 13px; margin-top: 30px;">
+            <h2>Скриншоты</h2>
+      <div class="game-shots">
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4943020/e3a286f551b65ccd7a0537f2a6f250e2d2c85e01/ss_e3a286f551b65ccd7a0537f2a6f250e2d2c85e01.1920x1080.jpg?t=1790308944" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4943020/e3a286f551b65ccd7a0537f2a6f250e2d2c85e01/ss_e3a286f551b65ccd7a0537f2a6f250e2d2c85e01.600x338.jpg?t=1790308944" alt="DeskFamiliar — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4943020/771e6a4125ae5459cc47d342f76ff2a69c298cb6/ss_771e6a4125ae5459cc47d342f76ff2a69c298cb6.1920x1080.jpg?t=1790308944" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4943020/771e6a4125ae5459cc47d342f76ff2a69c298cb6/ss_771e6a4125ae5459cc47d342f76ff2a69c298cb6.600x338.jpg?t=1790308944" alt="DeskFamiliar — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4943020/e2c33242b921d4e84e2ad1b7d8df3b70dc7498b3/ss_e2c33242b921d4e84e2ad1b7d8df3b70dc7498b3.1920x1080.jpg?t=1790308944" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4943020/e2c33242b921d4e84e2ad1b7d8df3b70dc7498b3/ss_e2c33242b921d4e84e2ad1b7d8df3b70dc7498b3.600x338.jpg?t=1790308944" alt="DeskFamiliar — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4943020/994ec8e1a6acbc38cb2efeab5f7df48779948ab8/ss_994ec8e1a6acbc38cb2efeab5f7df48779948ab8.1920x1080.jpg?t=1790308944" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4943020/994ec8e1a6acbc38cb2efeab5f7df48779948ab8/ss_994ec8e1a6acbc38cb2efeab5f7df48779948ab8.600x338.jpg?t=1790308944" alt="DeskFamiliar — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4943020/e6f502517cfe506e28a1b8e762f17dd266c13193/ss_e6f502517cfe506e28a1b8e762f17dd266c13193.1920x1080.jpg?t=1790308944" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4943020/e6f502517cfe506e28a1b8e762f17dd266c13193/ss_e6f502517cfe506e28a1b8e762f17dd266c13193.600x338.jpg?t=1790308944" alt="DeskFamiliar — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+      </div>
+
+      <h2>Геймплей</h2>
+      <div class="game-movies">
+        <figure class="game-movie"><div class="game-video" data-hls="https://video.akamai.steamstatic.com/store_trailers/4943020/129471089/c5c59a53129d3547d8da581811c2d321ca0f3e01/1785056513/hls_264_master.m3u8?t=1785057188" data-poster="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257385218/488fea0d8f04af2f0bcc6af4b332282ff56757b8/movie_600x337.jpg?t=1785057188" role="button" tabindex="0" aria-label="Смотреть геймплей: Coming soon"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257385218/488fea0d8f04af2f0bcc6af4b332282ff56757b8/movie_600x337.jpg?t=1785057188" alt="" loading="lazy" width="480" height="270" /><span class="game-video-play" aria-hidden="true"></span></div></figure>
+        <figure class="game-movie"><div class="game-video" data-hls="https://video.akamai.steamstatic.com/store_trailers/4943020/146225788/d1d1b57d9d87b1c4fe2edc5088ab7c8a959f6527/1784137846/hls_264_master.m3u8?t=1784138453" data-poster="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257372835/956fd1897e3345d24bc49a20b2619c374b5a9e03/movie_600x337.jpg?t=1784138453" role="button" tabindex="0" aria-label="Смотреть геймплей: DeskFamiliar - First Look Trailer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257372835/956fd1897e3345d24bc49a20b2619c374b5a9e03/movie_600x337.jpg?t=1784138453" alt="" loading="lazy" width="480" height="270" /><span class="game-video-play" aria-hidden="true"></span></div></figure>
+      </div>
+
+<p style="color: var(--text-faint); font-size: 13px; margin-top: 30px;">
         Данные о цене, отзывах и статистике обновляются автоматически на основе
         Steam Store API и SteamSpy.
       </p>
@@ -280,5 +323,6 @@ function declineCookies() {
 })();
 </script>
 <script src="/newsletter.js?v=2" defer></script>
+<script defer src="/game-media.js?v=1"></script>
 </body>
 </html>

@@ -117,6 +117,38 @@
     }
     .game-stat-card .label { font-size: 12px; color: var(--text-faint); text-transform: uppercase; }
     .game-stat-card .value { font-size: 20px; font-weight: bold; margin-top: 4px; }
+    .game-shots {
+      display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+      gap: 12px; margin: 20px 0;
+    }
+    .game-shot {
+      display: block; border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 8px; overflow: hidden;
+    }
+    .game-shot img { display: block; width: 100%; height: auto; }
+    .game-movies { display: grid; gap: 16px; margin: 20px 0; }
+    .game-movie { margin: 0; }
+    .game-movie video {
+      display: block; width: 100%; height: auto;
+      border-radius: 8px; background: #000;
+    }
+    .game-movie figcaption { margin-top: 6px; font-size: 13px; color: var(--text-faint); }
+    .game-video {
+      position: relative; cursor: pointer; overflow: hidden;
+      border-radius: 8px; background: #000; aspect-ratio: 16 / 9;
+    }
+    .game-video img { display: block; width: 100%; height: 100%; object-fit: cover; }
+    .game-video-play { position: absolute; inset: 0; display: grid; place-items: center; }
+    .game-video-play::before {
+      content: ''; width: 58px; height: 58px; border-radius: 50%;
+      background: rgba(0,0,0,0.5); border: 2px solid rgba(255,255,255,0.75);
+    }
+    .game-video-play::after {
+      content: ''; position: absolute; margin-left: 5px;
+      border-style: solid; border-width: 11px 0 11px 18px;
+      border-color: transparent transparent transparent #fff;
+    }
+    .game-video-el { display: block; width: 100%; height: 100%; background: #000; }
   </style>
 </head>
 <body>
@@ -155,7 +187,7 @@
 
     <article class="article-body">
 
-      <p>RIP is an all-out war simulation on the ground, in the air or at sea. With 4 different Soldier classes and their specific weapons in many different scenario maps from the middle eastern desert to a well-isolated bunker construction, you can fight as your heart desires and let the enemy bleed out in the dust.</p>
+      
 
       <div class="game-stats-grid">
         <div class="game-stat-card">
@@ -174,10 +206,6 @@
           <div class="label">Владельцев (оценка)</div>
           <div class="value">20,000 – 50,000</div>
         </div>
-        <div class="game-stat-card">
-          <div class="label">Среднее время игры</div>
-          <div class="value">нет данных</div>
-        </div>
       </div>
 
       <h2>Об игре</h2>
@@ -191,7 +219,30 @@
         </a>
       </p>
 
-      <p style="color: var(--text-faint); font-size: 13px; margin-top: 30px;">
+            <h2>Скриншоты</h2>
+      <div class="game-shots">
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/923530/ss_5a6a3f7d5f03d5532982662b316312d73d902f80.1920x1080.jpg?t=1790134462" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/923530/ss_5a6a3f7d5f03d5532982662b316312d73d902f80.600x338.jpg?t=1790134462" alt="RIP — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/923530/ss_df62f0306a03a1f8d1f6a6b5304955680f6005f1.1920x1080.jpg?t=1790134462" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/923530/ss_df62f0306a03a1f8d1f6a6b5304955680f6005f1.600x338.jpg?t=1790134462" alt="RIP — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/923530/ss_9b3c69cc2fa0168ed0df7c3b3fafb59551f6aa7c.1920x1080.jpg?t=1790134462" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/923530/ss_9b3c69cc2fa0168ed0df7c3b3fafb59551f6aa7c.600x338.jpg?t=1790134462" alt="RIP — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/923530/ss_612162d75cf453a218307028fcd167c172dbb5dc.1920x1080.jpg?t=1790134462" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/923530/ss_612162d75cf453a218307028fcd167c172dbb5dc.600x338.jpg?t=1790134462" alt="RIP — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/923530/ss_dde17354e5496782edb0b1aaf4c4d2b04fcfc23f.1920x1080.jpg?t=1790134462" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/923530/ss_dde17354e5496782edb0b1aaf4c4d2b04fcfc23f.600x338.jpg?t=1790134462" alt="RIP — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/923530/ss_17a3a3d6a7e7ca2515ae7fe433784103ce476738.1920x1080.jpg?t=1790134462" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/923530/ss_17a3a3d6a7e7ca2515ae7fe433784103ce476738.600x338.jpg?t=1790134462" alt="RIP — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/923530/ss_c73c77cb99f49d39c90ed641b03248f8cccc167d.1920x1080.jpg?t=1790134462" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/923530/ss_c73c77cb99f49d39c90ed641b03248f8cccc167d.600x338.jpg?t=1790134462" alt="RIP — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/923530/ss_3cbe3e90694b56313e97abcd931705fcee765c03.1920x1080.jpg?t=1790134462" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/923530/ss_3cbe3e90694b56313e97abcd931705fcee765c03.600x338.jpg?t=1790134462" alt="RIP — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/923530/ss_6a2b003822cd6d6ca70b73db88ed204496c9303e.1920x1080.jpg?t=1790134462" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/923530/ss_6a2b003822cd6d6ca70b73db88ed204496c9303e.600x338.jpg?t=1790134462" alt="RIP — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/923530/ss_3dca456d45261c839d2e325b284d9c621df244dc.1920x1080.jpg?t=1790134462" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/923530/ss_3dca456d45261c839d2e325b284d9c621df244dc.600x338.jpg?t=1790134462" alt="RIP — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/923530/ss_69807aa67990e185b4ea1f93c73577aa49545589.1920x1080.jpg?t=1790134462" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/923530/ss_69807aa67990e185b4ea1f93c73577aa49545589.600x338.jpg?t=1790134462" alt="RIP — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/923530/ss_4d8d5a876835f68c9092120dff0cb434dd410727.1920x1080.jpg?t=1790134462" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/923530/ss_4d8d5a876835f68c9092120dff0cb434dd410727.600x338.jpg?t=1790134462" alt="RIP — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+      </div>
+
+      <h2>Геймплей</h2>
+      <div class="game-movies">
+        <figure class="game-movie"><div class="game-video" data-hls="https://video.akamai.steamstatic.com/store_trailers/923530/862190/e89a7db344456a4682b2632bd8dbdfd3dfc8a0b5/1751164570/hls_264_master.m3u8?t=1743611719" data-poster="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257121267/86a09b498819bdfaeeed6d558028ccec27db24e4/movie_600x337.jpg?t=1743611719" role="button" tabindex="0" aria-label="Смотреть геймплей: RIP TRAILER 2025"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257121267/86a09b498819bdfaeeed6d558028ccec27db24e4/movie_600x337.jpg?t=1743611719" alt="" loading="lazy" width="480" height="270" /><span class="game-video-play" aria-hidden="true"></span></div></figure>
+        <figure class="game-movie"><div class="game-video" data-hls="https://video.akamai.steamstatic.com/store_trailers/923530/861995/3a14bb8653033284be9435337cf36b7986ed8a8b/1751164568/hls_264_master.m3u8?t=1743570403" data-poster="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257121146/5e1e8da9b9ebd83881e9b568b0a27d84d6149f83/movie_600x337.jpg?t=1743570403" role="button" tabindex="0" aria-label="Смотреть геймплей: Vehicle showdown"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257121146/5e1e8da9b9ebd83881e9b568b0a27d84d6149f83/movie_600x337.jpg?t=1743570403" alt="" loading="lazy" width="480" height="270" /><span class="game-video-play" aria-hidden="true"></span></div></figure>
+        <figure class="game-movie"><div class="game-video" data-hls="https://video.akamai.steamstatic.com/store_trailers/923530/861893/e17344cc071480aa9aaef8384b91c083bb24d4eb/1751164566/hls_264_master.m3u8?t=1743563510" data-poster="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257121079/6d67e2230e3dd78cc168fbe9b495b463e39d60bf/movie_600x337.jpg?t=1743563510" role="button" tabindex="0" aria-label="Смотреть геймплей: Volumetric Sky"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257121079/6d67e2230e3dd78cc168fbe9b495b463e39d60bf/movie_600x337.jpg?t=1743563510" alt="" loading="lazy" width="480" height="270" /><span class="game-video-play" aria-hidden="true"></span></div></figure>
+      </div>
+
+<p style="color: var(--text-faint); font-size: 13px; margin-top: 30px;">
         Данные о цене, отзывах и статистике обновляются автоматически на основе
         Steam Store API и SteamSpy.
       </p>
@@ -292,5 +343,6 @@ function declineCookies() {
 })();
 </script>
 <script src="/newsletter.js?v=2" defer></script>
+<script defer src="/game-media.js?v=1"></script>
 </body>
 </html>

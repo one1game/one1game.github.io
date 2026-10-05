@@ -112,6 +112,38 @@
     }
     .game-stat-card .label { font-size: 12px; color: var(--text-faint); text-transform: uppercase; }
     .game-stat-card .value { font-size: 20px; font-weight: bold; margin-top: 4px; }
+    .game-shots {
+      display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+      gap: 12px; margin: 20px 0;
+    }
+    .game-shot {
+      display: block; border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 8px; overflow: hidden;
+    }
+    .game-shot img { display: block; width: 100%; height: auto; }
+    .game-movies { display: grid; gap: 16px; margin: 20px 0; }
+    .game-movie { margin: 0; }
+    .game-movie video {
+      display: block; width: 100%; height: auto;
+      border-radius: 8px; background: #000;
+    }
+    .game-movie figcaption { margin-top: 6px; font-size: 13px; color: var(--text-faint); }
+    .game-video {
+      position: relative; cursor: pointer; overflow: hidden;
+      border-radius: 8px; background: #000; aspect-ratio: 16 / 9;
+    }
+    .game-video img { display: block; width: 100%; height: 100%; object-fit: cover; }
+    .game-video-play { position: absolute; inset: 0; display: grid; place-items: center; }
+    .game-video-play::before {
+      content: ''; width: 58px; height: 58px; border-radius: 50%;
+      background: rgba(0,0,0,0.5); border: 2px solid rgba(255,255,255,0.75);
+    }
+    .game-video-play::after {
+      content: ''; position: absolute; margin-left: 5px;
+      border-style: solid; border-width: 11px 0 11px 18px;
+      border-color: transparent transparent transparent #fff;
+    }
+    .game-video-el { display: block; width: 100%; height: 100%; background: #000; }
   </style>
 </head>
 <body>
@@ -150,7 +182,7 @@
 
     <article class="article-body">
 
-      <p>Set off on a musical journey with Ebi, navigating through challenges to save the Annual City Festival from the threats of the Shushinator. Meet friends, collect sounds, and hold your own live concerts &amp; remixes!</p>
+      
 
       <div class="game-stats-grid">
         <div class="game-stat-card">
@@ -166,10 +198,6 @@
           <div class="label">Владельцев (оценка)</div>
           <div class="value">0 – 20,000</div>
         </div>
-        <div class="game-stat-card">
-          <div class="label">Среднее время игры</div>
-          <div class="value">нет данных</div>
-        </div>
       </div>
 
       <h2>Об игре</h2>
@@ -183,7 +211,27 @@
         </a>
       </p>
 
-      <p style="color: var(--text-faint); font-size: 13px; margin-top: 30px;">
+            <h2>Скриншоты</h2>
+      <div class="game-shots">
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2221850/ss_6028b1772125a2e998a96aae0bce73b8da20cab8.1920x1080.jpg?t=1790098808" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2221850/ss_6028b1772125a2e998a96aae0bce73b8da20cab8.600x338.jpg?t=1790098808" alt="EbiTapes — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2221850/ss_84ac8bf6d30647f524ed5e4660d7cd51112e2b2e.1920x1080.jpg?t=1790098808" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2221850/ss_84ac8bf6d30647f524ed5e4660d7cd51112e2b2e.600x338.jpg?t=1790098808" alt="EbiTapes — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2221850/ss_79272559dfdbfb87220cc1f5c5c4e18085c58fc3.1920x1080.jpg?t=1790098808" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2221850/ss_79272559dfdbfb87220cc1f5c5c4e18085c58fc3.600x338.jpg?t=1790098808" alt="EbiTapes — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2221850/ss_41dbb480dd9bd1a26f43c5b8a3e69e739ac2744b.1920x1080.jpg?t=1790098808" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2221850/ss_41dbb480dd9bd1a26f43c5b8a3e69e739ac2744b.600x338.jpg?t=1790098808" alt="EbiTapes — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2221850/ss_b3fa48c0db6b2e099f17a955450cce0e7f9f7a81.1920x1080.jpg?t=1790098808" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2221850/ss_b3fa48c0db6b2e099f17a955450cce0e7f9f7a81.600x338.jpg?t=1790098808" alt="EbiTapes — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2221850/ss_5f4e84d6ba20eaad571955e8086d8ce9629ab9d3.1920x1080.jpg?t=1790098808" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2221850/ss_5f4e84d6ba20eaad571955e8086d8ce9629ab9d3.600x338.jpg?t=1790098808" alt="EbiTapes — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2221850/ss_8cd612cac06ee8ca7b997574b41d9b43be4c8dee.1920x1080.jpg?t=1790098808" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2221850/ss_8cd612cac06ee8ca7b997574b41d9b43be4c8dee.600x338.jpg?t=1790098808" alt="EbiTapes — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2221850/ss_602fad7a83b26ba9914deda0c08e88117a691bd8.1920x1080.jpg?t=1790098808" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2221850/ss_602fad7a83b26ba9914deda0c08e88117a691bd8.600x338.jpg?t=1790098808" alt="EbiTapes — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2221850/ss_3499b984167d17d17a902b71d24a4d0e5016e0f2.1920x1080.jpg?t=1790098808" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2221850/ss_3499b984167d17d17a902b71d24a4d0e5016e0f2.600x338.jpg?t=1790098808" alt="EbiTapes — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+      </div>
+
+      <h2>Геймплей</h2>
+      <div class="game-movies">
+        <figure class="game-movie"><div class="game-video" data-hls="https://video.akamai.steamstatic.com/store_trailers/2221850/874659/74da0fe4e7e03f6ed6a329df0afabdd965574eec/1751091949/hls_264_master.m3u8?t=1745341900" data-poster="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257128836/82801c3c8b3d8d34739d31b36b181dab4bc392db/movie_600x337.jpg?t=1745341900" role="button" tabindex="0" aria-label="Смотреть геймплей: TopHatTrailer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257128836/82801c3c8b3d8d34739d31b36b181dab4bc392db/movie_600x337.jpg?t=1745341900" alt="" loading="lazy" width="480" height="270" /><span class="game-video-play" aria-hidden="true"></span></div></figure>
+        <figure class="game-movie"><div class="game-video" data-hls="https://video.akamai.steamstatic.com/store_trailers/2221850/677360/6c280e99319d78f684a1637365a3a34f030928b8/1751091948/hls_264_master.m3u8?t=1717571480" data-poster="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257009834/movie.293x165.jpg?t=1717571480" role="button" tabindex="0" aria-label="Смотреть геймплей: Mixtape vol. 2"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257009834/movie.293x165.jpg?t=1717571480" alt="" loading="lazy" width="480" height="270" /><span class="game-video-play" aria-hidden="true"></span></div></figure>
+        <figure class="game-movie"><div class="game-video" data-hls="https://video.akamai.steamstatic.com/store_trailers/2221850/575325/6b540d57a81aa5c031643dac87057ea9dc085f69/1751091948/hls_264_master.m3u8?t=1686164951" data-poster="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/256951160/movie.293x165.jpg?t=1686164951" role="button" tabindex="0" aria-label="Смотреть геймплей: Mixtape vol. 1"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/256951160/movie.293x165.jpg?t=1686164951" alt="" loading="lazy" width="480" height="270" /><span class="game-video-play" aria-hidden="true"></span></div></figure>
+      </div>
+
+<p style="color: var(--text-faint); font-size: 13px; margin-top: 30px;">
         Данные о цене, отзывах и статистике обновляются автоматически на основе
         Steam Store API и SteamSpy.
       </p>
@@ -284,5 +332,6 @@ function declineCookies() {
 })();
 </script>
 <script src="/newsletter.js?v=2" defer></script>
+<script defer src="/game-media.js?v=1"></script>
 </body>
 </html>

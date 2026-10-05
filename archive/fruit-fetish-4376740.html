@@ -112,6 +112,38 @@
     }
     .game-stat-card .label { font-size: 12px; color: var(--text-faint); text-transform: uppercase; }
     .game-stat-card .value { font-size: 20px; font-weight: bold; margin-top: 4px; }
+    .game-shots {
+      display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+      gap: 12px; margin: 20px 0;
+    }
+    .game-shot {
+      display: block; border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 8px; overflow: hidden;
+    }
+    .game-shot img { display: block; width: 100%; height: auto; }
+    .game-movies { display: grid; gap: 16px; margin: 20px 0; }
+    .game-movie { margin: 0; }
+    .game-movie video {
+      display: block; width: 100%; height: auto;
+      border-radius: 8px; background: #000;
+    }
+    .game-movie figcaption { margin-top: 6px; font-size: 13px; color: var(--text-faint); }
+    .game-video {
+      position: relative; cursor: pointer; overflow: hidden;
+      border-radius: 8px; background: #000; aspect-ratio: 16 / 9;
+    }
+    .game-video img { display: block; width: 100%; height: 100%; object-fit: cover; }
+    .game-video-play { position: absolute; inset: 0; display: grid; place-items: center; }
+    .game-video-play::before {
+      content: ''; width: 58px; height: 58px; border-radius: 50%;
+      background: rgba(0,0,0,0.5); border: 2px solid rgba(255,255,255,0.75);
+    }
+    .game-video-play::after {
+      content: ''; position: absolute; margin-left: 5px;
+      border-style: solid; border-width: 11px 0 11px 18px;
+      border-color: transparent transparent transparent #fff;
+    }
+    .game-video-el { display: block; width: 100%; height: 100%; background: #000; }
   </style>
 </head>
 <body>
@@ -150,7 +182,7 @@
 
     <article class="article-body">
 
-      <p>Fruit Fetish is an active incremental game where you must strive to make as much money as fast as possible by harvesting and selling a range of juicy fruits. Upgrade your skills and shop to become a master of your craft. Maybe if you work hard enough, you may just escape with your life.</p>
+      
 
       <div class="game-stats-grid">
         <div class="game-stat-card">
@@ -166,10 +198,6 @@
           <div class="label">Владельцев (оценка)</div>
           <div class="value">0 – 20,000</div>
         </div>
-        <div class="game-stat-card">
-          <div class="label">Среднее время игры</div>
-          <div class="value">нет данных</div>
-        </div>
       </div>
 
       <h2>Об игре</h2>
@@ -183,7 +211,27 @@
         </a>
       </p>
 
-      <p style="color: var(--text-faint); font-size: 13px; margin-top: 30px;">
+            <h2>Скриншоты</h2>
+      <div class="game-shots">
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4376740/4ae6f573300d32d23a26a54ab41c5a0f4e267fbe/ss_4ae6f573300d32d23a26a54ab41c5a0f4e267fbe.1920x1080.jpg?t=1790748022" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4376740/4ae6f573300d32d23a26a54ab41c5a0f4e267fbe/ss_4ae6f573300d32d23a26a54ab41c5a0f4e267fbe.600x338.jpg?t=1790748022" alt="Fruit Fetish — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4376740/485b86217a858736e745d8b784db8b48ef89376b/ss_485b86217a858736e745d8b784db8b48ef89376b.1920x1080.jpg?t=1790748022" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4376740/485b86217a858736e745d8b784db8b48ef89376b/ss_485b86217a858736e745d8b784db8b48ef89376b.600x338.jpg?t=1790748022" alt="Fruit Fetish — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4376740/225a7d7f4a2244c2fe19afd694eead30b604a031/ss_225a7d7f4a2244c2fe19afd694eead30b604a031.1920x1080.jpg?t=1790748022" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4376740/225a7d7f4a2244c2fe19afd694eead30b604a031/ss_225a7d7f4a2244c2fe19afd694eead30b604a031.600x338.jpg?t=1790748022" alt="Fruit Fetish — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4376740/3ef134333c63859765c612cf961f8dcab021d598/ss_3ef134333c63859765c612cf961f8dcab021d598.1920x1080.jpg?t=1790748022" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4376740/3ef134333c63859765c612cf961f8dcab021d598/ss_3ef134333c63859765c612cf961f8dcab021d598.600x338.jpg?t=1790748022" alt="Fruit Fetish — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4376740/73ed10d5b21253cb2982d0a89316ca21a9a9237e/ss_73ed10d5b21253cb2982d0a89316ca21a9a9237e.1920x1080.jpg?t=1790748022" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4376740/73ed10d5b21253cb2982d0a89316ca21a9a9237e/ss_73ed10d5b21253cb2982d0a89316ca21a9a9237e.600x338.jpg?t=1790748022" alt="Fruit Fetish — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4376740/42699d090e8e31e3bee89258922d55e54891216a/ss_42699d090e8e31e3bee89258922d55e54891216a.1920x1080.jpg?t=1790748022" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4376740/42699d090e8e31e3bee89258922d55e54891216a/ss_42699d090e8e31e3bee89258922d55e54891216a.600x338.jpg?t=1790748022" alt="Fruit Fetish — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4376740/7f077020acd0c9ebbd77ca5788af20b12259e580/ss_7f077020acd0c9ebbd77ca5788af20b12259e580.1920x1080.jpg?t=1790748022" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4376740/7f077020acd0c9ebbd77ca5788af20b12259e580/ss_7f077020acd0c9ebbd77ca5788af20b12259e580.600x338.jpg?t=1790748022" alt="Fruit Fetish — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4376740/b487be541f756c74c29b8f78fa2f5276593b590f/ss_b487be541f756c74c29b8f78fa2f5276593b590f.1920x1080.jpg?t=1790748022" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4376740/b487be541f756c74c29b8f78fa2f5276593b590f/ss_b487be541f756c74c29b8f78fa2f5276593b590f.600x338.jpg?t=1790748022" alt="Fruit Fetish — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4376740/b71a017bd35ca27a92f9d9b1fb1dda555a8c59dc/ss_b71a017bd35ca27a92f9d9b1fb1dda555a8c59dc.1920x1080.jpg?t=1790748022" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4376740/b71a017bd35ca27a92f9d9b1fb1dda555a8c59dc/ss_b71a017bd35ca27a92f9d9b1fb1dda555a8c59dc.600x338.jpg?t=1790748022" alt="Fruit Fetish — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+      </div>
+
+      <h2>Геймплей</h2>
+      <div class="game-movies">
+        <figure class="game-movie"><div class="game-video" data-hls="https://video.akamai.steamstatic.com/store_trailers/4376740/214382535/4fbd6e829a4378221c05e291435cfae897ec1503/1789825377/hls_264_master.m3u8?t=1789826665" data-poster="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257429189/af99d75deb3438f55417daf2df96950bb19d0f85/movie_600x337.jpg?t=1789826665" role="button" tabindex="0" aria-label="Смотреть геймплей: Fruit Fetish Release Trailer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257429189/af99d75deb3438f55417daf2df96950bb19d0f85/movie_600x337.jpg?t=1789826665" alt="" loading="lazy" width="480" height="270" /><span class="game-video-play" aria-hidden="true"></span></div></figure>
+        <figure class="game-movie"><div class="game-video" data-hls="https://video.akamai.steamstatic.com/store_trailers/4376740/2128389440/a076f003c9297c3836e9f31af2258151d67f59c4/1780908927/hls_264_master.m3u8?t=1781086648" data-poster="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257353267/428aaf753fa6d9f8363e97c6c6ac7eaae2aec96b/movie_600x337.jpg?t=1781086648" role="button" tabindex="0" aria-label="Смотреть геймплей: Fruit Fetish Demo Release Trailer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257353267/428aaf753fa6d9f8363e97c6c6ac7eaae2aec96b/movie_600x337.jpg?t=1781086648" alt="" loading="lazy" width="480" height="270" /><span class="game-video-play" aria-hidden="true"></span></div></figure>
+        <figure class="game-movie"><div class="game-video" data-hls="https://video.akamai.steamstatic.com/store_trailers/4376740/213538135/5f17dbea512e47c830ce70e22e774089e94f0c86/1777290712/hls_264_master.m3u8?t=1777291588" data-poster="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257304260/f2506172c443e1da2233a6bf9bb5570029a884a6/movie_600x337.jpg?t=1777291588" role="button" tabindex="0" aria-label="Смотреть геймплей: Fruit Fetish Teaser Gameplay Trailer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257304260/f2506172c443e1da2233a6bf9bb5570029a884a6/movie_600x337.jpg?t=1777291588" alt="" loading="lazy" width="480" height="270" /><span class="game-video-play" aria-hidden="true"></span></div></figure>
+      </div>
+
+<p style="color: var(--text-faint); font-size: 13px; margin-top: 30px;">
         Данные о цене, отзывах и статистике обновляются автоматически на основе
         Steam Store API и SteamSpy.
       </p>
@@ -284,5 +332,6 @@ function declineCookies() {
 })();
 </script>
 <script src="/newsletter.js?v=2" defer></script>
+<script defer src="/game-media.js?v=1"></script>
 </body>
 </html>

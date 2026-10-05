@@ -112,6 +112,38 @@
     }
     .game-stat-card .label { font-size: 12px; color: var(--text-faint); text-transform: uppercase; }
     .game-stat-card .value { font-size: 20px; font-weight: bold; margin-top: 4px; }
+    .game-shots {
+      display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+      gap: 12px; margin: 20px 0;
+    }
+    .game-shot {
+      display: block; border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 8px; overflow: hidden;
+    }
+    .game-shot img { display: block; width: 100%; height: auto; }
+    .game-movies { display: grid; gap: 16px; margin: 20px 0; }
+    .game-movie { margin: 0; }
+    .game-movie video {
+      display: block; width: 100%; height: auto;
+      border-radius: 8px; background: #000;
+    }
+    .game-movie figcaption { margin-top: 6px; font-size: 13px; color: var(--text-faint); }
+    .game-video {
+      position: relative; cursor: pointer; overflow: hidden;
+      border-radius: 8px; background: #000; aspect-ratio: 16 / 9;
+    }
+    .game-video img { display: block; width: 100%; height: 100%; object-fit: cover; }
+    .game-video-play { position: absolute; inset: 0; display: grid; place-items: center; }
+    .game-video-play::before {
+      content: ''; width: 58px; height: 58px; border-radius: 50%;
+      background: rgba(0,0,0,0.5); border: 2px solid rgba(255,255,255,0.75);
+    }
+    .game-video-play::after {
+      content: ''; position: absolute; margin-left: 5px;
+      border-style: solid; border-width: 11px 0 11px 18px;
+      border-color: transparent transparent transparent #fff;
+    }
+    .game-video-el { display: block; width: 100%; height: 100%; background: #000; }
   </style>
 </head>
 <body>
@@ -150,7 +182,7 @@
 
     <article class="article-body">
 
-      <p>From kana to JLPT N1, turn every answer into a strike and every lesson into strength! Lexicon Odyssey blends 9,800+ learning entries and spaced review with RPG auto-battles. Study vocabulary and grammar, correct mistakes, collect 290+ items and 140+ spells, and travel with your camp companions.</p>
+      
 
       <div class="game-stats-grid">
         <div class="game-stat-card">
@@ -166,10 +198,6 @@
           <div class="label">Владельцев (оценка)</div>
           <div class="value">0 – 20,000</div>
         </div>
-        <div class="game-stat-card">
-          <div class="label">Среднее время игры</div>
-          <div class="value">нет данных</div>
-        </div>
       </div>
 
       <h2>Об игре</h2>
@@ -183,7 +211,27 @@
         </a>
       </p>
 
-      <p style="color: var(--text-faint); font-size: 13px; margin-top: 30px;">
+            <h2>Скриншоты</h2>
+      <div class="game-shots">
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5230220/f899712cf5720605dcf59707a904795d6710248b/ss_f899712cf5720605dcf59707a904795d6710248b.1920x1080.jpg?t=1791123133" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5230220/f899712cf5720605dcf59707a904795d6710248b/ss_f899712cf5720605dcf59707a904795d6710248b.600x338.jpg?t=1791123133" alt="Lexicon Odyssey ~~A Japanese-Learning RPG~~ — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5230220/5b36bdc7502d8e08dce5fd0586a4b46906d023ac/ss_5b36bdc7502d8e08dce5fd0586a4b46906d023ac.1920x1080.jpg?t=1791123133" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5230220/5b36bdc7502d8e08dce5fd0586a4b46906d023ac/ss_5b36bdc7502d8e08dce5fd0586a4b46906d023ac.600x338.jpg?t=1791123133" alt="Lexicon Odyssey ~~A Japanese-Learning RPG~~ — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5230220/ece334b88be946ad00122bcbac4aafa1155bd17d/ss_ece334b88be946ad00122bcbac4aafa1155bd17d.1920x1080.jpg?t=1791123133" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5230220/ece334b88be946ad00122bcbac4aafa1155bd17d/ss_ece334b88be946ad00122bcbac4aafa1155bd17d.600x338.jpg?t=1791123133" alt="Lexicon Odyssey ~~A Japanese-Learning RPG~~ — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5230220/206ffc63c5c55eb712560f8767679abe67dfcbc4/ss_206ffc63c5c55eb712560f8767679abe67dfcbc4.1920x1080.jpg?t=1791123133" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5230220/206ffc63c5c55eb712560f8767679abe67dfcbc4/ss_206ffc63c5c55eb712560f8767679abe67dfcbc4.600x338.jpg?t=1791123133" alt="Lexicon Odyssey ~~A Japanese-Learning RPG~~ — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5230220/52d140fedf46bf52793e3960cadd4d5897efbb25/ss_52d140fedf46bf52793e3960cadd4d5897efbb25.1920x1080.jpg?t=1791123133" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5230220/52d140fedf46bf52793e3960cadd4d5897efbb25/ss_52d140fedf46bf52793e3960cadd4d5897efbb25.600x338.jpg?t=1791123133" alt="Lexicon Odyssey ~~A Japanese-Learning RPG~~ — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5230220/2f6dd0ac7ab12c0a30bc2f55febabcdb6a1d5517/ss_2f6dd0ac7ab12c0a30bc2f55febabcdb6a1d5517.1920x1080.jpg?t=1791123133" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5230220/2f6dd0ac7ab12c0a30bc2f55febabcdb6a1d5517/ss_2f6dd0ac7ab12c0a30bc2f55febabcdb6a1d5517.600x338.jpg?t=1791123133" alt="Lexicon Odyssey ~~A Japanese-Learning RPG~~ — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5230220/f22da0d846c685c3c559249d68ee3808fcadeaf3/ss_f22da0d846c685c3c559249d68ee3808fcadeaf3.1920x1080.jpg?t=1791123133" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5230220/f22da0d846c685c3c559249d68ee3808fcadeaf3/ss_f22da0d846c685c3c559249d68ee3808fcadeaf3.600x338.jpg?t=1791123133" alt="Lexicon Odyssey ~~A Japanese-Learning RPG~~ — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5230220/e49320db2c1692a3b5cc943fa737bebac22292d8/ss_e49320db2c1692a3b5cc943fa737bebac22292d8.1920x1080.jpg?t=1791123133" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5230220/e49320db2c1692a3b5cc943fa737bebac22292d8/ss_e49320db2c1692a3b5cc943fa737bebac22292d8.600x338.jpg?t=1791123133" alt="Lexicon Odyssey ~~A Japanese-Learning RPG~~ — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5230220/f3b37c40a3545995ec2e9a28a46573fa97abaf40/ss_f3b37c40a3545995ec2e9a28a46573fa97abaf40.1920x1080.jpg?t=1791123133" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5230220/f3b37c40a3545995ec2e9a28a46573fa97abaf40/ss_f3b37c40a3545995ec2e9a28a46573fa97abaf40.600x338.jpg?t=1791123133" alt="Lexicon Odyssey ~~A Japanese-Learning RPG~~ — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+      </div>
+
+      <h2>Геймплей</h2>
+      <div class="game-movies">
+        <figure class="game-movie"><div class="game-video" data-hls="https://video.akamai.steamstatic.com/store_trailers/5230220/955603707/8d73563eab1053ef4280670a688abeabbe0b59a0/1790781590/hls_264_master.m3u8?t=1790859163" data-poster="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257441162/e58565e6aa90b8fd0ae03dab4469b621d959b233/movie_600x337.jpg?t=1790859163" role="button" tabindex="0" aria-label="Смотреть геймплей: 1.8tn"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257441162/e58565e6aa90b8fd0ae03dab4469b621d959b233/movie_600x337.jpg?t=1790859163" alt="" loading="lazy" width="480" height="270" /><span class="game-video-play" aria-hidden="true"></span></div></figure>
+        <figure class="game-movie"><div class="game-video" data-hls="https://video.akamai.steamstatic.com/store_trailers/5230220/2141300491/985b0b5d195b1bad84af3d3e0830f9a1f0555bc6/1790793290/hls_264_master.m3u8?t=1790859169" data-poster="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257441363/8ab4679abaa9f96b8f692f44bfd8f358088e3ee1/movie_600x337.jpg?t=1790859169" role="button" tabindex="0" aria-label="Смотреть геймплей: cn"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257441363/8ab4679abaa9f96b8f692f44bfd8f358088e3ee1/movie_600x337.jpg?t=1790859169" alt="" loading="lazy" width="480" height="270" /><span class="game-video-play" aria-hidden="true"></span></div></figure>
+        <figure class="game-movie"><div class="game-video" data-hls="https://video.akamai.steamstatic.com/store_trailers/5230220/787620768/a10b5081bd94c04c3ae3f0415d616205f35fc919/1790781590/hls_264_master.m3u8?t=1790859164" data-poster="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257441161/e529121a98e9df059efaadbc45a6a96cc2c77c6a/movie_600x337.jpg?t=1790859164" role="button" tabindex="0" aria-label="Смотреть геймплей: 1.8en"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257441161/e529121a98e9df059efaadbc45a6a96cc2c77c6a/movie_600x337.jpg?t=1790859164" alt="" loading="lazy" width="480" height="270" /><span class="game-video-play" aria-hidden="true"></span></div></figure>
+      </div>
+
+<p style="color: var(--text-faint); font-size: 13px; margin-top: 30px;">
         Данные о цене, отзывах и статистике обновляются автоматически на основе
         Steam Store API и SteamSpy.
       </p>
@@ -284,5 +332,6 @@ function declineCookies() {
 })();
 </script>
 <script src="/newsletter.js?v=2" defer></script>
+<script defer src="/game-media.js?v=1"></script>
 </body>
 </html>

@@ -112,6 +112,38 @@
     }
     .game-stat-card .label { font-size: 12px; color: var(--text-faint); text-transform: uppercase; }
     .game-stat-card .value { font-size: 20px; font-weight: bold; margin-top: 4px; }
+    .game-shots {
+      display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+      gap: 12px; margin: 20px 0;
+    }
+    .game-shot {
+      display: block; border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 8px; overflow: hidden;
+    }
+    .game-shot img { display: block; width: 100%; height: auto; }
+    .game-movies { display: grid; gap: 16px; margin: 20px 0; }
+    .game-movie { margin: 0; }
+    .game-movie video {
+      display: block; width: 100%; height: auto;
+      border-radius: 8px; background: #000;
+    }
+    .game-movie figcaption { margin-top: 6px; font-size: 13px; color: var(--text-faint); }
+    .game-video {
+      position: relative; cursor: pointer; overflow: hidden;
+      border-radius: 8px; background: #000; aspect-ratio: 16 / 9;
+    }
+    .game-video img { display: block; width: 100%; height: 100%; object-fit: cover; }
+    .game-video-play { position: absolute; inset: 0; display: grid; place-items: center; }
+    .game-video-play::before {
+      content: ''; width: 58px; height: 58px; border-radius: 50%;
+      background: rgba(0,0,0,0.5); border: 2px solid rgba(255,255,255,0.75);
+    }
+    .game-video-play::after {
+      content: ''; position: absolute; margin-left: 5px;
+      border-style: solid; border-width: 11px 0 11px 18px;
+      border-color: transparent transparent transparent #fff;
+    }
+    .game-video-el { display: block; width: 100%; height: 100%; background: #000; }
   </style>
 </head>
 <body>
@@ -150,7 +182,7 @@
 
     <article class="article-body">
 
-      <p>Unwind with a cozy art jigsaw. Piece together paintings, choose your difficulty, or turn your own images into puzzles. Save your progress, hide the timer, and unlock illustrated notebook pages as you complete artworks.</p>
+      
 
       <div class="game-stats-grid">
         <div class="game-stat-card">
@@ -166,10 +198,6 @@
           <div class="label">Владельцев (оценка)</div>
           <div class="value">0 – 20,000</div>
         </div>
-        <div class="game-stat-card">
-          <div class="label">Среднее время игры</div>
-          <div class="value">нет данных</div>
-        </div>
       </div>
 
       <h2>Об игре</h2>
@@ -183,7 +211,28 @@
         </a>
       </p>
 
-      <p style="color: var(--text-faint); font-size: 13px; margin-top: 30px;">
+            <h2>Скриншоты</h2>
+      <div class="game-shots">
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5227040/8c4495828317c2ed62be9327073c2b0f8b639ae0/ss_8c4495828317c2ed62be9327073c2b0f8b639ae0.1920x1080.jpg?t=1790828556" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5227040/8c4495828317c2ed62be9327073c2b0f8b639ae0/ss_8c4495828317c2ed62be9327073c2b0f8b639ae0.600x338.jpg?t=1790828556" alt="Cozy Jigsaw — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5227040/acf52ee1bb0906c33f31711d0674877f483251b5/ss_acf52ee1bb0906c33f31711d0674877f483251b5.1920x1080.jpg?t=1790828556" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5227040/acf52ee1bb0906c33f31711d0674877f483251b5/ss_acf52ee1bb0906c33f31711d0674877f483251b5.600x338.jpg?t=1790828556" alt="Cozy Jigsaw — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5227040/4dfff3abffb5ee64d7c90adb936a8263aefa70f6/ss_4dfff3abffb5ee64d7c90adb936a8263aefa70f6.1920x1080.jpg?t=1790828556" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5227040/4dfff3abffb5ee64d7c90adb936a8263aefa70f6/ss_4dfff3abffb5ee64d7c90adb936a8263aefa70f6.600x338.jpg?t=1790828556" alt="Cozy Jigsaw — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5227040/89cd1b8e2d67bbfdff80e60f7070a8a3b76cd134/ss_89cd1b8e2d67bbfdff80e60f7070a8a3b76cd134.1920x1080.jpg?t=1790828556" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5227040/89cd1b8e2d67bbfdff80e60f7070a8a3b76cd134/ss_89cd1b8e2d67bbfdff80e60f7070a8a3b76cd134.600x338.jpg?t=1790828556" alt="Cozy Jigsaw — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5227040/eb1c8d96894ce1777c71f0ac49f8488cea241e63/ss_eb1c8d96894ce1777c71f0ac49f8488cea241e63.1920x1080.jpg?t=1790828556" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5227040/eb1c8d96894ce1777c71f0ac49f8488cea241e63/ss_eb1c8d96894ce1777c71f0ac49f8488cea241e63.600x338.jpg?t=1790828556" alt="Cozy Jigsaw — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5227040/86a97d4b14d06094dbe8dfa99145a7caf1925ba5/ss_86a97d4b14d06094dbe8dfa99145a7caf1925ba5.1920x1080.jpg?t=1790828556" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5227040/86a97d4b14d06094dbe8dfa99145a7caf1925ba5/ss_86a97d4b14d06094dbe8dfa99145a7caf1925ba5.600x338.jpg?t=1790828556" alt="Cozy Jigsaw — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5227040/ef63ee8281cb08d9638ac5d6cb871581c4449d7e/ss_ef63ee8281cb08d9638ac5d6cb871581c4449d7e.1920x1080.jpg?t=1790828556" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5227040/ef63ee8281cb08d9638ac5d6cb871581c4449d7e/ss_ef63ee8281cb08d9638ac5d6cb871581c4449d7e.600x338.jpg?t=1790828556" alt="Cozy Jigsaw — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5227040/a68ed1e459a9ceddd01d9f7d9f5f7d7c9ed506a4/ss_a68ed1e459a9ceddd01d9f7d9f5f7d7c9ed506a4.1920x1080.jpg?t=1790828556" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5227040/a68ed1e459a9ceddd01d9f7d9f5f7d7c9ed506a4/ss_a68ed1e459a9ceddd01d9f7d9f5f7d7c9ed506a4.600x338.jpg?t=1790828556" alt="Cozy Jigsaw — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5227040/0249ca9d2db83dcb577d3d02306bfb1010edcdd2/ss_0249ca9d2db83dcb577d3d02306bfb1010edcdd2.1920x1080.jpg?t=1790828556" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5227040/0249ca9d2db83dcb577d3d02306bfb1010edcdd2/ss_0249ca9d2db83dcb577d3d02306bfb1010edcdd2.600x338.jpg?t=1790828556" alt="Cozy Jigsaw — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5227040/57aa642428ed90cc41280a36d643f5760bc280b9/ss_57aa642428ed90cc41280a36d643f5760bc280b9.1920x1080.jpg?t=1790828556" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5227040/57aa642428ed90cc41280a36d643f5760bc280b9/ss_57aa642428ed90cc41280a36d643f5760bc280b9.600x338.jpg?t=1790828556" alt="Cozy Jigsaw — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5227040/2d80072b95bf252c819ac972e037ec30d3f67387/ss_2d80072b95bf252c819ac972e037ec30d3f67387.1920x1080.jpg?t=1790828556" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5227040/2d80072b95bf252c819ac972e037ec30d3f67387/ss_2d80072b95bf252c819ac972e037ec30d3f67387.600x338.jpg?t=1790828556" alt="Cozy Jigsaw — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5227040/77475e04fd22075718b4f590e77ba70d4c12202c/ss_77475e04fd22075718b4f590e77ba70d4c12202c.1920x1080.jpg?t=1790828556" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5227040/77475e04fd22075718b4f590e77ba70d4c12202c/ss_77475e04fd22075718b4f590e77ba70d4c12202c.600x338.jpg?t=1790828556" alt="Cozy Jigsaw — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+      </div>
+
+      <h2>Геймплей</h2>
+      <div class="game-movies">
+        <figure class="game-movie"><div class="game-video" data-hls="https://video.akamai.steamstatic.com/store_trailers/5227040/1911671231/1d276d21fbeaf70a9317490578346111b9775b2e/1788768491/hls_264_master.m3u8?t=1789283000" data-poster="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257418884/35541695e605c851e520a3475e140519aabbf256/movie_600x337.jpg?t=1789283000" role="button" tabindex="0" aria-label="Смотреть геймплей: Cozy Jigsaw — Gameplay Trailer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257418884/35541695e605c851e520a3475e140519aabbf256/movie_600x337.jpg?t=1789283000" alt="" loading="lazy" width="480" height="270" /><span class="game-video-play" aria-hidden="true"></span></div></figure>
+      </div>
+
+<p style="color: var(--text-faint); font-size: 13px; margin-top: 30px;">
         Данные о цене, отзывах и статистике обновляются автоматически на основе
         Steam Store API и SteamSpy.
       </p>
@@ -284,5 +333,6 @@ function declineCookies() {
 })();
 </script>
 <script src="/newsletter.js?v=2" defer></script>
+<script defer src="/game-media.js?v=1"></script>
 </body>
 </html>

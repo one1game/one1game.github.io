@@ -112,6 +112,38 @@
     }
     .game-stat-card .label { font-size: 12px; color: var(--text-faint); text-transform: uppercase; }
     .game-stat-card .value { font-size: 20px; font-weight: bold; margin-top: 4px; }
+    .game-shots {
+      display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+      gap: 12px; margin: 20px 0;
+    }
+    .game-shot {
+      display: block; border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 8px; overflow: hidden;
+    }
+    .game-shot img { display: block; width: 100%; height: auto; }
+    .game-movies { display: grid; gap: 16px; margin: 20px 0; }
+    .game-movie { margin: 0; }
+    .game-movie video {
+      display: block; width: 100%; height: auto;
+      border-radius: 8px; background: #000;
+    }
+    .game-movie figcaption { margin-top: 6px; font-size: 13px; color: var(--text-faint); }
+    .game-video {
+      position: relative; cursor: pointer; overflow: hidden;
+      border-radius: 8px; background: #000; aspect-ratio: 16 / 9;
+    }
+    .game-video img { display: block; width: 100%; height: 100%; object-fit: cover; }
+    .game-video-play { position: absolute; inset: 0; display: grid; place-items: center; }
+    .game-video-play::before {
+      content: ''; width: 58px; height: 58px; border-radius: 50%;
+      background: rgba(0,0,0,0.5); border: 2px solid rgba(255,255,255,0.75);
+    }
+    .game-video-play::after {
+      content: ''; position: absolute; margin-left: 5px;
+      border-style: solid; border-width: 11px 0 11px 18px;
+      border-color: transparent transparent transparent #fff;
+    }
+    .game-video-el { display: block; width: 100%; height: 100%; background: #000; }
   </style>
 </head>
 <body>
@@ -150,7 +182,7 @@
 
     <article class="article-body">
 
-      <p>Magic Realm is a narrative-driven breakout roguelike game. Play as mage Sistaya with friend Yinghuo to explore a magical world, enter the Misty Forest, and uncover ancient castle secrets. Fight monsters, use potions, make tough choices.Your wisdom and courage shape the story.Ready for the adventure?</p>
+      
 
       <div class="game-stats-grid">
         <div class="game-stat-card">
@@ -166,10 +198,6 @@
           <div class="label">Владельцев (оценка)</div>
           <div class="value">0 – 20,000</div>
         </div>
-        <div class="game-stat-card">
-          <div class="label">Среднее время игры</div>
-          <div class="value">нет данных</div>
-        </div>
       </div>
 
       <h2>Об игре</h2>
@@ -183,7 +211,26 @@
         </a>
       </p>
 
-      <p style="color: var(--text-faint); font-size: 13px; margin-top: 30px;">
+            <h2>Скриншоты</h2>
+      <div class="game-shots">
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3183450/89874be8f397802e09a9319e0143033ed6ced775/ss_89874be8f397802e09a9319e0143033ed6ced775.1920x1080.jpg?t=1790909549" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3183450/89874be8f397802e09a9319e0143033ed6ced775/ss_89874be8f397802e09a9319e0143033ed6ced775.600x338.jpg?t=1790909549" alt="魔法之境 Magic Realm — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3183450/48b7635551ca77d76ff45ead2f22bf7d8dee727a/ss_48b7635551ca77d76ff45ead2f22bf7d8dee727a.1920x1080.jpg?t=1790909549" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3183450/48b7635551ca77d76ff45ead2f22bf7d8dee727a/ss_48b7635551ca77d76ff45ead2f22bf7d8dee727a.600x338.jpg?t=1790909549" alt="魔法之境 Magic Realm — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3183450/2c8628e71e467fe5f18b541e82dcaa0efb600fac/ss_2c8628e71e467fe5f18b541e82dcaa0efb600fac.1920x1080.jpg?t=1790909549" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3183450/2c8628e71e467fe5f18b541e82dcaa0efb600fac/ss_2c8628e71e467fe5f18b541e82dcaa0efb600fac.600x338.jpg?t=1790909549" alt="魔法之境 Magic Realm — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3183450/0372a0404457914a143c75ec86cb9e514491cdb1/ss_0372a0404457914a143c75ec86cb9e514491cdb1.1920x1080.jpg?t=1790909549" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3183450/0372a0404457914a143c75ec86cb9e514491cdb1/ss_0372a0404457914a143c75ec86cb9e514491cdb1.600x338.jpg?t=1790909549" alt="魔法之境 Magic Realm — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3183450/ef2473cd9fabfe2629307edf4fde120891ccc62e/ss_ef2473cd9fabfe2629307edf4fde120891ccc62e.1920x1080.jpg?t=1790909549" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3183450/ef2473cd9fabfe2629307edf4fde120891ccc62e/ss_ef2473cd9fabfe2629307edf4fde120891ccc62e.600x338.jpg?t=1790909549" alt="魔法之境 Magic Realm — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3183450/b84f3a6549b024466221ba73029faef8143086a6/ss_b84f3a6549b024466221ba73029faef8143086a6.1920x1080.jpg?t=1790909549" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3183450/b84f3a6549b024466221ba73029faef8143086a6/ss_b84f3a6549b024466221ba73029faef8143086a6.600x338.jpg?t=1790909549" alt="魔法之境 Magic Realm — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3183450/ec081b01d45b7fe9b0fd0cef30eb07135ea94140/ss_ec081b01d45b7fe9b0fd0cef30eb07135ea94140.1920x1080.jpg?t=1790909549" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3183450/ec081b01d45b7fe9b0fd0cef30eb07135ea94140/ss_ec081b01d45b7fe9b0fd0cef30eb07135ea94140.600x338.jpg?t=1790909549" alt="魔法之境 Magic Realm — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3183450/712ea8f794258d58dcdb44e50b1fb09d26ccb713/ss_712ea8f794258d58dcdb44e50b1fb09d26ccb713.1920x1080.jpg?t=1790909549" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3183450/712ea8f794258d58dcdb44e50b1fb09d26ccb713/ss_712ea8f794258d58dcdb44e50b1fb09d26ccb713.600x338.jpg?t=1790909549" alt="魔法之境 Magic Realm — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3183450/93cf272cf1ec970ca1549793e788aa5ff27ff95c/ss_93cf272cf1ec970ca1549793e788aa5ff27ff95c.1920x1080.jpg?t=1790909549" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3183450/93cf272cf1ec970ca1549793e788aa5ff27ff95c/ss_93cf272cf1ec970ca1549793e788aa5ff27ff95c.600x338.jpg?t=1790909549" alt="魔法之境 Magic Realm — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3183450/1cf421699c55916c72081a7031d57c2cc22dbaca/ss_1cf421699c55916c72081a7031d57c2cc22dbaca.1920x1080.jpg?t=1790909549" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3183450/1cf421699c55916c72081a7031d57c2cc22dbaca/ss_1cf421699c55916c72081a7031d57c2cc22dbaca.600x338.jpg?t=1790909549" alt="魔法之境 Magic Realm — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+      </div>
+
+      <h2>Геймплей</h2>
+      <div class="game-movies">
+        <figure class="game-movie"><div class="game-video" data-hls="https://video.akamai.steamstatic.com/store_trailers/3183450/1107463495/e6b4f9fc05f93ab2293562d32a38b8c55d8c6e7a/1788607538/hls_264_master.m3u8?t=1788622291" data-poster="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257417763/06978ded5893cf4163eb7d0bbec4ead5baa805ab/movie_600x337.jpg?t=1788622291" role="button" tabindex="0" aria-label="Смотреть геймплей: Gameplay"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257417763/06978ded5893cf4163eb7d0bbec4ead5baa805ab/movie_600x337.jpg?t=1788622291" alt="" loading="lazy" width="480" height="270" /><span class="game-video-play" aria-hidden="true"></span></div></figure>
+      </div>
+
+<p style="color: var(--text-faint); font-size: 13px; margin-top: 30px;">
         Данные о цене, отзывах и статистике обновляются автоматически на основе
         Steam Store API и SteamSpy.
       </p>
@@ -284,5 +331,6 @@ function declineCookies() {
 })();
 </script>
 <script src="/newsletter.js?v=2" defer></script>
+<script defer src="/game-media.js?v=1"></script>
 </body>
 </html>

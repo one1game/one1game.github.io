@@ -112,6 +112,38 @@
     }
     .game-stat-card .label { font-size: 12px; color: var(--text-faint); text-transform: uppercase; }
     .game-stat-card .value { font-size: 20px; font-weight: bold; margin-top: 4px; }
+    .game-shots {
+      display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+      gap: 12px; margin: 20px 0;
+    }
+    .game-shot {
+      display: block; border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 8px; overflow: hidden;
+    }
+    .game-shot img { display: block; width: 100%; height: auto; }
+    .game-movies { display: grid; gap: 16px; margin: 20px 0; }
+    .game-movie { margin: 0; }
+    .game-movie video {
+      display: block; width: 100%; height: auto;
+      border-radius: 8px; background: #000;
+    }
+    .game-movie figcaption { margin-top: 6px; font-size: 13px; color: var(--text-faint); }
+    .game-video {
+      position: relative; cursor: pointer; overflow: hidden;
+      border-radius: 8px; background: #000; aspect-ratio: 16 / 9;
+    }
+    .game-video img { display: block; width: 100%; height: 100%; object-fit: cover; }
+    .game-video-play { position: absolute; inset: 0; display: grid; place-items: center; }
+    .game-video-play::before {
+      content: ''; width: 58px; height: 58px; border-radius: 50%;
+      background: rgba(0,0,0,0.5); border: 2px solid rgba(255,255,255,0.75);
+    }
+    .game-video-play::after {
+      content: ''; position: absolute; margin-left: 5px;
+      border-style: solid; border-width: 11px 0 11px 18px;
+      border-color: transparent transparent transparent #fff;
+    }
+    .game-video-el { display: block; width: 100%; height: 100%; background: #000; }
   </style>
 </head>
 <body>
@@ -166,10 +198,6 @@
           <div class="label">Владельцев (оценка)</div>
           <div class="value">0 – 20,000</div>
         </div>
-        <div class="game-stat-card">
-          <div class="label">Среднее время игры</div>
-          <div class="value">нет данных</div>
-        </div>
       </div>
 
       <h2>Об игре</h2>
@@ -183,7 +211,28 @@
         </a>
       </p>
 
-      <p style="color: var(--text-faint); font-size: 13px; margin-top: 30px;">
+            <h2>Скриншоты</h2>
+      <div class="game-shots">
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3702140/378e0f534b2c6a3c6b5e98861d2eb971b2efa4b8/ss_378e0f534b2c6a3c6b5e98861d2eb971b2efa4b8.1920x1080.jpg?t=1791132649" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3702140/378e0f534b2c6a3c6b5e98861d2eb971b2efa4b8/ss_378e0f534b2c6a3c6b5e98861d2eb971b2efa4b8.600x338.jpg?t=1791132649" alt="Gunblade Ranger — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3702140/4595f5b49926dfa1dd671d4d746b74d3604f1fb9/ss_4595f5b49926dfa1dd671d4d746b74d3604f1fb9.1920x1080.jpg?t=1791132649" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3702140/4595f5b49926dfa1dd671d4d746b74d3604f1fb9/ss_4595f5b49926dfa1dd671d4d746b74d3604f1fb9.600x338.jpg?t=1791132649" alt="Gunblade Ranger — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3702140/6469b4cb9d98a1c0b9804a377178bee7c38d3f43/ss_6469b4cb9d98a1c0b9804a377178bee7c38d3f43.1920x1080.jpg?t=1791132649" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3702140/6469b4cb9d98a1c0b9804a377178bee7c38d3f43/ss_6469b4cb9d98a1c0b9804a377178bee7c38d3f43.600x338.jpg?t=1791132649" alt="Gunblade Ranger — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3702140/a67aa6a89b81107d6c4732156aadfaea7c6e6ad7/ss_a67aa6a89b81107d6c4732156aadfaea7c6e6ad7.1920x1080.jpg?t=1791132649" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3702140/a67aa6a89b81107d6c4732156aadfaea7c6e6ad7/ss_a67aa6a89b81107d6c4732156aadfaea7c6e6ad7.600x338.jpg?t=1791132649" alt="Gunblade Ranger — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3702140/5c097a14e11b9a549abe2d8c24773f1ed47ee8ce/ss_5c097a14e11b9a549abe2d8c24773f1ed47ee8ce.1920x1080.jpg?t=1791132649" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3702140/5c097a14e11b9a549abe2d8c24773f1ed47ee8ce/ss_5c097a14e11b9a549abe2d8c24773f1ed47ee8ce.600x338.jpg?t=1791132649" alt="Gunblade Ranger — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3702140/9f6e7531a3a37902f67428ac23a38ada78b21c5c/ss_9f6e7531a3a37902f67428ac23a38ada78b21c5c.1920x1080.jpg?t=1791132649" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3702140/9f6e7531a3a37902f67428ac23a38ada78b21c5c/ss_9f6e7531a3a37902f67428ac23a38ada78b21c5c.600x338.jpg?t=1791132649" alt="Gunblade Ranger — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3702140/b4cdd11ee0196c1c34eea9849136a988a035c37f/ss_b4cdd11ee0196c1c34eea9849136a988a035c37f.1920x1080.jpg?t=1791132649" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3702140/b4cdd11ee0196c1c34eea9849136a988a035c37f/ss_b4cdd11ee0196c1c34eea9849136a988a035c37f.600x338.jpg?t=1791132649" alt="Gunblade Ranger — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3702140/02184808d3e2364d0108a5eddabe8f8173bf1231/ss_02184808d3e2364d0108a5eddabe8f8173bf1231.1920x1080.jpg?t=1791132649" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3702140/02184808d3e2364d0108a5eddabe8f8173bf1231/ss_02184808d3e2364d0108a5eddabe8f8173bf1231.600x338.jpg?t=1791132649" alt="Gunblade Ranger — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3702140/6e32cb978052749652684ea66009a5e144ace6a0/ss_6e32cb978052749652684ea66009a5e144ace6a0.1920x1080.jpg?t=1791132649" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3702140/6e32cb978052749652684ea66009a5e144ace6a0/ss_6e32cb978052749652684ea66009a5e144ace6a0.600x338.jpg?t=1791132649" alt="Gunblade Ranger — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3702140/4b62a34ecc1c99284b359e58c9ed3916708ecc43/ss_4b62a34ecc1c99284b359e58c9ed3916708ecc43.1920x1080.jpg?t=1791132649" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3702140/4b62a34ecc1c99284b359e58c9ed3916708ecc43/ss_4b62a34ecc1c99284b359e58c9ed3916708ecc43.600x338.jpg?t=1791132649" alt="Gunblade Ranger — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3702140/787a2b9cbd09d8575d421c43141332aba54cdce6/ss_787a2b9cbd09d8575d421c43141332aba54cdce6.1920x1080.jpg?t=1791132649" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3702140/787a2b9cbd09d8575d421c43141332aba54cdce6/ss_787a2b9cbd09d8575d421c43141332aba54cdce6.600x338.jpg?t=1791132649" alt="Gunblade Ranger — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3702140/febc457e9f81c2e34c8bba0cb248d939bb32ed4f/ss_febc457e9f81c2e34c8bba0cb248d939bb32ed4f.1920x1080.jpg?t=1791132649" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3702140/febc457e9f81c2e34c8bba0cb248d939bb32ed4f/ss_febc457e9f81c2e34c8bba0cb248d939bb32ed4f.600x338.jpg?t=1791132649" alt="Gunblade Ranger — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+      </div>
+
+      <h2>Геймплей</h2>
+      <div class="game-movies">
+        <figure class="game-movie"><div class="game-video" data-hls="https://video.akamai.steamstatic.com/store_trailers/3702140/52495286/494458bd831fd3caeaac1a4c67cd35f4d7dd06fc/1790248415/hls_264_master.m3u8?t=1790250511" data-poster="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257426696/5124e34969193b6e0ea4005bf2174294336f47fa/movie_600x337.jpg?t=1790250511" role="button" tabindex="0" aria-label="Смотреть геймплей: PV_EN"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257426696/5124e34969193b6e0ea4005bf2174294336f47fa/movie_600x337.jpg?t=1790250511" alt="" loading="lazy" width="480" height="270" /><span class="game-video-play" aria-hidden="true"></span></div></figure>
+      </div>
+
+<p style="color: var(--text-faint); font-size: 13px; margin-top: 30px;">
         Данные о цене, отзывах и статистике обновляются автоматически на основе
         Steam Store API и SteamSpy.
       </p>
@@ -284,5 +333,6 @@ function declineCookies() {
 })();
 </script>
 <script src="/newsletter.js?v=2" defer></script>
+<script defer src="/game-media.js?v=1"></script>
 </body>
 </html>

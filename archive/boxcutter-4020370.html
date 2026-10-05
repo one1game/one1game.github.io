@@ -112,6 +112,38 @@
     }
     .game-stat-card .label { font-size: 12px; color: var(--text-faint); text-transform: uppercase; }
     .game-stat-card .value { font-size: 20px; font-weight: bold; margin-top: 4px; }
+    .game-shots {
+      display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+      gap: 12px; margin: 20px 0;
+    }
+    .game-shot {
+      display: block; border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 8px; overflow: hidden;
+    }
+    .game-shot img { display: block; width: 100%; height: auto; }
+    .game-movies { display: grid; gap: 16px; margin: 20px 0; }
+    .game-movie { margin: 0; }
+    .game-movie video {
+      display: block; width: 100%; height: auto;
+      border-radius: 8px; background: #000;
+    }
+    .game-movie figcaption { margin-top: 6px; font-size: 13px; color: var(--text-faint); }
+    .game-video {
+      position: relative; cursor: pointer; overflow: hidden;
+      border-radius: 8px; background: #000; aspect-ratio: 16 / 9;
+    }
+    .game-video img { display: block; width: 100%; height: 100%; object-fit: cover; }
+    .game-video-play { position: absolute; inset: 0; display: grid; place-items: center; }
+    .game-video-play::before {
+      content: ''; width: 58px; height: 58px; border-radius: 50%;
+      background: rgba(0,0,0,0.5); border: 2px solid rgba(255,255,255,0.75);
+    }
+    .game-video-play::after {
+      content: ''; position: absolute; margin-left: 5px;
+      border-style: solid; border-width: 11px 0 11px 18px;
+      border-color: transparent transparent transparent #fff;
+    }
+    .game-video-el { display: block; width: 100%; height: 100%; background: #000; }
   </style>
 </head>
 <body>
@@ -166,10 +198,6 @@
           <div class="label">Владельцев (оценка)</div>
           <div class="value">0 – 20,000</div>
         </div>
-        <div class="game-stat-card">
-          <div class="label">Среднее время игры</div>
-          <div class="value">нет данных</div>
-        </div>
       </div>
 
       <h2>Об игре</h2>
@@ -183,7 +211,26 @@
         </a>
       </p>
 
-      <p style="color: var(--text-faint); font-size: 13px; margin-top: 30px;">
+            <h2>Скриншоты</h2>
+      <div class="game-shots">
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4020370/f30c44cb3357cb81724dfd992c5c72e0d185d161/ss_f30c44cb3357cb81724dfd992c5c72e0d185d161.1920x1080.jpg?t=1790767299" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4020370/f30c44cb3357cb81724dfd992c5c72e0d185d161/ss_f30c44cb3357cb81724dfd992c5c72e0d185d161.600x338.jpg?t=1790767299" alt="Boxcutter — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4020370/0f6db091523d442c8743189fa6a3ea89c062bda8/ss_0f6db091523d442c8743189fa6a3ea89c062bda8.1920x1080.jpg?t=1790767299" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4020370/0f6db091523d442c8743189fa6a3ea89c062bda8/ss_0f6db091523d442c8743189fa6a3ea89c062bda8.600x338.jpg?t=1790767299" alt="Boxcutter — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4020370/68471141b2beebf2bb57665c6457701cadbd8eb9/ss_68471141b2beebf2bb57665c6457701cadbd8eb9.1920x1080.jpg?t=1790767299" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4020370/68471141b2beebf2bb57665c6457701cadbd8eb9/ss_68471141b2beebf2bb57665c6457701cadbd8eb9.600x338.jpg?t=1790767299" alt="Boxcutter — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4020370/14503b5779c760002b46736d54c064525390b3a8/ss_14503b5779c760002b46736d54c064525390b3a8.1920x1080.jpg?t=1790767299" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4020370/14503b5779c760002b46736d54c064525390b3a8/ss_14503b5779c760002b46736d54c064525390b3a8.600x338.jpg?t=1790767299" alt="Boxcutter — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4020370/e453921421220edb04ba82e0fdb4b20bc83a2d37/ss_e453921421220edb04ba82e0fdb4b20bc83a2d37.1920x1080.jpg?t=1790767299" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4020370/e453921421220edb04ba82e0fdb4b20bc83a2d37/ss_e453921421220edb04ba82e0fdb4b20bc83a2d37.600x338.jpg?t=1790767299" alt="Boxcutter — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4020370/c20ce9f5c75adcf523f733ed08c6af9d6b172940/ss_c20ce9f5c75adcf523f733ed08c6af9d6b172940.1920x1080.jpg?t=1790767299" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4020370/c20ce9f5c75adcf523f733ed08c6af9d6b172940/ss_c20ce9f5c75adcf523f733ed08c6af9d6b172940.600x338.jpg?t=1790767299" alt="Boxcutter — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4020370/76d38d6828efdaed000b301ee58f1b3884435165/ss_76d38d6828efdaed000b301ee58f1b3884435165.1920x1080.jpg?t=1790767299" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4020370/76d38d6828efdaed000b301ee58f1b3884435165/ss_76d38d6828efdaed000b301ee58f1b3884435165.600x338.jpg?t=1790767299" alt="Boxcutter — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4020370/99f50f8c0bd4ec28039a4c7f62c59248b74e30ac/ss_99f50f8c0bd4ec28039a4c7f62c59248b74e30ac.1920x1080.jpg?t=1790767299" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4020370/99f50f8c0bd4ec28039a4c7f62c59248b74e30ac/ss_99f50f8c0bd4ec28039a4c7f62c59248b74e30ac.600x338.jpg?t=1790767299" alt="Boxcutter — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4020370/d499f905dc59c93a2c74cdf1efc59d9596a8bfd9/ss_d499f905dc59c93a2c74cdf1efc59d9596a8bfd9.1920x1080.jpg?t=1790767299" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4020370/d499f905dc59c93a2c74cdf1efc59d9596a8bfd9/ss_d499f905dc59c93a2c74cdf1efc59d9596a8bfd9.600x338.jpg?t=1790767299" alt="Boxcutter — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+      </div>
+
+      <h2>Геймплей</h2>
+      <div class="game-movies">
+        <figure class="game-movie"><div class="game-video" data-hls="https://video.akamai.steamstatic.com/store_trailers/4020370/906931557/0436ab8895ca34848be36f7a91daab5190cc3dec/1784484165/hls_264_master.m3u8?t=1784484620" data-poster="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257380445/391eb0e5cdef8024335a68eec719d6de88377cc9/movie_600x337.jpg?t=1784484620" role="button" tabindex="0" aria-label="Смотреть геймплей: Boxcutter Trailer #2"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257380445/391eb0e5cdef8024335a68eec719d6de88377cc9/movie_600x337.jpg?t=1784484620" alt="" loading="lazy" width="480" height="270" /><span class="game-video-play" aria-hidden="true"></span></div></figure>
+        <figure class="game-movie"><div class="game-video" data-hls="https://video.akamai.steamstatic.com/store_trailers/4020370/2057040420/ac2dcf2dc01c8ba33f02ac340ddf254d9d88ff29/1757362110/hls_264_master.m3u8?t=1784484621" data-poster="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257194715/910921dae1c1b78592e11d21c072bb049a6fa266/movie_600x337.jpg?t=1784484621" role="button" tabindex="0" aria-label="Смотреть геймплей: Boxcutter Gameplay Trailer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257194715/910921dae1c1b78592e11d21c072bb049a6fa266/movie_600x337.jpg?t=1784484621" alt="" loading="lazy" width="480" height="270" /><span class="game-video-play" aria-hidden="true"></span></div></figure>
+      </div>
+
+<p style="color: var(--text-faint); font-size: 13px; margin-top: 30px;">
         Данные о цене, отзывах и статистике обновляются автоматически на основе
         Steam Store API и SteamSpy.
       </p>
@@ -284,5 +331,6 @@ function declineCookies() {
 })();
 </script>
 <script src="/newsletter.js?v=2" defer></script>
+<script defer src="/game-media.js?v=1"></script>
 </body>
 </html>

@@ -112,6 +112,38 @@
     }
     .game-stat-card .label { font-size: 12px; color: var(--text-faint); text-transform: uppercase; }
     .game-stat-card .value { font-size: 20px; font-weight: bold; margin-top: 4px; }
+    .game-shots {
+      display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+      gap: 12px; margin: 20px 0;
+    }
+    .game-shot {
+      display: block; border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 8px; overflow: hidden;
+    }
+    .game-shot img { display: block; width: 100%; height: auto; }
+    .game-movies { display: grid; gap: 16px; margin: 20px 0; }
+    .game-movie { margin: 0; }
+    .game-movie video {
+      display: block; width: 100%; height: auto;
+      border-radius: 8px; background: #000;
+    }
+    .game-movie figcaption { margin-top: 6px; font-size: 13px; color: var(--text-faint); }
+    .game-video {
+      position: relative; cursor: pointer; overflow: hidden;
+      border-radius: 8px; background: #000; aspect-ratio: 16 / 9;
+    }
+    .game-video img { display: block; width: 100%; height: 100%; object-fit: cover; }
+    .game-video-play { position: absolute; inset: 0; display: grid; place-items: center; }
+    .game-video-play::before {
+      content: ''; width: 58px; height: 58px; border-radius: 50%;
+      background: rgba(0,0,0,0.5); border: 2px solid rgba(255,255,255,0.75);
+    }
+    .game-video-play::after {
+      content: ''; position: absolute; margin-left: 5px;
+      border-style: solid; border-width: 11px 0 11px 18px;
+      border-color: transparent transparent transparent #fff;
+    }
+    .game-video-el { display: block; width: 100%; height: 100%; background: #000; }
   </style>
 </head>
 <body>
@@ -150,7 +182,7 @@
 
     <article class="article-body">
 
-      <p>Challenge four gorgeous librarians in a fully animated memory match game! Match the cards before you run out of time or moves, unlock their hidden desires, and enjoy hot animated rewards in this spicy journey through bookshelves and forbidden knowledge.</p>
+      
 
       <div class="game-stats-grid">
         <div class="game-stat-card">
@@ -166,10 +198,6 @@
           <div class="label">Владельцев (оценка)</div>
           <div class="value">0 – 20,000</div>
         </div>
-        <div class="game-stat-card">
-          <div class="label">Среднее время игры</div>
-          <div class="value">нет данных</div>
-        </div>
       </div>
 
       <h2>Об игре</h2>
@@ -183,7 +211,28 @@
         </a>
       </p>
 
-      <p style="color: var(--text-faint); font-size: 13px; margin-top: 30px;">
+            <h2>Скриншоты</h2>
+      <div class="game-shots">
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5117300/38511f0f905606f2e4105373594ce064c56e2484/ss_38511f0f905606f2e4105373594ce064c56e2484.1920x1080.jpg?t=1790925824" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5117300/38511f0f905606f2e4105373594ce064c56e2484/ss_38511f0f905606f2e4105373594ce064c56e2484.600x338.jpg?t=1790925824" alt="Strip Memory: Milfy Librarians — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5117300/e20252bbed646a2910187547504d4d87f44e855e/ss_e20252bbed646a2910187547504d4d87f44e855e.1920x1080.jpg?t=1790925824" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5117300/e20252bbed646a2910187547504d4d87f44e855e/ss_e20252bbed646a2910187547504d4d87f44e855e.600x338.jpg?t=1790925824" alt="Strip Memory: Milfy Librarians — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5117300/dd3950ce11c2f5ff515950cda6bd1283090e587d/ss_dd3950ce11c2f5ff515950cda6bd1283090e587d.1920x1080.jpg?t=1790925824" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5117300/dd3950ce11c2f5ff515950cda6bd1283090e587d/ss_dd3950ce11c2f5ff515950cda6bd1283090e587d.600x338.jpg?t=1790925824" alt="Strip Memory: Milfy Librarians — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5117300/8d5d2573c6d4d10b2059217fa7cd6ce540dcd280/ss_8d5d2573c6d4d10b2059217fa7cd6ce540dcd280.1920x1080.jpg?t=1790925824" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5117300/8d5d2573c6d4d10b2059217fa7cd6ce540dcd280/ss_8d5d2573c6d4d10b2059217fa7cd6ce540dcd280.600x338.jpg?t=1790925824" alt="Strip Memory: Milfy Librarians — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5117300/16fba659d239aa694b4e2dec37497702e493b4b1/ss_16fba659d239aa694b4e2dec37497702e493b4b1.1920x1080.jpg?t=1790925824" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5117300/16fba659d239aa694b4e2dec37497702e493b4b1/ss_16fba659d239aa694b4e2dec37497702e493b4b1.600x338.jpg?t=1790925824" alt="Strip Memory: Milfy Librarians — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5117300/a311b6f94ac42c344644e85b6e350ec65f39cd79/ss_a311b6f94ac42c344644e85b6e350ec65f39cd79.1920x1080.jpg?t=1790925824" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5117300/a311b6f94ac42c344644e85b6e350ec65f39cd79/ss_a311b6f94ac42c344644e85b6e350ec65f39cd79.600x338.jpg?t=1790925824" alt="Strip Memory: Milfy Librarians — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5117300/bbfc8cd4fbf0872f1da0f14c8d70a07dc28fc130/ss_bbfc8cd4fbf0872f1da0f14c8d70a07dc28fc130.1920x1080.jpg?t=1790925824" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5117300/bbfc8cd4fbf0872f1da0f14c8d70a07dc28fc130/ss_bbfc8cd4fbf0872f1da0f14c8d70a07dc28fc130.600x338.jpg?t=1790925824" alt="Strip Memory: Milfy Librarians — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5117300/e60836661e05e7a910a7518674ce6cdc84fbbb23/ss_e60836661e05e7a910a7518674ce6cdc84fbbb23.1920x1080.jpg?t=1790925824" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5117300/e60836661e05e7a910a7518674ce6cdc84fbbb23/ss_e60836661e05e7a910a7518674ce6cdc84fbbb23.600x338.jpg?t=1790925824" alt="Strip Memory: Milfy Librarians — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5117300/08243c20f5551d76f0792cf16be377760cccd160/ss_08243c20f5551d76f0792cf16be377760cccd160.1920x1080.jpg?t=1790925824" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5117300/08243c20f5551d76f0792cf16be377760cccd160/ss_08243c20f5551d76f0792cf16be377760cccd160.600x338.jpg?t=1790925824" alt="Strip Memory: Milfy Librarians — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5117300/6f0ef1389bb91dab8064bef6fce11233d288144e/ss_6f0ef1389bb91dab8064bef6fce11233d288144e.1920x1080.jpg?t=1790925824" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5117300/6f0ef1389bb91dab8064bef6fce11233d288144e/ss_6f0ef1389bb91dab8064bef6fce11233d288144e.600x338.jpg?t=1790925824" alt="Strip Memory: Milfy Librarians — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5117300/40740316b0094ba2afa4b99bef5ec8a1ae11e715/ss_40740316b0094ba2afa4b99bef5ec8a1ae11e715.1920x1080.jpg?t=1790925824" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5117300/40740316b0094ba2afa4b99bef5ec8a1ae11e715/ss_40740316b0094ba2afa4b99bef5ec8a1ae11e715.600x338.jpg?t=1790925824" alt="Strip Memory: Milfy Librarians — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5117300/a58074ce45af95a0805af0ff834c1b8d4a98349d/ss_a58074ce45af95a0805af0ff834c1b8d4a98349d.1920x1080.jpg?t=1790925824" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5117300/a58074ce45af95a0805af0ff834c1b8d4a98349d/ss_a58074ce45af95a0805af0ff834c1b8d4a98349d.600x338.jpg?t=1790925824" alt="Strip Memory: Milfy Librarians — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+      </div>
+
+      <h2>Геймплей</h2>
+      <div class="game-movies">
+        <figure class="game-movie"><div class="game-video" data-hls="https://video.akamai.steamstatic.com/store_trailers/5117300/1160746551/97b12d743b9f97eab08bb82e66846f0a47b56bbc/1786902121/hls_264_master.m3u8?t=1787731546" data-poster="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257400877/fe20a3bde9f886361da71ee9615c380474a38b89/movie_600x337.jpg?t=1787731546" role="button" tabindex="0" aria-label="Смотреть геймплей: Trailer_Gameplay"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257400877/fe20a3bde9f886361da71ee9615c380474a38b89/movie_600x337.jpg?t=1787731546" alt="" loading="lazy" width="480" height="270" /><span class="game-video-play" aria-hidden="true"></span></div></figure>
+      </div>
+
+<p style="color: var(--text-faint); font-size: 13px; margin-top: 30px;">
         Данные о цене, отзывах и статистике обновляются автоматически на основе
         Steam Store API и SteamSpy.
       </p>
@@ -284,5 +333,6 @@ function declineCookies() {
 })();
 </script>
 <script src="/newsletter.js?v=2" defer></script>
+<script defer src="/game-media.js?v=1"></script>
 </body>
 </html>

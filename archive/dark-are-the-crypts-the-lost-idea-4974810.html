@@ -112,6 +112,38 @@
     }
     .game-stat-card .label { font-size: 12px; color: var(--text-faint); text-transform: uppercase; }
     .game-stat-card .value { font-size: 20px; font-weight: bold; margin-top: 4px; }
+    .game-shots {
+      display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+      gap: 12px; margin: 20px 0;
+    }
+    .game-shot {
+      display: block; border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 8px; overflow: hidden;
+    }
+    .game-shot img { display: block; width: 100%; height: auto; }
+    .game-movies { display: grid; gap: 16px; margin: 20px 0; }
+    .game-movie { margin: 0; }
+    .game-movie video {
+      display: block; width: 100%; height: auto;
+      border-radius: 8px; background: #000;
+    }
+    .game-movie figcaption { margin-top: 6px; font-size: 13px; color: var(--text-faint); }
+    .game-video {
+      position: relative; cursor: pointer; overflow: hidden;
+      border-radius: 8px; background: #000; aspect-ratio: 16 / 9;
+    }
+    .game-video img { display: block; width: 100%; height: 100%; object-fit: cover; }
+    .game-video-play { position: absolute; inset: 0; display: grid; place-items: center; }
+    .game-video-play::before {
+      content: ''; width: 58px; height: 58px; border-radius: 50%;
+      background: rgba(0,0,0,0.5); border: 2px solid rgba(255,255,255,0.75);
+    }
+    .game-video-play::after {
+      content: ''; position: absolute; margin-left: 5px;
+      border-style: solid; border-width: 11px 0 11px 18px;
+      border-color: transparent transparent transparent #fff;
+    }
+    .game-video-el { display: block; width: 100%; height: 100%; background: #000; }
   </style>
 </head>
 <body>
@@ -150,7 +182,7 @@
 
     <article class="article-body">
 
-      <p>Dark Are The Crypts is a psychological exploration horror set in surreal, weirdcore-inspired liminal spaces. Use your camera to solve environmental puzzles, fight enemies, and uncover the secrets hidden within the fractured mind of a tormented artist.</p>
+      
 
       <div class="game-stats-grid">
         <div class="game-stat-card">
@@ -166,10 +198,6 @@
           <div class="label">Владельцев (оценка)</div>
           <div class="value">0 – 20,000</div>
         </div>
-        <div class="game-stat-card">
-          <div class="label">Среднее время игры</div>
-          <div class="value">нет данных</div>
-        </div>
       </div>
 
       <h2>Об игре</h2>
@@ -183,7 +211,27 @@
         </a>
       </p>
 
-      <p style="color: var(--text-faint); font-size: 13px; margin-top: 30px;">
+            <h2>Скриншоты</h2>
+      <div class="game-shots">
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4974810/e3f71acaa9f78c56f09663d38ab7d1cea7969209/ss_e3f71acaa9f78c56f09663d38ab7d1cea7969209.1920x1080.jpg?t=1790906149" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4974810/e3f71acaa9f78c56f09663d38ab7d1cea7969209/ss_e3f71acaa9f78c56f09663d38ab7d1cea7969209.600x338.jpg?t=1790906149" alt="Dark Are The Crypts: The Lost Idea — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4974810/e22a518db78ec2c7577251812533188284215e4e/ss_e22a518db78ec2c7577251812533188284215e4e.1920x1080.jpg?t=1790906149" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4974810/e22a518db78ec2c7577251812533188284215e4e/ss_e22a518db78ec2c7577251812533188284215e4e.600x338.jpg?t=1790906149" alt="Dark Are The Crypts: The Lost Idea — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4974810/1244f699d74d208a1be081bc0c5b7e11d550fac0/ss_1244f699d74d208a1be081bc0c5b7e11d550fac0.1920x1080.jpg?t=1790906149" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4974810/1244f699d74d208a1be081bc0c5b7e11d550fac0/ss_1244f699d74d208a1be081bc0c5b7e11d550fac0.600x338.jpg?t=1790906149" alt="Dark Are The Crypts: The Lost Idea — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4974810/322a3eb2441be4d10afbf711ec721a8fb17c531a/ss_322a3eb2441be4d10afbf711ec721a8fb17c531a.1920x1080.jpg?t=1790906149" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4974810/322a3eb2441be4d10afbf711ec721a8fb17c531a/ss_322a3eb2441be4d10afbf711ec721a8fb17c531a.600x338.jpg?t=1790906149" alt="Dark Are The Crypts: The Lost Idea — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4974810/d529099677cc00d949c8cb73d123b735acac2dad/ss_d529099677cc00d949c8cb73d123b735acac2dad.1920x1080.jpg?t=1790906149" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4974810/d529099677cc00d949c8cb73d123b735acac2dad/ss_d529099677cc00d949c8cb73d123b735acac2dad.600x338.jpg?t=1790906149" alt="Dark Are The Crypts: The Lost Idea — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4974810/87680001603c15bdddbbaa1218f62de6983afa5a/ss_87680001603c15bdddbbaa1218f62de6983afa5a.1920x1080.jpg?t=1790906149" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4974810/87680001603c15bdddbbaa1218f62de6983afa5a/ss_87680001603c15bdddbbaa1218f62de6983afa5a.600x338.jpg?t=1790906149" alt="Dark Are The Crypts: The Lost Idea — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4974810/3ad4bf117087afef44330160e33d442bda49ce88/ss_3ad4bf117087afef44330160e33d442bda49ce88.1920x1080.jpg?t=1790906149" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4974810/3ad4bf117087afef44330160e33d442bda49ce88/ss_3ad4bf117087afef44330160e33d442bda49ce88.600x338.jpg?t=1790906149" alt="Dark Are The Crypts: The Lost Idea — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4974810/2c3cca24c77af3eca4fc2d244b0744608c3ce250/ss_2c3cca24c77af3eca4fc2d244b0744608c3ce250.1920x1080.jpg?t=1790906149" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4974810/2c3cca24c77af3eca4fc2d244b0744608c3ce250/ss_2c3cca24c77af3eca4fc2d244b0744608c3ce250.600x338.jpg?t=1790906149" alt="Dark Are The Crypts: The Lost Idea — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4974810/a74c3150e66635be77da2e8749bca6efd94bb83f/ss_a74c3150e66635be77da2e8749bca6efd94bb83f.1920x1080.jpg?t=1790906149" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4974810/a74c3150e66635be77da2e8749bca6efd94bb83f/ss_a74c3150e66635be77da2e8749bca6efd94bb83f.600x338.jpg?t=1790906149" alt="Dark Are The Crypts: The Lost Idea — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4974810/64ba6825da3cffc6302253916dfaf7eea6c76ddc/ss_64ba6825da3cffc6302253916dfaf7eea6c76ddc.1920x1080.jpg?t=1790906149" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4974810/64ba6825da3cffc6302253916dfaf7eea6c76ddc/ss_64ba6825da3cffc6302253916dfaf7eea6c76ddc.600x338.jpg?t=1790906149" alt="Dark Are The Crypts: The Lost Idea — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+      </div>
+
+      <h2>Геймплей</h2>
+      <div class="game-movies">
+        <figure class="game-movie"><div class="game-video" data-hls="https://video.akamai.steamstatic.com/store_trailers/4974810/769865918/7ff1a2ba3e7e61a6f1c3979c76fd2eeebbd79642/1789902028/hls_264_master.m3u8?t=1789902406" data-poster="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257429821/2b8e7965fbe512a35a16e141a4cef3f1caf03dbc/movie_600x337.jpg?t=1789902406" role="button" tabindex="0" aria-label="Смотреть геймплей: Dark Are The Crypts"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257429821/2b8e7965fbe512a35a16e141a4cef3f1caf03dbc/movie_600x337.jpg?t=1789902406" alt="" loading="lazy" width="480" height="270" /><span class="game-video-play" aria-hidden="true"></span></div></figure>
+        <figure class="game-movie"><div class="game-video" data-hls="https://video.akamai.steamstatic.com/store_trailers/4974810/390121878/97aaa667fe0b0c8d915f4efc6a202c3536d39241/1784206847/hls_264_master.m3u8?t=1789902407" data-poster="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257377783/358411614500eff5b7293352284c54f51005b339/movie_600x337.jpg?t=1789902407" role="button" tabindex="0" aria-label="Смотреть геймплей: Dark Are The Crypts Steam Trailer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257377783/358411614500eff5b7293352284c54f51005b339/movie_600x337.jpg?t=1789902407" alt="" loading="lazy" width="480" height="270" /><span class="game-video-play" aria-hidden="true"></span></div></figure>
+      </div>
+
+<p style="color: var(--text-faint); font-size: 13px; margin-top: 30px;">
         Данные о цене, отзывах и статистике обновляются автоматически на основе
         Steam Store API и SteamSpy.
       </p>
@@ -284,5 +332,6 @@ function declineCookies() {
 })();
 </script>
 <script src="/newsletter.js?v=2" defer></script>
+<script defer src="/game-media.js?v=1"></script>
 </body>
 </html>

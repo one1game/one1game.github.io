@@ -112,6 +112,38 @@
     }
     .game-stat-card .label { font-size: 12px; color: var(--text-faint); text-transform: uppercase; }
     .game-stat-card .value { font-size: 20px; font-weight: bold; margin-top: 4px; }
+    .game-shots {
+      display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+      gap: 12px; margin: 20px 0;
+    }
+    .game-shot {
+      display: block; border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 8px; overflow: hidden;
+    }
+    .game-shot img { display: block; width: 100%; height: auto; }
+    .game-movies { display: grid; gap: 16px; margin: 20px 0; }
+    .game-movie { margin: 0; }
+    .game-movie video {
+      display: block; width: 100%; height: auto;
+      border-radius: 8px; background: #000;
+    }
+    .game-movie figcaption { margin-top: 6px; font-size: 13px; color: var(--text-faint); }
+    .game-video {
+      position: relative; cursor: pointer; overflow: hidden;
+      border-radius: 8px; background: #000; aspect-ratio: 16 / 9;
+    }
+    .game-video img { display: block; width: 100%; height: 100%; object-fit: cover; }
+    .game-video-play { position: absolute; inset: 0; display: grid; place-items: center; }
+    .game-video-play::before {
+      content: ''; width: 58px; height: 58px; border-radius: 50%;
+      background: rgba(0,0,0,0.5); border: 2px solid rgba(255,255,255,0.75);
+    }
+    .game-video-play::after {
+      content: ''; position: absolute; margin-left: 5px;
+      border-style: solid; border-width: 11px 0 11px 18px;
+      border-color: transparent transparent transparent #fff;
+    }
+    .game-video-el { display: block; width: 100%; height: 100%; background: #000; }
   </style>
 </head>
 <body>
@@ -166,10 +198,6 @@
           <div class="label">Владельцев (оценка)</div>
           <div class="value">0 – 20,000</div>
         </div>
-        <div class="game-stat-card">
-          <div class="label">Среднее время игры</div>
-          <div class="value">нет данных</div>
-        </div>
       </div>
 
       <h2>Об игре</h2>
@@ -183,7 +211,28 @@
         </a>
       </p>
 
-      <p style="color: var(--text-faint); font-size: 13px; margin-top: 30px;">
+            <h2>Скриншоты</h2>
+      <div class="game-shots">
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5186690/bd79c4edd3c5e023f97fe52b44c55a5fda499294/ss_bd79c4edd3c5e023f97fe52b44c55a5fda499294.1920x1080.jpg?t=1790960450" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5186690/bd79c4edd3c5e023f97fe52b44c55a5fda499294/ss_bd79c4edd3c5e023f97fe52b44c55a5fda499294.600x338.jpg?t=1790960450" alt="Game Keeper: Somebody Messed Up My Shop! — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5186690/bd11dc8a312deff2b0f8f61f77f71b00dac33f1e/ss_bd11dc8a312deff2b0f8f61f77f71b00dac33f1e.1920x1080.jpg?t=1790960450" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5186690/bd11dc8a312deff2b0f8f61f77f71b00dac33f1e/ss_bd11dc8a312deff2b0f8f61f77f71b00dac33f1e.600x338.jpg?t=1790960450" alt="Game Keeper: Somebody Messed Up My Shop! — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5186690/523dadcb2109febbda789ec5546038531bdd39a6/ss_523dadcb2109febbda789ec5546038531bdd39a6.1920x1080.jpg?t=1790960450" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5186690/523dadcb2109febbda789ec5546038531bdd39a6/ss_523dadcb2109febbda789ec5546038531bdd39a6.600x338.jpg?t=1790960450" alt="Game Keeper: Somebody Messed Up My Shop! — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5186690/e900ec07768b7447a8afeddeb04214e8bff2e297/ss_e900ec07768b7447a8afeddeb04214e8bff2e297.1920x1080.jpg?t=1790960450" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5186690/e900ec07768b7447a8afeddeb04214e8bff2e297/ss_e900ec07768b7447a8afeddeb04214e8bff2e297.600x338.jpg?t=1790960450" alt="Game Keeper: Somebody Messed Up My Shop! — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5186690/52bf53e6e6237473069bf3753827bdcc0b1e1dd8/ss_52bf53e6e6237473069bf3753827bdcc0b1e1dd8.1920x1080.jpg?t=1790960450" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5186690/52bf53e6e6237473069bf3753827bdcc0b1e1dd8/ss_52bf53e6e6237473069bf3753827bdcc0b1e1dd8.600x338.jpg?t=1790960450" alt="Game Keeper: Somebody Messed Up My Shop! — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5186690/4aa7a8a98d0bbb46e50c123ee4473e93dd70784f/ss_4aa7a8a98d0bbb46e50c123ee4473e93dd70784f.1920x1080.jpg?t=1790960450" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5186690/4aa7a8a98d0bbb46e50c123ee4473e93dd70784f/ss_4aa7a8a98d0bbb46e50c123ee4473e93dd70784f.600x338.jpg?t=1790960450" alt="Game Keeper: Somebody Messed Up My Shop! — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5186690/cae48dafb6c2eadca0dd6f863de819cdaecb08f9/ss_cae48dafb6c2eadca0dd6f863de819cdaecb08f9.1920x1080.jpg?t=1790960450" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5186690/cae48dafb6c2eadca0dd6f863de819cdaecb08f9/ss_cae48dafb6c2eadca0dd6f863de819cdaecb08f9.600x338.jpg?t=1790960450" alt="Game Keeper: Somebody Messed Up My Shop! — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5186690/792ac6fc6b1b52a79ae2360b1179794588336fdd/ss_792ac6fc6b1b52a79ae2360b1179794588336fdd.1920x1080.jpg?t=1790960450" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5186690/792ac6fc6b1b52a79ae2360b1179794588336fdd/ss_792ac6fc6b1b52a79ae2360b1179794588336fdd.600x338.jpg?t=1790960450" alt="Game Keeper: Somebody Messed Up My Shop! — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5186690/c3550a8dc129501aac4123de54afb870cf566e4f/ss_c3550a8dc129501aac4123de54afb870cf566e4f.1920x1080.jpg?t=1790960450" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5186690/c3550a8dc129501aac4123de54afb870cf566e4f/ss_c3550a8dc129501aac4123de54afb870cf566e4f.600x338.jpg?t=1790960450" alt="Game Keeper: Somebody Messed Up My Shop! — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5186690/1686305c40fa922ab4de3d4063b8cfe4ae17578d/ss_1686305c40fa922ab4de3d4063b8cfe4ae17578d.1920x1080.jpg?t=1790960450" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5186690/1686305c40fa922ab4de3d4063b8cfe4ae17578d/ss_1686305c40fa922ab4de3d4063b8cfe4ae17578d.600x338.jpg?t=1790960450" alt="Game Keeper: Somebody Messed Up My Shop! — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5186690/a86c8b94d8462988cabf1dc619b89776a246727e/ss_a86c8b94d8462988cabf1dc619b89776a246727e.1920x1080.jpg?t=1790960450" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5186690/a86c8b94d8462988cabf1dc619b89776a246727e/ss_a86c8b94d8462988cabf1dc619b89776a246727e.600x338.jpg?t=1790960450" alt="Game Keeper: Somebody Messed Up My Shop! — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5186690/578e7317b105f91bb9f1aae1b3a5c9a973a7059b/ss_578e7317b105f91bb9f1aae1b3a5c9a973a7059b.1920x1080.jpg?t=1790960450" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5186690/578e7317b105f91bb9f1aae1b3a5c9a973a7059b/ss_578e7317b105f91bb9f1aae1b3a5c9a973a7059b.600x338.jpg?t=1790960450" alt="Game Keeper: Somebody Messed Up My Shop! — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+      </div>
+
+      <h2>Геймплей</h2>
+      <div class="game-movies">
+        <figure class="game-movie"><div class="game-video" data-hls="https://video.akamai.steamstatic.com/store_trailers/5186690/589287874/ef3c22abd6454927c5ed37a1238457e2462fd2c5/1789720645/hls_264_master.m3u8?t=1789725966" data-poster="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257428240/6e6dafa8d956e61062f7095b0233bff91c368e0c/movie_600x337.jpg?t=1789725966" role="button" tabindex="0" aria-label="Смотреть геймплей: Game Keeper: Somebody Messed Up My Shop! - Official Announcement Trailer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257428240/6e6dafa8d956e61062f7095b0233bff91c368e0c/movie_600x337.jpg?t=1789725966" alt="" loading="lazy" width="480" height="270" /><span class="game-video-play" aria-hidden="true"></span></div></figure>
+      </div>
+
+<p style="color: var(--text-faint); font-size: 13px; margin-top: 30px;">
         Данные о цене, отзывах и статистике обновляются автоматически на основе
         Steam Store API и SteamSpy.
       </p>
@@ -284,5 +333,6 @@ function declineCookies() {
 })();
 </script>
 <script src="/newsletter.js?v=2" defer></script>
+<script defer src="/game-media.js?v=1"></script>
 </body>
 </html>

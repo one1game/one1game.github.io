@@ -117,6 +117,38 @@
     }
     .game-stat-card .label { font-size: 12px; color: var(--text-faint); text-transform: uppercase; }
     .game-stat-card .value { font-size: 20px; font-weight: bold; margin-top: 4px; }
+    .game-shots {
+      display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+      gap: 12px; margin: 20px 0;
+    }
+    .game-shot {
+      display: block; border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 8px; overflow: hidden;
+    }
+    .game-shot img { display: block; width: 100%; height: auto; }
+    .game-movies { display: grid; gap: 16px; margin: 20px 0; }
+    .game-movie { margin: 0; }
+    .game-movie video {
+      display: block; width: 100%; height: auto;
+      border-radius: 8px; background: #000;
+    }
+    .game-movie figcaption { margin-top: 6px; font-size: 13px; color: var(--text-faint); }
+    .game-video {
+      position: relative; cursor: pointer; overflow: hidden;
+      border-radius: 8px; background: #000; aspect-ratio: 16 / 9;
+    }
+    .game-video img { display: block; width: 100%; height: 100%; object-fit: cover; }
+    .game-video-play { position: absolute; inset: 0; display: grid; place-items: center; }
+    .game-video-play::before {
+      content: ''; width: 58px; height: 58px; border-radius: 50%;
+      background: rgba(0,0,0,0.5); border: 2px solid rgba(255,255,255,0.75);
+    }
+    .game-video-play::after {
+      content: ''; position: absolute; margin-left: 5px;
+      border-style: solid; border-width: 11px 0 11px 18px;
+      border-color: transparent transparent transparent #fff;
+    }
+    .game-video-el { display: block; width: 100%; height: 100%; background: #000; }
   </style>
 </head>
 <body>
@@ -174,10 +206,6 @@
           <div class="label">Владельцев (оценка)</div>
           <div class="value">5,000,000 – 10,000,000</div>
         </div>
-        <div class="game-stat-card">
-          <div class="label">Среднее время игры</div>
-          <div class="value">нет данных</div>
-        </div>
       </div>
 
       <h2>Об игре</h2>
@@ -191,7 +219,28 @@
         </a>
       </p>
 
-      <p style="color: var(--text-faint); font-size: 13px; margin-top: 30px;">
+            <h2>Скриншоты</h2>
+      <div class="game-shots">
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2183900/dc44e5e39009e9eeba59344d1b0bcf3eacf1e663/ss_dc44e5e39009e9eeba59344d1b0bcf3eacf1e663.1920x1080.jpg?t=1790874369" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2183900/dc44e5e39009e9eeba59344d1b0bcf3eacf1e663/ss_dc44e5e39009e9eeba59344d1b0bcf3eacf1e663.600x338.jpg?t=1790874369" alt="Warhammer 40,000: Space Marine 2 — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2183900/ss_ee88e4cc463b7b25b0ec03930a9e58e5fba2afdf.1920x1080.jpg?t=1790874369" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2183900/ss_ee88e4cc463b7b25b0ec03930a9e58e5fba2afdf.600x338.jpg?t=1790874369" alt="Warhammer 40,000: Space Marine 2 — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2183900/ss_66a8bc13bf868d0e2a76e4d797e6408c271065d7.1920x1080.jpg?t=1790874369" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2183900/ss_66a8bc13bf868d0e2a76e4d797e6408c271065d7.600x338.jpg?t=1790874369" alt="Warhammer 40,000: Space Marine 2 — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2183900/ss_20a753725a34225553c5873fbc079626451ebcf9.1920x1080.jpg?t=1790874369" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2183900/ss_20a753725a34225553c5873fbc079626451ebcf9.600x338.jpg?t=1790874369" alt="Warhammer 40,000: Space Marine 2 — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2183900/ss_712fe9d84a853d1d2fc1faee8cd8efb36e2278d0.1920x1080.jpg?t=1790874369" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2183900/ss_712fe9d84a853d1d2fc1faee8cd8efb36e2278d0.600x338.jpg?t=1790874369" alt="Warhammer 40,000: Space Marine 2 — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2183900/ss_4751069d565b92fadeb6bfd507cef64cf6c70cd1.1920x1080.jpg?t=1790874369" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2183900/ss_4751069d565b92fadeb6bfd507cef64cf6c70cd1.600x338.jpg?t=1790874369" alt="Warhammer 40,000: Space Marine 2 — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2183900/ss_d0bc9105e638b0f8a5364c4a6c70c6ccaf9268bb.1920x1080.jpg?t=1790874369" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2183900/ss_d0bc9105e638b0f8a5364c4a6c70c6ccaf9268bb.600x338.jpg?t=1790874369" alt="Warhammer 40,000: Space Marine 2 — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2183900/ss_90d54dd35ea29f80ccbe7618682d36736c2697df.1920x1080.jpg?t=1790874369" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2183900/ss_90d54dd35ea29f80ccbe7618682d36736c2697df.600x338.jpg?t=1790874369" alt="Warhammer 40,000: Space Marine 2 — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2183900/ss_f3cb28be981ddf20fccd4e8d827d0e340cf12b75.1920x1080.jpg?t=1790874369" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2183900/ss_f3cb28be981ddf20fccd4e8d827d0e340cf12b75.600x338.jpg?t=1790874369" alt="Warhammer 40,000: Space Marine 2 — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2183900/ss_dec108d540d8ae215ef9f558e4642ef4bee10e86.1920x1080.jpg?t=1790874369" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2183900/ss_dec108d540d8ae215ef9f558e4642ef4bee10e86.600x338.jpg?t=1790874369" alt="Warhammer 40,000: Space Marine 2 — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+      </div>
+
+      <h2>Геймплей</h2>
+      <div class="game-movies">
+        <figure class="game-movie"><div class="game-video" data-hls="https://video.akamai.steamstatic.com/store_trailers/2183900/2007785104/cd2a8a592bc18a44f4fddc7b61030ab1c24cd4d4/1790765090/hls_264_master.m3u8?t=1790873219" data-poster="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257440872/9569786b7628acdc9d5561f445d804bd584b883d/movie_600x337.jpg?t=1790873219" role="button" tabindex="0" aria-label="Смотреть геймплей: Warhammer 40,000: Space Marine 2 - Anniversary Update II Trailer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257440872/9569786b7628acdc9d5561f445d804bd584b883d/movie_600x337.jpg?t=1790873219" alt="" loading="lazy" width="480" height="270" /><span class="game-video-play" aria-hidden="true"></span></div></figure>
+        <figure class="game-movie"><div class="game-video" data-hls="https://video.akamai.steamstatic.com/store_trailers/2183900/297145733/f7b89e2e9403bf9721c94c7fb452500f0bfc4a00/1785244136/hls_264_master.m3u8?t=1785248226" data-poster="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257386773/48d92e73c75006bf39757c23c020776927d2055c/movie_600x337.jpg?t=1785248226" role="button" tabindex="0" aria-label="Смотреть геймплей: Space Marine 2 - Confrontation Update Trailer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257386773/48d92e73c75006bf39757c23c020776927d2055c/movie_600x337.jpg?t=1785248226" alt="" loading="lazy" width="480" height="270" /><span class="game-video-play" aria-hidden="true"></span></div></figure>
+        <figure class="game-movie"><div class="game-video" data-hls="https://video.akamai.steamstatic.com/store_trailers/2183900/1021516224/6e089510f10196d8a04432f23e2120e2add9bbef/1756462895/hls_264_master.m3u8?t=1756724125" data-poster="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257190659/673b7b5c3ccafec7c16a8820171608748eba3ba9/movie_600x337.jpg?t=1756724125" role="button" tabindex="0" aria-label="Смотреть геймплей: Warhammer 40,000: Space Marine 2 - Year 2 Trailer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257190659/673b7b5c3ccafec7c16a8820171608748eba3ba9/movie_600x337.jpg?t=1756724125" alt="" loading="lazy" width="480" height="270" /><span class="game-video-play" aria-hidden="true"></span></div></figure>
+      </div>
+
+<p style="color: var(--text-faint); font-size: 13px; margin-top: 30px;">
         Данные о цене, отзывах и статистике обновляются автоматически на основе
         Steam Store API и SteamSpy.
       </p>
@@ -292,5 +341,6 @@ function declineCookies() {
 })();
 </script>
 <script src="/newsletter.js?v=2" defer></script>
+<script defer src="/game-media.js?v=1"></script>
 </body>
 </html>

@@ -29,7 +29,7 @@
   <link rel="dns-prefetch" href="https://www.google-analytics.com" />
   
   <link rel="preload" as="style" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css" onload="this.rel='stylesheet';this.removeAttribute('onload')" /><noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css" /></noscript>
-  <link rel="stylesheet" href="styles.css?v=22" />
+  <link rel="stylesheet" href="styles.css?v=26" />
   <link rel="manifest" href="/manifest.json" />
   <meta name="theme-color" content="#06060c" />
   <!-- Google Analytics loads only after explicit consent -->
@@ -94,7 +94,7 @@
 
 </main>
 <script src="/cache-version.js"></script>
-<script defer src="articles-data.js?v=22"></script>
+<script defer src="articles-data.js?v=27"></script>
 <script>
 // === ARCHIVE PAGE LOGIC ===
 let allArticles = [];
@@ -114,6 +114,12 @@ function trackArchiveEvent(name, params) {
   }
 }
 
+// Обзор игры из автогенерации Steam — живёт в отдельном разделе «Обзоры»
+function isGameReview(a) {
+  return a.category === 'Обзоры' ||
+    /:\s*цена, отзывы и статистика игроков\s*$/i.test(a.title || '');
+}
+
 document.addEventListener('DOMContentLoaded', () => {
   setTimeout(() => {
     allArticles = window.allArticles || [];
@@ -130,7 +136,7 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 function initFilters() {
-  const catOrder = ['Технологии', 'Гайды', 'Консоли', 'Аналитика', 'Тренды', 'Разработка', 'Мнение', 'Во что поиграть?'];
+  const catOrder = ['Технологии', 'Гайды', 'Консоли', 'Аналитика', 'Тренды', 'Разработка', 'Мнение', 'Кино и игры', 'Обзоры'];
   const cats = [...new Set(allArticles.map(a => a.category))].sort((a, b) => {
     const ai = catOrder.indexOf(a), bi = catOrder.indexOf(b);
     return (ai === -1 ? 99 : ai) - (bi === -1 ? 99 : bi);
@@ -172,9 +178,9 @@ function filterAndDisplay() {
 
   if (currentCategory !== 'all') {
     filtered = filtered.filter(a => a.category === currentCategory);
-  } else {
-    // В «Все» не показываем игры — они в отдельном разделе
-    filtered = filtered.filter(a => a.category !== 'Во что поиграть?');
+  } else if (!query) {
+    // В «Все» без поиска не показываем обзоры игр — они в разделе «Обзоры»
+    filtered = filtered.filter(a => !isGameReview(a));
   }
   if (query) {
     filtered = filtered.filter(a =>
@@ -265,6 +271,6 @@ document.addEventListener('mouseover', e => {
 });
 </script>
 <script defer src="/babylon-hero.js?v=22"></script>
-<script src="/components.js?v=22" defer></script>
+<script src="/components.js?v=26" defer></script>
 </body>
 </html>

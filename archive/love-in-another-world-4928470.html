@@ -112,6 +112,38 @@
     }
     .game-stat-card .label { font-size: 12px; color: var(--text-faint); text-transform: uppercase; }
     .game-stat-card .value { font-size: 20px; font-weight: bold; margin-top: 4px; }
+    .game-shots {
+      display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+      gap: 12px; margin: 20px 0;
+    }
+    .game-shot {
+      display: block; border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 8px; overflow: hidden;
+    }
+    .game-shot img { display: block; width: 100%; height: auto; }
+    .game-movies { display: grid; gap: 16px; margin: 20px 0; }
+    .game-movie { margin: 0; }
+    .game-movie video {
+      display: block; width: 100%; height: auto;
+      border-radius: 8px; background: #000;
+    }
+    .game-movie figcaption { margin-top: 6px; font-size: 13px; color: var(--text-faint); }
+    .game-video {
+      position: relative; cursor: pointer; overflow: hidden;
+      border-radius: 8px; background: #000; aspect-ratio: 16 / 9;
+    }
+    .game-video img { display: block; width: 100%; height: 100%; object-fit: cover; }
+    .game-video-play { position: absolute; inset: 0; display: grid; place-items: center; }
+    .game-video-play::before {
+      content: ''; width: 58px; height: 58px; border-radius: 50%;
+      background: rgba(0,0,0,0.5); border: 2px solid rgba(255,255,255,0.75);
+    }
+    .game-video-play::after {
+      content: ''; position: absolute; margin-left: 5px;
+      border-style: solid; border-width: 11px 0 11px 18px;
+      border-color: transparent transparent transparent #fff;
+    }
+    .game-video-el { display: block; width: 100%; height: 100%; background: #000; }
   </style>
 </head>
 <body>
@@ -150,7 +182,7 @@
 
     <article class="article-body">
 
-      <p>The themes revolve around love, personal growth, and perilous adventures. The alternate world is called &quot;Alice Continent,&quot; a parallel universe inhabited only by women. Due to the laws of nature, only women are born, and they do not wear clothes (considered their natural state).</p>
+      
 
       <div class="game-stats-grid">
         <div class="game-stat-card">
@@ -166,10 +198,6 @@
           <div class="label">Владельцев (оценка)</div>
           <div class="value">0 – 20,000</div>
         </div>
-        <div class="game-stat-card">
-          <div class="label">Среднее время игры</div>
-          <div class="value">нет данных</div>
-        </div>
       </div>
 
       <h2>Об игре</h2>
@@ -183,7 +211,25 @@
         </a>
       </p>
 
-      <p style="color: var(--text-faint); font-size: 13px; margin-top: 30px;">
+            <h2>Скриншоты</h2>
+      <div class="game-shots">
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4928470/5772bb362a1bcfbbe538f657c29d01c0b40a344e/ss_5772bb362a1bcfbbe538f657c29d01c0b40a344e.1920x1080.jpg?t=1789808944" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4928470/5772bb362a1bcfbbe538f657c29d01c0b40a344e/ss_5772bb362a1bcfbbe538f657c29d01c0b40a344e.600x338.jpg?t=1789808944" alt="Love in Another World — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4928470/27fe2056240e44547520019f158088cc7b1c9624/ss_27fe2056240e44547520019f158088cc7b1c9624.1920x1080.jpg?t=1789808944" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4928470/27fe2056240e44547520019f158088cc7b1c9624/ss_27fe2056240e44547520019f158088cc7b1c9624.600x338.jpg?t=1789808944" alt="Love in Another World — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4928470/cb28c7872be064ad2b14d211f122908b03870e52/ss_cb28c7872be064ad2b14d211f122908b03870e52.1920x1080.jpg?t=1789808944" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4928470/cb28c7872be064ad2b14d211f122908b03870e52/ss_cb28c7872be064ad2b14d211f122908b03870e52.600x338.jpg?t=1789808944" alt="Love in Another World — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4928470/d9bd3b242d2630b8a7ed70f9f93929fb4ac202e4/ss_d9bd3b242d2630b8a7ed70f9f93929fb4ac202e4.1920x1080.jpg?t=1789808944" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4928470/d9bd3b242d2630b8a7ed70f9f93929fb4ac202e4/ss_d9bd3b242d2630b8a7ed70f9f93929fb4ac202e4.600x338.jpg?t=1789808944" alt="Love in Another World — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4928470/a50f676909a492e5e20dea73d9b3794639b07854/ss_a50f676909a492e5e20dea73d9b3794639b07854.1920x1080.jpg?t=1789808944" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4928470/a50f676909a492e5e20dea73d9b3794639b07854/ss_a50f676909a492e5e20dea73d9b3794639b07854.600x338.jpg?t=1789808944" alt="Love in Another World — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4928470/7d7fd7d8c7c2ff057c09c2f6923954edd620105a/ss_7d7fd7d8c7c2ff057c09c2f6923954edd620105a.1920x1080.jpg?t=1789808944" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4928470/7d7fd7d8c7c2ff057c09c2f6923954edd620105a/ss_7d7fd7d8c7c2ff057c09c2f6923954edd620105a.600x338.jpg?t=1789808944" alt="Love in Another World — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4928470/ab56f4c6d045490753d795b7fce15b79aa9a2199/ss_ab56f4c6d045490753d795b7fce15b79aa9a2199.1920x1080.jpg?t=1789808944" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4928470/ab56f4c6d045490753d795b7fce15b79aa9a2199/ss_ab56f4c6d045490753d795b7fce15b79aa9a2199.600x338.jpg?t=1789808944" alt="Love in Another World — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4928470/332b62e1696e2518ffd7dd269469c7a178c6301a/ss_332b62e1696e2518ffd7dd269469c7a178c6301a.1920x1080.jpg?t=1789808944" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4928470/332b62e1696e2518ffd7dd269469c7a178c6301a/ss_332b62e1696e2518ffd7dd269469c7a178c6301a.600x338.jpg?t=1789808944" alt="Love in Another World — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4928470/d2d33b81e75fdb1c105b07ee107bf0262c6a5e96/ss_d2d33b81e75fdb1c105b07ee107bf0262c6a5e96.1920x1080.jpg?t=1789808944" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4928470/d2d33b81e75fdb1c105b07ee107bf0262c6a5e96/ss_d2d33b81e75fdb1c105b07ee107bf0262c6a5e96.600x338.jpg?t=1789808944" alt="Love in Another World — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+      </div>
+
+      <h2>Геймплей</h2>
+      <div class="game-movies">
+        <figure class="game-movie"><div class="game-video" data-hls="https://video.akamai.steamstatic.com/store_trailers/4928470/1486425557/432498861e74faa366055705eef5f95203636fc4/1785829902/hls_264_master.m3u8?t=1785849889" data-poster="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257391453/951b2d2fe1a02274f59cc9a6058b6483d9e4aeac/movie_600x337.jpg?t=1785849889" role="button" tabindex="0" aria-label="Смотреть геймплей: 宣傳片"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257391453/951b2d2fe1a02274f59cc9a6058b6483d9e4aeac/movie_600x337.jpg?t=1785849889" alt="" loading="lazy" width="480" height="270" /><span class="game-video-play" aria-hidden="true"></span></div></figure>
+      </div>
+
+<p style="color: var(--text-faint); font-size: 13px; margin-top: 30px;">
         Данные о цене, отзывах и статистике обновляются автоматически на основе
         Steam Store API и SteamSpy.
       </p>
@@ -284,5 +330,6 @@ function declineCookies() {
 })();
 </script>
 <script src="/newsletter.js?v=2" defer></script>
+<script defer src="/game-media.js?v=1"></script>
 </body>
 </html>

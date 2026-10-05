@@ -112,6 +112,38 @@
     }
     .game-stat-card .label { font-size: 12px; color: var(--text-faint); text-transform: uppercase; }
     .game-stat-card .value { font-size: 20px; font-weight: bold; margin-top: 4px; }
+    .game-shots {
+      display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+      gap: 12px; margin: 20px 0;
+    }
+    .game-shot {
+      display: block; border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 8px; overflow: hidden;
+    }
+    .game-shot img { display: block; width: 100%; height: auto; }
+    .game-movies { display: grid; gap: 16px; margin: 20px 0; }
+    .game-movie { margin: 0; }
+    .game-movie video {
+      display: block; width: 100%; height: auto;
+      border-radius: 8px; background: #000;
+    }
+    .game-movie figcaption { margin-top: 6px; font-size: 13px; color: var(--text-faint); }
+    .game-video {
+      position: relative; cursor: pointer; overflow: hidden;
+      border-radius: 8px; background: #000; aspect-ratio: 16 / 9;
+    }
+    .game-video img { display: block; width: 100%; height: 100%; object-fit: cover; }
+    .game-video-play { position: absolute; inset: 0; display: grid; place-items: center; }
+    .game-video-play::before {
+      content: ''; width: 58px; height: 58px; border-radius: 50%;
+      background: rgba(0,0,0,0.5); border: 2px solid rgba(255,255,255,0.75);
+    }
+    .game-video-play::after {
+      content: ''; position: absolute; margin-left: 5px;
+      border-style: solid; border-width: 11px 0 11px 18px;
+      border-color: transparent transparent transparent #fff;
+    }
+    .game-video-el { display: block; width: 100%; height: 100%; background: #000; }
   </style>
 </head>
 <body>
@@ -150,7 +182,7 @@
 
     <article class="article-body">
 
-      <p>Engines at the ready! Hit the highways of American Truck Simulator like never before with the Ford pack, a DLC add-on for the new Road Trip gameplay module!</p>
+      
 
       <div class="game-stats-grid">
         <div class="game-stat-card">
@@ -166,10 +198,6 @@
           <div class="label">Владельцев (оценка)</div>
           <div class="value">0 – 20,000</div>
         </div>
-        <div class="game-stat-card">
-          <div class="label">Среднее время игры</div>
-          <div class="value">нет данных</div>
-        </div>
       </div>
 
       <h2>Об игре</h2>
@@ -183,7 +211,28 @@
         </a>
       </p>
 
-      <p style="color: var(--text-faint); font-size: 13px; margin-top: 30px;">
+            <h2>Скриншоты</h2>
+      <div class="game-shots">
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3793200/2dccc4d19feb0dcc4fa206b9455622655d39f0f3/ss_2dccc4d19feb0dcc4fa206b9455622655d39f0f3.1920x1080.jpg?t=1790868895" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3793200/2dccc4d19feb0dcc4fa206b9455622655d39f0f3/ss_2dccc4d19feb0dcc4fa206b9455622655d39f0f3.600x338.jpg?t=1790868895" alt="American Truck Simulator - Road Trip: Ford — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3793200/f38878a2795336c192a7ebe0dc13d52a71ece90a/ss_f38878a2795336c192a7ebe0dc13d52a71ece90a.1920x1080.jpg?t=1790868895" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3793200/f38878a2795336c192a7ebe0dc13d52a71ece90a/ss_f38878a2795336c192a7ebe0dc13d52a71ece90a.600x338.jpg?t=1790868895" alt="American Truck Simulator - Road Trip: Ford — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3793200/cad971ce3d80086b9087e7b361100b9c34b468af/ss_cad971ce3d80086b9087e7b361100b9c34b468af.1920x1080.jpg?t=1790868895" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3793200/cad971ce3d80086b9087e7b361100b9c34b468af/ss_cad971ce3d80086b9087e7b361100b9c34b468af.600x338.jpg?t=1790868895" alt="American Truck Simulator - Road Trip: Ford — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3793200/8a019003482734c0d75a72bb4aeb717d0ff10223/ss_8a019003482734c0d75a72bb4aeb717d0ff10223.1920x1080.jpg?t=1790868895" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3793200/8a019003482734c0d75a72bb4aeb717d0ff10223/ss_8a019003482734c0d75a72bb4aeb717d0ff10223.600x338.jpg?t=1790868895" alt="American Truck Simulator - Road Trip: Ford — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3793200/1529402c828fdb1c450c556d68c695dd25645a9c/ss_1529402c828fdb1c450c556d68c695dd25645a9c.1920x1080.jpg?t=1790868895" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3793200/1529402c828fdb1c450c556d68c695dd25645a9c/ss_1529402c828fdb1c450c556d68c695dd25645a9c.600x338.jpg?t=1790868895" alt="American Truck Simulator - Road Trip: Ford — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3793200/cb0111bbbdd6b8880bb8e4d077f00d42c7dc5545/ss_cb0111bbbdd6b8880bb8e4d077f00d42c7dc5545.1920x1080.jpg?t=1790868895" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3793200/cb0111bbbdd6b8880bb8e4d077f00d42c7dc5545/ss_cb0111bbbdd6b8880bb8e4d077f00d42c7dc5545.600x338.jpg?t=1790868895" alt="American Truck Simulator - Road Trip: Ford — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3793200/197dd70434411d2bb861b9fa43b33e913a4902e3/ss_197dd70434411d2bb861b9fa43b33e913a4902e3.1920x1080.jpg?t=1790868895" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3793200/197dd70434411d2bb861b9fa43b33e913a4902e3/ss_197dd70434411d2bb861b9fa43b33e913a4902e3.600x338.jpg?t=1790868895" alt="American Truck Simulator - Road Trip: Ford — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3793200/ac09d28b6896ef7f257636263dd39f839fce7bcd/ss_ac09d28b6896ef7f257636263dd39f839fce7bcd.1920x1080.jpg?t=1790868895" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3793200/ac09d28b6896ef7f257636263dd39f839fce7bcd/ss_ac09d28b6896ef7f257636263dd39f839fce7bcd.600x338.jpg?t=1790868895" alt="American Truck Simulator - Road Trip: Ford — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3793200/97f2f5f89a068416978750ef0a1e2364794a78c2/ss_97f2f5f89a068416978750ef0a1e2364794a78c2.1920x1080.jpg?t=1790868895" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3793200/97f2f5f89a068416978750ef0a1e2364794a78c2/ss_97f2f5f89a068416978750ef0a1e2364794a78c2.600x338.jpg?t=1790868895" alt="American Truck Simulator - Road Trip: Ford — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3793200/533e6fc6621ebaf502f98d89431f1d0a7e4dc708/ss_533e6fc6621ebaf502f98d89431f1d0a7e4dc708.1920x1080.jpg?t=1790868895" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3793200/533e6fc6621ebaf502f98d89431f1d0a7e4dc708/ss_533e6fc6621ebaf502f98d89431f1d0a7e4dc708.600x338.jpg?t=1790868895" alt="American Truck Simulator - Road Trip: Ford — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3793200/66fe7a7a2541939e3bb43c26fb4c3cbec33069a3/ss_66fe7a7a2541939e3bb43c26fb4c3cbec33069a3.1920x1080.jpg?t=1790868895" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3793200/66fe7a7a2541939e3bb43c26fb4c3cbec33069a3/ss_66fe7a7a2541939e3bb43c26fb4c3cbec33069a3.600x338.jpg?t=1790868895" alt="American Truck Simulator - Road Trip: Ford — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3793200/2324ba00eba3f32a3e11daae1dbadeaca4b994b9/ss_2324ba00eba3f32a3e11daae1dbadeaca4b994b9.1920x1080.jpg?t=1790868895" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3793200/2324ba00eba3f32a3e11daae1dbadeaca4b994b9/ss_2324ba00eba3f32a3e11daae1dbadeaca4b994b9.600x338.jpg?t=1790868895" alt="American Truck Simulator - Road Trip: Ford — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+      </div>
+
+      <h2>Геймплей</h2>
+      <div class="game-movies">
+        <figure class="game-movie"><div class="game-video" data-hls="https://video.akamai.steamstatic.com/store_trailers/3793200/6073515/8166d391338358243723eac315fceb85916579a7/1789921108/hls_264_master.m3u8?t=1789926427" data-poster="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257429985/e34b31000b1d372ffd720f5426b172beadf5cb49/movie_600x337.jpg?t=1789926427" role="button" tabindex="0" aria-label="Смотреть геймплей: American Truck Simulator - Road Trip: Ford"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257429985/e34b31000b1d372ffd720f5426b172beadf5cb49/movie_600x337.jpg?t=1789926427" alt="" loading="lazy" width="480" height="270" /><span class="game-video-play" aria-hidden="true"></span></div></figure>
+      </div>
+
+<p style="color: var(--text-faint); font-size: 13px; margin-top: 30px;">
         Данные о цене, отзывах и статистике обновляются автоматически на основе
         Steam Store API и SteamSpy.
       </p>
@@ -284,5 +333,6 @@ function declineCookies() {
 })();
 </script>
 <script src="/newsletter.js?v=2" defer></script>
+<script defer src="/game-media.js?v=1"></script>
 </body>
 </html>

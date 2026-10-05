@@ -108,6 +108,38 @@
     }
     .game-stat-card .label { font-size: 12px; color: var(--text-faint); text-transform: uppercase; }
     .game-stat-card .value { font-size: 20px; font-weight: bold; margin-top: 4px; }
+    .game-shots {
+      display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+      gap: 12px; margin: 20px 0;
+    }
+    .game-shot {
+      display: block; border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 8px; overflow: hidden;
+    }
+    .game-shot img { display: block; width: 100%; height: auto; }
+    .game-movies { display: grid; gap: 16px; margin: 20px 0; }
+    .game-movie { margin: 0; }
+    .game-movie video {
+      display: block; width: 100%; height: auto;
+      border-radius: 8px; background: #000;
+    }
+    .game-movie figcaption { margin-top: 6px; font-size: 13px; color: var(--text-faint); }
+    .game-video {
+      position: relative; cursor: pointer; overflow: hidden;
+      border-radius: 8px; background: #000; aspect-ratio: 16 / 9;
+    }
+    .game-video img { display: block; width: 100%; height: 100%; object-fit: cover; }
+    .game-video-play { position: absolute; inset: 0; display: grid; place-items: center; }
+    .game-video-play::before {
+      content: ''; width: 58px; height: 58px; border-radius: 50%;
+      background: rgba(0,0,0,0.5); border: 2px solid rgba(255,255,255,0.75);
+    }
+    .game-video-play::after {
+      content: ''; position: absolute; margin-left: 5px;
+      border-style: solid; border-width: 11px 0 11px 18px;
+      border-color: transparent transparent transparent #fff;
+    }
+    .game-video-el { display: block; width: 100%; height: 100%; background: #000; }
   </style>
 </head>
 <body>
@@ -146,7 +178,7 @@
 
     <article class="article-body">
 
-      <p>Potion Panic is a fast-paced cooperative potion brewing game where 1-4 players gather magical ingredients, manage chaotic workshop hazards, and craft increasingly complex potions to fulfill customer orders before time runs out.</p>
+      
 
       <div class="game-stats-grid">
         <div class="game-stat-card">
@@ -162,10 +194,6 @@
           <div class="label">Владельцев (оценка)</div>
           <div class="value">0 – 20,000</div>
         </div>
-        <div class="game-stat-card">
-          <div class="label">Среднее время игры</div>
-          <div class="value">нет данных</div>
-        </div>
       </div>
 
       <h2>Об игре</h2>
@@ -179,7 +207,24 @@
         </a>
       </p>
 
-      <p style="color: var(--text-faint); font-size: 13px; margin-top: 30px;">
+            <h2>Скриншоты</h2>
+      <div class="game-shots">
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4533650/d3d8b9f31123dd2b528c09619d12f2036417bf79/ss_d3d8b9f31123dd2b528c09619d12f2036417bf79.1920x1080.jpg?t=1789837388" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4533650/d3d8b9f31123dd2b528c09619d12f2036417bf79/ss_d3d8b9f31123dd2b528c09619d12f2036417bf79.600x338.jpg?t=1789837388" alt="PotionPanic — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4533650/2dbf2098008812b481fa43a07c0946a72a8241a6/ss_2dbf2098008812b481fa43a07c0946a72a8241a6.1920x1080.jpg?t=1789837388" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4533650/2dbf2098008812b481fa43a07c0946a72a8241a6/ss_2dbf2098008812b481fa43a07c0946a72a8241a6.600x338.jpg?t=1789837388" alt="PotionPanic — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4533650/f0c796dac5da019323dfc979281dba0897e02b1e/ss_f0c796dac5da019323dfc979281dba0897e02b1e.1920x1080.jpg?t=1789837388" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4533650/f0c796dac5da019323dfc979281dba0897e02b1e/ss_f0c796dac5da019323dfc979281dba0897e02b1e.600x338.jpg?t=1789837388" alt="PotionPanic — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4533650/9860757dc9ad7f9b808fdcf5529043a395a3ead7/ss_9860757dc9ad7f9b808fdcf5529043a395a3ead7.1920x1080.jpg?t=1789837388" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4533650/9860757dc9ad7f9b808fdcf5529043a395a3ead7/ss_9860757dc9ad7f9b808fdcf5529043a395a3ead7.600x338.jpg?t=1789837388" alt="PotionPanic — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4533650/83a21f94c0a308d389a6246dcd5070986ca05164/ss_83a21f94c0a308d389a6246dcd5070986ca05164.1920x1080.jpg?t=1789837388" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4533650/83a21f94c0a308d389a6246dcd5070986ca05164/ss_83a21f94c0a308d389a6246dcd5070986ca05164.600x338.jpg?t=1789837388" alt="PotionPanic — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4533650/8ae0a68113afa3db36e5bf37a594a9fd337abec1/ss_8ae0a68113afa3db36e5bf37a594a9fd337abec1.1920x1080.jpg?t=1789837388" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4533650/8ae0a68113afa3db36e5bf37a594a9fd337abec1/ss_8ae0a68113afa3db36e5bf37a594a9fd337abec1.600x338.jpg?t=1789837388" alt="PotionPanic — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4533650/bb1e106a6ff02dfd8364179fd4155f5e143d64b6/ss_bb1e106a6ff02dfd8364179fd4155f5e143d64b6.1920x1080.jpg?t=1789837388" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4533650/bb1e106a6ff02dfd8364179fd4155f5e143d64b6/ss_bb1e106a6ff02dfd8364179fd4155f5e143d64b6.600x338.jpg?t=1789837388" alt="PotionPanic — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4533650/954c2cc2bb195bba990ab96e8c7d1468f3a5188b/ss_954c2cc2bb195bba990ab96e8c7d1468f3a5188b.1920x1080.jpg?t=1789837388" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4533650/954c2cc2bb195bba990ab96e8c7d1468f3a5188b/ss_954c2cc2bb195bba990ab96e8c7d1468f3a5188b.600x338.jpg?t=1789837388" alt="PotionPanic — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+      </div>
+
+      <h2>Геймплей</h2>
+      <div class="game-movies">
+        <figure class="game-movie"><div class="game-video" data-hls="https://video.akamai.steamstatic.com/store_trailers/4533650/567225054/b5cdd81c7ebe3e90723ccc0f999cfae4c00c933f/1774627464/hls_264_master.m3u8?t=1778524342" data-poster="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257310211/f0c796dac5da019323dfc979281dba0897e02b1e/movie_600x337.jpg?t=1778524342" role="button" tabindex="0" aria-label="Смотреть геймплей: PotionPanic"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257310211/f0c796dac5da019323dfc979281dba0897e02b1e/movie_600x337.jpg?t=1778524342" alt="" loading="lazy" width="480" height="270" /><span class="game-video-play" aria-hidden="true"></span></div></figure>
+      </div>
+
+<p style="color: var(--text-faint); font-size: 13px; margin-top: 30px;">
         Данные о цене, отзывах и статистике обновляются автоматически на основе
         Steam Store API и SteamSpy.
       </p>
@@ -280,5 +325,6 @@ function declineCookies() {
 })();
 </script>
 <script src="/newsletter.js?v=2" defer></script>
+<script defer src="/game-media.js?v=1"></script>
 </body>
 </html>

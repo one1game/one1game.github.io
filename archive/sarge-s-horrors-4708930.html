@@ -112,6 +112,38 @@
     }
     .game-stat-card .label { font-size: 12px; color: var(--text-faint); text-transform: uppercase; }
     .game-stat-card .value { font-size: 20px; font-weight: bold; margin-top: 4px; }
+    .game-shots {
+      display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+      gap: 12px; margin: 20px 0;
+    }
+    .game-shot {
+      display: block; border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 8px; overflow: hidden;
+    }
+    .game-shot img { display: block; width: 100%; height: auto; }
+    .game-movies { display: grid; gap: 16px; margin: 20px 0; }
+    .game-movie { margin: 0; }
+    .game-movie video {
+      display: block; width: 100%; height: auto;
+      border-radius: 8px; background: #000;
+    }
+    .game-movie figcaption { margin-top: 6px; font-size: 13px; color: var(--text-faint); }
+    .game-video {
+      position: relative; cursor: pointer; overflow: hidden;
+      border-radius: 8px; background: #000; aspect-ratio: 16 / 9;
+    }
+    .game-video img { display: block; width: 100%; height: 100%; object-fit: cover; }
+    .game-video-play { position: absolute; inset: 0; display: grid; place-items: center; }
+    .game-video-play::before {
+      content: ''; width: 58px; height: 58px; border-radius: 50%;
+      background: rgba(0,0,0,0.5); border: 2px solid rgba(255,255,255,0.75);
+    }
+    .game-video-play::after {
+      content: ''; position: absolute; margin-left: 5px;
+      border-style: solid; border-width: 11px 0 11px 18px;
+      border-color: transparent transparent transparent #fff;
+    }
+    .game-video-el { display: block; width: 100%; height: 100%; background: #000; }
   </style>
 </head>
 <body>
@@ -150,7 +182,7 @@
 
     <article class="article-body">
 
-      <p>Toy soldiers. Real war. Betrayal. In a desperate bid for victory, the Tan commanders summon The Four Horsemen, unleashing an undead apocalypse across the battlefield. Hunt the Horsemen. Claim their demonic staffs. Return them to your commander. But some powers were never meant to be held.</p>
+      
 
       <div class="game-stats-grid">
         <div class="game-stat-card">
@@ -166,10 +198,6 @@
           <div class="label">Владельцев (оценка)</div>
           <div class="value">0 – 20,000</div>
         </div>
-        <div class="game-stat-card">
-          <div class="label">Среднее время игры</div>
-          <div class="value">нет данных</div>
-        </div>
       </div>
 
       <h2>Об игре</h2>
@@ -183,7 +211,28 @@
         </a>
       </p>
 
-      <p style="color: var(--text-faint); font-size: 13px; margin-top: 30px;">
+            <h2>Скриншоты</h2>
+      <div class="game-shots">
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4708930/58a2a4d13cce092c160600809775d8794d6a74cb/ss_58a2a4d13cce092c160600809775d8794d6a74cb.1920x1080.jpg?t=1790634914" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4708930/58a2a4d13cce092c160600809775d8794d6a74cb/ss_58a2a4d13cce092c160600809775d8794d6a74cb.600x338.jpg?t=1790634914" alt="Sarge&#x27;s Horrors — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4708930/8077fd641aaccd10a908e65013bcb6a47e018cd1/ss_8077fd641aaccd10a908e65013bcb6a47e018cd1.1920x1080.jpg?t=1790634914" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4708930/8077fd641aaccd10a908e65013bcb6a47e018cd1/ss_8077fd641aaccd10a908e65013bcb6a47e018cd1.600x338.jpg?t=1790634914" alt="Sarge&#x27;s Horrors — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4708930/c087f6e6eceab01c8c8ceb2c13af39625aa2334a/ss_c087f6e6eceab01c8c8ceb2c13af39625aa2334a.1920x1080.jpg?t=1790634914" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4708930/c087f6e6eceab01c8c8ceb2c13af39625aa2334a/ss_c087f6e6eceab01c8c8ceb2c13af39625aa2334a.600x338.jpg?t=1790634914" alt="Sarge&#x27;s Horrors — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4708930/dade5cc4fad0756d81054fd3d3aed15c70a95824/ss_dade5cc4fad0756d81054fd3d3aed15c70a95824.1920x1080.jpg?t=1790634914" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4708930/dade5cc4fad0756d81054fd3d3aed15c70a95824/ss_dade5cc4fad0756d81054fd3d3aed15c70a95824.600x338.jpg?t=1790634914" alt="Sarge&#x27;s Horrors — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4708930/d1cdf93eec9c5970a317a2621a0f91e1487f72b7/ss_d1cdf93eec9c5970a317a2621a0f91e1487f72b7.1920x1080.jpg?t=1790634914" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4708930/d1cdf93eec9c5970a317a2621a0f91e1487f72b7/ss_d1cdf93eec9c5970a317a2621a0f91e1487f72b7.600x338.jpg?t=1790634914" alt="Sarge&#x27;s Horrors — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4708930/5fd805879860aa0b30f04a55f43cf8ac343e0604/ss_5fd805879860aa0b30f04a55f43cf8ac343e0604.1920x1080.jpg?t=1790634914" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4708930/5fd805879860aa0b30f04a55f43cf8ac343e0604/ss_5fd805879860aa0b30f04a55f43cf8ac343e0604.600x338.jpg?t=1790634914" alt="Sarge&#x27;s Horrors — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4708930/1e7afd52ed117cc195c4f9d8627a7d44af5073bd/ss_1e7afd52ed117cc195c4f9d8627a7d44af5073bd.1920x1080.jpg?t=1790634914" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4708930/1e7afd52ed117cc195c4f9d8627a7d44af5073bd/ss_1e7afd52ed117cc195c4f9d8627a7d44af5073bd.600x338.jpg?t=1790634914" alt="Sarge&#x27;s Horrors — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4708930/78ce35b02f270689b7c9081740ec196df7d61fc2/ss_78ce35b02f270689b7c9081740ec196df7d61fc2.1920x1080.jpg?t=1790634914" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4708930/78ce35b02f270689b7c9081740ec196df7d61fc2/ss_78ce35b02f270689b7c9081740ec196df7d61fc2.600x338.jpg?t=1790634914" alt="Sarge&#x27;s Horrors — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4708930/287470cfa38068c87dfed8c7388abab35c85785a/ss_287470cfa38068c87dfed8c7388abab35c85785a.1920x1080.jpg?t=1790634914" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4708930/287470cfa38068c87dfed8c7388abab35c85785a/ss_287470cfa38068c87dfed8c7388abab35c85785a.600x338.jpg?t=1790634914" alt="Sarge&#x27;s Horrors — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4708930/44d32817339f3cb4d808369507e2cae40c91823e/ss_44d32817339f3cb4d808369507e2cae40c91823e.1920x1080.jpg?t=1790634914" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4708930/44d32817339f3cb4d808369507e2cae40c91823e/ss_44d32817339f3cb4d808369507e2cae40c91823e.600x338.jpg?t=1790634914" alt="Sarge&#x27;s Horrors — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4708930/3a3118b5d9e59aa6791d1874fe31b90e05833d5f/ss_3a3118b5d9e59aa6791d1874fe31b90e05833d5f.1920x1080.jpg?t=1790634914" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4708930/3a3118b5d9e59aa6791d1874fe31b90e05833d5f/ss_3a3118b5d9e59aa6791d1874fe31b90e05833d5f.600x338.jpg?t=1790634914" alt="Sarge&#x27;s Horrors — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4708930/6ea198e9e929a39df0508ffd8bc40612a7f1eca1/ss_6ea198e9e929a39df0508ffd8bc40612a7f1eca1.1920x1080.jpg?t=1790634914" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4708930/6ea198e9e929a39df0508ffd8bc40612a7f1eca1/ss_6ea198e9e929a39df0508ffd8bc40612a7f1eca1.600x338.jpg?t=1790634914" alt="Sarge&#x27;s Horrors — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+      </div>
+
+      <h2>Геймплей</h2>
+      <div class="game-movies">
+        <figure class="game-movie"><div class="game-video" data-hls="https://video.akamai.steamstatic.com/store_trailers/4708930/1504478678/8933678544dd15c06bec7e1074d1a0a331c02007/1780341317/hls_264_master.m3u8?t=1780342706" data-poster="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257347842/e749dfa4a35c4bd32cbd08d57e71817bdadba74f/movie_600x337.jpg?t=1780342706" role="button" tabindex="0" aria-label="Смотреть геймплей: Official Gameplay Trailer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257347842/e749dfa4a35c4bd32cbd08d57e71817bdadba74f/movie_600x337.jpg?t=1780342706" alt="" loading="lazy" width="480" height="270" /><span class="game-video-play" aria-hidden="true"></span></div></figure>
+      </div>
+
+<p style="color: var(--text-faint); font-size: 13px; margin-top: 30px;">
         Данные о цене, отзывах и статистике обновляются автоматически на основе
         Steam Store API и SteamSpy.
       </p>
@@ -284,5 +333,6 @@ function declineCookies() {
 })();
 </script>
 <script src="/newsletter.js?v=2" defer></script>
+<script defer src="/game-media.js?v=1"></script>
 </body>
 </html>

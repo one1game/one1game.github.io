@@ -112,6 +112,38 @@
     }
     .game-stat-card .label { font-size: 12px; color: var(--text-faint); text-transform: uppercase; }
     .game-stat-card .value { font-size: 20px; font-weight: bold; margin-top: 4px; }
+    .game-shots {
+      display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+      gap: 12px; margin: 20px 0;
+    }
+    .game-shot {
+      display: block; border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 8px; overflow: hidden;
+    }
+    .game-shot img { display: block; width: 100%; height: auto; }
+    .game-movies { display: grid; gap: 16px; margin: 20px 0; }
+    .game-movie { margin: 0; }
+    .game-movie video {
+      display: block; width: 100%; height: auto;
+      border-radius: 8px; background: #000;
+    }
+    .game-movie figcaption { margin-top: 6px; font-size: 13px; color: var(--text-faint); }
+    .game-video {
+      position: relative; cursor: pointer; overflow: hidden;
+      border-radius: 8px; background: #000; aspect-ratio: 16 / 9;
+    }
+    .game-video img { display: block; width: 100%; height: 100%; object-fit: cover; }
+    .game-video-play { position: absolute; inset: 0; display: grid; place-items: center; }
+    .game-video-play::before {
+      content: ''; width: 58px; height: 58px; border-radius: 50%;
+      background: rgba(0,0,0,0.5); border: 2px solid rgba(255,255,255,0.75);
+    }
+    .game-video-play::after {
+      content: ''; position: absolute; margin-left: 5px;
+      border-style: solid; border-width: 11px 0 11px 18px;
+      border-color: transparent transparent transparent #fff;
+    }
+    .game-video-el { display: block; width: 100%; height: 100%; background: #000; }
   </style>
 </head>
 <body>
@@ -150,7 +182,7 @@
 
     <article class="article-body">
 
-      <p>Play as Keine Kamishirasawa, the half-beast teacher of Gensokyo! Teach humans and yokai, grow their minds, hearts, and bodies, and guide them to graduation. Balance tradition and change, expand your influence, and build your ideal school. Write your legend on the education frontlines!</p>
+      
 
       <div class="game-stats-grid">
         <div class="game-stat-card">
@@ -166,10 +198,6 @@
           <div class="label">Владельцев (оценка)</div>
           <div class="value">0 – 20,000</div>
         </div>
-        <div class="game-stat-card">
-          <div class="label">Среднее время игры</div>
-          <div class="value">нет данных</div>
-        </div>
       </div>
 
       <h2>Об игре</h2>
@@ -183,7 +211,23 @@
         </a>
       </p>
 
-      <p style="color: var(--text-faint); font-size: 13px; margin-top: 30px;">
+            <h2>Скриншоты</h2>
+      <div class="game-shots">
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3679100/4c32d577022da48200c5f5125ddbb8075f120fb0/ss_4c32d577022da48200c5f5125ddbb8075f120fb0.1920x1080.jpg?t=1791040068" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3679100/4c32d577022da48200c5f5125ddbb8075f120fb0/ss_4c32d577022da48200c5f5125ddbb8075f120fb0.600x338.jpg?t=1791040068" alt="Keine’s Terakoya: A Schoolhouse in Gensokyo — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3679100/3e99bfc6fd9aa58fcd1d30b98f96dd6d6e409fa5/ss_3e99bfc6fd9aa58fcd1d30b98f96dd6d6e409fa5.1920x1080.jpg?t=1791040068" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3679100/3e99bfc6fd9aa58fcd1d30b98f96dd6d6e409fa5/ss_3e99bfc6fd9aa58fcd1d30b98f96dd6d6e409fa5.600x338.jpg?t=1791040068" alt="Keine’s Terakoya: A Schoolhouse in Gensokyo — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3679100/858ae95bb1bcabe8ee8ff21474d3c10d1a0ed1ae/ss_858ae95bb1bcabe8ee8ff21474d3c10d1a0ed1ae.1920x1080.jpg?t=1791040068" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3679100/858ae95bb1bcabe8ee8ff21474d3c10d1a0ed1ae/ss_858ae95bb1bcabe8ee8ff21474d3c10d1a0ed1ae.600x338.jpg?t=1791040068" alt="Keine’s Terakoya: A Schoolhouse in Gensokyo — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3679100/0c5b82d614c87fb204c96da1a9107ad8104f5ef6/ss_0c5b82d614c87fb204c96da1a9107ad8104f5ef6.1920x1080.jpg?t=1791040068" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3679100/0c5b82d614c87fb204c96da1a9107ad8104f5ef6/ss_0c5b82d614c87fb204c96da1a9107ad8104f5ef6.600x338.jpg?t=1791040068" alt="Keine’s Terakoya: A Schoolhouse in Gensokyo — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3679100/1ba5c143f76d57cfb15135cdd57f1614af1dfc0d/ss_1ba5c143f76d57cfb15135cdd57f1614af1dfc0d.1920x1080.jpg?t=1791040068" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3679100/1ba5c143f76d57cfb15135cdd57f1614af1dfc0d/ss_1ba5c143f76d57cfb15135cdd57f1614af1dfc0d.600x338.jpg?t=1791040068" alt="Keine’s Terakoya: A Schoolhouse in Gensokyo — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+      </div>
+
+      <h2>Геймплей</h2>
+      <div class="game-movies">
+        <figure class="game-movie"><div class="game-video" data-hls="https://video.akamai.steamstatic.com/store_trailers/3679100/2123583015/3397bbd0725faf2ef158748b859bb1ee21d5ba7f/1790931713/hls_264_master.m3u8?t=1790932266" data-poster="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257443720/6dad155fffaefb50348e415f53301713c9f83028/movie_600x337.jpg?t=1790932266" role="button" tabindex="0" aria-label="Смотреть геймплей: EN完整版PV"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257443720/6dad155fffaefb50348e415f53301713c9f83028/movie_600x337.jpg?t=1790932266" alt="" loading="lazy" width="480" height="270" /><span class="game-video-play" aria-hidden="true"></span></div></figure>
+        <figure class="game-movie"><div class="game-video" data-hls="https://video.akamai.steamstatic.com/store_trailers/3679100/1508131246/b246c0b5de1118fdbbc43ae6df6209e08c19642f/1760774076/hls_264_master.m3u8?t=1760781116" data-poster="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257219550/41e671379c3b8384ecdc8127f8dde4a9aa36a9d1/movie_600x337.jpg?t=1760781116" role="button" tabindex="0" aria-label="Смотреть геймплей: 发售PV"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257219550/41e671379c3b8384ecdc8127f8dde4a9aa36a9d1/movie_600x337.jpg?t=1760781116" alt="" loading="lazy" width="480" height="270" /><span class="game-video-play" aria-hidden="true"></span></div></figure>
+        <figure class="game-movie"><div class="game-video" data-hls="https://video.akamai.steamstatic.com/store_trailers/3679100/909776365/81ea639bc13568a52db55f354abaaabd2cd665a1/1760773550/hls_264_master.m3u8?t=1760781117" data-poster="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257128609/fa55a56edf506abfc961eab2f098f67372da31bd/movie_600x337.jpg?t=1760781117" role="button" tabindex="0" aria-label="Смотреть геймплей: 上架PV"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257128609/fa55a56edf506abfc961eab2f098f67372da31bd/movie_600x337.jpg?t=1760781117" alt="" loading="lazy" width="480" height="270" /><span class="game-video-play" aria-hidden="true"></span></div></figure>
+      </div>
+
+<p style="color: var(--text-faint); font-size: 13px; margin-top: 30px;">
         Данные о цене, отзывах и статистике обновляются автоматически на основе
         Steam Store API и SteamSpy.
       </p>
@@ -284,5 +328,6 @@ function declineCookies() {
 })();
 </script>
 <script src="/newsletter.js?v=2" defer></script>
+<script defer src="/game-media.js?v=1"></script>
 </body>
 </html>

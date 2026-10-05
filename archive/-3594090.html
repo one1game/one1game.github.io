@@ -112,6 +112,38 @@
     }
     .game-stat-card .label { font-size: 12px; color: var(--text-faint); text-transform: uppercase; }
     .game-stat-card .value { font-size: 20px; font-weight: bold; margin-top: 4px; }
+    .game-shots {
+      display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+      gap: 12px; margin: 20px 0;
+    }
+    .game-shot {
+      display: block; border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 8px; overflow: hidden;
+    }
+    .game-shot img { display: block; width: 100%; height: auto; }
+    .game-movies { display: grid; gap: 16px; margin: 20px 0; }
+    .game-movie { margin: 0; }
+    .game-movie video {
+      display: block; width: 100%; height: auto;
+      border-radius: 8px; background: #000;
+    }
+    .game-movie figcaption { margin-top: 6px; font-size: 13px; color: var(--text-faint); }
+    .game-video {
+      position: relative; cursor: pointer; overflow: hidden;
+      border-radius: 8px; background: #000; aspect-ratio: 16 / 9;
+    }
+    .game-video img { display: block; width: 100%; height: 100%; object-fit: cover; }
+    .game-video-play { position: absolute; inset: 0; display: grid; place-items: center; }
+    .game-video-play::before {
+      content: ''; width: 58px; height: 58px; border-radius: 50%;
+      background: rgba(0,0,0,0.5); border: 2px solid rgba(255,255,255,0.75);
+    }
+    .game-video-play::after {
+      content: ''; position: absolute; margin-left: 5px;
+      border-style: solid; border-width: 11px 0 11px 18px;
+      border-color: transparent transparent transparent #fff;
+    }
+    .game-video-el { display: block; width: 100%; height: 100%; background: #000; }
   </style>
 </head>
 <body>
@@ -150,7 +182,7 @@
 
     <article class="article-body">
 
-      <p>&quot;The Great Wastes&quot; is a pixelated fantasy RPG. Players take on the role of a mysterious young man living in an isolated village. One day, the village is suddenly attacked by a group of unidentified black-clad individuals, forcing the young man to flee with his childhood sweetheart and companions.</p>
+      
 
       <div class="game-stats-grid">
         <div class="game-stat-card">
@@ -166,10 +198,6 @@
           <div class="label">Владельцев (оценка)</div>
           <div class="value">0 – 20,000</div>
         </div>
-        <div class="game-stat-card">
-          <div class="label">Среднее время игры</div>
-          <div class="value">нет данных</div>
-        </div>
       </div>
 
       <h2>Об игре</h2>
@@ -183,7 +211,24 @@
         </a>
       </p>
 
-      <p style="color: var(--text-faint); font-size: 13px; margin-top: 30px;">
+            <h2>Скриншоты</h2>
+      <div class="game-shots">
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3594090/463625dda7bae1c3fa2113ab7093827c590fdc31/ss_463625dda7bae1c3fa2113ab7093827c590fdc31.1920x1080.jpg?t=1790577388" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3594090/463625dda7bae1c3fa2113ab7093827c590fdc31/ss_463625dda7bae1c3fa2113ab7093827c590fdc31.600x338.jpg?t=1790577388" alt="The Great Wastes — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3594090/268f2a6abdc757d3b51de19ca37e86fca841fb6a/ss_268f2a6abdc757d3b51de19ca37e86fca841fb6a.1920x1080.jpg?t=1790577388" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3594090/268f2a6abdc757d3b51de19ca37e86fca841fb6a/ss_268f2a6abdc757d3b51de19ca37e86fca841fb6a.600x338.jpg?t=1790577388" alt="The Great Wastes — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3594090/941fe03f388ad4ae294ccf8c4ddcf897814141e7/ss_941fe03f388ad4ae294ccf8c4ddcf897814141e7.1920x1080.jpg?t=1790577388" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3594090/941fe03f388ad4ae294ccf8c4ddcf897814141e7/ss_941fe03f388ad4ae294ccf8c4ddcf897814141e7.600x338.jpg?t=1790577388" alt="The Great Wastes — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3594090/fb9b1bf0188f1607f5f8e8f7c22cf7ddb21bf2ee/ss_fb9b1bf0188f1607f5f8e8f7c22cf7ddb21bf2ee.1920x1080.jpg?t=1790577388" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3594090/fb9b1bf0188f1607f5f8e8f7c22cf7ddb21bf2ee/ss_fb9b1bf0188f1607f5f8e8f7c22cf7ddb21bf2ee.600x338.jpg?t=1790577388" alt="The Great Wastes — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3594090/9244e0aee8b0b72e249e4d133e2c355701b31368/ss_9244e0aee8b0b72e249e4d133e2c355701b31368.1920x1080.jpg?t=1790577388" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3594090/9244e0aee8b0b72e249e4d133e2c355701b31368/ss_9244e0aee8b0b72e249e4d133e2c355701b31368.600x338.jpg?t=1790577388" alt="The Great Wastes — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3594090/495a5268647e6ed8b113008f49e6d5ac07488927/ss_495a5268647e6ed8b113008f49e6d5ac07488927.1920x1080.jpg?t=1790577388" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3594090/495a5268647e6ed8b113008f49e6d5ac07488927/ss_495a5268647e6ed8b113008f49e6d5ac07488927.600x338.jpg?t=1790577388" alt="The Great Wastes — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3594090/f17fb2333fd5b6210cbc13446b1a6685511619bf/ss_f17fb2333fd5b6210cbc13446b1a6685511619bf.1920x1080.jpg?t=1790577388" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3594090/f17fb2333fd5b6210cbc13446b1a6685511619bf/ss_f17fb2333fd5b6210cbc13446b1a6685511619bf.600x338.jpg?t=1790577388" alt="The Great Wastes — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3594090/8048f523d3efbec3c305f08411bd96c44f691848/ss_8048f523d3efbec3c305f08411bd96c44f691848.1920x1080.jpg?t=1790577388" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3594090/8048f523d3efbec3c305f08411bd96c44f691848/ss_8048f523d3efbec3c305f08411bd96c44f691848.600x338.jpg?t=1790577388" alt="The Great Wastes — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+      </div>
+
+      <h2>Геймплей</h2>
+      <div class="game-movies">
+        <figure class="game-movie"><div class="game-video" data-hls="https://video.akamai.steamstatic.com/store_trailers/3594090/168550433/fb6a5586719576f47bc52abb4a05bcd75b1abcf4/1778115124/hls_264_master.m3u8?t=1778116148" data-poster="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257164775/293e6dedfe599045cb0255e0b4ee2fb9c2a915ce/movie_600x337.jpg?t=1778116148" role="button" tabindex="0" aria-label="Смотреть геймплей: Introduction to The Great Wastes"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257164775/293e6dedfe599045cb0255e0b4ee2fb9c2a915ce/movie_600x337.jpg?t=1778116148" alt="" loading="lazy" width="480" height="270" /><span class="game-video-play" aria-hidden="true"></span></div></figure>
+      </div>
+
+<p style="color: var(--text-faint); font-size: 13px; margin-top: 30px;">
         Данные о цене, отзывах и статистике обновляются автоматически на основе
         Steam Store API и SteamSpy.
       </p>
@@ -284,5 +329,6 @@ function declineCookies() {
 })();
 </script>
 <script src="/newsletter.js?v=2" defer></script>
+<script defer src="/game-media.js?v=1"></script>
 </body>
 </html>

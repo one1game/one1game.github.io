@@ -112,6 +112,38 @@
     }
     .game-stat-card .label { font-size: 12px; color: var(--text-faint); text-transform: uppercase; }
     .game-stat-card .value { font-size: 20px; font-weight: bold; margin-top: 4px; }
+    .game-shots {
+      display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+      gap: 12px; margin: 20px 0;
+    }
+    .game-shot {
+      display: block; border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 8px; overflow: hidden;
+    }
+    .game-shot img { display: block; width: 100%; height: auto; }
+    .game-movies { display: grid; gap: 16px; margin: 20px 0; }
+    .game-movie { margin: 0; }
+    .game-movie video {
+      display: block; width: 100%; height: auto;
+      border-radius: 8px; background: #000;
+    }
+    .game-movie figcaption { margin-top: 6px; font-size: 13px; color: var(--text-faint); }
+    .game-video {
+      position: relative; cursor: pointer; overflow: hidden;
+      border-radius: 8px; background: #000; aspect-ratio: 16 / 9;
+    }
+    .game-video img { display: block; width: 100%; height: 100%; object-fit: cover; }
+    .game-video-play { position: absolute; inset: 0; display: grid; place-items: center; }
+    .game-video-play::before {
+      content: ''; width: 58px; height: 58px; border-radius: 50%;
+      background: rgba(0,0,0,0.5); border: 2px solid rgba(255,255,255,0.75);
+    }
+    .game-video-play::after {
+      content: ''; position: absolute; margin-left: 5px;
+      border-style: solid; border-width: 11px 0 11px 18px;
+      border-color: transparent transparent transparent #fff;
+    }
+    .game-video-el { display: block; width: 100%; height: 100%; background: #000; }
   </style>
 </head>
 <body>
@@ -150,7 +182,7 @@
 
     <article class="article-body">
 
-      <p>Galaxy Critter Co. is a cute chaotic roguelike where tower defense meets top-down shooting: build by day, fight by night, and craft broken synergies to survive the Swarm.</p>
+      
 
       <div class="game-stats-grid">
         <div class="game-stat-card">
@@ -166,10 +198,6 @@
           <div class="label">Владельцев (оценка)</div>
           <div class="value">0 – 20,000</div>
         </div>
-        <div class="game-stat-card">
-          <div class="label">Среднее время игры</div>
-          <div class="value">нет данных</div>
-        </div>
       </div>
 
       <h2>Об игре</h2>
@@ -183,7 +211,29 @@
         </a>
       </p>
 
-      <p style="color: var(--text-faint); font-size: 13px; margin-top: 30px;">
+            <h2>Скриншоты</h2>
+      <div class="game-shots">
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3630680/d7e073ba13a696b8d3d7955b2b1c35acf1134b1a/ss_d7e073ba13a696b8d3d7955b2b1c35acf1134b1a.1920x1080.jpg?t=1790582671" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3630680/d7e073ba13a696b8d3d7955b2b1c35acf1134b1a/ss_d7e073ba13a696b8d3d7955b2b1c35acf1134b1a.600x338.jpg?t=1790582671" alt="Galaxy Critter Co. — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3630680/8377c5b813ca88d181303fdb1bd63319f46e3233/ss_8377c5b813ca88d181303fdb1bd63319f46e3233.1920x1080.jpg?t=1790582671" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3630680/8377c5b813ca88d181303fdb1bd63319f46e3233/ss_8377c5b813ca88d181303fdb1bd63319f46e3233.600x338.jpg?t=1790582671" alt="Galaxy Critter Co. — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3630680/7743d08bdb85353e94dce3fc3bf42a3fb1d0255b/ss_7743d08bdb85353e94dce3fc3bf42a3fb1d0255b.1920x1080.jpg?t=1790582671" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3630680/7743d08bdb85353e94dce3fc3bf42a3fb1d0255b/ss_7743d08bdb85353e94dce3fc3bf42a3fb1d0255b.600x338.jpg?t=1790582671" alt="Galaxy Critter Co. — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3630680/2ba90a11d00014503876bebb40de629bea584258/ss_2ba90a11d00014503876bebb40de629bea584258.1920x1080.jpg?t=1790582671" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3630680/2ba90a11d00014503876bebb40de629bea584258/ss_2ba90a11d00014503876bebb40de629bea584258.600x338.jpg?t=1790582671" alt="Galaxy Critter Co. — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3630680/4a252807618ac9533cc17d2b29da74d07e4f520c/ss_4a252807618ac9533cc17d2b29da74d07e4f520c.1920x1080.jpg?t=1790582671" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3630680/4a252807618ac9533cc17d2b29da74d07e4f520c/ss_4a252807618ac9533cc17d2b29da74d07e4f520c.600x338.jpg?t=1790582671" alt="Galaxy Critter Co. — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3630680/37340d12c9854c1d0051702d4da2f660d38e6594/ss_37340d12c9854c1d0051702d4da2f660d38e6594.1920x1080.jpg?t=1790582671" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3630680/37340d12c9854c1d0051702d4da2f660d38e6594/ss_37340d12c9854c1d0051702d4da2f660d38e6594.600x338.jpg?t=1790582671" alt="Galaxy Critter Co. — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3630680/3cc2f72cb97e016245fa0b77a232f04c4f067a00/ss_3cc2f72cb97e016245fa0b77a232f04c4f067a00.1920x1080.jpg?t=1790582671" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3630680/3cc2f72cb97e016245fa0b77a232f04c4f067a00/ss_3cc2f72cb97e016245fa0b77a232f04c4f067a00.600x338.jpg?t=1790582671" alt="Galaxy Critter Co. — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3630680/084ab13405b551a7c2701b13f6719d1fa2f2a394/ss_084ab13405b551a7c2701b13f6719d1fa2f2a394.1920x1080.jpg?t=1790582671" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3630680/084ab13405b551a7c2701b13f6719d1fa2f2a394/ss_084ab13405b551a7c2701b13f6719d1fa2f2a394.600x338.jpg?t=1790582671" alt="Galaxy Critter Co. — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3630680/e28130dcfb2797acbc3c5a31c70bdb5ff8515727/ss_e28130dcfb2797acbc3c5a31c70bdb5ff8515727.1920x1080.jpg?t=1790582671" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3630680/e28130dcfb2797acbc3c5a31c70bdb5ff8515727/ss_e28130dcfb2797acbc3c5a31c70bdb5ff8515727.600x338.jpg?t=1790582671" alt="Galaxy Critter Co. — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3630680/ff546bb8fde6d16400cb3523bdd9a33706d9f85c/ss_ff546bb8fde6d16400cb3523bdd9a33706d9f85c.1920x1080.jpg?t=1790582671" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3630680/ff546bb8fde6d16400cb3523bdd9a33706d9f85c/ss_ff546bb8fde6d16400cb3523bdd9a33706d9f85c.600x338.jpg?t=1790582671" alt="Galaxy Critter Co. — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3630680/f82644d6889ef975e6ebd55c6a0e20c7d0556fe2/ss_f82644d6889ef975e6ebd55c6a0e20c7d0556fe2.1920x1080.jpg?t=1790582671" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3630680/f82644d6889ef975e6ebd55c6a0e20c7d0556fe2/ss_f82644d6889ef975e6ebd55c6a0e20c7d0556fe2.600x338.jpg?t=1790582671" alt="Galaxy Critter Co. — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3630680/d5bb0731d0836fd067dec8fd37daf077f599de18/ss_d5bb0731d0836fd067dec8fd37daf077f599de18.1920x1080.jpg?t=1790582671" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3630680/d5bb0731d0836fd067dec8fd37daf077f599de18/ss_d5bb0731d0836fd067dec8fd37daf077f599de18.600x338.jpg?t=1790582671" alt="Galaxy Critter Co. — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+      </div>
+
+      <h2>Геймплей</h2>
+      <div class="game-movies">
+        <figure class="game-movie"><div class="game-video" data-hls="https://video.akamai.steamstatic.com/store_trailers/3630680/1776407724/eb2a1ca2b627afc31f20e3ab1c68851ed4ea4606/1788958060/hls_264_master.m3u8?t=1789055274" data-poster="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257420840/ffe7b79fe3de6b4945fd8c83e534bf915e6fcfb0/movie_600x337.jpg?t=1789055274" role="button" tabindex="0" aria-label="Смотреть геймплей: Release Date Trailer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257420840/ffe7b79fe3de6b4945fd8c83e534bf915e6fcfb0/movie_600x337.jpg?t=1789055274" alt="" loading="lazy" width="480" height="270" /><span class="game-video-play" aria-hidden="true"></span></div></figure>
+        <figure class="game-movie"><div class="game-video" data-hls="https://video.akamai.steamstatic.com/store_trailers/3630680/1704023002/337d2f134afc2c065566e69cfde6d22d7daf9582/1780757635/hls_264_master.m3u8?t=1780758647" data-poster="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257352139/0da7046a303b6b54e88d3e6003e451c11dff8a64/movie_600x337.jpg?t=1780758647" role="button" tabindex="0" aria-label="Смотреть геймплей: Next Fest Trailer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257352139/0da7046a303b6b54e88d3e6003e451c11dff8a64/movie_600x337.jpg?t=1780758647" alt="" loading="lazy" width="480" height="270" /><span class="game-video-play" aria-hidden="true"></span></div></figure>
+      </div>
+
+<p style="color: var(--text-faint); font-size: 13px; margin-top: 30px;">
         Данные о цене, отзывах и статистике обновляются автоматически на основе
         Steam Store API и SteamSpy.
       </p>
@@ -284,5 +334,6 @@ function declineCookies() {
 })();
 </script>
 <script src="/newsletter.js?v=2" defer></script>
+<script defer src="/game-media.js?v=1"></script>
 </body>
 </html>

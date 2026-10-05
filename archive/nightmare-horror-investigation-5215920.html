@@ -112,6 +112,38 @@
     }
     .game-stat-card .label { font-size: 12px; color: var(--text-faint); text-transform: uppercase; }
     .game-stat-card .value { font-size: 20px; font-weight: bold; margin-top: 4px; }
+    .game-shots {
+      display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+      gap: 12px; margin: 20px 0;
+    }
+    .game-shot {
+      display: block; border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 8px; overflow: hidden;
+    }
+    .game-shot img { display: block; width: 100%; height: auto; }
+    .game-movies { display: grid; gap: 16px; margin: 20px 0; }
+    .game-movie { margin: 0; }
+    .game-movie video {
+      display: block; width: 100%; height: auto;
+      border-radius: 8px; background: #000;
+    }
+    .game-movie figcaption { margin-top: 6px; font-size: 13px; color: var(--text-faint); }
+    .game-video {
+      position: relative; cursor: pointer; overflow: hidden;
+      border-radius: 8px; background: #000; aspect-ratio: 16 / 9;
+    }
+    .game-video img { display: block; width: 100%; height: 100%; object-fit: cover; }
+    .game-video-play { position: absolute; inset: 0; display: grid; place-items: center; }
+    .game-video-play::before {
+      content: ''; width: 58px; height: 58px; border-radius: 50%;
+      background: rgba(0,0,0,0.5); border: 2px solid rgba(255,255,255,0.75);
+    }
+    .game-video-play::after {
+      content: ''; position: absolute; margin-left: 5px;
+      border-style: solid; border-width: 11px 0 11px 18px;
+      border-color: transparent transparent transparent #fff;
+    }
+    .game-video-el { display: block; width: 100%; height: 100%; background: #000; }
   </style>
 </head>
 <body>
@@ -150,7 +182,7 @@
 
     <article class="article-body">
 
-      <p>A survival horror adventure where you investigate terrifying locations, face deadly enemies, explore a mysterious world, and fight to survive. Discover secrets, manage your weapons and resources, and uncover the dark truth behind the nightmare.</p>
+      
 
       <div class="game-stats-grid">
         <div class="game-stat-card">
@@ -166,10 +198,6 @@
           <div class="label">Владельцев (оценка)</div>
           <div class="value">0 – 20,000</div>
         </div>
-        <div class="game-stat-card">
-          <div class="label">Среднее время игры</div>
-          <div class="value">нет данных</div>
-        </div>
       </div>
 
       <h2>Об игре</h2>
@@ -183,7 +211,24 @@
         </a>
       </p>
 
-      <p style="color: var(--text-faint); font-size: 13px; margin-top: 30px;">
+            <h2>Скриншоты</h2>
+      <div class="game-shots">
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5215920/00c3c99e48022fff88597b4bfaf70a0560c14453/ss_00c3c99e48022fff88597b4bfaf70a0560c14453.1920x1080.jpg?t=1790990515" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5215920/00c3c99e48022fff88597b4bfaf70a0560c14453/ss_00c3c99e48022fff88597b4bfaf70a0560c14453.600x338.jpg?t=1790990515" alt="Nightmare Horror Investigation — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5215920/199d433c1a8ec88552abf5b6685d9aef79ecae2e/ss_199d433c1a8ec88552abf5b6685d9aef79ecae2e.1920x1080.jpg?t=1790990515" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5215920/199d433c1a8ec88552abf5b6685d9aef79ecae2e/ss_199d433c1a8ec88552abf5b6685d9aef79ecae2e.600x338.jpg?t=1790990515" alt="Nightmare Horror Investigation — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5215920/b023231fff5075c6ff04dcc2309ff8febaa4a5e8/ss_b023231fff5075c6ff04dcc2309ff8febaa4a5e8.1920x1080.jpg?t=1790990515" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5215920/b023231fff5075c6ff04dcc2309ff8febaa4a5e8/ss_b023231fff5075c6ff04dcc2309ff8febaa4a5e8.600x338.jpg?t=1790990515" alt="Nightmare Horror Investigation — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5215920/510db3cdfc61b276245636afd60ea44044e44f2e/ss_510db3cdfc61b276245636afd60ea44044e44f2e.1920x1080.jpg?t=1790990515" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5215920/510db3cdfc61b276245636afd60ea44044e44f2e/ss_510db3cdfc61b276245636afd60ea44044e44f2e.600x338.jpg?t=1790990515" alt="Nightmare Horror Investigation — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5215920/858bebd12ced0d40e0223a17fbd9c6d001286892/ss_858bebd12ced0d40e0223a17fbd9c6d001286892.1920x1080.jpg?t=1790990515" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5215920/858bebd12ced0d40e0223a17fbd9c6d001286892/ss_858bebd12ced0d40e0223a17fbd9c6d001286892.600x338.jpg?t=1790990515" alt="Nightmare Horror Investigation — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5215920/417955d51510cf93ef025a8087b3f1108f5aabf4/ss_417955d51510cf93ef025a8087b3f1108f5aabf4.1920x1080.jpg?t=1790990515" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5215920/417955d51510cf93ef025a8087b3f1108f5aabf4/ss_417955d51510cf93ef025a8087b3f1108f5aabf4.600x338.jpg?t=1790990515" alt="Nightmare Horror Investigation — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5215920/8c89fa90100d66be6eeb34885b8e7b5d64a46b6a/ss_8c89fa90100d66be6eeb34885b8e7b5d64a46b6a.1920x1080.jpg?t=1790990515" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5215920/8c89fa90100d66be6eeb34885b8e7b5d64a46b6a/ss_8c89fa90100d66be6eeb34885b8e7b5d64a46b6a.600x338.jpg?t=1790990515" alt="Nightmare Horror Investigation — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5215920/7ecc50948bb90bd6ac81b0292f7a957724c6a170/ss_7ecc50948bb90bd6ac81b0292f7a957724c6a170.1920x1080.jpg?t=1790990515" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5215920/7ecc50948bb90bd6ac81b0292f7a957724c6a170/ss_7ecc50948bb90bd6ac81b0292f7a957724c6a170.600x338.jpg?t=1790990515" alt="Nightmare Horror Investigation — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+      </div>
+
+      <h2>Геймплей</h2>
+      <div class="game-movies">
+        <figure class="game-movie"><div class="game-video" data-hls="https://video.akamai.steamstatic.com/store_trailers/5215920/228879937/d07cf83c53308aab734576005c16ff96cb5ca7cc/1790989704/hls_264_master.m3u8?t=1790990432" data-poster="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257444516/f4077ea5a4e43da91b4aa4c4988bd0cd505460ef/movie_600x337.jpg?t=1790990432" role="button" tabindex="0" aria-label="Смотреть геймплей: TRAILER"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257444516/f4077ea5a4e43da91b4aa4c4988bd0cd505460ef/movie_600x337.jpg?t=1790990432" alt="" loading="lazy" width="480" height="270" /><span class="game-video-play" aria-hidden="true"></span></div></figure>
+      </div>
+
+<p style="color: var(--text-faint); font-size: 13px; margin-top: 30px;">
         Данные о цене, отзывах и статистике обновляются автоматически на основе
         Steam Store API и SteamSpy.
       </p>
@@ -284,5 +329,6 @@ function declineCookies() {
 })();
 </script>
 <script src="/newsletter.js?v=2" defer></script>
+<script defer src="/game-media.js?v=1"></script>
 </body>
 </html>

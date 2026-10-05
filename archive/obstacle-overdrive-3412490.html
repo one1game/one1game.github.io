@@ -112,6 +112,38 @@
     }
     .game-stat-card .label { font-size: 12px; color: var(--text-faint); text-transform: uppercase; }
     .game-stat-card .value { font-size: 20px; font-weight: bold; margin-top: 4px; }
+    .game-shots {
+      display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+      gap: 12px; margin: 20px 0;
+    }
+    .game-shot {
+      display: block; border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 8px; overflow: hidden;
+    }
+    .game-shot img { display: block; width: 100%; height: auto; }
+    .game-movies { display: grid; gap: 16px; margin: 20px 0; }
+    .game-movie { margin: 0; }
+    .game-movie video {
+      display: block; width: 100%; height: auto;
+      border-radius: 8px; background: #000;
+    }
+    .game-movie figcaption { margin-top: 6px; font-size: 13px; color: var(--text-faint); }
+    .game-video {
+      position: relative; cursor: pointer; overflow: hidden;
+      border-radius: 8px; background: #000; aspect-ratio: 16 / 9;
+    }
+    .game-video img { display: block; width: 100%; height: 100%; object-fit: cover; }
+    .game-video-play { position: absolute; inset: 0; display: grid; place-items: center; }
+    .game-video-play::before {
+      content: ''; width: 58px; height: 58px; border-radius: 50%;
+      background: rgba(0,0,0,0.5); border: 2px solid rgba(255,255,255,0.75);
+    }
+    .game-video-play::after {
+      content: ''; position: absolute; margin-left: 5px;
+      border-style: solid; border-width: 11px 0 11px 18px;
+      border-color: transparent transparent transparent #fff;
+    }
+    .game-video-el { display: block; width: 100%; height: 100%; background: #000; }
   </style>
 </head>
 <body>
@@ -150,7 +182,7 @@
 
     <article class="article-body">
 
-      <p>Cruise through a world of colorful retro inspired toys in Obstacle Overdrive, a cozy off-roading toy car adventure! Navigate fun, challenging courses, tumultuous tumbles, and enjoy the charm of a miniature world where the obstacles are as playful as the ride itself.</p>
+      
 
       <div class="game-stats-grid">
         <div class="game-stat-card">
@@ -166,10 +198,6 @@
           <div class="label">Владельцев (оценка)</div>
           <div class="value">0 – 20,000</div>
         </div>
-        <div class="game-stat-card">
-          <div class="label">Среднее время игры</div>
-          <div class="value">нет данных</div>
-        </div>
       </div>
 
       <h2>Об игре</h2>
@@ -183,7 +211,22 @@
         </a>
       </p>
 
-      <p style="color: var(--text-faint); font-size: 13px; margin-top: 30px;">
+            <h2>Скриншоты</h2>
+      <div class="game-shots">
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3412490/317bcaced0114005770d03f18fee06a960342d0f/ss_317bcaced0114005770d03f18fee06a960342d0f.1920x1080.jpg?t=1790960465" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3412490/317bcaced0114005770d03f18fee06a960342d0f/ss_317bcaced0114005770d03f18fee06a960342d0f.600x338.jpg?t=1790960465" alt="Obstacle Overdrive — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3412490/8ed080425b7f4ba37a9a0919481d28e1f616c1bb/ss_8ed080425b7f4ba37a9a0919481d28e1f616c1bb.1920x1080.jpg?t=1790960465" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3412490/8ed080425b7f4ba37a9a0919481d28e1f616c1bb/ss_8ed080425b7f4ba37a9a0919481d28e1f616c1bb.600x338.jpg?t=1790960465" alt="Obstacle Overdrive — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3412490/9151ffc509e4a8b9890cb413fbab975bedc05dcf/ss_9151ffc509e4a8b9890cb413fbab975bedc05dcf.1920x1080.jpg?t=1790960465" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3412490/9151ffc509e4a8b9890cb413fbab975bedc05dcf/ss_9151ffc509e4a8b9890cb413fbab975bedc05dcf.600x338.jpg?t=1790960465" alt="Obstacle Overdrive — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3412490/a7dd867aaa878680901c4502bdbdf6fb22a56597/ss_a7dd867aaa878680901c4502bdbdf6fb22a56597.1920x1080.jpg?t=1790960465" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3412490/a7dd867aaa878680901c4502bdbdf6fb22a56597/ss_a7dd867aaa878680901c4502bdbdf6fb22a56597.600x338.jpg?t=1790960465" alt="Obstacle Overdrive — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3412490/7bc8a7b8515fbe9734883ce496256a52efcf5990/ss_7bc8a7b8515fbe9734883ce496256a52efcf5990.1920x1080.jpg?t=1790960465" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3412490/7bc8a7b8515fbe9734883ce496256a52efcf5990/ss_7bc8a7b8515fbe9734883ce496256a52efcf5990.600x338.jpg?t=1790960465" alt="Obstacle Overdrive — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+      </div>
+
+      <h2>Геймплей</h2>
+      <div class="game-movies">
+        <figure class="game-movie"><div class="game-video" data-hls="https://video.akamai.steamstatic.com/store_trailers/3412490/1589094802/c37838a8d0ea8609d7bcf3aff693df660eff51fe/1790958083/hls_264_master.m3u8?t=1790960436" data-poster="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257430012/502e573b6583e9a52d580b5b9f9f499d6640fdc8/movie_600x337.jpg?t=1790960436" role="button" tabindex="0" aria-label="Смотреть геймплей: Available now!"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257430012/502e573b6583e9a52d580b5b9f9f499d6640fdc8/movie_600x337.jpg?t=1790960436" alt="" loading="lazy" width="480" height="270" /><span class="game-video-play" aria-hidden="true"></span></div></figure>
+        <figure class="game-movie"><div class="game-video" data-hls="https://video.akamai.steamstatic.com/store_trailers/3412490/59998776/adb3bf6904328e74210fb0960c3a3be36574a51e/1750848552/hls_264_master.m3u8?t=1761682162" data-poster="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257156502/813b22302a6ac72ae06f7438d56a8ce495e0a1e3/movie_600x337.jpg?t=1761682162" role="button" tabindex="0" aria-label="Смотреть геймплей: Obstacle Overdrive Trailer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257156502/813b22302a6ac72ae06f7438d56a8ce495e0a1e3/movie_600x337.jpg?t=1761682162" alt="" loading="lazy" width="480" height="270" /><span class="game-video-play" aria-hidden="true"></span></div></figure>
+      </div>
+
+<p style="color: var(--text-faint); font-size: 13px; margin-top: 30px;">
         Данные о цене, отзывах и статистике обновляются автоматически на основе
         Steam Store API и SteamSpy.
       </p>
@@ -284,5 +327,6 @@ function declineCookies() {
 })();
 </script>
 <script src="/newsletter.js?v=2" defer></script>
+<script defer src="/game-media.js?v=1"></script>
 </body>
 </html>

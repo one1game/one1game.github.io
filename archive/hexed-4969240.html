@@ -112,6 +112,38 @@
     }
     .game-stat-card .label { font-size: 12px; color: var(--text-faint); text-transform: uppercase; }
     .game-stat-card .value { font-size: 20px; font-weight: bold; margin-top: 4px; }
+    .game-shots {
+      display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+      gap: 12px; margin: 20px 0;
+    }
+    .game-shot {
+      display: block; border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 8px; overflow: hidden;
+    }
+    .game-shot img { display: block; width: 100%; height: auto; }
+    .game-movies { display: grid; gap: 16px; margin: 20px 0; }
+    .game-movie { margin: 0; }
+    .game-movie video {
+      display: block; width: 100%; height: auto;
+      border-radius: 8px; background: #000;
+    }
+    .game-movie figcaption { margin-top: 6px; font-size: 13px; color: var(--text-faint); }
+    .game-video {
+      position: relative; cursor: pointer; overflow: hidden;
+      border-radius: 8px; background: #000; aspect-ratio: 16 / 9;
+    }
+    .game-video img { display: block; width: 100%; height: 100%; object-fit: cover; }
+    .game-video-play { position: absolute; inset: 0; display: grid; place-items: center; }
+    .game-video-play::before {
+      content: ''; width: 58px; height: 58px; border-radius: 50%;
+      background: rgba(0,0,0,0.5); border: 2px solid rgba(255,255,255,0.75);
+    }
+    .game-video-play::after {
+      content: ''; position: absolute; margin-left: 5px;
+      border-style: solid; border-width: 11px 0 11px 18px;
+      border-color: transparent transparent transparent #fff;
+    }
+    .game-video-el { display: block; width: 100%; height: 100%; background: #000; }
   </style>
 </head>
 <body>
@@ -150,7 +182,7 @@
 
     <article class="article-body">
 
-      <p>A stylized, Halloween-inspired witchcraft game where memory is your greatest spell. Memorize rituals, gather mystical ingredients, and complete magical ceremonies before time runs out.</p>
+      
 
       <div class="game-stats-grid">
         <div class="game-stat-card">
@@ -166,10 +198,6 @@
           <div class="label">Владельцев (оценка)</div>
           <div class="value">0 – 20,000</div>
         </div>
-        <div class="game-stat-card">
-          <div class="label">Среднее время игры</div>
-          <div class="value">нет данных</div>
-        </div>
       </div>
 
       <h2>Об игре</h2>
@@ -183,7 +211,24 @@
         </a>
       </p>
 
-      <p style="color: var(--text-faint); font-size: 13px; margin-top: 30px;">
+            <h2>Скриншоты</h2>
+      <div class="game-shots">
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4969240/f44fcde3d6fbcac31735c7b473a9818dcdcb67e9/ss_f44fcde3d6fbcac31735c7b473a9818dcdcb67e9.1920x1080.jpg?t=1790839911" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4969240/f44fcde3d6fbcac31735c7b473a9818dcdcb67e9/ss_f44fcde3d6fbcac31735c7b473a9818dcdcb67e9.600x338.jpg?t=1790839911" alt="Hexed — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4969240/8c9ff2c78e58ad4e093b7f851c929889472088e1/ss_8c9ff2c78e58ad4e093b7f851c929889472088e1.1920x1080.jpg?t=1790839911" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4969240/8c9ff2c78e58ad4e093b7f851c929889472088e1/ss_8c9ff2c78e58ad4e093b7f851c929889472088e1.600x338.jpg?t=1790839911" alt="Hexed — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4969240/09bd03f69057d9554cc45dc9451a96b54550a72a/ss_09bd03f69057d9554cc45dc9451a96b54550a72a.1920x1080.jpg?t=1790839911" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4969240/09bd03f69057d9554cc45dc9451a96b54550a72a/ss_09bd03f69057d9554cc45dc9451a96b54550a72a.600x338.jpg?t=1790839911" alt="Hexed — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4969240/e16b22352c6cbe68fa440560180470ec0ba1a379/ss_e16b22352c6cbe68fa440560180470ec0ba1a379.1920x1080.jpg?t=1790839911" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4969240/e16b22352c6cbe68fa440560180470ec0ba1a379/ss_e16b22352c6cbe68fa440560180470ec0ba1a379.600x338.jpg?t=1790839911" alt="Hexed — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4969240/ee191d180cd3747b9206ee2f4299093e807f5270/ss_ee191d180cd3747b9206ee2f4299093e807f5270.1920x1080.jpg?t=1790839911" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4969240/ee191d180cd3747b9206ee2f4299093e807f5270/ss_ee191d180cd3747b9206ee2f4299093e807f5270.600x338.jpg?t=1790839911" alt="Hexed — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4969240/a2f00eb7ae5cba809e51633484c81879a700ae45/ss_a2f00eb7ae5cba809e51633484c81879a700ae45.1920x1080.jpg?t=1790839911" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4969240/a2f00eb7ae5cba809e51633484c81879a700ae45/ss_a2f00eb7ae5cba809e51633484c81879a700ae45.600x338.jpg?t=1790839911" alt="Hexed — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4969240/1b099098b8f971de0b1473f48fcdf8dc8918eee0/ss_1b099098b8f971de0b1473f48fcdf8dc8918eee0.1920x1080.jpg?t=1790839911" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4969240/1b099098b8f971de0b1473f48fcdf8dc8918eee0/ss_1b099098b8f971de0b1473f48fcdf8dc8918eee0.600x338.jpg?t=1790839911" alt="Hexed — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4969240/897b2f09c51ca094f1625e35ab5df99b5e2cc216/ss_897b2f09c51ca094f1625e35ab5df99b5e2cc216.1920x1080.jpg?t=1790839911" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4969240/897b2f09c51ca094f1625e35ab5df99b5e2cc216/ss_897b2f09c51ca094f1625e35ab5df99b5e2cc216.600x338.jpg?t=1790839911" alt="Hexed — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+      </div>
+
+      <h2>Геймплей</h2>
+      <div class="game-movies">
+        <figure class="game-movie"><div class="game-video" data-hls="https://video.akamai.steamstatic.com/store_trailers/4969240/586266676/3b3c61be0e05ef17702b9a44ee64c80bcb5a82d8/1784753477/hls_264_master.m3u8?t=1785265199" data-poster="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257382748/f44fcde3d6fbcac31735c7b473a9818dcdcb67e9/movie_600x337.jpg?t=1785265199" role="button" tabindex="0" aria-label="Смотреть геймплей: Hexed"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257382748/f44fcde3d6fbcac31735c7b473a9818dcdcb67e9/movie_600x337.jpg?t=1785265199" alt="" loading="lazy" width="480" height="270" /><span class="game-video-play" aria-hidden="true"></span></div></figure>
+      </div>
+
+<p style="color: var(--text-faint); font-size: 13px; margin-top: 30px;">
         Данные о цене, отзывах и статистике обновляются автоматически на основе
         Steam Store API и SteamSpy.
       </p>
@@ -284,5 +329,6 @@ function declineCookies() {
 })();
 </script>
 <script src="/newsletter.js?v=2" defer></script>
+<script defer src="/game-media.js?v=1"></script>
 </body>
 </html>

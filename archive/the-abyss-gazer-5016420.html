@@ -108,6 +108,38 @@
     }
     .game-stat-card .label { font-size: 12px; color: var(--text-faint); text-transform: uppercase; }
     .game-stat-card .value { font-size: 20px; font-weight: bold; margin-top: 4px; }
+    .game-shots {
+      display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+      gap: 12px; margin: 20px 0;
+    }
+    .game-shot {
+      display: block; border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 8px; overflow: hidden;
+    }
+    .game-shot img { display: block; width: 100%; height: auto; }
+    .game-movies { display: grid; gap: 16px; margin: 20px 0; }
+    .game-movie { margin: 0; }
+    .game-movie video {
+      display: block; width: 100%; height: auto;
+      border-radius: 8px; background: #000;
+    }
+    .game-movie figcaption { margin-top: 6px; font-size: 13px; color: var(--text-faint); }
+    .game-video {
+      position: relative; cursor: pointer; overflow: hidden;
+      border-radius: 8px; background: #000; aspect-ratio: 16 / 9;
+    }
+    .game-video img { display: block; width: 100%; height: 100%; object-fit: cover; }
+    .game-video-play { position: absolute; inset: 0; display: grid; place-items: center; }
+    .game-video-play::before {
+      content: ''; width: 58px; height: 58px; border-radius: 50%;
+      background: rgba(0,0,0,0.5); border: 2px solid rgba(255,255,255,0.75);
+    }
+    .game-video-play::after {
+      content: ''; position: absolute; margin-left: 5px;
+      border-style: solid; border-width: 11px 0 11px 18px;
+      border-color: transparent transparent transparent #fff;
+    }
+    .game-video-el { display: block; width: 100%; height: 100%; background: #000; }
   </style>
 </head>
 <body>
@@ -146,7 +178,7 @@
 
     <article class="article-body">
 
-      <p>In ancient Eastern legends, fairies were symbols of beauty and kindness. In the 21st century, the truly dangerous ones no longer fly in the sky. They walk among us. Every era has its witches. This is their story.</p>
+      
 
       <div class="game-stats-grid">
         <div class="game-stat-card">
@@ -162,10 +194,6 @@
           <div class="label">Владельцев (оценка)</div>
           <div class="value">0 – 20,000</div>
         </div>
-        <div class="game-stat-card">
-          <div class="label">Среднее время игры</div>
-          <div class="value">нет данных</div>
-        </div>
       </div>
 
       <h2>Об игре</h2>
@@ -179,7 +207,26 @@
         </a>
       </p>
 
-      <p style="color: var(--text-faint); font-size: 13px; margin-top: 30px;">
+            <h2>Скриншоты</h2>
+      <div class="game-shots">
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5016420/258d727e13c13f60c1969de9086217a5db6d9389/ss_258d727e13c13f60c1969de9086217a5db6d9389.1920x1080.jpg?t=1790583365" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5016420/258d727e13c13f60c1969de9086217a5db6d9389/ss_258d727e13c13f60c1969de9086217a5db6d9389.600x338.jpg?t=1790583365" alt="The Witch Trials EP1 The Abyss Gazer — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5016420/cbb497c8e509e0cfac88f171ff51ce93890a481b/ss_cbb497c8e509e0cfac88f171ff51ce93890a481b.1920x1080.jpg?t=1790583365" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5016420/cbb497c8e509e0cfac88f171ff51ce93890a481b/ss_cbb497c8e509e0cfac88f171ff51ce93890a481b.600x338.jpg?t=1790583365" alt="The Witch Trials EP1 The Abyss Gazer — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5016420/2cbff54b5796348c707debca540040d93fd782c2/ss_2cbff54b5796348c707debca540040d93fd782c2.1920x1080.jpg?t=1790583365" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5016420/2cbff54b5796348c707debca540040d93fd782c2/ss_2cbff54b5796348c707debca540040d93fd782c2.600x338.jpg?t=1790583365" alt="The Witch Trials EP1 The Abyss Gazer — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5016420/1d9a046df1dc09174904d092404d3cb02985169e/ss_1d9a046df1dc09174904d092404d3cb02985169e.1920x1080.jpg?t=1790583365" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5016420/1d9a046df1dc09174904d092404d3cb02985169e/ss_1d9a046df1dc09174904d092404d3cb02985169e.600x338.jpg?t=1790583365" alt="The Witch Trials EP1 The Abyss Gazer — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5016420/da986dcf9cd271a7ba7deaa67afb17b486d0ab07/ss_da986dcf9cd271a7ba7deaa67afb17b486d0ab07.1920x1080.jpg?t=1790583365" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5016420/da986dcf9cd271a7ba7deaa67afb17b486d0ab07/ss_da986dcf9cd271a7ba7deaa67afb17b486d0ab07.600x338.jpg?t=1790583365" alt="The Witch Trials EP1 The Abyss Gazer — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5016420/292016987dc711cb5a7e790f1611f0e040caed85/ss_292016987dc711cb5a7e790f1611f0e040caed85.1920x1080.jpg?t=1790583365" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5016420/292016987dc711cb5a7e790f1611f0e040caed85/ss_292016987dc711cb5a7e790f1611f0e040caed85.600x338.jpg?t=1790583365" alt="The Witch Trials EP1 The Abyss Gazer — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5016420/b0c87277b422a389ea3d11ce56763ac05957e465/ss_b0c87277b422a389ea3d11ce56763ac05957e465.1920x1080.jpg?t=1790583365" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5016420/b0c87277b422a389ea3d11ce56763ac05957e465/ss_b0c87277b422a389ea3d11ce56763ac05957e465.600x338.jpg?t=1790583365" alt="The Witch Trials EP1 The Abyss Gazer — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5016420/3a51685eb38da46233b107aa4da29bcb08868cf6/ss_3a51685eb38da46233b107aa4da29bcb08868cf6.1920x1080.jpg?t=1790583365" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5016420/3a51685eb38da46233b107aa4da29bcb08868cf6/ss_3a51685eb38da46233b107aa4da29bcb08868cf6.600x338.jpg?t=1790583365" alt="The Witch Trials EP1 The Abyss Gazer — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+      </div>
+
+      <h2>Геймплей</h2>
+      <div class="game-movies">
+        <figure class="game-movie"><div class="game-video" data-hls="https://video.akamai.steamstatic.com/store_trailers/5016420/2032909917/de7fdd94a8043b070dbc5eb478906004ff36b77c/1785267566/hls_264_master.m3u8?t=1789304993" data-poster="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257387058/e9be0519a848bed265c2c03148af340989d8fe21/movie_600x337.jpg?t=1789304993" role="button" tabindex="0" aria-label="Смотреть геймплей: DEMO1"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257387058/e9be0519a848bed265c2c03148af340989d8fe21/movie_600x337.jpg?t=1789304993" alt="" loading="lazy" width="480" height="270" /><span class="game-video-play" aria-hidden="true"></span></div></figure>
+        <figure class="game-movie"><div class="game-video" data-hls="https://video.akamai.steamstatic.com/store_trailers/5016420/1217194071/07e5663fe9851faad9f9577169600035ec204bb5/1785267656/hls_264_master.m3u8?t=1789304994" data-poster="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257387060/73ce87695c0f02851c4ca7561129b28e680aada2/movie_600x337.jpg?t=1789304994" role="button" tabindex="0" aria-label="Смотреть геймплей: DEMO2"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257387060/73ce87695c0f02851c4ca7561129b28e680aada2/movie_600x337.jpg?t=1789304994" alt="" loading="lazy" width="480" height="270" /><span class="game-video-play" aria-hidden="true"></span></div></figure>
+        <figure class="game-movie"><div class="game-video" data-hls="https://video.akamai.steamstatic.com/store_trailers/5016420/1027995023/3b48213f4e6b4ac370f260865abdb79c8d95fa59/1785267687/hls_264_master.m3u8?t=1789304995" data-poster="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257387061/290401156da3fa23f2b70a95046be0c38c91c9a9/movie_600x337.jpg?t=1789304995" role="button" tabindex="0" aria-label="Смотреть геймплей: DEMO3"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257387061/290401156da3fa23f2b70a95046be0c38c91c9a9/movie_600x337.jpg?t=1789304995" alt="" loading="lazy" width="480" height="270" /><span class="game-video-play" aria-hidden="true"></span></div></figure>
+      </div>
+
+<p style="color: var(--text-faint); font-size: 13px; margin-top: 30px;">
         Данные о цене, отзывах и статистике обновляются автоматически на основе
         Steam Store API и SteamSpy.
       </p>
@@ -280,5 +327,6 @@ function declineCookies() {
 })();
 </script>
 <script src="/newsletter.js?v=2" defer></script>
+<script defer src="/game-media.js?v=1"></script>
 </body>
 </html>

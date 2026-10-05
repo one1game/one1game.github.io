@@ -112,6 +112,38 @@
     }
     .game-stat-card .label { font-size: 12px; color: var(--text-faint); text-transform: uppercase; }
     .game-stat-card .value { font-size: 20px; font-weight: bold; margin-top: 4px; }
+    .game-shots {
+      display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+      gap: 12px; margin: 20px 0;
+    }
+    .game-shot {
+      display: block; border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 8px; overflow: hidden;
+    }
+    .game-shot img { display: block; width: 100%; height: auto; }
+    .game-movies { display: grid; gap: 16px; margin: 20px 0; }
+    .game-movie { margin: 0; }
+    .game-movie video {
+      display: block; width: 100%; height: auto;
+      border-radius: 8px; background: #000;
+    }
+    .game-movie figcaption { margin-top: 6px; font-size: 13px; color: var(--text-faint); }
+    .game-video {
+      position: relative; cursor: pointer; overflow: hidden;
+      border-radius: 8px; background: #000; aspect-ratio: 16 / 9;
+    }
+    .game-video img { display: block; width: 100%; height: 100%; object-fit: cover; }
+    .game-video-play { position: absolute; inset: 0; display: grid; place-items: center; }
+    .game-video-play::before {
+      content: ''; width: 58px; height: 58px; border-radius: 50%;
+      background: rgba(0,0,0,0.5); border: 2px solid rgba(255,255,255,0.75);
+    }
+    .game-video-play::after {
+      content: ''; position: absolute; margin-left: 5px;
+      border-style: solid; border-width: 11px 0 11px 18px;
+      border-color: transparent transparent transparent #fff;
+    }
+    .game-video-el { display: block; width: 100%; height: 100%; background: #000; }
   </style>
 </head>
 <body>
@@ -150,7 +182,7 @@
 
     <article class="article-body">
 
-      <p>Beat Boxy is a 3D rhythm-based auto-runner. Play as Boxy, a shipping crate running, skateboarding &amp; rollerblading to make his delivery. Jump &amp; slide through dozens of rhythm-fueled levels, and build your own custom levels! Collect gems, unlock gear &amp; survive the chaos while listening to epic music.</p>
+      
 
       <div class="game-stats-grid">
         <div class="game-stat-card">
@@ -166,10 +198,6 @@
           <div class="label">Владельцев (оценка)</div>
           <div class="value">0 – 20,000</div>
         </div>
-        <div class="game-stat-card">
-          <div class="label">Среднее время игры</div>
-          <div class="value">нет данных</div>
-        </div>
       </div>
 
       <h2>Об игре</h2>
@@ -183,7 +211,28 @@
         </a>
       </p>
 
-      <p style="color: var(--text-faint); font-size: 13px; margin-top: 30px;">
+            <h2>Скриншоты</h2>
+      <div class="game-shots">
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4536120/2b8c29020da525a667e0ea7289f4655d67d6ec0b/ss_2b8c29020da525a667e0ea7289f4655d67d6ec0b.1920x1080.jpg?t=1790208065" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4536120/2b8c29020da525a667e0ea7289f4655d67d6ec0b/ss_2b8c29020da525a667e0ea7289f4655d67d6ec0b.600x338.jpg?t=1790208065" alt="Beat Boxy — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4536120/8fce323102296e3bf46c4c8407a915508eae6613/ss_8fce323102296e3bf46c4c8407a915508eae6613.1920x1080.jpg?t=1790208065" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4536120/8fce323102296e3bf46c4c8407a915508eae6613/ss_8fce323102296e3bf46c4c8407a915508eae6613.600x338.jpg?t=1790208065" alt="Beat Boxy — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4536120/cf301e002c0ce7ceec1a49048031ed4cf665a933/ss_cf301e002c0ce7ceec1a49048031ed4cf665a933.1920x1080.jpg?t=1790208065" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4536120/cf301e002c0ce7ceec1a49048031ed4cf665a933/ss_cf301e002c0ce7ceec1a49048031ed4cf665a933.600x338.jpg?t=1790208065" alt="Beat Boxy — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4536120/68800061692b3dce6e3edf5e191983a9f4d3e43a/ss_68800061692b3dce6e3edf5e191983a9f4d3e43a.1920x1080.jpg?t=1790208065" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4536120/68800061692b3dce6e3edf5e191983a9f4d3e43a/ss_68800061692b3dce6e3edf5e191983a9f4d3e43a.600x338.jpg?t=1790208065" alt="Beat Boxy — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4536120/46db2c463106757ac29d25712cd0868502f1759c/ss_46db2c463106757ac29d25712cd0868502f1759c.1920x1080.jpg?t=1790208065" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4536120/46db2c463106757ac29d25712cd0868502f1759c/ss_46db2c463106757ac29d25712cd0868502f1759c.600x338.jpg?t=1790208065" alt="Beat Boxy — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4536120/6b3636ced3f78a7d9c35c4456d8a85a7bfb2587c/ss_6b3636ced3f78a7d9c35c4456d8a85a7bfb2587c.1920x1080.jpg?t=1790208065" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4536120/6b3636ced3f78a7d9c35c4456d8a85a7bfb2587c/ss_6b3636ced3f78a7d9c35c4456d8a85a7bfb2587c.600x338.jpg?t=1790208065" alt="Beat Boxy — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4536120/386c04202e57dd48e64a3938d56a6abb7eafb20b/ss_386c04202e57dd48e64a3938d56a6abb7eafb20b.1920x1080.jpg?t=1790208065" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4536120/386c04202e57dd48e64a3938d56a6abb7eafb20b/ss_386c04202e57dd48e64a3938d56a6abb7eafb20b.600x338.jpg?t=1790208065" alt="Beat Boxy — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4536120/25028a927d9e7c3d27ec05bf30e6d121fd2f90a2/ss_25028a927d9e7c3d27ec05bf30e6d121fd2f90a2.1920x1080.jpg?t=1790208065" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4536120/25028a927d9e7c3d27ec05bf30e6d121fd2f90a2/ss_25028a927d9e7c3d27ec05bf30e6d121fd2f90a2.600x338.jpg?t=1790208065" alt="Beat Boxy — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4536120/57007f249b4d952ecf9c843956b06f9fc34439e9/ss_57007f249b4d952ecf9c843956b06f9fc34439e9.1920x1080.jpg?t=1790208065" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4536120/57007f249b4d952ecf9c843956b06f9fc34439e9/ss_57007f249b4d952ecf9c843956b06f9fc34439e9.600x338.jpg?t=1790208065" alt="Beat Boxy — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4536120/e7b48ff7d00f93cee2ab4f11a4d7de977fa4db4b/ss_e7b48ff7d00f93cee2ab4f11a4d7de977fa4db4b.1920x1080.jpg?t=1790208065" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4536120/e7b48ff7d00f93cee2ab4f11a4d7de977fa4db4b/ss_e7b48ff7d00f93cee2ab4f11a4d7de977fa4db4b.600x338.jpg?t=1790208065" alt="Beat Boxy — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4536120/fe738ce9c79865d66aec1358b1fa8429e1e72d2f/ss_fe738ce9c79865d66aec1358b1fa8429e1e72d2f.1920x1080.jpg?t=1790208065" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4536120/fe738ce9c79865d66aec1358b1fa8429e1e72d2f/ss_fe738ce9c79865d66aec1358b1fa8429e1e72d2f.600x338.jpg?t=1790208065" alt="Beat Boxy — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4536120/80f5cbcf13d1f55f238cdb6dd93ec40d46127029/ss_80f5cbcf13d1f55f238cdb6dd93ec40d46127029.1920x1080.jpg?t=1790208065" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4536120/80f5cbcf13d1f55f238cdb6dd93ec40d46127029/ss_80f5cbcf13d1f55f238cdb6dd93ec40d46127029.600x338.jpg?t=1790208065" alt="Beat Boxy — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+      </div>
+
+      <h2>Геймплей</h2>
+      <div class="game-movies">
+        <figure class="game-movie"><div class="game-video" data-hls="https://video.akamai.steamstatic.com/store_trailers/4536120/989524804/5f0b8b80fbd41824c14817bba6c20bb77b31a9ff/1783722608/hls_264_master.m3u8?t=1783723828" data-poster="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257374785/f88c73597b77f342384539000583d1200e796503/movie_600x337.jpg?t=1783723828" role="button" tabindex="0" aria-label="Смотреть геймплей: Beat Boxy - Features Trailer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257374785/f88c73597b77f342384539000583d1200e796503/movie_600x337.jpg?t=1783723828" alt="" loading="lazy" width="480" height="270" /><span class="game-video-play" aria-hidden="true"></span></div></figure>
+      </div>
+
+<p style="color: var(--text-faint); font-size: 13px; margin-top: 30px;">
         Данные о цене, отзывах и статистике обновляются автоматически на основе
         Steam Store API и SteamSpy.
       </p>
@@ -284,5 +333,6 @@ function declineCookies() {
 })();
 </script>
 <script src="/newsletter.js?v=2" defer></script>
+<script defer src="/game-media.js?v=1"></script>
 </body>
 </html>

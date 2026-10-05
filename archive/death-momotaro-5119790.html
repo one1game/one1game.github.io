@@ -112,6 +112,38 @@
     }
     .game-stat-card .label { font-size: 12px; color: var(--text-faint); text-transform: uppercase; }
     .game-stat-card .value { font-size: 20px; font-weight: bold; margin-top: 4px; }
+    .game-shots {
+      display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+      gap: 12px; margin: 20px 0;
+    }
+    .game-shot {
+      display: block; border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 8px; overflow: hidden;
+    }
+    .game-shot img { display: block; width: 100%; height: auto; }
+    .game-movies { display: grid; gap: 16px; margin: 20px 0; }
+    .game-movie { margin: 0; }
+    .game-movie video {
+      display: block; width: 100%; height: auto;
+      border-radius: 8px; background: #000;
+    }
+    .game-movie figcaption { margin-top: 6px; font-size: 13px; color: var(--text-faint); }
+    .game-video {
+      position: relative; cursor: pointer; overflow: hidden;
+      border-radius: 8px; background: #000; aspect-ratio: 16 / 9;
+    }
+    .game-video img { display: block; width: 100%; height: 100%; object-fit: cover; }
+    .game-video-play { position: absolute; inset: 0; display: grid; place-items: center; }
+    .game-video-play::before {
+      content: ''; width: 58px; height: 58px; border-radius: 50%;
+      background: rgba(0,0,0,0.5); border: 2px solid rgba(255,255,255,0.75);
+    }
+    .game-video-play::after {
+      content: ''; position: absolute; margin-left: 5px;
+      border-style: solid; border-width: 11px 0 11px 18px;
+      border-color: transparent transparent transparent #fff;
+    }
+    .game-video-el { display: block; width: 100%; height: 100%; background: #000; }
   </style>
 </head>
 <body>
@@ -150,7 +182,7 @@
 
     <article class="article-body">
 
-      <p>DEATH MOMOTARO is a ridiculous horror-action comedy game based on the classic Japanese folktale Momotaro. Recommended for streamers who are good at witty comebacks!</p>
+      
 
       <div class="game-stats-grid">
         <div class="game-stat-card">
@@ -166,10 +198,6 @@
           <div class="label">Владельцев (оценка)</div>
           <div class="value">0 – 20,000</div>
         </div>
-        <div class="game-stat-card">
-          <div class="label">Среднее время игры</div>
-          <div class="value">нет данных</div>
-        </div>
       </div>
 
       <h2>Об игре</h2>
@@ -183,7 +211,25 @@
         </a>
       </p>
 
-      <p style="color: var(--text-faint); font-size: 13px; margin-top: 30px;">
+            <h2>Скриншоты</h2>
+      <div class="game-shots">
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5119790/ee5fb2db4d3140306da0df3b64c4a217ebbcde7e/ss_ee5fb2db4d3140306da0df3b64c4a217ebbcde7e.1920x1080.jpg?t=1790382903" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5119790/ee5fb2db4d3140306da0df3b64c4a217ebbcde7e/ss_ee5fb2db4d3140306da0df3b64c4a217ebbcde7e.600x338.jpg?t=1790382903" alt="Death Momotaro — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5119790/4b9d0dbc6d407e95473ebba4f145bed990617210/ss_4b9d0dbc6d407e95473ebba4f145bed990617210.1920x1080.jpg?t=1790382903" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5119790/4b9d0dbc6d407e95473ebba4f145bed990617210/ss_4b9d0dbc6d407e95473ebba4f145bed990617210.600x338.jpg?t=1790382903" alt="Death Momotaro — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5119790/1bee6841e0cadce3ec8d7cf22ebbe3c9f8f93fb6/ss_1bee6841e0cadce3ec8d7cf22ebbe3c9f8f93fb6.1920x1080.jpg?t=1790382903" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5119790/1bee6841e0cadce3ec8d7cf22ebbe3c9f8f93fb6/ss_1bee6841e0cadce3ec8d7cf22ebbe3c9f8f93fb6.600x338.jpg?t=1790382903" alt="Death Momotaro — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5119790/b49ba4eeab10d7351a8547390d95ebdd285b877d/ss_b49ba4eeab10d7351a8547390d95ebdd285b877d.1920x1080.jpg?t=1790382903" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5119790/b49ba4eeab10d7351a8547390d95ebdd285b877d/ss_b49ba4eeab10d7351a8547390d95ebdd285b877d.600x338.jpg?t=1790382903" alt="Death Momotaro — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5119790/2ee2d88cdf01d1748469d13d5e123c2bbda94c84/ss_2ee2d88cdf01d1748469d13d5e123c2bbda94c84.1920x1080.jpg?t=1790382903" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5119790/2ee2d88cdf01d1748469d13d5e123c2bbda94c84/ss_2ee2d88cdf01d1748469d13d5e123c2bbda94c84.600x338.jpg?t=1790382903" alt="Death Momotaro — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5119790/40d5337103595a5b25982cff238a76d22531dc63/ss_40d5337103595a5b25982cff238a76d22531dc63.1920x1080.jpg?t=1790382903" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5119790/40d5337103595a5b25982cff238a76d22531dc63/ss_40d5337103595a5b25982cff238a76d22531dc63.600x338.jpg?t=1790382903" alt="Death Momotaro — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5119790/d4b48f82800bc010ec79fba00f6410774c3199a2/ss_d4b48f82800bc010ec79fba00f6410774c3199a2.1920x1080.jpg?t=1790382903" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5119790/d4b48f82800bc010ec79fba00f6410774c3199a2/ss_d4b48f82800bc010ec79fba00f6410774c3199a2.600x338.jpg?t=1790382903" alt="Death Momotaro — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5119790/60429303cf471f98909abca041749f309cf70b1e/ss_60429303cf471f98909abca041749f309cf70b1e.1920x1080.jpg?t=1790382903" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5119790/60429303cf471f98909abca041749f309cf70b1e/ss_60429303cf471f98909abca041749f309cf70b1e.600x338.jpg?t=1790382903" alt="Death Momotaro — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+      </div>
+
+      <h2>Геймплей</h2>
+      <div class="game-movies">
+        <figure class="game-movie"><div class="game-video" data-hls="https://video.akamai.steamstatic.com/store_trailers/5119790/825775953/1183e24a04173b50c999f1f59a6f448a9f54cfe7/1790311805/hls_264_master.m3u8?t=1790312116" data-poster="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257409762/f03b619c6bf4e55d68e1a02c55db7b6fdc2b06d5/movie_600x337.jpg?t=1790312116" role="button" tabindex="0" aria-label="Смотреть геймплей: trailer_01"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257409762/f03b619c6bf4e55d68e1a02c55db7b6fdc2b06d5/movie_600x337.jpg?t=1790312116" alt="" loading="lazy" width="480" height="270" /><span class="game-video-play" aria-hidden="true"></span></div></figure>
+        <figure class="game-movie"><div class="game-video" data-hls="https://video.akamai.steamstatic.com/store_trailers/5119790/375354156/d9f404af6468b8488a00114902a159bc8655a645/1788822428/hls_264_master.m3u8?t=1788841035" data-poster="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257419394/49dd6ce25eaa4c66aa551be8feabdbf8e4026055/movie_600x337.jpg?t=1788841035" role="button" tabindex="0" aria-label="Смотреть геймплей: play_movie"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257419394/49dd6ce25eaa4c66aa551be8feabdbf8e4026055/movie_600x337.jpg?t=1788841035" alt="" loading="lazy" width="480" height="270" /><span class="game-video-play" aria-hidden="true"></span></div></figure>
+      </div>
+
+<p style="color: var(--text-faint); font-size: 13px; margin-top: 30px;">
         Данные о цене, отзывах и статистике обновляются автоматически на основе
         Steam Store API и SteamSpy.
       </p>
@@ -284,5 +330,6 @@ function declineCookies() {
 })();
 </script>
 <script src="/newsletter.js?v=2" defer></script>
+<script defer src="/game-media.js?v=1"></script>
 </body>
 </html>

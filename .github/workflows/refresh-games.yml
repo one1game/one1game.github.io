@@ -1,0 +1,36 @@
+name: Обновление данных всех игр (Steam)
+
+on:
+  schedule:
+    - cron: "0 4 * * 0" # каждое воскресенье в 04:00 UTC (07:00 МСК)
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Клонирование репозитория
+        uses: actions/checkout@v4
+
+      - name: Установка Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - name: Рефреш данных всех игр
+        env:
+          MODE: "refresh"
+          ARCHIVE_DIR: "archive"
+          DELAY_MS: "1200"
+        run: node scripts/generate-games.js
+
+      - name: Коммит и пуш изменений
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add archive/ articles-data.js
+          git diff --quiet --cached || git commit -m "Рефреш данных игр: $(date -u +'%Y-%m-%d')"
+          git push

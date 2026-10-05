@@ -112,6 +112,38 @@
     }
     .game-stat-card .label { font-size: 12px; color: var(--text-faint); text-transform: uppercase; }
     .game-stat-card .value { font-size: 20px; font-weight: bold; margin-top: 4px; }
+    .game-shots {
+      display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+      gap: 12px; margin: 20px 0;
+    }
+    .game-shot {
+      display: block; border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 8px; overflow: hidden;
+    }
+    .game-shot img { display: block; width: 100%; height: auto; }
+    .game-movies { display: grid; gap: 16px; margin: 20px 0; }
+    .game-movie { margin: 0; }
+    .game-movie video {
+      display: block; width: 100%; height: auto;
+      border-radius: 8px; background: #000;
+    }
+    .game-movie figcaption { margin-top: 6px; font-size: 13px; color: var(--text-faint); }
+    .game-video {
+      position: relative; cursor: pointer; overflow: hidden;
+      border-radius: 8px; background: #000; aspect-ratio: 16 / 9;
+    }
+    .game-video img { display: block; width: 100%; height: 100%; object-fit: cover; }
+    .game-video-play { position: absolute; inset: 0; display: grid; place-items: center; }
+    .game-video-play::before {
+      content: ''; width: 58px; height: 58px; border-radius: 50%;
+      background: rgba(0,0,0,0.5); border: 2px solid rgba(255,255,255,0.75);
+    }
+    .game-video-play::after {
+      content: ''; position: absolute; margin-left: 5px;
+      border-style: solid; border-width: 11px 0 11px 18px;
+      border-color: transparent transparent transparent #fff;
+    }
+    .game-video-el { display: block; width: 100%; height: 100%; background: #000; }
   </style>
 </head>
 <body>
@@ -150,7 +182,7 @@
 
     <article class="article-body">
 
-      <p>The minds at Miel hit us an all new twist on the familiar fantasy fucking formula. MAGIC MAYHEM AND MILFS!?!? Embark on an epic visual novel fantasy title where you battle through bushels of MILF bush and impregnate all who cum in your wake.</p>
+      
 
       <div class="game-stats-grid">
         <div class="game-stat-card">
@@ -166,10 +198,6 @@
           <div class="label">Владельцев (оценка)</div>
           <div class="value">0 – 20,000</div>
         </div>
-        <div class="game-stat-card">
-          <div class="label">Среднее время игры</div>
-          <div class="value">нет данных</div>
-        </div>
       </div>
 
       <h2>Об игре</h2>
@@ -183,7 +211,24 @@
         </a>
       </p>
 
-      <p style="color: var(--text-faint); font-size: 13px; margin-top: 30px;">
+            <h2>Скриншоты</h2>
+      <div class="game-shots">
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4949180/466027c153ec32ce682a1e8a76ac7edc57a9639d/ss_466027c153ec32ce682a1e8a76ac7edc57a9639d.1920x1080.jpg?t=1790563660" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4949180/466027c153ec32ce682a1e8a76ac7edc57a9639d/ss_466027c153ec32ce682a1e8a76ac7edc57a9639d.600x338.jpg?t=1790563660" alt="MMO: Massive Mommy Orgy — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4949180/61fc651b4b80a691a19e3a182b4df06d8918c6ed/ss_61fc651b4b80a691a19e3a182b4df06d8918c6ed.1920x1080.jpg?t=1790563660" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4949180/61fc651b4b80a691a19e3a182b4df06d8918c6ed/ss_61fc651b4b80a691a19e3a182b4df06d8918c6ed.600x338.jpg?t=1790563660" alt="MMO: Massive Mommy Orgy — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4949180/75cd500186b70c8cb52eac8539f2fac5011eb3f6/ss_75cd500186b70c8cb52eac8539f2fac5011eb3f6.1920x1080.jpg?t=1790563660" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4949180/75cd500186b70c8cb52eac8539f2fac5011eb3f6/ss_75cd500186b70c8cb52eac8539f2fac5011eb3f6.600x338.jpg?t=1790563660" alt="MMO: Massive Mommy Orgy — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4949180/7e5a4c50630d6cc65f16588dd4b04f5453108013/ss_7e5a4c50630d6cc65f16588dd4b04f5453108013.1920x1080.jpg?t=1790563660" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4949180/7e5a4c50630d6cc65f16588dd4b04f5453108013/ss_7e5a4c50630d6cc65f16588dd4b04f5453108013.600x338.jpg?t=1790563660" alt="MMO: Massive Mommy Orgy — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4949180/cf349a9c515221b6b941bef7b5e3f466ddd3410d/ss_cf349a9c515221b6b941bef7b5e3f466ddd3410d.1920x1080.jpg?t=1790563660" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4949180/cf349a9c515221b6b941bef7b5e3f466ddd3410d/ss_cf349a9c515221b6b941bef7b5e3f466ddd3410d.600x338.jpg?t=1790563660" alt="MMO: Massive Mommy Orgy — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4949180/521ae9c0eb05d8b58ce0def8ccfdee74c57d5529/ss_521ae9c0eb05d8b58ce0def8ccfdee74c57d5529.1920x1080.jpg?t=1790563660" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4949180/521ae9c0eb05d8b58ce0def8ccfdee74c57d5529/ss_521ae9c0eb05d8b58ce0def8ccfdee74c57d5529.600x338.jpg?t=1790563660" alt="MMO: Massive Mommy Orgy — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4949180/b3c57aa989168b45c7f195906afb2f808d96a760/ss_b3c57aa989168b45c7f195906afb2f808d96a760.1920x1080.jpg?t=1790563660" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4949180/b3c57aa989168b45c7f195906afb2f808d96a760/ss_b3c57aa989168b45c7f195906afb2f808d96a760.600x338.jpg?t=1790563660" alt="MMO: Massive Mommy Orgy — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4949180/fbdd4cfe972eb91f3aa82f5d9bbf92c584c3ac5f/ss_fbdd4cfe972eb91f3aa82f5d9bbf92c584c3ac5f.1920x1080.jpg?t=1790563660" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4949180/fbdd4cfe972eb91f3aa82f5d9bbf92c584c3ac5f/ss_fbdd4cfe972eb91f3aa82f5d9bbf92c584c3ac5f.600x338.jpg?t=1790563660" alt="MMO: Massive Mommy Orgy — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+      </div>
+
+      <h2>Геймплей</h2>
+      <div class="game-movies">
+        <figure class="game-movie"><div class="game-video" data-hls="https://video.akamai.steamstatic.com/store_trailers/4949180/39970153/cedc9a2fa9270c7ebaf247efc3082690f023cc80/1785349468/hls_264_master.m3u8?t=1789004917" data-poster="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257387874/86811fd4ee4a5ff87c695bced5379f67dae24522/movie_600x337.jpg?t=1789004917" role="button" tabindex="0" aria-label="Смотреть геймплей: MMO Trailer 01"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257387874/86811fd4ee4a5ff87c695bced5379f67dae24522/movie_600x337.jpg?t=1789004917" alt="" loading="lazy" width="480" height="270" /><span class="game-video-play" aria-hidden="true"></span></div></figure>
+      </div>
+
+<p style="color: var(--text-faint); font-size: 13px; margin-top: 30px;">
         Данные о цене, отзывах и статистике обновляются автоматически на основе
         Steam Store API и SteamSpy.
       </p>
@@ -284,5 +329,6 @@ function declineCookies() {
 })();
 </script>
 <script src="/newsletter.js?v=2" defer></script>
+<script defer src="/game-media.js?v=1"></script>
 </body>
 </html>

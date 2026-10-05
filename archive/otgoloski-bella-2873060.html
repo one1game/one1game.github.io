@@ -112,6 +112,38 @@
     }
     .game-stat-card .label { font-size: 12px; color: var(--text-faint); text-transform: uppercase; }
     .game-stat-card .value { font-size: 20px; font-weight: bold; margin-top: 4px; }
+    .game-shots {
+      display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+      gap: 12px; margin: 20px 0;
+    }
+    .game-shot {
+      display: block; border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 8px; overflow: hidden;
+    }
+    .game-shot img { display: block; width: 100%; height: auto; }
+    .game-movies { display: grid; gap: 16px; margin: 20px 0; }
+    .game-movie { margin: 0; }
+    .game-movie video {
+      display: block; width: 100%; height: auto;
+      border-radius: 8px; background: #000;
+    }
+    .game-movie figcaption { margin-top: 6px; font-size: 13px; color: var(--text-faint); }
+    .game-video {
+      position: relative; cursor: pointer; overflow: hidden;
+      border-radius: 8px; background: #000; aspect-ratio: 16 / 9;
+    }
+    .game-video img { display: block; width: 100%; height: 100%; object-fit: cover; }
+    .game-video-play { position: absolute; inset: 0; display: grid; place-items: center; }
+    .game-video-play::before {
+      content: ''; width: 58px; height: 58px; border-radius: 50%;
+      background: rgba(0,0,0,0.5); border: 2px solid rgba(255,255,255,0.75);
+    }
+    .game-video-play::after {
+      content: ''; position: absolute; margin-left: 5px;
+      border-style: solid; border-width: 11px 0 11px 18px;
+      border-color: transparent transparent transparent #fff;
+    }
+    .game-video-el { display: block; width: 100%; height: 100%; background: #000; }
   </style>
 </head>
 <body>
@@ -150,7 +182,7 @@
 
     <article class="article-body">
 
-      <p>The Bell Echoes is a story-driven tactical roguelite. Fight alongside a cast of distinctive companions as you venture deeper into the Corrupted Lands, defeat powerful foes, collect Echoes and memory fragments, and uncover the truth behind the characters and the world.</p>
+      
 
       <div class="game-stats-grid">
         <div class="game-stat-card">
@@ -166,10 +198,6 @@
           <div class="label">Владельцев (оценка)</div>
           <div class="value">0 – 20,000</div>
         </div>
-        <div class="game-stat-card">
-          <div class="label">Среднее время игры</div>
-          <div class="value">нет данных</div>
-        </div>
       </div>
 
       <h2>Об игре</h2>
@@ -183,7 +211,28 @@
         </a>
       </p>
 
-      <p style="color: var(--text-faint); font-size: 13px; margin-top: 30px;">
+            <h2>Скриншоты</h2>
+      <div class="game-shots">
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2873060/7eeaf948176eabbb00ffa750e6256a5dbb319abb/ss_7eeaf948176eabbb00ffa750e6256a5dbb319abb.1920x1080.jpg?t=1790560807" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2873060/7eeaf948176eabbb00ffa750e6256a5dbb319abb/ss_7eeaf948176eabbb00ffa750e6256a5dbb319abb.600x338.jpg?t=1790560807" alt="The Bell Echoes — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2873060/ee508154e3f6475e53f667271987b4277cb27c66/ss_ee508154e3f6475e53f667271987b4277cb27c66.1920x1080.jpg?t=1790560807" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2873060/ee508154e3f6475e53f667271987b4277cb27c66/ss_ee508154e3f6475e53f667271987b4277cb27c66.600x338.jpg?t=1790560807" alt="The Bell Echoes — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2873060/63b413c1b27b12dcf6a55d20e84d1ba421e0541c/ss_63b413c1b27b12dcf6a55d20e84d1ba421e0541c.1920x1080.jpg?t=1790560807" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2873060/63b413c1b27b12dcf6a55d20e84d1ba421e0541c/ss_63b413c1b27b12dcf6a55d20e84d1ba421e0541c.600x338.jpg?t=1790560807" alt="The Bell Echoes — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2873060/6dd4db668f6426372d5c95623bd2ba3e9290f25b/ss_6dd4db668f6426372d5c95623bd2ba3e9290f25b.1920x1080.jpg?t=1790560807" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2873060/6dd4db668f6426372d5c95623bd2ba3e9290f25b/ss_6dd4db668f6426372d5c95623bd2ba3e9290f25b.600x338.jpg?t=1790560807" alt="The Bell Echoes — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2873060/51537c3788c6737f63c2b9c4a1383523c8fbd3c7/ss_51537c3788c6737f63c2b9c4a1383523c8fbd3c7.1920x1080.jpg?t=1790560807" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2873060/51537c3788c6737f63c2b9c4a1383523c8fbd3c7/ss_51537c3788c6737f63c2b9c4a1383523c8fbd3c7.600x338.jpg?t=1790560807" alt="The Bell Echoes — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2873060/ea2c36f0be8479d8b17b3885cc63cf8285010eec/ss_ea2c36f0be8479d8b17b3885cc63cf8285010eec.1920x1080.jpg?t=1790560807" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2873060/ea2c36f0be8479d8b17b3885cc63cf8285010eec/ss_ea2c36f0be8479d8b17b3885cc63cf8285010eec.600x338.jpg?t=1790560807" alt="The Bell Echoes — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2873060/33b2c43aa18d7c3eb6679790c5aee08488c15e5e/ss_33b2c43aa18d7c3eb6679790c5aee08488c15e5e.1920x1080.jpg?t=1790560807" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2873060/33b2c43aa18d7c3eb6679790c5aee08488c15e5e/ss_33b2c43aa18d7c3eb6679790c5aee08488c15e5e.600x338.jpg?t=1790560807" alt="The Bell Echoes — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2873060/06144e093cfa6307e5bf81280510ffa8e694a32c/ss_06144e093cfa6307e5bf81280510ffa8e694a32c.1920x1080.jpg?t=1790560807" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2873060/06144e093cfa6307e5bf81280510ffa8e694a32c/ss_06144e093cfa6307e5bf81280510ffa8e694a32c.600x338.jpg?t=1790560807" alt="The Bell Echoes — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2873060/e2fb09dc8ca819a63eb306603712f7e96fac3365/ss_e2fb09dc8ca819a63eb306603712f7e96fac3365.1920x1080.jpg?t=1790560807" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2873060/e2fb09dc8ca819a63eb306603712f7e96fac3365/ss_e2fb09dc8ca819a63eb306603712f7e96fac3365.600x338.jpg?t=1790560807" alt="The Bell Echoes — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2873060/2cbe91cd18718b9bbda2087ed0bdd29c661498a7/ss_2cbe91cd18718b9bbda2087ed0bdd29c661498a7.1920x1080.jpg?t=1790560807" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2873060/2cbe91cd18718b9bbda2087ed0bdd29c661498a7/ss_2cbe91cd18718b9bbda2087ed0bdd29c661498a7.600x338.jpg?t=1790560807" alt="The Bell Echoes — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2873060/59e80d701cd611369298680b208d62cf87d28359/ss_59e80d701cd611369298680b208d62cf87d28359.1920x1080.jpg?t=1790560807" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2873060/59e80d701cd611369298680b208d62cf87d28359/ss_59e80d701cd611369298680b208d62cf87d28359.600x338.jpg?t=1790560807" alt="The Bell Echoes — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+      </div>
+
+      <h2>Геймплей</h2>
+      <div class="game-movies">
+        <figure class="game-movie"><div class="game-video" data-hls="https://video.akamai.steamstatic.com/store_trailers/2873060/845698368/58fed55abee6f31b344c6766e2910f7357918252/1790514795/hls_264_master.m3u8?t=1790515852" data-poster="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257437260/92c5629df4d558fffd2359f8eece226bd1c52326/movie_600x337.jpg?t=1790515852" role="button" tabindex="0" aria-label="Смотреть геймплей: The Bell Echoes"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257437260/92c5629df4d558fffd2359f8eece226bd1c52326/movie_600x337.jpg?t=1790515852" alt="" loading="lazy" width="480" height="270" /><span class="game-video-play" aria-hidden="true"></span></div></figure>
+        <figure class="game-movie"><div class="game-video" data-hls="https://video.akamai.steamstatic.com/store_trailers/2873060/1079406209/5d6f788488198bf1f0ddb20f69505e55305e7656/1790510865/hls_264_master.m3u8?t=1790515945" data-poster="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257437211/50e3a70f19d9122ec72c6831a06590ce115d0380/movie_600x337.jpg?t=1790515945" role="button" tabindex="0" aria-label="Смотреть геймплей: 人物向宣传片"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257437211/50e3a70f19d9122ec72c6831a06590ce115d0380/movie_600x337.jpg?t=1790515945" alt="" loading="lazy" width="480" height="270" /><span class="game-video-play" aria-hidden="true"></span></div></figure>
+      </div>
+
+<p style="color: var(--text-faint); font-size: 13px; margin-top: 30px;">
         Данные о цене, отзывах и статистике обновляются автоматически на основе
         Steam Store API и SteamSpy.
       </p>
@@ -284,5 +333,6 @@ function declineCookies() {
 })();
 </script>
 <script src="/newsletter.js?v=2" defer></script>
+<script defer src="/game-media.js?v=1"></script>
 </body>
 </html>

@@ -112,6 +112,38 @@
     }
     .game-stat-card .label { font-size: 12px; color: var(--text-faint); text-transform: uppercase; }
     .game-stat-card .value { font-size: 20px; font-weight: bold; margin-top: 4px; }
+    .game-shots {
+      display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+      gap: 12px; margin: 20px 0;
+    }
+    .game-shot {
+      display: block; border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 8px; overflow: hidden;
+    }
+    .game-shot img { display: block; width: 100%; height: auto; }
+    .game-movies { display: grid; gap: 16px; margin: 20px 0; }
+    .game-movie { margin: 0; }
+    .game-movie video {
+      display: block; width: 100%; height: auto;
+      border-radius: 8px; background: #000;
+    }
+    .game-movie figcaption { margin-top: 6px; font-size: 13px; color: var(--text-faint); }
+    .game-video {
+      position: relative; cursor: pointer; overflow: hidden;
+      border-radius: 8px; background: #000; aspect-ratio: 16 / 9;
+    }
+    .game-video img { display: block; width: 100%; height: 100%; object-fit: cover; }
+    .game-video-play { position: absolute; inset: 0; display: grid; place-items: center; }
+    .game-video-play::before {
+      content: ''; width: 58px; height: 58px; border-radius: 50%;
+      background: rgba(0,0,0,0.5); border: 2px solid rgba(255,255,255,0.75);
+    }
+    .game-video-play::after {
+      content: ''; position: absolute; margin-left: 5px;
+      border-style: solid; border-width: 11px 0 11px 18px;
+      border-color: transparent transparent transparent #fff;
+    }
+    .game-video-el { display: block; width: 100%; height: 100%; background: #000; }
   </style>
 </head>
 <body>
@@ -150,7 +182,7 @@
 
     <article class="article-body">
 
-      <p>Pushed from his nest for being born prematurely, Pip must prove Mother Nature wrong. Fluttering is a punishing precision platformer where determination is key. Master a unique momentum-based flutter mechanic, survive brutal falls, and climb back to the nest. Flutter. Fall. Rage. Repeat.</p>
+      
 
       <div class="game-stats-grid">
         <div class="game-stat-card">
@@ -166,10 +198,6 @@
           <div class="label">Владельцев (оценка)</div>
           <div class="value">0 – 20,000</div>
         </div>
-        <div class="game-stat-card">
-          <div class="label">Среднее время игры</div>
-          <div class="value">нет данных</div>
-        </div>
       </div>
 
       <h2>Об игре</h2>
@@ -183,7 +211,22 @@
         </a>
       </p>
 
-      <p style="color: var(--text-faint); font-size: 13px; margin-top: 30px;">
+            <h2>Скриншоты</h2>
+      <div class="game-shots">
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3759520/e16b77634e7332a0c9d186c172468370f04e05c0/ss_e16b77634e7332a0c9d186c172468370f04e05c0.1920x1080.jpg?t=1789831207" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3759520/e16b77634e7332a0c9d186c172468370f04e05c0/ss_e16b77634e7332a0c9d186c172468370f04e05c0.600x338.jpg?t=1789831207" alt="Fluttering — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3759520/3a11b87d02566154039e1b21d3f33074bafd7098/ss_3a11b87d02566154039e1b21d3f33074bafd7098.1920x1080.jpg?t=1789831207" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3759520/3a11b87d02566154039e1b21d3f33074bafd7098/ss_3a11b87d02566154039e1b21d3f33074bafd7098.600x338.jpg?t=1789831207" alt="Fluttering — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3759520/d9e0b5912a923b3904be8dd6a206bc3d430330a6/ss_d9e0b5912a923b3904be8dd6a206bc3d430330a6.1920x1080.jpg?t=1789831207" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3759520/d9e0b5912a923b3904be8dd6a206bc3d430330a6/ss_d9e0b5912a923b3904be8dd6a206bc3d430330a6.600x338.jpg?t=1789831207" alt="Fluttering — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3759520/45aa36a06670fd0b229d6adb0a0edf59f132d871/ss_45aa36a06670fd0b229d6adb0a0edf59f132d871.1920x1080.jpg?t=1789831207" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3759520/45aa36a06670fd0b229d6adb0a0edf59f132d871/ss_45aa36a06670fd0b229d6adb0a0edf59f132d871.600x338.jpg?t=1789831207" alt="Fluttering — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3759520/10e0dca4c2f81e75eeaeb6e4c777de2ad72244fc/ss_10e0dca4c2f81e75eeaeb6e4c777de2ad72244fc.1920x1080.jpg?t=1789831207" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3759520/10e0dca4c2f81e75eeaeb6e4c777de2ad72244fc/ss_10e0dca4c2f81e75eeaeb6e4c777de2ad72244fc.600x338.jpg?t=1789831207" alt="Fluttering — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3759520/ec43414f00a7c895f8155c785834f00fa2ec0265/ss_ec43414f00a7c895f8155c785834f00fa2ec0265.1920x1080.jpg?t=1789831207" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3759520/ec43414f00a7c895f8155c785834f00fa2ec0265/ss_ec43414f00a7c895f8155c785834f00fa2ec0265.600x338.jpg?t=1789831207" alt="Fluttering — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+      </div>
+
+      <h2>Геймплей</h2>
+      <div class="game-movies">
+        <figure class="game-movie"><div class="game-video" data-hls="https://video.akamai.steamstatic.com/store_trailers/3759520/1104557673/12616173230f6d5a7d1e1c66743c292f7f8886a4/1786663826/hls_264_master.m3u8?t=1787243517" data-poster="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257396015/c5e1d05bec8897abb9e38187af5466fea9f31eef/movie_600x337.jpg?t=1787243517" role="button" tabindex="0" aria-label="Смотреть геймплей: Fluttering"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257396015/c5e1d05bec8897abb9e38187af5466fea9f31eef/movie_600x337.jpg?t=1787243517" alt="" loading="lazy" width="480" height="270" /><span class="game-video-play" aria-hidden="true"></span></div></figure>
+      </div>
+
+<p style="color: var(--text-faint); font-size: 13px; margin-top: 30px;">
         Данные о цене, отзывах и статистике обновляются автоматически на основе
         Steam Store API и SteamSpy.
       </p>
@@ -284,5 +327,6 @@ function declineCookies() {
 })();
 </script>
 <script src="/newsletter.js?v=2" defer></script>
+<script defer src="/game-media.js?v=1"></script>
 </body>
 </html>

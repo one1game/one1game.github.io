@@ -117,6 +117,38 @@
     }
     .game-stat-card .label { font-size: 12px; color: var(--text-faint); text-transform: uppercase; }
     .game-stat-card .value { font-size: 20px; font-weight: bold; margin-top: 4px; }
+    .game-shots {
+      display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+      gap: 12px; margin: 20px 0;
+    }
+    .game-shot {
+      display: block; border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 8px; overflow: hidden;
+    }
+    .game-shot img { display: block; width: 100%; height: auto; }
+    .game-movies { display: grid; gap: 16px; margin: 20px 0; }
+    .game-movie { margin: 0; }
+    .game-movie video {
+      display: block; width: 100%; height: auto;
+      border-radius: 8px; background: #000;
+    }
+    .game-movie figcaption { margin-top: 6px; font-size: 13px; color: var(--text-faint); }
+    .game-video {
+      position: relative; cursor: pointer; overflow: hidden;
+      border-radius: 8px; background: #000; aspect-ratio: 16 / 9;
+    }
+    .game-video img { display: block; width: 100%; height: 100%; object-fit: cover; }
+    .game-video-play { position: absolute; inset: 0; display: grid; place-items: center; }
+    .game-video-play::before {
+      content: ''; width: 58px; height: 58px; border-radius: 50%;
+      background: rgba(0,0,0,0.5); border: 2px solid rgba(255,255,255,0.75);
+    }
+    .game-video-play::after {
+      content: ''; position: absolute; margin-left: 5px;
+      border-style: solid; border-width: 11px 0 11px 18px;
+      border-color: transparent transparent transparent #fff;
+    }
+    .game-video-el { display: block; width: 100%; height: 100%; background: #000; }
   </style>
 </head>
 <body>
@@ -155,7 +187,7 @@
 
     <article class="article-body">
 
-      <p>This Three Kingdoms sandbox RPG lets you do whatever you wish in the late Han Dynasty. Be a ruler, courtier, or hermit. Make friends, marry, raise children, manage estates, train yourself &amp; allies, govern, drill troops, experience &amp; alter history, and conquer all to win the hearts of the people.</p>
+      
 
       <div class="game-stats-grid">
         <div class="game-stat-card">
@@ -174,10 +206,6 @@
           <div class="label">Владельцев (оценка)</div>
           <div class="value">200,000 – 500,000</div>
         </div>
-        <div class="game-stat-card">
-          <div class="label">Среднее время игры</div>
-          <div class="value">нет данных</div>
-        </div>
       </div>
 
       <h2>Об игре</h2>
@@ -191,7 +219,28 @@
         </a>
       </p>
 
-      <p style="color: var(--text-faint); font-size: 13px; margin-top: 30px;">
+            <h2>Скриншоты</h2>
+      <div class="game-shots">
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3020510/460237ffe6acefb71f9933c08e5b463ec723716e/ss_460237ffe6acefb71f9933c08e5b463ec723716e.1920x1080.jpg?t=1790499638" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3020510/460237ffe6acefb71f9933c08e5b463ec723716e/ss_460237ffe6acefb71f9933c08e5b463ec723716e.600x338.jpg?t=1790499638" alt="Heroes&#x27; Vow: Three Kingdoms — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3020510/808d70321575d4748164ec1f0ebc66a5ee707ea0/ss_808d70321575d4748164ec1f0ebc66a5ee707ea0.1920x1080.jpg?t=1790499638" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3020510/808d70321575d4748164ec1f0ebc66a5ee707ea0/ss_808d70321575d4748164ec1f0ebc66a5ee707ea0.600x338.jpg?t=1790499638" alt="Heroes&#x27; Vow: Three Kingdoms — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3020510/ddcfad2b0ad49c3e679b6259074d1ba672186460/ss_ddcfad2b0ad49c3e679b6259074d1ba672186460.1920x1080.jpg?t=1790499638" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3020510/ddcfad2b0ad49c3e679b6259074d1ba672186460/ss_ddcfad2b0ad49c3e679b6259074d1ba672186460.600x338.jpg?t=1790499638" alt="Heroes&#x27; Vow: Three Kingdoms — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3020510/d7663d3d8e3dab60bed82afccea73ac257980551/ss_d7663d3d8e3dab60bed82afccea73ac257980551.1920x1080.jpg?t=1790499638" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3020510/d7663d3d8e3dab60bed82afccea73ac257980551/ss_d7663d3d8e3dab60bed82afccea73ac257980551.600x338.jpg?t=1790499638" alt="Heroes&#x27; Vow: Three Kingdoms — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3020510/004f9ab4623898dcef2b5dbc763dd6af303bd170/ss_004f9ab4623898dcef2b5dbc763dd6af303bd170.1920x1080.jpg?t=1790499638" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3020510/004f9ab4623898dcef2b5dbc763dd6af303bd170/ss_004f9ab4623898dcef2b5dbc763dd6af303bd170.600x338.jpg?t=1790499638" alt="Heroes&#x27; Vow: Three Kingdoms — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3020510/220e365e2d47c2417cca73bbdbc8172b07209e3d/ss_220e365e2d47c2417cca73bbdbc8172b07209e3d.1920x1080.jpg?t=1790499638" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3020510/220e365e2d47c2417cca73bbdbc8172b07209e3d/ss_220e365e2d47c2417cca73bbdbc8172b07209e3d.600x338.jpg?t=1790499638" alt="Heroes&#x27; Vow: Three Kingdoms — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3020510/b5f917cfa5141418bad3bbea9c1f327e2ecf8c5c/ss_b5f917cfa5141418bad3bbea9c1f327e2ecf8c5c.1920x1080.jpg?t=1790499638" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3020510/b5f917cfa5141418bad3bbea9c1f327e2ecf8c5c/ss_b5f917cfa5141418bad3bbea9c1f327e2ecf8c5c.600x338.jpg?t=1790499638" alt="Heroes&#x27; Vow: Three Kingdoms — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3020510/2e0e303f784178695450e4770402e6feb594d3e1/ss_2e0e303f784178695450e4770402e6feb594d3e1.1920x1080.jpg?t=1790499638" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3020510/2e0e303f784178695450e4770402e6feb594d3e1/ss_2e0e303f784178695450e4770402e6feb594d3e1.600x338.jpg?t=1790499638" alt="Heroes&#x27; Vow: Three Kingdoms — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3020510/0c05e6bbc2a9616193f643362544f55d45565b1d/ss_0c05e6bbc2a9616193f643362544f55d45565b1d.1920x1080.jpg?t=1790499638" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3020510/0c05e6bbc2a9616193f643362544f55d45565b1d/ss_0c05e6bbc2a9616193f643362544f55d45565b1d.600x338.jpg?t=1790499638" alt="Heroes&#x27; Vow: Three Kingdoms — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3020510/6d824383998d5f308d17fda4561aaeb37bd49f08/ss_6d824383998d5f308d17fda4561aaeb37bd49f08.1920x1080.jpg?t=1790499638" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3020510/6d824383998d5f308d17fda4561aaeb37bd49f08/ss_6d824383998d5f308d17fda4561aaeb37bd49f08.600x338.jpg?t=1790499638" alt="Heroes&#x27; Vow: Three Kingdoms — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3020510/2e8ebf89d2526308c21a3f1dd4697cfc4326c9b0/ss_2e8ebf89d2526308c21a3f1dd4697cfc4326c9b0.1920x1080.jpg?t=1790499638" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3020510/2e8ebf89d2526308c21a3f1dd4697cfc4326c9b0/ss_2e8ebf89d2526308c21a3f1dd4697cfc4326c9b0.600x338.jpg?t=1790499638" alt="Heroes&#x27; Vow: Three Kingdoms — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3020510/365b60b08be3f4d96697ffb85552e44982917500/ss_365b60b08be3f4d96697ffb85552e44982917500.1920x1080.jpg?t=1790499638" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3020510/365b60b08be3f4d96697ffb85552e44982917500/ss_365b60b08be3f4d96697ffb85552e44982917500.600x338.jpg?t=1790499638" alt="Heroes&#x27; Vow: Three Kingdoms — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+      </div>
+
+      <h2>Геймплей</h2>
+      <div class="game-movies">
+        <figure class="game-movie"><div class="game-video" data-hls="https://video.akamai.steamstatic.com/store_trailers/3020510/1043759040/5ffec0ac46778e70007aa2bab472c9bd84836300/1790145512/hls_264_master.m3u8?t=1790147195" data-poster="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257432373/1f2d5b598f944b312db3e5a3a1def1485e344776/movie_600x337.jpg?t=1790147195" role="button" tabindex="0" aria-label="Смотреть геймплей: 英雄立志传·三国志 正式版PV EN"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257432373/1f2d5b598f944b312db3e5a3a1def1485e344776/movie_600x337.jpg?t=1790147195" alt="" loading="lazy" width="480" height="270" /><span class="game-video-play" aria-hidden="true"></span></div></figure>
+      </div>
+
+<p style="color: var(--text-faint); font-size: 13px; margin-top: 30px;">
         Данные о цене, отзывах и статистике обновляются автоматически на основе
         Steam Store API и SteamSpy.
       </p>
@@ -292,5 +341,6 @@ function declineCookies() {
 })();
 </script>
 <script src="/newsletter.js?v=2" defer></script>
+<script defer src="/game-media.js?v=1"></script>
 </body>
 </html>

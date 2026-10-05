@@ -10,12 +10,12 @@
   <link rel="dns-prefetch" href="https://www.google-analytics.com" />
   <link rel="preload" href="../styles.css" as="style" />
 
-  <title>Jono: цена, отзывы и статистика игроков | One1Game</title>
-  <meta name="description" content="Jono — актуальная цена, скидки, процент положительных отзывов и статистика игроков в Steam. Обновляется автоматически." />
+  <title>Jono — совместная игра на миллион уровней | One1Game</title>
+  <meta name="description" content="Jono — мультиплеерная casual-игра, где игроки по очереди проходят уровни. Узнайте, подойдёт ли она для коротких сессий и общения." />
   <meta name="keywords" content="Jono, цена, отзывы, скидка, статистика игроков, Steam" />
 
-  <meta property="og:title" content="Jono: цена, отзывы и статистика игроков | One1Game" />
-  <meta property="og:description" content="Jono — актуальная цена, скидки, процент положительных отзывов и статистика игроков в Steam. Обновляется автоматически." />
+  <meta property="og:title" content="Jono — совместная игра на миллион уровней | One1Game" />
+  <meta property="og:description" content="Jono — мультиплеерная casual-игра, где игроки по очереди проходят уровни. Узнайте, подойдёт ли она для коротких сессий и общения." />
   <meta property="og:type" content="article" />
   <meta property="og:url" content="https://one1game.github.io/archive/jono-5257200.html" />
   <meta property="og:image" content="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5257200/989e148f3c5a42443b00f9352fbede25a4c99c71/header.jpg?t=1791178997" />
@@ -58,12 +58,12 @@
   {
     "@context": "https://schema.org",
     "@type": "Article",
-    "headline": "Jono: цена, отзывы и статистика игроков | One1Game",
+    "headline": "Jono — совместная игра на миллион уровней | One1Game",
     "datePublished": "2026-10-05",
     "dateModified": "2026-10-05",
     "author": {"@type": "Person", "name": "Команда One1Game"},
     "publisher": {"@type": "Organization", "name": "One1Game", "logo": {"@type": "ImageObject", "url": "https://one1game.github.io/logo.png"}},
-    "description": "Jono — актуальная цена, скидки, процент положительных отзывов и статистика игроков в Steam. Обновляется автоматически.",
+    "description": "Jono — мультиплеерная casual-игра, где игроки по очереди проходят уровни. Узнайте, подойдёт ли она для коротких сессий и общения.",
     "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5257200/989e148f3c5a42443b00f9352fbede25a4c99c71/header.jpg?t=1791178997"
   }
   </script>
@@ -108,6 +108,34 @@
     }
     .game-stat-card .label { font-size: 12px; color: var(--text-faint); text-transform: uppercase; }
     .game-stat-card .value { font-size: 20px; font-weight: bold; margin-top: 4px; }
+    .game-shots {
+      display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+      gap: 12px; margin: 20px 0;
+    }
+    .game-shot {
+      display: block; border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 8px; overflow: hidden;
+    }
+    .game-shot img { display: block; width: 100%; height: auto; }
+    .game-movies { display: grid; gap: 16px; margin: 20px 0; }
+    .game-movie { margin: 0; }
+    .game-video {
+      position: relative; cursor: pointer; overflow: hidden;
+      border-radius: 8px; background: #000; aspect-ratio: 16 / 9;
+    }
+    .game-video img { display: block; width: 100%; height: 100%; object-fit: cover; }
+    .game-video-play { position: absolute; inset: 0; display: grid; place-items: center; }
+    .game-video-play::before {
+      content: ''; width: 58px; height: 58px; border-radius: 50%;
+      background: rgba(0,0,0,0.5); border: 2px solid rgba(255,255,255,0.75);
+    }
+    .game-video-play::after {
+      content: ''; position: absolute; margin-left: 5px;
+      border-style: solid; border-width: 11px 0 11px 18px;
+      border-color: transparent transparent transparent #fff;
+    }
+    .game-video-el { display: block; width: 100%; height: 100%; background: #000; }
+    .game-movie figcaption { margin-top: 6px; font-size: 13px; color: var(--text-faint); }
   </style>
 </head>
 <body>
@@ -137,7 +165,7 @@
 
     <div class="article-header">
       <span class="article-category cat-reviews">Обзоры</span>
-      <h1>Jono: цена, отзывы и статистика игроков</h1>
+      <h1>Jono — совместная игра на миллион уровней</h1>
       <div class="article-meta">
         <span><i class="far fa-calendar"></i> 5 октября 2026</span>
         <span><i class="far fa-clock"></i> 2 минуты чтения</span>
@@ -146,7 +174,9 @@
 
     <article class="article-body">
 
-      <p>Work together to complete one million levels, one player at a time. Continue where the previous left off. Chat with others while you wait for your turn. How long will it take?</p>
+      <p>Jono предлагает необычный формат совместного прохождения: каждый игрок продолжает с того места, где остановился предыдущий. Цель — вместе пройти миллион уровней, по очереди.</p>
+
+      
 
       <div class="game-stats-grid">
         <div class="game-stat-card">
@@ -162,13 +192,11 @@
           <div class="label">Владельцев (оценка)</div>
           <div class="value">0 – 20,000</div>
         </div>
-        <div class="game-stat-card">
-          <div class="label">Среднее время игры</div>
-          <div class="value">нет данных</div>
-        </div>
       </div>
 
       <h2>Об игре</h2>
+      <p>Игра сочетает простую механику с элементами социального взаимодействия: пока ждёшь своей очереди, можно общаться в чате с другими участниками. Подходит для тех, кто любит casual-проекты с мультиплеерным акцентом и не против медленного, но коллективного прогресса.</p>
+
       <p><strong>Жанры:</strong> Казуальные игры, Инди, Многопользовательские игры, Бесплатные<br/>
       <strong>Разработчик:</strong> Part Time Monkey<br/>
       <strong>Издатель:</strong> Part Time Monkey</p>
@@ -179,6 +207,20 @@
         </a>
       </p>
 
+      <h2>Скриншоты</h2>
+      <div class="game-shots">
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5257200/8e439246c2d77d6abdcdd33b103afa1c7cbd105b/ss_8e439246c2d77d6abdcdd33b103afa1c7cbd105b.1920x1080.jpg?t=1791178997" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5257200/8e439246c2d77d6abdcdd33b103afa1c7cbd105b/ss_8e439246c2d77d6abdcdd33b103afa1c7cbd105b.600x338.jpg?t=1791178997" alt="Jono — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5257200/931f1eb244abb7db8c765d055aca671e98372eb8/ss_931f1eb244abb7db8c765d055aca671e98372eb8.1920x1080.jpg?t=1791178997" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5257200/931f1eb244abb7db8c765d055aca671e98372eb8/ss_931f1eb244abb7db8c765d055aca671e98372eb8.600x338.jpg?t=1791178997" alt="Jono — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5257200/63b6fe23bfd5c932a219b164eb04aefd7fe34fd9/ss_63b6fe23bfd5c932a219b164eb04aefd7fe34fd9.1920x1080.jpg?t=1791178997" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5257200/63b6fe23bfd5c932a219b164eb04aefd7fe34fd9/ss_63b6fe23bfd5c932a219b164eb04aefd7fe34fd9.600x338.jpg?t=1791178997" alt="Jono — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5257200/87439ca73b8165cb3645c44ed06f1f281557cca9/ss_87439ca73b8165cb3645c44ed06f1f281557cca9.1920x1080.jpg?t=1791178997" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5257200/87439ca73b8165cb3645c44ed06f1f281557cca9/ss_87439ca73b8165cb3645c44ed06f1f281557cca9.600x338.jpg?t=1791178997" alt="Jono — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5257200/f9e984a079b37b61a8ff6f56eaf1c351b2eaf0f0/ss_f9e984a079b37b61a8ff6f56eaf1c351b2eaf0f0.1920x1080.jpg?t=1791178997" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5257200/f9e984a079b37b61a8ff6f56eaf1c351b2eaf0f0/ss_f9e984a079b37b61a8ff6f56eaf1c351b2eaf0f0.600x338.jpg?t=1791178997" alt="Jono — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5257200/185a1f49506c6b246288be090e184e5b12fb3e8c/ss_185a1f49506c6b246288be090e184e5b12fb3e8c.1920x1080.jpg?t=1791178997" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5257200/185a1f49506c6b246288be090e184e5b12fb3e8c/ss_185a1f49506c6b246288be090e184e5b12fb3e8c.600x338.jpg?t=1791178997" alt="Jono — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+      </div>
+
+      <h2>Геймплей</h2>
+      <div class="game-movies">
+        <figure class="game-movie"><div class="game-video" data-hls="https://video.akamai.steamstatic.com/store_trailers/5257200/572922860/84b42c4b85082aa0b4fc0b95773c4b71a0f6bbbc/1789462220/hls_264_master.m3u8?t=1789625090" data-poster="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257425556/dea499c7ad21a7adb0bfdd213c24f06b3950e118/movie_600x337.jpg?t=1789625090" role="button" tabindex="0" aria-label="Смотреть геймплей"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257425556/dea499c7ad21a7adb0bfdd213c24f06b3950e118/movie_600x337.jpg?t=1789625090" alt="" loading="lazy" width="480" height="270" /><span class="game-video-play" aria-hidden="true"></span></div></figure>
+      </div>
       <p style="color: var(--text-faint); font-size: 13px; margin-top: 30px;">
         Данные о цене, отзывах и статистике обновляются автоматически на основе
         Steam Store API и SteamSpy.
@@ -280,5 +322,6 @@ function declineCookies() {
 })();
 </script>
 <script src="/newsletter.js?v=2" defer></script>
+<script defer src="/game-media.js?v=1"></script>
 </body>
 </html>

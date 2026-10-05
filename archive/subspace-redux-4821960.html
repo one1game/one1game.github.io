@@ -108,6 +108,38 @@
     }
     .game-stat-card .label { font-size: 12px; color: var(--text-faint); text-transform: uppercase; }
     .game-stat-card .value { font-size: 20px; font-weight: bold; margin-top: 4px; }
+    .game-shots {
+      display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+      gap: 12px; margin: 20px 0;
+    }
+    .game-shot {
+      display: block; border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 8px; overflow: hidden;
+    }
+    .game-shot img { display: block; width: 100%; height: auto; }
+    .game-movies { display: grid; gap: 16px; margin: 20px 0; }
+    .game-movie { margin: 0; }
+    .game-movie video {
+      display: block; width: 100%; height: auto;
+      border-radius: 8px; background: #000;
+    }
+    .game-movie figcaption { margin-top: 6px; font-size: 13px; color: var(--text-faint); }
+    .game-video {
+      position: relative; cursor: pointer; overflow: hidden;
+      border-radius: 8px; background: #000; aspect-ratio: 16 / 9;
+    }
+    .game-video img { display: block; width: 100%; height: 100%; object-fit: cover; }
+    .game-video-play { position: absolute; inset: 0; display: grid; place-items: center; }
+    .game-video-play::before {
+      content: ''; width: 58px; height: 58px; border-radius: 50%;
+      background: rgba(0,0,0,0.5); border: 2px solid rgba(255,255,255,0.75);
+    }
+    .game-video-play::after {
+      content: ''; position: absolute; margin-left: 5px;
+      border-style: solid; border-width: 11px 0 11px 18px;
+      border-color: transparent transparent transparent #fff;
+    }
+    .game-video-el { display: block; width: 100%; height: 100%; background: #000; }
   </style>
 </head>
 <body>
@@ -146,7 +178,7 @@
 
     <article class="article-body">
 
-      <p>Fast-paced multiplayer space combat inspired by the classic Subspace. Pick from 16 distinct ships, loot rare equipment, earn bounty in dogfights, and explore a jump-gate-linked galaxy with your squad. No pay-to-win, ever.</p>
+      
 
       <div class="game-stats-grid">
         <div class="game-stat-card">
@@ -162,10 +194,6 @@
           <div class="label">Владельцев (оценка)</div>
           <div class="value">0 – 20,000</div>
         </div>
-        <div class="game-stat-card">
-          <div class="label">Среднее время игры</div>
-          <div class="value">нет данных</div>
-        </div>
       </div>
 
       <h2>Об игре</h2>
@@ -179,7 +207,28 @@
         </a>
       </p>
 
-      <p style="color: var(--text-faint); font-size: 13px; margin-top: 30px;">
+            <h2>Скриншоты</h2>
+      <div class="game-shots">
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4821960/627de47cd9545b5b5cd1db27801af240e3217a3d/ss_627de47cd9545b5b5cd1db27801af240e3217a3d.1920x1080.jpg?t=1791103206" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4821960/627de47cd9545b5b5cd1db27801af240e3217a3d/ss_627de47cd9545b5b5cd1db27801af240e3217a3d.600x338.jpg?t=1791103206" alt="Subspace: Redux — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4821960/9016fb917df2ee25d56b5d8e630fe80e91191677/ss_9016fb917df2ee25d56b5d8e630fe80e91191677.1920x1080.jpg?t=1791103206" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4821960/9016fb917df2ee25d56b5d8e630fe80e91191677/ss_9016fb917df2ee25d56b5d8e630fe80e91191677.600x338.jpg?t=1791103206" alt="Subspace: Redux — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4821960/73c6f37fb28d6afe7083592f788dfe3d80d0b1af/ss_73c6f37fb28d6afe7083592f788dfe3d80d0b1af.1920x1080.jpg?t=1791103206" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4821960/73c6f37fb28d6afe7083592f788dfe3d80d0b1af/ss_73c6f37fb28d6afe7083592f788dfe3d80d0b1af.600x338.jpg?t=1791103206" alt="Subspace: Redux — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4821960/1a240d25fd6f683a6ef81c7f024ece47be6a09ba/ss_1a240d25fd6f683a6ef81c7f024ece47be6a09ba.1920x1080.jpg?t=1791103206" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4821960/1a240d25fd6f683a6ef81c7f024ece47be6a09ba/ss_1a240d25fd6f683a6ef81c7f024ece47be6a09ba.600x338.jpg?t=1791103206" alt="Subspace: Redux — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4821960/e502ec12c6e230b3c68191c4794e032e26ffe5ee/ss_e502ec12c6e230b3c68191c4794e032e26ffe5ee.1920x1080.jpg?t=1791103206" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4821960/e502ec12c6e230b3c68191c4794e032e26ffe5ee/ss_e502ec12c6e230b3c68191c4794e032e26ffe5ee.600x338.jpg?t=1791103206" alt="Subspace: Redux — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4821960/f760005f72cc10e5f9dac77826a9a872afb1f3a5/ss_f760005f72cc10e5f9dac77826a9a872afb1f3a5.1920x1080.jpg?t=1791103206" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4821960/f760005f72cc10e5f9dac77826a9a872afb1f3a5/ss_f760005f72cc10e5f9dac77826a9a872afb1f3a5.600x338.jpg?t=1791103206" alt="Subspace: Redux — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4821960/584d2715f49e5db3e79af1fe752061b883fb9018/ss_584d2715f49e5db3e79af1fe752061b883fb9018.1920x1080.jpg?t=1791103206" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4821960/584d2715f49e5db3e79af1fe752061b883fb9018/ss_584d2715f49e5db3e79af1fe752061b883fb9018.600x338.jpg?t=1791103206" alt="Subspace: Redux — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4821960/776dbcc464aa9b529907d476b63cce22806f6acb/ss_776dbcc464aa9b529907d476b63cce22806f6acb.1920x1080.jpg?t=1791103206" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4821960/776dbcc464aa9b529907d476b63cce22806f6acb/ss_776dbcc464aa9b529907d476b63cce22806f6acb.600x338.jpg?t=1791103206" alt="Subspace: Redux — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4821960/377fe92dd618e5138b9453cf77e76ae3a1a05731/ss_377fe92dd618e5138b9453cf77e76ae3a1a05731.1920x1080.jpg?t=1791103206" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4821960/377fe92dd618e5138b9453cf77e76ae3a1a05731/ss_377fe92dd618e5138b9453cf77e76ae3a1a05731.600x338.jpg?t=1791103206" alt="Subspace: Redux — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4821960/2a216114c59bcac1de5af28aba9c91c3fb3c4f4c/ss_2a216114c59bcac1de5af28aba9c91c3fb3c4f4c.1920x1080.jpg?t=1791103206" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4821960/2a216114c59bcac1de5af28aba9c91c3fb3c4f4c/ss_2a216114c59bcac1de5af28aba9c91c3fb3c4f4c.600x338.jpg?t=1791103206" alt="Subspace: Redux — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4821960/375d7287bea47fbee7b48f051dfda1f21e811269/ss_375d7287bea47fbee7b48f051dfda1f21e811269.1920x1080.jpg?t=1791103206" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4821960/375d7287bea47fbee7b48f051dfda1f21e811269/ss_375d7287bea47fbee7b48f051dfda1f21e811269.600x338.jpg?t=1791103206" alt="Subspace: Redux — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4821960/6fb537c3ce0deb31616ca70ec208ce8e2063c882/ss_6fb537c3ce0deb31616ca70ec208ce8e2063c882.1920x1080.jpg?t=1791103206" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4821960/6fb537c3ce0deb31616ca70ec208ce8e2063c882/ss_6fb537c3ce0deb31616ca70ec208ce8e2063c882.600x338.jpg?t=1791103206" alt="Subspace: Redux — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+      </div>
+
+      <h2>Геймплей</h2>
+      <div class="game-movies">
+        <figure class="game-movie"><div class="game-video" data-hls="https://video.akamai.steamstatic.com/store_trailers/4821960/691166594/2d0035602aec08324d0d6c1ee416216732daea0e/1791080696/hls_264_master.m3u8?t=1791082680" data-poster="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257433137/2c3c43fedaaffb5587221169166ee521f8d77b3d/movie_600x337.jpg?t=1791082680" role="button" tabindex="0" aria-label="Смотреть геймплей: Gameplay"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257433137/2c3c43fedaaffb5587221169166ee521f8d77b3d/movie_600x337.jpg?t=1791082680" alt="" loading="lazy" width="480" height="270" /><span class="game-video-play" aria-hidden="true"></span></div></figure>
+      </div>
+
+<p style="color: var(--text-faint); font-size: 13px; margin-top: 30px;">
         Данные о цене, отзывах и статистике обновляются автоматически на основе
         Steam Store API и SteamSpy.
       </p>
@@ -280,5 +329,6 @@ function declineCookies() {
 })();
 </script>
 <script src="/newsletter.js?v=2" defer></script>
+<script defer src="/game-media.js?v=1"></script>
 </body>
 </html>

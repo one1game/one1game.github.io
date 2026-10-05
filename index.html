@@ -31,7 +31,7 @@
   <link rel="dns-prefetch" href="https://www.google-analytics.com" />
 
   <link rel="preload" as="style" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css" onload="this.rel='stylesheet';this.removeAttribute('onload')" /><noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css" /></noscript>
-  <link rel="stylesheet" href="styles.css?v=22" />
+  <link rel="stylesheet" href="styles.css?v=27" />
   <link rel="manifest" href="/manifest.json" />
   <meta name="theme-color" content="#04060a" />
 
@@ -76,7 +76,7 @@
       </div>
       <div class="hero-stats">
         <span>материалов <b id="stat-articles">—</b></span>
-        <span>разделов <b>8</b></span>
+        <span>разделов <b id="stat-sections">—</b></span>
         <span>апдейт <b>ежедневно</b></span>
       </div>
       <p class="hero-hint"><i class="fas fa-hand-pointer" aria-hidden="true"></i> наведи и кликни по карточке в 3D · сцена слушает курсор и скролл · звук — кнопкой <i class="fas fa-volume-xmark" aria-hidden="true"></i> в шапке</p>
@@ -89,6 +89,15 @@
   </div>
 
   <div class="container">
+
+    <!-- ВО ЧТО ПОИГРАТЬ — отдельная система игровых обзоров (JS-populated) -->
+    <section class="play-rail" id="play-what" aria-label="Во что поиграть" hidden>
+      <div class="section-header">
+        <h2 class="section-title">Во что поиграть</h2>
+        <a href="archive.html?category=%D0%9E%D0%B1%D0%B7%D0%BE%D1%80%D1%8B" class="btn btn-ghost">все игры</a>
+      </div>
+      <div class="play-list" id="play-list"></div>
+    </section>
 
     <!-- ВЕДУЩАЯ ЗАПИСЬ -->
     <div id="top-article">
@@ -156,10 +165,10 @@
 </main>
 
 <script src="/cache-version.js"></script>
-<script defer src="articles-data.js?v=22"></script>
-<script defer src="/components.js?v=22"></script>
+<script defer src="articles-data.js?v=27"></script>
+<script defer src="/components.js?v=26"></script>
 <script defer src="/babylon-hero.js?v=22"></script>
-<script defer src="script.js?v=22"></script>
+<script defer src="script.js?v=27"></script>
 <script defer src="/api-config.js?v=1"></script>
 <script defer src="gaming-history.js?v=1"></script>
 

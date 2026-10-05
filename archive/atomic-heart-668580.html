@@ -117,6 +117,38 @@
     }
     .game-stat-card .label { font-size: 12px; color: var(--text-faint); text-transform: uppercase; }
     .game-stat-card .value { font-size: 20px; font-weight: bold; margin-top: 4px; }
+    .game-shots {
+      display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+      gap: 12px; margin: 20px 0;
+    }
+    .game-shot {
+      display: block; border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 8px; overflow: hidden;
+    }
+    .game-shot img { display: block; width: 100%; height: auto; }
+    .game-movies { display: grid; gap: 16px; margin: 20px 0; }
+    .game-movie { margin: 0; }
+    .game-movie video {
+      display: block; width: 100%; height: auto;
+      border-radius: 8px; background: #000;
+    }
+    .game-movie figcaption { margin-top: 6px; font-size: 13px; color: var(--text-faint); }
+    .game-video {
+      position: relative; cursor: pointer; overflow: hidden;
+      border-radius: 8px; background: #000; aspect-ratio: 16 / 9;
+    }
+    .game-video img { display: block; width: 100%; height: 100%; object-fit: cover; }
+    .game-video-play { position: absolute; inset: 0; display: grid; place-items: center; }
+    .game-video-play::before {
+      content: ''; width: 58px; height: 58px; border-radius: 50%;
+      background: rgba(0,0,0,0.5); border: 2px solid rgba(255,255,255,0.75);
+    }
+    .game-video-play::after {
+      content: ''; position: absolute; margin-left: 5px;
+      border-style: solid; border-width: 11px 0 11px 18px;
+      border-color: transparent transparent transparent #fff;
+    }
+    .game-video-el { display: block; width: 100%; height: 100%; background: #000; }
   </style>
 </head>
 <body>
@@ -174,10 +206,6 @@
           <div class="label">Владельцев (оценка)</div>
           <div class="value">1,000,000 – 2,000,000</div>
         </div>
-        <div class="game-stat-card">
-          <div class="label">Среднее время игры</div>
-          <div class="value">нет данных</div>
-        </div>
       </div>
 
       <h2>Об игре</h2>
@@ -191,7 +219,30 @@
         </a>
       </p>
 
-      <p style="color: var(--text-faint); font-size: 13px; margin-top: 30px;">
+            <h2>Скриншоты</h2>
+      <div class="game-shots">
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/668580/ss_1dc8661cde295efc2d1ff8612e079f5c74803748.1920x1080.jpg?t=1786632138" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/668580/ss_1dc8661cde295efc2d1ff8612e079f5c74803748.600x338.jpg?t=1786632138" alt="Atomic Heart — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/668580/ss_9dedae959672ac7d7f2db16638a5b65f80bfe125.1920x1080.jpg?t=1786632138" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/668580/ss_9dedae959672ac7d7f2db16638a5b65f80bfe125.600x338.jpg?t=1786632138" alt="Atomic Heart — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/668580/ss_2fce9ef441a18361b9ab8f1b1ac70160c8226577.1920x1080.jpg?t=1786632138" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/668580/ss_2fce9ef441a18361b9ab8f1b1ac70160c8226577.600x338.jpg?t=1786632138" alt="Atomic Heart — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/668580/ss_19b14ddac88c1f0d24c8061c1f38bebabfbbdff3.1920x1080.jpg?t=1786632138" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/668580/ss_19b14ddac88c1f0d24c8061c1f38bebabfbbdff3.600x338.jpg?t=1786632138" alt="Atomic Heart — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/668580/ss_1edcb9e8de3f513645678de19879cb02ecf07764.1920x1080.jpg?t=1786632138" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/668580/ss_1edcb9e8de3f513645678de19879cb02ecf07764.600x338.jpg?t=1786632138" alt="Atomic Heart — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/668580/ss_91b040e19e14baa32684a588c20246a305ae336e.1920x1080.jpg?t=1786632138" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/668580/ss_91b040e19e14baa32684a588c20246a305ae336e.600x338.jpg?t=1786632138" alt="Atomic Heart — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/668580/ss_0e4b3349f2124cdba1df885ac3cdabfba87b22fb.1920x1080.jpg?t=1786632138" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/668580/ss_0e4b3349f2124cdba1df885ac3cdabfba87b22fb.600x338.jpg?t=1786632138" alt="Atomic Heart — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/668580/ss_5b70e08d5afa8f3df574852f77fa2347eefd2a57.1920x1080.jpg?t=1786632138" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/668580/ss_5b70e08d5afa8f3df574852f77fa2347eefd2a57.600x338.jpg?t=1786632138" alt="Atomic Heart — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/668580/ss_2658707fc7d6bcf99493fce855408d4c0a5a8376.1920x1080.jpg?t=1786632138" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/668580/ss_2658707fc7d6bcf99493fce855408d4c0a5a8376.600x338.jpg?t=1786632138" alt="Atomic Heart — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/668580/ss_ce0e6d590cf0b6d5a2c9a69d8d0e215a745922e9.1920x1080.jpg?t=1786632138" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/668580/ss_ce0e6d590cf0b6d5a2c9a69d8d0e215a745922e9.600x338.jpg?t=1786632138" alt="Atomic Heart — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/668580/ss_7f04634032df01f90a57d3d72b8bb3ca3ac6661f.1920x1080.jpg?t=1786632138" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/668580/ss_7f04634032df01f90a57d3d72b8bb3ca3ac6661f.600x338.jpg?t=1786632138" alt="Atomic Heart — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/668580/ss_b9e0d03da7b16a97976a93b5be3dbcfafad1d740.1920x1080.jpg?t=1786632138" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/668580/ss_b9e0d03da7b16a97976a93b5be3dbcfafad1d740.600x338.jpg?t=1786632138" alt="Atomic Heart — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+      </div>
+
+      <h2>Геймплей</h2>
+      <div class="game-movies">
+        <figure class="game-movie"><div class="game-video" data-hls="https://video.akamai.steamstatic.com/store_trailers/668580/1388381949/c965a6562c5e54c31f615e2986651af413fb141d/1776333615/hls_264_master.m3u8?t=1776351728" data-poster="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257320698/6272f91196675318ed8467cfd11e7e40c94c56c4/movie_600x337.jpg?t=1776351728" role="button" tabindex="0" aria-label="Смотреть геймплей: Atomic Heart - Blood On Crystal Launch Trailer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257320698/6272f91196675318ed8467cfd11e7e40c94c56c4/movie_600x337.jpg?t=1776351728" alt="" loading="lazy" width="480" height="270" /><span class="game-video-play" aria-hidden="true"></span></div></figure>
+        <figure class="game-movie"><div class="game-video" data-hls="https://video.akamai.steamstatic.com/store_trailers/668580/541192/35712b7cc8365e35585e97171689c0602179e9f6/1750568063/hls_264_master.m3u8?t=1676995611" data-poster="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/256931819/movie.293x165.jpg?t=1676995611" role="button" tabindex="0" aria-label="Смотреть геймплей: Atomic Heart - Launch Trailer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/256931819/movie.293x165.jpg?t=1676995611" alt="" loading="lazy" width="480" height="270" /><span class="game-video-play" aria-hidden="true"></span></div></figure>
+        <figure class="game-movie"><div class="game-video" data-hls="https://video.akamai.steamstatic.com/store_trailers/668580/536893/07ccaf3dcf143895389e6cfc8925870d710cb067/1750568048/hls_264_master.m3u8?t=1733495704" data-poster="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/256929320/movie.293x165.jpg?t=1733495704" role="button" tabindex="0" aria-label="Смотреть геймплей: Atomic Heart - Combat Trailer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/256929320/movie.293x165.jpg?t=1733495704" alt="" loading="lazy" width="480" height="270" /><span class="game-video-play" aria-hidden="true"></span></div></figure>
+      </div>
+
+<p style="color: var(--text-faint); font-size: 13px; margin-top: 30px;">
         Данные о цене, отзывах и статистике обновляются автоматически на основе
         Steam Store API и SteamSpy.
       </p>
@@ -292,5 +343,6 @@ function declineCookies() {
 })();
 </script>
 <script src="/newsletter.js?v=2" defer></script>
+<script defer src="/game-media.js?v=1"></script>
 </body>
 </html>

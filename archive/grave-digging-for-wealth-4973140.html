@@ -112,6 +112,38 @@
     }
     .game-stat-card .label { font-size: 12px; color: var(--text-faint); text-transform: uppercase; }
     .game-stat-card .value { font-size: 20px; font-weight: bold; margin-top: 4px; }
+    .game-shots {
+      display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+      gap: 12px; margin: 20px 0;
+    }
+    .game-shot {
+      display: block; border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 8px; overflow: hidden;
+    }
+    .game-shot img { display: block; width: 100%; height: auto; }
+    .game-movies { display: grid; gap: 16px; margin: 20px 0; }
+    .game-movie { margin: 0; }
+    .game-movie video {
+      display: block; width: 100%; height: auto;
+      border-radius: 8px; background: #000;
+    }
+    .game-movie figcaption { margin-top: 6px; font-size: 13px; color: var(--text-faint); }
+    .game-video {
+      position: relative; cursor: pointer; overflow: hidden;
+      border-radius: 8px; background: #000; aspect-ratio: 16 / 9;
+    }
+    .game-video img { display: block; width: 100%; height: 100%; object-fit: cover; }
+    .game-video-play { position: absolute; inset: 0; display: grid; place-items: center; }
+    .game-video-play::before {
+      content: ''; width: 58px; height: 58px; border-radius: 50%;
+      background: rgba(0,0,0,0.5); border: 2px solid rgba(255,255,255,0.75);
+    }
+    .game-video-play::after {
+      content: ''; position: absolute; margin-left: 5px;
+      border-style: solid; border-width: 11px 0 11px 18px;
+      border-color: transparent transparent transparent #fff;
+    }
+    .game-video-el { display: block; width: 100%; height: 100%; background: #000; }
   </style>
 </head>
 <body>
@@ -150,7 +182,7 @@
 
     <article class="article-body">
 
-      <p>这款盗墓游戏以二十世纪初军阀混战为背景。玩家扮演盗墓贼，四个门派分支可选，寻找情报定位古墓位置、挖掘盗洞规避机关陷阱、消灭僵尸和怪物摸金撤离。搜寻宝物，揭开尘封的秘密。规划物资（食物、工具、道具）在危机四伏的地下，与生死之间探寻真相。</p>
+      
 
       <div class="game-stats-grid">
         <div class="game-stat-card">
@@ -166,10 +198,6 @@
           <div class="label">Владельцев (оценка)</div>
           <div class="value">0 – 20,000</div>
         </div>
-        <div class="game-stat-card">
-          <div class="label">Среднее время игры</div>
-          <div class="value">нет данных</div>
-        </div>
       </div>
 
       <h2>Об игре</h2>
@@ -183,7 +211,28 @@
         </a>
       </p>
 
-      <p style="color: var(--text-faint); font-size: 13px; margin-top: 30px;">
+            <h2>Скриншоты</h2>
+      <div class="game-shots">
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4973140/0ce805a16987bad6e9d76ee6a895e16990dfb694/ss_0ce805a16987bad6e9d76ee6a895e16990dfb694.1920x1080.jpg?t=1790557331" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4973140/0ce805a16987bad6e9d76ee6a895e16990dfb694/ss_0ce805a16987bad6e9d76ee6a895e16990dfb694.600x338.jpg?t=1790557331" alt="盗墓贼Grave digging for wealth — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4973140/d0e55540b06646b90b66c528b4cf4b957ddc2f01/ss_d0e55540b06646b90b66c528b4cf4b957ddc2f01.1920x1080.jpg?t=1790557331" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4973140/d0e55540b06646b90b66c528b4cf4b957ddc2f01/ss_d0e55540b06646b90b66c528b4cf4b957ddc2f01.600x338.jpg?t=1790557331" alt="盗墓贼Grave digging for wealth — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4973140/dedc0c5b16eb03232580c2230237bba89496c855/ss_dedc0c5b16eb03232580c2230237bba89496c855.1920x1080.jpg?t=1790557331" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4973140/dedc0c5b16eb03232580c2230237bba89496c855/ss_dedc0c5b16eb03232580c2230237bba89496c855.600x338.jpg?t=1790557331" alt="盗墓贼Grave digging for wealth — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4973140/09443784a21a7c6492aa1f169a60a94a238471bd/ss_09443784a21a7c6492aa1f169a60a94a238471bd.1920x1080.jpg?t=1790557331" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4973140/09443784a21a7c6492aa1f169a60a94a238471bd/ss_09443784a21a7c6492aa1f169a60a94a238471bd.600x338.jpg?t=1790557331" alt="盗墓贼Grave digging for wealth — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4973140/53e204812d9c8ffa1a213073b0c9bf5110d60830/ss_53e204812d9c8ffa1a213073b0c9bf5110d60830.1920x1080.jpg?t=1790557331" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4973140/53e204812d9c8ffa1a213073b0c9bf5110d60830/ss_53e204812d9c8ffa1a213073b0c9bf5110d60830.600x338.jpg?t=1790557331" alt="盗墓贼Grave digging for wealth — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4973140/f3e904c91054b83b0f7a847e74a481780c571ae4/ss_f3e904c91054b83b0f7a847e74a481780c571ae4.1920x1080.jpg?t=1790557331" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4973140/f3e904c91054b83b0f7a847e74a481780c571ae4/ss_f3e904c91054b83b0f7a847e74a481780c571ae4.600x338.jpg?t=1790557331" alt="盗墓贼Grave digging for wealth — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4973140/85fb887fba5d4c6b54b5d8171326b5d925102ce7/ss_85fb887fba5d4c6b54b5d8171326b5d925102ce7.1920x1080.jpg?t=1790557331" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4973140/85fb887fba5d4c6b54b5d8171326b5d925102ce7/ss_85fb887fba5d4c6b54b5d8171326b5d925102ce7.600x338.jpg?t=1790557331" alt="盗墓贼Grave digging for wealth — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4973140/6d39ba31dc56a7f8f7a3f2e4996416c3766f749b/ss_6d39ba31dc56a7f8f7a3f2e4996416c3766f749b.1920x1080.jpg?t=1790557331" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4973140/6d39ba31dc56a7f8f7a3f2e4996416c3766f749b/ss_6d39ba31dc56a7f8f7a3f2e4996416c3766f749b.600x338.jpg?t=1790557331" alt="盗墓贼Grave digging for wealth — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4973140/89288834f3b33656a35c4a1740703ad404064db7/ss_89288834f3b33656a35c4a1740703ad404064db7.1920x1080.jpg?t=1790557331" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4973140/89288834f3b33656a35c4a1740703ad404064db7/ss_89288834f3b33656a35c4a1740703ad404064db7.600x338.jpg?t=1790557331" alt="盗墓贼Grave digging for wealth — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4973140/8d2391cb6e15037ac341612809185a6f1b6658af/ss_8d2391cb6e15037ac341612809185a6f1b6658af.1920x1080.jpg?t=1790557331" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4973140/8d2391cb6e15037ac341612809185a6f1b6658af/ss_8d2391cb6e15037ac341612809185a6f1b6658af.600x338.jpg?t=1790557331" alt="盗墓贼Grave digging for wealth — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4973140/d809fd55ebcc1cde4c5d0224ae563e783859a054/ss_d809fd55ebcc1cde4c5d0224ae563e783859a054.1920x1080.jpg?t=1790557331" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4973140/d809fd55ebcc1cde4c5d0224ae563e783859a054/ss_d809fd55ebcc1cde4c5d0224ae563e783859a054.600x338.jpg?t=1790557331" alt="盗墓贼Grave digging for wealth — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4973140/4ad2053775ea6edd6a1ac54c107323f5d9c32008/ss_4ad2053775ea6edd6a1ac54c107323f5d9c32008.1920x1080.jpg?t=1790557331" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4973140/4ad2053775ea6edd6a1ac54c107323f5d9c32008/ss_4ad2053775ea6edd6a1ac54c107323f5d9c32008.600x338.jpg?t=1790557331" alt="盗墓贼Grave digging for wealth — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+      </div>
+
+      <h2>Геймплей</h2>
+      <div class="game-movies">
+        <figure class="game-movie"><div class="game-video" data-hls="https://video.akamai.steamstatic.com/store_trailers/4973140/1861283937/92818b1494c8bfac182aee6fbd86b763c0bc7b99/1788937540/hls_264_master.m3u8?t=1788938303" data-poster="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257420567/92222db189c22891888f95554e225b8e49f33e1d/movie_600x337.jpg?t=1788938303" role="button" tabindex="0" aria-label="Смотреть геймплей: 游戏介绍和玩法"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257420567/92222db189c22891888f95554e225b8e49f33e1d/movie_600x337.jpg?t=1788938303" alt="" loading="lazy" width="480" height="270" /><span class="game-video-play" aria-hidden="true"></span></div></figure>
+      </div>
+
+<p style="color: var(--text-faint); font-size: 13px; margin-top: 30px;">
         Данные о цене, отзывах и статистике обновляются автоматически на основе
         Steam Store API и SteamSpy.
       </p>
@@ -284,5 +333,6 @@ function declineCookies() {
 })();
 </script>
 <script src="/newsletter.js?v=2" defer></script>
+<script defer src="/game-media.js?v=1"></script>
 </body>
 </html>

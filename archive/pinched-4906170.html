@@ -112,6 +112,38 @@
     }
     .game-stat-card .label { font-size: 12px; color: var(--text-faint); text-transform: uppercase; }
     .game-stat-card .value { font-size: 20px; font-weight: bold; margin-top: 4px; }
+    .game-shots {
+      display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+      gap: 12px; margin: 20px 0;
+    }
+    .game-shot {
+      display: block; border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 8px; overflow: hidden;
+    }
+    .game-shot img { display: block; width: 100%; height: auto; }
+    .game-movies { display: grid; gap: 16px; margin: 20px 0; }
+    .game-movie { margin: 0; }
+    .game-movie video {
+      display: block; width: 100%; height: auto;
+      border-radius: 8px; background: #000;
+    }
+    .game-movie figcaption { margin-top: 6px; font-size: 13px; color: var(--text-faint); }
+    .game-video {
+      position: relative; cursor: pointer; overflow: hidden;
+      border-radius: 8px; background: #000; aspect-ratio: 16 / 9;
+    }
+    .game-video img { display: block; width: 100%; height: 100%; object-fit: cover; }
+    .game-video-play { position: absolute; inset: 0; display: grid; place-items: center; }
+    .game-video-play::before {
+      content: ''; width: 58px; height: 58px; border-radius: 50%;
+      background: rgba(0,0,0,0.5); border: 2px solid rgba(255,255,255,0.75);
+    }
+    .game-video-play::after {
+      content: ''; position: absolute; margin-left: 5px;
+      border-style: solid; border-width: 11px 0 11px 18px;
+      border-color: transparent transparent transparent #fff;
+    }
+    .game-video-el { display: block; width: 100%; height: 100%; background: #000; }
   </style>
 </head>
 <body>
@@ -150,7 +182,7 @@
 
     <article class="article-body">
 
-      <p>Co-op horror in the dark. Four players, each with a flashlight in a winding tunnel system that is generated fresh each round. Proximity voice carries through the tunnels. Your friends can hear echoes of your screams. Something else can hear them too.</p>
+      
 
       <div class="game-stats-grid">
         <div class="game-stat-card">
@@ -166,10 +198,6 @@
           <div class="label">Владельцев (оценка)</div>
           <div class="value">0 – 20,000</div>
         </div>
-        <div class="game-stat-card">
-          <div class="label">Среднее время игры</div>
-          <div class="value">нет данных</div>
-        </div>
       </div>
 
       <h2>Об игре</h2>
@@ -183,7 +211,21 @@
         </a>
       </p>
 
-      <p style="color: var(--text-faint); font-size: 13px; margin-top: 30px;">
+            <h2>Скриншоты</h2>
+      <div class="game-shots">
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4906170/6f136104665bcbeeb437cf62a547fbf44048b53f/ss_6f136104665bcbeeb437cf62a547fbf44048b53f.1920x1080.jpg?t=1791156113" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4906170/6f136104665bcbeeb437cf62a547fbf44048b53f/ss_6f136104665bcbeeb437cf62a547fbf44048b53f.600x338.jpg?t=1791156113" alt="Pinched — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4906170/29c04af0278a55c4031ace31bc4a86290d8b36e2/ss_29c04af0278a55c4031ace31bc4a86290d8b36e2.1920x1080.jpg?t=1791156113" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4906170/29c04af0278a55c4031ace31bc4a86290d8b36e2/ss_29c04af0278a55c4031ace31bc4a86290d8b36e2.600x338.jpg?t=1791156113" alt="Pinched — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4906170/66aff7c2b7fe027cec2914028e55113545dc6108/ss_66aff7c2b7fe027cec2914028e55113545dc6108.1920x1080.jpg?t=1791156113" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4906170/66aff7c2b7fe027cec2914028e55113545dc6108/ss_66aff7c2b7fe027cec2914028e55113545dc6108.600x338.jpg?t=1791156113" alt="Pinched — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4906170/649ad3d9f3c385e28315283cbbc1c5c889ad3066/ss_649ad3d9f3c385e28315283cbbc1c5c889ad3066.1920x1080.jpg?t=1791156113" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4906170/649ad3d9f3c385e28315283cbbc1c5c889ad3066/ss_649ad3d9f3c385e28315283cbbc1c5c889ad3066.600x338.jpg?t=1791156113" alt="Pinched — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4906170/7ac913d14c9119c284c83690da94afb377263cad/ss_7ac913d14c9119c284c83690da94afb377263cad.1920x1080.jpg?t=1791156113" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4906170/7ac913d14c9119c284c83690da94afb377263cad/ss_7ac913d14c9119c284c83690da94afb377263cad.600x338.jpg?t=1791156113" alt="Pinched — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+      </div>
+
+      <h2>Геймплей</h2>
+      <div class="game-movies">
+        <figure class="game-movie"><div class="game-video" data-hls="https://video.akamai.steamstatic.com/store_trailers/4906170/2111186795/287f9ef346170b2c47076f3f0232615728b7425a/1787631558/hls_264_master.m3u8?t=1787632140" data-poster="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257407809/45722689b8c93d84b1267ec5fe121532e46adc9b/movie_600x337.jpg?t=1787632140" role="button" tabindex="0" aria-label="Смотреть геймплей: Pinched Teaser"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257407809/45722689b8c93d84b1267ec5fe121532e46adc9b/movie_600x337.jpg?t=1787632140" alt="" loading="lazy" width="480" height="270" /><span class="game-video-play" aria-hidden="true"></span></div></figure>
+      </div>
+
+<p style="color: var(--text-faint); font-size: 13px; margin-top: 30px;">
         Данные о цене, отзывах и статистике обновляются автоматически на основе
         Steam Store API и SteamSpy.
       </p>
@@ -284,5 +326,6 @@ function declineCookies() {
 })();
 </script>
 <script src="/newsletter.js?v=2" defer></script>
+<script defer src="/game-media.js?v=1"></script>
 </body>
 </html>

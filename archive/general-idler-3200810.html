@@ -112,6 +112,38 @@
     }
     .game-stat-card .label { font-size: 12px; color: var(--text-faint); text-transform: uppercase; }
     .game-stat-card .value { font-size: 20px; font-weight: bold; margin-top: 4px; }
+    .game-shots {
+      display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+      gap: 12px; margin: 20px 0;
+    }
+    .game-shot {
+      display: block; border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 8px; overflow: hidden;
+    }
+    .game-shot img { display: block; width: 100%; height: auto; }
+    .game-movies { display: grid; gap: 16px; margin: 20px 0; }
+    .game-movie { margin: 0; }
+    .game-movie video {
+      display: block; width: 100%; height: auto;
+      border-radius: 8px; background: #000;
+    }
+    .game-movie figcaption { margin-top: 6px; font-size: 13px; color: var(--text-faint); }
+    .game-video {
+      position: relative; cursor: pointer; overflow: hidden;
+      border-radius: 8px; background: #000; aspect-ratio: 16 / 9;
+    }
+    .game-video img { display: block; width: 100%; height: 100%; object-fit: cover; }
+    .game-video-play { position: absolute; inset: 0; display: grid; place-items: center; }
+    .game-video-play::before {
+      content: ''; width: 58px; height: 58px; border-radius: 50%;
+      background: rgba(0,0,0,0.5); border: 2px solid rgba(255,255,255,0.75);
+    }
+    .game-video-play::after {
+      content: ''; position: absolute; margin-left: 5px;
+      border-style: solid; border-width: 11px 0 11px 18px;
+      border-color: transparent transparent transparent #fff;
+    }
+    .game-video-el { display: block; width: 100%; height: 100%; background: #000; }
   </style>
 </head>
 <body>
@@ -150,7 +182,7 @@
 
     <article class="article-body">
 
-      <p>Conquer 195 nations on a parallel Earth. Build industries, raise armies, and snowball an empire across continents — then deploy the nuke and do it faster. Three rival generals play the same map by your exact rules. Idle strategy about the map, not the clicker.</p>
+      
 
       <div class="game-stats-grid">
         <div class="game-stat-card">
@@ -166,10 +198,6 @@
           <div class="label">Владельцев (оценка)</div>
           <div class="value">0 – 20,000</div>
         </div>
-        <div class="game-stat-card">
-          <div class="label">Среднее время игры</div>
-          <div class="value">нет данных</div>
-        </div>
       </div>
 
       <h2>Об игре</h2>
@@ -183,7 +211,24 @@
         </a>
       </p>
 
-      <p style="color: var(--text-faint); font-size: 13px; margin-top: 30px;">
+            <h2>Скриншоты</h2>
+      <div class="game-shots">
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3200810/e11ac2a2dae60808d1e09c937e55c437c40aadb7/ss_e11ac2a2dae60808d1e09c937e55c437c40aadb7.1920x1080.jpg?t=1791010324" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3200810/e11ac2a2dae60808d1e09c937e55c437c40aadb7/ss_e11ac2a2dae60808d1e09c937e55c437c40aadb7.600x338.jpg?t=1791010324" alt="GENERAL IDLER — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3200810/2e8e7dd5d4f926e559f4af7f73686df845bab3ed/ss_2e8e7dd5d4f926e559f4af7f73686df845bab3ed.1920x1080.jpg?t=1791010324" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3200810/2e8e7dd5d4f926e559f4af7f73686df845bab3ed/ss_2e8e7dd5d4f926e559f4af7f73686df845bab3ed.600x338.jpg?t=1791010324" alt="GENERAL IDLER — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3200810/42626c0a827ed65fdd8bc65e4a6d0d7b31295755/ss_42626c0a827ed65fdd8bc65e4a6d0d7b31295755.1920x1080.jpg?t=1791010324" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3200810/42626c0a827ed65fdd8bc65e4a6d0d7b31295755/ss_42626c0a827ed65fdd8bc65e4a6d0d7b31295755.600x338.jpg?t=1791010324" alt="GENERAL IDLER — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3200810/7f16ebace24a6caab64a59d4e3b07a1ed79c3240/ss_7f16ebace24a6caab64a59d4e3b07a1ed79c3240.1920x1080.jpg?t=1791010324" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3200810/7f16ebace24a6caab64a59d4e3b07a1ed79c3240/ss_7f16ebace24a6caab64a59d4e3b07a1ed79c3240.600x338.jpg?t=1791010324" alt="GENERAL IDLER — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3200810/fe17a419d07117834b64ff9fe4fdb0bb44f0c955/ss_fe17a419d07117834b64ff9fe4fdb0bb44f0c955.1920x1080.jpg?t=1791010324" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3200810/fe17a419d07117834b64ff9fe4fdb0bb44f0c955/ss_fe17a419d07117834b64ff9fe4fdb0bb44f0c955.600x338.jpg?t=1791010324" alt="GENERAL IDLER — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3200810/00b450986efbafd1ca1b4bba4841428a4800d8e9/ss_00b450986efbafd1ca1b4bba4841428a4800d8e9.1920x1080.jpg?t=1791010324" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3200810/00b450986efbafd1ca1b4bba4841428a4800d8e9/ss_00b450986efbafd1ca1b4bba4841428a4800d8e9.600x338.jpg?t=1791010324" alt="GENERAL IDLER — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3200810/b14e0a2da9cf1d73bcba9866d7bf90edece492c9/ss_b14e0a2da9cf1d73bcba9866d7bf90edece492c9.1920x1080.jpg?t=1791010324" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3200810/b14e0a2da9cf1d73bcba9866d7bf90edece492c9/ss_b14e0a2da9cf1d73bcba9866d7bf90edece492c9.600x338.jpg?t=1791010324" alt="GENERAL IDLER — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3200810/f494575ca7019e0ba88f9c20fffc4a88420fbc5f/ss_f494575ca7019e0ba88f9c20fffc4a88420fbc5f.1920x1080.jpg?t=1791010324" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3200810/f494575ca7019e0ba88f9c20fffc4a88420fbc5f/ss_f494575ca7019e0ba88f9c20fffc4a88420fbc5f.600x338.jpg?t=1791010324" alt="GENERAL IDLER — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+      </div>
+
+      <h2>Геймплей</h2>
+      <div class="game-movies">
+        <figure class="game-movie"><div class="game-video" data-hls="https://video.akamai.steamstatic.com/store_trailers/3200810/450836898/cb9b6252ac7c51e7be48c09430072e00fd267a70/1780928518/hls_264_master.m3u8?t=1780936174" data-poster="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257353557/31191265b63940f1f5da9175ddf69a4d33b37dcb/movie_600x337.jpg?t=1780936174" role="button" tabindex="0" aria-label="Смотреть геймплей: GeneralIdler-DemoGameplay2"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257353557/31191265b63940f1f5da9175ddf69a4d33b37dcb/movie_600x337.jpg?t=1780936174" alt="" loading="lazy" width="480" height="270" /><span class="game-video-play" aria-hidden="true"></span></div></figure>
+      </div>
+
+<p style="color: var(--text-faint); font-size: 13px; margin-top: 30px;">
         Данные о цене, отзывах и статистике обновляются автоматически на основе
         Steam Store API и SteamSpy.
       </p>
@@ -284,5 +329,6 @@ function declineCookies() {
 })();
 </script>
 <script src="/newsletter.js?v=2" defer></script>
+<script defer src="/game-media.js?v=1"></script>
 </body>
 </html>

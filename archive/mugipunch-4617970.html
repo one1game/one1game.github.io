@@ -10,12 +10,12 @@
   <link rel="dns-prefetch" href="https://www.google-analytics.com" />
   <link rel="preload" href="../styles.css" as="style" />
 
-  <title>MugiPunch: цена, отзывы и статистика игроков | One1Game</title>
-  <meta name="description" content="MugiPunch — актуальная цена, скидки, процент положительных отзывов и статистика игроков в Steam. Обновляется автоматически." />
+  <title>MugiPunch: Аниме-файтинг в стиле beat 'em up | One1Game</title>
+  <meta name="description" content="MugiPunch — быстрый аниме-файтинг. Учите парирования, уклонения и открывайте новые способности, чтобы вернуть фигурку. Идеально для фанатов экшена и инди." />
   <meta name="keywords" content="MugiPunch, цена, отзывы, скидка, статистика игроков, Steam" />
 
-  <meta property="og:title" content="MugiPunch: цена, отзывы и статистика игроков | One1Game" />
-  <meta property="og:description" content="MugiPunch — актуальная цена, скидки, процент положительных отзывов и статистика игроков в Steam. Обновляется автоматически." />
+  <meta property="og:title" content="MugiPunch: Аниме-файтинг в стиле beat 'em up | One1Game" />
+  <meta property="og:description" content="MugiPunch — быстрый аниме-файтинг. Учите парирования, уклонения и открывайте новые способности, чтобы вернуть фигурку. Идеально для фанатов экшена и инди." />
   <meta property="og:type" content="article" />
   <meta property="og:url" content="https://one1game.github.io/archive/mugipunch-4617970.html" />
   <meta property="og:image" content="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4617970/4372dcafbc607ee8b2e60ed738f4ef654810b01b/header.jpg?t=1791180460" />
@@ -58,12 +58,12 @@
   {
     "@context": "https://schema.org",
     "@type": "Article",
-    "headline": "MugiPunch: цена, отзывы и статистика игроков | One1Game",
+    "headline": "MugiPunch: Аниме-файтинг в стиле beat 'em up | One1Game",
     "datePublished": "2026-10-05",
     "dateModified": "2026-10-05",
     "author": {"@type": "Person", "name": "Команда One1Game"},
     "publisher": {"@type": "Organization", "name": "One1Game", "logo": {"@type": "ImageObject", "url": "https://one1game.github.io/logo.png"}},
-    "description": "MugiPunch — актуальная цена, скидки, процент положительных отзывов и статистика игроков в Steam. Обновляется автоматически.",
+    "description": "MugiPunch — быстрый аниме-файтинг. Учите парирования, уклонения и открывайте новые способности, чтобы вернуть фигурку. Идеально для фанатов экшена и инди.",
     "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4617970/4372dcafbc607ee8b2e60ed738f4ef654810b01b/header.jpg?t=1791180460"
   }
   </script>
@@ -112,6 +112,34 @@
     }
     .game-stat-card .label { font-size: 12px; color: var(--text-faint); text-transform: uppercase; }
     .game-stat-card .value { font-size: 20px; font-weight: bold; margin-top: 4px; }
+    .game-shots {
+      display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+      gap: 12px; margin: 20px 0;
+    }
+    .game-shot {
+      display: block; border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 8px; overflow: hidden;
+    }
+    .game-shot img { display: block; width: 100%; height: auto; }
+    .game-movies { display: grid; gap: 16px; margin: 20px 0; }
+    .game-movie { margin: 0; }
+    .game-video {
+      position: relative; cursor: pointer; overflow: hidden;
+      border-radius: 8px; background: #000; aspect-ratio: 16 / 9;
+    }
+    .game-video img { display: block; width: 100%; height: 100%; object-fit: cover; }
+    .game-video-play { position: absolute; inset: 0; display: grid; place-items: center; }
+    .game-video-play::before {
+      content: ''; width: 58px; height: 58px; border-radius: 50%;
+      background: rgba(0,0,0,0.5); border: 2px solid rgba(255,255,255,0.75);
+    }
+    .game-video-play::after {
+      content: ''; position: absolute; margin-left: 5px;
+      border-style: solid; border-width: 11px 0 11px 18px;
+      border-color: transparent transparent transparent #fff;
+    }
+    .game-video-el { display: block; width: 100%; height: 100%; background: #000; }
+    .game-movie figcaption { margin-top: 6px; font-size: 13px; color: var(--text-faint); }
   </style>
 </head>
 <body>
@@ -141,7 +169,7 @@
 
     <div class="article-header">
       <span class="article-category cat-reviews">Обзоры</span>
-      <h1>MugiPunch: цена, отзывы и статистика игроков</h1>
+      <h1>MugiPunch: Аниме-файтинг в стиле beat 'em up</h1>
       <div class="article-meta">
         <span><i class="far fa-calendar"></i> 5 октября 2026</span>
         <span><i class="far fa-clock"></i> 2 минуты чтения</span>
@@ -150,7 +178,9 @@
 
     <article class="article-body">
 
-      <p>MugiPunch is a fast-paced anime beat 'em up game! Punch enemies, master parries &amp; dodges, and unlock new abilities as Mugi fights to reclaim her limited-edition anime figure back!</p>
+      <p>Нужно вернуть коллекционный фигурный персонаж? MugiPunch предлагает динамичный аниме-экшен, где важна скорость реакции. Сражайтесь в ближнем бою, осваивайте увороты и парирования, чтобы пройти все уровни.</p>
+
+      
 
       <div class="game-stats-grid">
         <div class="game-stat-card">
@@ -166,13 +196,11 @@
           <div class="label">Владельцев (оценка)</div>
           <div class="value">0 – 20,000</div>
         </div>
-        <div class="game-stat-card">
-          <div class="label">Среднее время игры</div>
-          <div class="value">нет данных</div>
-        </div>
       </div>
 
       <h2>Об игре</h2>
+      <p>Это инди-игра в жанре beat 'em up с упором на тактичный ближний бой. Механика построена на комбинировании ударов, уклонений и контратак. Прогрессия открывает новые способности, делая бои разнообразнее. Проект подойдет тем, кто любит ритмичные файтинги и аниме-эстетику.</p>
+
       <p><strong>Жанры:</strong> Экшены, Приключенческие игры, Казуальные игры, Инди<br/>
       <strong>Разработчик:</strong> Beatmil<br/>
       <strong>Издатель:</strong> Beatmil</p>
@@ -183,6 +211,26 @@
         </a>
       </p>
 
+      <h2>Скриншоты</h2>
+      <div class="game-shots">
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4617970/856ea081907a0c859c91c380d30ed64043fde41d/ss_856ea081907a0c859c91c380d30ed64043fde41d.1920x1080.jpg?t=1791180460" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4617970/856ea081907a0c859c91c380d30ed64043fde41d/ss_856ea081907a0c859c91c380d30ed64043fde41d.600x338.jpg?t=1791180460" alt="MugiPunch — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4617970/153efa5dd5726208ded9e25a660ed62a87352e2a/ss_153efa5dd5726208ded9e25a660ed62a87352e2a.1920x1080.jpg?t=1791180460" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4617970/153efa5dd5726208ded9e25a660ed62a87352e2a/ss_153efa5dd5726208ded9e25a660ed62a87352e2a.600x338.jpg?t=1791180460" alt="MugiPunch — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4617970/25bee00fbee5195cf661e8acb22c0848a81deab2/ss_25bee00fbee5195cf661e8acb22c0848a81deab2.1920x1080.jpg?t=1791180460" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4617970/25bee00fbee5195cf661e8acb22c0848a81deab2/ss_25bee00fbee5195cf661e8acb22c0848a81deab2.600x338.jpg?t=1791180460" alt="MugiPunch — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4617970/5111854ad09339e98811219a081c64b730dcc87f/ss_5111854ad09339e98811219a081c64b730dcc87f.1920x1080.jpg?t=1791180460" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4617970/5111854ad09339e98811219a081c64b730dcc87f/ss_5111854ad09339e98811219a081c64b730dcc87f.600x338.jpg?t=1791180460" alt="MugiPunch — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4617970/b36a3cada84eb9272fb8f82246d7341fe9f42ba2/ss_b36a3cada84eb9272fb8f82246d7341fe9f42ba2.1920x1080.jpg?t=1791180460" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4617970/b36a3cada84eb9272fb8f82246d7341fe9f42ba2/ss_b36a3cada84eb9272fb8f82246d7341fe9f42ba2.600x338.jpg?t=1791180460" alt="MugiPunch — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4617970/bb7f01809f09955d01f66c51ba8ff250a1c0a86f/ss_bb7f01809f09955d01f66c51ba8ff250a1c0a86f.1920x1080.jpg?t=1791180460" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4617970/bb7f01809f09955d01f66c51ba8ff250a1c0a86f/ss_bb7f01809f09955d01f66c51ba8ff250a1c0a86f.600x338.jpg?t=1791180460" alt="MugiPunch — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4617970/fc4bcfcc99e3c86a1afc6c9bb12ba63467814d36/ss_fc4bcfcc99e3c86a1afc6c9bb12ba63467814d36.1920x1080.jpg?t=1791180460" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4617970/fc4bcfcc99e3c86a1afc6c9bb12ba63467814d36/ss_fc4bcfcc99e3c86a1afc6c9bb12ba63467814d36.600x338.jpg?t=1791180460" alt="MugiPunch — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4617970/2cc7d29f41bf00ff13bf5be45601508dc63d142d/ss_2cc7d29f41bf00ff13bf5be45601508dc63d142d.1920x1080.jpg?t=1791180460" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4617970/2cc7d29f41bf00ff13bf5be45601508dc63d142d/ss_2cc7d29f41bf00ff13bf5be45601508dc63d142d.600x338.jpg?t=1791180460" alt="MugiPunch — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4617970/b79fb5441b6466c42bd0207df058465133778ddb/ss_b79fb5441b6466c42bd0207df058465133778ddb.1920x1080.jpg?t=1791180460" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4617970/b79fb5441b6466c42bd0207df058465133778ddb/ss_b79fb5441b6466c42bd0207df058465133778ddb.600x338.jpg?t=1791180460" alt="MugiPunch — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4617970/00454d34f31894d2bb0c1174e115e9ef67a47e70/ss_00454d34f31894d2bb0c1174e115e9ef67a47e70.1920x1080.jpg?t=1791180460" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4617970/00454d34f31894d2bb0c1174e115e9ef67a47e70/ss_00454d34f31894d2bb0c1174e115e9ef67a47e70.600x338.jpg?t=1791180460" alt="MugiPunch — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4617970/c734defee45e32e3a005fea5fa5b3042e3f16213/ss_c734defee45e32e3a005fea5fa5b3042e3f16213.1920x1080.jpg?t=1791180460" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4617970/c734defee45e32e3a005fea5fa5b3042e3f16213/ss_c734defee45e32e3a005fea5fa5b3042e3f16213.600x338.jpg?t=1791180460" alt="MugiPunch — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4617970/787f91f132ffe456fda181ba0ad10e257be72fc6/ss_787f91f132ffe456fda181ba0ad10e257be72fc6.1920x1080.jpg?t=1791180460" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4617970/787f91f132ffe456fda181ba0ad10e257be72fc6/ss_787f91f132ffe456fda181ba0ad10e257be72fc6.600x338.jpg?t=1791180460" alt="MugiPunch — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+      </div>
+
+      <h2>Геймплей</h2>
+      <div class="game-movies">
+        <figure class="game-movie"><div class="game-video" data-hls="https://video.akamai.steamstatic.com/store_trailers/4617970/1815729733/9311c108acc5112b6352cd124d0b99023c296882/1776232773/hls_264_master.m3u8?t=1777906980" data-poster="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257319523/745a0c46a2aa2dd682fa23680cea8c6def076f02/movie_600x337.jpg?t=1777906980" role="button" tabindex="0" aria-label="Смотреть геймплей"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257319523/745a0c46a2aa2dd682fa23680cea8c6def076f02/movie_600x337.jpg?t=1777906980" alt="" loading="lazy" width="480" height="270" /><span class="game-video-play" aria-hidden="true"></span></div></figure>
+      </div>
       <p style="color: var(--text-faint); font-size: 13px; margin-top: 30px;">
         Данные о цене, отзывах и статистике обновляются автоматически на основе
         Steam Store API и SteamSpy.
@@ -284,5 +332,6 @@ function declineCookies() {
 })();
 </script>
 <script src="/newsletter.js?v=2" defer></script>
+<script defer src="/game-media.js?v=1"></script>
 </body>
 </html>

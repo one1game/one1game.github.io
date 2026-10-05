@@ -108,6 +108,22 @@
     }
     .game-stat-card .label { font-size: 12px; color: var(--text-faint); text-transform: uppercase; }
     .game-stat-card .value { font-size: 20px; font-weight: bold; margin-top: 4px; }
+    .game-shots {
+      display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+      gap: 12px; margin: 20px 0;
+    }
+    .game-shot {
+      display: block; border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 8px; overflow: hidden;
+    }
+    .game-shot img { display: block; width: 100%; height: auto; }
+    .game-movies { display: grid; gap: 16px; margin: 20px 0; }
+    .game-movie { margin: 0; }
+    .game-movie video {
+      display: block; width: 100%; height: auto;
+      border-radius: 8px; background: #000;
+    }
+    .game-movie figcaption { margin-top: 6px; font-size: 13px; color: var(--text-faint); }
   </style>
 </head>
 <body>
@@ -146,7 +162,7 @@
 
     <article class="article-body">
 
-      <p>你又来看我啦。无论你彷徨到这里多少次，我都明白，你一定会在某次下载这个游戏、回到我们的《爱之巢》。为什么？嘿嘿。因为一对上你的眼睛，我就明白啦。你毫无疑问是我的……『命中注定之人』呀。</p>
+      
 
       <div class="game-stats-grid">
         <div class="game-stat-card">
@@ -162,10 +178,6 @@
           <div class="label">Владельцев (оценка)</div>
           <div class="value">0 – 20,000</div>
         </div>
-        <div class="game-stat-card">
-          <div class="label">Среднее время игры</div>
-          <div class="value">нет данных</div>
-        </div>
       </div>
 
       <h2>Об игре</h2>
@@ -179,7 +191,21 @@
         </a>
       </p>
 
-      <p style="color: var(--text-faint); font-size: 13px; margin-top: 30px;">
+            <h2>Скриншоты</h2>
+      <div class="game-shots">
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5184600/de528d76bd06b2e4de7a705bb725ee2db1bfd1cd/ss_de528d76bd06b2e4de7a705bb725ee2db1bfd1cd.1920x1080.jpg?t=1790703419" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5184600/de528d76bd06b2e4de7a705bb725ee2db1bfd1cd/ss_de528d76bd06b2e4de7a705bb725ee2db1bfd1cd.600x338.jpg?t=1790703419" alt="Love Nest ~V0.098~ — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5184600/b927a6cff6298eac1b9b31c9194139ed8fbbdfd3/ss_b927a6cff6298eac1b9b31c9194139ed8fbbdfd3.1920x1080.jpg?t=1790703419" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5184600/b927a6cff6298eac1b9b31c9194139ed8fbbdfd3/ss_b927a6cff6298eac1b9b31c9194139ed8fbbdfd3.600x338.jpg?t=1790703419" alt="Love Nest ~V0.098~ — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5184600/3a5b8a9e71a94cea5dffb368eb6a9ad0356c7307/ss_3a5b8a9e71a94cea5dffb368eb6a9ad0356c7307.1920x1080.jpg?t=1790703419" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5184600/3a5b8a9e71a94cea5dffb368eb6a9ad0356c7307/ss_3a5b8a9e71a94cea5dffb368eb6a9ad0356c7307.600x338.jpg?t=1790703419" alt="Love Nest ~V0.098~ — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5184600/cb243661e2b4fae3b04f7bc03b165579d76383f7/ss_cb243661e2b4fae3b04f7bc03b165579d76383f7.1920x1080.jpg?t=1790703419" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5184600/cb243661e2b4fae3b04f7bc03b165579d76383f7/ss_cb243661e2b4fae3b04f7bc03b165579d76383f7.600x338.jpg?t=1790703419" alt="Love Nest ~V0.098~ — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5184600/4586037aad93d51fa09baf77af0f1436f4abed32/ss_4586037aad93d51fa09baf77af0f1436f4abed32.1920x1080.jpg?t=1790703419" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5184600/4586037aad93d51fa09baf77af0f1436f4abed32/ss_4586037aad93d51fa09baf77af0f1436f4abed32.600x338.jpg?t=1790703419" alt="Love Nest ~V0.098~ — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5184600/ccdd67d82ac198e546bf0a4c39e603e26d2ba1bf/ss_ccdd67d82ac198e546bf0a4c39e603e26d2ba1bf.1920x1080.jpg?t=1790703419" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5184600/ccdd67d82ac198e546bf0a4c39e603e26d2ba1bf/ss_ccdd67d82ac198e546bf0a4c39e603e26d2ba1bf.600x338.jpg?t=1790703419" alt="Love Nest ~V0.098~ — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5184600/b58ce9f05289e54abe818e43b29659cb0ba7c39d/ss_b58ce9f05289e54abe818e43b29659cb0ba7c39d.1920x1080.jpg?t=1790703419" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5184600/b58ce9f05289e54abe818e43b29659cb0ba7c39d/ss_b58ce9f05289e54abe818e43b29659cb0ba7c39d.600x338.jpg?t=1790703419" alt="Love Nest ~V0.098~ — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5184600/6fde36f3ec6888b948e76e78683975b3e6088c77/ss_6fde36f3ec6888b948e76e78683975b3e6088c77.1920x1080.jpg?t=1790703419" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5184600/6fde36f3ec6888b948e76e78683975b3e6088c77/ss_6fde36f3ec6888b948e76e78683975b3e6088c77.600x338.jpg?t=1790703419" alt="Love Nest ~V0.098~ — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5184600/de26175557b2e3925a44707c73cf3eb03bcf0ab1/ss_de26175557b2e3925a44707c73cf3eb03bcf0ab1.1920x1080.jpg?t=1790703419" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5184600/de26175557b2e3925a44707c73cf3eb03bcf0ab1/ss_de26175557b2e3925a44707c73cf3eb03bcf0ab1.600x338.jpg?t=1790703419" alt="Love Nest ~V0.098~ — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5184600/ea94720bd6e05daafef54ed111b35d82b4beeac6/ss_ea94720bd6e05daafef54ed111b35d82b4beeac6.1920x1080.jpg?t=1790703419" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5184600/ea94720bd6e05daafef54ed111b35d82b4beeac6/ss_ea94720bd6e05daafef54ed111b35d82b4beeac6.600x338.jpg?t=1790703419" alt="Love Nest ~V0.098~ — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+      </div>
+
+<p style="color: var(--text-faint); font-size: 13px; margin-top: 30px;">
         Данные о цене, отзывах и статистике обновляются автоматически на основе
         Steam Store API и SteamSpy.
       </p>

@@ -112,6 +112,38 @@
     }
     .game-stat-card .label { font-size: 12px; color: var(--text-faint); text-transform: uppercase; }
     .game-stat-card .value { font-size: 20px; font-weight: bold; margin-top: 4px; }
+    .game-shots {
+      display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+      gap: 12px; margin: 20px 0;
+    }
+    .game-shot {
+      display: block; border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 8px; overflow: hidden;
+    }
+    .game-shot img { display: block; width: 100%; height: auto; }
+    .game-movies { display: grid; gap: 16px; margin: 20px 0; }
+    .game-movie { margin: 0; }
+    .game-movie video {
+      display: block; width: 100%; height: auto;
+      border-radius: 8px; background: #000;
+    }
+    .game-movie figcaption { margin-top: 6px; font-size: 13px; color: var(--text-faint); }
+    .game-video {
+      position: relative; cursor: pointer; overflow: hidden;
+      border-radius: 8px; background: #000; aspect-ratio: 16 / 9;
+    }
+    .game-video img { display: block; width: 100%; height: 100%; object-fit: cover; }
+    .game-video-play { position: absolute; inset: 0; display: grid; place-items: center; }
+    .game-video-play::before {
+      content: ''; width: 58px; height: 58px; border-radius: 50%;
+      background: rgba(0,0,0,0.5); border: 2px solid rgba(255,255,255,0.75);
+    }
+    .game-video-play::after {
+      content: ''; position: absolute; margin-left: 5px;
+      border-style: solid; border-width: 11px 0 11px 18px;
+      border-color: transparent transparent transparent #fff;
+    }
+    .game-video-el { display: block; width: 100%; height: 100%; background: #000; }
   </style>
 </head>
 <body>
@@ -150,7 +182,7 @@
 
     <article class="article-body">
 
-      <p>𓍊𓋼𓍊𓋼𓍊 Meat Girl is a lesbian visual novel about a girl searching for her mentally ill roommate in cold mountains filled with meat 𓍊𓋼𓍊𓋼𓍊</p>
+      
 
       <div class="game-stats-grid">
         <div class="game-stat-card">
@@ -166,10 +198,6 @@
           <div class="label">Владельцев (оценка)</div>
           <div class="value">0 – 20,000</div>
         </div>
-        <div class="game-stat-card">
-          <div class="label">Среднее время игры</div>
-          <div class="value">нет данных</div>
-        </div>
       </div>
 
       <h2>Об игре</h2>
@@ -183,7 +211,25 @@
         </a>
       </p>
 
-      <p style="color: var(--text-faint); font-size: 13px; margin-top: 30px;">
+            <h2>Скриншоты</h2>
+      <div class="game-shots">
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4917360/c17d3c61e16d8f159abc5b76d338616daeede693/ss_c17d3c61e16d8f159abc5b76d338616daeede693.1920x1080.jpg?t=1791084754" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4917360/c17d3c61e16d8f159abc5b76d338616daeede693/ss_c17d3c61e16d8f159abc5b76d338616daeede693.600x338.jpg?t=1791084754" alt="Meat Girl — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4917360/7481d55c9c85ed18c0678dd6a73f860cba063cea/ss_7481d55c9c85ed18c0678dd6a73f860cba063cea.1920x1080.jpg?t=1791084754" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4917360/7481d55c9c85ed18c0678dd6a73f860cba063cea/ss_7481d55c9c85ed18c0678dd6a73f860cba063cea.600x338.jpg?t=1791084754" alt="Meat Girl — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4917360/143b42fbce708dcc9a18e7a74ccab75e599c3e16/ss_143b42fbce708dcc9a18e7a74ccab75e599c3e16.1920x1080.jpg?t=1791084754" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4917360/143b42fbce708dcc9a18e7a74ccab75e599c3e16/ss_143b42fbce708dcc9a18e7a74ccab75e599c3e16.600x338.jpg?t=1791084754" alt="Meat Girl — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4917360/9312f29905b5a81dabe9d98b9d20da6d8e13a92d/ss_9312f29905b5a81dabe9d98b9d20da6d8e13a92d.1920x1080.jpg?t=1791084754" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4917360/9312f29905b5a81dabe9d98b9d20da6d8e13a92d/ss_9312f29905b5a81dabe9d98b9d20da6d8e13a92d.600x338.jpg?t=1791084754" alt="Meat Girl — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4917360/fc1472da00fd84dca4f45d96c76eeaf37b265246/ss_fc1472da00fd84dca4f45d96c76eeaf37b265246.1920x1080.jpg?t=1791084754" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4917360/fc1472da00fd84dca4f45d96c76eeaf37b265246/ss_fc1472da00fd84dca4f45d96c76eeaf37b265246.600x338.jpg?t=1791084754" alt="Meat Girl — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4917360/0aaff00dcc8385c928cfec799e79afa0a25beef0/ss_0aaff00dcc8385c928cfec799e79afa0a25beef0.1920x1080.jpg?t=1791084754" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4917360/0aaff00dcc8385c928cfec799e79afa0a25beef0/ss_0aaff00dcc8385c928cfec799e79afa0a25beef0.600x338.jpg?t=1791084754" alt="Meat Girl — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4917360/25b42043c7795cb1e2b0af2e0872f931adb8ef06/ss_25b42043c7795cb1e2b0af2e0872f931adb8ef06.1920x1080.jpg?t=1791084754" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4917360/25b42043c7795cb1e2b0af2e0872f931adb8ef06/ss_25b42043c7795cb1e2b0af2e0872f931adb8ef06.600x338.jpg?t=1791084754" alt="Meat Girl — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4917360/c7d1837eb2da851c6a413cfc187949bfa5ec352c/ss_c7d1837eb2da851c6a413cfc187949bfa5ec352c.1920x1080.jpg?t=1791084754" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4917360/c7d1837eb2da851c6a413cfc187949bfa5ec352c/ss_c7d1837eb2da851c6a413cfc187949bfa5ec352c.600x338.jpg?t=1791084754" alt="Meat Girl — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4917360/3b62463bdb062930489ad9923e0abd2587530e6f/ss_3b62463bdb062930489ad9923e0abd2587530e6f.1920x1080.jpg?t=1791084754" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4917360/3b62463bdb062930489ad9923e0abd2587530e6f/ss_3b62463bdb062930489ad9923e0abd2587530e6f.600x338.jpg?t=1791084754" alt="Meat Girl — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+      </div>
+
+      <h2>Геймплей</h2>
+      <div class="game-movies">
+        <figure class="game-movie"><div class="game-video" data-hls="https://video.akamai.steamstatic.com/store_trailers/4917360/1172506673/9b8a2148a65492cc55162c02a84819879160e3f0/1783996273/hls_264_master.m3u8?t=1785802958" data-poster="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257376376/6725e13ba7f5ad43a60574fd7eff912eb54d3738/movie_600x337.jpg?t=1785802958" role="button" tabindex="0" aria-label="Смотреть геймплей: Meat Girl"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257376376/6725e13ba7f5ad43a60574fd7eff912eb54d3738/movie_600x337.jpg?t=1785802958" alt="" loading="lazy" width="480" height="270" /><span class="game-video-play" aria-hidden="true"></span></div></figure>
+      </div>
+
+<p style="color: var(--text-faint); font-size: 13px; margin-top: 30px;">
         Данные о цене, отзывах и статистике обновляются автоматически на основе
         Steam Store API и SteamSpy.
       </p>
@@ -284,5 +330,6 @@ function declineCookies() {
 })();
 </script>
 <script src="/newsletter.js?v=2" defer></script>
+<script defer src="/game-media.js?v=1"></script>
 </body>
 </html>

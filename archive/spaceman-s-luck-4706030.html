@@ -112,6 +112,38 @@
     }
     .game-stat-card .label { font-size: 12px; color: var(--text-faint); text-transform: uppercase; }
     .game-stat-card .value { font-size: 20px; font-weight: bold; margin-top: 4px; }
+    .game-shots {
+      display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+      gap: 12px; margin: 20px 0;
+    }
+    .game-shot {
+      display: block; border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 8px; overflow: hidden;
+    }
+    .game-shot img { display: block; width: 100%; height: auto; }
+    .game-movies { display: grid; gap: 16px; margin: 20px 0; }
+    .game-movie { margin: 0; }
+    .game-movie video {
+      display: block; width: 100%; height: auto;
+      border-radius: 8px; background: #000;
+    }
+    .game-movie figcaption { margin-top: 6px; font-size: 13px; color: var(--text-faint); }
+    .game-video {
+      position: relative; cursor: pointer; overflow: hidden;
+      border-radius: 8px; background: #000; aspect-ratio: 16 / 9;
+    }
+    .game-video img { display: block; width: 100%; height: 100%; object-fit: cover; }
+    .game-video-play { position: absolute; inset: 0; display: grid; place-items: center; }
+    .game-video-play::before {
+      content: ''; width: 58px; height: 58px; border-radius: 50%;
+      background: rgba(0,0,0,0.5); border: 2px solid rgba(255,255,255,0.75);
+    }
+    .game-video-play::after {
+      content: ''; position: absolute; margin-left: 5px;
+      border-style: solid; border-width: 11px 0 11px 18px;
+      border-color: transparent transparent transparent #fff;
+    }
+    .game-video-el { display: block; width: 100%; height: 100%; background: #000; }
   </style>
 </head>
 <body>
@@ -150,7 +182,7 @@
 
     <article class="article-body">
 
-      <p>A space 4X game. Colonize planets and annihilate enemy races in an intergalactic war for living space. Designed to be fun, fast, and easy to play.</p>
+      
 
       <div class="game-stats-grid">
         <div class="game-stat-card">
@@ -166,10 +198,6 @@
           <div class="label">Владельцев (оценка)</div>
           <div class="value">0 – 20,000</div>
         </div>
-        <div class="game-stat-card">
-          <div class="label">Среднее время игры</div>
-          <div class="value">нет данных</div>
-        </div>
       </div>
 
       <h2>Об игре</h2>
@@ -183,7 +211,23 @@
         </a>
       </p>
 
-      <p style="color: var(--text-faint); font-size: 13px; margin-top: 30px;">
+            <h2>Скриншоты</h2>
+      <div class="game-shots">
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4706030/47fdf42a52910965953da14bab8b0499673c80b8/ss_47fdf42a52910965953da14bab8b0499673c80b8.1920x1080.jpg?t=1790991020" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4706030/47fdf42a52910965953da14bab8b0499673c80b8/ss_47fdf42a52910965953da14bab8b0499673c80b8.600x338.jpg?t=1790991020" alt="Spaceman&#x27;s Luck — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4706030/491ecbae34ee15e566ae1ad49f37b9ef5edcdaf5/ss_491ecbae34ee15e566ae1ad49f37b9ef5edcdaf5.1920x1080.jpg?t=1790991020" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4706030/491ecbae34ee15e566ae1ad49f37b9ef5edcdaf5/ss_491ecbae34ee15e566ae1ad49f37b9ef5edcdaf5.600x338.jpg?t=1790991020" alt="Spaceman&#x27;s Luck — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4706030/e935b9c2aa968b6bd0db2edf36202e74642a9342/ss_e935b9c2aa968b6bd0db2edf36202e74642a9342.1920x1080.jpg?t=1790991020" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4706030/e935b9c2aa968b6bd0db2edf36202e74642a9342/ss_e935b9c2aa968b6bd0db2edf36202e74642a9342.600x338.jpg?t=1790991020" alt="Spaceman&#x27;s Luck — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4706030/4369e02d8c33bcb7ac727cf4ca88f7db4b1d9ef2/ss_4369e02d8c33bcb7ac727cf4ca88f7db4b1d9ef2.1920x1080.jpg?t=1790991020" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4706030/4369e02d8c33bcb7ac727cf4ca88f7db4b1d9ef2/ss_4369e02d8c33bcb7ac727cf4ca88f7db4b1d9ef2.600x338.jpg?t=1790991020" alt="Spaceman&#x27;s Luck — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4706030/801cc65d29d59f537e0c13d32ff67ac642c0d4e0/ss_801cc65d29d59f537e0c13d32ff67ac642c0d4e0.1920x1080.jpg?t=1790991020" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4706030/801cc65d29d59f537e0c13d32ff67ac642c0d4e0/ss_801cc65d29d59f537e0c13d32ff67ac642c0d4e0.600x338.jpg?t=1790991020" alt="Spaceman&#x27;s Luck — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4706030/2ce0076d702f1900fb5121e707d7ea57a05ced85/ss_2ce0076d702f1900fb5121e707d7ea57a05ced85.1920x1080.jpg?t=1790991020" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4706030/2ce0076d702f1900fb5121e707d7ea57a05ced85/ss_2ce0076d702f1900fb5121e707d7ea57a05ced85.600x338.jpg?t=1790991020" alt="Spaceman&#x27;s Luck — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4706030/d28b5b9ca2a52026aa43daf468c7deb94bbeca7c/ss_d28b5b9ca2a52026aa43daf468c7deb94bbeca7c.1920x1080.jpg?t=1790991020" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4706030/d28b5b9ca2a52026aa43daf468c7deb94bbeca7c/ss_d28b5b9ca2a52026aa43daf468c7deb94bbeca7c.600x338.jpg?t=1790991020" alt="Spaceman&#x27;s Luck — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+      </div>
+
+      <h2>Геймплей</h2>
+      <div class="game-movies">
+        <figure class="game-movie"><div class="game-video" data-hls="https://video.akamai.steamstatic.com/store_trailers/4706030/211947129/e9e405b833ce481df762af31b5994917cb57be9c/1783113447/hls_264_master.m3u8?t=1783113600" data-poster="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257370680/e6bf23853c8b8bcd320ad80f3a0dd05e30614640/movie_600x337.jpg?t=1783113600" role="button" tabindex="0" aria-label="Смотреть геймплей: Trailer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257370680/e6bf23853c8b8bcd320ad80f3a0dd05e30614640/movie_600x337.jpg?t=1783113600" alt="" loading="lazy" width="480" height="270" /><span class="game-video-play" aria-hidden="true"></span></div></figure>
+      </div>
+
+<p style="color: var(--text-faint); font-size: 13px; margin-top: 30px;">
         Данные о цене, отзывах и статистике обновляются автоматически на основе
         Steam Store API и SteamSpy.
       </p>
@@ -284,5 +328,6 @@ function declineCookies() {
 })();
 </script>
 <script src="/newsletter.js?v=2" defer></script>
+<script defer src="/game-media.js?v=1"></script>
 </body>
 </html>

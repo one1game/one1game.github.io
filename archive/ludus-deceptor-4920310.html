@@ -112,6 +112,38 @@
     }
     .game-stat-card .label { font-size: 12px; color: var(--text-faint); text-transform: uppercase; }
     .game-stat-card .value { font-size: 20px; font-weight: bold; margin-top: 4px; }
+    .game-shots {
+      display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+      gap: 12px; margin: 20px 0;
+    }
+    .game-shot {
+      display: block; border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 8px; overflow: hidden;
+    }
+    .game-shot img { display: block; width: 100%; height: auto; }
+    .game-movies { display: grid; gap: 16px; margin: 20px 0; }
+    .game-movie { margin: 0; }
+    .game-movie video {
+      display: block; width: 100%; height: auto;
+      border-radius: 8px; background: #000;
+    }
+    .game-movie figcaption { margin-top: 6px; font-size: 13px; color: var(--text-faint); }
+    .game-video {
+      position: relative; cursor: pointer; overflow: hidden;
+      border-radius: 8px; background: #000; aspect-ratio: 16 / 9;
+    }
+    .game-video img { display: block; width: 100%; height: 100%; object-fit: cover; }
+    .game-video-play { position: absolute; inset: 0; display: grid; place-items: center; }
+    .game-video-play::before {
+      content: ''; width: 58px; height: 58px; border-radius: 50%;
+      background: rgba(0,0,0,0.5); border: 2px solid rgba(255,255,255,0.75);
+    }
+    .game-video-play::after {
+      content: ''; position: absolute; margin-left: 5px;
+      border-style: solid; border-width: 11px 0 11px 18px;
+      border-color: transparent transparent transparent #fff;
+    }
+    .game-video-el { display: block; width: 100%; height: 100%; background: #000; }
   </style>
 </head>
 <body>
@@ -166,10 +198,6 @@
           <div class="label">Владельцев (оценка)</div>
           <div class="value">0 – 20,000</div>
         </div>
-        <div class="game-stat-card">
-          <div class="label">Среднее время игры</div>
-          <div class="value">нет данных</div>
-        </div>
       </div>
 
       <h2>Об игре</h2>
@@ -183,7 +211,24 @@
         </a>
       </p>
 
-      <p style="color: var(--text-faint); font-size: 13px; margin-top: 30px;">
+            <h2>Скриншоты</h2>
+      <div class="game-shots">
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4920310/3302efa84dbef1f22c5ba9e48350202591dd988d/ss_3302efa84dbef1f22c5ba9e48350202591dd988d.1920x1080.jpg?t=1790032874" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4920310/3302efa84dbef1f22c5ba9e48350202591dd988d/ss_3302efa84dbef1f22c5ba9e48350202591dd988d.600x338.jpg?t=1790032874" alt="Ludus Deceptor — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4920310/4dc7ac3089dd5aa0f160fc45fe8f292fcdd20fc0/ss_4dc7ac3089dd5aa0f160fc45fe8f292fcdd20fc0.1920x1080.jpg?t=1790032874" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4920310/4dc7ac3089dd5aa0f160fc45fe8f292fcdd20fc0/ss_4dc7ac3089dd5aa0f160fc45fe8f292fcdd20fc0.600x338.jpg?t=1790032874" alt="Ludus Deceptor — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4920310/7859cc3b25708b2df96cb6fb91b25cd7799c5741/ss_7859cc3b25708b2df96cb6fb91b25cd7799c5741.1920x1080.jpg?t=1790032874" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4920310/7859cc3b25708b2df96cb6fb91b25cd7799c5741/ss_7859cc3b25708b2df96cb6fb91b25cd7799c5741.600x338.jpg?t=1790032874" alt="Ludus Deceptor — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4920310/56be026abc4dbcb57835e4f8687868d3c3600c1f/ss_56be026abc4dbcb57835e4f8687868d3c3600c1f.1920x1080.jpg?t=1790032874" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4920310/56be026abc4dbcb57835e4f8687868d3c3600c1f/ss_56be026abc4dbcb57835e4f8687868d3c3600c1f.600x338.jpg?t=1790032874" alt="Ludus Deceptor — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4920310/25a787eff32633ddb076fbd35ea13aefeceac64c/ss_25a787eff32633ddb076fbd35ea13aefeceac64c.1920x1080.jpg?t=1790032874" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4920310/25a787eff32633ddb076fbd35ea13aefeceac64c/ss_25a787eff32633ddb076fbd35ea13aefeceac64c.600x338.jpg?t=1790032874" alt="Ludus Deceptor — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4920310/112837044b9ca5c75f991a68e201b8aa4a380f84/ss_112837044b9ca5c75f991a68e201b8aa4a380f84.1920x1080.jpg?t=1790032874" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4920310/112837044b9ca5c75f991a68e201b8aa4a380f84/ss_112837044b9ca5c75f991a68e201b8aa4a380f84.600x338.jpg?t=1790032874" alt="Ludus Deceptor — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4920310/9c7ac1d5adce69fba16c79294d3f2ad535436c8b/ss_9c7ac1d5adce69fba16c79294d3f2ad535436c8b.1920x1080.jpg?t=1790032874" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4920310/9c7ac1d5adce69fba16c79294d3f2ad535436c8b/ss_9c7ac1d5adce69fba16c79294d3f2ad535436c8b.600x338.jpg?t=1790032874" alt="Ludus Deceptor — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4920310/171903135793b0ce13f5462b81223a5b806d782f/ss_171903135793b0ce13f5462b81223a5b806d782f.1920x1080.jpg?t=1790032874" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4920310/171903135793b0ce13f5462b81223a5b806d782f/ss_171903135793b0ce13f5462b81223a5b806d782f.600x338.jpg?t=1790032874" alt="Ludus Deceptor — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+      </div>
+
+      <h2>Геймплей</h2>
+      <div class="game-movies">
+        <figure class="game-movie"><div class="game-video" data-hls="https://video.akamai.steamstatic.com/store_trailers/4920310/1676769056/87abacdab534b4f83bfaa7294a1a90408b369a78/1787940774/hls_264_master.m3u8?t=1788449215" data-poster="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257411478/329c02df1f76f45e2d69376945721d75de051db9/movie_600x337.jpg?t=1788449215" role="button" tabindex="0" aria-label="Смотреть геймплей: gameplay"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257411478/329c02df1f76f45e2d69376945721d75de051db9/movie_600x337.jpg?t=1788449215" alt="" loading="lazy" width="480" height="270" /><span class="game-video-play" aria-hidden="true"></span></div></figure>
+      </div>
+
+<p style="color: var(--text-faint); font-size: 13px; margin-top: 30px;">
         Данные о цене, отзывах и статистике обновляются автоматически на основе
         Steam Store API и SteamSpy.
       </p>
@@ -284,5 +329,6 @@ function declineCookies() {
 })();
 </script>
 <script src="/newsletter.js?v=2" defer></script>
+<script defer src="/game-media.js?v=1"></script>
 </body>
 </html>

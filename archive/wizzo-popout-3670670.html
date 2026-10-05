@@ -112,6 +112,38 @@
     }
     .game-stat-card .label { font-size: 12px; color: var(--text-faint); text-transform: uppercase; }
     .game-stat-card .value { font-size: 20px; font-weight: bold; margin-top: 4px; }
+    .game-shots {
+      display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+      gap: 12px; margin: 20px 0;
+    }
+    .game-shot {
+      display: block; border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 8px; overflow: hidden;
+    }
+    .game-shot img { display: block; width: 100%; height: auto; }
+    .game-movies { display: grid; gap: 16px; margin: 20px 0; }
+    .game-movie { margin: 0; }
+    .game-movie video {
+      display: block; width: 100%; height: auto;
+      border-radius: 8px; background: #000;
+    }
+    .game-movie figcaption { margin-top: 6px; font-size: 13px; color: var(--text-faint); }
+    .game-video {
+      position: relative; cursor: pointer; overflow: hidden;
+      border-radius: 8px; background: #000; aspect-ratio: 16 / 9;
+    }
+    .game-video img { display: block; width: 100%; height: 100%; object-fit: cover; }
+    .game-video-play { position: absolute; inset: 0; display: grid; place-items: center; }
+    .game-video-play::before {
+      content: ''; width: 58px; height: 58px; border-radius: 50%;
+      background: rgba(0,0,0,0.5); border: 2px solid rgba(255,255,255,0.75);
+    }
+    .game-video-play::after {
+      content: ''; position: absolute; margin-left: 5px;
+      border-style: solid; border-width: 11px 0 11px 18px;
+      border-color: transparent transparent transparent #fff;
+    }
+    .game-video-el { display: block; width: 100%; height: 100%; background: #000; }
   </style>
 </head>
 <body>
@@ -166,10 +198,6 @@
           <div class="label">Владельцев (оценка)</div>
           <div class="value">0 – 20,000</div>
         </div>
-        <div class="game-stat-card">
-          <div class="label">Среднее время игры</div>
-          <div class="value">нет данных</div>
-        </div>
       </div>
 
       <h2>Об игре</h2>
@@ -183,7 +211,24 @@
         </a>
       </p>
 
-      <p style="color: var(--text-faint); font-size: 13px; margin-top: 30px;">
+            <h2>Скриншоты</h2>
+      <div class="game-shots">
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3670670/085325ba04e6d72f57657c466c154682e68c95d9/ss_085325ba04e6d72f57657c466c154682e68c95d9.1920x1080.jpg?t=1790672018" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3670670/085325ba04e6d72f57657c466c154682e68c95d9/ss_085325ba04e6d72f57657c466c154682e68c95d9.600x338.jpg?t=1790672018" alt="Wizzo PopOut — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3670670/e3460b8659b68222d4586bd30352d0f4446d4fe7/ss_e3460b8659b68222d4586bd30352d0f4446d4fe7.1920x1080.jpg?t=1790672018" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3670670/e3460b8659b68222d4586bd30352d0f4446d4fe7/ss_e3460b8659b68222d4586bd30352d0f4446d4fe7.600x338.jpg?t=1790672018" alt="Wizzo PopOut — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3670670/5b4ba039c2a9b5067cb936edf3d4508008e72110/ss_5b4ba039c2a9b5067cb936edf3d4508008e72110.1920x1080.jpg?t=1790672018" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3670670/5b4ba039c2a9b5067cb936edf3d4508008e72110/ss_5b4ba039c2a9b5067cb936edf3d4508008e72110.600x338.jpg?t=1790672018" alt="Wizzo PopOut — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3670670/ec1d8b5012a50d2894f2ba7cff36bccdccb2babc/ss_ec1d8b5012a50d2894f2ba7cff36bccdccb2babc.1920x1080.jpg?t=1790672018" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3670670/ec1d8b5012a50d2894f2ba7cff36bccdccb2babc/ss_ec1d8b5012a50d2894f2ba7cff36bccdccb2babc.600x338.jpg?t=1790672018" alt="Wizzo PopOut — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3670670/8f8a999a929825838a19a9998c21f58486aa833a/ss_8f8a999a929825838a19a9998c21f58486aa833a.1920x1080.jpg?t=1790672018" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3670670/8f8a999a929825838a19a9998c21f58486aa833a/ss_8f8a999a929825838a19a9998c21f58486aa833a.600x338.jpg?t=1790672018" alt="Wizzo PopOut — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3670670/c840f6352bacf722a2382e7d8b701004074bac9e/ss_c840f6352bacf722a2382e7d8b701004074bac9e.1920x1080.jpg?t=1790672018" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3670670/c840f6352bacf722a2382e7d8b701004074bac9e/ss_c840f6352bacf722a2382e7d8b701004074bac9e.600x338.jpg?t=1790672018" alt="Wizzo PopOut — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3670670/cf5ba8a5ba733c96fdb6dc751c662118c20e6e44/ss_cf5ba8a5ba733c96fdb6dc751c662118c20e6e44.1920x1080.jpg?t=1790672018" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3670670/cf5ba8a5ba733c96fdb6dc751c662118c20e6e44/ss_cf5ba8a5ba733c96fdb6dc751c662118c20e6e44.600x338.jpg?t=1790672018" alt="Wizzo PopOut — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+      </div>
+
+      <h2>Геймплей</h2>
+      <div class="game-movies">
+        <figure class="game-movie"><div class="game-video" data-hls="https://video.akamai.steamstatic.com/store_trailers/3670670/514548026/7507da273ffea7900b1b1937485fc35ea799c915/1790001660/hls_264_master.m3u8?t=1790001989" data-poster="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257430694/c4ad068ff1d11b74e3a75da2f5db5d5a88e592e9/movie_600x337.jpg?t=1790001989" role="button" tabindex="0" aria-label="Смотреть геймплей: Wizzo PopOut - Short Gameplay Trailer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257430694/c4ad068ff1d11b74e3a75da2f5db5d5a88e592e9/movie_600x337.jpg?t=1790001989" alt="" loading="lazy" width="480" height="270" /><span class="game-video-play" aria-hidden="true"></span></div></figure>
+        <figure class="game-movie"><div class="game-video" data-hls="https://video.akamai.steamstatic.com/store_trailers/3670670/1942288838/7afc17a8b1ac85ebc629120e11ba3a1d5265f51e/1790037030/hls_264_master.m3u8?t=1790037416" data-poster="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257367907/b4082f68eb4e408ca6218d38d783968f1c4fb581/movie_600x337.jpg?t=1790037416" role="button" tabindex="0" aria-label="Смотреть геймплей: Wizzo PopOut - Gameplay Trailer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257367907/b4082f68eb4e408ca6218d38d783968f1c4fb581/movie_600x337.jpg?t=1790037416" alt="" loading="lazy" width="480" height="270" /><span class="game-video-play" aria-hidden="true"></span></div></figure>
+      </div>
+
+<p style="color: var(--text-faint); font-size: 13px; margin-top: 30px;">
         Данные о цене, отзывах и статистике обновляются автоматически на основе
         Steam Store API и SteamSpy.
       </p>
@@ -284,5 +329,6 @@ function declineCookies() {
 })();
 </script>
 <script src="/newsletter.js?v=2" defer></script>
+<script defer src="/game-media.js?v=1"></script>
 </body>
 </html>

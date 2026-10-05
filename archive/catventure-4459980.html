@@ -112,6 +112,38 @@
     }
     .game-stat-card .label { font-size: 12px; color: var(--text-faint); text-transform: uppercase; }
     .game-stat-card .value { font-size: 20px; font-weight: bold; margin-top: 4px; }
+    .game-shots {
+      display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+      gap: 12px; margin: 20px 0;
+    }
+    .game-shot {
+      display: block; border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 8px; overflow: hidden;
+    }
+    .game-shot img { display: block; width: 100%; height: auto; }
+    .game-movies { display: grid; gap: 16px; margin: 20px 0; }
+    .game-movie { margin: 0; }
+    .game-movie video {
+      display: block; width: 100%; height: auto;
+      border-radius: 8px; background: #000;
+    }
+    .game-movie figcaption { margin-top: 6px; font-size: 13px; color: var(--text-faint); }
+    .game-video {
+      position: relative; cursor: pointer; overflow: hidden;
+      border-radius: 8px; background: #000; aspect-ratio: 16 / 9;
+    }
+    .game-video img { display: block; width: 100%; height: 100%; object-fit: cover; }
+    .game-video-play { position: absolute; inset: 0; display: grid; place-items: center; }
+    .game-video-play::before {
+      content: ''; width: 58px; height: 58px; border-radius: 50%;
+      background: rgba(0,0,0,0.5); border: 2px solid rgba(255,255,255,0.75);
+    }
+    .game-video-play::after {
+      content: ''; position: absolute; margin-left: 5px;
+      border-style: solid; border-width: 11px 0 11px 18px;
+      border-color: transparent transparent transparent #fff;
+    }
+    .game-video-el { display: block; width: 100%; height: 100%; background: #000; }
   </style>
 </head>
 <body>
@@ -166,10 +198,6 @@
           <div class="label">Владельцев (оценка)</div>
           <div class="value">0 – 20,000</div>
         </div>
-        <div class="game-stat-card">
-          <div class="label">Среднее время игры</div>
-          <div class="value">нет данных</div>
-        </div>
       </div>
 
       <h2>Об игре</h2>
@@ -183,7 +211,23 @@
         </a>
       </p>
 
-      <p style="color: var(--text-faint); font-size: 13px; margin-top: 30px;">
+            <h2>Скриншоты</h2>
+      <div class="game-shots">
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4459980/139cf70e92bf8af504fa3741529014365ac9ed3b/ss_139cf70e92bf8af504fa3741529014365ac9ed3b.1920x1080.jpg?t=1791129435" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4459980/139cf70e92bf8af504fa3741529014365ac9ed3b/ss_139cf70e92bf8af504fa3741529014365ac9ed3b.600x338.jpg?t=1791129435" alt="Catventure — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4459980/53599572c1b9ebe35c3eea59d9b1a4011ffd2a3b/ss_53599572c1b9ebe35c3eea59d9b1a4011ffd2a3b.1920x1080.jpg?t=1791129435" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4459980/53599572c1b9ebe35c3eea59d9b1a4011ffd2a3b/ss_53599572c1b9ebe35c3eea59d9b1a4011ffd2a3b.600x338.jpg?t=1791129435" alt="Catventure — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4459980/b980daf951875e91aa08127c037f258fd68a6279/ss_b980daf951875e91aa08127c037f258fd68a6279.1920x1080.jpg?t=1791129435" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4459980/b980daf951875e91aa08127c037f258fd68a6279/ss_b980daf951875e91aa08127c037f258fd68a6279.600x338.jpg?t=1791129435" alt="Catventure — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4459980/ab3e3052909ace4bf64096a6ddb81018a285a13c/ss_ab3e3052909ace4bf64096a6ddb81018a285a13c.1920x1080.jpg?t=1791129435" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4459980/ab3e3052909ace4bf64096a6ddb81018a285a13c/ss_ab3e3052909ace4bf64096a6ddb81018a285a13c.600x338.jpg?t=1791129435" alt="Catventure — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4459980/2c1dc9ea2684e4aeb87a1e743007b2c5f194e4b1/ss_2c1dc9ea2684e4aeb87a1e743007b2c5f194e4b1.1920x1080.jpg?t=1791129435" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4459980/2c1dc9ea2684e4aeb87a1e743007b2c5f194e4b1/ss_2c1dc9ea2684e4aeb87a1e743007b2c5f194e4b1.600x338.jpg?t=1791129435" alt="Catventure — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4459980/48e8256db6704270e29e370016fe3e5a98917c65/ss_48e8256db6704270e29e370016fe3e5a98917c65.1920x1080.jpg?t=1791129435" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4459980/48e8256db6704270e29e370016fe3e5a98917c65/ss_48e8256db6704270e29e370016fe3e5a98917c65.600x338.jpg?t=1791129435" alt="Catventure — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4459980/145c3afc5295113848d66f57602b16d611f0c858/ss_145c3afc5295113848d66f57602b16d611f0c858.1920x1080.jpg?t=1791129435" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4459980/145c3afc5295113848d66f57602b16d611f0c858/ss_145c3afc5295113848d66f57602b16d611f0c858.600x338.jpg?t=1791129435" alt="Catventure — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+      </div>
+
+      <h2>Геймплей</h2>
+      <div class="game-movies">
+        <figure class="game-movie"><div class="game-video" data-hls="https://video.akamai.steamstatic.com/store_trailers/4459980/123027274/cf6ca3c6ff9c9597c7554f0ef6be3746e3db3ad5/1789980899/hls_264_master.m3u8?t=1789983277" data-poster="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257315030/1fe8c31bb2763390c012a50ac797e98b2d5b41a1/movie_600x337.jpg?t=1789983277" role="button" tabindex="0" aria-label="Смотреть геймплей: Catventure Promotional video 英文"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257315030/1fe8c31bb2763390c012a50ac797e98b2d5b41a1/movie_600x337.jpg?t=1789983277" alt="" loading="lazy" width="480" height="270" /><span class="game-video-play" aria-hidden="true"></span></div></figure>
+      </div>
+
+<p style="color: var(--text-faint); font-size: 13px; margin-top: 30px;">
         Данные о цене, отзывах и статистике обновляются автоматически на основе
         Steam Store API и SteamSpy.
       </p>
@@ -284,5 +328,6 @@ function declineCookies() {
 })();
 </script>
 <script src="/newsletter.js?v=2" defer></script>
+<script defer src="/game-media.js?v=1"></script>
 </body>
 </html>

@@ -112,6 +112,38 @@
     }
     .game-stat-card .label { font-size: 12px; color: var(--text-faint); text-transform: uppercase; }
     .game-stat-card .value { font-size: 20px; font-weight: bold; margin-top: 4px; }
+    .game-shots {
+      display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+      gap: 12px; margin: 20px 0;
+    }
+    .game-shot {
+      display: block; border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 8px; overflow: hidden;
+    }
+    .game-shot img { display: block; width: 100%; height: auto; }
+    .game-movies { display: grid; gap: 16px; margin: 20px 0; }
+    .game-movie { margin: 0; }
+    .game-movie video {
+      display: block; width: 100%; height: auto;
+      border-radius: 8px; background: #000;
+    }
+    .game-movie figcaption { margin-top: 6px; font-size: 13px; color: var(--text-faint); }
+    .game-video {
+      position: relative; cursor: pointer; overflow: hidden;
+      border-radius: 8px; background: #000; aspect-ratio: 16 / 9;
+    }
+    .game-video img { display: block; width: 100%; height: 100%; object-fit: cover; }
+    .game-video-play { position: absolute; inset: 0; display: grid; place-items: center; }
+    .game-video-play::before {
+      content: ''; width: 58px; height: 58px; border-radius: 50%;
+      background: rgba(0,0,0,0.5); border: 2px solid rgba(255,255,255,0.75);
+    }
+    .game-video-play::after {
+      content: ''; position: absolute; margin-left: 5px;
+      border-style: solid; border-width: 11px 0 11px 18px;
+      border-color: transparent transparent transparent #fff;
+    }
+    .game-video-el { display: block; width: 100%; height: 100%; background: #000; }
   </style>
 </head>
 <body>
@@ -166,10 +198,6 @@
           <div class="label">Владельцев (оценка)</div>
           <div class="value">0 – 20,000</div>
         </div>
-        <div class="game-stat-card">
-          <div class="label">Среднее время игры</div>
-          <div class="value">нет данных</div>
-        </div>
       </div>
 
       <h2>Об игре</h2>
@@ -183,7 +211,30 @@
         </a>
       </p>
 
-      <p style="color: var(--text-faint); font-size: 13px; margin-top: 30px;">
+            <h2>Скриншоты</h2>
+      <div class="game-shots">
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3158820/7c279a6ff0bdf97bd9413f467c2621b66c51560e/ss_7c279a6ff0bdf97bd9413f467c2621b66c51560e.1920x1080.jpg?t=1790257006" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3158820/7c279a6ff0bdf97bd9413f467c2621b66c51560e/ss_7c279a6ff0bdf97bd9413f467c2621b66c51560e.600x338.jpg?t=1790257006" alt="Kalanoro — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3158820/4dd3e8d10c2219589e032937297e61069cf74d21/ss_4dd3e8d10c2219589e032937297e61069cf74d21.1920x1080.jpg?t=1790257006" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3158820/4dd3e8d10c2219589e032937297e61069cf74d21/ss_4dd3e8d10c2219589e032937297e61069cf74d21.600x338.jpg?t=1790257006" alt="Kalanoro — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3158820/743524c413a8c59996a4ad3159660e2193f03434/ss_743524c413a8c59996a4ad3159660e2193f03434.1920x1080.jpg?t=1790257006" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3158820/743524c413a8c59996a4ad3159660e2193f03434/ss_743524c413a8c59996a4ad3159660e2193f03434.600x338.jpg?t=1790257006" alt="Kalanoro — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3158820/4c43c38b8e01e3cf0b3e33a37c6a35a57acd58e8/ss_4c43c38b8e01e3cf0b3e33a37c6a35a57acd58e8.1920x1080.jpg?t=1790257006" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3158820/4c43c38b8e01e3cf0b3e33a37c6a35a57acd58e8/ss_4c43c38b8e01e3cf0b3e33a37c6a35a57acd58e8.600x338.jpg?t=1790257006" alt="Kalanoro — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3158820/0753024c4fb485c34af3507eacdf68da5010dbbe/ss_0753024c4fb485c34af3507eacdf68da5010dbbe.1920x1080.jpg?t=1790257006" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3158820/0753024c4fb485c34af3507eacdf68da5010dbbe/ss_0753024c4fb485c34af3507eacdf68da5010dbbe.600x338.jpg?t=1790257006" alt="Kalanoro — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3158820/c44f26d15fc270bea3e9e3ca3b2e95a1a263fd4a/ss_c44f26d15fc270bea3e9e3ca3b2e95a1a263fd4a.1920x1080.jpg?t=1790257006" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3158820/c44f26d15fc270bea3e9e3ca3b2e95a1a263fd4a/ss_c44f26d15fc270bea3e9e3ca3b2e95a1a263fd4a.600x338.jpg?t=1790257006" alt="Kalanoro — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3158820/dbabc6f8f3d479d680bc4e8f3332f7e3ac8a39cf/ss_dbabc6f8f3d479d680bc4e8f3332f7e3ac8a39cf.1920x1080.jpg?t=1790257006" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3158820/dbabc6f8f3d479d680bc4e8f3332f7e3ac8a39cf/ss_dbabc6f8f3d479d680bc4e8f3332f7e3ac8a39cf.600x338.jpg?t=1790257006" alt="Kalanoro — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3158820/0e2a9d807b98d91bffda6ce2d768bfaaae9f4bb0/ss_0e2a9d807b98d91bffda6ce2d768bfaaae9f4bb0.1920x1080.jpg?t=1790257006" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3158820/0e2a9d807b98d91bffda6ce2d768bfaaae9f4bb0/ss_0e2a9d807b98d91bffda6ce2d768bfaaae9f4bb0.600x338.jpg?t=1790257006" alt="Kalanoro — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3158820/a821415bc49d131938b4104276bb4ee9d12d13ed/ss_a821415bc49d131938b4104276bb4ee9d12d13ed.1920x1080.jpg?t=1790257006" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3158820/a821415bc49d131938b4104276bb4ee9d12d13ed/ss_a821415bc49d131938b4104276bb4ee9d12d13ed.600x338.jpg?t=1790257006" alt="Kalanoro — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3158820/3f2df5a5586ca45f461521ecfd7c056b6510cdd2/ss_3f2df5a5586ca45f461521ecfd7c056b6510cdd2.1920x1080.jpg?t=1790257006" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3158820/3f2df5a5586ca45f461521ecfd7c056b6510cdd2/ss_3f2df5a5586ca45f461521ecfd7c056b6510cdd2.600x338.jpg?t=1790257006" alt="Kalanoro — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3158820/025c173d478fad7c1c9b74172facfa506ecc0d5b/ss_025c173d478fad7c1c9b74172facfa506ecc0d5b.1920x1080.jpg?t=1790257006" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3158820/025c173d478fad7c1c9b74172facfa506ecc0d5b/ss_025c173d478fad7c1c9b74172facfa506ecc0d5b.600x338.jpg?t=1790257006" alt="Kalanoro — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3158820/2aa15ed603cabf9aafc09fd95bfd2c4d8c56e843/ss_2aa15ed603cabf9aafc09fd95bfd2c4d8c56e843.1920x1080.jpg?t=1790257006" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3158820/2aa15ed603cabf9aafc09fd95bfd2c4d8c56e843/ss_2aa15ed603cabf9aafc09fd95bfd2c4d8c56e843.600x338.jpg?t=1790257006" alt="Kalanoro — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+      </div>
+
+      <h2>Геймплей</h2>
+      <div class="game-movies">
+        <figure class="game-movie"><div class="game-video" data-hls="https://video.akamai.steamstatic.com/store_trailers/3158820/1042063753/7339891e4b7805880b30754d88375c466c0c14d2/1790238664/hls_264_master.m3u8?t=1790252688" data-poster="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257433463/107f972ce781a0d16c4af6ffabd795b8981dde00/movie_600x337.jpg?t=1790252688" role="button" tabindex="0" aria-label="Смотреть геймплей: Kalanoro - Launch Trailer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257433463/107f972ce781a0d16c4af6ffabd795b8981dde00/movie_600x337.jpg?t=1790252688" alt="" loading="lazy" width="480" height="270" /><span class="game-video-play" aria-hidden="true"></span></div></figure>
+        <figure class="game-movie"><div class="game-video" data-hls="https://video.akamai.steamstatic.com/store_trailers/3158820/384871590/17de11843e996ace0f338d6cafcbd2f7ac583859/1781099221/hls_264_master.m3u8?t=1781114506" data-poster="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257355221/f77b640457b11eee1bc133490bf79dd01349b63d/movie_600x337.jpg?t=1781114506" role="button" tabindex="0" aria-label="Смотреть геймплей: Kalanoro - Gameplay Trailer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257355221/f77b640457b11eee1bc133490bf79dd01349b63d/movie_600x337.jpg?t=1781114506" alt="" loading="lazy" width="480" height="270" /><span class="game-video-play" aria-hidden="true"></span></div></figure>
+        <figure class="game-movie"><div class="game-video" data-hls="https://video.akamai.steamstatic.com/store_trailers/3158820/422552999/b5bfe71c592bb72200127dab01712501e24eec6d/1777451215/hls_264_master.m3u8?t=1777452359" data-poster="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257328654/8493eaa9db6ed0a69bebf5f3527138ea04300b38/movie_600x337.jpg?t=1777452359" role="button" tabindex="0" aria-label="Смотреть геймплей: Kalanoro - Reveal Trailer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257328654/8493eaa9db6ed0a69bebf5f3527138ea04300b38/movie_600x337.jpg?t=1777452359" alt="" loading="lazy" width="480" height="270" /><span class="game-video-play" aria-hidden="true"></span></div></figure>
+      </div>
+
+<p style="color: var(--text-faint); font-size: 13px; margin-top: 30px;">
         Данные о цене, отзывах и статистике обновляются автоматически на основе
         Steam Store API и SteamSpy.
       </p>
@@ -284,5 +335,6 @@ function declineCookies() {
 })();
 </script>
 <script src="/newsletter.js?v=2" defer></script>
+<script defer src="/game-media.js?v=1"></script>
 </body>
 </html>

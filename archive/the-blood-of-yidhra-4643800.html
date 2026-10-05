@@ -112,6 +112,38 @@
     }
     .game-stat-card .label { font-size: 12px; color: var(--text-faint); text-transform: uppercase; }
     .game-stat-card .value { font-size: 20px; font-weight: bold; margin-top: 4px; }
+    .game-shots {
+      display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+      gap: 12px; margin: 20px 0;
+    }
+    .game-shot {
+      display: block; border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 8px; overflow: hidden;
+    }
+    .game-shot img { display: block; width: 100%; height: auto; }
+    .game-movies { display: grid; gap: 16px; margin: 20px 0; }
+    .game-movie { margin: 0; }
+    .game-movie video {
+      display: block; width: 100%; height: auto;
+      border-radius: 8px; background: #000;
+    }
+    .game-movie figcaption { margin-top: 6px; font-size: 13px; color: var(--text-faint); }
+    .game-video {
+      position: relative; cursor: pointer; overflow: hidden;
+      border-radius: 8px; background: #000; aspect-ratio: 16 / 9;
+    }
+    .game-video img { display: block; width: 100%; height: 100%; object-fit: cover; }
+    .game-video-play { position: absolute; inset: 0; display: grid; place-items: center; }
+    .game-video-play::before {
+      content: ''; width: 58px; height: 58px; border-radius: 50%;
+      background: rgba(0,0,0,0.5); border: 2px solid rgba(255,255,255,0.75);
+    }
+    .game-video-play::after {
+      content: ''; position: absolute; margin-left: 5px;
+      border-style: solid; border-width: 11px 0 11px 18px;
+      border-color: transparent transparent transparent #fff;
+    }
+    .game-video-el { display: block; width: 100%; height: 100%; background: #000; }
   </style>
 </head>
 <body>
@@ -150,7 +182,7 @@
 
     <article class="article-body">
 
-      <p>Delta woke up in the classroom. Around her, her classmates had turned into mindless monsters. After experiencing all of this, Delta realized she had been deceived. Amid confusion and doubt, she gradually uncovered the truth about herself and Yidhra's existence.</p>
+      
 
       <div class="game-stats-grid">
         <div class="game-stat-card">
@@ -166,10 +198,6 @@
           <div class="label">Владельцев (оценка)</div>
           <div class="value">0 – 20,000</div>
         </div>
-        <div class="game-stat-card">
-          <div class="label">Среднее время игры</div>
-          <div class="value">нет данных</div>
-        </div>
       </div>
 
       <h2>Об игре</h2>
@@ -183,7 +211,24 @@
         </a>
       </p>
 
-      <p style="color: var(--text-faint); font-size: 13px; margin-top: 30px;">
+            <h2>Скриншоты</h2>
+      <div class="game-shots">
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4643800/f3010e0dcdb5ad9d7cdc10cf7f98c45be237dfe1/ss_f3010e0dcdb5ad9d7cdc10cf7f98c45be237dfe1.1920x1080.jpg?t=1790050329" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4643800/f3010e0dcdb5ad9d7cdc10cf7f98c45be237dfe1/ss_f3010e0dcdb5ad9d7cdc10cf7f98c45be237dfe1.600x338.jpg?t=1790050329" alt="The Blood of Yidhra — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4643800/893961fb2e6fc8c8877743112fbef4c6efd26c55/ss_893961fb2e6fc8c8877743112fbef4c6efd26c55.1920x1080.jpg?t=1790050329" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4643800/893961fb2e6fc8c8877743112fbef4c6efd26c55/ss_893961fb2e6fc8c8877743112fbef4c6efd26c55.600x338.jpg?t=1790050329" alt="The Blood of Yidhra — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4643800/28a2f5bb2c4cfb79dbb44fa20f4d820aa80345b4/ss_28a2f5bb2c4cfb79dbb44fa20f4d820aa80345b4.1920x1080.jpg?t=1790050329" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4643800/28a2f5bb2c4cfb79dbb44fa20f4d820aa80345b4/ss_28a2f5bb2c4cfb79dbb44fa20f4d820aa80345b4.600x338.jpg?t=1790050329" alt="The Blood of Yidhra — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4643800/8ca7a03a15ebe4d9b437d8574231dc73904e8b0b/ss_8ca7a03a15ebe4d9b437d8574231dc73904e8b0b.1920x1080.jpg?t=1790050329" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4643800/8ca7a03a15ebe4d9b437d8574231dc73904e8b0b/ss_8ca7a03a15ebe4d9b437d8574231dc73904e8b0b.600x338.jpg?t=1790050329" alt="The Blood of Yidhra — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4643800/aec4f6667108227272fb140f43b795406182ace5/ss_aec4f6667108227272fb140f43b795406182ace5.1920x1080.jpg?t=1790050329" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4643800/aec4f6667108227272fb140f43b795406182ace5/ss_aec4f6667108227272fb140f43b795406182ace5.600x338.jpg?t=1790050329" alt="The Blood of Yidhra — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4643800/17c9f7caec95a29d87daccc56303479cd2e8a2fa/ss_17c9f7caec95a29d87daccc56303479cd2e8a2fa.1920x1080.jpg?t=1790050329" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4643800/17c9f7caec95a29d87daccc56303479cd2e8a2fa/ss_17c9f7caec95a29d87daccc56303479cd2e8a2fa.600x338.jpg?t=1790050329" alt="The Blood of Yidhra — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4643800/2a7af458403dbfb9232ec437365f80565c8256b6/ss_2a7af458403dbfb9232ec437365f80565c8256b6.1920x1080.jpg?t=1790050329" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4643800/2a7af458403dbfb9232ec437365f80565c8256b6/ss_2a7af458403dbfb9232ec437365f80565c8256b6.600x338.jpg?t=1790050329" alt="The Blood of Yidhra — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4643800/0ac7a6a67153d3d37df4e9fa205d7459178f811a/ss_0ac7a6a67153d3d37df4e9fa205d7459178f811a.1920x1080.jpg?t=1790050329" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4643800/0ac7a6a67153d3d37df4e9fa205d7459178f811a/ss_0ac7a6a67153d3d37df4e9fa205d7459178f811a.600x338.jpg?t=1790050329" alt="The Blood of Yidhra — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+      </div>
+
+      <h2>Геймплей</h2>
+      <div class="game-movies">
+        <figure class="game-movie"><div class="game-video" data-hls="https://video.akamai.steamstatic.com/store_trailers/4643800/590623741/c621e406cc0d42a61bf8ac4458c2a195328b7119/1779272744/hls_264_master.m3u8?t=1787649098" data-poster="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257339989/0c3957aa72f2fe13603613ea4fb6a8544d72c82f/movie_600x337.jpg?t=1787649098" role="button" tabindex="0" aria-label="Смотреть геймплей: STWPY01"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257339989/0c3957aa72f2fe13603613ea4fb6a8544d72c82f/movie_600x337.jpg?t=1787649098" alt="" loading="lazy" width="480" height="270" /><span class="game-video-play" aria-hidden="true"></span></div></figure>
+      </div>
+
+<p style="color: var(--text-faint); font-size: 13px; margin-top: 30px;">
         Данные о цене, отзывах и статистике обновляются автоматически на основе
         Steam Store API и SteamSpy.
       </p>
@@ -284,5 +329,6 @@ function declineCookies() {
 })();
 </script>
 <script src="/newsletter.js?v=2" defer></script>
+<script defer src="/game-media.js?v=1"></script>
 </body>
 </html>

@@ -112,6 +112,38 @@
     }
     .game-stat-card .label { font-size: 12px; color: var(--text-faint); text-transform: uppercase; }
     .game-stat-card .value { font-size: 20px; font-weight: bold; margin-top: 4px; }
+    .game-shots {
+      display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+      gap: 12px; margin: 20px 0;
+    }
+    .game-shot {
+      display: block; border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 8px; overflow: hidden;
+    }
+    .game-shot img { display: block; width: 100%; height: auto; }
+    .game-movies { display: grid; gap: 16px; margin: 20px 0; }
+    .game-movie { margin: 0; }
+    .game-movie video {
+      display: block; width: 100%; height: auto;
+      border-radius: 8px; background: #000;
+    }
+    .game-movie figcaption { margin-top: 6px; font-size: 13px; color: var(--text-faint); }
+    .game-video {
+      position: relative; cursor: pointer; overflow: hidden;
+      border-radius: 8px; background: #000; aspect-ratio: 16 / 9;
+    }
+    .game-video img { display: block; width: 100%; height: 100%; object-fit: cover; }
+    .game-video-play { position: absolute; inset: 0; display: grid; place-items: center; }
+    .game-video-play::before {
+      content: ''; width: 58px; height: 58px; border-radius: 50%;
+      background: rgba(0,0,0,0.5); border: 2px solid rgba(255,255,255,0.75);
+    }
+    .game-video-play::after {
+      content: ''; position: absolute; margin-left: 5px;
+      border-style: solid; border-width: 11px 0 11px 18px;
+      border-color: transparent transparent transparent #fff;
+    }
+    .game-video-el { display: block; width: 100%; height: 100%; background: #000; }
   </style>
 </head>
 <body>
@@ -150,7 +182,7 @@
 
     <article class="article-body">
 
-      <p>Every legend has a day job. Beer League Hockey delivers fast arcade hockey with monster slap shots, one-timers, big hits, hockey fights, Franchise progression, and skill games. Find the seam, beat the goalie, and rip the twine.</p>
+      
 
       <div class="game-stats-grid">
         <div class="game-stat-card">
@@ -166,10 +198,6 @@
           <div class="label">Владельцев (оценка)</div>
           <div class="value">0 – 20,000</div>
         </div>
-        <div class="game-stat-card">
-          <div class="label">Среднее время игры</div>
-          <div class="value">нет данных</div>
-        </div>
       </div>
 
       <h2>Об игре</h2>
@@ -183,7 +211,23 @@
         </a>
       </p>
 
-      <p style="color: var(--text-faint); font-size: 13px; margin-top: 30px;">
+            <h2>Скриншоты</h2>
+      <div class="game-shots">
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5096560/0977dca7eaaf22930d193e09907c69bff079af5f/ss_0977dca7eaaf22930d193e09907c69bff079af5f.1920x1080.jpg?t=1791042207" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5096560/0977dca7eaaf22930d193e09907c69bff079af5f/ss_0977dca7eaaf22930d193e09907c69bff079af5f.600x338.jpg?t=1791042207" alt="Beer League Hockey — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5096560/1bc1d3a544afdc5abf295df3bc2d26f08e3a58f8/ss_1bc1d3a544afdc5abf295df3bc2d26f08e3a58f8.1920x1080.jpg?t=1791042207" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5096560/1bc1d3a544afdc5abf295df3bc2d26f08e3a58f8/ss_1bc1d3a544afdc5abf295df3bc2d26f08e3a58f8.600x338.jpg?t=1791042207" alt="Beer League Hockey — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5096560/0ca4b8874cc51f9838d5db0e7ce552dd0c2f8e40/ss_0ca4b8874cc51f9838d5db0e7ce552dd0c2f8e40.1920x1080.jpg?t=1791042207" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5096560/0ca4b8874cc51f9838d5db0e7ce552dd0c2f8e40/ss_0ca4b8874cc51f9838d5db0e7ce552dd0c2f8e40.600x338.jpg?t=1791042207" alt="Beer League Hockey — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5096560/d8add2be833036949a095305927ee03ea92edc4d/ss_d8add2be833036949a095305927ee03ea92edc4d.1920x1080.jpg?t=1791042207" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5096560/d8add2be833036949a095305927ee03ea92edc4d/ss_d8add2be833036949a095305927ee03ea92edc4d.600x338.jpg?t=1791042207" alt="Beer League Hockey — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5096560/c1588fed35b9488031fbddf336afb0bfeb1c5ce3/ss_c1588fed35b9488031fbddf336afb0bfeb1c5ce3.1920x1080.jpg?t=1791042207" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5096560/c1588fed35b9488031fbddf336afb0bfeb1c5ce3/ss_c1588fed35b9488031fbddf336afb0bfeb1c5ce3.600x338.jpg?t=1791042207" alt="Beer League Hockey — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5096560/15f6dee91e7cd72663bb91895d487c5d97e1066f/ss_15f6dee91e7cd72663bb91895d487c5d97e1066f.1920x1080.jpg?t=1791042207" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5096560/15f6dee91e7cd72663bb91895d487c5d97e1066f/ss_15f6dee91e7cd72663bb91895d487c5d97e1066f.600x338.jpg?t=1791042207" alt="Beer League Hockey — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+      </div>
+
+      <h2>Геймплей</h2>
+      <div class="game-movies">
+        <figure class="game-movie"><div class="game-video" data-hls="https://video.akamai.steamstatic.com/store_trailers/5096560/676416454/453c636cb12ffd42172189d0b1d043d15515512c/1791041545/hls_264_master.m3u8?t=1791042204" data-poster="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257427385/72568c30a32c65366278627de817ca1049151c6d/movie_600x337.jpg?t=1791042204" role="button" tabindex="0" aria-label="Смотреть геймплей: Gameplay &amp; Features"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257427385/72568c30a32c65366278627de817ca1049151c6d/movie_600x337.jpg?t=1791042204" alt="" loading="lazy" width="480" height="270" /><span class="game-video-play" aria-hidden="true"></span></div></figure>
+        <figure class="game-movie"><div class="game-video" data-hls="https://video.akamai.steamstatic.com/store_trailers/5096560/2114540360/2de96b682df2117c6a5e30a9736a2d0bb66a66d1/1788914260/hls_264_master.m3u8?t=1791042206" data-poster="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257420240/1050742c453922a15f53db6f278d3085a6aa2b84/movie_600x337.jpg?t=1791042206" role="button" tabindex="0" aria-label="Смотреть геймплей: Beer League Hockey - Official Cinematic Intro"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257420240/1050742c453922a15f53db6f278d3085a6aa2b84/movie_600x337.jpg?t=1791042206" alt="" loading="lazy" width="480" height="270" /><span class="game-video-play" aria-hidden="true"></span></div></figure>
+      </div>
+
+<p style="color: var(--text-faint); font-size: 13px; margin-top: 30px;">
         Данные о цене, отзывах и статистике обновляются автоматически на основе
         Steam Store API и SteamSpy.
       </p>
@@ -284,5 +328,6 @@ function declineCookies() {
 })();
 </script>
 <script src="/newsletter.js?v=2" defer></script>
+<script defer src="/game-media.js?v=1"></script>
 </body>
 </html>

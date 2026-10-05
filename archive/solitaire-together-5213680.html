@@ -108,6 +108,38 @@
     }
     .game-stat-card .label { font-size: 12px; color: var(--text-faint); text-transform: uppercase; }
     .game-stat-card .value { font-size: 20px; font-weight: bold; margin-top: 4px; }
+    .game-shots {
+      display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+      gap: 12px; margin: 20px 0;
+    }
+    .game-shot {
+      display: block; border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 8px; overflow: hidden;
+    }
+    .game-shot img { display: block; width: 100%; height: auto; }
+    .game-movies { display: grid; gap: 16px; margin: 20px 0; }
+    .game-movie { margin: 0; }
+    .game-movie video {
+      display: block; width: 100%; height: auto;
+      border-radius: 8px; background: #000;
+    }
+    .game-movie figcaption { margin-top: 6px; font-size: 13px; color: var(--text-faint); }
+    .game-video {
+      position: relative; cursor: pointer; overflow: hidden;
+      border-radius: 8px; background: #000; aspect-ratio: 16 / 9;
+    }
+    .game-video img { display: block; width: 100%; height: 100%; object-fit: cover; }
+    .game-video-play { position: absolute; inset: 0; display: grid; place-items: center; }
+    .game-video-play::before {
+      content: ''; width: 58px; height: 58px; border-radius: 50%;
+      background: rgba(0,0,0,0.5); border: 2px solid rgba(255,255,255,0.75);
+    }
+    .game-video-play::after {
+      content: ''; position: absolute; margin-left: 5px;
+      border-style: solid; border-width: 11px 0 11px 18px;
+      border-color: transparent transparent transparent #fff;
+    }
+    .game-video-el { display: block; width: 100%; height: 100%; background: #000; }
   </style>
 </head>
 <body>
@@ -162,10 +194,6 @@
           <div class="label">Владельцев (оценка)</div>
           <div class="value">0 – 20,000</div>
         </div>
-        <div class="game-stat-card">
-          <div class="label">Среднее время игры</div>
-          <div class="value">нет данных</div>
-        </div>
       </div>
 
       <h2>Об игре</h2>
@@ -179,7 +207,22 @@
         </a>
       </p>
 
-      <p style="color: var(--text-faint); font-size: 13px; margin-top: 30px;">
+            <h2>Скриншоты</h2>
+      <div class="game-shots">
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5213680/c3b1b5a0a2ee051cfa9ef7ba28d1110f54fd3677/ss_c3b1b5a0a2ee051cfa9ef7ba28d1110f54fd3677.1920x1080.jpg?t=1790495665" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5213680/c3b1b5a0a2ee051cfa9ef7ba28d1110f54fd3677/ss_c3b1b5a0a2ee051cfa9ef7ba28d1110f54fd3677.600x338.jpg?t=1790495665" alt="Solitaire Together — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5213680/8193060ac66cb75671bb23500a754e2c45d9db8b/ss_8193060ac66cb75671bb23500a754e2c45d9db8b.1920x1080.jpg?t=1790495665" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5213680/8193060ac66cb75671bb23500a754e2c45d9db8b/ss_8193060ac66cb75671bb23500a754e2c45d9db8b.600x338.jpg?t=1790495665" alt="Solitaire Together — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5213680/70c8a48e998e8800c85caf9d1ef40a6f63f74f38/ss_70c8a48e998e8800c85caf9d1ef40a6f63f74f38.1920x1080.jpg?t=1790495665" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5213680/70c8a48e998e8800c85caf9d1ef40a6f63f74f38/ss_70c8a48e998e8800c85caf9d1ef40a6f63f74f38.600x338.jpg?t=1790495665" alt="Solitaire Together — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5213680/e3f458ae762cc2be0735aef588777987c50d7773/ss_e3f458ae762cc2be0735aef588777987c50d7773.1920x1080.jpg?t=1790495665" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5213680/e3f458ae762cc2be0735aef588777987c50d7773/ss_e3f458ae762cc2be0735aef588777987c50d7773.600x338.jpg?t=1790495665" alt="Solitaire Together — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5213680/b8dcc4a948bb458c2fa36cad2a59a0efe2694fd0/ss_b8dcc4a948bb458c2fa36cad2a59a0efe2694fd0.1920x1080.jpg?t=1790495665" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5213680/b8dcc4a948bb458c2fa36cad2a59a0efe2694fd0/ss_b8dcc4a948bb458c2fa36cad2a59a0efe2694fd0.600x338.jpg?t=1790495665" alt="Solitaire Together — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+      </div>
+
+      <h2>Геймплей</h2>
+      <div class="game-movies">
+        <figure class="game-movie"><div class="game-video" data-hls="https://video.akamai.steamstatic.com/store_trailers/5213680/1275094898/b21016c1db0a5a91da9cc068382f8a8c1d0cedbb/1789298987/hls_264_master.m3u8?t=1789320599" data-poster="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257423882/23503a5110fe4d04c82bb048047188812a0d5e1a/movie_600x337.jpg?t=1789320599" role="button" tabindex="0" aria-label="Смотреть геймплей: Gameplay Trailer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257423882/23503a5110fe4d04c82bb048047188812a0d5e1a/movie_600x337.jpg?t=1789320599" alt="" loading="lazy" width="480" height="270" /><span class="game-video-play" aria-hidden="true"></span></div></figure>
+        <figure class="game-movie"><div class="game-video" data-hls="https://video.akamai.steamstatic.com/store_trailers/5213680/1874635095/7449827905b844d589b4b52cab3ba1fb16c8c3eb/1789905868/hls_264_master.m3u8?t=1789906417" data-poster="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257429879/a5ddb97f8ac7b69a83b8addb4fcfce89e552e1b0/movie_600x337.jpg?t=1789906417" role="button" tabindex="0" aria-label="Смотреть геймплей: Cat Trailer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257429879/a5ddb97f8ac7b69a83b8addb4fcfce89e552e1b0/movie_600x337.jpg?t=1789906417" alt="" loading="lazy" width="480" height="270" /><span class="game-video-play" aria-hidden="true"></span></div></figure>
+      </div>
+
+<p style="color: var(--text-faint); font-size: 13px; margin-top: 30px;">
         Данные о цене, отзывах и статистике обновляются автоматически на основе
         Steam Store API и SteamSpy.
       </p>
@@ -280,5 +323,6 @@ function declineCookies() {
 })();
 </script>
 <script src="/newsletter.js?v=2" defer></script>
+<script defer src="/game-media.js?v=1"></script>
 </body>
 </html>

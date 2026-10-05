@@ -112,6 +112,38 @@
     }
     .game-stat-card .label { font-size: 12px; color: var(--text-faint); text-transform: uppercase; }
     .game-stat-card .value { font-size: 20px; font-weight: bold; margin-top: 4px; }
+    .game-shots {
+      display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+      gap: 12px; margin: 20px 0;
+    }
+    .game-shot {
+      display: block; border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 8px; overflow: hidden;
+    }
+    .game-shot img { display: block; width: 100%; height: auto; }
+    .game-movies { display: grid; gap: 16px; margin: 20px 0; }
+    .game-movie { margin: 0; }
+    .game-movie video {
+      display: block; width: 100%; height: auto;
+      border-radius: 8px; background: #000;
+    }
+    .game-movie figcaption { margin-top: 6px; font-size: 13px; color: var(--text-faint); }
+    .game-video {
+      position: relative; cursor: pointer; overflow: hidden;
+      border-radius: 8px; background: #000; aspect-ratio: 16 / 9;
+    }
+    .game-video img { display: block; width: 100%; height: 100%; object-fit: cover; }
+    .game-video-play { position: absolute; inset: 0; display: grid; place-items: center; }
+    .game-video-play::before {
+      content: ''; width: 58px; height: 58px; border-radius: 50%;
+      background: rgba(0,0,0,0.5); border: 2px solid rgba(255,255,255,0.75);
+    }
+    .game-video-play::after {
+      content: ''; position: absolute; margin-left: 5px;
+      border-style: solid; border-width: 11px 0 11px 18px;
+      border-color: transparent transparent transparent #fff;
+    }
+    .game-video-el { display: block; width: 100%; height: 100%; background: #000; }
   </style>
 </head>
 <body>
@@ -166,10 +198,6 @@
           <div class="label">Владельцев (оценка)</div>
           <div class="value">0 – 20,000</div>
         </div>
-        <div class="game-stat-card">
-          <div class="label">Среднее время игры</div>
-          <div class="value">нет данных</div>
-        </div>
       </div>
 
       <h2>Об игре</h2>
@@ -183,7 +211,28 @@
         </a>
       </p>
 
-      <p style="color: var(--text-faint); font-size: 13px; margin-top: 30px;">
+            <h2>Скриншоты</h2>
+      <div class="game-shots">
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3464000/a2907a69ea93ca06db1e4959e492ce6b9c3e5058/ss_a2907a69ea93ca06db1e4959e492ce6b9c3e5058.1920x1080.jpg?t=1790668829" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3464000/a2907a69ea93ca06db1e4959e492ce6b9c3e5058/ss_a2907a69ea93ca06db1e4959e492ce6b9c3e5058.600x338.jpg?t=1790668829" alt="Eropsychosis: The Project Elysiara — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3464000/5e4888bcc6dac020f40ac3fdfef5c030c8ef29f5/ss_5e4888bcc6dac020f40ac3fdfef5c030c8ef29f5.1920x1080.jpg?t=1790668829" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3464000/5e4888bcc6dac020f40ac3fdfef5c030c8ef29f5/ss_5e4888bcc6dac020f40ac3fdfef5c030c8ef29f5.600x338.jpg?t=1790668829" alt="Eropsychosis: The Project Elysiara — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3464000/be2aa296bc0bc4205c831b10e61ead25ebd3adcd/ss_be2aa296bc0bc4205c831b10e61ead25ebd3adcd.1920x1080.jpg?t=1790668829" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3464000/be2aa296bc0bc4205c831b10e61ead25ebd3adcd/ss_be2aa296bc0bc4205c831b10e61ead25ebd3adcd.600x338.jpg?t=1790668829" alt="Eropsychosis: The Project Elysiara — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3464000/e9cc8569c38cd5fbaa64efe1e18ecb7bdf40c626/ss_e9cc8569c38cd5fbaa64efe1e18ecb7bdf40c626.1920x1080.jpg?t=1790668829" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3464000/e9cc8569c38cd5fbaa64efe1e18ecb7bdf40c626/ss_e9cc8569c38cd5fbaa64efe1e18ecb7bdf40c626.600x338.jpg?t=1790668829" alt="Eropsychosis: The Project Elysiara — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3464000/160edf5cd32e6452b56e678d0642dcb6b643b2f6/ss_160edf5cd32e6452b56e678d0642dcb6b643b2f6.1920x1080.jpg?t=1790668829" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3464000/160edf5cd32e6452b56e678d0642dcb6b643b2f6/ss_160edf5cd32e6452b56e678d0642dcb6b643b2f6.600x338.jpg?t=1790668829" alt="Eropsychosis: The Project Elysiara — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3464000/f61c467a8c3a06dfff86999314be6d573b0d8404/ss_f61c467a8c3a06dfff86999314be6d573b0d8404.1920x1080.jpg?t=1790668829" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3464000/f61c467a8c3a06dfff86999314be6d573b0d8404/ss_f61c467a8c3a06dfff86999314be6d573b0d8404.600x338.jpg?t=1790668829" alt="Eropsychosis: The Project Elysiara — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3464000/215b95737b30d4a62673e2f023cb23dea69f23b1/ss_215b95737b30d4a62673e2f023cb23dea69f23b1.1920x1080.jpg?t=1790668829" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3464000/215b95737b30d4a62673e2f023cb23dea69f23b1/ss_215b95737b30d4a62673e2f023cb23dea69f23b1.600x338.jpg?t=1790668829" alt="Eropsychosis: The Project Elysiara — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3464000/c455a6c0e1a225a85f3dab980fee5a3399131f54/ss_c455a6c0e1a225a85f3dab980fee5a3399131f54.1920x1080.jpg?t=1790668829" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3464000/c455a6c0e1a225a85f3dab980fee5a3399131f54/ss_c455a6c0e1a225a85f3dab980fee5a3399131f54.600x338.jpg?t=1790668829" alt="Eropsychosis: The Project Elysiara — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3464000/5d97c3b1fc9a2823a22af956c9f081b119e9e6d8/ss_5d97c3b1fc9a2823a22af956c9f081b119e9e6d8.1920x1080.jpg?t=1790668829" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3464000/5d97c3b1fc9a2823a22af956c9f081b119e9e6d8/ss_5d97c3b1fc9a2823a22af956c9f081b119e9e6d8.600x338.jpg?t=1790668829" alt="Eropsychosis: The Project Elysiara — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3464000/95986cb71747042f7af28e8e42663a36afba4c39/ss_95986cb71747042f7af28e8e42663a36afba4c39.1920x1080.jpg?t=1790668829" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3464000/95986cb71747042f7af28e8e42663a36afba4c39/ss_95986cb71747042f7af28e8e42663a36afba4c39.600x338.jpg?t=1790668829" alt="Eropsychosis: The Project Elysiara — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3464000/97d4c1332fb50190f7d44373f32feb84d95a6ccd/ss_97d4c1332fb50190f7d44373f32feb84d95a6ccd.1920x1080.jpg?t=1790668829" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3464000/97d4c1332fb50190f7d44373f32feb84d95a6ccd/ss_97d4c1332fb50190f7d44373f32feb84d95a6ccd.600x338.jpg?t=1790668829" alt="Eropsychosis: The Project Elysiara — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3464000/94b6bd0f74e12aec27bd87a8d5d0703398482412/ss_94b6bd0f74e12aec27bd87a8d5d0703398482412.1920x1080.jpg?t=1790668829" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3464000/94b6bd0f74e12aec27bd87a8d5d0703398482412/ss_94b6bd0f74e12aec27bd87a8d5d0703398482412.600x338.jpg?t=1790668829" alt="Eropsychosis: The Project Elysiara — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+      </div>
+
+      <h2>Геймплей</h2>
+      <div class="game-movies">
+        <figure class="game-movie"><div class="game-video" data-hls="https://video.akamai.steamstatic.com/store_trailers/3464000/244886359/2315b55c8a6127e839a328fb2ca8041e09fa30dc/1790397253/hls_264_master.m3u8?t=1790397802" data-poster="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257235225/ad033b69f2bb372209262677aaf27dc3d274016e/movie_600x337.jpg?t=1790397802" role="button" tabindex="0" aria-label="Смотреть геймплей: Eropsychosis_PV_EN"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257235225/ad033b69f2bb372209262677aaf27dc3d274016e/movie_600x337.jpg?t=1790397802" alt="" loading="lazy" width="480" height="270" /><span class="game-video-play" aria-hidden="true"></span></div></figure>
+      </div>
+
+<p style="color: var(--text-faint); font-size: 13px; margin-top: 30px;">
         Данные о цене, отзывах и статистике обновляются автоматически на основе
         Steam Store API и SteamSpy.
       </p>
@@ -284,5 +333,6 @@ function declineCookies() {
 })();
 </script>
 <script src="/newsletter.js?v=2" defer></script>
+<script defer src="/game-media.js?v=1"></script>
 </body>
 </html>

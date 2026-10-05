@@ -112,6 +112,38 @@
     }
     .game-stat-card .label { font-size: 12px; color: var(--text-faint); text-transform: uppercase; }
     .game-stat-card .value { font-size: 20px; font-weight: bold; margin-top: 4px; }
+    .game-shots {
+      display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+      gap: 12px; margin: 20px 0;
+    }
+    .game-shot {
+      display: block; border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 8px; overflow: hidden;
+    }
+    .game-shot img { display: block; width: 100%; height: auto; }
+    .game-movies { display: grid; gap: 16px; margin: 20px 0; }
+    .game-movie { margin: 0; }
+    .game-movie video {
+      display: block; width: 100%; height: auto;
+      border-radius: 8px; background: #000;
+    }
+    .game-movie figcaption { margin-top: 6px; font-size: 13px; color: var(--text-faint); }
+    .game-video {
+      position: relative; cursor: pointer; overflow: hidden;
+      border-radius: 8px; background: #000; aspect-ratio: 16 / 9;
+    }
+    .game-video img { display: block; width: 100%; height: 100%; object-fit: cover; }
+    .game-video-play { position: absolute; inset: 0; display: grid; place-items: center; }
+    .game-video-play::before {
+      content: ''; width: 58px; height: 58px; border-radius: 50%;
+      background: rgba(0,0,0,0.5); border: 2px solid rgba(255,255,255,0.75);
+    }
+    .game-video-play::after {
+      content: ''; position: absolute; margin-left: 5px;
+      border-style: solid; border-width: 11px 0 11px 18px;
+      border-color: transparent transparent transparent #fff;
+    }
+    .game-video-el { display: block; width: 100%; height: 100%; background: #000; }
   </style>
 </head>
 <body>
@@ -150,7 +182,7 @@
 
     <article class="article-body">
 
-      <p>Wear the ever-changing battle suit “Gear” and scatter the grotesque enemies! Simple controls deliver exhilarating stylish action. Freely combine a rich arsenal of special moves and unleash relentless combos. In a devastated near-future setting—gorgeous, powerful, and sexy!</p>
+      
 
       <div class="game-stats-grid">
         <div class="game-stat-card">
@@ -166,10 +198,6 @@
           <div class="label">Владельцев (оценка)</div>
           <div class="value">0 – 20,000</div>
         </div>
-        <div class="game-stat-card">
-          <div class="label">Среднее время игры</div>
-          <div class="value">нет данных</div>
-        </div>
       </div>
 
       <h2>Об игре</h2>
@@ -183,7 +211,25 @@
         </a>
       </p>
 
-      <p style="color: var(--text-faint); font-size: 13px; margin-top: 30px;">
+            <h2>Скриншоты</h2>
+      <div class="game-shots">
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4150170/a95895c22115bd82b2be4bc58c34389af4caf4df/ss_a95895c22115bd82b2be4bc58c34389af4caf4df.1920x1080.jpg?t=1790580737" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4150170/a95895c22115bd82b2be4bc58c34389af4caf4df/ss_a95895c22115bd82b2be4bc58c34389af4caf4df.600x338.jpg?t=1790580737" alt="DARK HUNTER KURO — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4150170/39991b9edfb6dc01ec03889b88bdd81889b3facb/ss_39991b9edfb6dc01ec03889b88bdd81889b3facb.1920x1080.jpg?t=1790580737" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4150170/39991b9edfb6dc01ec03889b88bdd81889b3facb/ss_39991b9edfb6dc01ec03889b88bdd81889b3facb.600x338.jpg?t=1790580737" alt="DARK HUNTER KURO — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4150170/4f6e9d6e0083674d15ec928588468857741add4f/ss_4f6e9d6e0083674d15ec928588468857741add4f.1920x1080.jpg?t=1790580737" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4150170/4f6e9d6e0083674d15ec928588468857741add4f/ss_4f6e9d6e0083674d15ec928588468857741add4f.600x338.jpg?t=1790580737" alt="DARK HUNTER KURO — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4150170/813d4401c1ce0a3607f0208773611c4eaacec018/ss_813d4401c1ce0a3607f0208773611c4eaacec018.1920x1080.jpg?t=1790580737" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4150170/813d4401c1ce0a3607f0208773611c4eaacec018/ss_813d4401c1ce0a3607f0208773611c4eaacec018.600x338.jpg?t=1790580737" alt="DARK HUNTER KURO — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4150170/caf6bde1824588999707a729e4504b0107f92ba8/ss_caf6bde1824588999707a729e4504b0107f92ba8.1920x1080.jpg?t=1790580737" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4150170/caf6bde1824588999707a729e4504b0107f92ba8/ss_caf6bde1824588999707a729e4504b0107f92ba8.600x338.jpg?t=1790580737" alt="DARK HUNTER KURO — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4150170/788f1651acbd9172fedcdf03405e3a9918a69cf4/ss_788f1651acbd9172fedcdf03405e3a9918a69cf4.1920x1080.jpg?t=1790580737" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4150170/788f1651acbd9172fedcdf03405e3a9918a69cf4/ss_788f1651acbd9172fedcdf03405e3a9918a69cf4.600x338.jpg?t=1790580737" alt="DARK HUNTER KURO — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4150170/c9dc79acd044715586b8bf550242b11f5fdf7e0e/ss_c9dc79acd044715586b8bf550242b11f5fdf7e0e.1920x1080.jpg?t=1790580737" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4150170/c9dc79acd044715586b8bf550242b11f5fdf7e0e/ss_c9dc79acd044715586b8bf550242b11f5fdf7e0e.600x338.jpg?t=1790580737" alt="DARK HUNTER KURO — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4150170/179c75dfd3d0f6beb1405d01f5d6c5a5ef97eaa9/ss_179c75dfd3d0f6beb1405d01f5d6c5a5ef97eaa9.1920x1080.jpg?t=1790580737" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4150170/179c75dfd3d0f6beb1405d01f5d6c5a5ef97eaa9/ss_179c75dfd3d0f6beb1405d01f5d6c5a5ef97eaa9.600x338.jpg?t=1790580737" alt="DARK HUNTER KURO — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+      </div>
+
+      <h2>Геймплей</h2>
+      <div class="game-movies">
+        <figure class="game-movie"><div class="game-video" data-hls="https://video.akamai.steamstatic.com/store_trailers/4150170/1535972223/b86a8c6c3157d880f8d695cc31dcae9a9a6b69a5/1774621734/hls_264_master.m3u8?t=1774621964" data-poster="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257310175/0d7c66b40cdbdb9d224c25da24572fe6223c485d/movie_600x337.jpg?t=1774621964" role="button" tabindex="0" aria-label="Смотреть геймплей: en"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257310175/0d7c66b40cdbdb9d224c25da24572fe6223c485d/movie_600x337.jpg?t=1774621964" alt="" loading="lazy" width="480" height="270" /><span class="game-video-play" aria-hidden="true"></span></div></figure>
+        <figure class="game-movie"><div class="game-video" data-hls="https://video.akamai.steamstatic.com/store_trailers/4150170/1278292538/68533b5bee02ff3597a874bc432111f4283c249e/1782891053/hls_264_master.m3u8?t=1782892177" data-poster="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257368776/71ea45f68be23639c632bc59d559899b65199667/movie_600x337.jpg?t=1782892177" role="button" tabindex="0" aria-label="Смотреть геймплей: Trailer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257368776/71ea45f68be23639c632bc59d559899b65199667/movie_600x337.jpg?t=1782892177" alt="" loading="lazy" width="480" height="270" /><span class="game-video-play" aria-hidden="true"></span></div></figure>
+      </div>
+
+<p style="color: var(--text-faint); font-size: 13px; margin-top: 30px;">
         Данные о цене, отзывах и статистике обновляются автоматически на основе
         Steam Store API и SteamSpy.
       </p>
@@ -284,5 +330,6 @@ function declineCookies() {
 })();
 </script>
 <script src="/newsletter.js?v=2" defer></script>
+<script defer src="/game-media.js?v=1"></script>
 </body>
 </html>

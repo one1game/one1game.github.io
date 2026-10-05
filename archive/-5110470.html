@@ -112,6 +112,38 @@
     }
     .game-stat-card .label { font-size: 12px; color: var(--text-faint); text-transform: uppercase; }
     .game-stat-card .value { font-size: 20px; font-weight: bold; margin-top: 4px; }
+    .game-shots {
+      display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+      gap: 12px; margin: 20px 0;
+    }
+    .game-shot {
+      display: block; border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 8px; overflow: hidden;
+    }
+    .game-shot img { display: block; width: 100%; height: auto; }
+    .game-movies { display: grid; gap: 16px; margin: 20px 0; }
+    .game-movie { margin: 0; }
+    .game-movie video {
+      display: block; width: 100%; height: auto;
+      border-radius: 8px; background: #000;
+    }
+    .game-movie figcaption { margin-top: 6px; font-size: 13px; color: var(--text-faint); }
+    .game-video {
+      position: relative; cursor: pointer; overflow: hidden;
+      border-radius: 8px; background: #000; aspect-ratio: 16 / 9;
+    }
+    .game-video img { display: block; width: 100%; height: 100%; object-fit: cover; }
+    .game-video-play { position: absolute; inset: 0; display: grid; place-items: center; }
+    .game-video-play::before {
+      content: ''; width: 58px; height: 58px; border-radius: 50%;
+      background: rgba(0,0,0,0.5); border: 2px solid rgba(255,255,255,0.75);
+    }
+    .game-video-play::after {
+      content: ''; position: absolute; margin-left: 5px;
+      border-style: solid; border-width: 11px 0 11px 18px;
+      border-color: transparent transparent transparent #fff;
+    }
+    .game-video-el { display: block; width: 100%; height: 100%; background: #000; }
   </style>
 </head>
 <body>
@@ -150,7 +182,7 @@
 
     <article class="article-body">
 
-      <p>Cultivation blends sect management, character growth and top-down room combat. Recruit disciples, hatch spirit beasts, craft pills and artifacts, explore randomized trials, and plan every breakthrough within a finite lifespan as your sect rises from Qi Refining to Spirit Transformation.</p>
+      
 
       <div class="game-stats-grid">
         <div class="game-stat-card">
@@ -166,10 +198,6 @@
           <div class="label">Владельцев (оценка)</div>
           <div class="value">0 – 20,000</div>
         </div>
-        <div class="game-stat-card">
-          <div class="label">Среднее время игры</div>
-          <div class="value">нет данных</div>
-        </div>
       </div>
 
       <h2>Об игре</h2>
@@ -183,7 +211,28 @@
         </a>
       </p>
 
-      <p style="color: var(--text-faint); font-size: 13px; margin-top: 30px;">
+            <h2>Скриншоты</h2>
+      <div class="game-shots">
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5110470/8a8130ff348d3dc93d9efec9c6074285146c67b4/ss_8a8130ff348d3dc93d9efec9c6074285146c67b4.1920x1080.jpg?t=1789907739" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5110470/8a8130ff348d3dc93d9efec9c6074285146c67b4/ss_8a8130ff348d3dc93d9efec9c6074285146c67b4.600x338.jpg?t=1789907739" alt="Cultivation — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5110470/4b915f95c3a5df9741c5caa052a08ac671b73d91/ss_4b915f95c3a5df9741c5caa052a08ac671b73d91.1920x1080.jpg?t=1789907739" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5110470/4b915f95c3a5df9741c5caa052a08ac671b73d91/ss_4b915f95c3a5df9741c5caa052a08ac671b73d91.600x338.jpg?t=1789907739" alt="Cultivation — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5110470/d785c0c849c45c5dfeb47245c3f8dd6185745d7c/ss_d785c0c849c45c5dfeb47245c3f8dd6185745d7c.1920x1080.jpg?t=1789907739" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5110470/d785c0c849c45c5dfeb47245c3f8dd6185745d7c/ss_d785c0c849c45c5dfeb47245c3f8dd6185745d7c.600x338.jpg?t=1789907739" alt="Cultivation — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5110470/921d7895b7c5f72659e4963f828e4bc55cc10c0c/ss_921d7895b7c5f72659e4963f828e4bc55cc10c0c.1920x1080.jpg?t=1789907739" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5110470/921d7895b7c5f72659e4963f828e4bc55cc10c0c/ss_921d7895b7c5f72659e4963f828e4bc55cc10c0c.600x338.jpg?t=1789907739" alt="Cultivation — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5110470/25be62143265f72a102adfab4b5fc8b4b8f9496a/ss_25be62143265f72a102adfab4b5fc8b4b8f9496a.1920x1080.jpg?t=1789907739" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5110470/25be62143265f72a102adfab4b5fc8b4b8f9496a/ss_25be62143265f72a102adfab4b5fc8b4b8f9496a.600x338.jpg?t=1789907739" alt="Cultivation — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5110470/16f4db1113478a2b6ce6d4ed1d78b3b8e3d9b0b7/ss_16f4db1113478a2b6ce6d4ed1d78b3b8e3d9b0b7.1920x1080.jpg?t=1789907739" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5110470/16f4db1113478a2b6ce6d4ed1d78b3b8e3d9b0b7/ss_16f4db1113478a2b6ce6d4ed1d78b3b8e3d9b0b7.600x338.jpg?t=1789907739" alt="Cultivation — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5110470/7d0e79218d342c94894addbd18f3380ea9e86265/ss_7d0e79218d342c94894addbd18f3380ea9e86265.1920x1080.jpg?t=1789907739" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5110470/7d0e79218d342c94894addbd18f3380ea9e86265/ss_7d0e79218d342c94894addbd18f3380ea9e86265.600x338.jpg?t=1789907739" alt="Cultivation — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5110470/5f689ee82e1f3043df217d75698afe947c8e6f56/ss_5f689ee82e1f3043df217d75698afe947c8e6f56.1920x1080.jpg?t=1789907739" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5110470/5f689ee82e1f3043df217d75698afe947c8e6f56/ss_5f689ee82e1f3043df217d75698afe947c8e6f56.600x338.jpg?t=1789907739" alt="Cultivation — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5110470/e4b50ff841f59c4d6fd38c6e57d94f0963159dc1/ss_e4b50ff841f59c4d6fd38c6e57d94f0963159dc1.1920x1080.jpg?t=1789907739" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5110470/e4b50ff841f59c4d6fd38c6e57d94f0963159dc1/ss_e4b50ff841f59c4d6fd38c6e57d94f0963159dc1.600x338.jpg?t=1789907739" alt="Cultivation — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5110470/e888cb5221faf1b4d78cc5c3054dd26d45fb4813/ss_e888cb5221faf1b4d78cc5c3054dd26d45fb4813.1920x1080.jpg?t=1789907739" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5110470/e888cb5221faf1b4d78cc5c3054dd26d45fb4813/ss_e888cb5221faf1b4d78cc5c3054dd26d45fb4813.600x338.jpg?t=1789907739" alt="Cultivation — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5110470/954cf6a3028a9bfb44ca934d208f8ddf64317212/ss_954cf6a3028a9bfb44ca934d208f8ddf64317212.1920x1080.jpg?t=1789907739" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5110470/954cf6a3028a9bfb44ca934d208f8ddf64317212/ss_954cf6a3028a9bfb44ca934d208f8ddf64317212.600x338.jpg?t=1789907739" alt="Cultivation — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+      </div>
+
+      <h2>Геймплей</h2>
+      <div class="game-movies">
+        <figure class="game-movie"><div class="game-video" data-hls="https://video.akamai.steamstatic.com/store_trailers/5110470/1456735301/e2dc4812bcb821a5467421400a1a498c30e6cffb/1789903438/hls_264_master.m3u8?t=1789903998" data-poster="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257429849/b482951c210de33e156c27bd408913e1001f02af/movie_600x337.jpg?t=1789903998" role="button" tabindex="0" aria-label="Смотреть геймплей: gameplay recording"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257429849/b482951c210de33e156c27bd408913e1001f02af/movie_600x337.jpg?t=1789903998" alt="" loading="lazy" width="480" height="270" /><span class="game-video-play" aria-hidden="true"></span></div></figure>
+        <figure class="game-movie"><div class="game-video" data-hls="https://video.akamai.steamstatic.com/store_trailers/5110470/1290855864/e07189f5eb68a367637687bf7b6d2c9a9395d6ea/1786676967/hls_264_master.m3u8?t=1788653628" data-poster="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257398850/93d160ac55c92398032b26984afc5c26d8e5f1df/movie_600x337.jpg?t=1788653628" role="button" tabindex="0" aria-label="Смотреть геймплей: 修仙之凡界"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257398850/93d160ac55c92398032b26984afc5c26d8e5f1df/movie_600x337.jpg?t=1788653628" alt="" loading="lazy" width="480" height="270" /><span class="game-video-play" aria-hidden="true"></span></div></figure>
+      </div>
+
+<p style="color: var(--text-faint); font-size: 13px; margin-top: 30px;">
         Данные о цене, отзывах и статистике обновляются автоматически на основе
         Steam Store API и SteamSpy.
       </p>
@@ -284,5 +333,6 @@ function declineCookies() {
 })();
 </script>
 <script src="/newsletter.js?v=2" defer></script>
+<script defer src="/game-media.js?v=1"></script>
 </body>
 </html>

@@ -112,6 +112,38 @@
     }
     .game-stat-card .label { font-size: 12px; color: var(--text-faint); text-transform: uppercase; }
     .game-stat-card .value { font-size: 20px; font-weight: bold; margin-top: 4px; }
+    .game-shots {
+      display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+      gap: 12px; margin: 20px 0;
+    }
+    .game-shot {
+      display: block; border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 8px; overflow: hidden;
+    }
+    .game-shot img { display: block; width: 100%; height: auto; }
+    .game-movies { display: grid; gap: 16px; margin: 20px 0; }
+    .game-movie { margin: 0; }
+    .game-movie video {
+      display: block; width: 100%; height: auto;
+      border-radius: 8px; background: #000;
+    }
+    .game-movie figcaption { margin-top: 6px; font-size: 13px; color: var(--text-faint); }
+    .game-video {
+      position: relative; cursor: pointer; overflow: hidden;
+      border-radius: 8px; background: #000; aspect-ratio: 16 / 9;
+    }
+    .game-video img { display: block; width: 100%; height: 100%; object-fit: cover; }
+    .game-video-play { position: absolute; inset: 0; display: grid; place-items: center; }
+    .game-video-play::before {
+      content: ''; width: 58px; height: 58px; border-radius: 50%;
+      background: rgba(0,0,0,0.5); border: 2px solid rgba(255,255,255,0.75);
+    }
+    .game-video-play::after {
+      content: ''; position: absolute; margin-left: 5px;
+      border-style: solid; border-width: 11px 0 11px 18px;
+      border-color: transparent transparent transparent #fff;
+    }
+    .game-video-el { display: block; width: 100%; height: 100%; background: #000; }
   </style>
 </head>
 <body>
@@ -150,7 +182,7 @@
 
     <article class="article-body">
 
-      <p>Lexilotl is a crossword puzzle run with letter and word guessing. A cozy intellectual word game. Finish the puzzle with at least one chance left and you move on to the next puzzle. Being a great speller is not required and you're not racing the clock, it's you vs. your previous best run.</p>
+      
 
       <div class="game-stats-grid">
         <div class="game-stat-card">
@@ -166,10 +198,6 @@
           <div class="label">Владельцев (оценка)</div>
           <div class="value">0 – 20,000</div>
         </div>
-        <div class="game-stat-card">
-          <div class="label">Среднее время игры</div>
-          <div class="value">нет данных</div>
-        </div>
       </div>
 
       <h2>Об игре</h2>
@@ -183,7 +211,21 @@
         </a>
       </p>
 
-      <p style="color: var(--text-faint); font-size: 13px; margin-top: 30px;">
+            <h2>Скриншоты</h2>
+      <div class="game-shots">
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4735750/863d9802ab07a6cd83442d57c0ce901d1cd30a63/ss_863d9802ab07a6cd83442d57c0ce901d1cd30a63.1920x1080.jpg?t=1790390399" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4735750/863d9802ab07a6cd83442d57c0ce901d1cd30a63/ss_863d9802ab07a6cd83442d57c0ce901d1cd30a63.600x338.jpg?t=1790390399" alt="Lexilotl: Crossword Puzzle Run — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4735750/0ab01b3472862662b7a7350c0ffb76096f5767e8/ss_0ab01b3472862662b7a7350c0ffb76096f5767e8.1920x1080.jpg?t=1790390399" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4735750/0ab01b3472862662b7a7350c0ffb76096f5767e8/ss_0ab01b3472862662b7a7350c0ffb76096f5767e8.600x338.jpg?t=1790390399" alt="Lexilotl: Crossword Puzzle Run — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4735750/46fcee320bd42d202ea1ef61d8ea933f3dbb199d/ss_46fcee320bd42d202ea1ef61d8ea933f3dbb199d.1920x1080.jpg?t=1790390399" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4735750/46fcee320bd42d202ea1ef61d8ea933f3dbb199d/ss_46fcee320bd42d202ea1ef61d8ea933f3dbb199d.600x338.jpg?t=1790390399" alt="Lexilotl: Crossword Puzzle Run — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4735750/16948cae3eed7a571a2a0197f7b05147800c7200/ss_16948cae3eed7a571a2a0197f7b05147800c7200.1920x1080.jpg?t=1790390399" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4735750/16948cae3eed7a571a2a0197f7b05147800c7200/ss_16948cae3eed7a571a2a0197f7b05147800c7200.600x338.jpg?t=1790390399" alt="Lexilotl: Crossword Puzzle Run — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4735750/86d8edd97aaaf725992170ba531e11001c2dfa96/ss_86d8edd97aaaf725992170ba531e11001c2dfa96.1920x1080.jpg?t=1790390399" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4735750/86d8edd97aaaf725992170ba531e11001c2dfa96/ss_86d8edd97aaaf725992170ba531e11001c2dfa96.600x338.jpg?t=1790390399" alt="Lexilotl: Crossword Puzzle Run — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+      </div>
+
+      <h2>Геймплей</h2>
+      <div class="game-movies">
+        <figure class="game-movie"><div class="game-video" data-hls="https://video.akamai.steamstatic.com/store_trailers/4735750/643761594/82e7215120809b240188677e0bb9e1f498807570/1788234899/hls_264_master.m3u8?t=1788645552" data-poster="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257414418/ef278f8220e1243bd87c979ddd8afa6915d9e4ca/movie_600x337.jpg?t=1788645552" role="button" tabindex="0" aria-label="Смотреть геймплей: Lexilotl First Trailer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257414418/ef278f8220e1243bd87c979ddd8afa6915d9e4ca/movie_600x337.jpg?t=1788645552" alt="" loading="lazy" width="480" height="270" /><span class="game-video-play" aria-hidden="true"></span></div></figure>
+      </div>
+
+<p style="color: var(--text-faint); font-size: 13px; margin-top: 30px;">
         Данные о цене, отзывах и статистике обновляются автоматически на основе
         Steam Store API и SteamSpy.
       </p>
@@ -284,5 +326,6 @@ function declineCookies() {
 })();
 </script>
 <script src="/newsletter.js?v=2" defer></script>
+<script defer src="/game-media.js?v=1"></script>
 </body>
 </html>

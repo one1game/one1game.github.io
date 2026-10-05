@@ -108,6 +108,38 @@
     }
     .game-stat-card .label { font-size: 12px; color: var(--text-faint); text-transform: uppercase; }
     .game-stat-card .value { font-size: 20px; font-weight: bold; margin-top: 4px; }
+    .game-shots {
+      display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+      gap: 12px; margin: 20px 0;
+    }
+    .game-shot {
+      display: block; border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 8px; overflow: hidden;
+    }
+    .game-shot img { display: block; width: 100%; height: auto; }
+    .game-movies { display: grid; gap: 16px; margin: 20px 0; }
+    .game-movie { margin: 0; }
+    .game-movie video {
+      display: block; width: 100%; height: auto;
+      border-radius: 8px; background: #000;
+    }
+    .game-movie figcaption { margin-top: 6px; font-size: 13px; color: var(--text-faint); }
+    .game-video {
+      position: relative; cursor: pointer; overflow: hidden;
+      border-radius: 8px; background: #000; aspect-ratio: 16 / 9;
+    }
+    .game-video img { display: block; width: 100%; height: 100%; object-fit: cover; }
+    .game-video-play { position: absolute; inset: 0; display: grid; place-items: center; }
+    .game-video-play::before {
+      content: ''; width: 58px; height: 58px; border-radius: 50%;
+      background: rgba(0,0,0,0.5); border: 2px solid rgba(255,255,255,0.75);
+    }
+    .game-video-play::after {
+      content: ''; position: absolute; margin-left: 5px;
+      border-style: solid; border-width: 11px 0 11px 18px;
+      border-color: transparent transparent transparent #fff;
+    }
+    .game-video-el { display: block; width: 100%; height: 100%; background: #000; }
   </style>
 </head>
 <body>
@@ -146,7 +178,7 @@
 
     <article class="article-body">
 
-      <p>Prediction Error is a first-person psychological meta-game. Wander a void maze of geometry and synapses under a cynical narrator's gaze. Endure the dread of high free energy, break the fourth wall, and face cognitive choices. No dopamine rewards here—only an existential stress test.</p>
+      
 
       <div class="game-stats-grid">
         <div class="game-stat-card">
@@ -162,10 +194,6 @@
           <div class="label">Владельцев (оценка)</div>
           <div class="value">0 – 20,000</div>
         </div>
-        <div class="game-stat-card">
-          <div class="label">Среднее время игры</div>
-          <div class="value">нет данных</div>
-        </div>
       </div>
 
       <h2>Об игре</h2>
@@ -179,7 +207,28 @@
         </a>
       </p>
 
-      <p style="color: var(--text-faint); font-size: 13px; margin-top: 30px;">
+            <h2>Скриншоты</h2>
+      <div class="game-shots">
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5227780/8a7e8d80004d14f1214e0313f39d099e4c64806d/ss_8a7e8d80004d14f1214e0313f39d099e4c64806d.1920x1080.jpg?t=1790833161" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5227780/8a7e8d80004d14f1214e0313f39d099e4c64806d/ss_8a7e8d80004d14f1214e0313f39d099e4c64806d.600x338.jpg?t=1790833161" alt="Prediction Error — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5227780/fe5c250cc381d6395f19493f49ec759e173488e3/ss_fe5c250cc381d6395f19493f49ec759e173488e3.1920x1080.jpg?t=1790833161" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5227780/fe5c250cc381d6395f19493f49ec759e173488e3/ss_fe5c250cc381d6395f19493f49ec759e173488e3.600x338.jpg?t=1790833161" alt="Prediction Error — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5227780/41ed4fbe4a6a6e71aca957c7830626f672c500f9/ss_41ed4fbe4a6a6e71aca957c7830626f672c500f9.1920x1080.jpg?t=1790833161" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5227780/41ed4fbe4a6a6e71aca957c7830626f672c500f9/ss_41ed4fbe4a6a6e71aca957c7830626f672c500f9.600x338.jpg?t=1790833161" alt="Prediction Error — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5227780/673b14c4d39153ec41d3f1284a63fd361dcbec07/ss_673b14c4d39153ec41d3f1284a63fd361dcbec07.1920x1080.jpg?t=1790833161" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5227780/673b14c4d39153ec41d3f1284a63fd361dcbec07/ss_673b14c4d39153ec41d3f1284a63fd361dcbec07.600x338.jpg?t=1790833161" alt="Prediction Error — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5227780/a0adf2699fdd6840d59acbe3da6fa60a8713426f/ss_a0adf2699fdd6840d59acbe3da6fa60a8713426f.1920x1080.jpg?t=1790833161" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5227780/a0adf2699fdd6840d59acbe3da6fa60a8713426f/ss_a0adf2699fdd6840d59acbe3da6fa60a8713426f.600x338.jpg?t=1790833161" alt="Prediction Error — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5227780/eba499b4e0842f997c44ca6e58bc93cd86e5630f/ss_eba499b4e0842f997c44ca6e58bc93cd86e5630f.1920x1080.jpg?t=1790833161" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5227780/eba499b4e0842f997c44ca6e58bc93cd86e5630f/ss_eba499b4e0842f997c44ca6e58bc93cd86e5630f.600x338.jpg?t=1790833161" alt="Prediction Error — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5227780/be121eeb27bb38ab64c13eda5d83731360cf2286/ss_be121eeb27bb38ab64c13eda5d83731360cf2286.1920x1080.jpg?t=1790833161" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5227780/be121eeb27bb38ab64c13eda5d83731360cf2286/ss_be121eeb27bb38ab64c13eda5d83731360cf2286.600x338.jpg?t=1790833161" alt="Prediction Error — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5227780/47e27f7fbbac2d4918386394ac1f3d45540b6ed8/ss_47e27f7fbbac2d4918386394ac1f3d45540b6ed8.1920x1080.jpg?t=1790833161" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5227780/47e27f7fbbac2d4918386394ac1f3d45540b6ed8/ss_47e27f7fbbac2d4918386394ac1f3d45540b6ed8.600x338.jpg?t=1790833161" alt="Prediction Error — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5227780/b4e427c52bf37da3f884f0b351fc010722d5c3dd/ss_b4e427c52bf37da3f884f0b351fc010722d5c3dd.1920x1080.jpg?t=1790833161" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5227780/b4e427c52bf37da3f884f0b351fc010722d5c3dd/ss_b4e427c52bf37da3f884f0b351fc010722d5c3dd.600x338.jpg?t=1790833161" alt="Prediction Error — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5227780/beadb1ab2fc5f4c3f5d92abdee99cccda67cb534/ss_beadb1ab2fc5f4c3f5d92abdee99cccda67cb534.1920x1080.jpg?t=1790833161" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5227780/beadb1ab2fc5f4c3f5d92abdee99cccda67cb534/ss_beadb1ab2fc5f4c3f5d92abdee99cccda67cb534.600x338.jpg?t=1790833161" alt="Prediction Error — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+      </div>
+
+      <h2>Геймплей</h2>
+      <div class="game-movies">
+        <figure class="game-movie"><div class="game-video" data-hls="https://video.akamai.steamstatic.com/store_trailers/5227780/2100099187/a6c6d77ef157aac4ad22a6e7fbc3c4c05fba5289/1789621822/hls_264_master.m3u8?t=1790833158" data-poster="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257427132/c91ed897a7087a15da7a709e2d4dfc3afc16ced0/movie_600x337.jpg?t=1790833158" role="button" tabindex="0" aria-label="Смотреть геймплей: Official Trailer - JP"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257427132/c91ed897a7087a15da7a709e2d4dfc3afc16ced0/movie_600x337.jpg?t=1790833158" alt="" loading="lazy" width="480" height="270" /><span class="game-video-play" aria-hidden="true"></span></div></figure>
+        <figure class="game-movie"><div class="game-video" data-hls="https://video.akamai.steamstatic.com/store_trailers/5227780/679138575/a9cc01ca8a2aadb62ef296fd77ec8c4934a2b8c6/1789622903/hls_264_master.m3u8?t=1790833159" data-poster="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257427124/c91ed897a7087a15da7a709e2d4dfc3afc16ced0/movie_600x337.jpg?t=1790833159" role="button" tabindex="0" aria-label="Смотреть геймплей: Official Trailer - EN"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257427124/c91ed897a7087a15da7a709e2d4dfc3afc16ced0/movie_600x337.jpg?t=1790833159" alt="" loading="lazy" width="480" height="270" /><span class="game-video-play" aria-hidden="true"></span></div></figure>
+        <figure class="game-movie"><div class="game-video" data-hls="https://video.akamai.steamstatic.com/store_trailers/5227780/950951829/ba9950509ca33329de5d6a3acf22aa4525cb03d1/1789616243/hls_264_master.m3u8?t=1790833160" data-poster="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257427107/c91ed897a7087a15da7a709e2d4dfc3afc16ced0/movie_600x337.jpg?t=1790833160" role="button" tabindex="0" aria-label="Смотреть геймплей: Official Trailer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257427107/c91ed897a7087a15da7a709e2d4dfc3afc16ced0/movie_600x337.jpg?t=1790833160" alt="" loading="lazy" width="480" height="270" /><span class="game-video-play" aria-hidden="true"></span></div></figure>
+      </div>
+
+<p style="color: var(--text-faint); font-size: 13px; margin-top: 30px;">
         Данные о цене, отзывах и статистике обновляются автоматически на основе
         Steam Store API и SteamSpy.
       </p>
@@ -280,5 +329,6 @@ function declineCookies() {
 })();
 </script>
 <script src="/newsletter.js?v=2" defer></script>
+<script defer src="/game-media.js?v=1"></script>
 </body>
 </html>

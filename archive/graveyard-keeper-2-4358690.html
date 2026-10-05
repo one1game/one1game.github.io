@@ -112,6 +112,38 @@
     }
     .game-stat-card .label { font-size: 12px; color: var(--text-faint); text-transform: uppercase; }
     .game-stat-card .value { font-size: 20px; font-weight: bold; margin-top: 4px; }
+    .game-shots {
+      display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+      gap: 12px; margin: 20px 0;
+    }
+    .game-shot {
+      display: block; border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 8px; overflow: hidden;
+    }
+    .game-shot img { display: block; width: 100%; height: auto; }
+    .game-movies { display: grid; gap: 16px; margin: 20px 0; }
+    .game-movie { margin: 0; }
+    .game-movie video {
+      display: block; width: 100%; height: auto;
+      border-radius: 8px; background: #000;
+    }
+    .game-movie figcaption { margin-top: 6px; font-size: 13px; color: var(--text-faint); }
+    .game-video {
+      position: relative; cursor: pointer; overflow: hidden;
+      border-radius: 8px; background: #000; aspect-ratio: 16 / 9;
+    }
+    .game-video img { display: block; width: 100%; height: 100%; object-fit: cover; }
+    .game-video-play { position: absolute; inset: 0; display: grid; place-items: center; }
+    .game-video-play::before {
+      content: ''; width: 58px; height: 58px; border-radius: 50%;
+      background: rgba(0,0,0,0.5); border: 2px solid rgba(255,255,255,0.75);
+    }
+    .game-video-play::after {
+      content: ''; position: absolute; margin-left: 5px;
+      border-style: solid; border-width: 11px 0 11px 18px;
+      border-color: transparent transparent transparent #fff;
+    }
+    .game-video-el { display: block; width: 100%; height: 100%; background: #000; }
   </style>
 </head>
 <body>
@@ -166,10 +198,6 @@
           <div class="label">Владельцев (оценка)</div>
           <div class="value">0 – 20,000</div>
         </div>
-        <div class="game-stat-card">
-          <div class="label">Среднее время игры</div>
-          <div class="value">нет данных</div>
-        </div>
       </div>
 
       <h2>Об игре</h2>
@@ -183,7 +211,26 @@
         </a>
       </p>
 
-      <p style="color: var(--text-faint); font-size: 13px; margin-top: 30px;">
+            <h2>Скриншоты</h2>
+      <div class="game-shots">
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4358690/d4e05aa7d5ec3e9cd9648dbe2006482a886328de/ss_d4e05aa7d5ec3e9cd9648dbe2006482a886328de.1920x1080.jpg?t=1790169326" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4358690/d4e05aa7d5ec3e9cd9648dbe2006482a886328de/ss_d4e05aa7d5ec3e9cd9648dbe2006482a886328de.600x338.jpg?t=1790169326" alt="Graveyard Keeper 2 — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4358690/746f158d975b126bdceffb01b3e502174e18def1/ss_746f158d975b126bdceffb01b3e502174e18def1.1920x1080.jpg?t=1790169326" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4358690/746f158d975b126bdceffb01b3e502174e18def1/ss_746f158d975b126bdceffb01b3e502174e18def1.600x338.jpg?t=1790169326" alt="Graveyard Keeper 2 — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4358690/cf0d67bbebd1c9ee73dd90d0d9cc0a87ee3b35ba/ss_cf0d67bbebd1c9ee73dd90d0d9cc0a87ee3b35ba.1920x1080.jpg?t=1790169326" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4358690/cf0d67bbebd1c9ee73dd90d0d9cc0a87ee3b35ba/ss_cf0d67bbebd1c9ee73dd90d0d9cc0a87ee3b35ba.600x338.jpg?t=1790169326" alt="Graveyard Keeper 2 — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4358690/b240604158abbb1a96cfd52965b55ed407c9c66e/ss_b240604158abbb1a96cfd52965b55ed407c9c66e.1920x1080.jpg?t=1790169326" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4358690/b240604158abbb1a96cfd52965b55ed407c9c66e/ss_b240604158abbb1a96cfd52965b55ed407c9c66e.600x338.jpg?t=1790169326" alt="Graveyard Keeper 2 — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4358690/f8a775d558c7d9201486ea83e1f672fee1e9aed7/ss_f8a775d558c7d9201486ea83e1f672fee1e9aed7.1920x1080.jpg?t=1790169326" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4358690/f8a775d558c7d9201486ea83e1f672fee1e9aed7/ss_f8a775d558c7d9201486ea83e1f672fee1e9aed7.600x338.jpg?t=1790169326" alt="Graveyard Keeper 2 — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4358690/b3d62f77a0c9fa2f59c6baaba11a9af5eada2927/ss_b3d62f77a0c9fa2f59c6baaba11a9af5eada2927.1920x1080.jpg?t=1790169326" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4358690/b3d62f77a0c9fa2f59c6baaba11a9af5eada2927/ss_b3d62f77a0c9fa2f59c6baaba11a9af5eada2927.600x338.jpg?t=1790169326" alt="Graveyard Keeper 2 — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4358690/e6649cbfa91e2297be1c7fb472a2ce35ede14df8/ss_e6649cbfa91e2297be1c7fb472a2ce35ede14df8.1920x1080.jpg?t=1790169326" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4358690/e6649cbfa91e2297be1c7fb472a2ce35ede14df8/ss_e6649cbfa91e2297be1c7fb472a2ce35ede14df8.600x338.jpg?t=1790169326" alt="Graveyard Keeper 2 — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4358690/331865c3f11463c146679d11a837cb5030925543/ss_331865c3f11463c146679d11a837cb5030925543.1920x1080.jpg?t=1790169326" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4358690/331865c3f11463c146679d11a837cb5030925543/ss_331865c3f11463c146679d11a837cb5030925543.600x338.jpg?t=1790169326" alt="Graveyard Keeper 2 — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+      </div>
+
+      <h2>Геймплей</h2>
+      <div class="game-movies">
+        <figure class="game-movie"><div class="game-video" data-hls="https://video.akamai.steamstatic.com/store_trailers/4358690/2862157/0260cee92ae4094d7dba96ec7f7194417eac8afc/1790062171/hls_264_master.m3u8?t=1790096698" data-poster="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257431295/cf4eee585da69498cc1979527208d3e4326f127f/movie_600x337.jpg?t=1790096698" role="button" tabindex="0" aria-label="Смотреть геймплей: Launch Trailer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257431295/cf4eee585da69498cc1979527208d3e4326f127f/movie_600x337.jpg?t=1790096698" alt="" loading="lazy" width="480" height="270" /><span class="game-video-play" aria-hidden="true"></span></div></figure>
+        <figure class="game-movie"><div class="game-video" data-hls="https://video.akamai.steamstatic.com/store_trailers/4358690/1601401888/983f7683d790e70b2cefe8a2275ddf6039ac7acd/1789047972/hls_264_master.m3u8?t=1789399296" data-poster="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257421926/ec7d546537807a9381d5cded175170877cc5dcea/movie_600x337.jpg?t=1789399296" role="button" tabindex="0" aria-label="Смотреть геймплей: Demo Trailer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257421926/ec7d546537807a9381d5cded175170877cc5dcea/movie_600x337.jpg?t=1789399296" alt="" loading="lazy" width="480" height="270" /><span class="game-video-play" aria-hidden="true"></span></div></figure>
+        <figure class="game-movie"><div class="game-video" data-hls="https://video.akamai.steamstatic.com/store_trailers/4358690/1970438033/031d35f12a79d7f4a68073c5c9815c1b6204f6ed/1787315202/hls_264_master.m3u8?t=1787765033" data-poster="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257405097/ee5b43a80574b104a489651f9c4a7295514cb1a9/movie_600x337.jpg?t=1787765033" role="button" tabindex="0" aria-label="Смотреть геймплей: Release date Trailer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257405097/ee5b43a80574b104a489651f9c4a7295514cb1a9/movie_600x337.jpg?t=1787765033" alt="" loading="lazy" width="480" height="270" /><span class="game-video-play" aria-hidden="true"></span></div></figure>
+      </div>
+
+<p style="color: var(--text-faint); font-size: 13px; margin-top: 30px;">
         Данные о цене, отзывах и статистике обновляются автоматически на основе
         Steam Store API и SteamSpy.
       </p>
@@ -284,5 +331,6 @@ function declineCookies() {
 })();
 </script>
 <script src="/newsletter.js?v=2" defer></script>
+<script defer src="/game-media.js?v=1"></script>
 </body>
 </html>

@@ -112,6 +112,38 @@
     }
     .game-stat-card .label { font-size: 12px; color: var(--text-faint); text-transform: uppercase; }
     .game-stat-card .value { font-size: 20px; font-weight: bold; margin-top: 4px; }
+    .game-shots {
+      display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+      gap: 12px; margin: 20px 0;
+    }
+    .game-shot {
+      display: block; border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 8px; overflow: hidden;
+    }
+    .game-shot img { display: block; width: 100%; height: auto; }
+    .game-movies { display: grid; gap: 16px; margin: 20px 0; }
+    .game-movie { margin: 0; }
+    .game-movie video {
+      display: block; width: 100%; height: auto;
+      border-radius: 8px; background: #000;
+    }
+    .game-movie figcaption { margin-top: 6px; font-size: 13px; color: var(--text-faint); }
+    .game-video {
+      position: relative; cursor: pointer; overflow: hidden;
+      border-radius: 8px; background: #000; aspect-ratio: 16 / 9;
+    }
+    .game-video img { display: block; width: 100%; height: 100%; object-fit: cover; }
+    .game-video-play { position: absolute; inset: 0; display: grid; place-items: center; }
+    .game-video-play::before {
+      content: ''; width: 58px; height: 58px; border-radius: 50%;
+      background: rgba(0,0,0,0.5); border: 2px solid rgba(255,255,255,0.75);
+    }
+    .game-video-play::after {
+      content: ''; position: absolute; margin-left: 5px;
+      border-style: solid; border-width: 11px 0 11px 18px;
+      border-color: transparent transparent transparent #fff;
+    }
+    .game-video-el { display: block; width: 100%; height: 100%; background: #000; }
   </style>
 </head>
 <body>
@@ -150,7 +182,7 @@
 
     <article class="article-body">
 
-      <p>Rusted Awakening is a one hour nightmare with brutal first person combat, set inside an underground facility where humanity is kept asleep and harvested by those who remain awake. Find a way out.</p>
+      
 
       <div class="game-stats-grid">
         <div class="game-stat-card">
@@ -166,10 +198,6 @@
           <div class="label">Владельцев (оценка)</div>
           <div class="value">0 – 20,000</div>
         </div>
-        <div class="game-stat-card">
-          <div class="label">Среднее время игры</div>
-          <div class="value">нет данных</div>
-        </div>
       </div>
 
       <h2>Об игре</h2>
@@ -183,7 +211,30 @@
         </a>
       </p>
 
-      <p style="color: var(--text-faint); font-size: 13px; margin-top: 30px;">
+            <h2>Скриншоты</h2>
+      <div class="game-shots">
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2874490/ss_0a12106e903908fc08d7c035533d4eac26f583bd.1920x1080.jpg?t=1789837890" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2874490/ss_0a12106e903908fc08d7c035533d4eac26f583bd.600x338.jpg?t=1789837890" alt="Rusted Awakening — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2874490/ss_61c0ab1c61bf35177486ec740a8ab35ed844cdab.1920x1080.jpg?t=1789837890" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2874490/ss_61c0ab1c61bf35177486ec740a8ab35ed844cdab.600x338.jpg?t=1789837890" alt="Rusted Awakening — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2874490/ss_4039a830c973d20cd705d535ddf8e6af8455905a.1920x1080.jpg?t=1789837890" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2874490/ss_4039a830c973d20cd705d535ddf8e6af8455905a.600x338.jpg?t=1789837890" alt="Rusted Awakening — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2874490/ss_baaca4f477649abc92ac18d9569cda9661e61d07.1920x1080.jpg?t=1789837890" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2874490/ss_baaca4f477649abc92ac18d9569cda9661e61d07.600x338.jpg?t=1789837890" alt="Rusted Awakening — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2874490/ss_c3b8b61df6538ea697e3447ff6331a6d7ec44ecf.1920x1080.jpg?t=1789837890" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2874490/ss_c3b8b61df6538ea697e3447ff6331a6d7ec44ecf.600x338.jpg?t=1789837890" alt="Rusted Awakening — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2874490/ss_d89fa0e994b86bcafdaa55b417da1534a5599275.1920x1080.jpg?t=1789837890" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2874490/ss_d89fa0e994b86bcafdaa55b417da1534a5599275.600x338.jpg?t=1789837890" alt="Rusted Awakening — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2874490/ss_98cecbb1707eece19dff013249bbefdfeee272ff.1920x1080.jpg?t=1789837890" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2874490/ss_98cecbb1707eece19dff013249bbefdfeee272ff.600x338.jpg?t=1789837890" alt="Rusted Awakening — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2874490/ss_33848c3083b3d503d70213fb2520aed917bb65f9.1920x1080.jpg?t=1789837890" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2874490/ss_33848c3083b3d503d70213fb2520aed917bb65f9.600x338.jpg?t=1789837890" alt="Rusted Awakening — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2874490/ss_76280ee67ea87aadfa0362198202d6c6455f4f8f.1920x1080.jpg?t=1789837890" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2874490/ss_76280ee67ea87aadfa0362198202d6c6455f4f8f.600x338.jpg?t=1789837890" alt="Rusted Awakening — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2874490/ss_efc0a773be4137ae24093ffaaea0f4c13cd0f9c1.1920x1080.jpg?t=1789837890" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2874490/ss_efc0a773be4137ae24093ffaaea0f4c13cd0f9c1.600x338.jpg?t=1789837890" alt="Rusted Awakening — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2874490/ss_3262ff341ff894e93ca05030d5973c762876dc40.1920x1080.jpg?t=1789837890" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2874490/ss_3262ff341ff894e93ca05030d5973c762876dc40.600x338.jpg?t=1789837890" alt="Rusted Awakening — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2874490/ss_6f0c5adec1ee03dd093636e79db1cef3fad808a1.1920x1080.jpg?t=1789837890" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2874490/ss_6f0c5adec1ee03dd093636e79db1cef3fad808a1.600x338.jpg?t=1789837890" alt="Rusted Awakening — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+      </div>
+
+      <h2>Геймплей</h2>
+      <div class="game-movies">
+        <figure class="game-movie"><div class="game-video" data-hls="https://video.akamai.steamstatic.com/store_trailers/2874490/128051473/45ba0e2d76fe628b77a81552a7b4fc696423a074/1789544811/hls_264_master.m3u8?t=1789547008" data-poster="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257426309/bc99cf58c426a936beec442a04bb0b3d3478909a/movie_600x337.jpg?t=1789547008" role="button" tabindex="0" aria-label="Смотреть геймплей: Rusted Awakening - Official Release Trailer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257426309/bc99cf58c426a936beec442a04bb0b3d3478909a/movie_600x337.jpg?t=1789547008" alt="" loading="lazy" width="480" height="270" /><span class="game-video-play" aria-hidden="true"></span></div></figure>
+        <figure class="game-movie"><div class="game-video" data-hls="https://video.akamai.steamstatic.com/store_trailers/2874490/865658/1634242a27170216f0f669b9d9242739b9087be6/1750949637/hls_264_master.m3u8?t=1789547009" data-poster="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257123405/f13a17c4fbc52971c503d13b393129c6e12bca70/movie_600x337.jpg?t=1789547009" role="button" tabindex="0" aria-label="Смотреть геймплей: Rusted Awakening - Gameplay Trailer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257123405/f13a17c4fbc52971c503d13b393129c6e12bca70/movie_600x337.jpg?t=1789547009" alt="" loading="lazy" width="480" height="270" /><span class="game-video-play" aria-hidden="true"></span></div></figure>
+        <figure class="game-movie"><div class="game-video" data-hls="https://video.akamai.steamstatic.com/store_trailers/2874490/752454/1d32a27d107614274a4cb23f35ecbd4d29617eec/1750949634/hls_264_master.m3u8?t=1725813315" data-poster="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257053222/movie.293x165.jpg?t=1725813315" role="button" tabindex="0" aria-label="Смотреть геймплей: Rusted Awakening - First Look"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257053222/movie.293x165.jpg?t=1725813315" alt="" loading="lazy" width="480" height="270" /><span class="game-video-play" aria-hidden="true"></span></div></figure>
+      </div>
+
+<p style="color: var(--text-faint); font-size: 13px; margin-top: 30px;">
         Данные о цене, отзывах и статистике обновляются автоматически на основе
         Steam Store API и SteamSpy.
       </p>
@@ -284,5 +335,6 @@ function declineCookies() {
 })();
 </script>
 <script src="/newsletter.js?v=2" defer></script>
+<script defer src="/game-media.js?v=1"></script>
 </body>
 </html>

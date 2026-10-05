@@ -112,6 +112,38 @@
     }
     .game-stat-card .label { font-size: 12px; color: var(--text-faint); text-transform: uppercase; }
     .game-stat-card .value { font-size: 20px; font-weight: bold; margin-top: 4px; }
+    .game-shots {
+      display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+      gap: 12px; margin: 20px 0;
+    }
+    .game-shot {
+      display: block; border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 8px; overflow: hidden;
+    }
+    .game-shot img { display: block; width: 100%; height: auto; }
+    .game-movies { display: grid; gap: 16px; margin: 20px 0; }
+    .game-movie { margin: 0; }
+    .game-movie video {
+      display: block; width: 100%; height: auto;
+      border-radius: 8px; background: #000;
+    }
+    .game-movie figcaption { margin-top: 6px; font-size: 13px; color: var(--text-faint); }
+    .game-video {
+      position: relative; cursor: pointer; overflow: hidden;
+      border-radius: 8px; background: #000; aspect-ratio: 16 / 9;
+    }
+    .game-video img { display: block; width: 100%; height: 100%; object-fit: cover; }
+    .game-video-play { position: absolute; inset: 0; display: grid; place-items: center; }
+    .game-video-play::before {
+      content: ''; width: 58px; height: 58px; border-radius: 50%;
+      background: rgba(0,0,0,0.5); border: 2px solid rgba(255,255,255,0.75);
+    }
+    .game-video-play::after {
+      content: ''; position: absolute; margin-left: 5px;
+      border-style: solid; border-width: 11px 0 11px 18px;
+      border-color: transparent transparent transparent #fff;
+    }
+    .game-video-el { display: block; width: 100%; height: 100%; background: #000; }
   </style>
 </head>
 <body>
@@ -150,7 +182,7 @@
 
     <article class="article-body">
 
-      <p>《高三最后300天》是一款以2020年代中国普通公立高中为背景的横屏互动叙事生活模拟游戏。从距高考300天开始，选择主角的性别、选科方向与住校或走读身份，安排每周计划，在早读、晚自习、考试、宿舍和回家路上作出决定。你的选择会改变六科学习状态、精力与压力，也会影响承诺能否兑现、同学之间如何相处，以及某段关系最终停在友情还是继续靠近。故事将经过月考、换座、寒假、百日誓师、一模、二模、毕业照和三天高考，直到查分、填报志愿与收到录取结果。高分不是唯一答案；通关后重新开始，你还能带着有限的记忆，试着改变那些真正放不下的遗憾。</p>
+      
 
       <div class="game-stats-grid">
         <div class="game-stat-card">
@@ -166,10 +198,6 @@
           <div class="label">Владельцев (оценка)</div>
           <div class="value">0 – 20,000</div>
         </div>
-        <div class="game-stat-card">
-          <div class="label">Среднее время игры</div>
-          <div class="value">нет данных</div>
-        </div>
       </div>
 
       <h2>Об игре</h2>
@@ -183,7 +211,22 @@
         </a>
       </p>
 
-      <p style="color: var(--text-faint); font-size: 13px; margin-top: 30px;">
+            <h2>Скриншоты</h2>
+      <div class="game-shots">
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5206350/a536db3482dfba3e30f75d68598a488e4355b7d2/ss_a536db3482dfba3e30f75d68598a488e4355b7d2.1920x1080.jpg?t=1790319641" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5206350/a536db3482dfba3e30f75d68598a488e4355b7d2/ss_a536db3482dfba3e30f75d68598a488e4355b7d2.600x338.jpg?t=1790319641" alt="高三最后300天 — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5206350/56a4dbdd1116085f0f5f4568b8ee44c5268e5b97/ss_56a4dbdd1116085f0f5f4568b8ee44c5268e5b97.1920x1080.jpg?t=1790319641" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5206350/56a4dbdd1116085f0f5f4568b8ee44c5268e5b97/ss_56a4dbdd1116085f0f5f4568b8ee44c5268e5b97.600x338.jpg?t=1790319641" alt="高三最后300天 — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5206350/214011d84f5233b1969e8a8431dfa19fa694f25c/ss_214011d84f5233b1969e8a8431dfa19fa694f25c.1920x1080.jpg?t=1790319641" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5206350/214011d84f5233b1969e8a8431dfa19fa694f25c/ss_214011d84f5233b1969e8a8431dfa19fa694f25c.600x338.jpg?t=1790319641" alt="高三最后300天 — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5206350/f4bcab8cf7afb2c9cf2f5ba7fc2eb357b1f7e908/ss_f4bcab8cf7afb2c9cf2f5ba7fc2eb357b1f7e908.1920x1080.jpg?t=1790319641" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5206350/f4bcab8cf7afb2c9cf2f5ba7fc2eb357b1f7e908/ss_f4bcab8cf7afb2c9cf2f5ba7fc2eb357b1f7e908.600x338.jpg?t=1790319641" alt="高三最后300天 — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5206350/162075982de9560100902757bddc8ad24264268e/ss_162075982de9560100902757bddc8ad24264268e.1920x1080.jpg?t=1790319641" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5206350/162075982de9560100902757bddc8ad24264268e/ss_162075982de9560100902757bddc8ad24264268e.600x338.jpg?t=1790319641" alt="高三最后300天 — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5206350/74b2b023b235debcc8c88d93dda9c1729180b08b/ss_74b2b023b235debcc8c88d93dda9c1729180b08b.1920x1080.jpg?t=1790319641" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5206350/74b2b023b235debcc8c88d93dda9c1729180b08b/ss_74b2b023b235debcc8c88d93dda9c1729180b08b.600x338.jpg?t=1790319641" alt="高三最后300天 — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+      </div>
+
+      <h2>Геймплей</h2>
+      <div class="game-movies">
+        <figure class="game-movie"><div class="game-video" data-hls="https://video.akamai.steamstatic.com/store_trailers/5206350/905240190/14afc1de723de50699b0efb1ba18f380f2691048/1788334831/hls_264_master.m3u8?t=1789180028" data-poster="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257415481/a2bcdcd8558b9afb6345aed5e46c1229be8fdf40/movie_600x337.jpg?t=1789180028" role="button" tabindex="0" aria-label="Смотреть геймплей: 高三最后300天 - 官方实机宣传片"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257415481/a2bcdcd8558b9afb6345aed5e46c1229be8fdf40/movie_600x337.jpg?t=1789180028" alt="" loading="lazy" width="480" height="270" /><span class="game-video-play" aria-hidden="true"></span></div></figure>
+      </div>
+
+<p style="color: var(--text-faint); font-size: 13px; margin-top: 30px;">
         Данные о цене, отзывах и статистике обновляются автоматически на основе
         Steam Store API и SteamSpy.
       </p>
@@ -284,5 +327,6 @@ function declineCookies() {
 })();
 </script>
 <script src="/newsletter.js?v=2" defer></script>
+<script defer src="/game-media.js?v=1"></script>
 </body>
 </html>

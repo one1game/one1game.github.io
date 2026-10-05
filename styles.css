@@ -538,6 +538,49 @@ html.hero3d-on .hero-hint { opacity: 1; }
 .cat-analytics .cat-count, .cat-trends .cat-count, .cat-dev .cat-count,
 .cat-opinion .cat-count, .cat-movies .cat-count, .cat-play .cat-count { color: inherit; border-color: currentColor; }
 
+/* Рельс «Во что поиграть» — отдельная система игровых обзоров */
+.play-rail { margin: 22px 0 4px; }
+.play-rail[hidden] { display: none; }
+.play-list {
+  display: flex; gap: 8px;
+  overflow-x: auto; overflow-y: hidden;
+  -webkit-overflow-scrolling: touch; scrollbar-width: none;
+  padding: 12px 0 2px;
+}
+.play-list::-webkit-scrollbar { display: none; }
+.play-card {
+  flex: 0 0 auto;
+  display: flex; flex-direction: column; gap: 0;
+  min-width: 190px; max-width: 230px;
+  padding: 0 0 9px;
+  overflow: hidden;
+  border: 1px solid var(--line-soft);
+  background: var(--panel);
+  text-decoration: none;
+  transition: border-color 0.15s, background 0.15s;
+}
+.play-card:hover { border-color: var(--line-hi); background: var(--acid-soft); }
+.play-thumb {
+  display: block; width: 100%; aspect-ratio: 16 / 9;
+  background: var(--bg-2); border-bottom: 1px solid var(--line-soft);
+}
+.play-thumb img { display: block; width: 100%; height: 100%; object-fit: cover; }
+.play-name {
+  padding: 8px 12px 0;
+  font-size: 0.78rem; font-weight: 700; color: var(--ink);
+  white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+  transition: color 0.15s;
+}
+.play-name::before { content: '> '; color: var(--acid); }
+.play-card:hover .play-name { color: var(--acid); }
+.play-meta {
+  padding: 2px 12px 0;
+  font-family: var(--mono); font-size: 0.58rem; letter-spacing: 0.1em;
+  text-transform: uppercase; color: var(--ink-faint);
+}
+.play-card--more { justify-content: center; border-style: dashed; border-color: var(--line-hi); }
+.play-card--more .play-name { color: var(--acid); }
+
 /* =============================================================
    11. ЗАГОЛОВКИ СЕКЦИЙ — ASCII-разметка
    ============================================================= */

@@ -112,6 +112,38 @@
     }
     .game-stat-card .label { font-size: 12px; color: var(--text-faint); text-transform: uppercase; }
     .game-stat-card .value { font-size: 20px; font-weight: bold; margin-top: 4px; }
+    .game-shots {
+      display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+      gap: 12px; margin: 20px 0;
+    }
+    .game-shot {
+      display: block; border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 8px; overflow: hidden;
+    }
+    .game-shot img { display: block; width: 100%; height: auto; }
+    .game-movies { display: grid; gap: 16px; margin: 20px 0; }
+    .game-movie { margin: 0; }
+    .game-movie video {
+      display: block; width: 100%; height: auto;
+      border-radius: 8px; background: #000;
+    }
+    .game-movie figcaption { margin-top: 6px; font-size: 13px; color: var(--text-faint); }
+    .game-video {
+      position: relative; cursor: pointer; overflow: hidden;
+      border-radius: 8px; background: #000; aspect-ratio: 16 / 9;
+    }
+    .game-video img { display: block; width: 100%; height: 100%; object-fit: cover; }
+    .game-video-play { position: absolute; inset: 0; display: grid; place-items: center; }
+    .game-video-play::before {
+      content: ''; width: 58px; height: 58px; border-radius: 50%;
+      background: rgba(0,0,0,0.5); border: 2px solid rgba(255,255,255,0.75);
+    }
+    .game-video-play::after {
+      content: ''; position: absolute; margin-left: 5px;
+      border-style: solid; border-width: 11px 0 11px 18px;
+      border-color: transparent transparent transparent #fff;
+    }
+    .game-video-el { display: block; width: 100%; height: 100%; background: #000; }
   </style>
 </head>
 <body>
@@ -166,10 +198,6 @@
           <div class="label">Владельцев (оценка)</div>
           <div class="value">0 – 20,000</div>
         </div>
-        <div class="game-stat-card">
-          <div class="label">Среднее время игры</div>
-          <div class="value">нет данных</div>
-        </div>
       </div>
 
       <h2>Об игре</h2>
@@ -183,7 +211,28 @@
         </a>
       </p>
 
-      <p style="color: var(--text-faint); font-size: 13px; margin-top: 30px;">
+            <h2>Скриншоты</h2>
+      <div class="game-shots">
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4244040/76bef0dbdb46d2f7e23fb5740bfd043d0b70f887/ss_76bef0dbdb46d2f7e23fb5740bfd043d0b70f887.1920x1080.jpg?t=1790396109" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4244040/76bef0dbdb46d2f7e23fb5740bfd043d0b70f887/ss_76bef0dbdb46d2f7e23fb5740bfd043d0b70f887.600x338.jpg?t=1790396109" alt="Sector 13: Haunted Woods — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4244040/3e273b3f0c5289b36ff29a055da2326a150e4891/ss_3e273b3f0c5289b36ff29a055da2326a150e4891.1920x1080.jpg?t=1790396109" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4244040/3e273b3f0c5289b36ff29a055da2326a150e4891/ss_3e273b3f0c5289b36ff29a055da2326a150e4891.600x338.jpg?t=1790396109" alt="Sector 13: Haunted Woods — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4244040/22f8ea6879f7a26a434bbbdffe90481c13b4ce2d/ss_22f8ea6879f7a26a434bbbdffe90481c13b4ce2d.1920x1080.jpg?t=1790396109" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4244040/22f8ea6879f7a26a434bbbdffe90481c13b4ce2d/ss_22f8ea6879f7a26a434bbbdffe90481c13b4ce2d.600x338.jpg?t=1790396109" alt="Sector 13: Haunted Woods — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4244040/2d9bc299200468c1856d2d927f9e7c317b943390/ss_2d9bc299200468c1856d2d927f9e7c317b943390.1920x1080.jpg?t=1790396109" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4244040/2d9bc299200468c1856d2d927f9e7c317b943390/ss_2d9bc299200468c1856d2d927f9e7c317b943390.600x338.jpg?t=1790396109" alt="Sector 13: Haunted Woods — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4244040/72d665517af255eca8d7fdddddc67fb4a6b99df6/ss_72d665517af255eca8d7fdddddc67fb4a6b99df6.1920x1080.jpg?t=1790396109" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4244040/72d665517af255eca8d7fdddddc67fb4a6b99df6/ss_72d665517af255eca8d7fdddddc67fb4a6b99df6.600x338.jpg?t=1790396109" alt="Sector 13: Haunted Woods — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4244040/6654fcc3bf1f756e7ae55c5e4d14549f632d24c5/ss_6654fcc3bf1f756e7ae55c5e4d14549f632d24c5.1920x1080.jpg?t=1790396109" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4244040/6654fcc3bf1f756e7ae55c5e4d14549f632d24c5/ss_6654fcc3bf1f756e7ae55c5e4d14549f632d24c5.600x338.jpg?t=1790396109" alt="Sector 13: Haunted Woods — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4244040/27077751db10f234e01ddf2f3869e1acad810924/ss_27077751db10f234e01ddf2f3869e1acad810924.1920x1080.jpg?t=1790396109" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4244040/27077751db10f234e01ddf2f3869e1acad810924/ss_27077751db10f234e01ddf2f3869e1acad810924.600x338.jpg?t=1790396109" alt="Sector 13: Haunted Woods — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4244040/4d72bf5b4bf41786c45c81a1d85d5d80706af31c/ss_4d72bf5b4bf41786c45c81a1d85d5d80706af31c.1920x1080.jpg?t=1790396109" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4244040/4d72bf5b4bf41786c45c81a1d85d5d80706af31c/ss_4d72bf5b4bf41786c45c81a1d85d5d80706af31c.600x338.jpg?t=1790396109" alt="Sector 13: Haunted Woods — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4244040/37ea3e5c96bc83e24220f624961ebfac16079fe5/ss_37ea3e5c96bc83e24220f624961ebfac16079fe5.1920x1080.jpg?t=1790396109" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4244040/37ea3e5c96bc83e24220f624961ebfac16079fe5/ss_37ea3e5c96bc83e24220f624961ebfac16079fe5.600x338.jpg?t=1790396109" alt="Sector 13: Haunted Woods — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4244040/e6f8615dda0b817f3120d20670babd4c330a8561/ss_e6f8615dda0b817f3120d20670babd4c330a8561.1920x1080.jpg?t=1790396109" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4244040/e6f8615dda0b817f3120d20670babd4c330a8561/ss_e6f8615dda0b817f3120d20670babd4c330a8561.600x338.jpg?t=1790396109" alt="Sector 13: Haunted Woods — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4244040/8a108ce4ae9a49c1cc4192efd3a2c307fd3683ad/ss_8a108ce4ae9a49c1cc4192efd3a2c307fd3683ad.1920x1080.jpg?t=1790396109" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4244040/8a108ce4ae9a49c1cc4192efd3a2c307fd3683ad/ss_8a108ce4ae9a49c1cc4192efd3a2c307fd3683ad.600x338.jpg?t=1790396109" alt="Sector 13: Haunted Woods — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4244040/2d6ac4560e2100357d655066caedd6425f061adf/ss_2d6ac4560e2100357d655066caedd6425f061adf.1920x1080.jpg?t=1790396109" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4244040/2d6ac4560e2100357d655066caedd6425f061adf/ss_2d6ac4560e2100357d655066caedd6425f061adf.600x338.jpg?t=1790396109" alt="Sector 13: Haunted Woods — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+      </div>
+
+      <h2>Геймплей</h2>
+      <div class="game-movies">
+        <figure class="game-movie"><div class="game-video" data-hls="https://video.akamai.steamstatic.com/store_trailers/4244040/1697782444/11e39ba081222b368b0833e83c1d4d22ff392f33/1790383063/hls_264_master.m3u8?t=1790384112" data-poster="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257419420/04e49737d9d875e9895e68049aed98282f0d4c66/movie_600x337.jpg?t=1790384112" role="button" tabindex="0" aria-label="Смотреть геймплей: Sector 13: Haunted Woods - Official Teaser Trailer 🎮"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257419420/04e49737d9d875e9895e68049aed98282f0d4c66/movie_600x337.jpg?t=1790384112" alt="" loading="lazy" width="480" height="270" /><span class="game-video-play" aria-hidden="true"></span></div></figure>
+      </div>
+
+<p style="color: var(--text-faint); font-size: 13px; margin-top: 30px;">
         Данные о цене, отзывах и статистике обновляются автоматически на основе
         Steam Store API и SteamSpy.
       </p>
@@ -284,5 +333,6 @@ function declineCookies() {
 })();
 </script>
 <script src="/newsletter.js?v=2" defer></script>
+<script defer src="/game-media.js?v=1"></script>
 </body>
 </html>

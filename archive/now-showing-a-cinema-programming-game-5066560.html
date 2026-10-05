@@ -112,6 +112,38 @@
     }
     .game-stat-card .label { font-size: 12px; color: var(--text-faint); text-transform: uppercase; }
     .game-stat-card .value { font-size: 20px; font-weight: bold; margin-top: 4px; }
+    .game-shots {
+      display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+      gap: 12px; margin: 20px 0;
+    }
+    .game-shot {
+      display: block; border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 8px; overflow: hidden;
+    }
+    .game-shot img { display: block; width: 100%; height: auto; }
+    .game-movies { display: grid; gap: 16px; margin: 20px 0; }
+    .game-movie { margin: 0; }
+    .game-movie video {
+      display: block; width: 100%; height: auto;
+      border-radius: 8px; background: #000;
+    }
+    .game-movie figcaption { margin-top: 6px; font-size: 13px; color: var(--text-faint); }
+    .game-video {
+      position: relative; cursor: pointer; overflow: hidden;
+      border-radius: 8px; background: #000; aspect-ratio: 16 / 9;
+    }
+    .game-video img { display: block; width: 100%; height: 100%; object-fit: cover; }
+    .game-video-play { position: absolute; inset: 0; display: grid; place-items: center; }
+    .game-video-play::before {
+      content: ''; width: 58px; height: 58px; border-radius: 50%;
+      background: rgba(0,0,0,0.5); border: 2px solid rgba(255,255,255,0.75);
+    }
+    .game-video-play::after {
+      content: ''; position: absolute; margin-left: 5px;
+      border-style: solid; border-width: 11px 0 11px 18px;
+      border-color: transparent transparent transparent #fff;
+    }
+    .game-video-el { display: block; width: 100%; height: 100%; background: #000; }
   </style>
 </head>
 <body>
@@ -150,7 +182,7 @@
 
     <article class="article-body">
 
-      <p>You are the person who decides what plays, and when. One cinema, seven days, five slots a day. Which new release to sign, which revival to licence, what to spend on the house, whose trust to keep. These are the calls a cinema programmer makes, week after week.</p>
+      
 
       <div class="game-stats-grid">
         <div class="game-stat-card">
@@ -166,10 +198,6 @@
           <div class="label">Владельцев (оценка)</div>
           <div class="value">0 – 20,000</div>
         </div>
-        <div class="game-stat-card">
-          <div class="label">Среднее время игры</div>
-          <div class="value">нет данных</div>
-        </div>
       </div>
 
       <h2>Об игре</h2>
@@ -183,7 +211,23 @@
         </a>
       </p>
 
-      <p style="color: var(--text-faint); font-size: 13px; margin-top: 30px;">
+            <h2>Скриншоты</h2>
+      <div class="game-shots">
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5066560/00f63d72851fad64eb6299e4fbf6f263f2368256/ss_00f63d72851fad64eb6299e4fbf6f263f2368256.1920x1080.jpg?t=1790950091" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5066560/00f63d72851fad64eb6299e4fbf6f263f2368256/ss_00f63d72851fad64eb6299e4fbf6f263f2368256.600x338.jpg?t=1790950091" alt="NOW SHOWING: A Cinema Programming Game — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5066560/50218fc77f1db340d5aafc79362048bce70afac0/ss_50218fc77f1db340d5aafc79362048bce70afac0.1920x1080.jpg?t=1790950091" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5066560/50218fc77f1db340d5aafc79362048bce70afac0/ss_50218fc77f1db340d5aafc79362048bce70afac0.600x338.jpg?t=1790950091" alt="NOW SHOWING: A Cinema Programming Game — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5066560/5c46dd560e0220acbed4469e75a813c41a5e744f/ss_5c46dd560e0220acbed4469e75a813c41a5e744f.1920x1080.jpg?t=1790950091" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5066560/5c46dd560e0220acbed4469e75a813c41a5e744f/ss_5c46dd560e0220acbed4469e75a813c41a5e744f.600x338.jpg?t=1790950091" alt="NOW SHOWING: A Cinema Programming Game — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5066560/c17c6676550aeea633bf630d3f02affdb9bb6736/ss_c17c6676550aeea633bf630d3f02affdb9bb6736.1920x1080.jpg?t=1790950091" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5066560/c17c6676550aeea633bf630d3f02affdb9bb6736/ss_c17c6676550aeea633bf630d3f02affdb9bb6736.600x338.jpg?t=1790950091" alt="NOW SHOWING: A Cinema Programming Game — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5066560/679616b2ad2b4cdb77c80ab2a8eda1a18e77650f/ss_679616b2ad2b4cdb77c80ab2a8eda1a18e77650f.1920x1080.jpg?t=1790950091" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5066560/679616b2ad2b4cdb77c80ab2a8eda1a18e77650f/ss_679616b2ad2b4cdb77c80ab2a8eda1a18e77650f.600x338.jpg?t=1790950091" alt="NOW SHOWING: A Cinema Programming Game — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5066560/688a63bd4cd614e3a2bafca808c3963ce71fe06a/ss_688a63bd4cd614e3a2bafca808c3963ce71fe06a.1920x1080.jpg?t=1790950091" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5066560/688a63bd4cd614e3a2bafca808c3963ce71fe06a/ss_688a63bd4cd614e3a2bafca808c3963ce71fe06a.600x338.jpg?t=1790950091" alt="NOW SHOWING: A Cinema Programming Game — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5066560/bc881cae3060b410e8e297d2a8e341a079637c78/ss_bc881cae3060b410e8e297d2a8e341a079637c78.1920x1080.jpg?t=1790950091" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5066560/bc881cae3060b410e8e297d2a8e341a079637c78/ss_bc881cae3060b410e8e297d2a8e341a079637c78.600x338.jpg?t=1790950091" alt="NOW SHOWING: A Cinema Programming Game — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+      </div>
+
+      <h2>Геймплей</h2>
+      <div class="game-movies">
+        <figure class="game-movie"><div class="game-video" data-hls="https://video.akamai.steamstatic.com/store_trailers/5066560/1001917361/62f92bc21f0228184055bce40c1e7062209ad2b5/1785951553/hls_264_master.m3u8?t=1786554182" data-poster="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257392494/0dbbd7851d29e4292421bbd55e1ea3472a9296dd/movie_600x337.jpg?t=1786554182" role="button" tabindex="0" aria-label="Смотреть геймплей: Announcement Trailer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257392494/0dbbd7851d29e4292421bbd55e1ea3472a9296dd/movie_600x337.jpg?t=1786554182" alt="" loading="lazy" width="480" height="270" /><span class="game-video-play" aria-hidden="true"></span></div></figure>
+      </div>
+
+<p style="color: var(--text-faint); font-size: 13px; margin-top: 30px;">
         Данные о цене, отзывах и статистике обновляются автоматически на основе
         Steam Store API и SteamSpy.
       </p>
@@ -284,5 +328,6 @@ function declineCookies() {
 })();
 </script>
 <script src="/newsletter.js?v=2" defer></script>
+<script defer src="/game-media.js?v=1"></script>
 </body>
 </html>

@@ -112,6 +112,38 @@
     }
     .game-stat-card .label { font-size: 12px; color: var(--text-faint); text-transform: uppercase; }
     .game-stat-card .value { font-size: 20px; font-weight: bold; margin-top: 4px; }
+    .game-shots {
+      display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+      gap: 12px; margin: 20px 0;
+    }
+    .game-shot {
+      display: block; border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 8px; overflow: hidden;
+    }
+    .game-shot img { display: block; width: 100%; height: auto; }
+    .game-movies { display: grid; gap: 16px; margin: 20px 0; }
+    .game-movie { margin: 0; }
+    .game-movie video {
+      display: block; width: 100%; height: auto;
+      border-radius: 8px; background: #000;
+    }
+    .game-movie figcaption { margin-top: 6px; font-size: 13px; color: var(--text-faint); }
+    .game-video {
+      position: relative; cursor: pointer; overflow: hidden;
+      border-radius: 8px; background: #000; aspect-ratio: 16 / 9;
+    }
+    .game-video img { display: block; width: 100%; height: 100%; object-fit: cover; }
+    .game-video-play { position: absolute; inset: 0; display: grid; place-items: center; }
+    .game-video-play::before {
+      content: ''; width: 58px; height: 58px; border-radius: 50%;
+      background: rgba(0,0,0,0.5); border: 2px solid rgba(255,255,255,0.75);
+    }
+    .game-video-play::after {
+      content: ''; position: absolute; margin-left: 5px;
+      border-style: solid; border-width: 11px 0 11px 18px;
+      border-color: transparent transparent transparent #fff;
+    }
+    .game-video-el { display: block; width: 100%; height: 100%; background: #000; }
   </style>
 </head>
 <body>
@@ -150,7 +182,7 @@
 
     <article class="article-body">
 
-      <p>Beta Bar sends you and your friends partying on 4 floors of bars and an active dance floor. Talk to the ladies to build your confidence and be ready to swing back when one of your friends throws a punch. If things get serious, grab a drink and make sure you're the last man standing.</p>
+      
 
       <div class="game-stats-grid">
         <div class="game-stat-card">
@@ -166,10 +198,6 @@
           <div class="label">Владельцев (оценка)</div>
           <div class="value">0 – 20,000</div>
         </div>
-        <div class="game-stat-card">
-          <div class="label">Среднее время игры</div>
-          <div class="value">нет данных</div>
-        </div>
       </div>
 
       <h2>Об игре</h2>
@@ -183,7 +211,21 @@
         </a>
       </p>
 
-      <p style="color: var(--text-faint); font-size: 13px; margin-top: 30px;">
+            <h2>Скриншоты</h2>
+      <div class="game-shots">
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4904950/ca66033ac1295ab01c24eec2307cf0fa7621966b/ss_ca66033ac1295ab01c24eec2307cf0fa7621966b.1920x1080.jpg?t=1790827219" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4904950/ca66033ac1295ab01c24eec2307cf0fa7621966b/ss_ca66033ac1295ab01c24eec2307cf0fa7621966b.600x338.jpg?t=1790827219" alt="Beta Bar — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4904950/e72b85077a9a42f12a18061212f7a4bfb85d617a/ss_e72b85077a9a42f12a18061212f7a4bfb85d617a.1920x1080.jpg?t=1790827219" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4904950/e72b85077a9a42f12a18061212f7a4bfb85d617a/ss_e72b85077a9a42f12a18061212f7a4bfb85d617a.600x338.jpg?t=1790827219" alt="Beta Bar — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4904950/7ae7d3f20d1c0d2ad31f8d8cd0becd91b6c11624/ss_7ae7d3f20d1c0d2ad31f8d8cd0becd91b6c11624.1920x1080.jpg?t=1790827219" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4904950/7ae7d3f20d1c0d2ad31f8d8cd0becd91b6c11624/ss_7ae7d3f20d1c0d2ad31f8d8cd0becd91b6c11624.600x338.jpg?t=1790827219" alt="Beta Bar — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4904950/bb9788c737237731af87dede633c85bc2685055b/ss_bb9788c737237731af87dede633c85bc2685055b.1920x1080.jpg?t=1790827219" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4904950/bb9788c737237731af87dede633c85bc2685055b/ss_bb9788c737237731af87dede633c85bc2685055b.600x338.jpg?t=1790827219" alt="Beta Bar — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4904950/126c25514728ea90749c12e912ab2cc9f8db2ebc/ss_126c25514728ea90749c12e912ab2cc9f8db2ebc.1920x1080.jpg?t=1790827219" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4904950/126c25514728ea90749c12e912ab2cc9f8db2ebc/ss_126c25514728ea90749c12e912ab2cc9f8db2ebc.600x338.jpg?t=1790827219" alt="Beta Bar — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+      </div>
+
+      <h2>Геймплей</h2>
+      <div class="game-movies">
+        <figure class="game-movie"><div class="game-video" data-hls="https://video.akamai.steamstatic.com/store_trailers/4904950/1141295420/b7cd31aafa0bbc689db97d80887f374184b49bb6/1785843942/hls_264_master.m3u8?t=1786825916" data-poster="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257391545/40f7018aad64d54aeab2709abe20a306c8c0450c/movie_600x337.jpg?t=1786825916" role="button" tabindex="0" aria-label="Смотреть геймплей: Beta Bar"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257391545/40f7018aad64d54aeab2709abe20a306c8c0450c/movie_600x337.jpg?t=1786825916" alt="" loading="lazy" width="480" height="270" /><span class="game-video-play" aria-hidden="true"></span></div></figure>
+      </div>
+
+<p style="color: var(--text-faint); font-size: 13px; margin-top: 30px;">
         Данные о цене, отзывах и статистике обновляются автоматически на основе
         Steam Store API и SteamSpy.
       </p>
@@ -284,5 +326,6 @@ function declineCookies() {
 })();
 </script>
 <script src="/newsletter.js?v=2" defer></script>
+<script defer src="/game-media.js?v=1"></script>
 </body>
 </html>

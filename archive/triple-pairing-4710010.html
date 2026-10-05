@@ -112,6 +112,38 @@
     }
     .game-stat-card .label { font-size: 12px; color: var(--text-faint); text-transform: uppercase; }
     .game-stat-card .value { font-size: 20px; font-weight: bold; margin-top: 4px; }
+    .game-shots {
+      display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+      gap: 12px; margin: 20px 0;
+    }
+    .game-shot {
+      display: block; border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 8px; overflow: hidden;
+    }
+    .game-shot img { display: block; width: 100%; height: auto; }
+    .game-movies { display: grid; gap: 16px; margin: 20px 0; }
+    .game-movie { margin: 0; }
+    .game-movie video {
+      display: block; width: 100%; height: auto;
+      border-radius: 8px; background: #000;
+    }
+    .game-movie figcaption { margin-top: 6px; font-size: 13px; color: var(--text-faint); }
+    .game-video {
+      position: relative; cursor: pointer; overflow: hidden;
+      border-radius: 8px; background: #000; aspect-ratio: 16 / 9;
+    }
+    .game-video img { display: block; width: 100%; height: 100%; object-fit: cover; }
+    .game-video-play { position: absolute; inset: 0; display: grid; place-items: center; }
+    .game-video-play::before {
+      content: ''; width: 58px; height: 58px; border-radius: 50%;
+      background: rgba(0,0,0,0.5); border: 2px solid rgba(255,255,255,0.75);
+    }
+    .game-video-play::after {
+      content: ''; position: absolute; margin-left: 5px;
+      border-style: solid; border-width: 11px 0 11px 18px;
+      border-color: transparent transparent transparent #fff;
+    }
+    .game-video-el { display: block; width: 100%; height: 100%; background: #000; }
   </style>
 </head>
 <body>
@@ -150,7 +182,7 @@
 
     <article class="article-body">
 
-      <p>The three-way romance VN &quot;Triple Pairing&quot; now available on Steam! You are caught between an elite lady, a complicated childhood friend, and a motherly poster girl. Who will you choose? Navigate sweet moments and chaotic showdowns. Use the Love Triangle and Radar Chart systems to find your true love!</p>
+      
 
       <div class="game-stats-grid">
         <div class="game-stat-card">
@@ -166,10 +198,6 @@
           <div class="label">Владельцев (оценка)</div>
           <div class="value">0 – 20,000</div>
         </div>
-        <div class="game-stat-card">
-          <div class="label">Среднее время игры</div>
-          <div class="value">нет данных</div>
-        </div>
       </div>
 
       <h2>Об игре</h2>
@@ -183,7 +211,26 @@
         </a>
       </p>
 
-      <p style="color: var(--text-faint); font-size: 13px; margin-top: 30px;">
+            <h2>Скриншоты</h2>
+      <div class="game-shots">
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4710010/581967c15e29376a66050866fe4abf00f07c7b50/ss_581967c15e29376a66050866fe4abf00f07c7b50.1920x1080.jpg?t=1790316007" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4710010/581967c15e29376a66050866fe4abf00f07c7b50/ss_581967c15e29376a66050866fe4abf00f07c7b50.600x338.jpg?t=1790316007" alt="Triple Pairing — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4710010/52e9383692f1f69faa5c00e234bc00125bb90269/ss_52e9383692f1f69faa5c00e234bc00125bb90269.1920x1080.jpg?t=1790316007" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4710010/52e9383692f1f69faa5c00e234bc00125bb90269/ss_52e9383692f1f69faa5c00e234bc00125bb90269.600x338.jpg?t=1790316007" alt="Triple Pairing — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4710010/ed8f2c1515101fa811fb5b7c0289192a563d6d4e/ss_ed8f2c1515101fa811fb5b7c0289192a563d6d4e.1920x1080.jpg?t=1790316007" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4710010/ed8f2c1515101fa811fb5b7c0289192a563d6d4e/ss_ed8f2c1515101fa811fb5b7c0289192a563d6d4e.600x338.jpg?t=1790316007" alt="Triple Pairing — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4710010/d2d418b6b7163daffa3730a94717948e52d90132/ss_d2d418b6b7163daffa3730a94717948e52d90132.1920x1080.jpg?t=1790316007" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4710010/d2d418b6b7163daffa3730a94717948e52d90132/ss_d2d418b6b7163daffa3730a94717948e52d90132.600x338.jpg?t=1790316007" alt="Triple Pairing — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4710010/f6f372625a34afc3777bb0995b481daeb5e76c3f/ss_f6f372625a34afc3777bb0995b481daeb5e76c3f.1920x1080.jpg?t=1790316007" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4710010/f6f372625a34afc3777bb0995b481daeb5e76c3f/ss_f6f372625a34afc3777bb0995b481daeb5e76c3f.600x338.jpg?t=1790316007" alt="Triple Pairing — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4710010/fb27df756eb53e081a42a30f51f2bef0cf478da7/ss_fb27df756eb53e081a42a30f51f2bef0cf478da7.1920x1080.jpg?t=1790316007" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4710010/fb27df756eb53e081a42a30f51f2bef0cf478da7/ss_fb27df756eb53e081a42a30f51f2bef0cf478da7.600x338.jpg?t=1790316007" alt="Triple Pairing — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4710010/d90bf69cef05b79bdb71bd38d48cc9417cb567ad/ss_d90bf69cef05b79bdb71bd38d48cc9417cb567ad.1920x1080.jpg?t=1790316007" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4710010/d90bf69cef05b79bdb71bd38d48cc9417cb567ad/ss_d90bf69cef05b79bdb71bd38d48cc9417cb567ad.600x338.jpg?t=1790316007" alt="Triple Pairing — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4710010/fdc185d843850c93c2391f0db8aa3eefe67fea07/ss_fdc185d843850c93c2391f0db8aa3eefe67fea07.1920x1080.jpg?t=1790316007" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4710010/fdc185d843850c93c2391f0db8aa3eefe67fea07/ss_fdc185d843850c93c2391f0db8aa3eefe67fea07.600x338.jpg?t=1790316007" alt="Triple Pairing — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4710010/52cc50a0eede98cbdefb12c1078277ec0f5d9224/ss_52cc50a0eede98cbdefb12c1078277ec0f5d9224.1920x1080.jpg?t=1790316007" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4710010/52cc50a0eede98cbdefb12c1078277ec0f5d9224/ss_52cc50a0eede98cbdefb12c1078277ec0f5d9224.600x338.jpg?t=1790316007" alt="Triple Pairing — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+      </div>
+
+      <h2>Геймплей</h2>
+      <div class="game-movies">
+        <figure class="game-movie"><div class="game-video" data-hls="https://video.akamai.steamstatic.com/store_trailers/4710010/193817459/7f4c5f6c64391669740071fddf4dbe368a68bcad/1780060602/hls_264_master.m3u8?t=1780065277" data-poster="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257345972/b29cdfa1fc0629c2da51a46d0dd8c61a3417701d/movie_600x337.jpg?t=1780065277" role="button" tabindex="0" aria-label="Смотреть геймплей: TP_EN_OP"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257345972/b29cdfa1fc0629c2da51a46d0dd8c61a3417701d/movie_600x337.jpg?t=1780065277" alt="" loading="lazy" width="480" height="270" /><span class="game-video-play" aria-hidden="true"></span></div></figure>
+        <figure class="game-movie"><div class="game-video" data-hls="https://video.akamai.steamstatic.com/store_trailers/4710010/336444794/7250d5fa66d7e4a8049cd215e993bc32f26af36e/1780064782/hls_264_master.m3u8?t=1780065280" data-poster="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257346025/92e23928b7ececeb92be63ecef369a627adad8bf/movie_600x337.jpg?t=1780065280" role="button" tabindex="0" aria-label="Смотреть геймплей: TP_EN_PV"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257346025/92e23928b7ececeb92be63ecef369a627adad8bf/movie_600x337.jpg?t=1780065280" alt="" loading="lazy" width="480" height="270" /><span class="game-video-play" aria-hidden="true"></span></div></figure>
+      </div>
+
+<p style="color: var(--text-faint); font-size: 13px; margin-top: 30px;">
         Данные о цене, отзывах и статистике обновляются автоматически на основе
         Steam Store API и SteamSpy.
       </p>
@@ -284,5 +331,6 @@ function declineCookies() {
 })();
 </script>
 <script src="/newsletter.js?v=2" defer></script>
+<script defer src="/game-media.js?v=1"></script>
 </body>
 </html>

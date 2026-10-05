@@ -112,6 +112,38 @@
     }
     .game-stat-card .label { font-size: 12px; color: var(--text-faint); text-transform: uppercase; }
     .game-stat-card .value { font-size: 20px; font-weight: bold; margin-top: 4px; }
+    .game-shots {
+      display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+      gap: 12px; margin: 20px 0;
+    }
+    .game-shot {
+      display: block; border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 8px; overflow: hidden;
+    }
+    .game-shot img { display: block; width: 100%; height: auto; }
+    .game-movies { display: grid; gap: 16px; margin: 20px 0; }
+    .game-movie { margin: 0; }
+    .game-movie video {
+      display: block; width: 100%; height: auto;
+      border-radius: 8px; background: #000;
+    }
+    .game-movie figcaption { margin-top: 6px; font-size: 13px; color: var(--text-faint); }
+    .game-video {
+      position: relative; cursor: pointer; overflow: hidden;
+      border-radius: 8px; background: #000; aspect-ratio: 16 / 9;
+    }
+    .game-video img { display: block; width: 100%; height: 100%; object-fit: cover; }
+    .game-video-play { position: absolute; inset: 0; display: grid; place-items: center; }
+    .game-video-play::before {
+      content: ''; width: 58px; height: 58px; border-radius: 50%;
+      background: rgba(0,0,0,0.5); border: 2px solid rgba(255,255,255,0.75);
+    }
+    .game-video-play::after {
+      content: ''; position: absolute; margin-left: 5px;
+      border-style: solid; border-width: 11px 0 11px 18px;
+      border-color: transparent transparent transparent #fff;
+    }
+    .game-video-el { display: block; width: 100%; height: 100%; background: #000; }
   </style>
 </head>
 <body>
@@ -150,7 +182,7 @@
 
     <article class="article-body">
 
-      <p>A retro 2.5D heist shooter set in an office tower after closing. Fight your way up 26 floors of armed night security, win your next gun at the slot machine, and shoot straight through walls that were never built to stop a bullet, from a blowgun on floor one to rocket launchers at the top.</p>
+      
 
       <div class="game-stats-grid">
         <div class="game-stat-card">
@@ -166,10 +198,6 @@
           <div class="label">Владельцев (оценка)</div>
           <div class="value">0 – 20,000</div>
         </div>
-        <div class="game-stat-card">
-          <div class="label">Среднее время игры</div>
-          <div class="value">нет данных</div>
-        </div>
       </div>
 
       <h2>Об игре</h2>
@@ -183,7 +211,21 @@
         </a>
       </p>
 
-      <p style="color: var(--text-faint); font-size: 13px; margin-top: 30px;">
+            <h2>Скриншоты</h2>
+      <div class="game-shots">
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5262000/f85e14f483c80fd04771a8ac44737898cc1e8dd2/ss_f85e14f483c80fd04771a8ac44737898cc1e8dd2.1920x1080.jpg?t=1791049571" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5262000/f85e14f483c80fd04771a8ac44737898cc1e8dd2/ss_f85e14f483c80fd04771a8ac44737898cc1e8dd2.600x338.jpg?t=1791049571" alt="Nobody Clocks Out — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5262000/0ed000cc651fba6da63499862e54e71a374c77e6/ss_0ed000cc651fba6da63499862e54e71a374c77e6.1920x1080.jpg?t=1791049571" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5262000/0ed000cc651fba6da63499862e54e71a374c77e6/ss_0ed000cc651fba6da63499862e54e71a374c77e6.600x338.jpg?t=1791049571" alt="Nobody Clocks Out — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5262000/566e2235d29ac1a07c5ff44d7c657bb36b87cb87/ss_566e2235d29ac1a07c5ff44d7c657bb36b87cb87.1920x1080.jpg?t=1791049571" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5262000/566e2235d29ac1a07c5ff44d7c657bb36b87cb87/ss_566e2235d29ac1a07c5ff44d7c657bb36b87cb87.600x338.jpg?t=1791049571" alt="Nobody Clocks Out — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5262000/222f61f8625b274218a73175d0bd1ab2093bf858/ss_222f61f8625b274218a73175d0bd1ab2093bf858.1920x1080.jpg?t=1791049571" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5262000/222f61f8625b274218a73175d0bd1ab2093bf858/ss_222f61f8625b274218a73175d0bd1ab2093bf858.600x338.jpg?t=1791049571" alt="Nobody Clocks Out — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5262000/26e8c45819b70a15fcd089fac4fc11ba585208b0/ss_26e8c45819b70a15fcd089fac4fc11ba585208b0.1920x1080.jpg?t=1791049571" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5262000/26e8c45819b70a15fcd089fac4fc11ba585208b0/ss_26e8c45819b70a15fcd089fac4fc11ba585208b0.600x338.jpg?t=1791049571" alt="Nobody Clocks Out — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+      </div>
+
+      <h2>Геймплей</h2>
+      <div class="game-movies">
+        <figure class="game-movie"><div class="game-video" data-hls="https://video.akamai.steamstatic.com/store_trailers/5262000/461171087/13284387677e2426c0391b15655ebd3d7dd4756e/1789332677/hls_264_master.m3u8?t=1789667965" data-poster="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257424209/fb299cdeea5dd0e66650c6b26b0c577c450bd225/movie_600x337.jpg?t=1789667965" role="button" tabindex="0" aria-label="Смотреть геймплей: Announcement trailer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257424209/fb299cdeea5dd0e66650c6b26b0c577c450bd225/movie_600x337.jpg?t=1789667965" alt="" loading="lazy" width="480" height="270" /><span class="game-video-play" aria-hidden="true"></span></div></figure>
+      </div>
+
+<p style="color: var(--text-faint); font-size: 13px; margin-top: 30px;">
         Данные о цене, отзывах и статистике обновляются автоматически на основе
         Steam Store API и SteamSpy.
       </p>
@@ -284,5 +326,6 @@ function declineCookies() {
 })();
 </script>
 <script src="/newsletter.js?v=2" defer></script>
+<script defer src="/game-media.js?v=1"></script>
 </body>
 </html>

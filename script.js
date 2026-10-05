@@ -190,6 +190,7 @@ class One1GamePlatform {
   loadHomePageContent() {
     this.loadRandomVideo();
     this.loadLatestArticles();
+    this.loadGameList();
   }
 
   // Настройка видимых элементов управления радио
@@ -280,6 +281,14 @@ class One1GamePlatform {
     });
   }
 
+  // Игровой обзор — сгенерированная страница Steam-игры (scripts/generate-games.js).
+  // Такие материалы не идут в редакционную ленту, а живут в блоке «Во что поиграть».
+  isGameReview(article) {
+    if (!article) return false;
+    if (article.category === 'Обзоры') return true;
+    return /:\s*цена, отзывы и статистика игроков\s*$/i.test(article.title || '');
+  }
+
   // Latest Articles System — обновлённый дизайн карточек
   loadLatestArticles() {
     const container = document.getElementById('latest-articles');
@@ -290,7 +299,7 @@ class One1GamePlatform {
       return;
     }
 
-    const latestArticles = window.allArticles.slice(0, 6);
+    const latestArticles = window.allArticles.filter(a => !this.isGameReview(a)).slice(0, 6);
     const featured = latestArticles[0];
     const rest = latestArticles.slice(1);
 
@@ -363,6 +372,47 @@ class One1GamePlatform {
     this.loadCategories();
   }
 
+  // Блок «Во что поиграть» — отдельная система игровых обзоров на главной
+  loadGameList() {
+    const wrap = document.getElementById('play-what');
+    const list = document.getElementById('play-list');
+    if (!wrap || !list || !window.allArticles || window.allArticles.length === 0) return;
+
+    const games = window.allArticles.filter(a => this.isGameReview(a));
+    if (games.length === 0) return;
+
+    // На главной показываем только верхушку — иначе в DOM уходит весь список
+    // (после автогенерации это сотни записей). Остальное — по ссылке «все игры».
+    const LIMIT = 14;
+    const shown = games.slice(0, LIMIT);
+
+    list.innerHTML = shown.map(game => {
+      const safeUrl = this.escapeHTML(game.url || '#');
+      const safeImage = this.escapeHTML(game.image || '');
+      const rawName = (game.title || '')
+        .replace(/:\s*цена, отзывы и статистика игроков\s*$/i, '')
+        .trim();
+      const safeName = this.escapeHTML(rawName || game.title || 'Игра');
+      return `
+      <a href="${safeUrl}" class="play-card">
+        ${safeImage ? `<span class="play-thumb"><img src="${safeImage}" alt="${safeName}" loading="lazy" decoding="async" width="280" height="158"></span>` : ''}
+        <span class="play-name">${safeName}</span>
+        <span class="play-meta">обзор · статистика игроков</span>
+      </a>`;
+    }).join('');
+
+    if (games.length > LIMIT) {
+      const moreUrl = 'archive.html?category=' + encodeURIComponent('Обзоры');
+      list.insertAdjacentHTML('beforeend',
+        `<a href="${moreUrl}" class="play-card play-card--more">
+          <span class="play-name">ещё ${games.length - LIMIT}</span>
+          <span class="play-meta">смотреть все игры</span>
+        </a>`);
+    }
+
+    wrap.hidden = false;
+  }
+
   // Dynamic categories from articles
   loadCategories() {
     const row = document.getElementById('categories-row');
@@ -378,8 +428,8 @@ class One1GamePlatform {
       'Тренды': 'cat-trends',
       'Разработка': 'cat-dev',
       'Мнение': 'cat-opinion',
-      'Мнения': 'cat-opinion',
-      'Кино и игры': 'cat-movies'
+      'Кино и игры': 'cat-movies',
+      'Обзоры': 'cat-reviews'
     };
 
     window.allArticles.forEach(a => {
@@ -395,11 +445,11 @@ class One1GamePlatform {
       'Тренды': 'fa-fire',
       'Разработка': 'fa-code',
       'Мнение': 'fa-comment-dots',
-      'Мнения': 'fa-comment-dots',
-      'Кино и игры': 'fa-clapperboard'
+      'Кино и игры': 'fa-clapperboard',
+      'Обзоры': 'fa-star'
     };
 
-    const catOrder = ['Технологии', 'Гайды', 'Консоли', 'Аналитика', 'Тренды', 'Разработка', 'Мнение', 'Мнения', 'Кино и игры'];
+    const catOrder = ['Технологии', 'Гайды', 'Консоли', 'Аналитика', 'Тренды', 'Разработка', 'Мнение', 'Кино и игры', 'Обзоры'];
     const pills = Object.entries(catCount)
       .sort(([a], [b]) => {
         const ai = catOrder.indexOf(a), bi = catOrder.indexOf(b);

@@ -112,6 +112,38 @@
     }
     .game-stat-card .label { font-size: 12px; color: var(--text-faint); text-transform: uppercase; }
     .game-stat-card .value { font-size: 20px; font-weight: bold; margin-top: 4px; }
+    .game-shots {
+      display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+      gap: 12px; margin: 20px 0;
+    }
+    .game-shot {
+      display: block; border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 8px; overflow: hidden;
+    }
+    .game-shot img { display: block; width: 100%; height: auto; }
+    .game-movies { display: grid; gap: 16px; margin: 20px 0; }
+    .game-movie { margin: 0; }
+    .game-movie video {
+      display: block; width: 100%; height: auto;
+      border-radius: 8px; background: #000;
+    }
+    .game-movie figcaption { margin-top: 6px; font-size: 13px; color: var(--text-faint); }
+    .game-video {
+      position: relative; cursor: pointer; overflow: hidden;
+      border-radius: 8px; background: #000; aspect-ratio: 16 / 9;
+    }
+    .game-video img { display: block; width: 100%; height: 100%; object-fit: cover; }
+    .game-video-play { position: absolute; inset: 0; display: grid; place-items: center; }
+    .game-video-play::before {
+      content: ''; width: 58px; height: 58px; border-radius: 50%;
+      background: rgba(0,0,0,0.5); border: 2px solid rgba(255,255,255,0.75);
+    }
+    .game-video-play::after {
+      content: ''; position: absolute; margin-left: 5px;
+      border-style: solid; border-width: 11px 0 11px 18px;
+      border-color: transparent transparent transparent #fff;
+    }
+    .game-video-el { display: block; width: 100%; height: 100%; background: #000; }
   </style>
 </head>
 <body>
@@ -150,7 +182,7 @@
 
     <article class="article-body">
 
-      <p>Command a mercenary mech company in a turn-based tactical RPG. Plan every move on a hex battlefield, manage heat and localized damage, develop veteran pilots, repair battered machines, and carry the consequences of each mission into the next.</p>
+      
 
       <div class="game-stats-grid">
         <div class="game-stat-card">
@@ -166,10 +198,6 @@
           <div class="label">Владельцев (оценка)</div>
           <div class="value">0 – 20,000</div>
         </div>
-        <div class="game-stat-card">
-          <div class="label">Среднее время игры</div>
-          <div class="value">нет данных</div>
-        </div>
       </div>
 
       <h2>Об игре</h2>
@@ -183,7 +211,29 @@
         </a>
       </p>
 
-      <p style="color: var(--text-faint); font-size: 13px; margin-top: 30px;">
+            <h2>Скриншоты</h2>
+      <div class="game-shots">
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5139650/369c2e80018669ba26fa39a4ca06c104838ceb2d/ss_369c2e80018669ba26fa39a4ca06c104838ceb2d.1920x1080.jpg?t=1789857417" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5139650/369c2e80018669ba26fa39a4ca06c104838ceb2d/ss_369c2e80018669ba26fa39a4ca06c104838ceb2d.600x338.jpg?t=1789857417" alt="Meridian Strike — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5139650/b475ac902c6fd3dd42e7ce2a5a4187d9a162d98e/ss_b475ac902c6fd3dd42e7ce2a5a4187d9a162d98e.1920x1080.jpg?t=1789857417" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5139650/b475ac902c6fd3dd42e7ce2a5a4187d9a162d98e/ss_b475ac902c6fd3dd42e7ce2a5a4187d9a162d98e.600x338.jpg?t=1789857417" alt="Meridian Strike — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5139650/e4346e2eefee4afa57a72618be4ca86758939307/ss_e4346e2eefee4afa57a72618be4ca86758939307.1920x1080.jpg?t=1789857417" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5139650/e4346e2eefee4afa57a72618be4ca86758939307/ss_e4346e2eefee4afa57a72618be4ca86758939307.600x338.jpg?t=1789857417" alt="Meridian Strike — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5139650/39480dcd0477512703189816a8d4d22db337de04/ss_39480dcd0477512703189816a8d4d22db337de04.1920x1080.jpg?t=1789857417" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5139650/39480dcd0477512703189816a8d4d22db337de04/ss_39480dcd0477512703189816a8d4d22db337de04.600x338.jpg?t=1789857417" alt="Meridian Strike — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5139650/5a436f027f36c83740b4b111651d58b74600e3ad/ss_5a436f027f36c83740b4b111651d58b74600e3ad.1920x1080.jpg?t=1789857417" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5139650/5a436f027f36c83740b4b111651d58b74600e3ad/ss_5a436f027f36c83740b4b111651d58b74600e3ad.600x338.jpg?t=1789857417" alt="Meridian Strike — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5139650/f41c81a8b027dd064685819659090682c7648058/ss_f41c81a8b027dd064685819659090682c7648058.1920x1080.jpg?t=1789857417" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5139650/f41c81a8b027dd064685819659090682c7648058/ss_f41c81a8b027dd064685819659090682c7648058.600x338.jpg?t=1789857417" alt="Meridian Strike — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5139650/3376d1a77fdbb24e0ce5d62488665836358666be/ss_3376d1a77fdbb24e0ce5d62488665836358666be.1920x1080.jpg?t=1789857417" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5139650/3376d1a77fdbb24e0ce5d62488665836358666be/ss_3376d1a77fdbb24e0ce5d62488665836358666be.600x338.jpg?t=1789857417" alt="Meridian Strike — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5139650/77a525a19298bf3ff12e8e972e9c4a3715db6bed/ss_77a525a19298bf3ff12e8e972e9c4a3715db6bed.1920x1080.jpg?t=1789857417" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5139650/77a525a19298bf3ff12e8e972e9c4a3715db6bed/ss_77a525a19298bf3ff12e8e972e9c4a3715db6bed.600x338.jpg?t=1789857417" alt="Meridian Strike — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5139650/7e191d46ee4ca9720a08fb0dd57ed19e73c54c19/ss_7e191d46ee4ca9720a08fb0dd57ed19e73c54c19.1920x1080.jpg?t=1789857417" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5139650/7e191d46ee4ca9720a08fb0dd57ed19e73c54c19/ss_7e191d46ee4ca9720a08fb0dd57ed19e73c54c19.600x338.jpg?t=1789857417" alt="Meridian Strike — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5139650/5612e1235cbc0b95625f4b604a19bfe7da36fd7a/ss_5612e1235cbc0b95625f4b604a19bfe7da36fd7a.1920x1080.jpg?t=1789857417" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5139650/5612e1235cbc0b95625f4b604a19bfe7da36fd7a/ss_5612e1235cbc0b95625f4b604a19bfe7da36fd7a.600x338.jpg?t=1789857417" alt="Meridian Strike — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5139650/bb40ca77587cad37d5c85ed500b9edf749ec84ca/ss_bb40ca77587cad37d5c85ed500b9edf749ec84ca.1920x1080.jpg?t=1789857417" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5139650/bb40ca77587cad37d5c85ed500b9edf749ec84ca/ss_bb40ca77587cad37d5c85ed500b9edf749ec84ca.600x338.jpg?t=1789857417" alt="Meridian Strike — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5139650/d534cc5af4198196221ca3f712daeaa68341a6b5/ss_d534cc5af4198196221ca3f712daeaa68341a6b5.1920x1080.jpg?t=1789857417" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5139650/d534cc5af4198196221ca3f712daeaa68341a6b5/ss_d534cc5af4198196221ca3f712daeaa68341a6b5.600x338.jpg?t=1789857417" alt="Meridian Strike — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+      </div>
+
+      <h2>Геймплей</h2>
+      <div class="game-movies">
+        <figure class="game-movie"><div class="game-video" data-hls="https://video.akamai.steamstatic.com/store_trailers/5139650/126432463/ae7131e982c58eb989da617501c400aa0854a828/1787340492/hls_264_master.m3u8?t=1787815981" data-poster="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257405406/c398b4822892c0197b7a7326889d2b1f172ac45b/movie_600x337.jpg?t=1787815981" role="button" tabindex="0" aria-label="Смотреть геймплей: Game Tactical Battle Example"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257405406/c398b4822892c0197b7a7326889d2b1f172ac45b/movie_600x337.jpg?t=1787815981" alt="" loading="lazy" width="480" height="270" /><span class="game-video-play" aria-hidden="true"></span></div></figure>
+        <figure class="game-movie"><div class="game-video" data-hls="https://video.akamai.steamstatic.com/store_trailers/5139650/712584415/582724a424053376f235b915f8404909335d8ec8/1787340192/hls_264_master.m3u8?t=1787815982" data-poster="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257405399/2e361f2398f863d9095a49345daf8a024cf99d99/movie_600x337.jpg?t=1787815982" role="button" tabindex="0" aria-label="Смотреть геймплей: Prequel"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257405399/2e361f2398f863d9095a49345daf8a024cf99d99/movie_600x337.jpg?t=1787815982" alt="" loading="lazy" width="480" height="270" /><span class="game-video-play" aria-hidden="true"></span></div></figure>
+      </div>
+
+<p style="color: var(--text-faint); font-size: 13px; margin-top: 30px;">
         Данные о цене, отзывах и статистике обновляются автоматически на основе
         Steam Store API и SteamSpy.
       </p>
@@ -284,5 +334,6 @@ function declineCookies() {
 })();
 </script>
 <script src="/newsletter.js?v=2" defer></script>
+<script defer src="/game-media.js?v=1"></script>
 </body>
 </html>

@@ -112,6 +112,38 @@
     }
     .game-stat-card .label { font-size: 12px; color: var(--text-faint); text-transform: uppercase; }
     .game-stat-card .value { font-size: 20px; font-weight: bold; margin-top: 4px; }
+    .game-shots {
+      display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+      gap: 12px; margin: 20px 0;
+    }
+    .game-shot {
+      display: block; border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 8px; overflow: hidden;
+    }
+    .game-shot img { display: block; width: 100%; height: auto; }
+    .game-movies { display: grid; gap: 16px; margin: 20px 0; }
+    .game-movie { margin: 0; }
+    .game-movie video {
+      display: block; width: 100%; height: auto;
+      border-radius: 8px; background: #000;
+    }
+    .game-movie figcaption { margin-top: 6px; font-size: 13px; color: var(--text-faint); }
+    .game-video {
+      position: relative; cursor: pointer; overflow: hidden;
+      border-radius: 8px; background: #000; aspect-ratio: 16 / 9;
+    }
+    .game-video img { display: block; width: 100%; height: 100%; object-fit: cover; }
+    .game-video-play { position: absolute; inset: 0; display: grid; place-items: center; }
+    .game-video-play::before {
+      content: ''; width: 58px; height: 58px; border-radius: 50%;
+      background: rgba(0,0,0,0.5); border: 2px solid rgba(255,255,255,0.75);
+    }
+    .game-video-play::after {
+      content: ''; position: absolute; margin-left: 5px;
+      border-style: solid; border-width: 11px 0 11px 18px;
+      border-color: transparent transparent transparent #fff;
+    }
+    .game-video-el { display: block; width: 100%; height: 100%; background: #000; }
   </style>
 </head>
 <body>
@@ -150,7 +182,7 @@
 
     <article class="article-body">
 
-      <p>Your First: Half-Orc is a player-led MLM sexual experience in VR. Taking place in a fantasy world, enjoy the beautiful view of a glowing mushroom forest while you engage with a half-orc warrior in a dry sauna.</p>
+      
 
       <div class="game-stats-grid">
         <div class="game-stat-card">
@@ -166,10 +198,6 @@
           <div class="label">Владельцев (оценка)</div>
           <div class="value">0 – 20,000</div>
         </div>
-        <div class="game-stat-card">
-          <div class="label">Среднее время игры</div>
-          <div class="value">нет данных</div>
-        </div>
       </div>
 
       <h2>Об игре</h2>
@@ -183,7 +211,28 @@
         </a>
       </p>
 
-      <p style="color: var(--text-faint); font-size: 13px; margin-top: 30px;">
+            <h2>Скриншоты</h2>
+      <div class="game-shots">
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4739740/539b26bac86d2dfc0c85e374d834c8e1d1e2f061/ss_539b26bac86d2dfc0c85e374d834c8e1d1e2f061.1920x1080.jpg?t=1790982681" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4739740/539b26bac86d2dfc0c85e374d834c8e1d1e2f061/ss_539b26bac86d2dfc0c85e374d834c8e1d1e2f061.600x338.jpg?t=1790982681" alt="Your First Half-Orc: A Fantasy Gay Sex Encounter in VR — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4739740/6d01b423ff5b2d2659d8fa4c941e2b13bd352635/ss_6d01b423ff5b2d2659d8fa4c941e2b13bd352635.1920x1080.jpg?t=1790982681" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4739740/6d01b423ff5b2d2659d8fa4c941e2b13bd352635/ss_6d01b423ff5b2d2659d8fa4c941e2b13bd352635.600x338.jpg?t=1790982681" alt="Your First Half-Orc: A Fantasy Gay Sex Encounter in VR — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4739740/459d74c036dfb819212813f9b3663f217f6e1c67/ss_459d74c036dfb819212813f9b3663f217f6e1c67.1920x1080.jpg?t=1790982681" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4739740/459d74c036dfb819212813f9b3663f217f6e1c67/ss_459d74c036dfb819212813f9b3663f217f6e1c67.600x338.jpg?t=1790982681" alt="Your First Half-Orc: A Fantasy Gay Sex Encounter in VR — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4739740/5c212e811d8628fc4a42a85abc61dbbd558df172/ss_5c212e811d8628fc4a42a85abc61dbbd558df172.1920x1080.jpg?t=1790982681" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4739740/5c212e811d8628fc4a42a85abc61dbbd558df172/ss_5c212e811d8628fc4a42a85abc61dbbd558df172.600x338.jpg?t=1790982681" alt="Your First Half-Orc: A Fantasy Gay Sex Encounter in VR — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4739740/378475a6a82848c0d9e4bf07c416497630071933/ss_378475a6a82848c0d9e4bf07c416497630071933.1920x1080.jpg?t=1790982681" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4739740/378475a6a82848c0d9e4bf07c416497630071933/ss_378475a6a82848c0d9e4bf07c416497630071933.600x338.jpg?t=1790982681" alt="Your First Half-Orc: A Fantasy Gay Sex Encounter in VR — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4739740/f887fe8d4745bf8a110f98e3690b1901719c0080/ss_f887fe8d4745bf8a110f98e3690b1901719c0080.1920x1080.jpg?t=1790982681" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4739740/f887fe8d4745bf8a110f98e3690b1901719c0080/ss_f887fe8d4745bf8a110f98e3690b1901719c0080.600x338.jpg?t=1790982681" alt="Your First Half-Orc: A Fantasy Gay Sex Encounter in VR — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4739740/abbdb52600ab7ed624cec3a48173d37bd5dc8b34/ss_abbdb52600ab7ed624cec3a48173d37bd5dc8b34.1920x1080.jpg?t=1790982681" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4739740/abbdb52600ab7ed624cec3a48173d37bd5dc8b34/ss_abbdb52600ab7ed624cec3a48173d37bd5dc8b34.600x338.jpg?t=1790982681" alt="Your First Half-Orc: A Fantasy Gay Sex Encounter in VR — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4739740/1ca6314f71c4511b0639646dd09707cc8e714da6/ss_1ca6314f71c4511b0639646dd09707cc8e714da6.1920x1080.jpg?t=1790982681" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4739740/1ca6314f71c4511b0639646dd09707cc8e714da6/ss_1ca6314f71c4511b0639646dd09707cc8e714da6.600x338.jpg?t=1790982681" alt="Your First Half-Orc: A Fantasy Gay Sex Encounter in VR — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4739740/12b0dc83c05fa7ee17f98d08a95e308c4bf4e331/ss_12b0dc83c05fa7ee17f98d08a95e308c4bf4e331.1920x1080.jpg?t=1790982681" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4739740/12b0dc83c05fa7ee17f98d08a95e308c4bf4e331/ss_12b0dc83c05fa7ee17f98d08a95e308c4bf4e331.600x338.jpg?t=1790982681" alt="Your First Half-Orc: A Fantasy Gay Sex Encounter in VR — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4739740/d2a0bae77e18e8a1fa792f6f9da5f21d8f3de74b/ss_d2a0bae77e18e8a1fa792f6f9da5f21d8f3de74b.1920x1080.jpg?t=1790982681" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4739740/d2a0bae77e18e8a1fa792f6f9da5f21d8f3de74b/ss_d2a0bae77e18e8a1fa792f6f9da5f21d8f3de74b.600x338.jpg?t=1790982681" alt="Your First Half-Orc: A Fantasy Gay Sex Encounter in VR — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4739740/8ed61ab6ef2c83fb1a95d902d0e9d531f2f55b4f/ss_8ed61ab6ef2c83fb1a95d902d0e9d531f2f55b4f.1920x1080.jpg?t=1790982681" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4739740/8ed61ab6ef2c83fb1a95d902d0e9d531f2f55b4f/ss_8ed61ab6ef2c83fb1a95d902d0e9d531f2f55b4f.600x338.jpg?t=1790982681" alt="Your First Half-Orc: A Fantasy Gay Sex Encounter in VR — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+      </div>
+
+      <h2>Геймплей</h2>
+      <div class="game-movies">
+        <figure class="game-movie"><div class="game-video" data-hls="https://video.akamai.steamstatic.com/store_trailers/4739740/524804302/aa480fd131fcf5d74cbc8cdebfe6f9856700da38/1790405623/hls_264_master.m3u8?t=1790406768" data-poster="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257346327/2959d44cc6c54f30e36a5fb746747138a98e0c96/movie_600x337.jpg?t=1790406768" role="button" tabindex="0" aria-label="Смотреть геймплей: Your First: Half-Orc Gameplay Trailer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257346327/2959d44cc6c54f30e36a5fb746747138a98e0c96/movie_600x337.jpg?t=1790406768" alt="" loading="lazy" width="480" height="270" /><span class="game-video-play" aria-hidden="true"></span></div></figure>
+        <figure class="game-movie"><div class="game-video" data-hls="https://video.akamai.steamstatic.com/store_trailers/4739740/1308986778/c56c1e5ee5369808738fd85ea409535f0b53cf0b/1790405803/hls_264_master.m3u8?t=1790406768" data-poster="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257435823/a426119c4aa636beedb28e6dbf87f372d6fbcd78/movie_600x337.jpg?t=1790406768" role="button" tabindex="0" aria-label="Смотреть геймплей: Features Overview"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257435823/a426119c4aa636beedb28e6dbf87f372d6fbcd78/movie_600x337.jpg?t=1790406768" alt="" loading="lazy" width="480" height="270" /><span class="game-video-play" aria-hidden="true"></span></div></figure>
+      </div>
+
+<p style="color: var(--text-faint); font-size: 13px; margin-top: 30px;">
         Данные о цене, отзывах и статистике обновляются автоматически на основе
         Steam Store API и SteamSpy.
       </p>
@@ -284,5 +333,6 @@ function declineCookies() {
 })();
 </script>
 <script src="/newsletter.js?v=2" defer></script>
+<script defer src="/game-media.js?v=1"></script>
 </body>
 </html>

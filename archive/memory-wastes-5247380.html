@@ -108,6 +108,38 @@
     }
     .game-stat-card .label { font-size: 12px; color: var(--text-faint); text-transform: uppercase; }
     .game-stat-card .value { font-size: 20px; font-weight: bold; margin-top: 4px; }
+    .game-shots {
+      display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+      gap: 12px; margin: 20px 0;
+    }
+    .game-shot {
+      display: block; border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 8px; overflow: hidden;
+    }
+    .game-shot img { display: block; width: 100%; height: auto; }
+    .game-movies { display: grid; gap: 16px; margin: 20px 0; }
+    .game-movie { margin: 0; }
+    .game-movie video {
+      display: block; width: 100%; height: auto;
+      border-radius: 8px; background: #000;
+    }
+    .game-movie figcaption { margin-top: 6px; font-size: 13px; color: var(--text-faint); }
+    .game-video {
+      position: relative; cursor: pointer; overflow: hidden;
+      border-radius: 8px; background: #000; aspect-ratio: 16 / 9;
+    }
+    .game-video img { display: block; width: 100%; height: 100%; object-fit: cover; }
+    .game-video-play { position: absolute; inset: 0; display: grid; place-items: center; }
+    .game-video-play::before {
+      content: ''; width: 58px; height: 58px; border-radius: 50%;
+      background: rgba(0,0,0,0.5); border: 2px solid rgba(255,255,255,0.75);
+    }
+    .game-video-play::after {
+      content: ''; position: absolute; margin-left: 5px;
+      border-style: solid; border-width: 11px 0 11px 18px;
+      border-color: transparent transparent transparent #fff;
+    }
+    .game-video-el { display: block; width: 100%; height: 100%; background: #000; }
   </style>
 </head>
 <body>
@@ -162,10 +194,6 @@
           <div class="label">Владельцев (оценка)</div>
           <div class="value">0 – 20,000</div>
         </div>
-        <div class="game-stat-card">
-          <div class="label">Среднее время игры</div>
-          <div class="value">нет данных</div>
-        </div>
       </div>
 
       <h2>Об игре</h2>
@@ -179,7 +207,23 @@
         </a>
       </p>
 
-      <p style="color: var(--text-faint); font-size: 13px; margin-top: 30px;">
+            <h2>Скриншоты</h2>
+      <div class="game-shots">
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5247380/efe55947507e2bca92aaffdebbdb74f2ff8c1eba/ss_efe55947507e2bca92aaffdebbdb74f2ff8c1eba.1920x1080.jpg?t=1790757779" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5247380/efe55947507e2bca92aaffdebbdb74f2ff8c1eba/ss_efe55947507e2bca92aaffdebbdb74f2ff8c1eba.600x338.jpg?t=1790757779" alt="Memory Wastes — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5247380/73a032999255242add445ab8e1e2dfe9de94441d/ss_73a032999255242add445ab8e1e2dfe9de94441d.1920x1080.jpg?t=1790757779" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5247380/73a032999255242add445ab8e1e2dfe9de94441d/ss_73a032999255242add445ab8e1e2dfe9de94441d.600x338.jpg?t=1790757779" alt="Memory Wastes — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5247380/7cdf4153b2cf4de0096d8ad6a06ddf5965a8efc6/ss_7cdf4153b2cf4de0096d8ad6a06ddf5965a8efc6.1920x1080.jpg?t=1790757779" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5247380/7cdf4153b2cf4de0096d8ad6a06ddf5965a8efc6/ss_7cdf4153b2cf4de0096d8ad6a06ddf5965a8efc6.600x338.jpg?t=1790757779" alt="Memory Wastes — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5247380/00a354b03930ae6b7f30f4c0e9f28bf41a23d988/ss_00a354b03930ae6b7f30f4c0e9f28bf41a23d988.1920x1080.jpg?t=1790757779" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5247380/00a354b03930ae6b7f30f4c0e9f28bf41a23d988/ss_00a354b03930ae6b7f30f4c0e9f28bf41a23d988.600x338.jpg?t=1790757779" alt="Memory Wastes — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5247380/e0615da42787982dba46a88c44e12a4912f280cd/ss_e0615da42787982dba46a88c44e12a4912f280cd.1920x1080.jpg?t=1790757779" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5247380/e0615da42787982dba46a88c44e12a4912f280cd/ss_e0615da42787982dba46a88c44e12a4912f280cd.600x338.jpg?t=1790757779" alt="Memory Wastes — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5247380/c3b09c02941e0f1315e2f117567787718a1344be/ss_c3b09c02941e0f1315e2f117567787718a1344be.1920x1080.jpg?t=1790757779" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5247380/c3b09c02941e0f1315e2f117567787718a1344be/ss_c3b09c02941e0f1315e2f117567787718a1344be.600x338.jpg?t=1790757779" alt="Memory Wastes — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+      </div>
+
+      <h2>Геймплей</h2>
+      <div class="game-movies">
+        <figure class="game-movie"><div class="game-video" data-hls="https://video.akamai.steamstatic.com/store_trailers/5247380/1004079461/9de479fa2bfb9c4bb55949136d989d2d048d6f0f/1788975341/hls_264_master.m3u8?t=1789474384" data-poster="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257421042/aa33c48c9125511e9c7420a3e8ed8f8c987deae1/movie_600x337.jpg?t=1789474384" role="button" tabindex="0" aria-label="Смотреть геймплей: Gameplay Trailer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257421042/aa33c48c9125511e9c7420a3e8ed8f8c987deae1/movie_600x337.jpg?t=1789474384" alt="" loading="lazy" width="480" height="270" /><span class="game-video-play" aria-hidden="true"></span></div></figure>
+        <figure class="game-movie"><div class="game-video" data-hls="https://video.akamai.steamstatic.com/store_trailers/5247380/158567269/b9108bbf247903bbda0a1be660fa5b1e9b0dbee1/1788975642/hls_264_master.m3u8?t=1789474385" data-poster="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257421048/0d94c1d89dc6ea98ebe523c5e9c475d7075e7567/movie_600x337.jpg?t=1789474385" role="button" tabindex="0" aria-label="Смотреть геймплей: Gameplay Trailer 2"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257421048/0d94c1d89dc6ea98ebe523c5e9c475d7075e7567/movie_600x337.jpg?t=1789474385" alt="" loading="lazy" width="480" height="270" /><span class="game-video-play" aria-hidden="true"></span></div></figure>
+      </div>
+
+<p style="color: var(--text-faint); font-size: 13px; margin-top: 30px;">
         Данные о цене, отзывах и статистике обновляются автоматически на основе
         Steam Store API и SteamSpy.
       </p>
@@ -280,5 +324,6 @@ function declineCookies() {
 })();
 </script>
 <script src="/newsletter.js?v=2" defer></script>
+<script defer src="/game-media.js?v=1"></script>
 </body>
 </html>

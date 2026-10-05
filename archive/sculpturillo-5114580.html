@@ -112,6 +112,38 @@
     }
     .game-stat-card .label { font-size: 12px; color: var(--text-faint); text-transform: uppercase; }
     .game-stat-card .value { font-size: 20px; font-weight: bold; margin-top: 4px; }
+    .game-shots {
+      display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+      gap: 12px; margin: 20px 0;
+    }
+    .game-shot {
+      display: block; border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 8px; overflow: hidden;
+    }
+    .game-shot img { display: block; width: 100%; height: auto; }
+    .game-movies { display: grid; gap: 16px; margin: 20px 0; }
+    .game-movie { margin: 0; }
+    .game-movie video {
+      display: block; width: 100%; height: auto;
+      border-radius: 8px; background: #000;
+    }
+    .game-movie figcaption { margin-top: 6px; font-size: 13px; color: var(--text-faint); }
+    .game-video {
+      position: relative; cursor: pointer; overflow: hidden;
+      border-radius: 8px; background: #000; aspect-ratio: 16 / 9;
+    }
+    .game-video img { display: block; width: 100%; height: 100%; object-fit: cover; }
+    .game-video-play { position: absolute; inset: 0; display: grid; place-items: center; }
+    .game-video-play::before {
+      content: ''; width: 58px; height: 58px; border-radius: 50%;
+      background: rgba(0,0,0,0.5); border: 2px solid rgba(255,255,255,0.75);
+    }
+    .game-video-play::after {
+      content: ''; position: absolute; margin-left: 5px;
+      border-style: solid; border-width: 11px 0 11px 18px;
+      border-color: transparent transparent transparent #fff;
+    }
+    .game-video-el { display: block; width: 100%; height: 100%; background: #000; }
   </style>
 </head>
 <body>
@@ -150,7 +182,7 @@
 
     <article class="article-body">
 
-      <p>You get a secret word and you have to sculpt it in 3D clay while your friends spam the chat guessing absolute nonsense. Are you an artist or a disaster with hands? An online party game for 2 to 10 players, with characters you create yourself and matches in 6 languages.</p>
+      
 
       <div class="game-stats-grid">
         <div class="game-stat-card">
@@ -166,10 +198,6 @@
           <div class="label">Владельцев (оценка)</div>
           <div class="value">0 – 20,000</div>
         </div>
-        <div class="game-stat-card">
-          <div class="label">Среднее время игры</div>
-          <div class="value">нет данных</div>
-        </div>
       </div>
 
       <h2>Об игре</h2>
@@ -183,7 +211,26 @@
         </a>
       </p>
 
-      <p style="color: var(--text-faint); font-size: 13px; margin-top: 30px;">
+            <h2>Скриншоты</h2>
+      <div class="game-shots">
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5114580/ffc007d08b0e9c50b378e1dabeedbe586c215c6e/ss_ffc007d08b0e9c50b378e1dabeedbe586c215c6e.1920x1080.jpg?t=1791080066" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5114580/ffc007d08b0e9c50b378e1dabeedbe586c215c6e/ss_ffc007d08b0e9c50b378e1dabeedbe586c215c6e.600x338.jpg?t=1791080066" alt="Sculpturillo — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5114580/7a58b0b8321608ab719b0136a1b94067648d5ee6/ss_7a58b0b8321608ab719b0136a1b94067648d5ee6.1920x1080.jpg?t=1791080066" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5114580/7a58b0b8321608ab719b0136a1b94067648d5ee6/ss_7a58b0b8321608ab719b0136a1b94067648d5ee6.600x338.jpg?t=1791080066" alt="Sculpturillo — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5114580/5fc0016e26b18a7d809c5e710e6516fa6424061c/ss_5fc0016e26b18a7d809c5e710e6516fa6424061c.1920x1080.jpg?t=1791080066" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5114580/5fc0016e26b18a7d809c5e710e6516fa6424061c/ss_5fc0016e26b18a7d809c5e710e6516fa6424061c.600x338.jpg?t=1791080066" alt="Sculpturillo — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5114580/a3f82ab7b27359818237c7f0a21523ed9a0b0ebf/ss_a3f82ab7b27359818237c7f0a21523ed9a0b0ebf.1920x1080.jpg?t=1791080066" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5114580/a3f82ab7b27359818237c7f0a21523ed9a0b0ebf/ss_a3f82ab7b27359818237c7f0a21523ed9a0b0ebf.600x338.jpg?t=1791080066" alt="Sculpturillo — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5114580/87238dab5bbcf5bc92e5f0bc77473ea3ee00e2a9/ss_87238dab5bbcf5bc92e5f0bc77473ea3ee00e2a9.1920x1080.jpg?t=1791080066" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5114580/87238dab5bbcf5bc92e5f0bc77473ea3ee00e2a9/ss_87238dab5bbcf5bc92e5f0bc77473ea3ee00e2a9.600x338.jpg?t=1791080066" alt="Sculpturillo — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5114580/f89427f18d769b530d5650d2ed05eb5400baf81e/ss_f89427f18d769b530d5650d2ed05eb5400baf81e.1920x1080.jpg?t=1791080066" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5114580/f89427f18d769b530d5650d2ed05eb5400baf81e/ss_f89427f18d769b530d5650d2ed05eb5400baf81e.600x338.jpg?t=1791080066" alt="Sculpturillo — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5114580/91d0226b2ecb7757c2d853b8bf7c184ed7af60a4/ss_91d0226b2ecb7757c2d853b8bf7c184ed7af60a4.1920x1080.jpg?t=1791080066" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5114580/91d0226b2ecb7757c2d853b8bf7c184ed7af60a4/ss_91d0226b2ecb7757c2d853b8bf7c184ed7af60a4.600x338.jpg?t=1791080066" alt="Sculpturillo — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5114580/aa0238712f2aa0136ec349ec5539de7819ac24dc/ss_aa0238712f2aa0136ec349ec5539de7819ac24dc.1920x1080.jpg?t=1791080066" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5114580/aa0238712f2aa0136ec349ec5539de7819ac24dc/ss_aa0238712f2aa0136ec349ec5539de7819ac24dc.600x338.jpg?t=1791080066" alt="Sculpturillo — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5114580/7f6a4dd31d63243a70964e5e157b37821b3a0e83/ss_7f6a4dd31d63243a70964e5e157b37821b3a0e83.1920x1080.jpg?t=1791080066" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5114580/7f6a4dd31d63243a70964e5e157b37821b3a0e83/ss_7f6a4dd31d63243a70964e5e157b37821b3a0e83.600x338.jpg?t=1791080066" alt="Sculpturillo — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5114580/78fe3f28240cfc6667e5c3b84d32c122dfd23e77/ss_78fe3f28240cfc6667e5c3b84d32c122dfd23e77.1920x1080.jpg?t=1791080066" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5114580/78fe3f28240cfc6667e5c3b84d32c122dfd23e77/ss_78fe3f28240cfc6667e5c3b84d32c122dfd23e77.600x338.jpg?t=1791080066" alt="Sculpturillo — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+      </div>
+
+      <h2>Геймплей</h2>
+      <div class="game-movies">
+        <figure class="game-movie"><div class="game-video" data-hls="https://video.akamai.steamstatic.com/store_trailers/5114580/500571739/1dc9e8df0c4913d151e24528bce5a187208bd585/1791079255/hls_264_master.m3u8?t=1791080055" data-poster="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257443126/8b3e0510b88c1c41949323c87ae74a26ad7782e1/movie_600x337.jpg?t=1791080055" role="button" tabindex="0" aria-label="Смотреть геймплей: PresentationTrailerEN"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257443126/8b3e0510b88c1c41949323c87ae74a26ad7782e1/movie_600x337.jpg?t=1791080055" alt="" loading="lazy" width="480" height="270" /><span class="game-video-play" aria-hidden="true"></span></div></figure>
+      </div>
+
+<p style="color: var(--text-faint); font-size: 13px; margin-top: 30px;">
         Данные о цене, отзывах и статистике обновляются автоматически на основе
         Steam Store API и SteamSpy.
       </p>
@@ -284,5 +331,6 @@ function declineCookies() {
 })();
 </script>
 <script src="/newsletter.js?v=2" defer></script>
+<script defer src="/game-media.js?v=1"></script>
 </body>
 </html>

@@ -117,6 +117,38 @@
     }
     .game-stat-card .label { font-size: 12px; color: var(--text-faint); text-transform: uppercase; }
     .game-stat-card .value { font-size: 20px; font-weight: bold; margin-top: 4px; }
+    .game-shots {
+      display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+      gap: 12px; margin: 20px 0;
+    }
+    .game-shot {
+      display: block; border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 8px; overflow: hidden;
+    }
+    .game-shot img { display: block; width: 100%; height: auto; }
+    .game-movies { display: grid; gap: 16px; margin: 20px 0; }
+    .game-movie { margin: 0; }
+    .game-movie video {
+      display: block; width: 100%; height: auto;
+      border-radius: 8px; background: #000;
+    }
+    .game-movie figcaption { margin-top: 6px; font-size: 13px; color: var(--text-faint); }
+    .game-video {
+      position: relative; cursor: pointer; overflow: hidden;
+      border-radius: 8px; background: #000; aspect-ratio: 16 / 9;
+    }
+    .game-video img { display: block; width: 100%; height: 100%; object-fit: cover; }
+    .game-video-play { position: absolute; inset: 0; display: grid; place-items: center; }
+    .game-video-play::before {
+      content: ''; width: 58px; height: 58px; border-radius: 50%;
+      background: rgba(0,0,0,0.5); border: 2px solid rgba(255,255,255,0.75);
+    }
+    .game-video-play::after {
+      content: ''; position: absolute; margin-left: 5px;
+      border-style: solid; border-width: 11px 0 11px 18px;
+      border-color: transparent transparent transparent #fff;
+    }
+    .game-video-el { display: block; width: 100%; height: 100%; background: #000; }
   </style>
 </head>
 <body>
@@ -155,7 +187,7 @@
 
     <article class="article-body">
 
-      <p>Set in the zombie apocalypse, Left 4 Dead 2 is a co-operative action horror FPS takes you and your friends through the cities, swamps and cemeteries of the Deep South, from Savannah to New Orleans across five expansive campaigns.</p>
+      
 
       <div class="game-stats-grid">
         <div class="game-stat-card">
@@ -174,10 +206,6 @@
           <div class="label">Владельцев (оценка)</div>
           <div class="value">50,000,000 – 100,000,000</div>
         </div>
-        <div class="game-stat-card">
-          <div class="label">Среднее время игры</div>
-          <div class="value">нет данных</div>
-        </div>
       </div>
 
       <h2>Об игре</h2>
@@ -191,7 +219,29 @@
         </a>
       </p>
 
-      <p style="color: var(--text-faint); font-size: 13px; margin-top: 30px;">
+            <h2>Скриншоты</h2>
+      <div class="game-shots">
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/550/ss_2eae29fbdfe8e5e8999b96d8bb28c5db70507968.1920x1080.jpg?t=1772742214" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/550/ss_2eae29fbdfe8e5e8999b96d8bb28c5db70507968.600x338.jpg?t=1772742214" alt="Left 4 Dead 2 — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/550/ss_29b3b4f2a3994c889f6fc12e0781d9d4726ef33f.1920x1080.jpg?t=1772742214" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/550/ss_29b3b4f2a3994c889f6fc12e0781d9d4726ef33f.600x338.jpg?t=1772742214" alt="Left 4 Dead 2 — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/550/ss_9488e329bb42d792a059fb44cb7135d25b6262f5.1920x1080.jpg?t=1772742214" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/550/ss_9488e329bb42d792a059fb44cb7135d25b6262f5.600x338.jpg?t=1772742214" alt="Left 4 Dead 2 — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/550/ss_6ec4ee04d4924b099e25ce79f3d6571c3b623b3b.1920x1080.jpg?t=1772742214" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/550/ss_6ec4ee04d4924b099e25ce79f3d6571c3b623b3b.600x338.jpg?t=1772742214" alt="Left 4 Dead 2 — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/550/ss_73ad69168a263ce585e4823d9607d901719ca3c5.1920x1080.jpg?t=1772742214" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/550/ss_73ad69168a263ce585e4823d9607d901719ca3c5.600x338.jpg?t=1772742214" alt="Left 4 Dead 2 — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/550/ss_a9c1227ffe8a1968e234b3ebda08e773fc619e37.1920x1080.jpg?t=1772742214" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/550/ss_a9c1227ffe8a1968e234b3ebda08e773fc619e37.600x338.jpg?t=1772742214" alt="Left 4 Dead 2 — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/550/ss_ba2ea2eda245f89626277457ae2ab76ba997f46a.1920x1080.jpg?t=1772742214" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/550/ss_ba2ea2eda245f89626277457ae2ab76ba997f46a.600x338.jpg?t=1772742214" alt="Left 4 Dead 2 — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/550/ss_7098be159cfe3cc524fb68b2585f643324cc1078.1920x1080.jpg?t=1772742214" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/550/ss_7098be159cfe3cc524fb68b2585f643324cc1078.600x338.jpg?t=1772742214" alt="Left 4 Dead 2 — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/550/ss_67275710127ce20b62015718dbf84147fde7fc17.1920x1080.jpg?t=1772742214" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/550/ss_67275710127ce20b62015718dbf84147fde7fc17.600x338.jpg?t=1772742214" alt="Left 4 Dead 2 — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/550/ss_d97ee8bd9a512f350bd9433730db26da76ff7a29.1920x1080.jpg?t=1772742214" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/550/ss_d97ee8bd9a512f350bd9433730db26da76ff7a29.600x338.jpg?t=1772742214" alt="Left 4 Dead 2 — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/550/ss_6d2a44e590caa0cc2946d8397d4dd160cbd3f6ed.1920x1080.jpg?t=1772742214" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/550/ss_6d2a44e590caa0cc2946d8397d4dd160cbd3f6ed.600x338.jpg?t=1772742214" alt="Left 4 Dead 2 — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/550/ss_b7e72ed4d0af894a61d8c6bb5def3d169f56c702.1920x1080.jpg?t=1772742214" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/550/ss_b7e72ed4d0af894a61d8c6bb5def3d169f56c702.600x338.jpg?t=1772742214" alt="Left 4 Dead 2 — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+      </div>
+
+      <h2>Геймплей</h2>
+      <div class="game-movies">
+        <figure class="game-movie"><div class="game-video" data-hls="https://video.akamai.steamstatic.com/store_trailers/550/4183/7fdfab73a52d6b4e69a693f77c66620c53086cbd/1749861554/hls_264_master.m3u8?t=1682697457" data-poster="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5952/movie.293x165.jpg?t=1682697457" role="button" tabindex="0" aria-label="Смотреть геймплей: Left 4 Dead - The Sacrifice Trailer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5952/movie.293x165.jpg?t=1682697457" alt="" loading="lazy" width="480" height="270" /><span class="game-video-play" aria-hidden="true"></span></div></figure>
+        <figure class="game-movie"><div class="game-video" data-hls="https://video.akamai.steamstatic.com/store_trailers/550/2063/5a66ec1afd41bc64a8a84354bd9755acdb83b75e/1750107723/hls_264_master.m3u8?t=1447352170" data-poster="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5268/movie.jpg?t=1447352170" role="button" tabindex="0" aria-label="Смотреть геймплей: Left 4 Dead 2 Teaser"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5268/movie.jpg?t=1447352170" alt="" loading="lazy" width="480" height="270" /><span class="game-video-play" aria-hidden="true"></span></div></figure>
+      </div>
+
+<p style="color: var(--text-faint); font-size: 13px; margin-top: 30px;">
         Данные о цене, отзывах и статистике обновляются автоматически на основе
         Steam Store API и SteamSpy.
       </p>
@@ -292,5 +342,6 @@ function declineCookies() {
 })();
 </script>
 <script src="/newsletter.js?v=2" defer></script>
+<script defer src="/game-media.js?v=1"></script>
 </body>
 </html>

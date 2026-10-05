@@ -112,6 +112,38 @@
     }
     .game-stat-card .label { font-size: 12px; color: var(--text-faint); text-transform: uppercase; }
     .game-stat-card .value { font-size: 20px; font-weight: bold; margin-top: 4px; }
+    .game-shots {
+      display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+      gap: 12px; margin: 20px 0;
+    }
+    .game-shot {
+      display: block; border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 8px; overflow: hidden;
+    }
+    .game-shot img { display: block; width: 100%; height: auto; }
+    .game-movies { display: grid; gap: 16px; margin: 20px 0; }
+    .game-movie { margin: 0; }
+    .game-movie video {
+      display: block; width: 100%; height: auto;
+      border-radius: 8px; background: #000;
+    }
+    .game-movie figcaption { margin-top: 6px; font-size: 13px; color: var(--text-faint); }
+    .game-video {
+      position: relative; cursor: pointer; overflow: hidden;
+      border-radius: 8px; background: #000; aspect-ratio: 16 / 9;
+    }
+    .game-video img { display: block; width: 100%; height: 100%; object-fit: cover; }
+    .game-video-play { position: absolute; inset: 0; display: grid; place-items: center; }
+    .game-video-play::before {
+      content: ''; width: 58px; height: 58px; border-radius: 50%;
+      background: rgba(0,0,0,0.5); border: 2px solid rgba(255,255,255,0.75);
+    }
+    .game-video-play::after {
+      content: ''; position: absolute; margin-left: 5px;
+      border-style: solid; border-width: 11px 0 11px 18px;
+      border-color: transparent transparent transparent #fff;
+    }
+    .game-video-el { display: block; width: 100%; height: 100%; background: #000; }
   </style>
 </head>
 <body>
@@ -150,7 +182,7 @@
 
     <article class="article-body">
 
-      <p>A 2D pixel-art score-chaser built on real orbital mechanics. Launch, pitch over, coast, and circularise into the exact orbit each contract asks for, then hold it for one full lap before the fuel runs out. Ten missions, three hulls, and a gold tier tuned past the developers' own autopilot.</p>
+      
 
       <div class="game-stats-grid">
         <div class="game-stat-card">
@@ -166,10 +198,6 @@
           <div class="label">Владельцев (оценка)</div>
           <div class="value">0 – 20,000</div>
         </div>
-        <div class="game-stat-card">
-          <div class="label">Среднее время игры</div>
-          <div class="value">нет данных</div>
-        </div>
       </div>
 
       <h2>Об игре</h2>
@@ -183,7 +211,21 @@
         </a>
       </p>
 
-      <p style="color: var(--text-faint); font-size: 13px; margin-top: 30px;">
+            <h2>Скриншоты</h2>
+      <div class="game-shots">
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5130440/4334c86651ae3ccfebf6b4c64da6ed01ee59f92c/ss_4334c86651ae3ccfebf6b4c64da6ed01ee59f92c.1920x1080.jpg?t=1790965495" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5130440/4334c86651ae3ccfebf6b4c64da6ed01ee59f92c/ss_4334c86651ae3ccfebf6b4c64da6ed01ee59f92c.600x338.jpg?t=1790965495" alt="Get To Orbit — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5130440/35ec845e5f311386ed05ce7438cde1dfc6865515/ss_35ec845e5f311386ed05ce7438cde1dfc6865515.1920x1080.jpg?t=1790965495" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5130440/35ec845e5f311386ed05ce7438cde1dfc6865515/ss_35ec845e5f311386ed05ce7438cde1dfc6865515.600x338.jpg?t=1790965495" alt="Get To Orbit — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5130440/ca61a7f6d997be836c86e23136fc8569f3f2f4f8/ss_ca61a7f6d997be836c86e23136fc8569f3f2f4f8.1920x1080.jpg?t=1790965495" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5130440/ca61a7f6d997be836c86e23136fc8569f3f2f4f8/ss_ca61a7f6d997be836c86e23136fc8569f3f2f4f8.600x338.jpg?t=1790965495" alt="Get To Orbit — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5130440/db8cc623d8a1645945d42794d3b1a750da78951b/ss_db8cc623d8a1645945d42794d3b1a750da78951b.1920x1080.jpg?t=1790965495" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5130440/db8cc623d8a1645945d42794d3b1a750da78951b/ss_db8cc623d8a1645945d42794d3b1a750da78951b.600x338.jpg?t=1790965495" alt="Get To Orbit — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5130440/24c578422a91d79d32f042031ba74589c77650c3/ss_24c578422a91d79d32f042031ba74589c77650c3.1920x1080.jpg?t=1790965495" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5130440/24c578422a91d79d32f042031ba74589c77650c3/ss_24c578422a91d79d32f042031ba74589c77650c3.600x338.jpg?t=1790965495" alt="Get To Orbit — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+      </div>
+
+      <h2>Геймплей</h2>
+      <div class="game-movies">
+        <figure class="game-movie"><div class="game-video" data-hls="https://video.akamai.steamstatic.com/store_trailers/5130440/532639867/ecf4d44c93a0bd67b668fbe19c3cf6b26cea023c/1787207618/hls_264_master.m3u8?t=1789415477" data-poster="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257403770/98b89b081359d2c9f944bd23f1683181c78ad987/movie_600x337.jpg?t=1789415477" role="button" tabindex="0" aria-label="Смотреть геймплей: Wishlist Trailer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257403770/98b89b081359d2c9f944bd23f1683181c78ad987/movie_600x337.jpg?t=1789415477" alt="" loading="lazy" width="480" height="270" /><span class="game-video-play" aria-hidden="true"></span></div></figure>
+      </div>
+
+<p style="color: var(--text-faint); font-size: 13px; margin-top: 30px;">
         Данные о цене, отзывах и статистике обновляются автоматически на основе
         Steam Store API и SteamSpy.
       </p>
@@ -284,5 +326,6 @@ function declineCookies() {
 })();
 </script>
 <script src="/newsletter.js?v=2" defer></script>
+<script defer src="/game-media.js?v=1"></script>
 </body>
 </html>

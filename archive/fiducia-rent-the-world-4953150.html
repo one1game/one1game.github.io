@@ -108,6 +108,38 @@
     }
     .game-stat-card .label { font-size: 12px; color: var(--text-faint); text-transform: uppercase; }
     .game-stat-card .value { font-size: 20px; font-weight: bold; margin-top: 4px; }
+    .game-shots {
+      display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+      gap: 12px; margin: 20px 0;
+    }
+    .game-shot {
+      display: block; border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 8px; overflow: hidden;
+    }
+    .game-shot img { display: block; width: 100%; height: auto; }
+    .game-movies { display: grid; gap: 16px; margin: 20px 0; }
+    .game-movie { margin: 0; }
+    .game-movie video {
+      display: block; width: 100%; height: auto;
+      border-radius: 8px; background: #000;
+    }
+    .game-movie figcaption { margin-top: 6px; font-size: 13px; color: var(--text-faint); }
+    .game-video {
+      position: relative; cursor: pointer; overflow: hidden;
+      border-radius: 8px; background: #000; aspect-ratio: 16 / 9;
+    }
+    .game-video img { display: block; width: 100%; height: 100%; object-fit: cover; }
+    .game-video-play { position: absolute; inset: 0; display: grid; place-items: center; }
+    .game-video-play::before {
+      content: ''; width: 58px; height: 58px; border-radius: 50%;
+      background: rgba(0,0,0,0.5); border: 2px solid rgba(255,255,255,0.75);
+    }
+    .game-video-play::after {
+      content: ''; position: absolute; margin-left: 5px;
+      border-style: solid; border-width: 11px 0 11px 18px;
+      border-color: transparent transparent transparent #fff;
+    }
+    .game-video-el { display: block; width: 100%; height: 100%; background: #000; }
   </style>
 </head>
 <body>
@@ -162,10 +194,6 @@
           <div class="label">Владельцев (оценка)</div>
           <div class="value">0 – 20,000</div>
         </div>
-        <div class="game-stat-card">
-          <div class="label">Среднее время игры</div>
-          <div class="value">нет данных</div>
-        </div>
       </div>
 
       <h2>Об игре</h2>
@@ -179,7 +207,26 @@
         </a>
       </p>
 
-      <p style="color: var(--text-faint); font-size: 13px; margin-top: 30px;">
+            <h2>Скриншоты</h2>
+      <div class="game-shots">
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4953150/9b859e35aa21145ace0fd601ad9c02e28b2de458/ss_9b859e35aa21145ace0fd601ad9c02e28b2de458.1920x1080.jpg?t=1790420921" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4953150/9b859e35aa21145ace0fd601ad9c02e28b2de458/ss_9b859e35aa21145ace0fd601ad9c02e28b2de458.600x338.jpg?t=1790420921" alt="Fiducia: Rent The World — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4953150/3b0107fb55c71379d4b1b55f1f8a8f1a1325a330/ss_3b0107fb55c71379d4b1b55f1f8a8f1a1325a330.1920x1080.jpg?t=1790420921" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4953150/3b0107fb55c71379d4b1b55f1f8a8f1a1325a330/ss_3b0107fb55c71379d4b1b55f1f8a8f1a1325a330.600x338.jpg?t=1790420921" alt="Fiducia: Rent The World — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4953150/3b3f465ef28f4911d5f99ab6b843f0460057a562/ss_3b3f465ef28f4911d5f99ab6b843f0460057a562.1920x1080.jpg?t=1790420921" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4953150/3b3f465ef28f4911d5f99ab6b843f0460057a562/ss_3b3f465ef28f4911d5f99ab6b843f0460057a562.600x338.jpg?t=1790420921" alt="Fiducia: Rent The World — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4953150/4f3df15bdabd9de47a51551b13a23410c421b889/ss_4f3df15bdabd9de47a51551b13a23410c421b889.1920x1080.jpg?t=1790420921" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4953150/4f3df15bdabd9de47a51551b13a23410c421b889/ss_4f3df15bdabd9de47a51551b13a23410c421b889.600x338.jpg?t=1790420921" alt="Fiducia: Rent The World — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4953150/a0116ee194cba7275310ad49c7d7dcd205de9adb/ss_a0116ee194cba7275310ad49c7d7dcd205de9adb.1920x1080.jpg?t=1790420921" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4953150/a0116ee194cba7275310ad49c7d7dcd205de9adb/ss_a0116ee194cba7275310ad49c7d7dcd205de9adb.600x338.jpg?t=1790420921" alt="Fiducia: Rent The World — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4953150/1e3c9646974f91fe7611256100f87a7170c4bd50/ss_1e3c9646974f91fe7611256100f87a7170c4bd50.1920x1080.jpg?t=1790420921" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4953150/1e3c9646974f91fe7611256100f87a7170c4bd50/ss_1e3c9646974f91fe7611256100f87a7170c4bd50.600x338.jpg?t=1790420921" alt="Fiducia: Rent The World — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4953150/a307b908635d488016280ddc0535352644dd0065/ss_a307b908635d488016280ddc0535352644dd0065.1920x1080.jpg?t=1790420921" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4953150/a307b908635d488016280ddc0535352644dd0065/ss_a307b908635d488016280ddc0535352644dd0065.600x338.jpg?t=1790420921" alt="Fiducia: Rent The World — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4953150/c50ffaacbe3991806d45aa92e02e4a4e191e1c0b/ss_c50ffaacbe3991806d45aa92e02e4a4e191e1c0b.1920x1080.jpg?t=1790420921" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4953150/c50ffaacbe3991806d45aa92e02e4a4e191e1c0b/ss_c50ffaacbe3991806d45aa92e02e4a4e191e1c0b.600x338.jpg?t=1790420921" alt="Fiducia: Rent The World — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4953150/61f9a3d1f6b9c110c584668402a5a2465950c40d/ss_61f9a3d1f6b9c110c584668402a5a2465950c40d.1920x1080.jpg?t=1790420921" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4953150/61f9a3d1f6b9c110c584668402a5a2465950c40d/ss_61f9a3d1f6b9c110c584668402a5a2465950c40d.600x338.jpg?t=1790420921" alt="Fiducia: Rent The World — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4953150/66a643444f27f9cd75f448c327222a3262484d2b/ss_66a643444f27f9cd75f448c327222a3262484d2b.1920x1080.jpg?t=1790420921" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4953150/66a643444f27f9cd75f448c327222a3262484d2b/ss_66a643444f27f9cd75f448c327222a3262484d2b.600x338.jpg?t=1790420921" alt="Fiducia: Rent The World — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+      </div>
+
+      <h2>Геймплей</h2>
+      <div class="game-movies">
+        <figure class="game-movie"><div class="game-video" data-hls="https://video.akamai.steamstatic.com/store_trailers/4953150/1023267351/44093512e1d64721d682feb232fbfedc4e1315b1/1790418073/hls_264_master.m3u8?t=1790420021" data-poster="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257436017/25bc066b3e3b97c7429eef229208fbe7fb959470/movie_600x337.jpg?t=1790420021" role="button" tabindex="0" aria-label="Смотреть геймплей: Gameplay"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257436017/25bc066b3e3b97c7429eef229208fbe7fb959470/movie_600x337.jpg?t=1790420021" alt="" loading="lazy" width="480" height="270" /><span class="game-video-play" aria-hidden="true"></span></div></figure>
+      </div>
+
+<p style="color: var(--text-faint); font-size: 13px; margin-top: 30px;">
         Данные о цене, отзывах и статистике обновляются автоматически на основе
         Steam Store API и SteamSpy.
       </p>
@@ -280,5 +327,6 @@ function declineCookies() {
 })();
 </script>
 <script src="/newsletter.js?v=2" defer></script>
+<script defer src="/game-media.js?v=1"></script>
 </body>
 </html>

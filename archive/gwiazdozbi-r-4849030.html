@@ -112,6 +112,38 @@
     }
     .game-stat-card .label { font-size: 12px; color: var(--text-faint); text-transform: uppercase; }
     .game-stat-card .value { font-size: 20px; font-weight: bold; margin-top: 4px; }
+    .game-shots {
+      display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+      gap: 12px; margin: 20px 0;
+    }
+    .game-shot {
+      display: block; border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 8px; overflow: hidden;
+    }
+    .game-shot img { display: block; width: 100%; height: auto; }
+    .game-movies { display: grid; gap: 16px; margin: 20px 0; }
+    .game-movie { margin: 0; }
+    .game-movie video {
+      display: block; width: 100%; height: auto;
+      border-radius: 8px; background: #000;
+    }
+    .game-movie figcaption { margin-top: 6px; font-size: 13px; color: var(--text-faint); }
+    .game-video {
+      position: relative; cursor: pointer; overflow: hidden;
+      border-radius: 8px; background: #000; aspect-ratio: 16 / 9;
+    }
+    .game-video img { display: block; width: 100%; height: 100%; object-fit: cover; }
+    .game-video-play { position: absolute; inset: 0; display: grid; place-items: center; }
+    .game-video-play::before {
+      content: ''; width: 58px; height: 58px; border-radius: 50%;
+      background: rgba(0,0,0,0.5); border: 2px solid rgba(255,255,255,0.75);
+    }
+    .game-video-play::after {
+      content: ''; position: absolute; margin-left: 5px;
+      border-style: solid; border-width: 11px 0 11px 18px;
+      border-color: transparent transparent transparent #fff;
+    }
+    .game-video-el { display: block; width: 100%; height: 100%; background: #000; }
   </style>
 </head>
 <body>
@@ -150,7 +182,7 @@
 
     <article class="article-body">
 
-      <p>Gwiazdozbiór is a logic game where you steer beams of light to bring stars back to life. Use mirrors to redirect the laser and solve puzzles inspired by real constellations. Plan your moves, avoid black holes, earn the gold trophy. Single-player. Polish, English, German, French, Spanish.</p>
+      
 
       <div class="game-stats-grid">
         <div class="game-stat-card">
@@ -166,10 +198,6 @@
           <div class="label">Владельцев (оценка)</div>
           <div class="value">0 – 20,000</div>
         </div>
-        <div class="game-stat-card">
-          <div class="label">Среднее время игры</div>
-          <div class="value">нет данных</div>
-        </div>
       </div>
 
       <h2>Об игре</h2>
@@ -183,7 +211,24 @@
         </a>
       </p>
 
-      <p style="color: var(--text-faint); font-size: 13px; margin-top: 30px;">
+            <h2>Скриншоты</h2>
+      <div class="game-shots">
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4849030/7fff960d0686dd8d351ae83df2120018caec6dac/ss_7fff960d0686dd8d351ae83df2120018caec6dac.1920x1080.jpg?t=1789833373" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4849030/7fff960d0686dd8d351ae83df2120018caec6dac/ss_7fff960d0686dd8d351ae83df2120018caec6dac.600x338.jpg?t=1789833373" alt="Gwiazdozbiór — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4849030/1d9562b7a51d383d09c96e3e5d80f538b58962f7/ss_1d9562b7a51d383d09c96e3e5d80f538b58962f7.1920x1080.jpg?t=1789833373" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4849030/1d9562b7a51d383d09c96e3e5d80f538b58962f7/ss_1d9562b7a51d383d09c96e3e5d80f538b58962f7.600x338.jpg?t=1789833373" alt="Gwiazdozbiór — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4849030/daf9073fd4d4f8d7745aabcd56951f386b3cfb76/ss_daf9073fd4d4f8d7745aabcd56951f386b3cfb76.1920x1080.jpg?t=1789833373" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4849030/daf9073fd4d4f8d7745aabcd56951f386b3cfb76/ss_daf9073fd4d4f8d7745aabcd56951f386b3cfb76.600x338.jpg?t=1789833373" alt="Gwiazdozbiór — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4849030/471b01a142cf87e3211d4f588bd9d66040edb05f/ss_471b01a142cf87e3211d4f588bd9d66040edb05f.1920x1080.jpg?t=1789833373" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4849030/471b01a142cf87e3211d4f588bd9d66040edb05f/ss_471b01a142cf87e3211d4f588bd9d66040edb05f.600x338.jpg?t=1789833373" alt="Gwiazdozbiór — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4849030/a436ad7e0ca044a5c1572a9f492d56e833fca8ed/ss_a436ad7e0ca044a5c1572a9f492d56e833fca8ed.1920x1080.jpg?t=1789833373" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4849030/a436ad7e0ca044a5c1572a9f492d56e833fca8ed/ss_a436ad7e0ca044a5c1572a9f492d56e833fca8ed.600x338.jpg?t=1789833373" alt="Gwiazdozbiór — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4849030/21b85c16ef6be02a7e00b33ef957dfc97eb6f59b/ss_21b85c16ef6be02a7e00b33ef957dfc97eb6f59b.1920x1080.jpg?t=1789833373" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4849030/21b85c16ef6be02a7e00b33ef957dfc97eb6f59b/ss_21b85c16ef6be02a7e00b33ef957dfc97eb6f59b.600x338.jpg?t=1789833373" alt="Gwiazdozbiór — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4849030/eb75532f7fb2a37a482f3c2ffd26a7cebaba5b75/ss_eb75532f7fb2a37a482f3c2ffd26a7cebaba5b75.1920x1080.jpg?t=1789833373" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4849030/eb75532f7fb2a37a482f3c2ffd26a7cebaba5b75/ss_eb75532f7fb2a37a482f3c2ffd26a7cebaba5b75.600x338.jpg?t=1789833373" alt="Gwiazdozbiór — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4849030/c84d5602cb95720dca5aaaf483c7fbf3b564481c/ss_c84d5602cb95720dca5aaaf483c7fbf3b564481c.1920x1080.jpg?t=1789833373" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4849030/c84d5602cb95720dca5aaaf483c7fbf3b564481c/ss_c84d5602cb95720dca5aaaf483c7fbf3b564481c.600x338.jpg?t=1789833373" alt="Gwiazdozbiór — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+      </div>
+
+      <h2>Геймплей</h2>
+      <div class="game-movies">
+        <figure class="game-movie"><div class="game-video" data-hls="https://video.akamai.steamstatic.com/store_trailers/4849030/2063471329/eb21b76cf51421283671ab36dc739a1a051302b8/1782930953/hls_264_master.m3u8?t=1788534736" data-poster="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257369051/bcee20e4d26e07efd9237b510c740d293d1a56ff/movie_600x337.jpg?t=1788534736" role="button" tabindex="0" aria-label="Смотреть геймплей: Gwiazdozbiory"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257369051/bcee20e4d26e07efd9237b510c740d293d1a56ff/movie_600x337.jpg?t=1788534736" alt="" loading="lazy" width="480" height="270" /><span class="game-video-play" aria-hidden="true"></span></div></figure>
+      </div>
+
+<p style="color: var(--text-faint); font-size: 13px; margin-top: 30px;">
         Данные о цене, отзывах и статистике обновляются автоматически на основе
         Steam Store API и SteamSpy.
       </p>
@@ -284,5 +329,6 @@ function declineCookies() {
 })();
 </script>
 <script src="/newsletter.js?v=2" defer></script>
+<script defer src="/game-media.js?v=1"></script>
 </body>
 </html>

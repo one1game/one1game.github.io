@@ -112,6 +112,38 @@
     }
     .game-stat-card .label { font-size: 12px; color: var(--text-faint); text-transform: uppercase; }
     .game-stat-card .value { font-size: 20px; font-weight: bold; margin-top: 4px; }
+    .game-shots {
+      display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+      gap: 12px; margin: 20px 0;
+    }
+    .game-shot {
+      display: block; border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 8px; overflow: hidden;
+    }
+    .game-shot img { display: block; width: 100%; height: auto; }
+    .game-movies { display: grid; gap: 16px; margin: 20px 0; }
+    .game-movie { margin: 0; }
+    .game-movie video {
+      display: block; width: 100%; height: auto;
+      border-radius: 8px; background: #000;
+    }
+    .game-movie figcaption { margin-top: 6px; font-size: 13px; color: var(--text-faint); }
+    .game-video {
+      position: relative; cursor: pointer; overflow: hidden;
+      border-radius: 8px; background: #000; aspect-ratio: 16 / 9;
+    }
+    .game-video img { display: block; width: 100%; height: 100%; object-fit: cover; }
+    .game-video-play { position: absolute; inset: 0; display: grid; place-items: center; }
+    .game-video-play::before {
+      content: ''; width: 58px; height: 58px; border-radius: 50%;
+      background: rgba(0,0,0,0.5); border: 2px solid rgba(255,255,255,0.75);
+    }
+    .game-video-play::after {
+      content: ''; position: absolute; margin-left: 5px;
+      border-style: solid; border-width: 11px 0 11px 18px;
+      border-color: transparent transparent transparent #fff;
+    }
+    .game-video-el { display: block; width: 100%; height: 100%; background: #000; }
   </style>
 </head>
 <body>
@@ -150,7 +182,7 @@
 
     <article class="article-body">
 
-      <p>&quot;Downhill Drift&quot; is a racing game with 4 track themes and each can generate up to 4 billion courses with 4 differently tuned cars. Go Sideway and fast for high scores, or choose Time Attack. Wall collisions carry heavy penalties. Any tracks completed will be saved for you to challenge again.</p>
+      
 
       <div class="game-stats-grid">
         <div class="game-stat-card">
@@ -166,10 +198,6 @@
           <div class="label">Владельцев (оценка)</div>
           <div class="value">0 – 20,000</div>
         </div>
-        <div class="game-stat-card">
-          <div class="label">Среднее время игры</div>
-          <div class="value">нет данных</div>
-        </div>
       </div>
 
       <h2>Об игре</h2>
@@ -183,7 +211,23 @@
         </a>
       </p>
 
-      <p style="color: var(--text-faint); font-size: 13px; margin-top: 30px;">
+            <h2>Скриншоты</h2>
+      <div class="game-shots">
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5218170/3978a37558d76a41912492d9fc11c7186432e4af/ss_3978a37558d76a41912492d9fc11c7186432e4af.1920x1080.jpg?t=1790217089" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5218170/3978a37558d76a41912492d9fc11c7186432e4af/ss_3978a37558d76a41912492d9fc11c7186432e4af.600x338.jpg?t=1790217089" alt="Downhill Drift — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5218170/044a7e86ff2cd34554a24408769fc04efbe2f2e9/ss_044a7e86ff2cd34554a24408769fc04efbe2f2e9.1920x1080.jpg?t=1790217089" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5218170/044a7e86ff2cd34554a24408769fc04efbe2f2e9/ss_044a7e86ff2cd34554a24408769fc04efbe2f2e9.600x338.jpg?t=1790217089" alt="Downhill Drift — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5218170/9f91e7c435de8fd0d172f028c37ff68ab4271b54/ss_9f91e7c435de8fd0d172f028c37ff68ab4271b54.1920x1080.jpg?t=1790217089" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5218170/9f91e7c435de8fd0d172f028c37ff68ab4271b54/ss_9f91e7c435de8fd0d172f028c37ff68ab4271b54.600x338.jpg?t=1790217089" alt="Downhill Drift — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5218170/64077ae8b8680564183159f2c5b9c2ca1d109f02/ss_64077ae8b8680564183159f2c5b9c2ca1d109f02.1920x1080.jpg?t=1790217089" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5218170/64077ae8b8680564183159f2c5b9c2ca1d109f02/ss_64077ae8b8680564183159f2c5b9c2ca1d109f02.600x338.jpg?t=1790217089" alt="Downhill Drift — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5218170/8019540631f1c86f0fd34d98ffd7ba9ecf618f79/ss_8019540631f1c86f0fd34d98ffd7ba9ecf618f79.1920x1080.jpg?t=1790217089" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5218170/8019540631f1c86f0fd34d98ffd7ba9ecf618f79/ss_8019540631f1c86f0fd34d98ffd7ba9ecf618f79.600x338.jpg?t=1790217089" alt="Downhill Drift — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5218170/fb1c29cf6697eb1f2bca6ae8a2b703971f3aac92/ss_fb1c29cf6697eb1f2bca6ae8a2b703971f3aac92.1920x1080.jpg?t=1790217089" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5218170/fb1c29cf6697eb1f2bca6ae8a2b703971f3aac92/ss_fb1c29cf6697eb1f2bca6ae8a2b703971f3aac92.600x338.jpg?t=1790217089" alt="Downhill Drift — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+      </div>
+
+      <h2>Геймплей</h2>
+      <div class="game-movies">
+        <figure class="game-movie"><div class="game-video" data-hls="https://video.akamai.steamstatic.com/store_trailers/5218170/660021059/c79fef552b93659e55a3188c400c5c1c007e0d5c/1789018271/hls_264_master.m3u8?t=1789019313" data-poster="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257417856/4af4492b0b7896d17ed4a6e2eca5f65b028ede49/movie_600x337.jpg?t=1789019313" role="button" tabindex="0" aria-label="Смотреть геймплей: Trailer1"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257417856/4af4492b0b7896d17ed4a6e2eca5f65b028ede49/movie_600x337.jpg?t=1789019313" alt="" loading="lazy" width="480" height="270" /><span class="game-video-play" aria-hidden="true"></span></div></figure>
+        <figure class="game-movie"><div class="game-video" data-hls="https://video.akamai.steamstatic.com/store_trailers/5218170/1117283338/b604d6e8df8d57e3b2766f686630fc31bcca4bdb/1789700754/hls_264_master.m3u8?t=1789701380" data-poster="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257427710/4ab3bb62e97fe1e5d2e0a97275826570085f68ab/movie_600x337.jpg?t=1789701380" role="button" tabindex="0" aria-label="Смотреть геймплей: Advanced Drifting"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257427710/4ab3bb62e97fe1e5d2e0a97275826570085f68ab/movie_600x337.jpg?t=1789701380" alt="" loading="lazy" width="480" height="270" /><span class="game-video-play" aria-hidden="true"></span></div></figure>
+      </div>
+
+<p style="color: var(--text-faint); font-size: 13px; margin-top: 30px;">
         Данные о цене, отзывах и статистике обновляются автоматически на основе
         Steam Store API и SteamSpy.
       </p>
@@ -284,5 +328,6 @@ function declineCookies() {
 })();
 </script>
 <script src="/newsletter.js?v=2" defer></script>
+<script defer src="/game-media.js?v=1"></script>
 </body>
 </html>

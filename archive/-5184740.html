@@ -112,6 +112,38 @@
     }
     .game-stat-card .label { font-size: 12px; color: var(--text-faint); text-transform: uppercase; }
     .game-stat-card .value { font-size: 20px; font-weight: bold; margin-top: 4px; }
+    .game-shots {
+      display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+      gap: 12px; margin: 20px 0;
+    }
+    .game-shot {
+      display: block; border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 8px; overflow: hidden;
+    }
+    .game-shot img { display: block; width: 100%; height: auto; }
+    .game-movies { display: grid; gap: 16px; margin: 20px 0; }
+    .game-movie { margin: 0; }
+    .game-movie video {
+      display: block; width: 100%; height: auto;
+      border-radius: 8px; background: #000;
+    }
+    .game-movie figcaption { margin-top: 6px; font-size: 13px; color: var(--text-faint); }
+    .game-video {
+      position: relative; cursor: pointer; overflow: hidden;
+      border-radius: 8px; background: #000; aspect-ratio: 16 / 9;
+    }
+    .game-video img { display: block; width: 100%; height: 100%; object-fit: cover; }
+    .game-video-play { position: absolute; inset: 0; display: grid; place-items: center; }
+    .game-video-play::before {
+      content: ''; width: 58px; height: 58px; border-radius: 50%;
+      background: rgba(0,0,0,0.5); border: 2px solid rgba(255,255,255,0.75);
+    }
+    .game-video-play::after {
+      content: ''; position: absolute; margin-left: 5px;
+      border-style: solid; border-width: 11px 0 11px 18px;
+      border-color: transparent transparent transparent #fff;
+    }
+    .game-video-el { display: block; width: 100%; height: 100%; background: #000; }
   </style>
 </head>
 <body>
@@ -150,7 +182,7 @@
 
     <article class="article-body">
 
-      <p>Every night, a boy's mind drifts into an endless monster forest. Facing overwhelming swarms of beasts,Will he ultimately break the nightmare once and for all, or will he be swallowed by the endless tide of monsters?</p>
+      
 
       <div class="game-stats-grid">
         <div class="game-stat-card">
@@ -166,10 +198,6 @@
           <div class="label">Владельцев (оценка)</div>
           <div class="value">0 – 20,000</div>
         </div>
-        <div class="game-stat-card">
-          <div class="label">Среднее время игры</div>
-          <div class="value">нет данных</div>
-        </div>
       </div>
 
       <h2>Об игре</h2>
@@ -183,7 +211,28 @@
         </a>
       </p>
 
-      <p style="color: var(--text-faint); font-size: 13px; margin-top: 30px;">
+            <h2>Скриншоты</h2>
+      <div class="game-shots">
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5184740/bd5b7b5b13ddfb60644ef97cf4f45453b6c1c048/ss_bd5b7b5b13ddfb60644ef97cf4f45453b6c1c048.1920x1080.jpg?t=1790417082" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5184740/bd5b7b5b13ddfb60644ef97cf4f45453b6c1c048/ss_bd5b7b5b13ddfb60644ef97cf4f45453b6c1c048.600x338.jpg?t=1790417082" alt="GunfireFantasy — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5184740/ad702b5a6897f03f82c0df903b8e2d9b9fa1eb9e/ss_ad702b5a6897f03f82c0df903b8e2d9b9fa1eb9e.1920x1080.jpg?t=1790417082" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5184740/ad702b5a6897f03f82c0df903b8e2d9b9fa1eb9e/ss_ad702b5a6897f03f82c0df903b8e2d9b9fa1eb9e.600x338.jpg?t=1790417082" alt="GunfireFantasy — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5184740/2ea091a12474bd84dbf504b23b3af652fc7c33dc/ss_2ea091a12474bd84dbf504b23b3af652fc7c33dc.1920x1080.jpg?t=1790417082" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5184740/2ea091a12474bd84dbf504b23b3af652fc7c33dc/ss_2ea091a12474bd84dbf504b23b3af652fc7c33dc.600x338.jpg?t=1790417082" alt="GunfireFantasy — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5184740/9a2fe0a46db7e2a9276f0e95ec72d077265c4dcc/ss_9a2fe0a46db7e2a9276f0e95ec72d077265c4dcc.1920x1080.jpg?t=1790417082" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5184740/9a2fe0a46db7e2a9276f0e95ec72d077265c4dcc/ss_9a2fe0a46db7e2a9276f0e95ec72d077265c4dcc.600x338.jpg?t=1790417082" alt="GunfireFantasy — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5184740/a89e74a883a30b818785d41884814a307e6e0ff9/ss_a89e74a883a30b818785d41884814a307e6e0ff9.1920x1080.jpg?t=1790417082" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5184740/a89e74a883a30b818785d41884814a307e6e0ff9/ss_a89e74a883a30b818785d41884814a307e6e0ff9.600x338.jpg?t=1790417082" alt="GunfireFantasy — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5184740/c4f0b3f529b26b73f6902d11905a39518157e157/ss_c4f0b3f529b26b73f6902d11905a39518157e157.1920x1080.jpg?t=1790417082" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5184740/c4f0b3f529b26b73f6902d11905a39518157e157/ss_c4f0b3f529b26b73f6902d11905a39518157e157.600x338.jpg?t=1790417082" alt="GunfireFantasy — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5184740/00216d60c3459d3f8c8703a507ef46fa12f6b857/ss_00216d60c3459d3f8c8703a507ef46fa12f6b857.1920x1080.jpg?t=1790417082" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5184740/00216d60c3459d3f8c8703a507ef46fa12f6b857/ss_00216d60c3459d3f8c8703a507ef46fa12f6b857.600x338.jpg?t=1790417082" alt="GunfireFantasy — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5184740/e503decab1258d9754a029b0ca7cd800e46bf05d/ss_e503decab1258d9754a029b0ca7cd800e46bf05d.1920x1080.jpg?t=1790417082" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5184740/e503decab1258d9754a029b0ca7cd800e46bf05d/ss_e503decab1258d9754a029b0ca7cd800e46bf05d.600x338.jpg?t=1790417082" alt="GunfireFantasy — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5184740/c67e9dbd0cc509266dd44160b6430c256f45b059/ss_c67e9dbd0cc509266dd44160b6430c256f45b059.1920x1080.jpg?t=1790417082" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5184740/c67e9dbd0cc509266dd44160b6430c256f45b059/ss_c67e9dbd0cc509266dd44160b6430c256f45b059.600x338.jpg?t=1790417082" alt="GunfireFantasy — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5184740/8c6d87b23501bf0fe23f9aa129471e50e20ff417/ss_8c6d87b23501bf0fe23f9aa129471e50e20ff417.1920x1080.jpg?t=1790417082" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5184740/8c6d87b23501bf0fe23f9aa129471e50e20ff417/ss_8c6d87b23501bf0fe23f9aa129471e50e20ff417.600x338.jpg?t=1790417082" alt="GunfireFantasy — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5184740/a7ea6d0ba1da8c774845a89594c3bbb7deb0e9db/ss_a7ea6d0ba1da8c774845a89594c3bbb7deb0e9db.1920x1080.jpg?t=1790417082" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5184740/a7ea6d0ba1da8c774845a89594c3bbb7deb0e9db/ss_a7ea6d0ba1da8c774845a89594c3bbb7deb0e9db.600x338.jpg?t=1790417082" alt="GunfireFantasy — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5184740/af608495221039ebe9f3b4457f70c8c38b3292fc/ss_af608495221039ebe9f3b4457f70c8c38b3292fc.1920x1080.jpg?t=1790417082" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5184740/af608495221039ebe9f3b4457f70c8c38b3292fc/ss_af608495221039ebe9f3b4457f70c8c38b3292fc.600x338.jpg?t=1790417082" alt="GunfireFantasy — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+      </div>
+
+      <h2>Геймплей</h2>
+      <div class="game-movies">
+        <figure class="game-movie"><div class="game-video" data-hls="https://video.akamai.steamstatic.com/store_trailers/5184740/269159743/95f9520a6f926b54915c7c16afcc4c5daeddf1fb/1787924093/hls_264_master.m3u8?t=1788439504" data-poster="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257411179/5191da4b843b0d99f925f94e04943cfc00fc5f05/movie_600x337.jpg?t=1788439504" role="button" tabindex="0" aria-label="Смотреть геймплей: Actual game screen"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257411179/5191da4b843b0d99f925f94e04943cfc00fc5f05/movie_600x337.jpg?t=1788439504" alt="" loading="lazy" width="480" height="270" /><span class="game-video-play" aria-hidden="true"></span></div></figure>
+      </div>
+
+<p style="color: var(--text-faint); font-size: 13px; margin-top: 30px;">
         Данные о цене, отзывах и статистике обновляются автоматически на основе
         Steam Store API и SteamSpy.
       </p>
@@ -284,5 +333,6 @@ function declineCookies() {
 })();
 </script>
 <script src="/newsletter.js?v=2" defer></script>
+<script defer src="/game-media.js?v=1"></script>
 </body>
 </html>

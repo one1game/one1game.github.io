@@ -108,6 +108,38 @@
     }
     .game-stat-card .label { font-size: 12px; color: var(--text-faint); text-transform: uppercase; }
     .game-stat-card .value { font-size: 20px; font-weight: bold; margin-top: 4px; }
+    .game-shots {
+      display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+      gap: 12px; margin: 20px 0;
+    }
+    .game-shot {
+      display: block; border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 8px; overflow: hidden;
+    }
+    .game-shot img { display: block; width: 100%; height: auto; }
+    .game-movies { display: grid; gap: 16px; margin: 20px 0; }
+    .game-movie { margin: 0; }
+    .game-movie video {
+      display: block; width: 100%; height: auto;
+      border-radius: 8px; background: #000;
+    }
+    .game-movie figcaption { margin-top: 6px; font-size: 13px; color: var(--text-faint); }
+    .game-video {
+      position: relative; cursor: pointer; overflow: hidden;
+      border-radius: 8px; background: #000; aspect-ratio: 16 / 9;
+    }
+    .game-video img { display: block; width: 100%; height: 100%; object-fit: cover; }
+    .game-video-play { position: absolute; inset: 0; display: grid; place-items: center; }
+    .game-video-play::before {
+      content: ''; width: 58px; height: 58px; border-radius: 50%;
+      background: rgba(0,0,0,0.5); border: 2px solid rgba(255,255,255,0.75);
+    }
+    .game-video-play::after {
+      content: ''; position: absolute; margin-left: 5px;
+      border-style: solid; border-width: 11px 0 11px 18px;
+      border-color: transparent transparent transparent #fff;
+    }
+    .game-video-el { display: block; width: 100%; height: 100%; background: #000; }
   </style>
 </head>
 <body>
@@ -146,7 +178,7 @@
 
     <article class="article-body">
 
-      <p>A short adventure about the quiet hours before sleep. Touch the things in your room in any order you like. What you notice before drowsiness takes over decides how the story ends. Hand-drawn art, voiced by Natsuki Nako, about 30 minutes. Includes a word-shuffling sleep aid tool.</p>
+      
 
       <div class="game-stats-grid">
         <div class="game-stat-card">
@@ -162,10 +194,6 @@
           <div class="label">Владельцев (оценка)</div>
           <div class="value">0 – 20,000</div>
         </div>
-        <div class="game-stat-card">
-          <div class="label">Среднее время игры</div>
-          <div class="value">нет данных</div>
-        </div>
       </div>
 
       <h2>Об игре</h2>
@@ -179,7 +207,23 @@
         </a>
       </p>
 
-      <p style="color: var(--text-faint); font-size: 13px; margin-top: 30px;">
+            <h2>Скриншоты</h2>
+      <div class="game-shots">
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5026630/10600ecec876d9ccd13642a396bb729925b838a9/ss_10600ecec876d9ccd13642a396bb729925b838a9.1920x1080.jpg?t=1790895621" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5026630/10600ecec876d9ccd13642a396bb729925b838a9/ss_10600ecec876d9ccd13642a396bb729925b838a9.600x338.jpg?t=1790895621" alt="Opi Popi — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5026630/8377c84faab226a956bd072685fc000d8e93052b/ss_8377c84faab226a956bd072685fc000d8e93052b.1920x1080.jpg?t=1790895621" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5026630/8377c84faab226a956bd072685fc000d8e93052b/ss_8377c84faab226a956bd072685fc000d8e93052b.600x338.jpg?t=1790895621" alt="Opi Popi — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5026630/6cd1e83569720b0cbecd7ae3a07f80197854eae4/ss_6cd1e83569720b0cbecd7ae3a07f80197854eae4.1920x1080.jpg?t=1790895621" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5026630/6cd1e83569720b0cbecd7ae3a07f80197854eae4/ss_6cd1e83569720b0cbecd7ae3a07f80197854eae4.600x338.jpg?t=1790895621" alt="Opi Popi — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5026630/b827561f87a16c0e023f2fa3dbbd5f47e8d7952c/ss_b827561f87a16c0e023f2fa3dbbd5f47e8d7952c.1920x1080.jpg?t=1790895621" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5026630/b827561f87a16c0e023f2fa3dbbd5f47e8d7952c/ss_b827561f87a16c0e023f2fa3dbbd5f47e8d7952c.600x338.jpg?t=1790895621" alt="Opi Popi — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5026630/e1de2d84e588d17aa5925ef219dce78db935c300/ss_e1de2d84e588d17aa5925ef219dce78db935c300.1920x1080.jpg?t=1790895621" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5026630/e1de2d84e588d17aa5925ef219dce78db935c300/ss_e1de2d84e588d17aa5925ef219dce78db935c300.600x338.jpg?t=1790895621" alt="Opi Popi — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5026630/21066730b0ee8f090330bb947185a35e4e456aea/ss_21066730b0ee8f090330bb947185a35e4e456aea.1920x1080.jpg?t=1790895621" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5026630/21066730b0ee8f090330bb947185a35e4e456aea/ss_21066730b0ee8f090330bb947185a35e4e456aea.600x338.jpg?t=1790895621" alt="Opi Popi — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5026630/d116e7bfa42abd28b80b3fc51cc7df50cae741ce/ss_d116e7bfa42abd28b80b3fc51cc7df50cae741ce.1920x1080.jpg?t=1790895621" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5026630/d116e7bfa42abd28b80b3fc51cc7df50cae741ce/ss_d116e7bfa42abd28b80b3fc51cc7df50cae741ce.600x338.jpg?t=1790895621" alt="Opi Popi — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+      </div>
+
+      <h2>Геймплей</h2>
+      <div class="game-movies">
+        <figure class="game-movie"><div class="game-video" data-hls="https://video.akamai.steamstatic.com/store_trailers/5026630/2026419598/8c6a9791993cb10b2cc7183a696d1e83ad7ed48c/1785639458/hls_264_master.m3u8?t=1786668597" data-poster="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257390248/c63db8e1fb71128f637ff18d4d7d2674b65c5847/movie_600x337.jpg?t=1786668597" role="button" tabindex="0" aria-label="Смотреть геймплей: オピポピ1stPV"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257390248/c63db8e1fb71128f637ff18d4d7d2674b65c5847/movie_600x337.jpg?t=1786668597" alt="" loading="lazy" width="480" height="270" /><span class="game-video-play" aria-hidden="true"></span></div></figure>
+      </div>
+
+<p style="color: var(--text-faint); font-size: 13px; margin-top: 30px;">
         Данные о цене, отзывах и статистике обновляются автоматически на основе
         Steam Store API и SteamSpy.
       </p>
@@ -280,5 +324,6 @@ function declineCookies() {
 })();
 </script>
 <script src="/newsletter.js?v=2" defer></script>
+<script defer src="/game-media.js?v=1"></script>
 </body>
 </html>

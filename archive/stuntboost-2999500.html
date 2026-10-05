@@ -112,6 +112,38 @@
     }
     .game-stat-card .label { font-size: 12px; color: var(--text-faint); text-transform: uppercase; }
     .game-stat-card .value { font-size: 20px; font-weight: bold; margin-top: 4px; }
+    .game-shots {
+      display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+      gap: 12px; margin: 20px 0;
+    }
+    .game-shot {
+      display: block; border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 8px; overflow: hidden;
+    }
+    .game-shot img { display: block; width: 100%; height: auto; }
+    .game-movies { display: grid; gap: 16px; margin: 20px 0; }
+    .game-movie { margin: 0; }
+    .game-movie video {
+      display: block; width: 100%; height: auto;
+      border-radius: 8px; background: #000;
+    }
+    .game-movie figcaption { margin-top: 6px; font-size: 13px; color: var(--text-faint); }
+    .game-video {
+      position: relative; cursor: pointer; overflow: hidden;
+      border-radius: 8px; background: #000; aspect-ratio: 16 / 9;
+    }
+    .game-video img { display: block; width: 100%; height: 100%; object-fit: cover; }
+    .game-video-play { position: absolute; inset: 0; display: grid; place-items: center; }
+    .game-video-play::before {
+      content: ''; width: 58px; height: 58px; border-radius: 50%;
+      background: rgba(0,0,0,0.5); border: 2px solid rgba(255,255,255,0.75);
+    }
+    .game-video-play::after {
+      content: ''; position: absolute; margin-left: 5px;
+      border-style: solid; border-width: 11px 0 11px 18px;
+      border-color: transparent transparent transparent #fff;
+    }
+    .game-video-el { display: block; width: 100%; height: 100%; background: #000; }
   </style>
 </head>
 <body>
@@ -166,10 +198,6 @@
           <div class="label">Владельцев (оценка)</div>
           <div class="value">0 – 20,000</div>
         </div>
-        <div class="game-stat-card">
-          <div class="label">Среднее время игры</div>
-          <div class="value">нет данных</div>
-        </div>
       </div>
 
       <h2>Об игре</h2>
@@ -183,7 +211,25 @@
         </a>
       </p>
 
-      <p style="color: var(--text-faint); font-size: 13px; margin-top: 30px;">
+            <h2>Скриншоты</h2>
+      <div class="game-shots">
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2999500/4758300c9433c51346c454487ceae287476a717d/ss_4758300c9433c51346c454487ceae287476a717d.1920x1080.jpg?t=1790090714" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2999500/4758300c9433c51346c454487ceae287476a717d/ss_4758300c9433c51346c454487ceae287476a717d.600x338.jpg?t=1790090714" alt="STUNTBOOST — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2999500/b5ff74e0ef0c811d79552974da89aeac04c64fa3/ss_b5ff74e0ef0c811d79552974da89aeac04c64fa3.1920x1080.jpg?t=1790090714" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2999500/b5ff74e0ef0c811d79552974da89aeac04c64fa3/ss_b5ff74e0ef0c811d79552974da89aeac04c64fa3.600x338.jpg?t=1790090714" alt="STUNTBOOST — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2999500/bef3065ba76175787280705c8fd5f67ad7f7fea1/ss_bef3065ba76175787280705c8fd5f67ad7f7fea1.1920x1080.jpg?t=1790090714" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2999500/bef3065ba76175787280705c8fd5f67ad7f7fea1/ss_bef3065ba76175787280705c8fd5f67ad7f7fea1.600x338.jpg?t=1790090714" alt="STUNTBOOST — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2999500/21477a5f047fbc914bd31d369e78b142d47fe62d/ss_21477a5f047fbc914bd31d369e78b142d47fe62d.1920x1080.jpg?t=1790090714" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2999500/21477a5f047fbc914bd31d369e78b142d47fe62d/ss_21477a5f047fbc914bd31d369e78b142d47fe62d.600x338.jpg?t=1790090714" alt="STUNTBOOST — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2999500/63f592cc55ba83ef5cc61afa031f37927f3a8e2f/ss_63f592cc55ba83ef5cc61afa031f37927f3a8e2f.1920x1080.jpg?t=1790090714" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2999500/63f592cc55ba83ef5cc61afa031f37927f3a8e2f/ss_63f592cc55ba83ef5cc61afa031f37927f3a8e2f.600x338.jpg?t=1790090714" alt="STUNTBOOST — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2999500/c9992e29c71d887c7d109ac9decdfa1ed48f3f7f/ss_c9992e29c71d887c7d109ac9decdfa1ed48f3f7f.1920x1080.jpg?t=1790090714" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2999500/c9992e29c71d887c7d109ac9decdfa1ed48f3f7f/ss_c9992e29c71d887c7d109ac9decdfa1ed48f3f7f.600x338.jpg?t=1790090714" alt="STUNTBOOST — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2999500/6a7db8d222dda832c81376f8c8581495be6a1c22/ss_6a7db8d222dda832c81376f8c8581495be6a1c22.1920x1080.jpg?t=1790090714" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2999500/6a7db8d222dda832c81376f8c8581495be6a1c22/ss_6a7db8d222dda832c81376f8c8581495be6a1c22.600x338.jpg?t=1790090714" alt="STUNTBOOST — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2999500/a64321e05cc882aa4d2dba95d47611af10bd8a2a/ss_a64321e05cc882aa4d2dba95d47611af10bd8a2a.1920x1080.jpg?t=1790090714" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2999500/a64321e05cc882aa4d2dba95d47611af10bd8a2a/ss_a64321e05cc882aa4d2dba95d47611af10bd8a2a.600x338.jpg?t=1790090714" alt="STUNTBOOST — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+      </div>
+
+      <h2>Геймплей</h2>
+      <div class="game-movies">
+        <figure class="game-movie"><div class="game-video" data-hls="https://video.akamai.steamstatic.com/store_trailers/2999500/1146081772/4cbe60d15f611e45185e8307bdf57712a3bcee7d/1790066101/hls_264_master.m3u8?t=1790090713" data-poster="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257431333/0aa7b98b717f5f98240fa7c6df80b1daac254a42/movie_600x337.jpg?t=1790090713" role="button" tabindex="0" aria-label="Смотреть геймплей: Release Trailer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257431333/0aa7b98b717f5f98240fa7c6df80b1daac254a42/movie_600x337.jpg?t=1790090713" alt="" loading="lazy" width="480" height="270" /><span class="game-video-play" aria-hidden="true"></span></div></figure>
+        <figure class="game-movie"><div class="game-video" data-hls="https://video.akamai.steamstatic.com/store_trailers/2999500/1851244951/4143d5f7f83d3a9e53a321f806391ce3fb1f3632/1784553196/hls_264_master.m3u8?t=1786627940" data-poster="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257380994/847408b28ade6b88559b4ac59c87d156a0002bda/movie_600x337.jpg?t=1786627940" role="button" tabindex="0" aria-label="Смотреть геймплей: Release Date Trailer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257380994/847408b28ade6b88559b4ac59c87d156a0002bda/movie_600x337.jpg?t=1786627940" alt="" loading="lazy" width="480" height="270" /><span class="game-video-play" aria-hidden="true"></span></div></figure>
+      </div>
+
+<p style="color: var(--text-faint); font-size: 13px; margin-top: 30px;">
         Данные о цене, отзывах и статистике обновляются автоматически на основе
         Steam Store API и SteamSpy.
       </p>
@@ -284,5 +330,6 @@ function declineCookies() {
 })();
 </script>
 <script src="/newsletter.js?v=2" defer></script>
+<script defer src="/game-media.js?v=1"></script>
 </body>
 </html>

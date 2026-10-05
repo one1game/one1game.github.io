@@ -10,12 +10,12 @@
   <link rel="dns-prefetch" href="https://www.google-analytics.com" />
   <link rel="preload" href="../styles.css" as="style" />
 
-  <title>Piworld: цена, отзывы и статистика игроков | One1Game</title>
-  <meta name="description" content="Piworld — актуальная цена, скидки, процент положительных отзывов и статистика игроков в Steam. Обновляется автоматически." />
+  <title>Piworld - обзор игры | One1Game</title>
+  <meta name="description" content="Piworld - мультиплеер с разнообразными ролями и приключениями. Исследуйте мир, боритесь со злом и веселитесь с друзьями." />
   <meta name="keywords" content="Piworld, цена, отзывы, скидка, статистика игроков, Steam" />
 
-  <meta property="og:title" content="Piworld: цена, отзывы и статистика игроков | One1Game" />
-  <meta property="og:description" content="Piworld — актуальная цена, скидки, процент положительных отзывов и статистика игроков в Steam. Обновляется автоматически." />
+  <meta property="og:title" content="Piworld - обзор игры | One1Game" />
+  <meta property="og:description" content="Piworld - мультиплеер с разнообразными ролями и приключениями. Исследуйте мир, боритесь со злом и веселитесь с друзьями." />
   <meta property="og:type" content="article" />
   <meta property="og:url" content="https://one1game.github.io/archive/piworld-3167710.html" />
   <meta property="og:image" content="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3167710/a5f7b5fe335f19dbc327f3b72b5032ee48248dfe/header.jpg?t=1791138549" />
@@ -58,12 +58,12 @@
   {
     "@context": "https://schema.org",
     "@type": "Article",
-    "headline": "Piworld: цена, отзывы и статистика игроков | One1Game",
+    "headline": "Piworld - обзор игры | One1Game",
     "datePublished": "2026-10-05",
     "dateModified": "2026-10-05",
     "author": {"@type": "Person", "name": "Команда One1Game"},
     "publisher": {"@type": "Organization", "name": "One1Game", "logo": {"@type": "ImageObject", "url": "https://one1game.github.io/logo.png"}},
-    "description": "Piworld — актуальная цена, скидки, процент положительных отзывов и статистика игроков в Steam. Обновляется автоматически.",
+    "description": "Piworld - мультиплеер с разнообразными ролями и приключениями. Исследуйте мир, боритесь со злом и веселитесь с друзьями.",
     "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3167710/a5f7b5fe335f19dbc327f3b72b5032ee48248dfe/header.jpg?t=1791138549"
   }
   </script>
@@ -108,6 +108,34 @@
     }
     .game-stat-card .label { font-size: 12px; color: var(--text-faint); text-transform: uppercase; }
     .game-stat-card .value { font-size: 20px; font-weight: bold; margin-top: 4px; }
+    .game-shots {
+      display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+      gap: 12px; margin: 20px 0;
+    }
+    .game-shot {
+      display: block; border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 8px; overflow: hidden;
+    }
+    .game-shot img { display: block; width: 100%; height: auto; }
+    .game-movies { display: grid; gap: 16px; margin: 20px 0; }
+    .game-movie { margin: 0; }
+    .game-video {
+      position: relative; cursor: pointer; overflow: hidden;
+      border-radius: 8px; background: #000; aspect-ratio: 16 / 9;
+    }
+    .game-video img { display: block; width: 100%; height: 100%; object-fit: cover; }
+    .game-video-play { position: absolute; inset: 0; display: grid; place-items: center; }
+    .game-video-play::before {
+      content: ''; width: 58px; height: 58px; border-radius: 50%;
+      background: rgba(0,0,0,0.5); border: 2px solid rgba(255,255,255,0.75);
+    }
+    .game-video-play::after {
+      content: ''; position: absolute; margin-left: 5px;
+      border-style: solid; border-width: 11px 0 11px 18px;
+      border-color: transparent transparent transparent #fff;
+    }
+    .game-video-el { display: block; width: 100%; height: 100%; background: #000; }
+    .game-movie figcaption { margin-top: 6px; font-size: 13px; color: var(--text-faint); }
   </style>
 </head>
 <body>
@@ -137,7 +165,7 @@
 
     <div class="article-header">
       <span class="article-category cat-reviews">Обзоры</span>
-      <h1>Piworld: цена, отзывы и статистика игроков</h1>
+      <h1>Piworld - обзор игры</h1>
       <div class="article-meta">
         <span><i class="far fa-calendar"></i> 5 октября 2026</span>
         <span><i class="far fa-clock"></i> 2 минуты чтения</span>
@@ -145,6 +173,8 @@
     </div>
 
     <article class="article-body">
+
+      <p>Piworld — это уникальный мультиплеер, где каждый игрок может выбрать роль по душе. Отправляйтесь в путешествие в одиночку или с друзьями.</p>
 
       <p>Piworld — это уникальный мультиплеер, в котором каждый способен найти занятие под стать желаниям. Испробуйте на себе разные роли: от простого рыбака до искателя приключений. Отправляйтесь исследовать мир в одиночку или с друзьями, боритесь со злом, и веселитесь!</p>
 
@@ -162,13 +192,11 @@
           <div class="label">Владельцев (оценка)</div>
           <div class="value">0 – 20,000</div>
         </div>
-        <div class="game-stat-card">
-          <div class="label">Среднее время игры</div>
-          <div class="value">нет данных</div>
-        </div>
       </div>
 
       <h2>Об игре</h2>
+      <p>В Piworld каждый найдет занятие по вкусу: от рыбалки до поиска приключений. Игра предлагает разнообразные роли и активности, что делает её интересной для широкой аудитории. Исследуйте мир, сражайтесь с врагами и наслаждайтесь обществом друзей. Если вы любите открытые миры и социальное взаимодействие, то Piworld точно стоит вашего внимания.</p>
+
       <p><strong>Жанры:</strong> Приключенческие игры, Инди, Многопользовательские игры, Симуляторы, Бесплатные<br/>
       <strong>Разработчик:</strong> Ahaha studio<br/>
       <strong>Издатель:</strong> Ahaha studio</p>
@@ -179,6 +207,20 @@
         </a>
       </p>
 
+      <h2>Скриншоты</h2>
+      <div class="game-shots">
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3167710/9c607e679e44bed66f48845e09db6a4f99e5919a/ss_9c607e679e44bed66f48845e09db6a4f99e5919a.1920x1080.jpg?t=1791138549" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3167710/9c607e679e44bed66f48845e09db6a4f99e5919a/ss_9c607e679e44bed66f48845e09db6a4f99e5919a.600x338.jpg?t=1791138549" alt="Piworld — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3167710/9dd60f3421c347087f853a1181355d3f05b913c3/ss_9dd60f3421c347087f853a1181355d3f05b913c3.1920x1080.jpg?t=1791138549" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3167710/9dd60f3421c347087f853a1181355d3f05b913c3/ss_9dd60f3421c347087f853a1181355d3f05b913c3.600x338.jpg?t=1791138549" alt="Piworld — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3167710/75f0521af009d2c0774697def40d0257b06f6153/ss_75f0521af009d2c0774697def40d0257b06f6153.1920x1080.jpg?t=1791138549" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3167710/75f0521af009d2c0774697def40d0257b06f6153/ss_75f0521af009d2c0774697def40d0257b06f6153.600x338.jpg?t=1791138549" alt="Piworld — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3167710/1e5523c79c0c6de30344392de7811aeee61db3dc/ss_1e5523c79c0c6de30344392de7811aeee61db3dc.1920x1080.jpg?t=1791138549" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3167710/1e5523c79c0c6de30344392de7811aeee61db3dc/ss_1e5523c79c0c6de30344392de7811aeee61db3dc.600x338.jpg?t=1791138549" alt="Piworld — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3167710/d10c5c430fcd93b651f89cedb81f7116e5486817/ss_d10c5c430fcd93b651f89cedb81f7116e5486817.1920x1080.jpg?t=1791138549" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3167710/d10c5c430fcd93b651f89cedb81f7116e5486817/ss_d10c5c430fcd93b651f89cedb81f7116e5486817.600x338.jpg?t=1791138549" alt="Piworld — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3167710/acbe6cf7641ab5703923dcdda34a66b72c9d4575/ss_acbe6cf7641ab5703923dcdda34a66b72c9d4575.1920x1080.jpg?t=1791138549" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3167710/acbe6cf7641ab5703923dcdda34a66b72c9d4575/ss_acbe6cf7641ab5703923dcdda34a66b72c9d4575.600x338.jpg?t=1791138549" alt="Piworld — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+      </div>
+
+      <h2>Геймплей</h2>
+      <div class="game-movies">
+        <figure class="game-movie"><div class="game-video" data-hls="https://video.akamai.steamstatic.com/store_trailers/3167710/1910751887/212a54ac244c9e2ec55ba860a72e13b32b261612/1786576525/hls_264_master.m3u8?t=1786579154" data-poster="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257397808/03af5bff3cf4da2ca638c1426537f26b5a4222cb/movie_600x337.jpg?t=1786579154" role="button" tabindex="0" aria-label="Смотреть геймплей"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257397808/03af5bff3cf4da2ca638c1426537f26b5a4222cb/movie_600x337.jpg?t=1786579154" alt="" loading="lazy" width="480" height="270" /><span class="game-video-play" aria-hidden="true"></span></div></figure>
+      </div>
       <p style="color: var(--text-faint); font-size: 13px; margin-top: 30px;">
         Данные о цене, отзывах и статистике обновляются автоматически на основе
         Steam Store API и SteamSpy.
@@ -280,5 +322,6 @@ function declineCookies() {
 })();
 </script>
 <script src="/newsletter.js?v=2" defer></script>
+<script defer src="/game-media.js?v=1"></script>
 </body>
 </html>

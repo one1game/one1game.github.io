@@ -108,6 +108,38 @@
     }
     .game-stat-card .label { font-size: 12px; color: var(--text-faint); text-transform: uppercase; }
     .game-stat-card .value { font-size: 20px; font-weight: bold; margin-top: 4px; }
+    .game-shots {
+      display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+      gap: 12px; margin: 20px 0;
+    }
+    .game-shot {
+      display: block; border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 8px; overflow: hidden;
+    }
+    .game-shot img { display: block; width: 100%; height: auto; }
+    .game-movies { display: grid; gap: 16px; margin: 20px 0; }
+    .game-movie { margin: 0; }
+    .game-movie video {
+      display: block; width: 100%; height: auto;
+      border-radius: 8px; background: #000;
+    }
+    .game-movie figcaption { margin-top: 6px; font-size: 13px; color: var(--text-faint); }
+    .game-video {
+      position: relative; cursor: pointer; overflow: hidden;
+      border-radius: 8px; background: #000; aspect-ratio: 16 / 9;
+    }
+    .game-video img { display: block; width: 100%; height: 100%; object-fit: cover; }
+    .game-video-play { position: absolute; inset: 0; display: grid; place-items: center; }
+    .game-video-play::before {
+      content: ''; width: 58px; height: 58px; border-radius: 50%;
+      background: rgba(0,0,0,0.5); border: 2px solid rgba(255,255,255,0.75);
+    }
+    .game-video-play::after {
+      content: ''; position: absolute; margin-left: 5px;
+      border-style: solid; border-width: 11px 0 11px 18px;
+      border-color: transparent transparent transparent #fff;
+    }
+    .game-video-el { display: block; width: 100%; height: 100%; background: #000; }
   </style>
 </head>
 <body>
@@ -146,7 +178,7 @@
 
     <article class="article-body">
 
-      <p>Your workday. Their adventure. A free cozy idle game that lives on your taskbar. Run a dwarven forge while you work or browse—mine ore, craft weapons, decorate your shop, and send heroes on expeditions for gems, relics and rare loot.</p>
+      
 
       <div class="game-stats-grid">
         <div class="game-stat-card">
@@ -162,10 +194,6 @@
           <div class="label">Владельцев (оценка)</div>
           <div class="value">0 – 20,000</div>
         </div>
-        <div class="game-stat-card">
-          <div class="label">Среднее время игры</div>
-          <div class="value">нет данных</div>
-        </div>
       </div>
 
       <h2>Об игре</h2>
@@ -179,7 +207,29 @@
         </a>
       </p>
 
-      <p style="color: var(--text-faint); font-size: 13px; margin-top: 30px;">
+            <h2>Скриншоты</h2>
+      <div class="game-shots">
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5226040/469edf2df52958569dc332f3d5c1fd4e15487873/ss_469edf2df52958569dc332f3d5c1fd4e15487873.1920x1080.jpg?t=1790783384" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5226040/469edf2df52958569dc332f3d5c1fd4e15487873/ss_469edf2df52958569dc332f3d5c1fd4e15487873.600x338.jpg?t=1790783384" alt="Taskbar Armory — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5226040/670676baa0c7a38f23be31097a818c8d28980c5b/ss_670676baa0c7a38f23be31097a818c8d28980c5b.1920x1080.jpg?t=1790783384" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5226040/670676baa0c7a38f23be31097a818c8d28980c5b/ss_670676baa0c7a38f23be31097a818c8d28980c5b.600x338.jpg?t=1790783384" alt="Taskbar Armory — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5226040/84a5e8f740e4f719ed5485abdf2f5dedc1993d0b/ss_84a5e8f740e4f719ed5485abdf2f5dedc1993d0b.1920x1080.jpg?t=1790783384" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5226040/84a5e8f740e4f719ed5485abdf2f5dedc1993d0b/ss_84a5e8f740e4f719ed5485abdf2f5dedc1993d0b.600x338.jpg?t=1790783384" alt="Taskbar Armory — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5226040/519e71a9a13dcc1131f0a2b51669e3d3a79fabcf/ss_519e71a9a13dcc1131f0a2b51669e3d3a79fabcf.1920x1080.jpg?t=1790783384" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5226040/519e71a9a13dcc1131f0a2b51669e3d3a79fabcf/ss_519e71a9a13dcc1131f0a2b51669e3d3a79fabcf.600x338.jpg?t=1790783384" alt="Taskbar Armory — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5226040/248c34af2c198e394caa50bf68d75df3d125e4dd/ss_248c34af2c198e394caa50bf68d75df3d125e4dd.1920x1080.jpg?t=1790783384" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5226040/248c34af2c198e394caa50bf68d75df3d125e4dd/ss_248c34af2c198e394caa50bf68d75df3d125e4dd.600x338.jpg?t=1790783384" alt="Taskbar Armory — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5226040/c07705896c36fe0c4bd3ff4b87fc5eb7eb0dd8b2/ss_c07705896c36fe0c4bd3ff4b87fc5eb7eb0dd8b2.1920x1080.jpg?t=1790783384" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5226040/c07705896c36fe0c4bd3ff4b87fc5eb7eb0dd8b2/ss_c07705896c36fe0c4bd3ff4b87fc5eb7eb0dd8b2.600x338.jpg?t=1790783384" alt="Taskbar Armory — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5226040/78e0a1cc5cefd3bfbf1fe1086966fcb052028f49/ss_78e0a1cc5cefd3bfbf1fe1086966fcb052028f49.1920x1080.jpg?t=1790783384" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5226040/78e0a1cc5cefd3bfbf1fe1086966fcb052028f49/ss_78e0a1cc5cefd3bfbf1fe1086966fcb052028f49.600x338.jpg?t=1790783384" alt="Taskbar Armory — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5226040/29eedc3b13ead98416099e0e2768082fe39a1da6/ss_29eedc3b13ead98416099e0e2768082fe39a1da6.1920x1080.jpg?t=1790783384" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5226040/29eedc3b13ead98416099e0e2768082fe39a1da6/ss_29eedc3b13ead98416099e0e2768082fe39a1da6.600x338.jpg?t=1790783384" alt="Taskbar Armory — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5226040/eb20e902fa1f71983d7496f1e36369c3b28f4971/ss_eb20e902fa1f71983d7496f1e36369c3b28f4971.1920x1080.jpg?t=1790783384" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5226040/eb20e902fa1f71983d7496f1e36369c3b28f4971/ss_eb20e902fa1f71983d7496f1e36369c3b28f4971.600x338.jpg?t=1790783384" alt="Taskbar Armory — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5226040/64202b1ae0ec1cdf506d6b2c9db49895627448e3/ss_64202b1ae0ec1cdf506d6b2c9db49895627448e3.1920x1080.jpg?t=1790783384" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5226040/64202b1ae0ec1cdf506d6b2c9db49895627448e3/ss_64202b1ae0ec1cdf506d6b2c9db49895627448e3.600x338.jpg?t=1790783384" alt="Taskbar Armory — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5226040/2beee02020e1f7b1576cf5ec5f773c268ef88f78/ss_2beee02020e1f7b1576cf5ec5f773c268ef88f78.1920x1080.jpg?t=1790783384" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5226040/2beee02020e1f7b1576cf5ec5f773c268ef88f78/ss_2beee02020e1f7b1576cf5ec5f773c268ef88f78.600x338.jpg?t=1790783384" alt="Taskbar Armory — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5226040/7bd4fd2df2f8f0a0d0b9f67be38b2e89104c757d/ss_7bd4fd2df2f8f0a0d0b9f67be38b2e89104c757d.1920x1080.jpg?t=1790783384" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5226040/7bd4fd2df2f8f0a0d0b9f67be38b2e89104c757d/ss_7bd4fd2df2f8f0a0d0b9f67be38b2e89104c757d.600x338.jpg?t=1790783384" alt="Taskbar Armory — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+      </div>
+
+      <h2>Геймплей</h2>
+      <div class="game-movies">
+        <figure class="game-movie"><div class="game-video" data-hls="https://video.akamai.steamstatic.com/store_trailers/5226040/274162254/b915f8b6694b399ba9f1f6bf2b7c9bcfb3599246/1790659248/hls_264_master.m3u8?t=1790660163" data-poster="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257439323/fd5bf19673141e9b0b2d2f7cb51687f66c56cf65/movie_600x337.jpg?t=1790660163" role="button" tabindex="0" aria-label="Смотреть геймплей: Taskbar Armory Launch Trailer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257439323/fd5bf19673141e9b0b2d2f7cb51687f66c56cf65/movie_600x337.jpg?t=1790660163" alt="" loading="lazy" width="480" height="270" /><span class="game-video-play" aria-hidden="true"></span></div></figure>
+        <figure class="game-movie"><div class="game-video" data-hls="https://video.akamai.steamstatic.com/store_trailers/5226040/5159564/8040ab20d5b54861afa3e54bb35d0f3b6320f5c5/1788841778/hls_264_master.m3u8?t=1789576847" data-poster="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257419534/fd5bf19673141e9b0b2d2f7cb51687f66c56cf65/movie_600x337.jpg?t=1789576847" role="button" tabindex="0" aria-label="Смотреть геймплей: Taskbar Armory Trailer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257419534/fd5bf19673141e9b0b2d2f7cb51687f66c56cf65/movie_600x337.jpg?t=1789576847" alt="" loading="lazy" width="480" height="270" /><span class="game-video-play" aria-hidden="true"></span></div></figure>
+      </div>
+
+<p style="color: var(--text-faint); font-size: 13px; margin-top: 30px;">
         Данные о цене, отзывах и статистике обновляются автоматически на основе
         Steam Store API и SteamSpy.
       </p>
@@ -280,5 +330,6 @@ function declineCookies() {
 })();
 </script>
 <script src="/newsletter.js?v=2" defer></script>
+<script defer src="/game-media.js?v=1"></script>
 </body>
 </html>

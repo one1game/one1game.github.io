@@ -112,6 +112,38 @@
     }
     .game-stat-card .label { font-size: 12px; color: var(--text-faint); text-transform: uppercase; }
     .game-stat-card .value { font-size: 20px; font-weight: bold; margin-top: 4px; }
+    .game-shots {
+      display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+      gap: 12px; margin: 20px 0;
+    }
+    .game-shot {
+      display: block; border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 8px; overflow: hidden;
+    }
+    .game-shot img { display: block; width: 100%; height: auto; }
+    .game-movies { display: grid; gap: 16px; margin: 20px 0; }
+    .game-movie { margin: 0; }
+    .game-movie video {
+      display: block; width: 100%; height: auto;
+      border-radius: 8px; background: #000;
+    }
+    .game-movie figcaption { margin-top: 6px; font-size: 13px; color: var(--text-faint); }
+    .game-video {
+      position: relative; cursor: pointer; overflow: hidden;
+      border-radius: 8px; background: #000; aspect-ratio: 16 / 9;
+    }
+    .game-video img { display: block; width: 100%; height: 100%; object-fit: cover; }
+    .game-video-play { position: absolute; inset: 0; display: grid; place-items: center; }
+    .game-video-play::before {
+      content: ''; width: 58px; height: 58px; border-radius: 50%;
+      background: rgba(0,0,0,0.5); border: 2px solid rgba(255,255,255,0.75);
+    }
+    .game-video-play::after {
+      content: ''; position: absolute; margin-left: 5px;
+      border-style: solid; border-width: 11px 0 11px 18px;
+      border-color: transparent transparent transparent #fff;
+    }
+    .game-video-el { display: block; width: 100%; height: 100%; background: #000; }
   </style>
 </head>
 <body>
@@ -150,7 +182,7 @@
 
     <article class="article-body">
 
-      <p>What would you do with infinite resurrection and time travel? Predict the future, save the world, get rich overnight… or date six girls at once? You’ve lived every man’s dream but stepped into a fatal trap. You’re just trying to make them all happy—what’s wrong with that?</p>
+      
 
       <div class="game-stats-grid">
         <div class="game-stat-card">
@@ -166,10 +198,6 @@
           <div class="label">Владельцев (оценка)</div>
           <div class="value">0 – 20,000</div>
         </div>
-        <div class="game-stat-card">
-          <div class="label">Среднее время игры</div>
-          <div class="value">нет данных</div>
-        </div>
       </div>
 
       <h2>Об игре</h2>
@@ -183,7 +211,24 @@
         </a>
       </p>
 
-      <p style="color: var(--text-faint); font-size: 13px; margin-top: 30px;">
+            <h2>Скриншоты</h2>
+      <div class="game-shots">
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4553130/cb55c9a4e01f9745be018eae1cf70c57bda2e763/ss_cb55c9a4e01f9745be018eae1cf70c57bda2e763.1920x1080.jpg?t=1790210286" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4553130/cb55c9a4e01f9745be018eae1cf70c57bda2e763/ss_cb55c9a4e01f9745be018eae1cf70c57bda2e763.600x338.jpg?t=1790210286" alt="Love All My Girls — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4553130/3589596d6534f38d7b8b00ec1e4488f7c752966d/ss_3589596d6534f38d7b8b00ec1e4488f7c752966d.1920x1080.jpg?t=1790210286" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4553130/3589596d6534f38d7b8b00ec1e4488f7c752966d/ss_3589596d6534f38d7b8b00ec1e4488f7c752966d.600x338.jpg?t=1790210286" alt="Love All My Girls — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4553130/53b0e111a1c90398f556995c37cd6ebe3d7d4098/ss_53b0e111a1c90398f556995c37cd6ebe3d7d4098.1920x1080.jpg?t=1790210286" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4553130/53b0e111a1c90398f556995c37cd6ebe3d7d4098/ss_53b0e111a1c90398f556995c37cd6ebe3d7d4098.600x338.jpg?t=1790210286" alt="Love All My Girls — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4553130/0cfc6ee5bc041fc78e854430b2b51e2f24c4fa52/ss_0cfc6ee5bc041fc78e854430b2b51e2f24c4fa52.1920x1080.jpg?t=1790210286" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4553130/0cfc6ee5bc041fc78e854430b2b51e2f24c4fa52/ss_0cfc6ee5bc041fc78e854430b2b51e2f24c4fa52.600x338.jpg?t=1790210286" alt="Love All My Girls — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4553130/fff59fb0096a278f02b9386ea6668fa5c759c041/ss_fff59fb0096a278f02b9386ea6668fa5c759c041.1920x1080.jpg?t=1790210286" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4553130/fff59fb0096a278f02b9386ea6668fa5c759c041/ss_fff59fb0096a278f02b9386ea6668fa5c759c041.600x338.jpg?t=1790210286" alt="Love All My Girls — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4553130/5d7f94234035def8dbef9254d0b7bc5f31b625a4/ss_5d7f94234035def8dbef9254d0b7bc5f31b625a4.1920x1080.jpg?t=1790210286" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4553130/5d7f94234035def8dbef9254d0b7bc5f31b625a4/ss_5d7f94234035def8dbef9254d0b7bc5f31b625a4.600x338.jpg?t=1790210286" alt="Love All My Girls — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4553130/535d171c13a95cab2b3a598113b06f10e196bbab/ss_535d171c13a95cab2b3a598113b06f10e196bbab.1920x1080.jpg?t=1790210286" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4553130/535d171c13a95cab2b3a598113b06f10e196bbab/ss_535d171c13a95cab2b3a598113b06f10e196bbab.600x338.jpg?t=1790210286" alt="Love All My Girls — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+      </div>
+
+      <h2>Геймплей</h2>
+      <div class="game-movies">
+        <figure class="game-movie"><div class="game-video" data-hls="https://video.akamai.steamstatic.com/store_trailers/4553130/1241444895/06e0c90723c0de54a34972192eb9f27df44e42b8/1787145935/hls_264_master.m3u8?t=1787187341" data-poster="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257403144/8d93341bf170973916a056c9741530ff846de965/movie_600x337.jpg?t=1787187341" role="button" tabindex="0" aria-label="Смотреть геймплей: Gameplay | Rebirth × Love × Redemption・FMV Indie Game"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257403144/8d93341bf170973916a056c9741530ff846de965/movie_600x337.jpg?t=1787187341" alt="" loading="lazy" width="480" height="270" /><span class="game-video-play" aria-hidden="true"></span></div></figure>
+        <figure class="game-movie"><div class="game-video" data-hls="https://video.akamai.steamstatic.com/store_trailers/4553130/591881042/d9c64a347eae9b507267f426b9549dd43ba3e2ef/1775728613/hls_264_master.m3u8?t=1780882691" data-poster="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257316643/08c5e68e48d97d7c134563336ea6d8e9cb4765fd/movie_600x337.jpg?t=1780882691" role="button" tabindex="0" aria-label="Смотреть геймплей: Love All My Girls - Trailer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257316643/08c5e68e48d97d7c134563336ea6d8e9cb4765fd/movie_600x337.jpg?t=1780882691" alt="" loading="lazy" width="480" height="270" /><span class="game-video-play" aria-hidden="true"></span></div></figure>
+      </div>
+
+<p style="color: var(--text-faint); font-size: 13px; margin-top: 30px;">
         Данные о цене, отзывах и статистике обновляются автоматически на основе
         Steam Store API и SteamSpy.
       </p>
@@ -284,5 +329,6 @@ function declineCookies() {
 })();
 </script>
 <script src="/newsletter.js?v=2" defer></script>
+<script defer src="/game-media.js?v=1"></script>
 </body>
 </html>

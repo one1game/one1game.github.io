@@ -112,6 +112,38 @@
     }
     .game-stat-card .label { font-size: 12px; color: var(--text-faint); text-transform: uppercase; }
     .game-stat-card .value { font-size: 20px; font-weight: bold; margin-top: 4px; }
+    .game-shots {
+      display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+      gap: 12px; margin: 20px 0;
+    }
+    .game-shot {
+      display: block; border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 8px; overflow: hidden;
+    }
+    .game-shot img { display: block; width: 100%; height: auto; }
+    .game-movies { display: grid; gap: 16px; margin: 20px 0; }
+    .game-movie { margin: 0; }
+    .game-movie video {
+      display: block; width: 100%; height: auto;
+      border-radius: 8px; background: #000;
+    }
+    .game-movie figcaption { margin-top: 6px; font-size: 13px; color: var(--text-faint); }
+    .game-video {
+      position: relative; cursor: pointer; overflow: hidden;
+      border-radius: 8px; background: #000; aspect-ratio: 16 / 9;
+    }
+    .game-video img { display: block; width: 100%; height: 100%; object-fit: cover; }
+    .game-video-play { position: absolute; inset: 0; display: grid; place-items: center; }
+    .game-video-play::before {
+      content: ''; width: 58px; height: 58px; border-radius: 50%;
+      background: rgba(0,0,0,0.5); border: 2px solid rgba(255,255,255,0.75);
+    }
+    .game-video-play::after {
+      content: ''; position: absolute; margin-left: 5px;
+      border-style: solid; border-width: 11px 0 11px 18px;
+      border-color: transparent transparent transparent #fff;
+    }
+    .game-video-el { display: block; width: 100%; height: 100%; background: #000; }
   </style>
 </head>
 <body>
@@ -166,10 +198,6 @@
           <div class="label">Владельцев (оценка)</div>
           <div class="value">0 – 20,000</div>
         </div>
-        <div class="game-stat-card">
-          <div class="label">Среднее время игры</div>
-          <div class="value">нет данных</div>
-        </div>
       </div>
 
       <h2>Об игре</h2>
@@ -183,7 +211,27 @@
         </a>
       </p>
 
-      <p style="color: var(--text-faint); font-size: 13px; margin-top: 30px;">
+            <h2>Скриншоты</h2>
+      <div class="game-shots">
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4920750/fad63525c53b686c2eb9ec777c816df3039b27db/ss_fad63525c53b686c2eb9ec777c816df3039b27db.1920x1080.jpg?t=1791079038" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4920750/fad63525c53b686c2eb9ec777c816df3039b27db/ss_fad63525c53b686c2eb9ec777c816df3039b27db.600x338.jpg?t=1791079038" alt="Grim Siege — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4920750/e9d8bf477d7ff785c9a3278678e6c8bb077b1dfa/ss_e9d8bf477d7ff785c9a3278678e6c8bb077b1dfa.1920x1080.jpg?t=1791079038" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4920750/e9d8bf477d7ff785c9a3278678e6c8bb077b1dfa/ss_e9d8bf477d7ff785c9a3278678e6c8bb077b1dfa.600x338.jpg?t=1791079038" alt="Grim Siege — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4920750/6eb03da95b928cdced027474ad28db242989a53e/ss_6eb03da95b928cdced027474ad28db242989a53e.1920x1080.jpg?t=1791079038" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4920750/6eb03da95b928cdced027474ad28db242989a53e/ss_6eb03da95b928cdced027474ad28db242989a53e.600x338.jpg?t=1791079038" alt="Grim Siege — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4920750/1958c13a34400e34b6eae54a58bb1d0e64a22991/ss_1958c13a34400e34b6eae54a58bb1d0e64a22991.1920x1080.jpg?t=1791079038" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4920750/1958c13a34400e34b6eae54a58bb1d0e64a22991/ss_1958c13a34400e34b6eae54a58bb1d0e64a22991.600x338.jpg?t=1791079038" alt="Grim Siege — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4920750/01a747cdca340975286a22ce18032f8f10f9452d/ss_01a747cdca340975286a22ce18032f8f10f9452d.1920x1080.jpg?t=1791079038" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4920750/01a747cdca340975286a22ce18032f8f10f9452d/ss_01a747cdca340975286a22ce18032f8f10f9452d.600x338.jpg?t=1791079038" alt="Grim Siege — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4920750/e88f0156c7111a567b24bdedc96b01cdc90a6a8d/ss_e88f0156c7111a567b24bdedc96b01cdc90a6a8d.1920x1080.jpg?t=1791079038" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4920750/e88f0156c7111a567b24bdedc96b01cdc90a6a8d/ss_e88f0156c7111a567b24bdedc96b01cdc90a6a8d.600x338.jpg?t=1791079038" alt="Grim Siege — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4920750/8d9738e0908ffa48ec08804c000d5b75a8ab0b7b/ss_8d9738e0908ffa48ec08804c000d5b75a8ab0b7b.1920x1080.jpg?t=1791079038" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4920750/8d9738e0908ffa48ec08804c000d5b75a8ab0b7b/ss_8d9738e0908ffa48ec08804c000d5b75a8ab0b7b.600x338.jpg?t=1791079038" alt="Grim Siege — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4920750/bd95bd84c5a92fddce8543e9bda0a9f49530b8d4/ss_bd95bd84c5a92fddce8543e9bda0a9f49530b8d4.1920x1080.jpg?t=1791079038" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4920750/bd95bd84c5a92fddce8543e9bda0a9f49530b8d4/ss_bd95bd84c5a92fddce8543e9bda0a9f49530b8d4.600x338.jpg?t=1791079038" alt="Grim Siege — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4920750/645fd9a189c418400015b03c3e6913412a3f88d6/ss_645fd9a189c418400015b03c3e6913412a3f88d6.1920x1080.jpg?t=1791079038" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4920750/645fd9a189c418400015b03c3e6913412a3f88d6/ss_645fd9a189c418400015b03c3e6913412a3f88d6.600x338.jpg?t=1791079038" alt="Grim Siege — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4920750/78f37bfb61222519ccb1cdc7f57e0fa6f5895dc8/ss_78f37bfb61222519ccb1cdc7f57e0fa6f5895dc8.1920x1080.jpg?t=1791079038" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4920750/78f37bfb61222519ccb1cdc7f57e0fa6f5895dc8/ss_78f37bfb61222519ccb1cdc7f57e0fa6f5895dc8.600x338.jpg?t=1791079038" alt="Grim Siege — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4920750/497054450b012bfa2d5de3e195c1a99b08888c64/ss_497054450b012bfa2d5de3e195c1a99b08888c64.1920x1080.jpg?t=1791079038" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4920750/497054450b012bfa2d5de3e195c1a99b08888c64/ss_497054450b012bfa2d5de3e195c1a99b08888c64.600x338.jpg?t=1791079038" alt="Grim Siege — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+      </div>
+
+      <h2>Геймплей</h2>
+      <div class="game-movies">
+        <figure class="game-movie"><div class="game-video" data-hls="https://video.akamai.steamstatic.com/store_trailers/4920750/1179179092/278572b0f50d32f369a9ca23891c900786112a87/1790026950/hls_264_master.m3u8?t=1790027665" data-poster="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257431030/f9d0dbfc043e2abd4861c4ad8e05a40d5339648d/movie_600x337.jpg?t=1790027665" role="button" tabindex="0" aria-label="Смотреть геймплей: Main Trailer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257431030/f9d0dbfc043e2abd4861c4ad8e05a40d5339648d/movie_600x337.jpg?t=1790027665" alt="" loading="lazy" width="480" height="270" /><span class="game-video-play" aria-hidden="true"></span></div></figure>
+      </div>
+
+<p style="color: var(--text-faint); font-size: 13px; margin-top: 30px;">
         Данные о цене, отзывах и статистике обновляются автоматически на основе
         Steam Store API и SteamSpy.
       </p>
@@ -284,5 +332,6 @@ function declineCookies() {
 })();
 </script>
 <script src="/newsletter.js?v=2" defer></script>
+<script defer src="/game-media.js?v=1"></script>
 </body>
 </html>

@@ -1,0 +1,39 @@
+name: ИИ-обогащение страниц игр (Cloudflare)
+
+on:
+  schedule:
+    - cron: "0 5 * * *" # ежедневно 05:00 UTC (08:00 МСК)
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+
+jobs:
+  enrich:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Клонирование репозитория
+        uses: actions/checkout@v4
+
+      - name: Установка Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - name: ИИ-обогащение (Cloudflare Workers AI)
+        env:
+          MODE: "enrich"
+          ENRICH_LIMIT: "60"
+          ARCHIVE_DIR: "archive"
+          DELAY_MS: "800"
+          CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+        run: node scripts/generate-games.js
+
+      - name: Коммит и пуш изменений
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add archive/ articles-data.js
+          git diff --quiet --cached || git commit -m "ИИ-обогащение страниц игр: $(date -u +'%Y-%m-%d')"
+          git push

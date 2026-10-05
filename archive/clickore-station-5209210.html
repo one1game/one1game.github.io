@@ -112,6 +112,38 @@
     }
     .game-stat-card .label { font-size: 12px; color: var(--text-faint); text-transform: uppercase; }
     .game-stat-card .value { font-size: 20px; font-weight: bold; margin-top: 4px; }
+    .game-shots {
+      display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+      gap: 12px; margin: 20px 0;
+    }
+    .game-shot {
+      display: block; border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 8px; overflow: hidden;
+    }
+    .game-shot img { display: block; width: 100%; height: auto; }
+    .game-movies { display: grid; gap: 16px; margin: 20px 0; }
+    .game-movie { margin: 0; }
+    .game-movie video {
+      display: block; width: 100%; height: auto;
+      border-radius: 8px; background: #000;
+    }
+    .game-movie figcaption { margin-top: 6px; font-size: 13px; color: var(--text-faint); }
+    .game-video {
+      position: relative; cursor: pointer; overflow: hidden;
+      border-radius: 8px; background: #000; aspect-ratio: 16 / 9;
+    }
+    .game-video img { display: block; width: 100%; height: 100%; object-fit: cover; }
+    .game-video-play { position: absolute; inset: 0; display: grid; place-items: center; }
+    .game-video-play::before {
+      content: ''; width: 58px; height: 58px; border-radius: 50%;
+      background: rgba(0,0,0,0.5); border: 2px solid rgba(255,255,255,0.75);
+    }
+    .game-video-play::after {
+      content: ''; position: absolute; margin-left: 5px;
+      border-style: solid; border-width: 11px 0 11px 18px;
+      border-color: transparent transparent transparent #fff;
+    }
+    .game-video-el { display: block; width: 100%; height: 100%; background: #000; }
   </style>
 </head>
 <body>
@@ -150,7 +182,7 @@
 
     <article class="article-body">
 
-      <p>Defend your station with a click and survive as long as you can. Destroy the enemies, mine the deposit, then trade your ore for permanent upgrades. Every world has its own ore, its own enemies and its own rules.</p>
+      
 
       <div class="game-stats-grid">
         <div class="game-stat-card">
@@ -166,10 +198,6 @@
           <div class="label">Владельцев (оценка)</div>
           <div class="value">0 – 20,000</div>
         </div>
-        <div class="game-stat-card">
-          <div class="label">Среднее время игры</div>
-          <div class="value">нет данных</div>
-        </div>
       </div>
 
       <h2>Об игре</h2>
@@ -183,7 +211,27 @@
         </a>
       </p>
 
-      <p style="color: var(--text-faint); font-size: 13px; margin-top: 30px;">
+            <h2>Скриншоты</h2>
+      <div class="game-shots">
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5209210/6e3471ac7326460481d5241cd65c06d3d3719055/ss_6e3471ac7326460481d5241cd65c06d3d3719055.1920x1080.jpg?t=1791035346" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5209210/6e3471ac7326460481d5241cd65c06d3d3719055/ss_6e3471ac7326460481d5241cd65c06d3d3719055.600x338.jpg?t=1791035346" alt="Clickore Station — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5209210/177927e61afee7102c5af5e05e5100e26faa0fc7/ss_177927e61afee7102c5af5e05e5100e26faa0fc7.1920x1080.jpg?t=1791035346" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5209210/177927e61afee7102c5af5e05e5100e26faa0fc7/ss_177927e61afee7102c5af5e05e5100e26faa0fc7.600x338.jpg?t=1791035346" alt="Clickore Station — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5209210/3b1f8d50e4494ba3b2cfad5a08aef3976d174be7/ss_3b1f8d50e4494ba3b2cfad5a08aef3976d174be7.1920x1080.jpg?t=1791035346" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5209210/3b1f8d50e4494ba3b2cfad5a08aef3976d174be7/ss_3b1f8d50e4494ba3b2cfad5a08aef3976d174be7.600x338.jpg?t=1791035346" alt="Clickore Station — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5209210/7369286b5752d8cd0c1f6efcece814b975d5965a/ss_7369286b5752d8cd0c1f6efcece814b975d5965a.1920x1080.jpg?t=1791035346" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5209210/7369286b5752d8cd0c1f6efcece814b975d5965a/ss_7369286b5752d8cd0c1f6efcece814b975d5965a.600x338.jpg?t=1791035346" alt="Clickore Station — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5209210/42e866e4442ab9ffd3c517c4408119477cfd7a91/ss_42e866e4442ab9ffd3c517c4408119477cfd7a91.1920x1080.jpg?t=1791035346" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5209210/42e866e4442ab9ffd3c517c4408119477cfd7a91/ss_42e866e4442ab9ffd3c517c4408119477cfd7a91.600x338.jpg?t=1791035346" alt="Clickore Station — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5209210/07c8ac6acffbeaff05dddd6d12762a894bce6672/ss_07c8ac6acffbeaff05dddd6d12762a894bce6672.1920x1080.jpg?t=1791035346" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5209210/07c8ac6acffbeaff05dddd6d12762a894bce6672/ss_07c8ac6acffbeaff05dddd6d12762a894bce6672.600x338.jpg?t=1791035346" alt="Clickore Station — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5209210/aac8bca1f7ac8d7c94798414e89c03da21c755fc/ss_aac8bca1f7ac8d7c94798414e89c03da21c755fc.1920x1080.jpg?t=1791035346" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5209210/aac8bca1f7ac8d7c94798414e89c03da21c755fc/ss_aac8bca1f7ac8d7c94798414e89c03da21c755fc.600x338.jpg?t=1791035346" alt="Clickore Station — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5209210/37e67a356c36f477472a2e79d7bd878a9ae4ec01/ss_37e67a356c36f477472a2e79d7bd878a9ae4ec01.1920x1080.jpg?t=1791035346" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5209210/37e67a356c36f477472a2e79d7bd878a9ae4ec01/ss_37e67a356c36f477472a2e79d7bd878a9ae4ec01.600x338.jpg?t=1791035346" alt="Clickore Station — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5209210/967daf57cc5a144469141516485bd7153e8ea3a6/ss_967daf57cc5a144469141516485bd7153e8ea3a6.1920x1080.jpg?t=1791035346" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5209210/967daf57cc5a144469141516485bd7153e8ea3a6/ss_967daf57cc5a144469141516485bd7153e8ea3a6.600x338.jpg?t=1791035346" alt="Clickore Station — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5209210/06ca28783ac4eda89f1879446ace31f14d420340/ss_06ca28783ac4eda89f1879446ace31f14d420340.1920x1080.jpg?t=1791035346" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5209210/06ca28783ac4eda89f1879446ace31f14d420340/ss_06ca28783ac4eda89f1879446ace31f14d420340.600x338.jpg?t=1791035346" alt="Clickore Station — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5209210/3e8a373bb4c0e9c4af6bd26716c833ec267130c0/ss_3e8a373bb4c0e9c4af6bd26716c833ec267130c0.1920x1080.jpg?t=1791035346" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5209210/3e8a373bb4c0e9c4af6bd26716c833ec267130c0/ss_3e8a373bb4c0e9c4af6bd26716c833ec267130c0.600x338.jpg?t=1791035346" alt="Clickore Station — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+      </div>
+
+      <h2>Геймплей</h2>
+      <div class="game-movies">
+        <figure class="game-movie"><div class="game-video" data-hls="https://video.akamai.steamstatic.com/store_trailers/5209210/192000788/f4ced94047c771fbdd980bfda2359f2f79a63ac1/1790085272/hls_264_master.m3u8?t=1790085796" data-poster="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257431627/945be9bae506e44c2386fd45abb6db92a6b57c05/movie_600x337.jpg?t=1790085796" role="button" tabindex="0" aria-label="Смотреть геймплей: Gameplay Trailer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257431627/945be9bae506e44c2386fd45abb6db92a6b57c05/movie_600x337.jpg?t=1790085796" alt="" loading="lazy" width="480" height="270" /><span class="game-video-play" aria-hidden="true"></span></div></figure>
+      </div>
+
+<p style="color: var(--text-faint); font-size: 13px; margin-top: 30px;">
         Данные о цене, отзывах и статистике обновляются автоматически на основе
         Steam Store API и SteamSpy.
       </p>
@@ -284,5 +332,6 @@ function declineCookies() {
 })();
 </script>
 <script src="/newsletter.js?v=2" defer></script>
+<script defer src="/game-media.js?v=1"></script>
 </body>
 </html>

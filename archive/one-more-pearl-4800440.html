@@ -112,6 +112,38 @@
     }
     .game-stat-card .label { font-size: 12px; color: var(--text-faint); text-transform: uppercase; }
     .game-stat-card .value { font-size: 20px; font-weight: bold; margin-top: 4px; }
+    .game-shots {
+      display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+      gap: 12px; margin: 20px 0;
+    }
+    .game-shot {
+      display: block; border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 8px; overflow: hidden;
+    }
+    .game-shot img { display: block; width: 100%; height: auto; }
+    .game-movies { display: grid; gap: 16px; margin: 20px 0; }
+    .game-movie { margin: 0; }
+    .game-movie video {
+      display: block; width: 100%; height: auto;
+      border-radius: 8px; background: #000;
+    }
+    .game-movie figcaption { margin-top: 6px; font-size: 13px; color: var(--text-faint); }
+    .game-video {
+      position: relative; cursor: pointer; overflow: hidden;
+      border-radius: 8px; background: #000; aspect-ratio: 16 / 9;
+    }
+    .game-video img { display: block; width: 100%; height: 100%; object-fit: cover; }
+    .game-video-play { position: absolute; inset: 0; display: grid; place-items: center; }
+    .game-video-play::before {
+      content: ''; width: 58px; height: 58px; border-radius: 50%;
+      background: rgba(0,0,0,0.5); border: 2px solid rgba(255,255,255,0.75);
+    }
+    .game-video-play::after {
+      content: ''; position: absolute; margin-left: 5px;
+      border-style: solid; border-width: 11px 0 11px 18px;
+      border-color: transparent transparent transparent #fff;
+    }
+    .game-video-el { display: block; width: 100%; height: 100%; background: #000; }
   </style>
 </head>
 <body>
@@ -150,7 +182,7 @@
 
     <article class="article-body">
 
-      <p>The penniless otter taps on the magic drift bottle, and strange seashells keep appearing on the beach! Smash the shells, sell the pearls, upgrade the otter and pinball machine~</p>
+      
 
       <div class="game-stats-grid">
         <div class="game-stat-card">
@@ -166,10 +198,6 @@
           <div class="label">Владельцев (оценка)</div>
           <div class="value">0 – 20,000</div>
         </div>
-        <div class="game-stat-card">
-          <div class="label">Среднее время игры</div>
-          <div class="value">нет данных</div>
-        </div>
       </div>
 
       <h2>Об игре</h2>
@@ -183,7 +211,23 @@
         </a>
       </p>
 
-      <p style="color: var(--text-faint); font-size: 13px; margin-top: 30px;">
+            <h2>Скриншоты</h2>
+      <div class="game-shots">
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4800440/b073f675039c3f51a6b93d7fe3500513db19ce81/ss_b073f675039c3f51a6b93d7fe3500513db19ce81.1920x1080.jpg?t=1790134144" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4800440/b073f675039c3f51a6b93d7fe3500513db19ce81/ss_b073f675039c3f51a6b93d7fe3500513db19ce81.600x338.jpg?t=1790134144" alt="One More Pearl! — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4800440/6766fe18c9018eb914e3893f19405be47be47548/ss_6766fe18c9018eb914e3893f19405be47be47548.1920x1080.jpg?t=1790134144" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4800440/6766fe18c9018eb914e3893f19405be47be47548/ss_6766fe18c9018eb914e3893f19405be47be47548.600x338.jpg?t=1790134144" alt="One More Pearl! — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4800440/080d012f31daab395c7979a19d4553028dfab038/ss_080d012f31daab395c7979a19d4553028dfab038.1920x1080.jpg?t=1790134144" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4800440/080d012f31daab395c7979a19d4553028dfab038/ss_080d012f31daab395c7979a19d4553028dfab038.600x338.jpg?t=1790134144" alt="One More Pearl! — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4800440/08c2f907f94b0789640fc2061a8e9fc357d93ce0/ss_08c2f907f94b0789640fc2061a8e9fc357d93ce0.1920x1080.jpg?t=1790134144" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4800440/08c2f907f94b0789640fc2061a8e9fc357d93ce0/ss_08c2f907f94b0789640fc2061a8e9fc357d93ce0.600x338.jpg?t=1790134144" alt="One More Pearl! — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4800440/a4bb80fb3186f2ac351cc1b8c8e29f31fbbcacee/ss_a4bb80fb3186f2ac351cc1b8c8e29f31fbbcacee.1920x1080.jpg?t=1790134144" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4800440/a4bb80fb3186f2ac351cc1b8c8e29f31fbbcacee/ss_a4bb80fb3186f2ac351cc1b8c8e29f31fbbcacee.600x338.jpg?t=1790134144" alt="One More Pearl! — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4800440/165cab1fe7585e831a693552aed7dd23990d1a28/ss_165cab1fe7585e831a693552aed7dd23990d1a28.1920x1080.jpg?t=1790134144" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4800440/165cab1fe7585e831a693552aed7dd23990d1a28/ss_165cab1fe7585e831a693552aed7dd23990d1a28.600x338.jpg?t=1790134144" alt="One More Pearl! — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4800440/e444cd5a63aad5d599b1cab6f0da9aa0470ccaf5/ss_e444cd5a63aad5d599b1cab6f0da9aa0470ccaf5.1920x1080.jpg?t=1790134144" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4800440/e444cd5a63aad5d599b1cab6f0da9aa0470ccaf5/ss_e444cd5a63aad5d599b1cab6f0da9aa0470ccaf5.600x338.jpg?t=1790134144" alt="One More Pearl! — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+      </div>
+
+      <h2>Геймплей</h2>
+      <div class="game-movies">
+        <figure class="game-movie"><div class="game-video" data-hls="https://video.akamai.steamstatic.com/store_trailers/4800440/1935787731/fb42845b968d6ea52a005b426fa4948882ac1362/1788703630/hls_264_master.m3u8?t=1788765417" data-poster="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257418408/31db8cb3f4120bc8066e06e7747c47067e873f97/movie_600x337.jpg?t=1788765417" role="button" tabindex="0" aria-label="Смотреть геймплей: OneMorePearl"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257418408/31db8cb3f4120bc8066e06e7747c47067e873f97/movie_600x337.jpg?t=1788765417" alt="" loading="lazy" width="480" height="270" /><span class="game-video-play" aria-hidden="true"></span></div></figure>
+      </div>
+
+<p style="color: var(--text-faint); font-size: 13px; margin-top: 30px;">
         Данные о цене, отзывах и статистике обновляются автоматически на основе
         Steam Store API и SteamSpy.
       </p>
@@ -284,5 +328,6 @@ function declineCookies() {
 })();
 </script>
 <script src="/newsletter.js?v=2" defer></script>
+<script defer src="/game-media.js?v=1"></script>
 </body>
 </html>

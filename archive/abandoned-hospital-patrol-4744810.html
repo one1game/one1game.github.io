@@ -108,6 +108,38 @@
     }
     .game-stat-card .label { font-size: 12px; color: var(--text-faint); text-transform: uppercase; }
     .game-stat-card .value { font-size: 20px; font-weight: bold; margin-top: 4px; }
+    .game-shots {
+      display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+      gap: 12px; margin: 20px 0;
+    }
+    .game-shot {
+      display: block; border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 8px; overflow: hidden;
+    }
+    .game-shot img { display: block; width: 100%; height: auto; }
+    .game-movies { display: grid; gap: 16px; margin: 20px 0; }
+    .game-movie { margin: 0; }
+    .game-movie video {
+      display: block; width: 100%; height: auto;
+      border-radius: 8px; background: #000;
+    }
+    .game-movie figcaption { margin-top: 6px; font-size: 13px; color: var(--text-faint); }
+    .game-video {
+      position: relative; cursor: pointer; overflow: hidden;
+      border-radius: 8px; background: #000; aspect-ratio: 16 / 9;
+    }
+    .game-video img { display: block; width: 100%; height: 100%; object-fit: cover; }
+    .game-video-play { position: absolute; inset: 0; display: grid; place-items: center; }
+    .game-video-play::before {
+      content: ''; width: 58px; height: 58px; border-radius: 50%;
+      background: rgba(0,0,0,0.5); border: 2px solid rgba(255,255,255,0.75);
+    }
+    .game-video-play::after {
+      content: ''; position: absolute; margin-left: 5px;
+      border-style: solid; border-width: 11px 0 11px 18px;
+      border-color: transparent transparent transparent #fff;
+    }
+    .game-video-el { display: block; width: 100%; height: 100%; background: #000; }
   </style>
 </head>
 <body>
@@ -146,7 +178,7 @@
 
     <article class="article-body">
 
-      <p>During a security patrol at an abandoned hospital undergoing relocation, you enter Room 313—a room you were never meant to enter. The deeper you dig into the hospital's dark past, the more relentlessly &quot;something in there&quot; begins to pursue you. Find your way out before it's too late...</p>
+      
 
       <div class="game-stats-grid">
         <div class="game-stat-card">
@@ -162,10 +194,6 @@
           <div class="label">Владельцев (оценка)</div>
           <div class="value">0 – 20,000</div>
         </div>
-        <div class="game-stat-card">
-          <div class="label">Среднее время игры</div>
-          <div class="value">нет данных</div>
-        </div>
       </div>
 
       <h2>Об игре</h2>
@@ -179,7 +207,23 @@
         </a>
       </p>
 
-      <p style="color: var(--text-faint); font-size: 13px; margin-top: 30px;">
+            <h2>Скриншоты</h2>
+      <div class="game-shots">
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4744810/0b89717363354b7720a77d80187da5eb001fb323/ss_0b89717363354b7720a77d80187da5eb001fb323.1920x1080.jpg?t=1790302539" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4744810/0b89717363354b7720a77d80187da5eb001fb323/ss_0b89717363354b7720a77d80187da5eb001fb323.600x338.jpg?t=1790302539" alt="Abandoned Hospital Patrol — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4744810/edcb970d9fb8c10fa8eb1aa3cffc4151cf005b4e/ss_edcb970d9fb8c10fa8eb1aa3cffc4151cf005b4e.1920x1080.jpg?t=1790302539" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4744810/edcb970d9fb8c10fa8eb1aa3cffc4151cf005b4e/ss_edcb970d9fb8c10fa8eb1aa3cffc4151cf005b4e.600x338.jpg?t=1790302539" alt="Abandoned Hospital Patrol — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4744810/908bc251c3d14a40de85e9b6c6550092175e84da/ss_908bc251c3d14a40de85e9b6c6550092175e84da.1920x1080.jpg?t=1790302539" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4744810/908bc251c3d14a40de85e9b6c6550092175e84da/ss_908bc251c3d14a40de85e9b6c6550092175e84da.600x338.jpg?t=1790302539" alt="Abandoned Hospital Patrol — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4744810/315d44cca6c7d812e3f82d39862fe206343a99f4/ss_315d44cca6c7d812e3f82d39862fe206343a99f4.1920x1080.jpg?t=1790302539" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4744810/315d44cca6c7d812e3f82d39862fe206343a99f4/ss_315d44cca6c7d812e3f82d39862fe206343a99f4.600x338.jpg?t=1790302539" alt="Abandoned Hospital Patrol — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4744810/8f2b8a58ca614d0a691b7ad7e16b9108d44fe14f/ss_8f2b8a58ca614d0a691b7ad7e16b9108d44fe14f.1920x1080.jpg?t=1790302539" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4744810/8f2b8a58ca614d0a691b7ad7e16b9108d44fe14f/ss_8f2b8a58ca614d0a691b7ad7e16b9108d44fe14f.600x338.jpg?t=1790302539" alt="Abandoned Hospital Patrol — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4744810/f3cc70421af9175c4a711e7cb5a1ae3b7fa78d22/ss_f3cc70421af9175c4a711e7cb5a1ae3b7fa78d22.1920x1080.jpg?t=1790302539" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4744810/f3cc70421af9175c4a711e7cb5a1ae3b7fa78d22/ss_f3cc70421af9175c4a711e7cb5a1ae3b7fa78d22.600x338.jpg?t=1790302539" alt="Abandoned Hospital Patrol — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+      </div>
+
+      <h2>Геймплей</h2>
+      <div class="game-movies">
+        <figure class="game-movie"><div class="game-video" data-hls="https://video.akamai.steamstatic.com/store_trailers/4744810/867751535/ff49a70d1b37d92911f4a29c3862461e544955b1/1786346990/hls_264_master.m3u8?t=1787712688" data-poster="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257395489/20e63a9ce0465c87e70f3feea89eb63db266ee41/movie_600x337.jpg?t=1787712688" role="button" tabindex="0" aria-label="Смотреть геймплей: Abandoned Hospital Patrol_playdemo_ENG"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257395489/20e63a9ce0465c87e70f3feea89eb63db266ee41/movie_600x337.jpg?t=1787712688" alt="" loading="lazy" width="480" height="270" /><span class="game-video-play" aria-hidden="true"></span></div></figure>
+        <figure class="game-movie"><div class="game-video" data-hls="https://video.akamai.steamstatic.com/store_trailers/4744810/578089887/62bce048eb72716cec5a0e3f73e8c34bb7fd7a36/1787712019/hls_264_master.m3u8?t=1787712689" data-poster="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257408687/2b8e7965fbe512a35a16e141a4cef3f1caf03dbc/movie_600x337.jpg?t=1787712689" role="button" tabindex="0" aria-label="Смотреть геймплей: Abandoned Hospital Patrol_PV"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257408687/2b8e7965fbe512a35a16e141a4cef3f1caf03dbc/movie_600x337.jpg?t=1787712689" alt="" loading="lazy" width="480" height="270" /><span class="game-video-play" aria-hidden="true"></span></div></figure>
+      </div>
+
+<p style="color: var(--text-faint); font-size: 13px; margin-top: 30px;">
         Данные о цене, отзывах и статистике обновляются автоматически на основе
         Steam Store API и SteamSpy.
       </p>
@@ -280,5 +324,6 @@ function declineCookies() {
 })();
 </script>
 <script src="/newsletter.js?v=2" defer></script>
+<script defer src="/game-media.js?v=1"></script>
 </body>
 </html>

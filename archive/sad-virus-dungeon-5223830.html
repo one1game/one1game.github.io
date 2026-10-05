@@ -112,6 +112,38 @@
     }
     .game-stat-card .label { font-size: 12px; color: var(--text-faint); text-transform: uppercase; }
     .game-stat-card .value { font-size: 20px; font-weight: bold; margin-top: 4px; }
+    .game-shots {
+      display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+      gap: 12px; margin: 20px 0;
+    }
+    .game-shot {
+      display: block; border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 8px; overflow: hidden;
+    }
+    .game-shot img { display: block; width: 100%; height: auto; }
+    .game-movies { display: grid; gap: 16px; margin: 20px 0; }
+    .game-movie { margin: 0; }
+    .game-movie video {
+      display: block; width: 100%; height: auto;
+      border-radius: 8px; background: #000;
+    }
+    .game-movie figcaption { margin-top: 6px; font-size: 13px; color: var(--text-faint); }
+    .game-video {
+      position: relative; cursor: pointer; overflow: hidden;
+      border-radius: 8px; background: #000; aspect-ratio: 16 / 9;
+    }
+    .game-video img { display: block; width: 100%; height: 100%; object-fit: cover; }
+    .game-video-play { position: absolute; inset: 0; display: grid; place-items: center; }
+    .game-video-play::before {
+      content: ''; width: 58px; height: 58px; border-radius: 50%;
+      background: rgba(0,0,0,0.5); border: 2px solid rgba(255,255,255,0.75);
+    }
+    .game-video-play::after {
+      content: ''; position: absolute; margin-left: 5px;
+      border-style: solid; border-width: 11px 0 11px 18px;
+      border-color: transparent transparent transparent #fff;
+    }
+    .game-video-el { display: block; width: 100%; height: 100%; background: #000; }
   </style>
 </head>
 <body>
@@ -150,7 +182,7 @@
 
     <article class="article-body">
 
-      <p>Sad virus third person simulation adventure game series continue now in dungeon themed map where mission avoid traps and collect bottles</p>
+      
 
       <div class="game-stats-grid">
         <div class="game-stat-card">
@@ -166,10 +198,6 @@
           <div class="label">Владельцев (оценка)</div>
           <div class="value">0 – 20,000</div>
         </div>
-        <div class="game-stat-card">
-          <div class="label">Среднее время игры</div>
-          <div class="value">нет данных</div>
-        </div>
       </div>
 
       <h2>Об игре</h2>
@@ -183,7 +211,21 @@
         </a>
       </p>
 
-      <p style="color: var(--text-faint); font-size: 13px; margin-top: 30px;">
+            <h2>Скриншоты</h2>
+      <div class="game-shots">
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5223830/0a3c1660b552412b6d2c43222efc984bfa7a64c1/ss_0a3c1660b552412b6d2c43222efc984bfa7a64c1.1920x1080.jpg?t=1790666092" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5223830/0a3c1660b552412b6d2c43222efc984bfa7a64c1/ss_0a3c1660b552412b6d2c43222efc984bfa7a64c1.600x338.jpg?t=1790666092" alt="Sad Virus Dungeon — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5223830/59e380701588aab5eb0b1ec124b2e2acbcf24679/ss_59e380701588aab5eb0b1ec124b2e2acbcf24679.1920x1080.jpg?t=1790666092" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5223830/59e380701588aab5eb0b1ec124b2e2acbcf24679/ss_59e380701588aab5eb0b1ec124b2e2acbcf24679.600x338.jpg?t=1790666092" alt="Sad Virus Dungeon — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5223830/df2b53a1559ecf767617ea52c2150ea6fb187072/ss_df2b53a1559ecf767617ea52c2150ea6fb187072.1920x1080.jpg?t=1790666092" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5223830/df2b53a1559ecf767617ea52c2150ea6fb187072/ss_df2b53a1559ecf767617ea52c2150ea6fb187072.600x338.jpg?t=1790666092" alt="Sad Virus Dungeon — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5223830/9a0fe8d78603e0223ed1f89361ffd8e462034ae3/ss_9a0fe8d78603e0223ed1f89361ffd8e462034ae3.1920x1080.jpg?t=1790666092" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5223830/9a0fe8d78603e0223ed1f89361ffd8e462034ae3/ss_9a0fe8d78603e0223ed1f89361ffd8e462034ae3.600x338.jpg?t=1790666092" alt="Sad Virus Dungeon — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5223830/d4379d7dbc8cad524abc040f7df885597626f182/ss_d4379d7dbc8cad524abc040f7df885597626f182.1920x1080.jpg?t=1790666092" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5223830/d4379d7dbc8cad524abc040f7df885597626f182/ss_d4379d7dbc8cad524abc040f7df885597626f182.600x338.jpg?t=1790666092" alt="Sad Virus Dungeon — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+      </div>
+
+      <h2>Геймплей</h2>
+      <div class="game-movies">
+        <figure class="game-movie"><div class="game-video" data-hls="https://video.akamai.steamstatic.com/store_trailers/5223830/796180421/249c68f9bcfd06cf43d5e860ba636df9cb0650c4/1788508564/hls_264_master.m3u8?t=1789500877" data-poster="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257417073/5fa29dd666c7c86f842aa0fa718e3680f7c1f513/movie_600x337.jpg?t=1789500877" role="button" tabindex="0" aria-label="Смотреть геймплей: gameplay"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257417073/5fa29dd666c7c86f842aa0fa718e3680f7c1f513/movie_600x337.jpg?t=1789500877" alt="" loading="lazy" width="480" height="270" /><span class="game-video-play" aria-hidden="true"></span></div></figure>
+      </div>
+
+<p style="color: var(--text-faint); font-size: 13px; margin-top: 30px;">
         Данные о цене, отзывах и статистике обновляются автоматически на основе
         Steam Store API и SteamSpy.
       </p>
@@ -284,5 +326,6 @@ function declineCookies() {
 })();
 </script>
 <script src="/newsletter.js?v=2" defer></script>
+<script defer src="/game-media.js?v=1"></script>
 </body>
 </html>

@@ -112,6 +112,38 @@
     }
     .game-stat-card .label { font-size: 12px; color: var(--text-faint); text-transform: uppercase; }
     .game-stat-card .value { font-size: 20px; font-weight: bold; margin-top: 4px; }
+    .game-shots {
+      display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+      gap: 12px; margin: 20px 0;
+    }
+    .game-shot {
+      display: block; border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 8px; overflow: hidden;
+    }
+    .game-shot img { display: block; width: 100%; height: auto; }
+    .game-movies { display: grid; gap: 16px; margin: 20px 0; }
+    .game-movie { margin: 0; }
+    .game-movie video {
+      display: block; width: 100%; height: auto;
+      border-radius: 8px; background: #000;
+    }
+    .game-movie figcaption { margin-top: 6px; font-size: 13px; color: var(--text-faint); }
+    .game-video {
+      position: relative; cursor: pointer; overflow: hidden;
+      border-radius: 8px; background: #000; aspect-ratio: 16 / 9;
+    }
+    .game-video img { display: block; width: 100%; height: 100%; object-fit: cover; }
+    .game-video-play { position: absolute; inset: 0; display: grid; place-items: center; }
+    .game-video-play::before {
+      content: ''; width: 58px; height: 58px; border-radius: 50%;
+      background: rgba(0,0,0,0.5); border: 2px solid rgba(255,255,255,0.75);
+    }
+    .game-video-play::after {
+      content: ''; position: absolute; margin-left: 5px;
+      border-style: solid; border-width: 11px 0 11px 18px;
+      border-color: transparent transparent transparent #fff;
+    }
+    .game-video-el { display: block; width: 100%; height: 100%; background: #000; }
   </style>
 </head>
 <body>
@@ -166,10 +198,6 @@
           <div class="label">Владельцев (оценка)</div>
           <div class="value">0 – 20,000</div>
         </div>
-        <div class="game-stat-card">
-          <div class="label">Среднее время игры</div>
-          <div class="value">нет данных</div>
-        </div>
       </div>
 
       <h2>Об игре</h2>
@@ -183,7 +211,28 @@
         </a>
       </p>
 
-      <p style="color: var(--text-faint); font-size: 13px; margin-top: 30px;">
+            <h2>Скриншоты</h2>
+      <div class="game-shots">
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5130010/fa294cf462b6b2705fc8d824ec11244df81514bf/ss_fa294cf462b6b2705fc8d824ec11244df81514bf.1920x1080.jpg?t=1790693902" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5130010/fa294cf462b6b2705fc8d824ec11244df81514bf/ss_fa294cf462b6b2705fc8d824ec11244df81514bf.600x338.jpg?t=1790693902" alt="AIGENROBO — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5130010/842ee735fb0363f9eedb00907f40b0eb7add7b95/ss_842ee735fb0363f9eedb00907f40b0eb7add7b95.1920x1080.jpg?t=1790693902" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5130010/842ee735fb0363f9eedb00907f40b0eb7add7b95/ss_842ee735fb0363f9eedb00907f40b0eb7add7b95.600x338.jpg?t=1790693902" alt="AIGENROBO — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5130010/16410891a1a17de3999aa6f6f6c5b3b0a63d903c/ss_16410891a1a17de3999aa6f6f6c5b3b0a63d903c.1920x1080.jpg?t=1790693902" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5130010/16410891a1a17de3999aa6f6f6c5b3b0a63d903c/ss_16410891a1a17de3999aa6f6f6c5b3b0a63d903c.600x338.jpg?t=1790693902" alt="AIGENROBO — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5130010/21aa54ba950ec7fbb5c411b990e7deb247fa23b6/ss_21aa54ba950ec7fbb5c411b990e7deb247fa23b6.1920x1080.jpg?t=1790693902" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5130010/21aa54ba950ec7fbb5c411b990e7deb247fa23b6/ss_21aa54ba950ec7fbb5c411b990e7deb247fa23b6.600x338.jpg?t=1790693902" alt="AIGENROBO — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5130010/522e9743127d68ebf48f5514e8c531fdcd6b6dff/ss_522e9743127d68ebf48f5514e8c531fdcd6b6dff.1920x1080.jpg?t=1790693902" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5130010/522e9743127d68ebf48f5514e8c531fdcd6b6dff/ss_522e9743127d68ebf48f5514e8c531fdcd6b6dff.600x338.jpg?t=1790693902" alt="AIGENROBO — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5130010/77de74c8365809a3c4b7aa5519709f850a8c63e6/ss_77de74c8365809a3c4b7aa5519709f850a8c63e6.1920x1080.jpg?t=1790693902" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5130010/77de74c8365809a3c4b7aa5519709f850a8c63e6/ss_77de74c8365809a3c4b7aa5519709f850a8c63e6.600x338.jpg?t=1790693902" alt="AIGENROBO — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5130010/568e0ee8e604ea93d3a4fd5bc119661c0ce50ad7/ss_568e0ee8e604ea93d3a4fd5bc119661c0ce50ad7.1920x1080.jpg?t=1790693902" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5130010/568e0ee8e604ea93d3a4fd5bc119661c0ce50ad7/ss_568e0ee8e604ea93d3a4fd5bc119661c0ce50ad7.600x338.jpg?t=1790693902" alt="AIGENROBO — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5130010/4f71488e4c17f8f078259aad000fc02f78713e77/ss_4f71488e4c17f8f078259aad000fc02f78713e77.1920x1080.jpg?t=1790693902" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5130010/4f71488e4c17f8f078259aad000fc02f78713e77/ss_4f71488e4c17f8f078259aad000fc02f78713e77.600x338.jpg?t=1790693902" alt="AIGENROBO — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5130010/01dae304ab10e76a635a4f514899cf3c8899f0e5/ss_01dae304ab10e76a635a4f514899cf3c8899f0e5.1920x1080.jpg?t=1790693902" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5130010/01dae304ab10e76a635a4f514899cf3c8899f0e5/ss_01dae304ab10e76a635a4f514899cf3c8899f0e5.600x338.jpg?t=1790693902" alt="AIGENROBO — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5130010/e715ce4978f52a6f8995643ff99bddae7ef3b11f/ss_e715ce4978f52a6f8995643ff99bddae7ef3b11f.1920x1080.jpg?t=1790693902" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5130010/e715ce4978f52a6f8995643ff99bddae7ef3b11f/ss_e715ce4978f52a6f8995643ff99bddae7ef3b11f.600x338.jpg?t=1790693902" alt="AIGENROBO — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+      </div>
+
+      <h2>Геймплей</h2>
+      <div class="game-movies">
+        <figure class="game-movie"><div class="game-video" data-hls="https://video.akamai.steamstatic.com/store_trailers/5130010/1461736241/807369dc3e290bf9ab044999062da3c06618a10b/1790693479/hls_264_master.m3u8?t=1790693900" data-poster="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257439934/5d38e9cf82796a12e446e69d96268d119dc47fbf/movie_600x337.jpg?t=1790693900" role="button" tabindex="0" aria-label="Смотреть геймплей: Ver.1.5.0 Update Melee Weapons Arrive"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257439934/5d38e9cf82796a12e446e69d96268d119dc47fbf/movie_600x337.jpg?t=1790693900" alt="" loading="lazy" width="480" height="270" /><span class="game-video-play" aria-hidden="true"></span></div></figure>
+        <figure class="game-movie"><div class="game-video" data-hls="https://video.akamai.steamstatic.com/store_trailers/5130010/399149191/28bde6cfb35dbe0a8c54de41b840f0f9a8894df0/1790136962/hls_264_master.m3u8?t=1790137568" data-poster="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257432295/d217121089a490c21b6a3659f4d807fd4bbb9f1c/movie_600x337.jpg?t=1790137568" role="button" tabindex="0" aria-label="Смотреть геймплей: Opening movie"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257432295/d217121089a490c21b6a3659f4d807fd4bbb9f1c/movie_600x337.jpg?t=1790137568" alt="" loading="lazy" width="480" height="270" /><span class="game-video-play" aria-hidden="true"></span></div></figure>
+        <figure class="game-movie"><div class="game-video" data-hls="https://video.akamai.steamstatic.com/store_trailers/5130010/938643562/2acf731f4024a027c85bbb098dac808d589b2893/1789987830/hls_264_master.m3u8?t=1790159943" data-poster="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257430558/3d7b52f4434c37458e83fe74fa04c5686089332b/movie_600x337.jpg?t=1790159943" role="button" tabindex="0" aria-label="Смотреть геймплей: Gameplay Trailer2"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257430558/3d7b52f4434c37458e83fe74fa04c5686089332b/movie_600x337.jpg?t=1790159943" alt="" loading="lazy" width="480" height="270" /><span class="game-video-play" aria-hidden="true"></span></div></figure>
+      </div>
+
+<p style="color: var(--text-faint); font-size: 13px; margin-top: 30px;">
         Данные о цене, отзывах и статистике обновляются автоматически на основе
         Steam Store API и SteamSpy.
       </p>
@@ -284,5 +333,6 @@ function declineCookies() {
 })();
 </script>
 <script src="/newsletter.js?v=2" defer></script>
+<script defer src="/game-media.js?v=1"></script>
 </body>
 </html>

@@ -112,6 +112,38 @@
     }
     .game-stat-card .label { font-size: 12px; color: var(--text-faint); text-transform: uppercase; }
     .game-stat-card .value { font-size: 20px; font-weight: bold; margin-top: 4px; }
+    .game-shots {
+      display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+      gap: 12px; margin: 20px 0;
+    }
+    .game-shot {
+      display: block; border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 8px; overflow: hidden;
+    }
+    .game-shot img { display: block; width: 100%; height: auto; }
+    .game-movies { display: grid; gap: 16px; margin: 20px 0; }
+    .game-movie { margin: 0; }
+    .game-movie video {
+      display: block; width: 100%; height: auto;
+      border-radius: 8px; background: #000;
+    }
+    .game-movie figcaption { margin-top: 6px; font-size: 13px; color: var(--text-faint); }
+    .game-video {
+      position: relative; cursor: pointer; overflow: hidden;
+      border-radius: 8px; background: #000; aspect-ratio: 16 / 9;
+    }
+    .game-video img { display: block; width: 100%; height: 100%; object-fit: cover; }
+    .game-video-play { position: absolute; inset: 0; display: grid; place-items: center; }
+    .game-video-play::before {
+      content: ''; width: 58px; height: 58px; border-radius: 50%;
+      background: rgba(0,0,0,0.5); border: 2px solid rgba(255,255,255,0.75);
+    }
+    .game-video-play::after {
+      content: ''; position: absolute; margin-left: 5px;
+      border-style: solid; border-width: 11px 0 11px 18px;
+      border-color: transparent transparent transparent #fff;
+    }
+    .game-video-el { display: block; width: 100%; height: 100%; background: #000; }
   </style>
 </head>
 <body>
@@ -150,7 +182,7 @@
 
     <article class="article-body">
 
-      <p>Wipe floors here, there, and everywhere?! Race across courses while wiping floors and aim for 1st place!</p>
+      
 
       <div class="game-stats-grid">
         <div class="game-stat-card">
@@ -166,10 +198,6 @@
           <div class="label">Владельцев (оценка)</div>
           <div class="value">0 – 20,000</div>
         </div>
-        <div class="game-stat-card">
-          <div class="label">Среднее время игры</div>
-          <div class="value">нет данных</div>
-        </div>
       </div>
 
       <h2>Об игре</h2>
@@ -183,7 +211,21 @@
         </a>
       </p>
 
-      <p style="color: var(--text-faint); font-size: 13px; margin-top: 30px;">
+            <h2>Скриншоты</h2>
+      <div class="game-shots">
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5189750/89f852322d546b56060bd9a9d3a4e76c92071f1c/ss_89f852322d546b56060bd9a9d3a4e76c92071f1c.1920x1080.jpg?t=1790810918" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5189750/89f852322d546b56060bd9a9d3a4e76c92071f1c/ss_89f852322d546b56060bd9a9d3a4e76c92071f1c.600x338.jpg?t=1790810918" alt="Floor Wiping Race — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5189750/30de84636fb4c529a307b3cb60cb1084e53453f9/ss_30de84636fb4c529a307b3cb60cb1084e53453f9.1920x1080.jpg?t=1790810918" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5189750/30de84636fb4c529a307b3cb60cb1084e53453f9/ss_30de84636fb4c529a307b3cb60cb1084e53453f9.600x338.jpg?t=1790810918" alt="Floor Wiping Race — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5189750/c5c30f522cb5644a58cba6cc86727e891f094feb/ss_c5c30f522cb5644a58cba6cc86727e891f094feb.1920x1080.jpg?t=1790810918" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5189750/c5c30f522cb5644a58cba6cc86727e891f094feb/ss_c5c30f522cb5644a58cba6cc86727e891f094feb.600x338.jpg?t=1790810918" alt="Floor Wiping Race — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5189750/826c50a4b69dff7d48837206d15e27c14245e243/ss_826c50a4b69dff7d48837206d15e27c14245e243.1920x1080.jpg?t=1790810918" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5189750/826c50a4b69dff7d48837206d15e27c14245e243/ss_826c50a4b69dff7d48837206d15e27c14245e243.600x338.jpg?t=1790810918" alt="Floor Wiping Race — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5189750/f7d155d9b5ad87ff243fb59db7459ed7dc60e97d/ss_f7d155d9b5ad87ff243fb59db7459ed7dc60e97d.1920x1080.jpg?t=1790810918" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5189750/f7d155d9b5ad87ff243fb59db7459ed7dc60e97d/ss_f7d155d9b5ad87ff243fb59db7459ed7dc60e97d.600x338.jpg?t=1790810918" alt="Floor Wiping Race — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+      </div>
+
+      <h2>Геймплей</h2>
+      <div class="game-movies">
+        <figure class="game-movie"><div class="game-video" data-hls="https://video.akamai.steamstatic.com/store_trailers/5189750/1979684939/d61265e973cd78ae4da4be5b3d8c4eed02d8090d/1789438549/hls_264_master.m3u8?t=1789439592" data-poster="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257425295/46b4cb9b96a6bb6e8cf731bfdc618ef08cadb5e5/movie_600x337.jpg?t=1789439592" role="button" tabindex="0" aria-label="Смотреть геймплей: PV"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257425295/46b4cb9b96a6bb6e8cf731bfdc618ef08cadb5e5/movie_600x337.jpg?t=1789439592" alt="" loading="lazy" width="480" height="270" /><span class="game-video-play" aria-hidden="true"></span></div></figure>
+      </div>
+
+<p style="color: var(--text-faint); font-size: 13px; margin-top: 30px;">
         Данные о цене, отзывах и статистике обновляются автоматически на основе
         Steam Store API и SteamSpy.
       </p>
@@ -284,5 +326,6 @@ function declineCookies() {
 })();
 </script>
 <script src="/newsletter.js?v=2" defer></script>
+<script defer src="/game-media.js?v=1"></script>
 </body>
 </html>

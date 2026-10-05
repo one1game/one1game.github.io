@@ -112,6 +112,38 @@
     }
     .game-stat-card .label { font-size: 12px; color: var(--text-faint); text-transform: uppercase; }
     .game-stat-card .value { font-size: 20px; font-weight: bold; margin-top: 4px; }
+    .game-shots {
+      display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+      gap: 12px; margin: 20px 0;
+    }
+    .game-shot {
+      display: block; border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 8px; overflow: hidden;
+    }
+    .game-shot img { display: block; width: 100%; height: auto; }
+    .game-movies { display: grid; gap: 16px; margin: 20px 0; }
+    .game-movie { margin: 0; }
+    .game-movie video {
+      display: block; width: 100%; height: auto;
+      border-radius: 8px; background: #000;
+    }
+    .game-movie figcaption { margin-top: 6px; font-size: 13px; color: var(--text-faint); }
+    .game-video {
+      position: relative; cursor: pointer; overflow: hidden;
+      border-radius: 8px; background: #000; aspect-ratio: 16 / 9;
+    }
+    .game-video img { display: block; width: 100%; height: 100%; object-fit: cover; }
+    .game-video-play { position: absolute; inset: 0; display: grid; place-items: center; }
+    .game-video-play::before {
+      content: ''; width: 58px; height: 58px; border-radius: 50%;
+      background: rgba(0,0,0,0.5); border: 2px solid rgba(255,255,255,0.75);
+    }
+    .game-video-play::after {
+      content: ''; position: absolute; margin-left: 5px;
+      border-style: solid; border-width: 11px 0 11px 18px;
+      border-color: transparent transparent transparent #fff;
+    }
+    .game-video-el { display: block; width: 100%; height: 100%; background: #000; }
   </style>
 </head>
 <body>
@@ -150,7 +182,7 @@
 
     <article class="article-body">
 
-      <p>ChipBuilder is a story driven puzzle game about digital logic. Start with a single AND gate and work your way up through registers, memory, and a full ALU, until you have wired together a working CPU with your own hands.</p>
+      
 
       <div class="game-stats-grid">
         <div class="game-stat-card">
@@ -166,10 +198,6 @@
           <div class="label">Владельцев (оценка)</div>
           <div class="value">0 – 20,000</div>
         </div>
-        <div class="game-stat-card">
-          <div class="label">Среднее время игры</div>
-          <div class="value">нет данных</div>
-        </div>
       </div>
 
       <h2>Об игре</h2>
@@ -183,7 +211,21 @@
         </a>
       </p>
 
-      <p style="color: var(--text-faint); font-size: 13px; margin-top: 30px;">
+            <h2>Скриншоты</h2>
+      <div class="game-shots">
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5095670/226d0e62e6868da85db7189a348c18664a4f7b0b/ss_226d0e62e6868da85db7189a348c18664a4f7b0b.1920x1080.jpg?t=1790165484" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5095670/226d0e62e6868da85db7189a348c18664a4f7b0b/ss_226d0e62e6868da85db7189a348c18664a4f7b0b.600x338.jpg?t=1790165484" alt="Chip Builder — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5095670/54764ae621a9b2feef0382fe3cd1052321fabc8d/ss_54764ae621a9b2feef0382fe3cd1052321fabc8d.1920x1080.jpg?t=1790165484" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5095670/54764ae621a9b2feef0382fe3cd1052321fabc8d/ss_54764ae621a9b2feef0382fe3cd1052321fabc8d.600x338.jpg?t=1790165484" alt="Chip Builder — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5095670/2be5d77ceb3adb9526366609262180e4ffb49759/ss_2be5d77ceb3adb9526366609262180e4ffb49759.1920x1080.jpg?t=1790165484" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5095670/2be5d77ceb3adb9526366609262180e4ffb49759/ss_2be5d77ceb3adb9526366609262180e4ffb49759.600x338.jpg?t=1790165484" alt="Chip Builder — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5095670/2d77092d83d724fa662a8c41b8ce2b9b76b8564b/ss_2d77092d83d724fa662a8c41b8ce2b9b76b8564b.1920x1080.jpg?t=1790165484" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5095670/2d77092d83d724fa662a8c41b8ce2b9b76b8564b/ss_2d77092d83d724fa662a8c41b8ce2b9b76b8564b.600x338.jpg?t=1790165484" alt="Chip Builder — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5095670/3047f6da8d6d24e37c16871f9a244fba04546ab2/ss_3047f6da8d6d24e37c16871f9a244fba04546ab2.1920x1080.jpg?t=1790165484" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5095670/3047f6da8d6d24e37c16871f9a244fba04546ab2/ss_3047f6da8d6d24e37c16871f9a244fba04546ab2.600x338.jpg?t=1790165484" alt="Chip Builder — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+      </div>
+
+      <h2>Геймплей</h2>
+      <div class="game-movies">
+        <figure class="game-movie"><div class="game-video" data-hls="https://video.akamai.steamstatic.com/store_trailers/5095670/1559026539/d28c997a43b2f970911ce2fb5ba8808492554c04/1786611865/hls_264_master.m3u8?t=1788032763" data-poster="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257397704/cee3a7fd1a1687a6795ac69d1a83a3685b8560b8/movie_600x337.jpg?t=1788032763" role="button" tabindex="0" aria-label="Смотреть геймплей: ChipBuilder"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257397704/cee3a7fd1a1687a6795ac69d1a83a3685b8560b8/movie_600x337.jpg?t=1788032763" alt="" loading="lazy" width="480" height="270" /><span class="game-video-play" aria-hidden="true"></span></div></figure>
+      </div>
+
+<p style="color: var(--text-faint); font-size: 13px; margin-top: 30px;">
         Данные о цене, отзывах и статистике обновляются автоматически на основе
         Steam Store API и SteamSpy.
       </p>
@@ -284,5 +326,6 @@ function declineCookies() {
 })();
 </script>
 <script src="/newsletter.js?v=2" defer></script>
+<script defer src="/game-media.js?v=1"></script>
 </body>
 </html>

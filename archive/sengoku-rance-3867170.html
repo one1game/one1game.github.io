@@ -112,6 +112,38 @@
     }
     .game-stat-card .label { font-size: 12px; color: var(--text-faint); text-transform: uppercase; }
     .game-stat-card .value { font-size: 20px; font-weight: bold; margin-top: 4px; }
+    .game-shots {
+      display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+      gap: 12px; margin: 20px 0;
+    }
+    .game-shot {
+      display: block; border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 8px; overflow: hidden;
+    }
+    .game-shot img { display: block; width: 100%; height: auto; }
+    .game-movies { display: grid; gap: 16px; margin: 20px 0; }
+    .game-movie { margin: 0; }
+    .game-movie video {
+      display: block; width: 100%; height: auto;
+      border-radius: 8px; background: #000;
+    }
+    .game-movie figcaption { margin-top: 6px; font-size: 13px; color: var(--text-faint); }
+    .game-video {
+      position: relative; cursor: pointer; overflow: hidden;
+      border-radius: 8px; background: #000; aspect-ratio: 16 / 9;
+    }
+    .game-video img { display: block; width: 100%; height: 100%; object-fit: cover; }
+    .game-video-play { position: absolute; inset: 0; display: grid; place-items: center; }
+    .game-video-play::before {
+      content: ''; width: 58px; height: 58px; border-radius: 50%;
+      background: rgba(0,0,0,0.5); border: 2px solid rgba(255,255,255,0.75);
+    }
+    .game-video-play::after {
+      content: ''; position: absolute; margin-left: 5px;
+      border-style: solid; border-width: 11px 0 11px 18px;
+      border-color: transparent transparent transparent #fff;
+    }
+    .game-video-el { display: block; width: 100%; height: 100%; background: #000; }
   </style>
 </head>
 <body>
@@ -150,7 +182,7 @@
 
     <article class="article-body">
 
-      <p>Fresh from wreaking havoc on the vast fields of the Continent, the sword-wielding warrior Rance has reached the eastern nation of Nippon. With his loyal companion Sill by his side, Rance hopes to enjoy Nippon's hot springs!</p>
+      
 
       <div class="game-stats-grid">
         <div class="game-stat-card">
@@ -166,10 +198,6 @@
           <div class="label">Владельцев (оценка)</div>
           <div class="value">0 – 20,000</div>
         </div>
-        <div class="game-stat-card">
-          <div class="label">Среднее время игры</div>
-          <div class="value">нет данных</div>
-        </div>
       </div>
 
       <h2>Об игре</h2>
@@ -183,7 +211,28 @@
         </a>
       </p>
 
-      <p style="color: var(--text-faint); font-size: 13px; margin-top: 30px;">
+            <h2>Скриншоты</h2>
+      <div class="game-shots">
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3867170/25e9dca0bc9b3a8e0c244785eb83d4b8484f473a/ss_25e9dca0bc9b3a8e0c244785eb83d4b8484f473a.1920x1080.jpg?t=1790913603" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3867170/25e9dca0bc9b3a8e0c244785eb83d4b8484f473a/ss_25e9dca0bc9b3a8e0c244785eb83d4b8484f473a.600x338.jpg?t=1790913603" alt="Sengoku Rance — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3867170/90935d903235ffbe385fbc5f863c86a1636c43a8/ss_90935d903235ffbe385fbc5f863c86a1636c43a8.1920x1080.jpg?t=1790913603" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3867170/90935d903235ffbe385fbc5f863c86a1636c43a8/ss_90935d903235ffbe385fbc5f863c86a1636c43a8.600x338.jpg?t=1790913603" alt="Sengoku Rance — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3867170/f93b442a3cffdb40e89041ae628ef5b4bb9e732d/ss_f93b442a3cffdb40e89041ae628ef5b4bb9e732d.1920x1080.jpg?t=1790913603" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3867170/f93b442a3cffdb40e89041ae628ef5b4bb9e732d/ss_f93b442a3cffdb40e89041ae628ef5b4bb9e732d.600x338.jpg?t=1790913603" alt="Sengoku Rance — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3867170/96de6d7776be418654d65b0835fd865cdd4757fb/ss_96de6d7776be418654d65b0835fd865cdd4757fb.1920x1080.jpg?t=1790913603" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3867170/96de6d7776be418654d65b0835fd865cdd4757fb/ss_96de6d7776be418654d65b0835fd865cdd4757fb.600x338.jpg?t=1790913603" alt="Sengoku Rance — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3867170/883c47c5cce704384fd4c3ee7464339cec16ad29/ss_883c47c5cce704384fd4c3ee7464339cec16ad29.1920x1080.jpg?t=1790913603" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3867170/883c47c5cce704384fd4c3ee7464339cec16ad29/ss_883c47c5cce704384fd4c3ee7464339cec16ad29.600x338.jpg?t=1790913603" alt="Sengoku Rance — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3867170/2f2f216cc7b1349ba04dc3aa84499d4c2a7fa148/ss_2f2f216cc7b1349ba04dc3aa84499d4c2a7fa148.1920x1080.jpg?t=1790913603" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3867170/2f2f216cc7b1349ba04dc3aa84499d4c2a7fa148/ss_2f2f216cc7b1349ba04dc3aa84499d4c2a7fa148.600x338.jpg?t=1790913603" alt="Sengoku Rance — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3867170/98c01536cfb27806ec9e495892a3d7b4085541c9/ss_98c01536cfb27806ec9e495892a3d7b4085541c9.1920x1080.jpg?t=1790913603" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3867170/98c01536cfb27806ec9e495892a3d7b4085541c9/ss_98c01536cfb27806ec9e495892a3d7b4085541c9.600x338.jpg?t=1790913603" alt="Sengoku Rance — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3867170/ec7ec1ad6abe8a7ecac47fe1bc5aa50ba397f300/ss_ec7ec1ad6abe8a7ecac47fe1bc5aa50ba397f300.1920x1080.jpg?t=1790913603" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3867170/ec7ec1ad6abe8a7ecac47fe1bc5aa50ba397f300/ss_ec7ec1ad6abe8a7ecac47fe1bc5aa50ba397f300.600x338.jpg?t=1790913603" alt="Sengoku Rance — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3867170/c830860471e3aebf2586eddc6e63b05ebb339aec/ss_c830860471e3aebf2586eddc6e63b05ebb339aec.1920x1080.jpg?t=1790913603" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3867170/c830860471e3aebf2586eddc6e63b05ebb339aec/ss_c830860471e3aebf2586eddc6e63b05ebb339aec.600x338.jpg?t=1790913603" alt="Sengoku Rance — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3867170/499b623d8493faa4eab211da63417d108ebac9e8/ss_499b623d8493faa4eab211da63417d108ebac9e8.1920x1080.jpg?t=1790913603" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3867170/499b623d8493faa4eab211da63417d108ebac9e8/ss_499b623d8493faa4eab211da63417d108ebac9e8.600x338.jpg?t=1790913603" alt="Sengoku Rance — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3867170/b45d982f9e0936a17d5f82b9bd853fe5987cbcf3/ss_b45d982f9e0936a17d5f82b9bd853fe5987cbcf3.1920x1080.jpg?t=1790913603" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3867170/b45d982f9e0936a17d5f82b9bd853fe5987cbcf3/ss_b45d982f9e0936a17d5f82b9bd853fe5987cbcf3.600x338.jpg?t=1790913603" alt="Sengoku Rance — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3867170/161b426b0901c098f5559cf1cd877f50d9b28f33/ss_161b426b0901c098f5559cf1cd877f50d9b28f33.1920x1080.jpg?t=1790913603" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3867170/161b426b0901c098f5559cf1cd877f50d9b28f33/ss_161b426b0901c098f5559cf1cd877f50d9b28f33.600x338.jpg?t=1790913603" alt="Sengoku Rance — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+      </div>
+
+      <h2>Геймплей</h2>
+      <div class="game-movies">
+        <figure class="game-movie"><div class="game-video" data-hls="https://video.akamai.steamstatic.com/store_trailers/3867170/2034999063/e6c0c23825976a59fe0706685a38f4a5461ee821/1788586448/hls_264_master.m3u8?t=1788586876" data-poster="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257417668/bdbd48edeb10a9bbecac9c699d16854a01adb230/movie_600x337.jpg?t=1788586876" role="button" tabindex="0" aria-label="Смотреть геймплей: Sengoku Rance EN"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257417668/bdbd48edeb10a9bbecac9c699d16854a01adb230/movie_600x337.jpg?t=1788586876" alt="" loading="lazy" width="480" height="270" /><span class="game-video-play" aria-hidden="true"></span></div></figure>
+      </div>
+
+<p style="color: var(--text-faint); font-size: 13px; margin-top: 30px;">
         Данные о цене, отзывах и статистике обновляются автоматически на основе
         Steam Store API и SteamSpy.
       </p>
@@ -284,5 +333,6 @@ function declineCookies() {
 })();
 </script>
 <script src="/newsletter.js?v=2" defer></script>
+<script defer src="/game-media.js?v=1"></script>
 </body>
 </html>

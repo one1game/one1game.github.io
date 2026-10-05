@@ -112,6 +112,38 @@
     }
     .game-stat-card .label { font-size: 12px; color: var(--text-faint); text-transform: uppercase; }
     .game-stat-card .value { font-size: 20px; font-weight: bold; margin-top: 4px; }
+    .game-shots {
+      display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+      gap: 12px; margin: 20px 0;
+    }
+    .game-shot {
+      display: block; border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 8px; overflow: hidden;
+    }
+    .game-shot img { display: block; width: 100%; height: auto; }
+    .game-movies { display: grid; gap: 16px; margin: 20px 0; }
+    .game-movie { margin: 0; }
+    .game-movie video {
+      display: block; width: 100%; height: auto;
+      border-radius: 8px; background: #000;
+    }
+    .game-movie figcaption { margin-top: 6px; font-size: 13px; color: var(--text-faint); }
+    .game-video {
+      position: relative; cursor: pointer; overflow: hidden;
+      border-radius: 8px; background: #000; aspect-ratio: 16 / 9;
+    }
+    .game-video img { display: block; width: 100%; height: 100%; object-fit: cover; }
+    .game-video-play { position: absolute; inset: 0; display: grid; place-items: center; }
+    .game-video-play::before {
+      content: ''; width: 58px; height: 58px; border-radius: 50%;
+      background: rgba(0,0,0,0.5); border: 2px solid rgba(255,255,255,0.75);
+    }
+    .game-video-play::after {
+      content: ''; position: absolute; margin-left: 5px;
+      border-style: solid; border-width: 11px 0 11px 18px;
+      border-color: transparent transparent transparent #fff;
+    }
+    .game-video-el { display: block; width: 100%; height: 100%; background: #000; }
   </style>
 </head>
 <body>
@@ -166,10 +198,6 @@
           <div class="label">Владельцев (оценка)</div>
           <div class="value">0 – 20,000</div>
         </div>
-        <div class="game-stat-card">
-          <div class="label">Среднее время игры</div>
-          <div class="value">нет данных</div>
-        </div>
       </div>
 
       <h2>Об игре</h2>
@@ -183,7 +211,26 @@
         </a>
       </p>
 
-      <p style="color: var(--text-faint); font-size: 13px; margin-top: 30px;">
+            <h2>Скриншоты</h2>
+      <div class="game-shots">
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5080530/d72b6152f507f971a0922b2d8e4fe237c86670a5/ss_d72b6152f507f971a0922b2d8e4fe237c86670a5.1920x1080.jpg?t=1790332731" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5080530/d72b6152f507f971a0922b2d8e4fe237c86670a5/ss_d72b6152f507f971a0922b2d8e4fe237c86670a5.600x338.jpg?t=1790332731" alt="Abandoned Gameshop — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5080530/96071742b68906cb8660eadb9568b184fd613e47/ss_96071742b68906cb8660eadb9568b184fd613e47.1920x1080.jpg?t=1790332731" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5080530/96071742b68906cb8660eadb9568b184fd613e47/ss_96071742b68906cb8660eadb9568b184fd613e47.600x338.jpg?t=1790332731" alt="Abandoned Gameshop — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5080530/83f81c8edb2044d810b6af860c26bc12979b09c5/ss_83f81c8edb2044d810b6af860c26bc12979b09c5.1920x1080.jpg?t=1790332731" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5080530/83f81c8edb2044d810b6af860c26bc12979b09c5/ss_83f81c8edb2044d810b6af860c26bc12979b09c5.600x338.jpg?t=1790332731" alt="Abandoned Gameshop — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5080530/a1bb56a3ec6c311ee59bdb40d142f68417046599/ss_a1bb56a3ec6c311ee59bdb40d142f68417046599.1920x1080.jpg?t=1790332731" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5080530/a1bb56a3ec6c311ee59bdb40d142f68417046599/ss_a1bb56a3ec6c311ee59bdb40d142f68417046599.600x338.jpg?t=1790332731" alt="Abandoned Gameshop — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5080530/61a127ecc72a52b5e1c3b3e214b3578f70e645d2/ss_61a127ecc72a52b5e1c3b3e214b3578f70e645d2.1920x1080.jpg?t=1790332731" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5080530/61a127ecc72a52b5e1c3b3e214b3578f70e645d2/ss_61a127ecc72a52b5e1c3b3e214b3578f70e645d2.600x338.jpg?t=1790332731" alt="Abandoned Gameshop — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5080530/be7b3149946a909bc6d9b1e5747d2d183771dbd7/ss_be7b3149946a909bc6d9b1e5747d2d183771dbd7.1920x1080.jpg?t=1790332731" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5080530/be7b3149946a909bc6d9b1e5747d2d183771dbd7/ss_be7b3149946a909bc6d9b1e5747d2d183771dbd7.600x338.jpg?t=1790332731" alt="Abandoned Gameshop — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5080530/578e7aa6b5f29605fd97eae1d99719f715949bfc/ss_578e7aa6b5f29605fd97eae1d99719f715949bfc.1920x1080.jpg?t=1790332731" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5080530/578e7aa6b5f29605fd97eae1d99719f715949bfc/ss_578e7aa6b5f29605fd97eae1d99719f715949bfc.600x338.jpg?t=1790332731" alt="Abandoned Gameshop — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5080530/2ee6a63533a26a1327639871c04d1795630e3520/ss_2ee6a63533a26a1327639871c04d1795630e3520.1920x1080.jpg?t=1790332731" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5080530/2ee6a63533a26a1327639871c04d1795630e3520/ss_2ee6a63533a26a1327639871c04d1795630e3520.600x338.jpg?t=1790332731" alt="Abandoned Gameshop — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5080530/bae1269f831accc0c73dd2729d116a66d5dcea49/ss_bae1269f831accc0c73dd2729d116a66d5dcea49.1920x1080.jpg?t=1790332731" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5080530/bae1269f831accc0c73dd2729d116a66d5dcea49/ss_bae1269f831accc0c73dd2729d116a66d5dcea49.600x338.jpg?t=1790332731" alt="Abandoned Gameshop — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5080530/ff7977f08ff765a1094d104a3096f6f239b6ba34/ss_ff7977f08ff765a1094d104a3096f6f239b6ba34.1920x1080.jpg?t=1790332731" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5080530/ff7977f08ff765a1094d104a3096f6f239b6ba34/ss_ff7977f08ff765a1094d104a3096f6f239b6ba34.600x338.jpg?t=1790332731" alt="Abandoned Gameshop — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+      </div>
+
+      <h2>Геймплей</h2>
+      <div class="game-movies">
+        <figure class="game-movie"><div class="game-video" data-hls="https://video.akamai.steamstatic.com/store_trailers/5080530/872618333/e5b574144e18f561c2ae92b9dddbb7d3eb658ad3/1789385928/hls_264_master.m3u8?t=1789387190" data-poster="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257424614/a4b756bd1a77bbb53ca3d80b2ab08599fef44168/movie_600x337.jpg?t=1789387190" role="button" tabindex="0" aria-label="Смотреть геймплей: Gameplay Trailer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257424614/a4b756bd1a77bbb53ca3d80b2ab08599fef44168/movie_600x337.jpg?t=1789387190" alt="" loading="lazy" width="480" height="270" /><span class="game-video-play" aria-hidden="true"></span></div></figure>
+      </div>
+
+<p style="color: var(--text-faint); font-size: 13px; margin-top: 30px;">
         Данные о цене, отзывах и статистике обновляются автоматически на основе
         Steam Store API и SteamSpy.
       </p>
@@ -284,5 +331,6 @@ function declineCookies() {
 })();
 </script>
 <script src="/newsletter.js?v=2" defer></script>
+<script defer src="/game-media.js?v=1"></script>
 </body>
 </html>

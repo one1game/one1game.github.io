@@ -112,6 +112,38 @@
     }
     .game-stat-card .label { font-size: 12px; color: var(--text-faint); text-transform: uppercase; }
     .game-stat-card .value { font-size: 20px; font-weight: bold; margin-top: 4px; }
+    .game-shots {
+      display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+      gap: 12px; margin: 20px 0;
+    }
+    .game-shot {
+      display: block; border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 8px; overflow: hidden;
+    }
+    .game-shot img { display: block; width: 100%; height: auto; }
+    .game-movies { display: grid; gap: 16px; margin: 20px 0; }
+    .game-movie { margin: 0; }
+    .game-movie video {
+      display: block; width: 100%; height: auto;
+      border-radius: 8px; background: #000;
+    }
+    .game-movie figcaption { margin-top: 6px; font-size: 13px; color: var(--text-faint); }
+    .game-video {
+      position: relative; cursor: pointer; overflow: hidden;
+      border-radius: 8px; background: #000; aspect-ratio: 16 / 9;
+    }
+    .game-video img { display: block; width: 100%; height: 100%; object-fit: cover; }
+    .game-video-play { position: absolute; inset: 0; display: grid; place-items: center; }
+    .game-video-play::before {
+      content: ''; width: 58px; height: 58px; border-radius: 50%;
+      background: rgba(0,0,0,0.5); border: 2px solid rgba(255,255,255,0.75);
+    }
+    .game-video-play::after {
+      content: ''; position: absolute; margin-left: 5px;
+      border-style: solid; border-width: 11px 0 11px 18px;
+      border-color: transparent transparent transparent #fff;
+    }
+    .game-video-el { display: block; width: 100%; height: 100%; background: #000; }
   </style>
 </head>
 <body>
@@ -150,7 +182,7 @@
 
     <article class="article-body">
 
-      <p>《大唐隐士传》是一款以古代唐朝为背景的，仙侠类角色扮演游戏。游戏主角的修仙之旅可是不简单，路边说书人曾对其作过这样一句偈子，可谓是大隐隐于市，出世又入世，小小隐士破心魔，旅途艰险终正果！</p>
+      
 
       <div class="game-stats-grid">
         <div class="game-stat-card">
@@ -166,10 +198,6 @@
           <div class="label">Владельцев (оценка)</div>
           <div class="value">0 – 20,000</div>
         </div>
-        <div class="game-stat-card">
-          <div class="label">Среднее время игры</div>
-          <div class="value">нет данных</div>
-        </div>
       </div>
 
       <h2>Об игре</h2>
@@ -183,7 +211,24 @@
         </a>
       </p>
 
-      <p style="color: var(--text-faint); font-size: 13px; margin-top: 30px;">
+            <h2>Скриншоты</h2>
+      <div class="game-shots">
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5189440/44ba136be5f425f68eea34622a1aa90ae7c4e903/ss_44ba136be5f425f68eea34622a1aa90ae7c4e903.1920x1080.jpg?t=1791090697" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5189440/44ba136be5f425f68eea34622a1aa90ae7c4e903/ss_44ba136be5f425f68eea34622a1aa90ae7c4e903.600x338.jpg?t=1791090697" alt="Tales of the Tang Recluse — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5189440/d40961da18e8020691b568fccc0bf41b7603b229/ss_d40961da18e8020691b568fccc0bf41b7603b229.1920x1080.jpg?t=1791090697" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5189440/d40961da18e8020691b568fccc0bf41b7603b229/ss_d40961da18e8020691b568fccc0bf41b7603b229.600x338.jpg?t=1791090697" alt="Tales of the Tang Recluse — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5189440/290258d2a85d24479573a833a00040ee5c775885/ss_290258d2a85d24479573a833a00040ee5c775885.1920x1080.jpg?t=1791090697" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5189440/290258d2a85d24479573a833a00040ee5c775885/ss_290258d2a85d24479573a833a00040ee5c775885.600x338.jpg?t=1791090697" alt="Tales of the Tang Recluse — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5189440/a63fc8c1a8bf019d69fd2a5ca40179665841b1ae/ss_a63fc8c1a8bf019d69fd2a5ca40179665841b1ae.1920x1080.jpg?t=1791090697" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5189440/a63fc8c1a8bf019d69fd2a5ca40179665841b1ae/ss_a63fc8c1a8bf019d69fd2a5ca40179665841b1ae.600x338.jpg?t=1791090697" alt="Tales of the Tang Recluse — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5189440/3d3651bf94e4c529f9b0918735d5ee4b611eff03/ss_3d3651bf94e4c529f9b0918735d5ee4b611eff03.1920x1080.jpg?t=1791090697" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5189440/3d3651bf94e4c529f9b0918735d5ee4b611eff03/ss_3d3651bf94e4c529f9b0918735d5ee4b611eff03.600x338.jpg?t=1791090697" alt="Tales of the Tang Recluse — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5189440/d7fe5ebbd0c6970e7b09a2881ff1725b16cb5b72/ss_d7fe5ebbd0c6970e7b09a2881ff1725b16cb5b72.1920x1080.jpg?t=1791090697" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5189440/d7fe5ebbd0c6970e7b09a2881ff1725b16cb5b72/ss_d7fe5ebbd0c6970e7b09a2881ff1725b16cb5b72.600x338.jpg?t=1791090697" alt="Tales of the Tang Recluse — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5189440/5010010b40d5eee2a164e8f0be29cb325b0bd9cb/ss_5010010b40d5eee2a164e8f0be29cb325b0bd9cb.1920x1080.jpg?t=1791090697" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5189440/5010010b40d5eee2a164e8f0be29cb325b0bd9cb/ss_5010010b40d5eee2a164e8f0be29cb325b0bd9cb.600x338.jpg?t=1791090697" alt="Tales of the Tang Recluse — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5189440/e0fb0418f6eee0e57fedf57d175d10ec7fef8eba/ss_e0fb0418f6eee0e57fedf57d175d10ec7fef8eba.1920x1080.jpg?t=1791090697" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5189440/e0fb0418f6eee0e57fedf57d175d10ec7fef8eba/ss_e0fb0418f6eee0e57fedf57d175d10ec7fef8eba.600x338.jpg?t=1791090697" alt="Tales of the Tang Recluse — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+      </div>
+
+      <h2>Геймплей</h2>
+      <div class="game-movies">
+        <figure class="game-movie"><div class="game-video" data-hls="https://video.akamai.steamstatic.com/store_trailers/5189440/576164428/33320f684866a87fa0cbab4504dc3241bd0ae0a5/1788439113/hls_264_master.m3u8?t=1789514123" data-poster="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257416192/c487b0056a93d9da330669822120f758a1283007/movie_600x337.jpg?t=1789514123" role="button" tabindex="0" aria-label="Смотреть геймплей: 大唐隐士传宣传片"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257416192/c487b0056a93d9da330669822120f758a1283007/movie_600x337.jpg?t=1789514123" alt="" loading="lazy" width="480" height="270" /><span class="game-video-play" aria-hidden="true"></span></div></figure>
+      </div>
+
+<p style="color: var(--text-faint); font-size: 13px; margin-top: 30px;">
         Данные о цене, отзывах и статистике обновляются автоматически на основе
         Steam Store API и SteamSpy.
       </p>
@@ -284,5 +329,6 @@ function declineCookies() {
 })();
 </script>
 <script src="/newsletter.js?v=2" defer></script>
+<script defer src="/game-media.js?v=1"></script>
 </body>
 </html>

@@ -112,6 +112,38 @@
     }
     .game-stat-card .label { font-size: 12px; color: var(--text-faint); text-transform: uppercase; }
     .game-stat-card .value { font-size: 20px; font-weight: bold; margin-top: 4px; }
+    .game-shots {
+      display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+      gap: 12px; margin: 20px 0;
+    }
+    .game-shot {
+      display: block; border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 8px; overflow: hidden;
+    }
+    .game-shot img { display: block; width: 100%; height: auto; }
+    .game-movies { display: grid; gap: 16px; margin: 20px 0; }
+    .game-movie { margin: 0; }
+    .game-movie video {
+      display: block; width: 100%; height: auto;
+      border-radius: 8px; background: #000;
+    }
+    .game-movie figcaption { margin-top: 6px; font-size: 13px; color: var(--text-faint); }
+    .game-video {
+      position: relative; cursor: pointer; overflow: hidden;
+      border-radius: 8px; background: #000; aspect-ratio: 16 / 9;
+    }
+    .game-video img { display: block; width: 100%; height: 100%; object-fit: cover; }
+    .game-video-play { position: absolute; inset: 0; display: grid; place-items: center; }
+    .game-video-play::before {
+      content: ''; width: 58px; height: 58px; border-radius: 50%;
+      background: rgba(0,0,0,0.5); border: 2px solid rgba(255,255,255,0.75);
+    }
+    .game-video-play::after {
+      content: ''; position: absolute; margin-left: 5px;
+      border-style: solid; border-width: 11px 0 11px 18px;
+      border-color: transparent transparent transparent #fff;
+    }
+    .game-video-el { display: block; width: 100%; height: 100%; background: #000; }
   </style>
 </head>
 <body>
@@ -150,7 +182,7 @@
 
     <article class="article-body">
 
-      <p>Give your desktop a little personality with 188 original cursor themes. Pick a matching set, try it at actual size, or edit your own colors, pixels and animations. From cozy animals to space and fantasy—find your next favorite.</p>
+      
 
       <div class="game-stats-grid">
         <div class="game-stat-card">
@@ -166,10 +198,6 @@
           <div class="label">Владельцев (оценка)</div>
           <div class="value">0 – 20,000</div>
         </div>
-        <div class="game-stat-card">
-          <div class="label">Среднее время игры</div>
-          <div class="value">нет данных</div>
-        </div>
       </div>
 
       <h2>Об игре</h2>
@@ -183,7 +211,28 @@
         </a>
       </p>
 
-      <p style="color: var(--text-faint); font-size: 13px; margin-top: 30px;">
+            <h2>Скриншоты</h2>
+      <div class="game-shots">
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5268080/4bb8d5f411d6f15f014f3e2a00825f549456d347/ss_4bb8d5f411d6f15f014f3e2a00825f549456d347.1920x1080.jpg?t=1791116347" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5268080/4bb8d5f411d6f15f014f3e2a00825f549456d347/ss_4bb8d5f411d6f15f014f3e2a00825f549456d347.600x338.jpg?t=1791116347" alt="CURSORLOOM — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5268080/50a15f55f5244f55cbf7aa2fa8bc0d79893668d4/ss_50a15f55f5244f55cbf7aa2fa8bc0d79893668d4.1920x1080.jpg?t=1791116347" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5268080/50a15f55f5244f55cbf7aa2fa8bc0d79893668d4/ss_50a15f55f5244f55cbf7aa2fa8bc0d79893668d4.600x338.jpg?t=1791116347" alt="CURSORLOOM — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5268080/bb5ade56e467fa515417b88f0ecb8b93d5ae570d/ss_bb5ade56e467fa515417b88f0ecb8b93d5ae570d.1920x1080.jpg?t=1791116347" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5268080/bb5ade56e467fa515417b88f0ecb8b93d5ae570d/ss_bb5ade56e467fa515417b88f0ecb8b93d5ae570d.600x338.jpg?t=1791116347" alt="CURSORLOOM — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5268080/d7159dfd9864735e964078a672bcbcb002d2433f/ss_d7159dfd9864735e964078a672bcbcb002d2433f.1920x1080.jpg?t=1791116347" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5268080/d7159dfd9864735e964078a672bcbcb002d2433f/ss_d7159dfd9864735e964078a672bcbcb002d2433f.600x338.jpg?t=1791116347" alt="CURSORLOOM — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5268080/c613eb714053f47eeed2b76619db7d99f091f331/ss_c613eb714053f47eeed2b76619db7d99f091f331.1920x1080.jpg?t=1791116347" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5268080/c613eb714053f47eeed2b76619db7d99f091f331/ss_c613eb714053f47eeed2b76619db7d99f091f331.600x338.jpg?t=1791116347" alt="CURSORLOOM — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5268080/4eede5bac964a284277d14b1742f0fd773263df7/ss_4eede5bac964a284277d14b1742f0fd773263df7.1920x1080.jpg?t=1791116347" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5268080/4eede5bac964a284277d14b1742f0fd773263df7/ss_4eede5bac964a284277d14b1742f0fd773263df7.600x338.jpg?t=1791116347" alt="CURSORLOOM — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5268080/0939c3128a0fad1c8f8e85be9632630bdc3655ec/ss_0939c3128a0fad1c8f8e85be9632630bdc3655ec.1920x1080.jpg?t=1791116347" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5268080/0939c3128a0fad1c8f8e85be9632630bdc3655ec/ss_0939c3128a0fad1c8f8e85be9632630bdc3655ec.600x338.jpg?t=1791116347" alt="CURSORLOOM — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5268080/d37df11f2cc73f46af463532a18ec7b3a785d7fb/ss_d37df11f2cc73f46af463532a18ec7b3a785d7fb.1920x1080.jpg?t=1791116347" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5268080/d37df11f2cc73f46af463532a18ec7b3a785d7fb/ss_d37df11f2cc73f46af463532a18ec7b3a785d7fb.600x338.jpg?t=1791116347" alt="CURSORLOOM — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5268080/c66e00d9050c4e729526b16f503774914f401961/ss_c66e00d9050c4e729526b16f503774914f401961.1920x1080.jpg?t=1791116347" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5268080/c66e00d9050c4e729526b16f503774914f401961/ss_c66e00d9050c4e729526b16f503774914f401961.600x338.jpg?t=1791116347" alt="CURSORLOOM — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5268080/b041ef0a350080cd436f16809b5ebcc027bca192/ss_b041ef0a350080cd436f16809b5ebcc027bca192.1920x1080.jpg?t=1791116347" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5268080/b041ef0a350080cd436f16809b5ebcc027bca192/ss_b041ef0a350080cd436f16809b5ebcc027bca192.600x338.jpg?t=1791116347" alt="CURSORLOOM — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5268080/39d2feb9a76ebc2bd83ae0af8aa3f2a28932094c/ss_39d2feb9a76ebc2bd83ae0af8aa3f2a28932094c.1920x1080.jpg?t=1791116347" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5268080/39d2feb9a76ebc2bd83ae0af8aa3f2a28932094c/ss_39d2feb9a76ebc2bd83ae0af8aa3f2a28932094c.600x338.jpg?t=1791116347" alt="CURSORLOOM — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5268080/dce7b7583a7985788061dcceb5321d211fb167db/ss_dce7b7583a7985788061dcceb5321d211fb167db.1920x1080.jpg?t=1791116347" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5268080/dce7b7583a7985788061dcceb5321d211fb167db/ss_dce7b7583a7985788061dcceb5321d211fb167db.600x338.jpg?t=1791116347" alt="CURSORLOOM — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+      </div>
+
+      <h2>Геймплей</h2>
+      <div class="game-movies">
+        <figure class="game-movie"><div class="game-video" data-hls="https://video.akamai.steamstatic.com/store_trailers/5268080/2116159346/1b742ad8e76bc658fb6e55eea9f0b74ce405df05/1789348427/hls_264_master.m3u8?t=1789890401" data-poster="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257424288/71a4ec7097f786ac76c24542f923fd3ff4fff1ff/movie_600x337.jpg?t=1789890401" role="button" tabindex="0" aria-label="Смотреть геймплей: CURSORLOOM — Make it yours"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257424288/71a4ec7097f786ac76c24542f923fd3ff4fff1ff/movie_600x337.jpg?t=1789890401" alt="" loading="lazy" width="480" height="270" /><span class="game-video-play" aria-hidden="true"></span></div></figure>
+      </div>
+
+<p style="color: var(--text-faint); font-size: 13px; margin-top: 30px;">
         Данные о цене, отзывах и статистике обновляются автоматически на основе
         Steam Store API и SteamSpy.
       </p>
@@ -284,5 +333,6 @@ function declineCookies() {
 })();
 </script>
 <script src="/newsletter.js?v=2" defer></script>
+<script defer src="/game-media.js?v=1"></script>
 </body>
 </html>

@@ -112,6 +112,38 @@
     }
     .game-stat-card .label { font-size: 12px; color: var(--text-faint); text-transform: uppercase; }
     .game-stat-card .value { font-size: 20px; font-weight: bold; margin-top: 4px; }
+    .game-shots {
+      display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+      gap: 12px; margin: 20px 0;
+    }
+    .game-shot {
+      display: block; border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 8px; overflow: hidden;
+    }
+    .game-shot img { display: block; width: 100%; height: auto; }
+    .game-movies { display: grid; gap: 16px; margin: 20px 0; }
+    .game-movie { margin: 0; }
+    .game-movie video {
+      display: block; width: 100%; height: auto;
+      border-radius: 8px; background: #000;
+    }
+    .game-movie figcaption { margin-top: 6px; font-size: 13px; color: var(--text-faint); }
+    .game-video {
+      position: relative; cursor: pointer; overflow: hidden;
+      border-radius: 8px; background: #000; aspect-ratio: 16 / 9;
+    }
+    .game-video img { display: block; width: 100%; height: 100%; object-fit: cover; }
+    .game-video-play { position: absolute; inset: 0; display: grid; place-items: center; }
+    .game-video-play::before {
+      content: ''; width: 58px; height: 58px; border-radius: 50%;
+      background: rgba(0,0,0,0.5); border: 2px solid rgba(255,255,255,0.75);
+    }
+    .game-video-play::after {
+      content: ''; position: absolute; margin-left: 5px;
+      border-style: solid; border-width: 11px 0 11px 18px;
+      border-color: transparent transparent transparent #fff;
+    }
+    .game-video-el { display: block; width: 100%; height: 100%; background: #000; }
   </style>
 </head>
 <body>
@@ -150,7 +182,7 @@
 
     <article class="article-body">
 
-      <p>Princess Maker: Children of Revelation is a raising simulation game that returns after nearly 18 years as part of the Princess Maker package series, where you raise a young girl into adulthood. Become a parent in the game and help fulfill your daughter's dreams!</p>
+      
 
       <div class="game-stats-grid">
         <div class="game-stat-card">
@@ -166,10 +198,6 @@
           <div class="label">Владельцев (оценка)</div>
           <div class="value">0 – 20,000</div>
         </div>
-        <div class="game-stat-card">
-          <div class="label">Среднее время игры</div>
-          <div class="value">нет данных</div>
-        </div>
       </div>
 
       <h2>Об игре</h2>
@@ -183,7 +211,24 @@
         </a>
       </p>
 
-      <p style="color: var(--text-faint); font-size: 13px; margin-top: 30px;">
+            <h2>Скриншоты</h2>
+      <div class="game-shots">
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3438810/de387e83283f075837d1eaaec2858fc1353aeef9/ss_de387e83283f075837d1eaaec2858fc1353aeef9.1920x1080.jpg?t=1790761177" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3438810/de387e83283f075837d1eaaec2858fc1353aeef9/ss_de387e83283f075837d1eaaec2858fc1353aeef9.600x338.jpg?t=1790761177" alt="Princess Maker: Children of Revelation — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3438810/6652ddc83bb3d1c15345bb98f3b413578f02cced/ss_6652ddc83bb3d1c15345bb98f3b413578f02cced.1920x1080.jpg?t=1790761177" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3438810/6652ddc83bb3d1c15345bb98f3b413578f02cced/ss_6652ddc83bb3d1c15345bb98f3b413578f02cced.600x338.jpg?t=1790761177" alt="Princess Maker: Children of Revelation — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3438810/f1e3ce9d9dc9fa8e6eaf53055a2951ef9c2e3255/ss_f1e3ce9d9dc9fa8e6eaf53055a2951ef9c2e3255.1920x1080.jpg?t=1790761177" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3438810/f1e3ce9d9dc9fa8e6eaf53055a2951ef9c2e3255/ss_f1e3ce9d9dc9fa8e6eaf53055a2951ef9c2e3255.600x338.jpg?t=1790761177" alt="Princess Maker: Children of Revelation — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3438810/6500a6e3fe20582e80ffda5b0a0b50705f21573b/ss_6500a6e3fe20582e80ffda5b0a0b50705f21573b.1920x1080.jpg?t=1790761177" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3438810/6500a6e3fe20582e80ffda5b0a0b50705f21573b/ss_6500a6e3fe20582e80ffda5b0a0b50705f21573b.600x338.jpg?t=1790761177" alt="Princess Maker: Children of Revelation — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3438810/9e033704cf111c4273c12f729721a22033eeced7/ss_9e033704cf111c4273c12f729721a22033eeced7.1920x1080.jpg?t=1790761177" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3438810/9e033704cf111c4273c12f729721a22033eeced7/ss_9e033704cf111c4273c12f729721a22033eeced7.600x338.jpg?t=1790761177" alt="Princess Maker: Children of Revelation — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3438810/33db1e660de8aa1b0012a61eec76df11f8aca0c9/ss_33db1e660de8aa1b0012a61eec76df11f8aca0c9.1920x1080.jpg?t=1790761177" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3438810/33db1e660de8aa1b0012a61eec76df11f8aca0c9/ss_33db1e660de8aa1b0012a61eec76df11f8aca0c9.600x338.jpg?t=1790761177" alt="Princess Maker: Children of Revelation — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3438810/72e805365a52b34fddb16392648ddc3180f66769/ss_72e805365a52b34fddb16392648ddc3180f66769.1920x1080.jpg?t=1790761177" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3438810/72e805365a52b34fddb16392648ddc3180f66769/ss_72e805365a52b34fddb16392648ddc3180f66769.600x338.jpg?t=1790761177" alt="Princess Maker: Children of Revelation — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3438810/21b8f38571a333b978955cd08c418344390d712f/ss_21b8f38571a333b978955cd08c418344390d712f.1920x1080.jpg?t=1790761177" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3438810/21b8f38571a333b978955cd08c418344390d712f/ss_21b8f38571a333b978955cd08c418344390d712f.600x338.jpg?t=1790761177" alt="Princess Maker: Children of Revelation — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+      </div>
+
+      <h2>Геймплей</h2>
+      <div class="game-movies">
+        <figure class="game-movie"><div class="game-video" data-hls="https://video.akamai.steamstatic.com/store_trailers/3438810/2018579842/18272c1248121ef2863a4c020f0f049e4d06054a/1784196617/hls_264_master.m3u8?t=1784197430" data-poster="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257378148/86a82ac1569363e9f158dd6e57e0ccb71b39c027/movie_600x337.jpg?t=1784197430" role="button" tabindex="0" aria-label="Смотреть геймплей: GamePlay"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257378148/86a82ac1569363e9f158dd6e57e0ccb71b39c027/movie_600x337.jpg?t=1784197430" alt="" loading="lazy" width="480" height="270" /><span class="game-video-play" aria-hidden="true"></span></div></figure>
+      </div>
+
+<p style="color: var(--text-faint); font-size: 13px; margin-top: 30px;">
         Данные о цене, отзывах и статистике обновляются автоматически на основе
         Steam Store API и SteamSpy.
       </p>
@@ -284,5 +329,6 @@ function declineCookies() {
 })();
 </script>
 <script src="/newsletter.js?v=2" defer></script>
+<script defer src="/game-media.js?v=1"></script>
 </body>
 </html>

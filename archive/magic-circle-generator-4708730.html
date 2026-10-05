@@ -112,6 +112,38 @@
     }
     .game-stat-card .label { font-size: 12px; color: var(--text-faint); text-transform: uppercase; }
     .game-stat-card .value { font-size: 20px; font-weight: bold; margin-top: 4px; }
+    .game-shots {
+      display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+      gap: 12px; margin: 20px 0;
+    }
+    .game-shot {
+      display: block; border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 8px; overflow: hidden;
+    }
+    .game-shot img { display: block; width: 100%; height: auto; }
+    .game-movies { display: grid; gap: 16px; margin: 20px 0; }
+    .game-movie { margin: 0; }
+    .game-movie video {
+      display: block; width: 100%; height: auto;
+      border-radius: 8px; background: #000;
+    }
+    .game-movie figcaption { margin-top: 6px; font-size: 13px; color: var(--text-faint); }
+    .game-video {
+      position: relative; cursor: pointer; overflow: hidden;
+      border-radius: 8px; background: #000; aspect-ratio: 16 / 9;
+    }
+    .game-video img { display: block; width: 100%; height: 100%; object-fit: cover; }
+    .game-video-play { position: absolute; inset: 0; display: grid; place-items: center; }
+    .game-video-play::before {
+      content: ''; width: 58px; height: 58px; border-radius: 50%;
+      background: rgba(0,0,0,0.5); border: 2px solid rgba(255,255,255,0.75);
+    }
+    .game-video-play::after {
+      content: ''; position: absolute; margin-left: 5px;
+      border-style: solid; border-width: 11px 0 11px 18px;
+      border-color: transparent transparent transparent #fff;
+    }
+    .game-video-el { display: block; width: 100%; height: 100%; background: #000; }
   </style>
 </head>
 <body>
@@ -150,7 +182,7 @@
 
     <article class="article-body">
 
-      <p>Conjure Infinite Possibilities with this procedural magic circle and sigil generator wrapped in a living grimoire. Sculpt every ring, animate your spells, and export SVGs, PNGs, or GIFs ready for your game, TTRPG, or worldbuilding project.</p>
+      
 
       <div class="game-stats-grid">
         <div class="game-stat-card">
@@ -166,10 +198,6 @@
           <div class="label">Владельцев (оценка)</div>
           <div class="value">0 – 20,000</div>
         </div>
-        <div class="game-stat-card">
-          <div class="label">Среднее время игры</div>
-          <div class="value">нет данных</div>
-        </div>
       </div>
 
       <h2>Об игре</h2>
@@ -183,7 +211,24 @@
         </a>
       </p>
 
-      <p style="color: var(--text-faint); font-size: 13px; margin-top: 30px;">
+            <h2>Скриншоты</h2>
+      <div class="game-shots">
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4708730/d7d301dd0fa2b9dc7c13205dbdfb3905fdaa9269/ss_d7d301dd0fa2b9dc7c13205dbdfb3905fdaa9269.1920x1080.jpg?t=1790561687" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4708730/d7d301dd0fa2b9dc7c13205dbdfb3905fdaa9269/ss_d7d301dd0fa2b9dc7c13205dbdfb3905fdaa9269.600x338.jpg?t=1790561687" alt="Magic Circle Generator — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4708730/e39a79508e7116498834db79f2bd5ef4d973656b/ss_e39a79508e7116498834db79f2bd5ef4d973656b.1920x1080.jpg?t=1790561687" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4708730/e39a79508e7116498834db79f2bd5ef4d973656b/ss_e39a79508e7116498834db79f2bd5ef4d973656b.600x338.jpg?t=1790561687" alt="Magic Circle Generator — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4708730/554a3bc5c8e61c12bc043267af449f55cbd2a006/ss_554a3bc5c8e61c12bc043267af449f55cbd2a006.1920x1080.jpg?t=1790561687" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4708730/554a3bc5c8e61c12bc043267af449f55cbd2a006/ss_554a3bc5c8e61c12bc043267af449f55cbd2a006.600x338.jpg?t=1790561687" alt="Magic Circle Generator — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4708730/e9bb6d62725ed1d2421204ab24a041591d3300d9/ss_e9bb6d62725ed1d2421204ab24a041591d3300d9.1920x1080.jpg?t=1790561687" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4708730/e9bb6d62725ed1d2421204ab24a041591d3300d9/ss_e9bb6d62725ed1d2421204ab24a041591d3300d9.600x338.jpg?t=1790561687" alt="Magic Circle Generator — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4708730/b7a47a262147c44828ead40b1bfd234df6a25c99/ss_b7a47a262147c44828ead40b1bfd234df6a25c99.1920x1080.jpg?t=1790561687" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4708730/b7a47a262147c44828ead40b1bfd234df6a25c99/ss_b7a47a262147c44828ead40b1bfd234df6a25c99.600x338.jpg?t=1790561687" alt="Magic Circle Generator — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4708730/360c771dcfcc4cb70ee51b54e3faae08e901253a/ss_360c771dcfcc4cb70ee51b54e3faae08e901253a.1920x1080.jpg?t=1790561687" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4708730/360c771dcfcc4cb70ee51b54e3faae08e901253a/ss_360c771dcfcc4cb70ee51b54e3faae08e901253a.600x338.jpg?t=1790561687" alt="Magic Circle Generator — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4708730/fbdec15ba7eeb20ac0f5cf49ccf4da222daa699d/ss_fbdec15ba7eeb20ac0f5cf49ccf4da222daa699d.1920x1080.jpg?t=1790561687" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4708730/fbdec15ba7eeb20ac0f5cf49ccf4da222daa699d/ss_fbdec15ba7eeb20ac0f5cf49ccf4da222daa699d.600x338.jpg?t=1790561687" alt="Magic Circle Generator — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4708730/c4275c8c79808a640b331a2291780ebb58e67e18/ss_c4275c8c79808a640b331a2291780ebb58e67e18.1920x1080.jpg?t=1790561687" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4708730/c4275c8c79808a640b331a2291780ebb58e67e18/ss_c4275c8c79808a640b331a2291780ebb58e67e18.600x338.jpg?t=1790561687" alt="Magic Circle Generator — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+      </div>
+
+      <h2>Геймплей</h2>
+      <div class="game-movies">
+        <figure class="game-movie"><div class="game-video" data-hls="https://video.akamai.steamstatic.com/store_trailers/4708730/1967472388/c1410abdc3f7f8746cf39afffffd8432bb8b13b1/1785594966/hls_264_master.m3u8?t=1785595424" data-poster="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257389940/a14f3433ba0ccab8670d501589c8c1dd4d3a8b20/movie_600x337.jpg?t=1785595424" role="button" tabindex="0" aria-label="Смотреть геймплей: Trailer1"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257389940/a14f3433ba0ccab8670d501589c8c1dd4d3a8b20/movie_600x337.jpg?t=1785595424" alt="" loading="lazy" width="480" height="270" /><span class="game-video-play" aria-hidden="true"></span></div></figure>
+      </div>
+
+<p style="color: var(--text-faint); font-size: 13px; margin-top: 30px;">
         Данные о цене, отзывах и статистике обновляются автоматически на основе
         Steam Store API и SteamSpy.
       </p>
@@ -284,5 +329,6 @@ function declineCookies() {
 })();
 </script>
 <script src="/newsletter.js?v=2" defer></script>
+<script defer src="/game-media.js?v=1"></script>
 </body>
 </html>

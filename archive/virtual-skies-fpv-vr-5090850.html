@@ -112,6 +112,38 @@
     }
     .game-stat-card .label { font-size: 12px; color: var(--text-faint); text-transform: uppercase; }
     .game-stat-card .value { font-size: 20px; font-weight: bold; margin-top: 4px; }
+    .game-shots {
+      display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+      gap: 12px; margin: 20px 0;
+    }
+    .game-shot {
+      display: block; border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 8px; overflow: hidden;
+    }
+    .game-shot img { display: block; width: 100%; height: auto; }
+    .game-movies { display: grid; gap: 16px; margin: 20px 0; }
+    .game-movie { margin: 0; }
+    .game-movie video {
+      display: block; width: 100%; height: auto;
+      border-radius: 8px; background: #000;
+    }
+    .game-movie figcaption { margin-top: 6px; font-size: 13px; color: var(--text-faint); }
+    .game-video {
+      position: relative; cursor: pointer; overflow: hidden;
+      border-radius: 8px; background: #000; aspect-ratio: 16 / 9;
+    }
+    .game-video img { display: block; width: 100%; height: 100%; object-fit: cover; }
+    .game-video-play { position: absolute; inset: 0; display: grid; place-items: center; }
+    .game-video-play::before {
+      content: ''; width: 58px; height: 58px; border-radius: 50%;
+      background: rgba(0,0,0,0.5); border: 2px solid rgba(255,255,255,0.75);
+    }
+    .game-video-play::after {
+      content: ''; position: absolute; margin-left: 5px;
+      border-style: solid; border-width: 11px 0 11px 18px;
+      border-color: transparent transparent transparent #fff;
+    }
+    .game-video-el { display: block; width: 100%; height: 100%; background: #000; }
   </style>
 </head>
 <body>
@@ -150,7 +182,7 @@
 
     <article class="article-body">
 
-      <p>Virtual Skies FPV is a fast-paced arcade flight game. Pilot a neon wireframe craft through an endless procedural city, weave between towers, hit gates and chase higher scores as speed increases. Enjoy responsive controls, optional boost, a minimal HUD and instant restarts.</p>
+      
 
       <div class="game-stats-grid">
         <div class="game-stat-card">
@@ -166,10 +198,6 @@
           <div class="label">Владельцев (оценка)</div>
           <div class="value">0 – 20,000</div>
         </div>
-        <div class="game-stat-card">
-          <div class="label">Среднее время игры</div>
-          <div class="value">нет данных</div>
-        </div>
       </div>
 
       <h2>Об игре</h2>
@@ -183,7 +211,22 @@
         </a>
       </p>
 
-      <p style="color: var(--text-faint); font-size: 13px; margin-top: 30px;">
+            <h2>Скриншоты</h2>
+      <div class="game-shots">
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5090850/e2c279cc5409deeadcc7851464a838f50de065d0/ss_e2c279cc5409deeadcc7851464a838f50de065d0.1920x1080.jpg?t=1790313251" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5090850/e2c279cc5409deeadcc7851464a838f50de065d0/ss_e2c279cc5409deeadcc7851464a838f50de065d0.600x338.jpg?t=1790313251" alt="Virtual Skies FPV VR — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5090850/0dfaa055d290d47f581150a3227cb153f5d91ad2/ss_0dfaa055d290d47f581150a3227cb153f5d91ad2.1920x1080.jpg?t=1790313251" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5090850/0dfaa055d290d47f581150a3227cb153f5d91ad2/ss_0dfaa055d290d47f581150a3227cb153f5d91ad2.600x338.jpg?t=1790313251" alt="Virtual Skies FPV VR — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5090850/47e62d59bb33aba27ccb341db2334daf7041de3c/ss_47e62d59bb33aba27ccb341db2334daf7041de3c.1920x1080.jpg?t=1790313251" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5090850/47e62d59bb33aba27ccb341db2334daf7041de3c/ss_47e62d59bb33aba27ccb341db2334daf7041de3c.600x338.jpg?t=1790313251" alt="Virtual Skies FPV VR — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5090850/6158f1f5d9867d297e287ae7d537dac20d4b8f41/ss_6158f1f5d9867d297e287ae7d537dac20d4b8f41.1920x1080.jpg?t=1790313251" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5090850/6158f1f5d9867d297e287ae7d537dac20d4b8f41/ss_6158f1f5d9867d297e287ae7d537dac20d4b8f41.600x338.jpg?t=1790313251" alt="Virtual Skies FPV VR — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5090850/290033343dc51617bbfe5cc014f0c93b09fd70a7/ss_290033343dc51617bbfe5cc014f0c93b09fd70a7.1920x1080.jpg?t=1790313251" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5090850/290033343dc51617bbfe5cc014f0c93b09fd70a7/ss_290033343dc51617bbfe5cc014f0c93b09fd70a7.600x338.jpg?t=1790313251" alt="Virtual Skies FPV VR — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5090850/a059603985380f42feaee65f698ab1f231537885/ss_a059603985380f42feaee65f698ab1f231537885.1920x1080.jpg?t=1790313251" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5090850/a059603985380f42feaee65f698ab1f231537885/ss_a059603985380f42feaee65f698ab1f231537885.600x338.jpg?t=1790313251" alt="Virtual Skies FPV VR — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+      </div>
+
+      <h2>Геймплей</h2>
+      <div class="game-movies">
+        <figure class="game-movie"><div class="game-video" data-hls="https://video.akamai.steamstatic.com/store_trailers/5090850/728928950/0ea90e1311e314fc25ecafadfc30c398e6f5f526/1788284820/hls_264_master.m3u8?t=1788286853" data-poster="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257415007/71c1586c953726b8ee88e0cefa77d998b03253e7/movie_600x337.jpg?t=1788286853" role="button" tabindex="0" aria-label="Смотреть геймплей: Virtual Skies VR Trailer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257415007/71c1586c953726b8ee88e0cefa77d998b03253e7/movie_600x337.jpg?t=1788286853" alt="" loading="lazy" width="480" height="270" /><span class="game-video-play" aria-hidden="true"></span></div></figure>
+      </div>
+
+<p style="color: var(--text-faint); font-size: 13px; margin-top: 30px;">
         Данные о цене, отзывах и статистике обновляются автоматически на основе
         Steam Store API и SteamSpy.
       </p>
@@ -284,5 +327,6 @@ function declineCookies() {
 })();
 </script>
 <script src="/newsletter.js?v=2" defer></script>
+<script defer src="/game-media.js?v=1"></script>
 </body>
 </html>

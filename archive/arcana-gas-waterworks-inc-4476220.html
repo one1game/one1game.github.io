@@ -112,6 +112,38 @@
     }
     .game-stat-card .label { font-size: 12px; color: var(--text-faint); text-transform: uppercase; }
     .game-stat-card .value { font-size: 20px; font-weight: bold; margin-top: 4px; }
+    .game-shots {
+      display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+      gap: 12px; margin: 20px 0;
+    }
+    .game-shot {
+      display: block; border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 8px; overflow: hidden;
+    }
+    .game-shot img { display: block; width: 100%; height: auto; }
+    .game-movies { display: grid; gap: 16px; margin: 20px 0; }
+    .game-movie { margin: 0; }
+    .game-movie video {
+      display: block; width: 100%; height: auto;
+      border-radius: 8px; background: #000;
+    }
+    .game-movie figcaption { margin-top: 6px; font-size: 13px; color: var(--text-faint); }
+    .game-video {
+      position: relative; cursor: pointer; overflow: hidden;
+      border-radius: 8px; background: #000; aspect-ratio: 16 / 9;
+    }
+    .game-video img { display: block; width: 100%; height: 100%; object-fit: cover; }
+    .game-video-play { position: absolute; inset: 0; display: grid; place-items: center; }
+    .game-video-play::before {
+      content: ''; width: 58px; height: 58px; border-radius: 50%;
+      background: rgba(0,0,0,0.5); border: 2px solid rgba(255,255,255,0.75);
+    }
+    .game-video-play::after {
+      content: ''; position: absolute; margin-left: 5px;
+      border-style: solid; border-width: 11px 0 11px 18px;
+      border-color: transparent transparent transparent #fff;
+    }
+    .game-video-el { display: block; width: 100%; height: 100%; background: #000; }
   </style>
 </head>
 <body>
@@ -150,7 +182,7 @@
 
     <article class="article-body">
 
-      <p>Route magical energy through a fantasy utility a mid-level employee. Connect resources to consumers, manage complaints, and maintain the flow in this comedic puzzle-strategy game set in a mundane, magickal world. The benefits are not great, but neither is the pay! Welcome to the team!</p>
+      
 
       <div class="game-stats-grid">
         <div class="game-stat-card">
@@ -166,10 +198,6 @@
           <div class="label">Владельцев (оценка)</div>
           <div class="value">0 – 20,000</div>
         </div>
-        <div class="game-stat-card">
-          <div class="label">Среднее время игры</div>
-          <div class="value">нет данных</div>
-        </div>
       </div>
 
       <h2>Об игре</h2>
@@ -183,7 +211,30 @@
         </a>
       </p>
 
-      <p style="color: var(--text-faint); font-size: 13px; margin-top: 30px;">
+            <h2>Скриншоты</h2>
+      <div class="game-shots">
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4476220/2884cb8ccc62c2636c659646ee8a101b7dae24ce/ss_2884cb8ccc62c2636c659646ee8a101b7dae24ce.1920x1080.jpg?t=1791067190" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4476220/2884cb8ccc62c2636c659646ee8a101b7dae24ce/ss_2884cb8ccc62c2636c659646ee8a101b7dae24ce.600x338.jpg?t=1791067190" alt="Arcana, Gas &amp; Waterworks Inc. — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4476220/035943cf491412317521ac0b80b6e479eba77ef3/ss_035943cf491412317521ac0b80b6e479eba77ef3.1920x1080.jpg?t=1791067190" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4476220/035943cf491412317521ac0b80b6e479eba77ef3/ss_035943cf491412317521ac0b80b6e479eba77ef3.600x338.jpg?t=1791067190" alt="Arcana, Gas &amp; Waterworks Inc. — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4476220/673ff86d29094ae113c49331b21cbcaec42fa378/ss_673ff86d29094ae113c49331b21cbcaec42fa378.1920x1080.jpg?t=1791067190" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4476220/673ff86d29094ae113c49331b21cbcaec42fa378/ss_673ff86d29094ae113c49331b21cbcaec42fa378.600x338.jpg?t=1791067190" alt="Arcana, Gas &amp; Waterworks Inc. — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4476220/c98a25a4ee201914755e4a8b6e274ac94dda39b5/ss_c98a25a4ee201914755e4a8b6e274ac94dda39b5.1920x1080.jpg?t=1791067190" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4476220/c98a25a4ee201914755e4a8b6e274ac94dda39b5/ss_c98a25a4ee201914755e4a8b6e274ac94dda39b5.600x338.jpg?t=1791067190" alt="Arcana, Gas &amp; Waterworks Inc. — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4476220/1542b42f1c2e65ba1a83827c2fe390f014029a38/ss_1542b42f1c2e65ba1a83827c2fe390f014029a38.1920x1080.jpg?t=1791067190" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4476220/1542b42f1c2e65ba1a83827c2fe390f014029a38/ss_1542b42f1c2e65ba1a83827c2fe390f014029a38.600x338.jpg?t=1791067190" alt="Arcana, Gas &amp; Waterworks Inc. — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4476220/9e5e5eecc54a075fcbdadb9efd208b8e6f51b252/ss_9e5e5eecc54a075fcbdadb9efd208b8e6f51b252.1920x1080.jpg?t=1791067190" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4476220/9e5e5eecc54a075fcbdadb9efd208b8e6f51b252/ss_9e5e5eecc54a075fcbdadb9efd208b8e6f51b252.600x338.jpg?t=1791067190" alt="Arcana, Gas &amp; Waterworks Inc. — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4476220/b1b017a9abc5e427f8d09876e3f5a5baebb4fca2/ss_b1b017a9abc5e427f8d09876e3f5a5baebb4fca2.1920x1080.jpg?t=1791067190" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4476220/b1b017a9abc5e427f8d09876e3f5a5baebb4fca2/ss_b1b017a9abc5e427f8d09876e3f5a5baebb4fca2.600x338.jpg?t=1791067190" alt="Arcana, Gas &amp; Waterworks Inc. — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4476220/eb3a16c1691b7fcd015578f38d1ccca43236e2b3/ss_eb3a16c1691b7fcd015578f38d1ccca43236e2b3.1920x1080.jpg?t=1791067190" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4476220/eb3a16c1691b7fcd015578f38d1ccca43236e2b3/ss_eb3a16c1691b7fcd015578f38d1ccca43236e2b3.600x338.jpg?t=1791067190" alt="Arcana, Gas &amp; Waterworks Inc. — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4476220/7a60c4cbf2031310dd9bdb641ac01b8fb5635172/ss_7a60c4cbf2031310dd9bdb641ac01b8fb5635172.1920x1080.jpg?t=1791067190" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4476220/7a60c4cbf2031310dd9bdb641ac01b8fb5635172/ss_7a60c4cbf2031310dd9bdb641ac01b8fb5635172.600x338.jpg?t=1791067190" alt="Arcana, Gas &amp; Waterworks Inc. — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4476220/7be2794be9c7597628996684b221814ed40ade6c/ss_7be2794be9c7597628996684b221814ed40ade6c.1920x1080.jpg?t=1791067190" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4476220/7be2794be9c7597628996684b221814ed40ade6c/ss_7be2794be9c7597628996684b221814ed40ade6c.600x338.jpg?t=1791067190" alt="Arcana, Gas &amp; Waterworks Inc. — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4476220/d7f91f1bedbd81eafe7ae54e21c35067ead1a51d/ss_d7f91f1bedbd81eafe7ae54e21c35067ead1a51d.1920x1080.jpg?t=1791067190" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4476220/d7f91f1bedbd81eafe7ae54e21c35067ead1a51d/ss_d7f91f1bedbd81eafe7ae54e21c35067ead1a51d.600x338.jpg?t=1791067190" alt="Arcana, Gas &amp; Waterworks Inc. — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4476220/ab05284bc05ba850e31c5dce4b44a69501e1248e/ss_ab05284bc05ba850e31c5dce4b44a69501e1248e.1920x1080.jpg?t=1791067190" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4476220/ab05284bc05ba850e31c5dce4b44a69501e1248e/ss_ab05284bc05ba850e31c5dce4b44a69501e1248e.600x338.jpg?t=1791067190" alt="Arcana, Gas &amp; Waterworks Inc. — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+      </div>
+
+      <h2>Геймплей</h2>
+      <div class="game-movies">
+        <figure class="game-movie"><div class="game-video" data-hls="https://video.akamai.steamstatic.com/store_trailers/4476220/635192077/c8c4158c372d14d88b3bdf554e26a5983e7b0986/1791065275/hls_264_master.m3u8?t=1791067188" data-poster="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257445378/465501b22cde1585e6772c184b15ee502f738794/movie_600x337.jpg?t=1791067188" role="button" tabindex="0" aria-label="Смотреть геймплей: Hub and Spoke Operation"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257445378/465501b22cde1585e6772c184b15ee502f738794/movie_600x337.jpg?t=1791067188" alt="" loading="lazy" width="480" height="270" /><span class="game-video-play" aria-hidden="true"></span></div></figure>
+        <figure class="game-movie"><div class="game-video" data-hls="https://video.akamai.steamstatic.com/store_trailers/4476220/1115006595/a402ed188ec3d813985449b0210b0250b459b0be/1791063416/hls_264_master.m3u8?t=1791064868" data-poster="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257445355/bcea9a7b72dfdc99ab5d8afcce979dd2539de102/movie_600x337.jpg?t=1791064868" role="button" tabindex="0" aria-label="Смотреть геймплей: Long Haul Operation"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257445355/bcea9a7b72dfdc99ab5d8afcce979dd2539de102/movie_600x337.jpg?t=1791064868" alt="" loading="lazy" width="480" height="270" /><span class="game-video-play" aria-hidden="true"></span></div></figure>
+        <figure class="game-movie"><div class="game-video" data-hls="https://video.akamai.steamstatic.com/store_trailers/4476220/1637426872/8b3a080e7f270b2f6ce0086bd62d73bd215d583c/1776302374/hls_264_master.m3u8?t=1791064879" data-poster="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257320513/9514b1d82e8a9cf087258e44917dd3f8129902e8/movie_600x337.jpg?t=1791064879" role="button" tabindex="0" aria-label="Смотреть геймплей: Game Narrative Trailer 1"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257320513/9514b1d82e8a9cf087258e44917dd3f8129902e8/movie_600x337.jpg?t=1791064879" alt="" loading="lazy" width="480" height="270" /><span class="game-video-play" aria-hidden="true"></span></div></figure>
+      </div>
+
+<p style="color: var(--text-faint); font-size: 13px; margin-top: 30px;">
         Данные о цене, отзывах и статистике обновляются автоматически на основе
         Steam Store API и SteamSpy.
       </p>
@@ -284,5 +335,6 @@ function declineCookies() {
 })();
 </script>
 <script src="/newsletter.js?v=2" defer></script>
+<script defer src="/game-media.js?v=1"></script>
 </body>
 </html>

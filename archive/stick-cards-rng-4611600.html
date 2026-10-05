@@ -108,6 +108,38 @@
     }
     .game-stat-card .label { font-size: 12px; color: var(--text-faint); text-transform: uppercase; }
     .game-stat-card .value { font-size: 20px; font-weight: bold; margin-top: 4px; }
+    .game-shots {
+      display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+      gap: 12px; margin: 20px 0;
+    }
+    .game-shot {
+      display: block; border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 8px; overflow: hidden;
+    }
+    .game-shot img { display: block; width: 100%; height: auto; }
+    .game-movies { display: grid; gap: 16px; margin: 20px 0; }
+    .game-movie { margin: 0; }
+    .game-movie video {
+      display: block; width: 100%; height: auto;
+      border-radius: 8px; background: #000;
+    }
+    .game-movie figcaption { margin-top: 6px; font-size: 13px; color: var(--text-faint); }
+    .game-video {
+      position: relative; cursor: pointer; overflow: hidden;
+      border-radius: 8px; background: #000; aspect-ratio: 16 / 9;
+    }
+    .game-video img { display: block; width: 100%; height: 100%; object-fit: cover; }
+    .game-video-play { position: absolute; inset: 0; display: grid; place-items: center; }
+    .game-video-play::before {
+      content: ''; width: 58px; height: 58px; border-radius: 50%;
+      background: rgba(0,0,0,0.5); border: 2px solid rgba(255,255,255,0.75);
+    }
+    .game-video-play::after {
+      content: ''; position: absolute; margin-left: 5px;
+      border-style: solid; border-width: 11px 0 11px 18px;
+      border-color: transparent transparent transparent #fff;
+    }
+    .game-video-el { display: block; width: 100%; height: 100%; background: #000; }
   </style>
 </head>
 <body>
@@ -146,7 +178,7 @@
 
     <article class="article-body">
 
-      <p>Gamble your life away by buying card packs until your broke, or until you climbed the mountain of money!</p>
+      
 
       <div class="game-stats-grid">
         <div class="game-stat-card">
@@ -162,10 +194,6 @@
           <div class="label">Владельцев (оценка)</div>
           <div class="value">0 – 20,000</div>
         </div>
-        <div class="game-stat-card">
-          <div class="label">Среднее время игры</div>
-          <div class="value">нет данных</div>
-        </div>
       </div>
 
       <h2>Об игре</h2>
@@ -179,7 +207,25 @@
         </a>
       </p>
 
-      <p style="color: var(--text-faint); font-size: 13px; margin-top: 30px;">
+            <h2>Скриншоты</h2>
+      <div class="game-shots">
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4611600/dfa40198805f4736fcb1f37205871ff8b0b1a95e/ss_dfa40198805f4736fcb1f37205871ff8b0b1a95e.1920x1080.jpg?t=1790989270" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4611600/dfa40198805f4736fcb1f37205871ff8b0b1a95e/ss_dfa40198805f4736fcb1f37205871ff8b0b1a95e.600x338.jpg?t=1790989270" alt="Stick Cards RNG — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4611600/4d5bc502015965109d7a3d145618038c4fa7afa2/ss_4d5bc502015965109d7a3d145618038c4fa7afa2.1920x1080.jpg?t=1790989270" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4611600/4d5bc502015965109d7a3d145618038c4fa7afa2/ss_4d5bc502015965109d7a3d145618038c4fa7afa2.600x338.jpg?t=1790989270" alt="Stick Cards RNG — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4611600/974d70f044319e3c8b59932f032be5346edb189a/ss_974d70f044319e3c8b59932f032be5346edb189a.1920x1080.jpg?t=1790989270" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4611600/974d70f044319e3c8b59932f032be5346edb189a/ss_974d70f044319e3c8b59932f032be5346edb189a.600x338.jpg?t=1790989270" alt="Stick Cards RNG — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4611600/2960a4e832f550594032d50e944593dafc32556b/ss_2960a4e832f550594032d50e944593dafc32556b.1920x1080.jpg?t=1790989270" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4611600/2960a4e832f550594032d50e944593dafc32556b/ss_2960a4e832f550594032d50e944593dafc32556b.600x338.jpg?t=1790989270" alt="Stick Cards RNG — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4611600/98d9e8aa8683400eaf8dfa90f71105cea02d6f26/ss_98d9e8aa8683400eaf8dfa90f71105cea02d6f26.1920x1080.jpg?t=1790989270" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4611600/98d9e8aa8683400eaf8dfa90f71105cea02d6f26/ss_98d9e8aa8683400eaf8dfa90f71105cea02d6f26.600x338.jpg?t=1790989270" alt="Stick Cards RNG — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4611600/7a52e899077708cd1f66b10dccabfa9aa685a812/ss_7a52e899077708cd1f66b10dccabfa9aa685a812.1920x1080.jpg?t=1790989270" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4611600/7a52e899077708cd1f66b10dccabfa9aa685a812/ss_7a52e899077708cd1f66b10dccabfa9aa685a812.600x338.jpg?t=1790989270" alt="Stick Cards RNG — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4611600/a6b95d4f54eebe6d0edfcc3950b0f013f2762725/ss_a6b95d4f54eebe6d0edfcc3950b0f013f2762725.1920x1080.jpg?t=1790989270" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4611600/a6b95d4f54eebe6d0edfcc3950b0f013f2762725/ss_a6b95d4f54eebe6d0edfcc3950b0f013f2762725.600x338.jpg?t=1790989270" alt="Stick Cards RNG — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4611600/b3e93d339a42cbf3044b13f271df2d552ae0489e/ss_b3e93d339a42cbf3044b13f271df2d552ae0489e.1920x1080.jpg?t=1790989270" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4611600/b3e93d339a42cbf3044b13f271df2d552ae0489e/ss_b3e93d339a42cbf3044b13f271df2d552ae0489e.600x338.jpg?t=1790989270" alt="Stick Cards RNG — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+      </div>
+
+      <h2>Геймплей</h2>
+      <div class="game-movies">
+        <figure class="game-movie"><div class="game-video" data-hls="https://video.akamai.steamstatic.com/store_trailers/4611600/605877949/9b7e8897bb20bbe767aeef6a53be7b135ecd6350/1788864489/hls_264_master.m3u8?t=1788865137" data-poster="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257419789/4ecd519c810263446c5b35265d481bcbc47694e8/movie_600x337.jpg?t=1788865137" role="button" tabindex="0" aria-label="Смотреть геймплей: Stick Cards RNG Main Trailer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257419789/4ecd519c810263446c5b35265d481bcbc47694e8/movie_600x337.jpg?t=1788865137" alt="" loading="lazy" width="480" height="270" /><span class="game-video-play" aria-hidden="true"></span></div></figure>
+        <figure class="game-movie"><div class="game-video" data-hls="https://video.akamai.steamstatic.com/store_trailers/4611600/390227477/edfc3339dd28563e9b52f6bf171d59bac87a45f9/1783043335/hls_264_master.m3u8?t=1783519976" data-poster="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257317132/1a0cf5048e92526c3c3c075abe944d8693168876/movie_600x337.jpg?t=1783519976" role="button" tabindex="0" aria-label="Смотреть геймплей: Stick Cards RNG Release Date Trailer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257317132/1a0cf5048e92526c3c3c075abe944d8693168876/movie_600x337.jpg?t=1783519976" alt="" loading="lazy" width="480" height="270" /><span class="game-video-play" aria-hidden="true"></span></div></figure>
+      </div>
+
+<p style="color: var(--text-faint); font-size: 13px; margin-top: 30px;">
         Данные о цене, отзывах и статистике обновляются автоматически на основе
         Steam Store API и SteamSpy.
       </p>
@@ -280,5 +326,6 @@ function declineCookies() {
 })();
 </script>
 <script src="/newsletter.js?v=2" defer></script>
+<script defer src="/game-media.js?v=1"></script>
 </body>
 </html>

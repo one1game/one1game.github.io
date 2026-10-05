@@ -112,6 +112,38 @@
     }
     .game-stat-card .label { font-size: 12px; color: var(--text-faint); text-transform: uppercase; }
     .game-stat-card .value { font-size: 20px; font-weight: bold; margin-top: 4px; }
+    .game-shots {
+      display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+      gap: 12px; margin: 20px 0;
+    }
+    .game-shot {
+      display: block; border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 8px; overflow: hidden;
+    }
+    .game-shot img { display: block; width: 100%; height: auto; }
+    .game-movies { display: grid; gap: 16px; margin: 20px 0; }
+    .game-movie { margin: 0; }
+    .game-movie video {
+      display: block; width: 100%; height: auto;
+      border-radius: 8px; background: #000;
+    }
+    .game-movie figcaption { margin-top: 6px; font-size: 13px; color: var(--text-faint); }
+    .game-video {
+      position: relative; cursor: pointer; overflow: hidden;
+      border-radius: 8px; background: #000; aspect-ratio: 16 / 9;
+    }
+    .game-video img { display: block; width: 100%; height: 100%; object-fit: cover; }
+    .game-video-play { position: absolute; inset: 0; display: grid; place-items: center; }
+    .game-video-play::before {
+      content: ''; width: 58px; height: 58px; border-radius: 50%;
+      background: rgba(0,0,0,0.5); border: 2px solid rgba(255,255,255,0.75);
+    }
+    .game-video-play::after {
+      content: ''; position: absolute; margin-left: 5px;
+      border-style: solid; border-width: 11px 0 11px 18px;
+      border-color: transparent transparent transparent #fff;
+    }
+    .game-video-el { display: block; width: 100%; height: 100%; background: #000; }
   </style>
 </head>
 <body>
@@ -166,10 +198,6 @@
           <div class="label">Владельцев (оценка)</div>
           <div class="value">0 – 20,000</div>
         </div>
-        <div class="game-stat-card">
-          <div class="label">Среднее время игры</div>
-          <div class="value">нет данных</div>
-        </div>
       </div>
 
       <h2>Об игре</h2>
@@ -183,7 +211,25 @@
         </a>
       </p>
 
-      <p style="color: var(--text-faint); font-size: 13px; margin-top: 30px;">
+            <h2>Скриншоты</h2>
+      <div class="game-shots">
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4629760/8f56f30f2902750caccd6058bac7b096277148e3/ss_8f56f30f2902750caccd6058bac7b096277148e3.1920x1080.jpg?t=1791133038" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4629760/8f56f30f2902750caccd6058bac7b096277148e3/ss_8f56f30f2902750caccd6058bac7b096277148e3.600x338.jpg?t=1791133038" alt="Elsewar — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4629760/f29ec93f95180d1fcfec684da8c4c66ebe082f0d/ss_f29ec93f95180d1fcfec684da8c4c66ebe082f0d.1920x1080.jpg?t=1791133038" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4629760/f29ec93f95180d1fcfec684da8c4c66ebe082f0d/ss_f29ec93f95180d1fcfec684da8c4c66ebe082f0d.600x338.jpg?t=1791133038" alt="Elsewar — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4629760/7036ff748a9f16fba69415b6b64d973596111265/ss_7036ff748a9f16fba69415b6b64d973596111265.1920x1080.jpg?t=1791133038" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4629760/7036ff748a9f16fba69415b6b64d973596111265/ss_7036ff748a9f16fba69415b6b64d973596111265.600x338.jpg?t=1791133038" alt="Elsewar — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4629760/c2627c0efa8f4adab4036d12b7d4da0afdb721c6/ss_c2627c0efa8f4adab4036d12b7d4da0afdb721c6.1920x1080.jpg?t=1791133038" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4629760/c2627c0efa8f4adab4036d12b7d4da0afdb721c6/ss_c2627c0efa8f4adab4036d12b7d4da0afdb721c6.600x338.jpg?t=1791133038" alt="Elsewar — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4629760/9b090d822a98f2f0783157ac840ce2da750ed830/ss_9b090d822a98f2f0783157ac840ce2da750ed830.1920x1080.jpg?t=1791133038" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4629760/9b090d822a98f2f0783157ac840ce2da750ed830/ss_9b090d822a98f2f0783157ac840ce2da750ed830.600x338.jpg?t=1791133038" alt="Elsewar — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4629760/3bd2448e5ad3c1ef16111a5ba2f4f99669687d1a/ss_3bd2448e5ad3c1ef16111a5ba2f4f99669687d1a.1920x1080.jpg?t=1791133038" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4629760/3bd2448e5ad3c1ef16111a5ba2f4f99669687d1a/ss_3bd2448e5ad3c1ef16111a5ba2f4f99669687d1a.600x338.jpg?t=1791133038" alt="Elsewar — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4629760/d4de249f2ae7eedf6c3785e71b84ee2019b07fd7/ss_d4de249f2ae7eedf6c3785e71b84ee2019b07fd7.1920x1080.jpg?t=1791133038" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4629760/d4de249f2ae7eedf6c3785e71b84ee2019b07fd7/ss_d4de249f2ae7eedf6c3785e71b84ee2019b07fd7.600x338.jpg?t=1791133038" alt="Elsewar — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4629760/b9753f924b2c4b6017758899803094e0dda3d5be/ss_b9753f924b2c4b6017758899803094e0dda3d5be.1920x1080.jpg?t=1791133038" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4629760/b9753f924b2c4b6017758899803094e0dda3d5be/ss_b9753f924b2c4b6017758899803094e0dda3d5be.600x338.jpg?t=1791133038" alt="Elsewar — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4629760/579a4dfb71a1a862108db7f936c4092bab0fff0d/ss_579a4dfb71a1a862108db7f936c4092bab0fff0d.1920x1080.jpg?t=1791133038" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4629760/579a4dfb71a1a862108db7f936c4092bab0fff0d/ss_579a4dfb71a1a862108db7f936c4092bab0fff0d.600x338.jpg?t=1791133038" alt="Elsewar — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+      </div>
+
+      <h2>Геймплей</h2>
+      <div class="game-movies">
+        <figure class="game-movie"><div class="game-video" data-hls="https://video.akamai.steamstatic.com/store_trailers/4629760/1769175019/b87b0e2df9a087aa8bf059b370407b777138699a/1790836251/hls_264_master.m3u8?t=1790840617" data-poster="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257442218/d45f666a3a8c33a27ce00213015da8b01ff7ddf2/movie_600x337.jpg?t=1790840617" role="button" tabindex="0" aria-label="Смотреть геймплей: Elsewar Release Trailer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257442218/d45f666a3a8c33a27ce00213015da8b01ff7ddf2/movie_600x337.jpg?t=1790840617" alt="" loading="lazy" width="480" height="270" /><span class="game-video-play" aria-hidden="true"></span></div></figure>
+      </div>
+
+<p style="color: var(--text-faint); font-size: 13px; margin-top: 30px;">
         Данные о цене, отзывах и статистике обновляются автоматически на основе
         Steam Store API и SteamSpy.
       </p>
@@ -284,5 +330,6 @@ function declineCookies() {
 })();
 </script>
 <script src="/newsletter.js?v=2" defer></script>
+<script defer src="/game-media.js?v=1"></script>
 </body>
 </html>

@@ -94,13 +94,21 @@ function slugify(text) {
     .replace(/^-+|-+$/g, "");
 }
 
-function formatOwners(ownersStr) {
-  return ownersStr ? ownersStr.replace(/\.\./g, "–") : "нет данных";
+function escAttr(v) {
+  return String(v == null ? "" : v)
+    .replace(/&/g, "&amp;")
+    .replace(/"/g, "&quot;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;");
 }
 
-function formatPlaytime(minutes) {
-  if (!minutes) return "нет данных";
-  return `${Math.round(minutes / 60)} ч.`;
+// true, если в строке есть кириллица (чтобы не мешать EN/RU в тексте страницы)
+function hasRu(v) {
+  return /[а-яё]/i.test(String(v || ""));
+}
+
+function formatOwners(ownersStr) {
+  return ownersStr ? ownersStr.replace(/\.\./g, "–") : "нет данных";
 }
 
 function todayISO() {
@@ -137,10 +145,19 @@ function todayRuFull() {
   return `${d.getDate()} ${months[d.getMonth()]} ${d.getFullYear()}`;
 }
 
-function buildPage({ appid, slug, store, spy }) {
+function buildPage({ appid, slug, store, spy, entry }) {
   const title = store.name;
-  const pageTitle = `${title}: цена, отзывы и статистика игроков | One1Game`;
-  const metaDesc = `${title} — актуальная цена, скидки, процент положительных отзывов и статистика игроков в Steam. Обновляется автоматически.`;
+  // Если запись обогащена ИИ — используем её заголовок/описание/интро,
+  // чтобы рефреш данных НЕ затирал тексты под людей и поисковики.
+  const custom = !!(entry && entry.ai);
+  const displayTitle =
+    custom && entry.title ? entry.title : `${title}: цена, отзывы и статистика игроков`;
+  const pageTitle = `${displayTitle} | One1Game`;
+  const metaDesc =
+    custom && entry.excerpt
+      ? entry.excerpt
+      : `${title} — актуальная цена, скидки, процент положительных отзывов и статистика игроков в Steam. Обновляется автоматически.`;
+  const intro = custom && entry.ai_intro ? String(entry.ai_intro) : "";
   const url = `${CONFIG.siteUrl}/${CONFIG.archiveDir}/${slug}.html`;
 
   const isFree = store.is_free;
@@ -162,9 +179,54 @@ function buildPage({ appid, slug, store, spy }) {
       : null;
   const totalReviews = (spy.positive || 0) + (spy.negative || 0);
   const owners = formatOwners(spy.owners);
-  const avgPlaytime = formatPlaytime(spy.average_forever);
   const headerImg = store.header_image || `${CONFIG.siteUrl}/og-image.jpg`;
   const shortDesc = (store.short_description || "").replace(/"/g, "'");
+  const about = custom && entry.ai_about ? String(entry.ai_about) : "";
+  // Показываем официальное описание Steam только если оно на русском —
+  // иначе страница будет в мешанине EN/RU.
+  const shortRu = hasRu(shortDesc);
+
+  // Медиа из Store API: скриншоты и видео геймплея
+  const screenshots = Array.isArray(store.screenshots) ? store.screenshots : [];
+  const movieItems = (Array.isArray(store.movies) ? store.movies : [])
+    .map((mv) => ({
+      hls: mv.hls_h264 || "",
+      poster: mv.thumbnail || "",
+      name: mv.name || "",
+    }))
+    .filter((m) => m.hls)
+    .slice(0, 3);
+
+  const shotsHTML = screenshots.length
+    ? `
+      <h2>Скриншоты</h2>
+      <div class="game-shots">
+${screenshots
+  .slice(0, 12)
+  .map(
+    (s) =>
+      `        <a class="game-shot" href="${escAttr(s.path_full)}" target="_blank" rel="noopener noreferrer"><img src="${escAttr(s.path_thumbnail)}" alt="${escAttr(title)} — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>`
+  )
+  .join("\n")}
+      </div>`
+    : "";
+
+  const moviesHTML = movieItems.length
+    ? `
+      <h2>Геймплей</h2>
+      <div class="game-movies">
+${movieItems
+  .map(
+    (m) =>
+      `        <figure class="game-movie"><div class="game-video" data-hls="${escAttr(m.hls)}"${m.poster ? ` data-poster="${escAttr(m.poster)}"` : ""} role="button" tabindex="0" aria-label="Смотреть геймплей">${m.poster ? `<img src="${escAttr(m.poster)}" alt="" loading="lazy" width="480" height="270" />` : ""}<span class="game-video-play" aria-hidden="true"></span></div>${hasRu(m.name) ? `<figcaption>${escAttr(m.name)}</figcaption>` : ""}</figure>`
+  )
+  .join("\n")}
+      </div>`
+    : "";
+
+  const moviesScript = movieItems.length
+    ? '<script defer src="/game-media.js?v=1"></script>\n'
+    : "";
 
   return `<!DOCTYPE html>
 <html lang="ru">
@@ -285,6 +347,34 @@ function buildPage({ appid, slug, store, spy }) {
     }
     .game-stat-card .label { font-size: 12px; color: var(--text-faint); text-transform: uppercase; }
     .game-stat-card .value { font-size: 20px; font-weight: bold; margin-top: 4px; }
+    .game-shots {
+      display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+      gap: 12px; margin: 20px 0;
+    }
+    .game-shot {
+      display: block; border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 8px; overflow: hidden;
+    }
+    .game-shot img { display: block; width: 100%; height: auto; }
+    .game-movies { display: grid; gap: 16px; margin: 20px 0; }
+    .game-movie { margin: 0; }
+    .game-video {
+      position: relative; cursor: pointer; overflow: hidden;
+      border-radius: 8px; background: #000; aspect-ratio: 16 / 9;
+    }
+    .game-video img { display: block; width: 100%; height: 100%; object-fit: cover; }
+    .game-video-play { position: absolute; inset: 0; display: grid; place-items: center; }
+    .game-video-play::before {
+      content: ''; width: 58px; height: 58px; border-radius: 50%;
+      background: rgba(0,0,0,0.5); border: 2px solid rgba(255,255,255,0.75);
+    }
+    .game-video-play::after {
+      content: ''; position: absolute; margin-left: 5px;
+      border-style: solid; border-width: 11px 0 11px 18px;
+      border-color: transparent transparent transparent #fff;
+    }
+    .game-video-el { display: block; width: 100%; height: 100%; background: #000; }
+    .game-movie figcaption { margin-top: 6px; font-size: 13px; color: var(--text-faint); }
   </style>
 </head>
 <body>
@@ -314,7 +404,7 @@ function buildPage({ appid, slug, store, spy }) {
 
     <div class="article-header">
       <span class="article-category ${CONFIG.categoryClass}">${CONFIG.categoryLabel}</span>
-      <h1>${title}: цена, отзывы и статистика игроков</h1>
+      <h1>${displayTitle}</h1>
       <div class="article-meta">
         <span><i class="far fa-calendar"></i> ${todayRuFull()}</span>
         <span><i class="far fa-clock"></i> 2 минуты чтения</span>
@@ -323,7 +413,7 @@ function buildPage({ appid, slug, store, spy }) {
 
     <article class="article-body">
 
-      <p>${shortDesc}</p>
+      ${intro ? `<p>${intro}</p>\n\n      ` : ""}${shortRu ? `<p>${shortDesc}</p>` : ""}
 
       <div class="game-stats-grid">
         <div class="game-stat-card">
@@ -342,14 +432,10 @@ function buildPage({ appid, slug, store, spy }) {
           <div class="label">Владельцев (оценка)</div>
           <div class="value">${owners}</div>
         </div>
-        <div class="game-stat-card">
-          <div class="label">Среднее время игры</div>
-          <div class="value">${avgPlaytime}</div>
-        </div>
       </div>
 
       <h2>Об игре</h2>
-      <p><strong>Жанры:</strong> ${genres}<br/>
+      ${about ? `<p>${about}</p>\n\n      ` : ""}<p><strong>Жанры:</strong> ${genres}<br/>
       <strong>Разработчик:</strong> ${developers}<br/>
       <strong>Издатель:</strong> ${publishers}</p>
 
@@ -358,7 +444,8 @@ function buildPage({ appid, slug, store, spy }) {
           Страница игры в Steam →
         </a>
       </p>
-
+${shotsHTML}
+${moviesHTML}
       <p style="color: var(--text-faint); font-size: 13px; margin-top: 30px;">
         Данные о цене, отзывах и статистике обновляются автоматически на основе
         Steam Store API и SteamSpy.
@@ -460,7 +547,7 @@ function declineCookies() {
 })();
 </script>
 <script src="/newsletter.js?v=2" defer></script>
-</body>
+${moviesScript}</body>
 </html>
 `;
 }
@@ -468,6 +555,24 @@ function declineCookies() {
 async function main() {
   const archiveDir = path.resolve(process.cwd(), CONFIG.archiveDir);
   fs.mkdirSync(archiveDir, { recursive: true });
+
+  // Существующие ИИ-записи (url → entry): их тексты нельзя перезаписывать,
+  // даже если игра снова попала в топ и её страница пересобирается.
+  const existingAiByUrl = {};
+  try {
+    const vm = require("vm");
+    const dataPath = path.resolve(process.cwd(), CONFIG.articlesDataPath);
+    if (fs.existsSync(dataPath)) {
+      const sandbox = { window: {} };
+      vm.createContext(sandbox);
+      vm.runInContext(fs.readFileSync(dataPath, "utf-8"), sandbox);
+      for (const e of sandbox.window.allArticles || []) {
+        if (e.ai && e.url) existingAiByUrl[e.url] = e;
+      }
+    }
+  } catch (e) {
+    console.warn("[внимание] не удалось прочитать существующие записи:", e.message);
+  }
 
   console.log(`Получаю топ-${CONFIG.steadyLimit} игр по игрокам (SteamSpy)...`);
   const steadyIds = await getTopGames(CONFIG.steadyLimit);
@@ -501,7 +606,8 @@ async function main() {
       await sleep(CONFIG.delayMs);
 
       const slug = `${slugify(store.name)}-${appid}`;
-      const html = buildPage({ appid, slug, store, spy });
+      const aiEntry = existingAiByUrl[`/${CONFIG.archiveDir}/${slug}.html`];
+      const html = buildPage({ appid, slug, store, spy, entry: aiEntry });
       fs.writeFileSync(path.join(archiveDir, `${slug}.html`), html, "utf-8");
 
       newEntries.push({
@@ -516,6 +622,10 @@ async function main() {
         date: todayRuFull(),
         readTime: "2 мин",
         category: CONFIG.categoryLabel,
+        updated: todayISO(),
+        // Обложка: официальный Steam header из Store API (URL с хешем ассета).
+        // Без него карточка уйдёт на процедурный плейсхолдер.
+        image: store.header_image || "",
       });
 
       console.log(`  [ок] ${appid} — ${store.name}`);
@@ -569,7 +679,302 @@ function updateArticlesData(newEntries) {
   console.log(`\nВ ${CONFIG.articlesDataPath} добавлено новых записей: ${toAdd.length}.`);
 }
 
-main().catch((err) => {
-  console.error("Критическая ошибка:", err);
-  process.exit(1);
-});
+// ── Cloudflare Workers AI: генерация SEO-текста (бесплатный тир) ──
+// Ключи только из окружения: CLOUDFLARE_ACCOUNT_ID / CLOUDFLARE_API_TOKEN.
+const CF_ACCOUNT_ID = process.env.CLOUDFLARE_ACCOUNT_ID || "";
+const CF_API_TOKEN = process.env.CLOUDFLARE_API_TOKEN || "";
+// Основная — не-reasoning (быстро, без «размышлений», полный ответ).
+// Запасная — llama-3.3-70b-fast. Reasoning-модели (gpt-oss/nemotron/qwen3)
+// тратят весь max_tokens на размышления и возвращают пустой content.
+const CF_MODELS = [
+  "@cf/mistralai/mistral-small-3.1-24b-instruct",
+  "@cf/meta/llama-3.3-70b-instruct-fp8-fast",
+];
+
+async function cfChat(prompt) {
+  let lastErr = null;
+  for (const model of CF_MODELS) {
+    try {
+      const res = await fetch(
+        `https://api.cloudflare.com/client/v4/accounts/${CF_ACCOUNT_ID}/ai/run/${model}`,
+        {
+          method: "POST",
+          headers: {
+            Authorization: `Bearer ${CF_API_TOKEN}`,
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            messages: [{ role: "user", content: prompt }],
+            max_tokens: 1400,
+          }),
+        }
+      );
+      if (!res.ok) {
+        lastErr = new Error(`${model}: HTTP ${res.status}`);
+        continue;
+      }
+      const j = await res.json();
+      const r = j.result || {};
+      const txt =
+        r.response ||
+        (r.choices && r.choices[0] && r.choices[0].message && r.choices[0].message.content) ||
+        "";
+      if (txt) return txt;
+      lastErr = new Error(`${model}: пустой ответ`);
+    } catch (e) {
+      lastErr = e;
+    }
+  }
+  throw lastErr || new Error("Cloudflare AI недоступен");
+}
+
+function aiPrompt(d, strict) {
+  return `Ты SEO-редактор игрового портала One1Game (русскоязычный сайт-обзорник, НЕ магазин).
+Ниже данные игры из Steam. Сделай уникальный человечный текст ТОЛЬКО на русском.
+Правила:
+- Весь ответ только на русском, без английских слов (кроме названия игры).
+- Не выдумывай факты. Не упоминай цену, скидки, дату выхода, микротранзакции.
+- Не пиши "купить/скачать" — это обзор. Интент: что за игра, жанр, кому подойдёт, стоит ли играть.
+- Без воды и штампов.
+- Верни СТРОГО JSON без markdown:
+{"seo_title":"...","meta_description":"...","intro":"...","about":"..."}
+- seo_title: строго до 60 символов, содержит название игры.
+- meta_description: 120-155 символов.
+- intro: 2-3 предложения, до 300 символов.
+- about: 3-4 предложения, до 480 символов, по делу.
+${strict ? "- ВНИМАНИЕ: прошлый ответ нарушил правила (англ. слова, цена или длина). Исправь.\n" : ""}
+Данные Steam:
+Название: ${d.name}
+Жанры: ${d.genres}
+Описание: ${d.short}`;
+}
+
+function aiParse(txt) {
+  const m = String(txt || "").match(/\{[\s\S]*\}/);
+  if (!m) return null;
+  try {
+    return JSON.parse(m[0]);
+  } catch (e) {
+    return null;
+  }
+}
+
+function clampLen(s, max) {
+  s = String(s || "").trim();
+  if (s.length <= max) return s;
+  const cut = s.slice(0, max);
+  const sp = cut.lastIndexOf(" ");
+  return (sp > max * 0.6 ? cut.slice(0, sp) : cut).trim();
+}
+
+function aiValid(obj, name) {
+  if (!obj || !obj.seo_title || !obj.meta_description || !obj.intro) return false;
+  const text = [obj.seo_title, obj.meta_description, obj.intro, obj.about || ""].join(" ");
+  if (!/[а-яё]/i.test(text)) return false;
+  if (/(купить|скачай|скачать|цена|рубл|скидк|микротранзакц)/i.test(text)) return false;
+  const allowed = new Set(
+    (String(name).toLowerCase().match(/[a-zа-яё0-9]+/g) || []).concat(["steam"])
+  );
+  const latin = text.match(/[A-Za-z][A-Za-z'’-]{2,}/g) || [];
+  for (const w of latin) if (!allowed.has(w.toLowerCase())) return false;
+  return true;
+}
+
+// ИИ-обогащение: обрабатывает первые N игровых записей без флага ai
+// и сразу пересобирает их страницы (Steam + Cloudflare).
+async function enrichAll() {
+  if (!CF_ACCOUNT_ID || !CF_API_TOKEN) {
+    console.warn("[внимание] нет CLOUDFLARE_ACCOUNT_ID / CLOUDFLARE_API_TOKEN");
+    return;
+  }
+  const dataPath = path.resolve(process.cwd(), CONFIG.articlesDataPath);
+  const archiveDir = path.resolve(process.cwd(), CONFIG.archiveDir);
+  const vm = require("vm");
+  const sandbox = { window: {} };
+  vm.createContext(sandbox);
+  vm.runInContext(fs.readFileSync(dataPath, "utf-8"), sandbox);
+  const arr = sandbox.window.allArticles || [];
+
+  const isGame = (a) =>
+    a.category === CONFIG.categoryLabel ||
+    /:\s*цена, отзывы и статистика игроков\s*$/i.test(a.title || "");
+
+  const limit = parseInt(process.env.ENRICH_LIMIT || "60", 10);
+  const pending = arr.filter((a) => isGame(a) && !a.ai);
+  const targets = pending.slice(0, limit);
+  console.log(`ИИ-обогащение: ${targets.length} из ${pending.length} без ИИ`);
+
+  let ok = 0;
+  let skip = 0;
+  let fail = 0;
+  for (const entry of targets) {
+    const m = String(entry.url || "").match(/-(\d+)\.html$/);
+    if (!m) {
+      skip++;
+      continue;
+    }
+    const appid = m[1];
+    const slug = entry.url.split("/").pop().replace(/\.html$/, "");
+    try {
+      const store = await getStoreDetails(appid);
+      await sleep(CONFIG.delayMs);
+      if (!store) {
+        skip++;
+        console.log(`  [skip] ${appid}: нет данных Steam`);
+        continue;
+      }
+      const d = {
+        name: store.name || "",
+        genres: (store.genres || []).map((g) => g.description).join(", ") || "не указаны",
+        short: String(store.short_description || "").slice(0, 600),
+      };
+
+      let got = null;
+      for (let attempt = 1; attempt <= 2 && !got; attempt++) {
+        try {
+          const obj = aiParse(await cfChat(aiPrompt(d, attempt > 1)));
+          if (aiValid(obj, d.name)) got = obj;
+        } catch (e) {
+          console.error(`  [ai] ${appid}: ${e.message}`);
+        }
+        await sleep(600);
+      }
+      if (!got) {
+        fail++;
+        console.log(`  [skip] ${appid}: не прошло валидацию`);
+        continue;
+      }
+
+      entry.title = clampLen(got.seo_title, 60);
+      entry.excerpt = clampLen(got.meta_description, 155);
+      entry.ai_intro = String(got.intro || "").trim();
+      entry.ai_about = String(got.about || "").trim();
+      entry.ai = true;
+      entry.updated = todayISO();
+
+      const spy = (await getSteamSpyDetails(appid)) || {};
+      await sleep(CONFIG.delayMs);
+      entry.image = store.header_image || entry.image || "";
+      fs.writeFileSync(
+        path.join(archiveDir, `${slug}.html`),
+        buildPage({ appid, slug, store, spy, entry }),
+        "utf-8"
+      );
+      ok++;
+      console.log(`  [ок] ${appid} — ${d.name}`);
+    } catch (e) {
+      fail++;
+      console.error(`  [ошибка] ${appid}: ${e.message}`);
+    }
+  }
+
+  const output =
+    `// articles-data.js\n` +
+    `window.allArticles = ${JSON.stringify(arr, null, 2)};\n\n` +
+    `window.articlesData = window.allArticles;\n`;
+  fs.writeFileSync(dataPath, output, "utf-8");
+  console.log(`\nИИ-обогащение завершено. Обогащено: ${ok}, пропущено: ${skip}, ошибок: ${fail}.`);
+}
+
+// ── Полный рефреш: обновляет «чувствительные» данные (цена, скидка, отзывы,
+// владельцы, время, а также обложка/скриншоты/видео) у ВСЕХ игровых записей,
+// а не только у текущего топа. Запускается недельным workflow (MODE=refresh).
+async function refreshAll() {
+  const dataPath = path.resolve(process.cwd(), CONFIG.articlesDataPath);
+  const archiveDir = path.resolve(process.cwd(), CONFIG.archiveDir);
+  if (!fs.existsSync(dataPath)) {
+    console.warn(`[внимание] ${CONFIG.articlesDataPath} не найден`);
+    return;
+  }
+
+  const vm = require("vm");
+  const code = fs.readFileSync(dataPath, "utf-8");
+  const sandbox = { window: {} };
+  vm.createContext(sandbox);
+  vm.runInContext(code, sandbox);
+  const arr = sandbox.window.allArticles || [];
+
+  const isGame = (a) =>
+    a.category === CONFIG.categoryLabel ||
+    /:\s*цена, отзывы и статистика игроков\s*$/i.test(a.title || "");
+
+  const games = arr.filter(isGame);
+  // REFRESH_LIMIT>0 — обновить только первые N записей (для теста/отладки).
+  const limit = parseInt(process.env.REFRESH_LIMIT || "0", 10);
+  const list = limit > 0 ? games.slice(0, limit) : games;
+  console.log(`Рефреш: игровых записей ${list.length} из ${games.length}`);
+
+  let ok = 0;
+  let skip = 0;
+  let fail = 0;
+  for (const entry of list) {
+    const m = String(entry.url || "").match(/-(\d+)\.html$/);
+    if (!m) {
+      skip++;
+      continue;
+    }
+    const appid = m[1];
+    const slug = entry.url.split("/").pop().replace(/\.html$/, "");
+    try {
+      const store = await getStoreDetails(appid);
+      await sleep(CONFIG.delayMs);
+      if (!store) {
+        skip++;
+        continue;
+      }
+      const spy = await getSteamSpyDetails(appid);
+      await sleep(CONFIG.delayMs);
+
+      const custom = entry.ai === true;
+      fs.writeFileSync(
+        path.join(archiveDir, `${slug}.html`),
+        buildPage({ appid, slug, store, spy, entry }),
+        "utf-8"
+      );
+
+      // Записи, обогащённые ИИ, сохраняют свой заголовок/описание.
+      // Авто-заполнение применяем только к не-ИИ записям.
+      if (!custom) {
+        entry.title = `${store.name}: цена, отзывы и статистика игроков`;
+        entry.excerpt = buildExcerpt({
+          title: store.name,
+          price: isFreePrice(store),
+          positiveRatio: getPositiveRatio(spy),
+          owners: formatOwners(spy.owners),
+        });
+      }
+      entry.image = store.header_image || "";
+      entry.updated = todayISO();
+      ok++;
+      console.log(`  [ок] ${appid} — ${store.name}`);
+    } catch (err) {
+      fail++;
+      console.error(`  [ошибка] ${appid}: ${err.message}`);
+    }
+  }
+
+  const output =
+    `// articles-data.js\n` +
+    `window.allArticles = ${JSON.stringify(arr, null, 2)};\n\n` +
+    `window.articlesData = window.allArticles;\n`;
+  fs.writeFileSync(dataPath, output, "utf-8");
+
+  console.log(`\nРефреш завершён. Обновлено: ${ok}, пропущено: ${skip}, ошибок: ${fail}.`);
+}
+
+if (process.env.MODE === "refresh") {
+  refreshAll().catch((err) => {
+    console.error("Критическая ошибка рефреша:", err);
+    process.exit(1);
+  });
+} else if (process.env.MODE === "enrich") {
+  enrichAll().catch((err) => {
+    console.error("Критическая ошибка ИИ-обогащения:", err);
+    process.exit(1);
+  });
+} else {
+  main().catch((err) => {
+    console.error("Критическая ошибка:", err);
+    process.exit(1);
+  });
+}

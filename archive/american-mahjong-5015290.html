@@ -112,6 +112,38 @@
     }
     .game-stat-card .label { font-size: 12px; color: var(--text-faint); text-transform: uppercase; }
     .game-stat-card .value { font-size: 20px; font-weight: bold; margin-top: 4px; }
+    .game-shots {
+      display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+      gap: 12px; margin: 20px 0;
+    }
+    .game-shot {
+      display: block; border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 8px; overflow: hidden;
+    }
+    .game-shot img { display: block; width: 100%; height: auto; }
+    .game-movies { display: grid; gap: 16px; margin: 20px 0; }
+    .game-movie { margin: 0; }
+    .game-movie video {
+      display: block; width: 100%; height: auto;
+      border-radius: 8px; background: #000;
+    }
+    .game-movie figcaption { margin-top: 6px; font-size: 13px; color: var(--text-faint); }
+    .game-video {
+      position: relative; cursor: pointer; overflow: hidden;
+      border-radius: 8px; background: #000; aspect-ratio: 16 / 9;
+    }
+    .game-video img { display: block; width: 100%; height: 100%; object-fit: cover; }
+    .game-video-play { position: absolute; inset: 0; display: grid; place-items: center; }
+    .game-video-play::before {
+      content: ''; width: 58px; height: 58px; border-radius: 50%;
+      background: rgba(0,0,0,0.5); border: 2px solid rgba(255,255,255,0.75);
+    }
+    .game-video-play::after {
+      content: ''; position: absolute; margin-left: 5px;
+      border-style: solid; border-width: 11px 0 11px 18px;
+      border-color: transparent transparent transparent #fff;
+    }
+    .game-video-el { display: block; width: 100%; height: 100%; background: #000; }
   </style>
 </head>
 <body>
@@ -150,7 +182,7 @@
 
     <article class="article-body">
 
-      <p>Your place at the mahjong table. Play American mahjong with friends through Steam, practice against bots, or share a screen. Learn step by step, create custom cards, and settle into a welcoming room with detailed tiles and a table you can make your own.</p>
+      
 
       <div class="game-stats-grid">
         <div class="game-stat-card">
@@ -166,10 +198,6 @@
           <div class="label">Владельцев (оценка)</div>
           <div class="value">0 – 20,000</div>
         </div>
-        <div class="game-stat-card">
-          <div class="label">Среднее время игры</div>
-          <div class="value">нет данных</div>
-        </div>
       </div>
 
       <h2>Об игре</h2>
@@ -183,7 +211,26 @@
         </a>
       </p>
 
-      <p style="color: var(--text-faint); font-size: 13px; margin-top: 30px;">
+            <h2>Скриншоты</h2>
+      <div class="game-shots">
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5015290/b857427eba62891516e61ff67c884baaa3f6ce6b/ss_b857427eba62891516e61ff67c884baaa3f6ce6b.1920x1080.jpg?t=1790903947" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5015290/b857427eba62891516e61ff67c884baaa3f6ce6b/ss_b857427eba62891516e61ff67c884baaa3f6ce6b.600x338.jpg?t=1790903947" alt="American Mahjong — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5015290/470fa7b6381358e77dae550b7cbba0eabdbb53a3/ss_470fa7b6381358e77dae550b7cbba0eabdbb53a3.1920x1080.jpg?t=1790903947" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5015290/470fa7b6381358e77dae550b7cbba0eabdbb53a3/ss_470fa7b6381358e77dae550b7cbba0eabdbb53a3.600x338.jpg?t=1790903947" alt="American Mahjong — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5015290/4fa09f9a4892312701ae43760e6722fb525e9fcc/ss_4fa09f9a4892312701ae43760e6722fb525e9fcc.1920x1080.jpg?t=1790903947" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5015290/4fa09f9a4892312701ae43760e6722fb525e9fcc/ss_4fa09f9a4892312701ae43760e6722fb525e9fcc.600x338.jpg?t=1790903947" alt="American Mahjong — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5015290/8cef86074799b1c6ee9ad6af41b8eb63c825cfe0/ss_8cef86074799b1c6ee9ad6af41b8eb63c825cfe0.1920x1080.jpg?t=1790903947" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5015290/8cef86074799b1c6ee9ad6af41b8eb63c825cfe0/ss_8cef86074799b1c6ee9ad6af41b8eb63c825cfe0.600x338.jpg?t=1790903947" alt="American Mahjong — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5015290/9a8fc84c2ef987c59aa9d0f0d1295ca40a60e05f/ss_9a8fc84c2ef987c59aa9d0f0d1295ca40a60e05f.1920x1080.jpg?t=1790903947" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5015290/9a8fc84c2ef987c59aa9d0f0d1295ca40a60e05f/ss_9a8fc84c2ef987c59aa9d0f0d1295ca40a60e05f.600x338.jpg?t=1790903947" alt="American Mahjong — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5015290/918c093ade5c40aabe565112d34b63febec9e5f1/ss_918c093ade5c40aabe565112d34b63febec9e5f1.1920x1080.jpg?t=1790903947" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5015290/918c093ade5c40aabe565112d34b63febec9e5f1/ss_918c093ade5c40aabe565112d34b63febec9e5f1.600x338.jpg?t=1790903947" alt="American Mahjong — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5015290/79757401cb3d6b55131d611eb32e296472640316/ss_79757401cb3d6b55131d611eb32e296472640316.1920x1080.jpg?t=1790903947" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5015290/79757401cb3d6b55131d611eb32e296472640316/ss_79757401cb3d6b55131d611eb32e296472640316.600x338.jpg?t=1790903947" alt="American Mahjong — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5015290/52c0a2e2023e6677b90d224fa772e4866883f403/ss_52c0a2e2023e6677b90d224fa772e4866883f403.1920x1080.jpg?t=1790903947" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5015290/52c0a2e2023e6677b90d224fa772e4866883f403/ss_52c0a2e2023e6677b90d224fa772e4866883f403.600x338.jpg?t=1790903947" alt="American Mahjong — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5015290/1c493dbd0a81cc4e3594edfb2f2b24679806591a/ss_1c493dbd0a81cc4e3594edfb2f2b24679806591a.1920x1080.jpg?t=1790903947" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5015290/1c493dbd0a81cc4e3594edfb2f2b24679806591a/ss_1c493dbd0a81cc4e3594edfb2f2b24679806591a.600x338.jpg?t=1790903947" alt="American Mahjong — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+      </div>
+
+      <h2>Геймплей</h2>
+      <div class="game-movies">
+        <figure class="game-movie"><div class="game-video" data-hls="https://video.akamai.steamstatic.com/store_trailers/5015290/345287490/e75b454fae91777f2dad1500b93aef3378c57a7f/1790283395/hls_264_master.m3u8?t=1790285140" data-poster="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257420322/ae7b991fa682469dc10d326e06af2bc85f247f92/movie_600x337.jpg?t=1790285140" role="button" tabindex="0" aria-label="Смотреть геймплей: American Mahjong - Gameplay"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257420322/ae7b991fa682469dc10d326e06af2bc85f247f92/movie_600x337.jpg?t=1790285140" alt="" loading="lazy" width="480" height="270" /><span class="game-video-play" aria-hidden="true"></span></div></figure>
+        <figure class="game-movie"><div class="game-video" data-hls="https://video.akamai.steamstatic.com/store_trailers/5015290/1810361191/964db6753a95434ef0b20cf19ad7895d0164f983/1789446590/hls_264_master.m3u8?t=1789447534" data-poster="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257425361/482b4e278cca937b7d88709d56749be422f63b3b/movie_600x337.jpg?t=1789447534" role="button" tabindex="0" aria-label="Смотреть геймплей: American Mahjong — Room Tour"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257425361/482b4e278cca937b7d88709d56749be422f63b3b/movie_600x337.jpg?t=1789447534" alt="" loading="lazy" width="480" height="270" /><span class="game-video-play" aria-hidden="true"></span></div></figure>
+      </div>
+
+<p style="color: var(--text-faint); font-size: 13px; margin-top: 30px;">
         Данные о цене, отзывах и статистике обновляются автоматически на основе
         Steam Store API и SteamSpy.
       </p>
@@ -284,5 +331,6 @@ function declineCookies() {
 })();
 </script>
 <script src="/newsletter.js?v=2" defer></script>
+<script defer src="/game-media.js?v=1"></script>
 </body>
 </html>

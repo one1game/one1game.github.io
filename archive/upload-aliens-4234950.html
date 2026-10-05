@@ -112,6 +112,38 @@
     }
     .game-stat-card .label { font-size: 12px; color: var(--text-faint); text-transform: uppercase; }
     .game-stat-card .value { font-size: 20px; font-weight: bold; margin-top: 4px; }
+    .game-shots {
+      display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+      gap: 12px; margin: 20px 0;
+    }
+    .game-shot {
+      display: block; border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 8px; overflow: hidden;
+    }
+    .game-shot img { display: block; width: 100%; height: auto; }
+    .game-movies { display: grid; gap: 16px; margin: 20px 0; }
+    .game-movie { margin: 0; }
+    .game-movie video {
+      display: block; width: 100%; height: auto;
+      border-radius: 8px; background: #000;
+    }
+    .game-movie figcaption { margin-top: 6px; font-size: 13px; color: var(--text-faint); }
+    .game-video {
+      position: relative; cursor: pointer; overflow: hidden;
+      border-radius: 8px; background: #000; aspect-ratio: 16 / 9;
+    }
+    .game-video img { display: block; width: 100%; height: 100%; object-fit: cover; }
+    .game-video-play { position: absolute; inset: 0; display: grid; place-items: center; }
+    .game-video-play::before {
+      content: ''; width: 58px; height: 58px; border-radius: 50%;
+      background: rgba(0,0,0,0.5); border: 2px solid rgba(255,255,255,0.75);
+    }
+    .game-video-play::after {
+      content: ''; position: absolute; margin-left: 5px;
+      border-style: solid; border-width: 11px 0 11px 18px;
+      border-color: transparent transparent transparent #fff;
+    }
+    .game-video-el { display: block; width: 100%; height: 100%; background: #000; }
   </style>
 </head>
 <body>
@@ -166,10 +198,6 @@
           <div class="label">Владельцев (оценка)</div>
           <div class="value">0 – 20,000</div>
         </div>
-        <div class="game-stat-card">
-          <div class="label">Среднее время игры</div>
-          <div class="value">нет данных</div>
-        </div>
       </div>
 
       <h2>Об игре</h2>
@@ -183,7 +211,27 @@
         </a>
       </p>
 
-      <p style="color: var(--text-faint); font-size: 13px; margin-top: 30px;">
+            <h2>Скриншоты</h2>
+      <div class="game-shots">
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4234950/eb26ce3fbc17af32cbedfe6452e7034afc303c88/ss_eb26ce3fbc17af32cbedfe6452e7034afc303c88.1920x1080.jpg?t=1790522036" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4234950/eb26ce3fbc17af32cbedfe6452e7034afc303c88/ss_eb26ce3fbc17af32cbedfe6452e7034afc303c88.600x338.jpg?t=1790522036" alt="Upload Aliens — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4234950/080332c1178425bb8f216db130a576bf90a13bc9/ss_080332c1178425bb8f216db130a576bf90a13bc9.1920x1080.jpg?t=1790522036" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4234950/080332c1178425bb8f216db130a576bf90a13bc9/ss_080332c1178425bb8f216db130a576bf90a13bc9.600x338.jpg?t=1790522036" alt="Upload Aliens — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4234950/29e85b39db154b0e690db9db419ed434bf26ca81/ss_29e85b39db154b0e690db9db419ed434bf26ca81.1920x1080.jpg?t=1790522036" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4234950/29e85b39db154b0e690db9db419ed434bf26ca81/ss_29e85b39db154b0e690db9db419ed434bf26ca81.600x338.jpg?t=1790522036" alt="Upload Aliens — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4234950/1b848318e4620308410c8fba3bb380410702d46f/ss_1b848318e4620308410c8fba3bb380410702d46f.1920x1080.jpg?t=1790522036" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4234950/1b848318e4620308410c8fba3bb380410702d46f/ss_1b848318e4620308410c8fba3bb380410702d46f.600x338.jpg?t=1790522036" alt="Upload Aliens — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4234950/734783718acc3fa9fdbca3c58bc2f5c1cc965da2/ss_734783718acc3fa9fdbca3c58bc2f5c1cc965da2.1920x1080.jpg?t=1790522036" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4234950/734783718acc3fa9fdbca3c58bc2f5c1cc965da2/ss_734783718acc3fa9fdbca3c58bc2f5c1cc965da2.600x338.jpg?t=1790522036" alt="Upload Aliens — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4234950/af71b5df483b9f1d25c3c004c7ffb45fe03acdf8/ss_af71b5df483b9f1d25c3c004c7ffb45fe03acdf8.1920x1080.jpg?t=1790522036" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4234950/af71b5df483b9f1d25c3c004c7ffb45fe03acdf8/ss_af71b5df483b9f1d25c3c004c7ffb45fe03acdf8.600x338.jpg?t=1790522036" alt="Upload Aliens — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4234950/58c4300bba04aad1438df10c396efbcf43e026e6/ss_58c4300bba04aad1438df10c396efbcf43e026e6.1920x1080.jpg?t=1790522036" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4234950/58c4300bba04aad1438df10c396efbcf43e026e6/ss_58c4300bba04aad1438df10c396efbcf43e026e6.600x338.jpg?t=1790522036" alt="Upload Aliens — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4234950/6bfb79e2bfc8280d49f4801a50f1504d849a54e9/ss_6bfb79e2bfc8280d49f4801a50f1504d849a54e9.1920x1080.jpg?t=1790522036" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4234950/6bfb79e2bfc8280d49f4801a50f1504d849a54e9/ss_6bfb79e2bfc8280d49f4801a50f1504d849a54e9.600x338.jpg?t=1790522036" alt="Upload Aliens — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4234950/02da0d9be618ef71a3c878e3444c266da721ade2/ss_02da0d9be618ef71a3c878e3444c266da721ade2.1920x1080.jpg?t=1790522036" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4234950/02da0d9be618ef71a3c878e3444c266da721ade2/ss_02da0d9be618ef71a3c878e3444c266da721ade2.600x338.jpg?t=1790522036" alt="Upload Aliens — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4234950/3a3cb877f034aa175aa4b32275fe9840b1fc4169/ss_3a3cb877f034aa175aa4b32275fe9840b1fc4169.1920x1080.jpg?t=1790522036" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4234950/3a3cb877f034aa175aa4b32275fe9840b1fc4169/ss_3a3cb877f034aa175aa4b32275fe9840b1fc4169.600x338.jpg?t=1790522036" alt="Upload Aliens — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+      </div>
+
+      <h2>Геймплей</h2>
+      <div class="game-movies">
+        <figure class="game-movie"><div class="game-video" data-hls="https://video.akamai.steamstatic.com/store_trailers/4234950/1003101566/197cb4118fba17e1c352e06b1be84757275e1f07/1787373973/hls_264_master.m3u8?t=1787375919" data-poster="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257310505/e592f46cceba0452d4217e1324fbd1543a5e92d9/movie_600x337.jpg?t=1787375919" role="button" tabindex="0" aria-label="Смотреть геймплей: GamePlay Trailer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257310505/e592f46cceba0452d4217e1324fbd1543a5e92d9/movie_600x337.jpg?t=1787375919" alt="" loading="lazy" width="480" height="270" /><span class="game-video-play" aria-hidden="true"></span></div></figure>
+        <figure class="game-movie"><div class="game-video" data-hls="https://video.akamai.steamstatic.com/store_trailers/4234950/215968418/99eb7d521b507f814f0b3e474d221f4b1bb2e70e/1790364156/hls_264_master.m3u8?t=1790366431" data-poster="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257435281/588117241fa8138eaa3d3a1d605f9f10a23dc999/movie_600x337.jpg?t=1790366431" role="button" tabindex="0" aria-label="Смотреть геймплей: Gameplay Overview"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257435281/588117241fa8138eaa3d3a1d605f9f10a23dc999/movie_600x337.jpg?t=1790366431" alt="" loading="lazy" width="480" height="270" /><span class="game-video-play" aria-hidden="true"></span></div></figure>
+      </div>
+
+<p style="color: var(--text-faint); font-size: 13px; margin-top: 30px;">
         Данные о цене, отзывах и статистике обновляются автоматически на основе
         Steam Store API и SteamSpy.
       </p>
@@ -284,5 +332,6 @@ function declineCookies() {
 })();
 </script>
 <script src="/newsletter.js?v=2" defer></script>
+<script defer src="/game-media.js?v=1"></script>
 </body>
 </html>

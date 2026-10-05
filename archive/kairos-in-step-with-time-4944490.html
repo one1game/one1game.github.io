@@ -108,6 +108,38 @@
     }
     .game-stat-card .label { font-size: 12px; color: var(--text-faint); text-transform: uppercase; }
     .game-stat-card .value { font-size: 20px; font-weight: bold; margin-top: 4px; }
+    .game-shots {
+      display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+      gap: 12px; margin: 20px 0;
+    }
+    .game-shot {
+      display: block; border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 8px; overflow: hidden;
+    }
+    .game-shot img { display: block; width: 100%; height: auto; }
+    .game-movies { display: grid; gap: 16px; margin: 20px 0; }
+    .game-movie { margin: 0; }
+    .game-movie video {
+      display: block; width: 100%; height: auto;
+      border-radius: 8px; background: #000;
+    }
+    .game-movie figcaption { margin-top: 6px; font-size: 13px; color: var(--text-faint); }
+    .game-video {
+      position: relative; cursor: pointer; overflow: hidden;
+      border-radius: 8px; background: #000; aspect-ratio: 16 / 9;
+    }
+    .game-video img { display: block; width: 100%; height: 100%; object-fit: cover; }
+    .game-video-play { position: absolute; inset: 0; display: grid; place-items: center; }
+    .game-video-play::before {
+      content: ''; width: 58px; height: 58px; border-radius: 50%;
+      background: rgba(0,0,0,0.5); border: 2px solid rgba(255,255,255,0.75);
+    }
+    .game-video-play::after {
+      content: ''; position: absolute; margin-left: 5px;
+      border-style: solid; border-width: 11px 0 11px 18px;
+      border-color: transparent transparent transparent #fff;
+    }
+    .game-video-el { display: block; width: 100%; height: 100%; background: #000; }
   </style>
 </head>
 <body>
@@ -146,7 +178,7 @@
 
     <article class="article-body">
 
-      <p>Kairos: In Step with Time is an experimental interactive experience about time, cosmic order, and human response. Align the time ring, answer six moments of change, and let your final hexagram emerge from the rhythm of the universe.</p>
+      
 
       <div class="game-stats-grid">
         <div class="game-stat-card">
@@ -162,10 +194,6 @@
           <div class="label">Владельцев (оценка)</div>
           <div class="value">0 – 20,000</div>
         </div>
-        <div class="game-stat-card">
-          <div class="label">Среднее время игры</div>
-          <div class="value">нет данных</div>
-        </div>
       </div>
 
       <h2>Об игре</h2>
@@ -179,7 +207,22 @@
         </a>
       </p>
 
-      <p style="color: var(--text-faint); font-size: 13px; margin-top: 30px;">
+            <h2>Скриншоты</h2>
+      <div class="game-shots">
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4944490/dc9bac129c877b61a21de14645ad65df64f06ca5/ss_dc9bac129c877b61a21de14645ad65df64f06ca5.1920x1080.jpg?t=1789907775" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4944490/dc9bac129c877b61a21de14645ad65df64f06ca5/ss_dc9bac129c877b61a21de14645ad65df64f06ca5.600x338.jpg?t=1789907775" alt="Kairos: In Step with Time — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4944490/2bd22b6cf75ff0bbc5e239de52c501eab17d6a11/ss_2bd22b6cf75ff0bbc5e239de52c501eab17d6a11.1920x1080.jpg?t=1789907775" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4944490/2bd22b6cf75ff0bbc5e239de52c501eab17d6a11/ss_2bd22b6cf75ff0bbc5e239de52c501eab17d6a11.600x338.jpg?t=1789907775" alt="Kairos: In Step with Time — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4944490/d61258fec6713498fd9262af6796333e0b5d663a/ss_d61258fec6713498fd9262af6796333e0b5d663a.1920x1080.jpg?t=1789907775" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4944490/d61258fec6713498fd9262af6796333e0b5d663a/ss_d61258fec6713498fd9262af6796333e0b5d663a.600x338.jpg?t=1789907775" alt="Kairos: In Step with Time — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4944490/e7c35bfa7420a1de3d657aa4c65ff4d229ce7a37/ss_e7c35bfa7420a1de3d657aa4c65ff4d229ce7a37.1920x1080.jpg?t=1789907775" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4944490/e7c35bfa7420a1de3d657aa4c65ff4d229ce7a37/ss_e7c35bfa7420a1de3d657aa4c65ff4d229ce7a37.600x338.jpg?t=1789907775" alt="Kairos: In Step with Time — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4944490/0f6506a9cbb01748d1bfd03213da7ddee3d5c03e/ss_0f6506a9cbb01748d1bfd03213da7ddee3d5c03e.1920x1080.jpg?t=1789907775" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4944490/0f6506a9cbb01748d1bfd03213da7ddee3d5c03e/ss_0f6506a9cbb01748d1bfd03213da7ddee3d5c03e.600x338.jpg?t=1789907775" alt="Kairos: In Step with Time — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+      </div>
+
+      <h2>Геймплей</h2>
+      <div class="game-movies">
+        <figure class="game-movie"><div class="game-video" data-hls="https://video.akamai.steamstatic.com/store_trailers/4944490/171035802/5beb97ecf0f6cc5361390bd9c1174df57db49ad1/1783527964/hls_264_master.m3u8?t=1785447243" data-poster="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257373108/2e64710fe004b9c0392e39d7a4450162a6eeb301/movie_600x337.jpg?t=1785447243" role="button" tabindex="0" aria-label="Смотреть геймплей: 与时偕行"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257373108/2e64710fe004b9c0392e39d7a4450162a6eeb301/movie_600x337.jpg?t=1785447243" alt="" loading="lazy" width="480" height="270" /><span class="game-video-play" aria-hidden="true"></span></div></figure>
+        <figure class="game-movie"><div class="game-video" data-hls="https://video.akamai.steamstatic.com/store_trailers/4944490/208496318/67a0d9e1c1b7a3f26274493b911e0adb0daf1aea/1783527784/hls_264_master.m3u8?t=1785447244" data-poster="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257373104/c4e52b4580bb998168775c4a2cb516311f3b0862/movie_600x337.jpg?t=1785447244" role="button" tabindex="0" aria-label="Смотреть геймплей: in step with time"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257373104/c4e52b4580bb998168775c4a2cb516311f3b0862/movie_600x337.jpg?t=1785447244" alt="" loading="lazy" width="480" height="270" /><span class="game-video-play" aria-hidden="true"></span></div></figure>
+      </div>
+
+<p style="color: var(--text-faint); font-size: 13px; margin-top: 30px;">
         Данные о цене, отзывах и статистике обновляются автоматически на основе
         Steam Store API и SteamSpy.
       </p>
@@ -280,5 +323,6 @@ function declineCookies() {
 })();
 </script>
 <script src="/newsletter.js?v=2" defer></script>
+<script defer src="/game-media.js?v=1"></script>
 </body>
 </html>

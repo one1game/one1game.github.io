@@ -112,6 +112,38 @@
     }
     .game-stat-card .label { font-size: 12px; color: var(--text-faint); text-transform: uppercase; }
     .game-stat-card .value { font-size: 20px; font-weight: bold; margin-top: 4px; }
+    .game-shots {
+      display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+      gap: 12px; margin: 20px 0;
+    }
+    .game-shot {
+      display: block; border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 8px; overflow: hidden;
+    }
+    .game-shot img { display: block; width: 100%; height: auto; }
+    .game-movies { display: grid; gap: 16px; margin: 20px 0; }
+    .game-movie { margin: 0; }
+    .game-movie video {
+      display: block; width: 100%; height: auto;
+      border-radius: 8px; background: #000;
+    }
+    .game-movie figcaption { margin-top: 6px; font-size: 13px; color: var(--text-faint); }
+    .game-video {
+      position: relative; cursor: pointer; overflow: hidden;
+      border-radius: 8px; background: #000; aspect-ratio: 16 / 9;
+    }
+    .game-video img { display: block; width: 100%; height: 100%; object-fit: cover; }
+    .game-video-play { position: absolute; inset: 0; display: grid; place-items: center; }
+    .game-video-play::before {
+      content: ''; width: 58px; height: 58px; border-radius: 50%;
+      background: rgba(0,0,0,0.5); border: 2px solid rgba(255,255,255,0.75);
+    }
+    .game-video-play::after {
+      content: ''; position: absolute; margin-left: 5px;
+      border-style: solid; border-width: 11px 0 11px 18px;
+      border-color: transparent transparent transparent #fff;
+    }
+    .game-video-el { display: block; width: 100%; height: 100%; background: #000; }
   </style>
 </head>
 <body>
@@ -166,10 +198,6 @@
           <div class="label">Владельцев (оценка)</div>
           <div class="value">0 – 20,000</div>
         </div>
-        <div class="game-stat-card">
-          <div class="label">Среднее время игры</div>
-          <div class="value">нет данных</div>
-        </div>
       </div>
 
       <h2>Об игре</h2>
@@ -183,7 +211,28 @@
         </a>
       </p>
 
-      <p style="color: var(--text-faint); font-size: 13px; margin-top: 30px;">
+            <h2>Скриншоты</h2>
+      <div class="game-shots">
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4762810/cbae08ce284bf51b89ad0a9c780cfa72e4d915ad/ss_cbae08ce284bf51b89ad0a9c780cfa72e4d915ad.1920x1080.jpg?t=1790906703" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4762810/cbae08ce284bf51b89ad0a9c780cfa72e4d915ad/ss_cbae08ce284bf51b89ad0a9c780cfa72e4d915ad.600x338.jpg?t=1790906703" alt="SpyCat: Codename Wu — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4762810/828e87e76bd3f57b3baf836582e9e9c2221119cb/ss_828e87e76bd3f57b3baf836582e9e9c2221119cb.1920x1080.jpg?t=1790906703" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4762810/828e87e76bd3f57b3baf836582e9e9c2221119cb/ss_828e87e76bd3f57b3baf836582e9e9c2221119cb.600x338.jpg?t=1790906703" alt="SpyCat: Codename Wu — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4762810/1e9c5e3ad5bc4ec0eecc9ad124beb6acc98ba369/ss_1e9c5e3ad5bc4ec0eecc9ad124beb6acc98ba369.1920x1080.jpg?t=1790906703" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4762810/1e9c5e3ad5bc4ec0eecc9ad124beb6acc98ba369/ss_1e9c5e3ad5bc4ec0eecc9ad124beb6acc98ba369.600x338.jpg?t=1790906703" alt="SpyCat: Codename Wu — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4762810/320eb819f5b193e062a6093a52b83065d6a7cfee/ss_320eb819f5b193e062a6093a52b83065d6a7cfee.1920x1080.jpg?t=1790906703" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4762810/320eb819f5b193e062a6093a52b83065d6a7cfee/ss_320eb819f5b193e062a6093a52b83065d6a7cfee.600x338.jpg?t=1790906703" alt="SpyCat: Codename Wu — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4762810/bad58e614f1ae6c7642872db94647c9cece23895/ss_bad58e614f1ae6c7642872db94647c9cece23895.1920x1080.jpg?t=1790906703" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4762810/bad58e614f1ae6c7642872db94647c9cece23895/ss_bad58e614f1ae6c7642872db94647c9cece23895.600x338.jpg?t=1790906703" alt="SpyCat: Codename Wu — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4762810/892b4e50570f72ad4dbafb9ed835ce62a20f85bd/ss_892b4e50570f72ad4dbafb9ed835ce62a20f85bd.1920x1080.jpg?t=1790906703" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4762810/892b4e50570f72ad4dbafb9ed835ce62a20f85bd/ss_892b4e50570f72ad4dbafb9ed835ce62a20f85bd.600x338.jpg?t=1790906703" alt="SpyCat: Codename Wu — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4762810/bd403ddfd16af465e048fa61ffc2abfa9308e446/ss_bd403ddfd16af465e048fa61ffc2abfa9308e446.1920x1080.jpg?t=1790906703" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4762810/bd403ddfd16af465e048fa61ffc2abfa9308e446/ss_bd403ddfd16af465e048fa61ffc2abfa9308e446.600x338.jpg?t=1790906703" alt="SpyCat: Codename Wu — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4762810/30c8db6cb43611c5cce82dcd67a3785348302657/ss_30c8db6cb43611c5cce82dcd67a3785348302657.1920x1080.jpg?t=1790906703" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4762810/30c8db6cb43611c5cce82dcd67a3785348302657/ss_30c8db6cb43611c5cce82dcd67a3785348302657.600x338.jpg?t=1790906703" alt="SpyCat: Codename Wu — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4762810/82e17f1d2affe2e9a24dbbf04bda3f6232d13c81/ss_82e17f1d2affe2e9a24dbbf04bda3f6232d13c81.1920x1080.jpg?t=1790906703" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4762810/82e17f1d2affe2e9a24dbbf04bda3f6232d13c81/ss_82e17f1d2affe2e9a24dbbf04bda3f6232d13c81.600x338.jpg?t=1790906703" alt="SpyCat: Codename Wu — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4762810/1c99714d33be29857d836553e14c584cd2431aef/ss_1c99714d33be29857d836553e14c584cd2431aef.1920x1080.jpg?t=1790906703" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4762810/1c99714d33be29857d836553e14c584cd2431aef/ss_1c99714d33be29857d836553e14c584cd2431aef.600x338.jpg?t=1790906703" alt="SpyCat: Codename Wu — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4762810/b2f4ea238801df91515561d5e4f112bcffee0fe8/ss_b2f4ea238801df91515561d5e4f112bcffee0fe8.1920x1080.jpg?t=1790906703" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4762810/b2f4ea238801df91515561d5e4f112bcffee0fe8/ss_b2f4ea238801df91515561d5e4f112bcffee0fe8.600x338.jpg?t=1790906703" alt="SpyCat: Codename Wu — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4762810/f9d4e612be3f01f70441a3ea04e6f1c1c9fe8d05/ss_f9d4e612be3f01f70441a3ea04e6f1c1c9fe8d05.1920x1080.jpg?t=1790906703" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4762810/f9d4e612be3f01f70441a3ea04e6f1c1c9fe8d05/ss_f9d4e612be3f01f70441a3ea04e6f1c1c9fe8d05.600x338.jpg?t=1790906703" alt="SpyCat: Codename Wu — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+      </div>
+
+      <h2>Геймплей</h2>
+      <div class="game-movies">
+        <figure class="game-movie"><div class="game-video" data-hls="https://video.akamai.steamstatic.com/store_trailers/4762810/1555656430/60f73f9611f648e5c60a15b0a8acdc36749f45aa/1787814351/hls_264_master.m3u8?t=1787815048" data-poster="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257409934/6a12f5e0a885290f22d2c8281d08fe8128876f9b/movie_600x337.jpg?t=1787815048" role="button" tabindex="0" aria-label="Смотреть геймплей: SpyCat: Codename Wu"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257409934/6a12f5e0a885290f22d2c8281d08fe8128876f9b/movie_600x337.jpg?t=1787815048" alt="" loading="lazy" width="480" height="270" /><span class="game-video-play" aria-hidden="true"></span></div></figure>
+      </div>
+
+<p style="color: var(--text-faint); font-size: 13px; margin-top: 30px;">
         Данные о цене, отзывах и статистике обновляются автоматически на основе
         Steam Store API и SteamSpy.
       </p>
@@ -284,5 +333,6 @@ function declineCookies() {
 })();
 </script>
 <script src="/newsletter.js?v=2" defer></script>
+<script defer src="/game-media.js?v=1"></script>
 </body>
 </html>

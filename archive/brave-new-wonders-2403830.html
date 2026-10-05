@@ -112,6 +112,38 @@
     }
     .game-stat-card .label { font-size: 12px; color: var(--text-faint); text-transform: uppercase; }
     .game-stat-card .value { font-size: 20px; font-weight: bold; margin-top: 4px; }
+    .game-shots {
+      display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+      gap: 12px; margin: 20px 0;
+    }
+    .game-shot {
+      display: block; border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 8px; overflow: hidden;
+    }
+    .game-shot img { display: block; width: 100%; height: auto; }
+    .game-movies { display: grid; gap: 16px; margin: 20px 0; }
+    .game-movie { margin: 0; }
+    .game-movie video {
+      display: block; width: 100%; height: auto;
+      border-radius: 8px; background: #000;
+    }
+    .game-movie figcaption { margin-top: 6px; font-size: 13px; color: var(--text-faint); }
+    .game-video {
+      position: relative; cursor: pointer; overflow: hidden;
+      border-radius: 8px; background: #000; aspect-ratio: 16 / 9;
+    }
+    .game-video img { display: block; width: 100%; height: 100%; object-fit: cover; }
+    .game-video-play { position: absolute; inset: 0; display: grid; place-items: center; }
+    .game-video-play::before {
+      content: ''; width: 58px; height: 58px; border-radius: 50%;
+      background: rgba(0,0,0,0.5); border: 2px solid rgba(255,255,255,0.75);
+    }
+    .game-video-play::after {
+      content: ''; position: absolute; margin-left: 5px;
+      border-style: solid; border-width: 11px 0 11px 18px;
+      border-color: transparent transparent transparent #fff;
+    }
+    .game-video-el { display: block; width: 100%; height: 100%; background: #000; }
   </style>
 </head>
 <body>
@@ -166,10 +198,6 @@
           <div class="label">Владельцев (оценка)</div>
           <div class="value">0 – 20,000</div>
         </div>
-        <div class="game-stat-card">
-          <div class="label">Среднее время игры</div>
-          <div class="value">нет данных</div>
-        </div>
       </div>
 
       <h2>Об игре</h2>
@@ -183,7 +211,26 @@
         </a>
       </p>
 
-      <p style="color: var(--text-faint); font-size: 13px; margin-top: 30px;">
+            <h2>Скриншоты</h2>
+      <div class="game-shots">
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2403830/c2c0931d767c15bd58b1f72eee4a5ff8abda7b14/ss_c2c0931d767c15bd58b1f72eee4a5ff8abda7b14.1920x1080.jpg?t=1790619637" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2403830/c2c0931d767c15bd58b1f72eee4a5ff8abda7b14/ss_c2c0931d767c15bd58b1f72eee4a5ff8abda7b14.600x338.jpg?t=1790619637" alt="Brave New Wonders — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2403830/56807f2dbc2207b781405a7a8c7281194c776362/ss_56807f2dbc2207b781405a7a8c7281194c776362.1920x1080.jpg?t=1790619637" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2403830/56807f2dbc2207b781405a7a8c7281194c776362/ss_56807f2dbc2207b781405a7a8c7281194c776362.600x338.jpg?t=1790619637" alt="Brave New Wonders — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2403830/5c1ab28c6044b9dd329c5a9ebbb529f2b19f2be4/ss_5c1ab28c6044b9dd329c5a9ebbb529f2b19f2be4.1920x1080.jpg?t=1790619637" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2403830/5c1ab28c6044b9dd329c5a9ebbb529f2b19f2be4/ss_5c1ab28c6044b9dd329c5a9ebbb529f2b19f2be4.600x338.jpg?t=1790619637" alt="Brave New Wonders — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2403830/0a364a9ff4cc954e24fb15491fb1541a8c03cca0/ss_0a364a9ff4cc954e24fb15491fb1541a8c03cca0.1920x1080.jpg?t=1790619637" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2403830/0a364a9ff4cc954e24fb15491fb1541a8c03cca0/ss_0a364a9ff4cc954e24fb15491fb1541a8c03cca0.600x338.jpg?t=1790619637" alt="Brave New Wonders — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2403830/57922731ecf599522a132f7c55514bd618a90b18/ss_57922731ecf599522a132f7c55514bd618a90b18.1920x1080.jpg?t=1790619637" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2403830/57922731ecf599522a132f7c55514bd618a90b18/ss_57922731ecf599522a132f7c55514bd618a90b18.600x338.jpg?t=1790619637" alt="Brave New Wonders — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2403830/a87a848ac6c769ee463b6da5d5d1e0d02d13e897/ss_a87a848ac6c769ee463b6da5d5d1e0d02d13e897.1920x1080.jpg?t=1790619637" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2403830/a87a848ac6c769ee463b6da5d5d1e0d02d13e897/ss_a87a848ac6c769ee463b6da5d5d1e0d02d13e897.600x338.jpg?t=1790619637" alt="Brave New Wonders — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2403830/075f1a102c45d232f1c89174f68cb09db23a0010/ss_075f1a102c45d232f1c89174f68cb09db23a0010.1920x1080.jpg?t=1790619637" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2403830/075f1a102c45d232f1c89174f68cb09db23a0010/ss_075f1a102c45d232f1c89174f68cb09db23a0010.600x338.jpg?t=1790619637" alt="Brave New Wonders — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2403830/d0d9d3d022b06b1ca4d8bd0dd3da50979d27ae36/ss_d0d9d3d022b06b1ca4d8bd0dd3da50979d27ae36.1920x1080.jpg?t=1790619637" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2403830/d0d9d3d022b06b1ca4d8bd0dd3da50979d27ae36/ss_d0d9d3d022b06b1ca4d8bd0dd3da50979d27ae36.600x338.jpg?t=1790619637" alt="Brave New Wonders — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+      </div>
+
+      <h2>Геймплей</h2>
+      <div class="game-movies">
+        <figure class="game-movie"><div class="game-video" data-hls="https://video.akamai.steamstatic.com/store_trailers/2403830/443510566/da864813cc59fca6c573fe1127cc6699617c8db9/1789961039/hls_264_master.m3u8?t=1789961479" data-poster="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257430303/45f851ff456978dafaad010e9f868e0163bb3458/movie_600x337.jpg?t=1789961479" role="button" tabindex="0" aria-label="Смотреть геймплей: Launch Trailer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257430303/45f851ff456978dafaad010e9f868e0163bb3458/movie_600x337.jpg?t=1789961479" alt="" loading="lazy" width="480" height="270" /><span class="game-video-play" aria-hidden="true"></span></div></figure>
+        <figure class="game-movie"><div class="game-video" data-hls="https://video.akamai.steamstatic.com/store_trailers/2403830/1179022955/06197b77cbfaf229f8f49fb7879964184faf3f13/1781111221/hls_264_master.m3u8?t=1781112405" data-poster="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257355346/9f72648f483062f08659c5490e3041f47150f556/movie_600x337.jpg?t=1781112405" role="button" tabindex="0" aria-label="Смотреть геймплей: Official Next Fest Gameplay Trailer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257355346/9f72648f483062f08659c5490e3041f47150f556/movie_600x337.jpg?t=1781112405" alt="" loading="lazy" width="480" height="270" /><span class="game-video-play" aria-hidden="true"></span></div></figure>
+        <figure class="game-movie"><div class="game-video" data-hls="https://video.akamai.steamstatic.com/store_trailers/2403830/1816026595/5c0b11866841a2cacd03564355467203a4896d5b/1765394765/hls_264_master.m3u8?t=1765412248" data-poster="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257246848/c924b252232b3a559086b50ba4202fa8718e9048/movie_600x337.jpg?t=1765412248" role="button" tabindex="0" aria-label="Смотреть геймплей: Gameplay Trailer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257246848/c924b252232b3a559086b50ba4202fa8718e9048/movie_600x337.jpg?t=1765412248" alt="" loading="lazy" width="480" height="270" /><span class="game-video-play" aria-hidden="true"></span></div></figure>
+      </div>
+
+<p style="color: var(--text-faint); font-size: 13px; margin-top: 30px;">
         Данные о цене, отзывах и статистике обновляются автоматически на основе
         Steam Store API и SteamSpy.
       </p>
@@ -284,5 +331,6 @@ function declineCookies() {
 })();
 </script>
 <script src="/newsletter.js?v=2" defer></script>
+<script defer src="/game-media.js?v=1"></script>
 </body>
 </html>

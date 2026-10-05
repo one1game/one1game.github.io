@@ -112,6 +112,38 @@
     }
     .game-stat-card .label { font-size: 12px; color: var(--text-faint); text-transform: uppercase; }
     .game-stat-card .value { font-size: 20px; font-weight: bold; margin-top: 4px; }
+    .game-shots {
+      display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+      gap: 12px; margin: 20px 0;
+    }
+    .game-shot {
+      display: block; border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 8px; overflow: hidden;
+    }
+    .game-shot img { display: block; width: 100%; height: auto; }
+    .game-movies { display: grid; gap: 16px; margin: 20px 0; }
+    .game-movie { margin: 0; }
+    .game-movie video {
+      display: block; width: 100%; height: auto;
+      border-radius: 8px; background: #000;
+    }
+    .game-movie figcaption { margin-top: 6px; font-size: 13px; color: var(--text-faint); }
+    .game-video {
+      position: relative; cursor: pointer; overflow: hidden;
+      border-radius: 8px; background: #000; aspect-ratio: 16 / 9;
+    }
+    .game-video img { display: block; width: 100%; height: 100%; object-fit: cover; }
+    .game-video-play { position: absolute; inset: 0; display: grid; place-items: center; }
+    .game-video-play::before {
+      content: ''; width: 58px; height: 58px; border-radius: 50%;
+      background: rgba(0,0,0,0.5); border: 2px solid rgba(255,255,255,0.75);
+    }
+    .game-video-play::after {
+      content: ''; position: absolute; margin-left: 5px;
+      border-style: solid; border-width: 11px 0 11px 18px;
+      border-color: transparent transparent transparent #fff;
+    }
+    .game-video-el { display: block; width: 100%; height: 100%; background: #000; }
   </style>
 </head>
 <body>
@@ -166,10 +198,6 @@
           <div class="label">Владельцев (оценка)</div>
           <div class="value">0 – 20,000</div>
         </div>
-        <div class="game-stat-card">
-          <div class="label">Среднее время игры</div>
-          <div class="value">нет данных</div>
-        </div>
       </div>
 
       <h2>Об игре</h2>
@@ -183,7 +211,24 @@
         </a>
       </p>
 
-      <p style="color: var(--text-faint); font-size: 13px; margin-top: 30px;">
+            <h2>Скриншоты</h2>
+      <div class="game-shots">
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3634190/60e8a1a8ecfd852a6881ba3626e9310bcedc606f/ss_60e8a1a8ecfd852a6881ba3626e9310bcedc606f.1920x1080.jpg?t=1790948926" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3634190/60e8a1a8ecfd852a6881ba3626e9310bcedc606f/ss_60e8a1a8ecfd852a6881ba3626e9310bcedc606f.600x338.jpg?t=1790948926" alt="MXGP 26 - The Official Game — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3634190/53e59d31359df2b854222896915c7e36e100528c/ss_53e59d31359df2b854222896915c7e36e100528c.1920x1080.jpg?t=1790948926" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3634190/53e59d31359df2b854222896915c7e36e100528c/ss_53e59d31359df2b854222896915c7e36e100528c.600x338.jpg?t=1790948926" alt="MXGP 26 - The Official Game — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3634190/7159484edc106b80e6f8d5cc2889d9ada6e03214/ss_7159484edc106b80e6f8d5cc2889d9ada6e03214.1920x1080.jpg?t=1790948926" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3634190/7159484edc106b80e6f8d5cc2889d9ada6e03214/ss_7159484edc106b80e6f8d5cc2889d9ada6e03214.600x338.jpg?t=1790948926" alt="MXGP 26 - The Official Game — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3634190/2cbcece6bab1b053f7035eafbd669263e412361f/ss_2cbcece6bab1b053f7035eafbd669263e412361f.1920x1080.jpg?t=1790948926" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3634190/2cbcece6bab1b053f7035eafbd669263e412361f/ss_2cbcece6bab1b053f7035eafbd669263e412361f.600x338.jpg?t=1790948926" alt="MXGP 26 - The Official Game — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3634190/a33547b04c7b9fb3df3f3c9278a39e8327095b3e/ss_a33547b04c7b9fb3df3f3c9278a39e8327095b3e.1920x1080.jpg?t=1790948926" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3634190/a33547b04c7b9fb3df3f3c9278a39e8327095b3e/ss_a33547b04c7b9fb3df3f3c9278a39e8327095b3e.600x338.jpg?t=1790948926" alt="MXGP 26 - The Official Game — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3634190/35b08a22243e5d9226994ca0362c1377568ed27e/ss_35b08a22243e5d9226994ca0362c1377568ed27e.1920x1080.jpg?t=1790948926" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3634190/35b08a22243e5d9226994ca0362c1377568ed27e/ss_35b08a22243e5d9226994ca0362c1377568ed27e.600x338.jpg?t=1790948926" alt="MXGP 26 - The Official Game — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3634190/27744585ed221082366b20417065aacbc3db44c0/ss_27744585ed221082366b20417065aacbc3db44c0.1920x1080.jpg?t=1790948926" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3634190/27744585ed221082366b20417065aacbc3db44c0/ss_27744585ed221082366b20417065aacbc3db44c0.600x338.jpg?t=1790948926" alt="MXGP 26 - The Official Game — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+      </div>
+
+      <h2>Геймплей</h2>
+      <div class="game-movies">
+        <figure class="game-movie"><div class="game-video" data-hls="https://video.akamai.steamstatic.com/store_trailers/3634190/724445456/88c2cdaff81ab620e9446f6e6d3b9e3a9cab46e0/1790948123/hls_264_master.m3u8?t=1790948925" data-poster="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257443947/1a6392b85e0d4d234d860d8a6a3445393475529e/movie_600x337.jpg?t=1790948925" role="button" tabindex="0" aria-label="Смотреть геймплей: Launch Trailer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257443947/1a6392b85e0d4d234d860d8a6a3445393475529e/movie_600x337.jpg?t=1790948925" alt="" loading="lazy" width="480" height="270" /><span class="game-video-play" aria-hidden="true"></span></div></figure>
+        <figure class="game-movie"><div class="game-video" data-hls="https://video.akamai.steamstatic.com/store_trailers/3634190/77478015/018f193bdd977f53036de7577318cd7e770a71e5/1784211107/hls_264_master.m3u8?t=1784535290" data-poster="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257378291/92c7742a4c7055eba51cda878b57f7bab8f7dfbb/movie_600x337.jpg?t=1784535290" role="button" tabindex="0" aria-label="Смотреть геймплей: Gameplay Trailer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257378291/92c7742a4c7055eba51cda878b57f7bab8f7dfbb/movie_600x337.jpg?t=1784535290" alt="" loading="lazy" width="480" height="270" /><span class="game-video-play" aria-hidden="true"></span></div></figure>
+      </div>
+
+<p style="color: var(--text-faint); font-size: 13px; margin-top: 30px;">
         Данные о цене, отзывах и статистике обновляются автоматически на основе
         Steam Store API и SteamSpy.
       </p>
@@ -284,5 +329,6 @@ function declineCookies() {
 })();
 </script>
 <script src="/newsletter.js?v=2" defer></script>
+<script defer src="/game-media.js?v=1"></script>
 </body>
 </html>

@@ -112,6 +112,38 @@
     }
     .game-stat-card .label { font-size: 12px; color: var(--text-faint); text-transform: uppercase; }
     .game-stat-card .value { font-size: 20px; font-weight: bold; margin-top: 4px; }
+    .game-shots {
+      display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+      gap: 12px; margin: 20px 0;
+    }
+    .game-shot {
+      display: block; border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 8px; overflow: hidden;
+    }
+    .game-shot img { display: block; width: 100%; height: auto; }
+    .game-movies { display: grid; gap: 16px; margin: 20px 0; }
+    .game-movie { margin: 0; }
+    .game-movie video {
+      display: block; width: 100%; height: auto;
+      border-radius: 8px; background: #000;
+    }
+    .game-movie figcaption { margin-top: 6px; font-size: 13px; color: var(--text-faint); }
+    .game-video {
+      position: relative; cursor: pointer; overflow: hidden;
+      border-radius: 8px; background: #000; aspect-ratio: 16 / 9;
+    }
+    .game-video img { display: block; width: 100%; height: 100%; object-fit: cover; }
+    .game-video-play { position: absolute; inset: 0; display: grid; place-items: center; }
+    .game-video-play::before {
+      content: ''; width: 58px; height: 58px; border-radius: 50%;
+      background: rgba(0,0,0,0.5); border: 2px solid rgba(255,255,255,0.75);
+    }
+    .game-video-play::after {
+      content: ''; position: absolute; margin-left: 5px;
+      border-style: solid; border-width: 11px 0 11px 18px;
+      border-color: transparent transparent transparent #fff;
+    }
+    .game-video-el { display: block; width: 100%; height: 100%; background: #000; }
   </style>
 </head>
 <body>
@@ -166,10 +198,6 @@
           <div class="label">Владельцев (оценка)</div>
           <div class="value">0 – 20,000</div>
         </div>
-        <div class="game-stat-card">
-          <div class="label">Среднее время игры</div>
-          <div class="value">нет данных</div>
-        </div>
       </div>
 
       <h2>Об игре</h2>
@@ -183,7 +211,28 @@
         </a>
       </p>
 
-      <p style="color: var(--text-faint); font-size: 13px; margin-top: 30px;">
+            <h2>Скриншоты</h2>
+      <div class="game-shots">
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5179130/ea176051138195fa0b1c74529c652b86f90e3e95/ss_ea176051138195fa0b1c74529c652b86f90e3e95.1920x1080.jpg?t=1790960566" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5179130/ea176051138195fa0b1c74529c652b86f90e3e95/ss_ea176051138195fa0b1c74529c652b86f90e3e95.600x338.jpg?t=1790960566" alt="Sandcastle Battle — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5179130/44da8049b469415446af806e0b7324f996675e2c/ss_44da8049b469415446af806e0b7324f996675e2c.1920x1080.jpg?t=1790960566" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5179130/44da8049b469415446af806e0b7324f996675e2c/ss_44da8049b469415446af806e0b7324f996675e2c.600x338.jpg?t=1790960566" alt="Sandcastle Battle — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5179130/4bdf4c190c45d2d98a0394de510c2779d701c901/ss_4bdf4c190c45d2d98a0394de510c2779d701c901.1920x1080.jpg?t=1790960566" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5179130/4bdf4c190c45d2d98a0394de510c2779d701c901/ss_4bdf4c190c45d2d98a0394de510c2779d701c901.600x338.jpg?t=1790960566" alt="Sandcastle Battle — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5179130/fe3bd0b1e7d0540eba37084ea7646e80a8736238/ss_fe3bd0b1e7d0540eba37084ea7646e80a8736238.1920x1080.jpg?t=1790960566" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5179130/fe3bd0b1e7d0540eba37084ea7646e80a8736238/ss_fe3bd0b1e7d0540eba37084ea7646e80a8736238.600x338.jpg?t=1790960566" alt="Sandcastle Battle — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5179130/46184bb2d940abce0a6dcccdf94cc13753c545c2/ss_46184bb2d940abce0a6dcccdf94cc13753c545c2.1920x1080.jpg?t=1790960566" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5179130/46184bb2d940abce0a6dcccdf94cc13753c545c2/ss_46184bb2d940abce0a6dcccdf94cc13753c545c2.600x338.jpg?t=1790960566" alt="Sandcastle Battle — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5179130/b379e5b7b5adfaa75cba8cdb916604da5b3beb25/ss_b379e5b7b5adfaa75cba8cdb916604da5b3beb25.1920x1080.jpg?t=1790960566" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5179130/b379e5b7b5adfaa75cba8cdb916604da5b3beb25/ss_b379e5b7b5adfaa75cba8cdb916604da5b3beb25.600x338.jpg?t=1790960566" alt="Sandcastle Battle — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5179130/631ee0a5405cbaeb685f7cf974ae62592e27f244/ss_631ee0a5405cbaeb685f7cf974ae62592e27f244.1920x1080.jpg?t=1790960566" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5179130/631ee0a5405cbaeb685f7cf974ae62592e27f244/ss_631ee0a5405cbaeb685f7cf974ae62592e27f244.600x338.jpg?t=1790960566" alt="Sandcastle Battle — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5179130/d51c922550027cf3bc989c4f0bfa98577306baec/ss_d51c922550027cf3bc989c4f0bfa98577306baec.1920x1080.jpg?t=1790960566" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5179130/d51c922550027cf3bc989c4f0bfa98577306baec/ss_d51c922550027cf3bc989c4f0bfa98577306baec.600x338.jpg?t=1790960566" alt="Sandcastle Battle — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5179130/d39d4a61512efa586bab8fefe82c956e9adb1311/ss_d39d4a61512efa586bab8fefe82c956e9adb1311.1920x1080.jpg?t=1790960566" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5179130/d39d4a61512efa586bab8fefe82c956e9adb1311/ss_d39d4a61512efa586bab8fefe82c956e9adb1311.600x338.jpg?t=1790960566" alt="Sandcastle Battle — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5179130/cccf950761534c7583f7f0e0a8c4f5a83f0cb06b/ss_cccf950761534c7583f7f0e0a8c4f5a83f0cb06b.1920x1080.jpg?t=1790960566" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5179130/cccf950761534c7583f7f0e0a8c4f5a83f0cb06b/ss_cccf950761534c7583f7f0e0a8c4f5a83f0cb06b.600x338.jpg?t=1790960566" alt="Sandcastle Battle — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5179130/1cd8042b60baef031a293356772c699b23ffa6fc/ss_1cd8042b60baef031a293356772c699b23ffa6fc.1920x1080.jpg?t=1790960566" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5179130/1cd8042b60baef031a293356772c699b23ffa6fc/ss_1cd8042b60baef031a293356772c699b23ffa6fc.600x338.jpg?t=1790960566" alt="Sandcastle Battle — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5179130/9cbcc11ea89ab159a3e08794bd0cead68afe70ac/ss_9cbcc11ea89ab159a3e08794bd0cead68afe70ac.1920x1080.jpg?t=1790960566" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5179130/9cbcc11ea89ab159a3e08794bd0cead68afe70ac/ss_9cbcc11ea89ab159a3e08794bd0cead68afe70ac.600x338.jpg?t=1790960566" alt="Sandcastle Battle — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+      </div>
+
+      <h2>Геймплей</h2>
+      <div class="game-movies">
+        <figure class="game-movie"><div class="game-video" data-hls="https://video.akamai.steamstatic.com/store_trailers/5179130/413387818/8220ff83cedb863b0845f29737628c4bc5c5b89d/1787809401/hls_264_master.m3u8?t=1788805803" data-poster="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257409894/5ba4be9ea8ac80e0ec8f43583d5c44961d4c6f08/movie_600x337.jpg?t=1788805803" role="button" tabindex="0" aria-label="Смотреть геймплей: Sandcastle Battle Trailer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257409894/5ba4be9ea8ac80e0ec8f43583d5c44961d4c6f08/movie_600x337.jpg?t=1788805803" alt="" loading="lazy" width="480" height="270" /><span class="game-video-play" aria-hidden="true"></span></div></figure>
+      </div>
+
+<p style="color: var(--text-faint); font-size: 13px; margin-top: 30px;">
         Данные о цене, отзывах и статистике обновляются автоматически на основе
         Steam Store API и SteamSpy.
       </p>
@@ -284,5 +333,6 @@ function declineCookies() {
 })();
 </script>
 <script src="/newsletter.js?v=2" defer></script>
+<script defer src="/game-media.js?v=1"></script>
 </body>
 </html>

@@ -112,6 +112,38 @@
     }
     .game-stat-card .label { font-size: 12px; color: var(--text-faint); text-transform: uppercase; }
     .game-stat-card .value { font-size: 20px; font-weight: bold; margin-top: 4px; }
+    .game-shots {
+      display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+      gap: 12px; margin: 20px 0;
+    }
+    .game-shot {
+      display: block; border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 8px; overflow: hidden;
+    }
+    .game-shot img { display: block; width: 100%; height: auto; }
+    .game-movies { display: grid; gap: 16px; margin: 20px 0; }
+    .game-movie { margin: 0; }
+    .game-movie video {
+      display: block; width: 100%; height: auto;
+      border-radius: 8px; background: #000;
+    }
+    .game-movie figcaption { margin-top: 6px; font-size: 13px; color: var(--text-faint); }
+    .game-video {
+      position: relative; cursor: pointer; overflow: hidden;
+      border-radius: 8px; background: #000; aspect-ratio: 16 / 9;
+    }
+    .game-video img { display: block; width: 100%; height: 100%; object-fit: cover; }
+    .game-video-play { position: absolute; inset: 0; display: grid; place-items: center; }
+    .game-video-play::before {
+      content: ''; width: 58px; height: 58px; border-radius: 50%;
+      background: rgba(0,0,0,0.5); border: 2px solid rgba(255,255,255,0.75);
+    }
+    .game-video-play::after {
+      content: ''; position: absolute; margin-left: 5px;
+      border-style: solid; border-width: 11px 0 11px 18px;
+      border-color: transparent transparent transparent #fff;
+    }
+    .game-video-el { display: block; width: 100%; height: 100%; background: #000; }
   </style>
 </head>
 <body>
@@ -150,7 +182,7 @@
 
     <article class="article-body">
 
-      <p>A live-action horror visual novel set in Osaka Castle Park. Explore the park after dark, make choices, and uncover a disturbing supernatural mystery through footage filmed on location in Osaka.</p>
+      
 
       <div class="game-stats-grid">
         <div class="game-stat-card">
@@ -166,10 +198,6 @@
           <div class="label">Владельцев (оценка)</div>
           <div class="value">0 – 20,000</div>
         </div>
-        <div class="game-stat-card">
-          <div class="label">Среднее время игры</div>
-          <div class="value">нет данных</div>
-        </div>
       </div>
 
       <h2>Об игре</h2>
@@ -183,7 +211,26 @@
         </a>
       </p>
 
-      <p style="color: var(--text-faint); font-size: 13px; margin-top: 30px;">
+            <h2>Скриншоты</h2>
+      <div class="game-shots">
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5268550/f2adb95a7e83eb5793a9245ece16557a02631ca9/ss_f2adb95a7e83eb5793a9245ece16557a02631ca9.1920x1080.jpg?t=1791097561" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5268550/f2adb95a7e83eb5793a9245ece16557a02631ca9/ss_f2adb95a7e83eb5793a9245ece16557a02631ca9.600x338.jpg?t=1791097561" alt="The Demon Lurking in Osaka Castle – Episode 1 — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5268550/a34b31eb4d1b6041bcc6a6e945e02e5eac105548/ss_a34b31eb4d1b6041bcc6a6e945e02e5eac105548.1920x1080.jpg?t=1791097561" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5268550/a34b31eb4d1b6041bcc6a6e945e02e5eac105548/ss_a34b31eb4d1b6041bcc6a6e945e02e5eac105548.600x338.jpg?t=1791097561" alt="The Demon Lurking in Osaka Castle – Episode 1 — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5268550/3e9eab94ac4c91e5027d7e2906f724fcbfabaf0f/ss_3e9eab94ac4c91e5027d7e2906f724fcbfabaf0f.1920x1080.jpg?t=1791097561" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5268550/3e9eab94ac4c91e5027d7e2906f724fcbfabaf0f/ss_3e9eab94ac4c91e5027d7e2906f724fcbfabaf0f.600x338.jpg?t=1791097561" alt="The Demon Lurking in Osaka Castle – Episode 1 — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5268550/b2423fb304d4057cde84d8646e6605b7544631c7/ss_b2423fb304d4057cde84d8646e6605b7544631c7.1920x1080.jpg?t=1791097561" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5268550/b2423fb304d4057cde84d8646e6605b7544631c7/ss_b2423fb304d4057cde84d8646e6605b7544631c7.600x338.jpg?t=1791097561" alt="The Demon Lurking in Osaka Castle – Episode 1 — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5268550/025403e583abe99d023e43712ca8e8d538c2ed8d/ss_025403e583abe99d023e43712ca8e8d538c2ed8d.1920x1080.jpg?t=1791097561" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5268550/025403e583abe99d023e43712ca8e8d538c2ed8d/ss_025403e583abe99d023e43712ca8e8d538c2ed8d.600x338.jpg?t=1791097561" alt="The Demon Lurking in Osaka Castle – Episode 1 — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5268550/f38f4a7e23453ad9c354ccd85ee1c08aa3da7ec4/ss_f38f4a7e23453ad9c354ccd85ee1c08aa3da7ec4.1920x1080.jpg?t=1791097561" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5268550/f38f4a7e23453ad9c354ccd85ee1c08aa3da7ec4/ss_f38f4a7e23453ad9c354ccd85ee1c08aa3da7ec4.600x338.jpg?t=1791097561" alt="The Demon Lurking in Osaka Castle – Episode 1 — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5268550/6e09ee3a13b4b0ec96971569a3e887a4c79bede7/ss_6e09ee3a13b4b0ec96971569a3e887a4c79bede7.1920x1080.jpg?t=1791097561" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5268550/6e09ee3a13b4b0ec96971569a3e887a4c79bede7/ss_6e09ee3a13b4b0ec96971569a3e887a4c79bede7.600x338.jpg?t=1791097561" alt="The Demon Lurking in Osaka Castle – Episode 1 — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5268550/fc9247a8ee95c0180afb42f13941ff241db76657/ss_fc9247a8ee95c0180afb42f13941ff241db76657.1920x1080.jpg?t=1791097561" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5268550/fc9247a8ee95c0180afb42f13941ff241db76657/ss_fc9247a8ee95c0180afb42f13941ff241db76657.600x338.jpg?t=1791097561" alt="The Demon Lurking in Osaka Castle – Episode 1 — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5268550/b8d886d1fb83602f23a0d6a5b44c16f00417601b/ss_b8d886d1fb83602f23a0d6a5b44c16f00417601b.1920x1080.jpg?t=1791097561" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5268550/b8d886d1fb83602f23a0d6a5b44c16f00417601b/ss_b8d886d1fb83602f23a0d6a5b44c16f00417601b.600x338.jpg?t=1791097561" alt="The Demon Lurking in Osaka Castle – Episode 1 — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5268550/e4b22270767bf8163ef1c865aa94862a6277a6b7/ss_e4b22270767bf8163ef1c865aa94862a6277a6b7.1920x1080.jpg?t=1791097561" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5268550/e4b22270767bf8163ef1c865aa94862a6277a6b7/ss_e4b22270767bf8163ef1c865aa94862a6277a6b7.600x338.jpg?t=1791097561" alt="The Demon Lurking in Osaka Castle – Episode 1 — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+      </div>
+
+      <h2>Геймплей</h2>
+      <div class="game-movies">
+        <figure class="game-movie"><div class="game-video" data-hls="https://video.akamai.steamstatic.com/store_trailers/5268550/1146303618/000ca4a4861c50846bc7d5116f2999e1a28ea721/1790575817/hls_264_master.m3u8?t=1790576983" data-poster="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257425419/28b4ca4d0968d38220a8ea354c430a7a3828fcac/movie_600x337.jpg?t=1790576983" role="button" tabindex="0" aria-label="Смотреть геймплей: Official Trailer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257425419/28b4ca4d0968d38220a8ea354c430a7a3828fcac/movie_600x337.jpg?t=1790576983" alt="" loading="lazy" width="480" height="270" /><span class="game-video-play" aria-hidden="true"></span></div></figure>
+      </div>
+
+<p style="color: var(--text-faint); font-size: 13px; margin-top: 30px;">
         Данные о цене, отзывах и статистике обновляются автоматически на основе
         Steam Store API и SteamSpy.
       </p>
@@ -284,5 +331,6 @@ function declineCookies() {
 })();
 </script>
 <script src="/newsletter.js?v=2" defer></script>
+<script defer src="/game-media.js?v=1"></script>
 </body>
 </html>

@@ -112,6 +112,38 @@
     }
     .game-stat-card .label { font-size: 12px; color: var(--text-faint); text-transform: uppercase; }
     .game-stat-card .value { font-size: 20px; font-weight: bold; margin-top: 4px; }
+    .game-shots {
+      display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+      gap: 12px; margin: 20px 0;
+    }
+    .game-shot {
+      display: block; border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 8px; overflow: hidden;
+    }
+    .game-shot img { display: block; width: 100%; height: auto; }
+    .game-movies { display: grid; gap: 16px; margin: 20px 0; }
+    .game-movie { margin: 0; }
+    .game-movie video {
+      display: block; width: 100%; height: auto;
+      border-radius: 8px; background: #000;
+    }
+    .game-movie figcaption { margin-top: 6px; font-size: 13px; color: var(--text-faint); }
+    .game-video {
+      position: relative; cursor: pointer; overflow: hidden;
+      border-radius: 8px; background: #000; aspect-ratio: 16 / 9;
+    }
+    .game-video img { display: block; width: 100%; height: 100%; object-fit: cover; }
+    .game-video-play { position: absolute; inset: 0; display: grid; place-items: center; }
+    .game-video-play::before {
+      content: ''; width: 58px; height: 58px; border-radius: 50%;
+      background: rgba(0,0,0,0.5); border: 2px solid rgba(255,255,255,0.75);
+    }
+    .game-video-play::after {
+      content: ''; position: absolute; margin-left: 5px;
+      border-style: solid; border-width: 11px 0 11px 18px;
+      border-color: transparent transparent transparent #fff;
+    }
+    .game-video-el { display: block; width: 100%; height: 100%; background: #000; }
   </style>
 </head>
 <body>
@@ -150,7 +182,7 @@
 
     <article class="article-body">
 
-      <p>You're a traffic cop on endless patrol. Pull over drivers, shine your flashlight, and spot the anomalies. Let the normal ones go... or turn back before it's too late.</p>
+      
 
       <div class="game-stats-grid">
         <div class="game-stat-card">
@@ -166,10 +198,6 @@
           <div class="label">Владельцев (оценка)</div>
           <div class="value">0 – 20,000</div>
         </div>
-        <div class="game-stat-card">
-          <div class="label">Среднее время игры</div>
-          <div class="value">нет данных</div>
-        </div>
       </div>
 
       <h2>Об игре</h2>
@@ -183,7 +211,25 @@
         </a>
       </p>
 
-      <p style="color: var(--text-faint); font-size: 13px; margin-top: 30px;">
+            <h2>Скриншоты</h2>
+      <div class="game-shots">
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4408710/f89052469237786861fe5ed32bef64bcd8f934a4/ss_f89052469237786861fe5ed32bef64bcd8f934a4.1920x1080.jpg?t=1790713815" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4408710/f89052469237786861fe5ed32bef64bcd8f934a4/ss_f89052469237786861fe5ed32bef64bcd8f934a4.600x338.jpg?t=1790713815" alt="Traffic Stop Anomaly — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4408710/47e31346d3fb48898e7dd6d31b901870d74131c1/ss_47e31346d3fb48898e7dd6d31b901870d74131c1.1920x1080.jpg?t=1790713815" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4408710/47e31346d3fb48898e7dd6d31b901870d74131c1/ss_47e31346d3fb48898e7dd6d31b901870d74131c1.600x338.jpg?t=1790713815" alt="Traffic Stop Anomaly — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4408710/93d8faa8a23153a65a1e899ba6f04f41e666ae06/ss_93d8faa8a23153a65a1e899ba6f04f41e666ae06.1920x1080.jpg?t=1790713815" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4408710/93d8faa8a23153a65a1e899ba6f04f41e666ae06/ss_93d8faa8a23153a65a1e899ba6f04f41e666ae06.600x338.jpg?t=1790713815" alt="Traffic Stop Anomaly — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4408710/10bb5380b03b9efad99a26548337157e04d34ce6/ss_10bb5380b03b9efad99a26548337157e04d34ce6.1920x1080.jpg?t=1790713815" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4408710/10bb5380b03b9efad99a26548337157e04d34ce6/ss_10bb5380b03b9efad99a26548337157e04d34ce6.600x338.jpg?t=1790713815" alt="Traffic Stop Anomaly — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4408710/2191fafc8660f28cfd87ed041bc0e819c1a1c763/ss_2191fafc8660f28cfd87ed041bc0e819c1a1c763.1920x1080.jpg?t=1790713815" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4408710/2191fafc8660f28cfd87ed041bc0e819c1a1c763/ss_2191fafc8660f28cfd87ed041bc0e819c1a1c763.600x338.jpg?t=1790713815" alt="Traffic Stop Anomaly — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4408710/a19fd48a91cd2835139f11d524f4a234963d6eb7/ss_a19fd48a91cd2835139f11d524f4a234963d6eb7.1920x1080.jpg?t=1790713815" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4408710/a19fd48a91cd2835139f11d524f4a234963d6eb7/ss_a19fd48a91cd2835139f11d524f4a234963d6eb7.600x338.jpg?t=1790713815" alt="Traffic Stop Anomaly — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4408710/52b3909fc1fdebbe388855bfcaf70298c21180a6/ss_52b3909fc1fdebbe388855bfcaf70298c21180a6.1920x1080.jpg?t=1790713815" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4408710/52b3909fc1fdebbe388855bfcaf70298c21180a6/ss_52b3909fc1fdebbe388855bfcaf70298c21180a6.600x338.jpg?t=1790713815" alt="Traffic Stop Anomaly — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4408710/ea737bb6636467ef2c4d0308de6498e8ef89fd2c/ss_ea737bb6636467ef2c4d0308de6498e8ef89fd2c.1920x1080.jpg?t=1790713815" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4408710/ea737bb6636467ef2c4d0308de6498e8ef89fd2c/ss_ea737bb6636467ef2c4d0308de6498e8ef89fd2c.600x338.jpg?t=1790713815" alt="Traffic Stop Anomaly — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4408710/fe78a58454b17aedd799da34a70b1573ed59de0f/ss_fe78a58454b17aedd799da34a70b1573ed59de0f.1920x1080.jpg?t=1790713815" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4408710/fe78a58454b17aedd799da34a70b1573ed59de0f/ss_fe78a58454b17aedd799da34a70b1573ed59de0f.600x338.jpg?t=1790713815" alt="Traffic Stop Anomaly — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+      </div>
+
+      <h2>Геймплей</h2>
+      <div class="game-movies">
+        <figure class="game-movie"><div class="game-video" data-hls="https://video.akamai.steamstatic.com/store_trailers/4408710/695763099/d417b960dca9b9e63592438a59bc419af30d8589/1774316388/hls_264_master.m3u8?t=1774527310" data-poster="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257308106/fe78a58454b17aedd799da34a70b1573ed59de0f/movie_600x337.jpg?t=1774527310" role="button" tabindex="0" aria-label="Смотреть геймплей: Traffic Stop Anomaly Trailer One"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257308106/fe78a58454b17aedd799da34a70b1573ed59de0f/movie_600x337.jpg?t=1774527310" alt="" loading="lazy" width="480" height="270" /><span class="game-video-play" aria-hidden="true"></span></div></figure>
+      </div>
+
+<p style="color: var(--text-faint); font-size: 13px; margin-top: 30px;">
         Данные о цене, отзывах и статистике обновляются автоматически на основе
         Steam Store API и SteamSpy.
       </p>
@@ -284,5 +330,6 @@ function declineCookies() {
 })();
 </script>
 <script src="/newsletter.js?v=2" defer></script>
+<script defer src="/game-media.js?v=1"></script>
 </body>
 </html>

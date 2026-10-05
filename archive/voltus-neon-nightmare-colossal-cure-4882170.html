@@ -112,6 +112,38 @@
     }
     .game-stat-card .label { font-size: 12px; color: var(--text-faint); text-transform: uppercase; }
     .game-stat-card .value { font-size: 20px; font-weight: bold; margin-top: 4px; }
+    .game-shots {
+      display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+      gap: 12px; margin: 20px 0;
+    }
+    .game-shot {
+      display: block; border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 8px; overflow: hidden;
+    }
+    .game-shot img { display: block; width: 100%; height: auto; }
+    .game-movies { display: grid; gap: 16px; margin: 20px 0; }
+    .game-movie { margin: 0; }
+    .game-movie video {
+      display: block; width: 100%; height: auto;
+      border-radius: 8px; background: #000;
+    }
+    .game-movie figcaption { margin-top: 6px; font-size: 13px; color: var(--text-faint); }
+    .game-video {
+      position: relative; cursor: pointer; overflow: hidden;
+      border-radius: 8px; background: #000; aspect-ratio: 16 / 9;
+    }
+    .game-video img { display: block; width: 100%; height: 100%; object-fit: cover; }
+    .game-video-play { position: absolute; inset: 0; display: grid; place-items: center; }
+    .game-video-play::before {
+      content: ''; width: 58px; height: 58px; border-radius: 50%;
+      background: rgba(0,0,0,0.5); border: 2px solid rgba(255,255,255,0.75);
+    }
+    .game-video-play::after {
+      content: ''; position: absolute; margin-left: 5px;
+      border-style: solid; border-width: 11px 0 11px 18px;
+      border-color: transparent transparent transparent #fff;
+    }
+    .game-video-el { display: block; width: 100%; height: 100%; background: #000; }
   </style>
 </head>
 <body>
@@ -150,7 +182,7 @@
 
     <article class="article-body">
 
-      <p>After the previous events, you realized that this &quot;mall&quot; place was a trap to send you to another dimension, full of liminal and unknown places. Voltus is now controlled by the Core's energy, forced to keep you away from it.</p>
+      
 
       <div class="game-stats-grid">
         <div class="game-stat-card">
@@ -166,10 +198,6 @@
           <div class="label">Владельцев (оценка)</div>
           <div class="value">0 – 20,000</div>
         </div>
-        <div class="game-stat-card">
-          <div class="label">Среднее время игры</div>
-          <div class="value">нет данных</div>
-        </div>
       </div>
 
       <h2>Об игре</h2>
@@ -183,7 +211,25 @@
         </a>
       </p>
 
-      <p style="color: var(--text-faint); font-size: 13px; margin-top: 30px;">
+            <h2>Скриншоты</h2>
+      <div class="game-shots">
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4882170/87ac92f5b38c657affc082cb3b3570845c4483d2/ss_87ac92f5b38c657affc082cb3b3570845c4483d2.1920x1080.jpg?t=1790431263" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4882170/87ac92f5b38c657affc082cb3b3570845c4483d2/ss_87ac92f5b38c657affc082cb3b3570845c4483d2.600x338.jpg?t=1790431263" alt="Voltus&#x27; Neon Nightmare - Colossal Cure — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4882170/cd9b064b8a8f5387c361e3104dddc6a7f7469ea3/ss_cd9b064b8a8f5387c361e3104dddc6a7f7469ea3.1920x1080.jpg?t=1790431263" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4882170/cd9b064b8a8f5387c361e3104dddc6a7f7469ea3/ss_cd9b064b8a8f5387c361e3104dddc6a7f7469ea3.600x338.jpg?t=1790431263" alt="Voltus&#x27; Neon Nightmare - Colossal Cure — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4882170/da36d5f6fecb6903cdba1813d5e92b99060ee643/ss_da36d5f6fecb6903cdba1813d5e92b99060ee643.1920x1080.jpg?t=1790431263" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4882170/da36d5f6fecb6903cdba1813d5e92b99060ee643/ss_da36d5f6fecb6903cdba1813d5e92b99060ee643.600x338.jpg?t=1790431263" alt="Voltus&#x27; Neon Nightmare - Colossal Cure — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4882170/9546015f465132dec21e8f87a2b995d11c1f573b/ss_9546015f465132dec21e8f87a2b995d11c1f573b.1920x1080.jpg?t=1790431263" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4882170/9546015f465132dec21e8f87a2b995d11c1f573b/ss_9546015f465132dec21e8f87a2b995d11c1f573b.600x338.jpg?t=1790431263" alt="Voltus&#x27; Neon Nightmare - Colossal Cure — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4882170/d8a228087b025eec33a3f2421118d6f9c20f6706/ss_d8a228087b025eec33a3f2421118d6f9c20f6706.1920x1080.jpg?t=1790431263" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4882170/d8a228087b025eec33a3f2421118d6f9c20f6706/ss_d8a228087b025eec33a3f2421118d6f9c20f6706.600x338.jpg?t=1790431263" alt="Voltus&#x27; Neon Nightmare - Colossal Cure — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4882170/80cbc3960861ffdce93ea11c72c044ef37bb2a40/ss_80cbc3960861ffdce93ea11c72c044ef37bb2a40.1920x1080.jpg?t=1790431263" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4882170/80cbc3960861ffdce93ea11c72c044ef37bb2a40/ss_80cbc3960861ffdce93ea11c72c044ef37bb2a40.600x338.jpg?t=1790431263" alt="Voltus&#x27; Neon Nightmare - Colossal Cure — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4882170/5ac4600acfa35ead8747027b136914fab1a283f9/ss_5ac4600acfa35ead8747027b136914fab1a283f9.1920x1080.jpg?t=1790431263" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4882170/5ac4600acfa35ead8747027b136914fab1a283f9/ss_5ac4600acfa35ead8747027b136914fab1a283f9.600x338.jpg?t=1790431263" alt="Voltus&#x27; Neon Nightmare - Colossal Cure — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+      </div>
+
+      <h2>Геймплей</h2>
+      <div class="game-movies">
+        <figure class="game-movie"><div class="game-video" data-hls="https://video.akamai.steamstatic.com/store_trailers/4882170/981012877/cf3f42d9a88f376c03a6cf85cedd4646467fc70a/1782138583/hls_264_master.m3u8?t=1782914115" data-poster="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257363698/041f84a0d395d2d304146b3ffb7ce92576752e45/movie_600x337.jpg?t=1782914115" role="button" tabindex="0" aria-label="Смотреть геймплей:   Voltus&#x27; Neon Nightmare 2 (Colossal Cure) - Official Trailer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257363698/041f84a0d395d2d304146b3ffb7ce92576752e45/movie_600x337.jpg?t=1782914115" alt="" loading="lazy" width="480" height="270" /><span class="game-video-play" aria-hidden="true"></span></div></figure>
+        <figure class="game-movie"><div class="game-video" data-hls="https://video.akamai.steamstatic.com/store_trailers/4882170/589400459/1234e48835df7f65a1e9cc8754f0a4fda3937b9c/1782137060/hls_264_master.m3u8?t=1782914116" data-poster="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257363692/0c5f7375f258f297f6a15f22ecab1e9c735f8c33/movie_600x337.jpg?t=1782914116" role="button" tabindex="0" aria-label="Смотреть геймплей:   Voltus&#x27; Neon Nightmare 2 - Official Teaser Trailer (Recharged)"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257363692/0c5f7375f258f297f6a15f22ecab1e9c735f8c33/movie_600x337.jpg?t=1782914116" alt="" loading="lazy" width="480" height="270" /><span class="game-video-play" aria-hidden="true"></span></div></figure>
+        <figure class="game-movie"><div class="game-video" data-hls="https://video.akamai.steamstatic.com/store_trailers/4882170/254358173/8fe79b75e5c41d428dcad38a8f35a0a97c7b6702/1782136311/hls_264_master.m3u8?t=1782914117" data-poster="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257363684/b868b602a2b4b9fa31b4cb6d5a9c821aaa758f07/movie_600x337.jpg?t=1782914117" role="button" tabindex="0" aria-label="Смотреть геймплей: Voltus&#x27; Neon Nightmare 2 - Official Teaser Trailer (The Failed One)"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257363684/b868b602a2b4b9fa31b4cb6d5a9c821aaa758f07/movie_600x337.jpg?t=1782914117" alt="" loading="lazy" width="480" height="270" /><span class="game-video-play" aria-hidden="true"></span></div></figure>
+      </div>
+
+<p style="color: var(--text-faint); font-size: 13px; margin-top: 30px;">
         Данные о цене, отзывах и статистике обновляются автоматически на основе
         Steam Store API и SteamSpy.
       </p>
@@ -284,5 +330,6 @@ function declineCookies() {
 })();
 </script>
 <script src="/newsletter.js?v=2" defer></script>
+<script defer src="/game-media.js?v=1"></script>
 </body>
 </html>

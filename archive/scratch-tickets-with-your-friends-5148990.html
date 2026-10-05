@@ -112,6 +112,38 @@
     }
     .game-stat-card .label { font-size: 12px; color: var(--text-faint); text-transform: uppercase; }
     .game-stat-card .value { font-size: 20px; font-weight: bold; margin-top: 4px; }
+    .game-shots {
+      display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+      gap: 12px; margin: 20px 0;
+    }
+    .game-shot {
+      display: block; border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 8px; overflow: hidden;
+    }
+    .game-shot img { display: block; width: 100%; height: auto; }
+    .game-movies { display: grid; gap: 16px; margin: 20px 0; }
+    .game-movie { margin: 0; }
+    .game-movie video {
+      display: block; width: 100%; height: auto;
+      border-radius: 8px; background: #000;
+    }
+    .game-movie figcaption { margin-top: 6px; font-size: 13px; color: var(--text-faint); }
+    .game-video {
+      position: relative; cursor: pointer; overflow: hidden;
+      border-radius: 8px; background: #000; aspect-ratio: 16 / 9;
+    }
+    .game-video img { display: block; width: 100%; height: 100%; object-fit: cover; }
+    .game-video-play { position: absolute; inset: 0; display: grid; place-items: center; }
+    .game-video-play::before {
+      content: ''; width: 58px; height: 58px; border-radius: 50%;
+      background: rgba(0,0,0,0.5); border: 2px solid rgba(255,255,255,0.75);
+    }
+    .game-video-play::after {
+      content: ''; position: absolute; margin-left: 5px;
+      border-style: solid; border-width: 11px 0 11px 18px;
+      border-color: transparent transparent transparent #fff;
+    }
+    .game-video-el { display: block; width: 100%; height: 100%; background: #000; }
   </style>
 </head>
 <body>
@@ -166,10 +198,6 @@
           <div class="label">Владельцев (оценка)</div>
           <div class="value">0 – 20,000</div>
         </div>
-        <div class="game-stat-card">
-          <div class="label">Среднее время игры</div>
-          <div class="value">нет данных</div>
-        </div>
       </div>
 
       <h2>Об игре</h2>
@@ -183,7 +211,28 @@
         </a>
       </p>
 
-      <p style="color: var(--text-faint); font-size: 13px; margin-top: 30px;">
+            <h2>Скриншоты</h2>
+      <div class="game-shots">
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5148990/97a378844650c726919b1ff86dfe7d651582d595/ss_97a378844650c726919b1ff86dfe7d651582d595.1920x1080.jpg?t=1790500100" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5148990/97a378844650c726919b1ff86dfe7d651582d595/ss_97a378844650c726919b1ff86dfe7d651582d595.600x338.jpg?t=1790500100" alt="Scratch Tickets With Your Friends 🎰 — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5148990/8244db45837cee182c928f29b6b961ade1d3084b/ss_8244db45837cee182c928f29b6b961ade1d3084b.1920x1080.jpg?t=1790500100" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5148990/8244db45837cee182c928f29b6b961ade1d3084b/ss_8244db45837cee182c928f29b6b961ade1d3084b.600x338.jpg?t=1790500100" alt="Scratch Tickets With Your Friends 🎰 — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5148990/8297693a699304e13a206cd3999f64827ddf4c68/ss_8297693a699304e13a206cd3999f64827ddf4c68.1920x1080.jpg?t=1790500100" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5148990/8297693a699304e13a206cd3999f64827ddf4c68/ss_8297693a699304e13a206cd3999f64827ddf4c68.600x338.jpg?t=1790500100" alt="Scratch Tickets With Your Friends 🎰 — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5148990/b2059f8c9443a5344874ea355ae7e67344698547/ss_b2059f8c9443a5344874ea355ae7e67344698547.1920x1080.jpg?t=1790500100" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5148990/b2059f8c9443a5344874ea355ae7e67344698547/ss_b2059f8c9443a5344874ea355ae7e67344698547.600x338.jpg?t=1790500100" alt="Scratch Tickets With Your Friends 🎰 — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5148990/8d010667e1fade01bae2ee74864d5e4c074a2233/ss_8d010667e1fade01bae2ee74864d5e4c074a2233.1920x1080.jpg?t=1790500100" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5148990/8d010667e1fade01bae2ee74864d5e4c074a2233/ss_8d010667e1fade01bae2ee74864d5e4c074a2233.600x338.jpg?t=1790500100" alt="Scratch Tickets With Your Friends 🎰 — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5148990/e3728e1d390b9bd4ecf2c1e972f97fe1d912cfc4/ss_e3728e1d390b9bd4ecf2c1e972f97fe1d912cfc4.1920x1080.jpg?t=1790500100" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5148990/e3728e1d390b9bd4ecf2c1e972f97fe1d912cfc4/ss_e3728e1d390b9bd4ecf2c1e972f97fe1d912cfc4.600x338.jpg?t=1790500100" alt="Scratch Tickets With Your Friends 🎰 — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5148990/5544391c483990823e50f33076536b3b39184ac7/ss_5544391c483990823e50f33076536b3b39184ac7.1920x1080.jpg?t=1790500100" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5148990/5544391c483990823e50f33076536b3b39184ac7/ss_5544391c483990823e50f33076536b3b39184ac7.600x338.jpg?t=1790500100" alt="Scratch Tickets With Your Friends 🎰 — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5148990/5bd39eeabde3c59498197bfe0eb5928af63b662b/ss_5bd39eeabde3c59498197bfe0eb5928af63b662b.1920x1080.jpg?t=1790500100" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5148990/5bd39eeabde3c59498197bfe0eb5928af63b662b/ss_5bd39eeabde3c59498197bfe0eb5928af63b662b.600x338.jpg?t=1790500100" alt="Scratch Tickets With Your Friends 🎰 — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5148990/aca49d69e9289b7137f34d0d0e146c176033a7fd/ss_aca49d69e9289b7137f34d0d0e146c176033a7fd.1920x1080.jpg?t=1790500100" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5148990/aca49d69e9289b7137f34d0d0e146c176033a7fd/ss_aca49d69e9289b7137f34d0d0e146c176033a7fd.600x338.jpg?t=1790500100" alt="Scratch Tickets With Your Friends 🎰 — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5148990/8f50682b8ef52355281234b8a29616331d24903b/ss_8f50682b8ef52355281234b8a29616331d24903b.1920x1080.jpg?t=1790500100" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5148990/8f50682b8ef52355281234b8a29616331d24903b/ss_8f50682b8ef52355281234b8a29616331d24903b.600x338.jpg?t=1790500100" alt="Scratch Tickets With Your Friends 🎰 — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5148990/1196ea4b3d9e5503846b33a8978774dc333013da/ss_1196ea4b3d9e5503846b33a8978774dc333013da.1920x1080.jpg?t=1790500100" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5148990/1196ea4b3d9e5503846b33a8978774dc333013da/ss_1196ea4b3d9e5503846b33a8978774dc333013da.600x338.jpg?t=1790500100" alt="Scratch Tickets With Your Friends 🎰 — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5148990/fa01308b2e6cb02382e53436f63f8a42df414d4b/ss_fa01308b2e6cb02382e53436f63f8a42df414d4b.1920x1080.jpg?t=1790500100" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5148990/fa01308b2e6cb02382e53436f63f8a42df414d4b/ss_fa01308b2e6cb02382e53436f63f8a42df414d4b.600x338.jpg?t=1790500100" alt="Scratch Tickets With Your Friends 🎰 — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+      </div>
+
+      <h2>Геймплей</h2>
+      <div class="game-movies">
+        <figure class="game-movie"><div class="game-video" data-hls="https://video.akamai.steamstatic.com/store_trailers/5148990/144442917/998a67a91edf9336ecf15f16ede43dfe317a3852/1789496991/hls_264_master.m3u8?t=1789497412" data-poster="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257425939/c836a3f8023d54446960c09d5f9322158d16b3b2/movie_600x337.jpg?t=1789497412" role="button" tabindex="0" aria-label="Смотреть геймплей: Scratch1"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257425939/c836a3f8023d54446960c09d5f9322158d16b3b2/movie_600x337.jpg?t=1789497412" alt="" loading="lazy" width="480" height="270" /><span class="game-video-play" aria-hidden="true"></span></div></figure>
+      </div>
+
+<p style="color: var(--text-faint); font-size: 13px; margin-top: 30px;">
         Данные о цене, отзывах и статистике обновляются автоматически на основе
         Steam Store API и SteamSpy.
       </p>
@@ -284,5 +333,6 @@ function declineCookies() {
 })();
 </script>
 <script src="/newsletter.js?v=2" defer></script>
+<script defer src="/game-media.js?v=1"></script>
 </body>
 </html>

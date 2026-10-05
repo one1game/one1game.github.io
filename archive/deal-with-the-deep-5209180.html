@@ -108,6 +108,38 @@
     }
     .game-stat-card .label { font-size: 12px; color: var(--text-faint); text-transform: uppercase; }
     .game-stat-card .value { font-size: 20px; font-weight: bold; margin-top: 4px; }
+    .game-shots {
+      display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+      gap: 12px; margin: 20px 0;
+    }
+    .game-shot {
+      display: block; border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 8px; overflow: hidden;
+    }
+    .game-shot img { display: block; width: 100%; height: auto; }
+    .game-movies { display: grid; gap: 16px; margin: 20px 0; }
+    .game-movie { margin: 0; }
+    .game-movie video {
+      display: block; width: 100%; height: auto;
+      border-radius: 8px; background: #000;
+    }
+    .game-movie figcaption { margin-top: 6px; font-size: 13px; color: var(--text-faint); }
+    .game-video {
+      position: relative; cursor: pointer; overflow: hidden;
+      border-radius: 8px; background: #000; aspect-ratio: 16 / 9;
+    }
+    .game-video img { display: block; width: 100%; height: 100%; object-fit: cover; }
+    .game-video-play { position: absolute; inset: 0; display: grid; place-items: center; }
+    .game-video-play::before {
+      content: ''; width: 58px; height: 58px; border-radius: 50%;
+      background: rgba(0,0,0,0.5); border: 2px solid rgba(255,255,255,0.75);
+    }
+    .game-video-play::after {
+      content: ''; position: absolute; margin-left: 5px;
+      border-style: solid; border-width: 11px 0 11px 18px;
+      border-color: transparent transparent transparent #fff;
+    }
+    .game-video-el { display: block; width: 100%; height: 100%; background: #000; }
   </style>
 </head>
 <body>
@@ -146,7 +178,7 @@
 
     <article class="article-body">
 
-      <p>Deal with the Deep is a single-player roguelike deckbuilder featuring positional card combat and a tabletop route system. Choose a character, descend into the abyss, use movement, range and facing to outmaneuver enemies, and shape each run through cards, relics, events and route choices.</p>
+      
 
       <div class="game-stats-grid">
         <div class="game-stat-card">
@@ -162,10 +194,6 @@
           <div class="label">Владельцев (оценка)</div>
           <div class="value">0 – 20,000</div>
         </div>
-        <div class="game-stat-card">
-          <div class="label">Среднее время игры</div>
-          <div class="value">нет данных</div>
-        </div>
       </div>
 
       <h2>Об игре</h2>
@@ -179,7 +207,22 @@
         </a>
       </p>
 
-      <p style="color: var(--text-faint); font-size: 13px; margin-top: 30px;">
+            <h2>Скриншоты</h2>
+      <div class="game-shots">
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5209180/8951e316eac4a558db62932d16f333538a202a57/ss_8951e316eac4a558db62932d16f333538a202a57.1920x1080.jpg?t=1790834162" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5209180/8951e316eac4a558db62932d16f333538a202a57/ss_8951e316eac4a558db62932d16f333538a202a57.600x338.jpg?t=1790834162" alt="deal with the deep — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5209180/275dafe3e978314921bbe2880f419cd9c8378a61/ss_275dafe3e978314921bbe2880f419cd9c8378a61.1920x1080.jpg?t=1790834162" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5209180/275dafe3e978314921bbe2880f419cd9c8378a61/ss_275dafe3e978314921bbe2880f419cd9c8378a61.600x338.jpg?t=1790834162" alt="deal with the deep — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5209180/c733d9e8587159852bcf33175271a2162bdafcbf/ss_c733d9e8587159852bcf33175271a2162bdafcbf.1920x1080.jpg?t=1790834162" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5209180/c733d9e8587159852bcf33175271a2162bdafcbf/ss_c733d9e8587159852bcf33175271a2162bdafcbf.600x338.jpg?t=1790834162" alt="deal with the deep — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5209180/966f7c09943e83355d7f07781702567352e7eec2/ss_966f7c09943e83355d7f07781702567352e7eec2.1920x1080.jpg?t=1790834162" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5209180/966f7c09943e83355d7f07781702567352e7eec2/ss_966f7c09943e83355d7f07781702567352e7eec2.600x338.jpg?t=1790834162" alt="deal with the deep — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5209180/983c2869af44467b790bd1fda994d2944a0fe6ce/ss_983c2869af44467b790bd1fda994d2944a0fe6ce.1920x1080.jpg?t=1790834162" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5209180/983c2869af44467b790bd1fda994d2944a0fe6ce/ss_983c2869af44467b790bd1fda994d2944a0fe6ce.600x338.jpg?t=1790834162" alt="deal with the deep — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5209180/96e6c68e9fe64405cdc05c15afc34b79906b1458/ss_96e6c68e9fe64405cdc05c15afc34b79906b1458.1920x1080.jpg?t=1790834162" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5209180/96e6c68e9fe64405cdc05c15afc34b79906b1458/ss_96e6c68e9fe64405cdc05c15afc34b79906b1458.600x338.jpg?t=1790834162" alt="deal with the deep — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+      </div>
+
+      <h2>Геймплей</h2>
+      <div class="game-movies">
+        <figure class="game-movie"><div class="game-video" data-hls="https://video.akamai.steamstatic.com/store_trailers/5209180/362674914/32717ad30c7b8ff7ceb4f91343b394bbf3116929/1790163423/hls_264_master.m3u8?t=1790834161" data-poster="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257432681/e872b5a72111ec97cf3187cbfd6ddb325e2a0ad5/movie_600x337.jpg?t=1790834161" role="button" tabindex="0" aria-label="Смотреть геймплей: Gameplay Trailer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257432681/e872b5a72111ec97cf3187cbfd6ddb325e2a0ad5/movie_600x337.jpg?t=1790834161" alt="" loading="lazy" width="480" height="270" /><span class="game-video-play" aria-hidden="true"></span></div></figure>
+      </div>
+
+<p style="color: var(--text-faint); font-size: 13px; margin-top: 30px;">
         Данные о цене, отзывах и статистике обновляются автоматически на основе
         Steam Store API и SteamSpy.
       </p>
@@ -280,5 +323,6 @@ function declineCookies() {
 })();
 </script>
 <script src="/newsletter.js?v=2" defer></script>
+<script defer src="/game-media.js?v=1"></script>
 </body>
 </html>

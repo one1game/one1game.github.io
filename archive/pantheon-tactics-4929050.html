@@ -108,6 +108,38 @@
     }
     .game-stat-card .label { font-size: 12px; color: var(--text-faint); text-transform: uppercase; }
     .game-stat-card .value { font-size: 20px; font-weight: bold; margin-top: 4px; }
+    .game-shots {
+      display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+      gap: 12px; margin: 20px 0;
+    }
+    .game-shot {
+      display: block; border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 8px; overflow: hidden;
+    }
+    .game-shot img { display: block; width: 100%; height: auto; }
+    .game-movies { display: grid; gap: 16px; margin: 20px 0; }
+    .game-movie { margin: 0; }
+    .game-movie video {
+      display: block; width: 100%; height: auto;
+      border-radius: 8px; background: #000;
+    }
+    .game-movie figcaption { margin-top: 6px; font-size: 13px; color: var(--text-faint); }
+    .game-video {
+      position: relative; cursor: pointer; overflow: hidden;
+      border-radius: 8px; background: #000; aspect-ratio: 16 / 9;
+    }
+    .game-video img { display: block; width: 100%; height: 100%; object-fit: cover; }
+    .game-video-play { position: absolute; inset: 0; display: grid; place-items: center; }
+    .game-video-play::before {
+      content: ''; width: 58px; height: 58px; border-radius: 50%;
+      background: rgba(0,0,0,0.5); border: 2px solid rgba(255,255,255,0.75);
+    }
+    .game-video-play::after {
+      content: ''; position: absolute; margin-left: 5px;
+      border-style: solid; border-width: 11px 0 11px 18px;
+      border-color: transparent transparent transparent #fff;
+    }
+    .game-video-el { display: block; width: 100%; height: 100%; background: #000; }
   </style>
 </head>
 <body>
@@ -162,10 +194,6 @@
           <div class="label">Владельцев (оценка)</div>
           <div class="value">0 – 20,000</div>
         </div>
-        <div class="game-stat-card">
-          <div class="label">Среднее время игры</div>
-          <div class="value">нет данных</div>
-        </div>
       </div>
 
       <h2>Об игре</h2>
@@ -179,7 +207,21 @@
         </a>
       </p>
 
-      <p style="color: var(--text-faint); font-size: 13px; margin-top: 30px;">
+            <h2>Скриншоты</h2>
+      <div class="game-shots">
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4929050/02de0a6dd1b8dad9a87fd7812213ddcfe3b5a7f0/ss_02de0a6dd1b8dad9a87fd7812213ddcfe3b5a7f0.1920x1080.jpg?t=1790824426" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4929050/02de0a6dd1b8dad9a87fd7812213ddcfe3b5a7f0/ss_02de0a6dd1b8dad9a87fd7812213ddcfe3b5a7f0.600x338.jpg?t=1790824426" alt="Pantheon Tactics — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4929050/3ec30beeb42f7707ab4bbde5f6005cbb88e03082/ss_3ec30beeb42f7707ab4bbde5f6005cbb88e03082.1920x1080.jpg?t=1790824426" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4929050/3ec30beeb42f7707ab4bbde5f6005cbb88e03082/ss_3ec30beeb42f7707ab4bbde5f6005cbb88e03082.600x338.jpg?t=1790824426" alt="Pantheon Tactics — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4929050/58c08d6878e49882759132907f8126de7f194c1a/ss_58c08d6878e49882759132907f8126de7f194c1a.1920x1080.jpg?t=1790824426" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4929050/58c08d6878e49882759132907f8126de7f194c1a/ss_58c08d6878e49882759132907f8126de7f194c1a.600x338.jpg?t=1790824426" alt="Pantheon Tactics — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4929050/fdd36774437c71638b552f3ae81dabc0bd952a2b/ss_fdd36774437c71638b552f3ae81dabc0bd952a2b.1920x1080.jpg?t=1790824426" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4929050/fdd36774437c71638b552f3ae81dabc0bd952a2b/ss_fdd36774437c71638b552f3ae81dabc0bd952a2b.600x338.jpg?t=1790824426" alt="Pantheon Tactics — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4929050/6e7952d044defceda837730402ebf2ac2f6362c9/ss_6e7952d044defceda837730402ebf2ac2f6362c9.1920x1080.jpg?t=1790824426" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4929050/6e7952d044defceda837730402ebf2ac2f6362c9/ss_6e7952d044defceda837730402ebf2ac2f6362c9.600x338.jpg?t=1790824426" alt="Pantheon Tactics — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+      </div>
+
+      <h2>Геймплей</h2>
+      <div class="game-movies">
+        <figure class="game-movie"><div class="game-video" data-hls="https://video.akamai.steamstatic.com/store_trailers/4929050/738012496/ea26fae26adc8fe79bb6fb32537184dccb19686b/1786471432/hls_264_master.m3u8?t=1787041538" data-poster="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257396647/8b850f89419d2a25e6fa790d128993ade932b30e/movie_600x337.jpg?t=1787041538" role="button" tabindex="0" aria-label="Смотреть геймплей: Gameplay Reveal"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257396647/8b850f89419d2a25e6fa790d128993ade932b30e/movie_600x337.jpg?t=1787041538" alt="" loading="lazy" width="480" height="270" /><span class="game-video-play" aria-hidden="true"></span></div></figure>
+      </div>
+
+<p style="color: var(--text-faint); font-size: 13px; margin-top: 30px;">
         Данные о цене, отзывах и статистике обновляются автоматически на основе
         Steam Store API и SteamSpy.
       </p>
@@ -280,5 +322,6 @@ function declineCookies() {
 })();
 </script>
 <script src="/newsletter.js?v=2" defer></script>
+<script defer src="/game-media.js?v=1"></script>
 </body>
 </html>

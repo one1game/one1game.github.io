@@ -112,6 +112,38 @@
     }
     .game-stat-card .label { font-size: 12px; color: var(--text-faint); text-transform: uppercase; }
     .game-stat-card .value { font-size: 20px; font-weight: bold; margin-top: 4px; }
+    .game-shots {
+      display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+      gap: 12px; margin: 20px 0;
+    }
+    .game-shot {
+      display: block; border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 8px; overflow: hidden;
+    }
+    .game-shot img { display: block; width: 100%; height: auto; }
+    .game-movies { display: grid; gap: 16px; margin: 20px 0; }
+    .game-movie { margin: 0; }
+    .game-movie video {
+      display: block; width: 100%; height: auto;
+      border-radius: 8px; background: #000;
+    }
+    .game-movie figcaption { margin-top: 6px; font-size: 13px; color: var(--text-faint); }
+    .game-video {
+      position: relative; cursor: pointer; overflow: hidden;
+      border-radius: 8px; background: #000; aspect-ratio: 16 / 9;
+    }
+    .game-video img { display: block; width: 100%; height: 100%; object-fit: cover; }
+    .game-video-play { position: absolute; inset: 0; display: grid; place-items: center; }
+    .game-video-play::before {
+      content: ''; width: 58px; height: 58px; border-radius: 50%;
+      background: rgba(0,0,0,0.5); border: 2px solid rgba(255,255,255,0.75);
+    }
+    .game-video-play::after {
+      content: ''; position: absolute; margin-left: 5px;
+      border-style: solid; border-width: 11px 0 11px 18px;
+      border-color: transparent transparent transparent #fff;
+    }
+    .game-video-el { display: block; width: 100%; height: 100%; background: #000; }
   </style>
 </head>
 <body>
@@ -166,10 +198,6 @@
           <div class="label">Владельцев (оценка)</div>
           <div class="value">0 – 20,000</div>
         </div>
-        <div class="game-stat-card">
-          <div class="label">Среднее время игры</div>
-          <div class="value">нет данных</div>
-        </div>
       </div>
 
       <h2>Об игре</h2>
@@ -183,7 +211,28 @@
         </a>
       </p>
 
-      <p style="color: var(--text-faint); font-size: 13px; margin-top: 30px;">
+            <h2>Скриншоты</h2>
+      <div class="game-shots">
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4132030/80cc7e4966e10606a2a42f5d34b82f615d8a767c/ss_80cc7e4966e10606a2a42f5d34b82f615d8a767c.1920x1080.jpg?t=1790466790" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4132030/80cc7e4966e10606a2a42f5d34b82f615d8a767c/ss_80cc7e4966e10606a2a42f5d34b82f615d8a767c.600x338.jpg?t=1790466790" alt="Nova Origin — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4132030/3a1ccf8b91b8e06b4627cf01bda3ce98f3ae4eb3/ss_3a1ccf8b91b8e06b4627cf01bda3ce98f3ae4eb3.1920x1080.jpg?t=1790466790" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4132030/3a1ccf8b91b8e06b4627cf01bda3ce98f3ae4eb3/ss_3a1ccf8b91b8e06b4627cf01bda3ce98f3ae4eb3.600x338.jpg?t=1790466790" alt="Nova Origin — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4132030/9d9c359eebdb2140b7d082d90f5e3dd2a6fb3603/ss_9d9c359eebdb2140b7d082d90f5e3dd2a6fb3603.1920x1080.jpg?t=1790466790" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4132030/9d9c359eebdb2140b7d082d90f5e3dd2a6fb3603/ss_9d9c359eebdb2140b7d082d90f5e3dd2a6fb3603.600x338.jpg?t=1790466790" alt="Nova Origin — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4132030/78723004dfe2424360a0056116b8721635df192b/ss_78723004dfe2424360a0056116b8721635df192b.1920x1080.jpg?t=1790466790" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4132030/78723004dfe2424360a0056116b8721635df192b/ss_78723004dfe2424360a0056116b8721635df192b.600x338.jpg?t=1790466790" alt="Nova Origin — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4132030/24ba912eca6799174f7764b75a78796f6c69736b/ss_24ba912eca6799174f7764b75a78796f6c69736b.1920x1080.jpg?t=1790466790" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4132030/24ba912eca6799174f7764b75a78796f6c69736b/ss_24ba912eca6799174f7764b75a78796f6c69736b.600x338.jpg?t=1790466790" alt="Nova Origin — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4132030/1e515c01d0df6c0ff53ec8e30997f152dbea0eb1/ss_1e515c01d0df6c0ff53ec8e30997f152dbea0eb1.1920x1080.jpg?t=1790466790" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4132030/1e515c01d0df6c0ff53ec8e30997f152dbea0eb1/ss_1e515c01d0df6c0ff53ec8e30997f152dbea0eb1.600x338.jpg?t=1790466790" alt="Nova Origin — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4132030/f86c80b69f8a147d3ff2da84b327125bd9b848d6/ss_f86c80b69f8a147d3ff2da84b327125bd9b848d6.1920x1080.jpg?t=1790466790" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4132030/f86c80b69f8a147d3ff2da84b327125bd9b848d6/ss_f86c80b69f8a147d3ff2da84b327125bd9b848d6.600x338.jpg?t=1790466790" alt="Nova Origin — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4132030/2d6154f7495461b299a8ceb300a1e6b74eba77d1/ss_2d6154f7495461b299a8ceb300a1e6b74eba77d1.1920x1080.jpg?t=1790466790" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4132030/2d6154f7495461b299a8ceb300a1e6b74eba77d1/ss_2d6154f7495461b299a8ceb300a1e6b74eba77d1.600x338.jpg?t=1790466790" alt="Nova Origin — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4132030/d528ae98fae3b65da1afef566b130542f8a94ee9/ss_d528ae98fae3b65da1afef566b130542f8a94ee9.1920x1080.jpg?t=1790466790" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4132030/d528ae98fae3b65da1afef566b130542f8a94ee9/ss_d528ae98fae3b65da1afef566b130542f8a94ee9.600x338.jpg?t=1790466790" alt="Nova Origin — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4132030/a350b825c2fd360e0da27656cd5eaaf42485525b/ss_a350b825c2fd360e0da27656cd5eaaf42485525b.1920x1080.jpg?t=1790466790" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4132030/a350b825c2fd360e0da27656cd5eaaf42485525b/ss_a350b825c2fd360e0da27656cd5eaaf42485525b.600x338.jpg?t=1790466790" alt="Nova Origin — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4132030/3892acd679a302686a01a3bf2d1e381e56320d51/ss_3892acd679a302686a01a3bf2d1e381e56320d51.1920x1080.jpg?t=1790466790" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4132030/3892acd679a302686a01a3bf2d1e381e56320d51/ss_3892acd679a302686a01a3bf2d1e381e56320d51.600x338.jpg?t=1790466790" alt="Nova Origin — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4132030/7b5cab1fb30a867a03edca2c07998f1c8fc95f26/ss_7b5cab1fb30a867a03edca2c07998f1c8fc95f26.1920x1080.jpg?t=1790466790" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4132030/7b5cab1fb30a867a03edca2c07998f1c8fc95f26/ss_7b5cab1fb30a867a03edca2c07998f1c8fc95f26.600x338.jpg?t=1790466790" alt="Nova Origin — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+      </div>
+
+      <h2>Геймплей</h2>
+      <div class="game-movies">
+        <figure class="game-movie"><div class="game-video" data-hls="https://video.akamai.steamstatic.com/store_trailers/4132030/951981090/09ee3855c05f3c4280df9c7685d8ebbafd7504b5/1786443172/hls_264_master.m3u8?t=1786444101" data-poster="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257391476/5d4f2ed65baf5c78998ca0318beb05c25eddb58b/movie_600x337.jpg?t=1786444101" role="button" tabindex="0" aria-label="Смотреть геймплей: Official Gameplay Trailer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257391476/5d4f2ed65baf5c78998ca0318beb05c25eddb58b/movie_600x337.jpg?t=1786444101" alt="" loading="lazy" width="480" height="270" /><span class="game-video-play" aria-hidden="true"></span></div></figure>
+      </div>
+
+<p style="color: var(--text-faint); font-size: 13px; margin-top: 30px;">
         Данные о цене, отзывах и статистике обновляются автоматически на основе
         Steam Store API и SteamSpy.
       </p>
@@ -284,5 +333,6 @@ function declineCookies() {
 })();
 </script>
 <script src="/newsletter.js?v=2" defer></script>
+<script defer src="/game-media.js?v=1"></script>
 </body>
 </html>

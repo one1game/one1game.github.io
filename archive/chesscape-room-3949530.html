@@ -112,6 +112,38 @@
     }
     .game-stat-card .label { font-size: 12px; color: var(--text-faint); text-transform: uppercase; }
     .game-stat-card .value { font-size: 20px; font-weight: bold; margin-top: 4px; }
+    .game-shots {
+      display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+      gap: 12px; margin: 20px 0;
+    }
+    .game-shot {
+      display: block; border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 8px; overflow: hidden;
+    }
+    .game-shot img { display: block; width: 100%; height: auto; }
+    .game-movies { display: grid; gap: 16px; margin: 20px 0; }
+    .game-movie { margin: 0; }
+    .game-movie video {
+      display: block; width: 100%; height: auto;
+      border-radius: 8px; background: #000;
+    }
+    .game-movie figcaption { margin-top: 6px; font-size: 13px; color: var(--text-faint); }
+    .game-video {
+      position: relative; cursor: pointer; overflow: hidden;
+      border-radius: 8px; background: #000; aspect-ratio: 16 / 9;
+    }
+    .game-video img { display: block; width: 100%; height: 100%; object-fit: cover; }
+    .game-video-play { position: absolute; inset: 0; display: grid; place-items: center; }
+    .game-video-play::before {
+      content: ''; width: 58px; height: 58px; border-radius: 50%;
+      background: rgba(0,0,0,0.5); border: 2px solid rgba(255,255,255,0.75);
+    }
+    .game-video-play::after {
+      content: ''; position: absolute; margin-left: 5px;
+      border-style: solid; border-width: 11px 0 11px 18px;
+      border-color: transparent transparent transparent #fff;
+    }
+    .game-video-el { display: block; width: 100%; height: 100%; background: #000; }
   </style>
 </head>
 <body>
@@ -166,10 +198,6 @@
           <div class="label">Владельцев (оценка)</div>
           <div class="value">0 – 20,000</div>
         </div>
-        <div class="game-stat-card">
-          <div class="label">Среднее время игры</div>
-          <div class="value">нет данных</div>
-        </div>
       </div>
 
       <h2>Об игре</h2>
@@ -183,7 +211,27 @@
         </a>
       </p>
 
-      <p style="color: var(--text-faint); font-size: 13px; margin-top: 30px;">
+            <h2>Скриншоты</h2>
+      <div class="game-shots">
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3949530/c7e4c248d4429d6be6655c2c7b1e8652954e5481/ss_c7e4c248d4429d6be6655c2c7b1e8652954e5481.1920x1080.jpg?t=1790368763" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3949530/c7e4c248d4429d6be6655c2c7b1e8652954e5481/ss_c7e4c248d4429d6be6655c2c7b1e8652954e5481.600x338.jpg?t=1790368763" alt="Chesscape Room — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3949530/438651d8eb79bc0f929ebff3208904badd9afacb/ss_438651d8eb79bc0f929ebff3208904badd9afacb.1920x1080.jpg?t=1790368763" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3949530/438651d8eb79bc0f929ebff3208904badd9afacb/ss_438651d8eb79bc0f929ebff3208904badd9afacb.600x338.jpg?t=1790368763" alt="Chesscape Room — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3949530/92af8d6c6195329017d392a65f4644bf62d85436/ss_92af8d6c6195329017d392a65f4644bf62d85436.1920x1080.jpg?t=1790368763" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3949530/92af8d6c6195329017d392a65f4644bf62d85436/ss_92af8d6c6195329017d392a65f4644bf62d85436.600x338.jpg?t=1790368763" alt="Chesscape Room — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3949530/401f5943da892e8fd83333001a422823c1583c2f/ss_401f5943da892e8fd83333001a422823c1583c2f.1920x1080.jpg?t=1790368763" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3949530/401f5943da892e8fd83333001a422823c1583c2f/ss_401f5943da892e8fd83333001a422823c1583c2f.600x338.jpg?t=1790368763" alt="Chesscape Room — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3949530/06c35fe70ba9ce8ba5706b9a2778465731e531bc/ss_06c35fe70ba9ce8ba5706b9a2778465731e531bc.1920x1080.jpg?t=1790368763" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3949530/06c35fe70ba9ce8ba5706b9a2778465731e531bc/ss_06c35fe70ba9ce8ba5706b9a2778465731e531bc.600x338.jpg?t=1790368763" alt="Chesscape Room — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3949530/3746acc64f1b67d2a81f62642a845ff18d914634/ss_3746acc64f1b67d2a81f62642a845ff18d914634.1920x1080.jpg?t=1790368763" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3949530/3746acc64f1b67d2a81f62642a845ff18d914634/ss_3746acc64f1b67d2a81f62642a845ff18d914634.600x338.jpg?t=1790368763" alt="Chesscape Room — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3949530/d3a95aae2bd53d20583762696195b6ccbf15f6ea/ss_d3a95aae2bd53d20583762696195b6ccbf15f6ea.1920x1080.jpg?t=1790368763" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3949530/d3a95aae2bd53d20583762696195b6ccbf15f6ea/ss_d3a95aae2bd53d20583762696195b6ccbf15f6ea.600x338.jpg?t=1790368763" alt="Chesscape Room — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3949530/82e6acd22406b149cbc3309d5b53b8253a7498f8/ss_82e6acd22406b149cbc3309d5b53b8253a7498f8.1920x1080.jpg?t=1790368763" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3949530/82e6acd22406b149cbc3309d5b53b8253a7498f8/ss_82e6acd22406b149cbc3309d5b53b8253a7498f8.600x338.jpg?t=1790368763" alt="Chesscape Room — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3949530/b76f7330e462c5640a8205c5246c12a3d32bedab/ss_b76f7330e462c5640a8205c5246c12a3d32bedab.1920x1080.jpg?t=1790368763" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3949530/b76f7330e462c5640a8205c5246c12a3d32bedab/ss_b76f7330e462c5640a8205c5246c12a3d32bedab.600x338.jpg?t=1790368763" alt="Chesscape Room — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3949530/69d1c72103cfed7f3622f057cd7a213a9cbce6e7/ss_69d1c72103cfed7f3622f057cd7a213a9cbce6e7.1920x1080.jpg?t=1790368763" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3949530/69d1c72103cfed7f3622f057cd7a213a9cbce6e7/ss_69d1c72103cfed7f3622f057cd7a213a9cbce6e7.600x338.jpg?t=1790368763" alt="Chesscape Room — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3949530/3c80b4db3efe7123d97c1cf12576900ecd5c4a9f/ss_3c80b4db3efe7123d97c1cf12576900ecd5c4a9f.1920x1080.jpg?t=1790368763" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3949530/3c80b4db3efe7123d97c1cf12576900ecd5c4a9f/ss_3c80b4db3efe7123d97c1cf12576900ecd5c4a9f.600x338.jpg?t=1790368763" alt="Chesscape Room — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+      </div>
+
+      <h2>Геймплей</h2>
+      <div class="game-movies">
+        <figure class="game-movie"><div class="game-video" data-hls="https://video.akamai.steamstatic.com/store_trailers/3949530/813880031/89d5a4ebd21979c362dadc6e806b0b59dd344641/1789399699/hls_264_master.m3u8?t=1789406971" data-poster="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257423726/549a41fba81d397d08d5cf5a37001d6eca1e04c0/movie_600x337.jpg?t=1789406971" role="button" tabindex="0" aria-label="Смотреть геймплей: Release Trailer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257423726/549a41fba81d397d08d5cf5a37001d6eca1e04c0/movie_600x337.jpg?t=1789406971" alt="" loading="lazy" width="480" height="270" /><span class="game-video-play" aria-hidden="true"></span></div></figure>
+      </div>
+
+<p style="color: var(--text-faint); font-size: 13px; margin-top: 30px;">
         Данные о цене, отзывах и статистике обновляются автоматически на основе
         Steam Store API и SteamSpy.
       </p>
@@ -284,5 +332,6 @@ function declineCookies() {
 })();
 </script>
 <script src="/newsletter.js?v=2" defer></script>
+<script defer src="/game-media.js?v=1"></script>
 </body>
 </html>

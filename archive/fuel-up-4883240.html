@@ -108,6 +108,38 @@
     }
     .game-stat-card .label { font-size: 12px; color: var(--text-faint); text-transform: uppercase; }
     .game-stat-card .value { font-size: 20px; font-weight: bold; margin-top: 4px; }
+    .game-shots {
+      display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+      gap: 12px; margin: 20px 0;
+    }
+    .game-shot {
+      display: block; border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 8px; overflow: hidden;
+    }
+    .game-shot img { display: block; width: 100%; height: auto; }
+    .game-movies { display: grid; gap: 16px; margin: 20px 0; }
+    .game-movie { margin: 0; }
+    .game-movie video {
+      display: block; width: 100%; height: auto;
+      border-radius: 8px; background: #000;
+    }
+    .game-movie figcaption { margin-top: 6px; font-size: 13px; color: var(--text-faint); }
+    .game-video {
+      position: relative; cursor: pointer; overflow: hidden;
+      border-radius: 8px; background: #000; aspect-ratio: 16 / 9;
+    }
+    .game-video img { display: block; width: 100%; height: 100%; object-fit: cover; }
+    .game-video-play { position: absolute; inset: 0; display: grid; place-items: center; }
+    .game-video-play::before {
+      content: ''; width: 58px; height: 58px; border-radius: 50%;
+      background: rgba(0,0,0,0.5); border: 2px solid rgba(255,255,255,0.75);
+    }
+    .game-video-play::after {
+      content: ''; position: absolute; margin-left: 5px;
+      border-style: solid; border-width: 11px 0 11px 18px;
+      border-color: transparent transparent transparent #fff;
+    }
+    .game-video-el { display: block; width: 100%; height: 100%; background: #000; }
   </style>
 </head>
 <body>
@@ -146,7 +178,7 @@
 
     <article class="article-body">
 
-      <p>Juggle emergency drone calibrations against the clock as you assemble technology to save planets on the brink of collapse. Make choices based on real-world science as a Planetary Engineer at the Habitable Planet Coalition. Remember, a Habitable Planet is a HAPPY Planet.</p>
+      
 
       <div class="game-stats-grid">
         <div class="game-stat-card">
@@ -162,10 +194,6 @@
           <div class="label">Владельцев (оценка)</div>
           <div class="value">0 – 20,000</div>
         </div>
-        <div class="game-stat-card">
-          <div class="label">Среднее время игры</div>
-          <div class="value">нет данных</div>
-        </div>
       </div>
 
       <h2>Об игре</h2>
@@ -179,7 +207,27 @@
         </a>
       </p>
 
-      <p style="color: var(--text-faint); font-size: 13px; margin-top: 30px;">
+            <h2>Скриншоты</h2>
+      <div class="game-shots">
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4883240/f2d347cfce7375022165d340aad87bf3a80318bf/ss_f2d347cfce7375022165d340aad87bf3a80318bf.1920x1080.jpg?t=1790109708" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4883240/f2d347cfce7375022165d340aad87bf3a80318bf/ss_f2d347cfce7375022165d340aad87bf3a80318bf.600x338.jpg?t=1790109708" alt="Fuel Up — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4883240/4c99d17000b0431a9ef9aa7b7d9259f9abffdfcd/ss_4c99d17000b0431a9ef9aa7b7d9259f9abffdfcd.1920x1080.jpg?t=1790109708" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4883240/4c99d17000b0431a9ef9aa7b7d9259f9abffdfcd/ss_4c99d17000b0431a9ef9aa7b7d9259f9abffdfcd.600x338.jpg?t=1790109708" alt="Fuel Up — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4883240/6a17785d5d98020decebff2116d7a42c662f49e9/ss_6a17785d5d98020decebff2116d7a42c662f49e9.1920x1080.jpg?t=1790109708" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4883240/6a17785d5d98020decebff2116d7a42c662f49e9/ss_6a17785d5d98020decebff2116d7a42c662f49e9.600x338.jpg?t=1790109708" alt="Fuel Up — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4883240/9bf29da5464ff2e617e6fb3069029e7101da7e2a/ss_9bf29da5464ff2e617e6fb3069029e7101da7e2a.1920x1080.jpg?t=1790109708" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4883240/9bf29da5464ff2e617e6fb3069029e7101da7e2a/ss_9bf29da5464ff2e617e6fb3069029e7101da7e2a.600x338.jpg?t=1790109708" alt="Fuel Up — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4883240/13bde218d451bf5e7fd14fbbee4a2e2ea1664d91/ss_13bde218d451bf5e7fd14fbbee4a2e2ea1664d91.1920x1080.jpg?t=1790109708" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4883240/13bde218d451bf5e7fd14fbbee4a2e2ea1664d91/ss_13bde218d451bf5e7fd14fbbee4a2e2ea1664d91.600x338.jpg?t=1790109708" alt="Fuel Up — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4883240/a64b290515c69f9b67589d550e912468f296c33a/ss_a64b290515c69f9b67589d550e912468f296c33a.1920x1080.jpg?t=1790109708" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4883240/a64b290515c69f9b67589d550e912468f296c33a/ss_a64b290515c69f9b67589d550e912468f296c33a.600x338.jpg?t=1790109708" alt="Fuel Up — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4883240/0f2c5d402badb7f970e73971461c82b59f6c9830/ss_0f2c5d402badb7f970e73971461c82b59f6c9830.1920x1080.jpg?t=1790109708" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4883240/0f2c5d402badb7f970e73971461c82b59f6c9830/ss_0f2c5d402badb7f970e73971461c82b59f6c9830.600x338.jpg?t=1790109708" alt="Fuel Up — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4883240/b23d00ad4a6feea68a2c7635a6bf88e39771cf5b/ss_b23d00ad4a6feea68a2c7635a6bf88e39771cf5b.1920x1080.jpg?t=1790109708" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4883240/b23d00ad4a6feea68a2c7635a6bf88e39771cf5b/ss_b23d00ad4a6feea68a2c7635a6bf88e39771cf5b.600x338.jpg?t=1790109708" alt="Fuel Up — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4883240/5725eb6dd9e95f6f7c0fe69db0553cd2c457aa9d/ss_5725eb6dd9e95f6f7c0fe69db0553cd2c457aa9d.1920x1080.jpg?t=1790109708" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4883240/5725eb6dd9e95f6f7c0fe69db0553cd2c457aa9d/ss_5725eb6dd9e95f6f7c0fe69db0553cd2c457aa9d.600x338.jpg?t=1790109708" alt="Fuel Up — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4883240/ad23193c6f0b4ae36ffdf3eba7b806189bf7f98d/ss_ad23193c6f0b4ae36ffdf3eba7b806189bf7f98d.1920x1080.jpg?t=1790109708" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4883240/ad23193c6f0b4ae36ffdf3eba7b806189bf7f98d/ss_ad23193c6f0b4ae36ffdf3eba7b806189bf7f98d.600x338.jpg?t=1790109708" alt="Fuel Up — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+      </div>
+
+      <h2>Геймплей</h2>
+      <div class="game-movies">
+        <figure class="game-movie"><div class="game-video" data-hls="https://video.akamai.steamstatic.com/store_trailers/4883240/1431631412/6b3becc5e7d7e9686f0703b6b78d3cb17f406f68/1785976304/hls_264_master.m3u8?t=1787242329" data-poster="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257392632/d3e4213d468f62e10d35c4c4b315d353f81504ab/movie_600x337.jpg?t=1787242329" role="button" tabindex="0" aria-label="Смотреть геймплей: Gameplay Trailer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257392632/d3e4213d468f62e10d35c4c4b315d353f81504ab/movie_600x337.jpg?t=1787242329" alt="" loading="lazy" width="480" height="270" /><span class="game-video-play" aria-hidden="true"></span></div></figure>
+        <figure class="game-movie"><div class="game-video" data-hls="https://video.akamai.steamstatic.com/store_trailers/4883240/2127579171/42e9d337b9dce13b0a90e35ee01c270f9514163c/1785870851/hls_264_master.m3u8?t=1787242330" data-poster="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257391838/f6932c8938c6ab04cfabe4635694b49fc14135c5/movie_600x337.jpg?t=1787242330" role="button" tabindex="0" aria-label="Смотреть геймплей: Story Trailer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257391838/f6932c8938c6ab04cfabe4635694b49fc14135c5/movie_600x337.jpg?t=1787242330" alt="" loading="lazy" width="480" height="270" /><span class="game-video-play" aria-hidden="true"></span></div></figure>
+      </div>
+
+<p style="color: var(--text-faint); font-size: 13px; margin-top: 30px;">
         Данные о цене, отзывах и статистике обновляются автоматически на основе
         Steam Store API и SteamSpy.
       </p>
@@ -280,5 +328,6 @@ function declineCookies() {
 })();
 </script>
 <script src="/newsletter.js?v=2" defer></script>
+<script defer src="/game-media.js?v=1"></script>
 </body>
 </html>

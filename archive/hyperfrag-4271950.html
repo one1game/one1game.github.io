@@ -108,6 +108,38 @@
     }
     .game-stat-card .label { font-size: 12px; color: var(--text-faint); text-transform: uppercase; }
     .game-stat-card .value { font-size: 20px; font-weight: bold; margin-top: 4px; }
+    .game-shots {
+      display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+      gap: 12px; margin: 20px 0;
+    }
+    .game-shot {
+      display: block; border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 8px; overflow: hidden;
+    }
+    .game-shot img { display: block; width: 100%; height: auto; }
+    .game-movies { display: grid; gap: 16px; margin: 20px 0; }
+    .game-movie { margin: 0; }
+    .game-movie video {
+      display: block; width: 100%; height: auto;
+      border-radius: 8px; background: #000;
+    }
+    .game-movie figcaption { margin-top: 6px; font-size: 13px; color: var(--text-faint); }
+    .game-video {
+      position: relative; cursor: pointer; overflow: hidden;
+      border-radius: 8px; background: #000; aspect-ratio: 16 / 9;
+    }
+    .game-video img { display: block; width: 100%; height: 100%; object-fit: cover; }
+    .game-video-play { position: absolute; inset: 0; display: grid; place-items: center; }
+    .game-video-play::before {
+      content: ''; width: 58px; height: 58px; border-radius: 50%;
+      background: rgba(0,0,0,0.5); border: 2px solid rgba(255,255,255,0.75);
+    }
+    .game-video-play::after {
+      content: ''; position: absolute; margin-left: 5px;
+      border-style: solid; border-width: 11px 0 11px 18px;
+      border-color: transparent transparent transparent #fff;
+    }
+    .game-video-el { display: block; width: 100%; height: 100%; background: #000; }
   </style>
 </head>
 <body>
@@ -162,10 +194,6 @@
           <div class="label">Владельцев (оценка)</div>
           <div class="value">0 – 20,000</div>
         </div>
-        <div class="game-stat-card">
-          <div class="label">Среднее время игры</div>
-          <div class="value">нет данных</div>
-        </div>
       </div>
 
       <h2>Об игре</h2>
@@ -179,7 +207,27 @@
         </a>
       </p>
 
-      <p style="color: var(--text-faint); font-size: 13px; margin-top: 30px;">
+            <h2>Скриншоты</h2>
+      <div class="game-shots">
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4271950/07ea454bb1d500919d08f1fa6ff44db23a1c290d/ss_07ea454bb1d500919d08f1fa6ff44db23a1c290d.1920x1080.jpg?t=1790929756" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4271950/07ea454bb1d500919d08f1fa6ff44db23a1c290d/ss_07ea454bb1d500919d08f1fa6ff44db23a1c290d.600x338.jpg?t=1790929756" alt="HYPERFRAG — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4271950/148e77b16e25a87f1f34e723a2c9d715d74a917e/ss_148e77b16e25a87f1f34e723a2c9d715d74a917e.1920x1080.jpg?t=1790929756" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4271950/148e77b16e25a87f1f34e723a2c9d715d74a917e/ss_148e77b16e25a87f1f34e723a2c9d715d74a917e.600x338.jpg?t=1790929756" alt="HYPERFRAG — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4271950/e309c2553605b0b61a7785b2b132739d8678bb6b/ss_e309c2553605b0b61a7785b2b132739d8678bb6b.1920x1080.jpg?t=1790929756" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4271950/e309c2553605b0b61a7785b2b132739d8678bb6b/ss_e309c2553605b0b61a7785b2b132739d8678bb6b.600x338.jpg?t=1790929756" alt="HYPERFRAG — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4271950/4a68f1f8694a4e355cee193c8181a7b0e7b3ccf9/ss_4a68f1f8694a4e355cee193c8181a7b0e7b3ccf9.1920x1080.jpg?t=1790929756" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4271950/4a68f1f8694a4e355cee193c8181a7b0e7b3ccf9/ss_4a68f1f8694a4e355cee193c8181a7b0e7b3ccf9.600x338.jpg?t=1790929756" alt="HYPERFRAG — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4271950/3d3ab8e4f4b24dededc27b6755c4e0ef190d3ea5/ss_3d3ab8e4f4b24dededc27b6755c4e0ef190d3ea5.1920x1080.jpg?t=1790929756" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4271950/3d3ab8e4f4b24dededc27b6755c4e0ef190d3ea5/ss_3d3ab8e4f4b24dededc27b6755c4e0ef190d3ea5.600x338.jpg?t=1790929756" alt="HYPERFRAG — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4271950/49bfefd6f10ac88f876f4506a56302a284709f12/ss_49bfefd6f10ac88f876f4506a56302a284709f12.1920x1080.jpg?t=1790929756" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4271950/49bfefd6f10ac88f876f4506a56302a284709f12/ss_49bfefd6f10ac88f876f4506a56302a284709f12.600x338.jpg?t=1790929756" alt="HYPERFRAG — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4271950/9ac2db1a80106fab5bb32102cc331b735f3c060d/ss_9ac2db1a80106fab5bb32102cc331b735f3c060d.1920x1080.jpg?t=1790929756" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4271950/9ac2db1a80106fab5bb32102cc331b735f3c060d/ss_9ac2db1a80106fab5bb32102cc331b735f3c060d.600x338.jpg?t=1790929756" alt="HYPERFRAG — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4271950/c752b3d000c91f0f9bf157672c06c8262e62275c/ss_c752b3d000c91f0f9bf157672c06c8262e62275c.1920x1080.jpg?t=1790929756" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4271950/c752b3d000c91f0f9bf157672c06c8262e62275c/ss_c752b3d000c91f0f9bf157672c06c8262e62275c.600x338.jpg?t=1790929756" alt="HYPERFRAG — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4271950/0ec1035805574f0af1b9152495f8f849cc9f76d9/ss_0ec1035805574f0af1b9152495f8f849cc9f76d9.1920x1080.jpg?t=1790929756" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4271950/0ec1035805574f0af1b9152495f8f849cc9f76d9/ss_0ec1035805574f0af1b9152495f8f849cc9f76d9.600x338.jpg?t=1790929756" alt="HYPERFRAG — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+      </div>
+
+      <h2>Геймплей</h2>
+      <div class="game-movies">
+        <figure class="game-movie"><div class="game-video" data-hls="https://video.akamai.steamstatic.com/store_trailers/4271950/1183601049/657f280128f4cfa8f3c2c8c17f16f9a8b65cc6c2/1790929043/hls_264_master.m3u8?t=1790929755" data-poster="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257443671/8d7090657844f53b857b806b56a8536934b7ccd9/movie_600x337.jpg?t=1790929755" role="button" tabindex="0" aria-label="Смотреть геймплей: HYPERFRAG - Official Release Trailer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257443671/8d7090657844f53b857b806b56a8536934b7ccd9/movie_600x337.jpg?t=1790929755" alt="" loading="lazy" width="480" height="270" /><span class="game-video-play" aria-hidden="true"></span></div></figure>
+        <figure class="game-movie"><div class="game-video" data-hls="https://video.akamai.steamstatic.com/store_trailers/4271950/1061801614/03744fd8ee739cbc85558a62a872fde535cedff7/1788519905/hls_264_master.m3u8?t=1788520994" data-poster="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257417185/0b09127d023c963782949fc0e0ce686f1c288653/movie_600x337.jpg?t=1788520994" role="button" tabindex="0" aria-label="Смотреть геймплей: HYPERFRAG - Official Trailer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257417185/0b09127d023c963782949fc0e0ce686f1c288653/movie_600x337.jpg?t=1788520994" alt="" loading="lazy" width="480" height="270" /><span class="game-video-play" aria-hidden="true"></span></div></figure>
+        <figure class="game-movie"><div class="game-video" data-hls="https://video.akamai.steamstatic.com/store_trailers/4271950/2031167848/934ba4a25e5e955fa860abc40816eb44987991f3/1789680204/hls_264_master.m3u8?t=1789680651" data-poster="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257427879/f977d0225c88a7c6b9fa5b5949c10ccee435489e/movie_600x337.jpg?t=1789680651" role="button" tabindex="0" aria-label="Смотреть геймплей: HYPERFRAG - Official Release Date Trailer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257427879/f977d0225c88a7c6b9fa5b5949c10ccee435489e/movie_600x337.jpg?t=1789680651" alt="" loading="lazy" width="480" height="270" /><span class="game-video-play" aria-hidden="true"></span></div></figure>
+      </div>
+
+<p style="color: var(--text-faint); font-size: 13px; margin-top: 30px;">
         Данные о цене, отзывах и статистике обновляются автоматически на основе
         Steam Store API и SteamSpy.
       </p>
@@ -280,5 +328,6 @@ function declineCookies() {
 })();
 </script>
 <script src="/newsletter.js?v=2" defer></script>
+<script defer src="/game-media.js?v=1"></script>
 </body>
 </html>

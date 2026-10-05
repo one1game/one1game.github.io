@@ -112,6 +112,38 @@
     }
     .game-stat-card .label { font-size: 12px; color: var(--text-faint); text-transform: uppercase; }
     .game-stat-card .value { font-size: 20px; font-weight: bold; margin-top: 4px; }
+    .game-shots {
+      display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+      gap: 12px; margin: 20px 0;
+    }
+    .game-shot {
+      display: block; border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 8px; overflow: hidden;
+    }
+    .game-shot img { display: block; width: 100%; height: auto; }
+    .game-movies { display: grid; gap: 16px; margin: 20px 0; }
+    .game-movie { margin: 0; }
+    .game-movie video {
+      display: block; width: 100%; height: auto;
+      border-radius: 8px; background: #000;
+    }
+    .game-movie figcaption { margin-top: 6px; font-size: 13px; color: var(--text-faint); }
+    .game-video {
+      position: relative; cursor: pointer; overflow: hidden;
+      border-radius: 8px; background: #000; aspect-ratio: 16 / 9;
+    }
+    .game-video img { display: block; width: 100%; height: 100%; object-fit: cover; }
+    .game-video-play { position: absolute; inset: 0; display: grid; place-items: center; }
+    .game-video-play::before {
+      content: ''; width: 58px; height: 58px; border-radius: 50%;
+      background: rgba(0,0,0,0.5); border: 2px solid rgba(255,255,255,0.75);
+    }
+    .game-video-play::after {
+      content: ''; position: absolute; margin-left: 5px;
+      border-style: solid; border-width: 11px 0 11px 18px;
+      border-color: transparent transparent transparent #fff;
+    }
+    .game-video-el { display: block; width: 100%; height: 100%; background: #000; }
   </style>
 </head>
 <body>
@@ -166,10 +198,6 @@
           <div class="label">Владельцев (оценка)</div>
           <div class="value">0 – 20,000</div>
         </div>
-        <div class="game-stat-card">
-          <div class="label">Среднее время игры</div>
-          <div class="value">нет данных</div>
-        </div>
       </div>
 
       <h2>Об игре</h2>
@@ -183,7 +211,28 @@
         </a>
       </p>
 
-      <p style="color: var(--text-faint); font-size: 13px; margin-top: 30px;">
+            <h2>Скриншоты</h2>
+      <div class="game-shots">
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2343380/ss_9ec495f58c23b1ab8291cfae4d2d6c74403dcbca.1920x1080.jpg?t=1791124978" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2343380/ss_9ec495f58c23b1ab8291cfae4d2d6c74403dcbca.600x338.jpg?t=1791124978" alt="Rabbit Simulator — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2343380/ss_dffeb205e27b2185c570d53eb8aea518ccf77afa.1920x1080.jpg?t=1791124978" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2343380/ss_dffeb205e27b2185c570d53eb8aea518ccf77afa.600x338.jpg?t=1791124978" alt="Rabbit Simulator — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2343380/ss_2ddf1e43c2f9a66f8016b7d3bb86488ba443819e.1920x1080.jpg?t=1791124978" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2343380/ss_2ddf1e43c2f9a66f8016b7d3bb86488ba443819e.600x338.jpg?t=1791124978" alt="Rabbit Simulator — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2343380/ss_7449eaff2ee257d0efcb4a7e54dd5da07881851c.1920x1080.jpg?t=1791124978" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2343380/ss_7449eaff2ee257d0efcb4a7e54dd5da07881851c.600x338.jpg?t=1791124978" alt="Rabbit Simulator — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2343380/ss_6b75fe14292f92a01543c096d8a52ab5135f2b99.1920x1080.jpg?t=1791124978" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2343380/ss_6b75fe14292f92a01543c096d8a52ab5135f2b99.600x338.jpg?t=1791124978" alt="Rabbit Simulator — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2343380/ss_2618ba571f3cc8255fb2801b5a1fb626a41a7d60.1920x1080.jpg?t=1791124978" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2343380/ss_2618ba571f3cc8255fb2801b5a1fb626a41a7d60.600x338.jpg?t=1791124978" alt="Rabbit Simulator — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2343380/ss_ea210a5f53ebf2039965f30a343ac744f717bb65.1920x1080.jpg?t=1791124978" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2343380/ss_ea210a5f53ebf2039965f30a343ac744f717bb65.600x338.jpg?t=1791124978" alt="Rabbit Simulator — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2343380/ss_dc85bd0432aca4a67b08a737481ac005a7ff3adf.1920x1080.jpg?t=1791124978" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2343380/ss_dc85bd0432aca4a67b08a737481ac005a7ff3adf.600x338.jpg?t=1791124978" alt="Rabbit Simulator — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2343380/ss_2c6be478fff9c23ec1dd18cc739535b495d23339.1920x1080.jpg?t=1791124978" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2343380/ss_2c6be478fff9c23ec1dd18cc739535b495d23339.600x338.jpg?t=1791124978" alt="Rabbit Simulator — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2343380/ss_24e1328ddba82d4cc121e430b0d8f854968b2770.1920x1080.jpg?t=1791124978" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2343380/ss_24e1328ddba82d4cc121e430b0d8f854968b2770.600x338.jpg?t=1791124978" alt="Rabbit Simulator — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2343380/ss_cee20daad969ee18d07440d4072948f152f86734.1920x1080.jpg?t=1791124978" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2343380/ss_cee20daad969ee18d07440d4072948f152f86734.600x338.jpg?t=1791124978" alt="Rabbit Simulator — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2343380/ss_4a3a5f1e9293d2ae6e32cd2ce3cc923a70569b7d.1920x1080.jpg?t=1791124978" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2343380/ss_4a3a5f1e9293d2ae6e32cd2ce3cc923a70569b7d.600x338.jpg?t=1791124978" alt="Rabbit Simulator — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+      </div>
+
+      <h2>Геймплей</h2>
+      <div class="game-movies">
+        <figure class="game-movie"><div class="game-video" data-hls="https://video.akamai.steamstatic.com/store_trailers/2343380/1464108642/bb4b047187cdc895f9b8e9a8cf57b7f58e4c9947/1750909221/hls_264_master.m3u8?t=1779323849" data-poster="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/256946909/movie.293x165.jpg?t=1779323849" role="button" tabindex="0" aria-label="Смотреть геймплей: Rabbit Simulator Official Trailer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/256946909/movie.293x165.jpg?t=1779323849" alt="" loading="lazy" width="480" height="270" /><span class="game-video-play" aria-hidden="true"></span></div></figure>
+      </div>
+
+<p style="color: var(--text-faint); font-size: 13px; margin-top: 30px;">
         Данные о цене, отзывах и статистике обновляются автоматически на основе
         Steam Store API и SteamSpy.
       </p>
@@ -284,5 +333,6 @@ function declineCookies() {
 })();
 </script>
 <script src="/newsletter.js?v=2" defer></script>
+<script defer src="/game-media.js?v=1"></script>
 </body>
 </html>

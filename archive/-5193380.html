@@ -112,6 +112,38 @@
     }
     .game-stat-card .label { font-size: 12px; color: var(--text-faint); text-transform: uppercase; }
     .game-stat-card .value { font-size: 20px; font-weight: bold; margin-top: 4px; }
+    .game-shots {
+      display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+      gap: 12px; margin: 20px 0;
+    }
+    .game-shot {
+      display: block; border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 8px; overflow: hidden;
+    }
+    .game-shot img { display: block; width: 100%; height: auto; }
+    .game-movies { display: grid; gap: 16px; margin: 20px 0; }
+    .game-movie { margin: 0; }
+    .game-movie video {
+      display: block; width: 100%; height: auto;
+      border-radius: 8px; background: #000;
+    }
+    .game-movie figcaption { margin-top: 6px; font-size: 13px; color: var(--text-faint); }
+    .game-video {
+      position: relative; cursor: pointer; overflow: hidden;
+      border-radius: 8px; background: #000; aspect-ratio: 16 / 9;
+    }
+    .game-video img { display: block; width: 100%; height: 100%; object-fit: cover; }
+    .game-video-play { position: absolute; inset: 0; display: grid; place-items: center; }
+    .game-video-play::before {
+      content: ''; width: 58px; height: 58px; border-radius: 50%;
+      background: rgba(0,0,0,0.5); border: 2px solid rgba(255,255,255,0.75);
+    }
+    .game-video-play::after {
+      content: ''; position: absolute; margin-left: 5px;
+      border-style: solid; border-width: 11px 0 11px 18px;
+      border-color: transparent transparent transparent #fff;
+    }
+    .game-video-el { display: block; width: 100%; height: 100%; background: #000; }
   </style>
 </head>
 <body>
@@ -166,10 +198,6 @@
           <div class="label">Владельцев (оценка)</div>
           <div class="value">0 – 20,000</div>
         </div>
-        <div class="game-stat-card">
-          <div class="label">Среднее время игры</div>
-          <div class="value">нет данных</div>
-        </div>
       </div>
 
       <h2>Об игре</h2>
@@ -183,7 +211,27 @@
         </a>
       </p>
 
-      <p style="color: var(--text-faint); font-size: 13px; margin-top: 30px;">
+            <h2>Скриншоты</h2>
+      <div class="game-shots">
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5193380/eeeef126d3f04d2f57de8dfbfdd17260f4d9a9e8/ss_eeeef126d3f04d2f57de8dfbfdd17260f4d9a9e8.1920x1080.jpg?t=1790852543" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5193380/eeeef126d3f04d2f57de8dfbfdd17260f4d9a9e8/ss_eeeef126d3f04d2f57de8dfbfdd17260f4d9a9e8.600x338.jpg?t=1790852543" alt="Deep Space Idle: Frontier Era — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5193380/a51efa559994960a69dba3b67c870631dd758c37/ss_a51efa559994960a69dba3b67c870631dd758c37.1920x1080.jpg?t=1790852543" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5193380/a51efa559994960a69dba3b67c870631dd758c37/ss_a51efa559994960a69dba3b67c870631dd758c37.600x338.jpg?t=1790852543" alt="Deep Space Idle: Frontier Era — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5193380/ad31c3edfaa74685eec10aeb2a4024a542721aed/ss_ad31c3edfaa74685eec10aeb2a4024a542721aed.1920x1080.jpg?t=1790852543" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5193380/ad31c3edfaa74685eec10aeb2a4024a542721aed/ss_ad31c3edfaa74685eec10aeb2a4024a542721aed.600x338.jpg?t=1790852543" alt="Deep Space Idle: Frontier Era — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5193380/1cbc2d52d265e6336de5c90c1dc6d35dfdaaf268/ss_1cbc2d52d265e6336de5c90c1dc6d35dfdaaf268.1920x1080.jpg?t=1790852543" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5193380/1cbc2d52d265e6336de5c90c1dc6d35dfdaaf268/ss_1cbc2d52d265e6336de5c90c1dc6d35dfdaaf268.600x338.jpg?t=1790852543" alt="Deep Space Idle: Frontier Era — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5193380/f8acb61afd26d47f771780475400445a48613b1a/ss_f8acb61afd26d47f771780475400445a48613b1a.1920x1080.jpg?t=1790852543" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5193380/f8acb61afd26d47f771780475400445a48613b1a/ss_f8acb61afd26d47f771780475400445a48613b1a.600x338.jpg?t=1790852543" alt="Deep Space Idle: Frontier Era — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5193380/21e77dea1f104d48256aea0683afa0a5b69deaa1/ss_21e77dea1f104d48256aea0683afa0a5b69deaa1.1920x1080.jpg?t=1790852543" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5193380/21e77dea1f104d48256aea0683afa0a5b69deaa1/ss_21e77dea1f104d48256aea0683afa0a5b69deaa1.600x338.jpg?t=1790852543" alt="Deep Space Idle: Frontier Era — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5193380/8a0227c6240a5f4cd66adf989f285b2457d9b656/ss_8a0227c6240a5f4cd66adf989f285b2457d9b656.1920x1080.jpg?t=1790852543" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5193380/8a0227c6240a5f4cd66adf989f285b2457d9b656/ss_8a0227c6240a5f4cd66adf989f285b2457d9b656.600x338.jpg?t=1790852543" alt="Deep Space Idle: Frontier Era — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5193380/8470f4d50bcf671753fdf383e781d56a937e9289/ss_8470f4d50bcf671753fdf383e781d56a937e9289.1920x1080.jpg?t=1790852543" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5193380/8470f4d50bcf671753fdf383e781d56a937e9289/ss_8470f4d50bcf671753fdf383e781d56a937e9289.600x338.jpg?t=1790852543" alt="Deep Space Idle: Frontier Era — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5193380/04a57b878552f4ae171e1e74a4c58f721389804c/ss_04a57b878552f4ae171e1e74a4c58f721389804c.1920x1080.jpg?t=1790852543" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5193380/04a57b878552f4ae171e1e74a4c58f721389804c/ss_04a57b878552f4ae171e1e74a4c58f721389804c.600x338.jpg?t=1790852543" alt="Deep Space Idle: Frontier Era — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5193380/1aba0fb06fcaa8a8abe0b1223428a62d28b1f0dc/ss_1aba0fb06fcaa8a8abe0b1223428a62d28b1f0dc.1920x1080.jpg?t=1790852543" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5193380/1aba0fb06fcaa8a8abe0b1223428a62d28b1f0dc/ss_1aba0fb06fcaa8a8abe0b1223428a62d28b1f0dc.600x338.jpg?t=1790852543" alt="Deep Space Idle: Frontier Era — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5193380/f3622a67199cde9039450eb0fde8124067974ba2/ss_f3622a67199cde9039450eb0fde8124067974ba2.1920x1080.jpg?t=1790852543" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5193380/f3622a67199cde9039450eb0fde8124067974ba2/ss_f3622a67199cde9039450eb0fde8124067974ba2.600x338.jpg?t=1790852543" alt="Deep Space Idle: Frontier Era — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+      </div>
+
+      <h2>Геймплей</h2>
+      <div class="game-movies">
+        <figure class="game-movie"><div class="game-video" data-hls="https://video.akamai.steamstatic.com/store_trailers/5193380/1282664369/f56a3548c39daed1896375d2a3f2c94f999afb2d/1788533464/hls_264_master.m3u8?t=1789046158" data-poster="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257417310/da85854bd0f13bb8c52961cc809c2c2fef35ee71/movie_600x337.jpg?t=1789046158" role="button" tabindex="0" aria-label="Смотреть геймплей: GameplayTrailer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257417310/da85854bd0f13bb8c52961cc809c2c2fef35ee71/movie_600x337.jpg?t=1789046158" alt="" loading="lazy" width="480" height="270" /><span class="game-video-play" aria-hidden="true"></span></div></figure>
+      </div>
+
+<p style="color: var(--text-faint); font-size: 13px; margin-top: 30px;">
         Данные о цене, отзывах и статистике обновляются автоматически на основе
         Steam Store API и SteamSpy.
       </p>
@@ -284,5 +332,6 @@ function declineCookies() {
 })();
 </script>
 <script src="/newsletter.js?v=2" defer></script>
+<script defer src="/game-media.js?v=1"></script>
 </body>
 </html>

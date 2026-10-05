@@ -112,6 +112,38 @@
     }
     .game-stat-card .label { font-size: 12px; color: var(--text-faint); text-transform: uppercase; }
     .game-stat-card .value { font-size: 20px; font-weight: bold; margin-top: 4px; }
+    .game-shots {
+      display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+      gap: 12px; margin: 20px 0;
+    }
+    .game-shot {
+      display: block; border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 8px; overflow: hidden;
+    }
+    .game-shot img { display: block; width: 100%; height: auto; }
+    .game-movies { display: grid; gap: 16px; margin: 20px 0; }
+    .game-movie { margin: 0; }
+    .game-movie video {
+      display: block; width: 100%; height: auto;
+      border-radius: 8px; background: #000;
+    }
+    .game-movie figcaption { margin-top: 6px; font-size: 13px; color: var(--text-faint); }
+    .game-video {
+      position: relative; cursor: pointer; overflow: hidden;
+      border-radius: 8px; background: #000; aspect-ratio: 16 / 9;
+    }
+    .game-video img { display: block; width: 100%; height: 100%; object-fit: cover; }
+    .game-video-play { position: absolute; inset: 0; display: grid; place-items: center; }
+    .game-video-play::before {
+      content: ''; width: 58px; height: 58px; border-radius: 50%;
+      background: rgba(0,0,0,0.5); border: 2px solid rgba(255,255,255,0.75);
+    }
+    .game-video-play::after {
+      content: ''; position: absolute; margin-left: 5px;
+      border-style: solid; border-width: 11px 0 11px 18px;
+      border-color: transparent transparent transparent #fff;
+    }
+    .game-video-el { display: block; width: 100%; height: 100%; background: #000; }
   </style>
 </head>
 <body>
@@ -166,10 +198,6 @@
           <div class="label">Владельцев (оценка)</div>
           <div class="value">0 – 20,000</div>
         </div>
-        <div class="game-stat-card">
-          <div class="label">Среднее время игры</div>
-          <div class="value">нет данных</div>
-        </div>
       </div>
 
       <h2>Об игре</h2>
@@ -183,7 +211,26 @@
         </a>
       </p>
 
-      <p style="color: var(--text-faint); font-size: 13px; margin-top: 30px;">
+            <h2>Скриншоты</h2>
+      <div class="game-shots">
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5254710/5699911317b82810876c6fd02603e56a35018055/ss_5699911317b82810876c6fd02603e56a35018055.1920x1080.jpg?t=1790905831" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5254710/5699911317b82810876c6fd02603e56a35018055/ss_5699911317b82810876c6fd02603e56a35018055.600x338.jpg?t=1790905831" alt="Slaughter for the Gods — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5254710/bddd887bc9fb65b379f9d9a321c01d7dd3ca7091/ss_bddd887bc9fb65b379f9d9a321c01d7dd3ca7091.1920x1080.jpg?t=1790905831" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5254710/bddd887bc9fb65b379f9d9a321c01d7dd3ca7091/ss_bddd887bc9fb65b379f9d9a321c01d7dd3ca7091.600x338.jpg?t=1790905831" alt="Slaughter for the Gods — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5254710/0d674cd355208515cd55a03c9cf019cba395a203/ss_0d674cd355208515cd55a03c9cf019cba395a203.1920x1080.jpg?t=1790905831" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5254710/0d674cd355208515cd55a03c9cf019cba395a203/ss_0d674cd355208515cd55a03c9cf019cba395a203.600x338.jpg?t=1790905831" alt="Slaughter for the Gods — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5254710/0383e8bd62a865d9cdd9e2a583b2027c252d050b/ss_0383e8bd62a865d9cdd9e2a583b2027c252d050b.1920x1080.jpg?t=1790905831" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5254710/0383e8bd62a865d9cdd9e2a583b2027c252d050b/ss_0383e8bd62a865d9cdd9e2a583b2027c252d050b.600x338.jpg?t=1790905831" alt="Slaughter for the Gods — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5254710/47c6353430bae412f71f911a77e1a81ac16b609d/ss_47c6353430bae412f71f911a77e1a81ac16b609d.1920x1080.jpg?t=1790905831" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5254710/47c6353430bae412f71f911a77e1a81ac16b609d/ss_47c6353430bae412f71f911a77e1a81ac16b609d.600x338.jpg?t=1790905831" alt="Slaughter for the Gods — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5254710/589512cb78b6dfdd1374509deeca69c3d38434e4/ss_589512cb78b6dfdd1374509deeca69c3d38434e4.1920x1080.jpg?t=1790905831" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5254710/589512cb78b6dfdd1374509deeca69c3d38434e4/ss_589512cb78b6dfdd1374509deeca69c3d38434e4.600x338.jpg?t=1790905831" alt="Slaughter for the Gods — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5254710/7e7e10ce0632f2b61e3fcb9c7d73e152624718c7/ss_7e7e10ce0632f2b61e3fcb9c7d73e152624718c7.1920x1080.jpg?t=1790905831" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5254710/7e7e10ce0632f2b61e3fcb9c7d73e152624718c7/ss_7e7e10ce0632f2b61e3fcb9c7d73e152624718c7.600x338.jpg?t=1790905831" alt="Slaughter for the Gods — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5254710/f8dff02f946a1fca791d363eb417ac4d47ea6641/ss_f8dff02f946a1fca791d363eb417ac4d47ea6641.1920x1080.jpg?t=1790905831" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5254710/f8dff02f946a1fca791d363eb417ac4d47ea6641/ss_f8dff02f946a1fca791d363eb417ac4d47ea6641.600x338.jpg?t=1790905831" alt="Slaughter for the Gods — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+      </div>
+
+      <h2>Геймплей</h2>
+      <div class="game-movies">
+        <figure class="game-movie"><div class="game-video" data-hls="https://video.akamai.steamstatic.com/store_trailers/5254710/1467173670/eb4e78e7faaab5e5b697777214bc156b19869bed/1790903332/hls_264_master.m3u8?t=1790905830" data-poster="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257443404/1c2d428a74cacd0760416f0c795d46459ccae2c7/movie_600x337.jpg?t=1790905830" role="button" tabindex="0" aria-label="Смотреть геймплей: Release Trailer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257443404/1c2d428a74cacd0760416f0c795d46459ccae2c7/movie_600x337.jpg?t=1790905830" alt="" loading="lazy" width="480" height="270" /><span class="game-video-play" aria-hidden="true"></span></div></figure>
+        <figure class="game-movie"><div class="game-video" data-hls="https://video.akamai.steamstatic.com/store_trailers/5254710/1019690999/0d0915a2a2ff5f055dd7aade9e0e684e2a90a83c/1789065913/hls_264_master.m3u8?t=1789585092" data-poster="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257422187/5961e5043da718b9973ca5b0d05e6459dae53f5f/movie_600x337.jpg?t=1789585092" role="button" tabindex="0" aria-label="Смотреть геймплей: Slaughter for the Gods — Gameplay Trailer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257422187/5961e5043da718b9973ca5b0d05e6459dae53f5f/movie_600x337.jpg?t=1789585092" alt="" loading="lazy" width="480" height="270" /><span class="game-video-play" aria-hidden="true"></span></div></figure>
+        <figure class="game-movie"><div class="game-video" data-hls="https://video.akamai.steamstatic.com/store_trailers/5254710/1005998359/f33e2529fa612cce4557966a5ffe9fa5b2b324c8/1789844127/hls_264_master.m3u8?t=1789846365" data-poster="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257429370/e15ad355558420a3960e958c87e9e8598ae7bd2e/movie_600x337.jpg?t=1789846365" role="button" tabindex="0" aria-label="Смотреть геймплей: Horde Mode"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257429370/e15ad355558420a3960e958c87e9e8598ae7bd2e/movie_600x337.jpg?t=1789846365" alt="" loading="lazy" width="480" height="270" /><span class="game-video-play" aria-hidden="true"></span></div></figure>
+      </div>
+
+<p style="color: var(--text-faint); font-size: 13px; margin-top: 30px;">
         Данные о цене, отзывах и статистике обновляются автоматически на основе
         Steam Store API и SteamSpy.
       </p>
@@ -284,5 +331,6 @@ function declineCookies() {
 })();
 </script>
 <script src="/newsletter.js?v=2" defer></script>
+<script defer src="/game-media.js?v=1"></script>
 </body>
 </html>

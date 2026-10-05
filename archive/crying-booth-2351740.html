@@ -112,6 +112,38 @@
     }
     .game-stat-card .label { font-size: 12px; color: var(--text-faint); text-transform: uppercase; }
     .game-stat-card .value { font-size: 20px; font-weight: bold; margin-top: 4px; }
+    .game-shots {
+      display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+      gap: 12px; margin: 20px 0;
+    }
+    .game-shot {
+      display: block; border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 8px; overflow: hidden;
+    }
+    .game-shot img { display: block; width: 100%; height: auto; }
+    .game-movies { display: grid; gap: 16px; margin: 20px 0; }
+    .game-movie { margin: 0; }
+    .game-movie video {
+      display: block; width: 100%; height: auto;
+      border-radius: 8px; background: #000;
+    }
+    .game-movie figcaption { margin-top: 6px; font-size: 13px; color: var(--text-faint); }
+    .game-video {
+      position: relative; cursor: pointer; overflow: hidden;
+      border-radius: 8px; background: #000; aspect-ratio: 16 / 9;
+    }
+    .game-video img { display: block; width: 100%; height: 100%; object-fit: cover; }
+    .game-video-play { position: absolute; inset: 0; display: grid; place-items: center; }
+    .game-video-play::before {
+      content: ''; width: 58px; height: 58px; border-radius: 50%;
+      background: rgba(0,0,0,0.5); border: 2px solid rgba(255,255,255,0.75);
+    }
+    .game-video-play::after {
+      content: ''; position: absolute; margin-left: 5px;
+      border-style: solid; border-width: 11px 0 11px 18px;
+      border-color: transparent transparent transparent #fff;
+    }
+    .game-video-el { display: block; width: 100%; height: 100%; background: #000; }
   </style>
 </head>
 <body>
@@ -150,7 +182,7 @@
 
     <article class="article-body">
 
-      <p>Sacrifice, survive, trick or treat, and go home. Experience four first-person scenarios with stealth, survival, and puzzle elements along with one side scroller platformer.</p>
+      
 
       <div class="game-stats-grid">
         <div class="game-stat-card">
@@ -166,10 +198,6 @@
           <div class="label">Владельцев (оценка)</div>
           <div class="value">0 – 20,000</div>
         </div>
-        <div class="game-stat-card">
-          <div class="label">Среднее время игры</div>
-          <div class="value">нет данных</div>
-        </div>
       </div>
 
       <h2>Об игре</h2>
@@ -183,7 +211,27 @@
         </a>
       </p>
 
-      <p style="color: var(--text-faint); font-size: 13px; margin-top: 30px;">
+            <h2>Скриншоты</h2>
+      <div class="game-shots">
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2351740/cc01f56252ad27a20b4d533bb3e3a7915f079fa0/ss_cc01f56252ad27a20b4d533bb3e3a7915f079fa0.1920x1080.jpg?t=1790818122" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2351740/cc01f56252ad27a20b4d533bb3e3a7915f079fa0/ss_cc01f56252ad27a20b4d533bb3e3a7915f079fa0.600x338.jpg?t=1790818122" alt="CRYING BOOTH — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2351740/798499adb3cd0a5e93de50013774fa69e7b3b96c/ss_798499adb3cd0a5e93de50013774fa69e7b3b96c.1920x1080.jpg?t=1790818122" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2351740/798499adb3cd0a5e93de50013774fa69e7b3b96c/ss_798499adb3cd0a5e93de50013774fa69e7b3b96c.600x338.jpg?t=1790818122" alt="CRYING BOOTH — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2351740/93f274f4bf1bf8b2fafbd8eeaeffb9bfe251e1ef/ss_93f274f4bf1bf8b2fafbd8eeaeffb9bfe251e1ef.1920x1080.jpg?t=1790818122" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2351740/93f274f4bf1bf8b2fafbd8eeaeffb9bfe251e1ef/ss_93f274f4bf1bf8b2fafbd8eeaeffb9bfe251e1ef.600x338.jpg?t=1790818122" alt="CRYING BOOTH — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2351740/7f70608f74c97fb0021b1fe2ba6e3670de162080/ss_7f70608f74c97fb0021b1fe2ba6e3670de162080.1920x1080.jpg?t=1790818122" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2351740/7f70608f74c97fb0021b1fe2ba6e3670de162080/ss_7f70608f74c97fb0021b1fe2ba6e3670de162080.600x338.jpg?t=1790818122" alt="CRYING BOOTH — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2351740/467d6ec0ce121c779c6ec71d90b2054a3b75298a/ss_467d6ec0ce121c779c6ec71d90b2054a3b75298a.1920x1080.jpg?t=1790818122" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2351740/467d6ec0ce121c779c6ec71d90b2054a3b75298a/ss_467d6ec0ce121c779c6ec71d90b2054a3b75298a.600x338.jpg?t=1790818122" alt="CRYING BOOTH — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2351740/a350addc6ca8f8be7810a4d8e7736696df656646/ss_a350addc6ca8f8be7810a4d8e7736696df656646.1920x1080.jpg?t=1790818122" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2351740/a350addc6ca8f8be7810a4d8e7736696df656646/ss_a350addc6ca8f8be7810a4d8e7736696df656646.600x338.jpg?t=1790818122" alt="CRYING BOOTH — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2351740/379a9f06ff7fc378e1dc57573f55804ff80e7ed6/ss_379a9f06ff7fc378e1dc57573f55804ff80e7ed6.1920x1080.jpg?t=1790818122" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2351740/379a9f06ff7fc378e1dc57573f55804ff80e7ed6/ss_379a9f06ff7fc378e1dc57573f55804ff80e7ed6.600x338.jpg?t=1790818122" alt="CRYING BOOTH — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2351740/d93273a807e20693afaef8ca71737626c760d56b/ss_d93273a807e20693afaef8ca71737626c760d56b.1920x1080.jpg?t=1790818122" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2351740/d93273a807e20693afaef8ca71737626c760d56b/ss_d93273a807e20693afaef8ca71737626c760d56b.600x338.jpg?t=1790818122" alt="CRYING BOOTH — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2351740/f9c4245908e3b09378759fd187665bbedf98f9d2/ss_f9c4245908e3b09378759fd187665bbedf98f9d2.1920x1080.jpg?t=1790818122" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2351740/f9c4245908e3b09378759fd187665bbedf98f9d2/ss_f9c4245908e3b09378759fd187665bbedf98f9d2.600x338.jpg?t=1790818122" alt="CRYING BOOTH — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2351740/c219741a9fc36e7c66b5f5f4fd768b71962c782a/ss_c219741a9fc36e7c66b5f5f4fd768b71962c782a.1920x1080.jpg?t=1790818122" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2351740/c219741a9fc36e7c66b5f5f4fd768b71962c782a/ss_c219741a9fc36e7c66b5f5f4fd768b71962c782a.600x338.jpg?t=1790818122" alt="CRYING BOOTH — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2351740/190957f38123f0fc7c2d4ed2afe647441e43f5a4/ss_190957f38123f0fc7c2d4ed2afe647441e43f5a4.1920x1080.jpg?t=1790818122" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2351740/190957f38123f0fc7c2d4ed2afe647441e43f5a4/ss_190957f38123f0fc7c2d4ed2afe647441e43f5a4.600x338.jpg?t=1790818122" alt="CRYING BOOTH — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+      </div>
+
+      <h2>Геймплей</h2>
+      <div class="game-movies">
+        <figure class="game-movie"><div class="game-video" data-hls="https://video.akamai.steamstatic.com/store_trailers/2351740/395526729/2da215ad731ccffd13d444822fb6af75dc61b318/1787695430/hls_264_master.m3u8?t=1787787185" data-poster="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257408560/4e7854ca5c23780dfe3eec9836a4900901153b68/movie_600x337.jpg?t=1787787185" role="button" tabindex="0" aria-label="Смотреть геймплей: Overview"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257408560/4e7854ca5c23780dfe3eec9836a4900901153b68/movie_600x337.jpg?t=1787787185" alt="" loading="lazy" width="480" height="270" /><span class="game-video-play" aria-hidden="true"></span></div></figure>
+      </div>
+
+<p style="color: var(--text-faint); font-size: 13px; margin-top: 30px;">
         Данные о цене, отзывах и статистике обновляются автоматически на основе
         Steam Store API и SteamSpy.
       </p>
@@ -284,5 +332,6 @@ function declineCookies() {
 })();
 </script>
 <script src="/newsletter.js?v=2" defer></script>
+<script defer src="/game-media.js?v=1"></script>
 </body>
 </html>

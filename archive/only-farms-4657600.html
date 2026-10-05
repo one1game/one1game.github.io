@@ -112,6 +112,38 @@
     }
     .game-stat-card .label { font-size: 12px; color: var(--text-faint); text-transform: uppercase; }
     .game-stat-card .value { font-size: 20px; font-weight: bold; margin-top: 4px; }
+    .game-shots {
+      display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+      gap: 12px; margin: 20px 0;
+    }
+    .game-shot {
+      display: block; border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 8px; overflow: hidden;
+    }
+    .game-shot img { display: block; width: 100%; height: auto; }
+    .game-movies { display: grid; gap: 16px; margin: 20px 0; }
+    .game-movie { margin: 0; }
+    .game-movie video {
+      display: block; width: 100%; height: auto;
+      border-radius: 8px; background: #000;
+    }
+    .game-movie figcaption { margin-top: 6px; font-size: 13px; color: var(--text-faint); }
+    .game-video {
+      position: relative; cursor: pointer; overflow: hidden;
+      border-radius: 8px; background: #000; aspect-ratio: 16 / 9;
+    }
+    .game-video img { display: block; width: 100%; height: 100%; object-fit: cover; }
+    .game-video-play { position: absolute; inset: 0; display: grid; place-items: center; }
+    .game-video-play::before {
+      content: ''; width: 58px; height: 58px; border-radius: 50%;
+      background: rgba(0,0,0,0.5); border: 2px solid rgba(255,255,255,0.75);
+    }
+    .game-video-play::after {
+      content: ''; position: absolute; margin-left: 5px;
+      border-style: solid; border-width: 11px 0 11px 18px;
+      border-color: transparent transparent transparent #fff;
+    }
+    .game-video-el { display: block; width: 100%; height: 100%; background: #000; }
   </style>
 </head>
 <body>
@@ -150,7 +182,7 @@
 
     <article class="article-body">
 
-      <p>Hot days. Dirty secrets. Endless temptation. This summer is about to get hotter than you planned. Take on wild festival challenges, get dangerously close to tempting girls, uncover their hidden desires, and let every choice take you somewhere unexpected.🔞</p>
+      
 
       <div class="game-stats-grid">
         <div class="game-stat-card">
@@ -166,10 +198,6 @@
           <div class="label">Владельцев (оценка)</div>
           <div class="value">0 – 20,000</div>
         </div>
-        <div class="game-stat-card">
-          <div class="label">Среднее время игры</div>
-          <div class="value">нет данных</div>
-        </div>
       </div>
 
       <h2>Об игре</h2>
@@ -183,7 +211,28 @@
         </a>
       </p>
 
-      <p style="color: var(--text-faint); font-size: 13px; margin-top: 30px;">
+            <h2>Скриншоты</h2>
+      <div class="game-shots">
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4657600/73e86076ac71c32261b274576975293766ba60a7/ss_73e86076ac71c32261b274576975293766ba60a7.1920x1080.jpg?t=1790884168" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4657600/73e86076ac71c32261b274576975293766ba60a7/ss_73e86076ac71c32261b274576975293766ba60a7.600x338.jpg?t=1790884168" alt="ONLY FARMS 🍑 — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4657600/6559e44148eae77afffdc7f06fc90d6b5acfb263/ss_6559e44148eae77afffdc7f06fc90d6b5acfb263.1920x1080.jpg?t=1790884168" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4657600/6559e44148eae77afffdc7f06fc90d6b5acfb263/ss_6559e44148eae77afffdc7f06fc90d6b5acfb263.600x338.jpg?t=1790884168" alt="ONLY FARMS 🍑 — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4657600/623af450e12e4c5cd61d3ad841549471b3c62ad3/ss_623af450e12e4c5cd61d3ad841549471b3c62ad3.1920x1080.jpg?t=1790884168" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4657600/623af450e12e4c5cd61d3ad841549471b3c62ad3/ss_623af450e12e4c5cd61d3ad841549471b3c62ad3.600x338.jpg?t=1790884168" alt="ONLY FARMS 🍑 — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4657600/a370a08fc01a84a8d21cdf1582dfa5e268190071/ss_a370a08fc01a84a8d21cdf1582dfa5e268190071.1920x1080.jpg?t=1790884168" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4657600/a370a08fc01a84a8d21cdf1582dfa5e268190071/ss_a370a08fc01a84a8d21cdf1582dfa5e268190071.600x338.jpg?t=1790884168" alt="ONLY FARMS 🍑 — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4657600/00f49c2a70869ebad38cc3f4b275e96c005f4d34/ss_00f49c2a70869ebad38cc3f4b275e96c005f4d34.1920x1080.jpg?t=1790884168" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4657600/00f49c2a70869ebad38cc3f4b275e96c005f4d34/ss_00f49c2a70869ebad38cc3f4b275e96c005f4d34.600x338.jpg?t=1790884168" alt="ONLY FARMS 🍑 — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4657600/e8c4d357c4d4cf1da7ddaad3da15539eaf0860e3/ss_e8c4d357c4d4cf1da7ddaad3da15539eaf0860e3.1920x1080.jpg?t=1790884168" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4657600/e8c4d357c4d4cf1da7ddaad3da15539eaf0860e3/ss_e8c4d357c4d4cf1da7ddaad3da15539eaf0860e3.600x338.jpg?t=1790884168" alt="ONLY FARMS 🍑 — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4657600/ef5d26dc74021ada3330fac183a7a8558bb85ce0/ss_ef5d26dc74021ada3330fac183a7a8558bb85ce0.1920x1080.jpg?t=1790884168" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4657600/ef5d26dc74021ada3330fac183a7a8558bb85ce0/ss_ef5d26dc74021ada3330fac183a7a8558bb85ce0.600x338.jpg?t=1790884168" alt="ONLY FARMS 🍑 — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4657600/4c4e32025b9bec227e0d53e464a053b1453b6d90/ss_4c4e32025b9bec227e0d53e464a053b1453b6d90.1920x1080.jpg?t=1790884168" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4657600/4c4e32025b9bec227e0d53e464a053b1453b6d90/ss_4c4e32025b9bec227e0d53e464a053b1453b6d90.600x338.jpg?t=1790884168" alt="ONLY FARMS 🍑 — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4657600/cb4a08de5f17f17419908e1fc9c4d11e743d9e73/ss_cb4a08de5f17f17419908e1fc9c4d11e743d9e73.1920x1080.jpg?t=1790884168" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4657600/cb4a08de5f17f17419908e1fc9c4d11e743d9e73/ss_cb4a08de5f17f17419908e1fc9c4d11e743d9e73.600x338.jpg?t=1790884168" alt="ONLY FARMS 🍑 — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4657600/f98d96e854d40b0225346f28888014351cc1f7c4/ss_f98d96e854d40b0225346f28888014351cc1f7c4.1920x1080.jpg?t=1790884168" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4657600/f98d96e854d40b0225346f28888014351cc1f7c4/ss_f98d96e854d40b0225346f28888014351cc1f7c4.600x338.jpg?t=1790884168" alt="ONLY FARMS 🍑 — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4657600/91b8e6b22cf4ac2c0d01012369b06157058eedd8/ss_91b8e6b22cf4ac2c0d01012369b06157058eedd8.1920x1080.jpg?t=1790884168" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4657600/91b8e6b22cf4ac2c0d01012369b06157058eedd8/ss_91b8e6b22cf4ac2c0d01012369b06157058eedd8.600x338.jpg?t=1790884168" alt="ONLY FARMS 🍑 — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4657600/9fe3adb1198c187d815a2bdcf711294c060cca43/ss_9fe3adb1198c187d815a2bdcf711294c060cca43.1920x1080.jpg?t=1790884168" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4657600/9fe3adb1198c187d815a2bdcf711294c060cca43/ss_9fe3adb1198c187d815a2bdcf711294c060cca43.600x338.jpg?t=1790884168" alt="ONLY FARMS 🍑 — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+      </div>
+
+      <h2>Геймплей</h2>
+      <div class="game-movies">
+        <figure class="game-movie"><div class="game-video" data-hls="https://video.akamai.steamstatic.com/store_trailers/4657600/561355115/9a9fea2c7e96b822dfcc378d9cdea5fa6b344eb4/1788951371/hls_264_master.m3u8?t=1788957070" data-poster="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257420779/a0660a66f13d20729eed68fcb6b077f1a98c93ee/movie_600x337.jpg?t=1788957070" role="button" tabindex="0" aria-label="Смотреть геймплей: ONLY FARMS2"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257420779/a0660a66f13d20729eed68fcb6b077f1a98c93ee/movie_600x337.jpg?t=1788957070" alt="" loading="lazy" width="480" height="270" /><span class="game-video-play" aria-hidden="true"></span></div></figure>
+      </div>
+
+<p style="color: var(--text-faint); font-size: 13px; margin-top: 30px;">
         Данные о цене, отзывах и статистике обновляются автоматически на основе
         Steam Store API и SteamSpy.
       </p>
@@ -284,5 +333,6 @@ function declineCookies() {
 })();
 </script>
 <script src="/newsletter.js?v=2" defer></script>
+<script defer src="/game-media.js?v=1"></script>
 </body>
 </html>

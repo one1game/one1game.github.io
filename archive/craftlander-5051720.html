@@ -108,6 +108,38 @@
     }
     .game-stat-card .label { font-size: 12px; color: var(--text-faint); text-transform: uppercase; }
     .game-stat-card .value { font-size: 20px; font-weight: bold; margin-top: 4px; }
+    .game-shots {
+      display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+      gap: 12px; margin: 20px 0;
+    }
+    .game-shot {
+      display: block; border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 8px; overflow: hidden;
+    }
+    .game-shot img { display: block; width: 100%; height: auto; }
+    .game-movies { display: grid; gap: 16px; margin: 20px 0; }
+    .game-movie { margin: 0; }
+    .game-movie video {
+      display: block; width: 100%; height: auto;
+      border-radius: 8px; background: #000;
+    }
+    .game-movie figcaption { margin-top: 6px; font-size: 13px; color: var(--text-faint); }
+    .game-video {
+      position: relative; cursor: pointer; overflow: hidden;
+      border-radius: 8px; background: #000; aspect-ratio: 16 / 9;
+    }
+    .game-video img { display: block; width: 100%; height: 100%; object-fit: cover; }
+    .game-video-play { position: absolute; inset: 0; display: grid; place-items: center; }
+    .game-video-play::before {
+      content: ''; width: 58px; height: 58px; border-radius: 50%;
+      background: rgba(0,0,0,0.5); border: 2px solid rgba(255,255,255,0.75);
+    }
+    .game-video-play::after {
+      content: ''; position: absolute; margin-left: 5px;
+      border-style: solid; border-width: 11px 0 11px 18px;
+      border-color: transparent transparent transparent #fff;
+    }
+    .game-video-el { display: block; width: 100%; height: 100%; background: #000; }
   </style>
 </head>
 <body>
@@ -146,7 +178,7 @@
 
     <article class="article-body">
 
-      <p>Fight, explore, and sail across dangerous islands with discovery around every corner. Harvest rare materials and craft special gear to help you as you battle menacing fantastical creatures, build up your ship, and conquer a high-stakes final boss in a compact first-person island adventure.</p>
+      
 
       <div class="game-stats-grid">
         <div class="game-stat-card">
@@ -162,10 +194,6 @@
           <div class="label">Владельцев (оценка)</div>
           <div class="value">0 – 20,000</div>
         </div>
-        <div class="game-stat-card">
-          <div class="label">Среднее время игры</div>
-          <div class="value">нет данных</div>
-        </div>
       </div>
 
       <h2>Об игре</h2>
@@ -179,7 +207,28 @@
         </a>
       </p>
 
-      <p style="color: var(--text-faint); font-size: 13px; margin-top: 30px;">
+            <h2>Скриншоты</h2>
+      <div class="game-shots">
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5051720/1065bd7d2db8f99cd100b2c2ac4a328ff2bfaccc/ss_1065bd7d2db8f99cd100b2c2ac4a328ff2bfaccc.1920x1080.jpg?t=1790747644" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5051720/1065bd7d2db8f99cd100b2c2ac4a328ff2bfaccc/ss_1065bd7d2db8f99cd100b2c2ac4a328ff2bfaccc.600x338.jpg?t=1790747644" alt="CRAFTLANDER — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5051720/ca70a9fd4fcdd5acc9e044ed95ca8af9302a727a/ss_ca70a9fd4fcdd5acc9e044ed95ca8af9302a727a.1920x1080.jpg?t=1790747644" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5051720/ca70a9fd4fcdd5acc9e044ed95ca8af9302a727a/ss_ca70a9fd4fcdd5acc9e044ed95ca8af9302a727a.600x338.jpg?t=1790747644" alt="CRAFTLANDER — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5051720/f8a4db4b3df5373831c4de0eeb4841d52f387069/ss_f8a4db4b3df5373831c4de0eeb4841d52f387069.1920x1080.jpg?t=1790747644" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5051720/f8a4db4b3df5373831c4de0eeb4841d52f387069/ss_f8a4db4b3df5373831c4de0eeb4841d52f387069.600x338.jpg?t=1790747644" alt="CRAFTLANDER — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5051720/f04fcc641c51cd5c26db6952ecdee29335509afd/ss_f04fcc641c51cd5c26db6952ecdee29335509afd.1920x1080.jpg?t=1790747644" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5051720/f04fcc641c51cd5c26db6952ecdee29335509afd/ss_f04fcc641c51cd5c26db6952ecdee29335509afd.600x338.jpg?t=1790747644" alt="CRAFTLANDER — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5051720/95bd43769fc872b7a254e5170f6d88b8a320bb10/ss_95bd43769fc872b7a254e5170f6d88b8a320bb10.1920x1080.jpg?t=1790747644" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5051720/95bd43769fc872b7a254e5170f6d88b8a320bb10/ss_95bd43769fc872b7a254e5170f6d88b8a320bb10.600x338.jpg?t=1790747644" alt="CRAFTLANDER — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5051720/f7d35dfe7b143f6534b3d84b05be937033dbe361/ss_f7d35dfe7b143f6534b3d84b05be937033dbe361.1920x1080.jpg?t=1790747644" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5051720/f7d35dfe7b143f6534b3d84b05be937033dbe361/ss_f7d35dfe7b143f6534b3d84b05be937033dbe361.600x338.jpg?t=1790747644" alt="CRAFTLANDER — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5051720/25e86cdf7ad4d828c39427b188c882cd7e0fa1bb/ss_25e86cdf7ad4d828c39427b188c882cd7e0fa1bb.1920x1080.jpg?t=1790747644" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5051720/25e86cdf7ad4d828c39427b188c882cd7e0fa1bb/ss_25e86cdf7ad4d828c39427b188c882cd7e0fa1bb.600x338.jpg?t=1790747644" alt="CRAFTLANDER — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5051720/eb625c3a23e6c0392a594c0215cd87b42ea091fc/ss_eb625c3a23e6c0392a594c0215cd87b42ea091fc.1920x1080.jpg?t=1790747644" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5051720/eb625c3a23e6c0392a594c0215cd87b42ea091fc/ss_eb625c3a23e6c0392a594c0215cd87b42ea091fc.600x338.jpg?t=1790747644" alt="CRAFTLANDER — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5051720/f22601a7bc3890d91f5352aa10c0797c010468e4/ss_f22601a7bc3890d91f5352aa10c0797c010468e4.1920x1080.jpg?t=1790747644" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5051720/f22601a7bc3890d91f5352aa10c0797c010468e4/ss_f22601a7bc3890d91f5352aa10c0797c010468e4.600x338.jpg?t=1790747644" alt="CRAFTLANDER — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5051720/4c0a6d0b73db386624c858391d23c59324aa9395/ss_4c0a6d0b73db386624c858391d23c59324aa9395.1920x1080.jpg?t=1790747644" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5051720/4c0a6d0b73db386624c858391d23c59324aa9395/ss_4c0a6d0b73db386624c858391d23c59324aa9395.600x338.jpg?t=1790747644" alt="CRAFTLANDER — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5051720/eb82fea1699ca21982bd9d6b9817a1de993eee46/ss_eb82fea1699ca21982bd9d6b9817a1de993eee46.1920x1080.jpg?t=1790747644" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5051720/eb82fea1699ca21982bd9d6b9817a1de993eee46/ss_eb82fea1699ca21982bd9d6b9817a1de993eee46.600x338.jpg?t=1790747644" alt="CRAFTLANDER — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5051720/aff6ec874916598829c9e32d484fb7e5f8884f9e/ss_aff6ec874916598829c9e32d484fb7e5f8884f9e.1920x1080.jpg?t=1790747644" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5051720/aff6ec874916598829c9e32d484fb7e5f8884f9e/ss_aff6ec874916598829c9e32d484fb7e5f8884f9e.600x338.jpg?t=1790747644" alt="CRAFTLANDER — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+      </div>
+
+      <h2>Геймплей</h2>
+      <div class="game-movies">
+        <figure class="game-movie"><div class="game-video" data-hls="https://video.akamai.steamstatic.com/store_trailers/5051720/334409522/a58d4486da9d80be9c5ee66e044be87ea4413e18/1790740489/hls_264_master.m3u8?t=1790747642" data-poster="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257426260/d8a36882220945db1b2395d81fa7df2ae5eb423d/movie_600x337.jpg?t=1790747642" role="button" tabindex="0" aria-label="Смотреть геймплей: Gameplay Trailer 1"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257426260/d8a36882220945db1b2395d81fa7df2ae5eb423d/movie_600x337.jpg?t=1790747642" alt="" loading="lazy" width="480" height="270" /><span class="game-video-play" aria-hidden="true"></span></div></figure>
+      </div>
+
+<p style="color: var(--text-faint); font-size: 13px; margin-top: 30px;">
         Данные о цене, отзывах и статистике обновляются автоматически на основе
         Steam Store API и SteamSpy.
       </p>
@@ -280,5 +329,6 @@ function declineCookies() {
 })();
 </script>
 <script src="/newsletter.js?v=2" defer></script>
+<script defer src="/game-media.js?v=1"></script>
 </body>
 </html>

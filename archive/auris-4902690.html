@@ -112,6 +112,38 @@
     }
     .game-stat-card .label { font-size: 12px; color: var(--text-faint); text-transform: uppercase; }
     .game-stat-card .value { font-size: 20px; font-weight: bold; margin-top: 4px; }
+    .game-shots {
+      display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+      gap: 12px; margin: 20px 0;
+    }
+    .game-shot {
+      display: block; border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 8px; overflow: hidden;
+    }
+    .game-shot img { display: block; width: 100%; height: auto; }
+    .game-movies { display: grid; gap: 16px; margin: 20px 0; }
+    .game-movie { margin: 0; }
+    .game-movie video {
+      display: block; width: 100%; height: auto;
+      border-radius: 8px; background: #000;
+    }
+    .game-movie figcaption { margin-top: 6px; font-size: 13px; color: var(--text-faint); }
+    .game-video {
+      position: relative; cursor: pointer; overflow: hidden;
+      border-radius: 8px; background: #000; aspect-ratio: 16 / 9;
+    }
+    .game-video img { display: block; width: 100%; height: 100%; object-fit: cover; }
+    .game-video-play { position: absolute; inset: 0; display: grid; place-items: center; }
+    .game-video-play::before {
+      content: ''; width: 58px; height: 58px; border-radius: 50%;
+      background: rgba(0,0,0,0.5); border: 2px solid rgba(255,255,255,0.75);
+    }
+    .game-video-play::after {
+      content: ''; position: absolute; margin-left: 5px;
+      border-style: solid; border-width: 11px 0 11px 18px;
+      border-color: transparent transparent transparent #fff;
+    }
+    .game-video-el { display: block; width: 100%; height: 100%; background: #000; }
   </style>
 </head>
 <body>
@@ -150,7 +182,7 @@
 
     <article class="article-body">
 
-      <p>The professional hi-res music player Steam has been missing. WASAPI exclusive bit-perfect playback, native DSD, parametric EQ with AutoEQ, DR/LUFS analysis, internet radio.</p>
+      
 
       <div class="game-stats-grid">
         <div class="game-stat-card">
@@ -166,10 +198,6 @@
           <div class="label">Владельцев (оценка)</div>
           <div class="value">0 – 20,000</div>
         </div>
-        <div class="game-stat-card">
-          <div class="label">Среднее время игры</div>
-          <div class="value">нет данных</div>
-        </div>
       </div>
 
       <h2>Об игре</h2>
@@ -183,7 +211,22 @@
         </a>
       </p>
 
-      <p style="color: var(--text-faint); font-size: 13px; margin-top: 30px;">
+            <h2>Скриншоты</h2>
+      <div class="game-shots">
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4902690/4224d64507fba33b96ee01bb3d07692b7e47675b/ss_4224d64507fba33b96ee01bb3d07692b7e47675b.1920x1080.jpg?t=1791129480" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4902690/4224d64507fba33b96ee01bb3d07692b7e47675b/ss_4224d64507fba33b96ee01bb3d07692b7e47675b.600x338.jpg?t=1791129480" alt="Auris — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4902690/469533d7730b78a1fafaac12b40cc5bb7a5b8f6d/ss_469533d7730b78a1fafaac12b40cc5bb7a5b8f6d.1920x1080.jpg?t=1791129480" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4902690/469533d7730b78a1fafaac12b40cc5bb7a5b8f6d/ss_469533d7730b78a1fafaac12b40cc5bb7a5b8f6d.600x338.jpg?t=1791129480" alt="Auris — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4902690/19a044da026c20354a7ff5b5a4bc0530aa85a6b6/ss_19a044da026c20354a7ff5b5a4bc0530aa85a6b6.1920x1080.jpg?t=1791129480" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4902690/19a044da026c20354a7ff5b5a4bc0530aa85a6b6/ss_19a044da026c20354a7ff5b5a4bc0530aa85a6b6.600x338.jpg?t=1791129480" alt="Auris — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4902690/2bea776131d10c1eb399713f66301a028cea1079/ss_2bea776131d10c1eb399713f66301a028cea1079.1920x1080.jpg?t=1791129480" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4902690/2bea776131d10c1eb399713f66301a028cea1079/ss_2bea776131d10c1eb399713f66301a028cea1079.600x338.jpg?t=1791129480" alt="Auris — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4902690/31da44fc16866acbb89732e99a8bfec1a7c0da6a/ss_31da44fc16866acbb89732e99a8bfec1a7c0da6a.1920x1080.jpg?t=1791129480" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4902690/31da44fc16866acbb89732e99a8bfec1a7c0da6a/ss_31da44fc16866acbb89732e99a8bfec1a7c0da6a.600x338.jpg?t=1791129480" alt="Auris — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4902690/1e1ce621ef46750f72c654c931577ab3c4e65d6a/ss_1e1ce621ef46750f72c654c931577ab3c4e65d6a.1920x1080.jpg?t=1791129480" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4902690/1e1ce621ef46750f72c654c931577ab3c4e65d6a/ss_1e1ce621ef46750f72c654c931577ab3c4e65d6a.600x338.jpg?t=1791129480" alt="Auris — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+      </div>
+
+      <h2>Геймплей</h2>
+      <div class="game-movies">
+        <figure class="game-movie"><div class="game-video" data-hls="https://video.akamai.steamstatic.com/store_trailers/4902690/1358599071/54313cc137010c45f47fbab4b0562142a1bb6f2a/1782595614/hls_264_master.m3u8?t=1789642331" data-poster="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257366903/3b2923e41e2763a81171b02f0ccc90eb69308804/movie_600x337.jpg?t=1789642331" role="button" tabindex="0" aria-label="Смотреть геймплей: Auris - Trailer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257366903/3b2923e41e2763a81171b02f0ccc90eb69308804/movie_600x337.jpg?t=1789642331" alt="" loading="lazy" width="480" height="270" /><span class="game-video-play" aria-hidden="true"></span></div></figure>
+      </div>
+
+<p style="color: var(--text-faint); font-size: 13px; margin-top: 30px;">
         Данные о цене, отзывах и статистике обновляются автоматически на основе
         Steam Store API и SteamSpy.
       </p>
@@ -284,5 +327,6 @@ function declineCookies() {
 })();
 </script>
 <script src="/newsletter.js?v=2" defer></script>
+<script defer src="/game-media.js?v=1"></script>
 </body>
 </html>

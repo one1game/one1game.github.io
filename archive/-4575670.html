@@ -112,6 +112,38 @@
     }
     .game-stat-card .label { font-size: 12px; color: var(--text-faint); text-transform: uppercase; }
     .game-stat-card .value { font-size: 20px; font-weight: bold; margin-top: 4px; }
+    .game-shots {
+      display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+      gap: 12px; margin: 20px 0;
+    }
+    .game-shot {
+      display: block; border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 8px; overflow: hidden;
+    }
+    .game-shot img { display: block; width: 100%; height: auto; }
+    .game-movies { display: grid; gap: 16px; margin: 20px 0; }
+    .game-movie { margin: 0; }
+    .game-movie video {
+      display: block; width: 100%; height: auto;
+      border-radius: 8px; background: #000;
+    }
+    .game-movie figcaption { margin-top: 6px; font-size: 13px; color: var(--text-faint); }
+    .game-video {
+      position: relative; cursor: pointer; overflow: hidden;
+      border-radius: 8px; background: #000; aspect-ratio: 16 / 9;
+    }
+    .game-video img { display: block; width: 100%; height: 100%; object-fit: cover; }
+    .game-video-play { position: absolute; inset: 0; display: grid; place-items: center; }
+    .game-video-play::before {
+      content: ''; width: 58px; height: 58px; border-radius: 50%;
+      background: rgba(0,0,0,0.5); border: 2px solid rgba(255,255,255,0.75);
+    }
+    .game-video-play::after {
+      content: ''; position: absolute; margin-left: 5px;
+      border-style: solid; border-width: 11px 0 11px 18px;
+      border-color: transparent transparent transparent #fff;
+    }
+    .game-video-el { display: block; width: 100%; height: 100%; background: #000; }
   </style>
 </head>
 <body>
@@ -150,7 +182,7 @@
 
     <article class="article-body">
 
-      <p>&quot;Succubus Abyss: 30-Day Survival Guide&quot; is a card-building roguelike game. Players can freely assemble their own team, challenge different bosses, and save the people of the otherworld.</p>
+      
 
       <div class="game-stats-grid">
         <div class="game-stat-card">
@@ -166,10 +198,6 @@
           <div class="label">Владельцев (оценка)</div>
           <div class="value">0 – 20,000</div>
         </div>
-        <div class="game-stat-card">
-          <div class="label">Среднее время игры</div>
-          <div class="value">нет данных</div>
-        </div>
       </div>
 
       <h2>Об игре</h2>
@@ -183,7 +211,23 @@
         </a>
       </p>
 
-      <p style="color: var(--text-faint); font-size: 13px; margin-top: 30px;">
+            <h2>Скриншоты</h2>
+      <div class="game-shots">
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4575670/fe362705cc00d3129b4c92f87280cb3c8f17aa26/ss_fe362705cc00d3129b4c92f87280cb3c8f17aa26.1920x1080.jpg?t=1790065339" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4575670/fe362705cc00d3129b4c92f87280cb3c8f17aa26/ss_fe362705cc00d3129b4c92f87280cb3c8f17aa26.600x338.jpg?t=1790065339" alt="Succubus Abyss: 30-Day Survival Guide — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4575670/6a1b1612c6bfe63ff0db581d040a211686930f9b/ss_6a1b1612c6bfe63ff0db581d040a211686930f9b.1920x1080.jpg?t=1790065339" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4575670/6a1b1612c6bfe63ff0db581d040a211686930f9b/ss_6a1b1612c6bfe63ff0db581d040a211686930f9b.600x338.jpg?t=1790065339" alt="Succubus Abyss: 30-Day Survival Guide — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4575670/5046855b66ebedec2695941f7fff866f1d92da87/ss_5046855b66ebedec2695941f7fff866f1d92da87.1920x1080.jpg?t=1790065339" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4575670/5046855b66ebedec2695941f7fff866f1d92da87/ss_5046855b66ebedec2695941f7fff866f1d92da87.600x338.jpg?t=1790065339" alt="Succubus Abyss: 30-Day Survival Guide — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4575670/de8103cb2b20c11e451729dd0dc433a2c3631f3e/ss_de8103cb2b20c11e451729dd0dc433a2c3631f3e.1920x1080.jpg?t=1790065339" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4575670/de8103cb2b20c11e451729dd0dc433a2c3631f3e/ss_de8103cb2b20c11e451729dd0dc433a2c3631f3e.600x338.jpg?t=1790065339" alt="Succubus Abyss: 30-Day Survival Guide — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4575670/61dea04511d13cc18519375dc5c30d945ebf4aac/ss_61dea04511d13cc18519375dc5c30d945ebf4aac.1920x1080.jpg?t=1790065339" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4575670/61dea04511d13cc18519375dc5c30d945ebf4aac/ss_61dea04511d13cc18519375dc5c30d945ebf4aac.600x338.jpg?t=1790065339" alt="Succubus Abyss: 30-Day Survival Guide — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4575670/229247cf40e6dba346a4665cb933f6c6d3f2060e/ss_229247cf40e6dba346a4665cb933f6c6d3f2060e.1920x1080.jpg?t=1790065339" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4575670/229247cf40e6dba346a4665cb933f6c6d3f2060e/ss_229247cf40e6dba346a4665cb933f6c6d3f2060e.600x338.jpg?t=1790065339" alt="Succubus Abyss: 30-Day Survival Guide — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4575670/2cca0bf199dce290b5eba7fc07d9b3973d0d0ec6/ss_2cca0bf199dce290b5eba7fc07d9b3973d0d0ec6.1920x1080.jpg?t=1790065339" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4575670/2cca0bf199dce290b5eba7fc07d9b3973d0d0ec6/ss_2cca0bf199dce290b5eba7fc07d9b3973d0d0ec6.600x338.jpg?t=1790065339" alt="Succubus Abyss: 30-Day Survival Guide — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+      </div>
+
+      <h2>Геймплей</h2>
+      <div class="game-movies">
+        <figure class="game-movie"><div class="game-video" data-hls="https://video.akamai.steamstatic.com/store_trailers/4575670/419062018/350f9ddc1310e29d041f161728acca62f5578036/1787039014/hls_264_master.m3u8?t=1787039445" data-poster="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257402078/02da249ffe36f95c6e75df01fd45f3584ae37ec5/movie_600x337.jpg?t=1787039445" role="button" tabindex="0" aria-label="Смотреть геймплей: 宣传"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257402078/02da249ffe36f95c6e75df01fd45f3584ae37ec5/movie_600x337.jpg?t=1787039445" alt="" loading="lazy" width="480" height="270" /><span class="game-video-play" aria-hidden="true"></span></div></figure>
+      </div>
+
+<p style="color: var(--text-faint); font-size: 13px; margin-top: 30px;">
         Данные о цене, отзывах и статистике обновляются автоматически на основе
         Steam Store API и SteamSpy.
       </p>
@@ -284,5 +328,6 @@ function declineCookies() {
 })();
 </script>
 <script src="/newsletter.js?v=2" defer></script>
+<script defer src="/game-media.js?v=1"></script>
 </body>
 </html>

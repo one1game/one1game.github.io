@@ -112,6 +112,38 @@
     }
     .game-stat-card .label { font-size: 12px; color: var(--text-faint); text-transform: uppercase; }
     .game-stat-card .value { font-size: 20px; font-weight: bold; margin-top: 4px; }
+    .game-shots {
+      display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+      gap: 12px; margin: 20px 0;
+    }
+    .game-shot {
+      display: block; border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 8px; overflow: hidden;
+    }
+    .game-shot img { display: block; width: 100%; height: auto; }
+    .game-movies { display: grid; gap: 16px; margin: 20px 0; }
+    .game-movie { margin: 0; }
+    .game-movie video {
+      display: block; width: 100%; height: auto;
+      border-radius: 8px; background: #000;
+    }
+    .game-movie figcaption { margin-top: 6px; font-size: 13px; color: var(--text-faint); }
+    .game-video {
+      position: relative; cursor: pointer; overflow: hidden;
+      border-radius: 8px; background: #000; aspect-ratio: 16 / 9;
+    }
+    .game-video img { display: block; width: 100%; height: 100%; object-fit: cover; }
+    .game-video-play { position: absolute; inset: 0; display: grid; place-items: center; }
+    .game-video-play::before {
+      content: ''; width: 58px; height: 58px; border-radius: 50%;
+      background: rgba(0,0,0,0.5); border: 2px solid rgba(255,255,255,0.75);
+    }
+    .game-video-play::after {
+      content: ''; position: absolute; margin-left: 5px;
+      border-style: solid; border-width: 11px 0 11px 18px;
+      border-color: transparent transparent transparent #fff;
+    }
+    .game-video-el { display: block; width: 100%; height: 100%; background: #000; }
   </style>
 </head>
 <body>
@@ -166,10 +198,6 @@
           <div class="label">Владельцев (оценка)</div>
           <div class="value">0 – 20,000</div>
         </div>
-        <div class="game-stat-card">
-          <div class="label">Среднее время игры</div>
-          <div class="value">нет данных</div>
-        </div>
       </div>
 
       <h2>Об игре</h2>
@@ -183,7 +211,22 @@
         </a>
       </p>
 
-      <p style="color: var(--text-faint); font-size: 13px; margin-top: 30px;">
+            <h2>Скриншоты</h2>
+      <div class="game-shots">
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4976310/137c8aae257ab67a4f50a4513ed4812d1a300dc3/ss_137c8aae257ab67a4f50a4513ed4812d1a300dc3.1920x1080.jpg?t=1790897946" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4976310/137c8aae257ab67a4f50a4513ed4812d1a300dc3/ss_137c8aae257ab67a4f50a4513ed4812d1a300dc3.600x338.jpg?t=1790897946" alt="Hentai Tales: This Mesu Serves Me Now — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4976310/55a5a44cb42e7cd1fbd4473d5b78467d7b2629e5/ss_55a5a44cb42e7cd1fbd4473d5b78467d7b2629e5.1920x1080.jpg?t=1790897946" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4976310/55a5a44cb42e7cd1fbd4473d5b78467d7b2629e5/ss_55a5a44cb42e7cd1fbd4473d5b78467d7b2629e5.600x338.jpg?t=1790897946" alt="Hentai Tales: This Mesu Serves Me Now — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4976310/739a1066229c2cd0aef8fe41b44a00ca2a41078b/ss_739a1066229c2cd0aef8fe41b44a00ca2a41078b.1920x1080.jpg?t=1790897946" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4976310/739a1066229c2cd0aef8fe41b44a00ca2a41078b/ss_739a1066229c2cd0aef8fe41b44a00ca2a41078b.600x338.jpg?t=1790897946" alt="Hentai Tales: This Mesu Serves Me Now — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4976310/dd34ec5536ee90e620c8cf351bb3b10addfd6445/ss_dd34ec5536ee90e620c8cf351bb3b10addfd6445.1920x1080.jpg?t=1790897946" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4976310/dd34ec5536ee90e620c8cf351bb3b10addfd6445/ss_dd34ec5536ee90e620c8cf351bb3b10addfd6445.600x338.jpg?t=1790897946" alt="Hentai Tales: This Mesu Serves Me Now — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4976310/8c518dfb1aea2bd3b81b24781c9246c7aeaaa2cf/ss_8c518dfb1aea2bd3b81b24781c9246c7aeaaa2cf.1920x1080.jpg?t=1790897946" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4976310/8c518dfb1aea2bd3b81b24781c9246c7aeaaa2cf/ss_8c518dfb1aea2bd3b81b24781c9246c7aeaaa2cf.600x338.jpg?t=1790897946" alt="Hentai Tales: This Mesu Serves Me Now — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4976310/5d55f6654edeb11f2152123030f3baceac6127c0/ss_5d55f6654edeb11f2152123030f3baceac6127c0.1920x1080.jpg?t=1790897946" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4976310/5d55f6654edeb11f2152123030f3baceac6127c0/ss_5d55f6654edeb11f2152123030f3baceac6127c0.600x338.jpg?t=1790897946" alt="Hentai Tales: This Mesu Serves Me Now — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+      </div>
+
+      <h2>Геймплей</h2>
+      <div class="game-movies">
+        <figure class="game-movie"><div class="game-video" data-hls="https://video.akamai.steamstatic.com/store_trailers/4976310/393057029/a587ba63081b213fd05e2f9fb287e3dfd8da6f7b/1785553868/hls_264_master.m3u8?t=1786119926" data-poster="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257389725/c60b9b930937c50e90e58b52d4458ca497a378ee/movie_600x337.jpg?t=1786119926" role="button" tabindex="0" aria-label="Смотреть геймплей: preview"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257389725/c60b9b930937c50e90e58b52d4458ca497a378ee/movie_600x337.jpg?t=1786119926" alt="" loading="lazy" width="480" height="270" /><span class="game-video-play" aria-hidden="true"></span></div></figure>
+      </div>
+
+<p style="color: var(--text-faint); font-size: 13px; margin-top: 30px;">
         Данные о цене, отзывах и статистике обновляются автоматически на основе
         Steam Store API и SteamSpy.
       </p>
@@ -284,5 +327,6 @@ function declineCookies() {
 })();
 </script>
 <script src="/newsletter.js?v=2" defer></script>
+<script defer src="/game-media.js?v=1"></script>
 </body>
 </html>

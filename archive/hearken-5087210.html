@@ -112,6 +112,38 @@
     }
     .game-stat-card .label { font-size: 12px; color: var(--text-faint); text-transform: uppercase; }
     .game-stat-card .value { font-size: 20px; font-weight: bold; margin-top: 4px; }
+    .game-shots {
+      display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+      gap: 12px; margin: 20px 0;
+    }
+    .game-shot {
+      display: block; border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 8px; overflow: hidden;
+    }
+    .game-shot img { display: block; width: 100%; height: auto; }
+    .game-movies { display: grid; gap: 16px; margin: 20px 0; }
+    .game-movie { margin: 0; }
+    .game-movie video {
+      display: block; width: 100%; height: auto;
+      border-radius: 8px; background: #000;
+    }
+    .game-movie figcaption { margin-top: 6px; font-size: 13px; color: var(--text-faint); }
+    .game-video {
+      position: relative; cursor: pointer; overflow: hidden;
+      border-radius: 8px; background: #000; aspect-ratio: 16 / 9;
+    }
+    .game-video img { display: block; width: 100%; height: 100%; object-fit: cover; }
+    .game-video-play { position: absolute; inset: 0; display: grid; place-items: center; }
+    .game-video-play::before {
+      content: ''; width: 58px; height: 58px; border-radius: 50%;
+      background: rgba(0,0,0,0.5); border: 2px solid rgba(255,255,255,0.75);
+    }
+    .game-video-play::after {
+      content: ''; position: absolute; margin-left: 5px;
+      border-style: solid; border-width: 11px 0 11px 18px;
+      border-color: transparent transparent transparent #fff;
+    }
+    .game-video-el { display: block; width: 100%; height: 100%; background: #000; }
   </style>
 </head>
 <body>
@@ -166,10 +198,6 @@
           <div class="label">Владельцев (оценка)</div>
           <div class="value">0 – 20,000</div>
         </div>
-        <div class="game-stat-card">
-          <div class="label">Среднее время игры</div>
-          <div class="value">нет данных</div>
-        </div>
       </div>
 
       <h2>Об игре</h2>
@@ -183,7 +211,22 @@
         </a>
       </p>
 
-      <p style="color: var(--text-faint); font-size: 13px; margin-top: 30px;">
+            <h2>Скриншоты</h2>
+      <div class="game-shots">
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5087210/9ddcd62f280b667cb022e2c84b2820375a72c5d7/ss_9ddcd62f280b667cb022e2c84b2820375a72c5d7.1920x1080.jpg?t=1791194881" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5087210/9ddcd62f280b667cb022e2c84b2820375a72c5d7/ss_9ddcd62f280b667cb022e2c84b2820375a72c5d7.600x338.jpg?t=1791194881" alt="HEARKEN — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5087210/4c112762998e5a348c01a562f34a1059a36862a5/ss_4c112762998e5a348c01a562f34a1059a36862a5.1920x1080.jpg?t=1791194881" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5087210/4c112762998e5a348c01a562f34a1059a36862a5/ss_4c112762998e5a348c01a562f34a1059a36862a5.600x338.jpg?t=1791194881" alt="HEARKEN — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5087210/0fff5184eb72e1134b362511e81d2160d6cfe237/ss_0fff5184eb72e1134b362511e81d2160d6cfe237.1920x1080.jpg?t=1791194881" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5087210/0fff5184eb72e1134b362511e81d2160d6cfe237/ss_0fff5184eb72e1134b362511e81d2160d6cfe237.600x338.jpg?t=1791194881" alt="HEARKEN — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5087210/024524f1cd85eb5fe2253575cdbc66c22d694733/ss_024524f1cd85eb5fe2253575cdbc66c22d694733.1920x1080.jpg?t=1791194881" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5087210/024524f1cd85eb5fe2253575cdbc66c22d694733/ss_024524f1cd85eb5fe2253575cdbc66c22d694733.600x338.jpg?t=1791194881" alt="HEARKEN — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5087210/155893fa9b0a9de5d83ce4dfa0bd6ad21a215596/ss_155893fa9b0a9de5d83ce4dfa0bd6ad21a215596.1920x1080.jpg?t=1791194881" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5087210/155893fa9b0a9de5d83ce4dfa0bd6ad21a215596/ss_155893fa9b0a9de5d83ce4dfa0bd6ad21a215596.600x338.jpg?t=1791194881" alt="HEARKEN — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5087210/60bc846be2ba7a25cd6db817aa78ae21253181f2/ss_60bc846be2ba7a25cd6db817aa78ae21253181f2.1920x1080.jpg?t=1791194881" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5087210/60bc846be2ba7a25cd6db817aa78ae21253181f2/ss_60bc846be2ba7a25cd6db817aa78ae21253181f2.600x338.jpg?t=1791194881" alt="HEARKEN — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+      </div>
+
+      <h2>Геймплей</h2>
+      <div class="game-movies">
+        <figure class="game-movie"><div class="game-video" data-hls="https://video.akamai.steamstatic.com/store_trailers/5087210/505951784/46507cf34b220a225975c96947aa019f900edc18/1787854192/hls_264_master.m3u8?t=1787854691" data-poster="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257410469/31a8bc4cd8cc3f46a9501c5b5ad6cbb78b23bdaa/movie_600x337.jpg?t=1787854691" role="button" tabindex="0" aria-label="Смотреть геймплей: Teaser HEARKEN"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257410469/31a8bc4cd8cc3f46a9501c5b5ad6cbb78b23bdaa/movie_600x337.jpg?t=1787854691" alt="" loading="lazy" width="480" height="270" /><span class="game-video-play" aria-hidden="true"></span></div></figure>
+      </div>
+
+<p style="color: var(--text-faint); font-size: 13px; margin-top: 30px;">
         Данные о цене, отзывах и статистике обновляются автоматически на основе
         Steam Store API и SteamSpy.
       </p>
@@ -284,5 +327,6 @@ function declineCookies() {
 })();
 </script>
 <script src="/newsletter.js?v=2" defer></script>
+<script defer src="/game-media.js?v=1"></script>
 </body>
 </html>

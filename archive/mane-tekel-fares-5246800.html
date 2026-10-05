@@ -112,6 +112,38 @@
     }
     .game-stat-card .label { font-size: 12px; color: var(--text-faint); text-transform: uppercase; }
     .game-stat-card .value { font-size: 20px; font-weight: bold; margin-top: 4px; }
+    .game-shots {
+      display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+      gap: 12px; margin: 20px 0;
+    }
+    .game-shot {
+      display: block; border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 8px; overflow: hidden;
+    }
+    .game-shot img { display: block; width: 100%; height: auto; }
+    .game-movies { display: grid; gap: 16px; margin: 20px 0; }
+    .game-movie { margin: 0; }
+    .game-movie video {
+      display: block; width: 100%; height: auto;
+      border-radius: 8px; background: #000;
+    }
+    .game-movie figcaption { margin-top: 6px; font-size: 13px; color: var(--text-faint); }
+    .game-video {
+      position: relative; cursor: pointer; overflow: hidden;
+      border-radius: 8px; background: #000; aspect-ratio: 16 / 9;
+    }
+    .game-video img { display: block; width: 100%; height: 100%; object-fit: cover; }
+    .game-video-play { position: absolute; inset: 0; display: grid; place-items: center; }
+    .game-video-play::before {
+      content: ''; width: 58px; height: 58px; border-radius: 50%;
+      background: rgba(0,0,0,0.5); border: 2px solid rgba(255,255,255,0.75);
+    }
+    .game-video-play::after {
+      content: ''; position: absolute; margin-left: 5px;
+      border-style: solid; border-width: 11px 0 11px 18px;
+      border-color: transparent transparent transparent #fff;
+    }
+    .game-video-el { display: block; width: 100%; height: 100%; background: #000; }
   </style>
 </head>
 <body>
@@ -150,7 +182,7 @@
 
     <article class="article-body">
 
-      <p>How much of a human is left in you? &quot;Mane, tekel, fares&quot; is a classic-style text adventure game offering immense freedom of choice and multiple endings, based on the short story collection of the same name. Guide the fates of completely distinct characters across nine highly atmospheric stories.</p>
+      
 
       <div class="game-stats-grid">
         <div class="game-stat-card">
@@ -166,10 +198,6 @@
           <div class="label">Владельцев (оценка)</div>
           <div class="value">0 – 20,000</div>
         </div>
-        <div class="game-stat-card">
-          <div class="label">Среднее время игры</div>
-          <div class="value">нет данных</div>
-        </div>
       </div>
 
       <h2>Об игре</h2>
@@ -183,7 +211,24 @@
         </a>
       </p>
 
-      <p style="color: var(--text-faint); font-size: 13px; margin-top: 30px;">
+            <h2>Скриншоты</h2>
+      <div class="game-shots">
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5246800/3a716727a01c39f2c185aa32e8af05f7a1be7fd1/ss_3a716727a01c39f2c185aa32e8af05f7a1be7fd1.1920x1080.jpg?t=1790961106" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5246800/3a716727a01c39f2c185aa32e8af05f7a1be7fd1/ss_3a716727a01c39f2c185aa32e8af05f7a1be7fd1.600x338.jpg?t=1790961106" alt="Mane, Tekel, Fares — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5246800/ef6377475fa8a8580fb9d1cf8466f12330fc32b9/ss_ef6377475fa8a8580fb9d1cf8466f12330fc32b9.1920x1080.jpg?t=1790961106" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5246800/ef6377475fa8a8580fb9d1cf8466f12330fc32b9/ss_ef6377475fa8a8580fb9d1cf8466f12330fc32b9.600x338.jpg?t=1790961106" alt="Mane, Tekel, Fares — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5246800/59dcdc7d908036ac42030134065a5f7f267ef7e8/ss_59dcdc7d908036ac42030134065a5f7f267ef7e8.1920x1080.jpg?t=1790961106" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5246800/59dcdc7d908036ac42030134065a5f7f267ef7e8/ss_59dcdc7d908036ac42030134065a5f7f267ef7e8.600x338.jpg?t=1790961106" alt="Mane, Tekel, Fares — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5246800/94b419139d90f2b8a2074ebbc0feb25e9f5c0767/ss_94b419139d90f2b8a2074ebbc0feb25e9f5c0767.1920x1080.jpg?t=1790961106" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5246800/94b419139d90f2b8a2074ebbc0feb25e9f5c0767/ss_94b419139d90f2b8a2074ebbc0feb25e9f5c0767.600x338.jpg?t=1790961106" alt="Mane, Tekel, Fares — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5246800/a4b108ce1bf66bd9f6594598986174a07f1c618e/ss_a4b108ce1bf66bd9f6594598986174a07f1c618e.1920x1080.jpg?t=1790961106" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5246800/a4b108ce1bf66bd9f6594598986174a07f1c618e/ss_a4b108ce1bf66bd9f6594598986174a07f1c618e.600x338.jpg?t=1790961106" alt="Mane, Tekel, Fares — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5246800/61d77f21f1464f6bb045a0da3781c6836c990f32/ss_61d77f21f1464f6bb045a0da3781c6836c990f32.1920x1080.jpg?t=1790961106" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5246800/61d77f21f1464f6bb045a0da3781c6836c990f32/ss_61d77f21f1464f6bb045a0da3781c6836c990f32.600x338.jpg?t=1790961106" alt="Mane, Tekel, Fares — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5246800/9eeeebcb49eebca35c34e89508f5b42cac866f5e/ss_9eeeebcb49eebca35c34e89508f5b42cac866f5e.1920x1080.jpg?t=1790961106" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5246800/9eeeebcb49eebca35c34e89508f5b42cac866f5e/ss_9eeeebcb49eebca35c34e89508f5b42cac866f5e.600x338.jpg?t=1790961106" alt="Mane, Tekel, Fares — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+      </div>
+
+      <h2>Геймплей</h2>
+      <div class="game-movies">
+        <figure class="game-movie"><div class="game-video" data-hls="https://video.akamai.steamstatic.com/store_trailers/5246800/1677766231/afd128c9cd828da65914b7acd2834bd25feb1480/1788951130/hls_264_master.m3u8?t=1789468588" data-poster="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257420773/cc98db5a8ea8742d773821f3e3f20bc898df0f94/movie_600x337.jpg?t=1789468588" role="button" tabindex="0" aria-label="Смотреть геймплей: Mane, Tekel, Fares - soon available"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257420773/cc98db5a8ea8742d773821f3e3f20bc898df0f94/movie_600x337.jpg?t=1789468588" alt="" loading="lazy" width="480" height="270" /><span class="game-video-play" aria-hidden="true"></span></div></figure>
+        <figure class="game-movie"><div class="game-video" data-hls="https://video.akamai.steamstatic.com/store_trailers/5246800/1687843189/b047e4ea24e366492ac8b73343e5f27b24816fad/1790193813/hls_264_master.m3u8?t=1790194202" data-poster="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257433051/6c4967e522a38ac05e8318c6499960429ac993ab/movie_600x337.jpg?t=1790194202" role="button" tabindex="0" aria-label="Смотреть геймплей: Overwiew trailer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257433051/6c4967e522a38ac05e8318c6499960429ac993ab/movie_600x337.jpg?t=1790194202" alt="" loading="lazy" width="480" height="270" /><span class="game-video-play" aria-hidden="true"></span></div></figure>
+      </div>
+
+<p style="color: var(--text-faint); font-size: 13px; margin-top: 30px;">
         Данные о цене, отзывах и статистике обновляются автоматически на основе
         Steam Store API и SteamSpy.
       </p>
@@ -284,5 +329,6 @@ function declineCookies() {
 })();
 </script>
 <script src="/newsletter.js?v=2" defer></script>
+<script defer src="/game-media.js?v=1"></script>
 </body>
 </html>

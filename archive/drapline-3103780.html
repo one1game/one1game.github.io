@@ -112,6 +112,38 @@
     }
     .game-stat-card .label { font-size: 12px; color: var(--text-faint); text-transform: uppercase; }
     .game-stat-card .value { font-size: 20px; font-weight: bold; margin-top: 4px; }
+    .game-shots {
+      display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+      gap: 12px; margin: 20px 0;
+    }
+    .game-shot {
+      display: block; border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 8px; overflow: hidden;
+    }
+    .game-shot img { display: block; width: 100%; height: auto; }
+    .game-movies { display: grid; gap: 16px; margin: 20px 0; }
+    .game-movie { margin: 0; }
+    .game-movie video {
+      display: block; width: 100%; height: auto;
+      border-radius: 8px; background: #000;
+    }
+    .game-movie figcaption { margin-top: 6px; font-size: 13px; color: var(--text-faint); }
+    .game-video {
+      position: relative; cursor: pointer; overflow: hidden;
+      border-radius: 8px; background: #000; aspect-ratio: 16 / 9;
+    }
+    .game-video img { display: block; width: 100%; height: 100%; object-fit: cover; }
+    .game-video-play { position: absolute; inset: 0; display: grid; place-items: center; }
+    .game-video-play::before {
+      content: ''; width: 58px; height: 58px; border-radius: 50%;
+      background: rgba(0,0,0,0.5); border: 2px solid rgba(255,255,255,0.75);
+    }
+    .game-video-play::after {
+      content: ''; position: absolute; margin-left: 5px;
+      border-style: solid; border-width: 11px 0 11px 18px;
+      border-color: transparent transparent transparent #fff;
+    }
+    .game-video-el { display: block; width: 100%; height: 100%; background: #000; }
   </style>
 </head>
 <body>
@@ -150,7 +182,7 @@
 
     <article class="article-body">
 
-      <p>&quot;DRAPLINE&quot; is a roguelite training game where you raise a dragon girl who eats anything and train her to become the strongest in one year. Feed her a variety of things to increase her abilities, combine various skills to build your own strategy, and defeat the impending catastrophe!</p>
+      
 
       <div class="game-stats-grid">
         <div class="game-stat-card">
@@ -166,10 +198,6 @@
           <div class="label">Владельцев (оценка)</div>
           <div class="value">0 – 20,000</div>
         </div>
-        <div class="game-stat-card">
-          <div class="label">Среднее время игры</div>
-          <div class="value">нет данных</div>
-        </div>
       </div>
 
       <h2>Об игре</h2>
@@ -183,7 +211,26 @@
         </a>
       </p>
 
-      <p style="color: var(--text-faint); font-size: 13px; margin-top: 30px;">
+            <h2>Скриншоты</h2>
+      <div class="game-shots">
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3103780/28fed18f3fcb7a0f714751dc4480c41786011e79/ss_28fed18f3fcb7a0f714751dc4480c41786011e79.1920x1080.jpg?t=1790743652" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3103780/28fed18f3fcb7a0f714751dc4480c41786011e79/ss_28fed18f3fcb7a0f714751dc4480c41786011e79.600x338.jpg?t=1790743652" alt="DRAPLINE — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3103780/259518be7f4f0cc76931607eb1b9b3eba11f04b7/ss_259518be7f4f0cc76931607eb1b9b3eba11f04b7.1920x1080.jpg?t=1790743652" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3103780/259518be7f4f0cc76931607eb1b9b3eba11f04b7/ss_259518be7f4f0cc76931607eb1b9b3eba11f04b7.600x338.jpg?t=1790743652" alt="DRAPLINE — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3103780/29690c5270b66a364227c0d6227c0f51adf42487/ss_29690c5270b66a364227c0d6227c0f51adf42487.1920x1080.jpg?t=1790743652" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3103780/29690c5270b66a364227c0d6227c0f51adf42487/ss_29690c5270b66a364227c0d6227c0f51adf42487.600x338.jpg?t=1790743652" alt="DRAPLINE — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3103780/8b0f9225bea7fa7d14c5c6dc01377de905690599/ss_8b0f9225bea7fa7d14c5c6dc01377de905690599.1920x1080.jpg?t=1790743652" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3103780/8b0f9225bea7fa7d14c5c6dc01377de905690599/ss_8b0f9225bea7fa7d14c5c6dc01377de905690599.600x338.jpg?t=1790743652" alt="DRAPLINE — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3103780/61f948b1f27a627ef921e57ebb5d3ff8fa2a6151/ss_61f948b1f27a627ef921e57ebb5d3ff8fa2a6151.1920x1080.jpg?t=1790743652" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3103780/61f948b1f27a627ef921e57ebb5d3ff8fa2a6151/ss_61f948b1f27a627ef921e57ebb5d3ff8fa2a6151.600x338.jpg?t=1790743652" alt="DRAPLINE — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3103780/f01fd9a71a7daac0733e2dff1a5de67666cf594c/ss_f01fd9a71a7daac0733e2dff1a5de67666cf594c.1920x1080.jpg?t=1790743652" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3103780/f01fd9a71a7daac0733e2dff1a5de67666cf594c/ss_f01fd9a71a7daac0733e2dff1a5de67666cf594c.600x338.jpg?t=1790743652" alt="DRAPLINE — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3103780/c038618438d687ee453f2de3e94eff1f1c879d07/ss_c038618438d687ee453f2de3e94eff1f1c879d07.1920x1080.jpg?t=1790743652" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3103780/c038618438d687ee453f2de3e94eff1f1c879d07/ss_c038618438d687ee453f2de3e94eff1f1c879d07.600x338.jpg?t=1790743652" alt="DRAPLINE — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3103780/c137b869ef2018b3aaf5b5b5bdfe5d1905e68a14/ss_c137b869ef2018b3aaf5b5b5bdfe5d1905e68a14.1920x1080.jpg?t=1790743652" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3103780/c137b869ef2018b3aaf5b5b5bdfe5d1905e68a14/ss_c137b869ef2018b3aaf5b5b5bdfe5d1905e68a14.600x338.jpg?t=1790743652" alt="DRAPLINE — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3103780/6254fe3a8f490dcdee6cb73f1a7379f9830cb50b/ss_6254fe3a8f490dcdee6cb73f1a7379f9830cb50b.1920x1080.jpg?t=1790743652" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3103780/6254fe3a8f490dcdee6cb73f1a7379f9830cb50b/ss_6254fe3a8f490dcdee6cb73f1a7379f9830cb50b.600x338.jpg?t=1790743652" alt="DRAPLINE — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3103780/d36c0a5664acb729450c4702b2af0b0ff83950e5/ss_d36c0a5664acb729450c4702b2af0b0ff83950e5.1920x1080.jpg?t=1790743652" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3103780/d36c0a5664acb729450c4702b2af0b0ff83950e5/ss_d36c0a5664acb729450c4702b2af0b0ff83950e5.600x338.jpg?t=1790743652" alt="DRAPLINE — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+      </div>
+
+      <h2>Геймплей</h2>
+      <div class="game-movies">
+        <figure class="game-movie"><div class="game-video" data-hls="https://video.akamai.steamstatic.com/store_trailers/3103780/585729298/9cf9b2bd04ce6712e3c6fcaa206d64f8d4d826ec/1790743189/hls_264_master.m3u8?t=1790743651" data-poster="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257433362/6ed04c418af11d3092b530e468ca5930acbb5d1f/movie_600x337.jpg?t=1790743651" role="button" tabindex="0" aria-label="Смотреть геймплей: DRAPLINE_PV"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257433362/6ed04c418af11d3092b530e468ca5930acbb5d1f/movie_600x337.jpg?t=1790743651" alt="" loading="lazy" width="480" height="270" /><span class="game-video-play" aria-hidden="true"></span></div></figure>
+      </div>
+
+<p style="color: var(--text-faint); font-size: 13px; margin-top: 30px;">
         Данные о цене, отзывах и статистике обновляются автоматически на основе
         Steam Store API и SteamSpy.
       </p>
@@ -284,5 +331,6 @@ function declineCookies() {
 })();
 </script>
 <script src="/newsletter.js?v=2" defer></script>
+<script defer src="/game-media.js?v=1"></script>
 </body>
 </html>

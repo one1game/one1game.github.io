@@ -112,6 +112,38 @@
     }
     .game-stat-card .label { font-size: 12px; color: var(--text-faint); text-transform: uppercase; }
     .game-stat-card .value { font-size: 20px; font-weight: bold; margin-top: 4px; }
+    .game-shots {
+      display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+      gap: 12px; margin: 20px 0;
+    }
+    .game-shot {
+      display: block; border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 8px; overflow: hidden;
+    }
+    .game-shot img { display: block; width: 100%; height: auto; }
+    .game-movies { display: grid; gap: 16px; margin: 20px 0; }
+    .game-movie { margin: 0; }
+    .game-movie video {
+      display: block; width: 100%; height: auto;
+      border-radius: 8px; background: #000;
+    }
+    .game-movie figcaption { margin-top: 6px; font-size: 13px; color: var(--text-faint); }
+    .game-video {
+      position: relative; cursor: pointer; overflow: hidden;
+      border-radius: 8px; background: #000; aspect-ratio: 16 / 9;
+    }
+    .game-video img { display: block; width: 100%; height: 100%; object-fit: cover; }
+    .game-video-play { position: absolute; inset: 0; display: grid; place-items: center; }
+    .game-video-play::before {
+      content: ''; width: 58px; height: 58px; border-radius: 50%;
+      background: rgba(0,0,0,0.5); border: 2px solid rgba(255,255,255,0.75);
+    }
+    .game-video-play::after {
+      content: ''; position: absolute; margin-left: 5px;
+      border-style: solid; border-width: 11px 0 11px 18px;
+      border-color: transparent transparent transparent #fff;
+    }
+    .game-video-el { display: block; width: 100%; height: 100%; background: #000; }
   </style>
 </head>
 <body>
@@ -166,10 +198,6 @@
           <div class="label">Владельцев (оценка)</div>
           <div class="value">0 – 20,000</div>
         </div>
-        <div class="game-stat-card">
-          <div class="label">Среднее время игры</div>
-          <div class="value">нет данных</div>
-        </div>
       </div>
 
       <h2>Об игре</h2>
@@ -183,7 +211,28 @@
         </a>
       </p>
 
-      <p style="color: var(--text-faint); font-size: 13px; margin-top: 30px;">
+            <h2>Скриншоты</h2>
+      <div class="game-shots">
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2288340/4a99c9c55a7d7163370dc68a5a9008517a32e84a/ss_4a99c9c55a7d7163370dc68a5a9008517a32e84a.1920x1080.jpg?t=1790908088" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2288340/4a99c9c55a7d7163370dc68a5a9008517a32e84a/ss_4a99c9c55a7d7163370dc68a5a9008517a32e84a.600x338.jpg?t=1790908088" alt="ACE COMBAT 8: WINGS OF THEVE — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2288340/21213f14e460fd45dcc765d1d5ac02333b909d99/ss_21213f14e460fd45dcc765d1d5ac02333b909d99.1920x1080.jpg?t=1790908088" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2288340/21213f14e460fd45dcc765d1d5ac02333b909d99/ss_21213f14e460fd45dcc765d1d5ac02333b909d99.600x338.jpg?t=1790908088" alt="ACE COMBAT 8: WINGS OF THEVE — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2288340/9a10471075c3e34d3dcfa7def65d23a2adca478d/ss_9a10471075c3e34d3dcfa7def65d23a2adca478d.1920x1080.jpg?t=1790908088" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2288340/9a10471075c3e34d3dcfa7def65d23a2adca478d/ss_9a10471075c3e34d3dcfa7def65d23a2adca478d.600x338.jpg?t=1790908088" alt="ACE COMBAT 8: WINGS OF THEVE — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2288340/e3759c9a25dbc27325e0454d5f80af8021e8b505/ss_e3759c9a25dbc27325e0454d5f80af8021e8b505.1920x1080.jpg?t=1790908088" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2288340/e3759c9a25dbc27325e0454d5f80af8021e8b505/ss_e3759c9a25dbc27325e0454d5f80af8021e8b505.600x338.jpg?t=1790908088" alt="ACE COMBAT 8: WINGS OF THEVE — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2288340/a704b72d7c8647b2c6773731fe7a79979674dc70/ss_a704b72d7c8647b2c6773731fe7a79979674dc70.1920x1080.jpg?t=1790908088" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2288340/a704b72d7c8647b2c6773731fe7a79979674dc70/ss_a704b72d7c8647b2c6773731fe7a79979674dc70.600x338.jpg?t=1790908088" alt="ACE COMBAT 8: WINGS OF THEVE — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2288340/3336e83dd7a62acaf7c254803ca5a26e6712355b/ss_3336e83dd7a62acaf7c254803ca5a26e6712355b.1920x1080.jpg?t=1790908088" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2288340/3336e83dd7a62acaf7c254803ca5a26e6712355b/ss_3336e83dd7a62acaf7c254803ca5a26e6712355b.600x338.jpg?t=1790908088" alt="ACE COMBAT 8: WINGS OF THEVE — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2288340/68e295d816178c957fe1bf536506fcc2d90e7018/ss_68e295d816178c957fe1bf536506fcc2d90e7018.1920x1080.jpg?t=1790908088" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2288340/68e295d816178c957fe1bf536506fcc2d90e7018/ss_68e295d816178c957fe1bf536506fcc2d90e7018.600x338.jpg?t=1790908088" alt="ACE COMBAT 8: WINGS OF THEVE — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2288340/f403c2ef10ec22d59e8d7738d523a1a59429861a/ss_f403c2ef10ec22d59e8d7738d523a1a59429861a.1920x1080.jpg?t=1790908088" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2288340/f403c2ef10ec22d59e8d7738d523a1a59429861a/ss_f403c2ef10ec22d59e8d7738d523a1a59429861a.600x338.jpg?t=1790908088" alt="ACE COMBAT 8: WINGS OF THEVE — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2288340/c96554a11a418ac5773b2030d0355c775257e1d6/ss_c96554a11a418ac5773b2030d0355c775257e1d6.1920x1080.jpg?t=1790908088" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2288340/c96554a11a418ac5773b2030d0355c775257e1d6/ss_c96554a11a418ac5773b2030d0355c775257e1d6.600x338.jpg?t=1790908088" alt="ACE COMBAT 8: WINGS OF THEVE — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2288340/4b6e0b57e913610a5b692cc5c75e970020ac929e/ss_4b6e0b57e913610a5b692cc5c75e970020ac929e.1920x1080.jpg?t=1790908088" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2288340/4b6e0b57e913610a5b692cc5c75e970020ac929e/ss_4b6e0b57e913610a5b692cc5c75e970020ac929e.600x338.jpg?t=1790908088" alt="ACE COMBAT 8: WINGS OF THEVE — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2288340/ebcdb349bffe1ab1ffeea5232a0619ef99d399bf/ss_ebcdb349bffe1ab1ffeea5232a0619ef99d399bf.1920x1080.jpg?t=1790908088" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2288340/ebcdb349bffe1ab1ffeea5232a0619ef99d399bf/ss_ebcdb349bffe1ab1ffeea5232a0619ef99d399bf.600x338.jpg?t=1790908088" alt="ACE COMBAT 8: WINGS OF THEVE — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2288340/f1e64474ab9acbd661e8fb3bbf5c906a402225aa/ss_f1e64474ab9acbd661e8fb3bbf5c906a402225aa.1920x1080.jpg?t=1790908088" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2288340/f1e64474ab9acbd661e8fb3bbf5c906a402225aa/ss_f1e64474ab9acbd661e8fb3bbf5c906a402225aa.600x338.jpg?t=1790908088" alt="ACE COMBAT 8: WINGS OF THEVE — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+      </div>
+
+      <h2>Геймплей</h2>
+      <div class="game-movies">
+        <figure class="game-movie"><div class="game-video" data-hls="https://video.akamai.steamstatic.com/store_trailers/2288340/2135403393/bf8ac6c780e8d4ae6efa7e06c713900a4a8953cd/1765512369/hls_264_master.m3u8?t=1765516593" data-poster="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257248133/01d8a342a17cdcbb2f04029ce9a7956c68ac569c/movie_600x337.jpg?t=1765516593" role="button" tabindex="0" aria-label="Смотреть геймплей: ACE COMBAT 8: WINGS OF THEVE"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257248133/01d8a342a17cdcbb2f04029ce9a7956c68ac569c/movie_600x337.jpg?t=1765516593" alt="" loading="lazy" width="480" height="270" /><span class="game-video-play" aria-hidden="true"></span></div></figure>
+      </div>
+
+<p style="color: var(--text-faint); font-size: 13px; margin-top: 30px;">
         Данные о цене, отзывах и статистике обновляются автоматически на основе
         Steam Store API и SteamSpy.
       </p>
@@ -284,5 +333,6 @@ function declineCookies() {
 })();
 </script>
 <script src="/newsletter.js?v=2" defer></script>
+<script defer src="/game-media.js?v=1"></script>
 </body>
 </html>

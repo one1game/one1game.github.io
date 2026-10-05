@@ -112,6 +112,38 @@
     }
     .game-stat-card .label { font-size: 12px; color: var(--text-faint); text-transform: uppercase; }
     .game-stat-card .value { font-size: 20px; font-weight: bold; margin-top: 4px; }
+    .game-shots {
+      display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+      gap: 12px; margin: 20px 0;
+    }
+    .game-shot {
+      display: block; border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 8px; overflow: hidden;
+    }
+    .game-shot img { display: block; width: 100%; height: auto; }
+    .game-movies { display: grid; gap: 16px; margin: 20px 0; }
+    .game-movie { margin: 0; }
+    .game-movie video {
+      display: block; width: 100%; height: auto;
+      border-radius: 8px; background: #000;
+    }
+    .game-movie figcaption { margin-top: 6px; font-size: 13px; color: var(--text-faint); }
+    .game-video {
+      position: relative; cursor: pointer; overflow: hidden;
+      border-radius: 8px; background: #000; aspect-ratio: 16 / 9;
+    }
+    .game-video img { display: block; width: 100%; height: 100%; object-fit: cover; }
+    .game-video-play { position: absolute; inset: 0; display: grid; place-items: center; }
+    .game-video-play::before {
+      content: ''; width: 58px; height: 58px; border-radius: 50%;
+      background: rgba(0,0,0,0.5); border: 2px solid rgba(255,255,255,0.75);
+    }
+    .game-video-play::after {
+      content: ''; position: absolute; margin-left: 5px;
+      border-style: solid; border-width: 11px 0 11px 18px;
+      border-color: transparent transparent transparent #fff;
+    }
+    .game-video-el { display: block; width: 100%; height: 100%; background: #000; }
   </style>
 </head>
 <body>
@@ -166,10 +198,6 @@
           <div class="label">Владельцев (оценка)</div>
           <div class="value">0 – 20,000</div>
         </div>
-        <div class="game-stat-card">
-          <div class="label">Среднее время игры</div>
-          <div class="value">нет данных</div>
-        </div>
       </div>
 
       <h2>Об игре</h2>
@@ -183,7 +211,28 @@
         </a>
       </p>
 
-      <p style="color: var(--text-faint); font-size: 13px; margin-top: 30px;">
+            <h2>Скриншоты</h2>
+      <div class="game-shots">
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1488490/ss_8dd57ce19d1aa916b7b278880234efd1aed9601c.1920x1080.jpg?t=1790855080" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1488490/ss_8dd57ce19d1aa916b7b278880234efd1aed9601c.600x338.jpg?t=1790855080" alt="Nivalis Nights — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1488490/ss_46eeefc1cb3d74afa09231bbcb661827112831a6.1920x1080.jpg?t=1790855080" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1488490/ss_46eeefc1cb3d74afa09231bbcb661827112831a6.600x338.jpg?t=1790855080" alt="Nivalis Nights — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1488490/ss_c0449f262315fc03b248497ae12c3d28e44550d0.1920x1080.jpg?t=1790855080" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1488490/ss_c0449f262315fc03b248497ae12c3d28e44550d0.600x338.jpg?t=1790855080" alt="Nivalis Nights — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1488490/ss_161c3486ccac8344ec072f53e2965ac3d3a240a4.1920x1080.jpg?t=1790855080" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1488490/ss_161c3486ccac8344ec072f53e2965ac3d3a240a4.600x338.jpg?t=1790855080" alt="Nivalis Nights — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1488490/ss_e86993cb26c27bc321dd86ff86d6a281702e5aa0.1920x1080.jpg?t=1790855080" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1488490/ss_e86993cb26c27bc321dd86ff86d6a281702e5aa0.600x338.jpg?t=1790855080" alt="Nivalis Nights — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1488490/ss_1fcc85cfac99ebc74645d81e957f6616885fc258.1920x1080.jpg?t=1790855080" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1488490/ss_1fcc85cfac99ebc74645d81e957f6616885fc258.600x338.jpg?t=1790855080" alt="Nivalis Nights — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1488490/ss_db27ba88edb4fa50df733e256f3d302125833c08.1920x1080.jpg?t=1790855080" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1488490/ss_db27ba88edb4fa50df733e256f3d302125833c08.600x338.jpg?t=1790855080" alt="Nivalis Nights — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1488490/ss_c430c518f07111978f55651794ff33cd4d407fcc.1920x1080.jpg?t=1790855080" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1488490/ss_c430c518f07111978f55651794ff33cd4d407fcc.600x338.jpg?t=1790855080" alt="Nivalis Nights — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1488490/ss_45f7980606c2b6f2eb093a1702e72e3fb4e4b980.1920x1080.jpg?t=1790855080" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1488490/ss_45f7980606c2b6f2eb093a1702e72e3fb4e4b980.600x338.jpg?t=1790855080" alt="Nivalis Nights — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1488490/ss_2323ed8fc27bf7342eafbd2b5bd9896887d21851.1920x1080.jpg?t=1790855080" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1488490/ss_2323ed8fc27bf7342eafbd2b5bd9896887d21851.600x338.jpg?t=1790855080" alt="Nivalis Nights — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1488490/ss_aa4218348abf87669b5c73e3e8c212442c72ff0e.1920x1080.jpg?t=1790855080" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1488490/ss_aa4218348abf87669b5c73e3e8c212442c72ff0e.600x338.jpg?t=1790855080" alt="Nivalis Nights — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1488490/ss_1a1d69d64dc62c6b1b049ea4922cd0633bd275ba.1920x1080.jpg?t=1790855080" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1488490/ss_1a1d69d64dc62c6b1b049ea4922cd0633bd275ba.600x338.jpg?t=1790855080" alt="Nivalis Nights — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+      </div>
+
+      <h2>Геймплей</h2>
+      <div class="game-movies">
+        <figure class="game-movie"><div class="game-video" data-hls="https://video.akamai.steamstatic.com/store_trailers/1488490/855007577/e874b6165d4d1e7d1fd9d0ecc63ec386e7a4519f/1782479157/hls_264_master.m3u8?t=1783618501" data-poster="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257366259/efc428f87966d5ce40f088d402bdf4a0e0209ff0/movie_600x337.jpg?t=1783618501" role="button" tabindex="0" aria-label="Смотреть геймплей: Nivalis Nights Date Reveal Trailer EN"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257366259/efc428f87966d5ce40f088d402bdf4a0e0209ff0/movie_600x337.jpg?t=1783618501" alt="" loading="lazy" width="480" height="270" /><span class="game-video-play" aria-hidden="true"></span></div></figure>
+      </div>
+
+<p style="color: var(--text-faint); font-size: 13px; margin-top: 30px;">
         Данные о цене, отзывах и статистике обновляются автоматически на основе
         Steam Store API и SteamSpy.
       </p>
@@ -284,5 +333,6 @@ function declineCookies() {
 })();
 </script>
 <script src="/newsletter.js?v=2" defer></script>
+<script defer src="/game-media.js?v=1"></script>
 </body>
 </html>

@@ -112,6 +112,38 @@
     }
     .game-stat-card .label { font-size: 12px; color: var(--text-faint); text-transform: uppercase; }
     .game-stat-card .value { font-size: 20px; font-weight: bold; margin-top: 4px; }
+    .game-shots {
+      display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+      gap: 12px; margin: 20px 0;
+    }
+    .game-shot {
+      display: block; border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 8px; overflow: hidden;
+    }
+    .game-shot img { display: block; width: 100%; height: auto; }
+    .game-movies { display: grid; gap: 16px; margin: 20px 0; }
+    .game-movie { margin: 0; }
+    .game-movie video {
+      display: block; width: 100%; height: auto;
+      border-radius: 8px; background: #000;
+    }
+    .game-movie figcaption { margin-top: 6px; font-size: 13px; color: var(--text-faint); }
+    .game-video {
+      position: relative; cursor: pointer; overflow: hidden;
+      border-radius: 8px; background: #000; aspect-ratio: 16 / 9;
+    }
+    .game-video img { display: block; width: 100%; height: 100%; object-fit: cover; }
+    .game-video-play { position: absolute; inset: 0; display: grid; place-items: center; }
+    .game-video-play::before {
+      content: ''; width: 58px; height: 58px; border-radius: 50%;
+      background: rgba(0,0,0,0.5); border: 2px solid rgba(255,255,255,0.75);
+    }
+    .game-video-play::after {
+      content: ''; position: absolute; margin-left: 5px;
+      border-style: solid; border-width: 11px 0 11px 18px;
+      border-color: transparent transparent transparent #fff;
+    }
+    .game-video-el { display: block; width: 100%; height: 100%; background: #000; }
   </style>
 </head>
 <body>
@@ -150,7 +182,7 @@
 
     <article class="article-body">
 
-      <p>Myriad Gambit is a mythic Chinese auto battler. Pick a hero, recruit across 8 shifting tribes, and master a 7-slot formation against 7 AI rivals. Upgrade units into golden True Forms, cast spells, and adapt builds to conquer multi-phase Hell boss trials.</p>
+      
 
       <div class="game-stats-grid">
         <div class="game-stat-card">
@@ -166,10 +198,6 @@
           <div class="label">Владельцев (оценка)</div>
           <div class="value">0 – 20,000</div>
         </div>
-        <div class="game-stat-card">
-          <div class="label">Среднее время игры</div>
-          <div class="value">нет данных</div>
-        </div>
       </div>
 
       <h2>Об игре</h2>
@@ -183,7 +211,25 @@
         </a>
       </p>
 
-      <p style="color: var(--text-faint); font-size: 13px; margin-top: 30px;">
+            <h2>Скриншоты</h2>
+      <div class="game-shots">
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5262940/13b3927d7fa86155f76e4cc80800a317452af362/ss_13b3927d7fa86155f76e4cc80800a317452af362.1920x1080.jpg?t=1791096026" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5262940/13b3927d7fa86155f76e4cc80800a317452af362/ss_13b3927d7fa86155f76e4cc80800a317452af362.600x338.jpg?t=1791096026" alt="Myriad Gambit — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5262940/3cce6d409df1cd6f19bf1120b87e70e5065303e4/ss_3cce6d409df1cd6f19bf1120b87e70e5065303e4.1920x1080.jpg?t=1791096026" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5262940/3cce6d409df1cd6f19bf1120b87e70e5065303e4/ss_3cce6d409df1cd6f19bf1120b87e70e5065303e4.600x338.jpg?t=1791096026" alt="Myriad Gambit — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5262940/bd4e0a0c16ada2f0e36e210ffb81ffac7ee89058/ss_bd4e0a0c16ada2f0e36e210ffb81ffac7ee89058.1920x1080.jpg?t=1791096026" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5262940/bd4e0a0c16ada2f0e36e210ffb81ffac7ee89058/ss_bd4e0a0c16ada2f0e36e210ffb81ffac7ee89058.600x338.jpg?t=1791096026" alt="Myriad Gambit — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5262940/071734cbaddeb31381e0786a74ac82bd90dac905/ss_071734cbaddeb31381e0786a74ac82bd90dac905.1920x1080.jpg?t=1791096026" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5262940/071734cbaddeb31381e0786a74ac82bd90dac905/ss_071734cbaddeb31381e0786a74ac82bd90dac905.600x338.jpg?t=1791096026" alt="Myriad Gambit — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5262940/41122d54153160d7428ea9c49880184ede71a18e/ss_41122d54153160d7428ea9c49880184ede71a18e.1920x1080.jpg?t=1791096026" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5262940/41122d54153160d7428ea9c49880184ede71a18e/ss_41122d54153160d7428ea9c49880184ede71a18e.600x338.jpg?t=1791096026" alt="Myriad Gambit — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5262940/711f0d38a66ca574b4e28e1745b8ea2d2d1c0c27/ss_711f0d38a66ca574b4e28e1745b8ea2d2d1c0c27.1920x1080.jpg?t=1791096026" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5262940/711f0d38a66ca574b4e28e1745b8ea2d2d1c0c27/ss_711f0d38a66ca574b4e28e1745b8ea2d2d1c0c27.600x338.jpg?t=1791096026" alt="Myriad Gambit — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5262940/49c79aa675dc7df6885132633b67ab0b48e457ca/ss_49c79aa675dc7df6885132633b67ab0b48e457ca.1920x1080.jpg?t=1791096026" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5262940/49c79aa675dc7df6885132633b67ab0b48e457ca/ss_49c79aa675dc7df6885132633b67ab0b48e457ca.600x338.jpg?t=1791096026" alt="Myriad Gambit — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5262940/2fd3e666e45cb5b3d02be4d0d30dd83dc8da0362/ss_2fd3e666e45cb5b3d02be4d0d30dd83dc8da0362.1920x1080.jpg?t=1791096026" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5262940/2fd3e666e45cb5b3d02be4d0d30dd83dc8da0362/ss_2fd3e666e45cb5b3d02be4d0d30dd83dc8da0362.600x338.jpg?t=1791096026" alt="Myriad Gambit — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+      </div>
+
+      <h2>Геймплей</h2>
+      <div class="game-movies">
+        <figure class="game-movie"><div class="game-video" data-hls="https://video.akamai.steamstatic.com/store_trailers/5262940/1722298326/dde45ba3310c02f28325551dda69e2b5c3db1d62/1791090746/hls_264_master.m3u8?t=1791096024" data-poster="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257423975/475f98063c5fcff93e31b37bd4e812c14056a08d/movie_600x337.jpg?t=1791096024" role="button" tabindex="0" aria-label="Смотреть геймплей: 万相棋局-游戏实机PV"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257423975/475f98063c5fcff93e31b37bd4e812c14056a08d/movie_600x337.jpg?t=1791096024" alt="" loading="lazy" width="480" height="270" /><span class="game-video-play" aria-hidden="true"></span></div></figure>
+        <figure class="game-movie"><div class="game-video" data-hls="https://video.akamai.steamstatic.com/store_trailers/5262940/87876161/17bf76e4b10398f014f48204b9df2241212a8efb/1789309247/hls_264_master.m3u8?t=1789827790" data-poster="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257423971/066de2e4a52a0e632f4528aa2f3329c4b14d1e4f/movie_600x337.jpg?t=1789827790" role="button" tabindex="0" aria-label="Смотреть геймплей: Myriad Gambit Gameplay PV"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257423971/066de2e4a52a0e632f4528aa2f3329c4b14d1e4f/movie_600x337.jpg?t=1789827790" alt="" loading="lazy" width="480" height="270" /><span class="game-video-play" aria-hidden="true"></span></div></figure>
+      </div>
+
+<p style="color: var(--text-faint); font-size: 13px; margin-top: 30px;">
         Данные о цене, отзывах и статистике обновляются автоматически на основе
         Steam Store API и SteamSpy.
       </p>
@@ -284,5 +330,6 @@ function declineCookies() {
 })();
 </script>
 <script src="/newsletter.js?v=2" defer></script>
+<script defer src="/game-media.js?v=1"></script>
 </body>
 </html>

@@ -112,6 +112,38 @@
     }
     .game-stat-card .label { font-size: 12px; color: var(--text-faint); text-transform: uppercase; }
     .game-stat-card .value { font-size: 20px; font-weight: bold; margin-top: 4px; }
+    .game-shots {
+      display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+      gap: 12px; margin: 20px 0;
+    }
+    .game-shot {
+      display: block; border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 8px; overflow: hidden;
+    }
+    .game-shot img { display: block; width: 100%; height: auto; }
+    .game-movies { display: grid; gap: 16px; margin: 20px 0; }
+    .game-movie { margin: 0; }
+    .game-movie video {
+      display: block; width: 100%; height: auto;
+      border-radius: 8px; background: #000;
+    }
+    .game-movie figcaption { margin-top: 6px; font-size: 13px; color: var(--text-faint); }
+    .game-video {
+      position: relative; cursor: pointer; overflow: hidden;
+      border-radius: 8px; background: #000; aspect-ratio: 16 / 9;
+    }
+    .game-video img { display: block; width: 100%; height: 100%; object-fit: cover; }
+    .game-video-play { position: absolute; inset: 0; display: grid; place-items: center; }
+    .game-video-play::before {
+      content: ''; width: 58px; height: 58px; border-radius: 50%;
+      background: rgba(0,0,0,0.5); border: 2px solid rgba(255,255,255,0.75);
+    }
+    .game-video-play::after {
+      content: ''; position: absolute; margin-left: 5px;
+      border-style: solid; border-width: 11px 0 11px 18px;
+      border-color: transparent transparent transparent #fff;
+    }
+    .game-video-el { display: block; width: 100%; height: 100%; background: #000; }
   </style>
 </head>
 <body>
@@ -150,7 +182,7 @@
 
     <article class="article-body">
 
-      <p>On your desktop, Chika is not a passive decoration, but a presence with emotions, memory, and independent judgment. Fully supports local execution without compromising quality! you are accompanying her growth—through time, interaction, and choice, giving her a complete and unique life.</p>
+      
 
       <div class="game-stats-grid">
         <div class="game-stat-card">
@@ -166,10 +198,6 @@
           <div class="label">Владельцев (оценка)</div>
           <div class="value">0 – 20,000</div>
         </div>
-        <div class="game-stat-card">
-          <div class="label">Среднее время игры</div>
-          <div class="value">нет данных</div>
-        </div>
       </div>
 
       <h2>Об игре</h2>
@@ -183,7 +211,23 @@
         </a>
       </p>
 
-      <p style="color: var(--text-faint); font-size: 13px; margin-top: 30px;">
+            <h2>Скриншоты</h2>
+      <div class="game-shots">
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4285860/c62f05035636e951d982f2e0bdfe252e07220f7b/ss_c62f05035636e951d982f2e0bdfe252e07220f7b.1920x1080.jpg?t=1790219599" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4285860/c62f05035636e951d982f2e0bdfe252e07220f7b/ss_c62f05035636e951d982f2e0bdfe252e07220f7b.600x338.jpg?t=1790219599" alt="Desktop Girl Chika — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4285860/dd98f6c8488403a7e330bf738b2ee6fd2df64e97/ss_dd98f6c8488403a7e330bf738b2ee6fd2df64e97.1920x1080.jpg?t=1790219599" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4285860/dd98f6c8488403a7e330bf738b2ee6fd2df64e97/ss_dd98f6c8488403a7e330bf738b2ee6fd2df64e97.600x338.jpg?t=1790219599" alt="Desktop Girl Chika — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4285860/fe6819bb6ca9c725a8f45d43c089fbe83e43c9e1/ss_fe6819bb6ca9c725a8f45d43c089fbe83e43c9e1.1920x1080.jpg?t=1790219599" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4285860/fe6819bb6ca9c725a8f45d43c089fbe83e43c9e1/ss_fe6819bb6ca9c725a8f45d43c089fbe83e43c9e1.600x338.jpg?t=1790219599" alt="Desktop Girl Chika — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4285860/6ebcbe79dbbf46c800a0bf8c996be5781fc7811f/ss_6ebcbe79dbbf46c800a0bf8c996be5781fc7811f.1920x1080.jpg?t=1790219599" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4285860/6ebcbe79dbbf46c800a0bf8c996be5781fc7811f/ss_6ebcbe79dbbf46c800a0bf8c996be5781fc7811f.600x338.jpg?t=1790219599" alt="Desktop Girl Chika — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4285860/7280d6a93153484551dc64c1e2db246e7885c194/ss_7280d6a93153484551dc64c1e2db246e7885c194.1920x1080.jpg?t=1790219599" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4285860/7280d6a93153484551dc64c1e2db246e7885c194/ss_7280d6a93153484551dc64c1e2db246e7885c194.600x338.jpg?t=1790219599" alt="Desktop Girl Chika — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4285860/8d15713b97a9f077771f4513bddcded34441ae5e/ss_8d15713b97a9f077771f4513bddcded34441ae5e.1920x1080.jpg?t=1790219599" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4285860/8d15713b97a9f077771f4513bddcded34441ae5e/ss_8d15713b97a9f077771f4513bddcded34441ae5e.600x338.jpg?t=1790219599" alt="Desktop Girl Chika — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+      </div>
+
+      <h2>Геймплей</h2>
+      <div class="game-movies">
+        <figure class="game-movie"><div class="game-video" data-hls="https://video.akamai.steamstatic.com/store_trailers/4285860/503427662/fed0592ddde046ff4b3fd62914d9526f4f3d9139/1785599675/hls_264_master.m3u8?t=1785601832" data-poster="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257389991/ce08fb8313161c0fb80513e03d2cb7109eaebb85/movie_600x337.jpg?t=1785601832" role="button" tabindex="0" aria-label="Смотреть геймплей: 千花～～"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257389991/ce08fb8313161c0fb80513e03d2cb7109eaebb85/movie_600x337.jpg?t=1785601832" alt="" loading="lazy" width="480" height="270" /><span class="game-video-play" aria-hidden="true"></span></div></figure>
+        <figure class="game-movie"><div class="game-video" data-hls="https://video.akamai.steamstatic.com/store_trailers/4285860/483226867/e7fcb4bd61c02fdfcebf0a39b451c6498c20bc6c/1785600850/hls_264_master.m3u8?t=1785601831" data-poster="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257389998/f2dfca266e73ac653a075877dd7613cee9e6e308/movie_600x337.jpg?t=1785601831" role="button" tabindex="0" aria-label="Смотреть геймплей: Agent展示"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257389998/f2dfca266e73ac653a075877dd7613cee9e6e308/movie_600x337.jpg?t=1785601831" alt="" loading="lazy" width="480" height="270" /><span class="game-video-play" aria-hidden="true"></span></div></figure>
+      </div>
+
+<p style="color: var(--text-faint); font-size: 13px; margin-top: 30px;">
         Данные о цене, отзывах и статистике обновляются автоматически на основе
         Steam Store API и SteamSpy.
       </p>
@@ -284,5 +328,6 @@ function declineCookies() {
 })();
 </script>
 <script src="/newsletter.js?v=2" defer></script>
+<script defer src="/game-media.js?v=1"></script>
 </body>
 </html>

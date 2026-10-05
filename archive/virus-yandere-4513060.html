@@ -112,6 +112,38 @@
     }
     .game-stat-card .label { font-size: 12px; color: var(--text-faint); text-transform: uppercase; }
     .game-stat-card .value { font-size: 20px; font-weight: bold; margin-top: 4px; }
+    .game-shots {
+      display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+      gap: 12px; margin: 20px 0;
+    }
+    .game-shot {
+      display: block; border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 8px; overflow: hidden;
+    }
+    .game-shot img { display: block; width: 100%; height: auto; }
+    .game-movies { display: grid; gap: 16px; margin: 20px 0; }
+    .game-movie { margin: 0; }
+    .game-movie video {
+      display: block; width: 100%; height: auto;
+      border-radius: 8px; background: #000;
+    }
+    .game-movie figcaption { margin-top: 6px; font-size: 13px; color: var(--text-faint); }
+    .game-video {
+      position: relative; cursor: pointer; overflow: hidden;
+      border-radius: 8px; background: #000; aspect-ratio: 16 / 9;
+    }
+    .game-video img { display: block; width: 100%; height: 100%; object-fit: cover; }
+    .game-video-play { position: absolute; inset: 0; display: grid; place-items: center; }
+    .game-video-play::before {
+      content: ''; width: 58px; height: 58px; border-radius: 50%;
+      background: rgba(0,0,0,0.5); border: 2px solid rgba(255,255,255,0.75);
+    }
+    .game-video-play::after {
+      content: ''; position: absolute; margin-left: 5px;
+      border-style: solid; border-width: 11px 0 11px 18px;
+      border-color: transparent transparent transparent #fff;
+    }
+    .game-video-el { display: block; width: 100%; height: 100%; background: #000; }
   </style>
 </head>
 <body>
@@ -166,10 +198,6 @@
           <div class="label">Владельцев (оценка)</div>
           <div class="value">0 – 20,000</div>
         </div>
-        <div class="game-stat-card">
-          <div class="label">Среднее время игры</div>
-          <div class="value">нет данных</div>
-        </div>
       </div>
 
       <h2>Об игре</h2>
@@ -183,7 +211,23 @@
         </a>
       </p>
 
-      <p style="color: var(--text-faint); font-size: 13px; margin-top: 30px;">
+            <h2>Скриншоты</h2>
+      <div class="game-shots">
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4513060/6251985f18c3237a2a5e03c2bb0b491b53e15e64/ss_6251985f18c3237a2a5e03c2bb0b491b53e15e64.1920x1080.jpg?t=1790766671" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4513060/6251985f18c3237a2a5e03c2bb0b491b53e15e64/ss_6251985f18c3237a2a5e03c2bb0b491b53e15e64.600x338.jpg?t=1790766671" alt="Yandere Virus — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4513060/8b86cd849d5650199b4cc1769e6aaec2c62cfb51/ss_8b86cd849d5650199b4cc1769e6aaec2c62cfb51.1920x1080.jpg?t=1790766671" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4513060/8b86cd849d5650199b4cc1769e6aaec2c62cfb51/ss_8b86cd849d5650199b4cc1769e6aaec2c62cfb51.600x338.jpg?t=1790766671" alt="Yandere Virus — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4513060/5320a5922e6e862ef20e7129b6ac762d4cae1f29/ss_5320a5922e6e862ef20e7129b6ac762d4cae1f29.1920x1080.jpg?t=1790766671" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4513060/5320a5922e6e862ef20e7129b6ac762d4cae1f29/ss_5320a5922e6e862ef20e7129b6ac762d4cae1f29.600x338.jpg?t=1790766671" alt="Yandere Virus — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4513060/540209b3063b575cde41d9d62c7734a42d70bf90/ss_540209b3063b575cde41d9d62c7734a42d70bf90.1920x1080.jpg?t=1790766671" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4513060/540209b3063b575cde41d9d62c7734a42d70bf90/ss_540209b3063b575cde41d9d62c7734a42d70bf90.600x338.jpg?t=1790766671" alt="Yandere Virus — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4513060/0782ea9ae6da543e69b9de7349cab12c0d9de576/ss_0782ea9ae6da543e69b9de7349cab12c0d9de576.1920x1080.jpg?t=1790766671" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4513060/0782ea9ae6da543e69b9de7349cab12c0d9de576/ss_0782ea9ae6da543e69b9de7349cab12c0d9de576.600x338.jpg?t=1790766671" alt="Yandere Virus — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4513060/7484809be4b8e891bcb2a813f6b66fd4252ca8af/ss_7484809be4b8e891bcb2a813f6b66fd4252ca8af.1920x1080.jpg?t=1790766671" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4513060/7484809be4b8e891bcb2a813f6b66fd4252ca8af/ss_7484809be4b8e891bcb2a813f6b66fd4252ca8af.600x338.jpg?t=1790766671" alt="Yandere Virus — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4513060/9e83151483cba8541c3602ed0ef7ab8cd79900d8/ss_9e83151483cba8541c3602ed0ef7ab8cd79900d8.1920x1080.jpg?t=1790766671" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4513060/9e83151483cba8541c3602ed0ef7ab8cd79900d8/ss_9e83151483cba8541c3602ed0ef7ab8cd79900d8.600x338.jpg?t=1790766671" alt="Yandere Virus — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+      </div>
+
+      <h2>Геймплей</h2>
+      <div class="game-movies">
+        <figure class="game-movie"><div class="game-video" data-hls="https://video.akamai.steamstatic.com/store_trailers/4513060/2134978355/be53bb1475a4e80a8bf600694fd22772cf6f68bb/1789562691/hls_264_master.m3u8?t=1789865420" data-poster="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257426517/2a9bee8c47fec4e4bbe2d51fb4e85254cbb29246/movie_600x337.jpg?t=1789865420" role="button" tabindex="0" aria-label="Смотреть геймплей:  Launch Trailer EN"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257426517/2a9bee8c47fec4e4bbe2d51fb4e85254cbb29246/movie_600x337.jpg?t=1789865420" alt="" loading="lazy" width="480" height="270" /><span class="game-video-play" aria-hidden="true"></span></div></figure>
+      </div>
+
+<p style="color: var(--text-faint); font-size: 13px; margin-top: 30px;">
         Данные о цене, отзывах и статистике обновляются автоматически на основе
         Steam Store API и SteamSpy.
       </p>
@@ -284,5 +328,6 @@ function declineCookies() {
 })();
 </script>
 <script src="/newsletter.js?v=2" defer></script>
+<script defer src="/game-media.js?v=1"></script>
 </body>
 </html>

@@ -112,6 +112,38 @@
     }
     .game-stat-card .label { font-size: 12px; color: var(--text-faint); text-transform: uppercase; }
     .game-stat-card .value { font-size: 20px; font-weight: bold; margin-top: 4px; }
+    .game-shots {
+      display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+      gap: 12px; margin: 20px 0;
+    }
+    .game-shot {
+      display: block; border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 8px; overflow: hidden;
+    }
+    .game-shot img { display: block; width: 100%; height: auto; }
+    .game-movies { display: grid; gap: 16px; margin: 20px 0; }
+    .game-movie { margin: 0; }
+    .game-movie video {
+      display: block; width: 100%; height: auto;
+      border-radius: 8px; background: #000;
+    }
+    .game-movie figcaption { margin-top: 6px; font-size: 13px; color: var(--text-faint); }
+    .game-video {
+      position: relative; cursor: pointer; overflow: hidden;
+      border-radius: 8px; background: #000; aspect-ratio: 16 / 9;
+    }
+    .game-video img { display: block; width: 100%; height: 100%; object-fit: cover; }
+    .game-video-play { position: absolute; inset: 0; display: grid; place-items: center; }
+    .game-video-play::before {
+      content: ''; width: 58px; height: 58px; border-radius: 50%;
+      background: rgba(0,0,0,0.5); border: 2px solid rgba(255,255,255,0.75);
+    }
+    .game-video-play::after {
+      content: ''; position: absolute; margin-left: 5px;
+      border-style: solid; border-width: 11px 0 11px 18px;
+      border-color: transparent transparent transparent #fff;
+    }
+    .game-video-el { display: block; width: 100%; height: 100%; background: #000; }
   </style>
 </head>
 <body>
@@ -150,7 +182,7 @@
 
     <article class="article-body">
 
-      <p>Spend ten days answering customers as the human behind a supposedly automated AI. Choose the exact reply you can live with as everyday requests turn invasive, deceptive, and impossible. Your words stay on record. When the contract ends, someone has to take responsibility.</p>
+      
 
       <div class="game-stats-grid">
         <div class="game-stat-card">
@@ -166,10 +198,6 @@
           <div class="label">Владельцев (оценка)</div>
           <div class="value">0 – 20,000</div>
         </div>
-        <div class="game-stat-card">
-          <div class="label">Среднее время игры</div>
-          <div class="value">нет данных</div>
-        </div>
       </div>
 
       <h2>Об игре</h2>
@@ -183,7 +211,21 @@
         </a>
       </p>
 
-      <p style="color: var(--text-faint); font-size: 13px; margin-top: 30px;">
+            <h2>Скриншоты</h2>
+      <div class="game-shots">
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5054370/25218db9d1cd2fd79b931c16ee6b7559eac409df/ss_25218db9d1cd2fd79b931c16ee6b7559eac409df.1920x1080.jpg?t=1790555992" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5054370/25218db9d1cd2fd79b931c16ee6b7559eac409df/ss_25218db9d1cd2fd79b931c16ee6b7559eac409df.600x338.jpg?t=1790555992" alt="HUMAN INTELLIGENCE — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5054370/91892879531998e949e265890f67debb116f42f6/ss_91892879531998e949e265890f67debb116f42f6.1920x1080.jpg?t=1790555992" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5054370/91892879531998e949e265890f67debb116f42f6/ss_91892879531998e949e265890f67debb116f42f6.600x338.jpg?t=1790555992" alt="HUMAN INTELLIGENCE — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5054370/01e938cc64eed5ee5bdddef81d6650f75b62d63e/ss_01e938cc64eed5ee5bdddef81d6650f75b62d63e.1920x1080.jpg?t=1790555992" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5054370/01e938cc64eed5ee5bdddef81d6650f75b62d63e/ss_01e938cc64eed5ee5bdddef81d6650f75b62d63e.600x338.jpg?t=1790555992" alt="HUMAN INTELLIGENCE — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5054370/6a2dfc81f87a74d39548dce457bd6e342a554ba9/ss_6a2dfc81f87a74d39548dce457bd6e342a554ba9.1920x1080.jpg?t=1790555992" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5054370/6a2dfc81f87a74d39548dce457bd6e342a554ba9/ss_6a2dfc81f87a74d39548dce457bd6e342a554ba9.600x338.jpg?t=1790555992" alt="HUMAN INTELLIGENCE — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5054370/7ebfaaf89db939d581934ad6dc251aec20cbbf53/ss_7ebfaaf89db939d581934ad6dc251aec20cbbf53.1920x1080.jpg?t=1790555992" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5054370/7ebfaaf89db939d581934ad6dc251aec20cbbf53/ss_7ebfaaf89db939d581934ad6dc251aec20cbbf53.600x338.jpg?t=1790555992" alt="HUMAN INTELLIGENCE — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+      </div>
+
+      <h2>Геймплей</h2>
+      <div class="game-movies">
+        <figure class="game-movie"><div class="game-video" data-hls="https://video.akamai.steamstatic.com/store_trailers/5054370/633957381/4b0e1ae45e723aa526fcb9bbaa971cc560980475/1788738851/hls_264_master.m3u8?t=1789292608" data-poster="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257418391/e8c48729d887c647be9643259d43202723a8f85b/movie_600x337.jpg?t=1789292608" role="button" tabindex="0" aria-label="Смотреть геймплей: Gameplay Overview"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257418391/e8c48729d887c647be9643259d43202723a8f85b/movie_600x337.jpg?t=1789292608" alt="" loading="lazy" width="480" height="270" /><span class="game-video-play" aria-hidden="true"></span></div></figure>
+      </div>
+
+<p style="color: var(--text-faint); font-size: 13px; margin-top: 30px;">
         Данные о цене, отзывах и статистике обновляются автоматически на основе
         Steam Store API и SteamSpy.
       </p>
@@ -284,5 +326,6 @@ function declineCookies() {
 })();
 </script>
 <script src="/newsletter.js?v=2" defer></script>
+<script defer src="/game-media.js?v=1"></script>
 </body>
 </html>

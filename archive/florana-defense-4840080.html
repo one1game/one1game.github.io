@@ -112,6 +112,38 @@
     }
     .game-stat-card .label { font-size: 12px; color: var(--text-faint); text-transform: uppercase; }
     .game-stat-card .value { font-size: 20px; font-weight: bold; margin-top: 4px; }
+    .game-shots {
+      display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+      gap: 12px; margin: 20px 0;
+    }
+    .game-shot {
+      display: block; border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 8px; overflow: hidden;
+    }
+    .game-shot img { display: block; width: 100%; height: auto; }
+    .game-movies { display: grid; gap: 16px; margin: 20px 0; }
+    .game-movie { margin: 0; }
+    .game-movie video {
+      display: block; width: 100%; height: auto;
+      border-radius: 8px; background: #000;
+    }
+    .game-movie figcaption { margin-top: 6px; font-size: 13px; color: var(--text-faint); }
+    .game-video {
+      position: relative; cursor: pointer; overflow: hidden;
+      border-radius: 8px; background: #000; aspect-ratio: 16 / 9;
+    }
+    .game-video img { display: block; width: 100%; height: 100%; object-fit: cover; }
+    .game-video-play { position: absolute; inset: 0; display: grid; place-items: center; }
+    .game-video-play::before {
+      content: ''; width: 58px; height: 58px; border-radius: 50%;
+      background: rgba(0,0,0,0.5); border: 2px solid rgba(255,255,255,0.75);
+    }
+    .game-video-play::after {
+      content: ''; position: absolute; margin-left: 5px;
+      border-style: solid; border-width: 11px 0 11px 18px;
+      border-color: transparent transparent transparent #fff;
+    }
+    .game-video-el { display: block; width: 100%; height: 100%; background: #000; }
   </style>
 </head>
 <body>
@@ -150,7 +182,7 @@
 
     <article class="article-body">
 
-      <p>Incremental Mazing Tower Defense. No lives, just make more gold. No fixed mob path, create the best maze ever.</p>
+      
 
       <div class="game-stats-grid">
         <div class="game-stat-card">
@@ -166,10 +198,6 @@
           <div class="label">Владельцев (оценка)</div>
           <div class="value">0 – 20,000</div>
         </div>
-        <div class="game-stat-card">
-          <div class="label">Среднее время игры</div>
-          <div class="value">нет данных</div>
-        </div>
       </div>
 
       <h2>Об игре</h2>
@@ -183,7 +211,25 @@
         </a>
       </p>
 
-      <p style="color: var(--text-faint); font-size: 13px; margin-top: 30px;">
+            <h2>Скриншоты</h2>
+      <div class="game-shots">
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4840080/339fe3bd34f55d35f5f1d9c9bfd834887d0ba16b/ss_339fe3bd34f55d35f5f1d9c9bfd834887d0ba16b.1920x1080.jpg?t=1790777958" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4840080/339fe3bd34f55d35f5f1d9c9bfd834887d0ba16b/ss_339fe3bd34f55d35f5f1d9c9bfd834887d0ba16b.600x338.jpg?t=1790777958" alt="Florana Defense — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4840080/7e6debd1e2dfb27b0eaa8a2058ca4d2894ae8e1d/ss_7e6debd1e2dfb27b0eaa8a2058ca4d2894ae8e1d.1920x1080.jpg?t=1790777958" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4840080/7e6debd1e2dfb27b0eaa8a2058ca4d2894ae8e1d/ss_7e6debd1e2dfb27b0eaa8a2058ca4d2894ae8e1d.600x338.jpg?t=1790777958" alt="Florana Defense — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4840080/9e761ee4462362fc6af550994992297b65aa66fb/ss_9e761ee4462362fc6af550994992297b65aa66fb.1920x1080.jpg?t=1790777958" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4840080/9e761ee4462362fc6af550994992297b65aa66fb/ss_9e761ee4462362fc6af550994992297b65aa66fb.600x338.jpg?t=1790777958" alt="Florana Defense — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4840080/b02ea754086ad59caf1fab5ef949417a7256a821/ss_b02ea754086ad59caf1fab5ef949417a7256a821.1920x1080.jpg?t=1790777958" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4840080/b02ea754086ad59caf1fab5ef949417a7256a821/ss_b02ea754086ad59caf1fab5ef949417a7256a821.600x338.jpg?t=1790777958" alt="Florana Defense — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4840080/1981d8f3a72e23498141c3ab53fdb3088bd9fe05/ss_1981d8f3a72e23498141c3ab53fdb3088bd9fe05.1920x1080.jpg?t=1790777958" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4840080/1981d8f3a72e23498141c3ab53fdb3088bd9fe05/ss_1981d8f3a72e23498141c3ab53fdb3088bd9fe05.600x338.jpg?t=1790777958" alt="Florana Defense — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4840080/e18c849a084fbe13c053f9553fc92e40f03863db/ss_e18c849a084fbe13c053f9553fc92e40f03863db.1920x1080.jpg?t=1790777958" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4840080/e18c849a084fbe13c053f9553fc92e40f03863db/ss_e18c849a084fbe13c053f9553fc92e40f03863db.600x338.jpg?t=1790777958" alt="Florana Defense — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4840080/1878558bd0376b8a63717cf7c3715ac03a3bfe6e/ss_1878558bd0376b8a63717cf7c3715ac03a3bfe6e.1920x1080.jpg?t=1790777958" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4840080/1878558bd0376b8a63717cf7c3715ac03a3bfe6e/ss_1878558bd0376b8a63717cf7c3715ac03a3bfe6e.600x338.jpg?t=1790777958" alt="Florana Defense — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4840080/eedf5a5a90a5bc3058a68554bf1b3a08b5250601/ss_eedf5a5a90a5bc3058a68554bf1b3a08b5250601.1920x1080.jpg?t=1790777958" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4840080/eedf5a5a90a5bc3058a68554bf1b3a08b5250601/ss_eedf5a5a90a5bc3058a68554bf1b3a08b5250601.600x338.jpg?t=1790777958" alt="Florana Defense — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4840080/03e41e4c81ef782139f36964ad86bc3ef0426c07/ss_03e41e4c81ef782139f36964ad86bc3ef0426c07.1920x1080.jpg?t=1790777958" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4840080/03e41e4c81ef782139f36964ad86bc3ef0426c07/ss_03e41e4c81ef782139f36964ad86bc3ef0426c07.600x338.jpg?t=1790777958" alt="Florana Defense — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+      </div>
+
+      <h2>Геймплей</h2>
+      <div class="game-movies">
+        <figure class="game-movie"><div class="game-video" data-hls="https://video.akamai.steamstatic.com/store_trailers/4840080/431753575/3c819700b46d083e18d2cf5ea81ccc4c596d5ff2/1787694589/hls_264_master.m3u8?t=1787733428" data-poster="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257408554/7dcf869726059bb02d926d05209dcc778ddc8d43/movie_600x337.jpg?t=1787733428" role="button" tabindex="0" aria-label="Смотреть геймплей: Florana Defense 0.121.0 trailer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257408554/7dcf869726059bb02d926d05209dcc778ddc8d43/movie_600x337.jpg?t=1787733428" alt="" loading="lazy" width="480" height="270" /><span class="game-video-play" aria-hidden="true"></span></div></figure>
+      </div>
+
+<p style="color: var(--text-faint); font-size: 13px; margin-top: 30px;">
         Данные о цене, отзывах и статистике обновляются автоматически на основе
         Steam Store API и SteamSpy.
       </p>
@@ -284,5 +330,6 @@ function declineCookies() {
 })();
 </script>
 <script src="/newsletter.js?v=2" defer></script>
+<script defer src="/game-media.js?v=1"></script>
 </body>
 </html>

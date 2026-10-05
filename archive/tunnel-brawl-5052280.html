@@ -10,12 +10,12 @@
   <link rel="dns-prefetch" href="https://www.google-analytics.com" />
   <link rel="preload" href="../styles.css" as="style" />
 
-  <title>Tunnel Brawl: цена, отзывы и статистика игроков | One1Game</title>
-  <meta name="description" content="Tunnel Brawl — актуальная цена, скидки, процент положительных отзывов и статистика игроков в Steam. Обновляется автоматически." />
+  <title>Tunnel Brawl — обзор игры | One1Game</title>
+  <meta name="description" content="Tunnel Brawl — это онлайн-экшен с элементами стратегии, где игроки роют туннели и сражаются в танках. Игра подойдёт любителям динамичных дуэлей." />
   <meta name="keywords" content="Tunnel Brawl, цена, отзывы, скидка, статистика игроков, Steam" />
 
-  <meta property="og:title" content="Tunnel Brawl: цена, отзывы и статистика игроков | One1Game" />
-  <meta property="og:description" content="Tunnel Brawl — актуальная цена, скидки, процент положительных отзывов и статистика игроков в Steam. Обновляется автоматически." />
+  <meta property="og:title" content="Tunnel Brawl — обзор игры | One1Game" />
+  <meta property="og:description" content="Tunnel Brawl — это онлайн-экшен с элементами стратегии, где игроки роют туннели и сражаются в танках. Игра подойдёт любителям динамичных дуэлей." />
   <meta property="og:type" content="article" />
   <meta property="og:url" content="https://one1game.github.io/archive/tunnel-brawl-5052280.html" />
   <meta property="og:image" content="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5052280/bb42ec1659a99392591a1a78221f42d157a4e1f2/header.jpg?t=1791144230" />
@@ -58,12 +58,12 @@
   {
     "@context": "https://schema.org",
     "@type": "Article",
-    "headline": "Tunnel Brawl: цена, отзывы и статистика игроков | One1Game",
+    "headline": "Tunnel Brawl — обзор игры | One1Game",
     "datePublished": "2026-10-05",
     "dateModified": "2026-10-05",
     "author": {"@type": "Person", "name": "Команда One1Game"},
     "publisher": {"@type": "Organization", "name": "One1Game", "logo": {"@type": "ImageObject", "url": "https://one1game.github.io/logo.png"}},
-    "description": "Tunnel Brawl — актуальная цена, скидки, процент положительных отзывов и статистика игроков в Steam. Обновляется автоматически.",
+    "description": "Tunnel Brawl — это онлайн-экшен с элементами стратегии, где игроки роют туннели и сражаются в танках. Игра подойдёт любителям динамичных дуэлей.",
     "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5052280/bb42ec1659a99392591a1a78221f42d157a4e1f2/header.jpg?t=1791144230"
   }
   </script>
@@ -112,6 +112,34 @@
     }
     .game-stat-card .label { font-size: 12px; color: var(--text-faint); text-transform: uppercase; }
     .game-stat-card .value { font-size: 20px; font-weight: bold; margin-top: 4px; }
+    .game-shots {
+      display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+      gap: 12px; margin: 20px 0;
+    }
+    .game-shot {
+      display: block; border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 8px; overflow: hidden;
+    }
+    .game-shot img { display: block; width: 100%; height: auto; }
+    .game-movies { display: grid; gap: 16px; margin: 20px 0; }
+    .game-movie { margin: 0; }
+    .game-video {
+      position: relative; cursor: pointer; overflow: hidden;
+      border-radius: 8px; background: #000; aspect-ratio: 16 / 9;
+    }
+    .game-video img { display: block; width: 100%; height: 100%; object-fit: cover; }
+    .game-video-play { position: absolute; inset: 0; display: grid; place-items: center; }
+    .game-video-play::before {
+      content: ''; width: 58px; height: 58px; border-radius: 50%;
+      background: rgba(0,0,0,0.5); border: 2px solid rgba(255,255,255,0.75);
+    }
+    .game-video-play::after {
+      content: ''; position: absolute; margin-left: 5px;
+      border-style: solid; border-width: 11px 0 11px 18px;
+      border-color: transparent transparent transparent #fff;
+    }
+    .game-video-el { display: block; width: 100%; height: 100%; background: #000; }
+    .game-movie figcaption { margin-top: 6px; font-size: 13px; color: var(--text-faint); }
   </style>
 </head>
 <body>
@@ -141,7 +169,7 @@
 
     <div class="article-header">
       <span class="article-category cat-reviews">Обзоры</span>
-      <h1>Tunnel Brawl: цена, отзывы и статистика игроков</h1>
+      <h1>Tunnel Brawl — обзор игры</h1>
       <div class="article-meta">
         <span><i class="far fa-calendar"></i> 5 октября 2026</span>
         <span><i class="far fa-clock"></i> 2 минуты чтения</span>
@@ -150,7 +178,9 @@
 
     <article class="article-body">
 
-      <p>Dig your own battlefield in tense online 1v1 tank duels. Carve tunnels through destructible terrain, hunt your rival in the dark, and balance cannon fire against the energy you need to get home. First to three takedowns wins.</p>
+      <p>Tunnel Brawl — это экшен с элементами стратегии, где игроки соревнуются в онлайн-дуэлях на танках. Ваша задача — прорыть туннели и уничтожить противника.</p>
+
+      
 
       <div class="game-stats-grid">
         <div class="game-stat-card">
@@ -166,13 +196,11 @@
           <div class="label">Владельцев (оценка)</div>
           <div class="value">0 – 20,000</div>
         </div>
-        <div class="game-stat-card">
-          <div class="label">Среднее время игры</div>
-          <div class="value">нет данных</div>
-        </div>
       </div>
 
       <h2>Об игре</h2>
+      <p>В Tunnel Brawl игроки создают собственное поле боя, роя туннели в разрушаемой местности. Игра требует стратегического мышления и быстрой реакции. Важно правильно распределять энергию и огонь из пушки, чтобы одержать победу. Игра подойдёт тем, кто любит напряжённые и тактические сражения.</p>
+
       <p><strong>Жанры:</strong> Экшены, Инди, Стратегии<br/>
       <strong>Разработчик:</strong> Josef “Chose” Šíma<br/>
       <strong>Издатель:</strong> Supro Nivelo s.r.o.</p>
@@ -183,6 +211,22 @@
         </a>
       </p>
 
+      <h2>Скриншоты</h2>
+      <div class="game-shots">
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5052280/1657e4ec44d95a99e413855d3273b2cd930706cf/ss_1657e4ec44d95a99e413855d3273b2cd930706cf.1920x1080.jpg?t=1791144230" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5052280/1657e4ec44d95a99e413855d3273b2cd930706cf/ss_1657e4ec44d95a99e413855d3273b2cd930706cf.600x338.jpg?t=1791144230" alt="Tunnel Brawl — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5052280/e2cde8b0d6cebfa2d4be04917f4b083d973ea027/ss_e2cde8b0d6cebfa2d4be04917f4b083d973ea027.1920x1080.jpg?t=1791144230" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5052280/e2cde8b0d6cebfa2d4be04917f4b083d973ea027/ss_e2cde8b0d6cebfa2d4be04917f4b083d973ea027.600x338.jpg?t=1791144230" alt="Tunnel Brawl — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5052280/d4e53195de38e2f28ae697ba5e1bc382a0f9cb79/ss_d4e53195de38e2f28ae697ba5e1bc382a0f9cb79.1920x1080.jpg?t=1791144230" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5052280/d4e53195de38e2f28ae697ba5e1bc382a0f9cb79/ss_d4e53195de38e2f28ae697ba5e1bc382a0f9cb79.600x338.jpg?t=1791144230" alt="Tunnel Brawl — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5052280/2a27cb07485a5c7af327a636eea40e2bc9f21538/ss_2a27cb07485a5c7af327a636eea40e2bc9f21538.1920x1080.jpg?t=1791144230" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5052280/2a27cb07485a5c7af327a636eea40e2bc9f21538/ss_2a27cb07485a5c7af327a636eea40e2bc9f21538.600x338.jpg?t=1791144230" alt="Tunnel Brawl — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5052280/d277bde1a5065a0ff0da2d5b370d853880cf7ea5/ss_d277bde1a5065a0ff0da2d5b370d853880cf7ea5.1920x1080.jpg?t=1791144230" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5052280/d277bde1a5065a0ff0da2d5b370d853880cf7ea5/ss_d277bde1a5065a0ff0da2d5b370d853880cf7ea5.600x338.jpg?t=1791144230" alt="Tunnel Brawl — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5052280/fcf89525066c8054b4c282d8235b1ae91e4a97c8/ss_fcf89525066c8054b4c282d8235b1ae91e4a97c8.1920x1080.jpg?t=1791144230" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5052280/fcf89525066c8054b4c282d8235b1ae91e4a97c8/ss_fcf89525066c8054b4c282d8235b1ae91e4a97c8.600x338.jpg?t=1791144230" alt="Tunnel Brawl — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5052280/46f03feb846d433a44d80a911ee2b7e6b15774fa/ss_46f03feb846d433a44d80a911ee2b7e6b15774fa.1920x1080.jpg?t=1791144230" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5052280/46f03feb846d433a44d80a911ee2b7e6b15774fa/ss_46f03feb846d433a44d80a911ee2b7e6b15774fa.600x338.jpg?t=1791144230" alt="Tunnel Brawl — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5052280/cc607499a271ce6b2fc99a725c5aa91e81cfa570/ss_cc607499a271ce6b2fc99a725c5aa91e81cfa570.1920x1080.jpg?t=1791144230" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5052280/cc607499a271ce6b2fc99a725c5aa91e81cfa570/ss_cc607499a271ce6b2fc99a725c5aa91e81cfa570.600x338.jpg?t=1791144230" alt="Tunnel Brawl — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+      </div>
+
+      <h2>Геймплей</h2>
+      <div class="game-movies">
+        <figure class="game-movie"><div class="game-video" data-hls="https://video.akamai.steamstatic.com/store_trailers/5052280/658738730/ce9c892b925620f19501423b0ed373a97e72db91/1789554171/hls_264_master.m3u8?t=1789582053" data-poster="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257426402/11d7fe1c32731f077aaa626ad536fced09942ba7/movie_600x337.jpg?t=1789582053" role="button" tabindex="0" aria-label="Смотреть геймплей"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257426402/11d7fe1c32731f077aaa626ad536fced09942ba7/movie_600x337.jpg?t=1789582053" alt="" loading="lazy" width="480" height="270" /><span class="game-video-play" aria-hidden="true"></span></div></figure>
+      </div>
       <p style="color: var(--text-faint); font-size: 13px; margin-top: 30px;">
         Данные о цене, отзывах и статистике обновляются автоматически на основе
         Steam Store API и SteamSpy.
@@ -284,5 +328,6 @@ function declineCookies() {
 })();
 </script>
 <script src="/newsletter.js?v=2" defer></script>
+<script defer src="/game-media.js?v=1"></script>
 </body>
 </html>

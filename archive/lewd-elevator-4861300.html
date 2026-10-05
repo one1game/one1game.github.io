@@ -112,6 +112,38 @@
     }
     .game-stat-card .label { font-size: 12px; color: var(--text-faint); text-transform: uppercase; }
     .game-stat-card .value { font-size: 20px; font-weight: bold; margin-top: 4px; }
+    .game-shots {
+      display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+      gap: 12px; margin: 20px 0;
+    }
+    .game-shot {
+      display: block; border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 8px; overflow: hidden;
+    }
+    .game-shot img { display: block; width: 100%; height: auto; }
+    .game-movies { display: grid; gap: 16px; margin: 20px 0; }
+    .game-movie { margin: 0; }
+    .game-movie video {
+      display: block; width: 100%; height: auto;
+      border-radius: 8px; background: #000;
+    }
+    .game-movie figcaption { margin-top: 6px; font-size: 13px; color: var(--text-faint); }
+    .game-video {
+      position: relative; cursor: pointer; overflow: hidden;
+      border-radius: 8px; background: #000; aspect-ratio: 16 / 9;
+    }
+    .game-video img { display: block; width: 100%; height: 100%; object-fit: cover; }
+    .game-video-play { position: absolute; inset: 0; display: grid; place-items: center; }
+    .game-video-play::before {
+      content: ''; width: 58px; height: 58px; border-radius: 50%;
+      background: rgba(0,0,0,0.5); border: 2px solid rgba(255,255,255,0.75);
+    }
+    .game-video-play::after {
+      content: ''; position: absolute; margin-left: 5px;
+      border-style: solid; border-width: 11px 0 11px 18px;
+      border-color: transparent transparent transparent #fff;
+    }
+    .game-video-el { display: block; width: 100%; height: 100%; background: #000; }
   </style>
 </head>
 <body>
@@ -166,10 +198,6 @@
           <div class="label">Владельцев (оценка)</div>
           <div class="value">0 – 20,000</div>
         </div>
-        <div class="game-stat-card">
-          <div class="label">Среднее время игры</div>
-          <div class="value">нет данных</div>
-        </div>
       </div>
 
       <h2>Об игре</h2>
@@ -183,7 +211,29 @@
         </a>
       </p>
 
-      <p style="color: var(--text-faint); font-size: 13px; margin-top: 30px;">
+            <h2>Скриншоты</h2>
+      <div class="game-shots">
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4861300/0526784e39c6db30c705ffd2e2c1b2c7799a70b8/ss_0526784e39c6db30c705ffd2e2c1b2c7799a70b8.1920x1080.jpg?t=1790078701" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4861300/0526784e39c6db30c705ffd2e2c1b2c7799a70b8/ss_0526784e39c6db30c705ffd2e2c1b2c7799a70b8.600x338.jpg?t=1790078701" alt="Lewd Elevator — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4861300/4364c3878052b99d801cd7289b0c4367ebbd787c/ss_4364c3878052b99d801cd7289b0c4367ebbd787c.1920x1080.jpg?t=1790078701" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4861300/4364c3878052b99d801cd7289b0c4367ebbd787c/ss_4364c3878052b99d801cd7289b0c4367ebbd787c.600x338.jpg?t=1790078701" alt="Lewd Elevator — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4861300/4e0fdcad3c8b28c4a4ee3d3094c987bf1fe78eac/ss_4e0fdcad3c8b28c4a4ee3d3094c987bf1fe78eac.1920x1080.jpg?t=1790078701" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4861300/4e0fdcad3c8b28c4a4ee3d3094c987bf1fe78eac/ss_4e0fdcad3c8b28c4a4ee3d3094c987bf1fe78eac.600x338.jpg?t=1790078701" alt="Lewd Elevator — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4861300/0a4be43c926b0026efd44cee4633e83f1ab87764/ss_0a4be43c926b0026efd44cee4633e83f1ab87764.1920x1080.jpg?t=1790078701" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4861300/0a4be43c926b0026efd44cee4633e83f1ab87764/ss_0a4be43c926b0026efd44cee4633e83f1ab87764.600x338.jpg?t=1790078701" alt="Lewd Elevator — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4861300/20ad7009eed0629e6b297df6ffd28b6cc01855c2/ss_20ad7009eed0629e6b297df6ffd28b6cc01855c2.1920x1080.jpg?t=1790078701" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4861300/20ad7009eed0629e6b297df6ffd28b6cc01855c2/ss_20ad7009eed0629e6b297df6ffd28b6cc01855c2.600x338.jpg?t=1790078701" alt="Lewd Elevator — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4861300/928d2b3a7699dd6674afb823804f79e977f0d739/ss_928d2b3a7699dd6674afb823804f79e977f0d739.1920x1080.jpg?t=1790078701" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4861300/928d2b3a7699dd6674afb823804f79e977f0d739/ss_928d2b3a7699dd6674afb823804f79e977f0d739.600x338.jpg?t=1790078701" alt="Lewd Elevator — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4861300/934d9e679eaed9627ddef712f25d9a409ab9e36b/ss_934d9e679eaed9627ddef712f25d9a409ab9e36b.1920x1080.jpg?t=1790078701" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4861300/934d9e679eaed9627ddef712f25d9a409ab9e36b/ss_934d9e679eaed9627ddef712f25d9a409ab9e36b.600x338.jpg?t=1790078701" alt="Lewd Elevator — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4861300/be002f0e7d18c07702d9888a6ff1897875106b29/ss_be002f0e7d18c07702d9888a6ff1897875106b29.1920x1080.jpg?t=1790078701" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4861300/be002f0e7d18c07702d9888a6ff1897875106b29/ss_be002f0e7d18c07702d9888a6ff1897875106b29.600x338.jpg?t=1790078701" alt="Lewd Elevator — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4861300/93d15f29f6c38f55fcc87c521fc83b74442ce311/ss_93d15f29f6c38f55fcc87c521fc83b74442ce311.1920x1080.jpg?t=1790078701" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4861300/93d15f29f6c38f55fcc87c521fc83b74442ce311/ss_93d15f29f6c38f55fcc87c521fc83b74442ce311.600x338.jpg?t=1790078701" alt="Lewd Elevator — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4861300/ef770ded5ea32ffdfeab9bd7eaaa597a661feb5a/ss_ef770ded5ea32ffdfeab9bd7eaaa597a661feb5a.1920x1080.jpg?t=1790078701" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4861300/ef770ded5ea32ffdfeab9bd7eaaa597a661feb5a/ss_ef770ded5ea32ffdfeab9bd7eaaa597a661feb5a.600x338.jpg?t=1790078701" alt="Lewd Elevator — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4861300/24f9a379da1c5059ed0a3c8ffd4e5a6fd1389425/ss_24f9a379da1c5059ed0a3c8ffd4e5a6fd1389425.1920x1080.jpg?t=1790078701" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4861300/24f9a379da1c5059ed0a3c8ffd4e5a6fd1389425/ss_24f9a379da1c5059ed0a3c8ffd4e5a6fd1389425.600x338.jpg?t=1790078701" alt="Lewd Elevator — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4861300/e12ca8bdb9c495e985568de493e36462faa4b17d/ss_e12ca8bdb9c495e985568de493e36462faa4b17d.1920x1080.jpg?t=1790078701" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4861300/e12ca8bdb9c495e985568de493e36462faa4b17d/ss_e12ca8bdb9c495e985568de493e36462faa4b17d.600x338.jpg?t=1790078701" alt="Lewd Elevator — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+      </div>
+
+      <h2>Геймплей</h2>
+      <div class="game-movies">
+        <figure class="game-movie"><div class="game-video" data-hls="https://video.akamai.steamstatic.com/store_trailers/4861300/1375955418/1e82a0ac31e95a15866a53aa2e7fe2474635c3f5/1790076241/hls_264_master.m3u8?t=1789874847" data-poster="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257429206/4d4d4fd0018cf44656e567750729f5f865fc4474/movie_600x337.jpg?t=1789874847" role="button" tabindex="0" aria-label="Смотреть геймплей: Trailer_2"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257429206/4d4d4fd0018cf44656e567750729f5f865fc4474/movie_600x337.jpg?t=1789874847" alt="" loading="lazy" width="480" height="270" /><span class="game-video-play" aria-hidden="true"></span></div></figure>
+        <figure class="game-movie"><div class="game-video" data-hls="https://video.akamai.steamstatic.com/store_trailers/4861300/1710403719/df520cc6025766f0df5d70eac8eed5902f398ce7/1789859127/hls_264_master.m3u8?t=1789874848" data-poster="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257429470/e121a5b073268cbc8f87f3b6fdf00d97992a4dca/movie_600x337.jpg?t=1789874848" role="button" tabindex="0" aria-label="Смотреть геймплей: Trailer_1"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257429470/e121a5b073268cbc8f87f3b6fdf00d97992a4dca/movie_600x337.jpg?t=1789874848" alt="" loading="lazy" width="480" height="270" /><span class="game-video-play" aria-hidden="true"></span></div></figure>
+      </div>
+
+<p style="color: var(--text-faint); font-size: 13px; margin-top: 30px;">
         Данные о цене, отзывах и статистике обновляются автоматически на основе
         Steam Store API и SteamSpy.
       </p>
@@ -284,5 +334,6 @@ function declineCookies() {
 })();
 </script>
 <script src="/newsletter.js?v=2" defer></script>
+<script defer src="/game-media.js?v=1"></script>
 </body>
 </html>

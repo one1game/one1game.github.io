@@ -10,12 +10,12 @@
   <link rel="dns-prefetch" href="https://www.google-analytics.com" />
   <link rel="preload" href="../styles.css" as="style" />
 
-  <title>Hexcavate: цена, отзывы и статистика игроков | One1Game</title>
-  <meta name="description" content="Hexcavate — актуальная цена, скидки, процент положительных отзывов и статистика игроков в Steam. Обновляется автоматически." />
+  <title>Hexcavate: уютная головоломка про карликов и шахты | One1Game</title>
+  <meta name="description" content="Hexcavate — спокойная пазл-игра, где вы катаете бомбы по шестиугольным островкам. Управляйте рельефом, направляйте телеги и исследуйте 33 уровня без таймеров и провалов." />
   <meta name="keywords" content="Hexcavate, цена, отзывы, скидка, статистика игроков, Steam" />
 
-  <meta property="og:title" content="Hexcavate: цена, отзывы и статистика игроков | One1Game" />
-  <meta property="og:description" content="Hexcavate — актуальная цена, скидки, процент положительных отзывов и статистика игроков в Steam. Обновляется автоматически." />
+  <meta property="og:title" content="Hexcavate: уютная головоломка про карликов и шахты | One1Game" />
+  <meta property="og:description" content="Hexcavate — спокойная пазл-игра, где вы катаете бомбы по шестиугольным островкам. Управляйте рельефом, направляйте телеги и исследуйте 33 уровня без таймеров и провалов." />
   <meta property="og:type" content="article" />
   <meta property="og:url" content="https://one1game.github.io/archive/hexcavate-5239340.html" />
   <meta property="og:image" content="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5239340/763a61c3e9cd9e244e3121eb8c7b372857cd9cbc/header.jpg?t=1791155586" />
@@ -58,12 +58,12 @@
   {
     "@context": "https://schema.org",
     "@type": "Article",
-    "headline": "Hexcavate: цена, отзывы и статистика игроков | One1Game",
+    "headline": "Hexcavate: уютная головоломка про карликов и шахты | One1Game",
     "datePublished": "2026-10-05",
     "dateModified": "2026-10-05",
     "author": {"@type": "Person", "name": "Команда One1Game"},
     "publisher": {"@type": "Organization", "name": "One1Game", "logo": {"@type": "ImageObject", "url": "https://one1game.github.io/logo.png"}},
-    "description": "Hexcavate — актуальная цена, скидки, процент положительных отзывов и статистика игроков в Steam. Обновляется автоматически.",
+    "description": "Hexcavate — спокойная пазл-игра, где вы катаете бомбы по шестиугольным островкам. Управляйте рельефом, направляйте телеги и исследуйте 33 уровня без таймеров и провалов.",
     "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5239340/763a61c3e9cd9e244e3121eb8c7b372857cd9cbc/header.jpg?t=1791155586"
   }
   </script>
@@ -112,6 +112,34 @@
     }
     .game-stat-card .label { font-size: 12px; color: var(--text-faint); text-transform: uppercase; }
     .game-stat-card .value { font-size: 20px; font-weight: bold; margin-top: 4px; }
+    .game-shots {
+      display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+      gap: 12px; margin: 20px 0;
+    }
+    .game-shot {
+      display: block; border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 8px; overflow: hidden;
+    }
+    .game-shot img { display: block; width: 100%; height: auto; }
+    .game-movies { display: grid; gap: 16px; margin: 20px 0; }
+    .game-movie { margin: 0; }
+    .game-video {
+      position: relative; cursor: pointer; overflow: hidden;
+      border-radius: 8px; background: #000; aspect-ratio: 16 / 9;
+    }
+    .game-video img { display: block; width: 100%; height: 100%; object-fit: cover; }
+    .game-video-play { position: absolute; inset: 0; display: grid; place-items: center; }
+    .game-video-play::before {
+      content: ''; width: 58px; height: 58px; border-radius: 50%;
+      background: rgba(0,0,0,0.5); border: 2px solid rgba(255,255,255,0.75);
+    }
+    .game-video-play::after {
+      content: ''; position: absolute; margin-left: 5px;
+      border-style: solid; border-width: 11px 0 11px 18px;
+      border-color: transparent transparent transparent #fff;
+    }
+    .game-video-el { display: block; width: 100%; height: 100%; background: #000; }
+    .game-movie figcaption { margin-top: 6px; font-size: 13px; color: var(--text-faint); }
   </style>
 </head>
 <body>
@@ -141,7 +169,7 @@
 
     <div class="article-header">
       <span class="article-category cat-reviews">Обзоры</span>
-      <h1>Hexcavate: цена, отзывы и статистика игроков</h1>
+      <h1>Hexcavate: уютная головоломка про карликов и шахты</h1>
       <div class="article-meta">
         <span><i class="far fa-calendar"></i> 5 октября 2026</span>
         <span><i class="far fa-clock"></i> 2 минуты чтения</span>
@@ -150,7 +178,9 @@
 
     <article class="article-body">
 
-      <p>A cozy hex-island puzzle about dwarfs who mine by rolling bombs. Tap a tile: it lifts, turns, and settles, and every groove on the island reroutes. Guide the bomb to the boulder, the cart to the shaft, and dig 33 islands deep through four biomes. No timers, no fail states, just deeper.</p>
+      <p>Ищете расслабляющую механику без стресса? В Hexcavate вы помогаете карликам добывать руду, просто нажимая на тайлы. Каждый поворот плитки меняет путь бомбы, открывая новые маршруты для выкапывания золота.</p>
+
+      
 
       <div class="game-stats-grid">
         <div class="game-stat-card">
@@ -166,13 +196,11 @@
           <div class="label">Владельцев (оценка)</div>
           <div class="value">0 – 20,000</div>
         </div>
-        <div class="game-stat-card">
-          <div class="label">Среднее время игры</div>
-          <div class="value">нет данных</div>
-        </div>
       </div>
 
       <h2>Об игре</h2>
+      <p>Это инди-головоломка с четырьмя биомами и глубоким погружением в шахты. Механика построена на перестановке рельефа: вы поднимаете, поворачиваете и закрепляете участки острова, чтобы довести бомбу до цели. Игра не содержит таймеров и условий проигрыша, позволяя решать задачи в собственном темпе.</p>
+
       <p><strong>Жанры:</strong> Казуальные игры, Инди<br/>
       <strong>Разработчик:</strong> Robo Sombrero Studios<br/>
       <strong>Издатель:</strong> Robo Sombrero Studios</p>
@@ -183,6 +211,26 @@
         </a>
       </p>
 
+      <h2>Скриншоты</h2>
+      <div class="game-shots">
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5239340/5ca23a1dd74add4c42c15d22219b7f6d784605a9/ss_5ca23a1dd74add4c42c15d22219b7f6d784605a9.1920x1080.jpg?t=1791155586" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5239340/5ca23a1dd74add4c42c15d22219b7f6d784605a9/ss_5ca23a1dd74add4c42c15d22219b7f6d784605a9.600x338.jpg?t=1791155586" alt="Hexcavate — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5239340/cf211cff4f5fe359c1f74c5c8eb670d6e8b097fd/ss_cf211cff4f5fe359c1f74c5c8eb670d6e8b097fd.1920x1080.jpg?t=1791155586" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5239340/cf211cff4f5fe359c1f74c5c8eb670d6e8b097fd/ss_cf211cff4f5fe359c1f74c5c8eb670d6e8b097fd.600x338.jpg?t=1791155586" alt="Hexcavate — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5239340/ae2e60febab99f4f825f4644cf8542722b2769b7/ss_ae2e60febab99f4f825f4644cf8542722b2769b7.1920x1080.jpg?t=1791155586" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5239340/ae2e60febab99f4f825f4644cf8542722b2769b7/ss_ae2e60febab99f4f825f4644cf8542722b2769b7.600x338.jpg?t=1791155586" alt="Hexcavate — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5239340/3e86e37687630bc71e1a834e21a7495c75a2d9ff/ss_3e86e37687630bc71e1a834e21a7495c75a2d9ff.1920x1080.jpg?t=1791155586" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5239340/3e86e37687630bc71e1a834e21a7495c75a2d9ff/ss_3e86e37687630bc71e1a834e21a7495c75a2d9ff.600x338.jpg?t=1791155586" alt="Hexcavate — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5239340/b1aa07928d1ace0ff3421116b3d6552fcb92f56f/ss_b1aa07928d1ace0ff3421116b3d6552fcb92f56f.1920x1080.jpg?t=1791155586" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5239340/b1aa07928d1ace0ff3421116b3d6552fcb92f56f/ss_b1aa07928d1ace0ff3421116b3d6552fcb92f56f.600x338.jpg?t=1791155586" alt="Hexcavate — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5239340/1f3fc539b3b57a802122d91268af5f98b6b24833/ss_1f3fc539b3b57a802122d91268af5f98b6b24833.1920x1080.jpg?t=1791155586" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5239340/1f3fc539b3b57a802122d91268af5f98b6b24833/ss_1f3fc539b3b57a802122d91268af5f98b6b24833.600x338.jpg?t=1791155586" alt="Hexcavate — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5239340/5235d1354dcb028690148dc416e7187d11ac5069/ss_5235d1354dcb028690148dc416e7187d11ac5069.1920x1080.jpg?t=1791155586" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5239340/5235d1354dcb028690148dc416e7187d11ac5069/ss_5235d1354dcb028690148dc416e7187d11ac5069.600x338.jpg?t=1791155586" alt="Hexcavate — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5239340/591a4a6d60f38c9bf6cb020a0d29c929aad97fe6/ss_591a4a6d60f38c9bf6cb020a0d29c929aad97fe6.1920x1080.jpg?t=1791155586" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5239340/591a4a6d60f38c9bf6cb020a0d29c929aad97fe6/ss_591a4a6d60f38c9bf6cb020a0d29c929aad97fe6.600x338.jpg?t=1791155586" alt="Hexcavate — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5239340/2bd5f8f5f1974bfe91cf4ad07bfbfb478819f56a/ss_2bd5f8f5f1974bfe91cf4ad07bfbfb478819f56a.1920x1080.jpg?t=1791155586" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5239340/2bd5f8f5f1974bfe91cf4ad07bfbfb478819f56a/ss_2bd5f8f5f1974bfe91cf4ad07bfbfb478819f56a.600x338.jpg?t=1791155586" alt="Hexcavate — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5239340/2a5feb6f24b7ea23aea5dc20069a2d6f1897e886/ss_2a5feb6f24b7ea23aea5dc20069a2d6f1897e886.1920x1080.jpg?t=1791155586" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5239340/2a5feb6f24b7ea23aea5dc20069a2d6f1897e886/ss_2a5feb6f24b7ea23aea5dc20069a2d6f1897e886.600x338.jpg?t=1791155586" alt="Hexcavate — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5239340/4b96012bf0db1fbfb555564d25841e2c28e56337/ss_4b96012bf0db1fbfb555564d25841e2c28e56337.1920x1080.jpg?t=1791155586" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5239340/4b96012bf0db1fbfb555564d25841e2c28e56337/ss_4b96012bf0db1fbfb555564d25841e2c28e56337.600x338.jpg?t=1791155586" alt="Hexcavate — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5239340/609f97b844e4e51f01f2625579f3c2f291f45054/ss_609f97b844e4e51f01f2625579f3c2f291f45054.1920x1080.jpg?t=1791155586" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5239340/609f97b844e4e51f01f2625579f3c2f291f45054/ss_609f97b844e4e51f01f2625579f3c2f291f45054.600x338.jpg?t=1791155586" alt="Hexcavate — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+      </div>
+
+      <h2>Геймплей</h2>
+      <div class="game-movies">
+        <figure class="game-movie"><div class="game-video" data-hls="https://video.akamai.steamstatic.com/store_trailers/5239340/1163695752/5a4272ed2d5b8b89c8f13c369861fdba2c03b6c6/1790462174/hls_264_master.m3u8?t=1790463344" data-poster="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257436713/d46a5551f28467a92894b551a4234ff06629a67d/movie_600x337.jpg?t=1790463344" role="button" tabindex="0" aria-label="Смотреть геймплей"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257436713/d46a5551f28467a92894b551a4234ff06629a67d/movie_600x337.jpg?t=1790463344" alt="" loading="lazy" width="480" height="270" /><span class="game-video-play" aria-hidden="true"></span></div></figure>
+      </div>
       <p style="color: var(--text-faint); font-size: 13px; margin-top: 30px;">
         Данные о цене, отзывах и статистике обновляются автоматически на основе
         Steam Store API и SteamSpy.
@@ -284,5 +332,6 @@ function declineCookies() {
 })();
 </script>
 <script src="/newsletter.js?v=2" defer></script>
+<script defer src="/game-media.js?v=1"></script>
 </body>
 </html>

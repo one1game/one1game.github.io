@@ -112,6 +112,38 @@
     }
     .game-stat-card .label { font-size: 12px; color: var(--text-faint); text-transform: uppercase; }
     .game-stat-card .value { font-size: 20px; font-weight: bold; margin-top: 4px; }
+    .game-shots {
+      display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+      gap: 12px; margin: 20px 0;
+    }
+    .game-shot {
+      display: block; border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 8px; overflow: hidden;
+    }
+    .game-shot img { display: block; width: 100%; height: auto; }
+    .game-movies { display: grid; gap: 16px; margin: 20px 0; }
+    .game-movie { margin: 0; }
+    .game-movie video {
+      display: block; width: 100%; height: auto;
+      border-radius: 8px; background: #000;
+    }
+    .game-movie figcaption { margin-top: 6px; font-size: 13px; color: var(--text-faint); }
+    .game-video {
+      position: relative; cursor: pointer; overflow: hidden;
+      border-radius: 8px; background: #000; aspect-ratio: 16 / 9;
+    }
+    .game-video img { display: block; width: 100%; height: 100%; object-fit: cover; }
+    .game-video-play { position: absolute; inset: 0; display: grid; place-items: center; }
+    .game-video-play::before {
+      content: ''; width: 58px; height: 58px; border-radius: 50%;
+      background: rgba(0,0,0,0.5); border: 2px solid rgba(255,255,255,0.75);
+    }
+    .game-video-play::after {
+      content: ''; position: absolute; margin-left: 5px;
+      border-style: solid; border-width: 11px 0 11px 18px;
+      border-color: transparent transparent transparent #fff;
+    }
+    .game-video-el { display: block; width: 100%; height: 100%; background: #000; }
   </style>
 </head>
 <body>
@@ -150,7 +182,7 @@
 
     <article class="article-body">
 
-      <p>Reality is breaking — and the clock is counting down. Explore impossible worlds, uncover the connection between them, and survive as each strike of midnight pulls you deeper into something you were never meant to find.</p>
+      
 
       <div class="game-stats-grid">
         <div class="game-stat-card">
@@ -166,10 +198,6 @@
           <div class="label">Владельцев (оценка)</div>
           <div class="value">0 – 20,000</div>
         </div>
-        <div class="game-stat-card">
-          <div class="label">Среднее время игры</div>
-          <div class="value">нет данных</div>
-        </div>
       </div>
 
       <h2>Об игре</h2>
@@ -183,7 +211,23 @@
         </a>
       </p>
 
-      <p style="color: var(--text-faint); font-size: 13px; margin-top: 30px;">
+            <h2>Скриншоты</h2>
+      <div class="game-shots">
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5182380/35293b381398a769bb0f9f508dabde92c0ea8bad/ss_35293b381398a769bb0f9f508dabde92c0ea8bad.1920x1080.jpg?t=1791120342" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5182380/35293b381398a769bb0f9f508dabde92c0ea8bad/ss_35293b381398a769bb0f9f508dabde92c0ea8bad.600x338.jpg?t=1791120342" alt="BEYOND XII — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5182380/ecc96680d982f283a9a733353a79aca96fadc9e3/ss_ecc96680d982f283a9a733353a79aca96fadc9e3.1920x1080.jpg?t=1791120342" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5182380/ecc96680d982f283a9a733353a79aca96fadc9e3/ss_ecc96680d982f283a9a733353a79aca96fadc9e3.600x338.jpg?t=1791120342" alt="BEYOND XII — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5182380/7fd15dcc92e614f56be0f662a4a1c5bacc2f9339/ss_7fd15dcc92e614f56be0f662a4a1c5bacc2f9339.1920x1080.jpg?t=1791120342" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5182380/7fd15dcc92e614f56be0f662a4a1c5bacc2f9339/ss_7fd15dcc92e614f56be0f662a4a1c5bacc2f9339.600x338.jpg?t=1791120342" alt="BEYOND XII — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5182380/5e221209ec50833e5b7a75a86562474b014d99e5/ss_5e221209ec50833e5b7a75a86562474b014d99e5.1920x1080.jpg?t=1791120342" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5182380/5e221209ec50833e5b7a75a86562474b014d99e5/ss_5e221209ec50833e5b7a75a86562474b014d99e5.600x338.jpg?t=1791120342" alt="BEYOND XII — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5182380/38c4b464bb0e9572c4ec5f2fed4e9765a754b98b/ss_38c4b464bb0e9572c4ec5f2fed4e9765a754b98b.1920x1080.jpg?t=1791120342" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5182380/38c4b464bb0e9572c4ec5f2fed4e9765a754b98b/ss_38c4b464bb0e9572c4ec5f2fed4e9765a754b98b.600x338.jpg?t=1791120342" alt="BEYOND XII — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5182380/4621194e90bde0d7983162adf13324b9db4318bc/ss_4621194e90bde0d7983162adf13324b9db4318bc.1920x1080.jpg?t=1791120342" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5182380/4621194e90bde0d7983162adf13324b9db4318bc/ss_4621194e90bde0d7983162adf13324b9db4318bc.600x338.jpg?t=1791120342" alt="BEYOND XII — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5182380/d7ae940fba4efc213f68cfd2b94e2721b282f0bf/ss_d7ae940fba4efc213f68cfd2b94e2721b282f0bf.1920x1080.jpg?t=1791120342" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5182380/d7ae940fba4efc213f68cfd2b94e2721b282f0bf/ss_d7ae940fba4efc213f68cfd2b94e2721b282f0bf.600x338.jpg?t=1791120342" alt="BEYOND XII — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+      </div>
+
+      <h2>Геймплей</h2>
+      <div class="game-movies">
+        <figure class="game-movie"><div class="game-video" data-hls="https://video.akamai.steamstatic.com/store_trailers/5182380/108754502/9c2c100a28a2c39550eb94ec1bd14d1757a115fb/1789627073/hls_264_master.m3u8?t=1789760752" data-poster="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257427174/0d454c10373b93af54a2fb40e04c93db5c4e45ef/movie_600x337.jpg?t=1789760752" role="button" tabindex="0" aria-label="Смотреть геймплей: BEYOND XII - Official Trailer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257427174/0d454c10373b93af54a2fb40e04c93db5c4e45ef/movie_600x337.jpg?t=1789760752" alt="" loading="lazy" width="480" height="270" /><span class="game-video-play" aria-hidden="true"></span></div></figure>
+      </div>
+
+<p style="color: var(--text-faint); font-size: 13px; margin-top: 30px;">
         Данные о цене, отзывах и статистике обновляются автоматически на основе
         Steam Store API и SteamSpy.
       </p>
@@ -284,5 +328,6 @@ function declineCookies() {
 })();
 </script>
 <script src="/newsletter.js?v=2" defer></script>
+<script defer src="/game-media.js?v=1"></script>
 </body>
 </html>

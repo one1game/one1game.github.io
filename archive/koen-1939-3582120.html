@@ -112,6 +112,38 @@
     }
     .game-stat-card .label { font-size: 12px; color: var(--text-faint); text-transform: uppercase; }
     .game-stat-card .value { font-size: 20px; font-weight: bold; margin-top: 4px; }
+    .game-shots {
+      display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+      gap: 12px; margin: 20px 0;
+    }
+    .game-shot {
+      display: block; border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 8px; overflow: hidden;
+    }
+    .game-shot img { display: block; width: 100%; height: auto; }
+    .game-movies { display: grid; gap: 16px; margin: 20px 0; }
+    .game-movie { margin: 0; }
+    .game-movie video {
+      display: block; width: 100%; height: auto;
+      border-radius: 8px; background: #000;
+    }
+    .game-movie figcaption { margin-top: 6px; font-size: 13px; color: var(--text-faint); }
+    .game-video {
+      position: relative; cursor: pointer; overflow: hidden;
+      border-radius: 8px; background: #000; aspect-ratio: 16 / 9;
+    }
+    .game-video img { display: block; width: 100%; height: 100%; object-fit: cover; }
+    .game-video-play { position: absolute; inset: 0; display: grid; place-items: center; }
+    .game-video-play::before {
+      content: ''; width: 58px; height: 58px; border-radius: 50%;
+      background: rgba(0,0,0,0.5); border: 2px solid rgba(255,255,255,0.75);
+    }
+    .game-video-play::after {
+      content: ''; position: absolute; margin-left: 5px;
+      border-style: solid; border-width: 11px 0 11px 18px;
+      border-color: transparent transparent transparent #fff;
+    }
+    .game-video-el { display: block; width: 100%; height: 100%; background: #000; }
   </style>
 </head>
 <body>
@@ -150,7 +182,7 @@
 
     <article class="article-body">
 
-      <p>Birmingham, 1939. A murdered husband. A city that will pay. Fight through the British underworld in a fast-paced top-down shooter where enemy bullets are as deadly as yours. Throw your empty gun, seize another, and plan your next move.</p>
+      
 
       <div class="game-stats-grid">
         <div class="game-stat-card">
@@ -166,10 +198,6 @@
           <div class="label">Владельцев (оценка)</div>
           <div class="value">0 – 20,000</div>
         </div>
-        <div class="game-stat-card">
-          <div class="label">Среднее время игры</div>
-          <div class="value">нет данных</div>
-        </div>
       </div>
 
       <h2>Об игре</h2>
@@ -183,7 +211,29 @@
         </a>
       </p>
 
-      <p style="color: var(--text-faint); font-size: 13px; margin-top: 30px;">
+            <h2>Скриншоты</h2>
+      <div class="game-shots">
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3582120/f691dbe8bb99bd6eb9d94b29eeda055bbe2f9900/ss_f691dbe8bb99bd6eb9d94b29eeda055bbe2f9900.1920x1080.jpg?t=1790737209" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3582120/f691dbe8bb99bd6eb9d94b29eeda055bbe2f9900/ss_f691dbe8bb99bd6eb9d94b29eeda055bbe2f9900.600x338.jpg?t=1790737209" alt="Cohen 1939 — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3582120/ee2ffa6f3cbf6d8175d28abd54840ec217467643/ss_ee2ffa6f3cbf6d8175d28abd54840ec217467643.1920x1080.jpg?t=1790737209" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3582120/ee2ffa6f3cbf6d8175d28abd54840ec217467643/ss_ee2ffa6f3cbf6d8175d28abd54840ec217467643.600x338.jpg?t=1790737209" alt="Cohen 1939 — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3582120/7a20b1c7ee553fd33ce73802002e75ae36b06630/ss_7a20b1c7ee553fd33ce73802002e75ae36b06630.1920x1080.jpg?t=1790737209" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3582120/7a20b1c7ee553fd33ce73802002e75ae36b06630/ss_7a20b1c7ee553fd33ce73802002e75ae36b06630.600x338.jpg?t=1790737209" alt="Cohen 1939 — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3582120/a66478c980ee5b1aa55e4be9c35e8d4645e11f5e/ss_a66478c980ee5b1aa55e4be9c35e8d4645e11f5e.1920x1080.jpg?t=1790737209" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3582120/a66478c980ee5b1aa55e4be9c35e8d4645e11f5e/ss_a66478c980ee5b1aa55e4be9c35e8d4645e11f5e.600x338.jpg?t=1790737209" alt="Cohen 1939 — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3582120/bc63e89331de534ecbfc21b9ca98ac334f68e44f/ss_bc63e89331de534ecbfc21b9ca98ac334f68e44f.1920x1080.jpg?t=1790737209" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3582120/bc63e89331de534ecbfc21b9ca98ac334f68e44f/ss_bc63e89331de534ecbfc21b9ca98ac334f68e44f.600x338.jpg?t=1790737209" alt="Cohen 1939 — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3582120/55127bf4252ff557093006171f85e979c309f40d/ss_55127bf4252ff557093006171f85e979c309f40d.1920x1080.jpg?t=1790737209" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3582120/55127bf4252ff557093006171f85e979c309f40d/ss_55127bf4252ff557093006171f85e979c309f40d.600x338.jpg?t=1790737209" alt="Cohen 1939 — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3582120/18451f43584ee29a90425042f549b066db689d8d/ss_18451f43584ee29a90425042f549b066db689d8d.1920x1080.jpg?t=1790737209" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3582120/18451f43584ee29a90425042f549b066db689d8d/ss_18451f43584ee29a90425042f549b066db689d8d.600x338.jpg?t=1790737209" alt="Cohen 1939 — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3582120/4c0c7f31a8b697187821b056826b76472bde7686/ss_4c0c7f31a8b697187821b056826b76472bde7686.1920x1080.jpg?t=1790737209" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3582120/4c0c7f31a8b697187821b056826b76472bde7686/ss_4c0c7f31a8b697187821b056826b76472bde7686.600x338.jpg?t=1790737209" alt="Cohen 1939 — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3582120/efa8edc19dc61bdc60c5fbb29692d0d69a8e2c9b/ss_efa8edc19dc61bdc60c5fbb29692d0d69a8e2c9b.1920x1080.jpg?t=1790737209" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3582120/efa8edc19dc61bdc60c5fbb29692d0d69a8e2c9b/ss_efa8edc19dc61bdc60c5fbb29692d0d69a8e2c9b.600x338.jpg?t=1790737209" alt="Cohen 1939 — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3582120/49e39b80952dc555fa273687cf3cc2b2a2f48811/ss_49e39b80952dc555fa273687cf3cc2b2a2f48811.1920x1080.jpg?t=1790737209" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3582120/49e39b80952dc555fa273687cf3cc2b2a2f48811/ss_49e39b80952dc555fa273687cf3cc2b2a2f48811.600x338.jpg?t=1790737209" alt="Cohen 1939 — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3582120/7a4a3be0f922791e9d6b48e30be944c4eac62d35/ss_7a4a3be0f922791e9d6b48e30be944c4eac62d35.1920x1080.jpg?t=1790737209" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3582120/7a4a3be0f922791e9d6b48e30be944c4eac62d35/ss_7a4a3be0f922791e9d6b48e30be944c4eac62d35.600x338.jpg?t=1790737209" alt="Cohen 1939 — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3582120/c47d41c438bfa95e4a3060bd652bb38f872b8017/ss_c47d41c438bfa95e4a3060bd652bb38f872b8017.1920x1080.jpg?t=1790737209" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3582120/c47d41c438bfa95e4a3060bd652bb38f872b8017/ss_c47d41c438bfa95e4a3060bd652bb38f872b8017.600x338.jpg?t=1790737209" alt="Cohen 1939 — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+      </div>
+
+      <h2>Геймплей</h2>
+      <div class="game-movies">
+        <figure class="game-movie"><div class="game-video" data-hls="https://video.akamai.steamstatic.com/store_trailers/3582120/1978464346/7f2dec839969c24c143e5f976552caea3f36e0d0/1790736379/hls_264_master.m3u8?t=1790737208" data-poster="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257440487/0d6a5d8e1b3ef9ae0431a312410a1abd9351fb4d/movie_600x337.jpg?t=1790737208" role="button" tabindex="0" aria-label="Смотреть геймплей: 发售PVEN"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257440487/0d6a5d8e1b3ef9ae0431a312410a1abd9351fb4d/movie_600x337.jpg?t=1790737208" alt="" loading="lazy" width="480" height="270" /><span class="game-video-play" aria-hidden="true"></span></div></figure>
+        <figure class="game-movie"><div class="game-video" data-hls="https://video.akamai.steamstatic.com/store_trailers/3582120/744276281/7fdc17829084a4429008eaf8b025fadc76a86fff/1779439530/hls_264_master.m3u8?t=1779440509" data-poster="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257341364/b14064d86ab9615475cbd2e6cca9611aa782abd6/movie_600x337.jpg?t=1779440509" role="button" tabindex="0" aria-label="Смотреть геймплей: PVEN"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257341364/b14064d86ab9615475cbd2e6cca9611aa782abd6/movie_600x337.jpg?t=1779440509" alt="" loading="lazy" width="480" height="270" /><span class="game-video-play" aria-hidden="true"></span></div></figure>
+      </div>
+
+<p style="color: var(--text-faint); font-size: 13px; margin-top: 30px;">
         Данные о цене, отзывах и статистике обновляются автоматически на основе
         Steam Store API и SteamSpy.
       </p>
@@ -284,5 +334,6 @@ function declineCookies() {
 })();
 </script>
 <script src="/newsletter.js?v=2" defer></script>
+<script defer src="/game-media.js?v=1"></script>
 </body>
 </html>

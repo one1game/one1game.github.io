@@ -112,6 +112,38 @@
     }
     .game-stat-card .label { font-size: 12px; color: var(--text-faint); text-transform: uppercase; }
     .game-stat-card .value { font-size: 20px; font-weight: bold; margin-top: 4px; }
+    .game-shots {
+      display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+      gap: 12px; margin: 20px 0;
+    }
+    .game-shot {
+      display: block; border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 8px; overflow: hidden;
+    }
+    .game-shot img { display: block; width: 100%; height: auto; }
+    .game-movies { display: grid; gap: 16px; margin: 20px 0; }
+    .game-movie { margin: 0; }
+    .game-movie video {
+      display: block; width: 100%; height: auto;
+      border-radius: 8px; background: #000;
+    }
+    .game-movie figcaption { margin-top: 6px; font-size: 13px; color: var(--text-faint); }
+    .game-video {
+      position: relative; cursor: pointer; overflow: hidden;
+      border-radius: 8px; background: #000; aspect-ratio: 16 / 9;
+    }
+    .game-video img { display: block; width: 100%; height: 100%; object-fit: cover; }
+    .game-video-play { position: absolute; inset: 0; display: grid; place-items: center; }
+    .game-video-play::before {
+      content: ''; width: 58px; height: 58px; border-radius: 50%;
+      background: rgba(0,0,0,0.5); border: 2px solid rgba(255,255,255,0.75);
+    }
+    .game-video-play::after {
+      content: ''; position: absolute; margin-left: 5px;
+      border-style: solid; border-width: 11px 0 11px 18px;
+      border-color: transparent transparent transparent #fff;
+    }
+    .game-video-el { display: block; width: 100%; height: 100%; background: #000; }
   </style>
 </head>
 <body>
@@ -150,7 +182,7 @@
 
     <article class="article-body">
 
-      <p>Your first day at the local mine got a hell of a twist when the tunnels caved in. Can you escape when the only way out is going deeper? Avoid the deadly creatures, push through hallucinations and remember: Don't panic.</p>
+      
 
       <div class="game-stats-grid">
         <div class="game-stat-card">
@@ -166,10 +198,6 @@
           <div class="label">Владельцев (оценка)</div>
           <div class="value">0 – 20,000</div>
         </div>
-        <div class="game-stat-card">
-          <div class="label">Среднее время игры</div>
-          <div class="value">нет данных</div>
-        </div>
       </div>
 
       <h2>Об игре</h2>
@@ -183,7 +211,25 @@
         </a>
       </p>
 
-      <p style="color: var(--text-faint); font-size: 13px; margin-top: 30px;">
+            <h2>Скриншоты</h2>
+      <div class="game-shots">
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4012730/3c96d501074f009355e2e1f259276ef2ca7b700f/ss_3c96d501074f009355e2e1f259276ef2ca7b700f.1920x1080.jpg?t=1789831695" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4012730/3c96d501074f009355e2e1f259276ef2ca7b700f/ss_3c96d501074f009355e2e1f259276ef2ca7b700f.600x338.jpg?t=1789831695" alt="Panic Files: Buried Sanity — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4012730/1e4fcf80f5be6b391bfe9cab20b72db706dbd4e2/ss_1e4fcf80f5be6b391bfe9cab20b72db706dbd4e2.1920x1080.jpg?t=1789831695" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4012730/1e4fcf80f5be6b391bfe9cab20b72db706dbd4e2/ss_1e4fcf80f5be6b391bfe9cab20b72db706dbd4e2.600x338.jpg?t=1789831695" alt="Panic Files: Buried Sanity — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4012730/4bc2886c1ac37ea40e6286b901bcf91b77dd70ae/ss_4bc2886c1ac37ea40e6286b901bcf91b77dd70ae.1920x1080.jpg?t=1789831695" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4012730/4bc2886c1ac37ea40e6286b901bcf91b77dd70ae/ss_4bc2886c1ac37ea40e6286b901bcf91b77dd70ae.600x338.jpg?t=1789831695" alt="Panic Files: Buried Sanity — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4012730/8c24d00fbe108507b4fdb74884a3705c24615762/ss_8c24d00fbe108507b4fdb74884a3705c24615762.1920x1080.jpg?t=1789831695" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4012730/8c24d00fbe108507b4fdb74884a3705c24615762/ss_8c24d00fbe108507b4fdb74884a3705c24615762.600x338.jpg?t=1789831695" alt="Panic Files: Buried Sanity — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4012730/d3c5f95cb68b5672ce85ca42aa25eda7c91ad38e/ss_d3c5f95cb68b5672ce85ca42aa25eda7c91ad38e.1920x1080.jpg?t=1789831695" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4012730/d3c5f95cb68b5672ce85ca42aa25eda7c91ad38e/ss_d3c5f95cb68b5672ce85ca42aa25eda7c91ad38e.600x338.jpg?t=1789831695" alt="Panic Files: Buried Sanity — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4012730/3defea7a4d61af6a0bb023f381e859b432060bfa/ss_3defea7a4d61af6a0bb023f381e859b432060bfa.1920x1080.jpg?t=1789831695" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4012730/3defea7a4d61af6a0bb023f381e859b432060bfa/ss_3defea7a4d61af6a0bb023f381e859b432060bfa.600x338.jpg?t=1789831695" alt="Panic Files: Buried Sanity — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4012730/35606fd84c3476310b4f9210d7d8a41a6aa8a199/ss_35606fd84c3476310b4f9210d7d8a41a6aa8a199.1920x1080.jpg?t=1789831695" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4012730/35606fd84c3476310b4f9210d7d8a41a6aa8a199/ss_35606fd84c3476310b4f9210d7d8a41a6aa8a199.600x338.jpg?t=1789831695" alt="Panic Files: Buried Sanity — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4012730/ed17b6c218a12eb1faf9c865c2a3d79ee15fdcfd/ss_ed17b6c218a12eb1faf9c865c2a3d79ee15fdcfd.1920x1080.jpg?t=1789831695" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4012730/ed17b6c218a12eb1faf9c865c2a3d79ee15fdcfd/ss_ed17b6c218a12eb1faf9c865c2a3d79ee15fdcfd.600x338.jpg?t=1789831695" alt="Panic Files: Buried Sanity — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4012730/2d57ee58dea7dd48434cf7e9d2efc5b7a2aaad26/ss_2d57ee58dea7dd48434cf7e9d2efc5b7a2aaad26.1920x1080.jpg?t=1789831695" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4012730/2d57ee58dea7dd48434cf7e9d2efc5b7a2aaad26/ss_2d57ee58dea7dd48434cf7e9d2efc5b7a2aaad26.600x338.jpg?t=1789831695" alt="Panic Files: Buried Sanity — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+      </div>
+
+      <h2>Геймплей</h2>
+      <div class="game-movies">
+        <figure class="game-movie"><div class="game-video" data-hls="https://video.akamai.steamstatic.com/store_trailers/4012730/499972384/dcbd04e029e5791d1b7215ee96fef8b92131ba14/1760021844/hls_264_master.m3u8?t=1760022253" data-poster="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257193524/270cf05ac9032845f134716ae5b4993d7210dd3f/movie_600x337.jpg?t=1760022253" role="button" tabindex="0" aria-label="Смотреть геймплей: Panic Files: Buried Sanity Gameplay Trailer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257193524/270cf05ac9032845f134716ae5b4993d7210dd3f/movie_600x337.jpg?t=1760022253" alt="" loading="lazy" width="480" height="270" /><span class="game-video-play" aria-hidden="true"></span></div></figure>
+      </div>
+
+<p style="color: var(--text-faint); font-size: 13px; margin-top: 30px;">
         Данные о цене, отзывах и статистике обновляются автоматически на основе
         Steam Store API и SteamSpy.
       </p>
@@ -284,5 +330,6 @@ function declineCookies() {
 })();
 </script>
 <script src="/newsletter.js?v=2" defer></script>
+<script defer src="/game-media.js?v=1"></script>
 </body>
 </html>

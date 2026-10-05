@@ -108,6 +108,38 @@
     }
     .game-stat-card .label { font-size: 12px; color: var(--text-faint); text-transform: uppercase; }
     .game-stat-card .value { font-size: 20px; font-weight: bold; margin-top: 4px; }
+    .game-shots {
+      display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+      gap: 12px; margin: 20px 0;
+    }
+    .game-shot {
+      display: block; border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 8px; overflow: hidden;
+    }
+    .game-shot img { display: block; width: 100%; height: auto; }
+    .game-movies { display: grid; gap: 16px; margin: 20px 0; }
+    .game-movie { margin: 0; }
+    .game-movie video {
+      display: block; width: 100%; height: auto;
+      border-radius: 8px; background: #000;
+    }
+    .game-movie figcaption { margin-top: 6px; font-size: 13px; color: var(--text-faint); }
+    .game-video {
+      position: relative; cursor: pointer; overflow: hidden;
+      border-radius: 8px; background: #000; aspect-ratio: 16 / 9;
+    }
+    .game-video img { display: block; width: 100%; height: 100%; object-fit: cover; }
+    .game-video-play { position: absolute; inset: 0; display: grid; place-items: center; }
+    .game-video-play::before {
+      content: ''; width: 58px; height: 58px; border-radius: 50%;
+      background: rgba(0,0,0,0.5); border: 2px solid rgba(255,255,255,0.75);
+    }
+    .game-video-play::after {
+      content: ''; position: absolute; margin-left: 5px;
+      border-style: solid; border-width: 11px 0 11px 18px;
+      border-color: transparent transparent transparent #fff;
+    }
+    .game-video-el { display: block; width: 100%; height: 100%; background: #000; }
   </style>
 </head>
 <body>
@@ -146,7 +178,7 @@
 
     <article class="article-body">
 
-      <p>The only goal is survival. Explore a dangerous world, gather resources, craft equipment, build shelter, and fight to stay alive. Whether alone or with friends, every decision could mean the difference between thriving and losing everything.</p>
+      
 
       <div class="game-stats-grid">
         <div class="game-stat-card">
@@ -162,10 +194,6 @@
           <div class="label">Владельцев (оценка)</div>
           <div class="value">0 – 20,000</div>
         </div>
-        <div class="game-stat-card">
-          <div class="label">Среднее время игры</div>
-          <div class="value">нет данных</div>
-        </div>
       </div>
 
       <h2>Об игре</h2>
@@ -179,7 +207,27 @@
         </a>
       </p>
 
-      <p style="color: var(--text-faint); font-size: 13px; margin-top: 30px;">
+            <h2>Скриншоты</h2>
+      <div class="game-shots">
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5171770/1a6aa7be0312294312faa2c599522109a6eeb147/ss_1a6aa7be0312294312faa2c599522109a6eeb147.1920x1080.jpg?t=1790553076" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5171770/1a6aa7be0312294312faa2c599522109a6eeb147/ss_1a6aa7be0312294312faa2c599522109a6eeb147.600x338.jpg?t=1790553076" alt="Ultimate Multiplayer Survival Engine — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5171770/d2cb523b82d433aff6cbdd45a29b27e2c16384ef/ss_d2cb523b82d433aff6cbdd45a29b27e2c16384ef.1920x1080.jpg?t=1790553076" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5171770/d2cb523b82d433aff6cbdd45a29b27e2c16384ef/ss_d2cb523b82d433aff6cbdd45a29b27e2c16384ef.600x338.jpg?t=1790553076" alt="Ultimate Multiplayer Survival Engine — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5171770/b5d29a61fba30746c7f14631e1afe5b81933d159/ss_b5d29a61fba30746c7f14631e1afe5b81933d159.1920x1080.jpg?t=1790553076" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5171770/b5d29a61fba30746c7f14631e1afe5b81933d159/ss_b5d29a61fba30746c7f14631e1afe5b81933d159.600x338.jpg?t=1790553076" alt="Ultimate Multiplayer Survival Engine — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5171770/4bb61a40b1a4b5566226baf71ee7cfcc29560c5e/ss_4bb61a40b1a4b5566226baf71ee7cfcc29560c5e.1920x1080.jpg?t=1790553076" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5171770/4bb61a40b1a4b5566226baf71ee7cfcc29560c5e/ss_4bb61a40b1a4b5566226baf71ee7cfcc29560c5e.600x338.jpg?t=1790553076" alt="Ultimate Multiplayer Survival Engine — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5171770/09bdb78e84d1cf6eb5d4f5fbc2aa99531a208c1f/ss_09bdb78e84d1cf6eb5d4f5fbc2aa99531a208c1f.1920x1080.jpg?t=1790553076" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5171770/09bdb78e84d1cf6eb5d4f5fbc2aa99531a208c1f/ss_09bdb78e84d1cf6eb5d4f5fbc2aa99531a208c1f.600x338.jpg?t=1790553076" alt="Ultimate Multiplayer Survival Engine — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5171770/530e47e389cdeec7dffccc8d82bf4b6949a5186f/ss_530e47e389cdeec7dffccc8d82bf4b6949a5186f.1920x1080.jpg?t=1790553076" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5171770/530e47e389cdeec7dffccc8d82bf4b6949a5186f/ss_530e47e389cdeec7dffccc8d82bf4b6949a5186f.600x338.jpg?t=1790553076" alt="Ultimate Multiplayer Survival Engine — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5171770/55a9576b1e7aa7cd3301798773ce2f5589c3e360/ss_55a9576b1e7aa7cd3301798773ce2f5589c3e360.1920x1080.jpg?t=1790553076" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5171770/55a9576b1e7aa7cd3301798773ce2f5589c3e360/ss_55a9576b1e7aa7cd3301798773ce2f5589c3e360.600x338.jpg?t=1790553076" alt="Ultimate Multiplayer Survival Engine — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5171770/ce13f90eccb75f4a7465c333f99a1dfbe0c57c90/ss_ce13f90eccb75f4a7465c333f99a1dfbe0c57c90.1920x1080.jpg?t=1790553076" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5171770/ce13f90eccb75f4a7465c333f99a1dfbe0c57c90/ss_ce13f90eccb75f4a7465c333f99a1dfbe0c57c90.600x338.jpg?t=1790553076" alt="Ultimate Multiplayer Survival Engine — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5171770/b65f1189f51f929c7d2a93c4f9094ed50d1f4c22/ss_b65f1189f51f929c7d2a93c4f9094ed50d1f4c22.1920x1080.jpg?t=1790553076" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5171770/b65f1189f51f929c7d2a93c4f9094ed50d1f4c22/ss_b65f1189f51f929c7d2a93c4f9094ed50d1f4c22.600x338.jpg?t=1790553076" alt="Ultimate Multiplayer Survival Engine — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5171770/1c35c3525a32b02d25700ae6789b7da69b0e264d/ss_1c35c3525a32b02d25700ae6789b7da69b0e264d.1920x1080.jpg?t=1790553076" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5171770/1c35c3525a32b02d25700ae6789b7da69b0e264d/ss_1c35c3525a32b02d25700ae6789b7da69b0e264d.600x338.jpg?t=1790553076" alt="Ultimate Multiplayer Survival Engine — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5171770/1a06705250e11d8845fa1edfc200d1aecd642ea1/ss_1a06705250e11d8845fa1edfc200d1aecd642ea1.1920x1080.jpg?t=1790553076" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5171770/1a06705250e11d8845fa1edfc200d1aecd642ea1/ss_1a06705250e11d8845fa1edfc200d1aecd642ea1.600x338.jpg?t=1790553076" alt="Ultimate Multiplayer Survival Engine — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+      </div>
+
+      <h2>Геймплей</h2>
+      <div class="game-movies">
+        <figure class="game-movie"><div class="game-video" data-hls="https://video.akamai.steamstatic.com/store_trailers/5171770/889169988/d1811e8cf6e642b3908308df2b3661ddf2e264ed/1788476583/hls_264_master.m3u8?t=1789318411" data-poster="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257416838/e88ca71b6ac3d92137056bc2df9689762b079364/movie_600x337.jpg?t=1789318411" role="button" tabindex="0" aria-label="Смотреть геймплей: UMSE Trailer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257416838/e88ca71b6ac3d92137056bc2df9689762b079364/movie_600x337.jpg?t=1789318411" alt="" loading="lazy" width="480" height="270" /><span class="game-video-play" aria-hidden="true"></span></div></figure>
+      </div>
+
+<p style="color: var(--text-faint); font-size: 13px; margin-top: 30px;">
         Данные о цене, отзывах и статистике обновляются автоматически на основе
         Steam Store API и SteamSpy.
       </p>
@@ -280,5 +328,6 @@ function declineCookies() {
 })();
 </script>
 <script src="/newsletter.js?v=2" defer></script>
+<script defer src="/game-media.js?v=1"></script>
 </body>
 </html>

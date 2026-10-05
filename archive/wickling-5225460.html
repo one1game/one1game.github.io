@@ -112,6 +112,38 @@
     }
     .game-stat-card .label { font-size: 12px; color: var(--text-faint); text-transform: uppercase; }
     .game-stat-card .value { font-size: 20px; font-weight: bold; margin-top: 4px; }
+    .game-shots {
+      display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+      gap: 12px; margin: 20px 0;
+    }
+    .game-shot {
+      display: block; border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 8px; overflow: hidden;
+    }
+    .game-shot img { display: block; width: 100%; height: auto; }
+    .game-movies { display: grid; gap: 16px; margin: 20px 0; }
+    .game-movie { margin: 0; }
+    .game-movie video {
+      display: block; width: 100%; height: auto;
+      border-radius: 8px; background: #000;
+    }
+    .game-movie figcaption { margin-top: 6px; font-size: 13px; color: var(--text-faint); }
+    .game-video {
+      position: relative; cursor: pointer; overflow: hidden;
+      border-radius: 8px; background: #000; aspect-ratio: 16 / 9;
+    }
+    .game-video img { display: block; width: 100%; height: 100%; object-fit: cover; }
+    .game-video-play { position: absolute; inset: 0; display: grid; place-items: center; }
+    .game-video-play::before {
+      content: ''; width: 58px; height: 58px; border-radius: 50%;
+      background: rgba(0,0,0,0.5); border: 2px solid rgba(255,255,255,0.75);
+    }
+    .game-video-play::after {
+      content: ''; position: absolute; margin-left: 5px;
+      border-style: solid; border-width: 11px 0 11px 18px;
+      border-color: transparent transparent transparent #fff;
+    }
+    .game-video-el { display: block; width: 100%; height: 100%; background: #000; }
   </style>
 </head>
 <body>
@@ -150,7 +182,7 @@
 
     <article class="article-body">
 
-      <p>A cheerful 8-bit kingdom platformer with a candle for a head and something wrong underneath. World maps, power-up suits, fortresses and airships in the spirit of the NES classics. And a stalker that only moves when you look away. Don't let your flame go out.</p>
+      
 
       <div class="game-stats-grid">
         <div class="game-stat-card">
@@ -166,10 +198,6 @@
           <div class="label">Владельцев (оценка)</div>
           <div class="value">0 – 20,000</div>
         </div>
-        <div class="game-stat-card">
-          <div class="label">Среднее время игры</div>
-          <div class="value">нет данных</div>
-        </div>
       </div>
 
       <h2>Об игре</h2>
@@ -183,7 +211,29 @@
         </a>
       </p>
 
-      <p style="color: var(--text-faint); font-size: 13px; margin-top: 30px;">
+            <h2>Скриншоты</h2>
+      <div class="game-shots">
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5225460/b6dbe665c8a4e2cb5b102c01d29a3344f14d6dc6/ss_b6dbe665c8a4e2cb5b102c01d29a3344f14d6dc6.1920x1080.jpg?t=1791115075" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5225460/b6dbe665c8a4e2cb5b102c01d29a3344f14d6dc6/ss_b6dbe665c8a4e2cb5b102c01d29a3344f14d6dc6.600x338.jpg?t=1791115075" alt="Wickling — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5225460/3d61cfbf1f1cd201c1b5967b899fb998a456e098/ss_3d61cfbf1f1cd201c1b5967b899fb998a456e098.1920x1080.jpg?t=1791115075" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5225460/3d61cfbf1f1cd201c1b5967b899fb998a456e098/ss_3d61cfbf1f1cd201c1b5967b899fb998a456e098.600x338.jpg?t=1791115075" alt="Wickling — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5225460/ccb8888b465017323c2f595bf94ff3daca891272/ss_ccb8888b465017323c2f595bf94ff3daca891272.1920x1080.jpg?t=1791115075" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5225460/ccb8888b465017323c2f595bf94ff3daca891272/ss_ccb8888b465017323c2f595bf94ff3daca891272.600x338.jpg?t=1791115075" alt="Wickling — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5225460/1f863cd2dd87d60a310bb5aba7126974980fb3d9/ss_1f863cd2dd87d60a310bb5aba7126974980fb3d9.1920x1080.jpg?t=1791115075" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5225460/1f863cd2dd87d60a310bb5aba7126974980fb3d9/ss_1f863cd2dd87d60a310bb5aba7126974980fb3d9.600x338.jpg?t=1791115075" alt="Wickling — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5225460/f125a2128125b59a5cd71da3b3f6e38ccab7c5b6/ss_f125a2128125b59a5cd71da3b3f6e38ccab7c5b6.1920x1080.jpg?t=1791115075" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5225460/f125a2128125b59a5cd71da3b3f6e38ccab7c5b6/ss_f125a2128125b59a5cd71da3b3f6e38ccab7c5b6.600x338.jpg?t=1791115075" alt="Wickling — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5225460/30f9889e9bc5655cdb440f5c62b16153c0b71b9f/ss_30f9889e9bc5655cdb440f5c62b16153c0b71b9f.1920x1080.jpg?t=1791115075" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5225460/30f9889e9bc5655cdb440f5c62b16153c0b71b9f/ss_30f9889e9bc5655cdb440f5c62b16153c0b71b9f.600x338.jpg?t=1791115075" alt="Wickling — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5225460/598e5407f1942349fd898c25ee5cc8e4c7c8422e/ss_598e5407f1942349fd898c25ee5cc8e4c7c8422e.1920x1080.jpg?t=1791115075" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5225460/598e5407f1942349fd898c25ee5cc8e4c7c8422e/ss_598e5407f1942349fd898c25ee5cc8e4c7c8422e.600x338.jpg?t=1791115075" alt="Wickling — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5225460/69e9f419bf9fcacdacf88a7d44dd349ae1990a57/ss_69e9f419bf9fcacdacf88a7d44dd349ae1990a57.1920x1080.jpg?t=1791115075" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5225460/69e9f419bf9fcacdacf88a7d44dd349ae1990a57/ss_69e9f419bf9fcacdacf88a7d44dd349ae1990a57.600x338.jpg?t=1791115075" alt="Wickling — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5225460/549ab1533d2e621f5aca19fafa2d334fb5626524/ss_549ab1533d2e621f5aca19fafa2d334fb5626524.1920x1080.jpg?t=1791115075" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5225460/549ab1533d2e621f5aca19fafa2d334fb5626524/ss_549ab1533d2e621f5aca19fafa2d334fb5626524.600x338.jpg?t=1791115075" alt="Wickling — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5225460/360a31cdcb15c77435358e0316da07bd4281e5fe/ss_360a31cdcb15c77435358e0316da07bd4281e5fe.1920x1080.jpg?t=1791115075" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5225460/360a31cdcb15c77435358e0316da07bd4281e5fe/ss_360a31cdcb15c77435358e0316da07bd4281e5fe.600x338.jpg?t=1791115075" alt="Wickling — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5225460/4c2de3cb5e4e9eec6d08cb19e44f02186f0246d8/ss_4c2de3cb5e4e9eec6d08cb19e44f02186f0246d8.1920x1080.jpg?t=1791115075" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5225460/4c2de3cb5e4e9eec6d08cb19e44f02186f0246d8/ss_4c2de3cb5e4e9eec6d08cb19e44f02186f0246d8.600x338.jpg?t=1791115075" alt="Wickling — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5225460/b1b89e542c973a7fd4871f348196ed54a77ee54d/ss_b1b89e542c973a7fd4871f348196ed54a77ee54d.1920x1080.jpg?t=1791115075" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5225460/b1b89e542c973a7fd4871f348196ed54a77ee54d/ss_b1b89e542c973a7fd4871f348196ed54a77ee54d.600x338.jpg?t=1791115075" alt="Wickling — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+      </div>
+
+      <h2>Геймплей</h2>
+      <div class="game-movies">
+        <figure class="game-movie"><div class="game-video" data-hls="https://video.akamai.steamstatic.com/store_trailers/5225460/1832081453/e072060d4eff9822dde0fa1c641e34d0a74d3ad8/1790013660/hls_264_master.m3u8?t=1790013893" data-poster="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257430869/3403bda39189e2bb953d8f6782c52e63a84ec719/movie_600x337.jpg?t=1790013893" role="button" tabindex="0" aria-label="Смотреть геймплей: Scare"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257430869/3403bda39189e2bb953d8f6782c52e63a84ec719/movie_600x337.jpg?t=1790013893" alt="" loading="lazy" width="480" height="270" /><span class="game-video-play" aria-hidden="true"></span></div></figure>
+        <figure class="game-movie"><div class="game-video" data-hls="https://video.akamai.steamstatic.com/store_trailers/5225460/886254650/fe9ff1f1b8d846d3cebc82962226a2e487980796/1788549545/hls_264_master.m3u8?t=1789061854" data-poster="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257417485/40569246c86ee09298cb46f17c9e2a9ce01f1789/movie_600x337.jpg?t=1789061854" role="button" tabindex="0" aria-label="Смотреть геймплей: Gameplay"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257417485/40569246c86ee09298cb46f17c9e2a9ce01f1789/movie_600x337.jpg?t=1789061854" alt="" loading="lazy" width="480" height="270" /><span class="game-video-play" aria-hidden="true"></span></div></figure>
+      </div>
+
+<p style="color: var(--text-faint); font-size: 13px; margin-top: 30px;">
         Данные о цене, отзывах и статистике обновляются автоматически на основе
         Steam Store API и SteamSpy.
       </p>
@@ -284,5 +334,6 @@ function declineCookies() {
 })();
 </script>
 <script src="/newsletter.js?v=2" defer></script>
+<script defer src="/game-media.js?v=1"></script>
 </body>
 </html>

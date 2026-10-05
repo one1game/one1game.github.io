@@ -112,6 +112,38 @@
     }
     .game-stat-card .label { font-size: 12px; color: var(--text-faint); text-transform: uppercase; }
     .game-stat-card .value { font-size: 20px; font-weight: bold; margin-top: 4px; }
+    .game-shots {
+      display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+      gap: 12px; margin: 20px 0;
+    }
+    .game-shot {
+      display: block; border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 8px; overflow: hidden;
+    }
+    .game-shot img { display: block; width: 100%; height: auto; }
+    .game-movies { display: grid; gap: 16px; margin: 20px 0; }
+    .game-movie { margin: 0; }
+    .game-movie video {
+      display: block; width: 100%; height: auto;
+      border-radius: 8px; background: #000;
+    }
+    .game-movie figcaption { margin-top: 6px; font-size: 13px; color: var(--text-faint); }
+    .game-video {
+      position: relative; cursor: pointer; overflow: hidden;
+      border-radius: 8px; background: #000; aspect-ratio: 16 / 9;
+    }
+    .game-video img { display: block; width: 100%; height: 100%; object-fit: cover; }
+    .game-video-play { position: absolute; inset: 0; display: grid; place-items: center; }
+    .game-video-play::before {
+      content: ''; width: 58px; height: 58px; border-radius: 50%;
+      background: rgba(0,0,0,0.5); border: 2px solid rgba(255,255,255,0.75);
+    }
+    .game-video-play::after {
+      content: ''; position: absolute; margin-left: 5px;
+      border-style: solid; border-width: 11px 0 11px 18px;
+      border-color: transparent transparent transparent #fff;
+    }
+    .game-video-el { display: block; width: 100%; height: 100%; background: #000; }
   </style>
 </head>
 <body>
@@ -150,7 +182,7 @@
 
     <article class="article-body">
 
-      <p>&quot;Watatuyo ANOTHER&quot; is a side-scrolling action game with a nostalgic feel. Travel a world that stretches from north to south and east to west and take down the rampaging &quot;The Four Reverse Bandits&quot;.</p>
+      
 
       <div class="game-stats-grid">
         <div class="game-stat-card">
@@ -166,10 +198,6 @@
           <div class="label">Владельцев (оценка)</div>
           <div class="value">0 – 20,000</div>
         </div>
-        <div class="game-stat-card">
-          <div class="label">Среднее время игры</div>
-          <div class="value">нет данных</div>
-        </div>
       </div>
 
       <h2>Об игре</h2>
@@ -183,7 +211,28 @@
         </a>
       </p>
 
-      <p style="color: var(--text-faint); font-size: 13px; margin-top: 30px;">
+            <h2>Скриншоты</h2>
+      <div class="game-shots">
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4406710/a918a97847a1eab5732a725d26355f9e523e8650/ss_a918a97847a1eab5732a725d26355f9e523e8650.1920x1080.jpg?t=1790826783" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4406710/a918a97847a1eab5732a725d26355f9e523e8650/ss_a918a97847a1eab5732a725d26355f9e523e8650.600x338.jpg?t=1790826783" alt="Watatuyo-ANOTHER — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4406710/a5333c461834cc4267f28336326c8bed19c2bdae/ss_a5333c461834cc4267f28336326c8bed19c2bdae.1920x1080.jpg?t=1790826783" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4406710/a5333c461834cc4267f28336326c8bed19c2bdae/ss_a5333c461834cc4267f28336326c8bed19c2bdae.600x338.jpg?t=1790826783" alt="Watatuyo-ANOTHER — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4406710/f27afb5590dcbbc2fc6538a3f81a695862fcce4b/ss_f27afb5590dcbbc2fc6538a3f81a695862fcce4b.1920x1080.jpg?t=1790826783" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4406710/f27afb5590dcbbc2fc6538a3f81a695862fcce4b/ss_f27afb5590dcbbc2fc6538a3f81a695862fcce4b.600x338.jpg?t=1790826783" alt="Watatuyo-ANOTHER — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4406710/fe564380ed486c1813ddd36b28180a8521e0737a/ss_fe564380ed486c1813ddd36b28180a8521e0737a.1920x1080.jpg?t=1790826783" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4406710/fe564380ed486c1813ddd36b28180a8521e0737a/ss_fe564380ed486c1813ddd36b28180a8521e0737a.600x338.jpg?t=1790826783" alt="Watatuyo-ANOTHER — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4406710/67b24fb5c89477a3cf61ea9677e737a87c07a9b2/ss_67b24fb5c89477a3cf61ea9677e737a87c07a9b2.1920x1080.jpg?t=1790826783" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4406710/67b24fb5c89477a3cf61ea9677e737a87c07a9b2/ss_67b24fb5c89477a3cf61ea9677e737a87c07a9b2.600x338.jpg?t=1790826783" alt="Watatuyo-ANOTHER — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4406710/981e1e0ad212d393b1e85a07236b069dec70bac5/ss_981e1e0ad212d393b1e85a07236b069dec70bac5.1920x1080.jpg?t=1790826783" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4406710/981e1e0ad212d393b1e85a07236b069dec70bac5/ss_981e1e0ad212d393b1e85a07236b069dec70bac5.600x338.jpg?t=1790826783" alt="Watatuyo-ANOTHER — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4406710/f03e55cd5122ec1b750535d2f9c7da6db7d14faa/ss_f03e55cd5122ec1b750535d2f9c7da6db7d14faa.1920x1080.jpg?t=1790826783" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4406710/f03e55cd5122ec1b750535d2f9c7da6db7d14faa/ss_f03e55cd5122ec1b750535d2f9c7da6db7d14faa.600x338.jpg?t=1790826783" alt="Watatuyo-ANOTHER — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4406710/893fba9e71adcf284aeeba187e6c30d73fba50ac/ss_893fba9e71adcf284aeeba187e6c30d73fba50ac.1920x1080.jpg?t=1790826783" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4406710/893fba9e71adcf284aeeba187e6c30d73fba50ac/ss_893fba9e71adcf284aeeba187e6c30d73fba50ac.600x338.jpg?t=1790826783" alt="Watatuyo-ANOTHER — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4406710/def9e0c0eadb0226f681ebef34650d31c0add00f/ss_def9e0c0eadb0226f681ebef34650d31c0add00f.1920x1080.jpg?t=1790826783" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4406710/def9e0c0eadb0226f681ebef34650d31c0add00f/ss_def9e0c0eadb0226f681ebef34650d31c0add00f.600x338.jpg?t=1790826783" alt="Watatuyo-ANOTHER — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4406710/f271a34dc850ed30acda271f389409a03894f1c5/ss_f271a34dc850ed30acda271f389409a03894f1c5.1920x1080.jpg?t=1790826783" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4406710/f271a34dc850ed30acda271f389409a03894f1c5/ss_f271a34dc850ed30acda271f389409a03894f1c5.600x338.jpg?t=1790826783" alt="Watatuyo-ANOTHER — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4406710/36377ae5dde632a8ddb4c2132f4943a5282b41a1/ss_36377ae5dde632a8ddb4c2132f4943a5282b41a1.1920x1080.jpg?t=1790826783" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4406710/36377ae5dde632a8ddb4c2132f4943a5282b41a1/ss_36377ae5dde632a8ddb4c2132f4943a5282b41a1.600x338.jpg?t=1790826783" alt="Watatuyo-ANOTHER — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4406710/f614a2c2f7d226d9dfb9b7ce1a09c1a1cb6cde38/ss_f614a2c2f7d226d9dfb9b7ce1a09c1a1cb6cde38.1920x1080.jpg?t=1790826783" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4406710/f614a2c2f7d226d9dfb9b7ce1a09c1a1cb6cde38/ss_f614a2c2f7d226d9dfb9b7ce1a09c1a1cb6cde38.600x338.jpg?t=1790826783" alt="Watatuyo-ANOTHER — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+      </div>
+
+      <h2>Геймплей</h2>
+      <div class="game-movies">
+        <figure class="game-movie"><div class="game-video" data-hls="https://video.akamai.steamstatic.com/store_trailers/4406710/1028774466/83626249b8e60ed9c8e288d57744491a1f1fb99a/1786965903/hls_264_master.m3u8?t=1787323356" data-poster="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257401359/05be516d90cb3f20ad1a2c962c5d190abc012c82/movie_600x337.jpg?t=1787323356" role="button" tabindex="0" aria-label="Смотреть геймплей: watatuyo_another"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257401359/05be516d90cb3f20ad1a2c962c5d190abc012c82/movie_600x337.jpg?t=1787323356" alt="" loading="lazy" width="480" height="270" /><span class="game-video-play" aria-hidden="true"></span></div></figure>
+      </div>
+
+<p style="color: var(--text-faint); font-size: 13px; margin-top: 30px;">
         Данные о цене, отзывах и статистике обновляются автоматически на основе
         Steam Store API и SteamSpy.
       </p>
@@ -284,5 +333,6 @@ function declineCookies() {
 })();
 </script>
 <script src="/newsletter.js?v=2" defer></script>
+<script defer src="/game-media.js?v=1"></script>
 </body>
 </html>

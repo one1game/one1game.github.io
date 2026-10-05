@@ -112,6 +112,38 @@
     }
     .game-stat-card .label { font-size: 12px; color: var(--text-faint); text-transform: uppercase; }
     .game-stat-card .value { font-size: 20px; font-weight: bold; margin-top: 4px; }
+    .game-shots {
+      display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+      gap: 12px; margin: 20px 0;
+    }
+    .game-shot {
+      display: block; border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 8px; overflow: hidden;
+    }
+    .game-shot img { display: block; width: 100%; height: auto; }
+    .game-movies { display: grid; gap: 16px; margin: 20px 0; }
+    .game-movie { margin: 0; }
+    .game-movie video {
+      display: block; width: 100%; height: auto;
+      border-radius: 8px; background: #000;
+    }
+    .game-movie figcaption { margin-top: 6px; font-size: 13px; color: var(--text-faint); }
+    .game-video {
+      position: relative; cursor: pointer; overflow: hidden;
+      border-radius: 8px; background: #000; aspect-ratio: 16 / 9;
+    }
+    .game-video img { display: block; width: 100%; height: 100%; object-fit: cover; }
+    .game-video-play { position: absolute; inset: 0; display: grid; place-items: center; }
+    .game-video-play::before {
+      content: ''; width: 58px; height: 58px; border-radius: 50%;
+      background: rgba(0,0,0,0.5); border: 2px solid rgba(255,255,255,0.75);
+    }
+    .game-video-play::after {
+      content: ''; position: absolute; margin-left: 5px;
+      border-style: solid; border-width: 11px 0 11px 18px;
+      border-color: transparent transparent transparent #fff;
+    }
+    .game-video-el { display: block; width: 100%; height: 100%; background: #000; }
   </style>
 </head>
 <body>
@@ -166,10 +198,6 @@
           <div class="label">Владельцев (оценка)</div>
           <div class="value">0 – 20,000</div>
         </div>
-        <div class="game-stat-card">
-          <div class="label">Среднее время игры</div>
-          <div class="value">нет данных</div>
-        </div>
       </div>
 
       <h2>Об игре</h2>
@@ -183,7 +211,23 @@
         </a>
       </p>
 
-      <p style="color: var(--text-faint); font-size: 13px; margin-top: 30px;">
+            <h2>Скриншоты</h2>
+      <div class="game-shots">
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3263880/ced43abaa3506bd4f576adfe2d8ebef51ee06a0e/ss_ced43abaa3506bd4f576adfe2d8ebef51ee06a0e.1920x1080.jpg?t=1790567161" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3263880/ced43abaa3506bd4f576adfe2d8ebef51ee06a0e/ss_ced43abaa3506bd4f576adfe2d8ebef51ee06a0e.600x338.jpg?t=1790567161" alt="Project DevourSlime — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3263880/ca39caaac1dd80cc1cfe43d1b3ca2a123159f3cd/ss_ca39caaac1dd80cc1cfe43d1b3ca2a123159f3cd.1920x1080.jpg?t=1790567161" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3263880/ca39caaac1dd80cc1cfe43d1b3ca2a123159f3cd/ss_ca39caaac1dd80cc1cfe43d1b3ca2a123159f3cd.600x338.jpg?t=1790567161" alt="Project DevourSlime — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3263880/886f4a384b7d43d7c359d2e0dbf5e669de6c813e/ss_886f4a384b7d43d7c359d2e0dbf5e669de6c813e.1920x1080.jpg?t=1790567161" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3263880/886f4a384b7d43d7c359d2e0dbf5e669de6c813e/ss_886f4a384b7d43d7c359d2e0dbf5e669de6c813e.600x338.jpg?t=1790567161" alt="Project DevourSlime — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3263880/69989b79445989d55f6760a7e532caca637ad037/ss_69989b79445989d55f6760a7e532caca637ad037.1920x1080.jpg?t=1790567161" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3263880/69989b79445989d55f6760a7e532caca637ad037/ss_69989b79445989d55f6760a7e532caca637ad037.600x338.jpg?t=1790567161" alt="Project DevourSlime — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3263880/7f8de3e55d7cf0cd83f32308a5c30da35c170498/ss_7f8de3e55d7cf0cd83f32308a5c30da35c170498.1920x1080.jpg?t=1790567161" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3263880/7f8de3e55d7cf0cd83f32308a5c30da35c170498/ss_7f8de3e55d7cf0cd83f32308a5c30da35c170498.600x338.jpg?t=1790567161" alt="Project DevourSlime — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+      </div>
+
+      <h2>Геймплей</h2>
+      <div class="game-movies">
+        <figure class="game-movie"><div class="game-video" data-hls="https://video.akamai.steamstatic.com/store_trailers/3263880/1967353761/37c4a07f2ea4b94083ba18627916c5e669ddb3bc/1790564986/hls_264_master.m3u8?t=1790567160" data-poster="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257437878/23bf7f6fdee6a629cff05be34a268d4c4b86cf41/movie_600x337.jpg?t=1790567160" role="button" tabindex="0" aria-label="Смотреть геймплей: Out Now"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257437878/23bf7f6fdee6a629cff05be34a268d4c4b86cf41/movie_600x337.jpg?t=1790567160" alt="" loading="lazy" width="480" height="270" /><span class="game-video-play" aria-hidden="true"></span></div></figure>
+        <figure class="game-movie"><div class="game-video" data-hls="https://video.akamai.steamstatic.com/store_trailers/3263880/93850390/55bc72b3b370687510dcdd4e775971f1d834cf12/1780457109/hls_264_master.m3u8?t=1780459532" data-poster="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257349085/d70d4ed14cf2a1944f7b6a870f103d9c1b2aa6f7/movie_600x337.jpg?t=1780459532" role="button" tabindex="0" aria-label="Смотреть геймплей: Nen Version Demo 2026"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257349085/d70d4ed14cf2a1944f7b6a870f103d9c1b2aa6f7/movie_600x337.jpg?t=1780459532" alt="" loading="lazy" width="480" height="270" /><span class="game-video-play" aria-hidden="true"></span></div></figure>
+        <figure class="game-movie"><div class="game-video" data-hls="https://video.akamai.steamstatic.com/store_trailers/3263880/1860478060/0437188bda6cb98a2afad131d4b47f6bfcc96069/1770361564/hls_264_master.m3u8?t=1771898656" data-poster="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257280861/13ec5576f557b8596c8dd1529b2159a9db5a662b/movie_600x337.jpg?t=1771898656" role="button" tabindex="0" aria-label="Смотреть геймплей: 噬莱姆计划2月新品节PV_EN"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257280861/13ec5576f557b8596c8dd1529b2159a9db5a662b/movie_600x337.jpg?t=1771898656" alt="" loading="lazy" width="480" height="270" /><span class="game-video-play" aria-hidden="true"></span></div></figure>
+      </div>
+
+<p style="color: var(--text-faint); font-size: 13px; margin-top: 30px;">
         Данные о цене, отзывах и статистике обновляются автоматически на основе
         Steam Store API и SteamSpy.
       </p>
@@ -284,5 +328,6 @@ function declineCookies() {
 })();
 </script>
 <script src="/newsletter.js?v=2" defer></script>
+<script defer src="/game-media.js?v=1"></script>
 </body>
 </html>

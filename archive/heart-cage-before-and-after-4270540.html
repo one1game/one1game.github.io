@@ -112,6 +112,22 @@
     }
     .game-stat-card .label { font-size: 12px; color: var(--text-faint); text-transform: uppercase; }
     .game-stat-card .value { font-size: 20px; font-weight: bold; margin-top: 4px; }
+    .game-shots {
+      display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+      gap: 12px; margin: 20px 0;
+    }
+    .game-shot {
+      display: block; border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 8px; overflow: hidden;
+    }
+    .game-shot img { display: block; width: 100%; height: auto; }
+    .game-movies { display: grid; gap: 16px; margin: 20px 0; }
+    .game-movie { margin: 0; }
+    .game-movie video {
+      display: block; width: 100%; height: auto;
+      border-radius: 8px; background: #000;
+    }
+    .game-movie figcaption { margin-top: 6px; font-size: 13px; color: var(--text-faint); }
   </style>
 </head>
 <body>
@@ -150,7 +166,7 @@
 
     <article class="article-body">
 
-      <p>Heart Cage: Before and after is the Extra-story for Heart Cage !</p>
+      
 
       <div class="game-stats-grid">
         <div class="game-stat-card">
@@ -166,10 +182,6 @@
           <div class="label">Владельцев (оценка)</div>
           <div class="value">0 – 20,000</div>
         </div>
-        <div class="game-stat-card">
-          <div class="label">Среднее время игры</div>
-          <div class="value">нет данных</div>
-        </div>
       </div>
 
       <h2>Об игре</h2>
@@ -183,7 +195,18 @@
         </a>
       </p>
 
-      <p style="color: var(--text-faint); font-size: 13px; margin-top: 30px;">
+            <h2>Скриншоты</h2>
+      <div class="game-shots">
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4270540/9d95de900582f80b1172552f5f2ee276d5f097ab/ss_9d95de900582f80b1172552f5f2ee276d5f097ab.1920x1080.jpg?t=1790757433" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4270540/9d95de900582f80b1172552f5f2ee276d5f097ab/ss_9d95de900582f80b1172552f5f2ee276d5f097ab.600x338.jpg?t=1790757433" alt="Heart Cage - Before and After — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4270540/56b14dfe70f6537b40133d9ac480146420e5e8d7/ss_56b14dfe70f6537b40133d9ac480146420e5e8d7.1920x1080.jpg?t=1790757433" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4270540/56b14dfe70f6537b40133d9ac480146420e5e8d7/ss_56b14dfe70f6537b40133d9ac480146420e5e8d7.600x338.jpg?t=1790757433" alt="Heart Cage - Before and After — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4270540/534ac00bb030b5eafecd762ba50d704033a3822f/ss_534ac00bb030b5eafecd762ba50d704033a3822f.1920x1080.jpg?t=1790757433" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4270540/534ac00bb030b5eafecd762ba50d704033a3822f/ss_534ac00bb030b5eafecd762ba50d704033a3822f.600x338.jpg?t=1790757433" alt="Heart Cage - Before and After — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4270540/1b49661685500e9ea68ea60be40a5be9fe08d312/ss_1b49661685500e9ea68ea60be40a5be9fe08d312.1920x1080.jpg?t=1790757433" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4270540/1b49661685500e9ea68ea60be40a5be9fe08d312/ss_1b49661685500e9ea68ea60be40a5be9fe08d312.600x338.jpg?t=1790757433" alt="Heart Cage - Before and After — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4270540/87355083edd4369ff4ed4e288b673372739e2a53/ss_87355083edd4369ff4ed4e288b673372739e2a53.1920x1080.jpg?t=1790757433" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4270540/87355083edd4369ff4ed4e288b673372739e2a53/ss_87355083edd4369ff4ed4e288b673372739e2a53.600x338.jpg?t=1790757433" alt="Heart Cage - Before and After — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4270540/9801a43c94f71459674a2d14781acaa752e73f4a/ss_9801a43c94f71459674a2d14781acaa752e73f4a.1920x1080.jpg?t=1790757433" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4270540/9801a43c94f71459674a2d14781acaa752e73f4a/ss_9801a43c94f71459674a2d14781acaa752e73f4a.600x338.jpg?t=1790757433" alt="Heart Cage - Before and After — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4270540/7ec940cfe2ed79eab36c696df7bc80b233054adb/ss_7ec940cfe2ed79eab36c696df7bc80b233054adb.1920x1080.jpg?t=1790757433" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4270540/7ec940cfe2ed79eab36c696df7bc80b233054adb/ss_7ec940cfe2ed79eab36c696df7bc80b233054adb.600x338.jpg?t=1790757433" alt="Heart Cage - Before and After — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+      </div>
+
+<p style="color: var(--text-faint); font-size: 13px; margin-top: 30px;">
         Данные о цене, отзывах и статистике обновляются автоматически на основе
         Steam Store API и SteamSpy.
       </p>

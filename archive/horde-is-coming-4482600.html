@@ -112,6 +112,38 @@
     }
     .game-stat-card .label { font-size: 12px; color: var(--text-faint); text-transform: uppercase; }
     .game-stat-card .value { font-size: 20px; font-weight: bold; margin-top: 4px; }
+    .game-shots {
+      display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+      gap: 12px; margin: 20px 0;
+    }
+    .game-shot {
+      display: block; border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 8px; overflow: hidden;
+    }
+    .game-shot img { display: block; width: 100%; height: auto; }
+    .game-movies { display: grid; gap: 16px; margin: 20px 0; }
+    .game-movie { margin: 0; }
+    .game-movie video {
+      display: block; width: 100%; height: auto;
+      border-radius: 8px; background: #000;
+    }
+    .game-movie figcaption { margin-top: 6px; font-size: 13px; color: var(--text-faint); }
+    .game-video {
+      position: relative; cursor: pointer; overflow: hidden;
+      border-radius: 8px; background: #000; aspect-ratio: 16 / 9;
+    }
+    .game-video img { display: block; width: 100%; height: 100%; object-fit: cover; }
+    .game-video-play { position: absolute; inset: 0; display: grid; place-items: center; }
+    .game-video-play::before {
+      content: ''; width: 58px; height: 58px; border-radius: 50%;
+      background: rgba(0,0,0,0.5); border: 2px solid rgba(255,255,255,0.75);
+    }
+    .game-video-play::after {
+      content: ''; position: absolute; margin-left: 5px;
+      border-style: solid; border-width: 11px 0 11px 18px;
+      border-color: transparent transparent transparent #fff;
+    }
+    .game-video-el { display: block; width: 100%; height: 100%; background: #000; }
   </style>
 </head>
 <body>
@@ -166,10 +198,6 @@
           <div class="label">Владельцев (оценка)</div>
           <div class="value">0 – 20,000</div>
         </div>
-        <div class="game-stat-card">
-          <div class="label">Среднее время игры</div>
-          <div class="value">нет данных</div>
-        </div>
       </div>
 
       <h2>Об игре</h2>
@@ -183,7 +211,28 @@
         </a>
       </p>
 
-      <p style="color: var(--text-faint); font-size: 13px; margin-top: 30px;">
+            <h2>Скриншоты</h2>
+      <div class="game-shots">
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4482600/3544151538fef531f495c2cd5bf45b19eb153f59/ss_3544151538fef531f495c2cd5bf45b19eb153f59.1920x1080.jpg?t=1791020414" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4482600/3544151538fef531f495c2cd5bf45b19eb153f59/ss_3544151538fef531f495c2cd5bf45b19eb153f59.600x338.jpg?t=1791020414" alt="Horde is Coming — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4482600/014a96b9c2fef4f4b89ccc8a56da13dcbdb310f2/ss_014a96b9c2fef4f4b89ccc8a56da13dcbdb310f2.1920x1080.jpg?t=1791020414" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4482600/014a96b9c2fef4f4b89ccc8a56da13dcbdb310f2/ss_014a96b9c2fef4f4b89ccc8a56da13dcbdb310f2.600x338.jpg?t=1791020414" alt="Horde is Coming — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4482600/3b9627fcca702817ef406f5be731b98c7cba4359/ss_3b9627fcca702817ef406f5be731b98c7cba4359.1920x1080.jpg?t=1791020414" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4482600/3b9627fcca702817ef406f5be731b98c7cba4359/ss_3b9627fcca702817ef406f5be731b98c7cba4359.600x338.jpg?t=1791020414" alt="Horde is Coming — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4482600/20611c24e631f9c14a87a0d5ad870542c949296f/ss_20611c24e631f9c14a87a0d5ad870542c949296f.1920x1080.jpg?t=1791020414" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4482600/20611c24e631f9c14a87a0d5ad870542c949296f/ss_20611c24e631f9c14a87a0d5ad870542c949296f.600x338.jpg?t=1791020414" alt="Horde is Coming — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4482600/ca7e3d1d5793c9397ff127668acfce2db732de95/ss_ca7e3d1d5793c9397ff127668acfce2db732de95.1920x1080.jpg?t=1791020414" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4482600/ca7e3d1d5793c9397ff127668acfce2db732de95/ss_ca7e3d1d5793c9397ff127668acfce2db732de95.600x338.jpg?t=1791020414" alt="Horde is Coming — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4482600/408e089d3c432c6625cb41dc9e08a279e7f83e49/ss_408e089d3c432c6625cb41dc9e08a279e7f83e49.1920x1080.jpg?t=1791020414" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4482600/408e089d3c432c6625cb41dc9e08a279e7f83e49/ss_408e089d3c432c6625cb41dc9e08a279e7f83e49.600x338.jpg?t=1791020414" alt="Horde is Coming — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4482600/771f3880b4ab7b30851599cef06d86f04904ce82/ss_771f3880b4ab7b30851599cef06d86f04904ce82.1920x1080.jpg?t=1791020414" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4482600/771f3880b4ab7b30851599cef06d86f04904ce82/ss_771f3880b4ab7b30851599cef06d86f04904ce82.600x338.jpg?t=1791020414" alt="Horde is Coming — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4482600/205a242c976cc417e0252264a57c5eb63a4e5cf2/ss_205a242c976cc417e0252264a57c5eb63a4e5cf2.1920x1080.jpg?t=1791020414" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4482600/205a242c976cc417e0252264a57c5eb63a4e5cf2/ss_205a242c976cc417e0252264a57c5eb63a4e5cf2.600x338.jpg?t=1791020414" alt="Horde is Coming — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4482600/d6d0908e5d8e914136174ba1013f9897f4a97cb5/ss_d6d0908e5d8e914136174ba1013f9897f4a97cb5.1920x1080.jpg?t=1791020414" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4482600/d6d0908e5d8e914136174ba1013f9897f4a97cb5/ss_d6d0908e5d8e914136174ba1013f9897f4a97cb5.600x338.jpg?t=1791020414" alt="Horde is Coming — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4482600/cbdcacac7157a547104ebf1b1168cfd7909c66a1/ss_cbdcacac7157a547104ebf1b1168cfd7909c66a1.1920x1080.jpg?t=1791020414" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4482600/cbdcacac7157a547104ebf1b1168cfd7909c66a1/ss_cbdcacac7157a547104ebf1b1168cfd7909c66a1.600x338.jpg?t=1791020414" alt="Horde is Coming — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4482600/0ef2a635de92ddc0bc57be35e152a943545e0310/ss_0ef2a635de92ddc0bc57be35e152a943545e0310.1920x1080.jpg?t=1791020414" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4482600/0ef2a635de92ddc0bc57be35e152a943545e0310/ss_0ef2a635de92ddc0bc57be35e152a943545e0310.600x338.jpg?t=1791020414" alt="Horde is Coming — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4482600/8d763c5ba33d7e3eb5b37a389602f3c377797cd5/ss_8d763c5ba33d7e3eb5b37a389602f3c377797cd5.1920x1080.jpg?t=1791020414" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4482600/8d763c5ba33d7e3eb5b37a389602f3c377797cd5/ss_8d763c5ba33d7e3eb5b37a389602f3c377797cd5.600x338.jpg?t=1791020414" alt="Horde is Coming — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+      </div>
+
+      <h2>Геймплей</h2>
+      <div class="game-movies">
+        <figure class="game-movie"><div class="game-video" data-hls="https://video.akamai.steamstatic.com/store_trailers/4482600/918965211/87a64d5e2608ba4070d5a68edd84f1cbcd73310e/1789076773/hls_264_master.m3u8?t=1789809248" data-poster="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257422331/15d968f48b043de8da7c1f93eb30cbb78451d29d/movie_600x337.jpg?t=1789809248" role="button" tabindex="0" aria-label="Смотреть геймплей: Horde is coming - Trailer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257422331/15d968f48b043de8da7c1f93eb30cbb78451d29d/movie_600x337.jpg?t=1789809248" alt="" loading="lazy" width="480" height="270" /><span class="game-video-play" aria-hidden="true"></span></div></figure>
+      </div>
+
+<p style="color: var(--text-faint); font-size: 13px; margin-top: 30px;">
         Данные о цене, отзывах и статистике обновляются автоматически на основе
         Steam Store API и SteamSpy.
       </p>
@@ -284,5 +333,6 @@ function declineCookies() {
 })();
 </script>
 <script src="/newsletter.js?v=2" defer></script>
+<script defer src="/game-media.js?v=1"></script>
 </body>
 </html>

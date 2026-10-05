@@ -112,6 +112,38 @@
     }
     .game-stat-card .label { font-size: 12px; color: var(--text-faint); text-transform: uppercase; }
     .game-stat-card .value { font-size: 20px; font-weight: bold; margin-top: 4px; }
+    .game-shots {
+      display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+      gap: 12px; margin: 20px 0;
+    }
+    .game-shot {
+      display: block; border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 8px; overflow: hidden;
+    }
+    .game-shot img { display: block; width: 100%; height: auto; }
+    .game-movies { display: grid; gap: 16px; margin: 20px 0; }
+    .game-movie { margin: 0; }
+    .game-movie video {
+      display: block; width: 100%; height: auto;
+      border-radius: 8px; background: #000;
+    }
+    .game-movie figcaption { margin-top: 6px; font-size: 13px; color: var(--text-faint); }
+    .game-video {
+      position: relative; cursor: pointer; overflow: hidden;
+      border-radius: 8px; background: #000; aspect-ratio: 16 / 9;
+    }
+    .game-video img { display: block; width: 100%; height: 100%; object-fit: cover; }
+    .game-video-play { position: absolute; inset: 0; display: grid; place-items: center; }
+    .game-video-play::before {
+      content: ''; width: 58px; height: 58px; border-radius: 50%;
+      background: rgba(0,0,0,0.5); border: 2px solid rgba(255,255,255,0.75);
+    }
+    .game-video-play::after {
+      content: ''; position: absolute; margin-left: 5px;
+      border-style: solid; border-width: 11px 0 11px 18px;
+      border-color: transparent transparent transparent #fff;
+    }
+    .game-video-el { display: block; width: 100%; height: 100%; background: #000; }
   </style>
 </head>
 <body>
@@ -166,10 +198,6 @@
           <div class="label">Владельцев (оценка)</div>
           <div class="value">0 – 20,000</div>
         </div>
-        <div class="game-stat-card">
-          <div class="label">Среднее время игры</div>
-          <div class="value">нет данных</div>
-        </div>
       </div>
 
       <h2>Об игре</h2>
@@ -183,7 +211,23 @@
         </a>
       </p>
 
-      <p style="color: var(--text-faint); font-size: 13px; margin-top: 30px;">
+            <h2>Скриншоты</h2>
+      <div class="game-shots">
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4902250/f9cb1158bff72d0818dbe01bc80cabe7c4452c3c/ss_f9cb1158bff72d0818dbe01bc80cabe7c4452c3c.1920x1080.jpg?t=1790231412" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4902250/f9cb1158bff72d0818dbe01bc80cabe7c4452c3c/ss_f9cb1158bff72d0818dbe01bc80cabe7c4452c3c.600x338.jpg?t=1790231412" alt="Prisoners Chess — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4902250/d497aba51fd47bc72c2b637d138d02ef53adc63c/ss_d497aba51fd47bc72c2b637d138d02ef53adc63c.1920x1080.jpg?t=1790231412" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4902250/d497aba51fd47bc72c2b637d138d02ef53adc63c/ss_d497aba51fd47bc72c2b637d138d02ef53adc63c.600x338.jpg?t=1790231412" alt="Prisoners Chess — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4902250/579636ca2dbdec1e32de16d58cfcd2498e31aabd/ss_579636ca2dbdec1e32de16d58cfcd2498e31aabd.1920x1080.jpg?t=1790231412" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4902250/579636ca2dbdec1e32de16d58cfcd2498e31aabd/ss_579636ca2dbdec1e32de16d58cfcd2498e31aabd.600x338.jpg?t=1790231412" alt="Prisoners Chess — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4902250/9c523365faea7a0ab6e9f5b883cbc10990306139/ss_9c523365faea7a0ab6e9f5b883cbc10990306139.1920x1080.jpg?t=1790231412" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4902250/9c523365faea7a0ab6e9f5b883cbc10990306139/ss_9c523365faea7a0ab6e9f5b883cbc10990306139.600x338.jpg?t=1790231412" alt="Prisoners Chess — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4902250/cf4c300b96c8d141b8fb01d41b25f43f7eb7d47c/ss_cf4c300b96c8d141b8fb01d41b25f43f7eb7d47c.1920x1080.jpg?t=1790231412" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4902250/cf4c300b96c8d141b8fb01d41b25f43f7eb7d47c/ss_cf4c300b96c8d141b8fb01d41b25f43f7eb7d47c.600x338.jpg?t=1790231412" alt="Prisoners Chess — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4902250/15fd099ab5d7f299bf60a4e9d48a78493ef1befa/ss_15fd099ab5d7f299bf60a4e9d48a78493ef1befa.1920x1080.jpg?t=1790231412" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4902250/15fd099ab5d7f299bf60a4e9d48a78493ef1befa/ss_15fd099ab5d7f299bf60a4e9d48a78493ef1befa.600x338.jpg?t=1790231412" alt="Prisoners Chess — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4902250/58f0d00a2729935e7415ff01f5c6e73651ef6545/ss_58f0d00a2729935e7415ff01f5c6e73651ef6545.1920x1080.jpg?t=1790231412" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4902250/58f0d00a2729935e7415ff01f5c6e73651ef6545/ss_58f0d00a2729935e7415ff01f5c6e73651ef6545.600x338.jpg?t=1790231412" alt="Prisoners Chess — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+      </div>
+
+      <h2>Геймплей</h2>
+      <div class="game-movies">
+        <figure class="game-movie"><div class="game-video" data-hls="https://video.akamai.steamstatic.com/store_trailers/4902250/2757034/06531d8c2c9dc10a913270409356290164ebdf21/1786062885/hls_264_master.m3u8?t=1787449559" data-poster="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257393326/ac14fb3865fa15077e4df0a6f83c3ae13f7c5236/movie_600x337.jpg?t=1787449559" role="button" tabindex="0" aria-label="Смотреть геймплей: Prisoners Chess 1"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257393326/ac14fb3865fa15077e4df0a6f83c3ae13f7c5236/movie_600x337.jpg?t=1787449559" alt="" loading="lazy" width="480" height="270" /><span class="game-video-play" aria-hidden="true"></span></div></figure>
+      </div>
+
+<p style="color: var(--text-faint); font-size: 13px; margin-top: 30px;">
         Данные о цене, отзывах и статистике обновляются автоматически на основе
         Steam Store API и SteamSpy.
       </p>
@@ -284,5 +328,6 @@ function declineCookies() {
 })();
 </script>
 <script src="/newsletter.js?v=2" defer></script>
+<script defer src="/game-media.js?v=1"></script>
 </body>
 </html>

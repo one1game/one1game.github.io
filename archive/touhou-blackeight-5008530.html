@@ -112,6 +112,38 @@
     }
     .game-stat-card .label { font-size: 12px; color: var(--text-faint); text-transform: uppercase; }
     .game-stat-card .value { font-size: 20px; font-weight: bold; margin-top: 4px; }
+    .game-shots {
+      display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+      gap: 12px; margin: 20px 0;
+    }
+    .game-shot {
+      display: block; border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 8px; overflow: hidden;
+    }
+    .game-shot img { display: block; width: 100%; height: auto; }
+    .game-movies { display: grid; gap: 16px; margin: 20px 0; }
+    .game-movie { margin: 0; }
+    .game-movie video {
+      display: block; width: 100%; height: auto;
+      border-radius: 8px; background: #000;
+    }
+    .game-movie figcaption { margin-top: 6px; font-size: 13px; color: var(--text-faint); }
+    .game-video {
+      position: relative; cursor: pointer; overflow: hidden;
+      border-radius: 8px; background: #000; aspect-ratio: 16 / 9;
+    }
+    .game-video img { display: block; width: 100%; height: 100%; object-fit: cover; }
+    .game-video-play { position: absolute; inset: 0; display: grid; place-items: center; }
+    .game-video-play::before {
+      content: ''; width: 58px; height: 58px; border-radius: 50%;
+      background: rgba(0,0,0,0.5); border: 2px solid rgba(255,255,255,0.75);
+    }
+    .game-video-play::after {
+      content: ''; position: absolute; margin-left: 5px;
+      border-style: solid; border-width: 11px 0 11px 18px;
+      border-color: transparent transparent transparent #fff;
+    }
+    .game-video-el { display: block; width: 100%; height: 100%; background: #000; }
   </style>
 </head>
 <body>
@@ -150,7 +182,7 @@
 
     <article class="article-body">
 
-      <p>If there is an anomaly, do not put the lights out. Survive eight nights at Eientei in this first person Touhou Project horror fan game. 99 ruinous anomalies warp the sleeping girls in the dark, and the distance between Reimu, Marisa, Kaguya and Mokou shifts night by night. Exit 8 like, yuri horror.</p>
+      
 
       <div class="game-stats-grid">
         <div class="game-stat-card">
@@ -166,10 +198,6 @@
           <div class="label">Владельцев (оценка)</div>
           <div class="value">0 – 20,000</div>
         </div>
-        <div class="game-stat-card">
-          <div class="label">Среднее время игры</div>
-          <div class="value">нет данных</div>
-        </div>
       </div>
 
       <h2>Об игре</h2>
@@ -183,7 +211,27 @@
         </a>
       </p>
 
-      <p style="color: var(--text-faint); font-size: 13px; margin-top: 30px;">
+            <h2>Скриншоты</h2>
+      <div class="game-shots">
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5008530/fc5662e32c703efc0652c042a9c1178806d8c556/ss_fc5662e32c703efc0652c042a9c1178806d8c556.1920x1080.jpg?t=1791111476" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5008530/fc5662e32c703efc0652c042a9c1178806d8c556/ss_fc5662e32c703efc0652c042a9c1178806d8c556.600x338.jpg?t=1791111476" alt="Touhou: BlackEight — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5008530/566d26f40c1b90b94a4143bcab9b1719827eb054/ss_566d26f40c1b90b94a4143bcab9b1719827eb054.1920x1080.jpg?t=1791111476" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5008530/566d26f40c1b90b94a4143bcab9b1719827eb054/ss_566d26f40c1b90b94a4143bcab9b1719827eb054.600x338.jpg?t=1791111476" alt="Touhou: BlackEight — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5008530/b9b2cf77d0aba3ef3105970b7ec068183cd5e042/ss_b9b2cf77d0aba3ef3105970b7ec068183cd5e042.1920x1080.jpg?t=1791111476" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5008530/b9b2cf77d0aba3ef3105970b7ec068183cd5e042/ss_b9b2cf77d0aba3ef3105970b7ec068183cd5e042.600x338.jpg?t=1791111476" alt="Touhou: BlackEight — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5008530/70776eef09f75a88c8e7f7ee3b1d0ed8f83d2f4a/ss_70776eef09f75a88c8e7f7ee3b1d0ed8f83d2f4a.1920x1080.jpg?t=1791111476" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5008530/70776eef09f75a88c8e7f7ee3b1d0ed8f83d2f4a/ss_70776eef09f75a88c8e7f7ee3b1d0ed8f83d2f4a.600x338.jpg?t=1791111476" alt="Touhou: BlackEight — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5008530/3fc3b68f3ad7bcd36eceaf2b7bcecf612cdd84db/ss_3fc3b68f3ad7bcd36eceaf2b7bcecf612cdd84db.1920x1080.jpg?t=1791111476" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5008530/3fc3b68f3ad7bcd36eceaf2b7bcecf612cdd84db/ss_3fc3b68f3ad7bcd36eceaf2b7bcecf612cdd84db.600x338.jpg?t=1791111476" alt="Touhou: BlackEight — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5008530/6c854ac3e51e10877eb01bac9c52f5254eb3ef13/ss_6c854ac3e51e10877eb01bac9c52f5254eb3ef13.1920x1080.jpg?t=1791111476" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5008530/6c854ac3e51e10877eb01bac9c52f5254eb3ef13/ss_6c854ac3e51e10877eb01bac9c52f5254eb3ef13.600x338.jpg?t=1791111476" alt="Touhou: BlackEight — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5008530/a997fbda9c7cb5c6c7cae69fd807c9fffb8567ed/ss_a997fbda9c7cb5c6c7cae69fd807c9fffb8567ed.1920x1080.jpg?t=1791111476" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5008530/a997fbda9c7cb5c6c7cae69fd807c9fffb8567ed/ss_a997fbda9c7cb5c6c7cae69fd807c9fffb8567ed.600x338.jpg?t=1791111476" alt="Touhou: BlackEight — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5008530/2334372d11dbe17f8ca14aaa40451f3cd8d15a7a/ss_2334372d11dbe17f8ca14aaa40451f3cd8d15a7a.1920x1080.jpg?t=1791111476" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5008530/2334372d11dbe17f8ca14aaa40451f3cd8d15a7a/ss_2334372d11dbe17f8ca14aaa40451f3cd8d15a7a.600x338.jpg?t=1791111476" alt="Touhou: BlackEight — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5008530/ea3acd450e65ec82eddf25b74856bc07b9fdc1b1/ss_ea3acd450e65ec82eddf25b74856bc07b9fdc1b1.1920x1080.jpg?t=1791111476" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5008530/ea3acd450e65ec82eddf25b74856bc07b9fdc1b1/ss_ea3acd450e65ec82eddf25b74856bc07b9fdc1b1.600x338.jpg?t=1791111476" alt="Touhou: BlackEight — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5008530/5a428f694eedfcf6c93f187710a946c5339b8900/ss_5a428f694eedfcf6c93f187710a946c5339b8900.1920x1080.jpg?t=1791111476" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5008530/5a428f694eedfcf6c93f187710a946c5339b8900/ss_5a428f694eedfcf6c93f187710a946c5339b8900.600x338.jpg?t=1791111476" alt="Touhou: BlackEight — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5008530/868ea43047286e7018c35818fab59253450a9d39/ss_868ea43047286e7018c35818fab59253450a9d39.1920x1080.jpg?t=1791111476" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5008530/868ea43047286e7018c35818fab59253450a9d39/ss_868ea43047286e7018c35818fab59253450a9d39.600x338.jpg?t=1791111476" alt="Touhou: BlackEight — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+      </div>
+
+      <h2>Геймплей</h2>
+      <div class="game-movies">
+        <figure class="game-movie"><div class="game-video" data-hls="https://video.akamai.steamstatic.com/store_trailers/5008530/1965139373/4ad8b5be53cc696f1d547695178af8e79df68455/1788923740/hls_264_master.m3u8?t=1789896834" data-poster="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257420361/fc74b06c656b648c7f94ab586c82c614fb311c3f/movie_600x337.jpg?t=1789896834" role="button" tabindex="0" aria-label="Смотреть геймплей: movie"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257420361/fc74b06c656b648c7f94ab586c82c614fb311c3f/movie_600x337.jpg?t=1789896834" alt="" loading="lazy" width="480" height="270" /><span class="game-video-play" aria-hidden="true"></span></div></figure>
+      </div>
+
+<p style="color: var(--text-faint); font-size: 13px; margin-top: 30px;">
         Данные о цене, отзывах и статистике обновляются автоматически на основе
         Steam Store API и SteamSpy.
       </p>
@@ -284,5 +332,6 @@ function declineCookies() {
 })();
 </script>
 <script src="/newsletter.js?v=2" defer></script>
+<script defer src="/game-media.js?v=1"></script>
 </body>
 </html>

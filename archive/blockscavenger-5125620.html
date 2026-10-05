@@ -112,6 +112,38 @@
     }
     .game-stat-card .label { font-size: 12px; color: var(--text-faint); text-transform: uppercase; }
     .game-stat-card .value { font-size: 20px; font-weight: bold; margin-top: 4px; }
+    .game-shots {
+      display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+      gap: 12px; margin: 20px 0;
+    }
+    .game-shot {
+      display: block; border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 8px; overflow: hidden;
+    }
+    .game-shot img { display: block; width: 100%; height: auto; }
+    .game-movies { display: grid; gap: 16px; margin: 20px 0; }
+    .game-movie { margin: 0; }
+    .game-movie video {
+      display: block; width: 100%; height: auto;
+      border-radius: 8px; background: #000;
+    }
+    .game-movie figcaption { margin-top: 6px; font-size: 13px; color: var(--text-faint); }
+    .game-video {
+      position: relative; cursor: pointer; overflow: hidden;
+      border-radius: 8px; background: #000; aspect-ratio: 16 / 9;
+    }
+    .game-video img { display: block; width: 100%; height: 100%; object-fit: cover; }
+    .game-video-play { position: absolute; inset: 0; display: grid; place-items: center; }
+    .game-video-play::before {
+      content: ''; width: 58px; height: 58px; border-radius: 50%;
+      background: rgba(0,0,0,0.5); border: 2px solid rgba(255,255,255,0.75);
+    }
+    .game-video-play::after {
+      content: ''; position: absolute; margin-left: 5px;
+      border-style: solid; border-width: 11px 0 11px 18px;
+      border-color: transparent transparent transparent #fff;
+    }
+    .game-video-el { display: block; width: 100%; height: 100%; background: #000; }
   </style>
 </head>
 <body>
@@ -150,7 +182,7 @@
 
     <article class="article-body">
 
-      <p>BlockScavenger is a top-down shooter with a block-stacking crafting system. Explore abandoned space stations to scavenge items and scrap, then repair or recycle them by stacking and cutting blocks around a rotating core.</p>
+      
 
       <div class="game-stats-grid">
         <div class="game-stat-card">
@@ -166,10 +198,6 @@
           <div class="label">Владельцев (оценка)</div>
           <div class="value">0 – 20,000</div>
         </div>
-        <div class="game-stat-card">
-          <div class="label">Среднее время игры</div>
-          <div class="value">нет данных</div>
-        </div>
       </div>
 
       <h2>Об игре</h2>
@@ -183,7 +211,22 @@
         </a>
       </p>
 
-      <p style="color: var(--text-faint); font-size: 13px; margin-top: 30px;">
+            <h2>Скриншоты</h2>
+      <div class="game-shots">
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5125620/2f04195b45a58552835becf83d56502ea6c51677/ss_2f04195b45a58552835becf83d56502ea6c51677.1920x1080.jpg?t=1790014614" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5125620/2f04195b45a58552835becf83d56502ea6c51677/ss_2f04195b45a58552835becf83d56502ea6c51677.600x338.jpg?t=1790014614" alt="BlockScavenger — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5125620/c13c3f1827626566cd3fa3ecd95f501aac4d5545/ss_c13c3f1827626566cd3fa3ecd95f501aac4d5545.1920x1080.jpg?t=1790014614" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5125620/c13c3f1827626566cd3fa3ecd95f501aac4d5545/ss_c13c3f1827626566cd3fa3ecd95f501aac4d5545.600x338.jpg?t=1790014614" alt="BlockScavenger — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5125620/7cbea3871dac3dd4dace678e80caa8b5af6f695b/ss_7cbea3871dac3dd4dace678e80caa8b5af6f695b.1920x1080.jpg?t=1790014614" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5125620/7cbea3871dac3dd4dace678e80caa8b5af6f695b/ss_7cbea3871dac3dd4dace678e80caa8b5af6f695b.600x338.jpg?t=1790014614" alt="BlockScavenger — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5125620/b828d9330df1ecd337d92b2a97d7a4d1bc78199f/ss_b828d9330df1ecd337d92b2a97d7a4d1bc78199f.1920x1080.jpg?t=1790014614" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5125620/b828d9330df1ecd337d92b2a97d7a4d1bc78199f/ss_b828d9330df1ecd337d92b2a97d7a4d1bc78199f.600x338.jpg?t=1790014614" alt="BlockScavenger — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5125620/c5558eb0645f739053393c878287355725e041bf/ss_c5558eb0645f739053393c878287355725e041bf.1920x1080.jpg?t=1790014614" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5125620/c5558eb0645f739053393c878287355725e041bf/ss_c5558eb0645f739053393c878287355725e041bf.600x338.jpg?t=1790014614" alt="BlockScavenger — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5125620/b3de583b9cda270720f9e4608d54b4c0d8142596/ss_b3de583b9cda270720f9e4608d54b4c0d8142596.1920x1080.jpg?t=1790014614" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5125620/b3de583b9cda270720f9e4608d54b4c0d8142596/ss_b3de583b9cda270720f9e4608d54b4c0d8142596.600x338.jpg?t=1790014614" alt="BlockScavenger — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+      </div>
+
+      <h2>Геймплей</h2>
+      <div class="game-movies">
+        <figure class="game-movie"><div class="game-video" data-hls="https://video.akamai.steamstatic.com/store_trailers/5125620/607691975/2106067d13e94d5fbcb20a068596f929d93d854f/1788712390/hls_264_master.m3u8?t=1788712654" data-poster="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257416946/0482879185551d3801a52f29448cefd31d4e3fb3/movie_600x337.jpg?t=1788712654" role="button" tabindex="0" aria-label="Смотреть геймплей"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257416946/0482879185551d3801a52f29448cefd31d4e3fb3/movie_600x337.jpg?t=1788712654" alt="" loading="lazy" width="480" height="270" /><span class="game-video-play" aria-hidden="true"></span></div></figure>
+      </div>
+
+<p style="color: var(--text-faint); font-size: 13px; margin-top: 30px;">
         Данные о цене, отзывах и статистике обновляются автоматически на основе
         Steam Store API и SteamSpy.
       </p>
@@ -284,5 +327,6 @@ function declineCookies() {
 })();
 </script>
 <script src="/newsletter.js?v=2" defer></script>
+<script defer src="/game-media.js?v=1"></script>
 </body>
 </html>

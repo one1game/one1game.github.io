@@ -112,6 +112,38 @@
     }
     .game-stat-card .label { font-size: 12px; color: var(--text-faint); text-transform: uppercase; }
     .game-stat-card .value { font-size: 20px; font-weight: bold; margin-top: 4px; }
+    .game-shots {
+      display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+      gap: 12px; margin: 20px 0;
+    }
+    .game-shot {
+      display: block; border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 8px; overflow: hidden;
+    }
+    .game-shot img { display: block; width: 100%; height: auto; }
+    .game-movies { display: grid; gap: 16px; margin: 20px 0; }
+    .game-movie { margin: 0; }
+    .game-movie video {
+      display: block; width: 100%; height: auto;
+      border-radius: 8px; background: #000;
+    }
+    .game-movie figcaption { margin-top: 6px; font-size: 13px; color: var(--text-faint); }
+    .game-video {
+      position: relative; cursor: pointer; overflow: hidden;
+      border-radius: 8px; background: #000; aspect-ratio: 16 / 9;
+    }
+    .game-video img { display: block; width: 100%; height: 100%; object-fit: cover; }
+    .game-video-play { position: absolute; inset: 0; display: grid; place-items: center; }
+    .game-video-play::before {
+      content: ''; width: 58px; height: 58px; border-radius: 50%;
+      background: rgba(0,0,0,0.5); border: 2px solid rgba(255,255,255,0.75);
+    }
+    .game-video-play::after {
+      content: ''; position: absolute; margin-left: 5px;
+      border-style: solid; border-width: 11px 0 11px 18px;
+      border-color: transparent transparent transparent #fff;
+    }
+    .game-video-el { display: block; width: 100%; height: 100%; background: #000; }
   </style>
 </head>
 <body>
@@ -166,10 +198,6 @@
           <div class="label">Владельцев (оценка)</div>
           <div class="value">0 – 20,000</div>
         </div>
-        <div class="game-stat-card">
-          <div class="label">Среднее время игры</div>
-          <div class="value">нет данных</div>
-        </div>
       </div>
 
       <h2>Об игре</h2>
@@ -183,7 +211,24 @@
         </a>
       </p>
 
-      <p style="color: var(--text-faint); font-size: 13px; margin-top: 30px;">
+            <h2>Скриншоты</h2>
+      <div class="game-shots">
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1352890/41bea4f6d28e6456fd6a6854b0893652b436e0a1/ss_41bea4f6d28e6456fd6a6854b0893652b436e0a1.1920x1080.jpg?t=1791194796" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1352890/41bea4f6d28e6456fd6a6854b0893652b436e0a1/ss_41bea4f6d28e6456fd6a6854b0893652b436e0a1.600x338.jpg?t=1791194796" alt="Seekers Alliance: Hero&#x27;s Journey — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1352890/5e8437f53e9ada1cccc4662652e03a63eb86e94d/ss_5e8437f53e9ada1cccc4662652e03a63eb86e94d.1920x1080.jpg?t=1791194796" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1352890/5e8437f53e9ada1cccc4662652e03a63eb86e94d/ss_5e8437f53e9ada1cccc4662652e03a63eb86e94d.600x338.jpg?t=1791194796" alt="Seekers Alliance: Hero&#x27;s Journey — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1352890/e18a066d3b3e54d7cb734665e83df8a83f6337df/ss_e18a066d3b3e54d7cb734665e83df8a83f6337df.1920x1080.jpg?t=1791194796" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1352890/e18a066d3b3e54d7cb734665e83df8a83f6337df/ss_e18a066d3b3e54d7cb734665e83df8a83f6337df.600x338.jpg?t=1791194796" alt="Seekers Alliance: Hero&#x27;s Journey — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1352890/2271fdad0b0542de886335b73338b0d161e770eb/ss_2271fdad0b0542de886335b73338b0d161e770eb.1920x1080.jpg?t=1791194796" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1352890/2271fdad0b0542de886335b73338b0d161e770eb/ss_2271fdad0b0542de886335b73338b0d161e770eb.600x338.jpg?t=1791194796" alt="Seekers Alliance: Hero&#x27;s Journey — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1352890/7a30e556061dddfc9f9be7b5fed40d96820b97ba/ss_7a30e556061dddfc9f9be7b5fed40d96820b97ba.1920x1080.jpg?t=1791194796" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1352890/7a30e556061dddfc9f9be7b5fed40d96820b97ba/ss_7a30e556061dddfc9f9be7b5fed40d96820b97ba.600x338.jpg?t=1791194796" alt="Seekers Alliance: Hero&#x27;s Journey — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1352890/24d4bb8184cff15fc2eaba9d8b3df0f31b73a780/ss_24d4bb8184cff15fc2eaba9d8b3df0f31b73a780.1920x1080.jpg?t=1791194796" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1352890/24d4bb8184cff15fc2eaba9d8b3df0f31b73a780/ss_24d4bb8184cff15fc2eaba9d8b3df0f31b73a780.600x338.jpg?t=1791194796" alt="Seekers Alliance: Hero&#x27;s Journey — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1352890/6ccbed2cef10259639851766146227553eb5ba11/ss_6ccbed2cef10259639851766146227553eb5ba11.1920x1080.jpg?t=1791194796" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1352890/6ccbed2cef10259639851766146227553eb5ba11/ss_6ccbed2cef10259639851766146227553eb5ba11.600x338.jpg?t=1791194796" alt="Seekers Alliance: Hero&#x27;s Journey — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+      </div>
+
+      <h2>Геймплей</h2>
+      <div class="game-movies">
+        <figure class="game-movie"><div class="game-video" data-hls="https://video.akamai.steamstatic.com/store_trailers/1352890/1632205797/b4cafe88beabcf51f5866db3bd514fc52a322f5b/1785922752/hls_264_master.m3u8?t=1785923484" data-poster="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257392133/f51b7b167c60420f8c63186eb0b1ce3c977644c2/movie_600x337.jpg?t=1785923484" role="button" tabindex="0" aria-label="Смотреть геймплей: Seekers Alliance: Hero&#x27;s Journey Official Gameplay Trailer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257392133/f51b7b167c60420f8c63186eb0b1ce3c977644c2/movie_600x337.jpg?t=1785923484" alt="" loading="lazy" width="480" height="270" /><span class="game-video-play" aria-hidden="true"></span></div></figure>
+        <figure class="game-movie"><div class="game-video" data-hls="https://video.akamai.steamstatic.com/store_trailers/1352890/532463399/0731b027cd6af851a5a3b1e2f27614fb455aef1d/1775789694/hls_264_master.m3u8?t=1775790297" data-poster="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257156310/583d21319da316a4f2b3e7c7bde74c1b0b7de940/movie_600x337.jpg?t=1775790297" role="button" tabindex="0" aria-label="Смотреть геймплей: Defying Fate | Seekers Alliance: Hero’s Journey Cinematic Trailer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257156310/583d21319da316a4f2b3e7c7bde74c1b0b7de940/movie_600x337.jpg?t=1775790297" alt="" loading="lazy" width="480" height="270" /><span class="game-video-play" aria-hidden="true"></span></div></figure>
+      </div>
+
+<p style="color: var(--text-faint); font-size: 13px; margin-top: 30px;">
         Данные о цене, отзывах и статистике обновляются автоматически на основе
         Steam Store API и SteamSpy.
       </p>
@@ -284,5 +329,6 @@ function declineCookies() {
 })();
 </script>
 <script src="/newsletter.js?v=2" defer></script>
+<script defer src="/game-media.js?v=1"></script>
 </body>
 </html>

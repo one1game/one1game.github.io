@@ -10,12 +10,12 @@
   <link rel="dns-prefetch" href="https://www.google-analytics.com" />
   <link rel="preload" href="../styles.css" as="style" />
 
-  <title>Horror In Santa Land: цена, отзывы и статистика игроков | One1Game</title>
-  <meta name="description" content="Horror In Santa Land — актуальная цена, скидки, процент положительных отзывов и статистика игроков в Steam. Обновляется автоматически." />
+  <title>Horror In Santa Land: обзор хоррор-шутера | One1Game</title>
+  <meta name="description" content="Horror In Santa Land — инди-шутер с головоломками. Ищите Санта-Клауса, отбивайтесь от зомби и спасайте Рождество в мрачном экшене." />
   <meta name="keywords" content="Horror In Santa Land, цена, отзывы, скидка, статистика игроков, Steam" />
 
-  <meta property="og:title" content="Horror In Santa Land: цена, отзывы и статистика игроков | One1Game" />
-  <meta property="og:description" content="Horror In Santa Land — актуальная цена, скидки, процент положительных отзывов и статистика игроков в Steam. Обновляется автоматически." />
+  <meta property="og:title" content="Horror In Santa Land: обзор хоррор-шутера | One1Game" />
+  <meta property="og:description" content="Horror In Santa Land — инди-шутер с головоломками. Ищите Санта-Клауса, отбивайтесь от зомби и спасайте Рождество в мрачном экшене." />
   <meta property="og:type" content="article" />
   <meta property="og:url" content="https://one1game.github.io/archive/horror-in-santa-land-5281760.html" />
   <meta property="og:image" content="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5281760/c59b8fea6443c553831f080b52c6b5e6edd8f71e/header.jpg?t=1791183661" />
@@ -58,12 +58,12 @@
   {
     "@context": "https://schema.org",
     "@type": "Article",
-    "headline": "Horror In Santa Land: цена, отзывы и статистика игроков | One1Game",
+    "headline": "Horror In Santa Land: обзор хоррор-шутера | One1Game",
     "datePublished": "2026-10-05",
     "dateModified": "2026-10-05",
     "author": {"@type": "Person", "name": "Команда One1Game"},
     "publisher": {"@type": "Organization", "name": "One1Game", "logo": {"@type": "ImageObject", "url": "https://one1game.github.io/logo.png"}},
-    "description": "Horror In Santa Land — актуальная цена, скидки, процент положительных отзывов и статистика игроков в Steam. Обновляется автоматически.",
+    "description": "Horror In Santa Land — инди-шутер с головоломками. Ищите Санта-Клауса, отбивайтесь от зомби и спасайте Рождество в мрачном экшене.",
     "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5281760/c59b8fea6443c553831f080b52c6b5e6edd8f71e/header.jpg?t=1791183661"
   }
   </script>
@@ -112,6 +112,34 @@
     }
     .game-stat-card .label { font-size: 12px; color: var(--text-faint); text-transform: uppercase; }
     .game-stat-card .value { font-size: 20px; font-weight: bold; margin-top: 4px; }
+    .game-shots {
+      display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+      gap: 12px; margin: 20px 0;
+    }
+    .game-shot {
+      display: block; border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 8px; overflow: hidden;
+    }
+    .game-shot img { display: block; width: 100%; height: auto; }
+    .game-movies { display: grid; gap: 16px; margin: 20px 0; }
+    .game-movie { margin: 0; }
+    .game-video {
+      position: relative; cursor: pointer; overflow: hidden;
+      border-radius: 8px; background: #000; aspect-ratio: 16 / 9;
+    }
+    .game-video img { display: block; width: 100%; height: 100%; object-fit: cover; }
+    .game-video-play { position: absolute; inset: 0; display: grid; place-items: center; }
+    .game-video-play::before {
+      content: ''; width: 58px; height: 58px; border-radius: 50%;
+      background: rgba(0,0,0,0.5); border: 2px solid rgba(255,255,255,0.75);
+    }
+    .game-video-play::after {
+      content: ''; position: absolute; margin-left: 5px;
+      border-style: solid; border-width: 11px 0 11px 18px;
+      border-color: transparent transparent transparent #fff;
+    }
+    .game-video-el { display: block; width: 100%; height: 100%; background: #000; }
+    .game-movie figcaption { margin-top: 6px; font-size: 13px; color: var(--text-faint); }
   </style>
 </head>
 <body>
@@ -141,7 +169,7 @@
 
     <div class="article-header">
       <span class="article-category cat-reviews">Обзоры</span>
-      <h1>Horror In Santa Land: цена, отзывы и статистика игроков</h1>
+      <h1>Horror In Santa Land: обзор хоррор-шутера</h1>
       <div class="article-meta">
         <span><i class="far fa-calendar"></i> 5 октября 2026</span>
         <span><i class="far fa-clock"></i> 2 минуты чтения</span>
@@ -150,7 +178,9 @@
 
     <article class="article-body">
 
-      <p>Play as hero in this FPS horror shooter. Player main mission is to kill zombies, solve puzzles and find captured Santa Claus and save Christmas</p>
+      <p>Классическая рождественская атмосфера здесь смешивается с выживанием и стрельбой. Вам предстоит не просто веселиться, а пробиваться сквозь толпы мертвецов, чтобы найти похищенного Санта-Клауса.</p>
+
+      
 
       <div class="game-stats-grid">
         <div class="game-stat-card">
@@ -166,13 +196,11 @@
           <div class="label">Владельцев (оценка)</div>
           <div class="value">0 – 20,000</div>
         </div>
-        <div class="game-stat-card">
-          <div class="label">Среднее время игры</div>
-          <div class="value">нет данных</div>
-        </div>
       </div>
 
       <h2>Об игре</h2>
+      <p>Игра представляет собой инди-экшен от первого лица, где основная задача — устранение зомби и решение головоломок. Сюжетный поворот превращает праздник в мрачное приключение, требующее внимания к окружению и точности стрельбы.</p>
+
       <p><strong>Жанры:</strong> Экшены, Приключенческие игры, Инди<br/>
       <strong>Разработчик:</strong> Saylor Games<br/>
       <strong>Издатель:</strong> Saylor Games</p>
@@ -183,6 +211,20 @@
         </a>
       </p>
 
+      <h2>Скриншоты</h2>
+      <div class="game-shots">
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5281760/515883f83090ad9e4b6a29c82b9d1cf1f35dd64e/ss_515883f83090ad9e4b6a29c82b9d1cf1f35dd64e.1920x1080.jpg?t=1791183661" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5281760/515883f83090ad9e4b6a29c82b9d1cf1f35dd64e/ss_515883f83090ad9e4b6a29c82b9d1cf1f35dd64e.600x338.jpg?t=1791183661" alt="Horror In Santa Land — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5281760/64f75f1c63bd61072b178e7b7438ee4ed555d126/ss_64f75f1c63bd61072b178e7b7438ee4ed555d126.1920x1080.jpg?t=1791183661" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5281760/64f75f1c63bd61072b178e7b7438ee4ed555d126/ss_64f75f1c63bd61072b178e7b7438ee4ed555d126.600x338.jpg?t=1791183661" alt="Horror In Santa Land — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5281760/cf2a2c21f03a17bc48a877f22514dfb3d5c52d48/ss_cf2a2c21f03a17bc48a877f22514dfb3d5c52d48.1920x1080.jpg?t=1791183661" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5281760/cf2a2c21f03a17bc48a877f22514dfb3d5c52d48/ss_cf2a2c21f03a17bc48a877f22514dfb3d5c52d48.600x338.jpg?t=1791183661" alt="Horror In Santa Land — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5281760/57b5d82e4711486b9fb07383748724588fab06ba/ss_57b5d82e4711486b9fb07383748724588fab06ba.1920x1080.jpg?t=1791183661" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5281760/57b5d82e4711486b9fb07383748724588fab06ba/ss_57b5d82e4711486b9fb07383748724588fab06ba.600x338.jpg?t=1791183661" alt="Horror In Santa Land — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5281760/fe95bfe5d4231b08a1f97a5830f87d507e527b7c/ss_fe95bfe5d4231b08a1f97a5830f87d507e527b7c.1920x1080.jpg?t=1791183661" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5281760/fe95bfe5d4231b08a1f97a5830f87d507e527b7c/ss_fe95bfe5d4231b08a1f97a5830f87d507e527b7c.600x338.jpg?t=1791183661" alt="Horror In Santa Land — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5281760/c9c02454eef56c0947388e451bfbb0416191d496/ss_c9c02454eef56c0947388e451bfbb0416191d496.1920x1080.jpg?t=1791183661" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5281760/c9c02454eef56c0947388e451bfbb0416191d496/ss_c9c02454eef56c0947388e451bfbb0416191d496.600x338.jpg?t=1791183661" alt="Horror In Santa Land — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+      </div>
+
+      <h2>Геймплей</h2>
+      <div class="game-movies">
+        <figure class="game-movie"><div class="game-video" data-hls="https://video.akamai.steamstatic.com/store_trailers/5281760/724476412/d59bc57c3bf4a679b3cf946a82471d90e15bbe56/1790113322/hls_264_master.m3u8?t=1790113527" data-poster="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257432041/85cc2dfcb6a76de2dc55ac8f545554e7ad9ca6ad/movie_600x337.jpg?t=1790113527" role="button" tabindex="0" aria-label="Смотреть геймплей"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257432041/85cc2dfcb6a76de2dc55ac8f545554e7ad9ca6ad/movie_600x337.jpg?t=1790113527" alt="" loading="lazy" width="480" height="270" /><span class="game-video-play" aria-hidden="true"></span></div></figure>
+      </div>
       <p style="color: var(--text-faint); font-size: 13px; margin-top: 30px;">
         Данные о цене, отзывах и статистике обновляются автоматически на основе
         Steam Store API и SteamSpy.
@@ -284,5 +326,6 @@ function declineCookies() {
 })();
 </script>
 <script src="/newsletter.js?v=2" defer></script>
+<script defer src="/game-media.js?v=1"></script>
 </body>
 </html>

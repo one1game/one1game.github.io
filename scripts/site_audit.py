@@ -8,6 +8,8 @@ import sys
 ROOT = Path(__file__).resolve().parents[1]
 VERIFICATION = {'googlee56722acc2e581a3.html', 'yandex_f022bbd73d9b7625.html'}
 SKIP_METADATA = {'stats.html', 'ot/index.html', 'game-ai/rpg/index.html'}
+# Отдельные мини-приложения со своей вёрсткой — не требуем от них SEO-мета.
+SKIP_METADATA_PREFIXES = ('go/',)
 SECRET_PATTERNS = [
     re.compile(r'AIzaSy[A-Za-z0-9_-]{20,}'),
     re.compile(r'https://api\.buttondown\.email/v1/subscribers'),
@@ -116,12 +118,12 @@ for path in sorted(ROOT.rglob('*.html')):
         errors.append(f'{rel}: missing html[lang]')
     if Path(rel).name not in VERIFICATION and not parser.title.strip():
         errors.append(f'{rel}: missing title')
-    if rel not in SKIP_METADATA and Path(rel).name not in VERIFICATION:
+    if rel not in SKIP_METADATA and not rel.startswith(SKIP_METADATA_PREFIXES) and Path(rel).name not in VERIFICATION:
         if not parser.description:
             warnings.append(f'{rel}: missing meta description')
         if not parser.canonical:
             warnings.append(f'{rel}: missing canonical')
-    if parser.h1_count == 0 and rel not in SKIP_METADATA and Path(rel).name not in VERIFICATION:
+    if parser.h1_count == 0 and rel not in SKIP_METADATA and not rel.startswith(SKIP_METADATA_PREFIXES) and Path(rel).name not in VERIFICATION:
         warnings.append(f'{rel}: missing H1')
     duplicate_ids = sorted({x for x in parser.ids if parser.ids.count(x) > 1})
     if duplicate_ids:

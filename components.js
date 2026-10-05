@@ -586,6 +586,17 @@
     if (!el) return;
     if (window.allArticles && window.allArticles.length) {
       el.textContent = window.allArticles.length;
+
+      // Число разделов считаем по данным, а не хардкодом
+      var secEl = doc.getElementById('stat-sections');
+      if (secEl) {
+        var seen = {}, n = 0;
+        for (var i = 0; i < window.allArticles.length; i++) {
+          var c = window.allArticles[i].category || '';
+          if (c && !seen[c]) { seen[c] = 1; n++; }
+        }
+        if (n) secEl.textContent = n;
+      }
     } else {
       var wrap = doc.getElementById('stat-articles-wrap');
       if (wrap) wrap.style.display = 'none';

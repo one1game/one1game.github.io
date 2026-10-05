@@ -108,6 +108,38 @@
     }
     .game-stat-card .label { font-size: 12px; color: var(--text-faint); text-transform: uppercase; }
     .game-stat-card .value { font-size: 20px; font-weight: bold; margin-top: 4px; }
+    .game-shots {
+      display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+      gap: 12px; margin: 20px 0;
+    }
+    .game-shot {
+      display: block; border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 8px; overflow: hidden;
+    }
+    .game-shot img { display: block; width: 100%; height: auto; }
+    .game-movies { display: grid; gap: 16px; margin: 20px 0; }
+    .game-movie { margin: 0; }
+    .game-movie video {
+      display: block; width: 100%; height: auto;
+      border-radius: 8px; background: #000;
+    }
+    .game-movie figcaption { margin-top: 6px; font-size: 13px; color: var(--text-faint); }
+    .game-video {
+      position: relative; cursor: pointer; overflow: hidden;
+      border-radius: 8px; background: #000; aspect-ratio: 16 / 9;
+    }
+    .game-video img { display: block; width: 100%; height: 100%; object-fit: cover; }
+    .game-video-play { position: absolute; inset: 0; display: grid; place-items: center; }
+    .game-video-play::before {
+      content: ''; width: 58px; height: 58px; border-radius: 50%;
+      background: rgba(0,0,0,0.5); border: 2px solid rgba(255,255,255,0.75);
+    }
+    .game-video-play::after {
+      content: ''; position: absolute; margin-left: 5px;
+      border-style: solid; border-width: 11px 0 11px 18px;
+      border-color: transparent transparent transparent #fff;
+    }
+    .game-video-el { display: block; width: 100%; height: 100%; background: #000; }
   </style>
 </head>
 <body>
@@ -146,7 +178,7 @@
 
     <article class="article-body">
 
-      <p>A high-speed boss action game where you ride power lines and unleash electric attacks. Take down the rogue Central Power Grid Controller, NODE-08!</p>
+      
 
       <div class="game-stats-grid">
         <div class="game-stat-card">
@@ -162,10 +194,6 @@
           <div class="label">Владельцев (оценка)</div>
           <div class="value">0 – 20,000</div>
         </div>
-        <div class="game-stat-card">
-          <div class="label">Среднее время игры</div>
-          <div class="value">нет данных</div>
-        </div>
       </div>
 
       <h2>Об игре</h2>
@@ -179,7 +207,23 @@
         </a>
       </p>
 
-      <p style="color: var(--text-faint); font-size: 13px; margin-top: 30px;">
+            <h2>Скриншоты</h2>
+      <div class="game-shots">
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4744850/bc5876e50a352144633869e6630aed43dfd9d174/ss_bc5876e50a352144633869e6630aed43dfd9d174.1920x1080.jpg?t=1790302696" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4744850/bc5876e50a352144633869e6630aed43dfd9d174/ss_bc5876e50a352144633869e6630aed43dfd9d174.600x338.jpg?t=1790302696" alt="DEN KO SENKA — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4744850/3b1e19ab4296857f7bb883c2616d351de15f0f76/ss_3b1e19ab4296857f7bb883c2616d351de15f0f76.1920x1080.jpg?t=1790302696" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4744850/3b1e19ab4296857f7bb883c2616d351de15f0f76/ss_3b1e19ab4296857f7bb883c2616d351de15f0f76.600x338.jpg?t=1790302696" alt="DEN KO SENKA — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4744850/2203aa68cdc37ca7e34f0d201f4ac7c0bcc59c5f/ss_2203aa68cdc37ca7e34f0d201f4ac7c0bcc59c5f.1920x1080.jpg?t=1790302696" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4744850/2203aa68cdc37ca7e34f0d201f4ac7c0bcc59c5f/ss_2203aa68cdc37ca7e34f0d201f4ac7c0bcc59c5f.600x338.jpg?t=1790302696" alt="DEN KO SENKA — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4744850/0837b1914bc1dde2b2010882e4e6d9e3b444c5dd/ss_0837b1914bc1dde2b2010882e4e6d9e3b444c5dd.1920x1080.jpg?t=1790302696" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4744850/0837b1914bc1dde2b2010882e4e6d9e3b444c5dd/ss_0837b1914bc1dde2b2010882e4e6d9e3b444c5dd.600x338.jpg?t=1790302696" alt="DEN KO SENKA — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4744850/05773abdc99ce90653a081cd323dc8626b85786a/ss_05773abdc99ce90653a081cd323dc8626b85786a.1920x1080.jpg?t=1790302696" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4744850/05773abdc99ce90653a081cd323dc8626b85786a/ss_05773abdc99ce90653a081cd323dc8626b85786a.600x338.jpg?t=1790302696" alt="DEN KO SENKA — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+        <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4744850/dbe7e638b41fb88bd68d7972255135e84ddfa375/ss_dbe7e638b41fb88bd68d7972255135e84ddfa375.1920x1080.jpg?t=1790302696" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4744850/dbe7e638b41fb88bd68d7972255135e84ddfa375/ss_dbe7e638b41fb88bd68d7972255135e84ddfa375.600x338.jpg?t=1790302696" alt="DEN KO SENKA — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
+      </div>
+
+      <h2>Геймплей</h2>
+      <div class="game-movies">
+        <figure class="game-movie"><div class="game-video" data-hls="https://video.akamai.steamstatic.com/store_trailers/4744850/869093863/0888daa1bc7c294a4024f92c240a771f6e1b66bf/1786009424/hls_264_master.m3u8?t=1787713702" data-poster="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257392880/9dbd31332206abfe93fca3b95fa528bc691fe4f9/movie_600x337.jpg?t=1787713702" role="button" tabindex="0" aria-label="Смотреть геймплей: DEN KOU SENKA_playdemo_ENG"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257392880/9dbd31332206abfe93fca3b95fa528bc691fe4f9/movie_600x337.jpg?t=1787713702" alt="" loading="lazy" width="480" height="270" /><span class="game-video-play" aria-hidden="true"></span></div></figure>
+        <figure class="game-movie"><div class="game-video" data-hls="https://video.akamai.steamstatic.com/store_trailers/4744850/241580790/05e14422fe76f08ffa26342ddc0d367ad5c776c1/1787713010/hls_264_master.m3u8?t=1787713703" data-poster="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257408694/3520c87b2a58ea3b8ca7773b441b112babf3b394/movie_600x337.jpg?t=1787713703" role="button" tabindex="0" aria-label="Смотреть геймплей: DEN KOU SENKA_PV"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257408694/3520c87b2a58ea3b8ca7773b441b112babf3b394/movie_600x337.jpg?t=1787713703" alt="" loading="lazy" width="480" height="270" /><span class="game-video-play" aria-hidden="true"></span></div></figure>
+      </div>
+
+<p style="color: var(--text-faint); font-size: 13px; margin-top: 30px;">
         Данные о цене, отзывах и статистике обновляются автоматически на основе
         Steam Store API и SteamSpy.
       </p>
@@ -280,5 +324,6 @@ function declineCookies() {
 })();
 </script>
 <script src="/newsletter.js?v=2" defer></script>
+<script defer src="/game-media.js?v=1"></script>
 </body>
 </html>
