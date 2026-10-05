@@ -22,6 +22,8 @@
   var isScanner = path.includes('/cyber-scanner');
   var isL2 = path.includes('/l2');
   var isTriad = path.includes('/triad-duel');
+  var isAI = path === '/ai' || path.indexOf('/ai/') === 0;
+  var isMusic = path === '/genriprocedur' || path.indexOf('/genriprocedur/') === 0;
   var isGo = path === '/go' || path.indexOf('/go/') === 0;
 
   function active(state) { return state ? ' active' : ''; }
@@ -42,7 +44,9 @@
     vk: 'fa-vk',
     yt: 'fa-youtube',
     doc: 'fa-file-lines',
-    cash: 'fa-rectangle-ad'
+    cash: 'fa-rectangle-ad',
+    ai: 'fa-robot',
+    music: 'fa-music'
   };
 
   // ── Радио доступно только там, где подключён script.js ──
@@ -56,6 +60,8 @@
     '<a href="/" class="nav-link' + active(isHome) + '">Главная</a>' +
     '<a href="/go/" class="nav-link' + active(isGo) + '">Игры онлайн</a>' +
     '<a href="/archive.html" class="nav-link' + active(isArchive) + '">Статьи</a>' +
+    '<a href="/ai/" class="nav-link' + active(isAI) + '">AI Pulse</a>' +
+    '<a href="/genriprocedur/" class="nav-link' + active(isMusic) + '">Cosmic Drift</a>' +
     '<a href="/triad-duel.html" class="nav-link' + active(isTriad) + '">Triad Duel</a>' +
     '<a href="/anal-code/" class="nav-link' + active(isCodeFusion) + '">CodeFusion</a>' +
     '<a href="/cyber-scanner/" class="nav-link' + active(isScanner) + '">Scanner</a>' +
@@ -93,6 +99,8 @@
     '  <div class="sheet-links">' +
     '    <a href="/go/" class="sheet-link' + active(isGo) + '"><i class="fas ' + I.online + '" aria-hidden="true"></i> Игры онлайн</a>' +
     '    <a href="/archive.html" class="sheet-link' + active(isArchive) + '"><i class="fas ' + I.articles + '" aria-hidden="true"></i> Все статьи</a>' +
+    '    <a href="/ai/" class="sheet-link' + active(isAI) + '"><i class="fas ' + I.ai + '" aria-hidden="true"></i> AI Pulse</a>' +
+    '    <a href="/genriprocedur/" class="sheet-link' + active(isMusic) + '"><i class="fas ' + I.music + '" aria-hidden="true"></i> Cosmic Drift</a>' +
     '    <a href="/triad-duel.html" class="sheet-link' + active(isTriad) + '"><i class="fas ' + I.game + '" aria-hidden="true"></i> Triad Duel</a>' +
     '    <a href="/anal-code/" class="sheet-link' + active(isCodeFusion) + '"><i class="fas ' + I.code + '" aria-hidden="true"></i> CodeFusion</a>' +
     '    <a href="/cyber-scanner/" class="sheet-link' + active(isScanner) + '"><i class="fas ' + I.scanner + '" aria-hidden="true"></i> Scanner</a>' +
@@ -127,6 +135,8 @@
     '    <a href="/" class="footer-brand">ONE1<span>GAME</span></a>' +
     '    <div class="footer-links">' +
     '      <a href="/archive.html">Статьи</a>' +
+    '      <a href="/ai/">AI Pulse</a>' +
+    '      <a href="/genriprocedur/">Cosmic Drift</a>' +
     '      <a href="/cyber-scanner/">Проверка безопасности</a>' +
     '      <a href="/advertising.html">Реклама</a>' +
     '      <a href="/privacy.html">Политика</a>' +

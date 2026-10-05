@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>AI Pulse — рейтинг ИИ-моделей, новости ИИ и инструменты | One1Games</title>
+<meta name="description" content="Живые новости ИИ, рейтинг моделей по реальному объёму токенов OpenRouter, трендовые инструменты и список бесплатных нейросетей (g4f). Данные обновляются ежедневно.">
+<meta name="keywords" content="ИИ, искусственный интеллект, новости ИИ, рейтинг нейросетей, OpenRouter, LLM, AI-инструменты, бесплатные нейросети, g4f, One1Game">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://one1game.github.io/ai/">
+<meta name="theme-color" content="#0f1820" media="(prefers-color-scheme:dark)">
+<meta name="theme-color" content="#e8edf2" media="(prefers-color-scheme:light)">
+
+<!-- OpenGraph -->
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="One1Game">
+<meta property="og:title" content="AI Pulse — рейтинг ИИ-моделей, новости ИИ и инструменты">
+<meta property="og:description" content="Рейтинг моделей по токенам OpenRouter, свежие новости ИИ, трендовые инструменты и бесплатные нейросети (g4f).">
+<meta property="og:url" content="https://one1game.github.io/ai/">
+<meta property="og:image" content="https://one1game.github.io/site-og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="AI Pulse — новости и рейтинг ИИ">
+<meta name="twitter:description" content="Рейтинг ИИ-моделей, новости ИИ и трендовые инструменты.">
+<meta name="twitter:image" content="https://one1game.github.io/site-og.png">
+
+<link rel="icon" type="image/png" href="/favicon.png">
+<link rel="manifest" href="/manifest.json">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,800&display=swap" rel="stylesheet">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "AI Pulse",
+  "url": "https://one1game.github.io/ai/",
+  "applicationCategory": "UtilitiesApplication",
+  "operatingSystem": "Any",
+  "inLanguage": "ru",
+  "description": "Живые новости ИИ, рейтинг моделей по объёму токенов OpenRouter, трендовые инструменты и список бесплатных нейросетей (g4f).",
+  "isPartOf": { "@type": "WebSite", "name": "One1Game", "url": "https://one1game.github.io" }
+}
+</script>
+<style>
+:root{--bg:#e8edf2;--panel:#f6f8fa;--ink:#12202b;--mute:#5d6b78;--line:#c9d3dc;--blue:#2b4bff;--amber:#f2b134;--r:10px}
+@media (prefers-color-scheme:dark){:root{--bg:#0f1820;--panel:#16222c;--ink:#e6edf3;--mute:#8fa1b0;--line:#27384a;--blue:#6f86ff;--amber:#f2b134}}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.5 "Bricolage Grotesque",system-ui,sans-serif}
+a{color:inherit}
+.wrap{max-width:1100px;margin:0 auto;padding:0 20px}
+header{padding:36px 0 20px}
+.top{display:flex;justify-content:space-between;align-items:flex-start;gap:12px}
+h1{font-size:clamp(32px,6vw,60px);line-height:1;margin:0 0 8px;font-weight:800;letter-spacing:-.03em}
+.sub{color:var(--mute);margin:0 0 24px;max-width:56ch}
+.lang{display:flex;align-items:center;gap:6px;font-size:14px;color:var(--mute)}
+.bars{background:var(--panel);border:1px solid var(--line);border-radius:var(--r);padding:16px}
+.bars h2{font-size:14px;font-weight:600;margin:0 0 12px;color:var(--mute)}
+.bar{display:grid;grid-template-columns:130px 1fr 60px;gap:10px;align-items:center;margin:6px 0;font-size:14px;cursor:pointer}
+.bar .t{background:var(--line);border-radius:4px;height:14px;overflow:hidden}
+.bar .t i{display:block;height:100%;background:var(--blue);border-radius:4px;transform-origin:left;animation:grow .9s ease-out both}
+.bar b{font-weight:600;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.bar span{text-align:right;color:var(--mute)}
+@keyframes grow{from{transform:scaleX(0)}}
+nav{display:flex;gap:6px;margin:22px 0 16px;border-bottom:1px solid var(--line);overflow-x:auto}
+nav button{background:none;border:0;padding:10px 14px;font:inherit;font-weight:600;color:var(--mute);cursor:pointer;border-bottom:3px solid transparent;white-space:nowrap}
+nav button[aria-selected=true]{color:var(--ink);border-color:var(--blue)}
+button:focus-visible,input:focus-visible,select:focus-visible{outline:2px solid var(--blue);outline-offset:2px}
+.tools{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:14px;align-items:center}
+select,input{font:inherit;padding:8px 10px;border:1px solid var(--line);border-radius:8px;background:var(--panel);color:var(--ink)}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:14px}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:var(--r);padding:16px;cursor:pointer;display:flex;flex-direction:column;gap:8px;text-align:left;font:inherit;color:inherit}
+.card:hover{border-color:var(--blue)}
+.card h3{margin:0;font-size:18px;line-height:1.25}
+.card p{margin:0;color:var(--mute);font-size:14px}
+.meta{display:flex;gap:8px;flex-wrap:wrap;font-size:12px;color:var(--mute)}
+.tag{background:var(--amber);color:#1b1500;border-radius:4px;padding:1px 7px;font-weight:600}
+.tag.b{background:var(--blue);color:#fff}
+table{width:100%;border-collapse:collapse;background:var(--panel);border:1px solid var(--line);border-radius:var(--r);overflow:hidden;font-size:14px}
+th,td{padding:10px 12px;text-align:left;border-bottom:1px solid var(--line);white-space:nowrap}
+th{color:var(--mute);font-weight:600}
+tr.row{cursor:pointer}tr.row:hover{background:var(--bg)}
+.scroll{overflow-x:auto}
+.more{display:block;margin:20px auto;padding:10px 22px;font:inherit;font-weight:600;background:var(--blue);color:#fff;border:0;border-radius:8px;cursor:pointer}
+.more:disabled{opacity:.5}
+.msg{padding:30px;text-align:center;color:var(--mute)}
+dialog{border:1px solid var(--line);border-radius:14px;background:var(--panel);color:var(--ink);max-width:620px;width:calc(100% - 32px);padding:24px}
+dialog::backdrop{background:rgba(0,0,0,.5)}
+dialog h2{margin:0 0 10px;font-size:24px;line-height:1.2}
+dialog dl{display:grid;grid-template-columns:auto 1fr;gap:6px 16px;margin:14px 0}
+dialog dt{color:var(--mute)}dialog dd{margin:0}
+.close{float:right;background:none;border:0;font-size:26px;cursor:pointer;color:var(--mute)}
+.btn{display:inline-block;margin-top:10px;background:var(--blue);color:#fff;text-decoration:none;padding:8px 16px;border-radius:8px;font-weight:600}
+footer{padding:30px 0 50px;color:var(--mute);font-size:13px}
+#tstat{position:fixed;right:14px;bottom:14px;background:var(--ink);color:var(--bg);padding:6px 12px;border-radius:20px;font-size:13px;opacity:0;transition:opacity .2s;pointer-events:none}
+#tstat.on{opacity:.9}
+[hidden]{display:none!important}
+.chip{font:inherit;font-size:13px;padding:4px 12px;border-radius:20px;border:1px solid var(--line);background:var(--panel);color:var(--ink);cursor:pointer}
+.chip[aria-pressed=true]{background:var(--blue);color:#fff;border-color:var(--blue)}
+.cp{font:inherit;font-size:12px;padding:2px 10px;border:1px solid var(--line);border-radius:6px;background:none;color:var(--ink);cursor:pointer}
+.back{display:inline-flex;align-items:center;gap:6px;font-size:13px;font-weight:600;color:var(--mute);text-decoration:none;margin-bottom:14px}
+.back:hover{color:var(--blue)}
+@media (max-width:520px){.bar{grid-template-columns:90px 1fr 52px}.top{flex-direction:column}}
+@media (prefers-reduced-motion:reduce){.bar .t i{animation:none}}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header>
+  <a class="back" href="https://one1game.github.io/">← One1Game</a>
+  <div class="top">
+    <div>
+      <h1>AI Pulse</h1>
+      <p class="sub" data-tr="ui">Живые новости ИИ, рейтинг моделей по реальному объёму токенов OpenRouter и список трендовых инструментов. Данные: whatstrending.ai.</p>
+    </div>
+    <label class="lang"><span data-tr="ui">Язык</span>
+      <select id="lang">
+        <option value="ru">Русский</option><option value="en">English</option><option value="uk">Українська</option>
+        <option value="kk">Қазақша</option><option value="es">Español</option><option value="de">Deutsch</option>
+        <option value="fr">Français</option><option value="zh-CN">中文</option><option value="tr">Türkçe</option>
+        <option value="pt">Português</option><option value="ja">日本語</option><option value="ar">العربية</option>
+      </select>
+    </label>
+  </div>
+  <div class="bars"><h2 data-tr="ui">Топ моделей по объёму токенов</h2><div id="heroBars" class="msg" data-tr="ui">Загрузка…</div></div>
+</header>
+
+<nav role="tablist" id="tabs">
+  <button role="tab" data-t="news" aria-selected="true" data-tr="ui">Новости</button>
+  <button role="tab" data-t="models" aria-selected="false" data-tr="ui">Модели</button>
+  <button role="tab" data-t="read" aria-selected="false" data-tr="ui">Самое читаемое</button>
+  <button role="tab" data-t="tools" aria-selected="false" data-tr="ui">Инструменты</button>
+  <button role="tab" data-t="g4f" aria-selected="false" data-tr="ui">Бесплатные ИИ (g4f)</button>
+</nav>
+
+<main>
+  <section id="news">
+    <div class="tools"><select id="cat" aria-label="Category">
+      <option value="" data-tr="ui">Все категории</option>
+      <option value="Industry" data-tr="api">Industry</option><option value="Tools" data-tr="api">Tools</option><option value="Research" data-tr="api">Research</option><option value="Startups" data-tr="api">Startups</option><option value="Regulation" data-tr="api">Regulation</option><option value="Models" data-tr="api">Models</option><option value="Open Source" data-tr="api">Open Source</option>
+    </select></div>
+    <div class="grid" id="newsGrid"></div>
+    <button class="more" id="newsMore" data-tr="ui">Показать ещё</button>
+  </section>
+
+  <section id="models" hidden>
+    <div class="tools">
+      <label><span data-tr="ui">Сколько моделей</span> <select id="mlimit"><option>10</option><option selected>25</option><option>50</option><option>100</option></select></label>
+      <input id="mq" data-ph="Поиск по названию или провайдеру">
+    </div>
+    <div class="scroll" id="modelsBox"></div>
+  </section>
+
+  <section id="read" hidden><div class="grid" id="readGrid"></div></section>
+
+  <section id="tools" hidden>
+    <div class="tools">
+      <select id="tcat"><option value="" data-tr="ui">Все категории</option></select>
+      <select id="tprice"><option value="" data-tr="ui">Любая цена</option></select>
+      <input id="tq" data-ph="Поиск инструмента">
+    </div>
+    <div class="grid" id="toolsGrid"></div>
+  </section>
+  <section id="g4f" hidden>
+    <p class="sub" data-tr="ui">Ежедневно обновляемый список провайдеров и моделей GPT4Free, которые работают без API-ключей, токенов и cookies. Каждая пара проверена реальным тестовым запросом.</p>
+    <div class="meta" id="gsum" style="margin-bottom:12px"></div>
+    <div class="tools" id="gchips"></div>
+    <div class="tools">
+      <select id="gprov" aria-label="Provider"><option value="" data-tr="ui">Все провайдеры</option></select>
+      <input id="gq" data-ph="Поиск по провайдеру или модели">
+      <span class="meta" id="gcount"></span>
+    </div>
+    <div class="scroll" id="gbox"><div class="msg" data-tr="ui">Загрузка…</div></div>
+    <button class="more" id="gmore" data-tr="ui" hidden>Показать ещё</button>
+    <p class="meta"><span data-tr="ui">Данные:</span> <a href="https://github.com/Free-AI-Things/g4f-working" target="_blank" rel="noopener">g4f-working</a> · <span data-tr="ui">лицензия CC BY-NC 4.0: только некоммерческое использование.</span></p>
+  </section>
+</main>
+<footer><span data-tr="ui">Источник данных —</span> <a href="https://whatstrending.ai" target="_blank" rel="noopener">whatstrending.ai</a>. <span data-tr="ui">Новости суммаризированы ИИ; полный текст по ссылке на оригинал.</span> · <a href="https://one1game.github.io/">One1Game</a></footer>
+</div>
+
+<dialog id="dlg"><button class="close" aria-label="×" onclick="dlg.close()">×</button><div id="dlgBody"></div></dialog>
+<div id="tstat" data-tr="ui">Перевод…</div>
+
+<script>
+const API='https://whatstrending.ai';
+const $=s=>document.querySelector(s);
+const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const U=s=>`<span data-tr="ui">${s}</span>`;           // текст интерфейса (оригинал: русский)
+const A=s=>`<span data-tr="api">${esc(s)}</span>`;     // текст из API (оригинал: английский)
+const slugify=n=>n.toLowerCase().replace(/\s+/g,'-');
+const dlg=$('#dlg'),dlgBody=$('#dlgBody');
+const state={models:[],tools:null,readLoaded:false,offset:0,PAGE:12};
+let LANG='ru';
+try{LANG=localStorage.getItem('lang')||'ru'}catch(e){}
+
+const fmtDate=d=>{const x=new Date(d);return isNaN(x)?'':x.toLocaleDateString(LANG,{day:'numeric',month:'short',year:'numeric'})};
+const D=d=>`<span data-date="${esc(d)}">${fmtDate(d)}</span>`;
+async function api(p){const r=await fetch(API+p);const j=await r.json();if(j.success===false)throw new Error(j.error||'Error');return j.success===undefined?j:j.data}
+
+/* ================= ПЕРЕВОД (без ключей) =================
+   1) translate.googleapis.com (gtx)  2) MyMemory как запасной. Кэш в памяти + localStorage. */
+const cache=new Map();
+try{Object.entries(JSON.parse(localStorage.getItem('trcache')||'{}')).forEach(([k,v])=>cache.set(k,v))}catch(e){}
+let saveT;const saveCache=()=>{clearTimeout(saveT);saveT=setTimeout(()=>{try{const o={};[...cache].slice(-1500).forEach(([k,v])=>o[k]=v);localStorage.setItem('trcache',JSON.stringify(o))}catch(e){}},800)};
+let active=0;const waiters=[];
+const slot=()=>active<6?(active++,Promise.resolve()):new Promise(r=>waiters.push(r));
+const free=()=>{const n=waiters.shift();n?n():active--};
+async function gtx(text,tl){
+  const r=await fetch('https://translate.googleapis.com/translate_a/single?client=gtx&sl=auto&tl='+encodeURIComponent(tl)+'&dt=t&q='+encodeURIComponent(text));
+  if(!r.ok)throw 0;const j=await r.json();return j[0].map(p=>p[0]).join('');
+}
+async function mymemory(text,tl){
+  const out=[];
+  for(const part of text.match(/[\s\S]{1,450}(?:\s|$)/g)||[text]){
+    const r=await fetch('https://api.mymemory.translated.net/get?q='+encodeURIComponent(part)+'&langpair=autodetect|'+encodeURIComponent(tl));
+    const j=await r.json();if(!j.responseData)throw 0;out.push(j.responseData.translatedText);
+  }
+  return out.join(' ');
+}
+async function tx(text,tl){
+  const k=tl+'|'+text;if(cache.has(k))return cache.get(k);
+  await slot();
+  try{
+    let t;try{t=await gtx(text,tl)}catch(e){t=await mymemory(text,tl)}
+    if(t){cache.set(k,t);saveCache();return t}
+  }catch(e){}finally{free()}
+  return text;
+}
+let pending=0;const stat=$('#tstat');
+function bump(n){pending+=n;stat.classList.toggle('on',pending>0)}
+
+function translateDOM(){
+  document.documentElement.lang=LANG;
+  document.documentElement.dir=LANG==='ar'?'rtl':'ltr';
+  document.querySelectorAll('[data-tr]').forEach(el=>{
+    if(el.dataset.d===LANG)return;
+    if(el.dataset.o===undefined)el.dataset.o=el.textContent;
+    const o=el.dataset.o,src=el.dataset.tr==='ui'?'ru':'en',lang=LANG;
+    el.dataset.d=lang;
+    if(src===lang||!o.trim()||/^[\d\s.,:%$/+-]+$/.test(o)){el.textContent=o;return}
+    bump(1);
+    tx(o,lang).then(t=>{if(LANG===lang&&el.dataset.o===o)el.textContent=t}).finally(()=>bump(-1));
+  });
+  document.querySelectorAll('[data-ph]').forEach(el=>{
+    const o=el.dataset.ph,lang=LANG;
+    if(lang==='ru'){el.placeholder=o;return}
+    tx(o,lang).then(t=>{if(LANG===lang)el.placeholder=t});
+  });
+  document.querySelectorAll('[data-date]').forEach(el=>el.textContent=fmtDate(el.dataset.date));
+}
+let obsT;
+new MutationObserver(()=>{clearTimeout(obsT);obsT=setTimeout(translateDOM,40)})
+  .observe(document.body,{childList:true,subtree:true});
+$('#lang').value=LANG;
+$('#lang').onchange=e=>{
+  LANG=e.target.value;try{localStorage.setItem('lang',LANG)}catch(x){}
+  document.querySelectorAll('[data-tr]').forEach(el=>delete el.dataset.d);
+  translateDOM();
+};
+
+/* ---------- Tabs ---------- */
+$('#tabs').addEventListener('click',e=>{
+  const b=e.target.closest('button');if(!b)return;
+  document.querySelectorAll('#tabs button').forEach(x=>x.setAttribute('aria-selected',x===b));
+  ['news','models','read','tools','g4f'].forEach(id=>$('#'+id).hidden=id!==b.dataset.t);
+  if(b.dataset.t==='read'&&!state.readLoaded)loadRead();
+  if(b.dataset.t==='tools'&&!state.tools)loadTools();
+  if(b.dataset.t==='g4f'&&!g.loaded)loadG4F();
+});
+
+/* ---------- Articles: GET /api/articles ---------- */
+function articleCard(a){
+  const s=a.summary||'';
+  return `<button class="card" data-slug="${esc(a.slug)}">
+    <div class="meta"><span class="tag">${A(a.category||'AI')}</span><span>${esc(a.source||'')}</span>${D(a.date)}</div>
+    <h3>${A(a.title)}</h3><p>${A(s.slice(0,180)+(s.length>180?'…':''))}</p>
+    ${a.coverage>1?`<div class="meta"><span>${U('Источников')}: ${esc(a.coverage)}</span><span>${U('Тренд')}: ${esc(a.trendScore)}</span></div>`:''}
+  </button>`;
+}
+async function loadNews(reset){
+  const btn=$('#newsMore'),grid=$('#newsGrid');
+  if(reset){state.offset=0;grid.innerHTML=`<div class="msg">${U('Загрузка…')}</div>`}
+  btn.disabled=true;
+  try{
+    const c=$('#cat').value;
+    const list=await api(`/api/articles?limit=${state.PAGE}&offset=${state.offset}`+(c?`&category=${encodeURIComponent(c)}`:''));
+    if(reset)grid.innerHTML='';
+    if(!list.length&&reset)grid.innerHTML=`<div class="msg">${U('В этой категории пока нет новостей.')}</div>`;
+    grid.insertAdjacentHTML('beforeend',list.map(articleCard).join(''));
+    state.offset+=list.length;
+    btn.hidden=list.length<state.PAGE;
+  }catch(e){grid.innerHTML=`<div class="msg">${U('Не удалось загрузить новости')}: ${esc(e.message)}</div>`}
+  btn.disabled=false;
+}
+$('#cat').onchange=()=>loadNews(true);
+$('#newsMore').onclick=()=>loadNews(false);
+
+/* ---------- Single article: GET /api/articles/{slug} ---------- */
+async function openArticle(slug){
+  dlgBody.innerHTML=`<div class="msg">${U('Загрузка…')}</div>`;dlg.showModal();
+  try{
+    const a=await api('/api/articles/'+encodeURIComponent(slug));
+    dlgBody.innerHTML=`<div class="meta"><span class="tag">${A(a.category)}</span><span>${esc(a.source)}</span>${D(a.date)}</div>
+      <h2>${A(a.title)}</h2><p>${A(a.summary)}</p>
+      ${a.sources?.length?`<p class="meta">${U('Освещают')}: ${a.sources.map(esc).join(', ')}</p>`:''}
+      <a class="btn" href="${esc(a.link)}" target="_blank" rel="noopener">${U('Читать оригинал')}</a>`;
+  }catch(e){dlgBody.innerHTML=`<h2>${U('Статья не найдена')}</h2><p>${esc(e.message)}</p>`}
+}
+document.addEventListener('click',e=>{const c=e.target.closest('[data-slug]');if(c)openArticle(c.dataset.slug)});
+
+/* ---------- Models: GET /api/models ---------- */
+function renderHero(){
+  const top=state.models.slice(0,8),max=Math.max(...top.map(m=>m.tokens));
+  const h=$('#heroBars');h.className='';h.removeAttribute('data-tr');delete h.dataset.o;delete h.dataset.d;
+  h.innerHTML=top.map(m=>`<div class="bar" data-model="${esc(m.name)}" title="${esc(m.provider)}"><b>${esc(m.name)}</b><div class="t"><i style="width:${(m.tokens/max*100).toFixed(1)}%"></i></div><span>${esc(m.scoreDisplay)}</span></div>`).join('');
+}
+function renderModels(){
+  const q=$('#mq').value.toLowerCase();
+  const rows=state.models.filter(m=>(m.name+m.provider).toLowerCase().includes(q));
+  $('#modelsBox').innerHTML=rows.length?`<table><thead><tr><th>#</th><th>${U('Модель')}</th><th>${U('Провайдер')}</th><th>${U('Токены')}</th><th>${U('Запросы')}</th><th>${U('Цена вход/выход, $/1M')}</th><th>${U('Контекст')}</th><th>${U('Тип')}</th></tr></thead><tbody>${
+    rows.map(m=>`<tr class="row" data-model="${esc(m.name)}"><td>${m.rank}</td><td><b>${esc(m.name)}</b></td><td>${esc(m.provider)}</td><td>${esc(m.scoreDisplay)}</td><td>${Number(m.requests).toLocaleString(LANG)}</td><td>${esc(m.pricing)}</td><td>${esc(m.context)}</td><td>${A(m.category)}</td></tr>`).join('')}</tbody></table>`:`<div class="msg">${U('Ничего не найдено.')}</div>`;
+}
+async function loadModels(){
+  $('#modelsBox').innerHTML=`<div class="msg">${U('Загрузка…')}</div>`;
+  try{
+    state.models=await api('/api/models?limit='+$('#mlimit').value);
+    renderModels();renderHero();
+  }catch(e){$('#modelsBox').innerHTML=`<div class="msg">${U('Не удалось загрузить модели')}: ${esc(e.message)}</div>`;$('#heroBars').textContent=e.message}
+}
+$('#mlimit').onchange=loadModels;$('#mq').oninput=renderModels;
+
+/* ---------- Single model: GET /api/models/{id} ---------- */
+async function openModel(name){
+  dlgBody.innerHTML=`<div class="msg">${U('Загрузка…')}</div>`;dlg.showModal();
+  try{
+    const m=await api('/api/models/'+slugify(name));
+    dlgBody.innerHTML=`<div class="meta"><span class="tag b">#${m.rank}</span><span class="tag">${A(m.category)}</span></div>
+      <h2>${esc(m.name)}</h2><p class="meta">${esc(m.provider)} · ${esc(m.or)}</p>
+      <dl><dt>${U('Токены')}</dt><dd>${esc(m.scoreDisplay)} (${Number(m.tokens).toLocaleString(LANG)})</dd>
+      <dt>${U('Запросы')}</dt><dd>${Number(m.requests).toLocaleString(LANG)}</dd>
+      <dt>${U('Цена вход/выход')}</dt><dd>${esc(m.pricing)} ${U('за 1M токенов')}</dd>
+      <dt>${U('Контекст')}</dt><dd>${esc(m.context)}</dd>
+      <dt>${U('Изменение')}</dt><dd>${esc(m.change)}</dd></dl>
+      <a class="btn" href="https://openrouter.ai/${esc(m.or)}" target="_blank" rel="noopener">${U('Открыть на OpenRouter')}</a>`;
+  }catch(e){dlgBody.innerHTML=`<h2>${U('Модель не найдена')}</h2><p>${esc(e.message)}</p>`}
+}
+document.addEventListener('click',e=>{const c=e.target.closest('[data-model]');if(c)openModel(c.dataset.model)});
+
+/* ---------- Most read: GET /api/most-read ---------- */
+async function loadRead(){
+  const g=$('#readGrid');g.innerHTML=`<div class="msg">${U('Загрузка…')}</div>`;
+  try{
+    const list=(await api('/api/most-read')).slice(0,12);
+    const full=await Promise.allSettled(list.map(x=>api('/api/articles/'+encodeURIComponent(x.slug))));
+    g.innerHTML=list.map((x,i)=>{
+      const a=full[i].status==='fulfilled'?full[i].value:{slug:x.slug,title:x.slug.replace(/-/g,' '),summary:'',category:'AI'};
+      return articleCard(a).replace('<div class="meta">',`<div class="meta"><span class="tag b">${x.views} ${U('просм.')}</span>`);
+    }).join('')||`<div class="msg">${U('Пока нет данных.')}</div>`;
+    state.readLoaded=true;
+  }catch(e){g.innerHTML=`<div class="msg">${U('Не удалось загрузить')}: ${esc(e.message)}</div>`}
+}
+
+/* ---------- Tools: GET /api/awesome-data ---------- */
+function renderTools(){
+  const c=$('#tcat').value,p=$('#tprice').value,q=$('#tq').value.toLowerCase();
+  const rows=state.tools.filter(t=>(!c||t.category===c)&&(!p||t.pricing===p)&&(t.name+t.tagline+t.description).toLowerCase().includes(q));
+  $('#toolsGrid').innerHTML=rows.map(t=>`<a class="card" href="${esc(t.url)}" target="_blank" rel="noopener" style="text-decoration:none">
+    <div class="meta"><span class="tag">${A(t.category)}</span><span class="tag b">${A(t.pricing)}</span></div>
+    <h3>${esc(t.name)}</h3><p><b>${A(t.tagline)}</b></p><p>${A(t.description)}</p></a>`).join('')||`<div class="msg">${U('Ничего не найдено.')}</div>`;
+}
+async function loadTools(){
+  const g=$('#toolsGrid');g.innerHTML=`<div class="msg">${U('Загрузка…')}</div>`;
+  try{
+    const d=await api('/api/awesome-data');
+    state.tools=d.tools||[];
+    const fill=(sel,key)=>[...new Set(state.tools.map(t=>t[key]).filter(Boolean))].sort().forEach(v=>sel.insertAdjacentHTML('beforeend',`<option value="${esc(v)}" data-tr="api">${esc(v)}</option>`));
+    fill($('#tcat'),'category');fill($('#tprice'),'pricing');
+    renderTools();
+  }catch(e){g.innerHTML=`<div class="msg">${U('Не удалось загрузить')}: ${esc(e.message)}</div>`}
+}
+['#tcat','#tprice'].forEach(s=>$(s).onchange=()=>state.tools&&renderTools());
+$('#tq').oninput=()=>state.tools&&renderTools();
+
+/* ---------- g4f-working: статические файлы репозитория (без ключей) ---------- */
+const G4F=['https://raw.githubusercontent.com/maruf009sultan/g4f-working/refs/heads/main/working/','https://raw.githubusercontent.com/Free-AI-Things/g4f-working/main/working/'];
+async function g4fFile(name){
+  for(const b of G4F){try{const r=await fetch(b+name);if(r.ok)return await r.text()}catch(e){}}
+  throw new Error('network');
+}
+const g={rows:[],type:'',shown:100,PAGE:100,loaded:false};
+function g4fFiltered(){
+  const p=$('#gprov').value,q=$('#gq').value.toLowerCase();
+  return g.rows.filter(r=>(!g.type||r.type===g.type)&&(!p||r.provider===p)&&(r.provider+' '+r.model).toLowerCase().includes(q));
+}
+function g4fRender(reset){
+  if(reset)g.shown=g.PAGE;
+  const rows=g4fFiltered(),vis=rows.slice(0,g.shown);
+  $('#gcount').innerHTML=`${U('Найдено')}: ${rows.length}`;
+  $('#gbox').innerHTML=vis.length?`<table><thead><tr><th>${U('Провайдер')}</th><th>${U('Модель')}</th><th>${U('Тип')}</th><th></th></tr></thead><tbody>${
+    vis.map(r=>`<tr><td>${esc(r.provider)}</td><td><b>${esc(r.model)}</b></td><td><span class="tag">${esc(r.type)}</span></td><td><button class="cp" data-copy="${esc(r.provider+'|'+r.model)}" title="provider|model">copy</button></td></tr>`).join('')}</tbody></table>`:`<div class="msg">${U('Ничего не найдено.')}</div>`;
+  $('#gmore').hidden=rows.length<=g.shown;
+}
+async function loadG4F(){
+  try{
+    const txt=await g4fFile('working_results.txt');
+    g.rows=txt.split('\n').map(l=>l.trim()).filter(l=>l&&!l.startsWith('#')).map(l=>l.split('|')).filter(a=>a.length>=3).map(a=>({provider:a[0].trim(),model:a[1].trim(),type:a[2].trim()}));
+    const types={};g.rows.forEach(r=>types[r.type]=(types[r.type]||0)+1);
+    $('#gchips').innerHTML=`<button class="chip" data-gtype="" aria-pressed="true">${U('Все')} ${g.rows.length}</button>`+Object.entries(types).map(([t,n])=>`<button class="chip" data-gtype="${esc(t)}" aria-pressed="false">${esc(t)} ${n}</button>`).join('');
+    const prov=[...new Set(g.rows.map(r=>r.provider))].sort((a,b)=>a.localeCompare(b));
+    prov.forEach(v=>$('#gprov').insertAdjacentHTML('beforeend',`<option value="${esc(v)}">${esc(v)}</option>`));
+    g.loaded=true;g4fRender(true);
+    // сводка из test_results.json (необязательно)
+    g4fFile('test_results.json').then(t=>{
+      const s=JSON.parse(t).summary;if(!s||typeof s!=='object')return;
+      $('#gsum').innerHTML=Object.entries(s).filter(([k,v])=>['string','number'].includes(typeof v)).slice(0,6)
+        .map(([k,v])=>`<span class="tag b">${A(k.replace(/_/g,' '))}: ${esc(typeof v==='number'?+v.toFixed(2):v)}</span>`).join('');
+    }).catch(()=>{});
+  }catch(e){$('#gbox').innerHTML=`<div class="msg">${U('Не удалось загрузить список')}: ${esc(e.message)}</div>`}
+}
+$('#gchips').addEventListener('click',e=>{
+  const c=e.target.closest('[data-gtype]');if(!c)return;
+  g.type=c.dataset.gtype;
+  document.querySelectorAll('#gchips .chip').forEach(x=>x.setAttribute('aria-pressed',x===c));
+  g4fRender(true);
+});
+$('#gprov').onchange=()=>g4fRender(true);
+$('#gq').oninput=()=>g4fRender(true);
+$('#gmore').onclick=()=>{g.shown+=g.PAGE;g4fRender(false)};
+document.addEventListener('click',e=>{
+  const b=e.target.closest('[data-copy]');if(!b)return;
+  navigator.clipboard?.writeText(b.dataset.copy).then(()=>{b.textContent='✓';setTimeout(()=>b.textContent='copy',1200)}).catch(()=>{});
+});
+
+translateDOM();
+loadModels();loadNews(true);
+</script>
+</body>
+</html>

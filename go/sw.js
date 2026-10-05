@@ -1,6 +1,6 @@
 /* Оффлайн-оболочка хаба. Игры кэшируются после первого запуска. */
-const CACHE = 'hub-v4';
-const SHELL = ['./', './index.html', './play.html', './games.js', './assets/icon.svg', './manifest.webmanifest', './games/utki/', './games/fishing/'];
+const CACHE = 'hub-v5';
+const SHELL = ['./', './index.html', './play.html', './games.js', './assets/icon.svg', './manifest.webmanifest', './games/utki/', './games/fishing/', './games/slon/'];
 
 self.addEventListener('install', (e) => {
   e.waitUntil(caches.open(CACHE).then((c) => c.addAll(SHELL)).then(() => self.skipWaiting()));

@@ -1051,8 +1051,8 @@ body.has-dock .cookie-banner { bottom: calc(var(--dock-h) + env(safe-area-inset-
   .hero-inner { grid-template-columns: minmax(0, 1.05fr) minmax(300px, 0.95fr); gap: 32px; align-items: center; }
   .hero-copy { max-width: 640px; }
   .hero-side { width: 100%; max-width: 480px; margin-left: auto; }
-  .hero h1 { font-size: clamp(1.8rem, 3.4vw, 2.5rem); max-width: 20ch; }
-  .hero-sub { font-size: 0.85rem; max-width: 46ch; }
+  .hero h1 { font-size: clamp(1.8rem, 3.4vw, 2.5rem); max-width: 24ch; }
+  .hero-sub { font-size: 0.85rem; max-width: 52ch; }
 
   /* Лента: номер | картинка | текст */
   .entry { display: grid; grid-template-columns: 30px 168px 1fr; gap: 14px; align-items: start; padding: 13px 0; }
@@ -1090,7 +1090,7 @@ body.has-dock .cookie-banner { bottom: calc(var(--dock-h) + env(safe-area-inset-
   .ad-vps-card { padding: 18px; }
 }
 
-/* Семь ссылок в шапке не помещаются в узком десктопе:
+/* Ссылки в шапке не помещаются в узком десктопе:
    до 1060px навигацию берут на себя док и шторка */
 @media (min-width: 900px) and (max-width: 1059px) {
   .nav-links { display: none; }

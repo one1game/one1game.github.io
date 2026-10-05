@@ -10,7 +10,7 @@ window.GAMES = [
     tags: ["аркада", "шутер"],
     colors: ["#f7b733", "#fc4a1a"],
     date: "2026-09-17",
-    pinned: true
+    pinned: false
   },
   {
     slug: "fishing",
@@ -23,5 +23,17 @@ window.GAMES = [
     colors: ["#38bdf8", "#0ea5e9"],
     date: "2026-09-17",
     pinned: false
+  },
+  {
+    slug: "slon",
+    title: "Слон",
+    desc: "Аркадный 3D-шутер: беги, стреляй и выживай в неизвестной реальности.",
+    url: "games/slon/",
+    cover: "🐘",
+    bg: "#050510",
+    tags: ["шутер", "3D"],
+    colors: ["#a78bfa", "#6ec1ff"],
+    date: "2026-10-05",
+    pinned: true
   }
 ];

@@ -1,4 +1,4 @@
-const CACHE = 'one1game-v49';
+const CACHE = 'one1game-v52';
 const CDN_CACHE = 'one1game-cdn-v1';
 
 const SHELL = [
@@ -48,6 +48,9 @@ self.addEventListener('fetch', e => {
 
   const url = new URL(e.request.url);
   const isCDN = CDN_HOSTS.some(h => url.hostname.includes(h));
+
+  // Сторонние API и ресурсы не кэшируем (иначе живые данные залипают)
+  if (url.origin !== self.location.origin && !isCDN) return;
 
   if (e.request.mode === 'navigate') {
     e.respondWith(

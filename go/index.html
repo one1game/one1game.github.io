@@ -201,6 +201,12 @@ header.stuck{border-bottom-color:var(--line)}
 .toast.show{opacity:1;transform:translate(-50%,0)}
 
 footer{text-align:center;color:var(--dim);font-size:12px;padding:26px 0 6px}
+
+/* ── Реклама ─────────────────────────────────────────── */
+.ad-label{font-size:11px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--dim);margin:0 2px 8px}
+.ad{display:block;border:1px solid var(--line);border-radius:var(--r-sm);overflow:hidden;background:var(--card)}
+.ad img{display:block;width:100%;height:auto;filter:saturate(.95) brightness(.96);transition:filter .3s,transform .5s}
+@media (hover:hover){.ad:hover img{filter:none;transform:scale(1.01)}}
 @media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
 </style>
 </head>
@@ -252,6 +258,13 @@ footer{text-align:center;color:var(--dim);font-size:12px;padding:26px 0 6px}
       <div class="big">🔍</div>
       Ничего не нашлось
     </div>
+  </section>
+
+  <section class="sect">
+    <div class="ad-label">реклама</div>
+    <a class="ad" href="https://bosslike.ru/?ref=7248523" target="_blank" rel="noopener noreferrer">
+      <img src="/img/baner/baner1.webp?v=3" alt="Bosslike — продвижение и накрутка для соцсетей" width="2272" height="464" loading="lazy" decoding="async">
+    </a>
   </section>
 
   <footer>Каждая игра — своя ссылка. Сохраняй в закладки и делись.</footer>
