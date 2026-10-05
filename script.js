@@ -395,7 +395,7 @@ class One1GamePlatform {
       const safeName = this.escapeHTML(rawName || game.title || 'Игра');
       return `
       <a href="${safeUrl}" class="play-card">
-        ${safeImage ? `<span class="play-thumb"><img src="${safeImage}" alt="${safeName}" loading="lazy" decoding="async" width="280" height="158"></span>` : ''}
+        ${safeImage ? `<span class="play-thumb fx"><img src="${safeImage}" alt="${safeName}" loading="lazy" decoding="async" width="280" height="158"></span>` : ''}
         <span class="play-name">${safeName}</span>
         <span class="play-meta">обзор · статистика игроков</span>
       </a>`;
@@ -537,3 +537,39 @@ class One1GamePlatform {
 
 // Initialize the platform
 new One1GamePlatform();
+
+// ── Курс биткоина в шапке (CoinGecko, без ключа; фолбэк — Coinbase) ──
+(function btcTicker() {
+  const el = document.getElementById('btc-ticker');
+  if (!el) return;
+  const val = document.getElementById('btc-val');
+  const chg = document.getElementById('btc-chg');
+
+  const money = (n) => Math.round(n).toLocaleString('ru-RU').replace(/[\u00A0\u202F]/g, ' ');
+  const pct = (n) => (n >= 0 ? '+' : '−') + Math.abs(n).toFixed(2).replace('.', ',') + '%';
+
+  const render = (d) => {
+    if (!d || !d.usd) return;
+    if (val) val.textContent = '$' + money(d.usd);
+    if (chg && typeof d.usd_24h_change === 'number') {
+      chg.textContent = pct(d.usd_24h_change);
+      chg.className = 'btc-chg ' + (d.usd_24h_change >= 0 ? 'is-up' : 'is-down');
+    }
+    el.hidden = false;
+  };
+
+  const fallback = () => {
+    fetch('https://api.coinbase.com/v2/prices/BTC-USD/spot')
+      .then(r => r.ok ? r.json() : null)
+      .then(j => {
+        const p = j && j.data && parseFloat(j.data.amount);
+        if (p) render({ usd: p });
+      })
+      .catch(() => {});
+  };
+
+  fetch('https://api.coingecko.com/api/v3/simple/price?ids=bitcoin&vs_currencies=usd&include_24hr_change=true')
+    .then(r => r.ok ? r.json() : null)
+    .then(j => { if (j && j.bitcoin) render(j.bitcoin); else fallback(); })
+    .catch(fallback);
+})();

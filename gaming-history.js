@@ -392,19 +392,133 @@
 
   var event = events[key];
   if (!event) { event = findClosest(key); }
+  if (!event) return;
 
   var el = document.getElementById(CONTAINER);
+  if (!el) return;
+
+  var dateLabel = today.getDate() + ' ' + monthName(today.getMonth());
+  var ago = today.getFullYear() - event.y;
+  var agoLabel = ago > 0 ? ago + ' ' + yearsWord(ago) + ' назад' : 'в этом году';
+  var term = latinTerm(event.t);
+
   el.innerHTML =
-    '<div class="gh-card">' +
-    '  <div class="gh-date">' + today.getDate() + ' ' + monthName(today.getMonth()) + '</div>' +
-    '  <div class="gh-year">' + event.y + '</div>' +
-    '  <div class="gh-title">' + esc(event.t) + '</div>' +
-    '  <div class="gh-desc">' + esc(event.d) + '</div>' +
-    '  <div class="gh-label">Сегодня в истории игр</div>' +
-    '</div>';
+    '<article class="gh-card">' +
+    '  <div class="gh-head">' +
+    '    <span class="gh-eyebrow">Сегодня в истории игр</span>' +
+    '    <span class="gh-date">' + dateLabel + '</span>' +
+    '  </div>' +
+    '  <div class="gh-body">' +
+    '    <div class="gh-year-block">' +
+    '      <span class="gh-year">' + event.y + '</span>' +
+    '      <span class="gh-ago">' + esc(agoLabel) + '</span>' +
+    '    </div>' +
+    '    <div class="gh-main">' +
+    '      <h3 class="gh-title">' + esc(event.t) + '</h3>' +
+    '      <p class="gh-desc">' + esc(event.d) + '</p>' +
+    '      <div class="gh-details" id="gh-details" hidden>' +
+    '        <button type="button" class="gh-toggle" id="gh-toggle" aria-expanded="false" aria-controls="gh-extras">' +
+    '          <span>Подробнее</span><span class="gh-toggle-caret" aria-hidden="true"></span>' +
+    '        </button>' +
+    '        <div class="gh-extras" id="gh-extras" aria-hidden="true">' +
+    '          <img class="gh-thumb" id="gh-thumb" alt="" loading="lazy" hidden>' +
+    '          <p class="gh-extract" id="gh-extract"></p>' +
+    '        </div>' +
+    '      </div>' +
+    '    </div>' +
+    '  </div>' +
+    '</article>';
+
+  var toggle = document.getElementById('gh-toggle');
+  if (toggle) {
+    toggle.addEventListener('click', function () {
+      var box = document.getElementById('gh-extras');
+      if (!box) return;
+      var open = box.classList.toggle('is-open');
+      toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+      box.setAttribute('aria-hidden', open ? 'false' : 'true');
+    });
+  }
+
+  requestAnimationFrame(relayout);
+  if (term) enrich(term);
+
+  // ── Открытое API Википедии (MediaWiki, без ключа, CORS через origin=*) ──
+  // Дополняет событие реальным описанием и изображением. Если сеть/API
+  // недоступны — карточка остаётся полноценной на локальных данных.
+  function enrich(q) {
+    var cacheKey = 'gh:v1:' + key + ':' + q;
+    try {
+      var cached = sessionStorage.getItem(cacheKey);
+      if (cached) { applyWiki(JSON.parse(cached)); return; }
+    } catch (e) { /* приватный режим — просто без кеша */ }
+
+    var url = 'https://ru.wikipedia.org/w/api.php?action=query&format=json&origin=*' +
+      '&generator=search&gsrsearch=' + encodeURIComponent(q) + '&gsrlimit=1' +
+      '&prop=extracts|pageimages|info&inprop=url&exintro=1&explaintext=1&exsentences=2' +
+      '&piprop=thumbnail&pithumbsize=360';
+
+    var ctrl = (typeof AbortController === 'function') ? new AbortController() : null;
+    var timer = setTimeout(function () { if (ctrl) ctrl.abort(); }, 7000);
+
+    fetch(url, ctrl ? { signal: ctrl.signal } : undefined)
+      .then(function (r) { return r.ok ? r.json() : null; })
+      .then(function (data) {
+        clearTimeout(timer);
+        var pages = data && data.query && data.query.pages;
+        if (!pages) return;
+        var p = pages[Object.keys(pages)[0]];
+        if (!p || !p.extract) return;
+        // Защита от нерелевантного результата поиска
+        if (p.title.toLowerCase().indexOf(q.split(/\s+/)[0].toLowerCase()) < 0) return;
+        var info = {
+          extract: p.extract,
+          url: p.fullurl || '',
+          thumb: (p.thumbnail && p.thumbnail.source) || ''
+        };
+        try { sessionStorage.setItem(cacheKey, JSON.stringify(info)); } catch (e) { /* ignore */ }
+        applyWiki(info);
+      })
+      .catch(function () { clearTimeout(timer); });
+  }
+
+  function applyWiki(info) {
+    var wrap = document.getElementById('gh-details');
+    var txt = document.getElementById('gh-extract');
+    if (!wrap || !txt || !info || !info.extract) return;
+    var img = document.getElementById('gh-thumb');
+    if (info.thumb && img) { img.src = info.thumb; img.hidden = false; }
+    txt.textContent = info.extract;
+    wrap.hidden = false;
+    relayout();
+  }
+
+  // Виджет живёт в шапке и меняет её высоту — просим сцену пересчитать размер
+  function relayout() {
+    try { window.dispatchEvent(new Event('resize')); } catch (e) { /* ignore */ }
+  }
 
   function monthName(m) {
     return ['января','февраля','марта','апреля','мая','июня','июля','августа','сентября','октября','ноября','декабря'][m];
+  }
+
+  function yearsWord(n) {
+    var a = n % 100, b = n % 10;
+    if (b === 1 && a !== 11) return 'год';
+    if (b >= 2 && b <= 4 && (a < 10 || a >= 20)) return 'года';
+    return 'лет';
+  }
+
+  // Латинское имя события — ключ для Википедии и поиска по сайту
+  function latinTerm(str) {
+    var parts = String(str || '').match(/[A-Za-z][A-Za-z0-9'’.\-]*(?:\s+[A-Za-z0-9'’.\-]+)*/g);
+    if (!parts) return '';
+    var best = '';
+    for (var i = 0; i < parts.length; i++) {
+      var s = parts[i].replace(/\s+/g, ' ').trim();
+      if (s.length > best.length) best = s;
+    }
+    return best;
   }
 
   function findClosest(k) {
@@ -419,7 +533,7 @@
 
   function esc(str) {
     var d = document.createElement('div');
-    d.textContent = str;
+    d.textContent = str == null ? '' : String(str);
     return d.innerHTML;
   }
 })();

@@ -70,7 +70,6 @@
     '    <div class="nav-actions">' +
     '      <button type="button" class="icon-btn" id="search-btn" aria-label="Поиск по статьям"><i class="fas fa-magnifying-glass" aria-hidden="true"></i></button>' +
     '      <button type="button" class="icon-btn icon-radio" id="radio-play"' + (hasRadio ? '' : ' hidden') + ' aria-label="Радио: включить или выключить"><i class="fas fa-play" aria-hidden="true"></i></button>' +
-    '      <button type="button" class="icon-btn" id="sfx-toggle" aria-label="Звуки интерфейса" aria-pressed="false"><i class="fas fa-volume-xmark" aria-hidden="true"></i></button>' +
     '    </div>' +
     '  </div>' +
     '</nav>';
@@ -152,14 +151,11 @@
   }
 
   /* ============================================================
-     SFX — процедурный звук интерфейса (Web Audio, opt-in)
+     SFX — процедурный звук интерфейса (Web Audio). Всегда включён:
+     без фоновой музыки/гула и без переключателя.
      ============================================================ */
   var Sfx = (function () {
-    var KEY = 'one1game_sfx';
     var ctx = null;
-    var on = false;
-
-    try { on = localStorage.getItem(KEY) === '1'; } catch (e) { on = false; }
 
     function ensure() {
       if (ctx) return ctx;
@@ -188,72 +184,8 @@
       o.stop(t + dur + 0.03);
     }
 
-    // ── Эмбиент: процедурный гул для 3D-сцены (без внешних файлов) ──
-    var ambNodes = null;
-
-    function ambientOn() {
-      var c = ensure();
-      if (!c || ambNodes) return;
-      if (c.state === 'suspended') c.resume();
-      // Если играет радио — не наслаиваемся
-      if (window.One1GameRadio && window.One1GameRadio.audio && !window.One1GameRadio.audio.paused) return;
-
-      var t0 = c.currentTime;
-      var master = c.createGain();
-      master.gain.setValueAtTime(0.0001, t0);
-      master.gain.exponentialRampToValueAtTime(0.05, t0 + 4);
-
-      var filter = c.createBiquadFilter();
-      filter.type = 'lowpass';
-      filter.frequency.value = 320;
-      filter.Q.value = 0.8;
-
-      var a = c.createOscillator(); a.type = 'sawtooth'; a.frequency.value = 55;    // A1
-      var b = c.createOscillator(); b.type = 'sawtooth'; b.frequency.value = 55.45; // лёгкий детюн
-      var d = c.createOscillator(); d.type = 'sine';     d.frequency.value = 110;   // октава
-
-      var lfo = c.createOscillator(); lfo.type = 'sine'; lfo.frequency.value = 0.05;
-      var lfoGain = c.createGain(); lfoGain.gain.value = 110;
-      lfo.connect(lfoGain);
-      lfoGain.connect(filter.frequency);
-
-      a.connect(filter); b.connect(filter); d.connect(filter);
-      filter.connect(master);
-      master.connect(c.destination);
-      a.start(); b.start(); d.start(); lfo.start();
-
-      ambNodes = { master: master, nodes: [a, b, d, lfo] };
-    }
-
-    function ambientOff() {
-      if (!ambNodes) return;
-      var c = ctx;
-      var master = ambNodes.master;
-      var nodes = ambNodes.nodes;
-      ambNodes = null;
-      try {
-        var now = c.currentTime;
-        master.gain.cancelScheduledValues(now);
-        master.gain.setValueAtTime(Math.max(0.0001, master.gain.value), now);
-        master.gain.exponentialRampToValueAtTime(0.0001, now + 0.9);
-      } catch (e) { /* гасим жёстко ниже */ }
-      setTimeout(function () {
-        for (var i = 0; i < nodes.length; i++) { try { nodes[i].stop(); } catch (e) {} }
-      }, 1100);
-    }
-
     return {
-      enabled: function () { return on; },
-      set: function (v) {
-        on = !!v;
-        try { localStorage.setItem(KEY, on ? '1' : '0'); } catch (e) {}
-      },
-      ambient: function (want) {
-        if (want) ambientOn(); else ambientOff();
-      },
-      isAmbient: function () { return !!ambNodes; },
       play: function (kind) {
-        if (!on) return;
         try {
           if (kind === 'open') { tone(420, 0.16, 'sine', 0.05, 880); }
           else if (kind === 'close') { tone(700, 0.14, 'sine', 0.04, 320); }
@@ -267,38 +199,7 @@
 
   window.One1Sfx = Sfx;
 
-  var sfxBtn = doc.getElementById('sfx-toggle');
-  function paintSfx() {
-    if (!sfxBtn) return;
-    var isOn = Sfx.enabled();
-    sfxBtn.classList.toggle('is-on', isOn);
-    sfxBtn.setAttribute('aria-pressed', String(isOn));
-    var icon = sfxBtn.querySelector('i');
-    if (icon) icon.className = isOn ? 'fas fa-volume-high' : 'fas fa-volume-xmark';
-  }
-  // Звук привязан к состоянию 3D-сцены: гул включается вместе с ней
-  var heroLive = false;
-  function syncAmbient() {
-    Sfx.ambient(!!(Sfx.enabled() && heroLive && !doc.hidden));
-  }
-  doc.addEventListener('one1hero:ready', function () {
-    heroLive = true;
-    root.classList.add('hero3d-on');
-    syncAmbient();
-  });
-  doc.addEventListener('visibilitychange', syncAmbient);
-
-  if (sfxBtn) {
-    paintSfx();
-    sfxBtn.addEventListener('click', function () {
-      Sfx.set(!Sfx.enabled());
-      paintSfx();
-      if (Sfx.enabled()) Sfx.play('on');
-      syncAmbient();
-    });
-  }
-
-  // Тихий «тик» на интерактивных элементах (только при включённом звуке)
+  // Тихий «тик» на интерактивных элементах
   doc.addEventListener('click', function (e) {
     var el = e.target && e.target.closest ? e.target.closest('.dock-item, .sheet-link, .nav-link, .btn, .icon-btn, .article-card, .cat-pill') : null;
     if (el) Sfx.play('tap');
@@ -327,9 +228,6 @@
         };
         radio.audio.addEventListener('play', sync);
         radio.audio.addEventListener('pause', sync);
-        // Радио и эмбиент не звучат одновременно
-        radio.audio.addEventListener('play', function () { Sfx.ambient(false); });
-        radio.audio.addEventListener('pause', function () { syncAmbient(); });
         sync();
         return;
       }
@@ -604,126 +502,17 @@
   })();
 
   /* ============================================================
-     Терминальный движок: загрузочный лог в hero
-     ============================================================ */
-  (function bootLog() {
-    var el = doc.getElementById('boot-log');
-    if (!el) return;
-
-    var n = (window.allArticles || []).length;
-    var lines = [
-      '> one1game://uplink .......... ok',
-      '> индекс материалов ......... ' + (n ? n + ' записей' : 'нет данных'),
-      '> разделы и фильтры ......... ok',
-      '> статус .................... в сети'
-    ];
-
-    function markup(arr) {
-      return arr.map(function (s) {
-        return s
-          .replace(/ok\b|в сети/g, '<b>$&</b>')
-          .replace(/\.{3,}/g, '<i>$&</i>');
-      }).join('\n');
-    }
-
-    if (reduceMotion) { el.innerHTML = markup(lines); return; }
-
-    el.textContent = '';
-    var i = 0, j = 0, done = [];
-    (function step() {
-      if (i >= lines.length) { el.innerHTML = markup(lines); return; }
-      var partial = lines[i].slice(0, ++j);
-      el.textContent = done.concat([partial]).join('\n');
-      if (j >= lines[i].length) { done.push(lines[i]); i++; j = 0; setTimeout(step, 150); }
-      else setTimeout(step, 11);
-    })();
-  })();
-
-  /* ============================================================
      Приёмы из топа: прогресс-линия, монтажные метки, HUD, клавиши
      ============================================================ */
   (function shellExtras() {
-    function p3(n) { return n < 10 ? '00' + n : (n < 100 ? '0' + n : String(n)); }
-
     // Прогресс чтения: анимируется CSS scroll-driven, JS не участвует
     var line = doc.createElement('div');
     line.className = 'scroll-line';
     line.setAttribute('aria-hidden', 'true');
     doc.body.appendChild(line);
 
-    // Монтажные метки «производственного кадра»
-    var marks = doc.createElement('div');
-    marks.className = 'marks';
-    marks.setAttribute('aria-hidden', 'true');
-    marks.innerHTML = '<i></i><i></i><i></i><i></i>';
-    doc.body.appendChild(marks);
-
-    hud();
     keyboard();
     decodeHeadline();
-
-    // ── HUD: телеметрия портала (только десктоп) ──
-    function hud() {
-      if (!window.matchMedia('(min-width: 900px)').matches) return;
-
-      var el = doc.createElement('div');
-      el.className = 'hud';
-      el.setAttribute('aria-hidden', 'true');
-      el.innerHTML =
-        '<span>scroll <b id="hud-scroll">000%</b></span>' +
-        '<span>section <b id="hud-sec">01</b></span>' +
-        '<span>render <b id="hud-fps">--</b></span>' +
-        '<span>time <b id="hud-clock">--:--:--</b></span>';
-      doc.body.appendChild(el);
-
-      var sScroll = doc.getElementById('hud-scroll');
-      var sSec = doc.getElementById('hud-sec');
-      var sFps = doc.getElementById('hud-fps');
-      var sClock = doc.getElementById('hud-clock');
-      var secs = [];
-
-      function collect() { secs = [].slice.call(doc.querySelectorAll('.section-header, .sec')); }
-
-      function update() {
-        var max = doc.documentElement.scrollHeight - window.innerHeight;
-        var p = max > 0 ? Math.max(0, Math.min(1, (window.scrollY || 0) / max)) : 0;
-        sScroll.textContent = p3(Math.round(p * 100)) + '%';
-
-        var probe = (window.scrollY || 0) + window.innerHeight * 0.35;
-        var n = 1;
-        for (var i = 0; i < secs.length; i++) if (secs[i].offsetTop <= probe) n = i + 1;
-        sSec.textContent = p3(n);
-      }
-
-      var queued = false;
-      window.addEventListener('scroll', function () {
-        if (queued) return;
-        queued = true;
-        requestAnimationFrame(function () { queued = false; update(); });
-      }, { passive: true });
-      window.addEventListener('resize', function () { collect(); update(); });
-
-      function clock() {
-        var d = new Date();
-        sClock.textContent = p3(d.getHours()).slice(1) + ':' + p3(d.getMinutes()).slice(1) + ':' + p3(d.getSeconds()).slice(1);
-      }
-
-      collect();
-      update();
-      clock();
-      setInterval(clock, 1000);
-
-      var frames = 0, last = performance.now();
-      (function loop(now) {
-        frames++;
-        if (now - last >= 1000) {
-          sFps.textContent = String(Math.round((frames * 1000) / (now - last)));
-          frames = 0;
-          last = now;
-        }
-        requestAnimationFrame(loop);
-      })(last);
-    }
 
     // ── Клавиатурная навигация ──
     function keyboard() {
@@ -741,7 +530,6 @@
         '    <dt>enter</dt><dd>открыть выбранную</dd>' +
         '    <dt>esc</dt><dd>сбросить выбор</dd>' +
         '    <dt>/ · ctrl+k</dt><dd>поиск по материалам</dd>' +
-        '    <dt>s</dt><dd>звук интерфейса вкл/выкл</dd>' +
         '    <dt>?</dt><dd>эта подсказка</dd>' +
         '  </dl>' +
         '  <button type="button" class="keys-close">закрыть</button>' +
@@ -801,7 +589,6 @@
           return;
         }
         if (e.key === '?') { e.preventDefault(); openKeys(); return; }
-        if (e.key === 's' || e.key === 'S') { if (sfxBtn) { e.preventDefault(); sfxBtn.click(); } }
       });
     }
 

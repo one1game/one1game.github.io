@@ -102,6 +102,53 @@ function escAttr(v) {
     .replace(/>/g, "&gt;");
 }
 
+// ── Рекламные блоки внутри статей игр ──
+// Это часть шаблона buildPage, поэтому реклама автоматически появляется и у
+// новых игр, и после недельного рефреша (страницы пересобираются тем же шаблоном).
+const AD_VPS_URL = "https://my.adminvps.ru/aff.php?aff=31864";
+const AD_GO_URL = `${CONFIG.siteUrl}/go/`;
+const AD_BANNER_URL = "https://bosslike.ru/?ref=7248523";
+const AD_BANNER = {
+  src: "/img/baner/baner1.webp?v=3",
+  alt: "Bosslike — накрутка подписчиков, лайков и просмотров",
+  title: "Bosslike — накрутка подписчиков, лайков и просмотров",
+};
+
+// Компактный рекламный баннер внутри статьи
+function adBannerHTML() {
+  return `
+      <a class="av-banner" href="${AD_BANNER_URL}" target="_blank" rel="noopener noreferrer" title="${AD_BANNER.title}">
+        <span class="av-ad-label">реклама</span>
+        <img src="${AD_BANNER.src}" alt="${AD_BANNER.alt}" loading="lazy" width="2272" height="464" />
+      </a>`;
+}
+
+// Текстовая реклама AdminVPS
+function adVpsHTML() {
+  return `
+      <a class="av-ad" href="${AD_VPS_URL}" target="_blank" rel="noopener noreferrer">
+        <span class="av-ad-label">реклама</span>
+        <span class="av-ad-header">
+          <span class="av-ad-badge">выгодно</span>
+          <span class="av-ad-title">VPS/VDS от 299 ₽/мес</span>
+        </span>
+        <span class="av-ad-desc">NVMe-диски, CPU до 5.0 ГГц, бесплатное администрирование. Для сайтов, ботов, Docker и AI.</span>
+        <span class="av-ad-tags"><span class="av-ad-tag">NVMe</span><span class="av-ad-tag">24/7</span><span class="av-ad-tag">Мир</span></span>
+        <span class="av-ad-cta">Попробовать AdminVPS</span>
+      </a>`;
+}
+
+// Ненавязчивый призыв зайти в раздел мини-игр /go/
+function adGoHTML() {
+  return `
+      <a class="av-ad av-ad--go" href="${AD_GO_URL}">
+        <span class="av-ad-label">наши игры</span>
+        <span class="av-ad-header"><span class="av-ad-title">Мини-игры — играй прямо в браузере</span></span>
+        <span class="av-ad-desc">Быстрые игры без установки и регистрации. Пара кликов — и ты в деле.</span>
+        <span class="av-ad-cta">Играть бесплатно →</span>
+      </a>`;
+}
+
 // true, если в строке есть кириллица (чтобы не мешать EN/RU в тексте страницы)
 function hasRu(v) {
   return /[а-яё]/i.test(String(v || ""));
@@ -270,7 +317,7 @@ ${movieItems
     if (localStorage.getItem('ga_consent') === 'yes') enableGA();
   </script>
   <link href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css" rel="stylesheet" />
-  <link rel="stylesheet" href="/styles.css?v=7" />
+  <link rel="stylesheet" href="/styles.css?v=31" />
 
   <script type="application/ld+json">
   {
@@ -375,6 +422,50 @@ ${movieItems
     }
     .game-video-el { display: block; width: 100%; height: 100%; background: #000; }
     .game-movie figcaption { margin-top: 6px; font-size: 13px; color: var(--text-faint); }
+
+    /* Рекламные блоки внутри статьи (самодостаточные стили — не зависят от кэша styles.css) */
+    .av-ad {
+      display: block; margin: 26px 0; padding: 16px 18px; position: relative;
+      background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.10);
+      border-radius: 10px; text-decoration: none; color: inherit;
+      transition: border-color 0.2s, background 0.2s;
+    }
+    .av-ad:hover { border-color: rgba(125,255,155,0.45); background: rgba(125,255,155,0.05); }
+    .av-ad--go { border-color: rgba(125,255,155,0.30); }
+    .av-ad-label {
+      display: block; margin-bottom: 8px;
+      font-size: 10px; letter-spacing: 0.14em; text-transform: uppercase; color: #6b7480;
+    }
+    .av-ad-header { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; margin-bottom: 6px; }
+    .av-ad-badge {
+      font-size: 10px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase;
+      color: #ffc061; border: 1px solid rgba(255,192,97,0.35); padding: 1px 6px; border-radius: 3px;
+    }
+    .av-ad-title { display: block; font-size: 15px; font-weight: 700; color: #fff; }
+    .av-ad-desc { display: block; font-size: 13px; color: #aab2bd; line-height: 1.55; margin-bottom: 12px; }
+    .av-ad-tags { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 12px; }
+    .av-ad-tag { font-size: 10px; color: #6b7480; border: 1px solid rgba(255,255,255,0.12); padding: 1px 6px; border-radius: 3px; }
+    .av-ad-cta {
+      display: inline-block; padding: 8px 14px; border-radius: 6px;
+      background: #ffc061; color: #1a1200;
+      font-size: 11px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase;
+    }
+    .av-ad--go .av-ad-cta { background: #7dff9b; }
+    .av-banner {
+      display: block; position: relative; max-width: 560px; margin: 26px auto;
+      border: 1px solid rgba(255,255,255,0.10); border-radius: 8px; overflow: hidden;
+      transition: border-color 0.2s;
+    }
+    .av-banner:hover { border-color: rgba(125,255,155,0.45); }
+    .av-banner img {
+      display: block; width: 100%; height: auto;
+      filter: grayscale(0.8) contrast(1.1) brightness(0.82); transition: filter 0.3s;
+    }
+    .av-banner:hover img { filter: grayscale(0.1) contrast(1.05) brightness(1); }
+    .av-banner .av-ad-label {
+      position: absolute; top: 8px; left: 10px; z-index: 2; margin: 0;
+      padding: 1px 6px; background: rgba(4,6,10,0.75); border-radius: 3px;
+    }
   </style>
 </head>
 <body>
@@ -433,12 +524,12 @@ ${movieItems
           <div class="value">${owners}</div>
         </div>
       </div>
-
+${adBannerHTML()}
       <h2>Об игре</h2>
       ${about ? `<p>${about}</p>\n\n      ` : ""}<p><strong>Жанры:</strong> ${genres}<br/>
       <strong>Разработчик:</strong> ${developers}<br/>
       <strong>Издатель:</strong> ${publishers}</p>
-
+${adVpsHTML()}
       <p>
         <a href="https://store.steampowered.com/app/${appid}" target="_blank" rel="noopener">
           Страница игры в Steam →
@@ -450,7 +541,7 @@ ${moviesHTML}
         Данные о цене, отзывах и статистике обновляются автоматически на основе
         Steam Store API и SteamSpy.
       </p>
-
+${adGoHTML()}
 <div class="newsletter-box">
   <h4>📬 Получайте такие разборы раз в неделю</h4>
   <p>Аналитика индустрии, редкие цифры и мнения, о которых не пишут в крупных СМИ. Без спама — только по делу.</p>

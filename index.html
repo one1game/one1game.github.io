@@ -31,7 +31,7 @@
   <link rel="dns-prefetch" href="https://www.google-analytics.com" />
 
   <link rel="preload" as="style" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css" onload="this.rel='stylesheet';this.removeAttribute('onload')" /><noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css" /></noscript>
-  <link rel="stylesheet" href="styles.css?v=27" />
+  <link rel="stylesheet" href="styles.css?v=43" />
   <link rel="manifest" href="/manifest.json" />
   <meta name="theme-color" content="#04060a" />
 
@@ -57,29 +57,33 @@
 
 <main id="main-content">
 
-  <!-- HERO: терминал + интерактивная 3D-сцена -->
+  <!-- HERO: терминал + живой 2D-космос -->
   <section class="hero" id="hero">
     <canvas class="hero-canvas" id="hero-canvas" aria-hidden="true"></canvas>
-    <canvas class="hero-3d" id="hero-3d" aria-hidden="true"></canvas>
-    <button type="button" class="hero-3d-status" id="hero-3d-status" aria-label="3D-сцена портала">
-      <span class="hero-3d-dot" aria-hidden="true"></span><span id="hero-3d-status-text">3D</span>
-    </button>
-    <div class="hero-tip" id="hero-tip" aria-hidden="true"></div>
+    <canvas class="hero-space" id="hero-space" aria-hidden="true"></canvas>
 
     <div class="hero-inner container">
-      <p class="boot" id="boot-log">&gt; one1game://uplink ......... <b>ok</b></p>
-      <h1>Игровые новости, <span class="highlight">обзоры и гайды</span><span class="caret" aria-hidden="true"></span></h1>
-      <p class="hero-sub">Честные разборы новинок, аналитика рынка и руководства, которые экономят часы. Без воды, кликбейта и пустых обещаний.</p>
-      <div class="hero-actions">
-        <a href="archive.html" class="btn btn-primary">Читать статьи</a>
-        <a href="/triad-duel.html" class="btn btn-outline">Triad Duel</a>
+      <div class="hero-copy">
+        <div class="btc-ticker" id="btc-ticker" hidden>
+          <span class="btc-sym" aria-hidden="true">₿</span>
+          <span class="btc-val" id="btc-val">—</span>
+          <span class="btc-chg" id="btc-chg"></span>
+        </div>
+        <h1>Игровые новости, <span class="highlight">обзоры и гайды</span></h1>
+        <p class="hero-sub">Честные разборы новинок, аналитика рынка и руководства, которые экономят часы. Без воды, кликбейта и пустых обещаний.</p>
+        <div class="hero-actions">
+          <a href="archive.html" class="btn btn-primary">Читать статьи</a>
+          <a href="/triad-duel.html" class="btn btn-outline">Triad Duel</a>
+        </div>
+        <div class="hero-stats">
+          <span>материалов <b id="stat-articles">—</b></span>
+          <span>разделов <b id="stat-sections">—</b></span>
+          <span>апдейт <b>ежедневно</b></span>
+        </div>
       </div>
-      <div class="hero-stats">
-        <span>материалов <b id="stat-articles">—</b></span>
-        <span>разделов <b id="stat-sections">—</b></span>
-        <span>апдейт <b>ежедневно</b></span>
-      </div>
-      <p class="hero-hint"><i class="fas fa-hand-pointer" aria-hidden="true"></i> наведи и кликни по карточке в 3D · сцена слушает курсор и скролл · звук — кнопкой <i class="fas fa-volume-xmark" aria-hidden="true"></i> в шапке</p>
+      <aside class="hero-side" aria-label="Сегодня в истории игр">
+        <div id="today-in-history"></div>
+      </aside>
     </div>
   </section>
 
@@ -90,31 +94,19 @@
 
   <div class="container">
 
-    <!-- ВО ЧТО ПОИГРАТЬ — отдельная система игровых обзоров (JS-populated) -->
-    <section class="play-rail" id="play-what" aria-label="Во что поиграть" hidden>
-      <div class="section-header">
-        <h2 class="section-title">Во что поиграть</h2>
-        <a href="archive.html?category=%D0%9E%D0%B1%D0%B7%D0%BE%D1%80%D1%8B" class="btn btn-ghost">все игры</a>
-      </div>
-      <div class="play-list" id="play-list"></div>
-    </section>
-
     <!-- ВЕДУЩАЯ ЗАПИСЬ -->
+    <div class="section-header">
+      <h2 class="section-title">В фокусе</h2>
+    </div>
     <div id="top-article">
       <div class="skeleton-card"></div>
     </div>
 
-    <!-- СПОНСОР -->
-    <div class="ad-slot">
-      <span class="ad-label">реклама</span>
-      <div class="ad-banner-wrap">
-        <a href="https://bosslike.ru/?ref=7248523" target="_blank" rel="noopener noreferrer" title="Bosslike — накрутка подписчиков, лайков и просмотров">
-          <img src="/img/baner/baner1.webp?v=3" alt="Bosslike — сервис накрутки подписчиков и лайков" width="2272" height="464" loading="lazy">
-        </a>
-      </div>
-    </div>
-
     <!-- ЗАКРЕПЛЁННЫЙ ПРОЕКТ -->
+    <div class="section-header">
+      <h2 class="section-title">Наш проект</h2>
+      <a href="/triad-duel.html" class="btn btn-ghost">подробнее</a>
+    </div>
     <div class="featured-banner">
       <a href="/triad-duel.html" class="featured-link">
         <div class="featured-card">
@@ -122,7 +114,6 @@
             <img src="/img/og-triad-duel-800.webp" srcset="/img/og-triad-duel-800.webp 800w, /img/og-triad-duel.webp 1200w" sizes="(min-width: 900px) 460px, 100vw" alt="Triad Duel — карточная игра в Telegram" width="600" height="315" loading="lazy" decoding="async">
           </div>
           <div class="featured-info">
-            <span class="featured-badge">проект</span>
             <h2 class="featured-title">Triad Duel — тактическая карточная PvP в Telegram</h2>
             <p class="featured-desc">Собирай колоду, сражайся в PvP и получай 100 Remains бонусом. Без скачивания, прямо в мессенджере.</p>
             <span class="featured-cta">играть бесплатно</span>
@@ -153,24 +144,33 @@
       </div>
     </div>
 
-    <!-- ИСТОРИЯ -->
-    <div class="section-header">
-      <h2 class="section-title">Сегодня в истории игр</h2>
-      <span class="section-badge">архив данных</span>
-    </div>
-    <div id="today-in-history"></div>
+    <!-- ВО ЧТО ПОИГРАТЬ — отдельная система игровых обзоров (JS-populated) -->
+    <section class="play-rail" id="play-what" aria-label="Во что поиграть" hidden>
+      <div class="section-header">
+        <h2 class="section-title">Во что поиграть</h2>
+        <a href="archive.html?category=%D0%9E%D0%B1%D0%B7%D0%BE%D1%80%D1%8B" class="btn btn-ghost">все игры</a>
+      </div>
+      <div class="play-list" id="play-list"></div>
+    </section>
+
+    <!-- МИНИ-ИГРЫ — призыв в раздел /go/ -->
+    <a class="go-cta" href="/go/">
+      <span class="go-cta-title">Мини-игры — играй прямо в браузере</span>
+      <span class="go-cta-desc">Быстрые игры без установки и регистрации. Пара кликов — и ты в деле.</span>
+      <span class="go-cta-btn">Играть бесплатно →</span>
+    </a>
 
   </div>
 
 </main>
 
 <script src="/cache-version.js"></script>
-<script defer src="articles-data.js?v=27"></script>
-<script defer src="/components.js?v=26"></script>
-<script defer src="/babylon-hero.js?v=22"></script>
-<script defer src="script.js?v=27"></script>
+<script defer src="articles-data.js?v=29"></script>
+<script defer src="/components.js?v=32"></script>
+<script defer src="/hero-space.js?v=1"></script>
+<script defer src="script.js?v=31"></script>
 <script defer src="/api-config.js?v=1"></script>
-<script defer src="gaming-history.js?v=1"></script>
+<script defer src="gaming-history.js?v=8"></script>
 
 <script>
 document.addEventListener('mouseover', function (e) {

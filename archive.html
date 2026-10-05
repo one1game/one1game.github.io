@@ -29,7 +29,7 @@
   <link rel="dns-prefetch" href="https://www.google-analytics.com" />
   
   <link rel="preload" as="style" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css" onload="this.rel='stylesheet';this.removeAttribute('onload')" /><noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css" /></noscript>
-  <link rel="stylesheet" href="styles.css?v=26" />
+  <link rel="stylesheet" href="styles.css?v=43" />
   <link rel="manifest" href="/manifest.json" />
   <meta name="theme-color" content="#06060c" />
   <!-- Google Analytics loads only after explicit consent -->
@@ -55,19 +55,13 @@
 <main id="main-content">
 <div class="container">
 
-  <section class="hero hero--compact" id="hero" style="padding: 44px 0 40px;">
+  <section class="hero hero--compact" id="hero" style="padding: 28px 0 26px;">
     <canvas class="hero-canvas" id="hero-canvas" aria-hidden="true"></canvas>
-    <canvas class="hero-3d" id="hero-3d" data-scene="compact" aria-hidden="true"></canvas>
-    <button type="button" class="hero-3d-status" id="hero-3d-status" aria-label="3D-сцена портала">
-      <span class="hero-3d-dot" aria-hidden="true"></span><span id="hero-3d-status-text">3D</span>
-    </button>
-    <div class="hero-tip" id="hero-tip" aria-hidden="true"></div>
+    <canvas class="hero-space" id="hero-space" aria-hidden="true"></canvas>
 
     <div class="hero-inner container">
-      <p class="boot">&gt; one1game://archive ......... <b>ok</b> · полный индекс материалов</p>
-      <h1>Архив <span class="highlight">статей</span><span class="caret" aria-hidden="true"></span></h1>
+      <h1>Архив <span class="highlight">статей</span></h1>
       <p class="hero-sub">Все игровые материалы One1Game — обзоры, гайды, аналитика и новости индустрии.</p>
-      <p class="hero-hint"><i class="fas fa-hand-pointer" aria-hidden="true"></i> кликни по карточке в 3D — откроется материал</p>
     </div>
   </section>
 
@@ -94,7 +88,7 @@
 
 </main>
 <script src="/cache-version.js"></script>
-<script defer src="articles-data.js?v=27"></script>
+<script defer src="articles-data.js?v=29"></script>
 <script>
 // === ARCHIVE PAGE LOGIC ===
 let allArticles = [];
@@ -128,6 +122,13 @@ document.addEventListener('DOMContentLoaded', () => {
     const catParam = params.get('category');
     if (catParam) {
       currentCategory = catParam;
+    }
+    // ?q= — прямые ссылки на поиск (виджет истории, schema.org SearchAction)
+    const qParam = params.get('q');
+    if (qParam) {
+      const searchInput = document.getElementById('article-search');
+      if (searchInput) searchInput.value = qParam;
+      currentCategory = 'all';
     }
     initFilters();
     filterAndDisplay();
@@ -270,7 +271,7 @@ document.addEventListener('mouseover', e => {
   card.style.setProperty('--mouse-y', y + '%');
 });
 </script>
-<script defer src="/babylon-hero.js?v=22"></script>
-<script src="/components.js?v=26" defer></script>
+<script defer src="/hero-space.js?v=1"></script>
+<script src="/components.js?v=32" defer></script>
 </body>
 </html>
