@@ -26,7 +26,8 @@ jobs:
           ENRICH_LIMIT: "60"
           ARCHIVE_DIR: "archive"
           DELAY_MS: "800"
-          CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          # Принимаем и CLOUDFLARE_ACCOUNT_ID, и CLOUDFLARE_ACCOUNT — что настроено в секретах.
+          CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID || secrets.CLOUDFLARE_ACCOUNT }}
           CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
         run: node scripts/generate-games.js
 

@@ -681,7 +681,8 @@ function updateArticlesData(newEntries) {
 
 // ── Cloudflare Workers AI: генерация SEO-текста (бесплатный тир) ──
 // Ключи только из окружения: CLOUDFLARE_ACCOUNT_ID / CLOUDFLARE_API_TOKEN.
-const CF_ACCOUNT_ID = process.env.CLOUDFLARE_ACCOUNT_ID || "";
+const CF_ACCOUNT_ID =
+  process.env.CLOUDFLARE_ACCOUNT_ID || process.env.CLOUDFLARE_ACCOUNT || "";
 const CF_API_TOKEN = process.env.CLOUDFLARE_API_TOKEN || "";
 // Основная — не-reasoning (быстро, без «размышлений», полный ответ).
 // Запасная — llama-3.3-70b-fast. Reasoning-модели (gpt-oss/nemotron/qwen3)
