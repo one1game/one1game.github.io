@@ -1,6 +1,15 @@
 // articles-data.js
 window.allArticles = [
   {
+    "url": "/archive/ii-v-igrodeli-2026-polnyy-razbor.html",
+    "title": "ИИ в игровой индустрии 2026: полный разбор — инструменты, деньги и тренды",
+    "excerpt": "Как нейросети меняют разработку игр: арт, 3D, код, озвучка и NPC. Реальные цифры рынка, экономия до 99%, скандалы, суды, увольнения и прогнозы до 2030 года.",
+    "image": "https://coresg-normal.trae.ai/api/ide/v1/text_to_image?prompt=dark%20futuristic%20game%20development%20studio%2C%20glowing%20neural%20network%20hologram%20over%20a%20game%20controller%2C%20AI%20brain%2C%20neon%20purple%20and%20cyan%20light%2C%20cinematic%2C%20ultra%20detailed&image_size=landscape_16_9",
+    "date": "6 октября 2026",
+    "readTime": "18 мин",
+    "category": "ИИ и технологии"
+  },
+  {
     "url": "/archive/third-law-5245170.html",
     "title": "Третья закономерность THIRD LAW",
     "excerpt": "Игра THIRD LAW предлагает уникальный геймплей с использованием отдачи оружия для перемещения. Подойдёт для любителей инди-экшенов.",
@@ -4488,11 +4497,11 @@ window.allArticles = [
   },
   {
     "url": "/archive/blood-of-dawnwalker-gajd-bildy-2026.html",
-    "title": "The Blood of Dawnwalker: гайд по лучшим билдам и скрытым механикам в 2026 году",
-    "excerpt": "Топ-3 рабочих билда, секрет легендарного оружия и разбор механики Кровавого экстаза. Основано на 60 часах личного прохождения...",
+    "title": "The Blood of Dawnwalker: билды, способности и таймер 30 дней — гайд 2026",
+    "excerpt": "Три ветки прокачки, лучшие билды дня и ночи, заряды активации, спасение семьи за 30 дней, все концовки и мод на таймер. Гайд обновлён после релиза.",
     "image": "/img/ai/output/blood_of_dawnwalker_guide_2026.webp",
-    "date": "9 июля 2026",
-    "readTime": "8 мин",
+    "date": "6 октября 2026",
+    "readTime": "13 мин",
     "category": "Гайды"
   },
   {
@@ -4511,7 +4520,7 @@ window.allArticles = [
     "image": "/img/ai/output/rtx_5090_vs_rx_9070xt.webp",
     "date": "9 июля 2026",
     "readTime": "10 мин",
-    "category": "Технологии"
+    "category": "ИИ и технологии"
   },
   {
     "url": "/archive/gta-6-polnyy-analiz-utechek-i-treylera.html",
@@ -4574,7 +4583,7 @@ window.allArticles = [
     "image": "/img/ai/output/metaverses_ai_2026.webp",
     "date": "21 января 2026",
     "readTime": "10 мин",
-    "category": "Технологии"
+    "category": "ИИ и технологии"
   },
   {
     "url": "/archive/game-design-ai-2026.html",

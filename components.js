@@ -916,7 +916,7 @@
 
     var catClass = function(cat) {
       var map = { 'Гайды': 'cat-guides', 'Аналитика': 'cat-analytics', 'Мнение': 'cat-opinion',
-                  'Разработка': 'cat-dev', 'Технологии': 'cat-tech', 'Консоли': 'cat-consoles',
+                  'Разработка': 'cat-dev', 'ИИ и технологии': 'cat-tech', 'Консоли': 'cat-consoles',
                   'Тренды': 'cat-trends' };
       return map[cat] || '';
     };

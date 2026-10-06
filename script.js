@@ -421,7 +421,7 @@ class One1GamePlatform {
     // Count articles per category
     const catCount = {};
     const categoryMap = {
-      'Технологии': 'cat-tech',
+      'ИИ и технологии': 'cat-tech',
       'Гайды': 'cat-guides',
       'Консоли': 'cat-consoles',
       'Аналитика': 'cat-analytics',
@@ -438,7 +438,7 @@ class One1GamePlatform {
 
     // Category icons
     const icons = {
-      'Технологии': 'fa-microchip',
+      'ИИ и технологии': 'fa-microchip',
       'Гайды': 'fa-map',
       'Консоли': 'fa-gamepad',
       'Аналитика': 'fa-chart-line',
@@ -449,7 +449,7 @@ class One1GamePlatform {
       'Обзоры': 'fa-star'
     };
 
-    const catOrder = ['Технологии', 'Гайды', 'Консоли', 'Аналитика', 'Тренды', 'Разработка', 'Мнение', 'Кино и игры', 'Обзоры'];
+    const catOrder = ['ИИ и технологии', 'Гайды', 'Консоли', 'Аналитика', 'Тренды', 'Разработка', 'Мнение', 'Кино и игры', 'Обзоры'];
     const pills = Object.entries(catCount)
       .sort(([a], [b]) => {
         const ai = catOrder.indexOf(a), bi = catOrder.indexOf(b);

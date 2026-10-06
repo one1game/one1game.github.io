@@ -88,7 +88,7 @@
 
 </main>
 <script src="/cache-version.js"></script>
-<script defer src="articles-data.js?v=29"></script>
+<script defer src="articles-data.js?v=30"></script>
 <script>
 // === ARCHIVE PAGE LOGIC ===
 let allArticles = [];
@@ -137,7 +137,7 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 function initFilters() {
-  const catOrder = ['Технологии', 'Гайды', 'Консоли', 'Аналитика', 'Тренды', 'Разработка', 'Мнение', 'Кино и игры', 'Обзоры'];
+  const catOrder = ['ИИ и технологии', 'Гайды', 'Консоли', 'Аналитика', 'Тренды', 'Разработка', 'Мнение', 'Кино и игры', 'Обзоры'];
   const cats = [...new Set(allArticles.map(a => a.category))].sort((a, b) => {
     const ai = catOrder.indexOf(a), bi = catOrder.indexOf(b);
     return (ai === -1 ? 99 : ai) - (bi === -1 ? 99 : bi);
@@ -272,6 +272,6 @@ document.addEventListener('mouseover', e => {
 });
 </script>
 <script defer src="/hero-space.js?v=1"></script>
-<script src="/components.js?v=34" defer></script>
+<script src="/components.js?v=35" defer></script>
 </body>
 </html>
