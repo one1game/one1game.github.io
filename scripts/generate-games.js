@@ -275,6 +275,32 @@ ${movieItems
     ? '<script defer src="/game-media.js?v=1"></script>\n'
     : "";
 
+  // Схема VideoGame собирается как объект и сериализуется — так JSON всегда валиден
+  // (раньше при наличии цены, но без рейтинга оставалась висячая запятая).
+  const videoGameLd = {
+    "@context": "https://schema.org",
+    "@type": "VideoGame",
+    name: title,
+    genre: genres,
+    operatingSystem: "Windows",
+    applicationCategory: "Game",
+  };
+  if (!isFree && store.price_overview) {
+    videoGameLd.offers = {
+      "@type": "Offer",
+      price: (store.price_overview.final / 100).toFixed(2),
+      priceCurrency: store.price_overview.currency,
+    };
+  }
+  if (positiveRatio !== null) {
+    videoGameLd.aggregateRating = {
+      "@type": "AggregateRating",
+      ratingValue: String(Math.round(positiveRatio / 20)),
+      bestRating: "5",
+      ratingCount: String(totalReviews),
+    };
+  }
+
   return `<!DOCTYPE html>
 <html lang="ru">
 <head>
@@ -300,7 +326,7 @@ ${movieItems
   <meta property="og:image:height" content="630" />
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:image" content="${headerImg}" />
-  <meta name="robots" content="index, follow" />
+  <meta name="robots" content="index, follow, max-image-preview:large" />
 
   <script async src="https://www.googletagmanager.com/gtag/js?id=${CONFIG.gtagId}"></script>
   <script>
@@ -350,25 +376,7 @@ ${movieItems
   </script>
 
   <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "VideoGame",
-    "name": "${title}",
-    "genre": "${genres}",
-    "operatingSystem": "Windows",
-    "applicationCategory": "Game",
-    ${!isFree && store.price_overview ? `"offers": {
-      "@type": "Offer",
-      "price": "${(store.price_overview.final / 100).toFixed(2)}",
-      "priceCurrency": "${store.price_overview.currency}"
-    },` : ""}
-    ${positiveRatio !== null ? `"aggregateRating": {
-      "@type": "AggregateRating",
-      "ratingValue": "${Math.round(positiveRatio / 20)}",
-      "bestRating": "5",
-      "ratingCount": "${totalReviews}"
-    }` : ""}
-  }
+${JSON.stringify(videoGameLd, null, 2)}
   </script>
 
   <link rel="manifest" href="/manifest.json" />
