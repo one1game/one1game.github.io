@@ -4,7 +4,7 @@ window.allArticles = [
     "url": "/archive/ii-v-igrodeli-2026-polnyy-razbor.html",
     "title": "ИИ в игровой индустрии 2026: полный разбор — инструменты, деньги и тренды",
     "excerpt": "Как нейросети меняют разработку игр: арт, 3D, код, озвучка и NPC. Реальные цифры рынка, экономия до 99%, скандалы, суды, увольнения и прогнозы до 2030 года.",
-    "image": "https://coresg-normal.trae.ai/api/ide/v1/text_to_image?prompt=dark%20futuristic%20game%20development%20studio%2C%20glowing%20neural%20network%20hologram%20over%20a%20game%20controller%2C%20AI%20brain%2C%20neon%20purple%20and%20cyan%20light%2C%20cinematic%2C%20ultra%20detailed&image_size=landscape_16_9",
+    "image": "/img/ai/output/ii-v-igrodeli-2026.webp",
     "date": "6 октября 2026",
     "readTime": "18 мин",
     "category": "ИИ и технологии"
