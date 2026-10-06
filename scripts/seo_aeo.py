@@ -188,6 +188,34 @@ def link_categories():
     print(f"Ссылки на хабы в статьях: {changed}")
 
 
+ROOT_PAGES = ["404.html", "advertising.html", "archive.html", "index.html",
+              "privacy.html", "terms.html", "triad-duel.html", "stats.html"]
+
+
+def add_consent():
+    """Добавляет consent-загрузчик аналитики (GA + Метрика) на страницы, где его нет,
+    и поднимает версию ?v=, чтобы кэш отдал новую версию."""
+    files = sorted(ARCHIVE.glob("*.html")) + [Path(p) for p in ROOT_PAGES if Path(p).exists()]
+    added = bumped = 0
+    for f in files:
+        src = f.read_text(encoding="utf-8")
+        orig = src
+        if "analytics-consent.js" in src:
+            if "analytics-consent.js?v=1" in src:
+                src = src.replace("analytics-consent.js?v=1", "analytics-consent.js?v=2")
+                bumped += 1
+        elif "</head>" in src:
+            src = src.replace(
+                "</head>",
+                '<script defer src="/analytics-consent.js?v=2"></script>\n</head>',
+                1,
+            )
+            added += 1
+        if src != orig:
+            f.write_text(src, encoding="utf-8")
+    print(f"Consent-скрипт: добавлено {added}, версия обновлена {bumped}")
+
+
 def main():
     if "--validate" in sys.argv:
         sys.exit(1 if validate() else 0)
@@ -196,6 +224,9 @@ def main():
         return
     if "--link-categories" in sys.argv:
         link_categories()
+        return
+    if "--add-consent" in sys.argv:
+        add_consent()
         return
 
     apply = "--apply" in sys.argv
