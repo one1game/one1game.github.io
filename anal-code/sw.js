@@ -1,4 +1,4 @@
-const CACHE_NAME = 'codefusion-v3';
+const CACHE_NAME = 'codefusion-v4';
 const ASSETS = [
   '/anal-code/',
   '/anal-code/index.html',

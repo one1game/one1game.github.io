@@ -718,55 +718,12 @@
   body { display: block; }
   .app { min-height: calc(100vh - 57px); min-height: calc(100dvh - 57px); justify-content: center; margin: 0 auto; gap: 1.5rem; padding: 1.6rem 1.4rem; }
 
-  .site-nav {
-    position: sticky; top: 0; z-index: 300;
-    background: rgba(4, 6, 10, 0.82);
-    -webkit-backdrop-filter: blur(16px) saturate(1.2);
-    backdrop-filter: blur(16px) saturate(1.2);
-    border-bottom: 1px solid rgba(125, 255, 155, 0.16);
-  }
-  .nav-inner { max-width: 1180px; margin: 0 auto; padding: 0 18px; height: 56px; display: flex; align-items: center; gap: 10px; }
-  .nav-logo {
-    flex: 0 0 auto; display: inline-flex; align-items: center; gap: 6px;
-    font-family: 'JetBrains Mono', monospace; font-size: 0.86rem; font-weight: 700;
-    letter-spacing: 0.02em; color: #fff; text-decoration: none; white-space: nowrap;
-  }
-  .nav-logo::before { content: '>'; color: #7dff9b; }
-  .nav-logo span { color: #7dff9b; }
-  .nav-links { flex: 1; min-width: 0; display: flex; align-items: center; margin-left: 14px; overflow-x: auto; scrollbar-width: none; }
-  .nav-links::-webkit-scrollbar { display: none; }
-  .nav-link {
-    flex: 0 0 auto; padding: 8px 12px; border-radius: 999px;
-    color: #8f99a6; text-decoration: none;
-    font-family: 'JetBrains Mono', monospace; font-size: 0.72rem;
-    letter-spacing: 0.04em; text-transform: uppercase; white-space: nowrap;
-    transition: color 0.15s, background 0.15s;
-  }
-  .nav-link:hover, .nav-link.active { color: #7dff9b; background: rgba(125, 255, 155, 0.09); }
-
   .mark { text-decoration: none; }
   .mark:hover { color: var(--ink); }
   .mark h1 { font: inherit; margin: 0; }
 </style>
 </head>
 <body>
-
-<nav class="site-nav" aria-label="Главная навигация">
-  <div class="nav-inner">
-    <a href="/" class="nav-logo">ONE1<span>GAME</span></a>
-    <div class="nav-links">
-      <a href="/" class="nav-link">Главная</a>
-      <a href="/go/" class="nav-link">Игры онлайн</a>
-      <a href="/archive.html" class="nav-link">Статьи</a>
-      <a href="/ai/" class="nav-link">AI Pulse</a>
-      <a href="/genriprocedur/" class="nav-link active">Cosmic Drift</a>
-      <a href="/triad-duel.html" class="nav-link">Triad Duel</a>
-      <a href="/anal-code/" class="nav-link">CodeFusion</a>
-      <a href="/cyber-scanner/" class="nav-link">Scanner</a>
-      <a href="/l2/" class="nav-link">L2 Server</a>
-    </div>
-  </div>
-</nav>
 
 <div class="bg-layer bg-aurora"></div>
 <div class="bg-layer bg-grid"></div>
@@ -3460,5 +3417,6 @@ drawCover(hashString('Cosmic Drift'));
 
 console.log('%c✦ Cosmic Drift', 'color:#a78bfa;font-size:14px;font-weight:500;letter-spacing:0.3em;');
 </script>
+<script src="/site-chrome.js?v=1" defer></script>
 </body>
 </html>
