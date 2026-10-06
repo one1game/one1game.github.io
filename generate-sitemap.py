@@ -78,6 +78,8 @@ def generate():
         url_block(f'{BASE_URL}/genriprocedur/', priority='0.7'),
         url_block(f'{BASE_URL}/cyber-scanner/', priority='0.7'),
         url_block(f'{BASE_URL}/go/', priority='0.7'),
+        url_block(f'{BASE_URL}/feed/', priority='0.8'),
+        url_block(f'{BASE_URL}/red-alert-2/', priority='0.8'),
     ]
 
     # Страницы-хабы категорий (topical authority)

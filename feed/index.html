@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="ru"><head><meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Залипательные видео — бесконечная лента онлайн | One1Game</title>
+<meta name="description" content="Бесконечная лента коротких видео: залипательные, успокаивающие и мемные ролики в один тап. Листай как в ТикТоке — бесплатно, без регистрации и установки. Работает на телефоне.">
+<meta name="keywords" content="залипательные видео, видео для настроения, бесконечная лента, короткие видео онлайн, мемы, расслабляющие видео, satisfying видео, смотреть видео подряд, лента видео, видео залипалово">
+<meta name="author" content="One1Game">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<link rel="canonical" href="https://one1game.github.io/feed/">
+<meta name="theme-color" content="#000000">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="format-detection" content="telephone=no">
+<link rel="icon" type="image/png" href="/favicon.png">
+<link rel="manifest" href="/manifest.json">
+
+<!-- OpenGraph -->
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="One1Game">
+<meta property="og:locale" content="ru_RU">
+<meta property="og:title" content="Залипательные видео — бесконечная лента онлайн">
+<meta property="og:description" content="Короткие залипательные и мемные видео подряд. Листай как в ТикТоке — прямо в браузере, бесплатно.">
+<meta property="og:url" content="https://one1game.github.io/feed/">
+<meta property="og:image" content="https://one1game.github.io/site-og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Залипательные видео — бесконечная лента">
+<meta name="twitter:description" content="Короткие залипательные видео подряд, листай как в ТикТоке.">
+<meta name="twitter:image" content="https://one1game.github.io/site-og.png">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebApplication",
+      "name": "Лента — залипательные видео",
+      "url": "https://one1game.github.io/feed/",
+      "description": "Бесконечная лента коротких залипательных и мемных видео. Листается как в ТикТоке, работает в браузере без установки.",
+      "applicationCategory": "EntertainmentApplication",
+      "operatingSystem": "Any",
+      "inLanguage": "ru",
+      "isAccessibleForFree": true,
+      "offers": { "@type": "Offer", "price": "0", "priceCurrency": "RUB" },
+      "isPartOf": { "@type": "WebSite", "name": "One1Game", "url": "https://one1game.github.io" }
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        { "@type": "Question", "name": "Что такое залипательные видео?", "acceptedAnswer": { "@type": "Answer", "text": "Это короткие зацикленные ролики, которые приятно смотреть подряд: ритмичные, плавные и успокаивающие. Лента подбирает их бесконечно, листать можно одним свайпом." } },
+        { "@type": "Question", "name": "Можно ли смотреть бесплатно и без регистрации?", "acceptedAnswer": { "@type": "Answer", "text": "Да. Лента открывается сразу, без входа и установки приложений. Достаточно браузера на телефоне или компьютере." } },
+        { "@type": "Question", "name": "Работает ли лента на телефоне?", "acceptedAnswer": { "@type": "Answer", "text": "Да, интерфейс рассчитан на телефон: видео занимает весь экран, переключение — свайпом вверх, как в ТикТоке." } },
+        { "@type": "Question", "name": "Можно ли скачать понравившееся видео?", "acceptedAnswer": { "@type": "Answer", "text": "Да. На каждом ролике есть кнопка скачивания — видео сохраняется на устройство." } }
+      ]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Главная", "item": "https://one1game.github.io/" },
+        { "@type": "ListItem", "position": 2, "name": "Лента видео", "item": "https://one1game.github.io/feed/" }
+      ]
+    }
+  ]
+}
+</script>
+<style>
+:root{--nav-h:52px;--bg:#000;--fg:#fff;--red:#fe2c55;color-scheme:dark}
+@media(min-width:900px){:root{--nav-h:56px}}
+*{margin:0;padding:0;box-sizing:border-box;-webkit-tap-highlight-color:transparent;user-select:none}
+html{background:var(--bg)}
+body{background:var(--bg);color:var(--fg);font-family:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;overflow-x:hidden}
+
+/* ---------- Экран-приложение (листается как в ТикТоке) ---------- */
+.app{position:relative;width:100%;max-width:440px;margin:0 auto;height:calc(100vh - var(--nav-h));height:calc(100dvh - var(--nav-h));overflow:hidden;background:var(--bg)}
+.feed{height:100%;overflow-y:scroll;scroll-snap-type:y mandatory;scrollbar-width:none;overscroll-behavior-y:auto}
+.feed::-webkit-scrollbar{display:none}
+.card{position:relative;height:100%;scroll-snap-align:start;scroll-snap-stop:always;overflow:hidden;background:#000}
+canvas{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.shade{position:absolute;inset:0;pointer-events:none;background:linear-gradient(rgba(0,0,0,.35),transparent 18%,transparent 58%,rgba(0,0,0,.78))}
+.info{position:absolute;left:14px;right:84px;bottom:22px;text-shadow:0 1px 5px #000;pointer-events:none}
+.info b{font-size:16px}.info p{font-size:14px;margin:6px 0 8px;line-height:1.3}
+.music{font-size:13px;opacity:.95;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.acts{position:absolute;right:8px;bottom:80px;display:flex;flex-direction:column;gap:16px;align-items:center}
+.act{background:none;border:0;color:#fff;font-size:12px;font-weight:600;display:flex;flex-direction:column;align-items:center;gap:2px;cursor:pointer;text-shadow:0 1px 4px #000}
+.act i{font-style:normal;font-size:31px;filter:drop-shadow(0 1px 3px rgba(0,0,0,.8));transition:transform .15s}
+.act.on i{color:var(--red);transform:scale(1.18)}
+.prog{position:absolute;left:0;bottom:0;height:3px;width:0;background:#fff;opacity:.9}
+.top{position:absolute;top:calc(12px + env(safe-area-inset-top,0px));left:0;right:0;z-index:5;display:flex;justify-content:center;gap:22px;font-weight:700;font-size:16px;pointer-events:none;text-shadow:0 1px 5px #000}
+.top span{opacity:.6;padding-bottom:3px}.top .a{opacity:1;border-bottom:2px solid #fff}
+#fs{position:absolute;top:calc(8px + env(safe-area-inset-top,0px));right:10px;z-index:7;width:40px;height:40px;border-radius:50%;border:0;background:rgba(0,0,0,.45);color:#fff;font-size:19px;line-height:1;cursor:pointer;backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px)}
+#fs:active{transform:scale(.94)}
+body.fs .site-nav,body.fs .site-footer,body.fs .seo-wrap{display:none!important}
+body.fs{overflow:hidden;background:#000}
+body.fs .app{width:100%;max-width:calc(100vh * 9 / 16);max-width:calc(100dvh * 9 / 16);height:100vh;height:100dvh;margin:0 auto}
+#tip{position:absolute;left:50%;top:44%;transform:translateX(-50%);z-index:6;background:rgba(0,0,0,.6);backdrop-filter:blur(8px);padding:12px 20px;border-radius:30px;font-weight:700;font-size:15px;pointer-events:none;white-space:nowrap;animation:pl 1.6s infinite}
+@keyframes pl{50%{transform:translateX(-50%) scale(1.07)}}
+#tip[hidden]{display:none}
+.pi{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);font-size:70px;opacity:0;transition:opacity .15s;pointer-events:none;text-shadow:0 2px 12px #000}
+.heart{position:absolute;font-size:90px;color:var(--red);pointer-events:none;animation:hp .8s forwards;text-shadow:0 2px 14px rgba(0,0,0,.5)}
+@keyframes hp{0%{opacity:0;transform:translate(-50%,-50%) scale(.3)}25%{opacity:1;transform:translate(-50%,-60%) scale(1.2)}100%{opacity:0;transform:translate(-50%,-160%) scale(1)}}
+@media(prefers-reduced-motion:reduce){#tip{animation:none}}
+
+/* ---------- Текстовый блок под поиск ---------- */
+.seo-wrap{max-width:760px;margin:0 auto;padding:40px 18px 8px;font-size:15px;line-height:1.65;color:#c9d1d9;user-select:text}
+.seo-wrap h1{font-size:1.7rem;line-height:1.25;margin-bottom:14px;color:#fff}
+.seo-wrap h2{font-size:1.15rem;margin:26px 0 8px;color:#7dff9b}
+.seo-wrap p{margin-bottom:12px}
+.seo-wrap ul{margin:0 0 14px 20px}
+.seo-wrap li{margin-bottom:6px}
+.seo-wrap a{color:#7dff9b}
+.seo-wrap .faq{border-top:1px solid rgba(125,255,155,.16);margin-top:26px;padding-top:6px}
+.seo-wrap details{border-bottom:1px solid rgba(125,255,155,.12);padding:10px 0}
+.seo-wrap summary{cursor:pointer;font-weight:600;color:#fff}
+.seo-wrap details p{margin:8px 0 0;color:#a9b2bd}
+.seo-links{display:flex;flex-wrap:wrap;gap:8px;margin-top:18px}
+.seo-links a{border:1px solid rgba(125,255,155,.24);padding:8px 12px;border-radius:999px;font-size:.82rem;text-decoration:none}
+</style></head><body>
+
+<div class="app"><div class="top"><span>Подписки</span><span class="a">Для тебя</span></div>
+<button id="fs" type="button" aria-label="На весь экран" title="На весь экран">⛶</button>
+<div id="tip">👆 тапни экран — пойдёт звук</div><div class="feed" id="feed"></div></div>
+
+<main id="main-content" class="seo-wrap">
+  <h1>Залипательные видео — бесконечная лента онлайн</h1>
+  <p>Лента коротких видео, которые хочется смотреть подряд: плавные, ритмичные и успокаивающие ролики листаются одним тапом — как в ТикТоке, только прямо в браузере. Никаких установок и регистрации: открыл и смотришь.</p>
+  <p>Каждый ролик — со своим настроением и звуком, а лента не заканчивается: видео подгружаются по мере листания. Листай вверх свайпом, ставь лайк двойным тапом, сохраняй понравившееся себе на устройство.</p>
+
+  <h2>Что внутри</h2>
+  <ul>
+    <li>Короткие зацикленные ролики на любой вайб — от спокойных до жёстких и мемных.</li>
+    <li>Разные жанры звука: под каждый ролик свой трек.</li>
+    <li>Тёмный полноэкранный режим: на телефоне видео занимает весь экран.</li>
+    <li>Кнопка скачивания — сохрани ролик, который зацепил.</li>
+  </ul>
+
+  <h2>Как смотреть</h2>
+  <p>Открой ленту на телефоне и просто листай вверх — ролики переключаются один за другим, как в коротких видео. Тапни экран, чтобы включить звук. Двойной тап — лайк, удержание — пауза. Понравившийся ролик можно скачать кнопкой «Скачать».</p>
+
+  <div class="faq">
+    <h2>Частые вопросы</h2>
+    <details open><summary>Что такое залипательные видео?</summary><p>Это короткие зацикленные ролики, которые приятно смотреть подряд: ритмичные, плавные и успокаивающие. Лента подбирает их бесконечно, листать можно одним свайпом.</p></details>
+    <details><summary>Смотреть можно бесплатно и без регистрации?</summary><p>Да. Лента открывается сразу, без входа и установки приложений. Достаточно браузера на телефоне или компьютере.</p></details>
+    <details><summary>Работает ли лента на телефоне?</summary><p>Да, интерфейс рассчитан на телефон: видео занимает весь экран, переключение — свайпом вверх, как в ТикТоке.</p></details>
+    <details><summary>Можно ли скачать понравившееся видео?</summary><p>Да. На каждом ролике есть кнопка скачивания — видео сохраняется на устройство.</p></details>
+  </div>
+
+  <nav class="seo-links" aria-label="Другие разделы">
+    <a href="/">На главную</a>
+    <a href="/go/">Игры онлайн</a>
+    <a href="/genriprocedur/">Cosmic Drift</a>
+    <a href="/ai/">AI Pulse</a>
+    <a href="/archive.html">Статьи</a>
+  </nav>
+</main>
+
+<script src="/site-chrome.js?v=1" defer></script>
+<script src="/analytics-consent.js" defer></script>
+<script src="js/core.js"></script>
+<script src="js/styles.js"></script>
+<script src="js/audio.js"></script>
+<script src="js/memes.js"></script>
+<script src="js/visuals.js"></script>
+<script src="js/app.js"></script>
+</body></html>

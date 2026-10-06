@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>DOS-игры в браузере — Wolfenstein 3D, DOOM, Quake онлайн | One1Game</title>
+<meta name="description" content="Классика DOS прямо в браузере: Wolfenstein 3D, DOOM и Quake (shareware). Ничего не нужно скачивать и устанавливать — игра запускается на сайте, есть управление для телефона.">
+<meta name="keywords" content="dos игры в браузере, wolfenstein 3d онлайн, doom онлайн, quake онлайн, js-dos, retro игры без установки, играть на телефоне">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<link rel="canonical" href="https://one1game.github.io/dos/">
+<meta name="theme-color" content="#04060a">
+<link rel="icon" type="image/png" href="/favicon.png">
+<meta name="manifest" href="/manifest.json">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="One1Game">
+<meta property="og:title" content="DOS-игры в браузере — Wolfenstein 3D, DOOM, Quake">
+<meta property="og:description" content="Классика DOS в браузере без установки: Wolfenstein 3D, DOOM, Quake. Работает и на телефоне.">
+<meta property="og:url" content="https://one1game.github.io/dos/">
+<meta property="og:image" content="https://one1game.github.io/site-og.png">
+<meta name="twitter:card" content="summary_large_image">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "CollectionPage",
+  "name": "DOS-игры в браузере",
+  "url": "https://one1game.github.io/dos/",
+  "inLanguage": "ru",
+  "description": "Wolfenstein 3D, DOOM и Quake (shareware) прямо в браузере, без установки. Встроенные эмулятор DOSBox и управление для телефона.",
+  "isPartOf": { "@type": "WebSite", "name": "One1Game", "url": "https://one1game.github.io" }
+}
+</script>
+<link rel="stylesheet" href="/styles.css?v=44">
+<link rel="stylesheet" href="/dos/js-dos/js-dos.css">
+<style>
+.dos-hero{
+  margin:22px 0 6px;padding:24px 20px;border:1px solid var(--line);border-left:4px solid var(--acid);
+  border-radius:var(--radius);
+  background:
+    repeating-linear-gradient(0deg,rgba(125,255,155,.04) 0 1px,transparent 1px 3px),
+    linear-gradient(135deg,rgba(255,95,61,.10),var(--panel) 58%);
+}
+.dos-eyebrow{font-size:.66rem;letter-spacing:.18em;text-transform:uppercase;color:var(--acid);margin-bottom:10px}
+.dos-h1{font-size:clamp(1.6rem,5.4vw,2.5rem);line-height:1.12;letter-spacing:-.02em;color:#fff;margin-bottom:12px}
+.dos-h1 span{color:var(--acid)}
+.dos-sub{max-width:66ch;color:var(--ink-dim);font-size:.9rem}
+.dos-badges{display:flex;flex-wrap:wrap;gap:8px;margin-top:16px}
+.dos-badges span{font-size:.62rem;letter-spacing:.08em;text-transform:uppercase;color:var(--acid);border:1px solid var(--line-hi);border-radius:999px;padding:4px 10px}
+.dos-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:12px;margin:14px 0 2px}
+.dos-card{
+  position:relative;overflow:hidden;border:1px solid var(--line-soft);border-radius:var(--radius);
+  background:var(--panel);text-align:left;cursor:pointer;padding:0;transition:border-color .15s,transform .15s,box-shadow .15s;
+}
+.dos-card:hover{border-color:var(--line-hi);transform:translateY(-2px);box-shadow:var(--shadow)}
+.dos-card .cover{position:relative;aspect-ratio:16/10;display:grid;place-items:center;font-size:3.1rem;background:linear-gradient(140deg,var(--c1),var(--c2))}
+.dos-card .cover::after{content:'';position:absolute;inset:0;background:linear-gradient(180deg,transparent 40%,rgba(0,0,0,.45))}
+.dos-card .cover em{position:relative;z-index:1;font-style:normal;filter:drop-shadow(0 6px 16px rgba(0,0,0,.5))}
+.dos-card .year{position:absolute;top:8px;right:8px;z-index:2;font-size:.6rem;letter-spacing:.08em;padding:3px 8px;border-radius:8px;background:rgba(0,0,0,.5);color:#fff;backdrop-filter:blur(6px)}
+.dos-card .body{padding:11px 13px 13px}
+.dos-card .body b{display:block;color:#fff;font-size:.92rem;margin-bottom:3px}
+.dos-card .body small{display:block;color:var(--ink-dim);font-size:.72rem;margin-bottom:9px}
+.dos-card .go{display:inline-flex;align-items:center;gap:6px;font-size:.66rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--acid)}
+.dos-note{margin:16px 0 6px;padding:12px 14px;border-left:3px solid var(--amber);background:rgba(255,192,97,.08);border-radius:8px;color:#e8d9b6;font-size:.78rem;line-height:1.6}
+.dos-tip{margin:12px 0;color:var(--ink-faint);font-size:.72rem;line-height:1.7}
+
+/* Оверлей-плеер */
+.dos-player{position:fixed;inset:0;z-index:900;display:flex;flex-direction:column;background:#000}
+.dos-player[hidden]{display:none}
+.dos-bar{display:flex;align-items:center;gap:10px;padding:calc(env(safe-area-inset-top,0px) + 8px) 12px 8px;background:#05080c;border-bottom:1px solid var(--line)}
+.dos-bar b{color:#fff;font-size:.8rem;letter-spacing:.04em;flex:1;min-width:0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.dos-bar span{color:var(--ink-faint);font-size:.66rem;text-transform:uppercase;letter-spacing:.08em}
+.dos-close{width:38px;height:38px;border-radius:11px;border:1px solid var(--line);background:transparent;color:var(--ink);font-size:1rem}
+.dos-close:hover{border-color:var(--line-hi);color:var(--acid)}
+.dos-mount{flex:1;min-height:0;position:relative}
+.dos-load{position:absolute;inset:0;display:grid;place-items:center;color:var(--acid);font-size:.8rem;letter-spacing:.1em;text-transform:uppercase}
+</style>
+</head>
+<body>
+
+<main id="main-content" class="container">
+  <section class="dos-hero">
+    <p class="dos-eyebrow">DOSBox · WebAssembly · shareware</p>
+    <h1 class="dos-h1">DOS-игры <span>в браузере</span> — Wolfenstein 3D, DOOM, Quake</h1>
+    <p class="dos-sub">Классика 90-х запускается прямо тут, на One1Game: ничего не скачивать и не устанавливать. Внутри — DOSBox, скомпилированный в WebAssembly, плюс виртуальная клавиатура для телефона.</p>
+    <div class="dos-badges"><span>без установки</span><span>без файлов у игрока</span><span>телефон и ПК</span><span>freeware/shareware</span></div>
+  </section>
+
+  <div class="section-header"><h2 class="section-title">Выбери игру</h2></div>
+  <div class="dos-grid" id="dos-grid"></div>
+
+  <p class="dos-tip">Управление как в оригинале: стрелки — движение, <b>Ctrl</b> — огонь, <b>Space</b> — действие, <b>Esc</b> — меню. На телефоне жми иконку клавиатуры в плеере, чтобы вызвать кнопки.</p>
+  <div class="dos-note"><strong>О лицензиях:</strong> здесь только официальные shareware-выпуски (Wolfenstein 3D v1.4, DOOM v1.9, Quake v1.06) — их разрешено свободно распространять. Полные версии игр не размещаются.</div>
+</main>
+
+<div class="dos-player" id="player" hidden>
+  <div class="dos-bar">
+    <b id="p-title">—</b>
+    <span id="p-sub"></span>
+    <button class="dos-close" id="p-close" aria-label="Закрыть">✕</button>
+  </div>
+  <div class="dos-mount" id="dos-mount"><div class="dos-load" id="p-load">Загрузка…</div></div>
+</div>
+
+<script type="module" src="/dos/js-dos/js-dos.js"></script>
+<script type="module">
+const GAMES = [
+  {
+    id: 'wolf3d', title: 'Wolfenstein 3D', year: '1992', cover: '🐺', colors: ['#64748b', '#1e293b'],
+    sub: 'Shareware-эпизод · id Software', exe: 'WOLF3D.EXE', mem: 16,
+    files: ['WOLF3D.EXE','AUDIOHED.WL1','AUDIOT.WL1','CONFIG.WL1','GAMEMAPS.WL1','MAPHEAD.WL1','VGADICT.WL1','VGAGRAPH.WL1','VGAHEAD.WL1','VSWAP.WL1']
+  },
+  {
+    id: 'doom', title: 'DOOM', year: '1993', cover: '👹', colors: ['#dc2626', '#450a0a'],
+    sub: 'Shareware v1.9 · id Software', exe: 'DOOM.EXE', mem: 16,
+    files: ['DOOM.EXE','DOOM1.WAD','SETUP.EXE','DEFAULT.CFG']
+  },
+  {
+    id: 'quake', title: 'Quake', year: '1996', cover: '🌀', colors: ['#8b5cf6', '#4c1d95'],
+    sub: 'Shareware v1.06 · id Software', exe: 'QUAKE.EXE', mem: 32,
+    files: ['QUAKE.EXE','CWSDPMI.EXE','ID1/PAK0.PAK','ID1/CONFIG.CFG']
+  }
+];
+
+const grid = document.getElementById('dos-grid');
+const player = document.getElementById('player');
+const mount = document.getElementById('dos-mount');
+const pTitle = document.getElementById('p-title');
+const pSub = document.getElementById('p-sub');
+const pLoad = document.getElementById('p-load');
+
+let props = null;
+let loading = false;
+
+grid.innerHTML = GAMES.map((g, i) =>
+  '<button class="dos-card" data-i="' + i + '">' +
+    '<span class="cover" style="--c1:' + g.colors[0] + ';--c2:' + g.colors[1] + '"><em>' + g.cover + '</em></span>' +
+    '<span class="year">' + g.year + '</span>' +
+    '<span class="body"><b>' + g.title + '</b><small>' + g.sub + '</small><span class="go">▶ Играть в браузере</span></span>' +
+  '</button>'
+).join('');
+
+function conf(game) {
+  return '[dosbox]\n' +
+    'memsize=' + game.mem + '\n' +
+    '[cpu]\ncycles=auto\n' +
+    '[sblaster]\nsbtype=sb16\n' +
+    '[autoexec]\nmount c .\nc:\n' + game.exe + '\n';
+}
+
+async function play(game) {
+  if (loading) return;
+  loading = true;
+  player.hidden = false;
+  pTitle.textContent = game.title;
+  pSub.textContent = game.year;
+  pLoad.style.display = '';
+  mount.querySelectorAll('div[class^="jsdos"], canvas').forEach(function (n) { n.remove(); });
+
+  try {
+    const entries = [];
+    for (const f of game.files) {
+      const res = await fetch('/dos/games/' + game.id + '/' + f);
+      if (!res.ok) throw new Error(f + ': HTTP ' + res.status);
+      entries.push({ path: f, contents: new Uint8Array(await res.arrayBuffer()) });
+    }
+    pLoad.style.display = 'none';
+    props = Dos(mount, {
+      dosboxConf: conf(game),
+      initFs: entries,
+      pathPrefix: '/dos/js-dos/emulators/',
+      theme: 'dark',
+      lang: 'ru',
+      autoStart: true,
+      imageRendering: 'pixelated',
+      softKeyboardLayout: ['{up} {down} {left} {right}', '{ctrl} {space} {enter} {esc}', '1 2 3 4 5 6 7 8', 'y n'],
+      softKeyboardSymbols: [{ '{up}': '↑', '{down}': '↓', '{left}': '←', '{right}': '→', '{ctrl}': 'Ctrl', '{space}': 'Space', '{enter}': 'Enter', '{esc}': 'Esc' }],
+      onEvent: function (event) { if (event === 'ci-ready') { try { props.setNoCloud(true); } catch (e) {} } }
+    });
+  } catch (err) {
+    pLoad.style.display = '';
+    pLoad.textContent = 'Не удалось загрузить: ' + err.message;
+  } finally {
+    loading = false;
+  }
+}
+
+function closePlayer() {
+  if (props) { try { props.stop(); } catch (e) {} props = null; }
+  player.hidden = true;
+  mount.querySelectorAll('div[class^="jsdos"], canvas').forEach(function (n) { n.remove(); });
+  if (mount.firstChild !== pLoad) mount.insertBefore(pLoad, mount.firstChild);
+  pLoad.style.display = 'none';
+}
+
+grid.addEventListener('click', function (e) {
+  const c = e.target.closest('.dos-card');
+  if (c) play(GAMES[+c.dataset.i]);
+});
+document.getElementById('p-close').addEventListener('click', closePlayer);
+document.addEventListener('keydown', function (e) { if (e.key === 'Escape' && !player.hidden) closePlayer(); });
+
+const want = new URLSearchParams(location.search).get('g');
+if (want) { const g = GAMES.filter(function (x) { return x.id === want; })[0]; if (g) play(g); }
+</script>
+<script src="/site-chrome.js?v=1" defer></script>
+<script src="/analytics-consent.js" defer></script>
+</body>
+</html>

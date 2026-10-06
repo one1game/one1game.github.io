@@ -21,6 +21,9 @@
   var isCodeFusion = starts('/anal-code');
   var isScanner = starts('/cyber-scanner');
   var isL2 = starts('/l2');
+  var isFeed = starts('/feed');
+  var isRa2 = starts('/ra2') || starts('/red-alert-2');
+  var isRetro = starts('/portablewebgame') || starts('/dos');
 
   function a(s) { return s ? ' active' : ''; }
 
@@ -31,6 +34,9 @@
     '    <a href="/" class="nav-logo">ONE1<span>GAME</span></a>' +
     '    <div class="nav-links">' +
     '      <a href="/" class="nav-link' + a(isHome) + '">Главная</a>' +
+    '      <a href="/feed/" class="nav-link' + a(isFeed) + '">ТикТок</a>' +
+    '      <a href="/red-alert-2/" class="nav-link' + a(isRa2) + '">Red Alert 2</a>' +
+    '      <a href="/portablewebgame/" class="nav-link' + a(isRetro) + '">Ретро-игры</a>' +
     '      <a href="/go/" class="nav-link' + a(isGo) + '">Игры онлайн</a>' +
     '      <a href="/archive.html" class="nav-link' + a(isArchive) + '">Статьи</a>' +
     '      <a href="/ai/" class="nav-link' + a(isAI) + '">AI Pulse</a>' +
@@ -48,6 +54,10 @@
     '  <div class="footer-content">' +
     '    <a href="/" class="footer-brand">ONE1<span>GAME</span></a>' +
     '    <div class="footer-links">' +
+    '      <a href="/feed/">ТикТок</a>' +
+    '      <a href="/red-alert-2/">Red Alert 2</a>' +
+    '      <a href="/portablewebgame/">Ретро-игры</a>' +
+    '      <a href="/dos/">DOS-игры</a>' +
     '      <a href="/archive.html">Статьи</a>' +
     '      <a href="/category/obzory.html">Обзоры игр</a>' +
     '      <a href="/category/gajdy.html">Гайды</a>' +

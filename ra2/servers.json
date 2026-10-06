@@ -1,0 +1,28 @@
+{
+  "regions": [
+    {
+      "id": "ENGGER",
+      "label": "Европейский сервер",
+      "available": true,
+      "gameVersion": "0.87.0",
+      "wolUrl": "wss://ne1game-ra2.igoralx9119.workers.dev/en/wol",
+      "apiRegUrl": "https://ne1game-ra2.igoralx9119.workers.dev/en/register",
+      "clientIncidentUrl": "https://telemetry.bj1.k0s.cn/client-incidents",
+      "wladderUrl": "https://ne1game-ra2.igoralx9119.workers.dev/en/ladder",
+      "wgameresUrl": "https://ne1game-ra2.igoralx9119.workers.dev/en/wgameres",
+      "mapTransferUrl": "https://ne1game-ra2.igoralx9119.workers.dev/en/map-transfer"
+    },
+    {
+      "id": "CHN2",
+      "label": "Китайский сервер",
+      "available": true,
+      "gameVersion": "0.87.0",
+      "wolUrl": "wss://ne1game-ra2.igoralx9119.workers.dev/cn/wol",
+      "apiRegUrl": "https://ne1game-ra2.igoralx9119.workers.dev/cn/register",
+      "clientIncidentUrl": "https://telemetry.bj1.wangerhuoda.cn/client-incidents",
+      "wladderUrl": "https://ne1game-ra2.igoralx9119.workers.dev/cn/ladder",
+      "wgameresUrl": "https://ne1game-ra2.igoralx9119.workers.dev/cn/wgameres",
+      "mapTransferUrl": "https://ne1game-ra2.igoralx9119.workers.dev/cn/map-transfer"
+    }
+  ]
+}

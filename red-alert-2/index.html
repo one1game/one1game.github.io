@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="ru"><head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Red Alert 2 в браузере — играть онлайн без установки | One1Game</title>
+<meta name="description" content="Классическая Red Alert 2 прямо в браузере: онлайн-бои, оригинальные карты, ладдер 1×1 и 2×2. Что такое Chrono Divide, как начать играть, требования и управление. Бесплатно, без скачивания клиента.">
+<meta name="keywords" content="red alert 2 в браузере, красная тревога 2 онлайн, red alert 2 online, поиграть в red alert 2, red alert 2 без установки, chrono divide, ra2 в браузере, c&c red alert 2 web, red alert 2 на телефоне">
+<meta name="author" content="One1Game">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<link rel="canonical" href="https://one1game.github.io/red-alert-2/">
+<meta name="theme-color" content="#04060a">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<link rel="icon" type="image/png" href="/favicon.png">
+<link rel="manifest" href="/manifest.json">
+
+<!-- OpenGraph -->
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="One1Game">
+<meta property="og:locale" content="ru_RU">
+<meta property="og:title" content="Red Alert 2 в браузере — играть онлайн">
+<meta property="og:description" content="Классическая Red Alert 2 прямо в браузере: онлайн-бои, оригинальные карты, ладдер 1×1 и 2×2. Как начать играть и что нужно.">
+<meta property="og:url" content="https://one1game.github.io/red-alert-2/">
+<meta property="og:image" content="https://one1game.github.io/site-og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Red Alert 2 в браузере — играть онлайн">
+<meta name="twitter:description" content="Chrono Divide — Red Alert 2 в браузере: онлайн, карты, ладдер. Гайд как начать.">
+<meta name="twitter:image" content="https://one1game.github.io/site-og.png">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebPage",
+      "name": "Red Alert 2 в браузере — играть онлайн",
+      "url": "https://one1game.github.io/red-alert-2/",
+      "inLanguage": "ru",
+      "description": "Гайд: как играть в Red Alert 2 в браузере через проект Chrono Divide — онлайн-бои, оригинальные карты, требования и управление."
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        { "@type": "Question", "name": "Можно ли играть в Red Alert 2 в браузере?", "acceptedAnswer": { "@type": "Answer", "text": "Да. Фанатский проект Chrono Divide воссоздаёт Red Alert 2 и запускает игру прямо в браузере — без установки клиента. Онлайн-бои, оригинальные карты, ладдер 1×1 и 2×2." } },
+        { "@type": "Question", "name": "Нужно ли что-то скачивать?", "acceptedAnswer": { "@type": "Answer", "text": "Клиент скачивать не нужно — игра открывается по ссылке в браузере и подгружает ресурсы сама." } },
+        { "@type": "Question", "name": "Работает ли на телефоне?", "acceptedAnswer": { "@type": "Answer", "text": "Да, Chrono Divide поддерживает телефоны и планшеты. Для стабильного FPS лучше играть в Chrome или Edge (Firefox не рекомендуется)." } },
+        { "@type": "Question", "name": "Это бесплатно?", "acceptedAnswer": { "@type": "Answer", "text": "Да, играть бесплатно. Проект существует на пожертвования игроков." } },
+        { "@type": "Question", "name": "Есть ли кампания?", "acceptedAnswer": { "@type": "Answer", "text": "Кампания пока в разработке. Основной упор — мультиплеер: быстрые матчи, ладдер и кастомные лобби на оригинальных картах." } }
+      ]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Главная", "item": "https://one1game.github.io/" },
+        { "@type": "ListItem", "position": 2, "name": "Red Alert 2 в браузере", "item": "https://one1game.github.io/red-alert-2/" }
+      ]
+    }
+  ]
+}
+</script>
+
+<link rel="stylesheet" href="/styles.css?v=44">
+<style>
+.ra2-hero{margin:22px 0 4px;padding:22px 20px;border:1px solid var(--line);border-left:4px solid var(--acid);border-radius:var(--radius);background:linear-gradient(135deg,rgba(255,95,61,.10),var(--panel) 58%),var(--panel)}
+.ra2-eyebrow{font-size:.66rem;letter-spacing:.16em;text-transform:uppercase;color:var(--acid);margin-bottom:10px}
+.ra2-h1{font-size:clamp(1.6rem,5.4vw,2.5rem);line-height:1.12;letter-spacing:-.02em;color:#fff;margin-bottom:12px}
+.ra2-h1 span{color:var(--acid)}
+.ra2-sub{max-width:64ch;color:var(--ink-dim);font-size:.9rem}
+.ra2-actions{display:flex;flex-wrap:wrap;gap:10px;margin-top:18px}
+.ra2-stats{display:flex;flex-wrap:wrap;gap:8px 18px;margin-top:16px;font-size:.66rem;letter-spacing:.06em;text-transform:uppercase;color:var(--ink-faint)}
+.ra2-stats b{color:var(--acid)}
+.ra2-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:10px;margin:14px 0 2px}
+.ra2-tile{border:1px solid var(--line-soft);border-radius:var(--radius);background:var(--panel);padding:12px 14px}
+.ra2-tile b{display:block;color:#fff;font-size:.82rem;margin-bottom:4px}
+.ra2-tile span{font-size:.74rem;color:var(--ink-dim);line-height:1.5}
+.ra2-steps{counter-reset:s;list-style:none;margin:14px 0 2px}
+.ra2-steps li{counter-increment:s;position:relative;padding:10px 0 10px 44px;border-bottom:1px solid var(--line-soft);color:var(--ink-dim);font-size:.84rem}
+.ra2-steps li::before{content:counter(s);position:absolute;left:0;top:10px;width:28px;height:28px;border-radius:50%;background:var(--acid-soft);color:var(--acid);display:flex;align-items:center;justify-content:center;font-weight:700}
+.ra2-note{margin:14px 0;padding:12px 14px;border-left:3px solid var(--amber);background:rgba(255,192,97,.08);border-radius:8px;color:#e8d9b6;font-size:.8rem}
+.ra2-list{margin:14px 0 2px;list-style:none}
+.ra2-list li{position:relative;padding:7px 0 7px 20px;color:var(--ink-dim);font-size:.84rem;border-bottom:1px solid var(--line-soft)}
+.ra2-list li::before{content:">";position:absolute;left:0;color:var(--acid)}
+.ra2-list b{color:var(--ink)}
+.ra2-faq details{border-bottom:1px solid var(--line-soft);padding:10px 0}
+.ra2-faq summary{cursor:pointer;color:#fff;font-size:.84rem;font-weight:700}
+.ra2-faq p{margin-top:8px;color:var(--ink-dim);font-size:.82rem}
+.ra2-links{display:flex;flex-wrap:wrap;gap:8px;margin:16px 0 4px}
+.ra2-ad-card{display:flex;justify-content:space-between;align-items:center;gap:14px;flex-wrap:wrap;margin:16px 0;padding:14px 16px;border:1px solid var(--line);border-left:4px solid var(--acid);border-radius:var(--radius);background:linear-gradient(120deg,var(--acid-soft),var(--panel) 58%);text-decoration:none;color:inherit;transition:border-color .15s,box-shadow .15s}
+.ra2-ad-card:hover{border-color:var(--line-hi);box-shadow:var(--shadow)}
+.ra2-ad-card strong{display:block;color:#fff;font-size:.88rem}
+.ra2-ad-card small{font-size:.74rem;color:var(--ink-dim)}
+.ra2-ad-cta{background:var(--acid);color:#04140a;font-weight:700;font-size:.7rem;padding:8px 14px;border-radius:var(--radius-sm);white-space:nowrap}
+.ra2-foot{font-size:.66rem;color:var(--ink-faint);margin:22px 0 6px;line-height:1.6}
+</style>
+</head><body>
+
+<main id="main-content" class="container">
+
+  <section class="ra2-hero">
+    <p class="ra2-eyebrow">Command &amp; Conquer · Red Alert 2</p>
+    <h1 class="ra2-h1">Red Alert 2 <span>в браузере</span> — играть онлайн без установки</h1>
+    <p class="ra2-sub">Легендарная <strong>Red Alert 2</strong> снова в деле: ни установщика, ни мощного ПК. Фанатский проект <strong>Chrono Divide</strong> воссоздал классическую RTS и запускает её прямо в браузере — онлайн-бои, оригинальные карты, ладдер 1×1 и 2×2.</p>
+    <div class="ra2-actions">
+      <a class="btn btn-primary" href="/ra2/">▶ Играть в Red Alert 2</a>
+      <a class="btn btn-outline" href="#mini">Мини-игры</a>
+    </div>
+    <div class="ra2-stats">
+      <span>режим <b>онлайн + ИИ</b></span>
+      <span>ладдер <b>1×1 и 2×2</b></span>
+      <span>устройства <b>ПК и телефон</b></span>
+      <span>цена <b>бесплатно</b></span>
+    </div>
+  </section>
+
+  <div class="ad-slot">
+    <span class="ad-label">реклама</span>
+    <div class="ad-banner-wrap">
+      <a href="https://bosslike.ru/?ref=7248523" target="_blank" rel="noopener noreferrer" title="Bosslike — продвижение и накрутка для соцсетей">
+        <img src="/img/baner/baner2.webp?v=3" alt="Bosslike — продвижение в социальных сетях" width="2272" height="464" loading="lazy" decoding="async">
+      </a>
+    </div>
+  </div>
+
+  <div class="section-header"><h2 class="section-title">Что такое Chrono Divide</h2></div>
+  <p class="ra2-sub" style="margin-top:12px">Chrono Divide — фанатский проект, который воссоздаёт оригинальную Red Alert 2 на веб-технологиях. Это не эмулятор со скачиванием, а полноценный клиент, который работает в браузере на Windows, macOS, Linux, а также на телефонах и планшетах. Соединение идёт через серверы проекта — порты и firewall настраивать не нужно.</p>
+  <div class="ra2-grid">
+    <div class="ra2-tile"><b>Без установки</b><span>Запуск из браузера, без плагинов и приложений</span></div>
+    <div class="ra2-tile"><b>Онлайн-мультиплеер</b><span>Быстрые матчи, ладдер 1×1 и 2×2, кастомные лобби</span></div>
+    <div class="ra2-tile"><b>Оригинальные карты</b><span>Классические карты RA2 и поддержка модов</span></div>
+    <div class="ra2-tile"><b>Телефон и планшет</b><span>Тач-управление и игра с любого устройства</span></div>
+  </div>
+
+  <div class="section-header"><h2 class="section-title">Как начать играть</h2></div>
+  <ol class="ra2-steps">
+    <li>Нажмите «Играть в Red Alert 2» — откроется веб-клиент прямо на One1Game.</li>
+    <li>Выберите регион и ник, войдите в аккаунт.</li>
+    <li>Возьмите быстрый матч или создайте лобби, выберите карту — и в бой.</li>
+  </ol>
+  <div class="ra2-note"><strong>Важно:</strong> кампания пока не готова. Основное — сетевая игра против людей и ИИ на оригинальных картах.</div>
+
+  <div class="section-header"><h2 class="section-title">Что нужно для игры</h2></div>
+  <ul class="ra2-list">
+    <li><b>Браузер:</b> актуальный Chrome, Edge или Safari. Firefox не рекомендуют — проседает FPS.</li>
+    <li><b>Система:</b> 64-битная, от 4 ГБ ОЗУ (комфортно — 8 ГБ).</li>
+    <li><b>Экран:</b> от 1024×768; лучше дискретная видеокарта, но тянет и встроенная.</li>
+    <li><b>Интернет:</b> стабильное соединение — игра идёт через серверы проекта.</li>
+  </ul>
+
+  <div class="section-header"><h2 class="section-title">Управление</h2></div>
+  <p class="ra2-sub" style="margin-top:12px">Два режима: классический (левая кнопка мыши, как в оригинале) и современный (правая кнопка). Есть реплеи, горячие клавиши и настройки управления в меню игры. На телефоне доступно тач-управление.</p>
+
+  <div class="section-header" id="mini"><h2 class="section-title">Мини-игры — играй прямо в браузере</h2><a class="btn btn-ghost" href="/go/">все игры</a></div>
+  <div class="play-list" id="ra2-games"></div>
+
+  <div class="section-header"><h2 class="section-title">Частые вопросы</h2></div>
+  <div class="ra2-faq">
+    <details open><summary>Можно ли играть в Red Alert 2 в браузере?</summary><p>Да. Chrono Divide запускает Red Alert 2 прямо в браузере: онлайн-бои, оригинальные карты, ладдер 1×1 и 2×2 — без установки клиента.</p></details>
+    <details><summary>Нужно ли что-то скачивать?</summary><p>Нет. Игра открывается прямо в браузере без установки клиента и плагинов — ресурсы подгружаются автоматически.</p></details>
+    <details><summary>Работает ли на телефоне?</summary><p>Да, поддерживаются телефоны и планшеты, есть тач-управление. Для стабильного FPS лучше Chrome или Edge.</p></details>
+    <details><summary>Это бесплатно?</summary><p>Да, играть бесплатно. Проект живёт на пожертвования игроков.</p></details>
+    <details><summary>Есть ли кампания?</summary><p>Кампания пока в разработке. Основной упор — мультиплеер: быстрые матчи, ладдер и кастомные лобби.</p></details>
+  </div>
+
+  <a class="ra2-ad-card" href="https://my.adminvps.ru/aff.php?aff=31864" target="_blank" rel="noopener noreferrer">
+    <span><strong>Нужен сервер под игры, сайт или бота?</strong><small>VPS/VDS в AdminVPS — от 299 ₽/мес, оплата картой, поддержка 24/7.</small></span>
+    <span class="ra2-ad-cta">Попробовать AdminVPS →</span>
+  </a>
+
+  <nav class="ra2-links" aria-label="Полезные ссылки">
+    <a class="btn btn-outline" href="/ra2/">▶ Играть на сайте</a>
+    <a class="btn btn-ghost" href="https://chronodivide.com/" target="_blank" rel="noopener noreferrer">О проекте Chrono Divide</a>
+    <a class="btn btn-ghost" href="https://discord.gg/uavJ34JTWY" target="_blank" rel="noopener noreferrer">Сообщество в Discord</a>
+    <a class="btn btn-ghost" href="/go/">Другие игры онлайн</a>
+    <a class="btn btn-ghost" href="/feed/">Лента видео</a>
+    <a class="btn btn-ghost" href="/">На главную</a>
+  </nav>
+
+  <p class="ra2-foot">Red Alert 2 — торговая марка и интеллектуальная собственность EA. Chrono Divide — некоммерческий фанатский проект; One1Game не связан с EA и не распространяет файлы игры.</p>
+
+</main>
+
+<script src="/go/games.js" defer></script>
+<script defer>
+document.addEventListener('DOMContentLoaded', function () {
+  var box = document.getElementById('ra2-games');
+  if (!box) return;
+  var games = (window.GAMES || []).slice(0, 8);
+  if (!games.length) return;
+  box.innerHTML = games.map(function (g) {
+    var colors = g.colors || [];
+    var c1 = colors[0] || '#7dff9b', c2 = colors[1] || '#0ea5e9';
+    var href = '/go/' + (g.url || ('games/' + g.slug + '/'));
+    var meta = (g.tags && g.tags.length ? g.tags.join(' · ') : 'мини-игра');
+    return '<a class="play-card" href="' + href + '">' +
+      '<span class="play-thumb" style="display:grid;place-items:center;font-size:2.6rem;background:linear-gradient(140deg,' + c1 + ',' + c2 + ')">' + (g.cover || '🎮') + '</span>' +
+      '<span class="play-name">' + g.title + '</span>' +
+      '<span class="play-meta">' + meta + '</span>' +
+      '</a>';
+  }).join('');
+});
+</script>
+<script src="/site-chrome.js?v=1" defer></script>
+<script src="/analytics-consent.js" defer></script>
+</body></html>
