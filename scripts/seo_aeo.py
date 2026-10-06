@@ -153,11 +153,49 @@ def fix_json():
     print(f"Исправлено JSON-LD блоков: {fixed}")
 
 
+CAT_SLUGS = {
+    "ИИ и технологии": "ii-i-tehnologii",
+    "Аналитика": "analitika",
+    "Гайды": "gajdy",
+    "Консоли": "konsoli",
+    "Тренды": "trendy",
+    "Разработка": "razrabotka",
+    "Мнение": "mnenie",
+    "Кино и игры": "kino-i-igry",
+    "Обзоры": "obzory",
+}
+CATEGORY_BADGE = re.compile(r'<span class="article-category (cat-[a-z]+)">([^<]+)</span>')
+
+
+def link_categories():
+    """Превращает бейдж категории в ссылку на страницу-хаб (внутренняя перелинковка)."""
+    changed = 0
+    for f in sorted(ARCHIVE.glob("*.html")):
+        src = f.read_text(encoding="utf-8")
+
+        def repl(m):
+            nonlocal changed
+            cls, label = m.group(1), m.group(2).strip()
+            slug = CAT_SLUGS.get(label)
+            if not slug:
+                return m.group(0)
+            changed += 1
+            return f'<a class="article-category {cls}" href="/category/{slug}.html">{label}</a>'
+
+        new = CATEGORY_BADGE.sub(repl, src)
+        if new != src:
+            f.write_text(new, encoding="utf-8")
+    print(f"Ссылки на хабы в статьях: {changed}")
+
+
 def main():
     if "--validate" in sys.argv:
         sys.exit(1 if validate() else 0)
     if "--fix-json" in sys.argv:
         fix_json()
+        return
+    if "--link-categories" in sys.argv:
+        link_categories()
         return
 
     apply = "--apply" in sys.argv

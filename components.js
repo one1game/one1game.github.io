@@ -135,6 +135,10 @@
     '    <a href="/" class="footer-brand">ONE1<span>GAME</span></a>' +
     '    <div class="footer-links">' +
     '      <a href="/archive.html">Статьи</a>' +
+    '      <a href="/category/obzory.html">Обзоры игр</a>' +
+    '      <a href="/category/gajdy.html">Гайды</a>' +
+    '      <a href="/category/analitika.html">Аналитика</a>' +
+    '      <a href="/category/ii-i-tehnologii.html">ИИ и технологии</a>' +
     '      <a href="/ai/">AI Pulse</a>' +
     '      <a href="/genriprocedur/">Cosmic Drift</a>' +
     '      <a href="/cyber-scanner/">Проверка безопасности</a>' +

@@ -1,4 +1,5 @@
 import re
+from datetime import datetime, timezone
 
 # Путь к вашему файлу с данными
 DATA_FILE = 'articles-data.js'
@@ -78,6 +79,12 @@ def generate():
         url_block(f'{BASE_URL}/cyber-scanner/', priority='0.7'),
         url_block(f'{BASE_URL}/go/', priority='0.7'),
     ]
+
+    # Страницы-хабы категорий (topical authority)
+    today = datetime.now(timezone.utc).strftime("%Y-%m-%d")
+    for slug in ('ii-i-tehnologii', 'analitika', 'gajdy', 'konsoli', 'trendy',
+                 'razrabotka', 'mnenie', 'kino-i-igry', 'obzory'):
+        lines.append(url_block(f'{BASE_URL}/category/{slug}.html', lastmod=today, priority='0.6'))
 
     for url in urls:
         clean_path = url.lstrip('/')
