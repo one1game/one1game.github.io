@@ -341,7 +341,11 @@ ${movieItems
     "author": {"@type": "Person", "name": "Команда One1Game"},
     "publisher": {"@type": "Organization", "name": "One1Game", "logo": {"@type": "ImageObject", "url": "${CONFIG.siteUrl}/logo.png"}},
     "description": "${metaDesc}",
-    "image": "${headerImg}"
+    "image": "${headerImg}",
+    "inLanguage": "ru-RU",
+    "isAccessibleForFree": true,
+    "articleSection": "Обзоры",
+    "speakable": {"@type": "SpeakableSpecification", "cssSelector": ["h1", ".article-body p:first-of-type"]}
   }
   </script>
 

@@ -1,4 +1,30 @@
 User-agent: *
 Allow: /
 
+# Поисковые роботы
+User-agent: YandexBot
+Allow: /
+
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+# ИИ-краулеры (GEO/AEO): контент можно индексировать и цитировать
+User-agent: GPTBot
+Allow: /
+
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
 Sitemap: https://one1game.github.io/sitemap.xml
