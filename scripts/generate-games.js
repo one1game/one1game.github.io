@@ -864,11 +864,25 @@ function aiValid(obj, name) {
   const text = [obj.seo_title, obj.meta_description, obj.intro, obj.about || ""].join(" ");
   if (!/[а-яё]/i.test(text)) return false;
   if (/(купить|скачай|скачать|цена|рубл|скидк|микротранзакц)/i.test(text)) return false;
+  // Латиница допустима только как название игры, жанровый термин или аббревиатура.
+  // Иначе модель срывается в английский — такие ответы отбрасываем.
   const allowed = new Set(
     (String(name).toLowerCase().match(/[a-zа-яё0-9]+/g) || []).concat(["steam"])
   );
-  const latin = text.match(/[A-Za-z][A-Za-z'’-]{2,}/g) || [];
-  for (const w of latin) if (!allowed.has(w.toLowerCase())) return false;
+  const genreLatin = new Set([
+    "rpg", "mmo", "mmorpg", "pvp", "pve", "pvpve", "fps", "tps", "rts", "moba",
+    "coop", "co-op", "indie", "roguelike", "roguelite", "sandbox", "survival",
+    "battle", "royale", "action", "adventure", "simulator", "strategy", "horror",
+    "puzzle", "platformer", "quest", "arena", "openworld", "dlc", "bundle",
+    "singleplayer", "multiplayer", "online", "hardcore", "casual", "soulslike",
+  ]);
+  const latin = text.match(/[A-Za-z][A-Za-z'’-]{1,}/g) || [];
+  for (const w of latin) {
+    const lw = w.toLowerCase();
+    if (allowed.has(lw) || genreLatin.has(lw)) continue;
+    if (/^[A-Z]{2,6}$/.test(w)) continue; // аббревиатура жанра: RPG, PvP, FPS
+    return false;
+  }
   return true;
 }
 
