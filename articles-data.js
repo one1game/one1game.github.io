@@ -1,6 +1,306 @@
 // articles-data.js
 window.allArticles = [
   {
+    "url": "/archive/third-law-5245170.html",
+    "title": "第三定律 THIRD LAW: цена, отзывы и статистика игроков",
+    "excerpt": "第三定律 THIRD LAW: актуальная цена (51.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
+    "date": "6 октября 2026",
+    "readTime": "2 мин",
+    "category": "Обзоры",
+    "updated": "2026-10-06",
+    "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5245170/5704e0ab9b31028597f53f004f350063b625dad7/header.jpg?t=1791264728"
+  },
+  {
+    "url": "/archive/empty-inbox-5178990.html",
+    "title": "Empty Inbox: цена, отзывы и статистика игроков",
+    "excerpt": "Empty Inbox: актуальная цена (150.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
+    "date": "6 октября 2026",
+    "readTime": "2 мин",
+    "category": "Обзоры",
+    "updated": "2026-10-06",
+    "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5178990/33801c8aaae8495c2bb267aa5b87dce986a8bf09/header.jpg?t=1791263912"
+  },
+  {
+    "url": "/archive/deadline-last-checkpoint-5261340.html",
+    "title": "DEADLINE: LAST CHECKPOINT: цена, отзывы и статистика игроков",
+    "excerpt": "DEADLINE: LAST CHECKPOINT: актуальная цена (261.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
+    "date": "6 октября 2026",
+    "readTime": "2 мин",
+    "category": "Обзоры",
+    "updated": "2026-10-06",
+    "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5261340/ca78a60865cb9e358622bf8a2f08c050bcea7450/header.jpg?t=1791261699"
+  },
+  {
+    "url": "/archive/10countavoidance-4120530.html",
+    "title": "10CountAvoidance: цена, отзывы и статистика игроков",
+    "excerpt": "10CountAvoidance: актуальная цена (Бесплатно), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
+    "date": "6 октября 2026",
+    "readTime": "2 мин",
+    "category": "Обзоры",
+    "updated": "2026-10-06",
+    "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4120530/12c1af56308559e57a8985ef5dabc9bbe0e1bc90/header.jpg?t=1791259229"
+  },
+  {
+    "url": "/archive/a-i-ttorney-4355070.html",
+    "title": "A.I.ttorney: цена, отзывы и статистика игроков",
+    "excerpt": "A.I.ttorney: актуальная цена (35.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
+    "date": "6 октября 2026",
+    "readTime": "2 мин",
+    "category": "Обзоры",
+    "updated": "2026-10-06",
+    "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4355070/84ab0411b79ebbe852884f9f14998bed4d125c61/header.jpg?t=1791257068"
+  },
+  {
+    "url": "/archive/norn-saber-the-guardian-s-oath-4030680.html",
+    "title": "女神：守護之約(Norn Saber : The Guardian's Oath): цена, отзывы и статистика игроков",
+    "excerpt": "女神：守護之約(Norn Saber : The Guardian's Oath): актуальная цена (Бесплатно), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
+    "date": "6 октября 2026",
+    "readTime": "2 мин",
+    "category": "Обзоры",
+    "updated": "2026-10-06",
+    "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4030680/5af2349dd3b84bc404d18c672a8624ced25457f5/header.jpg?t=1791252583"
+  },
+  {
+    "url": "/archive/king-s-cup-the-online-multiplayer-drinking-game-1506610.html",
+    "title": "King's Cup: The online multiplayer drinking game: цена, отзывы и статистика игроков",
+    "excerpt": "King's Cup: The online multiplayer drinking game: актуальная цена (144.00 RUB), 88% положительных отзывов в Steam, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
+    "date": "6 октября 2026",
+    "readTime": "2 мин",
+    "category": "Обзоры",
+    "updated": "2026-10-06",
+    "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1506610/4ec28fe3f9ca9918e54b587c75b8933413763bc3/header.jpg?t=1791248693"
+  },
+  {
+    "url": "/archive/idle-miner-5255350.html",
+    "title": "Idle Miner: цена, отзывы и статистика игроков",
+    "excerpt": "Idle Miner: актуальная цена (170.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
+    "date": "6 октября 2026",
+    "readTime": "2 мин",
+    "category": "Обзоры",
+    "updated": "2026-10-06",
+    "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5255350/1d24611510d6ee57d9db8b93275e858158a6c43e/header.jpg?t=1791244763"
+  },
+  {
+    "url": "/archive/deadly-force-5161590.html",
+    "title": "Deadly Force: цена, отзывы и статистика игроков",
+    "excerpt": "Deadly Force: актуальная цена (Бесплатно), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
+    "date": "6 октября 2026",
+    "readTime": "2 мин",
+    "category": "Обзоры",
+    "updated": "2026-10-06",
+    "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5161590/f4bddcbb3ff5f0172a40a986ecb5907a612cb051/header.jpg?t=1791244236"
+  },
+  {
+    "url": "/archive/in-your-hands-5193580.html",
+    "title": "In Your Hands: цена, отзывы и статистика игроков",
+    "excerpt": "In Your Hands: актуальная цена (216.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
+    "date": "6 октября 2026",
+    "readTime": "2 мин",
+    "category": "Обзоры",
+    "updated": "2026-10-06",
+    "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5193580/685346d02134389ff2098630bd182f07fe844d22/header.jpg?t=1791242862"
+  },
+  {
+    "url": "/archive/chase-the-number-5274390.html",
+    "title": "Chase The Number: цена, отзывы и статистика игроков",
+    "excerpt": "Chase The Number: актуальная цена (99.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
+    "date": "6 октября 2026",
+    "readTime": "2 мин",
+    "category": "Обзоры",
+    "updated": "2026-10-06",
+    "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5274390/ccee3bfa53500497bea7e8195633742c0d36e17c/header.jpg?t=1791241705"
+  },
+  {
+    "url": "/archive/pogo-gnom-5128520.html",
+    "title": "Pogo Gnom: цена, отзывы и статистика игроков",
+    "excerpt": "Pogo Gnom: актуальная цена (Бесплатно), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
+    "date": "6 октября 2026",
+    "readTime": "2 мин",
+    "category": "Обзоры",
+    "updated": "2026-10-06",
+    "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5128520/867d4d48e9e7af0846c446332d121117b5da1aa9/header.jpg?t=1791247944"
+  },
+  {
+    "url": "/archive/bering-tonnage-4610080.html",
+    "title": "Bering Tonnage: цена, отзывы и статистика игроков",
+    "excerpt": "Bering Tonnage: актуальная цена (837.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
+    "date": "6 октября 2026",
+    "readTime": "2 мин",
+    "category": "Обзоры",
+    "updated": "2026-10-06",
+    "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4610080/f6ff04196a206d6c588526666e723fd17baddc8b/header.jpg?t=1791237609"
+  },
+  {
+    "url": "/archive/starbloom-ranch-5237770.html",
+    "title": "Starbloom Ranch: цена, отзывы и статистика игроков",
+    "excerpt": "Starbloom Ranch: актуальная цена (Бесплатно), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
+    "date": "6 октября 2026",
+    "readTime": "2 мин",
+    "category": "Обзоры",
+    "updated": "2026-10-06",
+    "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5237770/6006ded46e75168716629ce853b7b72a77932af4/header.jpg?t=1791237093"
+  },
+  {
+    "url": "/archive/night-study-5278370.html",
+    "title": "Night Study: цена, отзывы и статистика игроков",
+    "excerpt": "Night Study: актуальная цена (84.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
+    "date": "6 октября 2026",
+    "readTime": "2 мин",
+    "category": "Обзоры",
+    "updated": "2026-10-06",
+    "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5278370/5705dd5526ea330061243b32cc9c770655e28d20/header.jpg?t=1791236312"
+  },
+  {
+    "url": "/archive/stolemates-4761400.html",
+    "title": "Stolemates: цена, отзывы и статистика игроков",
+    "excerpt": "Stolemates: актуальная цена (Бесплатно), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
+    "date": "6 октября 2026",
+    "readTime": "2 мин",
+    "category": "Обзоры",
+    "updated": "2026-10-06",
+    "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4761400/9cbb6e6653215577f88b066f8eb053d3998e02bb/header.jpg?t=1791236274"
+  },
+  {
+    "url": "/archive/werfast-4763960.html",
+    "title": "Werfast: цена, отзывы и статистика игроков",
+    "excerpt": "Werfast: актуальная цена (660.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
+    "date": "6 октября 2026",
+    "readTime": "2 мин",
+    "category": "Обзоры",
+    "updated": "2026-10-06",
+    "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4763960/6bea051164807036a207314fce74f20717b82b18/header.jpg?t=1791230912"
+  },
+  {
+    "url": "/archive/drone-n-gone-4930810.html",
+    "title": "Drone n Gone: цена, отзывы и статистика игроков",
+    "excerpt": "Drone n Gone: актуальная цена (232.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
+    "date": "6 октября 2026",
+    "readTime": "2 мин",
+    "category": "Обзоры",
+    "updated": "2026-10-06",
+    "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4930810/51bd3e1cadebd781c035584d50d4cb392970e680/header.jpg?t=1791230400"
+  },
+  {
+    "url": "/archive/bloody-bunny-3d-3892280.html",
+    "title": "Bloody Bunny 3D: цена, отзывы и статистика игроков",
+    "excerpt": "Bloody Bunny 3D: актуальная цена (315.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
+    "date": "6 октября 2026",
+    "readTime": "2 мин",
+    "category": "Обзоры",
+    "updated": "2026-10-06",
+    "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3892280/249b369b59e3d4896ba0139a2a179d78349daaba/header.jpg?t=1791229386"
+  },
+  {
+    "url": "/archive/voidfall-4632760.html",
+    "title": "VoidFall: цена, отзывы и статистика игроков",
+    "excerpt": "VoidFall: актуальная цена (465.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
+    "date": "6 октября 2026",
+    "readTime": "2 мин",
+    "category": "Обзоры",
+    "updated": "2026-10-06",
+    "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4632760/f9bac9bcb7652d76a80878c6d64de18e2e38f01f/header.jpg?t=1791226840"
+  },
+  {
+    "url": "/archive/sinever-first-seal-5001350.html",
+    "title": "Sinever: First Seal: цена, отзывы и статистика игроков",
+    "excerpt": "Sinever: First Seal: актуальная цена (346.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
+    "date": "6 октября 2026",
+    "readTime": "2 мин",
+    "category": "Обзоры",
+    "updated": "2026-10-06",
+    "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5001350/38aadcaf7c7de161c1bdcfcc9bcb9a5c6734edec/header.jpg?t=1791224408"
+  },
+  {
+    "url": "/archive/sightsplice-5226480.html",
+    "title": "SightSplice: цена, отзывы и статистика игроков",
+    "excerpt": "SightSplice: актуальная цена (194.44 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
+    "date": "6 октября 2026",
+    "readTime": "2 мин",
+    "category": "Обзоры",
+    "updated": "2026-10-06",
+    "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5226480/c82fa2caaf49a3bb9bf049634d6b31d0c85fbc3e/header.jpg?t=1791224028"
+  },
+  {
+    "url": "/archive/-5207060.html",
+    "title": "宗门轮回: цена, отзывы и статистика игроков",
+    "excerpt": "宗门轮回: актуальная цена (140.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
+    "date": "6 октября 2026",
+    "readTime": "2 мин",
+    "category": "Обзоры",
+    "updated": "2026-10-06",
+    "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5207060/365a353a2bdfcb1d3e9dd0e5b8c076ef7e2f5cfe/header.jpg?t=1791221062"
+  },
+  {
+    "url": "/archive/dospehi-oktoberfest-5239930.html",
+    "title": "Доспехи «Октоберфест»: цена, отзывы и статистика игроков",
+    "excerpt": "Доспехи «Октоберфест»: актуальная цена (465.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
+    "date": "6 октября 2026",
+    "readTime": "2 мин",
+    "category": "Обзоры",
+    "updated": "2026-10-06",
+    "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5239930/da8cfc4241aa048bf88f2b5a0b9a85a67e3b1588/header.jpg?t=1791220681"
+  },
+  {
+    "url": "/archive/veillombre-4914240.html",
+    "title": "Veillombre: цена, отзывы и статистика игроков",
+    "excerpt": "Veillombre: актуальная цена (465.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
+    "date": "6 октября 2026",
+    "readTime": "2 мин",
+    "category": "Обзоры",
+    "updated": "2026-10-06",
+    "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4914240/ee8a467548d25e6231a83e87741e17f939fb108a/header.jpg?t=1791219658"
+  },
+  {
+    "url": "/archive/solo-cultivation-3878440.html",
+    "title": "Solo Cultivation 独修: цена, отзывы и статистика игроков",
+    "excerpt": "Solo Cultivation 独修: актуальная цена (365.46 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
+    "date": "6 октября 2026",
+    "readTime": "2 мин",
+    "category": "Обзоры",
+    "updated": "2026-10-06",
+    "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3878440/1c15654bb8ba54b7e945189ccae5df8d5e9404d4/header.jpg?t=1791219318"
+  },
+  {
+    "url": "/archive/sudoku-girls-hawaii-vacation-4946070.html",
+    "title": "Sudoku Girls: Hawaii Vacation: цена, отзывы и статистика игроков",
+    "excerpt": "Sudoku Girls: Hawaii Vacation: актуальная цена (561.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
+    "date": "6 октября 2026",
+    "readTime": "2 мин",
+    "category": "Обзоры",
+    "updated": "2026-10-06",
+    "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4946070/ba233ab643e110a71b225fb83cdaccc2c0c8f9f0/header.jpg?t=1791218888"
+  },
+  {
+    "url": "/archive/gacha-and-sleep-2101640.html",
+    "title": "GACHA AND SLEEP: цена, отзывы и статистика игроков",
+    "excerpt": "GACHA AND SLEEP: актуальная цена (239.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
+    "date": "6 октября 2026",
+    "readTime": "2 мин",
+    "category": "Обзоры",
+    "updated": "2026-10-06",
+    "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2101640/a7ed2a15bbb1fa34b1770870e1e795dc6db0a42f/header.jpg?t=1791218302"
+  },
+  {
+    "url": "/archive/stickility-3419140.html",
+    "title": "Stickility: цена, отзывы и статистика игроков",
+    "excerpt": "Stickility: актуальная цена (467.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
+    "date": "6 октября 2026",
+    "readTime": "2 мин",
+    "category": "Обзоры",
+    "updated": "2026-10-06",
+    "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3419140/2e0b387fe0e447970aa883bacd20ed194f898c1a/header.jpg?t=1791221069"
+  },
+  {
+    "url": "/archive/kiosunevn-5273430.html",
+    "title": "KiosuneVN: цена, отзывы и статистика игроков",
+    "excerpt": "KiosuneVN: актуальная цена (465.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
+    "date": "6 октября 2026",
+    "readTime": "2 мин",
+    "category": "Обзоры",
+    "updated": "2026-10-06",
+    "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5273430/b97291bc9e4abd4f75c4bdf44c0fafcc58009a7c/header.jpg?t=1791216553"
+  },
+  {
     "url": "/archive/-4246730.html",
     "title": "Idle: Shuguang's Alchemy Store — обзор игры",
     "excerpt": "Уютный симулятор алхимической лавки. Управляйте магазином в фоне, расслабляйтесь и наблюдайте за ростом бизнеса в спокойном темпе без стресса.",
