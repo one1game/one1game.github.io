@@ -1,2 +1,2 @@
 // cache-version.js — меняй только эту цифру, чтобы сбросить кеш на всём сайте
-window.CACHE_VER = '53';
+window.CACHE_VER = '54';

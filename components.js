@@ -9,6 +9,27 @@
   var body = doc.body;
   var reduceMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
+  // ── Защита изображений ─────────────────────────────
+  // Правый клик по картинке не открывает «Сохранить изображение как»,
+  // ведёт себя как по пустому месту; перетаскивание картинок отключено.
+  // Работает и для динамически добавленных картинок (делегирование на document).
+  (function() {
+    var guard = doc.createElement('style');
+    guard.id = 'o1g-img-guard';
+    guard.textContent = 'img{-webkit-user-drag:none;-webkit-touch-callout:none;user-select:none;-webkit-user-select:none}';
+    (doc.head || doc.documentElement).appendChild(guard);
+
+    doc.addEventListener('contextmenu', function(e) {
+      var t = e.target;
+      if (t && (t.tagName === 'IMG' || (t.closest && t.closest('picture, figure')))) e.preventDefault();
+    }, true);
+
+    doc.addEventListener('dragstart', function(e) {
+      var t = e.target;
+      if (t && t.tagName === 'IMG') e.preventDefault();
+    }, true);
+  })();
+
   // ── PWA ────────────────────────────────────────────
   if ('serviceWorker' in navigator) {
     navigator.serviceWorker.register('/sw.js');

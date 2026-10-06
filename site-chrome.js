@@ -98,6 +98,7 @@
     '.footer-socials a:hover{color:#7dff9b;border-color:rgba(125,255,155,.34)}' +
     '.skip-link{position:absolute;top:-100px;left:10px;z-index:9999;padding:10px 14px;background:#7dff9b;color:#04060a;font-weight:700;font-size:.8rem;text-decoration:none}' +
     '.skip-link:focus{top:10px}' +
+    'img{-webkit-user-drag:none;-webkit-touch-callout:none;user-select:none;-webkit-user-select:none}' +
     '@media (min-width:900px){.footer-content{flex-direction:row;align-items:center;justify-content:space-between}}';
 
   var style = document.createElement('style');
@@ -107,4 +108,14 @@
 
   document.body.insertAdjacentHTML('afterbegin', nav);
   document.body.insertAdjacentHTML('beforeend', footer);
+
+  // Защита изображений: правый клик — как по пустому месту, без «Сохранить изображение».
+  document.addEventListener('contextmenu', function (e) {
+    var t = e.target;
+    if (t && (t.tagName === 'IMG' || (t.closest && t.closest('picture, figure')))) e.preventDefault();
+  }, true);
+  document.addEventListener('dragstart', function (e) {
+    var t = e.target;
+    if (t && t.tagName === 'IMG') e.preventDefault();
+  }, true);
 })();
