@@ -1,10 +1,10 @@
 name: Telegram Post
 
 # Автопост новых статей в Telegram-канал.
-# Работает, если в Settings → Secrets → Actions заданы:
+# Секреты (Settings → Secrets → Actions):
 #   TELEGRAM_BOT_TOKEN — токен бота от @BotFather
-#   TELEGRAM_CHAT_ID   — id канала (например -1001234567890) или @username
-# Без секретов workflow просто ничего не делает.
+#   TELEGRAM_CHAT_ID   — id канала (отрицательный, вида -100...), например -1002196230157
+# Ручной запуск (workflow_dispatch) присылает тестовое сообщение — так удобно проверять связь.
 
 on:
   push:
@@ -27,18 +27,53 @@ jobs:
       - name: Post new articles
         env:
           TG_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
-          TG_CHAT: ${{ secrets.TELEGRAM_CHAT_ID }}
+          TG_CHAT: ${{ secrets.TELEGRAM_CHAT_ID || '-1002196230157' }}
+          EVENT: ${{ github.event_name }}
         run: |
           python - <<'PY'
           import json, os, re, subprocess, urllib.request, urllib.parse, time
 
           token = os.environ.get('TG_TOKEN', '').strip()
           chat = os.environ.get('TG_CHAT', '').strip()
+          event = os.environ.get('EVENT', '').strip()
           if not token or not chat:
-              print('Telegram: секреты не заданы — пропускаю')
+              print('Telegram: нет токена или chat_id — пропускаю')
               raise SystemExit(0)
 
           BASE = 'https://one1game.github.io'
+          API = f'https://api.telegram.org/bot{token}/sendMessage'
+
+          # Автосгенерированные обзоры игр ("...: цена, отзывы и статистика игроков")
+          # в канал не отправляем — это технические страницы, а не редакционные статьи.
+          GAME_SUFFIX = re.compile(r':\s*цена, отзывы и статистика игроков\s*$', re.IGNORECASE)
+
+          def send(text):
+              data = urllib.parse.urlencode({
+                  'chat_id': chat,
+                  'text': text,
+                  'parse_mode': 'HTML',
+                  'disable_web_page_preview': 'false',
+              }).encode()
+              req = urllib.request.Request(API, data=data)
+              with urllib.request.urlopen(req, timeout=20) as resp:
+                  return resp.status
+
+          def esc(text):
+              return text.replace('&', '&amp;').replace('<', '&lt;').replace('>', '&gt;')
+
+          def meta(html, pattern):
+              found = re.search(pattern, html, re.IGNORECASE | re.DOTALL)
+              return found.group(1).strip() if found else ''
+
+          # Ручной запуск — просто проверяем связь
+          if event == 'workflow_dispatch':
+              try:
+                  status = send(f'✅ <b>Проверка связи</b>\n\nTelegram-автопост подключён.\n\n<a href="{BASE}/">{BASE}</a>')
+                  print(f'Telegram: тестовое сообщение отправлено, HTTP {status}')
+              except Exception as err:
+                  print(f'Telegram: ошибка отправки — {err}')
+              raise SystemExit(0)
+
           try:
               changed = subprocess.run(
                   ['git', 'diff', '--name-only', '--diff-filter=AM', 'HEAD~1', 'HEAD', '--', 'archive/*.html'],
@@ -50,19 +85,20 @@ jobs:
               print('Telegram: новых статей нет')
               raise SystemExit(0)
 
-          def meta(html, pattern):
-              m = re.search(pattern, html, re.IGNORECASE | re.DOTALL)
-              return m.group(1).strip() if m else ''
-
-          def esc(text):
-              return (text.replace('&', '&amp;').replace('<', '&lt;').replace('>', '&gt;'))
-
-          for path in changed[:5]:
+          sent = 0
+          for path in changed:
+              if sent >= 5:
+                  break
               if not os.path.exists(path):
                   continue
               with open(path, encoding='utf-8') as f:
                   html = f.read()
+
               title = meta(html, r'<title>(.*?)</title>') or path
+              if GAME_SUFFIX.search(title):
+                  print(f'Telegram: пропускаю игровой обзор {path}')
+                  continue
+
               desc = meta(html, r'<meta\s+name=["\']description["\']\s+content=["\'](.*?)["\']')
               url = f'{BASE}/{path.lstrip("/")}'
 
@@ -71,17 +107,13 @@ jobs:
                   text += f'\n\n{esc(desc)}\n'
               text += f'\n<a href="{url}">{url}</a>'
 
-              data = urllib.parse.urlencode({
-                  'chat_id': chat,
-                  'text': text,
-                  'parse_mode': 'HTML',
-                  'disable_web_page_preview': 'false',
-              }).encode()
-              req = urllib.request.Request(f'https://api.telegram.org/bot{token}/sendMessage', data=data)
               try:
-                  with urllib.request.urlopen(req, timeout=20) as resp:
-                      print(f'Telegram: отправлено {path} → {resp.status}')
+                  status = send(text)
+                  sent += 1
+                  print(f'Telegram: отправлено {path} → HTTP {status}')
               except Exception as err:
                   print(f'Telegram: ошибка для {path}: {err}')
               time.sleep(2)
+
+          print(f'Telegram: отправлено сообщений — {sent}')
           PY
