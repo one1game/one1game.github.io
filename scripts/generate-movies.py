@@ -719,10 +719,13 @@ def run():
     ai_new = ai_wiki = ai_fail = 0
     for item in kept:
         key = str(item["id"])
-        cached = ai_data.get(key)
-        if cached and cached.get("v") == AI_VERSION and cached.get("lead"):
+        cached = ai_data.get(key) or {}
+        # Ранее сгенерированный текст показываем даже старой версии:
+        # сбой генерации не должен обнулять страницу.
+        if cached.get("lead") and cached.get("meta"):
             item["article"] = cached
-            continue
+            if cached.get("v") == AI_VERSION:
+                continue
         if not (CF_ACCOUNT_ID and CF_API_TOKEN):
             continue
         try:
@@ -740,9 +743,9 @@ def run():
         item["article"] = article
         ai_new += 1
 
+    # Чистим только фильмы, выпавшие из подборки: тексты действующих не теряем.
     keep_keys = {str(i["id"]) for i in kept}
-    ai_data = {k: v for k, v in ai_data.items()
-               if k in keep_keys and v.get("v") == AI_VERSION}
+    ai_data = {k: v for k, v in ai_data.items() if k in keep_keys}
     AI_FILE.write_text(json.dumps(ai_data, ensure_ascii=False, indent=2, sort_keys=True),
                        encoding="utf-8", newline="\n")
 
