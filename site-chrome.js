@@ -53,7 +53,6 @@
     '    <a href="/" class="footer-brand">ONE1<span>GAME</span></a>' +
     '    <div class="footer-links">' +
     '      <a href="/feed/">ТикТок</a>' +
-    '      <a href="/red-alert-2/">Red Alert 2</a>' +
     '      <a href="/portablewebgame/">Ретро-игры</a>' +
     '      <a href="/dos/">DOS-игры</a>' +
     '      <a href="/archive.html">Статьи</a>' +
