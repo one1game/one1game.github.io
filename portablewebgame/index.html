@@ -4,8 +4,8 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <title>Порты Web Game — играть в браузере без установки | One1Game</title>
-<meta name="description" content="Игры, которые запускаются прямо на сайте без установки и без файлов на устройстве: Red Alert 2, Wolfenstein 3D, DOOM, Quake. Плюс каталог браузерных портов: Ruffle, OpenLara, Quake III и другие.">
-<meta name="keywords" content="порты web game, игры в браузере без установки, red alert 2 онлайн, wolfenstein 3d онлайн, doom онлайн, quake онлайн, ruffle, openlara, играть на телефоне">
+<meta name="description" content="Игры, которые запускаются прямо на сайте без установки и без файлов на устройстве: Red Alert 2, Wolfenstein 3D, DOOM, Quake. Работает на телефоне и ПК.">
+<meta name="keywords" content="порты web game, игры в браузере без установки, red alert 2 онлайн, wolfenstein 3d онлайн, doom онлайн, quake онлайн, играть на телефоне">
 <meta name="robots" content="index, follow, max-image-preview:large">
 <link rel="canonical" href="https://one1game.github.io/portablewebgame/">
 <meta name="theme-color" content="#04060a">
@@ -14,7 +14,7 @@
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="One1Game">
 <meta property="og:title" content="Порты Web Game — игры в браузере без установки">
-<meta property="og:description" content="Red Alert 2, Wolfenstein 3D, DOOM, Quake — сразу на сайте. Плюс каталог браузерных портов.">
+<meta property="og:description" content="Red Alert 2, Wolfenstein 3D, DOOM, Quake — запускаются сразу на сайте, без установки и без файлов на устройстве.">
 <meta property="og:url" content="https://one1game.github.io/portablewebgame/">
 <meta property="og:image" content="https://one1game.github.io/site-og.png">
 <meta name="twitter:card" content="summary_large_image">
@@ -27,14 +27,14 @@
       "name": "Порты Web Game",
       "url": "https://one1game.github.io/portablewebgame/",
       "inLanguage": "ru",
-      "description": "Игры и движки, которые запускаются прямо в браузере без установки: Red Alert 2, Wolfenstein 3D, DOOM, Quake и другие порты.",
+      "description": "Игры, которые запускаются прямо в браузере без установки: Red Alert 2, Wolfenstein 3D, DOOM, Quake.",
       "isPartOf": { "@type": "WebSite", "name": "One1Game", "url": "https://one1game.github.io" }
     },
     {
       "@type": "FAQPage",
       "mainEntity": [
-        { "@type": "Question", "name": "Нужно ли что-то скачивать?", "acceptedAnswer": { "@type": "Answer", "text": "Нет. Игры из блока «Играть прямо на сайте» запускаются в браузере и не требуют файлов на устройстве." } },
-        { "@type": "Question", "name": "Работает ли на телефоне?", "acceptedAnswer": { "@type": "Answer", "text": "Да, у игр на сайте есть управление для телефона. Для стабильного FPS лучше Chrome, Edge или Safari." } },
+        { "@type": "Question", "name": "Нужно ли что-то скачивать?", "acceptedAnswer": { "@type": "Answer", "text": "Нет. Все игры запускаются в браузере и не требуют файлов на устройстве." } },
+        { "@type": "Question", "name": "Работает ли на телефоне?", "acceptedAnswer": { "@type": "Answer", "text": "Да, у игр есть управление для телефона. Для стабильного FPS лучше Chrome, Edge или Safari." } },
         { "@type": "Question", "name": "Это легально?", "acceptedAnswer": { "@type": "Answer", "text": "Размещены только свободно распространяемые shareware-выпуски (Wolfenstein 3D v1.4, DOOM v1.9, Quake v1.06) и фанатские проекты. Полные версии коммерческих игр не размещаются." } }
       ]
     }
@@ -57,16 +57,19 @@
 .pw-badges span{font-size:.62rem;letter-spacing:.08em;text-transform:uppercase;color:var(--acid);border:1px solid var(--line-hi);border-radius:999px;padding:4px 10px}
 
 .pw-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:12px;margin:14px 0 2px}
-.pw-grid.small{grid-template-columns:repeat(auto-fill,minmax(190px,1fr))}
 .pw-card{
   position:relative;overflow:hidden;border:1px solid var(--line-soft);border-radius:var(--radius);
   background:var(--panel);text-decoration:none;color:inherit;display:block;transition:border-color .15s,transform .15s,box-shadow .15s;
 }
 .pw-card:hover{border-color:var(--line-hi);transform:translateY(-2px);box-shadow:var(--shadow)}
-.pw-card .cover{position:relative;aspect-ratio:16/10;display:grid;place-items:center;font-size:3rem;background:linear-gradient(140deg,var(--c1),var(--c2))}
-.pw-card .cover::after{content:'';position:absolute;inset:0;background:linear-gradient(180deg,transparent 42%,rgba(0,0,0,.45))}
-.pw-card .cover em{position:relative;z-index:1;font-style:normal;filter:drop-shadow(0 6px 16px rgba(0,0,0,.5))}
-.pw-card .tag{position:absolute;top:8px;right:8px;z-index:2;font-size:.58rem;letter-spacing:.08em;text-transform:uppercase;padding:3px 8px;border-radius:8px;background:rgba(0,0,0,.5);color:#fff;backdrop-filter:blur(6px)}
+.pw-card .cover{
+  position:relative;aspect-ratio:16/10;display:grid;place-items:center;font-size:3rem;
+  background-image:linear-gradient(140deg,var(--c1),var(--c2));background-size:cover;background-position:center;
+}
+.pw-card .cover::after{content:'';position:absolute;inset:0;background:linear-gradient(180deg,transparent 42%,rgba(0,0,0,.5));transition:background .3s}
+.pw-card .cover em{position:relative;z-index:1;font-style:normal;filter:drop-shadow(0 6px 16px rgba(0,0,0,.5));transition:opacity .25s}
+.pw-card .cover.has-img em{opacity:0}
+.pw-card .cover.has-img::after{background:linear-gradient(180deg,transparent 58%,rgba(0,0,0,.62))}
 .pw-card .here{position:absolute;top:8px;left:8px;z-index:2;font-size:.58rem;letter-spacing:.08em;text-transform:uppercase;padding:3px 8px;border-radius:8px;background:var(--acid);color:#04140a;font-weight:700}
 .pw-card .body{padding:11px 13px 13px}
 .pw-card .body b{display:block;color:#fff;font-size:.92rem;margin-bottom:3px}
@@ -75,13 +78,6 @@
 .pw-flags{display:flex;gap:5px;margin-top:8px}
 .pw-flags i{font-style:normal;font-size:.62rem;padding:3px 7px;border-radius:7px;border:1px solid var(--line-soft);color:var(--ink-faint)}
 
-.pw-chips{display:flex;flex-wrap:wrap;gap:8px;margin:12px 0 4px}
-.pw-chip{font-family:var(--mono);font-size:.66rem;letter-spacing:.06em;text-transform:uppercase;padding:7px 13px;border-radius:999px;border:1px solid var(--line-soft);background:var(--panel);color:var(--ink-dim);cursor:pointer;transition:all .15s}
-.pw-chip:hover{border-color:var(--line-hi);color:var(--ink)}
-.pw-chip.on{background:var(--acid);border-color:var(--acid);color:#04140a;font-weight:700}
-.pw-chip.mob.on{background:#22d3a6;border-color:#22d3a6}
-
-.pw-legend{display:flex;flex-wrap:wrap;gap:6px 16px;margin:10px 0 2px;font-size:.68rem;color:var(--ink-faint)}
 .pw-note{margin:16px 0 6px;padding:12px 14px;border-left:3px solid var(--amber);background:rgba(255,192,97,.08);border-radius:8px;color:#e8d9b6;font-size:.78rem;line-height:1.6}
 .pw-faq details{border-bottom:1px solid var(--line-soft);padding:10px 0}
 .pw-faq summary{cursor:pointer;color:#fff;font-size:.84rem;font-weight:700}
@@ -96,7 +92,7 @@
   <section class="pw-hero">
     <p class="pw-eyebrow">Ports Web Game</p>
     <h1 class="pw-h1">Игры, которые запускаются <span>прямо в браузере</span></h1>
-    <p class="pw-sub">Всё играется на сайте: без установки, без плагинов и без файлов на устройстве. Ниже — то, что уже работает у нас, и каталог браузерных портов, которые запускаются из браузера в один клик.</p>
+    <p class="pw-sub">Всё играется на сайте: без установки, без плагинов и без файлов на устройстве. Выбирай игру и жми — она откроется тут же.</p>
     <div class="pw-badges"><span>без установки</span><span>без файлов у игрока</span><span>телефон и ПК</span><span>shareware и open source</span></div>
   </section>
 
@@ -112,23 +108,11 @@
     </div>
   </div>
 
-  <div class="section-header"><h2 class="section-title">Другие порты — открываются на сторонних сайтах</h2></div>
-  <div class="pw-chips" id="pw-chips"></div>
-  <div class="pw-legend">
-    <span><b>🎮</b> играется сразу</span>
-    <span><b>🌐</b> мультиплеер</span>
-    <span><b>📱</b> мобильный</span>
-    <span><b>📚</b> библиотека</span>
-  </div>
-  <div class="pw-grid small" id="pw-grid"></div>
-  <div class="pw-note"><strong>Учти:</strong> это внешние проекты — открываются на своих сайтах, не у нас. Ни один из них не требует файлов на устройстве.</div>
-
   <div class="section-header"><h2 class="section-title">Частые вопросы</h2></div>
   <div class="pw-faq">
-    <details open><summary>Нужно ли что-то скачивать?</summary><p>Нет. Игры из блока «Играть прямо на сайте» работают в браузере и не требуют файлов на устройстве — движок и данные уже залиты на сайт.</p></details>
-    <details><summary>Работает ли на телефоне?</summary><p>Да, у наших игр есть тач-управление. Для стабильного FPS лучше Chrome, Edge или Safari; Firefox не рекомендуют.</p></details>
+    <details open><summary>Нужно ли что-то скачивать?</summary><p>Нет. Все игры на этой странице работают в браузере и не требуют файлов на устройстве — движок и данные уже залиты на сайт.</p></details>
+    <details><summary>Работает ли на телефоне?</summary><p>Да, у игр есть тач-управление. Для стабильного FPS лучше Chrome, Edge или Safari; Firefox не рекомендуют.</p></details>
     <details><summary>Это легально?</summary><p>На сайте размещены только свободно распространяемые shareware-выпуски (Wolfenstein 3D v1.4, DOOM v1.9, Quake v1.06) и фанатские проекты вроде Chrono Divide. Полные версии коммерческих игр не размещаются.</p></details>
-    <details><summary>Почему не все порты играются у вас?</summary><p>Часть проектов требует ваших файлов игры или своего сервера — такие мы не хостим. В каталоге они помечены как внешние.</p></details>
   </div>
 
   <p class="pw-foot">Права на игры, движки и торговые марки принадлежат их владельцам. One1Game не размещает полные версии коммерческих игр и не связан с правообладателями.</p>
@@ -141,45 +125,23 @@
   'use strict';
 
   var ONLINE = [
-    { title:'Red Alert 2', sub:'Chrono Divide · RTS', url:'/ra2/', cover:'🚀', c1:'#ff5f3d', c2:'#7d1f14',
+    { id:'ra2', title:'Red Alert 2', sub:'Chrono Divide · RTS', url:'/ra2/', cover:'🚀', c1:'#ff5f3d', c2:'#7d1f14',
       go:'▶ Играть онлайн', flags:['онлайн','1×1 и 2×2','моб'] },
-    { title:'Wolfenstein 3D', sub:'id Software, 1992 · shareware', url:'/dos/?g=wolf3d', cover:'🐺', c1:'#64748b', c2:'#1e293b',
+    { id:'wolf3d', title:'Wolfenstein 3D', sub:'id Software, 1992 · shareware', url:'/dos/?g=wolf3d', cover:'🐺', c1:'#64748b', c2:'#1e293b',
       go:'▶ Играть в браузере', flags:['FPS','DOS','моб'] },
-    { title:'DOOM', sub:'id Software, 1993 · shareware', url:'/dos/?g=doom', cover:'👹', c1:'#dc2626', c2:'#450a0a',
+    { id:'doom', title:'DOOM', sub:'id Software, 1993 · shareware', url:'/dos/?g=doom', cover:'👹', c1:'#dc2626', c2:'#450a0a',
       go:'▶ Играть в браузере', flags:['FPS','DOS','моб'] },
-    { title:'Quake', sub:'id Software, 1996 · shareware', url:'/dos/?g=quake', cover:'🌀', c1:'#8b5cf6', c2:'#4c1d95',
+    { id:'quake', title:'Quake', sub:'id Software, 1996 · shareware', url:'/dos/?g=quake', cover:'🌀', c1:'#8b5cf6', c2:'#4c1d95',
       go:'▶ Играть в браузере', flags:['FPS','DOS','моб'] }
   ];
 
-  var PORTS = [
-    { title:'OpenLara — Tomb Raider', cat:'Экшн', url:'http://xproger.info/projects/OpenLara/', cover:'🏺', colors:['#c9a227','#6b4a10'], flags:['p'], tags:['WebGL','демо'] },
-    { title:'Flash-игры (Ruffle)', cat:'Эмуляторы', url:'https://ruffle.rs/demo/', cover:'⚡', colors:['#facc15','#b45309'], flags:['p','l'], tags:['Flash','SWF'] },
-    { title:'Freeciv', cat:'Стратегии', url:'http://play.freeciv.org/', cover:'🏛️', colors:['#eab308','#a16207'], flags:['m'], tags:['4X','онлайн'] },
-    { title:'Quake III Arena (Q3JS)', cat:'FPS', url:'https://q3js.com/', cover:'🎯', colors:['#ef4444','#7f1d1d'], flags:['m'], tags:['арена','онлайн'] },
-    { title:'Quake (NetQuake.io)', cat:'FPS', url:'https://www.netquake.io/', cover:'👹', colors:['#8b5cf6','#4c1d95'], flags:['m'], tags:['классика','онлайн'] },
-    { title:'Marathon 2 / ∞ (AlephWeb)', cat:'FPS', url:'https://totallygatsby.github.io/AlephWeb/', cover:'👽', colors:['#0ea5e9','#0c4a6e'], flags:[], tags:['WebGL','трилогия'] },
-    { title:'Silent Space Marine', cat:'FPS', url:'https://silentspacemarine.com/', cover:'👾', colors:['#10b981','#064e3b'], flags:['m'], tags:['DOOM','онлайн'] },
-    { title:'Duke Nukem 3D (shareware)', cat:'DOS', url:'https://dos.zone/duke-nukem-3d-1996/', cover:'💥', colors:['#e11d48','#4c0519'], flags:['p'], tags:['DOS','Build engine'] },
-    { title:'Warcraft II', cat:'DOS', url:'https://dos.zone/warcraft-ii-tides-of-darkness/', cover:'⚔️', colors:['#b45309','#451a03'], flags:['p'], tags:['RTS','DOS'] },
-    { title:'Dune II', cat:'DOS', url:'https://dos.zone/dune-ii-the-building-of-a-dynasty-dec-1992/', cover:'🏜️', colors:['#d97706','#78350f'], flags:['p'], tags:['RTS','DOS'] },
-    { title:'Prince of Persia', cat:'DOS', url:'https://dos.zone/prince-of-persia-1990/', cover:'🗡️', colors:['#7c3aed','#2e1065'], flags:['p'], tags:['платформер','DOS'] },
-    { title:'Monkey Island', cat:'Приключения', url:'https://dos.zone/the-secret-of-monkey-island/', cover:'🐵', colors:['#06b6d4','#164e63'], flags:['p'], tags:['квест','DOS'] },
-    { title:'Beneath a Steel Sky', cat:'Приключения', url:'https://scummweb.tsilva.eu/', cover:'🏙️', colors:['#64748b','#0f172a'], flags:[], tags:['freeware','Sci-Fi'] },
-    { title:'Internet Archive DOS', cat:'Библиотеки', url:'https://archive.org/details/softwarelibrary_msdos_games', cover:'📚', colors:['#3b82f6','#1e3a8a'], flags:['l'], tags:['DOS','архив'] },
-    { title:'EmuOS', cat:'Библиотеки', url:'https://emupedia.net/', cover:'🪟', colors:['#0ea5e9','#075985'], flags:['l'], tags:['Win 3.11–ME','набор'] },
-    { title:'SuperTuxKart', cat:'Гонки', url:'https://supertuxkart.net/', cover:'🏎️', colors:['#f43f5e','#881337'], flags:[], tags:['карт','open source'] }
-  ];
-
-  var CATS = ['Все','FPS','Экшн','Приключения','Стратегии','DOS','Гонки','Эмуляторы','Библиотеки'];
-  var ICON = { m:'🌐', p:'📱', l:'📚' };
-  var state = { cat:'Все', mob:false };
   var $ = function (id) { return document.getElementById(id); };
 
   function esc(s){ return String(s == null ? '' : s).replace(/[&<>"']/g, function(c){ return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]; }); }
 
   $('pw-online').innerHTML = ONLINE.map(function (g) {
     return '<a class="pw-card" href="' + g.url + '">' +
-      '<span class="cover" style="--c1:' + g.c1 + ';--c2:' + g.c2 + '"><em>' + g.cover + '</em></span>' +
+      '<span class="cover" data-cover="' + g.id + '" style="--c1:' + g.c1 + ';--c2:' + g.c2 + '"><em>' + g.cover + '</em></span>' +
       '<span class="here">на сайте</span>' +
       '<span class="body"><b>' + esc(g.title) + '</b><small>' + esc(g.sub) + '</small>' +
       '<span class="go">' + g.go + '</span>' +
@@ -187,37 +149,45 @@
       '</a>';
   }).join('');
 
-  function chips() {
-    $('pw-chips').innerHTML = '<button class="pw-chip mob' + (state.mob ? ' on' : '') + '" data-mob="1">📱 Мобильные</button>' +
-      CATS.map(function (c) { return '<button class="pw-chip' + (c === state.cat ? ' on' : '') + '" data-cat="' + esc(c) + '">' + esc(c) + '</button>'; }).join('');
+  // Обложки — MediaWiki API Википедии (без ключа), pilicense=any отдаёт и обложки
+  var WIKI = {
+    ra2: 'Command & Conquer: Red Alert 2',
+    wolf3d: 'Wolfenstein 3D',
+    doom: 'Doom (игра, 1993)',
+    quake: 'Quake'
+  };
+
+  function norm(s) { return String(s).replace(/_/g, ' ').replace(/\s+/g, ' ').trim().toLowerCase(); }
+
+  (function loadCovers() {
+    var ids = Object.keys(WIKI);
+    var titles = ids.map(function (k) { return WIKI[k]; }).join('|');
+    var u = 'https://ru.wikipedia.org/w/api.php?action=query&format=json&origin=*' +
+      '&prop=pageimages&piprop=thumbnail&pithumbsize=800&pilicense=any' +
+      '&titles=' + encodeURIComponent(titles);
+    fetch(u, { mode: 'cors' }).then(function (r) { return r.json(); }).then(function (j) {
+      var pages = (j && j.query && j.query.pages) || {};
+      var byTitle = {};
+      Object.keys(pages).forEach(function (k) { if (pages[k] && pages[k].title) byTitle[norm(pages[k].title)] = pages[k]; });
+      ids.forEach(function (id) {
+        var p = byTitle[norm(WIKI[id])];
+        var src = p && p.thumbnail && p.thumbnail.source;
+        if (!src) return;
+        applyCover(id, src);
+      });
+    }).catch(function () { /* остаются градиент и эмодзи */ });
+  })();
+
+  function applyCover(id, src) {
+    var el = document.querySelector('[data-cover="' + id + '"]');
+    if (!el) return;
+    var img = new Image();
+    img.onload = function () {
+      el.style.backgroundImage = 'url("' + src + '")';
+      el.classList.add('has-img');
+    };
+    img.src = src;
   }
-
-  function render() {
-    var list = PORTS.filter(function (g) {
-      if (state.mob && g.flags.indexOf('p') === -1) return false;
-      if (state.cat !== 'Все' && g.cat !== state.cat) return false;
-      return true;
-    });
-    $('pw-grid').innerHTML = list.map(function (g) {
-      return '<a class="pw-card" href="' + g.url + '" target="_blank" rel="noopener noreferrer">' +
-        '<span class="cover" style="--c1:' + g.colors[0] + ';--c2:' + g.colors[1] + '"><em>' + g.cover + '</em></span>' +
-        '<span class="tag">' + esc(g.cat) + '</span>' +
-        '<span class="body"><b>' + esc(g.title) + '</b><small>' + esc(g.tags.join(' · ')) + '</small>' +
-        '<span class="go">Открыть →</span>' +
-        '<span class="pw-flags">' + g.flags.map(function (f) { return '<i>' + ICON[f] + '</i>'; }).join('') + '</span></span>' +
-        '</a>';
-    }).join('');
-  }
-
-  $('pw-chips').addEventListener('click', function (e) {
-    var c = e.target.closest('.pw-chip');
-    if (!c) return;
-    if (c.dataset.mob) state.mob = !state.mob;
-    else state.cat = c.dataset.cat;
-    chips(); render();
-  });
-
-  chips(); render();
 })();
 </script>
 </body>
