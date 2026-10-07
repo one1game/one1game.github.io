@@ -189,7 +189,7 @@ def wiki_text(title, year):
                 req = urllib.request.Request(url, headers={"User-Agent": "One1GameBot/1.0"})
                 with urllib.request.urlopen(req, timeout=30) as resp:
                     pages = (json.loads(resp.read().decode()).get("query") or {}).get("pages") or {}
-            except (urllib.error.URLError, ValueError):
+            except Exception:  # noqa: BLE001
                 continue
             for page in pages.values():
                 text = (page.get("extract") or "").strip()
@@ -202,7 +202,7 @@ def english_overview(mid):
     """Английское описание из TMDB — источник для пересказа, если русского нет."""
     try:
         data = _get(f"/movie/{mid}", language="en-US")
-    except (urllib.error.URLError, ValueError):
+    except Exception:  # noqa: BLE001
         return ""
     return (data.get("overview") or "").strip()
 
@@ -222,7 +222,7 @@ def cf_chat(prompt):
                          "Content-Type": "application/json"})
             with urllib.request.urlopen(req, timeout=90) as resp:
                 data = json.loads(resp.read().decode())
-        except (urllib.error.URLError, ValueError):
+        except Exception:  # noqa: BLE001 — таймауты и сетевые сбои не должны ломать прогон
             continue
         result = data.get("result") or {}
         text = (result.get("response") or "").strip()
@@ -623,23 +623,19 @@ def render_movie(item):
                 desc, item["page"], MOVIE_CSS, ld) + body
 
 
-def main():
-    if not os.environ.get("TMDB_API_KEY", "").strip():
-        print("Кино: нет TMDB_API_KEY — пропускаю")
-        return 0
-    try:
-        upcoming, released = collect()
-    except (urllib.error.URLError, RuntimeError, ValueError) as err:
-        print(f"Кино: ошибка TMDB — {err}")
-        return 1
+def run():
+    """Собирает раздел «Кино». Возвращает счётчики для отчёта."""
+    upcoming, released = collect()
     if not upcoming and not released:
-        print("Кино: TMDB не вернул ни одной экранизации — страницы не меняю")
-        return 1
+        raise RuntimeError("TMDB не вернул ни одной экранизации")
 
     OUT_DIR.mkdir(parents=True, exist_ok=True)
     items = upcoming + released
     for item in items:
-        attach_details(item)
+        try:
+            attach_details(item)
+        except Exception as err:  # noqa: BLE001
+            print(f"Кино: детали недоступны для {item.get('id')}: {err}")
 
     # Источник описания: русское из TMDB, иначе английское (для пересказа ИИ).
     for item in items:
@@ -655,19 +651,24 @@ def main():
 
     # ИИ-обогащение: к каждому фильму статья генерируется один раз и кешируется.
     ai_data = load_ai()
-    ai_new = 0
-    ai_wiki = 0
+    ai_new = ai_wiki = ai_fail = 0
     for item in kept:
         key = str(item["id"])
         cached = ai_data.get(key)
         if cached and cached.get("v") == AI_VERSION and cached.get("lead"):
             item["article"] = cached
             continue
-        wiki = wiki_text(item["title"], item["iso"][:4])
-        if wiki:
-            ai_wiki += 1
-        article = generate_article(item, wiki) if (CF_ACCOUNT_ID and CF_API_TOKEN) else None
+        if not (CF_ACCOUNT_ID and CF_API_TOKEN):
+            continue
+        try:
+            wiki = wiki_text(item["title"], item["iso"][:4])
+            ai_wiki += 1 if wiki else 0
+            article = generate_article(item, wiki)
+        except Exception as err:  # noqa: BLE001
+            print(f"Кино: ИИ не справился с {key}: {err}")
+            continue
         if not article:
+            ai_fail += 1
             continue
         article.update({"v": AI_VERSION, "updated": date.today().isoformat()})
         ai_data[key] = article
@@ -678,7 +679,14 @@ def main():
     AI_FILE.write_text(json.dumps(ai_data, ensure_ascii=False, indent=2, sort_keys=True),
                        encoding="utf-8", newline="\n")
 
-    # Убираем страницы фильмов, которых больше нет в подборке.
+    # Сначала пишем новые страницы и лишь потом убираем лишние —
+    # чтобы сбой посередине не оставил раздел пустым.
+    (OUT_DIR / "index.html").write_text(render_hub(upcoming, released), encoding="utf-8", newline="\n")
+    trailers = 0
+    for item in kept:
+        (OUT_DIR / Path(item["href"]).name).write_text(render_movie(item), encoding="utf-8", newline="\n")
+        trailers += 1 if item.get("trailer") else 0
+
     keep = {Path(i["href"]).name for i in kept} | {"index.html"}
     removed = 0
     for old in OUT_DIR.glob("*.html"):
@@ -686,16 +694,33 @@ def main():
             old.unlink()
             removed += 1
 
-    (OUT_DIR / "index.html").write_text(render_hub(upcoming, released), encoding="utf-8", newline="\n")
-    trailers = 0
-    for item in kept:
-        (OUT_DIR / Path(item["href"]).name).write_text(render_movie(item), encoding="utf-8", newline="\n")
-        trailers += 1 if item.get("trailer") else 0
+    return {
+        "movies": len(kept), "trailers": trailers, "removed": removed, "dropped": dropped,
+        "ai_new": ai_new, "ai_wiki": ai_wiki, "ai_fail": ai_fail,
+        "upcoming": len(upcoming), "released": len(released),
+    }
 
-    print(f"Кино: хаб + {len(kept)} страниц фильмов (трейлеров: {trailers}), "
-          f"удалено старых: {removed}, пропущено пустых: {dropped}, "
-          f"новых статей: {ai_new} (с Википедией: {ai_wiki})")
-    print(f"Кино: скоро {len(upcoming)}, вышло {len(released)}")
+
+def main():
+    """Никогда не валит job: даже при сбое отчёт попадёт в kino/last-run.json."""
+    report = {"ok": False, "when": date.today().isoformat()}
+    if not os.environ.get("TMDB_API_KEY", "").strip():
+        print("Кино: нет TMDB_API_KEY — пропускаю")
+        report["skipped"] = "нет TMDB_API_KEY"
+    else:
+        try:
+            report.update(run())
+            report["ok"] = True
+        except Exception as err:  # noqa: BLE001
+            report["error"] = f"{type(err).__name__}: {err}"
+            print(f"Кино: сбой — {report['error']}")
+    try:
+        OUT_DIR.mkdir(parents=True, exist_ok=True)
+        (OUT_DIR / "last-run.json").write_text(
+            json.dumps(report, ensure_ascii=False, indent=2), encoding="utf-8", newline="\n")
+    except OSError:
+        pass
+    print(json.dumps(report, ensure_ascii=False))
     return 0
 
 
