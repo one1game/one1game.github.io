@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <title>Порты Web Game — играть в браузере без установки | One1Game</title>
-<meta name="description" content="Игры, которые запускаются прямо на сайте без установки и без файлов на устройстве: Red Alert 2, Wolfenstein 3D, DOOM, Quake. Работает на телефоне и ПК.">
+<meta name="description" content="Игры, которые запускаются прямо на сайте без установки и без файлов на устройстве: Red Alert 2, Wolfenstein 3D, DOOM, Quake. Трейлеры, обложки и игра на телефоне и ПК.">
 <meta name="keywords" content="порты web game, игры в браузере без установки, red alert 2 онлайн, wolfenstein 3d онлайн, doom онлайн, quake онлайн, играть на телефоне">
 <meta name="robots" content="index, follow, max-image-preview:large">
 <link rel="canonical" href="https://one1game.github.io/portablewebgame/">
@@ -56,12 +56,13 @@
 .pw-badges{display:flex;flex-wrap:wrap;gap:8px;margin-top:16px}
 .pw-badges span{font-size:.62rem;letter-spacing:.08em;text-transform:uppercase;color:var(--acid);border:1px solid var(--line-hi);border-radius:999px;padding:4px 10px}
 
-.pw-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:12px;margin:14px 0 2px}
+.pw-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:12px;margin:14px 0 2px}
 .pw-card{
   position:relative;overflow:hidden;border:1px solid var(--line-soft);border-radius:var(--radius);
-  background:var(--panel);text-decoration:none;color:inherit;display:block;transition:border-color .15s,transform .15s,box-shadow .15s;
+  background:var(--panel);display:flex;flex-direction:column;transition:border-color .15s,transform .15s,box-shadow .15s;
 }
 .pw-card:hover{border-color:var(--line-hi);transform:translateY(-2px);box-shadow:var(--shadow)}
+.pw-card .thumb{position:relative;display:block;text-decoration:none}
 .pw-card .cover{
   position:relative;aspect-ratio:16/10;display:grid;place-items:center;font-size:3rem;
   background-image:linear-gradient(140deg,var(--c1),var(--c2));background-size:cover;background-position:center;
@@ -71,14 +72,29 @@
 .pw-card .cover.has-img em{opacity:0}
 .pw-card .cover.has-img::after{background:linear-gradient(180deg,transparent 58%,rgba(0,0,0,.62))}
 .pw-card .here{position:absolute;top:8px;left:8px;z-index:2;font-size:.58rem;letter-spacing:.08em;text-transform:uppercase;padding:3px 8px;border-radius:8px;background:var(--acid);color:#04140a;font-weight:700}
-.pw-card .body{padding:11px 13px 13px}
+.pw-card .body{padding:11px 13px 13px;display:flex;flex-direction:column;flex:1}
 .pw-card .body b{display:block;color:#fff;font-size:.92rem;margin-bottom:3px}
-.pw-card .body small{display:block;color:var(--ink-dim);font-size:.72rem;margin-bottom:8px}
-.pw-card .go{font-size:.64rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--acid)}
-.pw-flags{display:flex;gap:5px;margin-top:8px}
+.pw-card .body small{display:block;color:var(--ink-dim);font-size:.72rem}
+.pw-acts{display:flex;gap:8px;margin-top:10px}
+.pw-play,.pw-trail{
+  flex:1;height:34px;border-radius:9px;font-size:.64rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;
+  display:inline-flex;align-items:center;justify-content:center;gap:5px;transition:transform .12s,border-color .15s,color .15s;
+}
+.pw-play{background:var(--acid);color:#04140a;text-decoration:none}
+.pw-trail{background:transparent;border:1px solid var(--line-soft);color:var(--ink-dim);cursor:pointer;font-family:inherit}
+.pw-trail:hover{border-color:var(--line-hi);color:var(--ink)}
+.pw-play:active,.pw-trail:active{transform:scale(.96)}
+.pw-flags{display:flex;gap:5px;margin-top:9px}
 .pw-flags i{font-style:normal;font-size:.62rem;padding:3px 7px;border-radius:7px;border:1px solid var(--line-soft);color:var(--ink-faint)}
 
-.pw-note{margin:16px 0 6px;padding:12px 14px;border-left:3px solid var(--amber);background:rgba(255,192,97,.08);border-radius:8px;color:#e8d9b6;font-size:.78rem;line-height:1.6}
+.pw-modal{position:fixed;inset:0;z-index:900;display:grid;place-items:center;padding:16px}
+.pw-modal[hidden]{display:none}
+.pw-modal-bg{position:absolute;inset:0;background:rgba(0,0,0,.74);backdrop-filter:blur(3px)}
+.pw-modal-box{position:relative;width:min(960px,100%);aspect-ratio:16/9;background:#000;border:1px solid var(--line-hi);border-radius:14px;overflow:hidden;box-shadow:var(--shadow)}
+.pw-modal-box iframe{position:absolute;inset:0;width:100%;height:100%;border:0;display:block}
+.pw-modal-x{position:absolute;top:-42px;right:0;width:34px;height:34px;border-radius:10px;border:1px solid var(--line);background:var(--panel);color:var(--ink);font-size:.95rem;cursor:pointer}
+.pw-modal-x:hover{border-color:var(--line-hi);color:var(--acid)}
+
 .pw-faq details{border-bottom:1px solid var(--line-soft);padding:10px 0}
 .pw-faq summary{cursor:pointer;color:#fff;font-size:.84rem;font-weight:700}
 .pw-faq p{margin-top:8px;color:var(--ink-dim);font-size:.82rem}
@@ -92,7 +108,7 @@
   <section class="pw-hero">
     <p class="pw-eyebrow">Ports Web Game</p>
     <h1 class="pw-h1">Игры, которые запускаются <span>прямо в браузере</span></h1>
-    <p class="pw-sub">Всё играется на сайте: без установки, без плагинов и без файлов на устройстве. Выбирай игру и жми — она откроется тут же.</p>
+    <p class="pw-sub">Всё играется на сайте: без установки, без плагинов и без файлов на устройстве. Выбирай игру и жми — она откроется тут же, а кнопка «Трейлер» покажет короткое видео.</p>
     <div class="pw-badges"><span>без установки</span><span>без файлов у игрока</span><span>телефон и ПК</span><span>shareware и open source</span></div>
   </section>
 
@@ -112,11 +128,19 @@
   <div class="pw-faq">
     <details open><summary>Нужно ли что-то скачивать?</summary><p>Нет. Все игры на этой странице работают в браузере и не требуют файлов на устройстве — движок и данные уже залиты на сайт.</p></details>
     <details><summary>Работает ли на телефоне?</summary><p>Да, у игр есть тач-управление. Для стабильного FPS лучше Chrome, Edge или Safari; Firefox не рекомендуют.</p></details>
-    <details><summary>Это легально?</summary><p>На сайте размещены только свободно распространяемые shareware-выпуски (Wolfenstein 3D v1.4, DOOM v1.9, Quake v1.06) и фанатские проекты вроде Chrono Divide. Полные версии коммерческих игр не размещаются.</p></details>
+    <details><summary>Это легально?</summary><p>На сайте размещены только свободно распространяемые shareware-выпуски (Wolfenstein 3D v1.4, DOOM v1.9, Quake v1.06) и фанатские проекты вроде Chrono Divide. Полные версии коммерческих игр не размещаются. Трейлеры воспроизводятся с YouTube.</p></details>
   </div>
 
   <p class="pw-foot">Права на игры, движки и торговые марки принадлежат их владельцам. One1Game не размещает полные версии коммерческих игр и не связан с правообладателями.</p>
 </main>
+
+<div class="pw-modal" id="pw-modal" hidden>
+  <div class="pw-modal-bg" data-close></div>
+  <div class="pw-modal-box">
+    <button class="pw-modal-x" data-close aria-label="Закрыть">✕</button>
+    <div id="pw-frame"></div>
+  </div>
+</div>
 
 <script src="/site-chrome.js?v=1" defer></script>
 <script src="/analytics-consent.js" defer></script>
@@ -124,32 +148,18 @@
 (function () {
   'use strict';
 
+  // yt — проверенные через YouTube oEmbed ролики
   var ONLINE = [
     { id:'ra2', title:'Red Alert 2', sub:'Chrono Divide · RTS', url:'/ra2/', cover:'🚀', c1:'#ff5f3d', c2:'#7d1f14',
-      go:'▶ Играть онлайн', flags:['онлайн','1×1 и 2×2','моб'] },
+      flags:['онлайн','1×1 и 2×2','моб'], yt:'sDVDeDZiawQ' },
     { id:'wolf3d', title:'Wolfenstein 3D', sub:'id Software, 1992 · shareware', url:'/dos/?g=wolf3d', cover:'🐺', c1:'#64748b', c2:'#1e293b',
-      go:'▶ Играть в браузере', flags:['FPS','DOS','моб'] },
+      flags:['FPS','DOS','моб'], yt:'a5fV223-exw' },
     { id:'doom', title:'DOOM', sub:'id Software, 1993 · shareware', url:'/dos/?g=doom', cover:'👹', c1:'#dc2626', c2:'#450a0a',
-      go:'▶ Играть в браузере', flags:['FPS','DOS','моб'] },
+      flags:['FPS','DOS','моб'], yt:'DJq_gDt2TyI' },
     { id:'quake', title:'Quake', sub:'id Software, 1996 · shareware', url:'/dos/?g=quake', cover:'🌀', c1:'#8b5cf6', c2:'#4c1d95',
-      go:'▶ Играть в браузере', flags:['FPS','DOS','моб'] }
+      flags:['FPS','DOS','моб'], yt:'8cz1YLIxleg' }
   ];
 
-  var $ = function (id) { return document.getElementById(id); };
-
-  function esc(s){ return String(s == null ? '' : s).replace(/[&<>"']/g, function(c){ return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]; }); }
-
-  $('pw-online').innerHTML = ONLINE.map(function (g) {
-    return '<a class="pw-card" href="' + g.url + '">' +
-      '<span class="cover" data-cover="' + g.id + '" style="--c1:' + g.c1 + ';--c2:' + g.c2 + '"><em>' + g.cover + '</em></span>' +
-      '<span class="here">на сайте</span>' +
-      '<span class="body"><b>' + esc(g.title) + '</b><small>' + esc(g.sub) + '</small>' +
-      '<span class="go">' + g.go + '</span>' +
-      '<span class="pw-flags">' + g.flags.map(function (f) { return '<i>' + esc(f) + '</i>'; }).join('') + '</span></span>' +
-      '</a>';
-  }).join('');
-
-  // Обложки — MediaWiki API Википедии (без ключа), pilicense=any отдаёт и обложки
   var WIKI = {
     ra2: 'Command & Conquer: Red Alert 2',
     wolf3d: 'Wolfenstein 3D',
@@ -157,15 +167,33 @@
     quake: 'Quake'
   };
 
-  function norm(s) { return String(s).replace(/_/g, ' ').replace(/\s+/g, ' ').trim().toLowerCase(); }
+  function esc(s){ return String(s == null ? '' : s).replace(/[&<>"']/g, function(c){ return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]; }); }
+  function norm(s){ return String(s).replace(/_/g,' ').replace(/\s+/g,' ').trim().toLowerCase(); }
 
+  document.getElementById('pw-online').innerHTML = ONLINE.map(function (g) {
+    return '<div class="pw-card">' +
+      '<a class="thumb" href="' + g.url + '">' +
+        '<span class="cover" data-cover="' + g.id + '" style="--c1:' + g.c1 + ';--c2:' + g.c2 + '"><em>' + g.cover + '</em></span>' +
+        '<span class="here">на сайте</span>' +
+      '</a>' +
+      '<div class="body">' +
+        '<b>' + esc(g.title) + '</b><small>' + esc(g.sub) + '</small>' +
+        '<div class="pw-acts">' +
+          '<a class="pw-play" href="' + g.url + '">▶ Играть</a>' +
+          '<button class="pw-trail" data-yt="' + g.yt + '" data-title="' + esc(g.title) + '">Трейлер</button>' +
+        '</div>' +
+        '<span class="pw-flags">' + g.flags.map(function (f) { return '<i>' + esc(f) + '</i>'; }).join('') + '</span>' +
+      '</div>' +
+    '</div>';
+  }).join('');
+
+  // Обложки — MediaWiki API Википедии (без ключа), pilicense=any отдаёт и бокс-арты
   (function loadCovers() {
     var ids = Object.keys(WIKI);
-    var titles = ids.map(function (k) { return WIKI[k]; }).join('|');
     var u = 'https://ru.wikipedia.org/w/api.php?action=query&format=json&origin=*' +
       '&prop=pageimages&piprop=thumbnail&pithumbsize=800&pilicense=any' +
-      '&titles=' + encodeURIComponent(titles);
-    fetch(u, { mode: 'cors' }).then(function (r) { return r.json(); }).then(function (j) {
+      '&titles=' + encodeURIComponent(ids.map(function (k) { return WIKI[k]; }).join('|'));
+    fetch(u, { mode:'cors' }).then(function (r) { return r.json(); }).then(function (j) {
       var pages = (j && j.query && j.query.pages) || {};
       var byTitle = {};
       Object.keys(pages).forEach(function (k) { if (pages[k] && pages[k].title) byTitle[norm(pages[k].title)] = pages[k]; });
@@ -173,21 +201,37 @@
         var p = byTitle[norm(WIKI[id])];
         var src = p && p.thumbnail && p.thumbnail.source;
         if (!src) return;
-        applyCover(id, src);
+        var el = document.querySelector('[data-cover="' + id + '"]');
+        if (!el) return;
+        var img = new Image();
+        img.onload = function () { el.style.backgroundImage = 'url("' + src + '")'; el.classList.add('has-img'); };
+        img.src = src;
       });
     }).catch(function () { /* остаются градиент и эмодзи */ });
   })();
 
-  function applyCover(id, src) {
-    var el = document.querySelector('[data-cover="' + id + '"]');
-    if (!el) return;
-    var img = new Image();
-    img.onload = function () {
-      el.style.backgroundImage = 'url("' + src + '")';
-      el.classList.add('has-img');
-    };
-    img.src = src;
+  // Трейлеры — YouTube (youtube-nocookie)
+  var modal = document.getElementById('pw-modal');
+  var frame = document.getElementById('pw-frame');
+
+  function openTrailer(id, title) {
+    frame.innerHTML = '<iframe src="https://www.youtube-nocookie.com/embed/' + encodeURIComponent(id) +
+      '?autoplay=1&rel=0" title="' + esc(title) + ' — трейлер" allow="autoplay; encrypted-media; picture-in-picture; fullscreen" allowfullscreen></iframe>';
+    modal.hidden = false;
+    document.body.style.overflow = 'hidden';
   }
+  function closeTrailer() {
+    frame.innerHTML = '';
+    modal.hidden = true;
+    document.body.style.overflow = '';
+  }
+
+  document.getElementById('pw-online').addEventListener('click', function (e) {
+    var b = e.target.closest('.pw-trail');
+    if (b) openTrailer(b.dataset.yt, b.dataset.title);
+  });
+  modal.addEventListener('click', function (e) { if (e.target.hasAttribute('data-close')) closeTrailer(); });
+  document.addEventListener('keydown', function (e) { if (e.key === 'Escape' && !modal.hidden) closeTrailer(); });
 })();
 </script>
 </body>
