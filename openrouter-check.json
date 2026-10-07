@@ -1,0 +1,55 @@
+{
+  "key_present": true,
+  "key_prefix": "sk-or-v1-…",
+  "key": {
+    "label": "sk-or-v1-a41...226",
+    "is_management_key": false,
+    "is_provisioning_key": false,
+    "limit": 1000,
+    "limit_reset": null,
+    "limit_remaining": 1000,
+    "include_byok_in_limit": false,
+    "usage": 0,
+    "usage_daily": 0,
+    "usage_weekly": 0,
+    "usage_monthly": 0,
+    "byok_usage": 0,
+    "byok_usage_daily": 0,
+    "byok_usage_weekly": 0,
+    "byok_usage_monthly": 0,
+    "is_free_tier": true,
+    "expires_at": "2027-04-05T16:02:40.097Z",
+    "creator_user_id": "user_3JH71ZTzhhUvRLcfBeX8SoLnLOB",
+    "organization_id": null,
+    "workspace_id": "74432662-e387-56d5-8b8c-c05d615fe045",
+    "allowed_data_regions": [
+      "global"
+    ],
+    "free_model_daily_requests": {
+      "used": 0,
+      "limit": 50,
+      "remaining": 50
+    },
+    "rate_limit": {
+      "requests": -1,
+      "interval": "10s",
+      "note": "This field is deprecated and safe to ignore."
+    }
+  },
+  "credits": {
+    "total_credits": 0,
+    "total_usage": 0.020619092
+  },
+  "models_total": 465,
+  "models_free": 16,
+  "models_with_native_web_search": 178,
+  "popular_available": [
+    "anthropic/claude-haiku-4.5",
+    "anthropic/claude-sonnet-4.6",
+    "deepseek/deepseek-chat",
+    "google/gemini-3.5-flash",
+    "openai/gpt-5.4",
+    "openai/gpt-5.5"
+  ],
+  "popular_missing": []
+}
