@@ -40,7 +40,7 @@ CF_MODELS = (
 # Сгенерированные тексты копим здесь, чтобы они не менялись от запуска к запуску.
 AI_FILE = OUT_DIR / "movies-ai.json"
 # Версия формата текста: при смене промпта/структуры старые записи перегенерируются.
-AI_VERSION = 2
+AI_VERSION = 3
 WIKI_LANGS = ("ru", "en")
 # Отладочные образцы ответов ИИ (первые несколько) — попадают в отчёт прогона.
 AI_DEBUG = []
@@ -298,14 +298,16 @@ def ai_prompt(item, wiki, strict=False):
         "- Нет данных для части — верни для неё пустую строку или пустой список.\n"
         "- Без спойлеров: не раскрывай финал и ключевые повороты сюжета.\n"
         "- Запрещены слова «купить», «скачать», «смотреть онлайн».\n"
+        "- Не пиши пункты вида «не указано», «нет данных», «неизвестно» — просто не добавляй такой пункт.\n"
+        "- Не повторяй в блоке интересных фактов то, что уже сказано в лиде.\n"
         "- Без воды, штампов и повторов одних и тех же мыслей.\n"
         "- Верни СТРОГО JSON без markdown:\n"
         '{"lead":"...","plot":"...","facts":["..."],"trivia":["..."],"meta":"..."}\n'
         "- lead: 2-3 предложения, 150-380 символов. Что это за фильм и чем он интересен.\n"
         "- plot: 2-4 предложения, 150-600 символов. Краткий сюжет без концовки. Нет данных — \"\".\n"
         "- facts: 2-5 фактов, каждый 30-120 символов: производство, бюджет, сборы, студии, страны, кастинг.\n"
-        "- trivia: 0-3 факта, каждый 30-140 символов. Нет — [].\n"
-        "- meta: 120-155 символов, обязательно с названием фильма.\n"
+        "- trivia: 0-3 факта, каждый 30-140 символов, которых нет в лиде. Нет — [].\n"
+        "- meta: строго 120-155 символов, обязательно с названием фильма.\n"
         + ("- ВНИМАНИЕ: прошлый ответ нарушил правила (язык, длина или пустые поля). Исправь.\n" if strict else "")
         + "Данные:\n" + "\n".join(rows)
     )
@@ -332,6 +334,26 @@ def ai_valid(obj):
     return True
 
 
+JUNK = re.compile(r"не указан|нет данных|неизвестн|отсутству", re.IGNORECASE)
+
+
+def clean_items(rows, lead, limit):
+    """Убирает мусорные пункты («не указано») и повторы лида."""
+    lead_words = set(re.findall(r"[а-яё]{5,}", lead.lower()))
+    result = []
+    for row in rows or []:
+        text = str(row).strip()
+        if not text or JUNK.search(text):
+            continue
+        words = set(re.findall(r"[а-яё]{5,}", text.lower()))
+        if words and len(words & lead_words) / len(words) > 0.8:
+            continue
+        result.append(clamp(text, 150))
+        if len(result) >= limit:
+            break
+    return result
+
+
 def generate_article(item, wiki):
     """До двух попыток: обычная и со строгим напоминанием. Иначе None."""
     for strict in (False, True):
@@ -340,11 +362,12 @@ def generate_article(item, wiki):
             AI_DEBUG.append({"id": item.get("id"), "strict": strict, "raw": (text or "")[:200]})
         obj = ai_parse(text) if text else None
         if obj and ai_valid(obj):
+            lead = clamp(obj.get("lead"), 420)
             return {
-                "lead": clamp(obj.get("lead"), 420),
+                "lead": lead,
                 "plot": clamp(obj.get("plot"), 640),
-                "facts": [clamp(f, 130) for f in (obj.get("facts") or [])[:5]],
-                "trivia": [clamp(t, 150) for t in (obj.get("trivia") or [])[:3]],
+                "facts": clean_items(obj.get("facts"), lead, 5),
+                "trivia": clean_items(obj.get("trivia"), lead, 3),
                 "meta": clamp(obj.get("meta"), 158),
             }
     return None
@@ -696,7 +719,9 @@ def run():
         item["article"] = article
         ai_new += 1
 
-    ai_data = {k: v for k, v in ai_data.items() if k in {str(i["id"]) for i in kept}}
+    keep_keys = {str(i["id"]) for i in kept}
+    ai_data = {k: v for k, v in ai_data.items()
+               if k in keep_keys and v.get("v") == AI_VERSION}
     AI_FILE.write_text(json.dumps(ai_data, ensure_ascii=False, indent=2, sort_keys=True),
                        encoding="utf-8", newline="\n")
 
