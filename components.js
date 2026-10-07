@@ -48,6 +48,7 @@
   var isGo = path === '/go' || path.indexOf('/go/') === 0;
   var isFeed = path === '/feed' || path.indexOf('/feed/') === 0;
   var isRa2 = path === '/ra2' || path.indexOf('/ra2/') === 0 || path === '/red-alert-2' || path.indexOf('/red-alert-2/') === 0;
+  var isRetro = path === '/portablewebgame' || path.indexOf('/portablewebgame/') === 0 || path === '/dos' || path.indexOf('/dos/') === 0;
 
   function active(state) { return state ? ' active' : ''; }
 
@@ -83,6 +84,7 @@
     '<a href="/" class="nav-link' + active(isHome) + '">Главная</a>' +
     '<a href="/feed/" class="nav-link' + active(isFeed) + '">ТикТок</a>' +
     '<a href="/red-alert-2/" class="nav-link' + active(isRa2) + '">Red Alert 2</a>' +
+    '<a href="/portablewebgame/" class="nav-link' + active(isRetro) + '">Ретро-игры</a>' +
     '<a href="/go/" class="nav-link' + active(isGo) + '">Игры онлайн</a>' +
     '<a href="/archive.html" class="nav-link' + active(isArchive) + '">Статьи</a>' +
     '<a href="/ai/" class="nav-link' + active(isAI) + '">AI Pulse</a>' +
@@ -124,6 +126,7 @@
     '  <div class="sheet-links">' +
     '    <a href="/feed/" class="sheet-link' + active(isFeed) + '"><i class="fas fa-fire" aria-hidden="true"></i> ТикТок</a>' +
     '    <a href="/red-alert-2/" class="sheet-link' + active(isRa2) + '"><i class="fas fa-tank" aria-hidden="true"></i> Red Alert 2</a>' +
+    '    <a href="/portablewebgame/" class="sheet-link' + active(isRetro) + '"><i class="fas fa-gamepad" aria-hidden="true"></i> Ретро-игры</a>' +
     '    <a href="/go/" class="sheet-link' + active(isGo) + '"><i class="fas ' + I.online + '" aria-hidden="true"></i> Игры онлайн</a>' +
     '    <a href="/archive.html" class="sheet-link' + active(isArchive) + '"><i class="fas ' + I.articles + '" aria-hidden="true"></i> Все статьи</a>' +
     '    <a href="/ai/" class="sheet-link' + active(isAI) + '"><i class="fas ' + I.ai + '" aria-hidden="true"></i> AI Pulse</a>' +
@@ -163,6 +166,8 @@
     '    <div class="footer-links">' +
     '      <a href="/feed/">ТикТок</a>' +
     '      <a href="/red-alert-2/">Red Alert 2</a>' +
+    '      <a href="/portablewebgame/">Ретро-игры</a>' +
+    '      <a href="/dos/">DOS-игры</a>' +
     '      <a href="/archive.html">Статьи</a>' +
     '      <a href="/category/obzory.html">Обзоры игр</a>' +
     '      <a href="/category/gajdy.html">Гайды</a>' +
