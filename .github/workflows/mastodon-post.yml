@@ -23,13 +23,14 @@ jobs:
     steps:
       - uses: actions/checkout@v4
         with:
-          fetch-depth: 2
+          fetch-depth: 0
 
       - name: Post new articles
         env:
           MASTODON_INSTANCE: ${{ secrets.MASTODON_INSTANCE }}
           MASTODON_TOKEN: ${{ secrets.MASTODON_TOKEN }}
           EVENT: ${{ github.event_name }}
+          BEFORE: ${{ github.event.before }}
         run: |
           python - <<'PY'
           import hashlib, json, os, re, subprocess, time, urllib.error, urllib.request
@@ -81,9 +82,14 @@ jobs:
               print(f'Mastodon: тест — HTTP {status} {res.get("url", res)}')
               raise SystemExit(0)
 
+          # Только статьи, добавленные в этом пуше. Старые не перепостим:
+          # сравниваем с состоянием до пуша и берём лишь новые файлы (A).
+          base = os.environ.get('BEFORE', '').strip()
+          if not base or set(base) == {'0'}:
+              base = 'HEAD~1'
           try:
               changed = subprocess.run(
-                  ['git', 'diff', '--name-only', '--diff-filter=AM', 'HEAD~1', 'HEAD', '--', 'archive/*.html'],
+                  ['git', 'diff', '--name-only', '--diff-filter=A', base, 'HEAD', '--', 'archive/*.html'],
                   capture_output=True, text=True, check=True).stdout.split()
           except subprocess.CalledProcessError:
               changed = []
