@@ -23,6 +23,7 @@
   var isL2 = starts('/l2');
   var isFeed = starts('/feed');
   var isRetro = starts('/portablewebgame') || starts('/dos') || starts('/ra2') || starts('/red-alert-2');
+  var isKino = starts('/kino');
 
   function a(s) { return s ? ' active' : ''; }
 
@@ -36,6 +37,7 @@
     '      <a href="/feed/" class="nav-link' + a(isFeed) + '">ТикТок</a>' +
     '      <a href="/portablewebgame/" class="nav-link' + a(isRetro) + '">Ретро-игры</a>' +
     '      <a href="/go/" class="nav-link' + a(isGo) + '">Игры онлайн</a>' +
+    '      <a href="/kino/" class="nav-link' + a(isKino) + '">Кино</a>' +
     '      <a href="/archive.html" class="nav-link' + a(isArchive) + '">Статьи</a>' +
     '      <a href="/ai/" class="nav-link' + a(isAI) + '">AI Pulse</a>' +
     '      <a href="/genriprocedur/" class="nav-link' + a(isMusic) + '">Cosmic Drift</a>' +
@@ -55,6 +57,7 @@
     '      <a href="/feed/">ТикТок</a>' +
     '      <a href="/portablewebgame/">Ретро-игры</a>' +
     '      <a href="/dos/">DOS-игры</a>' +
+    '      <a href="/kino/">Кино</a>' +
     '      <a href="/archive.html">Статьи</a>' +
     '      <a href="/category/obzory.html">Обзоры игр</a>' +
     '      <a href="/category/gajdy.html">Гайды</a>' +

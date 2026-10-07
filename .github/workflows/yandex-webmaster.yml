@@ -1,0 +1,130 @@
+name: Yandex Webmaster
+
+# Работа с API Яндекс Вебмастера.
+#   push → новые/изменённые HTML отправляются в очередь переобхода (в пределах суточной квоты).
+#   ручной запуск и еженедельный cron → сводка: SQI, страницы в поиске, остаток квоты.
+# Секрет (Settings → Secrets → Actions): YANDEX_WEBMASTER_TOKEN
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - '**.html'
+  schedule:
+    - cron: '0 7 * * 1'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  webmaster:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 2
+
+      - name: Talk to Webmaster API
+        env:
+          YANDEX_WEBMASTER_TOKEN: ${{ secrets.YANDEX_WEBMASTER_TOKEN }}
+          EVENT: ${{ github.event_name }}
+        run: |
+          python - <<'PY'
+          import json, os, re, subprocess, time, urllib.error, urllib.request
+
+          TOKEN = os.environ.get('YANDEX_WEBMASTER_TOKEN', '').strip()
+          EVENT = os.environ.get('EVENT', '').strip()
+          HOST = 'one1game.github.io'
+          BASE = f'https://{HOST}'
+          API = 'https://api.webmaster.yandex.net/v4'
+          MAX_SUBMIT = 50  # не больше столько URL за один прогон
+
+          if not TOKEN:
+              print('Webmaster: нет токена — пропускаю')
+              raise SystemExit(0)
+
+          def api(path, method='GET', body=None):
+              data = json.dumps(body).encode() if body is not None else None
+              req = urllib.request.Request(f'{API}{path}', data=data, method=method)
+              req.add_header('Authorization', f'OAuth {TOKEN}')
+              if data is not None:
+                  req.add_header('Content-Type', 'application/json')
+              try:
+                  with urllib.request.urlopen(req, timeout=30) as resp:
+                      return resp.status, json.loads(resp.read().decode() or '{}')
+              except urllib.error.HTTPError as err:
+                  try:
+                      payload = json.loads(err.read().decode() or '{}')
+                  except Exception:
+                      payload = {}
+                  return err.code, payload
+
+          status, data = api('/user/')
+          uid = data.get('user_id')
+          if not uid:
+              print(f'Webmaster: не получил user_id — HTTP {status} {data}')
+              raise SystemExit(1)
+
+          status, hosts = api(f'/user/{uid}/hosts/')
+          host_id = next(
+              (h.get('host_id') for h in hosts.get('hosts', [])
+               if HOST in (h.get('ascii_host_url') or '') or HOST in (h.get('host_id') or '')),
+              None)
+          if not host_id:
+              print(f'Webmaster: сайт {HOST} не найден среди подтверждённых — {hosts}')
+              raise SystemExit(1)
+
+          _, quota = api(f'/user/{uid}/hosts/{host_id}/recrawl/quota')
+          remainder = int(quota.get('quota_remainder') or 0)
+
+          # Ручной запуск и cron — просто отчёт.
+          if EVENT != 'push':
+              _, summary = api(f'/user/{uid}/hosts/{host_id}/summary/')
+              print('Webmaster: сводка по', HOST)
+              print(f"  SQI:               {summary.get('sqi')}")
+              print(f"  Страниц в поиске:  {summary.get('searchable_pages_count')}")
+              print(f"  Исключено страниц: {summary.get('excluded_pages_count')}")
+              print(f"  Квота переобхода:  остаток {remainder} из {quota.get('daily_quota')}")
+              raise SystemExit(0)
+
+          changed = subprocess.run(
+              ['git', 'diff', '--name-only', '--diff-filter=AM', 'HEAD~1', 'HEAD', '--', '*.html'],
+              capture_output=True, text=True).stdout.split()
+
+          urls = set()
+          for path in changed:
+              if path == '404.html':
+                  continue
+              # Файлы подтверждения прав (yandex_*/google*.html) индексировать не нужно.
+              if re.match(r'^(yandex_|google)[0-9a-f]+\.html$', path, re.IGNORECASE):
+                  continue
+              clean = re.sub(r'index\.html$', '', path)
+              urls.add(f'{BASE}/{clean}' if clean else f'{BASE}/')
+
+          if not urls or remainder <= 0:
+              print(f'Webmaster: нечего отправлять (URL: {len(urls)}, квота: {remainder})')
+              raise SystemExit(0)
+
+          limit = min(len(urls), remainder, MAX_SUBMIT)
+          print(f'Webmaster: к переобходу {limit} из {len(urls)} URL (квота {remainder})')
+
+          time.sleep(90)  # ждём, пока GitHub Pages опубликует новую версию
+
+          sent = 0
+          for url in sorted(urls)[:limit]:
+              status, res = api(f'/user/{uid}/hosts/{host_id}/recrawl/queue', 'POST', {'url': url})
+              if status == 202:
+                  sent += 1
+                  print(f'Webmaster: отправлено {url} (осталось {res.get("quota_remainder")})')
+              elif status == 409:
+                  print(f'Webmaster: уже в очереди {url}')
+              elif status == 429:
+                  print('Webmaster: суточная квота исчерпана, стоп')
+                  break
+              else:
+                  print(f'Webmaster: ошибка {status} для {url} — {res}')
+              time.sleep(1)
+
+          print(f'Webmaster: отправлено {sent} URL на переобход')
+          PY

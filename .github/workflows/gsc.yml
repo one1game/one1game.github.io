@@ -1,0 +1,105 @@
+name: Google Search Console
+
+# Работа с Google Search Console API через сервисный аккаунт.
+#   push → повторная отправка sitemap.xml.
+#   ручной запуск и еженедельный cron → сводка за неделю: клики, показы, CTR, топ-запросы.
+# Секрет (Settings → Secrets → Actions): GSC_SERVICE_ACCOUNT_JSON — содержимое JSON-ключа целиком.
+# Сервисный аккаунт должен быть добавлен в Search Console → Пользователи и права (права «Полный»).
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'sitemap.xml'
+  schedule:
+    - cron: '0 7 * * 1'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  gsc:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Install google-auth
+        run: pip install --quiet google-auth requests
+
+      - name: Talk to Search Console API
+        env:
+          GSC_SERVICE_ACCOUNT_JSON: ${{ secrets.GSC_SERVICE_ACCOUNT_JSON }}
+          EVENT: ${{ github.event_name }}
+          HOST: one1game.github.io
+        run: |
+          python - <<'PY'
+          import datetime, json, os, urllib.error, urllib.parse, urllib.request
+
+          raw = os.environ.get('GSC_SERVICE_ACCOUNT_JSON', '').strip()
+          event = os.environ.get('EVENT', '').strip()
+          host = os.environ.get('HOST', '').strip()
+
+          if not raw:
+              print('GSC: нет сервисного JSON — пропускаю')
+              raise SystemExit(0)
+
+          from google.auth.transport.requests import Request
+          from google.oauth2 import service_account
+
+          info = json.loads(raw)
+          creds = service_account.Credentials.from_service_account_info(
+              info, scopes=['https://www.googleapis.com/auth/webmasters'])
+          creds.refresh(Request())
+          token = creds.token
+
+          API = 'https://www.googleapis.com/webmasters/v3'
+
+          def call(path, method='GET', body=None):
+              data = json.dumps(body).encode() if body is not None else None
+              req = urllib.request.Request(f'{API}{path}', data=data, method=method)
+              req.add_header('Authorization', f'Bearer {token}')
+              if data is not None:
+                  req.add_header('Content-Type', 'application/json')
+              try:
+                  with urllib.request.urlopen(req, timeout=30) as resp:
+                      payload = resp.read().decode()
+                      return resp.status, (json.loads(payload) if payload else {})
+              except urllib.error.HTTPError as err:
+                  try:
+                      payload = json.loads(err.read().decode() or '{}')
+                  except Exception:
+                      payload = {}
+                  return err.code, payload
+
+          status, sites = call('/sites')
+          entries = sites.get('siteEntry', [])
+          site = next((s['siteUrl'] for s in entries if host in s.get('siteUrl', '')), None)
+          if not site:
+              print(f'GSC: сайт {host} не найден в Search Console — {entries}')
+              raise SystemExit(1)
+
+          enc = urllib.parse.quote(site, safe='')
+
+          if event == 'push':
+              sitemap = urllib.parse.quote(f'https://{host}/sitemap.xml', safe='')
+              status, _ = call(f'/sites/{enc}/sitemaps/{sitemap}', method='PUT')
+              print(f'GSC: sitemap отправлен — HTTP {status}')
+              raise SystemExit(0)
+
+          # Ручной запуск и cron — сводка за неделю (данные GSC отстают ~2 дня).
+          end = datetime.date.today() - datetime.timedelta(days=3)
+          start = end - datetime.timedelta(days=7)
+          status, data = call(f'/sites/{enc}/searchAnalytics/query', method='POST', body={
+              'startDate': start.isoformat(),
+              'endDate': end.isoformat(),
+              'dimensions': ['query'],
+              'rowLimit': 10,
+          })
+
+          print(f'GSC: {site} — {start} … {end}')
+          for row in data.get('rows', []):
+              keys = row.get('keys', [''])
+              print(f"  {keys[0][:60]:60} клики {int(row.get('clicks', 0)):>5}  "
+                    f"показы {int(row.get('impressions', 0)):>7}  CTR {row.get('ctr', 0) * 100:5.1f}%")
+          if not data.get('rows'):
+              print('  данных нет')
+          PY

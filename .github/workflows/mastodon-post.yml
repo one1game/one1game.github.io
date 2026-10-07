@@ -1,0 +1,120 @@
+name: Mastodon Post
+
+# Автопост новых редакционных статей в Mastodon.
+# Автосгенерированные страницы игр пропускаются — как в Telegram и Bluesky.
+# Ручной запуск (workflow_dispatch) публикует тестовое сообщение.
+# Секреты (Settings → Secrets → Actions):
+#   MASTODON_INSTANCE — например https://mastodon.social
+#   MASTODON_TOKEN    — access token приложения (scope write:statuses)
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'archive/**.html'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  post:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 2
+
+      - name: Post new articles
+        env:
+          MASTODON_INSTANCE: ${{ secrets.MASTODON_INSTANCE }}
+          MASTODON_TOKEN: ${{ secrets.MASTODON_TOKEN }}
+          EVENT: ${{ github.event_name }}
+        run: |
+          python - <<'PY'
+          import hashlib, json, os, re, subprocess, time, urllib.error, urllib.request
+
+          INSTANCE = os.environ.get('MASTODON_INSTANCE', '').strip().rstrip('/')
+          TOKEN = os.environ.get('MASTODON_TOKEN', '').strip()
+          EVENT = os.environ.get('EVENT', '').strip()
+          BASE = 'https://one1game.github.io'
+          MAX_POSTS = 3
+
+          if not INSTANCE or not TOKEN:
+              print('Mastodon: нет инстанса или токена — пропускаю')
+              raise SystemExit(0)
+
+          GAME_KEYWORDS = re.compile(r'статистика игроков', re.IGNORECASE)
+          GAME_SUFFIX = re.compile(r':\s*цена, отзывы и статистика игроков\s*$', re.IGNORECASE)
+          SITE_SUFFIX = re.compile(r'\s*\|\s*One1Game\s*$', re.IGNORECASE)
+
+          def meta(html, pattern):
+              found = re.search(pattern, html, re.IGNORECASE | re.DOTALL)
+              return found.group(1).strip() if found else ''
+
+          def is_game_page(html, title):
+              if GAME_KEYWORDS.search(meta(html, r'<meta\s+name=["\']keywords["\']\s+content=["\'](.*?)["\']')):
+                  return True
+              return bool(GAME_SUFFIX.search(SITE_SUFFIX.sub('', title)))
+
+          def publish(text, idem=None):
+              req = urllib.request.Request(f'{INSTANCE}/api/v1/statuses',
+                                           data=json.dumps({'status': text[:500],
+                                                            'visibility': 'public'}).encode(),
+                                           method='POST')
+              req.add_header('Authorization', f'Bearer {TOKEN}')
+              req.add_header('Content-Type', 'application/json')
+              if idem:
+                  req.add_header('Idempotency-Key', idem)
+              try:
+                  with urllib.request.urlopen(req, timeout=30) as resp:
+                      return resp.status, json.loads(resp.read().decode() or '{}')
+              except urllib.error.HTTPError as err:
+                  try:
+                      body = json.loads(err.read().decode() or '{}')
+                  except Exception:
+                      body = {}
+                  return err.code, body
+
+          if EVENT == 'workflow_dispatch':
+              status, res = publish(f'✅ Проверка связи — автопост из GitHub Actions.\n{BASE}')
+              print(f'Mastodon: тест — HTTP {status} {res.get("url", res)}')
+              raise SystemExit(0)
+
+          try:
+              changed = subprocess.run(
+                  ['git', 'diff', '--name-only', '--diff-filter=AM', 'HEAD~1', 'HEAD', '--', 'archive/*.html'],
+                  capture_output=True, text=True, check=True).stdout.split()
+          except subprocess.CalledProcessError:
+              changed = []
+
+          if not changed:
+              print('Mastodon: новых статей нет')
+              raise SystemExit(0)
+
+          sent = 0
+          for path in changed:
+              if sent >= MAX_POSTS:
+                  break
+              if not os.path.exists(path):
+                  continue
+              with open(path, encoding='utf-8') as f:
+                  html = f.read()
+
+              title = SITE_SUFFIX.sub('', meta(html, r'<title>(.*?)</title>') or path)
+              if is_game_page(html, title):
+                  print(f'Mastodon: пропускаю автостраницу игры {path}')
+                  continue
+
+              url = f'{BASE}/{path.lstrip("/")}'
+              text = f'{title}\n\n{url}'
+              status, res = publish(text, hashlib.sha1(url.encode()).hexdigest())
+              if status in (200, 201):
+                  sent += 1
+                  print(f'Mastodon: опубликовано {path} → {res.get("url", "")}')
+              else:
+                  print(f'Mastodon: ошибка {status} для {path} — {res}')
+              time.sleep(2)
+
+          print(f'Mastodon: опубликовано постов — {sent}')
+          PY

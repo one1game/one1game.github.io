@@ -1,0 +1,40 @@
+name: Movie hub (TMDB)
+
+# Раз в неделю пересобирает страницу «Фильмы по играм» (/kino/) из TMDB.
+# Ручной запуск — то же самое, когда нужно обновить сразу.
+# Секрет (Settings → Secrets → Actions): TMDB_API_KEY (API Key v3 auth)
+
+on:
+  schedule:
+    - cron: '0 6 * * 1'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Собрать страницу /kino/
+        env:
+          TMDB_API_KEY: ${{ secrets.TMDB_API_KEY }}
+        run: python3 scripts/generate-movies.py
+
+      - name: Обновить sitemap
+        run: python3 generate-sitemap.py
+
+      - name: Коммит и пуш
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add kino/index.html sitemap.xml
+          git diff --quiet --cached || git commit -m "Кино: обновление страницы экранизаций (TMDB)"
+          git pull --rebase --autostash origin main
+          git push

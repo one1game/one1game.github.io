@@ -43,9 +43,13 @@ jobs:
           BASE = 'https://one1game.github.io'
           API = f'https://api.telegram.org/bot{token}/sendMessage'
 
-          # Автосгенерированные обзоры игр ("...: цена, отзывы и статистика игроков")
-          # в канал не отправляем — это технические страницы, а не редакционные статьи.
+          # Автосгенерированные страницы игр (scripts/generate-games.js) в канал
+          # не отправляем — ни старые, ни новые. Это технические SEO-страницы,
+          # а не редакционные статьи. Признак: keywords содержат "статистика игроков"
+          # (у ИИ-обогащённых страниц заголовок свой, но keywords остаются теми же).
+          GAME_KEYWORDS = re.compile(r'статистика игроков', re.IGNORECASE)
           GAME_SUFFIX = re.compile(r':\s*цена, отзывы и статистика игроков\s*$', re.IGNORECASE)
+          SITE_SUFFIX = re.compile(r'\s*\|\s*One1Game\s*$', re.IGNORECASE)
 
           def send(text):
               data = urllib.parse.urlencode({
@@ -64,6 +68,13 @@ jobs:
           def meta(html, pattern):
               found = re.search(pattern, html, re.IGNORECASE | re.DOTALL)
               return found.group(1).strip() if found else ''
+
+          def is_game_page(html, title):
+              # Ключевой признак — keywords автосгенерированной карточки игры.
+              if GAME_KEYWORDS.search(meta(html, r'<meta\s+name=["\']keywords["\']\s+content=["\'](.*?)["\']')):
+                  return True
+              # Запасной признак — заголовок вида "…: цена, отзывы и статистика игроков".
+              return bool(GAME_SUFFIX.search(SITE_SUFFIX.sub('', title)))
 
           # Ручной запуск — просто проверяем связь
           if event == 'workflow_dispatch':
@@ -95,8 +106,8 @@ jobs:
                   html = f.read()
 
               title = meta(html, r'<title>(.*?)</title>') or path
-              if GAME_SUFFIX.search(title):
-                  print(f'Telegram: пропускаю игровой обзор {path}')
+              if is_game_page(html, title):
+                  print(f'Telegram: пропускаю автостраницу игры {path}')
                   continue
 
               desc = meta(html, r'<meta\s+name=["\']description["\']\s+content=["\'](.*?)["\']')

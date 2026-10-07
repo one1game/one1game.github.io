@@ -49,6 +49,7 @@
   var isFeed = path === '/feed' || path.indexOf('/feed/') === 0;
   var isRetro = path === '/portablewebgame' || path.indexOf('/portablewebgame/') === 0 || path === '/dos' || path.indexOf('/dos/') === 0
     || path === '/ra2' || path.indexOf('/ra2/') === 0 || path === '/red-alert-2' || path.indexOf('/red-alert-2/') === 0;
+  var isKino = path === '/kino' || path.indexOf('/kino/') === 0;
 
   function active(state) { return state ? ' active' : ''; }
 
@@ -85,6 +86,7 @@
     '<a href="/feed/" class="nav-link' + active(isFeed) + '">ТикТок</a>' +
     '<a href="/portablewebgame/" class="nav-link' + active(isRetro) + '">Ретро-игры</a>' +
     '<a href="/go/" class="nav-link' + active(isGo) + '">Игры онлайн</a>' +
+    '<a href="/kino/" class="nav-link' + active(isKino) + '">Кино</a>' +
     '<a href="/archive.html" class="nav-link' + active(isArchive) + '">Статьи</a>' +
     '<a href="/ai/" class="nav-link' + active(isAI) + '">AI Pulse</a>' +
     '<a href="/genriprocedur/" class="nav-link' + active(isMusic) + '">Cosmic Drift</a>' +
@@ -126,6 +128,7 @@
     '    <a href="/feed/" class="sheet-link' + active(isFeed) + '"><i class="fas fa-fire" aria-hidden="true"></i> ТикТок</a>' +
     '    <a href="/portablewebgame/" class="sheet-link' + active(isRetro) + '"><i class="fas fa-gamepad" aria-hidden="true"></i> Ретро-игры</a>' +
     '    <a href="/go/" class="sheet-link' + active(isGo) + '"><i class="fas ' + I.online + '" aria-hidden="true"></i> Игры онлайн</a>' +
+    '    <a href="/kino/" class="sheet-link' + active(isKino) + '"><i class="fas fa-film" aria-hidden="true"></i> Кино</a>' +
     '    <a href="/archive.html" class="sheet-link' + active(isArchive) + '"><i class="fas ' + I.articles + '" aria-hidden="true"></i> Все статьи</a>' +
     '    <a href="/ai/" class="sheet-link' + active(isAI) + '"><i class="fas ' + I.ai + '" aria-hidden="true"></i> AI Pulse</a>' +
     '    <a href="/genriprocedur/" class="sheet-link' + active(isMusic) + '"><i class="fas ' + I.music + '" aria-hidden="true"></i> Cosmic Drift</a>' +
@@ -165,6 +168,7 @@
     '      <a href="/feed/">ТикТок</a>' +
     '      <a href="/portablewebgame/">Ретро-игры</a>' +
     '      <a href="/dos/">DOS-игры</a>' +
+    '      <a href="/kino/">Кино</a>' +
     '      <a href="/archive.html">Статьи</a>' +
     '      <a href="/category/obzory.html">Обзоры игр</a>' +
     '      <a href="/category/gajdy.html">Гайды</a>' +

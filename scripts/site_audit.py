@@ -108,6 +108,20 @@ errors = []
 warnings = []
 html_count = 0
 
+PRERENDER_MARKERS = ('HOME:TOP', 'HOME:FEED', 'HOME:PLAY')
+
+
+def check_prerender(rel, text):
+    """Главная обязана отдавать контент без JS: между маркерами должен быть реальный HTML."""
+    for marker in PRERENDER_MARKERS:
+        found = re.search(r'<!--%s:START-->(.*?)<!--%s:END-->' % (marker, marker),
+                          text, re.DOTALL)
+        if not found:
+            errors.append(f'{rel}: нет маркера {marker} — главная снова станет JS-only')
+            continue
+        if not found.group(1).strip() or 'skeleton-card' in found.group(1):
+            errors.append(f'{rel}: блок {marker} пустой — статичный контент главной откатился')
+
 for path in sorted(ROOT.rglob('*.html')):
     rel = path.relative_to(ROOT).as_posix()
     if any(part in {'.git', 'node_modules'} for part in Path(rel).parts):
@@ -147,6 +161,8 @@ for path in sorted(ROOT.rglob('*.html')):
         target = local_target(value, path)
         if target is not None and not target.exists():
             errors.append(f'{rel}: broken local link: {value}')
+    if rel == 'index.html':
+        check_prerender(rel, text)
 
 for path in iter_source_files():
     text = path.read_text(encoding='utf-8', errors='replace')
