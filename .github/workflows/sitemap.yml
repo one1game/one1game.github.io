@@ -1,24 +1,28 @@
-name: Generate Sitemap
+name: Generate Sitemap & Home
+
 on:
   push:
     paths:
       - 'articles-data.js'
-  workflow_dispatch:  # <-- Эта строка добавит кнопку ручного запуска
+  workflow_dispatch:  # кнопка ручного запуска
+
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
       - name: Set up Python
-        uses: actions/setup-python@v4
+        uses: actions/setup-python@v5
         with:
           python-version: '3.x'
-      - name: Run generator
-        run: python generate-sitemap.py
+      - name: Run generators
+        run: |
+          python generate-sitemap.py
+          python generate-home.py
       - name: Commit and push
         run: |
           git config --global user.name 'Sitemap Bot'
           git config --global user.email 'bot@github.com'
-          git add sitemap.xml
-          git diff --quiet && git diff --staged --quiet || (git commit -m "Manual sitemap update" && git push)
+          git add sitemap.xml index.html
+          git diff --quiet && git diff --staged --quiet || (git commit -m "Автогенерация: sitemap и статичный HTML главной" && git push)

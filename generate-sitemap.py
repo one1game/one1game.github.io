@@ -65,11 +65,14 @@ def generate():
 
     lastmods = collect_lastmod(content)
 
+    # Дата сборки: у статических хабов нет своего «обновлено», но менять их принято
+    today = datetime.now(timezone.utc).strftime("%Y-%m-%d")
+
     lines = [
         '<?xml version="1.0" encoding="UTF-8"?>',
         '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">',
-        url_block(f'{BASE_URL}/', priority='1.0'),
-        url_block(f'{BASE_URL}/archive.html', priority='0.8'),
+        url_block(f'{BASE_URL}/', lastmod=today, priority='1.0'),
+        url_block(f'{BASE_URL}/archive.html', lastmod=today, priority='0.8'),
         url_block(f'{BASE_URL}/privacy.html', priority='0.3'),
         url_block(f'{BASE_URL}/terms.html', priority='0.3'),
         url_block(f'{BASE_URL}/advertising.html', priority='0.3'),
@@ -78,12 +81,13 @@ def generate():
         url_block(f'{BASE_URL}/genriprocedur/', priority='0.7'),
         url_block(f'{BASE_URL}/cyber-scanner/', priority='0.7'),
         url_block(f'{BASE_URL}/go/', priority='0.7'),
-        url_block(f'{BASE_URL}/feed/', priority='0.8'),
-        url_block(f'{BASE_URL}/red-alert-2/', priority='0.8'),
+        url_block(f'{BASE_URL}/feed/', lastmod=today, priority='0.8'),
+        url_block(f'{BASE_URL}/portablewebgame/', lastmod=today, priority='0.8'),
+        url_block(f'{BASE_URL}/dos/', lastmod=today, priority='0.8'),
+        url_block(f'{BASE_URL}/red-alert-2/', lastmod=today, priority='0.8'),
     ]
 
     # Страницы-хабы категорий (topical authority)
-    today = datetime.now(timezone.utc).strftime("%Y-%m-%d")
     for slug in ('ii-i-tehnologii', 'analitika', 'gajdy', 'konsoli', 'trendy',
                  'razrabotka', 'mnenie', 'kino-i-igry', 'obzory'):
         lines.append(url_block(f'{BASE_URL}/category/{slug}.html', lastmod=today, priority='0.6'))

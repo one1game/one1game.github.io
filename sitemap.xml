@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url><loc>https://one1game.github.io/</loc><priority>1.0</priority></url>
-  <url><loc>https://one1game.github.io/archive.html</loc><priority>0.8</priority></url>
+  <url><loc>https://one1game.github.io/</loc><lastmod>2026-10-07</lastmod><priority>1.0</priority></url>
+  <url><loc>https://one1game.github.io/archive.html</loc><lastmod>2026-10-07</lastmod><priority>0.8</priority></url>
   <url><loc>https://one1game.github.io/privacy.html</loc><priority>0.3</priority></url>
   <url><loc>https://one1game.github.io/terms.html</loc><priority>0.3</priority></url>
   <url><loc>https://one1game.github.io/advertising.html</loc><priority>0.3</priority></url>
@@ -10,8 +10,10 @@
   <url><loc>https://one1game.github.io/genriprocedur/</loc><priority>0.7</priority></url>
   <url><loc>https://one1game.github.io/cyber-scanner/</loc><priority>0.7</priority></url>
   <url><loc>https://one1game.github.io/go/</loc><priority>0.7</priority></url>
-  <url><loc>https://one1game.github.io/feed/</loc><priority>0.8</priority></url>
-  <url><loc>https://one1game.github.io/red-alert-2/</loc><priority>0.8</priority></url>
+  <url><loc>https://one1game.github.io/feed/</loc><lastmod>2026-10-07</lastmod><priority>0.8</priority></url>
+  <url><loc>https://one1game.github.io/portablewebgame/</loc><lastmod>2026-10-07</lastmod><priority>0.8</priority></url>
+  <url><loc>https://one1game.github.io/dos/</loc><lastmod>2026-10-07</lastmod><priority>0.8</priority></url>
+  <url><loc>https://one1game.github.io/red-alert-2/</loc><lastmod>2026-10-07</lastmod><priority>0.8</priority></url>
   <url><loc>https://one1game.github.io/category/ii-i-tehnologii.html</loc><lastmod>2026-10-07</lastmod><priority>0.6</priority></url>
   <url><loc>https://one1game.github.io/category/analitika.html</loc><lastmod>2026-10-07</lastmod><priority>0.6</priority></url>
   <url><loc>https://one1game.github.io/category/gajdy.html</loc><lastmod>2026-10-07</lastmod><priority>0.6</priority></url>
@@ -69,7 +71,7 @@
   <url><loc>https://one1game.github.io/archive/night-study-5278370.html</loc><lastmod>2026-10-06</lastmod><priority>0.7</priority></url>
   <url><loc>https://one1game.github.io/archive/stolemates-4761400.html</loc><lastmod>2026-10-06</lastmod><priority>0.7</priority></url>
   <url><loc>https://one1game.github.io/archive/werfast-4763960.html</loc><lastmod>2026-10-06</lastmod><priority>0.7</priority></url>
-  <url><loc>https://one1game.github.io/archive/drone-n-gone-4930810.html</loc><lastmod>2026-10-06</lastmod><priority>0.7</priority></url>
+  <url><loc>https://one1game.github.io/archive/drone-n-gone-4930810.html</loc><lastmod>2026-10-07</lastmod><priority>0.7</priority></url>
   <url><loc>https://one1game.github.io/archive/bloody-bunny-3d-3892280.html</loc><lastmod>2026-10-06</lastmod><priority>0.7</priority></url>
   <url><loc>https://one1game.github.io/archive/voidfall-4632760.html</loc><lastmod>2026-10-06</lastmod><priority>0.7</priority></url>
   <url><loc>https://one1game.github.io/archive/sinever-first-seal-5001350.html</loc><lastmod>2026-10-06</lastmod><priority>0.7</priority></url>
@@ -105,7 +107,7 @@
   <url><loc>https://one1game.github.io/archive/morrowtape-5225470.html</loc><lastmod>2026-10-06</lastmod><priority>0.7</priority></url>
   <url><loc>https://one1game.github.io/archive/wickling-5225460.html</loc><lastmod>2026-10-06</lastmod><priority>0.7</priority></url>
   <url><loc>https://one1game.github.io/archive/postapo-2216510.html</loc><lastmod>2026-10-06</lastmod><priority>0.7</priority></url>
-  <url><loc>https://one1game.github.io/archive/touhou-blackeight-5008530.html</loc><lastmod>2026-10-05</lastmod><priority>0.7</priority></url>
+  <url><loc>https://one1game.github.io/archive/touhou-blackeight-5008530.html</loc><lastmod>2026-10-07</lastmod><priority>0.7</priority></url>
   <url><loc>https://one1game.github.io/archive/jolly-roger-jam-cathraul-s-curse-5235210.html</loc><lastmod>2026-10-05</lastmod><priority>0.7</priority></url>
   <url><loc>https://one1game.github.io/archive/lupkar-world-of-billiards-5036340.html</loc><lastmod>2026-10-06</lastmod><priority>0.7</priority></url>
   <url><loc>https://one1game.github.io/archive/mythicalbeast-5234170.html</loc><lastmod>2026-10-06</lastmod><priority>0.7</priority></url>
@@ -126,20 +128,20 @@
   <url><loc>https://one1game.github.io/archive/myriad-gambit-5262940.html</loc><lastmod>2026-10-06</lastmod><priority>0.7</priority></url>
   <url><loc>https://one1game.github.io/archive/horde-is-coming-4482600.html</loc><lastmod>2026-10-06</lastmod><priority>0.7</priority></url>
   <url><loc>https://one1game.github.io/archive/-5136270.html</loc><lastmod>2026-10-06</lastmod><priority>0.7</priority></url>
-  <url><loc>https://one1game.github.io/archive/soldier-rush-5113560.html</loc><lastmod>2026-10-04</lastmod><priority>0.7</priority></url>
-  <url><loc>https://one1game.github.io/archive/blackout-5267360.html</loc><lastmod>2026-10-04</lastmod><priority>0.7</priority></url>
-  <url><loc>https://one1game.github.io/archive/3-5269520.html</loc><lastmod>2026-10-04</lastmod><priority>0.7</priority></url>
-  <url><loc>https://one1game.github.io/archive/lucid-sys-4131310.html</loc><lastmod>2026-10-04</lastmod><priority>0.7</priority></url>
-  <url><loc>https://one1game.github.io/archive/lumesprout-5242800.html</loc><lastmod>2026-10-04</lastmod><priority>0.7</priority></url>
-  <url><loc>https://one1game.github.io/archive/alchemy-master-5201260.html</loc><lastmod>2026-10-04</lastmod><priority>0.7</priority></url>
+  <url><loc>https://one1game.github.io/archive/soldier-rush-5113560.html</loc><lastmod>2026-10-07</lastmod><priority>0.7</priority></url>
+  <url><loc>https://one1game.github.io/archive/blackout-5267360.html</loc><lastmod>2026-10-07</lastmod><priority>0.7</priority></url>
+  <url><loc>https://one1game.github.io/archive/3-5269520.html</loc><lastmod>2026-10-07</lastmod><priority>0.7</priority></url>
+  <url><loc>https://one1game.github.io/archive/lucid-sys-4131310.html</loc><lastmod>2026-10-07</lastmod><priority>0.7</priority></url>
+  <url><loc>https://one1game.github.io/archive/lumesprout-5242800.html</loc><lastmod>2026-10-07</lastmod><priority>0.7</priority></url>
+  <url><loc>https://one1game.github.io/archive/alchemy-master-5201260.html</loc><lastmod>2026-10-07</lastmod><priority>0.7</priority></url>
   <url><loc>https://one1game.github.io/archive/timos-4934110.html</loc><lastmod>2026-10-03</lastmod><priority>0.7</priority></url>
   <url><loc>https://one1game.github.io/archive/dreamspring-3231480.html</loc><lastmod>2026-10-03</lastmod><priority>0.7</priority></url>
-  <url><loc>https://one1game.github.io/archive/general-idler-3200810.html</loc><lastmod>2026-10-03</lastmod><priority>0.7</priority></url>
+  <url><loc>https://one1game.github.io/archive/general-idler-3200810.html</loc><lastmod>2026-10-07</lastmod><priority>0.7</priority></url>
   <url><loc>https://one1game.github.io/archive/simrace-publisher-studio-5219510.html</loc><lastmod>2026-10-03</lastmod><priority>0.7</priority></url>
-  <url><loc>https://one1game.github.io/archive/tunnel-escape-fates-entwined-4285110.html</loc><lastmod>2026-10-03</lastmod><priority>0.7</priority></url>
+  <url><loc>https://one1game.github.io/archive/tunnel-escape-fates-entwined-4285110.html</loc><lastmod>2026-10-07</lastmod><priority>0.7</priority></url>
   <url><loc>https://one1game.github.io/archive/spaceman-s-luck-4706030.html</loc><lastmod>2026-10-03</lastmod><priority>0.7</priority></url>
-  <url><loc>https://one1game.github.io/archive/in-these-hallowed-halls-4875320.html</loc><lastmod>2026-10-03</lastmod><priority>0.7</priority></url>
-  <url><loc>https://one1game.github.io/archive/stick-cards-rng-4611600.html</loc><lastmod>2026-10-03</lastmod><priority>0.7</priority></url>
+  <url><loc>https://one1game.github.io/archive/in-these-hallowed-halls-4875320.html</loc><lastmod>2026-10-07</lastmod><priority>0.7</priority></url>
+  <url><loc>https://one1game.github.io/archive/stick-cards-rng-4611600.html</loc><lastmod>2026-10-07</lastmod><priority>0.7</priority></url>
   <url><loc>https://one1game.github.io/archive/your-first-half-orc-a-fantasy-gay-sex-encounter-in-vr-4739740.html</loc><lastmod>2026-10-03</lastmod><priority>0.7</priority></url>
   <url><loc>https://one1game.github.io/archive/birb-4364930.html</loc><lastmod>2026-10-03</lastmod><priority>0.7</priority></url>
   <url><loc>https://one1game.github.io/archive/rorasuketo-4401480.html</loc><lastmod>2026-10-03</lastmod><priority>0.7</priority></url>

@@ -1,0 +1,56 @@
+name: PageSpeed Insights
+
+# Еженедельная проверка Core Web Vitals ключевых страниц.
+# Секрет PAGESPEED_API_KEY не обязателен, но с ним выше лимиты Google.
+
+on:
+  schedule:
+    - cron: '0 6 * * 1'   # каждый понедельник в 06:00 UTC
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  psi:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check Core Web Vitals
+        env:
+          PSI_KEY: ${{ secrets.PAGESPEED_API_KEY }}
+        run: |
+          python - <<'PY'
+          import json, os, urllib.parse, urllib.request
+
+          key = os.environ.get('PSI_KEY', '').strip()
+          urls = [
+              'https://one1game.github.io/',
+              'https://one1game.github.io/portablewebgame/',
+              'https://one1game.github.io/dos/',
+              'https://one1game.github.io/archive.html',
+          ]
+
+          for url in urls:
+              query = {'url': url, 'strategy': 'mobile'}
+              if key:
+                  query['key'] = key
+              api = 'https://www.googleapis.com/pagespeedonline/v5/runPagespeed?' + urllib.parse.urlencode(query)
+              try:
+                  with urllib.request.urlopen(api, timeout=120) as resp:
+                      data = json.load(resp)
+              except Exception as err:
+                  print(f'{url} -> ошибка: {err}')
+                  continue
+
+              result = data.get('lighthouseResult', {})
+              categories = result.get('categories', {})
+              score = int(round((categories.get('performance', {}).get('score') or 0) * 100))
+              audits = result.get('audits', {})
+
+              def display(name):
+                  return audits.get(name, {}).get('displayValue') or '—'
+
+              print(f'{url}')
+              print(f'  performance: {score}/100')
+              print(f'  LCP: {display("largest-contentful-paint")} | CLS: {display("cumulative-layout-shift")} | TBT: {display("total-blocking-time")}')
+          PY

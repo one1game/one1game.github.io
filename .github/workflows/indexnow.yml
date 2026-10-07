@@ -1,0 +1,61 @@
+name: IndexNow
+
+# Сообщает Яндексу и Bing об изменившихся страницах — быстрая индексация.
+# Ключ берётся из секрета INDEXNOW_KEY, а если его нет — из <key>.txt в корне репозитория.
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - '**.html'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  ping:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 2
+
+      - name: Submit changed pages
+        env:
+          SECRET_KEY: ${{ secrets.INDEXNOW_KEY }}
+        run: |
+          set -euo pipefail
+          HOST=one1game.github.io
+
+          if [ -n "${SECRET_KEY:-}" ]; then
+            KEY="$SECRET_KEY"
+          else
+            KEY=$(ls *.txt 2>/dev/null | sed -n 's/^\([0-9a-f]\{32\}\)\.txt$/\1/p' | head -n1)
+          fi
+          if [ -z "${KEY:-}" ]; then
+            echo "IndexNow: ключ не найден — пропускаю"
+            exit 0
+          fi
+
+          CHANGED=$(git diff --name-only --diff-filter=AM HEAD~1 HEAD -- '*.html' 2>/dev/null || true)
+          PATHS=$(printf '%s\n' "$CHANGED" \
+            | sed -e 's#^index\.html$##' -e 's#/index\.html$#/#' \
+            | grep -v '^404\.html$' \
+            | grep -v '^$' \
+            | sort -u || true)
+
+          if [ -z "$CHANGED" ]; then
+            echo "IndexNow: изменённых HTML-страниц нет"
+            exit 0
+          fi
+
+          URLS=$( { printf '%s\n' "$PATHS" | sed "s#^#https://$HOST/#"; echo "https://$HOST/"; } \
+            | grep -v '^$' | sort -u | jq -R . | jq -s .)
+          echo "Отправляю URL:"; echo "$URLS"
+
+          sleep 90  # ждём, пока GitHub Pages опубликует новую версию
+          curl -sS -X POST "https://api.indexnow.org/indexnow" \
+            -H "Content-Type: application/json; charset=utf-8" \
+            -d "{\"host\":\"$HOST\",\"key\":\"$KEY\",\"keyLocation\":\"https://$HOST/$KEY.txt\",\"urlList\":$URLS}" \
+            -w "\nHTTP %{http_code}\n"
