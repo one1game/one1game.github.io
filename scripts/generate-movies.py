@@ -28,6 +28,18 @@ KEYWORD = "based on video game"
 UPCOMING_LIMIT = 12
 RELEASED_LIMIT = 18
 
+# ИИ-обогащение: тот же Cloudflare Workers AI, что и для игровых страниц.
+# Ключи только из окружения, без них генерация текстов просто пропускается.
+CF_ACCOUNT_ID = (os.environ.get("CLOUDFLARE_ACCOUNT_ID")
+                 or os.environ.get("CLOUDFLARE_ACCOUNT") or "")
+CF_API_TOKEN = os.environ.get("CLOUDFLARE_API_TOKEN", "")
+CF_MODELS = (
+    "@cf/mistralai/mistral-small-3.1-24b-instruct",
+    "@cf/meta/llama-3.3-70b-instruct-fp8-fast",
+)
+# Сгенерированные тексты копим здесь, чтобы они не менялись от запуска к запуску.
+AI_FILE = OUT_DIR / "movies-ai.json"
+
 RU_MONTHS = ("января", "февраля", "марта", "апреля", "мая", "июня",
              "июля", "августа", "сентября", "октября", "ноября", "декабря")
 
@@ -150,6 +162,86 @@ def attach_details(item):
         except (urllib.error.URLError, ValueError):
             item["trailer"] = ""
     return item
+
+
+def english_overview(mid):
+    """Английское описание из TMDB — источник для пересказа, если русского нет."""
+    try:
+        data = _get(f"/movie/{mid}", language="en-US")
+    except (urllib.error.URLError, ValueError):
+        return ""
+    return (data.get("overview") or "").strip()
+
+
+def cf_chat(prompt):
+    """Текст от Cloudflare Workers AI. Пусто, если ключей нет или модели молчат."""
+    if not (CF_ACCOUNT_ID and CF_API_TOKEN):
+        return ""
+    for model in CF_MODELS:
+        try:
+            body = json.dumps({"messages": [{"role": "user", "content": prompt}],
+                               "max_tokens": 1200}).encode()
+            req = urllib.request.Request(
+                f"https://api.cloudflare.com/client/v4/accounts/{CF_ACCOUNT_ID}/ai/run/{model}",
+                data=body, method="POST",
+                headers={"Authorization": f"Bearer {CF_API_TOKEN}",
+                         "Content-Type": "application/json"})
+            with urllib.request.urlopen(req, timeout=90) as resp:
+                data = json.loads(resp.read().decode())
+        except (urllib.error.URLError, ValueError):
+            continue
+        result = data.get("result") or {}
+        text = (result.get("response") or "").strip()
+        if not text:
+            choices = result.get("choices") or []
+            if choices:
+                text = ((choices[0].get("message") or {}).get("content") or "").strip()
+        if text:
+            return text
+    return ""
+
+
+def ai_prompt(item, source):
+    cast = ", ".join(name for name, _ in (item.get("cast") or [])) or "не указаны"
+    return (
+        "Ты SEO-редактор кинораздела русскоязычного портала One1Game.\n"
+        "Ниже данные фильма-экранизации видеоигры. Сделай уникальный текст ТОЛЬКО на русском.\n"
+        "Правила:\n"
+        "- Весь ответ только на русском, без английских слов (кроме названия фильма и имён).\n"
+        "- Не выдумывай факты: опирайся только на данные ниже.\n"
+        "- Не пиши «купить», «скачать», «смотреть онлайн».\n"
+        "- Без воды и штампов.\n"
+        "- Верни СТРОГО JSON без markdown:\n"
+        '{"overview":"...","meta":"..."}\n'
+        "- overview: 2-3 предложения, до 420 символов, о чём фильм и чем интересен.\n"
+        "- meta: 120-155 символов.\n"
+        "Данные:\n"
+        f"Название: {item['title']}\n"
+        f"Год: {item['iso'][:4] or 'неизвестен'}\n"
+        f"Жанры: {', '.join(item.get('genres') or []) or 'не указаны'}\n"
+        f"Режиссёр: {', '.join(item.get('directors') or []) or 'не указан'}\n"
+        f"Актёры: {cast}\n"
+        f"Описание TMDB: {source or 'нет'}"
+    )
+
+
+def ai_parse(text):
+    found = re.search(r"\{[\s\S]*\}", text or "")
+    if not found:
+        return None
+    try:
+        return json.loads(found.group(0))
+    except ValueError:
+        return None
+
+
+def load_ai():
+    if not AI_FILE.exists():
+        return {}
+    try:
+        return json.loads(AI_FILE.read_text(encoding="utf-8"))
+    except ValueError:
+        return {}
 
 
 def ru_date(iso):
@@ -369,7 +461,7 @@ def render_movie(item):
     if item.get("runtime"):
         ld["duration"] = f"PT{int(item['runtime'])}M"
 
-    desc = item["overview"] or f"{item['title']} — экранизация видеоигры: описание, актёры, трейлер."
+    desc = item.get("meta") or item["overview"] or f"{item['title']} — экранизация видеоигры: описание, актёры, трейлер."
     body = f"""<main id="main-content" class="container mv-film">
   <nav class="mv-crumbs" aria-label="Хлебные крошки">
     <a href="/">Главная</a> → <a href="/kino/">Кино</a> → <span>{title_esc}</span>
@@ -419,8 +511,47 @@ def main():
     for item in items:
         attach_details(item)
 
+    # Источник описания: русское из TMDB, иначе английское (для пересказа ИИ).
+    for item in items:
+        if not item["overview"]:
+            item["en"] = english_overview(item["id"])
+
+    # Пустышки — ни описания, ни рейтинга — страниц не получают.
+    kept = [i for i in items if i["overview"] or i.get("en") or i["votes"] >= 5]
+    keep_ids = {i["id"] for i in kept}
+    dropped = len(items) - len(kept)
+    upcoming = [i for i in upcoming if i["id"] in keep_ids]
+    released = [i for i in released if i["id"] in keep_ids]
+
+    # ИИ-обогащение: тексты кешируются в movies-ai.json и не меняются от запуска к запуску.
+    ai_data = load_ai()
+    ai_new = 0
+    for item in kept:
+        if item["overview"]:
+            continue
+        cached = ai_data.get(str(item["id"]))
+        if cached and cached.get("overview"):
+            item["overview"] = cached["overview"]
+            item["meta"] = cached.get("meta") or ""
+            continue
+        text = cf_chat(ai_prompt(item, item.get("en", "")))
+        obj = ai_parse(text) if text else None
+        if obj and (obj.get("overview") or "").strip():
+            item["overview"] = str(obj["overview"]).strip()[:420]
+            item["meta"] = str(obj.get("meta") or "").strip()[:160]
+            ai_data[str(item["id"])] = {"overview": item["overview"],
+                                        "meta": item["meta"],
+                                        "updated": date.today().isoformat()}
+            ai_new += 1
+        elif item.get("en"):
+            item["overview"] = item["en"][:420]
+
+    ai_data = {k: v for k, v in ai_data.items() if k in {str(i["id"]) for i in kept}}
+    AI_FILE.write_text(json.dumps(ai_data, ensure_ascii=False, indent=2, sort_keys=True),
+                       encoding="utf-8", newline="\n")
+
     # Убираем страницы фильмов, которых больше нет в подборке.
-    keep = {Path(i["href"]).name for i in items} | {"index.html"}
+    keep = {Path(i["href"]).name for i in kept} | {"index.html"}
     removed = 0
     for old in OUT_DIR.glob("*.html"):
         if old.name not in keep:
@@ -429,11 +560,12 @@ def main():
 
     (OUT_DIR / "index.html").write_text(render_hub(upcoming, released), encoding="utf-8", newline="\n")
     trailers = 0
-    for item in items:
+    for item in kept:
         (OUT_DIR / Path(item["href"]).name).write_text(render_movie(item), encoding="utf-8", newline="\n")
         trailers += 1 if item.get("trailer") else 0
 
-    print(f"Кино: хаб + {len(items)} страниц фильмов (с трейлером: {trailers}), удалено старых: {removed}")
+    print(f"Кино: хаб + {len(kept)} страниц фильмов (трейлеров: {trailers}), "
+          f"удалено старых: {removed}, пропущено пустых: {dropped}, ИИ-текстов новых: {ai_new}")
     print(f"Кино: скоро {len(upcoming)}, вышло {len(released)}")
     return 0
 

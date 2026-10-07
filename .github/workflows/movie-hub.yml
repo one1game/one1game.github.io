@@ -29,6 +29,9 @@ jobs:
       - name: Собрать раздел «Кино» (хаб + страницы фильмов)
         env:
           TMDB_API_KEY: ${{ secrets.TMDB_API_KEY }}
+          # ИИ-обогащение текстов (тот же ключ, что и для игровых страниц).
+          CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID || secrets.CLOUDFLARE_ACCOUNT }}
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
         run: python3 scripts/generate-movies.py
 
       - name: Обновить sitemap
