@@ -10,6 +10,15 @@ VERIFICATION = {'googlee56722acc2e581a3.html', 'yandex_f022bbd73d9b7625.html'}
 SKIP_METADATA = {'stats.html', 'ot/index.html', 'game-ai/rpg/index.html'}
 # Отдельные мини-приложения со своей вёрсткой — не требуем от них SEO-мета.
 SKIP_METADATA_PREFIXES = ('go/',)
+# Вендорные сборки сторонних игр: HTML не наш, требования к разметке не применяем.
+SKIP_HTML_PREFIXES = ('ra2/',)
+# Файлы подтверждения прав (Яндекс/Google) — без doctype, title и мета по определению.
+VERIFICATION_RE = re.compile(r'^(yandex_|google)[0-9a-f]+\.html$', re.IGNORECASE)
+
+
+def is_verification(name):
+    return name in VERIFICATION or bool(VERIFICATION_RE.match(name))
+
 SECRET_PATTERNS = [
     re.compile(r'AIzaSy[A-Za-z0-9_-]{20,}'),
     re.compile(r'https://api\.buttondown\.email/v1/subscribers'),
@@ -103,6 +112,8 @@ for path in sorted(ROOT.rglob('*.html')):
     rel = path.relative_to(ROOT).as_posix()
     if any(part in {'.git', 'node_modules'} for part in Path(rel).parts):
         continue
+    if rel.startswith(SKIP_HTML_PREFIXES):
+        continue
     html_count += 1
     text = path.read_text(encoding='utf-8', errors='replace')
     parser = PageParser()
@@ -112,18 +123,19 @@ for path in sorted(ROOT.rglob('*.html')):
         errors.append(f'{rel}: HTML parse error: {exc}')
         continue
 
-    if not parser.doctype and Path(rel).name not in VERIFICATION:
+    verified = is_verification(Path(rel).name)
+    if not parser.doctype and not verified:
         errors.append(f'{rel}: missing <!doctype html>')
-    if not parser.lang and Path(rel).name not in VERIFICATION:
+    if not parser.lang and not verified:
         errors.append(f'{rel}: missing html[lang]')
-    if Path(rel).name not in VERIFICATION and not parser.title.strip():
+    if not verified and not parser.title.strip():
         errors.append(f'{rel}: missing title')
-    if rel not in SKIP_METADATA and not rel.startswith(SKIP_METADATA_PREFIXES) and Path(rel).name not in VERIFICATION:
+    if rel not in SKIP_METADATA and not rel.startswith(SKIP_METADATA_PREFIXES) and not verified:
         if not parser.description:
             warnings.append(f'{rel}: missing meta description')
         if not parser.canonical:
             warnings.append(f'{rel}: missing canonical')
-    if parser.h1_count == 0 and rel not in SKIP_METADATA and not rel.startswith(SKIP_METADATA_PREFIXES) and Path(rel).name not in VERIFICATION:
+    if parser.h1_count == 0 and rel not in SKIP_METADATA and not rel.startswith(SKIP_METADATA_PREFIXES) and not verified:
         warnings.append(f'{rel}: missing H1')
     duplicate_ids = sorted({x for x in parser.ids if parser.ids.count(x) > 1})
     if duplicate_ids:
