@@ -44,6 +44,7 @@ AI_VERSION = 4
 WIKI_LANGS = ("ru", "en")
 # Отладочные образцы ответов ИИ (первые несколько) — попадают в отчёт прогона.
 AI_DEBUG = []
+CF_DEBUG = []
 
 RU_MONTHS = ("января", "февраля", "марта", "апреля", "мая", "июня",
              "июля", "августа", "сентября", "октября", "ноября", "декабря")
@@ -259,7 +260,13 @@ def cf_chat(prompt):
                 headers={"Authorization": f"Bearer {CF_API_TOKEN}",
                          "Content-Type": "application/json"})
             with urllib.request.urlopen(req, timeout=90) as resp:
+                status = resp.status
                 data = json.loads(resp.read().decode())
+            if data.get("success") is False:
+                if len(CF_DEBUG) < 3:
+                    CF_DEBUG.append({"model": model, "http": status,
+                                     "errors": str(data.get("errors"))[:180]})
+                continue
             result = data.get("result") or {}
             text = as_text(result.get("response"))
             if not text:
@@ -268,7 +275,17 @@ def cf_chat(prompt):
                     text = as_text((choices[0].get("message") or {}).get("content"))
             if text:
                 return text
-        except Exception:  # noqa: BLE001 — таймауты и сетевые сбои не должны ломать прогон
+        except urllib.error.HTTPError as err:
+            if len(CF_DEBUG) < 3:
+                try:
+                    body = err.read().decode()[:180]
+                except Exception:  # noqa: BLE001
+                    body = ""
+                CF_DEBUG.append({"model": model, "http": err.code, "body": body})
+            continue
+        except Exception as err:  # noqa: BLE001 — таймауты и сетевые сбои не должны ломать прогон
+            if len(CF_DEBUG) < 3:
+                CF_DEBUG.append({"model": model, "error": f"{type(err).__name__}: {err}"[:180]})
             continue
     return ""
 
@@ -770,6 +787,7 @@ def run():
         "upcoming": len(upcoming), "released": len(released),
         "errors": errors[:5],
         "ai_debug": AI_DEBUG[:3],
+        "cf_debug": CF_DEBUG[:3],
     }
 
 
