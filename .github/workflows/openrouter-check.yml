@@ -1,0 +1,39 @@
+name: OpenRouter check
+
+# Разовая проверка ключа OpenRouter: что за ключ, баланс, доступные модели.
+# Запускается при изменении самого скрипта проверки или вручную.
+# Секрет (Settings → Secrets → Actions): KINO_TOKEN_openrouter
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'scripts/openrouter-check.py'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+
+      - uses: actions/setup-python@v6
+        with:
+          python-version: '3.12'
+
+      - name: Проверить ключ OpenRouter
+        env:
+          OPENROUTER_API_KEY: ${{ secrets.KINO_TOKEN_openrouter }}
+        run: python3 scripts/openrouter-check.py
+
+      - name: Коммит результата
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add openrouter-check.json
+          git diff --quiet --cached || git commit -m "Проверка ключа OpenRouter"
+          git pull --rebase --autostash origin main
+          git push
