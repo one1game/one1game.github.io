@@ -32,7 +32,10 @@
 
   // ── PWA ────────────────────────────────────────────
   if ('serviceWorker' in navigator) {
-    navigator.serviceWorker.register('/sw.js');
+    navigator.serviceWorker.register('/sw.js').then(function (reg) {
+      // Проверяем обновление при каждом заходе, чтобы новая версия подхватывалась сразу.
+      if (reg && reg.update) reg.update();
+    }).catch(function () {});
   }
 
   // ── Active page detection ──────────────────────────
