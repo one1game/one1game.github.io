@@ -5,17 +5,27 @@
   "trailers": 22,
   "removed": 0,
   "dropped": 0,
-  "ai_new": 0,
-  "ai_wiki": 10,
-  "ai_fail": 0,
+  "ai_new": 27,
+  "ai_wiki": 8,
+  "ai_fail": 1,
   "upcoming": 10,
   "released": 18,
-  "errors": [
-    "ИИ 1153576: AttributeError: 'dict' object has no attribute 'strip'",
-    "ИИ 1300926: AttributeError: 'dict' object has no attribute 'strip'",
-    "ИИ 1401586: AttributeError: 'dict' object has no attribute 'strip'",
-    "ИИ 1177369: AttributeError: 'dict' object has no attribute 'strip'",
-    "ИИ 1701407: AttributeError: 'dict' object has no attribute 'strip'"
-  ],
-  "ai_debug": []
+  "errors": [],
+  "ai_debug": [
+    {
+      "id": 1153576,
+      "strict": false,
+      "raw": "{\"facts\": [\"Режиссёр: Китао Сакураи\", \"Студии: Capcom, Legendary Pictures\", \"Страны: Япония, США\", \"Жанры: боевик, фэнтези\"], \"lead\": \"Уличный боец - новый фильм 2026 года, сочетающий в себе элементы "
+    },
+    {
+      "id": 1300926,
+      "strict": false,
+      "raw": "{\"facts\": [\"Режиссёр: Джон Райс\", \"Студии: Rovio Animation, SEGA of America\", \"Страны: Финляндия, Япония, США\", \"Бюджет и сборы не указаны\"], \"lead\": \"Angry Birds 3 в кино - новый мультфильм от режисс"
+    },
+    {
+      "id": 1401586,
+      "strict": false,
+      "raw": "{\"facts\": [\"Режиссёр - Джефф Фаулер\", \"Студии - Paramount Pictures, Original Film\", \"Страны - США, Япония\", \"Жанры - комедия, боевик, семейный, фантастика\"], \"lead\": \"Соник 4 в Кино - долгожданное про"
+    }
+  ]
 }
