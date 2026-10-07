@@ -235,9 +235,9 @@
       "integrity": "sha384-/rgqyTcT43ZUxiw3eXR7apzrkvEE4kVAp7nQjpeZHDM+mgVc95fSTiXU7C4YWq8z"
     },
     "qq.html": {
-      "bytes": 1770,
-      "sha256": "717aaab59facc057066fb475b8b98a8bd354d7fc68dd80ef7c8ef96106d0317c",
-      "integrity": "sha384-LtackwuZGaKGzPxG/6LlcXqIfTmTQkVYsaPpT3PEdgv0H/iIodLJgc5bLbAkOa0+"
+      "bytes": 2012,
+      "sha256": "b1d3ef743dbb1eede51e08e23ebb00bc836f1de10c8631d46e504436d70203ae",
+      "integrity": "sha384-hhldfWEj//i56WUt27TpLvcGXc9lkShqsm/PF5M0mHtf/sGTsWkCkXVo+Pz+u9PD"
     },
     "res/fonts/fonts.css": {
       "bytes": 7344,
@@ -395,9 +395,9 @@
       "integrity": "sha384-I63YP0gzGvAe+f+tYIMvIRLJ+5Xng9pmdGJDfacDS69M97vcF3cWqW8cwzfGTnu5"
     },
     "res/overlay/modcd.ini": {
-      "bytes": 244,
-      "sha256": "f94de9d9a48b0eedf336635a52f069673f82676f0ba62a9afb2210f44fa0d006",
-      "integrity": "sha384-ty0MyDx+EZwvKRsywo9ztr7CHKwqkRrQ6Vw3qu1S0Mm8HnpnKPLL8cydmcxxa2WA"
+      "bytes": 271,
+      "sha256": "38507dc8beaed15ae980d124ef0298fbbb5e2e8397822320b4557b4da9a1f4fd",
+      "integrity": "sha384-QpcySgbl4kma5tL5CkanA/zQHVMw9f1o6Sa+pzkJPxGnpDA/X2ups01TyAH0esnT"
     },
     "res/overlay/mpbattle.ini": {
       "bytes": 295,
@@ -510,14 +510,14 @@
       "integrity": "sha384-Z4VyJKNSjV1RlaX2HUvhXdYgEJp91Ul1KQyN8XrN2tYXuFnMDnBpTYr28iSDnLlL"
     },
     "res/race/maps/arctic.json": {
-      "bytes": 657813,
-      "sha256": "d6e5a52773c96ab41c94f042e2773a8f9a92ea86147941edf446da37d8bfa5e8",
-      "integrity": "sha384-c3UqT6oAnCMMlW0Z1vzL3jOk5B3Aagi9Dvo0mWxBUalARvYA2InTI1BOoISblKFV"
+      "bytes": 657829,
+      "sha256": "6b6668a92298111a63cda643e40bf952b1e1cb63c76c3eb481f3e281cb02acae",
+      "integrity": "sha384-tDZxpDphYljQVaH6nr7HiLZI3lw4OMY0G6L6g/PLvYFPUIhkBvKtLvUz82xZrNwd"
     },
     "res/race/maps/long_march.json": {
-      "bytes": 779445,
-      "sha256": "6c4093901838487de1d9a659b3f7e5b3d8a472364671c6168751600ee115b877",
-      "integrity": "sha384-ZrYCzaSuk7Eb6CynpqAG29WO3vPSPi+7AWusljr8wdch+X8pxxjW+gA2RWXB7sDq"
+      "bytes": 779464,
+      "sha256": "ea4076093c830e6be2a660e8218fe4e08ea033960b860bd7a14c1fe59a6180e3",
+      "integrity": "sha384-DSnUNF5az/Z2MJ2aeDkBaeje433EXDCuy0nN+msJSaQpTf4eDVRRBml181eA8/Ju"
     },
     "res/race/previews/race-arctic-preview.jpg": {
       "bytes": 455034,
