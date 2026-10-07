@@ -1,3 +1,4 @@
+import os
 import re
 from datetime import datetime, timezone
 
@@ -92,6 +93,13 @@ def generate():
     for slug in ('ii-i-tehnologii', 'analitika', 'gajdy', 'konsoli', 'trendy',
                  'razrabotka', 'mnenie', 'kino-i-igry', 'obzory'):
         lines.append(url_block(f'{BASE_URL}/category/{slug}.html', lastmod=today, priority='0.6'))
+
+    # Страницы фильмов, сгенерированные из TMDB
+    kino_dir = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'kino')
+    if os.path.isdir(kino_dir):
+        for name in sorted(os.listdir(kino_dir)):
+            if name.endswith('.html') and name != 'index.html':
+                lines.append(url_block(f'{BASE_URL}/kino/{name}', lastmod=today, priority='0.6'))
 
     for url in urls:
         clean_path = url.lstrip('/')

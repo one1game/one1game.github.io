@@ -7,6 +7,10 @@ name: Movie hub (TMDB)
 on:
   schedule:
     - cron: '0 6 * * 1'
+  push:
+    branches: [main]
+    paths:
+      - 'scripts/generate-movies.py'
   workflow_dispatch:
 
 permissions:
@@ -22,7 +26,7 @@ jobs:
         with:
           python-version: '3.12'
 
-      - name: Собрать страницу /kino/
+      - name: Собрать раздел «Кино» (хаб + страницы фильмов)
         env:
           TMDB_API_KEY: ${{ secrets.TMDB_API_KEY }}
         run: python3 scripts/generate-movies.py
@@ -34,7 +38,7 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add kino/index.html sitemap.xml
-          git diff --quiet --cached || git commit -m "Кино: обновление страницы экранизаций (TMDB)"
+          git add -A kino sitemap.xml
+          git diff --quiet --cached || git commit -m "Кино: обновление раздела — хаб и страницы фильмов (TMDB)"
           git pull --rebase --autostash origin main
           git push
