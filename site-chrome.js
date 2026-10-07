@@ -22,8 +22,7 @@
   var isScanner = starts('/cyber-scanner');
   var isL2 = starts('/l2');
   var isFeed = starts('/feed');
-  var isRa2 = starts('/ra2') || starts('/red-alert-2');
-  var isRetro = starts('/portablewebgame') || starts('/dos');
+  var isRetro = starts('/portablewebgame') || starts('/dos') || starts('/ra2') || starts('/red-alert-2');
 
   function a(s) { return s ? ' active' : ''; }
 
@@ -35,7 +34,6 @@
     '    <div class="nav-links">' +
     '      <a href="/" class="nav-link' + a(isHome) + '">Главная</a>' +
     '      <a href="/feed/" class="nav-link' + a(isFeed) + '">ТикТок</a>' +
-    '      <a href="/red-alert-2/" class="nav-link' + a(isRa2) + '">Red Alert 2</a>' +
     '      <a href="/portablewebgame/" class="nav-link' + a(isRetro) + '">Ретро-игры</a>' +
     '      <a href="/go/" class="nav-link' + a(isGo) + '">Игры онлайн</a>' +
     '      <a href="/archive.html" class="nav-link' + a(isArchive) + '">Статьи</a>' +
