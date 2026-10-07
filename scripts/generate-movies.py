@@ -244,6 +244,16 @@ def load_ai():
         return {}
 
 
+def clamp(text, limit):
+    """Обрезает текст по границе слова, чтобы не рвать слова пополам."""
+    text = str(text or "").strip()
+    if len(text) <= limit:
+        return text
+    cut = text[:limit]
+    space = cut.rfind(" ")
+    return (cut[:space] if space > limit * 0.6 else cut).strip()
+
+
 def ru_date(iso):
     if len(iso) < 10:
         return "дата не объявлена"
@@ -537,8 +547,8 @@ def main():
         text = cf_chat(ai_prompt(item, item.get("en", "")))
         obj = ai_parse(text) if text else None
         if obj and (obj.get("overview") or "").strip():
-            item["overview"] = str(obj["overview"]).strip()[:420]
-            item["meta"] = str(obj.get("meta") or "").strip()[:160]
+            item["overview"] = clamp(obj["overview"], 420)
+            item["meta"] = clamp(obj.get("meta"), 158)
             ai_data[str(item["id"])] = {"overview": item["overview"],
                                         "meta": item["meta"],
                                         "updated": date.today().isoformat()}
