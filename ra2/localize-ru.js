@@ -537,9 +537,116 @@
     else document.addEventListener('DOMContentLoaded', addButton);
   }
 
+  /* ── Настройка мобильного круга управления ──────────────────────────
+   * Движок кладёт центр (джойстик = прокрутка карты) и кнопки вокруг него
+   * как DOM-элементы. Меняем геометрию на лету: центр крупнее, кольцо
+   * раздвигаем, чтобы кнопки не налезали. Радиусы кнопок хранятся в
+   * buttonDefs и используются и для отрисовки, и для попаданий — правим их,
+   * поэтому тапы совпадают с картинкой.
+   */
+  var JOY_CENTER_SCALE = 2;   // во сколько раз увеличить центр (джойстик)
+  var JOY_GAP = 14;           // зазор между центром и кнопками, px
+
+  function tuneJoystick(j) {
+    if (!j || !j.clusterEl || j.__ruTuned) return;
+    j.__ruTuned = true;
+
+    var oldInner = j.buttonInnerOrbit;
+    var oldOuter = j.buttonOuterOrbit;
+    var btn = j.buttonBaseSize;
+    var maxBtn = Math.max(j.buttonBaseSize, j.holdButtonSize || j.buttonBaseSize);
+    var ringGap = Math.max(20, oldOuter - oldInner);
+
+    var pad = Math.round(j.joystickPadSize * JOY_CENTER_SCALE);
+    var inner = Math.round(pad / 2 + JOY_GAP + btn / 2);
+    var outer = inner + ringGap;
+    var cluster = Math.round(2 * (outer + maxBtn / 2 + 10));
+
+    // Не даём кругу вылезти за экран: при необходимости ужимаем всё разом.
+    var maxCl = Math.min(window.innerWidth, window.innerHeight) - 8;
+    if (maxCl > 120 && cluster > maxCl) {
+      var k = maxCl / cluster;
+      pad = Math.round(pad * k);
+      inner = Math.round(inner * k);
+      outer = Math.round(outer * k);
+      cluster = Math.round(cluster * k);
+    }
+
+    j.joystickPadSize = pad;
+    j.buttonInnerOrbit = inner;
+    j.buttonOuterOrbit = outer;
+    j.clusterSize = cluster;
+    (j.buttonDefs || []).forEach(function (d) {
+      if (d.radius === oldInner) d.radius = inner;
+      else if (d.radius === oldOuter) d.radius = outer;
+    });
+
+    // Кластер
+    j.clusterEl.style.width = cluster + 'px';
+    j.clusterEl.style.height = cluster + 'px';
+
+    // Центр (джойстик) + внутреннее кольцо
+    var padEl = j.joystickTouchPad;
+    if (padEl) {
+      var off = (cluster - pad) / 2;
+      padEl.style.left = off + 'px';
+      padEl.style.bottom = off + 'px';
+      padEl.style.width = pad + 'px';
+      padEl.style.height = pad + 'px';
+      padEl.style.borderRadius = pad / 2 + 'px';
+      var ring = padEl.children[0];
+      if (ring) {
+        var n = Math.max(36, pad - 24);
+        var a = Math.max(0, (pad - n) / 2);
+        ring.style.left = a + 'px';
+        ring.style.top = a + 'px';
+        ring.style.width = n + 'px';
+        ring.style.height = n + 'px';
+        ring.style.borderRadius = n / 2 + 'px';
+      }
+    }
+
+    // Кнопки вокруг — по той же формуле, что и в движке
+    (j.buttonDefs || []).forEach(function (d) {
+      var h = j.buttonsByKey && j.buttonsByKey.get ? j.buttonsByKey.get(d.key) : null;
+      if (!h || !h.el) return;
+      var sz = typeof d.size === 'number' ? d.size : j.buttonBaseSize;
+      var r = typeof d.radius === 'number' ? d.radius : j.buttonInnerOrbit;
+      var x = cluster / 2 + Math.cos(d.angle || 0) * r + (d.xOffset || 0) - sz / 2;
+      var y = cluster / 2 + Math.sin(d.angle || 0) * r + (d.yOffset || 0) - sz / 2;
+      h.el.style.left = x + 'px';
+      h.el.style.bottom = y + 'px';
+    });
+
+    try { j.applyClusterPosition && j.applyClusterPosition(); } catch (e) { /* ignore */ }
+    try { j.applyDisplayMode && j.applyDisplayMode(); } catch (e) { /* ignore */ }
+
+    // Страховка: не даём вылезти за края экрана
+    try {
+      var r2 = j.clusterEl.getBoundingClientRect();
+      var left = parseFloat(j.clusterEl.style.left);
+      var bottom = parseFloat(j.clusterEl.style.bottom);
+      if (!isFinite(left)) left = 67;
+      if (!isFinite(bottom)) bottom = 67;
+      if (r2.top < 4) bottom = Math.max(4, bottom - (4 - r2.top));
+      if (r2.right > window.innerWidth - 4) left = Math.max(4, left - (r2.right - (window.innerWidth - 4)));
+      j.clusterEl.style.left = left + 'px';
+      j.clusterEl.style.bottom = bottom + 'px';
+    } catch (e) { /* ignore */ }
+  }
+
+  function setupJoystick() {
+    if (!isTouch()) return;
+    setInterval(function () {
+      var j = window.__ra2webVirtualJoystickLite;
+      if (j && j.clusterEl) tuneJoystick(j);
+    }, 1000);
+  }
+
   function boot() {
     startI18n();
     setupFullscreen();
+    setupJoystick();
   }
 
   if (document.readyState === 'loading') {

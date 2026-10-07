@@ -64,8 +64,8 @@
     },
     "index.html": {
       "bytes": 28929,
-      "sha256": "a086d280ef8717fbb2995bcf0fce6cf707438c3cd662a056a2a6d4a95551bca9",
-      "integrity": "sha384-6JrtLm/oKiwJcwMJzXrerI2yG/yvOJ67RnLHPsJdJ/TSax7ZOuPB53XPoF2oexaA"
+      "sha256": "a3a64b8ea179ac943303cb0c4281d761cab78f1bbb62843cd25fd3333e55a763",
+      "integrity": "sha384-78QrgdGli3U0hXrt38N8qNO7UOB7k9K7SS1Wp8EESkjoTUE2f0iKerwyaOlsBGr3"
     }
   },
   "files": {
@@ -141,8 +141,8 @@
     },
     "index.html": {
       "bytes": 28929,
-      "sha256": "a086d280ef8717fbb2995bcf0fce6cf707438c3cd662a056a2a6d4a95551bca9",
-      "integrity": "sha384-6JrtLm/oKiwJcwMJzXrerI2yG/yvOJ67RnLHPsJdJ/TSax7ZOuPB53XPoF2oexaA"
+      "sha256": "a3a64b8ea179ac943303cb0c4281d761cab78f1bbb62843cd25fd3333e55a763",
+      "integrity": "sha384-78QrgdGli3U0hXrt38N8qNO7UOB7k9K7SS1Wp8EESkjoTUE2f0iKerwyaOlsBGr3"
     },
     "js/7zz.wasm": {
       "bytes": 1651931,
