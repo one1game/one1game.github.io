@@ -34,11 +34,14 @@ CF_ACCOUNT_ID = (os.environ.get("CLOUDFLARE_ACCOUNT_ID")
                  or os.environ.get("CLOUDFLARE_ACCOUNT") or "")
 CF_API_TOKEN = os.environ.get("CLOUDFLARE_API_TOKEN", "")
 CF_MODELS = (
-    "@cf/mistralai/mistral-small-3.1-24b-instruct",
     "@cf/meta/llama-3.3-70b-instruct-fp8-fast",
+    "@cf/mistralai/mistral-small-3.1-24b-instruct",
 )
 # Сгенерированные тексты копим здесь, чтобы они не менялись от запуска к запуску.
 AI_FILE = OUT_DIR / "movies-ai.json"
+# Версия формата текста: при смене промпта/структуры старые записи перегенерируются.
+AI_VERSION = 2
+WIKI_LANGS = ("ru", "en")
 
 RU_MONTHS = ("января", "февраля", "марта", "апреля", "мая", "июня",
              "июля", "августа", "сентября", "октября", "ноября", "декабря")
@@ -143,9 +146,9 @@ def pick_trailer(videos):
 
 
 def attach_details(item):
-    """Догружает жанры, длительность, актёров и трейлер (рус. с откатом на англ.)."""
+    """Догружает жанры, длительность, актёров, факты и трейлер (рус. с откатом на англ.)."""
     try:
-        data = _get(f"/movie/{item['id']}", append_to_response="videos,credits")
+        data = _get(f"/movie/{item['id']}", append_to_response="videos,credits,keywords")
     except (urllib.error.URLError, ValueError):
         return item
     item["genres"] = [g.get("name") for g in (data.get("genres") or []) if g.get("name")]
@@ -155,6 +158,15 @@ def attach_details(item):
                     for c in ((data.get("credits") or {}).get("cast") or [])[:8] if c.get("name")]
     item["directors"] = [c.get("name") for c in ((data.get("credits") or {}).get("crew") or [])
                          if c.get("job") == "Director" and c.get("name")]
+    item["companies"] = [c.get("name") for c in (data.get("production_companies") or [])
+                         if c.get("name")][:4]
+    item["countries"] = [c.get("name") for c in (data.get("production_countries") or [])
+                         if c.get("name")][:3]
+    item["budget"] = data.get("budget") or 0
+    item["revenue"] = data.get("revenue") or 0
+    item["status"] = (data.get("status") or "").strip()
+    item["keywords"] = [k.get("name") for k in ((data.get("keywords") or {}).get("keywords") or [])
+                        if k.get("name")][:8]
     item["trailer"] = pick_trailer(data.get("videos"))
     if not item["trailer"]:
         try:
@@ -162,6 +174,28 @@ def attach_details(item):
         except (urllib.error.URLError, ValueError):
             item["trailer"] = ""
     return item
+
+
+def wiki_text(title, year):
+    """Краткий пересказ статьи Википедии — источник реальных фактов для ИИ."""
+    for lang in WIKI_LANGS:
+        for query in (f"{title} ({year})" if year else title, title):
+            try:
+                url = ("https://" + lang + ".wikipedia.org/w/api.php?"
+                       + urllib.parse.urlencode({
+                           "action": "query", "format": "json", "redirects": 1,
+                           "prop": "extracts", "explaintext": 1, "exsectionformat": "plain",
+                           "titles": query}))
+                req = urllib.request.Request(url, headers={"User-Agent": "One1GameBot/1.0"})
+                with urllib.request.urlopen(req, timeout=30) as resp:
+                    pages = (json.loads(resp.read().decode()).get("query") or {}).get("pages") or {}
+            except (urllib.error.URLError, ValueError):
+                continue
+            for page in pages.values():
+                text = (page.get("extract") or "").strip()
+                if len(text) > 400:
+                    return text[:4000]
+    return ""
 
 
 def english_overview(mid):
@@ -201,28 +235,99 @@ def cf_chat(prompt):
     return ""
 
 
-def ai_prompt(item, source):
-    cast = ", ".join(name for name, _ in (item.get("cast") or [])) or "не указаны"
+def fmt_money(value):
+    return f"{int(value):,}".replace(",", " ") + " $" if value else ""
+
+
+def cyrillic_ratio(text):
+    letters = [c for c in text if c.isalpha()]
+    if not letters:
+        return 0.0
+    return sum(1 for c in letters if c.lower() == "ё" or "а" <= c.lower() <= "я") / len(letters)
+
+
+def ai_prompt(item, wiki, strict=False):
+    cast = ", ".join(f"{n} — {r}" if r else n for n, r in (item.get("cast") or [])) or "не указаны"
+    rows = [
+        f"Название: {item['title']}",
+        f"Год: {item['iso'][:4] or 'неизвестен'}",
+        f"Статус: {item.get('status') or 'неизвестен'}",
+        f"Жанры: {', '.join(item.get('genres') or []) or 'не указаны'}",
+        f"Длительность: {ru_runtime(item.get('runtime')) or 'неизвестна'}",
+        f"Режиссёр: {', '.join(item.get('directors') or []) or 'не указан'}",
+        f"Актёры: {cast}",
+        f"Студии: {', '.join(item.get('companies') or []) or 'не указаны'}",
+        f"Страны: {', '.join(item.get('countries') or []) or 'не указаны'}",
+    ]
+    if item.get("budget"):
+        rows.append(f"Бюджет: {fmt_money(item['budget'])}")
+    if item.get("revenue"):
+        rows.append(f"Сборы: {fmt_money(item['revenue'])}")
+    if item.get("keywords"):
+        rows.append(f"Ключевые слова: {', '.join(item['keywords'])}")
+    source = item.get("overview") or item.get("en") or ""
+    if source:
+        rows.append(f"Описание (TMDB): {source}")
+    if wiki:
+        rows.append(f"Статья Википедии:\n{wiki}")
+
     return (
-        "Ты SEO-редактор кинораздела русскоязычного портала One1Game.\n"
-        "Ниже данные фильма-экранизации видеоигры. Сделай уникальный текст ТОЛЬКО на русском.\n"
-        "Правила:\n"
-        "- Весь ответ только на русском, без английских слов (кроме названия фильма и имён).\n"
-        "- Не выдумывай факты: опирайся только на данные ниже.\n"
-        "- Не пиши «купить», «скачать», «смотреть онлайн».\n"
-        "- Без воды и штампов.\n"
+        "Ты опытный редактор кинораздела русскоязычного портала One1Game (сайт про игры и кино).\n"
+        "Ниже данные фильма. Напиши уникальную заметку ТОЛЬКО на русском.\n"
+        "Жёсткие правила:\n"
+        "- Только русский. Английских слов нет, кроме названий фильмов и имён людей.\n"
+        "- Используй ТОЛЬКО факты из блока «Данные». Ничего не придумывай и не додумывай.\n"
+        "- Нет данных для части — верни для неё пустую строку или пустой список.\n"
+        "- Без спойлеров: не раскрывай финал и ключевые повороты сюжета.\n"
+        "- Запрещены слова «купить», «скачать», «смотреть онлайн».\n"
+        "- Без воды, штампов и повторов одних и тех же мыслей.\n"
         "- Верни СТРОГО JSON без markdown:\n"
-        '{"overview":"...","meta":"..."}\n'
-        "- overview: 2-3 предложения, до 420 символов, о чём фильм и чем интересен.\n"
-        "- meta: 120-155 символов.\n"
-        "Данные:\n"
-        f"Название: {item['title']}\n"
-        f"Год: {item['iso'][:4] or 'неизвестен'}\n"
-        f"Жанры: {', '.join(item.get('genres') or []) or 'не указаны'}\n"
-        f"Режиссёр: {', '.join(item.get('directors') or []) or 'не указан'}\n"
-        f"Актёры: {cast}\n"
-        f"Описание TMDB: {source or 'нет'}"
+        '{"lead":"...","plot":"...","facts":["..."],"trivia":["..."],"meta":"..."}\n'
+        "- lead: 2-3 предложения, 150-380 символов. Что это за фильм и чем он интересен.\n"
+        "- plot: 2-4 предложения, 150-600 символов. Краткий сюжет без концовки. Нет данных — \"\".\n"
+        "- facts: 2-5 фактов, каждый 30-120 символов: производство, бюджет, сборы, студии, страны, кастинг.\n"
+        "- trivia: 0-3 факта, каждый 30-140 символов. Нет — [].\n"
+        "- meta: 120-155 символов, обязательно с названием фильма.\n"
+        + ("- ВНИМАНИЕ: прошлый ответ нарушил правила (язык, длина или пустые поля). Исправь.\n" if strict else "")
+        + "Данные:\n" + "\n".join(rows)
     )
+
+
+def ai_valid(obj):
+    if not isinstance(obj, dict):
+        return False
+    lead = str(obj.get("lead") or "").strip()
+    meta = str(obj.get("meta") or "").strip()
+    if not 60 <= len(lead) <= 520 or not 60 <= len(meta) <= 200:
+        return False
+    # Язык проверяем по каждому полю: русский текст не должен тонуть в английском.
+    if cyrillic_ratio(lead) < 0.5 or cyrillic_ratio(meta) < 0.5:
+        return False
+    if str(obj.get("plot") or "").strip() and cyrillic_ratio(str(obj["plot"])) < 0.5:
+        return False
+    for key, limit in (("facts", 6), ("trivia", 5)):
+        rows = obj.get(key) or []
+        if not isinstance(rows, list) or len(rows) > limit:
+            return False
+        if any(not str(r).strip() for r in rows):
+            return False
+    return True
+
+
+def generate_article(item, wiki):
+    """До двух попыток: обычная и со строгим напоминанием. Иначе None."""
+    for strict in (False, True):
+        text = cf_chat(ai_prompt(item, wiki, strict))
+        obj = ai_parse(text) if text else None
+        if obj and ai_valid(obj):
+            return {
+                "lead": clamp(obj.get("lead"), 420),
+                "plot": clamp(obj.get("plot"), 640),
+                "facts": [clamp(f, 130) for f in (obj.get("facts") or [])[:5]],
+                "trivia": [clamp(t, 150) for t in (obj.get("trivia") or [])[:3]],
+                "meta": clamp(obj.get("meta"), 158),
+            }
+    return None
 
 
 def ai_parse(text):
@@ -279,11 +384,12 @@ def card(item):
                   f'width="300" height="450">')
     else:
         poster = '<span class="mv-empty">🎬</span>'
+    desc = (item.get("article") or {}).get("lead") or item["overview"] or "Описание пока не добавлено."
     return (f'<article class="mv-card">'
             f'<a class="mv-poster" href="{item["href"]}">{poster}{rate}</a>'
             f'<div class="mv-body"><b><a href="{item["href"]}">{title}</a></b>'
             f'<small>{ru_date(item["iso"])}</small>'
-            f'<p>{html.escape(item["overview"]) or "Описание пока не добавлено."}</p>'
+            f'<p>{html.escape(desc)}</p>'
             f'</div></article>')
 
 
@@ -336,6 +442,8 @@ MOVIE_CSS = """
 .mv-facts span b{color:var(--acid);font-weight:700}
 .mv-film-overview{color:var(--ink-dim);font-size:.9rem;line-height:1.7}
 .mv-film h2{font-size:1.05rem;color:#fff;margin:24px 0 10px}
+.mv-list{margin:0;padding-left:20px;color:var(--ink-dim);font-size:.86rem;line-height:1.7}
+.mv-list li{margin-bottom:6px}
 .mv-trailer{position:relative;aspect-ratio:16/9;border:1px solid var(--line-hi);border-radius:12px;overflow:hidden;background:#000}
 .mv-trailer iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
 .mv-cast{display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:8px}
@@ -425,7 +533,8 @@ def render_hub(upcoming, released):
 
 def render_movie(item):
     title_esc = html.escape(item["title"])
-    overview = item["overview"] or "Описание пока не добавлено."
+    art = item.get("article") or {}
+    lead = art.get("lead") or item["overview"] or "Описание пока не добавлено."
     facts = []
     if item["iso"]:
         facts.append(f'<span>Премьера: <b>{ru_date(item["iso"])}</b></span>')
@@ -451,6 +560,14 @@ def render_movie(item):
     if item.get("cast"):
         rows = "".join(f'<div><b>{html.escape(n)}</b>{html.escape(r)}</div>' for n, r in item["cast"])
         cast = f'<h2>В ролях</h2>\n<div class="mv-cast">{rows}</div>'
+    plot_html = (f'<h2>Сюжет</h2>\n<p class="mv-film-overview">{html.escape(art["plot"])}</p>'
+                 if art.get("plot") else "")
+    facts_html = ("<h2>Факты о фильме</h2>\n<ul class=\"mv-list\">"
+                  + "".join(f'<li>{html.escape(x)}</li>' for x in (art.get("facts") or [])) + "</ul>"
+                  if art.get("facts") else "")
+    trivia_html = ("<h2>Интересные факты</h2>\n<ul class=\"mv-list\">"
+                   + "".join(f'<li>{html.escape(x)}</li>' for x in (art.get("trivia") or [])) + "</ul>"
+                   if art.get("trivia") else "")
 
     ld = {
         "@context": "https://schema.org",
@@ -471,7 +588,7 @@ def render_movie(item):
     if item.get("runtime"):
         ld["duration"] = f"PT{int(item['runtime'])}M"
 
-    desc = item.get("meta") or item["overview"] or f"{item['title']} — экранизация видеоигры: описание, актёры, трейлер."
+    desc = art.get("meta") or item["overview"] or f"{item['title']} — экранизация видеоигры: описание, актёры, трейлер."
     body = f"""<main id="main-content" class="container mv-film">
   <nav class="mv-crumbs" aria-label="Хлебные крошки">
     <a href="/">Главная</a> → <a href="/kino/">Кино</a> → <span>{title_esc}</span>
@@ -483,12 +600,15 @@ def render_movie(item):
       <h1 class="mv-film-title">{title_esc}</h1>
       {f'<p class="mv-film-tagline">{html.escape(item["tagline"])}</p>' if item.get("tagline") else ""}
       <div class="mv-facts">{''.join(facts)}</div>
-      <p class="mv-film-overview">{html.escape(overview)}</p>
+      <p class="mv-film-overview">{html.escape(lead)}</p>
     </div>
   </div>
 
   {trailer}
+  {plot_html}
+  {facts_html}
   {cast}
+  {trivia_html}
 
   <a class="mv-back" href="/kino/">← Все экранизации</a>
   <div class="mv-foot">{TMDB_NOTE}</div>
@@ -533,28 +653,26 @@ def main():
     upcoming = [i for i in upcoming if i["id"] in keep_ids]
     released = [i for i in released if i["id"] in keep_ids]
 
-    # ИИ-обогащение: тексты кешируются в movies-ai.json и не меняются от запуска к запуску.
+    # ИИ-обогащение: к каждому фильму статья генерируется один раз и кешируется.
     ai_data = load_ai()
     ai_new = 0
+    ai_wiki = 0
     for item in kept:
-        if item["overview"]:
+        key = str(item["id"])
+        cached = ai_data.get(key)
+        if cached and cached.get("v") == AI_VERSION and cached.get("lead"):
+            item["article"] = cached
             continue
-        cached = ai_data.get(str(item["id"]))
-        if cached and cached.get("overview"):
-            item["overview"] = cached["overview"]
-            item["meta"] = cached.get("meta") or ""
+        wiki = wiki_text(item["title"], item["iso"][:4])
+        if wiki:
+            ai_wiki += 1
+        article = generate_article(item, wiki) if (CF_ACCOUNT_ID and CF_API_TOKEN) else None
+        if not article:
             continue
-        text = cf_chat(ai_prompt(item, item.get("en", "")))
-        obj = ai_parse(text) if text else None
-        if obj and (obj.get("overview") or "").strip():
-            item["overview"] = clamp(obj["overview"], 420)
-            item["meta"] = clamp(obj.get("meta"), 158)
-            ai_data[str(item["id"])] = {"overview": item["overview"],
-                                        "meta": item["meta"],
-                                        "updated": date.today().isoformat()}
-            ai_new += 1
-        elif item.get("en"):
-            item["overview"] = item["en"][:420]
+        article.update({"v": AI_VERSION, "updated": date.today().isoformat()})
+        ai_data[key] = article
+        item["article"] = article
+        ai_new += 1
 
     ai_data = {k: v for k, v in ai_data.items() if k in {str(i["id"]) for i in kept}}
     AI_FILE.write_text(json.dumps(ai_data, ensure_ascii=False, indent=2, sort_keys=True),
@@ -575,7 +693,8 @@ def main():
         trailers += 1 if item.get("trailer") else 0
 
     print(f"Кино: хаб + {len(kept)} страниц фильмов (трейлеров: {trailers}), "
-          f"удалено старых: {removed}, пропущено пустых: {dropped}, ИИ-текстов новых: {ai_new}")
+          f"удалено старых: {removed}, пропущено пустых: {dropped}, "
+          f"новых статей: {ai_new} (с Википедией: {ai_wiki})")
     print(f"Кино: скоро {len(upcoming)}, вышло {len(released)}")
     return 0
 
