@@ -42,6 +42,8 @@ AI_FILE = OUT_DIR / "movies-ai.json"
 # Версия формата текста: при смене промпта/структуры старые записи перегенерируются.
 AI_VERSION = 2
 WIKI_LANGS = ("ru", "en")
+# Отладочные образцы ответов ИИ (первые несколько) — попадают в отчёт прогона.
+AI_DEBUG = []
 
 RU_MONTHS = ("января", "февраля", "марта", "апреля", "мая", "июня",
              "июля", "августа", "сентября", "октября", "ноября", "декабря")
@@ -318,6 +320,8 @@ def generate_article(item, wiki):
     """До двух попыток: обычная и со строгим напоминанием. Иначе None."""
     for strict in (False, True):
         text = cf_chat(ai_prompt(item, wiki, strict))
+        if len(AI_DEBUG) < 3:
+            AI_DEBUG.append({"id": item.get("id"), "strict": strict, "raw": (text or "")[:200]})
         obj = ai_parse(text) if text else None
         if obj and ai_valid(obj):
             return {
@@ -630,12 +634,13 @@ def run():
         raise RuntimeError("TMDB не вернул ни одной экранизации")
 
     OUT_DIR.mkdir(parents=True, exist_ok=True)
+    errors = []
     items = upcoming + released
     for item in items:
         try:
             attach_details(item)
         except Exception as err:  # noqa: BLE001
-            print(f"Кино: детали недоступны для {item.get('id')}: {err}")
+            errors.append(f"детали {item.get('id')}: {type(err).__name__}: {err}")
 
     # Источник описания: русское из TMDB, иначе английское (для пересказа ИИ).
     for item in items:
@@ -665,7 +670,7 @@ def run():
             ai_wiki += 1 if wiki else 0
             article = generate_article(item, wiki)
         except Exception as err:  # noqa: BLE001
-            print(f"Кино: ИИ не справился с {key}: {err}")
+            errors.append(f"ИИ {key}: {type(err).__name__}: {err}")
             continue
         if not article:
             ai_fail += 1
@@ -698,6 +703,8 @@ def run():
         "movies": len(kept), "trailers": trailers, "removed": removed, "dropped": dropped,
         "ai_new": ai_new, "ai_wiki": ai_wiki, "ai_fail": ai_fail,
         "upcoming": len(upcoming), "released": len(released),
+        "errors": errors[:5],
+        "ai_debug": AI_DEBUG[:3],
     }
 
 
