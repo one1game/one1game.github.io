@@ -1,8 +1,8 @@
 <!DOCTYPE html>
-<html>
+<html lang="ru">
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=0.46875" />
+    <meta name="viewport" content="width=device-width, initial-scale=0.46875, maximum-scale=1, user-scalable=no, viewport-fit=cover" />
     <meta name="theme-color" content="#000000" />
     <meta name="mobile-web-app-capable" content="yes" />
     <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -37,8 +37,8 @@
   var phases = [];
   var phase = 'entry';
   var progressValue = 15;
-  var statusText = '正在启动客户端...';
-  var detailText = '正在检测客户端配置、界面资源和游戏资源清单。';
+  var statusText = 'Запуск клиента...';
+  var detailText = 'Проверка конфигурации клиента, ресурсов интерфейса и списка игровых ресурсов.';
   var uploadStatus = 'not-sent';
 
   function safeUrl(value) {
@@ -96,7 +96,7 @@
   }
 
   function addRecord(list, kind, reason, resourceUrl, attribution, event) {
-    var description = errorMessage(reason) || (resourceUrl ? '无法加载 ' + safeUrl(resourceUrl) : '浏览器未能完成此启动步骤。');
+    var description = errorMessage(reason) || (resourceUrl ? 'Не удалось загрузить ' + safeUrl(resourceUrl) : 'Браузер не смог завершить этот шаг запуска.');
     var record = { kind: kind, message: description, url: safeUrl(resourceUrl), phase: phase, attribution: attribution };
     if (reason && typeof reason.name === 'string') record.name = reason.name.slice(0, 80);
     if (event && event.lineno > 0) record.line = event.lineno;
@@ -217,7 +217,7 @@
     elements.bar.style.width = progressValue + '%';
     if (failed) {
       elements.panel.dataset.state = 'error';
-      elements.title.textContent = '加载检测未通过';
+      elements.title.textContent = 'Проверка загрузки не пройдена';
       elements.retry.hidden = false;
       elements.diagnostics.hidden = false;
     }
@@ -229,7 +229,7 @@
     if (!failed) {
       failed = true;
       clearTimeout(slowTimer);
-      statusText = message || '客户端未能继续加载';
+      statusText = message || 'Клиент не смог продолжить загрузку';
       detailText = record.message;
       // Gather dependent-module error events from the same failure, then send once.
       reportTimer = setTimeout(flushFailure, 300);
@@ -243,28 +243,28 @@
     if (tag === 'SCRIPT' || (tag === 'LINK' && /^(modulepreload|stylesheet)$/.test(target.rel))) {
       var resourceUrl = target.src || target.href;
       if ((tag === 'SCRIPT' || target.rel === 'modulepreload') && isClientScript(resourceUrl)) {
-        fail('启动脚本或依赖加载失败', null, resourceUrl, 'resource');
+        fail('Не удалось загрузить стартовый скрипт или зависимости', null, resourceUrl, 'resource');
       } else {
         observe('resource', null, resourceUrl, 'noncritical-resource');
       }
     } else if (target === window || event.error || event.message) {
       var scriptUrl = errorLocation(event.error, event.filename);
-      if (isClientScript(scriptUrl)) fail('启动脚本执行失败', event.error || event.message, scriptUrl, 'javascript', event);
+      if (isClientScript(scriptUrl)) fail('Ошибка выполнения стартового скрипта', event.error || event.message, scriptUrl, 'javascript', event);
       else observe('javascript', event.error || event.message, scriptUrl, unconfirmedAttribution(scriptUrl), event);
     }
   }
   function onRejection(event) {
     var scriptUrl = errorLocation(event.reason);
-    if (isClientScript(scriptUrl)) fail('客户端初始化失败', event.reason, scriptUrl, 'promise');
+    if (isClientScript(scriptUrl)) fail('Ошибка инициализации клиента', event.reason, scriptUrl, 'promise');
     else observe('promise', event.reason, scriptUrl, unconfirmedAttribution(scriptUrl));
   }
-  function onOffline() { observe('offline', '浏览器当前处于离线状态。', '', 'network-state'); }
+  function onOffline() { observe('offline', 'Браузер сейчас находится офлайн.', '', 'network-state'); }
 
   var slowTimer = setTimeout(function () {
     if (!active || failed) return;
     slow = true;
-    statusText = '加载时间较长';
-    detailText = '启动尚未完成，可以查看诊断信息或重新加载。';
+    statusText = 'Загрузка занимает много времени';
+    detailText = 'Запуск ещё не завершён. Можно посмотреть диагностику или перезагрузить страницу.';
     render();
     if (mounted) {
       elements.panel.dataset.state = 'slow';
@@ -342,22 +342,22 @@
       // Syntax retained by the browser build (class static blocks are transpiled).
       eval('class C { field = 1; async test(...args) { let spread = {...({a: 2})}; return spread?.a ?? 0; } }');
     } catch (error) {
-      return '当前浏览器不支持客户端所需的 JavaScript 语法，请更新系统或浏览器。';
+      return 'Браузер не поддерживает нужный синтаксис JavaScript. Обновите систему или браузер.';
     }
     if (!window.WebAssembly || !window.Promise || !Promise.any || !window.URL || !window.MutationObserver || !window.fetch) {
-      return '当前浏览器缺少客户端所需的 WebAssembly、Promise.any 或网络接口，请更新系统或浏览器。';
+      return 'Браузеру не хватает WebAssembly, Promise.any или сетевых интерфейсов. Обновите систему или браузер.';
     }
-    if (!window.Blob || !Blob.prototype.arrayBuffer) return '当前浏览器不支持资源文件读取，请更新系统或浏览器。';
-    if (!window.crypto || typeof crypto.getRandomValues !== 'function') return '当前浏览器缺少安全随机数接口 crypto.getRandomValues，请更新系统或浏览器。';
+    if (!window.Blob || !Blob.prototype.arrayBuffer) return 'Браузер не поддерживает чтение файлов ресурсов. Обновите систему или браузер.';
+    if (!window.crypto || typeof crypto.getRandomValues !== 'function') return 'В браузере нет интерфейса безопасных случайных чисел crypto.getRandomValues. Обновите систему или браузер.';
     var canvas = document.createElement('canvas');
     if (!window.WebGLRenderingContext || !(canvas.getContext('webgl') || canvas.getContext('experimental-webgl'))) {
-      return '浏览器无法创建 WebGL 图形环境，请检查硬件加速设置或更新浏览器。';
+      return 'Браузер не смог создать WebGL-контекст. Проверьте аппаратное ускорение или обновите браузер.';
     }
     return '';
   }
   var unsupported = checkBrowser();
   window.browserSupported = !unsupported;
-  if (unsupported) fail('当前浏览器不受支持', unsupported, '', 'compatibility');
+  if (unsupported) fail('Текущий браузер не поддерживается', unsupported, '', 'compatibility');
   else if (navigator.onLine === false) onOffline();
 })();
 </script>
@@ -582,13 +582,14 @@
     document.addEventListener('DOMContentLoaded', resolve, { once: true });
   });
   Promise.all([ready, controllerInfo().then(prepareLegacyController)]).then(start, function (error) {
-    window.__ra2webStartupLoadCheck.fail('启动依赖加载失败', error, vendorUrl, 'resource');
+    window.__ra2webStartupLoadCheck.fail('Не удалось загрузить зависимости запуска', error, vendorUrl, 'resource');
   });
 })();
 </script>
     
   </head>
   <body class="no-js">
+    <script src="./localize-ru.js?v=2"></script>
     <div id="ra2web-root">
       <div id="startup-load-check-host">
         <div
@@ -602,38 +603,38 @@
             <div class="startup-load-check-heading">
               <div class="startup-load-check-spinner" aria-hidden="true"></div>
               <div>
-                <div id="startup-load-check-title" class="startup-load-check-title">加载检测</div>
-                <div id="startup-load-check-status" class="startup-load-check-status">正在启动客户端...</div>
+                <div id="startup-load-check-title" class="startup-load-check-title">Проверка загрузки</div>
+                <div id="startup-load-check-status" class="startup-load-check-status">Запуск клиента...</div>
               </div>
             </div>
             <p id="startup-load-check-detail" class="startup-load-check-detail">
-              正在检测客户端配置、界面资源和游戏资源清单。
+              Проверка конфигурации клиента, ресурсов интерфейса и списка игровых ресурсов.
             </p>
             <div class="startup-load-check-progress-meta">
-              <span>加载版本：<strong id="startup-load-check-version">0.87.0-r79e73e7-d6ddea4af</strong></span>
-              <span>启动进度</span>
+              <span>Версия загрузки: <strong id="startup-load-check-version">0.87.0-r79e73e7-d6ddea4af</strong></span>
+              <span>Прогресс запуска</span>
             </div>
             <div
               id="startup-load-check-progress"
               class="startup-load-check-progress"
               role="progressbar"
-              aria-label="启动进度"
+              aria-label="Прогресс запуска"
               aria-valuemin="0"
               aria-valuemax="100"
               aria-valuenow="15"
             >
               <div id="startup-load-check-progress-bar" class="startup-load-check-progress-bar"></div>
             </div>
-            <textarea id="startup-load-check-diagnostic-text" aria-label="可复制的启动诊断信息" readonly hidden></textarea>
-            <p class="startup-load-check-hint">如果页面长时间停留在这里，可以重新加载后再试。</p>
+            <textarea id="startup-load-check-diagnostic-text" aria-label="Текст диагностики запуска для копирования" readonly hidden></textarea>
+            <p class="startup-load-check-hint">Если страница надолго остаётся на этом экране, попробуйте перезагрузить её.</p>
             <p class="startup-load-check-feedback">
-              遇到问题，可访问
+              При проблемах посетите
               <a href="https://feedback.ra2web.com" target="_blank" rel="noopener noreferrer">feedback.ra2web.com</a>
-              反馈问题。
+              и сообщите о них.
             </p>
           </div>
           <div class="message-box-footer">
-            <button id="startup-load-check-diagnostics" class="dialog-button" type="button" hidden>诊断信息</button>
+            <button id="startup-load-check-diagnostics" class="dialog-button" type="button" hidden>Диагностика</button>
             <button
               id="startup-load-check-retry"
               class="dialog-button"
@@ -641,7 +642,7 @@
               hidden
               onclick="location.reload()"
             >
-              重新加载
+              Перезагрузить
             </button>
           </div>
         </div>

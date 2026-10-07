@@ -63,16 +63,16 @@
       "integrity": "sha384-jQNwa9+VP7A7phkJyREsR9y+JTe1SS03sXT87e+m2hed6Qnqy3U1CxlsMpbGyX8I"
     },
     "index.html": {
-      "bytes": 27559,
-      "sha256": "16f58a4d3bcf69049e27d675f0428a786e8025b659688a6fe9fd0eeed908d251",
-      "integrity": "sha384-xEyrhV7g9Pkbprd3FEUYaPeScy8MZc4BDKqIuk7TbpDPgGlIcSfR/MV13zh+HkVE"
+      "bytes": 28929,
+      "sha256": "a086d280ef8717fbb2995bcf0fce6cf707438c3cd662a056a2a6d4a95551bca9",
+      "integrity": "sha384-6JrtLm/oKiwJcwMJzXrerI2yG/yvOJ67RnLHPsJdJ/TSax7ZOuPB53XPoF2oexaA"
     }
   },
   "files": {
     "breaking-news.html": {
-      "bytes": 329,
-      "sha256": "a06b5678faf1131b5b54e7a382724aa9a4afc9117be84dc05b9e49419b136bea",
-      "integrity": "sha384-1u0jFBxElTCxVJX58eXzaCW7wNwpl9spH2xX5r0bNxfNk2onZkbq7GYgwgV2TpAB"
+      "bytes": 720,
+      "sha256": "b67f9362718e6ee3273e67d9d9f31074dbaeca4099f492fb1110cc4e298b7e2f",
+      "integrity": "sha384-abiqp+VXy/qTH+Cv9vKISX3hZsj03Bqh3yERQ+IK40pL2dXY3nJRxHG3I9/857eU"
     },
     "docs/examples/README.md": {
       "bytes": 1060,
@@ -140,9 +140,9 @@
       "integrity": "sha384-n7q+HUmA5z//7aLgu/qIAuU2sazpwrxj0WRQRFtdh/OMzNPRTmWBlthPffjHatSf"
     },
     "index.html": {
-      "bytes": 27559,
-      "sha256": "16f58a4d3bcf69049e27d675f0428a786e8025b659688a6fe9fd0eeed908d251",
-      "integrity": "sha384-xEyrhV7g9Pkbprd3FEUYaPeScy8MZc4BDKqIuk7TbpDPgGlIcSfR/MV13zh+HkVE"
+      "bytes": 28929,
+      "sha256": "a086d280ef8717fbb2995bcf0fce6cf707438c3cd662a056a2a6d4a95551bca9",
+      "integrity": "sha384-6JrtLm/oKiwJcwMJzXrerI2yG/yvOJ67RnLHPsJdJ/TSax7ZOuPB53XPoF2oexaA"
     },
     "js/7zz.wasm": {
       "bytes": 1651931,
@@ -230,9 +230,9 @@
       "integrity": "sha384-toizm3of+/TJ50NzG5vqe3bapp16txcQPjNTkHsETSEVqExcjiW+UDT6pNuL3kl7"
     },
     "manifest.webmanifest": {
-      "bytes": 761,
-      "sha256": "a6efec6a0b32f880f6e612ab8d1660f79c3878a2a9d01623dc14f687660e1830",
-      "integrity": "sha384-LP3M9DfrifdHvEbvvjr4NJeCz01LMfEUmnK9ZhePhC5PoTGNP+UYZNXQMuMp2n6g"
+      "bytes": 857,
+      "sha256": "6310408d6b99bdae5b1e026a8600cbd7e964bc0a37a217a62d81bc60af482a03",
+      "integrity": "sha384-/rgqyTcT43ZUxiw3eXR7apzrkvEE4kVAp7nQjpeZHDM+mgVc95fSTiXU7C4YWq8z"
     },
     "qq.html": {
       "bytes": 1770,

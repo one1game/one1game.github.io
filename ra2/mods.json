@@ -2,9 +2,9 @@
   "mods": [
     {
       "id": "athse",
-      "name": "焦土（Scorched Earth）",
-      "description": "成熟的《红色警戒2》大型重制 MOD，专注于提供更出色的战斗体验。",
-      "author": "G-E；汉化：RA2WEB",
+      "name": "Выжженная земля (Scorched Earth)",
+      "description": "Крупный ремейк-мод для «Red Alert 2» с упором на более качественные сражения.",
+      "author": "G-E; русификация: RA2WEB",
       "version": "Rev.2026.07.18.zh-CN.5",
       "website": "https://www.moddb.com/mods/scorched-earth-ra2-mod-with-smart-ai",
       "download": "https://mod.btfs.cn/mod/athse/athse-zh-cn-20260718-r5.zip?v=20260718-r5",
@@ -12,9 +12,9 @@
     },
     {
       "id": "gonghui",
-      "name": "共和国之辉",
-      "description": "风靡全球的低质量MOD移植到网页平台，更多平衡性提高!",
-      "author": "共和国之辉网",
+      "name": "Слава Республики",
+      "description": "Популярный мод, перенесённый на веб-платформу, с улучшенным балансом!",
+      "author": "gongheguozhihui.com",
       "version": "Rev.2026.02.20.3",
       "website": "https://www.gongheguozhihui.com",
       "download": "https://mod.btfs.cn/mod/gonghui-20260220-3.zip",
@@ -22,8 +22,8 @@
     },
     {
       "id": "meisuzhenba",
-      "name": "红色警戒2原版阵营补丁",
-      "description": "将所有的子阵营合并成两个，但是美国可以建造巨炮、黑鹰、狙击手、坦克杀手，苏联可以建造辐射工兵、自爆卡车、恐怖分子",
+      "name": "Патч фракций оригинальной Red Alert 2",
+      "description": "Объединяет все подфракции в две, но США могут строить суперпушку, «Чёрного ястреба», снайпера и «Танк-охотника», а СССР — радиационных инженеров, грузовик-смертник и террористов.",
       "author": "先锋439943鬼才",
       "version": "Rev.1",
       "website": "https://www.bilibili.com",
@@ -32,8 +32,8 @@
     },
     {
       "id": "ra4",
-      "name": "红色警戒4",
-      "description": "神奇的单位，带你进入自定义mod对决的世界！",
+      "name": "Red Alert 4",
+      "description": "Необычные юниты и мир дуэлей на пользовательских модах!",
       "author": "先锋439943鬼才",
       "version": "Rev.2025.06.03.1",
       "website": "https://www.qq.com",
