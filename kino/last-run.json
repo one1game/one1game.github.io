@@ -6,8 +6,16 @@
   "removed": 0,
   "dropped": 0,
   "ai_new": 0,
-  "ai_wiki": 7,
+  "ai_wiki": 10,
   "ai_fail": 0,
   "upcoming": 10,
-  "released": 18
+  "released": 18,
+  "errors": [
+    "ИИ 1153576: AttributeError: 'dict' object has no attribute 'strip'",
+    "ИИ 1300926: AttributeError: 'dict' object has no attribute 'strip'",
+    "ИИ 1401586: AttributeError: 'dict' object has no attribute 'strip'",
+    "ИИ 1177369: AttributeError: 'dict' object has no attribute 'strip'",
+    "ИИ 1701407: AttributeError: 'dict' object has no attribute 'strip'"
+  ],
+  "ai_debug": []
 }
