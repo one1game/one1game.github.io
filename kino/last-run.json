@@ -5,9 +5,9 @@
   "trailers": 22,
   "removed": 0,
   "dropped": 0,
-  "ai_new": 27,
-  "ai_wiki": 11,
-  "ai_fail": 1,
+  "ai_new": 0,
+  "ai_wiki": 3,
+  "ai_fail": 28,
   "upcoming": 10,
   "released": 18,
   "errors": [],
@@ -15,17 +15,17 @@
     {
       "id": 1153576,
       "strict": false,
-      "raw": "{\"facts\": [\"Режиссёр: Китао Сакураи\", \"Студии: Capcom, Legendary Pictures\", \"Страны: Japan, United States of America\", \"Актёры: Эндрю Кодзи, Ной Сентинео, Каллина Лян\"], \"lead\": \"Уличный боец - новый "
+      "raw": ""
+    },
+    {
+      "id": 1153576,
+      "strict": true,
+      "raw": ""
     },
     {
       "id": 1300926,
       "strict": false,
-      "raw": "{\"facts\": [\"Режиссёр - Джон Райс\", \"Студии - Rovio Animation, SEGA of America, Flywheel Media, One Cool Films\", \"Страны - Finland, Japan, United States of America\", \"Длительность - 1 ч 36 мин\", \"Год -"
-    },
-    {
-      "id": 1401586,
-      "strict": false,
-      "raw": "{\"facts\": [\"Режиссёр: Джефф Фаулер\", \"Студии: Paramount Pictures, Original Film\", \"Страны: США, Япония\", \"Жанры: комедия, боевик, семейный, фантастика\", \"Год: 2027\"], \"lead\": \"Фильм Соник 4 в Кино - п"
+      "raw": ""
     }
   ]
 }
