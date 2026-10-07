@@ -6,7 +6,9 @@ name: Movie hub (TMDB)
 
 on:
   schedule:
-    - cron: '0 6 * * 1'
+    # Понедельник 04:00 UTC — раньше дневного ИИ-обогащения игр (05:00),
+    # иначе на статьи фильмов не остаётся суточной квоты Cloudflare.
+    - cron: '0 4 * * 1'
   push:
     branches: [main]
     paths:
