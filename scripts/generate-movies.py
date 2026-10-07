@@ -209,6 +209,22 @@ def english_overview(mid):
     return (data.get("overview") or "").strip()
 
 
+def as_text(value):
+    """Ответ модели может прийти строкой, объектом или списком — приводим к тексту."""
+    if value is None:
+        return ""
+    if isinstance(value, str):
+        return value.strip()
+    if isinstance(value, dict):
+        for key in ("response", "text", "content", "answer"):
+            if isinstance(value.get(key), str):
+                return value[key].strip()
+        return json.dumps(value, ensure_ascii=False)
+    if isinstance(value, list):
+        return "\n".join(as_text(v) for v in value).strip()
+    return str(value).strip()
+
+
 def cf_chat(prompt):
     """Текст от Cloudflare Workers AI. Пусто, если ключей нет или модели молчат."""
     if not (CF_ACCOUNT_ID and CF_API_TOKEN):
@@ -224,16 +240,16 @@ def cf_chat(prompt):
                          "Content-Type": "application/json"})
             with urllib.request.urlopen(req, timeout=90) as resp:
                 data = json.loads(resp.read().decode())
+            result = data.get("result") or {}
+            text = as_text(result.get("response"))
+            if not text:
+                choices = result.get("choices") or []
+                if choices:
+                    text = as_text((choices[0].get("message") or {}).get("content"))
+            if text:
+                return text
         except Exception:  # noqa: BLE001 — таймауты и сетевые сбои не должны ломать прогон
             continue
-        result = data.get("result") or {}
-        text = (result.get("response") or "").strip()
-        if not text:
-            choices = result.get("choices") or []
-            if choices:
-                text = ((choices[0].get("message") or {}).get("content") or "").strip()
-        if text:
-            return text
     return ""
 
 
