@@ -209,14 +209,22 @@ function buildHub(hub, entries) {
   const titleTag = hub.title;
 
   const cards = entries.map((e) => {
-    const img = e.steam && e.steam.image
-      ? `<img src="${esc(e.steam.image)}" alt="${esc(e.name)} — скриншот из Steam" loading="lazy" width="460" height="215" />`
+    // Картинку берём из наших данных, иначе из API, иначе прямо с CDN Steam по appid.
+    const imgSrc =
+      e.image ||
+      (e.steam && e.steam.image) ||
+      (e.appid ? `https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/${e.appid}/header.jpg` : '');
+    const img = imgSrc
+      ? `<img src="${esc(imgSrc)}" alt="${esc(e.name)} — обложка игры" loading="lazy" width="460" height="215" />`
       : '';
     const req = e.steam && e.steam.min
       ? `<p class="hub-req"><strong>Минимум по Steam:</strong> ${esc(e.steam.min)}</p>`
       : '';
-    const link = e.steam
-      ? `<a class="btn" href="https://store.steampowered.com/app/${e.appid}/" rel="nofollow noopener" target="_blank">Открыть в Steam</a>`
+    // Кнопка должна быть у каждой карточки: либо страница в Steam, либо сайт игры.
+    const href = e.appid ? `https://store.steampowered.com/app/${e.appid}/` : (e.url || '');
+    const label = e.appid ? 'Открыть в Steam' : 'Официальный сайт';
+    const link = href
+      ? `<a class="btn" href="${esc(href)}" rel="nofollow noopener" target="_blank">${label}</a>`
       : '';
     return `      <article class="hub-card">
         ${img}
@@ -234,7 +242,7 @@ function buildHub(hub, entries) {
     const s = e.steam || {};
     const ram = parseRam(s.min) || '—';
     const genres = s.genres || '—';
-    const access = s.isFree ? 'Бесплатно' : 'Платно';
+    const access = (s.isFree || e.free) ? 'Бесплатно' : 'Платно';
     return `        <tr><td>${esc(e.name)}</td><td>${esc(ram)}</td><td>${esc(genres)}</td><td>${esc(access)}</td></tr>`;
   }).join('\n');
 
@@ -337,8 +345,8 @@ async function main() {
     try {
       // В данных можно указать appid вручную — это нужно там, где поиск
       // находит не ту версию игры (например, Skyrim Special Edition вместо оригинала).
-      appid = g.appid || (await findAppId(g.name));
-      if (!g.appid) await sleep(900);
+      appid = g.appid || (g.url ? null : await findAppId(g.name));
+      if (!g.appid && !g.url) await sleep(900);
       if (appid) {
         steam = await loadSteam(appid, g.name);
         await sleep(900);
@@ -350,7 +358,14 @@ async function main() {
     console.log(`${steam ? '✓' : '·'} ${g.name}${appid ? ` (${appid})` : ''}`);
   }
 
-  // 2. Рендерим страницы хабов.
+  // 2. Проверяем, что ни одна карточка не осталась без обложки или кнопки.
+  const noImage = prepared.filter((g) => !g.image && !(g.steam && g.steam.image) && !g.appid);
+  const noLink = prepared.filter((g) => !g.appid && !g.url);
+  if (noImage.length) console.log(`\n[!] Без обложки (${noImage.length}): ${noImage.map((g) => g.name).join(', ')}`);
+  if (noLink.length) console.log(`[!] Без ссылки (${noLink.length}): ${noLink.map((g) => g.name).join(', ')}`);
+  if (!noImage.length && !noLink.length) console.log('\nПроверка карточек: у всех есть обложка и ссылка');
+
+  // 3. Рендерим страницы хабов.
   for (const hub of HUBS) {
     const entries = prepared.filter((g) => g.tags.includes(hub.tag));
     if (!entries.length) {

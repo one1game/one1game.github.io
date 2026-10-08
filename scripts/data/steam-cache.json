@@ -197,6 +197,15 @@
   "released": "5 сен. 2009 г.",
   "min": "Поддерживаемые ОС: Windows XP и Windows Vista · Процессор: Intel Pentium 3 или AMD Athlon с тактовой частотой 1 ГГц · Оперативная память: 256 МБ · Видеокарта: с 32 МБ видеопамяти и аппаратным ускорителем трехмерной графики · DirectX®: DirectX 9.0b или лучше · Жесткий диск: 3,5 ГБ свободного места · Звуковая карта: совм"
  },
+ "41700": {
+  "name": "S.T.A.L.K.E.R.: Call of Pripyat",
+  "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/41700/header.jpg?t=1747756035",
+  "isFree": false,
+  "price": "6 600₸",
+  "genres": "Экшены, Ролевые игры",
+  "released": "11 фев. 2010 г.",
+  "min": "Поддерживаемые ОС: Microsoft® Windows® XP (с пакетом обновлений 2)/Microsoft® Windows® 2000 (с пакетом обновлений 4) · Процессор: Intel Pentium 4 с тактовой частотой 2 ГГц / AMD XP 2200+ · Видеокарта: со 128 МБ видеопамяти, совместимая с DirectX® 8.0 / nVIDIA® GeForce™ 5700 / ATI Radeon® 9600 · Оперативная память: 768 "
+ },
  "47810": {
   "name": "Dragon Age: Origins - Ultimate Edition",
   "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/47810/header.jpg?t=1782471846",
@@ -214,6 +223,15 @@
   "genres": "Экшены, Ролевые игры",
   "released": "20 сен. 2012 г.",
   "min": "ОС: Windows XP с пакетом обновления 3 · Процессор: двухъядерный с тактовой частотой 2,4 ГГц · Оперативная память: 2 ГБ (XP), 2 ГБ (Vista) · Жесткий диск: 13 ГБ свободного места · Видеопамять: 256 МБ · Видеокарта: NVIDIA GeForce 8500 или ATI Radeon HD 2600 · Звуковая карта: совместимая с DirectX 9.0c · Другие требования: при первичной установке необходимо единоразовое подключение к Интернету для ау"
+ },
+ "50300": {
+  "name": "Spec Ops: The Line",
+  "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/50300/header.jpg?t=1706567828",
+  "isFree": false,
+  "price": "",
+  "genres": "Экшены, Приключенческие игры",
+  "released": "29 июн. 2012 г.",
+  "min": "ОС: Windows XP с пакетом обновления 3 · Процессор: Intel Core 2 Duo с тактовой частотой 2 ГГц или эквивалентный по мощности AMD Athlon 64 X2 · Оперативная память: 2 ГБ · Жесткий диск: 6 ГБ свободного места · Видеокарта: NVIDIA GeForce 8600 или ATI Radeon HD 2600XT (с 256 МБ видеопамяти) · DirectX®: 9.0 · Звуковая карта"
  },
  "72850": {
   "name": "The Elder Scrolls V: Skyrim",
@@ -377,6 +395,15 @@
   "released": "8 фев. 2018 г.",
   "min": "64-разрядные процессор и операционная система · ОС: Windows 11 64bit · Процессор: AMD Ryzen 5 1400 or Intel Core i5-6600 · Оперативная память: 12 GB ОЗУ · Видеокарта: AMD Radeon RX 470, NVIDIA GeForce GTX 1060, Intel® Arc™ A580 · DirectX: версии 11 · Сеть: Широкополосное подключение к интернету · Место на диске: 45 GB · Дополнительно: SSD is highly recommended or expect longer than average load ti"
  },
+ "255220": {
+  "name": "GRID Autosport",
+  "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/255220/header.jpg?t=1593617496",
+  "isFree": false,
+  "price": "",
+  "genres": "Гонки, Спорт",
+  "released": "26 июн. 2014 г.",
+  "min": "ОС *: Windows Vista, Windows 7 or Windows 8 · Процессор: Intel Core 2 Duo @ 2.4Ghz or AMD Athlon X2 5400+ · Оперативная память: 2 GB ОЗУ · Видеокарта: Intel HD3000 or AMD HD2000 Series or NVIDIA Geforce 8000 Series Series · Сеть: Широкополосное подключение к интернету · Место на диске: 15 GB · Звуковая карта: Direct X "
+ },
  "257350": {
   "name": "Baldur's Gate II: Enhanced Edition",
   "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257350/486ef7ce52fdb1ee5d2909ac97f26d4e26da18d3/header.jpg?t=1787947512",
@@ -484,6 +511,15 @@
   "genres": "Экшены",
   "released": "12 мая. 2016 г.",
   "min": "ОС *: Windows 7/8.1/10 (64-bit versions) · Процессор: Intel Core i5-2400/AMD FX-8320 or better · Оперативная память: 8 GB ОЗУ · Видеокарта: NVIDIA GTX 670 2GB/AMD Radeon HD 7870 2GB or better · Место на диске: 55 GB · Дополнительно: Requires Steam activation and broadband internet connection for Multiplayer and SnapMap"
+ },
+ "389140": {
+  "name": "Horizon Chase Turbo",
+  "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/389140/header.jpg?t=1780329689",
+  "isFree": false,
+  "price": "",
+  "genres": "Экшены, Казуальные игры, Инди, Гонки, Спорт",
+  "released": "15 мая. 2018 г.",
+  "min": "ОС *: Windows 7 or newer · Процессор: Intel Core 2 Duo 2.0 GHz or better · Оперативная память: 2 GB ОЗУ · Видеокарта: Intel HD Graphics 4000 or better · DirectX: версии 9.0c · Место на диске: 800 MB"
  },
  "393380": {
   "name": "Squad",
@@ -800,6 +836,15 @@
   "released": "6 ноя. 2020 г.",
   "min": "64-разрядные процессор и операционная система · ОС: WIndows 10, 64 Bit · Процессор: (AMD) Phenom II X4 965 or equivalent (Intel) Corei3-2120 or equivalent · Оперативная память: 8 GB ОЗУ · Видеокарта: (AMD) Radeon HD 5870 or equivalent (Nvidia) GeForce GT 640 or equivalent · DirectX: версии 11 · Сеть: Широкополосное под"
  },
+ "1328670": {
+  "name": "Mass Effect™ издание Legendary",
+  "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1328670/header.jpg?t=1777395134",
+  "isFree": false,
+  "price": "19 999₸",
+  "genres": "Экшены, Ролевые игры",
+  "released": "14 мая. 2021 г.",
+  "min": "64-разрядные процессор и операционная система · ОС: 64-bit Windows 10 · Процессор: Intel Core i5 3570 or AMD FX-8350 · Оперативная память: 8 GB ОЗУ · Видеокарта: GPU: NVIDIA GTX 760, AMD Radeon 7970 / R9280X GPU RAM: 2 GB Video Memory · DirectX: версии 11 · Место на диске: 120 GB"
+ },
  "1352890": {
   "name": "Seekers Alliance: Hero's Journey",
   "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1352890/a3b1e15bdb379190f82b00b89390d2bd48fa39d9/header.jpg?t=1791429013",
@@ -1006,6 +1051,15 @@
   "genres": "Экшены, Приключенческие игры, Казуальные игры, Инди, Стратегии",
   "released": "30 сен. 2026 г.",
   "min": "ОС: Windows 11 · DirectX: версии 11 · Место на диске: 2 GB"
+ },
+ "2357570": {
+  "name": "Overwatch®",
+  "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2357570/5c208b2699cd38ed6125d039be388fa744db54a4/header_alt_assets_23.jpg?t=1791311522",
+  "isFree": true,
+  "price": "",
+  "genres": "Экшены, Бесплатные",
+  "released": "10 авг. 2023 г.",
+  "min": "64-разрядные процессор и операционная система · ОС: Windows® 10 64-bit с последним пакетом обновлений) · Процессор: Intel® Core™ i3 или AMD Phenom™ X3 8650 · Оперативная память: 6 GB ОЗУ · Видеокарта: Серия NVIDIA® GeForce® GTX 600, серия AMD Radeon™ HD 7000 · DirectX: версии 11 · Сеть: Широкополосное подключение к инт"
  },
  "2403830": {
   "name": "Brave New Wonders",
