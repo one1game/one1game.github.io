@@ -192,6 +192,26 @@ function todayRuFull() {
   return `${d.getDate()} ${months[d.getMonth()]} ${d.getFullYear()}`;
 }
 
+// Блок «Потянет ли слабый ноутбук?»: официальные требования Steam + ссылки на
+// кластер страниц про слабое железо. Он должен собираться прямо в шаблоне, иначе
+// при обновлении данных страницы его потеряют.
+function lowEndBlock(store) {
+  const reqHtml = String((store && store.pc_requirements && store.pc_requirements.minimum) || "");
+  const items = [...reqHtml.matchAll(/<li[^>]*>([\s\S]*?)<\/li>/gi)].map((m) => m[1]);
+  const parts = (items.length ? items : reqHtml ? [reqHtml] : [])
+    .map((s) => s.replace(/<[^>]+>/g, " ").replace(/\s+/g, " ").trim())
+    .filter(Boolean);
+  const req = parts.join(" · ").slice(0, 400);
+  return `<!--LOWEND:START-->
+      <section class="lowend-block" style="margin:26px 0;padding:16px 18px;border:1px solid rgba(255,255,255,.10);border-radius:10px;background:rgba(255,255,255,.03)">
+        <h2 style="margin:0 0 10px;font-size:1.15rem">Потянет ли слабый ноутбук?</h2>
+        ${req ? `<p><strong>Минимальные требования (Steam):</strong> ${req}</p>` : ""}
+        <p>Ориентир для ноутбука без дискретной видеокарты — 720p и низкие настройки. Готовые подборки: <a href="/igry-bez-videokarty.html">игры без видеокарты</a>, <a href="/igry-dlya-slabyh-noutbukov-4gb-ozu.html">игры на 4 ГБ ОЗУ</a>, <a href="/besplatnye-igry-dlya-slabyh-pk.html">бесплатные игры для слабых ПК</a>. Как поднять FPS — в <a href="/archive/igry-dlya-slabyh-noutbukov-2026.html">полном гиде по слабым ноутбукам</a>.</p>
+      </section>
+<!--LOWEND:END-->
+`;
+}
+
 function buildPage({ appid, slug, store, spy, entry }) {
   const title = store.name;
   // Если запись обогащена ИИ — используем её заголовок/описание/интро,
@@ -549,6 +569,7 @@ ${adVpsHTML()}
       </p>
 ${shotsHTML}
 ${moviesHTML}
+${lowEndBlock(store)}
       <p style="color: var(--text-faint); font-size: 13px; margin-top: 30px;">
         Данные о цене, отзывах и статистике обновляются автоматически на основе
         Steam Store API и SteamSpy.
