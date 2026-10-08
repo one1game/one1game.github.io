@@ -11,8 +11,12 @@ Allow: /
 User-agent: Bingbot
 Allow: /
 
-# ИИ-краулеры (GEO/AEO): контент можно индексировать и цитировать
+# ИИ-краулеры (GEO/AEO): контент можно индексировать и цитировать.
+# Отдельные правила ниже — для наглядности: директива User-agent: * уже всё разрешает.
 User-agent: GPTBot
+Allow: /
+
+User-agent: ChatGPT-User
 Allow: /
 
 User-agent: OAI-SearchBot

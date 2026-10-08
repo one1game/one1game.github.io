@@ -5,6 +5,22 @@
 ## Основные разделы
 
 - [Статьи и обзоры](https://one1game.github.io/archive.html): все материалы — обзоры игр, гайды, аналитика рынка, технологии, кино.
+- [Бесплатные раздачи игр](https://one1game.github.io/besplatnye-igry.html): что сейчас отдают бесплатно в Steam, Epic, GOG и других магазинах (обновляется ежедневно).
+- [Скидки на игры](https://one1game.github.io/skidki-na-igry.html): лучшие скидки Steam по размеру скидки (обновляется ежедневно).
+- [Во что поиграть](https://one1game.github.io/vo-chto-poigrat.html): случайная игра из базы сайта с фильтром по описанию.
+
+## Игры для слабых ноутбуков
+
+- [Полный гид: игры для слабых ноутбуков 2026](https://one1game.github.io/archive/igry-dlya-slabyh-noutbukov-2026.html): что реально запустится без дискретной видеокарты, настройки ради FPS.
+- [Игры без видеокарты](https://one1game.github.io/igry-bez-videokarty.html): что тянет встроенная графика Intel HD/UHD, Iris Xe и AMD Vega.
+- [Игры для слабых ноутбуков с 4 ГБ ОЗУ](https://one1game.github.io/igry-dlya-slabyh-noutbukov-4gb-ozu.html).
+- [Бесплатные игры для слабых ПК](https://one1game.github.io/besplatnye-igry-dlya-slabyh-pk.html).
+- [Кооперативные игры для слабых ПК](https://one1game.github.io/kooperativnye-igry-dlya-slabyh-pk.html).
+- [Стрелялки для слабых ноутбуков](https://one1game.github.io/shuter-igry-dlya-slabyh-noutbukov.html).
+- [RPG для слабых ноутбуков](https://one1game.github.io/rpg-igry-dlya-slabyh-noutbukov.html).
+- [Гонки для слабых ноутбуков](https://one1game.github.io/gonochnye-igry-dlya-slabyh-noutbukov.html).
+- [Онлайн-игры для слабых ноутбуков](https://one1game.github.io/igry-dlya-slabyh-noutbukov-onlajn.html).
+- [Игры с геймпадом](https://one1game.github.io/igry-dlya-slabyh-noutbukov-s-gejmpadom.html).
 - [Игры онлайн](https://one1game.github.io/go/): браузерные мини-игры без установки и регистрации.
 - [AI Pulse](https://one1game.github.io/ai/): новости ИИ, рейтинг моделей, трендовые инструменты, бесплатные нейросети.
 - [Cosmic Drift](https://one1game.github.io/genriprocedur/): генератор процедурной музыки онлайн (ambient и hip-hop).

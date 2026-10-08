@@ -20,9 +20,11 @@ jobs:
         run: |
           python generate-sitemap.py
           python generate-home.py
+          python generate-archive.py
+          python scripts/gen_category_hubs.py
       - name: Commit and push
         run: |
           git config --global user.name 'Sitemap Bot'
           git config --global user.email 'bot@github.com'
-          git add sitemap.xml index.html
-          git diff --quiet && git diff --staged --quiet || (git commit -m "Автогенерация: sitemap и статичный HTML главной" && git push)
+          git add sitemap.xml index.html archive.html category
+          git diff --quiet && git diff --staged --quiet || (git commit -m "Автогенерация: sitemap, статичные главная и лента статей, хабы категорий" && git push)
