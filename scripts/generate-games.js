@@ -836,17 +836,87 @@ async function cfChat(prompt) {
 // Cloudflare упирается в 10 000 neurons/сутки на весь аккаунт (игры + фильмы),
 // поэтому основным делаем Gemini, затем Groq, а Cloudflare оставляем на подхвате.
 const GEMINI_API_KEY = process.env.GEMINI_API_KEY || "";
-const GEMINI_MODELS = [
-  process.env.GEMINI_MODEL,
-  "gemini-2.5-flash",
-  "gemini-2.0-flash",
-].filter(Boolean);
 const GROQ_API_KEY = process.env.GROQ_API_KEY || "";
-const GROQ_MODEL = process.env.GROQ_MODEL || "llama-3.3-70b-versatile";
+
+// Провайдеры регулярно снимают модели с обслуживания: Gemini 2.0/2.5 и Groq
+// llama-3.3 уже отдают 404. Поэтому спрашиваем актуальный список моделей у самих
+// API, а статический список держим только как резерв на случай сбоя запроса.
+const GEMINI_FALLBACK = [
+  process.env.GEMINI_MODEL,
+  "gemini-3.6-flash",
+  "gemini-2.5-flash-latest",
+  "gemini-2.5-flash",
+].filter(Boolean);
+const GROQ_FALLBACK = [
+  process.env.GROQ_MODEL,
+  "openai/gpt-oss-120b",
+  "qwen/qwen3.6-27b",
+  "openai/gpt-oss-20b",
+].filter(Boolean);
+
+let geminiModelsCache = null;
+async function resolveGeminiModels() {
+  if (geminiModelsCache) return geminiModelsCache;
+  geminiModelsCache = GEMINI_FALLBACK;
+  try {
+    const res = await fetch(
+      `https://generativelanguage.googleapis.com/v1beta/models?key=${encodeURIComponent(GEMINI_API_KEY)}&pageSize=200`
+    );
+    if (res.ok) {
+      const j = await res.json();
+      const ids = (j.models || [])
+        .filter((m) => (m.supportedGenerationMethods || []).includes("generateContent"))
+        .map((m) => String(m.name || "").replace(/^models\//, ""))
+        .filter(
+          (id) =>
+            /gemini/.test(id) &&
+            /(flash|pro)/.test(id) &&
+            !/(embedding|aqa|image|tts|live|learnlm|robotics|computer|preview)/.test(id)
+        );
+      if (ids.length) {
+        // Сначала flash (быстрее и дешевле), затем самые свежие версии.
+        const score = (id) => {
+          const ver = parseFloat((id.match(/gemini-(\d+(?:\.\d+)?)/) || [])[1] || "0");
+          return (/flash/.test(id) ? 100 : 0) + ver * 10;
+        };
+        geminiModelsCache = ids.sort((a, b) => score(b) - score(a));
+        console.log(`  [модель] Gemini: ${geminiModelsCache[0]}`);
+      }
+    }
+  } catch (e) {
+    // не удалось получить список — работаем на резервных именах
+  }
+  return geminiModelsCache;
+}
+
+let groqModelCache = null;
+async function resolveGroqModel() {
+  if (groqModelCache) return groqModelCache;
+  groqModelCache = GROQ_FALLBACK[0] || "openai/gpt-oss-120b";
+  try {
+    const res = await fetch("https://api.groq.com/openai/v1/models", {
+      headers: { Authorization: `Bearer ${GROQ_API_KEY}` },
+    });
+    if (res.ok) {
+      const j = await res.json();
+      const ids = (j.data || []).map((m) => m.id);
+      const pick =
+        GROQ_FALLBACK.find((m) => ids.includes(m)) || ids.find((id) => /gpt-oss|qwen|llama/.test(id));
+      if (pick) {
+        groqModelCache = pick;
+        console.log(`  [модель] Groq: ${pick}`);
+      }
+    }
+  } catch (e) {
+    // не удалось получить список — работаем на резервном имени
+  }
+  return groqModelCache;
+}
 
 async function geminiChat(prompt) {
   let lastErr = null;
-  for (const model of GEMINI_MODELS) {
+  const models = (await resolveGeminiModels()).slice(0, 3);
+  for (const model of models) {
     try {
       const res = await fetch(
         `https://generativelanguage.googleapis.com/v1beta/models/${model}:generateContent?key=${encodeURIComponent(GEMINI_API_KEY)}`,
@@ -855,10 +925,11 @@ async function geminiChat(prompt) {
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify({
             contents: [{ parts: [{ text: prompt }] }],
-            generationConfig: { temperature: 0.8, maxOutputTokens: 1200 },
+            generationConfig: { temperature: 0.8, maxOutputTokens: 2048 },
           }),
         }
       );
+      if (res.status === 429) throw rateLimitError(`gemini ${model}`, res);
       if (!res.ok) {
         lastErr = new Error(`gemini ${model}: HTTP ${res.status}`);
         continue;
@@ -869,6 +940,8 @@ async function geminiChat(prompt) {
       if (txt) return txt;
       lastErr = new Error(`gemini ${model}: пустой ответ`);
     } catch (e) {
+      // 429 общий для всей квоты аккаунта — пробовать другие модели бессмысленно
+      if (e.rateLimited) throw e;
       lastErr = e;
     }
   }
@@ -876,6 +949,7 @@ async function geminiChat(prompt) {
 }
 
 async function groqChat(prompt) {
+  const model = await resolveGroqModel();
   const res = await fetch("https://api.groq.com/openai/v1/chat/completions", {
     method: "POST",
     headers: {
@@ -883,17 +957,19 @@ async function groqChat(prompt) {
       "Content-Type": "application/json",
     },
     body: JSON.stringify({
-      model: GROQ_MODEL,
+      model,
       messages: [{ role: "user", content: prompt }],
-      max_tokens: 1200,
+      // у моделей gpt-oss часть лимита уходит на «рассуждение», поэтому с запасом
+      max_tokens: 2048,
       temperature: 0.8,
     }),
   });
-  if (!res.ok) throw new Error(`groq: HTTP ${res.status}`);
+  if (res.status === 429) throw rateLimitError(`groq ${model}`, res);
+  if (!res.ok) throw new Error(`groq ${model}: HTTP ${res.status}`);
   const j = await res.json();
   const txt =
     (j.choices && j.choices[0] && j.choices[0].message && j.choices[0].message.content) || "";
-  if (!txt) throw new Error("groq: пустой ответ");
+  if (!txt) throw new Error(`groq ${model}: пустой ответ`);
   return txt;
 }
 
@@ -912,6 +988,31 @@ function aiProviders() {
 const providerFails = new Map();
 const PROVIDER_FAIL_LIMIT = 3;
 
+// 429 — это чаще всего временный лимит (запросов в минуту), а не «провайдер мёртв»:
+// такое не считаем в предохранитель, а ждём и идём дальше. Но если 429 сыпятся
+// подряд — значит кончилась суточная квота, тогда отключаем провайдера до конца прогона.
+const providerRateLimits = new Map();
+const PROVIDER_RATE_LIMIT = 5;
+
+// Бесплатные тиры Gemini — 10-15 запросов в минуту. Без паузы на 150 страницах
+// гарантированно ловим 429 и теряем время, поэтому держим интервал между запросами.
+const AI_MIN_INTERVAL_MS = parseInt(process.env.AI_MIN_INTERVAL_MS || "7000", 10);
+let lastAiCallAt = 0;
+async function aiPace() {
+  const wait = lastAiCallAt + AI_MIN_INTERVAL_MS - Date.now();
+  if (wait > 0) await sleep(wait);
+  lastAiCallAt = Date.now();
+}
+
+function rateLimitError(name, res) {
+  const e = new Error(`${name}: HTTP 429`);
+  e.rateLimited = true;
+  const ra = parseFloat(res.headers.get("retry-after") || "");
+  // Ждём не больше минуты, иначе прогон растянется.
+  e.retryAfter = Math.min(Number.isFinite(ra) ? ra * 1000 : 20000, 60000);
+  return e;
+}
+
 async function aiChat(prompt) {
   const all = aiProviders();
   if (!all.length) throw new Error("не задан ни один ИИ-ключ");
@@ -920,14 +1021,26 @@ async function aiChat(prompt) {
   const list = alive.length ? alive : all;
   let lastErr = null;
   for (const [name, fn] of list) {
+    await aiPace();
     try {
       const txt = await fn(prompt);
       providerFails.set(name, 0);
+      providerRateLimits.set(name, 0);
       return txt;
     } catch (e) {
-      providerFails.set(name, (providerFails.get(name) || 0) + 1);
       lastErr = e;
-      console.warn(`  [ai] ${name}: ${e.message}`);
+      if (e.rateLimited) {
+        const n = (providerRateLimits.get(name) || 0) + 1;
+        providerRateLimits.set(name, n);
+        console.warn(
+          `  [лимит] ${name}: 429, пауза ${Math.round(e.retryAfter / 1000)} с (${n}/${PROVIDER_RATE_LIMIT})`
+        );
+        if (n >= PROVIDER_RATE_LIMIT) providerFails.set(name, PROVIDER_FAIL_LIMIT);
+        else await sleep(e.retryAfter);
+      } else {
+        providerFails.set(name, (providerFails.get(name) || 0) + 1);
+        console.warn(`  [ai] ${name}: ${e.message}`);
+      }
     }
   }
   throw lastErr || new Error("все ИИ-провайдеры недоступны");
