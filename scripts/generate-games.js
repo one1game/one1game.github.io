@@ -906,14 +906,26 @@ function aiProviders() {
   return list;
 }
 
+// Предохранитель: если провайдер подряд не отвечает (кончилась квота и т.п.),
+// отключаем его до конца прогона и работаем остальными. Иначе на каждой странице
+// будет тратиться лишний неудачный запрос в уже исчерпанный сервис.
+const providerFails = new Map();
+const PROVIDER_FAIL_LIMIT = 3;
+
 async function aiChat(prompt) {
-  const list = aiProviders();
-  if (!list.length) throw new Error("не задан ни один ИИ-ключ");
+  const all = aiProviders();
+  if (!all.length) throw new Error("не задан ни один ИИ-ключ");
+  const alive = all.filter(([name]) => (providerFails.get(name) || 0) < PROVIDER_FAIL_LIMIT);
+  // Если отключились все — пробуем весь список заново, вдруг лимит уже сбросился.
+  const list = alive.length ? alive : all;
   let lastErr = null;
   for (const [name, fn] of list) {
     try {
-      return await fn(prompt);
+      const txt = await fn(prompt);
+      providerFails.set(name, 0);
+      return txt;
     } catch (e) {
+      providerFails.set(name, (providerFails.get(name) || 0) + 1);
       lastErr = e;
       console.warn(`  [ai] ${name}: ${e.message}`);
     }
@@ -1009,6 +1021,7 @@ async function enrichAll() {
     /:\s*цена, отзывы и статистика игроков\s*$/i.test(a.title || "");
 
   const limit = parseInt(process.env.ENRICH_LIMIT || "60", 10);
+  console.log(`ИИ-провайдеры: ${aiProviders().map(([n]) => n).join(" → ")}`);
   const pending = arr.filter((a) => isGame(a) && !a.ai);
   const targets = pending.slice(0, limit);
   console.log(`ИИ-обогащение: ${targets.length} из ${pending.length} без ИИ`);
