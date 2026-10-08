@@ -142,6 +142,7 @@
     '    <a href="/besplatnye-igry.html" class="sheet-link"><i class="fas fa-gift" aria-hidden="true"></i> Бесплатные раздачи</a>' +
     '    <a href="/skidki-na-igry.html" class="sheet-link"><i class="fas fa-tags" aria-hidden="true"></i> Скидки на игры</a>' +
     '    <a href="/vo-chto-poigrat.html" class="sheet-link"><i class="fas fa-dice" aria-hidden="true"></i> Во что поиграть</a>' +
+    '    <a href="/igry-bez-videokarty.html" class="sheet-link"><i class="fas fa-laptop" aria-hidden="true"></i> Игры для слабых ПК</a>' +
     '  </div>' +
     '  <p class="sheet-title">Издание</p>' +
     '  <div class="sheet-links">' +
@@ -178,6 +179,7 @@
     '      <a href="/besplatnye-igry.html">Бесплатные раздачи</a>' +
     '      <a href="/skidki-na-igry.html">Скидки на игры</a>' +
     '      <a href="/vo-chto-poigrat.html">Во что поиграть</a>' +
+    '      <a href="/igry-bez-videokarty.html">Игры для слабых ПК</a>' +
     '      <a href="/archive.html">Статьи</a>' +
     '      <a href="/category/obzory.html">Обзоры игр</a>' +
     '      <a href="/category/gajdy.html">Гайды</a>' +

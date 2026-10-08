@@ -90,6 +90,16 @@ def generate():
         url_block(f'{BASE_URL}/besplatnye-igry.html', lastmod=today, priority='0.8'),
         url_block(f'{BASE_URL}/skidki-na-igry.html', lastmod=today, priority='0.8'),
         url_block(f'{BASE_URL}/vo-chto-poigrat.html', lastmod=today, priority='0.7'),
+        # Хабы «игры для слабых ноутбуков» (собираются scripts/slabye-noutbuki.mjs)
+        url_block(f'{BASE_URL}/igry-bez-videokarty.html', lastmod=today, priority='0.8'),
+        url_block(f'{BASE_URL}/igry-dlya-slabyh-noutbukov-4gb-ozu.html', lastmod=today, priority='0.8'),
+        url_block(f'{BASE_URL}/besplatnye-igry-dlya-slabyh-pk.html', lastmod=today, priority='0.8'),
+        url_block(f'{BASE_URL}/kooperativnye-igry-dlya-slabyh-pk.html', lastmod=today, priority='0.8'),
+        url_block(f'{BASE_URL}/shuter-igry-dlya-slabyh-noutbukov.html', lastmod=today, priority='0.8'),
+        url_block(f'{BASE_URL}/rpg-igry-dlya-slabyh-noutbukov.html', lastmod=today, priority='0.8'),
+        url_block(f'{BASE_URL}/gonochnye-igry-dlya-slabyh-noutbukov.html', lastmod=today, priority='0.8'),
+        url_block(f'{BASE_URL}/igry-dlya-slabyh-noutbukov-onlajn.html', lastmod=today, priority='0.8'),
+        url_block(f'{BASE_URL}/igry-dlya-slabyh-noutbukov-s-gejmpadom.html', lastmod=today, priority='0.8'),
     ]
 
     # Страницы-хабы категорий (topical authority)

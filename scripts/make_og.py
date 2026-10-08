@@ -226,6 +226,7 @@ def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--limit", type=int, default=40, help="сколько карточек собрать за прогон")
     ap.add_argument("--only-missing", action="store_true", help="пропускать уже готовые")
+    ap.add_argument("--only", default="", help="собрать карточку только для этого slug")
     args = ap.parse_args()
 
     done = 0
@@ -236,6 +237,8 @@ def main():
             continue
         page = ROOT / url.lstrip("/")
         if not page.exists():
+            continue
+        if args.only and page.stem != args.only:
             continue
         og_url, html = current_og(page)
         if should_skip(og_url):
@@ -255,7 +258,7 @@ def main():
         done += 1
         print(f"  [ок] {slug}")
 
-    kino_done = process_kino(args.limit, args.only_missing)
+    kino_done = 0 if args.only else process_kino(args.limit, args.only_missing)
     print(f"Готово: собрано карточек — {done} (статьи) + {kino_done} (кино)")
 
 
