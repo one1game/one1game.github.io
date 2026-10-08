@@ -1,0 +1,64 @@
+name: Daily deals & giveaways
+
+# Ежедневно пересобирает «вечнозелёные» страницы:
+#   besplatnye-igry.html (GamerPower) и skidki-na-igry.html (CheapShark).
+# Индекс-пинг делается в этом же job: push от GITHUB_TOKEN не запускает другие workflow.
+
+on:
+  schedule:
+    - cron: '0 6 * * *' # 06:00 UTC (09:00 МСК)
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+
+      - uses: actions/setup-node@v5
+        with:
+          node-version: '20'
+
+      - name: Сборка страниц раздач и скидок
+        run: node scripts/giveaways.mjs
+
+      - name: Коммит и пуш
+        id: commit
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add besplatnye-igry.html skidki-na-igry.html
+          if git diff --quiet --cached; then
+            echo "changed=0" >> "$GITHUB_OUTPUT"
+            echo "Изменений нет"
+            exit 0
+          fi
+          git commit -m "Раздачи и скидки: $(date -u +'%Y-%m-%d')"
+          git pull --rebase --autostash origin main
+          git push
+          echo "changed=1" >> "$GITHUB_OUTPUT"
+
+      - name: Пинг IndexNow
+        if: steps.commit.outputs.changed == '1'
+        env:
+          SECRET_KEY: ${{ secrets.INDEXNOW_KEY }}
+        run: |
+          set -euo pipefail
+          HOST=one1game.github.io
+          if [ -n "${SECRET_KEY:-}" ]; then
+            KEY="$SECRET_KEY"
+          else
+            KEY=$(ls *.txt 2>/dev/null | sed -n 's/^\([0-9a-f]\{32\}\)\.txt$/\1/p' | head -n1)
+          fi
+          if [ -z "${KEY:-}" ]; then
+            echo "IndexNow: ключ не найден — пропускаю"
+            exit 0
+          fi
+          sleep 90
+          curl -sS -X POST "https://api.indexnow.org/indexnow" \
+            -H "Content-Type: application/json; charset=utf-8" \
+            -d "{\"host\":\"$HOST\",\"key\":\"$KEY\",\"keyLocation\":\"https://$HOST/$KEY.txt\",\"urlList\":[\"https://$HOST/besplatnye-igry.html\",\"https://$HOST/skidki-na-igry.html\"]}" \
+            -w "\nHTTP %{http_code}\n"

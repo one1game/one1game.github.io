@@ -1,0 +1,42 @@
+name: OG-картинки для статей
+
+# Раз в сутки собирает брендированные карточки 1200×630 для свежих страниц
+# и прописывает их в og:image / twitter:image. Свои картинки (загруженные вручную)
+# скрипт не трогает.
+
+on:
+  schedule:
+    - cron: '0 7 * * *' # 07:00 UTC (10:00 МСК), после обогащения контента
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+
+jobs:
+  og:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+
+      - uses: actions/setup-python@v6
+        with:
+          python-version: '3.12'
+
+      - name: Pillow
+        run: pip install --quiet pillow
+
+      - name: Сборка карточек
+        run: python scripts/make_og.py --limit 40 --only-missing
+
+      - name: Коммит и пуш
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add img/og archive kino
+          if git diff --quiet --cached; then
+            echo "Новых карточек нет"
+            exit 0
+          fi
+          git commit -m "OG-картинки: $(date -u +'%Y-%m-%d')"
+          git pull --rebase --autostash origin main
+          git push

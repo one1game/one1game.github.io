@@ -87,6 +87,9 @@ def generate():
         url_block(f'{BASE_URL}/dos/', lastmod=today, priority='0.8'),
         url_block(f'{BASE_URL}/red-alert-2/', lastmod=today, priority='0.8'),
         url_block(f'{BASE_URL}/kino/', lastmod=today, priority='0.8'),
+        url_block(f'{BASE_URL}/besplatnye-igry.html', lastmod=today, priority='0.8'),
+        url_block(f'{BASE_URL}/skidki-na-igry.html', lastmod=today, priority='0.8'),
+        url_block(f'{BASE_URL}/vo-chto-poigrat.html', lastmod=today, priority='0.7'),
     ]
 
     # Страницы-хабы категорий (topical authority)

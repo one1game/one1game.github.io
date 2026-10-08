@@ -139,6 +139,9 @@
     '    <a href="/anal-code/" class="sheet-link' + active(isCodeFusion) + '"><i class="fas ' + I.code + '" aria-hidden="true"></i> CodeFusion</a>' +
     '    <a href="/cyber-scanner/" class="sheet-link' + active(isScanner) + '"><i class="fas ' + I.scanner + '" aria-hidden="true"></i> Scanner</a>' +
     '    <a href="/l2/" class="sheet-link' + active(isL2) + '"><i class="fas ' + I.server + '" aria-hidden="true"></i> L2 Server</a>' +
+    '    <a href="/besplatnye-igry.html" class="sheet-link"><i class="fas fa-gift" aria-hidden="true"></i> Бесплатные раздачи</a>' +
+    '    <a href="/skidki-na-igry.html" class="sheet-link"><i class="fas fa-tags" aria-hidden="true"></i> Скидки на игры</a>' +
+    '    <a href="/vo-chto-poigrat.html" class="sheet-link"><i class="fas fa-dice" aria-hidden="true"></i> Во что поиграть</a>' +
     '  </div>' +
     '  <p class="sheet-title">Издание</p>' +
     '  <div class="sheet-links">' +
@@ -172,6 +175,9 @@
     '      <a href="/portablewebgame/">Ретро-игры</a>' +
     '      <a href="/dos/">DOS-игры</a>' +
     '      <a href="/kino/">Кино</a>' +
+    '      <a href="/besplatnye-igry.html">Бесплатные раздачи</a>' +
+    '      <a href="/skidki-na-igry.html">Скидки на игры</a>' +
+    '      <a href="/vo-chto-poigrat.html">Во что поиграть</a>' +
     '      <a href="/archive.html">Статьи</a>' +
     '      <a href="/category/obzory.html">Обзоры игр</a>' +
     '      <a href="/category/gajdy.html">Гайды</a>' +

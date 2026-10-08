@@ -832,6 +832,95 @@ async function cfChat(prompt) {
   throw lastErr || new Error("Cloudflare AI недоступен");
 }
 
+// ── Другие бесплатные провайдеры: Gemini и Groq ──
+// Cloudflare упирается в 10 000 neurons/сутки на весь аккаунт (игры + фильмы),
+// поэтому основным делаем Gemini, затем Groq, а Cloudflare оставляем на подхвате.
+const GEMINI_API_KEY = process.env.GEMINI_API_KEY || "";
+const GEMINI_MODELS = [
+  process.env.GEMINI_MODEL,
+  "gemini-2.5-flash",
+  "gemini-2.0-flash",
+].filter(Boolean);
+const GROQ_API_KEY = process.env.GROQ_API_KEY || "";
+const GROQ_MODEL = process.env.GROQ_MODEL || "llama-3.3-70b-versatile";
+
+async function geminiChat(prompt) {
+  let lastErr = null;
+  for (const model of GEMINI_MODELS) {
+    try {
+      const res = await fetch(
+        `https://generativelanguage.googleapis.com/v1beta/models/${model}:generateContent?key=${encodeURIComponent(GEMINI_API_KEY)}`,
+        {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({
+            contents: [{ parts: [{ text: prompt }] }],
+            generationConfig: { temperature: 0.8, maxOutputTokens: 1200 },
+          }),
+        }
+      );
+      if (!res.ok) {
+        lastErr = new Error(`gemini ${model}: HTTP ${res.status}`);
+        continue;
+      }
+      const j = await res.json();
+      const parts = (((j.candidates || [])[0] || {}).content || {}).parts || [];
+      const txt = parts.map((p) => p.text || "").join("").trim();
+      if (txt) return txt;
+      lastErr = new Error(`gemini ${model}: пустой ответ`);
+    } catch (e) {
+      lastErr = e;
+    }
+  }
+  throw lastErr || new Error("Gemini недоступен");
+}
+
+async function groqChat(prompt) {
+  const res = await fetch("https://api.groq.com/openai/v1/chat/completions", {
+    method: "POST",
+    headers: {
+      Authorization: `Bearer ${GROQ_API_KEY}`,
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({
+      model: GROQ_MODEL,
+      messages: [{ role: "user", content: prompt }],
+      max_tokens: 1200,
+      temperature: 0.8,
+    }),
+  });
+  if (!res.ok) throw new Error(`groq: HTTP ${res.status}`);
+  const j = await res.json();
+  const txt =
+    (j.choices && j.choices[0] && j.choices[0].message && j.choices[0].message.content) || "";
+  if (!txt) throw new Error("groq: пустой ответ");
+  return txt;
+}
+
+// Порядок: Gemini → Groq → Cloudflare. Отвечает первый доступный.
+function aiProviders() {
+  const list = [];
+  if (GEMINI_API_KEY) list.push(["Gemini", geminiChat]);
+  if (GROQ_API_KEY) list.push(["Groq", groqChat]);
+  if (CF_ACCOUNT_ID && CF_API_TOKEN) list.push(["Cloudflare", cfChat]);
+  return list;
+}
+
+async function aiChat(prompt) {
+  const list = aiProviders();
+  if (!list.length) throw new Error("не задан ни один ИИ-ключ");
+  let lastErr = null;
+  for (const [name, fn] of list) {
+    try {
+      return await fn(prompt);
+    } catch (e) {
+      lastErr = e;
+      console.warn(`  [ai] ${name}: ${e.message}`);
+    }
+  }
+  throw lastErr || new Error("все ИИ-провайдеры недоступны");
+}
+
 function aiPrompt(d, strict) {
   return `Ты SEO-редактор игрового портала One1Game (русскоязычный сайт-обзорник, НЕ магазин).
 Ниже данные игры из Steam. Сделай уникальный человечный текст ТОЛЬКО на русском.
@@ -899,10 +988,12 @@ function aiValid(obj, name) {
 }
 
 // ИИ-обогащение: обрабатывает первые N игровых записей без флага ai
-// и сразу пересобирает их страницы (Steam + Cloudflare).
+// и сразу пересобирает их страницы (Steam + ИИ: Gemini → Groq → Cloudflare).
 async function enrichAll() {
-  if (!CF_ACCOUNT_ID || !CF_API_TOKEN) {
-    console.warn("[внимание] нет CLOUDFLARE_ACCOUNT_ID / CLOUDFLARE_API_TOKEN");
+  if (!aiProviders().length) {
+    console.warn(
+      "[внимание] нет ни одного ИИ-ключа: задайте GEMINI_API_KEY, GROQ_API_KEY или CLOUDFLARE_ACCOUNT_ID + CLOUDFLARE_API_TOKEN"
+    );
     return;
   }
   const dataPath = path.resolve(process.cwd(), CONFIG.articlesDataPath);
@@ -950,7 +1041,7 @@ async function enrichAll() {
       let got = null;
       for (let attempt = 1; attempt <= 2 && !got; attempt++) {
         try {
-          const obj = aiParse(await cfChat(aiPrompt(d, attempt > 1)));
+          const obj = aiParse(await aiChat(aiPrompt(d, attempt > 1)));
           if (aiValid(obj, d.name)) got = obj;
         } catch (e) {
           console.error(`  [ai] ${appid}: ${e.message}`);
