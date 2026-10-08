@@ -389,7 +389,7 @@ window.allArticles = [
     "readTime": "14 мин",
     "category": "Гайды",
     "updated": "2026-10-08",
-    "image": "/img/og/igry-dlya-slabyh-noutbukov-2026.jpg"
+    "image": "/img/igry-dlya-slabyh-noutbukov-2026.webp"
   },
   {
     "url": "/archive/igry-dlya-dvoih-na-telefone-2026.html",
