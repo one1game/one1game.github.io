@@ -36,3 +36,9 @@
 - Обновление: ежедневно (обзоры игр — автоматически; статьи — по мере выхода).
 - Карта сайта: https://one1game.github.io/sitemap.xml
 - Соцсети: Telegram https://t.me/one1game, VK https://vk.com/one1games, YouTube https://www.youtube.com/@one1game
+
+## Машиночитаемые данные (JSON)
+
+- [Бесплатные раздачи игр](https://one1game.github.io/data/giveaways.json): название, платформы, магазин, дата окончания, ссылка. Обновляется ежедневно.
+- [Скидки на игры в Steam](https://one1game.github.io/data/deals.json): цена, скидка в процентах, рейтинг Steam. Цены в долларах США. Обновляется ежедневно.
+- Данные игр (страницы /archive/*-<appid>.html) собраны из Steam Store API и SteamSpy; минимальные системные требования указаны на каждой странице игры.

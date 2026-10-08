@@ -9,7 +9,7 @@
  *
  * Запуск: node scripts/giveaways.mjs
  */
-import { writeFileSync } from 'node:fs';
+import { writeFileSync, mkdirSync } from 'node:fs';
 
 const SITE = 'https://one1game.github.io';
 const UA = { 'User-Agent': 'One1GameBot/1.0 (+https://one1game.github.io)' };
@@ -30,6 +30,15 @@ async function getJSON(url) {
   const res = await fetch(url, { headers: UA });
   if (!res.ok) throw new Error(`${url} → HTTP ${res.status}`);
   return res.json();
+}
+
+/**
+ * Машиночитаемая копия страницы: ИИ-агентам и скриптам проще забрать JSON,
+ * чем разбирать HTML. Ссылки на эти файлы даны в llms.txt.
+ */
+function writeJsonFeed(file, payload) {
+  mkdirSync('data', { recursive: true });
+  writeFileSync(file, JSON.stringify(payload, null, 1), 'utf8');
 }
 
 /** Общая оболочка страницы: тот же хром сайта, что и везде. */
@@ -134,6 +143,21 @@ async function buildGiveaways() {
   const freeCount = items.filter((g) => /free/i.test(g.type || '')).length || items.length;
   const titles = items.slice(0, 6).map((g) => g.title);
 
+  writeJsonFeed('data/giveaways.json', {
+    updated: ISO_DATE,
+    source: 'gamerpower.com',
+    page: `${SITE}/besplatnye-igry.html`,
+    count: items.length,
+    items: items.map((g) => ({
+      title: g.title,
+      platforms: g.platforms,
+      worth: g.worth,
+      end_date: g.end_date,
+      url: g.open_giveaway_url,
+      description: String(g.description || '').replace(/\s+/g, ' ').slice(0, 300),
+    })),
+  });
+
   return render({
     slug: 'besplatnye-igry.html',
     title: `Бесплатные раздачи игр сегодня — ${HUMAN_DATE} | One1Game`,
@@ -183,6 +207,22 @@ async function buildDeals() {
 
   const best = items.slice(0, 3).map((d) => `${d.title} (−${Math.round(Number(d.savings))}%)`);
   const under5 = items.filter((d) => Number(d.salePrice) <= 5).length;
+
+  writeJsonFeed('data/deals.json', {
+    updated: ISO_DATE,
+    source: 'cheapshark.com',
+    page: `${SITE}/skidki-na-igry.html`,
+    currency: 'USD',
+    count: items.length,
+    items: items.map((d) => ({
+      title: d.title,
+      salePrice: Number(d.salePrice),
+      normalPrice: Number(d.normalPrice),
+      savingsPercent: Math.round(Number(d.savings)),
+      steamRating: Number(d.dealRating),
+      url: `https://www.cheapshark.com/redirect?dealID=${d.dealID}`,
+    })),
+  });
 
   return render({
     slug: 'skidki-na-igry.html',
