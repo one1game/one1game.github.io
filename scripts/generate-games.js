@@ -917,33 +917,30 @@ async function geminiChat(prompt) {
   let lastErr = null;
   const models = (await resolveGeminiModels()).slice(0, 3);
   for (const model of models) {
-    try {
-      const res = await fetch(
-        `https://generativelanguage.googleapis.com/v1beta/models/${model}:generateContent?key=${encodeURIComponent(GEMINI_API_KEY)}`,
-        {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({
-            contents: [{ parts: [{ text: prompt }] }],
-            generationConfig: { temperature: 0.8, maxOutputTokens: 2048 },
-          }),
-        }
-      );
-      if (res.status === 429) throw rateLimitError(`gemini ${model}`, res);
-      if (!res.ok) {
-        lastErr = new Error(`gemini ${model}: HTTP ${res.status}`);
-        continue;
+    const res = await fetch(
+      `https://generativelanguage.googleapis.com/v1beta/models/${model}:generateContent?key=${encodeURIComponent(GEMINI_API_KEY)}`,
+      {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          contents: [{ parts: [{ text: prompt }] }],
+          generationConfig: { temperature: 0.8, maxOutputTokens: 2048 },
+        }),
       }
+    );
+    if (res.ok) {
       const j = await res.json();
       const parts = (((j.candidates || [])[0] || {}).content || {}).parts || [];
       const txt = parts.map((p) => p.text || "").join("").trim();
       if (txt) return txt;
       lastErr = new Error(`gemini ${model}: пустой ответ`);
-    } catch (e) {
-      // 429 общий для всей квоты аккаунта — пробовать другие модели бессмысленно
-      if (e.rateLimited) throw e;
-      lastErr = e;
+      continue;
     }
+    const e = apiError(`gemini ${model}`, res);
+    // 404 = этой модели больше нет, есть смысл взять следующую.
+    // 429/5xx — общие для всей квоты и сервиса: перебор моделей только жжёт лимит.
+    if (res.status !== 404) throw e;
+    lastErr = e;
   }
   throw lastErr || new Error("Gemini недоступен");
 }
@@ -959,13 +956,14 @@ async function groqChat(prompt) {
     body: JSON.stringify({
       model,
       messages: [{ role: "user", content: prompt }],
-      // у моделей gpt-oss часть лимита уходит на «рассуждение», поэтому с запасом
-      max_tokens: 2048,
+      // gpt-oss сначала «думает» и тратит на это весь max_tokens, оставляя content
+      // пустым. Просим минимум рассуждений и даём запас по токенам.
+      reasoning_effort: "low",
+      max_tokens: 4096,
       temperature: 0.8,
     }),
   });
-  if (res.status === 429) throw rateLimitError(`groq ${model}`, res);
-  if (!res.ok) throw new Error(`groq ${model}: HTTP ${res.status}`);
+  if (!res.ok) throw apiError(`groq ${model}`, res);
   const j = await res.json();
   const txt =
     (j.choices && j.choices[0] && j.choices[0].message && j.choices[0].message.content) || "";
@@ -1004,21 +1002,27 @@ async function aiPace() {
   lastAiCallAt = Date.now();
 }
 
-function rateLimitError(name, res) {
-  const e = new Error(`${name}: HTTP 429`);
-  e.rateLimited = true;
-  const ra = parseFloat(res.headers.get("retry-after") || "");
-  // Ждём не больше минуты, иначе прогон растянется.
-  e.retryAfter = Math.min(Number.isFinite(ra) ? ra * 1000 : 20000, 60000);
+// 404 — «этой модели больше нет»: есть смысл попробовать другую.
+// 429 — временный лимит: ждём и идём дальше, провайдера не отключаем.
+// 5xx — сервис перегружен: тоже не приговор, просто ждём и пробуем снова.
+function apiError(name, res) {
+  const e = new Error(`${name}: HTTP ${res.status}`);
+  if (res.status === 429) {
+    e.rateLimited = true;
+    const ra = parseFloat(res.headers.get("retry-after") || "");
+    // Ждём не больше минуты, иначе прогон растянется.
+    e.retryAfter = Math.min(Number.isFinite(ra) ? ra * 1000 : 20000, 60000);
+  } else if (res.status >= 500) {
+    e.transient = true;
+  }
   return e;
 }
 
 async function aiChat(prompt) {
   const all = aiProviders();
   if (!all.length) throw new Error("не задан ни один ИИ-ключ");
-  const alive = all.filter(([name]) => (providerFails.get(name) || 0) < PROVIDER_FAIL_LIMIT);
-  // Если отключились все — пробуем весь список заново, вдруг лимит уже сбросился.
-  const list = alive.length ? alive : all;
+  const list = all.filter(([name]) => (providerFails.get(name) || 0) < PROVIDER_FAIL_LIMIT);
+  if (!list.length) throw new Error("все ИИ-провайдеры исчерпаны");
   let lastErr = null;
   for (const [name, fn] of list) {
     await aiPace();
@@ -1037,6 +1041,9 @@ async function aiChat(prompt) {
         );
         if (n >= PROVIDER_RATE_LIMIT) providerFails.set(name, PROVIDER_FAIL_LIMIT);
         else await sleep(e.retryAfter);
+      } else if (e.transient) {
+        console.warn(`  [сбой] ${name}: ${e.message}`);
+        await sleep(3000);
       } else {
         providerFails.set(name, (providerFails.get(name) || 0) + 1);
         console.warn(`  [ai] ${name}: ${e.message}`);
