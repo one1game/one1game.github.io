@@ -1,13 +1,13 @@
 {
   "ok": true,
-  "when": "2026-10-07",
+  "when": "2026-10-09",
   "movies": 28,
   "trailers": 22,
-  "removed": 0,
+  "removed": 1,
   "dropped": 0,
-  "ai_new": 0,
-  "ai_wiki": 5,
-  "ai_fail": 28,
+  "ai_new": 26,
+  "ai_wiki": 12,
+  "ai_fail": 2,
   "upcoming": 10,
   "released": 18,
   "errors": [],
@@ -15,34 +15,18 @@
     {
       "id": 1153576,
       "strict": false,
-      "raw": ""
-    },
-    {
-      "id": 1153576,
-      "strict": true,
-      "raw": ""
+      "raw": "{\"facts\": [\"Студии: Capcom, Legendary Pictures\", \"Страны: Япония, США\", \"Жанры: боевик, фэнтези\", \"Год: 2026\"], \"lead\": \"Фильм «Уличный боец» - это боевик с элементами фэнтези, основанный на популярно"
     },
     {
       "id": 1300926,
       "strict": false,
-      "raw": ""
+      "raw": "{\"facts\": [\"Rovio Animation\", \"Финляндия\", \"Япония\", \"США\", \"Джейсон Судейкис — Ред\", \"Джош Гэд — Чак\"], \"lead\": \"Angry Birds 3 в кино - новый мультфильм, продолжающий историю о птицах и свиньях. Режи"
+    },
+    {
+      "id": 1401586,
+      "strict": false,
+      "raw": "{\"facts\": [\"Режиссёр - Джефф Фаулер\", \"Студии - Paramount Pictures, Original Film\", \"Страны - США, Япония\", \"Жанры - комедия, боевик, семейный, фантастика\"], \"lead\": \"Фильм «Соник 4 в Кино» - это прод"
     }
   ],
-  "cf_debug": [
-    {
-      "model": "@cf/meta/llama-3.3-70b-instruct-fp8-fast",
-      "http": 429,
-      "body": "{\"errors\":[{\"message\":\"AiError: AiError: you have used up your daily free allocation of 10,000 neurons, please upgrade to Cloudflare's Workers Paid plan if you would like to contin"
-    },
-    {
-      "model": "@cf/mistralai/mistral-small-3.1-24b-instruct",
-      "http": 429,
-      "body": "{\"errors\":[{\"message\":\"AiError: AiError: you have used up your daily free allocation of 10,000 neurons, please upgrade to Cloudflare's Workers Paid plan if you would like to contin"
-    },
-    {
-      "model": "@cf/meta/llama-3.3-70b-instruct-fp8-fast",
-      "http": 429,
-      "body": "{\"errors\":[{\"message\":\"AiError: AiError: you have used up your daily free allocation of 10,000 neurons, please upgrade to Cloudflare's Workers Paid plan if you would like to contin"
-    }
-  ]
+  "cf_debug": []
 }
