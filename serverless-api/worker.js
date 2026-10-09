@@ -1,4 +1,4 @@
-const DEFAULT_ORIGIN = 'https://one1game.github.io';
+const DEFAULT_ORIGIN = 'https://one1game.org';
 const CHANNEL_ID = 'UChR3kvItnDlJ8vn2_sBmTiQ';
 const MAX_RESULTS = 6;
 const UPSTREAM_TIMEOUT_MS = 8000;

@@ -25,7 +25,7 @@ wrangler deploy
 
 Команды `wrangler secret put` запрашивают значение интерактивно. Не добавляйте значение ключа в аргументы команды и не сохраняйте его в истории shell.
 
-После деплоя Wrangler выдаст URL вида `https://one1game-api.<account>.workers.dev`. Этот URL нужно указать в `api-config.js` сайта. Для production предпочтительнее привязать собственный поддомен, например `api.one1game.github.io` или `api.example.com`, если DNS-политика проекта это позволяет.
+После деплоя Wrangler выдаст URL вида `https://one1game-api.<account>.workers.dev`. Этот URL нужно указать в `api-config.js` сайта. Для production предпочтительнее привязать собственный поддомен, например `api.one1game.org` или `api.example.com`, если DNS-политика проекта это позволяет.
 
 ## Локальная разработка
 
@@ -43,14 +43,14 @@ Health endpoint должен отвечать без утечки конфигу
 
 ```bash
 curl -i https://one1game-api.<account>.workers.dev/health \
-  -H "Origin: https://one1game.github.io"
+  -H "Origin: https://one1game.org"
 ```
 
 Preflight newsletter:
 
 ```bash
 curl -i -X OPTIONS https://one1game-api.<account>.workers.dev/api/newsletter \
-  -H "Origin: https://one1game.github.io" \
+  -H "Origin: https://one1game.org" \
   -H "Access-Control-Request-Method: POST" \
   -H "Access-Control-Request-Headers: content-type"
 ```
@@ -61,14 +61,14 @@ YouTube feed:
 
 ```bash
 curl -i https://one1game-api.<account>.workers.dev/api/youtube-feed \
-  -H "Origin: https://one1game.github.io"
+  -H "Origin: https://one1game.org"
 ```
 
 Ответ не должен содержать `YOUTUBE_API_KEY`, upstream JSON целиком или заголовки с секретами.
 
 ## Обязательные production-настройки
 
-`ALLOWED_ORIGIN` сейчас ограничен `https://one1game.github.io`. Если появится custom domain, его нужно явно заменить в `wrangler.jsonc` и в клиентском `api-config.js`; не используйте `*`.
+`ALLOWED_ORIGIN` сейчас ограничен `https://one1game.org`. Если появится custom domain, его нужно явно заменить в `wrangler.jsonc` и в клиентском `api-config.js`; не используйте `*`.
 
 Нужно включить rate limiting для `/api/newsletter` и `/api/youtube-feed`, а для newsletter желательно добавить Cloudflare Turnstile. Даже при проверке Origin любой клиент может вручную отправить запрос, поэтому CORS не заменяет rate limit и антиспам.
 

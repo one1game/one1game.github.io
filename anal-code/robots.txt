@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 Disallow: /api/
-Sitemap: https://one1game.github.io/anal-code/sitemap.xml
+Sitemap: https://one1game.org/anal-code/sitemap.xml

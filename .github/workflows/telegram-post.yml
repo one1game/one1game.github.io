@@ -41,7 +41,7 @@ jobs:
               print('Telegram: нет токена или chat_id — пропускаю')
               raise SystemExit(0)
 
-          BASE = 'https://one1game.github.io'
+          BASE = 'https://one1game.org'
           API = f'https://api.telegram.org/bot{token}/sendMessage'
 
           # Автосгенерированные страницы игр (scripts/generate-games.js) в канал

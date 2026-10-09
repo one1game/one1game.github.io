@@ -7,7 +7,7 @@ DATA_FILE = 'articles-data.js'
 # Путь к итоговому sitemap
 SITEMAP_FILE = 'sitemap.xml'
 # Ваш домен
-BASE_URL = 'https://one1game.github.io'
+BASE_URL = 'https://one1game.org'
 
 MONTHS = {
     'января': '01', 'февраля': '02', 'марта': '03', 'апреля': '04',

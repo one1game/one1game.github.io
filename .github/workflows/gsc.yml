@@ -29,7 +29,7 @@ jobs:
         env:
           GSC_SERVICE_ACCOUNT_JSON: ${{ secrets.GSC_SERVICE_ACCOUNT_JSON }}
           EVENT: ${{ github.event_name }}
-          HOST: one1game.github.io
+          HOST: one1game.org
         run: |
           python - <<'PY'
           import datetime, json, os, urllib.error, urllib.parse, urllib.request

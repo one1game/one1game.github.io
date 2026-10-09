@@ -38,7 +38,7 @@ jobs:
           INSTANCE = os.environ.get('MASTODON_INSTANCE', '').strip().rstrip('/')
           TOKEN = os.environ.get('MASTODON_TOKEN', '').strip()
           EVENT = os.environ.get('EVENT', '').strip()
-          BASE = 'https://one1game.github.io'
+          BASE = 'https://one1game.org'
           MAX_POSTS = 3
 
           if not INSTANCE or not TOKEN:

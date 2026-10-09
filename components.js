@@ -897,7 +897,7 @@
     // Find current article
     for (var i = 0; i < window.allArticles.length; i++) {
       var a = window.allArticles[i];
-      var aPath = new URL(a.url, 'https://one1game.github.io').pathname;
+      var aPath = new URL(a.url, 'https://one1game.org').pathname;
       if (aPath === currentUrl) { currentArticle = a; break; }
     }
 
@@ -932,7 +932,7 @@
     var scored = [];
     for (var j = 0; j < window.allArticles.length; j++) {
       var b = window.allArticles[j];
-      var bPath = new URL(b.url, 'https://one1game.github.io').pathname;
+      var bPath = new URL(b.url, 'https://one1game.org').pathname;
       if (bPath === currentUrl) continue;
 
       var score = 0;

@@ -24,10 +24,10 @@ jobs:
 
           key = os.environ.get('PSI_KEY', '').strip()
           urls = [
-              'https://one1game.github.io/',
-              'https://one1game.github.io/portablewebgame/',
-              'https://one1game.github.io/dos/',
-              'https://one1game.github.io/archive.html',
+              'https://one1game.org/',
+              'https://one1game.org/portablewebgame/',
+              'https://one1game.org/dos/',
+              'https://one1game.org/archive.html',
           ]
 
           for url in urls:

@@ -17,7 +17,7 @@ from pathlib import Path
 
 DATA_FILE = Path("articles-data.js")
 OUT_DIR = Path("category")
-BASE = "https://one1game.github.io"
+BASE = "https://one1game.org"
 
 # Категория → slug URL
 SLUGS = {

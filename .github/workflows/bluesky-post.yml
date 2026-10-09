@@ -38,7 +38,7 @@ jobs:
           HANDLE = os.environ.get('BLUESKY_HANDLE', '').strip() or 'one1game.bsky.social'
           PASSWORD = os.environ.get('BLUESKY_APP_PASSWORD', '').strip()
           EVENT = os.environ.get('EVENT', '').strip()
-          BASE = 'https://one1game.github.io'
+          BASE = 'https://one1game.org'
           PDS = 'https://bsky.social'
           COLLECTION = 'app.bsky.feed.post'
           MAX_POSTS = 3

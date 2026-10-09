@@ -1,44 +1,44 @@
 # One1Game
 
-> One1Game (https://one1game.github.io) — русскоязычный игровой портал: обзоры видеоигр, аналитика индустрии, гайды, ИИ и технологии, кино. Обзоры игр обновляются автоматически из Steam/SteamSpy; часть описаний создана с помощью ИИ и помечена в данных сайта.
+> One1Game (https://one1game.org) — русскоязычный игровой портал: обзоры видеоигр, аналитика индустрии, гайды, ИИ и технологии, кино. Обзоры игр обновляются автоматически из Steam/SteamSpy; часть описаний создана с помощью ИИ и помечена в данных сайта.
 
 ## Основные разделы
 
-- [Статьи и обзоры](https://one1game.github.io/archive.html): все материалы — обзоры игр, гайды, аналитика рынка, технологии, кино.
-- [Бесплатные раздачи игр](https://one1game.github.io/besplatnye-igry.html): что сейчас отдают бесплатно в Steam, Epic, GOG и других магазинах (обновляется ежедневно).
-- [Скидки на игры](https://one1game.github.io/skidki-na-igry.html): лучшие скидки Steam по размеру скидки (обновляется ежедневно).
-- [Во что поиграть](https://one1game.github.io/vo-chto-poigrat.html): случайная игра из базы сайта с фильтром по описанию.
+- [Статьи и обзоры](https://one1game.org/archive.html): все материалы — обзоры игр, гайды, аналитика рынка, технологии, кино.
+- [Бесплатные раздачи игр](https://one1game.org/besplatnye-igry.html): что сейчас отдают бесплатно в Steam, Epic, GOG и других магазинах (обновляется ежедневно).
+- [Скидки на игры](https://one1game.org/skidki-na-igry.html): лучшие скидки Steam по размеру скидки (обновляется ежедневно).
+- [Во что поиграть](https://one1game.org/vo-chto-poigrat.html): случайная игра из базы сайта с фильтром по описанию.
 
 ## Игры для слабых ноутбуков
 
-- [Полный гид: игры для слабых ноутбуков 2026](https://one1game.github.io/archive/igry-dlya-slabyh-noutbukov-2026.html): что реально запустится без дискретной видеокарты, настройки ради FPS.
-- [Игры без видеокарты](https://one1game.github.io/igry-bez-videokarty.html): что тянет встроенная графика Intel HD/UHD, Iris Xe и AMD Vega.
-- [Игры для слабых ноутбуков с 4 ГБ ОЗУ](https://one1game.github.io/igry-dlya-slabyh-noutbukov-4gb-ozu.html).
-- [Бесплатные игры для слабых ПК](https://one1game.github.io/besplatnye-igry-dlya-slabyh-pk.html).
-- [Кооперативные игры для слабых ПК](https://one1game.github.io/kooperativnye-igry-dlya-slabyh-pk.html).
-- [Стрелялки для слабых ноутбуков](https://one1game.github.io/shuter-igry-dlya-slabyh-noutbukov.html).
-- [RPG для слабых ноутбуков](https://one1game.github.io/rpg-igry-dlya-slabyh-noutbukov.html).
-- [Гонки для слабых ноутбуков](https://one1game.github.io/gonochnye-igry-dlya-slabyh-noutbukov.html).
-- [Онлайн-игры для слабых ноутбуков](https://one1game.github.io/igry-dlya-slabyh-noutbukov-onlajn.html).
-- [Игры с геймпадом](https://one1game.github.io/igry-dlya-slabyh-noutbukov-s-gejmpadom.html).
-- [Игры онлайн](https://one1game.github.io/go/): браузерные мини-игры без установки и регистрации.
-- [AI Pulse](https://one1game.github.io/ai/): новости ИИ, рейтинг моделей, трендовые инструменты, бесплатные нейросети.
-- [Cosmic Drift](https://one1game.github.io/genriprocedur/): генератор процедурной музыки онлайн (ambient и hip-hop).
-- [CodeFusion](https://one1game.github.io/anal-code/): онлайн-анализатор исходного кода с ИИ, GitHub, diff и security scan.
-- [Cyber-Scanner](https://one1game.github.io/cyber-scanner/): проверка SPF, DMARC, DKIM, CSP, JWT и паролей без регистрации.
-- [L2 Server](https://one1game.github.io/l2/): лендинг Lineage 2 x3 DUO PLAY.
-- [Triad Duel](https://one1game.github.io/triad-duel.html): тактическая карточная PvP-игра в Telegram.
+- [Полный гид: игры для слабых ноутбуков 2026](https://one1game.org/archive/igry-dlya-slabyh-noutbukov-2026.html): что реально запустится без дискретной видеокарты, настройки ради FPS.
+- [Игры без видеокарты](https://one1game.org/igry-bez-videokarty.html): что тянет встроенная графика Intel HD/UHD, Iris Xe и AMD Vega.
+- [Игры для слабых ноутбуков с 4 ГБ ОЗУ](https://one1game.org/igry-dlya-slabyh-noutbukov-4gb-ozu.html).
+- [Бесплатные игры для слабых ПК](https://one1game.org/besplatnye-igry-dlya-slabyh-pk.html).
+- [Кооперативные игры для слабых ПК](https://one1game.org/kooperativnye-igry-dlya-slabyh-pk.html).
+- [Стрелялки для слабых ноутбуков](https://one1game.org/shuter-igry-dlya-slabyh-noutbukov.html).
+- [RPG для слабых ноутбуков](https://one1game.org/rpg-igry-dlya-slabyh-noutbukov.html).
+- [Гонки для слабых ноутбуков](https://one1game.org/gonochnye-igry-dlya-slabyh-noutbukov.html).
+- [Онлайн-игры для слабых ноутбуков](https://one1game.org/igry-dlya-slabyh-noutbukov-onlajn.html).
+- [Игры с геймпадом](https://one1game.org/igry-dlya-slabyh-noutbukov-s-gejmpadom.html).
+- [Игры онлайн](https://one1game.org/go/): браузерные мини-игры без установки и регистрации.
+- [AI Pulse](https://one1game.org/ai/): новости ИИ, рейтинг моделей, трендовые инструменты, бесплатные нейросети.
+- [Cosmic Drift](https://one1game.org/genriprocedur/): генератор процедурной музыки онлайн (ambient и hip-hop).
+- [CodeFusion](https://one1game.org/anal-code/): онлайн-анализатор исходного кода с ИИ, GitHub, diff и security scan.
+- [Cyber-Scanner](https://one1game.org/cyber-scanner/): проверка SPF, DMARC, DKIM, CSP, JWT и паролей без регистрации.
+- [L2 Server](https://one1game.org/l2/): лендинг Lineage 2 x3 DUO PLAY.
+- [Triad Duel](https://one1game.org/triad-duel.html): тактическая карточная PvP-игра в Telegram.
 
 ## О сайте
 
 - Язык: русский (ru-RU).
 - Темы: видеоигры, игровая индустрия, искусственный интеллект, технологии, кино.
 - Обновление: ежедневно (обзоры игр — автоматически; статьи — по мере выхода).
-- Карта сайта: https://one1game.github.io/sitemap.xml
+- Карта сайта: https://one1game.org/sitemap.xml
 - Соцсети: Telegram https://t.me/one1game, VK https://vk.com/one1games, YouTube https://www.youtube.com/@one1game
 
 ## Машиночитаемые данные (JSON)
 
-- [Бесплатные раздачи игр](https://one1game.github.io/data/giveaways.json): название, платформы, магазин, дата окончания, ссылка. Обновляется ежедневно.
-- [Скидки на игры в Steam](https://one1game.github.io/data/deals.json): цена, скидка в процентах, рейтинг Steam. Цены в долларах США. Обновляется ежедневно.
+- [Бесплатные раздачи игр](https://one1game.org/data/giveaways.json): название, платформы, магазин, дата окончания, ссылка. Обновляется ежедневно.
+- [Скидки на игры в Steam](https://one1game.org/data/deals.json): цена, скидка в процентах, рейтинг Steam. Цены в долларах США. Обновляется ежедневно.
 - Данные игр (страницы /archive/*-<appid>.html) собраны из Steam Store API и SteamSpy; минимальные системные требования указаны на каждой странице игры.

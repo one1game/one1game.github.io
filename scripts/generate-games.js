@@ -1,5 +1,5 @@
 /**
- * Генератор страниц игр под шаблон one1game.github.io
+ * Генератор страниц игр под шаблон one1game.org
  * Источники данных: SteamSpy (без ключа) + Steam Store API (без ключа)
  *
  * Результат: HTML-файлы в папку /archive/, полностью совпадающие по вёрстке,
@@ -12,7 +12,7 @@ const fs = require("fs");
 const path = require("path");
 
 const CONFIG = {
-  siteUrl: "https://one1game.github.io",
+  siteUrl: "https://one1game.org",
   // Сколько игр брать из "вечнозелёного" топа по игрокам (эти почти не меняются:
   // CS2, Dota 2, PUBG и т.д. — но полезны для стабильного трафика и обновления цен).
   steadyLimit: parseInt(process.env.STEADY_LIMIT || "15", 10),

@@ -11,8 +11,8 @@
  */
 import { writeFileSync, mkdirSync } from 'node:fs';
 
-const SITE = 'https://one1game.github.io';
-const UA = { 'User-Agent': 'One1GameBot/1.0 (+https://one1game.github.io)' };
+const SITE = 'https://one1game.org';
+const UA = { 'User-Agent': 'One1GameBot/1.0 (+https://one1game.org)' };
 const IMG_FALLBACK = `${SITE}/og-image.jpg`;
 
 const MONTHS = ['января', 'февраля', 'марта', 'апреля', 'мая', 'июня',

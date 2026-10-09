@@ -21,7 +21,7 @@ const ROOT = resolve(dirname(fileURLToPath(import.meta.url)), '..');
 const DATA_FILE = resolve(ROOT, 'scripts/data/slabye-noutbuki.json');
 const CACHE_FILE = resolve(ROOT, 'scripts/data/steam-cache.json');
 
-const SITE = 'https://one1game.github.io';
+const SITE = 'https://one1game.org';
 const UA = { 'User-Agent': 'Mozilla/5.0 (compatible; One1GameBot/1.0)' };
 const MONTHS = ['января', 'февраля', 'марта', 'апреля', 'мая', 'июня',
   'июля', 'августа', 'сентября', 'октября', 'ноября', 'декабря'];

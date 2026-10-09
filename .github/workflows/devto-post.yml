@@ -1,6 +1,6 @@
 name: Dev.to Cross-post
 
-# Кросспост новых редакционных статей на Dev.to (canonical_url указывает на one1game.github.io).
+# Кросспост новых редакционных статей на Dev.to (canonical_url указывает на one1game.org).
 # Автосгенерированные страницы игр пропускаются — как в Telegram и Bluesky.
 # Ручной запуск (workflow_dispatch) публикует тестовую заметку.
 # Секрет (Settings → Secrets → Actions): DEVTO_API_KEY
@@ -34,7 +34,7 @@ jobs:
 
           KEY = os.environ.get('DEVTO_API_KEY', '').strip()
           EVENT = os.environ.get('EVENT', '').strip()
-          BASE = 'https://one1game.github.io'
+          BASE = 'https://one1game.org'
           MAX_POSTS = 2
 
           if not KEY:

@@ -31,4 +31,4 @@ Allow: /
 User-agent: Google-Extended
 Allow: /
 
-Sitemap: https://one1game.github.io/sitemap.xml
+Sitemap: https://one1game.org/sitemap.xml

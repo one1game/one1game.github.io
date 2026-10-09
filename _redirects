@@ -1,0 +1,5 @@
+# Правила редиректов для Cloudflare Pages
+# Документация: https://developers.cloudflare.com/pages/configuration/redirects/
+
+# www → основной домен (301)
+https://www.one1game.org/* https://one1game.org/:splat 301

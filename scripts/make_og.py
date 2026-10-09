@@ -124,7 +124,7 @@ def render_card(title, cover_url, out_path):
         y += 78
 
     foot_font = load_font(28)
-    draw.text((PAD, H - 74), "one1game.github.io", font=foot_font, fill=(159, 176, 199))
+    draw.text((PAD, H - 74), "one1game.org", font=foot_font, fill=(159, 176, 199))
 
     # Обложка справа с плавным входом в фон
     cover = fetch_image(cover_url)
@@ -214,7 +214,7 @@ def process_kino(limit, only_missing):
         except Exception as err:
             print(f"  [ошибка] {slug}: {err}")
             continue
-        new_url = f"https://one1game.github.io/img/og/{slug}.jpg"
+        new_url = f"https://one1game.org/img/og/{slug}.jpg"
         if new_url not in html:
             page.write_text(set_meta(html, new_url), encoding="utf-8", newline="\n")
         done += 1
@@ -252,7 +252,7 @@ def main():
         except Exception as err:
             print(f"  [ошибка] {slug}: {err}")
             continue
-        new_url = f"https://one1game.github.io/img/og/{slug}.jpg"
+        new_url = f"https://one1game.org/img/og/{slug}.jpg"
         if new_url not in html:
             page.write_text(set_meta(html, new_url), encoding="utf-8", newline="\n")
         done += 1
