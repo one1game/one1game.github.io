@@ -1,6 +1,326 @@
 // articles-data.js
 window.allArticles = [
   {
+    "url": "/archive/guys-with-magnets-4594370.html",
+    "title": "Guys with Magnets: цена, отзывы и статистика игроков",
+    "excerpt": "Guys with Magnets: актуальная цена (204.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
+    "date": "9 октября 2026",
+    "readTime": "2 мин",
+    "category": "Обзоры",
+    "updated": "2026-10-09",
+    "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4594370/98fad492574bce33613cb32c6f8a4c1dab79889b/header.jpg?t=1791537278"
+  },
+  {
+    "url": "/archive/stancefolio-5306270.html",
+    "title": "Stancefolio: цена, отзывы и статистика игроков",
+    "excerpt": "Stancefolio: актуальная цена (Бесплатно), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
+    "date": "9 октября 2026",
+    "readTime": "2 мин",
+    "category": "Обзоры",
+    "updated": "2026-10-09",
+    "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5306270/9074ccb8a026d9dfecda34946cd3b53b63ff74f9/header.jpg?t=1791537263"
+  },
+  {
+    "url": "/archive/mir-koshmarov-4276450.html",
+    "title": "Мир кошмаров: цена, отзывы и статистика игроков",
+    "excerpt": "Мир кошмаров: актуальная цена (590.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
+    "date": "9 октября 2026",
+    "readTime": "2 мин",
+    "category": "Обзоры",
+    "updated": "2026-10-09",
+    "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4276450/54a24d8a05f29ed9c16838a07cc042d64a48cbda/header_russian.jpg?t=1791535037"
+  },
+  {
+    "url": "/archive/dark-dice-dungeon-5248650.html",
+    "title": "Dark Dice Dungeon: цена, отзывы и статистика игроков",
+    "excerpt": "Dark Dice Dungeon: актуальная цена (261.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
+    "date": "9 октября 2026",
+    "readTime": "2 мин",
+    "category": "Обзоры",
+    "updated": "2026-10-09",
+    "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5248650/c4893d030fb8f5460f80e431c03771e2a2ae5753/header.jpg?t=1791534579"
+  },
+  {
+    "url": "/archive/botlings-4139440.html",
+    "title": "Botlings: цена, отзывы и статистика игроков",
+    "excerpt": "Botlings: актуальная цена (440.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
+    "date": "9 октября 2026",
+    "readTime": "2 мин",
+    "category": "Обзоры",
+    "updated": "2026-10-09",
+    "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4139440/8d0701f1d80e4c47ae213c5e8a2ca58827a71649/header.jpg?t=1791532547"
+  },
+  {
+    "url": "/archive/-4872790.html",
+    "title": "解熵: цена, отзывы и статистика игроков",
+    "excerpt": "解熵: актуальная цена (150.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
+    "date": "9 октября 2026",
+    "readTime": "2 мин",
+    "category": "Обзоры",
+    "updated": "2026-10-09",
+    "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4872790/0e0bf662f348f496dc8342eec48034d28df4825c/header.jpg?t=1791535422"
+  },
+  {
+    "url": "/archive/escape-immersion-4033680.html",
+    "title": "Escape: Immersion: цена, отзывы и статистика игроков",
+    "excerpt": "Escape: Immersion: актуальная цена (345.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
+    "date": "9 октября 2026",
+    "readTime": "2 мин",
+    "category": "Обзоры",
+    "updated": "2026-10-09",
+    "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4033680/df497a028725507eceb3c6c8ed67abcae24e3efa/header.jpg?t=1791529222"
+  },
+  {
+    "url": "/archive/lane-rider-highway-runner-5088650.html",
+    "title": "Lane Rider: Highway Runner: цена, отзывы и статистика игроков",
+    "excerpt": "Lane Rider: Highway Runner: актуальная цена (726.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
+    "date": "9 октября 2026",
+    "readTime": "2 мин",
+    "category": "Обзоры",
+    "updated": "2026-10-09",
+    "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5088650/de1b2a6740591045cf6a7caa834e5da6ea3a6409/header.jpg?t=1791527778"
+  },
+  {
+    "url": "/archive/-4056370.html",
+    "title": "魔法少女ゆーしゃちゃんと淫獄の迷宮: цена, отзывы и статистика игроков",
+    "excerpt": "魔法少女ゆーしゃちゃんと淫獄の迷宮: актуальная цена (332.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
+    "date": "9 октября 2026",
+    "readTime": "2 мин",
+    "category": "Обзоры",
+    "updated": "2026-10-09",
+    "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4056370/b47a1f3af015ef35db9f737f9c304f41fa04d239/header.jpg?t=1791525730"
+  },
+  {
+    "url": "/archive/tower-survivors-fortress-5197160.html",
+    "title": "Tower Survivors: Fortress: цена, отзывы и статистика игроков",
+    "excerpt": "Tower Survivors: Fortress: актуальная цена (170.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
+    "date": "9 октября 2026",
+    "readTime": "2 мин",
+    "category": "Обзоры",
+    "updated": "2026-10-09",
+    "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5197160/2b9e29d778d069a881aabefcd909fe9c9b3a34ff/header.jpg?t=1791525067"
+  },
+  {
+    "url": "/archive/hazmat-simulator-5236060.html",
+    "title": "Hazmat Simulator: цена, отзывы и статистика игроков",
+    "excerpt": "Hazmat Simulator: актуальная цена (305.91 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
+    "date": "9 октября 2026",
+    "readTime": "2 мин",
+    "category": "Обзоры",
+    "updated": "2026-10-09",
+    "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5236060/f0affd4dfd01a391c53a585ef23b822fbca24557/header.jpg?t=1791525502"
+  },
+  {
+    "url": "/archive/kronite-void-4096710.html",
+    "title": "KRONITE VOID: цена, отзывы и статистика игроков",
+    "excerpt": "KRONITE VOID: актуальная цена (Бесплатно), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
+    "date": "9 октября 2026",
+    "readTime": "2 мин",
+    "category": "Обзоры",
+    "updated": "2026-10-09",
+    "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4096710/831e2cec299b921412e654450da339c8475fc674/header.jpg?t=1791524507"
+  },
+  {
+    "url": "/archive/-839140.html",
+    "title": "修仙界: цена, отзывы и статистика игроков",
+    "excerpt": "修仙界: актуальная цена (Бесплатно), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
+    "date": "9 октября 2026",
+    "readTime": "2 мин",
+    "category": "Обзоры",
+    "updated": "2026-10-09",
+    "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/839140/a7934a87204c41dbc10746ee4f5811291ee66002/header.jpg?t=1791524087"
+  },
+  {
+    "url": "/archive/do-disciplinary-committee-members-dream-of-succubi-4233960.html",
+    "title": "Do Disciplinary Committee Members Dream of Succubi?: цена, отзывы и статистика игроков",
+    "excerpt": "Do Disciplinary Committee Members Dream of Succubi?: актуальная цена (528.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
+    "date": "9 октября 2026",
+    "readTime": "2 мин",
+    "category": "Обзоры",
+    "updated": "2026-10-09",
+    "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4233960/d706f01a7c37e3aaa220b69dc5289a399d961e09/header.jpg?t=1791518404"
+  },
+  {
+    "url": "/archive/m-a-h-nh-trading-cards-season-4932510.html",
+    "title": "Mùa Hình (Trading-cards Season): цена, отзывы и статистика игроков",
+    "excerpt": "Mùa Hình (Trading-cards Season): актуальная цена (315.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
+    "date": "9 октября 2026",
+    "readTime": "2 мин",
+    "category": "Обзоры",
+    "updated": "2026-10-09",
+    "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4932510/2a840a0db03a2914d8afd4fb3b55075ff63f2d74/header.jpg?t=1791516746"
+  },
+  {
+    "url": "/archive/bunny-girl-spa-5214100.html",
+    "title": "Bunny Girl Spa 〜生意気ギャルにいたずらマッサージ〜: цена, отзывы и статистика игроков",
+    "excerpt": "Bunny Girl Spa 〜生意気ギャルにいたずらマッサージ〜: актуальная цена (337.30 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
+    "date": "9 октября 2026",
+    "readTime": "2 мин",
+    "category": "Обзоры",
+    "updated": "2026-10-09",
+    "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5214100/a9c94e601d2c843719958009f8e45a17596904fb/header.jpg?t=1791515957"
+  },
+  {
+    "url": "/archive/tessera-5073130.html",
+    "title": "Tessera: цена, отзывы и статистика игроков",
+    "excerpt": "Tessera: актуальная цена (348.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
+    "date": "9 октября 2026",
+    "readTime": "2 мин",
+    "category": "Обзоры",
+    "updated": "2026-10-09",
+    "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5073130/44d3a6e0ffb7f2ba348e6d719e6cd26232df7226/header.jpg?t=1791515952"
+  },
+  {
+    "url": "/archive/-5235070.html",
+    "title": "百世成仙: цена, отзывы и статистика игроков",
+    "excerpt": "百世成仙: актуальная цена (120.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
+    "date": "9 октября 2026",
+    "readTime": "2 мин",
+    "category": "Обзоры",
+    "updated": "2026-10-09",
+    "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5235070/d6a7a74696efc50a62da303e9b821c2582ef61df/header.jpg?t=1791515631"
+  },
+  {
+    "url": "/archive/taerim-s-blueberry-defense-5165750.html",
+    "title": "Taerim's Blueberry Defense: цена, отзывы и статистика игроков",
+    "excerpt": "Taerim's Blueberry Defense: актуальная цена (120.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
+    "date": "9 октября 2026",
+    "readTime": "2 мин",
+    "category": "Обзоры",
+    "updated": "2026-10-09",
+    "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5165750/bf47d79f8667019d66895a54d92534cf88ceff1d/header.jpg?t=1791515613"
+  },
+  {
+    "url": "/archive/blosharper-bitva-tsvetov-4718270.html",
+    "title": "Blosharper: Битва цветов: цена, отзывы и статистика игроков",
+    "excerpt": "Blosharper: Битва цветов: актуальная цена (385.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
+    "date": "9 октября 2026",
+    "readTime": "2 мин",
+    "category": "Обзоры",
+    "updated": "2026-10-09",
+    "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4718270/c653dde5a53b9d8dc23966af0d5a6b59ba9f15e6/header.jpg?t=1791515348"
+  },
+  {
+    "url": "/archive/celestay-craft-slowlife-4183770.html",
+    "title": "CELESTAY Craft&Slowlife: цена, отзывы и статистика игроков",
+    "excerpt": "CELESTAY Craft&Slowlife: актуальная цена (336.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
+    "date": "9 октября 2026",
+    "readTime": "2 мин",
+    "category": "Обзоры",
+    "updated": "2026-10-09",
+    "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4183770/361bb8cfdf7993a6654bd52422dae2defcea4b2b/header.jpg?t=1791514870"
+  },
+  {
+    "url": "/archive/snowplow-therapy-4616180.html",
+    "title": "Snowplow Therapy: цена, отзывы и статистика игроков",
+    "excerpt": "Snowplow Therapy: актуальная цена (200.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
+    "date": "9 октября 2026",
+    "readTime": "2 мин",
+    "category": "Обзоры",
+    "updated": "2026-10-09",
+    "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4616180/47f3eeb803b1961a77a0efecc9e89e4cf414a42c/header.jpg?t=1791528455"
+  },
+  {
+    "url": "/archive/ai-5218580.html",
+    "title": "重生之我在产业园当AI: цена, отзывы и статистика игроков",
+    "excerpt": "重生之我在产业园当AI: актуальная цена (38.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
+    "date": "9 октября 2026",
+    "readTime": "2 мин",
+    "category": "Обзоры",
+    "updated": "2026-10-09",
+    "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5218580/3b6cd457854b8ed3741293191cd9830e8152ee43/header.jpg?t=1791537138"
+  },
+  {
+    "url": "/archive/puppetborne-5034450.html",
+    "title": "Puppetborne: цена, отзывы и статистика игроков",
+    "excerpt": "Puppetborne: актуальная цена (340.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
+    "date": "9 октября 2026",
+    "readTime": "2 мин",
+    "category": "Обзоры",
+    "updated": "2026-10-09",
+    "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5034450/3b7edd60cf61bae50c6e04c2b5dc0b4ee0cb5b58/header.jpg?t=1791513614"
+  },
+  {
+    "url": "/archive/hello-golf-5160720.html",
+    "title": "Hello Golf: цена, отзывы и статистика игроков",
+    "excerpt": "Hello Golf: актуальная цена (327.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
+    "date": "9 октября 2026",
+    "readTime": "2 мин",
+    "category": "Обзоры",
+    "updated": "2026-10-09",
+    "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5160720/a44032a1bbc86d1572cec901d01944bbfebb3e57/header.jpg?t=1791513561"
+  },
+  {
+    "url": "/archive/yunyun-syndrome-rhythm-psychosis-extra-song-pack-feat-kotoko-5253050.html",
+    "title": "Yunyun Syndrome!? Rhythm Psychosis - Extra Song Pack feat. KOTOKO: цена, отзывы и статистика игроков",
+    "excerpt": "Yunyun Syndrome!? Rhythm Psychosis - Extra Song Pack feat. KOTOKO: актуальная цена (180.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
+    "date": "9 октября 2026",
+    "readTime": "2 мин",
+    "category": "Обзоры",
+    "updated": "2026-10-09",
+    "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5253050/57c2e1300ef34b3b09ca705183122d165f3543e8/header.jpg?t=1791512592"
+  },
+  {
+    "url": "/archive/-4451790.html",
+    "title": "师姐别急，我抽卡就变强: цена, отзывы и статистика игроков",
+    "excerpt": "师姐别急，我抽卡就变强: актуальная цена (760.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
+    "date": "9 октября 2026",
+    "readTime": "2 мин",
+    "category": "Обзоры",
+    "updated": "2026-10-09",
+    "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4451790/dfb1c04a0892ce0b7909278437eab9d4ae9e3f8e/header.jpg?t=1791511889"
+  },
+  {
+    "url": "/archive/kill-your-friends-4681250.html",
+    "title": "Kill Your Friends: цена, отзывы и статистика игроков",
+    "excerpt": "Kill Your Friends: актуальная цена (224.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
+    "date": "9 октября 2026",
+    "readTime": "2 мин",
+    "category": "Обзоры",
+    "updated": "2026-10-09",
+    "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4681250/89757a4c0257396c7c443b7148676406edf59f59/header.jpg?t=1791530611"
+  },
+  {
+    "url": "/archive/crystash-4744820.html",
+    "title": "CRYSTASH!: цена, отзывы и статистика игроков",
+    "excerpt": "CRYSTASH!: актуальная цена (Бесплатно), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
+    "date": "9 октября 2026",
+    "readTime": "2 мин",
+    "category": "Обзоры",
+    "updated": "2026-10-09",
+    "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4744820/97782ebf7f3d1f070ce072b5a15867c1bbec2a1d/header.jpg?t=1791511330"
+  },
+  {
+    "url": "/archive/rush-aim-show-4744800.html",
+    "title": "Rush Aim Show: цена, отзывы и статистика игроков",
+    "excerpt": "Rush Aim Show: актуальная цена (Бесплатно), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
+    "date": "9 октября 2026",
+    "readTime": "2 мин",
+    "category": "Обзоры",
+    "updated": "2026-10-09",
+    "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4744800/d2e2bf5d8caea2e94c413cef0ccb5b0b45a034ec/header.jpg?t=1791511286"
+  },
+  {
+    "url": "/archive/clive-barker-s-hellraiser-revival-1551980.html",
+    "title": "Clive Barker's Hellraiser: Revival: цена, отзывы и статистика игроков",
+    "excerpt": "Clive Barker's Hellraiser: Revival: актуальная цена (2399.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
+    "date": "9 октября 2026",
+    "readTime": "2 мин",
+    "category": "Обзоры",
+    "updated": "2026-10-09",
+    "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1551980/d1e7111b93b6a8b3eb029908887648348c2c55e6/header.jpg?t=1791462446"
+  },
+  {
+    "url": "/archive/order-of-the-sinking-star-499170.html",
+    "title": "Order of the Sinking Star: цена, отзывы и статистика игроков",
+    "excerpt": "Order of the Sinking Star: актуальная цена (1300.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
+    "date": "9 октября 2026",
+    "readTime": "2 мин",
+    "category": "Обзоры",
+    "updated": "2026-10-09",
+    "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/499170/deda420d9e42288f4734a068c707f4c156203969/header.jpg?t=1791483535"
+  },
+  {
     "url": "/archive/sortiruy-kapibar-5130480.html",
     "title": "Сортируй капибар! – уютный симулятор сортировки",
     "excerpt": "Сортируй капибар! – казуальная игра‑симулятор, где нужно упорядочить более 4800 игрушечных капибар, используя специальные способности и превращая хаос в",
