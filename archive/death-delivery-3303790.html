@@ -11,12 +11,12 @@
   <link rel="dns-prefetch" href="https://www.google-analytics.com" />
   <link rel="preload" href="../styles.css" as="style" />
 
-  <title>Death Delivery: цена, отзывы и статистика игроков | One1Game</title>
-  <meta name="description" content="Death Delivery — актуальная цена, скидки, процент положительных отзывов и статистика игроков в Steam. Обновляется автоматически." />
+  <title>Death Delivery – динамичный шутер в стиле 80‑х | One1Game</title>
+  <meta name="description" content="Жестокий шутер от первого лица с атмосферой гонконгского кино 80‑х годов, стилизованным замедлением и олдскульной сложностью, понравится любителям" />
   <meta name="keywords" content="Death Delivery, цена, отзывы, скидка, статистика игроков, Steam" />
 
-  <meta property="og:title" content="Death Delivery: цена, отзывы и статистика игроков | One1Game" />
-  <meta property="og:description" content="Death Delivery — актуальная цена, скидки, процент положительных отзывов и статистика игроков в Steam. Обновляется автоматически." />
+  <meta property="og:title" content="Death Delivery – динамичный шутер в стиле 80‑х | One1Game" />
+  <meta property="og:description" content="Жестокий шутер от первого лица с атмосферой гонконгского кино 80‑х годов, стилизованным замедлением и олдскульной сложностью, понравится любителям" />
   <meta property="og:type" content="article" />
   <meta property="og:url" content="https://one1game.org/archive/death-delivery-3303790" />
   <meta property="og:image" content="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3303790/f0fd4a0f9d223da765e1431a5f11f7ef47793904/header.jpg?t=1790540028" />
@@ -41,7 +41,7 @@
     if (localStorage.getItem('ga_consent') === 'yes') enableGA();
   </script>
   <link href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css" rel="stylesheet" />
-  <link rel="stylesheet" href="/styles.css?v=7" />
+  <link rel="stylesheet" href="/styles.css?v=31" />
 
   <script type="application/ld+json">
   {
@@ -56,34 +56,21 @@
   </script>
 
   <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "Article",
-  "headline": "Death Delivery: цена, отзывы и статистика игроков | One1Game",
-  "datePublished": "2026-09-28",
-  "dateModified": "2026-09-28",
-  "author": {
-    "@type": "Person",
-    "name": "Команда One1Game"
-  },
-  "publisher": {
-    "@type": "Organization",
-    "name": "One1Game",
-    "logo": {
-      "@type": "ImageObject",
-      "url": "https://one1game.org/logo.png"
-    }
-  },
-  "description": "Death Delivery — актуальная цена, скидки, процент положительных отзывов и статистика игроков в Steam. Обновляется автоматически.",
-  "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3303790/f0fd4a0f9d223da765e1431a5f11f7ef47793904/header.jpg?t=1790540028",
-  "speakable": {
-    "@type": "SpeakableSpecification",
-    "cssSelector": [
-      "h1",
-      ".article-body p:first-of-type"
-    ]
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Death Delivery – динамичный шутер в стиле 80‑х | One1Game",
+    "datePublished": "2026-10-10",
+    "dateModified": "2026-10-10",
+    "author": {"@type": "Person", "name": "Команда One1Game"},
+    "publisher": {"@type": "Organization", "name": "One1Game", "logo": {"@type": "ImageObject", "url": "https://one1game.org/logo.png"}},
+    "description": "Жестокий шутер от первого лица с атмосферой гонконгского кино 80‑х годов, стилизованным замедлением и олдскульной сложностью, понравится любителям",
+    "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3303790/f0fd4a0f9d223da765e1431a5f11f7ef47793904/header.jpg?t=1790540028",
+    "inLanguage": "ru-RU",
+    "isAccessibleForFree": true,
+    "articleSection": "Обзоры",
+    "speakable": {"@type": "SpeakableSpecification", "cssSelector": ["h1", ".article-body p:first-of-type"]}
   }
-}
   </script>
 
   <script type="application/ld+json">
@@ -96,7 +83,7 @@
   "applicationCategory": "Game",
   "offers": {
     "@type": "Offer",
-    "price": "120.00",
+    "price": "200.00",
     "priceCurrency": "RUB"
   }
 }
@@ -140,11 +127,6 @@
     .game-shot img { display: block; width: 100%; height: auto; }
     .game-movies { display: grid; gap: 16px; margin: 20px 0; }
     .game-movie { margin: 0; }
-    .game-movie video {
-      display: block; width: 100%; height: auto;
-      border-radius: 8px; background: #000;
-    }
-    .game-movie figcaption { margin-top: 6px; font-size: 13px; color: var(--text-faint); }
     .game-video {
       position: relative; cursor: pointer; overflow: hidden;
       border-radius: 8px; background: #000; aspect-ratio: 16 / 9;
@@ -161,8 +143,52 @@
       border-color: transparent transparent transparent #fff;
     }
     .game-video-el { display: block; width: 100%; height: 100%; background: #000; }
+    .game-movie figcaption { margin-top: 6px; font-size: 13px; color: var(--text-faint); }
+
+    /* Рекламные блоки внутри статьи (самодостаточные стили — не зависят от кэша styles.css) */
+    .av-ad {
+      display: block; margin: 26px 0; padding: 16px 18px; position: relative;
+      background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.10);
+      border-radius: 10px; text-decoration: none; color: inherit;
+      transition: border-color 0.2s, background 0.2s;
+    }
+    .av-ad:hover { border-color: rgba(125,255,155,0.45); background: rgba(125,255,155,0.05); }
+    .av-ad--go { border-color: rgba(125,255,155,0.30); }
+    .av-ad-label {
+      display: block; margin-bottom: 8px;
+      font-size: 10px; letter-spacing: 0.14em; text-transform: uppercase; color: #6b7480;
+    }
+    .av-ad-header { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; margin-bottom: 6px; }
+    .av-ad-badge {
+      font-size: 10px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase;
+      color: #ffc061; border: 1px solid rgba(255,192,97,0.35); padding: 1px 6px; border-radius: 3px;
+    }
+    .av-ad-title { display: block; font-size: 15px; font-weight: 700; color: #fff; }
+    .av-ad-desc { display: block; font-size: 13px; color: #aab2bd; line-height: 1.55; margin-bottom: 12px; }
+    .av-ad-tags { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 12px; }
+    .av-ad-tag { font-size: 10px; color: #6b7480; border: 1px solid rgba(255,255,255,0.12); padding: 1px 6px; border-radius: 3px; }
+    .av-ad-cta {
+      display: inline-block; padding: 8px 14px; border-radius: 6px;
+      background: #ffc061; color: #1a1200;
+      font-size: 11px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase;
+    }
+    .av-ad--go .av-ad-cta { background: #7dff9b; }
+    .av-banner {
+      display: block; position: relative; max-width: 560px; margin: 26px auto;
+      border: 1px solid rgba(255,255,255,0.10); border-radius: 8px; overflow: hidden;
+      transition: border-color 0.2s;
+    }
+    .av-banner:hover { border-color: rgba(125,255,155,0.45); }
+    .av-banner img {
+      display: block; width: 100%; height: auto;
+      transition: filter 0.3s;
+    }
+    .av-banner:hover img { filter: brightness(1.04); }
+    .av-banner .av-ad-label {
+      position: absolute; top: 8px; left: 10px; z-index: 2; margin: 0;
+      padding: 1px 6px; background: rgba(4,6,10,0.75); border-radius: 3px;
+    }
   </style>
-<script defer src="/analytics-consent.js?v=2"></script>
 </head>
 <body>
 <a href="#main-content" class="skip-link">Перейти к содержимому</a>
@@ -190,23 +216,24 @@
     </nav>
 
     <div class="article-header">
-      <a class="article-category cat-reviews" href="/category/obzory">Обзоры</a>
-      <h1>Death Delivery: цена, отзывы и статистика игроков</h1>
+      <span class="article-category cat-reviews">Обзоры</span>
+      <h1>Death Delivery – динамичный шутер в стиле 80‑х</h1>
       <div class="article-meta">
-        <span><i class="far fa-calendar"></i> 28 сентября 2026</span>
+        <span><i class="far fa-calendar"></i> 10 октября 2026</span>
         <span><i class="far fa-clock"></i> 2 минуты чтения</span>
       </div>
     </div>
 
     <article class="article-body">
-      <div class="quick-answer" id="quick-answer" style="margin:18px 0;padding:14px 18px;border-left:3px solid var(--cyan,#7dff9b);background:rgba(125,255,155,.06);border-radius:8px;line-height:1.7"><strong>Коротко:</strong> Death Delivery — актуальная цена, скидки, процент положительных отзывов и статистика игроков в Steam. Обновляется автоматически.</div>
+
+      <p>Death Delivery – быстрый и яркий шутер от первого лица, пропитанный духом гонконгского кино 80‑х. Игра сочетает стилизованную визуальную подачу, замедленную съёмку и динамичный геймплей, требующий от игрока точных реакций.</p>
 
       <p>Death Delivery — это жестокий, увлекательный и динамичный шутер от первого лица, вдохновленный гонконгским кино, со стилизованной под 80-е годы замедленной съемкой, музыкой, экшеном и олдскульной сложностью, основанной на методе проб и ошибок.</p>
 
       <div class="game-stats-grid">
         <div class="game-stat-card">
           <div class="label">Цена</div>
-          <div class="value">120.00 RUB (скидка 40%)</div>
+          <div class="value">200.00 RUB</div>
         </div>
         <div class="game-stat-card">
           <div class="label">Дата выхода</div>
@@ -219,18 +246,34 @@
         </div>
       </div>
 
+      <a class="av-banner" href="https://bosslike.ru/?ref=7248523" target="_blank" rel="noopener noreferrer" title="Bosslike — накрутка подписчиков, лайков и просмотров">
+        <span class="av-ad-label">реклама</span>
+        <img src="/img/baner/baner1.webp?v=3" alt="Bosslike — накрутка подписчиков, лайков и просмотров" loading="lazy" width="2272" height="464" />
+      </a>
       <h2>Об игре</h2>
+      <p>Игровой процесс построен на методе проб и ошибок: каждый бой — это испытание реакции и точности стрельбы. Визуальный стиль напоминает классические фильмы того периода, а саундтрек усиливает ощущение ностальгии. Сложность напоминает олдскульные шутеры, где каждый выстрел имеет значение. Подойдёт тем, кто ценит быстрый экшен, атмосферные ретро‑элементы и готов к серьёзному испытанию навыков.</p>
+
       <p><strong>Жанры:</strong> Экшены, Казуальные игры, Инди<br/>
       <strong>Разработчик:</strong> GogaGames.<br/>
       <strong>Издатель:</strong> GogaGames.</p>
 
+      <a class="av-ad" href="https://my.adminvps.ru/aff.php?aff=31864" target="_blank" rel="noopener noreferrer">
+        <span class="av-ad-label">реклама</span>
+        <span class="av-ad-header">
+          <span class="av-ad-badge">выгодно</span>
+          <span class="av-ad-title">VPS/VDS от 299 ₽/мес</span>
+        </span>
+        <span class="av-ad-desc">NVMe-диски, CPU до 5.0 ГГц, бесплатное администрирование. Для сайтов, ботов, Docker и AI.</span>
+        <span class="av-ad-tags"><span class="av-ad-tag">NVMe</span><span class="av-ad-tag">24/7</span><span class="av-ad-tag">Мир</span></span>
+        <span class="av-ad-cta">Попробовать AdminVPS</span>
+      </a>
       <p>
         <a href="https://store.steampowered.com/app/3303790" target="_blank" rel="noopener">
           Страница игры в Steam →
         </a>
       </p>
 
-            <h2>Скриншоты</h2>
+      <h2>Скриншоты</h2>
       <div class="game-shots">
         <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3303790/ss_1a60a78535bcb32b3a5a7ab6da8903deeca665d1.1920x1080.jpg?t=1790540028" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3303790/ss_1a60a78535bcb32b3a5a7ab6da8903deeca665d1.600x338.jpg?t=1790540028" alt="Death Delivery — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
         <a class="game-shot" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3303790/4e01afd4e2f5b0c15d958d8a95255d1a8d554074/ss_4e01afd4e2f5b0c15d958d8a95255d1a8d554074.1920x1080.jpg?t=1790540028" target="_blank" rel="noopener noreferrer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3303790/4e01afd4e2f5b0c15d958d8a95255d1a8d554074/ss_4e01afd4e2f5b0c15d958d8a95255d1a8d554074.600x338.jpg?t=1790540028" alt="Death Delivery — скриншот" loading="lazy" decoding="async" width="600" height="337" /></a>
@@ -248,10 +291,9 @@
 
       <h2>Геймплей</h2>
       <div class="game-movies">
-        <figure class="game-movie"><div class="game-video" data-hls="https://video.akamai.steamstatic.com/store_trailers/3303790/2103617626/48a10aeb96c2c3c24ebbe6504447464f076ee04b/1750977400/hls_264_master.m3u8?t=1748289572" data-poster="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257145250/75c64946ad28f49a5b2c06f25ea73d2e1a7812d0/movie_600x337.jpg?t=1748289572" role="button" tabindex="0" aria-label="Смотреть геймплей: Gameplay Trailer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257145250/75c64946ad28f49a5b2c06f25ea73d2e1a7812d0/movie_600x337.jpg?t=1748289572" alt="" loading="lazy" width="480" height="270" /><span class="game-video-play" aria-hidden="true"></span></div></figure>
-        <figure class="game-movie"><div class="game-video" data-hls="https://video.akamai.steamstatic.com/store_trailers/3303790/774372/12aff6fabd82cd086226bd5b96c94241f6c0b978/1750977400/hls_264_master.m3u8?t=1730261511" data-poster="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257066759/7b909091ac6494a767414e7d5358f74d7f727606/movie_600x337.jpg?t=1730261511" role="button" tabindex="0" aria-label="Смотреть геймплей: Death Delivery Early Access Gameplay Trailer"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257066759/7b909091ac6494a767414e7d5358f74d7f727606/movie_600x337.jpg?t=1730261511" alt="" loading="lazy" width="480" height="270" /><span class="game-video-play" aria-hidden="true"></span></div></figure>
+        <figure class="game-movie"><div class="game-video" data-hls="https://video.akamai.steamstatic.com/store_trailers/3303790/2103617626/48a10aeb96c2c3c24ebbe6504447464f076ee04b/1750977400/hls_264_master.m3u8?t=1748289572" data-poster="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257145250/75c64946ad28f49a5b2c06f25ea73d2e1a7812d0/movie_600x337.jpg?t=1748289572" role="button" tabindex="0" aria-label="Смотреть геймплей"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257145250/75c64946ad28f49a5b2c06f25ea73d2e1a7812d0/movie_600x337.jpg?t=1748289572" alt="" loading="lazy" width="480" height="270" /><span class="game-video-play" aria-hidden="true"></span></div></figure>
+        <figure class="game-movie"><div class="game-video" data-hls="https://video.akamai.steamstatic.com/store_trailers/3303790/774372/12aff6fabd82cd086226bd5b96c94241f6c0b978/1750977400/hls_264_master.m3u8?t=1730261511" data-poster="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257066759/7b909091ac6494a767414e7d5358f74d7f727606/movie_600x337.jpg?t=1730261511" role="button" tabindex="0" aria-label="Смотреть геймплей"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257066759/7b909091ac6494a767414e7d5358f74d7f727606/movie_600x337.jpg?t=1730261511" alt="" loading="lazy" width="480" height="270" /><span class="game-video-play" aria-hidden="true"></span></div></figure>
       </div>
-
 <!--LOWEND:START-->
       <section class="lowend-block" style="margin:26px 0;padding:16px 18px;border:1px solid rgba(255,255,255,.10);border-radius:10px;background:rgba(255,255,255,.03)">
         <h2 style="margin:0 0 10px;font-size:1.15rem">Потянет ли слабый ноутбук?</h2>
@@ -259,11 +301,18 @@
         <p>Ориентир для ноутбука без дискретной видеокарты — 720p и низкие настройки. Готовые подборки: <a href="/igry-bez-videokarty">игры без видеокарты</a>, <a href="/igry-dlya-slabyh-noutbukov-4gb-ozu">игры на 4 ГБ ОЗУ</a>, <a href="/besplatnye-igry-dlya-slabyh-pk">бесплатные игры для слабых ПК</a>. Как поднять FPS — в <a href="/archive/igry-dlya-slabyh-noutbukov-2026">полном гиде по слабым ноутбукам</a>.</p>
       </section>
 <!--LOWEND:END-->
-<p style="color: var(--text-faint); font-size: 13px; margin-top: 30px;">
+
+      <p style="color: var(--text-faint); font-size: 13px; margin-top: 30px;">
         Данные о цене, отзывах и статистике обновляются автоматически на основе
         Steam Store API и SteamSpy.
       </p>
 
+      <a class="av-ad av-ad--go" href="https://one1game.org/go/">
+        <span class="av-ad-label">наши игры</span>
+        <span class="av-ad-header"><span class="av-ad-title">Мини-игры — играй прямо в браузере</span></span>
+        <span class="av-ad-desc">Быстрые игры без установки и регистрации. Пара кликов — и ты в деле.</span>
+        <span class="av-ad-cta">Играть бесплатно →</span>
+      </a>
 <div class="newsletter-box">
   <h4>📬 Получайте такие разборы раз в неделю</h4>
   <p>Аналитика индустрии, редкие цифры и мнения, о которых не пишут в крупных СМИ. Без спама — только по делу.</p>
