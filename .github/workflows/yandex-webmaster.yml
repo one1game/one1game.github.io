@@ -10,6 +10,8 @@ on:
     branches: [main]
     paths:
       - '**.html'
+      - 'sitemap.xml'
+      - '.github/workflows/yandex-webmaster.yml'
   schedule:
     - cron: '0 7 * * 1'
   workflow_dispatch:
@@ -74,6 +76,22 @@ jobs:
           if not host_id:
               print(f'Webmaster: сайт {HOST} не найден среди подтверждённых — {hosts}')
               raise SystemExit(1)
+
+          # Регистрируем sitemap.xml (идемпотентно: повторная регистрация → 409).
+          sitemap_url = f'{BASE}/sitemap.xml'
+          _, existing = api(f'/user/{uid}/hosts/{host_id}/user-added-sitemaps/')
+          known = {s.get('url') for s in (existing.get('sitemaps') or [])}
+          if sitemap_url in known:
+              print(f'Webmaster: sitemap уже добавлен — {sitemap_url}')
+          else:
+              status, res = api(
+                  f'/user/{uid}/hosts/{host_id}/user-added-sitemaps/', 'POST', {'url': sitemap_url})
+              if status in (200, 201, 202):
+                  print(f'Webmaster: sitemap добавлен — {sitemap_url}')
+              elif status == 409:
+                  print(f'Webmaster: sitemap уже добавлен — {sitemap_url}')
+              else:
+                  print(f'Webmaster: не удалось добавить sitemap — HTTP {status} {res}')
 
           _, quota = api(f'/user/{uid}/hosts/{host_id}/recrawl/quota')
           remainder = int(quota.get('quota_remainder') or 0)
