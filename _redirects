@@ -1,5 +1,8 @@
 # Правила редиректов для Cloudflare Pages
 # Документация: https://developers.cloudflare.com/pages/configuration/redirects/
-
-# www → основной домен (301)
-https://www.one1game.org/* https://one1game.org/:splat 301
+#
+# www → основной домен (301) настраивается НЕ здесь, а на уровне зоны:
+#   Cloudflare → one1game.org → Rules → Redirect Rules → Create rule:
+#     IF  Hostname equals "www.one1game.org"
+#     THEN Redirect (Dynamic): 301 → concat("https://one1game.org", http.request.uri.path), preserve query string
+# Причина: `_redirects` не умеет редирект по хосту (source — только путь).
