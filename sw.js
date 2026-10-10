@@ -1,18 +1,16 @@
-const CACHE = 'one1game-v60';
+const CACHE = 'one1game-v61';
 const CDN_CACHE = 'one1game-cdn-v1';
 
 const SHELL = [
   '/',
-  '/index.html',
-  '/archive.html',
+  '/archive',
   '/styles.css',
   '/script.js',
   '/articles-data.js',
   '/gaming-history.js',
   '/components.js',
   '/hero-space.js',
-  '/manifest.json',
-  '/404.html'
+  '/manifest.json'
 ];
 
 const CDN_HOSTS = [
@@ -96,7 +94,7 @@ self.addEventListener('fetch', e => {
       const hit = await caches.match(e.request);
       if (hit) return hit;
       if (e.request.mode === 'navigate') {
-        const shell = await caches.match('/index.html');
+        const shell = await caches.match('/');
         if (shell) return shell;
       }
       throw err;

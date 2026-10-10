@@ -23,7 +23,7 @@ class One1GamePlatform {
 
   // Проверяем, это архив или нет
   isArchivePage() {
-    return window.location.pathname.includes('archive.html') || 
+    return window.location.pathname.replace(/\/$/, '').endsWith('/archive') || window.location.pathname.includes('archive.html') || 
            document.title.includes('Архив') ||
            document.querySelector('.articles-container') !== null;
   }
