@@ -117,7 +117,7 @@ def normalize(movie):
         "overview": (movie.get("overview") or "").strip(),
         "poster": f"{IMG}{movie['poster_path']}" if movie.get("poster_path") else "",
         "poster_big": f"{IMG_BIG}{movie['poster_path']}" if movie.get("poster_path") else "",
-        "page": f"{SITE}/kino/{slugify(title)}-{mid}.html",
+        "page": f"{SITE}/kino/{slugify(title)}-{mid}",
         "href": f"/kino/{slugify(title)}-{mid}.html",
     }
 

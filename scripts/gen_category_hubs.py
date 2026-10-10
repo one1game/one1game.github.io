@@ -75,7 +75,7 @@ def esc(s):
 
 def build_hub(category, slug, items):
     items = sorted(items, key=sort_key, reverse=True)
-    url = f"{BASE}/category/{slug}.html"
+    url = f"{BASE}/category/{slug}"
     today = datetime.utcnow().strftime("%Y-%m-%d")
     title = f"{category} — все статьи и обзоры 2026 | One1Game"
     desc = f"Все материалы раздела «{category}»: {len(items)} статей и обзоров с датами и краткими описаниями. Обновляется автоматически."
@@ -103,7 +103,7 @@ def build_hub(category, slug, items):
                 "@type": "BreadcrumbList",
                 "itemListElement": [
                     {"@type": "ListItem", "position": 1, "name": "Главная", "item": f"{BASE}/"},
-                    {"@type": "ListItem", "position": 2, "name": "Статьи", "item": f"{BASE}/archive.html"},
+                    {"@type": "ListItem", "position": 2, "name": "Статьи", "item": f"{BASE}/archive"},
                     {"@type": "ListItem", "position": 3, "name": category, "item": url},
                 ],
             },
@@ -156,9 +156,9 @@ def build_hub(category, slug, items):
 <body>
 <main id="main-content">
   <div class="container cat-page">
-    <a href="/archive.html" class="article-back"><i class="fas fa-arrow-left" aria-hidden="true"></i> К списку статей</a>
+    <a href="/archive" class="article-back"><i class="fas fa-arrow-left" aria-hidden="true"></i> К списку статей</a>
     <nav class="breadcrumbs" aria-label="Хлебные крошки">
-      <a href="/">Главная</a> → <a href="/archive.html">Статьи</a> → <span>{esc(category)}</span>
+      <a href="/">Главная</a> → <a href="/archive">Статьи</a> → <span>{esc(category)}</span>
     </nav>
     <h1 class="cat-title">{esc(category)}: все статьи</h1>
     <p class="cat-lead">В разделе {len(items)} материалов. Отсортированы от новых к старым.</p>

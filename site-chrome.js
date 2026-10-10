@@ -38,10 +38,10 @@
     '      <a href="/portablewebgame/" class="nav-link' + a(isRetro) + '">Ретро-игры</a>' +
     '      <a href="/go/" class="nav-link' + a(isGo) + '">Игры онлайн</a>' +
     '      <a href="/kino/" class="nav-link' + a(isKino) + '">Кино</a>' +
-    '      <a href="/archive.html" class="nav-link' + a(isArchive) + '">Статьи</a>' +
+    '      <a href="/archive" class="nav-link' + a(isArchive) + '">Статьи</a>' +
     '      <a href="/ai/" class="nav-link' + a(isAI) + '">AI Pulse</a>' +
     '      <a href="/genriprocedur/" class="nav-link' + a(isMusic) + '">Cosmic Drift</a>' +
-    '      <a href="/triad-duel.html" class="nav-link' + a(isTriad) + '">Triad Duel</a>' +
+    '      <a href="/triad-duel" class="nav-link' + a(isTriad) + '">Triad Duel</a>' +
     '      <a href="/anal-code/" class="nav-link' + a(isCodeFusion) + '">CodeFusion</a>' +
     '      <a href="/cyber-scanner/" class="nav-link' + a(isScanner) + '">Scanner</a>' +
     '      <a href="/l2/" class="nav-link' + a(isL2) + '">L2 Server</a>' +
@@ -58,17 +58,17 @@
     '      <a href="/portablewebgame/">Ретро-игры</a>' +
     '      <a href="/dos/">DOS-игры</a>' +
     '      <a href="/kino/">Кино</a>' +
-    '      <a href="/archive.html">Статьи</a>' +
-    '      <a href="/category/obzory.html">Обзоры игр</a>' +
-    '      <a href="/category/gajdy.html">Гайды</a>' +
-    '      <a href="/category/analitika.html">Аналитика</a>' +
-    '      <a href="/category/ii-i-tehnologii.html">ИИ и технологии</a>' +
+    '      <a href="/archive">Статьи</a>' +
+    '      <a href="/category/obzory">Обзоры игр</a>' +
+    '      <a href="/category/gajdy">Гайды</a>' +
+    '      <a href="/category/analitika">Аналитика</a>' +
+    '      <a href="/category/ii-i-tehnologii">ИИ и технологии</a>' +
     '      <a href="/ai/">AI Pulse</a>' +
     '      <a href="/genriprocedur/">Cosmic Drift</a>' +
     '      <a href="/cyber-scanner/">Проверка безопасности</a>' +
-    '      <a href="/advertising.html">Реклама</a>' +
-    '      <a href="/privacy.html">Политика</a>' +
-    '      <a href="/terms.html">Правила</a>' +
+    '      <a href="/advertising">Реклама</a>' +
+    '      <a href="/privacy">Политика</a>' +
+    '      <a href="/terms">Правила</a>' +
     '    </div>' +
     '    <div class="footer-socials">' +
     '      <a href="https://t.me/one1game" target="_blank" rel="noopener" aria-label="Telegram" title="Telegram">TG</a>' +

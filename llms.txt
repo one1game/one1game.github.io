@@ -4,30 +4,30 @@
 
 ## Основные разделы
 
-- [Статьи и обзоры](https://one1game.org/archive.html): все материалы — обзоры игр, гайды, аналитика рынка, технологии, кино.
-- [Бесплатные раздачи игр](https://one1game.org/besplatnye-igry.html): что сейчас отдают бесплатно в Steam, Epic, GOG и других магазинах (обновляется ежедневно).
-- [Скидки на игры](https://one1game.org/skidki-na-igry.html): лучшие скидки Steam по размеру скидки (обновляется ежедневно).
-- [Во что поиграть](https://one1game.org/vo-chto-poigrat.html): случайная игра из базы сайта с фильтром по описанию.
+- [Статьи и обзоры](https://one1game.org/archive): все материалы — обзоры игр, гайды, аналитика рынка, технологии, кино.
+- [Бесплатные раздачи игр](https://one1game.org/besplatnye-igry): что сейчас отдают бесплатно в Steam, Epic, GOG и других магазинах (обновляется ежедневно).
+- [Скидки на игры](https://one1game.org/skidki-na-igry): лучшие скидки Steam по размеру скидки (обновляется ежедневно).
+- [Во что поиграть](https://one1game.org/vo-chto-poigrat): случайная игра из базы сайта с фильтром по описанию.
 
 ## Игры для слабых ноутбуков
 
-- [Полный гид: игры для слабых ноутбуков 2026](https://one1game.org/archive/igry-dlya-slabyh-noutbukov-2026.html): что реально запустится без дискретной видеокарты, настройки ради FPS.
-- [Игры без видеокарты](https://one1game.org/igry-bez-videokarty.html): что тянет встроенная графика Intel HD/UHD, Iris Xe и AMD Vega.
-- [Игры для слабых ноутбуков с 4 ГБ ОЗУ](https://one1game.org/igry-dlya-slabyh-noutbukov-4gb-ozu.html).
-- [Бесплатные игры для слабых ПК](https://one1game.org/besplatnye-igry-dlya-slabyh-pk.html).
-- [Кооперативные игры для слабых ПК](https://one1game.org/kooperativnye-igry-dlya-slabyh-pk.html).
-- [Стрелялки для слабых ноутбуков](https://one1game.org/shuter-igry-dlya-slabyh-noutbukov.html).
-- [RPG для слабых ноутбуков](https://one1game.org/rpg-igry-dlya-slabyh-noutbukov.html).
-- [Гонки для слабых ноутбуков](https://one1game.org/gonochnye-igry-dlya-slabyh-noutbukov.html).
-- [Онлайн-игры для слабых ноутбуков](https://one1game.org/igry-dlya-slabyh-noutbukov-onlajn.html).
-- [Игры с геймпадом](https://one1game.org/igry-dlya-slabyh-noutbukov-s-gejmpadom.html).
+- [Полный гид: игры для слабых ноутбуков 2026](https://one1game.org/archive/igry-dlya-slabyh-noutbukov-2026): что реально запустится без дискретной видеокарты, настройки ради FPS.
+- [Игры без видеокарты](https://one1game.org/igry-bez-videokarty): что тянет встроенная графика Intel HD/UHD, Iris Xe и AMD Vega.
+- [Игры для слабых ноутбуков с 4 ГБ ОЗУ](https://one1game.org/igry-dlya-slabyh-noutbukov-4gb-ozu).
+- [Бесплатные игры для слабых ПК](https://one1game.org/besplatnye-igry-dlya-slabyh-pk).
+- [Кооперативные игры для слабых ПК](https://one1game.org/kooperativnye-igry-dlya-slabyh-pk).
+- [Стрелялки для слабых ноутбуков](https://one1game.org/shuter-igry-dlya-slabyh-noutbukov).
+- [RPG для слабых ноутбуков](https://one1game.org/rpg-igry-dlya-slabyh-noutbukov).
+- [Гонки для слабых ноутбуков](https://one1game.org/gonochnye-igry-dlya-slabyh-noutbukov).
+- [Онлайн-игры для слабых ноутбуков](https://one1game.org/igry-dlya-slabyh-noutbukov-onlajn).
+- [Игры с геймпадом](https://one1game.org/igry-dlya-slabyh-noutbukov-s-gejmpadom).
 - [Игры онлайн](https://one1game.org/go/): браузерные мини-игры без установки и регистрации.
 - [AI Pulse](https://one1game.org/ai/): новости ИИ, рейтинг моделей, трендовые инструменты, бесплатные нейросети.
 - [Cosmic Drift](https://one1game.org/genriprocedur/): генератор процедурной музыки онлайн (ambient и hip-hop).
 - [CodeFusion](https://one1game.org/anal-code/): онлайн-анализатор исходного кода с ИИ, GitHub, diff и security scan.
 - [Cyber-Scanner](https://one1game.org/cyber-scanner/): проверка SPF, DMARC, DKIM, CSP, JWT и паролей без регистрации.
 - [L2 Server](https://one1game.org/l2/): лендинг Lineage 2 x3 DUO PLAY.
-- [Triad Duel](https://one1game.org/triad-duel.html): тактическая карточная PvP-игра в Telegram.
+- [Triad Duel](https://one1game.org/triad-duel): тактическая карточная PvP-игра в Telegram.
 
 ## О сайте
 

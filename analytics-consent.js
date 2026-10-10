@@ -73,7 +73,7 @@
       banner.className = 'cookie-banner';
       banner.setAttribute('role', 'dialog');
       banner.setAttribute('aria-label', 'Настройки cookies');
-      banner.innerHTML = '<div class="cookie-banner-inner"><p>Мы используем аналитические cookies, чтобы улучшать сайт. <a href="/privacy.html">Подробнее</a></p><div class="cookie-actions"><button type="button" id="cookie-decline" class="cookie-btn cookie-decline">Только необходимые</button><button type="button" id="cookie-accept" class="cookie-btn cookie-accept">Разрешить аналитику</button></div></div>';
+      banner.innerHTML = '<div class="cookie-banner-inner"><p>Мы используем аналитические cookies, чтобы улучшать сайт. <a href="/privacy">Подробнее</a></p><div class="cookie-actions"><button type="button" id="cookie-decline" class="cookie-btn cookie-decline">Только необходимые</button><button type="button" id="cookie-accept" class="cookie-btn cookie-accept">Разрешить аналитику</button></div></div>';
       document.body.appendChild(banner);
     }
 

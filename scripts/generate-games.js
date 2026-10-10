@@ -206,7 +206,7 @@ function lowEndBlock(store) {
       <section class="lowend-block" style="margin:26px 0;padding:16px 18px;border:1px solid rgba(255,255,255,.10);border-radius:10px;background:rgba(255,255,255,.03)">
         <h2 style="margin:0 0 10px;font-size:1.15rem">Потянет ли слабый ноутбук?</h2>
         ${req ? `<p><strong>Минимальные требования (Steam):</strong> ${req}</p>` : ""}
-        <p>Ориентир для ноутбука без дискретной видеокарты — 720p и низкие настройки. Готовые подборки: <a href="/igry-bez-videokarty.html">игры без видеокарты</a>, <a href="/igry-dlya-slabyh-noutbukov-4gb-ozu.html">игры на 4 ГБ ОЗУ</a>, <a href="/besplatnye-igry-dlya-slabyh-pk.html">бесплатные игры для слабых ПК</a>. Как поднять FPS — в <a href="/archive/igry-dlya-slabyh-noutbukov-2026.html">полном гиде по слабым ноутбукам</a>.</p>
+        <p>Ориентир для ноутбука без дискретной видеокарты — 720p и низкие настройки. Готовые подборки: <a href="/igry-bez-videokarty">игры без видеокарты</a>, <a href="/igry-dlya-slabyh-noutbukov-4gb-ozu">игры на 4 ГБ ОЗУ</a>, <a href="/besplatnye-igry-dlya-slabyh-pk">бесплатные игры для слабых ПК</a>. Как поднять FPS — в <a href="/archive/igry-dlya-slabyh-noutbukov-2026">полном гиде по слабым ноутбукам</a>.</p>
       </section>
 <!--LOWEND:END-->
 `;
@@ -225,7 +225,7 @@ function buildPage({ appid, slug, store, spy, entry }) {
       ? entry.excerpt
       : `${title} — актуальная цена, скидки, процент положительных отзывов и статистика игроков в Steam. Обновляется автоматически.`;
   const intro = custom && entry.ai_intro ? String(entry.ai_intro) : "";
-  const url = `${CONFIG.siteUrl}/${CONFIG.archiveDir}/${slug}.html`;
+  const url = `${CONFIG.siteUrl}/${CONFIG.archiveDir}/${slug}`;
 
   const isFree = store.is_free;
   const price = isFree
@@ -372,7 +372,7 @@ ${movieItems
     "@type": "BreadcrumbList",
     "itemListElement": [
       {"@type": "ListItem", "position": 1, "name": "Главная", "item": "${CONFIG.siteUrl}/"},
-      {"@type": "ListItem", "position": 2, "name": "Статьи", "item": "${CONFIG.siteUrl}/archive.html"},
+      {"@type": "ListItem", "position": 2, "name": "Статьи", "item": "${CONFIG.siteUrl}/archive"},
       {"@type": "ListItem", "position": 3, "name": "${title}", "item": "${url}"}
     ]
   }
@@ -507,7 +507,7 @@ ${JSON.stringify(videoGameLd, null, 2)}
 <div class="container">
   <div class="article-page">
 
-    <a href="/archive.html" class="article-back">
+    <a href="/archive" class="article-back">
       <i class="fas fa-arrow-left"></i> К списку статей
     </a>
 
@@ -517,7 +517,7 @@ ${JSON.stringify(videoGameLd, null, 2)}
         <meta itemprop="position" content="1" />
       </span> →
       <span itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
-        <a itemprop="item" href="/archive.html"><span itemprop="name">Статьи</span></a>
+        <a itemprop="item" href="/archive"><span itemprop="name">Статьи</span></a>
         <meta itemprop="position" content="2" />
       </span> →
       <span itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
@@ -646,7 +646,7 @@ ${adGoHTML()}
 <script src="/components.js" defer></script>
 <script src="/reactions.js" defer></script>
 <div class="cookie-banner" id="cookie-banner" role="dialog" aria-live="polite" aria-label="Согласие на использование cookies">
-  <p>Мы используем cookies для аналитики и улучшения сайта. Подробнее — в <a href="/privacy.html">политике конфиденциальности</a>.</p>
+  <p>Мы используем cookies для аналитики и улучшения сайта. Подробнее — в <a href="/privacy">политике конфиденциальности</a>.</p>
   <div class="cookie-buttons">
     <button class="cookie-btn primary" onclick="acceptCookies()">Принять</button>
     <button class="cookie-btn secondary" onclick="declineCookies()">Только необходимые</button>
@@ -731,12 +731,12 @@ async function main() {
       await sleep(CONFIG.delayMs);
 
       const slug = `${slugify(store.name)}-${appid}`;
-      const aiEntry = existingAiByUrl[`/${CONFIG.archiveDir}/${slug}.html`];
+      const aiEntry = existingAiByUrl[`/${CONFIG.archiveDir}/${slug}`];
       const html = buildPage({ appid, slug, store, spy, entry: aiEntry });
       fs.writeFileSync(path.join(archiveDir, `${slug}.html`), html, "utf-8");
 
       newEntries.push({
-        url: `/${CONFIG.archiveDir}/${slug}.html`,
+        url: `/${CONFIG.archiveDir}/${slug}`,
         title: `${store.name}: цена, отзывы и статистика игроков`,
         excerpt: buildExcerpt({
           title: store.name,
@@ -1172,7 +1172,7 @@ async function enrichAll() {
   let skip = 0;
   let fail = 0;
   for (const entry of targets) {
-    const m = String(entry.url || "").match(/-(\d+)\.html$/);
+    const m = String(entry.url || "").match(/-(\d+)(?:\.html)?$/);
     if (!m) {
       skip++;
       continue;
@@ -1272,7 +1272,7 @@ async function refreshAll() {
   let skip = 0;
   let fail = 0;
   for (const entry of list) {
-    const m = String(entry.url || "").match(/-(\d+)\.html$/);
+    const m = String(entry.url || "").match(/-(\d+)(?:\.html)?$/);
     if (!m) {
       skip++;
       continue;

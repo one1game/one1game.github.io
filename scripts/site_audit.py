@@ -101,7 +101,11 @@ def local_target(value, page):
     else:
         target = page.parent / raw
     if target.suffix == '' and not target.exists():
-        target = target / 'index.html'
+        html_variant = target.parent / (target.name + '.html')
+        if target.name and html_variant.exists():
+            target = html_variant   # чистые URL (без .html) — Cloudflare отдаёт foo.html
+        else:
+            target = target / 'index.html'
     return target
 
 errors = []

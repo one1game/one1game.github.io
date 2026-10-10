@@ -180,7 +180,7 @@ def link_categories():
             if not slug:
                 return m.group(0)
             changed += 1
-            return f'<a class="article-category {cls}" href="/category/{slug}.html">{label}</a>'
+            return f'<a class="article-category {cls}" href="/category/{slug}">{label}</a>'
 
         new = CATEGORY_BADGE.sub(repl, src)
         if new != src:

@@ -90,10 +90,10 @@
     '<a href="/portablewebgame/" class="nav-link' + active(isRetro) + '">Ретро-игры</a>' +
     '<a href="/go/" class="nav-link' + active(isGo) + '">Игры онлайн</a>' +
     '<a href="/kino/" class="nav-link' + active(isKino) + '">Кино</a>' +
-    '<a href="/archive.html" class="nav-link' + active(isArchive) + '">Статьи</a>' +
+    '<a href="/archive" class="nav-link' + active(isArchive) + '">Статьи</a>' +
     '<a href="/ai/" class="nav-link' + active(isAI) + '">AI Pulse</a>' +
     '<a href="/genriprocedur/" class="nav-link' + active(isMusic) + '">Cosmic Drift</a>' +
-    '<a href="/triad-duel.html" class="nav-link' + active(isTriad) + '">Triad Duel</a>' +
+    '<a href="/triad-duel" class="nav-link' + active(isTriad) + '">Triad Duel</a>' +
     '<a href="/anal-code/" class="nav-link' + active(isCodeFusion) + '">CodeFusion</a>' +
     '<a href="/cyber-scanner/" class="nav-link' + active(isScanner) + '">Scanner</a>' +
     '<a href="/l2/" class="nav-link' + active(isL2) + '">L2 Server</a>';
@@ -115,7 +115,7 @@
   var dock =
     '<nav class="mobile-dock" aria-label="Мобильная навигация">' +
     '  <a href="/" class="dock-item' + active(isHome) + '"><i class="fas ' + I.home + '" aria-hidden="true"></i><span>Главная</span></a>' +
-    '  <a href="/archive.html" class="dock-item' + active(isArchive) + '"><i class="fas ' + I.articles + '" aria-hidden="true"></i><span>Статьи</span></a>' +
+    '  <a href="/archive" class="dock-item' + active(isArchive) + '"><i class="fas ' + I.articles + '" aria-hidden="true"></i><span>Статьи</span></a>' +
     '  <button type="button" class="dock-item" id="dock-radio"' + (hasRadio ? '' : ' hidden') + '><i class="fas ' + I.radio + '" aria-hidden="true"></i><span>Радио</span></button>' +
     '  <button type="button" class="dock-item" id="dock-search"><i class="fas ' + I.search + '" aria-hidden="true"></i><span>Поиск</span></button>' +
     '  <button type="button" class="dock-item" id="dock-more"><i class="fas ' + I.more + '" aria-hidden="true"></i><span>Ещё</span></button>' +
@@ -132,23 +132,23 @@
     '    <a href="/portablewebgame/" class="sheet-link' + active(isRetro) + '"><i class="fas fa-gamepad" aria-hidden="true"></i> Ретро-игры</a>' +
     '    <a href="/go/" class="sheet-link' + active(isGo) + '"><i class="fas ' + I.online + '" aria-hidden="true"></i> Игры онлайн</a>' +
     '    <a href="/kino/" class="sheet-link' + active(isKino) + '"><i class="fas fa-film" aria-hidden="true"></i> Кино</a>' +
-    '    <a href="/archive.html" class="sheet-link' + active(isArchive) + '"><i class="fas ' + I.articles + '" aria-hidden="true"></i> Все статьи</a>' +
+    '    <a href="/archive" class="sheet-link' + active(isArchive) + '"><i class="fas ' + I.articles + '" aria-hidden="true"></i> Все статьи</a>' +
     '    <a href="/ai/" class="sheet-link' + active(isAI) + '"><i class="fas ' + I.ai + '" aria-hidden="true"></i> AI Pulse</a>' +
     '    <a href="/genriprocedur/" class="sheet-link' + active(isMusic) + '"><i class="fas ' + I.music + '" aria-hidden="true"></i> Cosmic Drift</a>' +
-    '    <a href="/triad-duel.html" class="sheet-link' + active(isTriad) + '"><i class="fas ' + I.game + '" aria-hidden="true"></i> Triad Duel</a>' +
+    '    <a href="/triad-duel" class="sheet-link' + active(isTriad) + '"><i class="fas ' + I.game + '" aria-hidden="true"></i> Triad Duel</a>' +
     '    <a href="/anal-code/" class="sheet-link' + active(isCodeFusion) + '"><i class="fas ' + I.code + '" aria-hidden="true"></i> CodeFusion</a>' +
     '    <a href="/cyber-scanner/" class="sheet-link' + active(isScanner) + '"><i class="fas ' + I.scanner + '" aria-hidden="true"></i> Scanner</a>' +
     '    <a href="/l2/" class="sheet-link' + active(isL2) + '"><i class="fas ' + I.server + '" aria-hidden="true"></i> L2 Server</a>' +
-    '    <a href="/besplatnye-igry.html" class="sheet-link"><i class="fas fa-gift" aria-hidden="true"></i> Бесплатные раздачи</a>' +
-    '    <a href="/skidki-na-igry.html" class="sheet-link"><i class="fas fa-tags" aria-hidden="true"></i> Скидки на игры</a>' +
-    '    <a href="/vo-chto-poigrat.html" class="sheet-link"><i class="fas fa-dice" aria-hidden="true"></i> Во что поиграть</a>' +
-    '    <a href="/igry-bez-videokarty.html" class="sheet-link"><i class="fas fa-laptop" aria-hidden="true"></i> Игры для слабых ПК</a>' +
+    '    <a href="/besplatnye-igry" class="sheet-link"><i class="fas fa-gift" aria-hidden="true"></i> Бесплатные раздачи</a>' +
+    '    <a href="/skidki-na-igry" class="sheet-link"><i class="fas fa-tags" aria-hidden="true"></i> Скидки на игры</a>' +
+    '    <a href="/vo-chto-poigrat" class="sheet-link"><i class="fas fa-dice" aria-hidden="true"></i> Во что поиграть</a>' +
+    '    <a href="/igry-bez-videokarty" class="sheet-link"><i class="fas fa-laptop" aria-hidden="true"></i> Игры для слабых ПК</a>' +
     '  </div>' +
     '  <p class="sheet-title">Издание</p>' +
     '  <div class="sheet-links">' +
-    '    <a href="/advertising.html" class="sheet-link"><i class="fas ' + I.cash + '" aria-hidden="true"></i> Реклама на сайте</a>' +
-    '    <a href="/privacy.html" class="sheet-link"><i class="fas ' + I.doc + '" aria-hidden="true"></i> Политика конфиденциальности</a>' +
-    '    <a href="/terms.html" class="sheet-link"><i class="fas ' + I.doc + '" aria-hidden="true"></i> Правила использования</a>' +
+    '    <a href="/advertising" class="sheet-link"><i class="fas ' + I.cash + '" aria-hidden="true"></i> Реклама на сайте</a>' +
+    '    <a href="/privacy" class="sheet-link"><i class="fas ' + I.doc + '" aria-hidden="true"></i> Политика конфиденциальности</a>' +
+    '    <a href="/terms" class="sheet-link"><i class="fas ' + I.doc + '" aria-hidden="true"></i> Правила использования</a>' +
     '  </div>' +
     '</aside>';
 
@@ -176,21 +176,21 @@
     '      <a href="/portablewebgame/">Ретро-игры</a>' +
     '      <a href="/dos/">DOS-игры</a>' +
     '      <a href="/kino/">Кино</a>' +
-    '      <a href="/besplatnye-igry.html">Бесплатные раздачи</a>' +
-    '      <a href="/skidki-na-igry.html">Скидки на игры</a>' +
-    '      <a href="/vo-chto-poigrat.html">Во что поиграть</a>' +
-    '      <a href="/igry-bez-videokarty.html">Игры для слабых ПК</a>' +
-    '      <a href="/archive.html">Статьи</a>' +
-    '      <a href="/category/obzory.html">Обзоры игр</a>' +
-    '      <a href="/category/gajdy.html">Гайды</a>' +
-    '      <a href="/category/analitika.html">Аналитика</a>' +
-    '      <a href="/category/ii-i-tehnologii.html">ИИ и технологии</a>' +
+    '      <a href="/besplatnye-igry">Бесплатные раздачи</a>' +
+    '      <a href="/skidki-na-igry">Скидки на игры</a>' +
+    '      <a href="/vo-chto-poigrat">Во что поиграть</a>' +
+    '      <a href="/igry-bez-videokarty">Игры для слабых ПК</a>' +
+    '      <a href="/archive">Статьи</a>' +
+    '      <a href="/category/obzory">Обзоры игр</a>' +
+    '      <a href="/category/gajdy">Гайды</a>' +
+    '      <a href="/category/analitika">Аналитика</a>' +
+    '      <a href="/category/ii-i-tehnologii">ИИ и технологии</a>' +
     '      <a href="/ai/">AI Pulse</a>' +
     '      <a href="/genriprocedur/">Cosmic Drift</a>' +
     '      <a href="/cyber-scanner/">Проверка безопасности</a>' +
-    '      <a href="/advertising.html">Реклама</a>' +
-    '      <a href="/privacy.html">Политика</a>' +
-    '      <a href="/terms.html">Правила</a>' +
+    '      <a href="/advertising">Реклама</a>' +
+    '      <a href="/privacy">Политика</a>' +
+    '      <a href="/terms">Правила</a>' +
     '    </div>' +
     '    <div class="footer-socials">' +
     '      <a href="https://t.me/one1game" target="_blank" rel="noopener" aria-label="Telegram"><i class="fab fa-telegram" aria-hidden="true"></i></a>' +
@@ -394,7 +394,7 @@
         '</a>';
     }
     if (q) {
-      html += '<a href="/archive.html" class="search-result" style="justify-content:center"><span class="search-result-txt"><strong>Все результаты в архиве →</strong></span></a>';
+      html += '<a href="/archive" class="search-result" style="justify-content:center"><span class="search-result-txt"><strong>Все результаты в архиве →</strong></span></a>';
     }
     searchResults.innerHTML = html;
   }

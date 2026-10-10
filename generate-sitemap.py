@@ -45,6 +45,7 @@ def collect_lastmod(content):
 
 
 def url_block(loc, lastmod=None, priority='0.7'):
+    loc = loc.replace('.html', '')  # Cloudflare Pages убирает .html — sitemap тоже без расширения
     lastmod_xml = f'<lastmod>{lastmod}</lastmod>' if lastmod else ''
     return f'  <url><loc>{loc}</loc>{lastmod_xml}<priority>{priority}</priority></url>'
 

@@ -112,7 +112,7 @@ ${cardsHtml}
     </div>
     <h2>Частые вопросы</h2>${faqHtml}
     ${sourceHtml}
-    <p><a href="/">← На главную</a> · <a href="/go/">Игры онлайн</a> · <a href="/archive.html">Все статьи</a></p>
+    <p><a href="/">← На главную</a> · <a href="/go/">Игры онлайн</a> · <a href="/archive">Все статьи</a></p>
   </div>
 </div>
 </main>
@@ -147,7 +147,7 @@ async function buildGiveaways() {
   writeJsonFeed('data/giveaways.json', {
     updated: ISO_DATE,
     source: 'gamerpower.com',
-    page: `${SITE}/besplatnye-igry.html`,
+    page: `${SITE}/besplatnye-igry`,
     count: items.length,
     items: items.map((g) => ({
       title: g.title,
@@ -212,7 +212,7 @@ async function buildDeals() {
   writeJsonFeed('data/deals.json', {
     updated: ISO_DATE,
     source: 'cheapshark.com',
-    page: `${SITE}/skidki-na-igry.html`,
+    page: `${SITE}/skidki-na-igry`,
     currency: 'USD',
     count: items.length,
     items: items.map((d) => ({

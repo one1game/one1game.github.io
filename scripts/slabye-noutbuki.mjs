@@ -289,8 +289,8 @@ ${cards}
       <h4>Читайте также</h4>
       <a href="${esc(ARTICLE)}">Игры для слабых ноутбуков: полный гид 2026</a>
 ${related}
-      <a href="/vo-chto-poigrat.html">Во что поиграть — случайная игра из базы</a>
-      <a href="/archive.html">Все статьи</a>
+      <a href="/vo-chto-poigrat">Во что поиграть — случайная игра из базы</a>
+      <a href="/archive">Все статьи</a>
     </div>
 
     <p><a href="/">← На главную</a></p>`;

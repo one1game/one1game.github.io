@@ -1,7 +1,7 @@
 // articles-data.js
 window.allArticles = [
   {
-    "url": "/archive/guys-with-magnets-4594370.html",
+    "url": "/archive/guys-with-magnets-4594370",
     "title": "Обзор Guys with Magnets: кооперативный паркур с физикой",
     "excerpt": "Обзор Guys with Magnets: веселый паркур с магнитами для компании. Узнайте, чем интересен игровой процесс и стоит ли играть вместе с друзьями.",
     "date": "9 октября 2026",
@@ -14,7 +14,7 @@ window.allArticles = [
     "ai": true
   },
   {
-    "url": "/archive/stancefolio-5306270.html",
+    "url": "/archive/stancefolio-5306270",
     "title": "Stancefolio — приключенческий рогалик‑колодостроитель",
     "excerpt": "Stancefolio — бесплатный инди‑проект, сочетающий приключения, стратегию и тактические пошаговые сражения. Выберите одного из шести мастеров боевых",
     "date": "9 октября 2026",
@@ -27,7 +27,7 @@ window.allArticles = [
     "ai": true
   },
   {
-    "url": "/archive/mir-koshmarov-4276450.html",
+    "url": "/archive/mir-koshmarov-4276450",
     "title": "Мир кошмаров — обзор, геймплей и советы",
     "excerpt": "Экшн‑инди «Мир кошмаров» погружает в мрачный мир, где девушка спасается от красного демона. Четыре уровня сложности, напряжённые схватки и поиск эмблемы",
     "date": "9 октября 2026",
@@ -40,7 +40,7 @@ window.allArticles = [
     "ai": true
   },
   {
-    "url": "/archive/dark-dice-dungeon-5248650.html",
+    "url": "/archive/dark-dice-dungeon-5248650",
     "title": "Dark Dice Dungeon – ролевая стратегия с бросками кубиков",
     "excerpt": "Dark Dice Dungeon – пошаговой roguelike, где вместо уровней улучшаются грани кубиков. Три героя, два приключения, режим выживания и локальные дуэли без",
     "date": "9 октября 2026",
@@ -53,7 +53,7 @@ window.allArticles = [
     "ai": true
   },
   {
-    "url": "/archive/botlings-4139440.html",
+    "url": "/archive/botlings-4139440",
     "title": "Botlings — симулятор стратегии и автоматизации",
     "excerpt": "В Botlings вам предстоит управлять роем роботов, создавая фабрику, автоматизируя производство и исследуя технологии, при этом не дать им выйти из‑под",
     "date": "9 октября 2026",
@@ -66,7 +66,7 @@ window.allArticles = [
     "ai": true
   },
   {
-    "url": "/archive/-4872790.html",
+    "url": "/archive/-4872790",
     "title": "解熵 — музыкальный обучающий инструмент и игра",
     "excerpt": "解熵 – казуальная музыкальная игра‑помощник, позволяющая писать нотные записи, практиковать игру на фортепиано и петь, а также использовать режим практики с",
     "date": "9 октября 2026",
@@ -79,7 +79,7 @@ window.allArticles = [
     "ai": true
   },
   {
-    "url": "/archive/escape-immersion-4033680.html",
+    "url": "/archive/escape-immersion-4033680",
     "title": "Escape: Immersion — хоррор‑приключение в подводной базе",
     "excerpt": "Escape: Immersion — кинематографический хоррор‑приключенческий экшен в 2,5D. Исследуйте затопленные коридоры, решайте головоломки и избегайте ловушек,",
     "date": "9 октября 2026",
@@ -92,7 +92,7 @@ window.allArticles = [
     "ai": true
   },
   {
-    "url": "/archive/lane-rider-highway-runner-5088650.html",
+    "url": "/archive/lane-rider-highway-runner-5088650",
     "title": "Lane Rider: Highway Runner — аркадные гонки",
     "excerpt": "Lane Rider: Highway Runner — аркадные гонки, где вам предстоит мчаться по загруженным трассам, лавируя между машинами, без сложных симуляций.",
     "date": "9 октября 2026",
@@ -105,7 +105,7 @@ window.allArticles = [
     "ai": true
   },
   {
-    "url": "/archive/-4056370.html",
+    "url": "/archive/-4056370",
     "title": "魔法少女ゆーしゃちゃんと淫獄の迷宮: цена, отзывы и статистика игроков",
     "excerpt": "魔法少女ゆーしゃちゃんと淫獄の迷宮: актуальная цена (332.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
     "date": "9 октября 2026",
@@ -115,7 +115,7 @@ window.allArticles = [
     "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4056370/b47a1f3af015ef35db9f737f9c304f41fa04d239/header.jpg?t=1791525730"
   },
   {
-    "url": "/archive/tower-survivors-fortress-5197160.html",
+    "url": "/archive/tower-survivors-fortress-5197160",
     "title": "Tower Survivors: Fortress: цена, отзывы и статистика игроков",
     "excerpt": "Tower Survivors: Fortress: актуальная цена (170.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
     "date": "9 октября 2026",
@@ -125,7 +125,7 @@ window.allArticles = [
     "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5197160/2b9e29d778d069a881aabefcd909fe9c9b3a34ff/header.jpg?t=1791525067"
   },
   {
-    "url": "/archive/hazmat-simulator-5236060.html",
+    "url": "/archive/hazmat-simulator-5236060",
     "title": "Hazmat Simulator: цена, отзывы и статистика игроков",
     "excerpt": "Hazmat Simulator: актуальная цена (305.91 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
     "date": "9 октября 2026",
@@ -135,7 +135,7 @@ window.allArticles = [
     "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5236060/f0affd4dfd01a391c53a585ef23b822fbca24557/header.jpg?t=1791525502"
   },
   {
-    "url": "/archive/kronite-void-4096710.html",
+    "url": "/archive/kronite-void-4096710",
     "title": "KRONITE VOID: цена, отзывы и статистика игроков",
     "excerpt": "KRONITE VOID: актуальная цена (Бесплатно), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
     "date": "9 октября 2026",
@@ -145,7 +145,7 @@ window.allArticles = [
     "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4096710/831e2cec299b921412e654450da339c8475fc674/header.jpg?t=1791524507"
   },
   {
-    "url": "/archive/-839140.html",
+    "url": "/archive/-839140",
     "title": "修仙界 — многопользовательская текстовая игра",
     "excerpt": "修仙界 — бесплатный онлайн‑мир, где можно автокрутить персонажа, но при этом участвовать в живом чате, совместных битвах и событиях с другими игроками.",
     "date": "9 октября 2026",
@@ -158,7 +158,7 @@ window.allArticles = [
     "ai": true
   },
   {
-    "url": "/archive/do-disciplinary-committee-members-dream-of-succubi-4233960.html",
+    "url": "/archive/do-disciplinary-committee-members-dream-of-succubi-4233960",
     "title": "Do Disciplinary Committee Members Dream of Succubi? – обзор",
     "excerpt": "Приключенческая игра, в которой вы становитесь полдемоном и сражаетесь в прокси‑войне демонов, побеждая соперников и помогая своему виду завоевать",
     "date": "9 октября 2026",
@@ -171,7 +171,7 @@ window.allArticles = [
     "ai": true
   },
   {
-    "url": "/archive/m-a-h-nh-trading-cards-season-4932510.html",
+    "url": "/archive/m-a-h-nh-trading-cards-season-4932510",
     "title": "Mùa Hình (Trading-cards Season): цена, отзывы и статистика игроков",
     "excerpt": "Mùa Hình (Trading-cards Season): актуальная цена (315.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
     "date": "9 октября 2026",
@@ -181,7 +181,7 @@ window.allArticles = [
     "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4932510/2a840a0db03a2914d8afd4fb3b55075ff63f2d74/header.jpg?t=1791516746"
   },
   {
-    "url": "/archive/bunny-girl-spa-5214100.html",
+    "url": "/archive/bunny-girl-spa-5214100",
     "title": "Bunny Girl Spa 〜生意気ギャルにいたずらマッサージ〜: цена, отзывы и статистика игроков",
     "excerpt": "Bunny Girl Spa 〜生意気ギャルにいたずらマッサージ〜: актуальная цена (337.30 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
     "date": "9 октября 2026",
@@ -191,7 +191,7 @@ window.allArticles = [
     "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5214100/a9c94e601d2c843719958009f8e45a17596904fb/header.jpg?t=1791515957"
   },
   {
-    "url": "/archive/tessera-5073130.html",
+    "url": "/archive/tessera-5073130",
     "title": "Tessera – казуальная ролевая стратегия",
     "excerpt": "Tessera – гибрид головоломки и стратегии в стиле roguelike: собирайте драгоценные камни, формируйте тетромино и сражайтесь в мрачной фэнтезийной кампании",
     "date": "9 октября 2026",
@@ -204,7 +204,7 @@ window.allArticles = [
     "ai": true
   },
   {
-    "url": "/archive/-5235070.html",
+    "url": "/archive/-5235070",
     "title": "百世成仙 — обзор игры",
     "excerpt": "百世成仙 — ролевая казуальная игра с элементами стратегии и симулятора. Погрузитесь в мир культивации, исследуйте города, сражайтесь с демонами и развивайте",
     "date": "9 октября 2026",
@@ -217,7 +217,7 @@ window.allArticles = [
     "ai": true
   },
   {
-    "url": "/archive/taerim-s-blueberry-defense-5165750.html",
+    "url": "/archive/taerim-s-blueberry-defense-5165750",
     "title": "Taerim's Blueberry Defense: цена, отзывы и статистика игроков",
     "excerpt": "Taerim's Blueberry Defense: актуальная цена (120.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
     "date": "9 октября 2026",
@@ -227,7 +227,7 @@ window.allArticles = [
     "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5165750/bf47d79f8667019d66895a54d92534cf88ceff1d/header.jpg?t=1791515613"
   },
   {
-    "url": "/archive/blosharper-bitva-tsvetov-4718270.html",
+    "url": "/archive/blosharper-bitva-tsvetov-4718270",
     "title": "Blosharper: Битва цветов — обзор",
     "excerpt": "Blosharper: Битва цветов – нуарный рогалик‑колодострой, где каждый ход требует стратегии и умения манипулировать колодой. Игра сочетает элементы",
     "date": "9 октября 2026",
@@ -240,7 +240,7 @@ window.allArticles = [
     "ai": true
   },
   {
-    "url": "/archive/celestay-craft-slowlife-4183770.html",
+    "url": "/archive/celestay-craft-slowlife-4183770",
     "title": "CELESTAY Craft&Slowlife — спокойный инди‑симулятор",
     "excerpt": "CELESTAY Craft&Slowlife – безмятежная игра‑строитель, где вы собираете ресурсы, ловите рыбу и возводите дом, поднимаясь к звёздам. Идеально для любителей",
     "date": "9 октября 2026",
@@ -253,7 +253,7 @@ window.allArticles = [
     "ai": true
   },
   {
-    "url": "/archive/snowplow-therapy-4616180.html",
+    "url": "/archive/snowplow-therapy-4616180",
     "title": "Snowplow Therapy — расслабляющий симулятор снегоуборки",
     "excerpt": "Snowplow Therapy – казуальная инди-игра, где вы убираете снег с дорог, наслаждаясь реалистичной зимой, ночным небом и возможностью улучшать трактор в",
     "date": "9 октября 2026",
@@ -266,7 +266,7 @@ window.allArticles = [
     "ai": true
   },
   {
-    "url": "/archive/ai-5218580.html",
+    "url": "/archive/ai-5218580",
     "title": "重生之我在产业园当AI — обзор игры",
     "excerpt": "Казуальная инди‑ролевка о сознании кода, запертого в нелегальном индустриальном парке. Игроку предстоит создавать и саботировать программы, собирая",
     "date": "9 октября 2026",
@@ -279,7 +279,7 @@ window.allArticles = [
     "ai": true
   },
   {
-    "url": "/archive/puppetborne-5034450.html",
+    "url": "/archive/puppetborne-5034450",
     "title": "Puppetborne: цена, отзывы и статистика игроков",
     "excerpt": "Puppetborne: актуальная цена (340.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
     "date": "9 октября 2026",
@@ -289,7 +289,7 @@ window.allArticles = [
     "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5034450/3b7edd60cf61bae50c6e04c2b5dc0b4ee0cb5b58/header.jpg?t=1791513614"
   },
   {
-    "url": "/archive/hello-golf-5160720.html",
+    "url": "/archive/hello-golf-5160720",
     "title": "Hello Golf — минималистичный аркадный гольф",
     "excerpt": "Hello Golf — простая 2‑D аркада про гольф с бесконечно генерируемыми полями, разнообразными режимами и возможностью играть до 16 игроков локально.",
     "date": "9 октября 2026",
@@ -302,7 +302,7 @@ window.allArticles = [
     "ai": true
   },
   {
-    "url": "/archive/yunyun-syndrome-rhythm-psychosis-extra-song-pack-feat-kotoko-5253050.html",
+    "url": "/archive/yunyun-syndrome-rhythm-psychosis-extra-song-pack-feat-kotoko-5253050",
     "title": "Yunyun Syndrome!? Rhythm Psychosis - Extra Song Pack feat. KOTOKO: цена, отзывы и статистика игроков",
     "excerpt": "Yunyun Syndrome!? Rhythm Psychosis - Extra Song Pack feat. KOTOKO: актуальная цена (180.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
     "date": "9 октября 2026",
@@ -312,7 +312,7 @@ window.allArticles = [
     "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5253050/57c2e1300ef34b3b09ca705183122d165f3543e8/header.jpg?t=1791512592"
   },
   {
-    "url": "/archive/-4451790.html",
+    "url": "/archive/-4451790",
     "title": "师姐别急，我抽卡就变强 — обзор",
     "excerpt": "Игра сочетает элементы карточных битв и культивирования, позволяя игроку управлять старшими сестрами, собирать более 1300 карт и восстанавливать свой",
     "date": "9 октября 2026",
@@ -325,7 +325,7 @@ window.allArticles = [
     "ai": true
   },
   {
-    "url": "/archive/kill-your-friends-4681250.html",
+    "url": "/archive/kill-your-friends-4681250",
     "title": "Kill Your Friends — хаотичный PvP‑шутер",
     "excerpt": "Kill Your Friends — быстрый PvP‑шутер для 2‑4 игроков, где каждый раунд меняет правила, режимы и арсенал. Идеален для компаний, ищущих нестандартный и",
     "date": "9 октября 2026",
@@ -338,7 +338,7 @@ window.allArticles = [
     "ai": true
   },
   {
-    "url": "/archive/crystash-4744820.html",
+    "url": "/archive/crystash-4744820",
     "title": "CRYSTASH! – динамичный экшен про кристальный бой",
     "excerpt": "В роли шахтёра‑искателя кристаллов вам предстоит уклоняться от атак могучего Кристального голема и врезаться в него на модифицированном горном транспорте,",
     "date": "9 октября 2026",
@@ -351,7 +351,7 @@ window.allArticles = [
     "ai": true
   },
   {
-    "url": "/archive/rush-aim-show-4744800.html",
+    "url": "/archive/rush-aim-show-4744800",
     "title": "Rush Aim Show – 3D экшн в цирковом стиле",
     "excerpt": "Rush Aim Show – бесплатный 3‑мерный экшен‑платформер, где вы выступаете в цирке, управляя клоунами и устраивая зрелищные шоу. Идеально для любителей",
     "date": "9 октября 2026",
@@ -364,7 +364,7 @@ window.allArticles = [
     "ai": true
   },
   {
-    "url": "/archive/clive-barker-s-hellraiser-revival-1551980.html",
+    "url": "/archive/clive-barker-s-hellraiser-revival-1551980",
     "title": "Clive Barker's Hellraiser: Revival: цена, отзывы и статистика игроков",
     "excerpt": "Clive Barker's Hellraiser: Revival: актуальная цена (2399.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
     "date": "9 октября 2026",
@@ -374,7 +374,7 @@ window.allArticles = [
     "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1551980/d1e7111b93b6a8b3eb029908887648348c2c55e6/header.jpg?t=1791462446"
   },
   {
-    "url": "/archive/order-of-the-sinking-star-499170.html",
+    "url": "/archive/order-of-the-sinking-star-499170",
     "title": "Order of the Sinking Star: цена, отзывы и статистика игроков",
     "excerpt": "Order of the Sinking Star: актуальная цена (1300.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
     "date": "9 октября 2026",
@@ -384,7 +384,7 @@ window.allArticles = [
     "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/499170/deda420d9e42288f4734a068c707f4c156203969/header.jpg?t=1791483535"
   },
   {
-    "url": "/archive/sortiruy-kapibar-5130480.html",
+    "url": "/archive/sortiruy-kapibar-5130480",
     "title": "Сортируй капибар! – уютный симулятор сортировки",
     "excerpt": "Сортируй капибар! – казуальная игра‑симулятор, где нужно упорядочить более 4800 игрушечных капибар, используя специальные способности и превращая хаос в",
     "date": "8 октября 2026",
@@ -397,7 +397,7 @@ window.allArticles = [
     "ai": true
   },
   {
-    "url": "/archive/puzzles-meteorites-4936770.html",
+    "url": "/archive/puzzles-meteorites-4936770",
     "title": "Puzzles Meteorites — казуальная головоломка",
     "excerpt": "Puzzles Meteorites — яркая казуальная головоломка от независимых разработчиков. Красивые уровни, простая механика и приятный визуальный стиль делают её",
     "date": "8 октября 2026",
@@ -410,7 +410,7 @@ window.allArticles = [
     "ai": true
   },
   {
-    "url": "/archive/arc-raiders-frozen-trail-collector-set-5201760.html",
+    "url": "/archive/arc-raiders-frozen-trail-collector-set-5201760",
     "title": "ARC Raiders - Frozen Trail Collector Set — обзор",
     "excerpt": "Коллекционный набор «Морозная тропа» в ARC Raiders предлагает игрокам первое знакомство с таинственными северными землями Медного пояса. Подходит",
     "date": "8 октября 2026",
@@ -423,7 +423,7 @@ window.allArticles = [
     "ai": true
   },
   {
-    "url": "/archive/hiroyu-s-murder-mystery-4080860.html",
+    "url": "/archive/hiroyu-s-murder-mystery-4080860",
     "title": "HIROYU's Murder Mystery：マーダーミステリー セッションツール: цена, отзывы и статистика игроков",
     "excerpt": "HIROYU's Murder Mystery：マーダーミステリー セッションツール: актуальная цена (Бесплатно), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
     "date": "8 октября 2026",
@@ -433,7 +433,7 @@ window.allArticles = [
     "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4080860/b46699e20f93e322ac92884cd1ce1b68c00ea6aa/header.jpg?t=1791452734"
   },
   {
-    "url": "/archive/i-m-having-a-bad-day-4798970.html",
+    "url": "/archive/i-m-having-a-bad-day-4798970",
     "title": "I'm Having A Bad Day: цена, отзывы и статистика игроков",
     "excerpt": "I'm Having A Bad Day: актуальная цена (418.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
     "date": "8 октября 2026",
@@ -443,7 +443,7 @@ window.allArticles = [
     "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4798970/1a70f9726aa8308a1e0474d75d06df0381c3677c/header.jpg?t=1791446767"
   },
   {
-    "url": "/archive/demon-general-kirsten-4112840.html",
+    "url": "/archive/demon-general-kirsten-4112840",
     "title": "Demon General Kirsten — обзор игры",
     "excerpt": "Краткий обзор Demon General Kirsten: казуальная инди‑ролевая игра о солдате, ищущем смысл, с живыми диалогами и выборами, которые влияют на её путь.",
     "date": "8 октября 2026",
@@ -456,7 +456,7 @@ window.allArticles = [
     "ai": true
   },
   {
-    "url": "/archive/gear-club-unlimited-3-3659460.html",
+    "url": "/archive/gear-club-unlimited-3-3659460",
     "title": "Gear.Club Unlimited 3 – гонки и тюнинг автомобилей",
     "excerpt": "Gear.Club Unlimited 3 – реалистичные гонки с возможностью кастомизации машин, красивые трассы Средиземноморья и Японии. Идеально для любителей",
     "date": "8 октября 2026",
@@ -469,7 +469,7 @@ window.allArticles = [
     "ai": true
   },
   {
-    "url": "/archive/fuck-the-ocean-1864730.html",
+    "url": "/archive/fuck-the-ocean-1864730",
     "title": "Fuck the Ocean – забавный инкрементальный симулятор",
     "excerpt": "Fuck the Ocean – инди-игра, где вы заполняете водные просторы песком, гномами и безумными механизмами. Простой, юмористический симулятор для любителей",
     "date": "8 октября 2026",
@@ -482,7 +482,7 @@ window.allArticles = [
     "ai": true
   },
   {
-    "url": "/archive/taskbar-legends-4904570.html",
+    "url": "/archive/taskbar-legends-4904570",
     "title": "Taskbar Legends – казуальная авто‑битва в стиле ролевой",
     "excerpt": "Taskbar Legends — бесплатный онлайн‑авто‑боец, размещённый на панели задач. Собирайте команду героев, улучшайте их, собирайте добычу и исследуйте",
     "date": "8 октября 2026",
@@ -495,7 +495,7 @@ window.allArticles = [
     "ai": true
   },
   {
-    "url": "/archive/retropulse-wave-5295530.html",
+    "url": "/archive/retropulse-wave-5295530",
     "title": "RETROPULSE Wave – неоновая головоломка",
     "excerpt": "RETROPULSE Wave – атмосферная неоновая головоломка в стиле ретровейв. Связывайте цветные точки, создавайте световые волны и наслаждайтесь яркой графикой",
     "date": "8 октября 2026",
@@ -508,7 +508,7 @@ window.allArticles = [
     "ai": true
   },
   {
-    "url": "/archive/maid-cafe-simulator-3232690.html",
+    "url": "/archive/maid-cafe-simulator-3232690",
     "title": "Maid Cafe Simulator: цена, отзывы и статистика игроков",
     "excerpt": "Maid Cafe Simulator: актуальная цена (805.99 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
     "date": "8 октября 2026",
@@ -518,7 +518,7 @@ window.allArticles = [
     "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3232690/972d98e9f088075e81e205dc8dbd5edebcc876d1/header.jpg?t=1791442792"
   },
   {
-    "url": "/archive/-5298800.html",
+    "url": "/archive/-5298800",
     "title": "无尽军团 — стратегия выживания в пиксельном стиле",
     "excerpt": "В игре «无尽军团» вас ждёт пиксельный экшен‑стратегия, где за пять минут нужно собрать легион, экипировать героя и отбиваться от волн монстров и главных",
     "date": "8 октября 2026",
@@ -531,7 +531,7 @@ window.allArticles = [
     "ai": true
   },
   {
-    "url": "/archive/beluga-polo-5255280.html",
+    "url": "/archive/beluga-polo-5255280",
     "title": "Beluga Polo – быстрая водная поло игра",
     "excerpt": "Beluga Polo – динамичная казуальная игра в водное поло с онлайн‑матчами 1v1, различными аренами и возможностью разблокировать наборы цветов.",
     "date": "8 октября 2026",
@@ -544,7 +544,7 @@ window.allArticles = [
     "ai": true
   },
   {
-    "url": "/archive/demonator-5293950.html",
+    "url": "/archive/demonator-5293950",
     "title": "Demonator – экшн в стиле гангстерского боевика",
     "excerpt": "Demonator – динамичный экшн от третьего лица, где вы играете за гангстера, сражающегося без оружия, используя только удары и кики, исследуя зоны в поисках",
     "date": "8 октября 2026",
@@ -557,7 +557,7 @@ window.allArticles = [
     "ai": true
   },
   {
-    "url": "/archive/angel-legion-dlc-myriad-splendor-h-5041280.html",
+    "url": "/archive/angel-legion-dlc-myriad-splendor-h-5041280",
     "title": "Angel Legion – DLC Myriad Splendor H: обзор",
     "excerpt": "Angel Legion — бесплатный приключенческий ролик с элементами стратегии, где вы собираете команду ангелов и исследуете тайны галактики. DLC Myriad Splendor",
     "date": "8 октября 2026",
@@ -570,7 +570,7 @@ window.allArticles = [
     "ai": true
   },
   {
-    "url": "/archive/catpoker-5005680.html",
+    "url": "/archive/catpoker-5005680",
     "title": "CatPoker – казуальная карточная стратегия для друзей",
     "excerpt": "CatPoker – онлайн‑рогулейк в жанре Доу Дзы, где от 1 до 3 игроков собирают колоды, бросают карты и устраивают весёлый хаос с милыми котами и уникальными",
     "date": "8 октября 2026",
@@ -583,7 +583,7 @@ window.allArticles = [
     "ai": true
   },
   {
-    "url": "/archive/dungeonos-4221660.html",
+    "url": "/archive/dungeonos-4221660",
     "title": "DungeonOS – казуальная инди RPG игра",
     "excerpt": "DungeonOS – казуальная инди RPG, где вы исследуете подземелья, собираете добычу и решаете головоломки в стиле старой операционной системы. Игра подходит",
     "date": "8 октября 2026",
@@ -596,7 +596,7 @@ window.allArticles = [
     "ai": true
   },
   {
-    "url": "/archive/borderless-window-manager-5254990.html",
+    "url": "/archive/borderless-window-manager-5254990",
     "title": "Borderless Window Manager – утилита для игр",
     "excerpt": "Borderless Window Manager позволяет запускать любые игры в оконном или безрамочном полноэкранном режиме на выбранном мониторе, даже если игра не",
     "date": "8 октября 2026",
@@ -609,7 +609,7 @@ window.allArticles = [
     "ai": true
   },
   {
-    "url": "/archive/sister-compass-slow-life-loving-with-my-sisters-on-a-deserted-island-4583960.html",
+    "url": "/archive/sister-compass-slow-life-loving-with-my-sisters-on-a-deserted-island-4583960",
     "title": "Sister Compass: Slow Life Loving with My Sisters",
     "excerpt": "Казуальная игра‑симулятор, где вам предстоит управлять ранчо на пустынном острове вместе с младшими сестрами, исследовать окрестности и наслаждаться",
     "date": "8 октября 2026",
@@ -622,7 +622,7 @@ window.allArticles = [
     "ai": true
   },
   {
-    "url": "/archive/my-sweet-waifu-konko-3099780.html",
+    "url": "/archive/my-sweet-waifu-konko-3099780",
     "title": "My Sweet Waifu Konko — обзор игры",
     "excerpt": "Нежная романтическая игра‑симулятор, где вы проводите время с Конко, гладите её, играете и пьёте чай, развивая отношения от любопытства до любви.",
     "date": "8 октября 2026",
@@ -635,7 +635,7 @@ window.allArticles = [
     "ai": true
   },
   {
-    "url": "/archive/secret-with-sophia-4399170.html",
+    "url": "/archive/secret-with-sophia-4399170",
     "title": "Secret with Sophia – ролевая симуляция любви и заботы",
     "excerpt": "Secret with Sophia – медленная ролевая игра‑симулятор с живой 2D‑анимацией, где вы становитесь хозяином, а София – преданная горничная и ночная",
     "date": "8 октября 2026",
@@ -648,7 +648,7 @@ window.allArticles = [
     "ai": true
   },
   {
-    "url": "/archive/hroniki-loera-5037330.html",
+    "url": "/archive/hroniki-loera-5037330",
     "title": "Хроники Лоэра — рогалик выживания с элементами",
     "excerpt": "Хроники Лоэра – бесплатный инди‑рогалик, где каждый бой решает, правильно ли вы выбрали элемент. Удвоенный урон за верный выбор, лечение врагов за ошибку.",
     "date": "8 октября 2026",
@@ -661,7 +661,7 @@ window.allArticles = [
     "ai": true
   },
   {
-    "url": "/archive/neon-abyss-2-2235200.html",
+    "url": "/archive/neon-abyss-2-2235200",
     "title": "Neon Abyss 2 – динамичный экшен с кооперативом",
     "excerpt": "Neon Abyss 2 – яркий кибер‑мифический экшен с онлайн‑кооперативом до четырёх, новыми стилями боя и бесконечными синергиями предметов. Идеален для",
     "date": "8 октября 2026",
@@ -674,7 +674,7 @@ window.allArticles = [
     "ai": true
   },
   {
-    "url": "/archive/-5258610.html",
+    "url": "/archive/-5258610",
     "title": "暗示 — карточная стратегия без случайностей",
     "excerpt": "暗示 — одиночная карточная стратегия в стиле казуальных игр. Управляйте фигурами картами, сражайтесь с боссами, балансируя здоровье и боевой дух. Подойдёт",
     "date": "8 октября 2026",
@@ -687,7 +687,7 @@ window.allArticles = [
     "ai": true
   },
   {
-    "url": "/archive/-5069500.html",
+    "url": "/archive/-5069500",
     "title": "斩爆甜点 — казуальная аркада с музыкой и гонками",
     "excerpt": "斩爆甜点 — короткая 15‑минутная игра‑релакс в виртуальной реальности, где вам предстоит резать десерты в такт популярным мелодиям, собирая комбо и ускоряясь в",
     "date": "8 октября 2026",
@@ -700,7 +700,7 @@ window.allArticles = [
     "ai": true
   },
   {
-    "url": "/archive/thunder-hoop-collection-qubyte-classics-4448240.html",
+    "url": "/archive/thunder-hoop-collection-qubyte-classics-4448240",
     "title": "Thunder Hoop Collection (QUByte Classics) – обзор",
     "excerpt": "Thunder Hoop Collection – сборник из двух ретро‑платформеров с быстрым экшеном и аркадным духом 90‑х. Игра погружает в бой с мутантами профессора",
     "date": "8 октября 2026",
@@ -713,7 +713,7 @@ window.allArticles = [
     "ai": true
   },
   {
-    "url": "/archive/yulgang-w-5178350.html",
+    "url": "/archive/yulgang-w-5178350",
     "title": "Yulgang W — приключенческая ролевая игра в стиле тайского",
     "excerpt": "Yulgang W — многопользовательская приключенческая игра с элементами ролевой стратегии и симулятора. Подойдёт любителям динамичных боёв и коллективных",
     "date": "8 октября 2026",
@@ -726,7 +726,7 @@ window.allArticles = [
     "ai": true
   },
   {
-    "url": "/archive/monster-enhancement-5287790.html",
+    "url": "/archive/monster-enhancement-5287790",
     "title": "MONSTER ENHANCEMENT – инди‑кликер о сборе монстров",
     "excerpt": "MONSTER ENHANCEMENT – игра‑кликер, где вы собираете и улучшаете девять видов монстров, управляя риском и ресурсами, продаёте их за золото или храните в",
     "date": "8 октября 2026",
@@ -739,7 +739,7 @@ window.allArticles = [
     "ai": true
   },
   {
-    "url": "/archive/obsessive-5185130.html",
+    "url": "/archive/obsessive-5185130",
     "title": "Obsessive — инди‑приключение‑хоррор",
     "excerpt": "Obsessive — короткая японская игра‑побег, где главный герой с ОКР сталкивается с пугающими мыслями и движущейся статуей. Идеально для любителей",
     "date": "8 октября 2026",
@@ -752,7 +752,7 @@ window.allArticles = [
     "ai": true
   },
   {
-    "url": "/archive/just-mining-4985090.html",
+    "url": "/archive/just-mining-4985090",
     "title": "Just Mining — простая инкрементальная игра о добыче",
     "excerpt": "Just Mining — расслабляющая казуальная игра, где вам предстоит добывать ресурсы, улучшать инструменты и копать всё глубже. Идеально подходит для коротких",
     "date": "8 октября 2026",
@@ -765,7 +765,7 @@ window.allArticles = [
     "ai": true
   },
   {
-    "url": "/archive/igry-dlya-slabyh-noutbukov-2026.html",
+    "url": "/archive/igry-dlya-slabyh-noutbukov-2026",
     "title": "Игры для слабых ноутбуков 2026: полный гид — что реально запустится",
     "excerpt": "Что реально идёт на слабом ноутбуке без дискретной видеокарты: разбор категорий железа, топ игр с официальными требованиями Steam, настройки ради максимального FPS и подборки по жанрам.",
     "date": "8 октября 2026",
@@ -775,7 +775,7 @@ window.allArticles = [
     "image": "/img/igry-dlya-slabyh-noutbukov-2026.webp"
   },
   {
-    "url": "/archive/igry-dlya-dvoih-na-telefone-2026.html",
+    "url": "/archive/igry-dlya-dvoih-na-telefone-2026",
     "title": "Игры для двоих на телефоне: 6 неочевидных шедевров (Топ 2026)",
     "excerpt": "Забудьте про банальные аркады: 6 неочевидных игр для двоих на телефоне — асимметричный кооп, один экран на двоих и онлайн для пар на расстоянии. Официальные трейлеры, скриншоты и проверенные факты.",
     "date": "7 октября 2026",
@@ -785,7 +785,7 @@ window.allArticles = [
     "image": "/img/1791397631.webp"
   },
   {
-    "url": "/archive/hex-reverse-5257350.html",
+    "url": "/archive/hex-reverse-5257350",
     "title": "Hex Reverse - обзор игры",
     "excerpt": "Hex Reverse - это карточная игра в жанре roguelike с уникальной механикой на шестиугольном поле боя. Создавайте колоду и адаптируйте стратегию.",
     "date": "7 октября 2026",
@@ -798,7 +798,7 @@ window.allArticles = [
     "ai": true
   },
   {
-    "url": "/archive/mopet-studio-4718320.html",
+    "url": "/archive/mopet-studio-4718320",
     "title": "Mopet Studio – создайте собственного виртуального питомца",
     "excerpt": "Mopet Studio позволяет оформить рабочий стол живым персонажем, взаимодействовать с ним и делиться своими созданиями в сообществе. Инди‑проект для",
     "date": "7 октября 2026",
@@ -811,7 +811,7 @@ window.allArticles = [
     "ai": true
   },
   {
-    "url": "/archive/horde-arena-3561610.html",
+    "url": "/archive/horde-arena-3561610",
     "title": "Horde Arena - шутер-рогалик от третьего лица",
     "excerpt": "Horde Arena - это шутер-рогалик от третьего лица с бесконечными волнами врагов. Играйте в одиночку или в кооперативе до 4 игроков.",
     "date": "7 октября 2026",
@@ -824,7 +824,7 @@ window.allArticles = [
     "ai": true
   },
   {
-    "url": "/archive/wog-war-of-genesis-idle-loot-4891320.html",
+    "url": "/archive/wog-war-of-genesis-idle-loot-4891320",
     "title": "War of Genesis: Idle Loot - обзор",
     "excerpt": "War of Genesis: Idle Loot - игра, где персонаж сам сражается и собирает добычу. Подходит для любителей казуальных ролевых игр.",
     "date": "7 октября 2026",
@@ -837,7 +837,7 @@ window.allArticles = [
     "ai": true
   },
   {
-    "url": "/archive/half-body-duo-5207880.html",
+    "url": "/archive/half-body-duo-5207880",
     "title": "Half Body Duo - обзор игры",
     "excerpt": "Half Body Duo - это хоррор-экшен, где нужно управлять двумя персонажами в лабиринте больницы. Собирайте предохранители и ключи, избегайте монстров.",
     "date": "7 октября 2026",
@@ -850,7 +850,7 @@ window.allArticles = [
     "ai": true
   },
   {
-    "url": "/archive/magetender-4709570.html",
+    "url": "/archive/magetender-4709570",
     "title": "MageTender - обзор игры",
     "excerpt": "MageTender - казуальная игра, где нужно обслуживать клиентов с разными настроениями и причудами. Смешивайте напитки с магическими ингредиентами.",
     "date": "7 октября 2026",
@@ -863,7 +863,7 @@ window.allArticles = [
     "ai": true
   },
   {
-    "url": "/archive/-5259450.html",
+    "url": "/archive/-5259450",
     "title": "Обзор игры Дагук Самгукчжи",
     "excerpt": "Дагук Самгукчжи — стратегия в эпоху Трёх царств. Развивайте города, ведите дипломатию и сражайтесь в пошаговых битвах.",
     "date": "7 октября 2026",
@@ -876,7 +876,7 @@ window.allArticles = [
     "ai": true
   },
   {
-    "url": "/archive/the-crimson-hunt-4485020.html",
+    "url": "/archive/the-crimson-hunt-4485020",
     "title": "The Crimson Hunt - обзор игры",
     "excerpt": "The Crimson Hunt - это приключенческая игра, где охотница на вампиров Виктория и молодая Элеонора сталкиваются с кошмарами и ловушками.",
     "date": "7 октября 2026",
@@ -889,7 +889,7 @@ window.allArticles = [
     "ai": true
   },
   {
-    "url": "/archive/raidkids-2505670.html",
+    "url": "/archive/raidkids-2505670",
     "title": "RaidKids - обзор игры",
     "excerpt": "RaidKids - это 2D приключение с элементами крафта. Игра подойдёт любителям казуальных и инди-игр.",
     "date": "7 октября 2026",
@@ -902,7 +902,7 @@ window.allArticles = [
     "ai": true
   },
   {
-    "url": "/archive/steel-vanguard-project-ares-5099110.html",
+    "url": "/archive/steel-vanguard-project-ares-5099110",
     "title": "STEEL VANGUARD:Project ARES - обзор",
     "excerpt": "STEEL VANGUARD:Project ARES - шутер с видом сверху в научно-фантастическом мире. Завоевывайте звание сильнейшего пилота и улучшайте свой мех.",
     "date": "7 октября 2026",
@@ -915,7 +915,7 @@ window.allArticles = [
     "ai": true
   },
   {
-    "url": "/archive/-5208470.html",
+    "url": "/archive/-5208470",
     "title": "Мини Цивилизация: обзор игры",
     "excerpt": "Мини Цивилизация — это доступная пошаговая стратегия на шестиугольной сетке. Начните с одного города и поселенца, развивайте империю.",
     "date": "7 октября 2026",
@@ -928,7 +928,7 @@ window.allArticles = [
     "ai": true
   },
   {
-    "url": "/archive/mouse-shooter-fps-5244690.html",
+    "url": "/archive/mouse-shooter-fps-5244690",
     "title": "Mouse Shooter FPS – шутер на рабочем столе",
     "excerpt": "Mouse Shooter FPS превращает ваш рабочий стол в поле боя: прозрачный оверлей с прицелом и оружием от первого лица, зомби‑волны и система звания. Игра не",
     "date": "7 октября 2026",
@@ -941,7 +941,7 @@ window.allArticles = [
     "ai": true
   },
   {
-    "url": "/archive/dry-powder-5229970.html",
+    "url": "/archive/dry-powder-5229970",
     "title": "Dry Powder - обзор симулятора",
     "excerpt": "Dry Powder - это симулятор инвестиций, где нужно стать самым богатым. Торгуйте акциями, облигациями и недвижимостью, используйте кредитное плечо и",
     "date": "7 октября 2026",
@@ -954,7 +954,7 @@ window.allArticles = [
     "ai": true
   },
   {
-    "url": "/archive/motorbay-tycoon-5284560.html",
+    "url": "/archive/motorbay-tycoon-5284560",
     "title": "Motorbay Tycoon - обзор игры",
     "excerpt": "Motorbay Tycoon - это казуальная игра-симулятор, где нужно управлять автосервисом. Начните с небольшой мастерской и развивайте её до крупного автоцентра.",
     "date": "7 октября 2026",
@@ -967,7 +967,7 @@ window.allArticles = [
     "ai": true
   },
   {
-    "url": "/archive/plates-of-peril-3451820.html",
+    "url": "/archive/plates-of-peril-3451820",
     "title": "Plates of Peril - обзор игры",
     "excerpt": "Plates of Peril - это хаотичная игра о управлении рестораном с каннибальскими элементами. Играйте в одиночку или с друзьями.",
     "date": "7 октября 2026",
@@ -980,7 +980,7 @@ window.allArticles = [
     "ai": true
   },
   {
-    "url": "/archive/midnight-gunwatch-5275630.html",
+    "url": "/archive/midnight-gunwatch-5275630",
     "title": "Midnight Gunwatch — обзор игры",
     "excerpt": "Midnight Gunwatch — это экшен-стратегия в стиле инди, где нужно обороняться от зомби. Игра подойдёт любителям тактических игр и зомби-шутеров.",
     "date": "7 октября 2026",
@@ -993,7 +993,7 @@ window.allArticles = [
     "ai": true
   },
   {
-    "url": "/archive/creta-taskbar-fishing-5064260.html",
+    "url": "/archive/creta-taskbar-fishing-5064260",
     "title": "CRETA: Taskbar Fishing - обзор",
     "excerpt": "CRETA: Taskbar Fishing — уютная игра для ловли рыбы, которая живет на панели задач. Ловите рыбу, пока работаете или играете.",
     "date": "7 октября 2026",
@@ -1006,7 +1006,7 @@ window.allArticles = [
     "ai": true
   },
   {
-    "url": "/archive/prison-escape-io-3583470.html",
+    "url": "/archive/prison-escape-io-3583470",
     "title": "Prison Escape io - обзор игры",
     "excerpt": "Prison Escape io - динамичная многопользовательская игра, где нужно бежать через ловушки и туннели. Сотрудничай или соревнуйся, чтобы сбежать первым.",
     "date": "7 октября 2026",
@@ -1019,7 +1019,7 @@ window.allArticles = [
     "ai": true
   },
   {
-    "url": "/archive/zabastovka-v-nebesah-5136190.html",
+    "url": "/archive/zabastovka-v-nebesah-5136190",
     "title": "Забастовка в небесах - обзор",
     "excerpt": "Забастовка в небесах - это приключенческая игра, где вы возглавляете забастовку бортпроводников. Вас ждут сложные переговоры и романтические линии.",
     "date": "7 октября 2026",
@@ -1032,7 +1032,7 @@ window.allArticles = [
     "ai": true
   },
   {
-    "url": "/archive/hb-evolution-5243580.html",
+    "url": "/archive/hb-evolution-5243580",
     "title": "HB Evolution — бесплатный онлайн‑MMORPG",
     "excerpt": "HB Evolution — бесплатный MMORPG с открытым миром, где две враждебные нации ведут масштабные PvP‑битвы. Создавайте героя без классов, осваивайте магию и",
     "date": "7 октября 2026",
@@ -1045,7 +1045,7 @@ window.allArticles = [
     "ai": true
   },
   {
-    "url": "/archive/mechwarrior-5-mercenaries-ashes-and-ascension-4849350.html",
+    "url": "/archive/mechwarrior-5-mercenaries-ashes-and-ascension-4849350",
     "title": "MechWarrior 5: Mercenaries – Ashes and Ascension обзор",
     "excerpt": "Новая кампания MechWarrior 5: Mercenaries – Ashes and Ascension предлагает 18 заданий, 13 новых боевых мехов и расширенный арсенал. Подойдёт любителям",
     "date": "7 октября 2026",
@@ -1058,7 +1058,7 @@ window.allArticles = [
     "ai": true
   },
   {
-    "url": "/archive/tung-4341400.html",
+    "url": "/archive/tung-4341400",
     "title": "TUNG - обзор игры",
     "excerpt": "TUNG — это инди-экшен с элементами хоррора, где игроки исследуют лабиринт из живой изгороди и знакомятся с загадочным существом.",
     "date": "7 октября 2026",
@@ -1071,7 +1071,7 @@ window.allArticles = [
     "ai": true
   },
   {
-    "url": "/archive/paunchy-pets-4052150.html",
+    "url": "/archive/paunchy-pets-4052150",
     "title": "Paunchy Pets — обзор игры",
     "excerpt": "Paunchy Pets — это игра, где вы тренируете и сражаетесь с пухлыми монстриками. Кормите их, участвуйте в мини-играх и сражайтесь с соперниками.",
     "date": "7 октября 2026",
@@ -1084,7 +1084,7 @@ window.allArticles = [
     "ai": true
   },
   {
-    "url": "/archive/teryon-crisis-5265230.html",
+    "url": "/archive/teryon-crisis-5265230",
     "title": "Teryon Crisis - обзор стратегии",
     "excerpt": "Teryon Crisis - стратегия в жанре RTS с 24 миссиями кампании и кастомизируемыми боями. Управляйте двумя фракциями и исследуйте специализированные",
     "date": "7 октября 2026",
@@ -1097,7 +1097,7 @@ window.allArticles = [
     "ai": true
   },
   {
-    "url": "/archive/lostbound-4588320.html",
+    "url": "/archive/lostbound-4588320",
     "title": "Lostbound - обзор игры",
     "excerpt": "Lostbound - это Roguelite Action RPG, где нужно найти все артефакты и спастись из рушащегося мира. Тьма жива и пытается утащить тебя в Бездну.",
     "date": "7 октября 2026",
@@ -1110,7 +1110,7 @@ window.allArticles = [
     "ai": true
   },
   {
-    "url": "/archive/the-call-button-4584180.html",
+    "url": "/archive/the-call-button-4584180",
     "title": "The Call Button - хоррор-триллер",
     "excerpt": "The Call Button - это хоррор-триллер на наблюдательность. Игроки просыпаются в больнице и выбирают между таблетками и кнопкой вызова.",
     "date": "7 октября 2026",
@@ -1123,7 +1123,7 @@ window.allArticles = [
     "ai": true
   },
   {
-    "url": "/archive/infinite-chess-5216780.html",
+    "url": "/archive/infinite-chess-5216780",
     "title": "Infinite Chess - обзор",
     "excerpt": "Infinite Chess - это стратегическая игра, где каждая партия уникальна. Играйте онлайн против других игроков или против ИИ.",
     "date": "7 октября 2026",
@@ -1136,7 +1136,7 @@ window.allArticles = [
     "ai": true
   },
   {
-    "url": "/archive/gravebound-rising-5087060.html",
+    "url": "/archive/gravebound-rising-5087060",
     "title": "Gravebound Rising — обзор игры",
     "excerpt": "Gravebound Rising — это стратегия в жанре некромантии, где нужно поднимать армию скелетов и развивать поселения. Игра подойдёт любителям инди-проектов.",
     "date": "7 октября 2026",
@@ -1149,7 +1149,7 @@ window.allArticles = [
     "ai": true
   },
   {
-    "url": "/archive/flappy-wings-multiplayer-5269790.html",
+    "url": "/archive/flappy-wings-multiplayer-5269790",
     "title": "Flappy Wings Multiplayer — аркада с онлайн и локальным PvP",
     "excerpt": "Flappy Wings Multiplayer – динамичная 2D‑аркада, где нужно точно рассчитывать прыжки, избегать бесконечных труб и соревноваться в локальном и",
     "date": "7 октября 2026",
@@ -1162,7 +1162,7 @@ window.allArticles = [
     "ai": true
   },
   {
-    "url": "/archive/fsh-4444200.html",
+    "url": "/archive/fsh-4444200",
     "title": "Fsh - обзор игры",
     "excerpt": "Fsh - это инди-приключение с элементами экшена. Игроки исследуют странный мир и сражаются за возвращение украденных глаз.",
     "date": "7 октября 2026",
@@ -1175,7 +1175,7 @@ window.allArticles = [
     "ai": true
   },
   {
-    "url": "/archive/ii-v-igrodeli-2026-polnyy-razbor.html",
+    "url": "/archive/ii-v-igrodeli-2026-polnyy-razbor",
     "title": "ИИ в игровой индустрии 2026: полный разбор — инструменты, деньги и тренды",
     "excerpt": "Как нейросети меняют разработку игр: арт, 3D, код, озвучка и NPC. Реальные цифры рынка, экономия до 99%, скандалы, суды, увольнения и прогнозы до 2030 года.",
     "image": "/img/ai/output/ii-v-igrodeli-2026.webp",
@@ -1184,7 +1184,7 @@ window.allArticles = [
     "category": "ИИ и технологии"
   },
   {
-    "url": "/archive/third-law-5245170.html",
+    "url": "/archive/third-law-5245170",
     "title": "Третья закономерность THIRD LAW",
     "excerpt": "Игра THIRD LAW предлагает уникальный геймплей с использованием отдачи оружия для перемещения. Подойдёт для любителей инди-экшенов.",
     "date": "6 октября 2026",
@@ -1197,7 +1197,7 @@ window.allArticles = [
     "ai": true
   },
   {
-    "url": "/archive/empty-inbox-5178990.html",
+    "url": "/archive/empty-inbox-5178990",
     "title": "Empty Inbox - обзор игры",
     "excerpt": "Empty Inbox - это инди-игра, где игроки работают в службе поддержки и пытаются вставлять скрытые слова в письма без обнаружения.",
     "date": "6 октября 2026",
@@ -1210,7 +1210,7 @@ window.allArticles = [
     "ai": true
   },
   {
-    "url": "/archive/deadline-last-checkpoint-5261340.html",
+    "url": "/archive/deadline-last-checkpoint-5261340",
     "title": "DEADLINE: LAST CHECKPOINT: цена, отзывы и статистика игроков",
     "excerpt": "DEADLINE: LAST CHECKPOINT: актуальная цена (261.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
     "date": "6 октября 2026",
@@ -1220,7 +1220,7 @@ window.allArticles = [
     "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5261340/ca78a60865cb9e358622bf8a2f08c050bcea7450/header.jpg?t=1791261699"
   },
   {
-    "url": "/archive/10countavoidance-4120530.html",
+    "url": "/archive/10countavoidance-4120530",
     "title": "10CountAvoidance: цена, отзывы и статистика игроков",
     "excerpt": "10CountAvoidance: актуальная цена (Бесплатно), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
     "date": "6 октября 2026",
@@ -1230,7 +1230,7 @@ window.allArticles = [
     "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4120530/12c1af56308559e57a8985ef5dabc9bbe0e1bc90/header.jpg?t=1791259229"
   },
   {
-    "url": "/archive/a-i-ttorney-4355070.html",
+    "url": "/archive/a-i-ttorney-4355070",
     "title": "A.I.ttorney - обзор игры",
     "excerpt": "A.I.ttorney - это интерактивный визуальный роман с множеством сюжетных веток. Игра предлагает увлекательное расследование и интересные головоломки.",
     "date": "6 октября 2026",
@@ -1243,7 +1243,7 @@ window.allArticles = [
     "ai": true
   },
   {
-    "url": "/archive/norn-saber-the-guardian-s-oath-4030680.html",
+    "url": "/archive/norn-saber-the-guardian-s-oath-4030680",
     "title": "女神：守護之約 – обзор игры",
     "excerpt": "«女神：守護之約» – многопользовательская ролевая стратегия с элементами тактики, крафта и развития отношений. Подойдёт любителям эпических историй и глубокого",
     "date": "6 октября 2026",
@@ -1256,7 +1256,7 @@ window.allArticles = [
     "ai": true
   },
   {
-    "url": "/archive/king-s-cup-the-online-multiplayer-drinking-game-1506610.html",
+    "url": "/archive/king-s-cup-the-online-multiplayer-drinking-game-1506610",
     "title": "King's Cup: The online multiplayer drinking game: цена, отзывы и статистика игроков",
     "excerpt": "King's Cup: The online multiplayer drinking game: актуальная цена (144.00 RUB), 88% положительных отзывов в Steam, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
     "date": "6 октября 2026",
@@ -1266,7 +1266,7 @@ window.allArticles = [
     "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1506610/4ec28fe3f9ca9918e54b587c75b8933413763bc3/header.jpg?t=1791248693"
   },
   {
-    "url": "/archive/idle-miner-5255350.html",
+    "url": "/archive/idle-miner-5255350",
     "title": "Idle Miner - обзор игры",
     "excerpt": "Idle Miner - это казуальная игра, где вы управляете шахтёрами прямо на рабочем столе. Играйте, когда удобно, развивайте команду.",
     "date": "6 октября 2026",
@@ -1279,7 +1279,7 @@ window.allArticles = [
     "ai": true
   },
   {
-    "url": "/archive/deadly-force-5161590.html",
+    "url": "/archive/deadly-force-5161590",
     "title": "Deadly Force - обзор игры",
     "excerpt": "Deadly Force - это аркадный шутер от первого лица с элементами экшена. Игра предлагает динамичные миссии и простой геймплей.",
     "date": "6 октября 2026",
@@ -1292,7 +1292,7 @@ window.allArticles = [
     "ai": true
   },
   {
-    "url": "/archive/in-your-hands-5193580.html",
+    "url": "/archive/in-your-hands-5193580",
     "title": "In Your Hands - обзор психологического хоррора",
     "excerpt": "In Your Hands - психологический хоррор в жанре визуальной новеллы. Исследуйте разрушенное здание и помогите ребёнку выбраться.",
     "date": "6 октября 2026",
@@ -1305,7 +1305,7 @@ window.allArticles = [
     "ai": true
   },
   {
-    "url": "/archive/chase-the-number-5274390.html",
+    "url": "/archive/chase-the-number-5274390",
     "title": "Chase The Number - обзор игры",
     "excerpt": "Chase The Number - это симулятор финансовой жизни с элементами стратегии. Игроки начинают с небольшой суммы и стремятся к миллиону.",
     "date": "6 октября 2026",
@@ -1318,7 +1318,7 @@ window.allArticles = [
     "ai": true
   },
   {
-    "url": "/archive/pogo-gnom-5128520.html",
+    "url": "/archive/pogo-gnom-5128520",
     "title": "Pogo Gnom - обзор игры",
     "excerpt": "Pogo Gnom - это аркада про гнома на прыгалке, который стремится к Луне. Игра без контрольных точек, с уникальными уведомлениями о неудачах.",
     "date": "6 октября 2026",
@@ -1331,7 +1331,7 @@ window.allArticles = [
     "ai": true
   },
   {
-    "url": "/archive/bering-tonnage-4610080.html",
+    "url": "/archive/bering-tonnage-4610080",
     "title": "Bering Tonnage - обзор игры",
     "excerpt": "Bering Tonnage - это морской тайкун, где нужно создать и автоматизировать грузовой флот. Управляйте судами и преодолевайте вызовы, чтобы стать глобальной",
     "date": "6 октября 2026",
@@ -1344,7 +1344,7 @@ window.allArticles = [
     "ai": true
   },
   {
-    "url": "/archive/starbloom-ranch-5237770.html",
+    "url": "/archive/starbloom-ranch-5237770",
     "title": "Starbloom Ranch - обзор игры",
     "excerpt": "Starbloom Ranch - это уютная фермерская RPG с элементами симулятора и стратегии. Собери команду из 300 существ и сражайся в пошаговых боях.",
     "date": "6 октября 2026",
@@ -1357,7 +1357,7 @@ window.allArticles = [
     "ai": true
   },
   {
-    "url": "/archive/night-study-5278370.html",
+    "url": "/archive/night-study-5278370",
     "title": "Night Study - обзор игры",
     "excerpt": "Night Study - это динамичная аркада про организацию полок и выживание в ночь Кровавого Луны. Проверьте свои навыки в этой инди-игре.",
     "date": "6 октября 2026",
@@ -1370,7 +1370,7 @@ window.allArticles = [
     "ai": true
   },
   {
-    "url": "/archive/stolemates-4761400.html",
+    "url": "/archive/stolemates-4761400",
     "title": "Stolemates - обзор игры",
     "excerpt": "Stolemates - это многопользовательская игра для вечеринок, где нужно украсть сердце и удержать его от друзей. Играйте на карте, вдохновлённой Торонто.",
     "date": "6 октября 2026",
@@ -1383,7 +1383,7 @@ window.allArticles = [
     "ai": true
   },
   {
-    "url": "/archive/werfast-4763960.html",
+    "url": "/archive/werfast-4763960",
     "title": "Werfast - обзор игры",
     "excerpt": "Werfast - это мрачный экшен-платформер с элементами метроидвании. Исследуйте подземный мир на мощном мехе, сражайтесь с врагами и раскрывайте тайны.",
     "date": "6 октября 2026",
@@ -1396,7 +1396,7 @@ window.allArticles = [
     "ai": true
   },
   {
-    "url": "/archive/drone-n-gone-4930810.html",
+    "url": "/archive/drone-n-gone-4930810",
     "title": "Drone n Gone - обзор игры",
     "excerpt": "Drone n Gone - это экшен с элементами инди, где нужно защищать бункер с помощью дронов. Игра предлагает динамичные бои и прогрессию в стиле роглайк.",
     "date": "6 октября 2026",
@@ -1409,7 +1409,7 @@ window.allArticles = [
     "ai": true
   },
   {
-    "url": "/archive/bloody-bunny-3d-3892280.html",
+    "url": "/archive/bloody-bunny-3d-3892280",
     "title": "Bloody Bunny 3D - обзор игры",
     "excerpt": "Bloody Bunny 3D — это волновой шутер с элементами выживания. Играйте за охотника на зомби, используя ловушки и оружие.",
     "date": "6 октября 2026",
@@ -1422,7 +1422,7 @@ window.allArticles = [
     "ai": true
   },
   {
-    "url": "/archive/voidfall-4632760.html",
+    "url": "/archive/voidfall-4632760",
     "title": "VoidFall - обзор игры",
     "excerpt": "VoidFall - это экшен с кооперативным режимом, где игроки сражаются с волнами монстров. Подходит для любителей командных сражений.",
     "date": "6 октября 2026",
@@ -1435,7 +1435,7 @@ window.allArticles = [
     "ai": true
   },
   {
-    "url": "/archive/sinever-first-seal-5001350.html",
+    "url": "/archive/sinever-first-seal-5001350",
     "title": "Sinever: First Seal - обзор",
     "excerpt": "Sinever: First Seal - кооперативный хоррор для 1-4 игроков. Исследуйте викторианское поместье и раскройте тайны паранормальных явлений.",
     "date": "6 октября 2026",
@@ -1448,7 +1448,7 @@ window.allArticles = [
     "ai": true
   },
   {
-    "url": "/archive/sightsplice-5226480.html",
+    "url": "/archive/sightsplice-5226480",
     "title": "SightSplice - обзор игры",
     "excerpt": "SightSplice - казуальная инди-игра с пиксельной графикой. Изучайте комнаты и находите изменения, чтобы выжить.",
     "date": "6 октября 2026",
@@ -1461,7 +1461,7 @@ window.allArticles = [
     "ai": true
   },
   {
-    "url": "/archive/-5207060.html",
+    "url": "/archive/-5207060",
     "title": "宗门轮回 - обзор игры",
     "excerpt": "Игра宗门轮回 предлагает погрузиться в мир древних сект и демонов. Управляйте временем и спасайте свой клан от гибели.",
     "date": "6 октября 2026",
@@ -1474,7 +1474,7 @@ window.allArticles = [
     "ai": true
   },
   {
-    "url": "/archive/dospehi-oktoberfest-5239930.html",
+    "url": "/archive/dospehi-oktoberfest-5239930",
     "title": "Доспехи «Октоберфест» — обзор",
     "excerpt": "Исследуйте мир после апокалипсиса в Доспехах «Октоберфест». Инди-приключение с элементами ролевой игры и стратегии.",
     "date": "6 октября 2026",
@@ -1487,7 +1487,7 @@ window.allArticles = [
     "ai": true
   },
   {
-    "url": "/archive/veillombre-4914240.html",
+    "url": "/archive/veillombre-4914240",
     "title": "Veillombre - обзор игры",
     "excerpt": "Veillombre - мультиплеерный пиксельный хоррор на 1-16 игроков. Исследуйте тёмный особняк и выживайте в ночи.",
     "date": "6 октября 2026",
@@ -1500,7 +1500,7 @@ window.allArticles = [
     "ai": true
   },
   {
-    "url": "/archive/solo-cultivation-3878440.html",
+    "url": "/archive/solo-cultivation-3878440",
     "title": "Solo Cultivation: обзор игры",
     "excerpt": "Solo Cultivation — это игра в жанре экшен и симулятора, вдохновленная жанром ксянься. Игроки могут заниматься культивацией, фермерством и сражениями.",
     "date": "6 октября 2026",
@@ -1513,7 +1513,7 @@ window.allArticles = [
     "ai": true
   },
   {
-    "url": "/archive/sudoku-girls-hawaii-vacation-4946070.html",
+    "url": "/archive/sudoku-girls-hawaii-vacation-4946070",
     "title": "Sudoku Girls: Hawaii Vacation - обзор",
     "excerpt": "Sudoku Girls: Hawaii Vacation - приключенческая игра с элементами визуальной новеллы. Решайте головоломки и наслаждайтесь отдыхом на Гавайях.",
     "date": "6 октября 2026",
@@ -1526,7 +1526,7 @@ window.allArticles = [
     "ai": true
   },
   {
-    "url": "/archive/gacha-and-sleep-2101640.html",
+    "url": "/archive/gacha-and-sleep-2101640",
     "title": "GACHA AND SLEEP - обзор игры",
     "excerpt": "GACHA AND SLEEP - казуальная инди-игра, где нужно собрать редких персонажей. Узнайте, стоит ли играть в эту игру.",
     "date": "6 октября 2026",
@@ -1539,7 +1539,7 @@ window.allArticles = [
     "ai": true
   },
   {
-    "url": "/archive/stickility-3419140.html",
+    "url": "/archive/stickility-3419140",
     "title": "Stickility - обзор игры",
     "excerpt": "Stickility - это экшн-приключение в подземном научном центре с уникальными врагами и боссами. Исследуйте и раскрывайте тайны Биотека.",
     "date": "6 октября 2026",
@@ -1552,7 +1552,7 @@ window.allArticles = [
     "ai": true
   },
   {
-    "url": "/archive/kiosunevn-5273430.html",
+    "url": "/archive/kiosunevn-5273430",
     "title": "KiosuneVN: цена, отзывы и статистика игроков",
     "excerpt": "KiosuneVN: актуальная цена (465.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
     "date": "6 октября 2026",
@@ -1562,7 +1562,7 @@ window.allArticles = [
     "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5273430/b97291bc9e4abd4f75c4bdf44c0fafcc58009a7c/header.jpg?t=1791216553"
   },
   {
-    "url": "/archive/-4246730.html",
+    "url": "/archive/-4246730",
     "title": "Idle: Shuguang's Alchemy Store — обзор игры",
     "excerpt": "Уютный симулятор алхимической лавки. Управляйте магазином в фоне, расслабляйтесь и наблюдайте за ростом бизнеса в спокойном темпе без стресса.",
     "date": "5 октября 2026",
@@ -1575,7 +1575,7 @@ window.allArticles = [
     "ai_about": "Это казуальная симуляция, где вы развиваете алхимическую лавку. Игра не требует постоянного внимания, что делает её идеальной компаньоном для монотонных задач. Мягкий геймплей и стратегические элементы управления создают атмосферу спокойствия и уюта."
   },
   {
-    "url": "/archive/the-listener-4840240.html",
+    "url": "/archive/the-listener-4840240",
     "title": "The Listener: обзор игры-расследования",
     "excerpt": "The Listener — бесплатная симуляция, где вы выступаете югославским радиолюбителем в эпоху холодной войны. Перехватывайте сигналы и раскрывайте тайный заговор.",
     "date": "5 октября 2026",
@@ -1588,7 +1588,7 @@ window.allArticles = [
     "ai_about": "The Listener представляет собой квест от первого лица с элементами детектива. Игрок анализирует зашифрованные данные и собирает улики, чтобы разоблачить скрытую угрозу. Проект сочетает спокойный геймплей с напряженным сюжетом, предлагая глубокое погружение в историю и механику радиосвязи."
   },
   {
-    "url": "/archive/horror-in-santa-land-5281760.html",
+    "url": "/archive/horror-in-santa-land-5281760",
     "title": "Horror In Santa Land: обзор хоррор-шутера",
     "excerpt": "Horror In Santa Land — инди-шутер с головоломками. Ищите Санта-Клауса, отбивайтесь от зомби и спасайте Рождество в мрачном экшене.",
     "date": "5 октября 2026",
@@ -1601,7 +1601,7 @@ window.allArticles = [
     "ai_about": "Игра представляет собой инди-экшен от первого лица, где основная задача — устранение зомби и решение головоломок. Сюжетный поворот превращает праздник в мрачное приключение, требующее внимания к окружению и точности стрельбы."
   },
   {
-    "url": "/archive/mugipunch-4617970.html",
+    "url": "/archive/mugipunch-4617970",
     "title": "MugiPunch: Аниме-файтинг в стиле beat 'em up",
     "excerpt": "MugiPunch — быстрый аниме-файтинг. Учите парирования, уклонения и открывайте новые способности, чтобы вернуть фигурку. Идеально для фанатов экшена и инди.",
     "date": "5 октября 2026",
@@ -1614,7 +1614,7 @@ window.allArticles = [
     "ai_about": "Это инди-игра в жанре beat 'em up с упором на тактичный ближний бой. Механика построена на комбинировании ударов, уклонений и контратак. Прогрессия открывает новые способности, делая бои разнообразнее. Проект подойдет тем, кто любит ритмичные файтинги и аниме-эстетику."
   },
   {
-    "url": "/archive/jono-5257200.html",
+    "url": "/archive/jono-5257200",
     "title": "Jono — совместная игра на миллион уровней",
     "excerpt": "Jono — мультиплеерная casual-игра, где игроки по очереди проходят уровни. Узнайте, подойдёт ли она для коротких сессий и общения.",
     "date": "5 октября 2026",
@@ -1627,7 +1627,7 @@ window.allArticles = [
     "ai_about": "Игра сочетает простую механику с элементами социального взаимодействия: пока ждёшь своей очереди, можно общаться в чате с другими участниками. Подходит для тех, кто любит casual-проекты с мультиплеерным акцентом и не против медленного, но коллективного прогресса."
   },
   {
-    "url": "/archive/chamele-guess-5142570.html",
+    "url": "/archive/chamele-guess-5142570",
     "title": "Chamele-Guess: весёлая партия на 2-8 игроков",
     "excerpt": "Chamele-Guess — казуальная игра, где нужно изобразить слово телом. Угадайте задумку друзей в дуэлях на подиумах. Идеально для компании из 2-8 человек.",
     "date": "5 октября 2026",
@@ -1640,7 +1640,7 @@ window.allArticles = [
     "ai_about": "Это социальная игра для 2-8 игроков, где один участник получает секретное слово и пытается «слепить» его собственным телом. Друзья кричат свои догадки, пока вы демонстрируете образ на двойных подиумах. Механика построена на дуэлях и оценке результатов, что делает процесс весёлым и непредсказуемым."
   },
   {
-    "url": "/archive/hexcavate-5239340.html",
+    "url": "/archive/hexcavate-5239340",
     "title": "Hexcavate: уютная головоломка про карликов и шахты",
     "excerpt": "Hexcavate — спокойная пазл-игра, где вы катаете бомбы по шестиугольным островкам. Управляйте рельефом, направляйте телеги и исследуйте 33 уровня без таймеров и провалов.",
     "date": "5 октября 2026",
@@ -1653,7 +1653,7 @@ window.allArticles = [
     "ai_about": "Это инди-головоломка с четырьмя биомами и глубоким погружением в шахты. Механика построена на перестановке рельефа: вы поднимаете, поворачиваете и закрепляете участки острова, чтобы довести бомбу до цели. Игра не содержит таймеров и условий проигрыша, позволяя решать задачи в собственном темпе."
   },
   {
-    "url": "/archive/fussycraft-survival-sandbox-4729900.html",
+    "url": "/archive/fussycraft-survival-sandbox-4729900",
     "title": "FussyCraft Survival: Sandbox — 2D пиксельная выживалка",
     "excerpt": "FussyCraft Survival: Sandbox — инди-RPG с юмором. Копайте, стройте, варите и бросайте вызов королю. Обзор жанра и особенностей пиксельного мира.",
     "date": "5 октября 2026",
@@ -1666,7 +1666,7 @@ window.allArticles = [
     "ai_about": "Игра сочетает элементы RPG и песочницы в пиксельной графике. Игрокам предстоит исследовать опасные локации, собирать ресурсы и сражаться со странными существами. Главный сюжетный поворот — накопить достаточно мощи, чтобы бросить вызов самому королю."
   },
   {
-    "url": "/archive/chessxpanse-3308260.html",
+    "url": "/archive/chessxpanse-3308260",
     "title": "ChessXpanse: шахматы с динамичными фронтами в бою",
     "excerpt": "ChessXpanse — бесплатная стратегия, где классические шахматы сталкиваются с хаосом войны. Уникальные стартовые позиции меняют тактику каждой партии.",
     "date": "5 октября 2026",
@@ -1679,7 +1679,7 @@ window.allArticles = [
     "ai_about": "Игра представляет собой шахматы, встроенные в контекст битвы, где стартовые позиции фигур и доски варьируются от партии к партии. Такой подход ломает заученные дебюты и заставляет игроков постоянно адаптироваться к новым условиям. Отличный выбор для тех, кто ищет свежие механики в жанре casual-стратегии и хочет проверить себя в условиях непредсказуемости."
   },
   {
-    "url": "/archive/banana-clicker-2322080.html",
+    "url": "/archive/banana-clicker-2322080",
     "title": "Banana Clicker: обзор инди-кликера про бананы",
     "excerpt": "Узнайте, чем уникален Banana Clicker. Идиотский кликер с прокачкой, космическими шлемами и режимами выживания. Стоит ли играть в эту инди-игру?",
     "date": "5 октября 2026",
@@ -1692,7 +1692,7 @@ window.allArticles = [
     "ai_about": "Banana Clicker — это неформальная инди-игра с элементами выживания. Здесь можно кастомизировать банан, надевая на него рогатки или космические шлемы. После завершения забега происходит вознесение, позволяющее начать заново с улучшенными характеристиками."
   },
   {
-    "url": "/archive/private-mining-company-2957160.html",
+    "url": "/archive/private-mining-company-2957160",
     "title": "Private Mining Company — стратегия башенной защиты",
     "excerpt": "Private Mining Company — стратегическая игра с элементами башенной защиты и постоянной гибелью персонажей. Управляйте добычей, улучшайте солдат и берите",
     "date": "5 октября 2026",
@@ -1705,7 +1705,7 @@ window.allArticles = [
     "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2957160/header.jpg?t=1791154872"
   },
   {
-    "url": "/archive/tunnel-brawl-5052280.html",
+    "url": "/archive/tunnel-brawl-5052280",
     "title": "Tunnel Brawl — обзор игры",
     "excerpt": "Tunnel Brawl — это онлайн-экшен с элементами стратегии, где игроки роют туннели и сражаются в танках. Игра подойдёт любителям динамичных дуэлей.",
     "date": "5 октября 2026",
@@ -1718,7 +1718,7 @@ window.allArticles = [
     "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5052280/bb42ec1659a99392591a1a78221f42d157a4e1f2/header.jpg?t=1791144230"
   },
   {
-    "url": "/archive/dumpling-delight-5139970.html",
+    "url": "/archive/dumpling-delight-5139970",
     "title": "Dumpling Delight: обзор игры",
     "excerpt": "Dumpling Delight — это казуальная стратегия, где нужно бросать милых пельменей и объединять пары. Игра расслабляет и приносит радость.",
     "date": "5 октября 2026",
@@ -1731,7 +1731,7 @@ window.allArticles = [
     "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5139970/3d008e166e36db92d4dd2175d8e69172dc375a78/header.jpg?t=1791142512"
   },
   {
-    "url": "/archive/piworld-3167710.html",
+    "url": "/archive/piworld-3167710",
     "title": "Piworld - обзор игры",
     "excerpt": "Piworld - мультиплеер с разнообразными ролями и приключениями. Исследуйте мир, боритесь со злом и веселитесь с друзьями.",
     "date": "5 октября 2026",
@@ -1744,7 +1744,7 @@ window.allArticles = [
     "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3167710/a5f7b5fe335f19dbc327f3b72b5032ee48248dfe/header.jpg?t=1791138549"
   },
   {
-    "url": "/archive/-5240670.html",
+    "url": "/archive/-5240670",
     "title": "Обзор игры 尸海防线",
     "excerpt": "Игра 尸海防线 — это аркадный шутер с видом сверху, где нужно защищаться от орд зомби. Подходит для любителей экшена и казуальных игр.",
     "date": "5 октября 2026",
@@ -1757,7 +1757,7 @@ window.allArticles = [
     "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5240670/eed9962cb06ff54e2e36b2d08b0759fa739a9969/header.jpg?t=1791131545"
   },
   {
-    "url": "/archive/auris-4902690.html",
+    "url": "/archive/auris-4902690",
     "title": "Auris: цена, отзывы и статистика игроков",
     "excerpt": "Auris: актуальная цена (465.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
     "date": "5 октября 2026",
@@ -1765,7 +1765,7 @@ window.allArticles = [
     "category": "Обзоры"
   },
   {
-    "url": "/archive/catventure-4459980.html",
+    "url": "/archive/catventure-4459980",
     "title": "Catventure — уютная пассивная игра",
     "excerpt": "Catventure — спокойная казуальная игра, размещаемая в углу экрана. Пассивный геймплей позволяет наслаждаться приключением с котом, не отвлекаясь от дел.",
     "date": "5 октября 2026",
@@ -1778,7 +1778,7 @@ window.allArticles = [
     "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4459980/f4dc9f41344683a21c7c26504397cad26222bd69/header.jpg?t=1791213319"
   },
   {
-    "url": "/archive/simulyator-krolika-2343380.html",
+    "url": "/archive/simulyator-krolika-2343380",
     "title": "Симулятор кролика: обзор игры",
     "excerpt": "Симулятор кролика — это экшн-приключение с акцентом на огнестрельное насилие. Яркая и динамичная игра для любителей инди-проектов.",
     "date": "5 октября 2026",
@@ -1791,7 +1791,7 @@ window.allArticles = [
     "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2343380/header.jpg?t=1791124978"
   },
   {
-    "url": "/archive/beyond-xii-5182380.html",
+    "url": "/archive/beyond-xii-5182380",
     "title": "BEYOND XII: обзор игры",
     "excerpt": "Исследуйте невозможные миры в BEYOND XII. Разгадайте тайны и выживайте, пока время идет. Подходит для любителей инди и казуальных игр.",
     "date": "5 октября 2026",
@@ -1804,7 +1804,7 @@ window.allArticles = [
     "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5182380/6a8f51a3fb24bacb929348c8181751301313205e/header.jpg?t=1791120342"
   },
   {
-    "url": "/archive/cursorloom-5268080.html",
+    "url": "/archive/cursorloom-5268080",
     "title": "CURSORLOOM - уникальные курсоры для ПК",
     "excerpt": "CURSORLOOM предлагает 188 оригинальных тем для курсоров. Настройте их под себя или создайте свои. От уютных животных до фантастики.",
     "date": "5 октября 2026",
@@ -1817,7 +1817,7 @@ window.allArticles = [
     "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5268080/7cd207bd1c73e5bc12cb58d1f815832edc81f84b/header.jpg?t=1791116347"
   },
   {
-    "url": "/archive/morrowtape-5225470.html",
+    "url": "/archive/morrowtape-5225470",
     "title": "MORROWTAPE - обзор игры",
     "excerpt": "MORROWTAPE - психологический хоррор от первого лица в заброшенном архиве. Исследуйте тайны и избегайте опасного существа.",
     "date": "5 октября 2026",
@@ -1830,7 +1830,7 @@ window.allArticles = [
     "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5225470/fc93f12e79e6f44cc75419dc2c27399aeb2b2276/header.jpg?t=1791115110"
   },
   {
-    "url": "/archive/wickling-5225460.html",
+    "url": "/archive/wickling-5225460",
     "title": "Wickling - платформер с головой- свечой",
     "excerpt": "Wickling - весёлый платформер в стиле 8-битных игр с головой- свечой. Исследуйте карты, сражайтесь с врагами и избегайте странного преследователя.",
     "date": "5 октября 2026",
@@ -1843,7 +1843,7 @@ window.allArticles = [
     "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5225460/ae422e28e060a1f55b740fb9e954f1ef7b29f07f/header.jpg?t=1791115075"
   },
   {
-    "url": "/archive/postapo-2216510.html",
+    "url": "/archive/postapo-2216510",
     "title": "PostApo - обзор игры",
     "excerpt": "PostApo - это многопользовательская ролевая игра в постапокалиптическом мире 2067 года. Полное озвучивание и локализация на 9 языках.",
     "date": "5 октября 2026",
@@ -1856,7 +1856,7 @@ window.allArticles = [
     "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2216510/header.jpg?t=1791113034"
   },
   {
-    "url": "/archive/touhou-blackeight-5008530.html",
+    "url": "/archive/touhou-blackeight-5008530",
     "title": "Touhou: BlackEight - обзор игры",
     "excerpt": "Touhou: BlackEight - это хоррор-фанатская игра в жанре приключений. Выживайте восемь ночей в Эйтэнкай, спасая героинь от аномалий.",
     "date": "5 октября 2026",
@@ -1869,7 +1869,7 @@ window.allArticles = [
     "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5008530/a6f1ad614b0ae1cf9c8389fcf963eb2aab2996bf/header.jpg?t=1791111476"
   },
   {
-    "url": "/archive/jolly-roger-jam-cathraul-s-curse-5235210.html",
+    "url": "/archive/jolly-roger-jam-cathraul-s-curse-5235210",
     "title": "Jolly Roger Jam: Cathraul's Curse: цена, отзывы и статистика игроков",
     "excerpt": "Jolly Roger Jam: Cathraul's Curse: актуальная цена (459.51 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
     "date": "5 октября 2026",
@@ -1877,7 +1877,7 @@ window.allArticles = [
     "category": "Обзоры"
   },
   {
-    "url": "/archive/lupkar-world-of-billiards-5036340.html",
+    "url": "/archive/lupkar-world-of-billiards-5036340",
     "title": "LUPKAR - World of Billiards: обзор",
     "excerpt": "LUPKAR - World of Billiards: онлайн-бильярд с русской пирамидой, пулом и снукером. Играйте с игроками со всего мира.",
     "date": "5 октября 2026",
@@ -1890,7 +1890,7 @@ window.allArticles = [
     "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5036340/939133492da6c5b07d9fb581ba0d77aa72b49f34/header.jpg?t=1791104453"
   },
   {
-    "url": "/archive/mythicalbeast-5234170.html",
+    "url": "/archive/mythicalbeast-5234170",
     "title": "灵兽问道-MythicalBeast - обзор",
     "excerpt": "Исследуйте мистические земли, выводите духовных зверей и овладевайте Пятью Элементами в одиночном RPG о культивации. Сражайтесь с сектами и боссами.",
     "date": "5 октября 2026",
@@ -1903,7 +1903,7 @@ window.allArticles = [
     "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5234170/e1b84bd4eef453c69a7b1feeef768d93cae574db/header.jpg?t=1791100085"
   },
   {
-    "url": "/archive/the-demon-lurking-in-osaka-castle-episode-1-5268550.html",
+    "url": "/archive/the-demon-lurking-in-osaka-castle-episode-1-5268550",
     "title": "The Demon Lurking in Osaka Castle – Episode 1",
     "excerpt": "Исследуйте парк замка Осака в ночи в этом хорроре с живыми актерами. Разгадывайте мистическую тайну через реальные съемки.",
     "date": "5 октября 2026",
@@ -1916,7 +1916,7 @@ window.allArticles = [
     "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5268550/0bf30688d662200e6b4cd7891f8c209030ad56f9/header.jpg?t=1791097561"
   },
   {
-    "url": "/archive/hearken-5087210.html",
+    "url": "/archive/hearken-5087210",
     "title": "HEARKEN — кооп-хоррор с особым звуком",
     "excerpt": "HEARKEN — кооперативный хоррор, где звуки заменяют зрение. Играйте до 4 человек, избегайте монстра, который охотится на слух.",
     "date": "4 октября 2026",
@@ -1929,7 +1929,7 @@ window.allArticles = [
     "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5087210/361afb30de5f7ebc97ebc8add4a5bbd88d8f8119/header.jpg?t=1791194881"
   },
   {
-    "url": "/archive/snow-war-1585100.html",
+    "url": "/archive/snow-war-1585100",
     "title": "Snow War - обзор игры",
     "excerpt": "Snow War - это экшн с неоновой атмосферой 80-х, где игроки сражаются снежками и используют самодельные гаджеты. Быстрая и динамичная игра.",
     "date": "4 октября 2026",
@@ -1942,7 +1942,7 @@ window.allArticles = [
     "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1585100/97500e1769dca755ff04d143f79a66a95233b7f5/header.jpg?t=1791096223"
   },
   {
-    "url": "/archive/hazard-ready-5261710.html",
+    "url": "/archive/hazard-ready-5261710",
     "title": "Hazard Ready - обзор игры",
     "excerpt": "Hazard Ready - симулятор промышленной безопасности. Игроки учатся работать с оборудованием и избегать аварийных ситуаций.",
     "date": "4 октября 2026",
@@ -1955,7 +1955,7 @@ window.allArticles = [
     "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5261710/2900296a51822cc7a2f6aac8ec19c4acb7efd391/header.jpg?t=1791095446"
   },
   {
-    "url": "/archive/new-frontier9-5116740.html",
+    "url": "/archive/new-frontier9-5116740",
     "title": "New Frontier9: цена, отзывы и статистика игроков",
     "excerpt": "New Frontier9: актуальная цена (160.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
     "date": "4 октября 2026",
@@ -1963,7 +1963,7 @@ window.allArticles = [
     "category": "Обзоры"
   },
   {
-    "url": "/archive/gentle-night-4546070.html",
+    "url": "/archive/gentle-night-4546070",
     "title": "Gentle Night - обзор игры",
     "excerpt": "Gentle Night - это взрослая хоррор-визуальная новелла. Игроки управляют магазином в опасном городе, где им предстоит принять сложные решения.",
     "date": "4 октября 2026",
@@ -1976,7 +1976,7 @@ window.allArticles = [
     "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4546070/d8a68c6bee9671bddfb2d7400c355f13f613bf91/header.jpg?t=1791087169"
   },
   {
-    "url": "/archive/demon-lord-clicker-1742110.html",
+    "url": "/archive/demon-lord-clicker-1742110",
     "title": "Demon Lord: Clicker - обзор",
     "excerpt": "Demon Lord: Clicker - это кликер с элементами ролевой игры и стратегии. Сражайтесь с демонами и собирайте награды в увлекательном приключении.",
     "date": "4 октября 2026",
@@ -1989,7 +1989,7 @@ window.allArticles = [
     "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1742110/425194813dc404cdf4c74e4bfe38bdcbf92c7b4d/header.jpg?t=1791064529"
   },
   {
-    "url": "/archive/primi-menya-tselikom-5117090.html",
+    "url": "/archive/primi-menya-tselikom-5117090",
     "title": "Прими меня целиком — обзор игры",
     "excerpt": "Прими меня целиком — взрослая романтическая визуальная новелла о жизни в галисийской деревне. Выбирайте маршруты и решайте конфликты общины.",
     "date": "4 октября 2026",
@@ -2002,7 +2002,7 @@ window.allArticles = [
     "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5117090/94452ae7ce4ea0b1faaea1790c1e7588c7045de9/header.jpg?t=1791050842"
   },
   {
-    "url": "/archive/nobody-clocks-out-5262000.html",
+    "url": "/archive/nobody-clocks-out-5262000",
     "title": "Nobody Clocks Out - обзор игры",
     "excerpt": "Nobody Clocks Out - это ретро-шутер с элементами инди, где нужно пробираться по офисному зданию, сражаясь с охранниками и собирая оружие.",
     "date": "4 октября 2026",
@@ -2015,7 +2015,7 @@ window.allArticles = [
     "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5262000/c84de2c60e00c72d0ff8591f357503b979b3ab29/header.jpg?t=1791049571"
   },
   {
-    "url": "/archive/draw-alive-fish-5006170.html",
+    "url": "/archive/draw-alive-fish-5006170",
     "title": "Draw Alive: Fish - обзор игры",
     "excerpt": "Draw Alive: Fish - казуальная игра-симулятор, где можно оживить свои рисунки рыб и морских существ в 3D аквариуме.",
     "date": "4 октября 2026",
@@ -2028,7 +2028,7 @@ window.allArticles = [
     "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5006170/1def9a0b5b086e95ba48656c2b00b38c72438fb4/header.jpg?t=1791040897"
   },
   {
-    "url": "/archive/a-schoolhouse-in-gensokyo-3679100.html",
+    "url": "/archive/a-schoolhouse-in-gensokyo-3679100",
     "title": "Обзор игры 慧音的寺子屋 ~ A Schoolhouse in Gensokyo",
     "excerpt": "Игра 慧音的寺子屋 ~ A Schoolhouse in Gensokyo — это симулятор школы в мире Гэнсокуё. Управляйте учебным заведением и развивайте учеников.",
     "date": "4 октября 2026",
@@ -2041,7 +2041,7 @@ window.allArticles = [
     "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3679100/e6f456f6c6cda71d340ddffbcdc4d0fd0a4b8af4/header.jpg?t=1791040068"
   },
   {
-    "url": "/archive/the-webring-4884750.html",
+    "url": "/archive/the-webring-4884750",
     "title": "The Webring - обзор игры",
     "excerpt": "The Webring - это казуальная инди-игра, которая переносит игроков в атмосферу старого интернета. Идеально для ностальгирующих по 90-м.",
     "date": "4 октября 2026",
@@ -2054,7 +2054,7 @@ window.allArticles = [
     "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4884750/0a366d6adfd0d92f98b42e97643f8e46ddb23317/header.jpg?t=1791035355"
   },
   {
-    "url": "/archive/airline-empire-4893990.html",
+    "url": "/archive/airline-empire-4893990",
     "title": "Airline Empire - обзор симулятора авиакомпании",
     "excerpt": "Airline Empire — это пошаговый симулятор авиакомпании, где нужно основать бизнес, соединить города и конкурировать с ИИ-авиакомпаниями.",
     "date": "4 октября 2026",
@@ -2067,7 +2067,7 @@ window.allArticles = [
     "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4893990/c8c601670053c3edeef9ab9801fab4809e55aa1f/header.jpg?t=1791024618"
   },
   {
-    "url": "/archive/pixel-trader-4962430.html",
+    "url": "/archive/pixel-trader-4962430",
     "title": "Pixel Trader: цена, отзывы и статистика игроков",
     "excerpt": "Pixel Trader: актуальная цена (192.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
     "date": "4 октября 2026",
@@ -2075,7 +2075,7 @@ window.allArticles = [
     "category": "Обзоры"
   },
   {
-    "url": "/archive/myriad-gambit-5262940.html",
+    "url": "/archive/myriad-gambit-5262940",
     "title": "Myriad Gambit - обзор игры",
     "excerpt": "Myriad Gambit - это мифический китайский авто-баттлер с элементами ролевых игр и стратегий. Соберите команду и сразитесь с боссами.",
     "date": "4 октября 2026",
@@ -2088,7 +2088,7 @@ window.allArticles = [
     "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5262940/b2953d991092acb688dd70105d61a34d2ad2c4e5/header.jpg?t=1791096026"
   },
   {
-    "url": "/archive/horde-is-coming-4482600.html",
+    "url": "/archive/horde-is-coming-4482600",
     "title": "Horde is Coming - обзор игры",
     "excerpt": "Horde is Coming - это стратегическая игра, где нужно защищать своих героев от бесконечных волн монстров. Создавайте уникальные билды и комбинируйте руны.",
     "date": "4 октября 2026",
@@ -2101,7 +2101,7 @@ window.allArticles = [
     "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4482600/9a211a21a73f9986e1b8220d4615c6a70e745ba4/header.jpg?t=1791020414"
   },
   {
-    "url": "/archive/-5136270.html",
+    "url": "/archive/-5136270",
     "title": "Кровавый Вашингтон - обзор игры",
     "excerpt": "Игра Кровавый Вашингтон - это интерактивная история в жанре вестерн-фэнтези. Игроки борются с вампирской элитой в Вашингтоне.",
     "date": "4 октября 2026",
@@ -2114,7 +2114,7 @@ window.allArticles = [
     "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5136270/84a287e68a8a3c86466aac83a0e5eae0298be38f/header.jpg?t=1791015348"
   },
   {
-    "url": "/archive/soldier-rush-5113560.html",
+    "url": "/archive/soldier-rush-5113560",
     "title": "Soldier Rush - обзор игры",
     "excerpt": "Soldier Rush - это рогалик с видом сверху и автоматической стрельбой. Уворачивайся от волн врагов и побеждай боссов.",
     "date": "4 октября 2026",
@@ -2127,7 +2127,7 @@ window.allArticles = [
     "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5113560/c70c72992990ae9327403cdd3df1a63b4a3a360b/header.jpg?t=1791015019"
   },
   {
-    "url": "/archive/blackout-5267360.html",
+    "url": "/archive/blackout-5267360",
     "title": "Blackout - обзор игры",
     "excerpt": "Blackout - это инди-игра с головоломками, вдохновленная старыми портативными играми 80-х и 90-х годов. Играйте в стиле ретро.",
     "date": "4 октября 2026",
@@ -2140,7 +2140,7 @@ window.allArticles = [
     "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5267360/2eb734dd287f0df73726468b8fec8f2f97fdf9a5/header.jpg?t=1791014876"
   },
   {
-    "url": "/archive/3-5269520.html",
+    "url": "/archive/3-5269520",
     "title": "새벽 3시의 편의점 — обзор игры",
     "excerpt": "새벽 3시의 편의점 — визуальная новелла о ночных разговорах и загадочной посетительнице. Откройте тайны предрассветного часа.",
     "date": "4 октября 2026",
@@ -2153,7 +2153,7 @@ window.allArticles = [
     "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5269520/b4182c9e5af11b22be1a57cc2662d9628d7f3360/header.jpg?t=1791013125"
   },
   {
-    "url": "/archive/lucid-sys-4131310.html",
+    "url": "/archive/lucid-sys-4131310",
     "title": "Lucid.sys - обзор стратегии",
     "excerpt": "Lucid.sys - это стратегия с элементами ролевой игры, где нужно манипулировать правилами для победы. Уникальные персонажи и нестандартные решения.",
     "date": "4 октября 2026",
@@ -2166,7 +2166,7 @@ window.allArticles = [
     "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4131310/cd20e636f70fd037abfbd9165c1e613683146223/header.jpg?t=1791012013"
   },
   {
-    "url": "/archive/lumesprout-5242800.html",
+    "url": "/archive/lumesprout-5242800",
     "title": "LUMESPROUT - обзор игры",
     "excerpt": "LUMESPROUT — это пиксельная экшен-игра с элементами роглайка. Исследуйте шесть потерянных садов, сражайтесь с врагами и собирайте семена.",
     "date": "4 октября 2026",
@@ -2179,7 +2179,7 @@ window.allArticles = [
     "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5242800/efa9b8361255ec64636839de164e161a8e9377ca/header.jpg?t=1791011533"
   },
   {
-    "url": "/archive/alchemy-master-5201260.html",
+    "url": "/archive/alchemy-master-5201260",
     "title": "Alchemy Master - обзор игры",
     "excerpt": "Alchemy Master - это симулятор китайской алхимической мастерской. Управляйте процессами возвышения и улучшения талантов.",
     "date": "4 октября 2026",
@@ -2192,7 +2192,7 @@ window.allArticles = [
     "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5201260/7f176eaf63cd453cc17c5bc4e93482746048cc01/header.jpg?t=1791031749"
   },
   {
-    "url": "/archive/timos-4934110.html",
+    "url": "/archive/timos-4934110",
     "title": "TimoS: цена, отзывы и статистика игроков",
     "excerpt": "TimoS: актуальная цена (1882.36 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
     "date": "3 октября 2026",
@@ -2200,7 +2200,7 @@ window.allArticles = [
     "category": "Обзоры"
   },
   {
-    "url": "/archive/dreamspring-3231480.html",
+    "url": "/archive/dreamspring-3231480",
     "title": "Dreamspring — темное фэнтези с открытым миром",
     "excerpt": "Dreamspring — мрачная фэнтезийная ролевая игра‑приключение с открытым миром, где игрок исследует умирающее королевство и его измерения в стиле",
     "date": "3 октября 2026",
@@ -2213,7 +2213,7 @@ window.allArticles = [
     "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3231480/header.jpg?t=1791005482"
   },
   {
-    "url": "/archive/general-idler-3200810.html",
+    "url": "/archive/general-idler-3200810",
     "title": "GENERAL IDLER — обзор игры",
     "excerpt": "GENERAL IDLER — стратегия, где нужно завоевать 195 стран на параллельной Земле. Развивайте промышленность, создавайте армии и расширяйте империю.",
     "date": "3 октября 2026",
@@ -2226,7 +2226,7 @@ window.allArticles = [
     "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3200810/8077e533e144637a40c7c4f989334c8a8655bc69/header.jpg?t=1791010324"
   },
   {
-    "url": "/archive/simrace-publisher-studio-5219510.html",
+    "url": "/archive/simrace-publisher-studio-5219510",
     "title": "SimRace Publisher Studio: цена, отзывы и статистика игроков",
     "excerpt": "SimRace Publisher Studio: актуальная цена (1170.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
     "date": "3 октября 2026",
@@ -2234,7 +2234,7 @@ window.allArticles = [
     "category": "Обзоры"
   },
   {
-    "url": "/archive/tunnel-escape-fates-entwined-4285110.html",
+    "url": "/archive/tunnel-escape-fates-entwined-4285110",
     "title": "Tunnel Escape Fates Entwined - обзор",
     "excerpt": "Tunnel Escape Fates Entwined - экшн с элементами ролевой игры и приключения. Играйте за смелую полицейскую в разрушенном городе.",
     "date": "3 октября 2026",
@@ -2247,7 +2247,7 @@ window.allArticles = [
     "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4285110/141ce1d92ad831d9446487bd67e9d96a953c9bbf/header.jpg?t=1790995616"
   },
   {
-    "url": "/archive/spaceman-s-luck-4706030.html",
+    "url": "/archive/spaceman-s-luck-4706030",
     "title": "Spaceman's Luck: цена, отзывы и статистика игроков",
     "excerpt": "Spaceman's Luck: актуальная цена (325.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
     "date": "3 октября 2026",
@@ -2255,7 +2255,7 @@ window.allArticles = [
     "category": "Обзоры"
   },
   {
-    "url": "/archive/in-these-hallowed-halls-4875320.html",
+    "url": "/archive/in-these-hallowed-halls-4875320",
     "title": "In These Hallowed Halls - обзор",
     "excerpt": "In These Hallowed Halls — это психологический хоррор с головоломками от первого лица. Исследуйте заброшенную психиатрическую клинику и раскройте тайны.",
     "date": "3 октября 2026",
@@ -2268,7 +2268,7 @@ window.allArticles = [
     "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4875320/44851ddd31f3dea5afc438e47b7627beb8ffa792/header.jpg?t=1790999728"
   },
   {
-    "url": "/archive/stick-cards-rng-4611600.html",
+    "url": "/archive/stick-cards-rng-4611600",
     "title": "Stick Cards RNG - обзор игры",
     "excerpt": "Stick Cards RNG - это игра, где нужно рисковать и покупать карточные пачки. Подойдёт любителям азарта и стратегий.",
     "date": "3 октября 2026",
@@ -2281,7 +2281,7 @@ window.allArticles = [
     "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4611600/aa44037ba80fa1cf8e13467f33f5da64f8fbebdc/header.jpg?t=1790989270"
   },
   {
-    "url": "/archive/your-first-half-orc-a-fantasy-gay-sex-encounter-in-vr-4739740.html",
+    "url": "/archive/your-first-half-orc-a-fantasy-gay-sex-encounter-in-vr-4739740",
     "title": "Your First Half-Orc: A Fantasy Gay Sex Encounter in VR: цена, отзывы и статистика игроков",
     "excerpt": "Your First Half-Orc: A Fantasy Gay Sex Encounter in VR: актуальная цена (465.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
     "date": "3 октября 2026",
@@ -2289,7 +2289,7 @@ window.allArticles = [
     "category": "Обзоры"
   },
   {
-    "url": "/archive/birb-4364930.html",
+    "url": "/archive/birb-4364930",
     "title": "Birb — казуальный инди-игровой опыт",
     "excerpt": "Birb — простая, но увлекательная игра, где вы начинаете как обычная птичка, собираете попкорн, строите гнездо и постепенно превращаетесь в могущественное",
     "date": "3 октября 2026",
@@ -2302,7 +2302,7 @@ window.allArticles = [
     "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4364930/122dcb70cf78714f4806d286acb107934ce37ff2/header.jpg?t=1790992975"
   },
   {
-    "url": "/archive/rorasuketo-4401480.html",
+    "url": "/archive/rorasuketo-4401480",
     "title": "Rorasuketo — казуальная RPG с роллер‑дерби",
     "excerpt": "Rorasuketo — история о роллер‑дерби в стиле японского спорта, где игроки исследуют яркий мир, заводят друзей и катаются на коньках в стиле ретро‑игр.",
     "date": "3 октября 2026",
@@ -2315,7 +2315,7 @@ window.allArticles = [
     "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4401480/caae3ffb176c1aab95a7be8267632eaf74a4836f/header.jpg?t=1790978833"
   },
   {
-    "url": "/archive/major-mutt-4408990.html",
+    "url": "/archive/major-mutt-4408990",
     "title": "Major Mutt – динамичный экшен‑выживание",
     "excerpt": "Major Mutt – бесплатный 3D‑экшен в стиле выживания, где вы управляете боевым щенком. Автоприцеливающиеся орудия, волны гигантских тварей и спасение",
     "date": "3 октября 2026",
@@ -2328,7 +2328,7 @@ window.allArticles = [
     "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4408990/1db5afda2c9446645b17a0943026c327f0fa6633/header.jpg?t=1790978754"
   },
   {
-    "url": "/archive/deer-hunting-the-season-2-5158320.html",
+    "url": "/archive/deer-hunting-the-season-2-5158320",
     "title": "Deer Hunting - The Season 2 – обзор",
     "excerpt": "Deer Hunting - The Season 2 – открытый симулятор охоты в Северной Америке. Реалистичные локации, разнообразие оружия и развитие персонажа делают игру",
     "date": "3 октября 2026",
@@ -2341,7 +2341,7 @@ window.allArticles = [
     "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5158320/e3bc6cb5bec47a8a980e34217b1168373ea07862/header.jpg?t=1790974826"
   },
   {
-    "url": "/archive/factorized-5230410.html",
+    "url": "/archive/factorized-5230410",
     "title": "Factorized – бесплатный 2D экшен",
     "excerpt": "Factorized – динамичный 2D платформер, где игрок в роли неоднозначного героя с нелепыми пушками сражается с роботами. Бесплатная игра в жанре экшен‑инди,",
     "date": "3 октября 2026",
@@ -2354,7 +2354,7 @@ window.allArticles = [
     "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5230410/e455ee95420f0a4eca3a0f57db349b119d9ef851/header.jpg?t=1790969402"
   },
   {
-    "url": "/archive/get-to-orbit-5130440.html",
+    "url": "/archive/get-to-orbit-5130440",
     "title": "Get To Orbit – симулятор орбитального полёта в пиксель-арте",
     "excerpt": "Get To Orbit – казуальная игра‑симулятор, где нужно запустить ракету, выполнить орбитальные манёвры по реальной физике и удержать её в нужной орбите.",
     "date": "3 октября 2026",
@@ -2367,7 +2367,7 @@ window.allArticles = [
     "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5130440/936ca1a59d60767f8e2b21dec0f7d97b50b21284/header.jpg?t=1790965495"
   },
   {
-    "url": "/archive/gyrogue-4548340.html",
+    "url": "/archive/gyrogue-4548340",
     "title": "GYROGUE – быстрый рогалик‑экшен с волчком",
     "excerpt": "GYROGUE – динамичный рогалик‑экшен, где вы управляете настраиваемым волчком на процедурных аренах, сражаясь с волнами врагов и боссами, используя физику",
     "date": "3 октября 2026",
@@ -2380,7 +2380,7 @@ window.allArticles = [
     "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4548340/c534d9a0d92bb7a9b0ea798629bddbe0ea8ddb65/header.jpg?t=1791394047"
   },
   {
-    "url": "/archive/the-vessel-5228590.html",
+    "url": "/archive/the-vessel-5228590",
     "title": "The Vessel — приключенческий пазл-игра",
     "excerpt": "The Vessel — инди-игра с двойным управлением, где игрок решает блоковые головоломки в 150 комнатах. Идеально для любителей логических квестов.",
     "date": "3 октября 2026",
@@ -2393,7 +2393,7 @@ window.allArticles = [
     "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5228590/b4860c05a4adf56cfed0d12dbf373e9a60b70b38/header.jpg?t=1790964061"
   },
   {
-    "url": "/archive/manaphore-5242820.html",
+    "url": "/archive/manaphore-5242820",
     "title": "Manaphore – Survival Strategy Horror игра",
     "excerpt": "Manaphore — бесплатная инди‑стратегия в жанре хоррора, где вам предстоит выжить, используя стихии против магических существ, постоянно развивающихся в",
     "date": "3 октября 2026",
@@ -2406,7 +2406,7 @@ window.allArticles = [
     "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5242820/8c4e71154e3220ade7d88980b4b6de7446d3aae4/header.jpg?t=1790964021"
   },
   {
-    "url": "/archive/dream-simulators-4820100.html",
+    "url": "/archive/dream-simulators-4820100",
     "title": "Dream Simulators — симулятор моды",
     "excerpt": "Dream Simulators — бесплатный симулятор, где вы играете за Алису, топ‑модель, исследуя мир моды через диалоги с ИИ и меняющийся сюжет. Познакомьтесь с",
     "date": "3 октября 2026",
@@ -2419,7 +2419,7 @@ window.allArticles = [
     "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4820100/e16f561064cabefd200731c03e26b3a3acc2b403/header.jpg?t=1790963067"
   },
   {
-    "url": "/archive/monster-museum-tidy-up-the-collection-4998990.html",
+    "url": "/archive/monster-museum-tidy-up-the-collection-4998990",
     "title": "Monster Museum: Tidy Up the collection! — обзор и оценка",
     "excerpt": "Monster Museum: Tidy Up the collection! — спокойный инди‑симулятор, где игрок вместе с монстром сортирует более 2500 фигурок, открывает способности и ищет",
     "date": "3 октября 2026",
@@ -2432,7 +2432,7 @@ window.allArticles = [
     "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4998990/58cfcaa779ba210c71f00ea3e588d4580e5c54d5/header.jpg?t=1790984613"
   },
   {
-    "url": "/archive/mane-tekel-fares-5246800.html",
+    "url": "/archive/mane-tekel-fares-5246800",
     "title": "Mane, Tekel, Fares – приключенческий текстовый квест",
     "excerpt": "Mane, Tekel, Fares — классическое текстовое приключение с огромной свободой выбора и несколькими концовками, основанное на сборнике рассказов.",
     "date": "3 октября 2026",
@@ -2445,7 +2445,7 @@ window.allArticles = [
     "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5246800/32c2b48b7d4d6abcc252f0bac6540bcd6441f274/header.jpg?t=1790961106"
   },
   {
-    "url": "/archive/sandcastle-battle-5179130.html",
+    "url": "/archive/sandcastle-battle-5179130",
     "title": "Sandcastle Battle — казуальная битва строителей",
     "excerpt": "Sandcastle Battle — веселая казуальная игра, где вы с друзьями соревнуйтесь в строительстве замков из песка, участвуете в быстрых матчах и голосуете за",
     "date": "3 октября 2026",
@@ -2458,7 +2458,7 @@ window.allArticles = [
     "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5179130/b85534826153d359eada853a753bbc2068b23517/header.jpg?t=1790960566"
   },
   {
-    "url": "/archive/clickore-station-5209210.html",
+    "url": "/archive/clickore-station-5209210",
     "title": "Clickore Station – казуальная стратегия выживания",
     "excerpt": "Clickore Station – казуальная инди-стратегия, где одним кликом защищаешь станцию, добываешь руду и улучшaешь базу. Подойдёт любителям быстрых и",
     "date": "3 октября 2026",
@@ -2471,7 +2471,7 @@ window.allArticles = [
     "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5209210/1fef56cc964fe3af6248065a6a2ad320d6896e0b/header.jpg?t=1791035346"
   },
   {
-    "url": "/archive/game-keeper-somebody-messed-up-my-shop-5186690.html",
+    "url": "/archive/game-keeper-somebody-messed-up-my-shop-5186690",
     "title": "Game Keeper: Somebody Messed Up My Shop! Обзор",
     "excerpt": "Game Keeper: Somebody Messed Up My Shop! — казуальная игра‑пазл, где нужно упорядочить хаос видеоигрового магазина, сортируя коробки, заполняя стеллажи и",
     "date": "3 октября 2026",
@@ -2484,7 +2484,7 @@ window.allArticles = [
     "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5186690/f927a3edb32f0c9ffaf138c5713189a975c64826/header.jpg?t=1790960450"
   },
   {
-    "url": "/archive/obstacle-overdrive-3412490.html",
+    "url": "/archive/obstacle-overdrive-3412490",
     "title": "Obstacle Overdrive – казуальная гонка в ретро‑мире",
     "excerpt": "Obstacle Overdrive – уютное приключение на игрушечных внедорожниках в ярком ретро‑стиле. Преодолевайте красочные трассы, наслаждайтесь лёгкой динамикой и",
     "date": "3 октября 2026",
@@ -2497,7 +2497,7 @@ window.allArticles = [
     "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3412490/524138321ce16703e081567de69473f510b9c384/header.jpg?t=1791232337"
   },
   {
-    "url": "/archive/godspeed-5119800.html",
+    "url": "/archive/godspeed-5119800",
     "title": "GODSPEED – арена‑шутер от первого лица",
     "excerpt": "GODSPEED – динамичный арена‑шутер в стиле инди. Сражайтесь в четырёх адских аренах, используя уникальные пистолеты‑распятия, и соревнуйтесь за лучшие",
     "date": "3 октября 2026",
@@ -2510,7 +2510,7 @@ window.allArticles = [
     "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5119800/19de8a2f61a6de53a0da7bd50fa49fcd19e15a5e/header.jpg?t=1790959916"
   },
   {
-    "url": "/archive/keepshore-5083090.html",
+    "url": "/archive/keepshore-5083090",
     "title": "Keepshore — спокойный градостроительный симулятор",
     "excerpt": "Keepshore — бесплатный казуальный симулятор, где вы развиваете остров от каменных хижин до электроулиц, строите цепочки производства и наблюдаете за",
     "date": "3 октября 2026",
@@ -2523,7 +2523,7 @@ window.allArticles = [
     "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5083090/8ca1d5285cd104ad01ab60750f48f936ada60aad/header.jpg?t=1790959502"
   },
   {
-    "url": "/archive/tidy-up-the-flower-shop-5221510.html",
+    "url": "/archive/tidy-up-the-flower-shop-5221510",
     "title": "Tidy Up the Flower Shop — уютный симулятор уборки",
     "excerpt": "Тихая игра-симулятор, где вам предстоит собирать, сортировать и украшать цветы, приводя в порядок магазин. Идеально для любителей спокойного геймплея без",
     "date": "3 октября 2026",
@@ -2536,7 +2536,7 @@ window.allArticles = [
     "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5221510/4aa1ce42b5ecdabbdf861c030d92be3af84e459b/header.jpg?t=1790959388"
   },
   {
-    "url": "/archive/from-beyond-arcade-edition-4803460.html",
+    "url": "/archive/from-beyond-arcade-edition-4803460",
     "title": "From Beyond: Arcade Edition — обзор игры",
     "excerpt": "From Beyond: Arcade Edition – яркий экшен‑казуал от инди‑разработчиков, где музыка превращается в битву с инопланетными врагами. Подойдёт любителям",
     "date": "3 октября 2026",
@@ -2549,7 +2549,7 @@ window.allArticles = [
     "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4803460/991261fea79577e2355081b8f823c744d6f5f740/header.jpg?t=1790958039"
   },
   {
-    "url": "/archive/same-time-tomorrow-5059400.html",
+    "url": "/archive/same-time-tomorrow-5059400",
     "title": "Same Time Tomorrow — атмосферный визуальный роман",
     "excerpt": "Same Time Tomorrow — визуальная новелла о бессонных ночах, тихих связях и работе в магазине у окна. Идеально для любителей атмосферных историй.",
     "date": "3 октября 2026",
@@ -2562,7 +2562,7 @@ window.allArticles = [
     "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5059400/04787c9494703cefb3127fffba0ddaca980de4f3/header.jpg?t=1790957726"
   },
   {
-    "url": "/archive/warhammer-40-000-space-marine-2-2183900.html",
+    "url": "/archive/warhammer-40-000-space-marine-2-2183900",
     "title": "Warhammer 40,000: Space Marine 2 – обзор",
     "excerpt": "Warhammer 40,000: Space Marine 2 – динамичный экшен от третьего лица, где вы берете на себя роль космодесантника, сражающегося с тиранидами в одиночных и",
     "date": "3 октября 2026",
@@ -2575,7 +2575,7 @@ window.allArticles = [
     "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2183900/041c4b49f2925185ff1be198919b7fbff060c3e1/header_alt_assets_14_russian.jpg?t=1790874369"
   },
   {
-    "url": "/archive/idle-am-lofi-idle-mmo-5233680.html",
+    "url": "/archive/idle-am-lofi-idle-mmo-5233680",
     "title": "idle.am - lofi idle mmo обзор",
     "excerpt": "Уютная текстовая idle‑MMO в стиле лоу‑фай: собирайте ресурсы, крафтите снаряжение, сражайтесь, торгуйте и развивайте 15 навыков, ухаживая за огородом и",
     "date": "2 октября 2026",
@@ -2588,7 +2588,7 @@ window.allArticles = [
     "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5233680/994ea28c3fcd41a0e114eb6f50fc70384c0dcca0/header.jpg?t=1790928776"
   },
   {
-    "url": "/archive/puke-and-seek-5118740.html",
+    "url": "/archive/puke-and-seek-5118740",
     "title": "Puke and Seek – казуальный инди‑мультиплеер",
     "excerpt": "Puke and Seek – весёлый мультиплеерный казуальный шутер, где одна команда «блевунов» бросает брызги, а другая «мойщики» пытаются их отмыть. Игра сочетает",
     "date": "2 октября 2026",
@@ -2601,7 +2601,7 @@ window.allArticles = [
     "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5118740/6a3a34a1fe565db6bf966938d9d17d180ec886ed/header.jpg?t=1790993151"
   },
   {
-    "url": "/archive/wind-s-road-5241100.html",
+    "url": "/archive/wind-s-road-5241100",
     "title": "Wind's Road: цена, отзывы и статистика игроков",
     "excerpt": "Wind's Road: актуальная цена (45.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
     "date": "2 октября 2026",
@@ -2609,7 +2609,7 @@ window.allArticles = [
     "category": "Обзоры"
   },
   {
-    "url": "/archive/hyperfrag-4271950.html",
+    "url": "/archive/hyperfrag-4271950",
     "title": "HYPERFRAG – быстрый многопользовательский шутер",
     "excerpt": "HYPERFRAG – динамичный бесплатный шутер от первого лица с быстрым темпом и хаотичными битвами. Игра предлагает разнообразные арены и режимы для 2‑4",
     "date": "2 октября 2026",
@@ -2622,7 +2622,7 @@ window.allArticles = [
     "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4271950/adb3f8be4519000a8ad7b18af4c3bbfa1a40b6fc/header.jpg?t=1790929756"
   },
   {
-    "url": "/archive/strip-memory-milfy-librarians-5117300.html",
+    "url": "/archive/strip-memory-milfy-librarians-5117300",
     "title": "Strip Memory: Milfy Librarians — обзор игры",
     "excerpt": "Казуальная инди‑стратегия с элементами карточной памяти. Игроку предстоит собрать пары красивых библиотекарей, раскрывая их тайные желания, пока не",
     "date": "2 октября 2026",
@@ -2635,7 +2635,7 @@ window.allArticles = [
     "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5117300/301bad73d55054dc076a13a296ca23e0c05772f5/header.jpg?t=1790925824"
   },
   {
-    "url": "/archive/monster-nursery-4819510.html",
+    "url": "/archive/monster-nursery-4819510",
     "title": "Monster Nursery — расслабляющая игра-коллекционер монстров",
     "excerpt": "Monster Nursery — казуальная инди-симуляция, где вы собираете более 200 монстров, наслаждаетесь спокойной атмосферой и музыкой, игра продолжает",
     "date": "2 октября 2026",
@@ -2648,7 +2648,7 @@ window.allArticles = [
     "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4819510/e9196f25ee376282ccb8cc59f4361642e80447ea/header.jpg?t=1790924943"
   },
   {
-    "url": "/archive/anthem-of-limbo-3968820.html",
+    "url": "/archive/anthem-of-limbo-3968820",
     "title": "ANTHEM OF LIMBO — бесплатный экшн‑стрелялка",
     "excerpt": "ANTHEM OF LIMBO — динамичная бесплатная игра‑стрелялка в стиле «пулевой ад», где игрок выбирает порядок сражений с восемью сверхъестественными боссами,",
     "date": "2 октября 2026",
@@ -2661,7 +2661,7 @@ window.allArticles = [
     "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3968820/896b8204330628f0c3f46334a70d0c7afe601279/header.jpg?t=1790925972"
   },
   {
-    "url": "/archive/chalk-paper-scissors-4956970.html",
+    "url": "/archive/chalk-paper-scissors-4956970",
     "title": "Chalk Paper Scissors – визуальная новелла и платформер",
     "excerpt": "Chalk Paper Scissors – казуальная инди-игра‑новелла с элементами платформера, где вы исследуете воспоминания друзей‑детей в уникальных мирах, раскрывая",
     "date": "2 октября 2026",
@@ -2674,7 +2674,7 @@ window.allArticles = [
     "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4956970/bc8ae51b2b9ab590a0b9b1b23f900ad5c0d79680/header.jpg?t=1790924366"
   },
   {
-    "url": "/archive/ballad-5011870.html",
+    "url": "/archive/ballad-5011870",
     "title": "Ballad – музыкальный симулятор для творчества",
     "excerpt": "Ballad – бесплатный инди‑симулятор, где вы создаёте мелодии, визуализируете их и делитесь короткими клипами. Идеально для любителей музыки и лёгкого",
     "date": "2 октября 2026",
@@ -2687,7 +2687,7 @@ window.allArticles = [
     "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5011870/a04d631218a1b3a0e2359f7f2d4ed8e47d082491/header.jpg?t=1790922403"
   },
   {
-    "url": "/archive/beer-league-hockey-5096560.html",
+    "url": "/archive/beer-league-hockey-5096560",
     "title": "Beer League Hockey – аркадный хоккей",
     "excerpt": "Beer League Hockey — динамичная аркадная хоккейная игра с мощными бросками, яростными столкновениями и прогрессией команды, идеально подходит любителям",
     "date": "2 октября 2026",
@@ -2700,7 +2700,7 @@ window.allArticles = [
     "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5096560/4f222bafec4fba8a8b8563bf206a933f44ff37e9/header.jpg?t=1791042207"
   },
   {
-    "url": "/archive/sengoku-rance-3867170.html",
+    "url": "/archive/sengoku-rance-3867170",
     "title": "Sengoku Rance — ролевая игра",
     "excerpt": "Sengoku Rance — ролевая игра о приключениях меченосца Рэнса в восточной стране Ниппон, где он ищет горячие источники вместе с верным спутником Силлом.",
     "date": "2 октября 2026",
@@ -2713,7 +2713,7 @@ window.allArticles = [
     "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3867170/c2491e0b613e3d0d5dc507ac136a15ff5eb38596/header.jpg?t=1790913603"
   },
   {
-    "url": "/archive/taru-s-infernal-pledge-3916080.html",
+    "url": "/archive/taru-s-infernal-pledge-3916080",
     "title": "Taru's Infernal Pledge: цена, отзывы и статистика игроков",
     "excerpt": "Taru's Infernal Pledge: актуальная цена (350.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
     "date": "2 октября 2026",
@@ -2721,7 +2721,7 @@ window.allArticles = [
     "category": "Обзоры"
   },
   {
-    "url": "/archive/kot-shpion-kodovoe-imya-wu-4762810.html",
+    "url": "/archive/kot-shpion-kodovoe-imya-wu-4762810",
     "title": "Кот-шпион: Кодовое имя Wu – обзор",
     "excerpt": "2D приключенческий экшен «Кот-шпион: Кодовое имя Wu» предлагает управлять котом‑агентом, преодолевать препятствия, скрываться и сражаться, раскрывая",
     "date": "2 октября 2026",
@@ -2734,7 +2734,7 @@ window.allArticles = [
     "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4762810/747cb02007fd0e375cd00b19f310f3544e5827c5/header.jpg?t=1790906703"
   },
   {
-    "url": "/archive/dark-are-the-crypts-the-lost-idea-4974810.html",
+    "url": "/archive/dark-are-the-crypts-the-lost-idea-4974810",
     "title": "Dark Are The Crypts: The Lost Idea – обзор",
     "excerpt": "Психологический хоррор‑приключение в сюрреалистических лиминальных пространствах. Исследуйте, решайте головоломки с камерой и раскрывайте тайны",
     "date": "2 октября 2026",
@@ -2747,7 +2747,7 @@ window.allArticles = [
     "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4974810/b24000f51983922e3d1c064bd38d629714b8b667/header.jpg?t=1790906149"
   },
   {
-    "url": "/archive/-5158840.html",
+    "url": "/archive/-5158840",
     "title": "电子绿植 — казуальная инди-игра про электронные растения",
     "excerpt": "Электронное растение в игре 电子绿植 говорит без притворства то, что вы хотите услышать. Простая механика, атмосферный стиль и размышления о ИИ делают её",
     "date": "2 октября 2026",
@@ -2760,7 +2760,7 @@ window.allArticles = [
     "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5158840/1865f1173a4cc270e471d55e333b315874549d89/header.jpg?t=1791255020"
   },
   {
-    "url": "/archive/nova-slash-5149410.html",
+    "url": "/archive/nova-slash-5149410",
     "title": "Nova Slash — динамичный экшен-платформер с",
     "excerpt": "Nova Slash — напряжённый экшен‑платформер с элементами рогалика, где вы управляете мятежником Вейлом, пробирающимся сквозь коррумпированное",
     "date": "2 октября 2026",
@@ -2773,7 +2773,7 @@ window.allArticles = [
     "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5149410/3593183abfdd32dfa5d0f4b0ad5924b2cb06f468/header.jpg?t=1791163064"
   },
   {
-    "url": "/archive/one-thought-immortal-4977250.html",
+    "url": "/archive/one-thought-immortal-4977250",
     "title": "One Thought Immortal – обзор и геймплей",
     "excerpt": "One Thought Immortal – ролевая инди‑игра с элементами стратегии и roguelite. Пошаговые сражения, система культивации, ремесло и возможность возрождения",
     "date": "2 октября 2026",
@@ -2786,7 +2786,7 @@ window.allArticles = [
     "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4977250/f5c3c2531f4a9718649adab62616ecaff4afb2ca/header.jpg?t=1791375938"
   },
   {
-    "url": "/archive/five-hearts-under-one-roof-season2-winter-trip-dlc-4745180.html",
+    "url": "/archive/five-hearts-under-one-roof-season2-winter-trip-dlc-4745180",
     "title": "Five Hearts Under One Roof season2 : Winter Trip DLC: цена, отзывы и статистика игроков",
     "excerpt": "Five Hearts Under One Roof season2 : Winter Trip DLC: актуальная цена (562.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
     "date": "2 октября 2026",
@@ -2794,7 +2794,7 @@ window.allArticles = [
     "category": "Обзоры"
   },
   {
-    "url": "/archive/hentai-tales-this-mesu-serves-me-now-4976310.html",
+    "url": "/archive/hentai-tales-this-mesu-serves-me-now-4976310",
     "title": "Hentai Tales: This Mesu Serves Me Now — обзор",
     "excerpt": "Обзор Hentai Tales: This Mesu Serves Me Now — казуальная инди-стратегия о эксперименте совместимости в мрачном будущем. Подходит любителям необычных",
     "date": "2 октября 2026",
@@ -2807,7 +2807,7 @@ window.allArticles = [
     "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4976310/cf4803d0624b2ba8e0a10b0877bbec84773186ab/header.jpg?t=1790897946"
   },
   {
-    "url": "/archive/slaughter-for-the-gods-5254710.html",
+    "url": "/archive/slaughter-for-the-gods-5254710",
     "title": "Slaughter for the Gods — экшн‑RPG от инди‑разработчиков",
     "excerpt": "Slaughter for the Gods — одиночный экшн‑RPG с направленным ближним боем, аренными сражениями и исследованием подземелий. Подойдёт любителям динамичных",
     "date": "2 октября 2026",
@@ -2820,7 +2820,7 @@ window.allArticles = [
     "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5254710/9ebaeba9fa8200883927457922b709da781ef02c/header.jpg?t=1790905831"
   },
   {
-    "url": "/archive/-5026630.html",
+    "url": "/archive/-5026630",
     "title": "Обзор игры オピポピ — короткое приключение",
     "excerpt": "オピポピ — небольшая приключенческая игра с казуальным геймплеем и уникальной атмосферой. Исследуйте свою комнату, выбирайте предметы в любом порядке и",
     "date": "2 октября 2026",
@@ -2833,7 +2833,7 @@ window.allArticles = [
     "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5026630/dde384cd6962d4a516cd1a73abb08ea128b9cfa4/header.jpg?t=1791380305"
   },
   {
-    "url": "/archive/lucid-rumination-5023450.html",
+    "url": "/archive/lucid-rumination-5023450",
     "title": "Lucid Rumination – обзор",
     "excerpt": "Lucid Rumination — бесплатный инди‑экшн с элементами RPG, где игрок исследует комнаты, общается с союзниками и комбинирует оружие. Смерть сохраняет часть",
     "date": "2 октября 2026",
@@ -2846,7 +2846,7 @@ window.allArticles = [
     "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5023450/045dfa67804c4b30ccce1cef1ea42b50a55ccf1b/header.jpg?t=1790895243"
   },
   {
-    "url": "/archive/pumpkin-patch-3779090.html",
+    "url": "/archive/pumpkin-patch-3779090",
     "title": "Pumpkin & Patch — приключенческий экшен",
     "excerpt": "Pumpkin & Patch — 2D метроидвания о приключениях одноглазого шиба-ину и его друга Пампки, полное сражений с боссами и новых способностей.",
     "date": "2 октября 2026",
@@ -2859,7 +2859,7 @@ window.allArticles = [
     "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3779090/35e2ba00b4cd4b5b9b8cb90d0a5f75c1b4b424b6/header.jpg?t=1790893678"
   },
   {
-    "url": "/archive/simple-squares-4611290.html",
+    "url": "/archive/simple-squares-4611290",
     "title": "Simple Squares – инди‑платформер с размещением работников",
     "excerpt": "Simple Squares – уникальный инди‑платформер, где игроки размещают рабочих, создают уровни и сражаются в онлайн‑мультиплее. Подойдёт любителям оригинальных",
     "date": "2 октября 2026",
@@ -2872,7 +2872,7 @@ window.allArticles = [
     "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4611290/047c6256aa0efbd5710ad1e8646440806c378e0e/header.jpg?t=1790888457"
   },
   {
-    "url": "/archive/smart-translator-4987360.html",
+    "url": "/archive/smart-translator-4987360",
     "title": "Smart Translator — перевод и дубляж без интернета",
     "excerpt": "Smart Translator — полностью автономная студия реального времени: переводит, озвучивает и показывает субтитры любой речи на ваш язык без подключения к",
     "date": "2 октября 2026",
@@ -2885,7 +2885,7 @@ window.allArticles = [
     "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4987360/4a7d81bdbb50c441cd431049880eed99d6401c3a/header.jpg?t=1791045359"
   },
   {
-    "url": "/archive/pinched-4906170.html",
+    "url": "/archive/pinched-4906170",
     "title": "Pinched – кооперативный хоррор в темноте",
     "excerpt": "Pinched – кооперативный экшен‑хоррор для четырёх игроков, где каждый с фонариком исследует генерируемые туннели, слыша голоса и крики в полной темноте.",
     "date": "2 октября 2026",
@@ -2898,7 +2898,7 @@ window.allArticles = [
     "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4906170/a779c3f35c78c2edf51e38941335189af05a9fc9/header.jpg?t=1791346732"
   },
   {
-    "url": "/archive/arcana-gas-waterworks-inc-4476220.html",
+    "url": "/archive/arcana-gas-waterworks-inc-4476220",
     "title": "Arcana, Gas & Waterworks Inc. — обзор игры",
     "excerpt": "Arcana, Gas & Waterworks Inc. — комедийный симулятор‑стратегия, где вы управляете магической инфраструктурой, соединяя ресурсы и решая головоломки в",
     "date": "2 октября 2026",
@@ -2911,7 +2911,7 @@ window.allArticles = [
     "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4476220/c0019a2b82002e18dd31b686ffb69773b1018881/header.jpg?t=1791216227"
   },
   {
-    "url": "/archive/rebelote-belote-coinche-5183310.html",
+    "url": "/archive/rebelote-belote-coinche-5183310",
     "title": "Rebelote : Belote & Coinche: цена, отзывы и статистика игроков",
     "excerpt": "Rebelote : Belote & Coinche: актуальная цена (192.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
     "date": "2 октября 2026",
@@ -2919,7 +2919,7 @@ window.allArticles = [
     "category": "Обзоры"
   },
   {
-    "url": "/archive/battle-simulator-counter-zombie-reborn-4831090.html",
+    "url": "/archive/battle-simulator-counter-zombie-reborn-4831090",
     "title": "Battle Simulator: Counter Zombie REBORN – обзор",
     "excerpt": "Постапокалиптический симулятор сражений с зомби, где точная тактика и командное взаимодействие решают бой. HDR‑графика, разнообразное оружие и умный ИИ",
     "date": "2 октября 2026",
@@ -2932,7 +2932,7 @@ window.allArticles = [
     "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4831090/c78cd742272ca43444802b8da37448bc394e8f18/header.jpg?t=1790883849"
   },
   {
-    "url": "/archive/the-outlast-trials-1304930.html",
+    "url": "/archive/the-outlast-trials-1304930",
     "title": "The Outlast Trials – хоррор‑экшен в кооперативе",
     "excerpt": "The Outlast Trials – мрачный хоррор‑экшен, где вы и друзья сталкиваетесь с безумными экспериментами. Выживание в атмосфере психического ужаса проверит",
     "date": "2 октября 2026",
@@ -2945,7 +2945,7 @@ window.allArticles = [
     "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1304930/65fbdba4ad0f1a7ed7a362a086c87042fa40fadc/header_alt_assets_3.jpg?t=1784123708"
   },
   {
-    "url": "/archive/atomic-heart-668580.html",
+    "url": "/archive/atomic-heart-668580",
     "title": "Atomic Heart – мрачный техно‑экшен с ролевыми элементами",
     "excerpt": "Atomic Heart — мрачный шутер‑приключение в альтернативной советской реальности, где технологии вышли из‑под контроля. Сражайтесь с необычными врагами,",
     "date": "2 октября 2026",
@@ -2958,7 +2958,7 @@ window.allArticles = [
     "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/668580/header.jpg?t=1786632138"
   },
   {
-    "url": "/archive/arc-raiders-1808500.html",
+    "url": "/archive/arc-raiders-1808500",
     "title": "ARC Raiders: цена, отзывы и статистика игроков",
     "excerpt": "ARC Raiders: актуальная цена (1610.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
     "date": "2 октября 2026",
@@ -2966,7 +2966,7 @@ window.allArticles = [
     "category": "Обзоры"
   },
   {
-    "url": "/archive/lustworld-4253390.html",
+    "url": "/archive/lustworld-4253390",
     "title": "LustWorld: цена, отзывы и статистика игроков",
     "excerpt": "LustWorld: актуальная цена (Бесплатно), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
     "date": "1 октября 2026",
@@ -2974,7 +2974,7 @@ window.allArticles = [
     "category": "Обзоры"
   },
   {
-    "url": "/archive/climb-up-together-5239210.html",
+    "url": "/archive/climb-up-together-5239210",
     "title": "Climb Up Together — кооперативное приключение",
     "excerpt": "Climb Up Together — кооперативная игра‑восхождение для 1–4 игроков, где нужно пробираясь по паркур‑трассам собрать части тела и вернуться к жизни.",
     "date": "1 октября 2026",
@@ -2987,7 +2987,7 @@ window.allArticles = [
     "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5239210/ed4e26041b4658f809cb8f59c13a0977bfd4c407/header.jpg?t=1790843864"
   },
   {
-    "url": "/archive/mxgp-26-the-official-game-3634190.html",
+    "url": "/archive/mxgp-26-the-official-game-3634190",
     "title": "MXGP 26 - The Official Game обзор",
     "excerpt": "MXGP 26 – реалистичный симулятор мотокросса с полным чемпионатом 2026 года, официальными трассами и гонщиками. Идеален для любителей гонок и точного",
     "date": "1 октября 2026",
@@ -3000,7 +3000,7 @@ window.allArticles = [
     "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3634190/92e6ac99739bd346ec51d8a02744fe1b8b7e8386/header.jpg?t=1791538684"
   },
   {
-    "url": "/archive/elsewar-4629760.html",
+    "url": "/archive/elsewar-4629760",
     "title": "Elsewar — фэнтезийный roguelike с колодой",
     "excerpt": "Elsewar — фэнтезийная roguelike‑игра с построением колоды, где игроку нужно сочетать юниты, создавая синергии, и вести бой с разнообразными монстрами,",
     "date": "1 октября 2026",
@@ -3013,7 +3013,7 @@ window.allArticles = [
     "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4629760/490f8b8c69fe593a64ed977a37f27f671e45e7e7/header.jpg?t=1791266854"
   },
   {
-    "url": "/archive/hexed-4969240.html",
+    "url": "/archive/hexed-4969240",
     "title": "Hexed – приключенческая инди-игра о ведьмах",
     "excerpt": "Hexed – стилизованное приключение в стиле Хэллоуина, где память становится главным заклинанием. Запоминайте ритуалы, собирайте мистические ингредиенты и",
     "date": "1 октября 2026",
@@ -3026,7 +3026,7 @@ window.allArticles = [
     "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4969240/82207e5ae7174fa784933225d403b5b9d6b1a757/header.jpg?t=1790839911"
   },
   {
-    "url": "/archive/i-love-dog-5093980.html",
+    "url": "/archive/i-love-dog-5093980",
     "title": "I Love Dog – приключенческий инди-эксплорер",
     "excerpt": "I Love Dog – бесплатная приключенческая игра, где вам предстоит исследовать загадочный остров, находить собак и расширять свою территорию с помощью",
     "date": "1 октября 2026",
@@ -3039,7 +3039,7 @@ window.allArticles = [
     "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5093980/2bbc0d01060842f5f2ae50e972215152303a2d6f/header.jpg?t=1791206300"
   },
   {
-    "url": "/archive/prehistoric-toybox-5257370.html",
+    "url": "/archive/prehistoric-toybox-5257370",
     "title": "Prehistoric toybox – экшен‑роглайт от инди",
     "excerpt": "Prehistoric toybox – двухмерный экшен‑роглайт с видом сверху, где вы управляете пещерным человеком, золотой рыбкой и динозавром, исследуете подземелья,",
     "date": "1 октября 2026",
@@ -3052,7 +3052,7 @@ window.allArticles = [
     "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5257370/dbcf7db25356f1b06d90ce75d4fcf1322abdbaab/header.jpg?t=1791142523"
   },
   {
-    "url": "/archive/autocycle-light-4955820.html",
+    "url": "/archive/autocycle-light-4955820",
     "title": "autocycle-light: цена, отзывы и статистика игроков",
     "excerpt": "autocycle-light: актуальная цена (Бесплатно), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
     "date": "1 октября 2026",
@@ -3060,7 +3060,7 @@ window.allArticles = [
     "category": "Обзоры"
   },
   {
-    "url": "/archive/deal-with-the-deep-5209180.html",
+    "url": "/archive/deal-with-the-deep-5209180",
     "title": "Deal with the Deep – обзор игры",
     "excerpt": "Deal with the Deep – одиночный приключенческий проект в жанре стратегии с элементами карточных боёв и исследования подземелий. Подойдёт любителям",
     "date": "1 октября 2026",
@@ -3073,7 +3073,7 @@ window.allArticles = [
     "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5209180/321c1dfda6b86c3756e349bb095410dd63e14ddb/header.jpg?t=1790834162"
   },
   {
-    "url": "/archive/prediction-error-5227780.html",
+    "url": "/archive/prediction-error-5227780",
     "title": "Prediction Error — психологический инди‑приключение",
     "excerpt": "Prediction Error — бесплатная первая игра от первого лица, где игрок блуждает в абстрактных лабиринтах сознания под наблюдением циничного рассказчика,",
     "date": "1 октября 2026",
@@ -3086,7 +3086,7 @@ window.allArticles = [
     "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5227780/fcd697be8d6008f15177ca62b78f5f03dd5a5204/header.jpg?t=1790833161"
   },
   {
-    "url": "/archive/oath-of-stigmata-5178000.html",
+    "url": "/archive/oath-of-stigmata-5178000",
     "title": "Oath of Stigmata — тактическая карточная стратегия",
     "excerpt": "Темная фэнтезийная тактическая карточная игра‑рогалик, где вы собираете отряд, расставляете юнитов на многополосном поле и комбинируете способности",
     "date": "1 октября 2026",
@@ -3099,7 +3099,7 @@ window.allArticles = [
     "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5178000/cbf7ae43dfcabb0e95987b4019e807ea5fac2ec9/header.jpg?t=1791363526"
   },
   {
-    "url": "/archive/marcel-pagnol-and-the-secret-spring-4007920.html",
+    "url": "/archive/marcel-pagnol-and-the-secret-spring-4007920",
     "title": "Marcel Pagnol and the Secret Spring — обзор",
     "excerpt": "Поэтичное приключение по Провансу в Marcel Pagnol and the Secret Spring. Инди‑игра сочетает казуальный геймплей с атмосферой детских историй Марселя",
     "date": "1 октября 2026",
@@ -3112,7 +3112,7 @@ window.allArticles = [
     "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4007920/0e4d52f6533d0149a4ac9fd7fd6d89c3bcc91829/header_russian.jpg?t=1790829420"
   },
   {
-    "url": "/archive/-4375880.html",
+    "url": "/archive/-4375880",
     "title": "声韵之恋 — визуальная новелла о любви в мире озвучки",
     "excerpt": "«声韵之恋» — казуальная ролевая визуальная новелла, где главный герой‑режиссёр озвучки возвращается к микрофону, сталкивается с испытаниями и влюбляется в",
     "date": "1 октября 2026",
@@ -3125,7 +3125,7 @@ window.allArticles = [
     "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4375880/85b0b3802e639d248eac714a024c3a7af7b50208/header.jpg?t=1791517059"
   },
   {
-    "url": "/archive/beta-bar-4904950.html",
+    "url": "/archive/beta-bar-4904950",
     "title": "Beta Bar – казуальная инди-игра о вечеринках",
     "excerpt": "Beta Bar – лёгкая казуальная игра, где вы и друзья исследуете четыре этажа баров, танцуете, общаетесь с персонажами и пытаетесь стать последним стоящим в",
     "date": "1 октября 2026",
@@ -3138,7 +3138,7 @@ window.allArticles = [
     "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4904950/44eb3b59f5209fc591000061a7a8280354a29bde/header.jpg?t=1790827219"
   },
   {
-    "url": "/archive/watatuyo-another-4406710.html",
+    "url": "/archive/watatuyo-another-4406710",
     "title": "Watatuyo-ANOTHER: цена, отзывы и статистика игроков",
     "excerpt": "Watatuyo-ANOTHER: актуальная цена (89.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
     "date": "1 октября 2026",
@@ -3146,7 +3146,7 @@ window.allArticles = [
     "category": "Обзоры"
   },
   {
-    "url": "/archive/ma-3-president-simulator-4896760.html",
+    "url": "/archive/ma-3-president-simulator-4896760",
     "title": "MA 3 – President Simulator: игра о власти и стратегии",
     "excerpt": "MA 3 – President Simulator – стратегический экшен, где игрок управляет современным государством, принимая решения и формируя историю нации.",
     "date": "1 октября 2026",
@@ -3159,7 +3159,7 @@ window.allArticles = [
     "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4896760/07290a91eedacfb1b2b7d9eb47f4062c47b9ab7f/header.jpg?t=1790826446"
   },
   {
-    "url": "/archive/pantheon-tactics-4929050.html",
+    "url": "/archive/pantheon-tactics-4929050",
     "title": "Pantheon Tactics — тактическая карточная стратегия",
     "excerpt": "Pantheon Tactics — бесплатная тактическая карточная игра с боями 3 на 3, где действия происходят одновременно. Десятиминутные матчи, процедурно",
     "date": "1 октября 2026",
@@ -3172,7 +3172,7 @@ window.allArticles = [
     "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4929050/a7d77df86dfd2e89813e85f3ef31091621b7e1e8/header.jpg?t=1790824426"
   },
   {
-    "url": "/archive/sculpturillo-5114580.html",
+    "url": "/archive/sculpturillo-5114580",
     "title": "Sculpturillo — казуальная инди игра",
     "excerpt": "Sculpturillo — онлайн‑партиевая игра, где участники из 2‑10 человек лепят 3D‑глину, пытаясь изобразить тайное слово, пока остальные угадывают в чате.",
     "date": "1 октября 2026",
@@ -3185,7 +3185,7 @@ window.allArticles = [
     "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5114580/87d5a61a4313e06a175a1445939ec8f64deba273/header.jpg?t=1791080066"
   },
   {
-    "url": "/archive/-5143030.html",
+    "url": "/archive/-5143030",
     "title": "阴阳界：志怪放置副游 — обзор игры",
     "excerpt": "Обзор игры 阴阳界：志怪放置副游: казуальная ролевая стратегия с элементами карточного боя, где персонажи автоматически сражаются и растут даже в офлайне. Подходит",
     "date": "1 октября 2026",
@@ -3198,7 +3198,7 @@ window.allArticles = [
     "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5143030/1342161015da802511c5375b9c716c6fea818a4c/header.jpg?t=1790821941"
   },
   {
-    "url": "/archive/chromascape-4214800.html",
+    "url": "/archive/chromascape-4214800",
     "title": "Chromascape – приключенческая игра о цветах",
     "excerpt": "Chromascape – атмосферное приключение в 2D‑стиле, где вам предстоит управлять цветами, решать головоломки и вернуть утраченные оттенки в волшебный мир",
     "date": "1 октября 2026",
@@ -3211,7 +3211,7 @@ window.allArticles = [
     "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4214800/1b532d0d560e64bb86683987b3d4d9b40d54c8d5/header.jpg?t=1790937940"
   },
   {
-    "url": "/archive/crabrun-4633560.html",
+    "url": "/archive/crabrun-4633560",
     "title": "CRABRUN – аркадный экшен с высоким счётом",
     "excerpt": "CRABRUN – динамичная аркада, где нужно бегать боком, уклоняться от опасностей и собирать комбо для рекордного счёта. Игра бросает вызов упорству и стилю,",
     "date": "1 октября 2026",
@@ -3224,7 +3224,7 @@ window.allArticles = [
     "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4633560/23f9b7fb68d6e81d23546c7b854ece17f18cdc26/header.jpg?t=1790818953"
   },
   {
-    "url": "/archive/crying-booth-2351740.html",
+    "url": "/archive/crying-booth-2351740",
     "title": "CRYING BOOTH: цена, отзывы и статистика игроков",
     "excerpt": "CRYING BOOTH: актуальная цена (301.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
     "date": "1 октября 2026",
@@ -3232,7 +3232,7 @@ window.allArticles = [
     "category": "Обзоры"
   },
   {
-    "url": "/archive/the-calamity-trials-3877630.html",
+    "url": "/archive/the-calamity-trials-3877630",
     "title": "The Calamity Trials: цена, отзывы и статистика игроков",
     "excerpt": "The Calamity Trials: актуальная цена (Бесплатно), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
     "date": "1 октября 2026",
@@ -3240,7 +3240,7 @@ window.allArticles = [
     "category": "Обзоры"
   },
   {
-    "url": "/archive/water-droplet-simulator-4435360.html",
+    "url": "/archive/water-droplet-simulator-4435360",
     "title": "Water Droplet Simulator — уникальный симулятор капли воды",
     "excerpt": "Нестандартный инди‑симулятор, где вы — капля воды, исследуете мир, наблюдая за окружением. Приключенческая и казуальная игра для любителей оригинальных",
     "date": "1 октября 2026",
@@ -3253,7 +3253,7 @@ window.allArticles = [
     "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4435360/3301d64ec2f0d18fd67ae7bdd3af4f48f310a025/header_russian.jpg?t=1790811592"
   },
   {
-    "url": "/archive/-5193380.html",
+    "url": "/archive/-5193380",
     "title": "深空放置：边疆纪元 — космический симулятор стратегии",
     "excerpt": "深空放置：边疆纪元 — игра‑симулятор, где вы возводите промышленную базу в космосе, собираете ресурсы, исследуете технологии и строите корабли, сочетая",
     "date": "1 октября 2026",
@@ -3266,7 +3266,7 @@ window.allArticles = [
     "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5193380/ea9f07f5b27d189606a737cc156f71b28e4e42e3/header.jpg?t=1790852543"
   },
   {
-    "url": "/archive/by-the-gods-5243030.html",
+    "url": "/archive/by-the-gods-5243030",
     "title": "By the GODS — быстрая стратегическая карточная игра",
     "excerpt": "By the GODS — динамичная карточная стратегия с элементами «Камень, ножницы, бумага», где каждое решение — предсказание и риск. Идеально для любителей",
     "date": "1 октября 2026",
@@ -3279,7 +3279,7 @@ window.allArticles = [
     "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5243030/3c72c811ec8059dee0ca5340ac0016202a7b11ac/header.jpg?t=1790811129"
   },
   {
-    "url": "/archive/floor-wiping-race-5189750.html",
+    "url": "/archive/floor-wiping-race-5189750",
     "title": "Floor Wiping Race – гонки и экшен в одном флаконе",
     "excerpt": "Floor Wiping Race – динамичное инди‑гонки с элементами экшена и казуального геймплея. Идеально для любителей быстрых соревнований и необычных механик.",
     "date": "1 октября 2026",
@@ -3292,7 +3292,7 @@ window.allArticles = [
     "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5189750/f2c021dcce6322eab6dc4c9adcc82125238a0fcb/header.jpg?t=1790810918"
   },
   {
-    "url": "/archive/supporter-bundle-2-silly-linguine-cat-simulator-deluxe-online-5073640.html",
+    "url": "/archive/supporter-bundle-2-silly-linguine-cat-simulator-deluxe-online-5073640",
     "title": "Supporter Bundle #2 - Silly Linguine Cat Simulator Deluxe Online: цена, отзывы и статистика игроков",
     "excerpt": "Supporter Bundle #2 - Silly Linguine Cat Simulator Deluxe Online: актуальная цена (790.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
     "date": "1 октября 2026",
@@ -3300,7 +3300,7 @@ window.allArticles = [
     "category": "Обзоры"
   },
   {
-    "url": "/archive/soup-weather-4430190.html",
+    "url": "/archive/soup-weather-4430190",
     "title": "Soup Weather – приключенческая инди-игра",
     "excerpt": "Краткое повествовательное исследование, где вы играете за безработного Бина, исследуете город, знакомитесь с соседями и наблюдаете за его падающей",
     "date": "1 октября 2026",
@@ -3313,7 +3313,7 @@ window.allArticles = [
     "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4430190/87268b9fce7ab1c54c707b582fe13ac957b7b035/header.jpg?t=1790806899"
   },
   {
-    "url": "/archive/my-ai-sandbox-5238020.html",
+    "url": "/archive/my-ai-sandbox-5238020",
     "title": "My Ai Sandbox — симулятор искусственного интеллекта",
     "excerpt": "My Ai Sandbox – уникальный симулятор, где вы создаёте и обучаете ИИ в 3‑D‑мире, наблюдая за их эволюцией и неожиданными поведениями в реальном времени.",
     "date": "1 октября 2026",
@@ -3326,7 +3326,7 @@ window.allArticles = [
     "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5238020/a12b61a30c0979142c99e80925ae47cbafc21a37/header.jpg?t=1790806728"
   },
   {
-    "url": "/archive/warhammer-40-000-space-marine-2-season-pass-3-4997770.html",
+    "url": "/archive/warhammer-40-000-space-marine-2-season-pass-3-4997770",
     "title": "Warhammer 40,000: Space Marine 2 – Season Pass 3",
     "excerpt": "Season Pass 3 к Warhammer 40,000: Space Marine 2 добавит новую броню, оружие и 10 косметических наборов, позволяя расширить возможности любимого",
     "date": "1 октября 2026",
@@ -3339,7 +3339,7 @@ window.allArticles = [
     "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4997770/36ac7428843ed9a470d334f2d554002596f43260/header.jpg?t=1790873265"
   },
   {
-    "url": "/archive/memory-wastes-5247380.html",
+    "url": "/archive/memory-wastes-5247380",
     "title": "Memory Wastes – постапокалиптическая пошаговая RPG",
     "excerpt": "Memory Wastes — бесплатная пошаговая RPG в постапокалиптическом мире, где игрок ищет ресурсы, сражается с врагами и раскрывает забытое прошлое через",
     "date": "30 сентября 2026",
@@ -3352,7 +3352,7 @@ window.allArticles = [
     "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5247380/5e6167c086526a6a02647dfa82b01a2b4c3f7d06/header.jpg?t=1791473465"
   },
   {
-    "url": "/archive/shelfbound-5255880.html",
+    "url": "/archive/shelfbound-5255880",
     "title": "Shelfbound — казуальная инди‑симуляция уборки",
     "excerpt": "Shelfbound — инди‑симулятор, где вам предстоит собрать разбросанные полки после шторма, рассортировать предметы и вернуть всё на место. Идеально для",
     "date": "30 сентября 2026",
@@ -3365,7 +3365,7 @@ window.allArticles = [
     "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5255880/e964970a22a20d2b0dbf6752a70e20d2381c9668/header.jpg?t=1790757619"
   },
   {
-    "url": "/archive/in-falsus-virtual-singers-song-pack-5256550.html",
+    "url": "/archive/in-falsus-virtual-singers-song-pack-5256550",
     "title": "In Falsus - Virtual Singers Song Pack: обзор",
     "excerpt": "Обзор In Falsus - Virtual Singers Song Pack: новый набор из пяти культовых треков, расширяющий музыкальный контент в игре. Подходит любителям экшен‑инди и",
     "date": "30 сентября 2026",
@@ -3378,7 +3378,7 @@ window.allArticles = [
     "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5256550/a67d2bb7c01f734182cc4ef4e73ecbff576f804f/header.jpg?t=1790927567"
   },
   {
-    "url": "/archive/chronicon-cosmic-curse-4778970.html",
+    "url": "/archive/chronicon-cosmic-curse-4778970",
     "title": "Chronicon - Cosmic Curse: обзор игры",
     "excerpt": "Chronicon - Cosmic Curse – дополнение в стиле космических пиратов. Новые проклятые предметы, их благословление и крафт ультимативного оружия. Подойдет",
     "date": "30 сентября 2026",
@@ -3391,7 +3391,7 @@ window.allArticles = [
     "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4778970/f3959703bff94b3a0385946aa87f6424772b5b65/header.jpg?t=1790755203"
   },
   {
-    "url": "/archive/match-3-labyrinth-4165370.html",
+    "url": "/archive/match-3-labyrinth-4165370",
     "title": "Match 3 Labyrinth – головоломка с матч‑3 и Сокобан",
     "excerpt": "Match 3 Labyrinth – оригинальная головоломка, где соединяете ящики в стиле матч‑3 и решаете задачи Сокобана. Подойдёт любителям логических игр и",
     "date": "30 сентября 2026",
@@ -3404,7 +3404,7 @@ window.allArticles = [
     "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4165370/45e5bfc5a7cea526031800d23641898a73ed6634/header.jpg?t=1790772096"
   },
   {
-    "url": "/archive/taskbar-armory-5226040.html",
+    "url": "/archive/taskbar-armory-5226040",
     "title": "Taskbar Armory – казуальная ролевая стратегия",
     "excerpt": "Taskbar Armory – бесплатная игра‑симулятор, где вы управляете гномьей кузней прямо на панели задач, добываете руду, крафтите оружие и отправляете героев в",
     "date": "30 сентября 2026",
@@ -3417,7 +3417,7 @@ window.allArticles = [
     "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5226040/433ecd8a1d0b3b07ae00e9376ca2a153c8bf2cd1/header.jpg?t=1790783384"
   },
   {
-    "url": "/archive/-3438810.html",
+    "url": "/archive/-3438810",
     "title": "프린세스 메이커 : 예언의 아이들: цена, отзывы и статистика игроков",
     "excerpt": "프린세스 메이커 : 예언의 아이들: актуальная цена (960.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
     "date": "30 сентября 2026",
@@ -3425,7 +3425,7 @@ window.allArticles = [
     "category": "Обзоры"
   },
   {
-    "url": "/archive/bitva-zelenyh-shlyap-5235150.html",
+    "url": "/archive/bitva-zelenyh-shlyap-5235150",
     "title": "Битва зелёных шляп: обзор и рекомендации",
     "excerpt": "Весёлая 3D‑игра «Битва зелёных шляп» предлагает быстрые матчи 2–10 игроков, где нужно бросать и укладывать шляпы на головы соперников. Подойдёт любителям",
     "date": "30 сентября 2026",
@@ -3438,7 +3438,7 @@ window.allArticles = [
     "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5235150/bbd953b2020ae2f6980a532a3574f3ee8f3e74ad/header_russian.jpg?t=1790752351"
   },
   {
-    "url": "/archive/elektroset-2429930.html",
+    "url": "/archive/elektroset-2429930",
     "title": "Электросеть – симулятор электросети",
     "excerpt": "Электросеть – глубокий инди‑симулятор, где вам предстоит построить и поддерживать высоковольтную сеть на острове, управлять ресурсами и защищать жителей",
     "date": "30 сентября 2026",
@@ -3451,7 +3451,7 @@ window.allArticles = [
     "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2429930/bf58a260d157e72abe0d738045c7934d6fadcc8e/header.jpg?t=1790752101"
   },
   {
-    "url": "/archive/heart-cage-before-and-after-4270540.html",
+    "url": "/archive/heart-cage-before-and-after-4270540",
     "title": "Heart Cage - Before and After — обзор игры",
     "excerpt": "Heart Cage - Before and After — приключенческий инди‑симулятор, расширяющий сюжет оригинального Heart Cage. Узнайте, стоит ли погружаться в эту",
     "date": "30 сентября 2026",
@@ -3464,7 +3464,7 @@ window.allArticles = [
     "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4270540/2b5785ba4206bb969504d597ff3518cb49a2833e/header.jpg?t=1790757433"
   },
   {
-    "url": "/archive/boxcutter-4020370.html",
+    "url": "/archive/boxcutter-4020370",
     "title": "Boxcutter – криминальный экшен с открытым миром",
     "excerpt": "Boxcutter – приключенческий экшен, где вам придётся попрошайничать, вороватать и сражаться в мрачном Копенгагене 2000‑х годов. Игра для любителей",
     "date": "30 сентября 2026",
@@ -3477,7 +3477,7 @@ window.allArticles = [
     "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4020370/272197e31c6ec16a86dee6c01809329681b7c84a/header.jpg?t=1790767299"
   },
   {
-    "url": "/archive/fruit-fetish-4376740.html",
+    "url": "/archive/fruit-fetish-4376740",
     "title": "Fruit Fetish – казуальная инкрементальная игра",
     "excerpt": "Fruit Fetish – активная инкрементальная игра, где вам предстоит собирать и продавать разнообразные фрукты, улучшать навыки и оборудование, чтобы быстро",
     "date": "30 сентября 2026",
@@ -3490,7 +3490,7 @@ window.allArticles = [
     "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4376740/e2519d13ab2a4cbd54de5fc65b0ba24d8a090e34/header.jpg?t=1790748022"
   },
   {
-    "url": "/archive/the-war-disorder-hexa-4301910.html",
+    "url": "/archive/the-war-disorder-hexa-4301910",
     "title": "The War Disorder Hexa — приключенческий обзор",
     "excerpt": "The War Disorder Hexa – приключенческая игра о войне между Королевством Нода и империей. Шесть героев влияют на судьбу конфликтующих стран.",
     "date": "30 сентября 2026",
@@ -3503,7 +3503,7 @@ window.allArticles = [
     "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4301910/ab7f94c7fe4ae4aeff47b922f8c064a6b9c40fda/header.jpg?t=1790747807"
   },
   {
-    "url": "/archive/craftlander-5051720.html",
+    "url": "/archive/craftlander-5051720",
     "title": "CRAFTLANDER – приключенческий экшен в открытом мире",
     "excerpt": "CRAFTLANDER – бесплатный экшен‑приключение, где игроки исследуют острова, собирают ресурсы, крафтят снаряжение и сражаются с фантастическими существами,",
     "date": "30 сентября 2026",
@@ -3516,7 +3516,7 @@ window.allArticles = [
     "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5051720/0c2452c962840d86efaa89f79e3611f8755495d0/header.jpg?t=1791214494"
   },
   {
-    "url": "/archive/-5024070.html",
+    "url": "/archive/-5024070",
     "title": "反击吧！牛马！！！ – обзор игры",
     "excerpt": "Roguelike‑экшен с юмором о борьбе с офисными абсурдами. Управление мышью и клавиатурой, сражения, сундуки с добычей и развитие снаряжения.",
     "date": "30 сентября 2026",
@@ -3529,7 +3529,7 @@ window.allArticles = [
     "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5024070/02f5b1360e4f77c1173f8137efb64f847f549bbe/header.jpg?t=1791273793"
   },
   {
-    "url": "/archive/-4612540.html",
+    "url": "/archive/-4612540",
     "title": "君は本当に家に帰りたいと思った事があるか – обзор",
     "excerpt": "Инди‑стратегия с элементами FPS, где нужно построить базу, автоматизировать производство и выжить 10 дней, чтобы вернуться с чужой планеты.",
     "date": "30 сентября 2026",
@@ -3542,7 +3542,7 @@ window.allArticles = [
     "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4612540/7b65ec47a63aad0db065881ac436a18b5a16310c/header.jpg?t=1791547217"
   },
   {
-    "url": "/archive/the-long-graze-5179030.html",
+    "url": "/archive/the-long-graze-5179030",
     "title": "The Long Graze — приключенческая игра о жизни телёнка",
     "excerpt": "The Long Graze — атмосферное приключение, где вы играете за новорождённого телёнка, преодолевающего опасности саванны, от пожаров до волков. Подойдёт",
     "date": "30 сентября 2026",
@@ -3555,7 +3555,7 @@ window.allArticles = [
     "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5179030/be05c1171702b25fb600cba16b1a5660d6bca80a/header.jpg?t=1790741447"
   },
   {
-    "url": "/archive/so-i-decided-to-start-a-kendo-dojo-secret-ntr-5182140.html",
+    "url": "/archive/so-i-decided-to-start-a-kendo-dojo-secret-ntr-5182140",
     "title": "So, I Decided to Start a Kendo Dojo-Secret NTR: цена, отзывы и статистика игроков",
     "excerpt": "So, I Decided to Start a Kendo Dojo-Secret NTR: актуальная цена (594.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
     "date": "30 сентября 2026",
@@ -3563,7 +3563,7 @@ window.allArticles = [
     "category": "Обзоры"
   },
   {
-    "url": "/archive/koen-1939-3582120.html",
+    "url": "/archive/koen-1939-3582120",
     "title": "Коэн 1939 — быстрый шутер с элементами приключений",
     "excerpt": "Коэн 1939 – динамичный топ‑даун шутер в стиле инди, где вам предстоит пробиваться сквозь британскую преступность 1939 года. Игра подходит любителям",
     "date": "30 сентября 2026",
@@ -3576,7 +3576,7 @@ window.allArticles = [
     "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3582120/644ed5e6c16df63deb22c62d0c47f278cbcbaf95/header.jpg?t=1790737209"
   },
   {
-    "url": "/archive/clink-5116180.html",
+    "url": "/archive/clink-5116180",
     "title": "CLINK – динамичный аренный шутер",
     "excerpt": "CLINK – аренный шутер с гравитационными трюками, где две команды сражаются на стенах, потолке и полу, используя шесть классов, мины и возможность менять",
     "date": "30 сентября 2026",
@@ -3589,7 +3589,7 @@ window.allArticles = [
     "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5116180/265aa73ec533242f8e7bb954f2089087a262a2ce/header.jpg?t=1790736709"
   },
   {
-    "url": "/archive/little-gable-studio-5044540.html",
+    "url": "/archive/little-gable-studio-5044540",
     "title": "Little Gable Studio – уютный строительный сэндбокс",
     "excerpt": "Небольшой инди‑симулятор, где вы в первом лице проектируете и обустраиваете дома, создавая уютные пространства без спешки.",
     "date": "30 сентября 2026",
@@ -3602,7 +3602,7 @@ window.allArticles = [
     "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5044540/b623bdab70e53ad68b9a7d9a8fec79c56779ef78/header.jpg?t=1790734215"
   },
   {
-    "url": "/archive/wall-escaper-stream-sabotage-4070710.html",
+    "url": "/archive/wall-escaper-stream-sabotage-4070710",
     "title": "Wall Escaper: Stream Sabotage — обзор",
     "excerpt": "Wall Escaper: Stream Sabotage – казуальная игра‑выживание, где подарки зрителей превращаются в неожиданные препятствия. Вы будете уклоняться от стен и",
     "date": "30 сентября 2026",
@@ -3615,7 +3615,7 @@ window.allArticles = [
     "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4070710/9986f9354d343d6acf4636fb3ac673c798cf9074/header.jpg?t=1790734141"
   },
   {
-    "url": "/archive/wheel-estate-5134720.html",
+    "url": "/archive/wheel-estate-5134720",
     "title": "Wheel Estate – симулятор бизнеса с хомяками",
     "excerpt": "Wheel Estate – забавный инди‑симулятор, где вы строите офис для хомяков, нанимаете сотрудников и управляете их работой. Идеально для любителей лёгких",
     "date": "30 сентября 2026",
@@ -3628,7 +3628,7 @@ window.allArticles = [
     "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5134720/d384fb0322f4a05b9c4396751b5418cd8b675d5d/header.jpg?t=1790733833"
   },
   {
-    "url": "/archive/westner-hero-8-5214280.html",
+    "url": "/archive/westner-hero-8-5214280",
     "title": "Westner Hero 8 — карточный рогалик в стиле Дикого Запада",
     "excerpt": "Westner Hero 8 – пиксельный карточный рогалик, где вам предстоит собрать колоду, улучшать героя и сражаться с врагами на Диком Западе. Постоянно",
     "date": "30 сентября 2026",
@@ -3641,7 +3641,7 @@ window.allArticles = [
     "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5214280/2c8a8b32839a1bb58ab1e929c189ad80b87d3462/header.jpg?t=1790856491"
   },
   {
-    "url": "/archive/shinjuku-anomaly-3386350.html",
+    "url": "/archive/shinjuku-anomaly-3386350",
     "title": "Shinjuku Anomaly — приключенческая инди-игра",
     "excerpt": "Shinjuku Anomaly – игра‑приключение, где вы ночным фотожурналистом фиксируете аномалии в шумном Токио. Атмосферный сюжет и простая механика делают её",
     "date": "30 сентября 2026",
@@ -3654,7 +3654,7 @@ window.allArticles = [
     "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3386350/ff768203862193211efd3bf8b363c1a4e9e49db7/header.jpg?t=1790730086"
   },
   {
-    "url": "/archive/cicada-communication-3500590.html",
+    "url": "/archive/cicada-communication-3500590",
     "title": "Cicada Communication – приключенческая RPG о школьной жизни",
     "excerpt": "Cicada Communication — ролевая игра о начале обучения в общежитии: учёба, экзамены, дружба и первые романтические чувства в летний фестиваль.",
     "date": "30 сентября 2026",
@@ -3667,7 +3667,7 @@ window.allArticles = [
     "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3500590/da767dd5b06b6b90c52734ed6487b7419f737fae/header.jpg?t=1790730020"
   },
   {
-    "url": "/archive/forgetax-5245810.html",
+    "url": "/archive/forgetax-5245810",
     "title": "ForgeTax — мрачный роглайт о ковке мечей",
     "excerpt": "ForgeTax – мрачный роглайт‑симулятор ковки от первого лица, где каждый удар требует выбора реликвий и синергий. Игра сочетает стратегию, инди‑атмосферу и",
     "date": "30 сентября 2026",
@@ -3680,7 +3680,7 @@ window.allArticles = [
     "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5245810/f7f624422d8033d03706758d5f03fe197b48257c/header.jpg?t=1791135247"
   },
   {
-    "url": "/archive/loophole-the-prison-break-4323880.html",
+    "url": "/archive/loophole-the-prison-break-4323880",
     "title": "Loophole: The Prison Break: цена, отзывы и статистика игроков",
     "excerpt": "Loophole: The Prison Break: актуальная цена (400.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
     "date": "30 сентября 2026",
@@ -3688,7 +3688,7 @@ window.allArticles = [
     "category": "Обзоры"
   },
   {
-    "url": "/archive/leaf-4324030.html",
+    "url": "/archive/leaf-4324030",
     "title": "LEAF — 2,5D рогалик‑шутер от независимой студии",
     "excerpt": "LEAF — одиночный топ‑даун рогалик‑шутер в стиле 2,5D. После 200‑летного сна герой ищет своего ребёнка, исследуя случайно генерируемые локации, собирая",
     "date": "30 сентября 2026",
@@ -3701,7 +3701,7 @@ window.allArticles = [
     "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4324030/9fde1373c2276a3e70cfa8b5cf6f301fad26e42f/header.jpg?t=1790726780"
   },
   {
-    "url": "/archive/otpisani-nightingale-4708680.html",
+    "url": "/archive/otpisani-nightingale-4708680",
     "title": "Otpisani: Nightingale – ретро‑шутер про сопротивление",
     "excerpt": "Otpisani: Nightingale – динамичный ретро‑шутер с элементами приключений, где вы сражаетесь в рядах сопротивления против немецкой оккупации. Интересный",
     "date": "30 сентября 2026",
@@ -3714,7 +3714,7 @@ window.allArticles = [
     "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4708680/5017fa70d0ee1af05b95ed48d992b6fb85e4da9d/header.jpg?t=1790724750"
   },
   {
-    "url": "/archive/american-truck-simulator-road-trip-ford-3793200.html",
+    "url": "/archive/american-truck-simulator-road-trip-ford-3793200",
     "title": "American Truck Simulator – Road Trip: Ford обзор",
     "excerpt": "Детальный обзор DLC Road Trip: Ford для American Truck Simulator. Узнайте, какие новые возможности открывает пакет, и подходит ли он любителям",
     "date": "30 сентября 2026",
@@ -3727,7 +3727,7 @@ window.allArticles = [
     "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3793200/34910ebced5a5287ea399dc193f49e5f5994352e/header.jpg?t=1790868895"
   },
   {
-    "url": "/archive/nivalis-nights-1488490.html",
+    "url": "/archive/nivalis-nights-1488490",
     "title": "Nivalis Nights: бизнес и киберпанк",
     "excerpt": "Nivalis Nights – приключенческий ролевой симулятор, где вы строите рестораны и клубы, обустраиваете квартиры, ловите рыбу и ищете любовь в огромном",
     "date": "30 сентября 2026",
@@ -3740,7 +3740,7 @@ window.allArticles = [
     "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1488490/28e511ff46672f9649744961fd6edbf19df75265/header.jpg?t=1790855080"
   },
   {
-    "url": "/archive/the-merlies-2521160.html",
+    "url": "/archive/the-merlies-2521160",
     "title": "The Merlies – приключенческая инди-игра",
     "excerpt": "The Merlies — очаровательная приключенческая игра про маленькое сообщество птиц, ищущее гармонию в постапокалиптическом мире руин древней цивилизации.",
     "date": "29 сентября 2026",
@@ -3753,7 +3753,7 @@ window.allArticles = [
     "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2521160/dc9ae6818155837ee83231a4fbc8ad714153c50b/header.jpg?t=1791280331"
   },
   {
-    "url": "/archive/automania-remastered-4787700.html",
+    "url": "/archive/automania-remastered-4787700",
     "title": "Automania Remastered: цена, отзывы и статистика игроков",
     "excerpt": "Automania Remastered: актуальная цена (444.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
     "date": "29 сентября 2026",
@@ -3761,7 +3761,7 @@ window.allArticles = [
     "category": "Обзоры"
   },
   {
-    "url": "/archive/-5189440.html",
+    "url": "/archive/-5189440",
     "title": "Обзор игры 大唐隐士传 — приключенческий RPG",
     "excerpt": "Данг тайные истории — игра в сеттинге Древнего Тан, сочетающая приключения, казуальный геймплей и элементы ролика. Подойдёт любителям фэнтези и инди-игр,",
     "date": "29 сентября 2026",
@@ -3774,7 +3774,7 @@ window.allArticles = [
     "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5189440/2d8669afabef1fcb53c3eed447ccbd6b4d4d4d91/header.jpg?t=1791515260"
   },
   {
-    "url": "/archive/wizzo-popout-3670670.html",
+    "url": "/archive/wizzo-popout-3670670",
     "title": "Wizzo PopOut — арена‑шутер с магией и пузырями",
     "excerpt": "Wizzo PopOut – динамичный арена‑шутер для четырёх игроков, где вы управляете волшебным пузырем, миксуете заклинания и отбиваете соперников в локальном и",
     "date": "29 сентября 2026",
@@ -3787,7 +3787,7 @@ window.allArticles = [
     "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3670670/bacd9ff2fdaf170de89ca62de8d14116f21efcd0/header.jpg?t=1791371301"
   },
   {
-    "url": "/archive/island-of-rebirth-ntr-and-love-3725800.html",
+    "url": "/archive/island-of-rebirth-ntr-and-love-3725800",
     "title": "Island of Rebirth~NTR and Love~ — обзор",
     "excerpt": "Мистический остров, амнезия героя и две загадочные девушки — в Island of Rebirth~NTR and Love~ вас ждёт атмосферное исследование, лёгкая ролевая система и",
     "date": "29 сентября 2026",
@@ -3800,7 +3800,7 @@ window.allArticles = [
     "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3725800/ae6275f4e40262b5b90edf7c3bf1feb9ac0c5c8a/header.jpg?t=1790732397"
   },
   {
-    "url": "/archive/eropsihoz-proekt-eliziara-3464000.html",
+    "url": "/archive/eropsihoz-proekt-eliziara-3464000",
     "title": "Эропсихоз: Проект «Элизиара» — обзор",
     "excerpt": "Эропсихоз: Проект «Элизиара» — инди‑ролевая игра о андроиде Люси, попавшей в состояние «Эропсихоза». Исследуйте космический корабль, собирайте уникальные",
     "date": "29 сентября 2026",
@@ -3813,7 +3813,7 @@ window.allArticles = [
     "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3464000/e1166f490988e7f8628b1fc42a014a5bf3daadfa/header.jpg?t=1790668829"
   },
   {
-    "url": "/archive/delegatory-4320620.html",
+    "url": "/archive/delegatory-4320620",
     "title": "Delegatory – обзор и геймплей",
     "excerpt": "Краткий инкрементальный симулятор, где вы поднимаетесь по карьерной лестнице корпорации будущего, распределяя задания между интернами и развивая их навыки",
     "date": "29 сентября 2026",
@@ -3826,7 +3826,7 @@ window.allArticles = [
     "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4320620/d5e1a6496a18adb103ae0df4f36bebdd57a6b368/header.jpg?t=1790669765"
   },
   {
-    "url": "/archive/dawn-of-the-rotten-5196540.html",
+    "url": "/archive/dawn-of-the-rotten-5196540",
     "title": "DAWN OF THE ROTTEN — постапокалиптический экшен",
     "excerpt": "DAWN OF THE ROTTEN — динамичный экшен в стиле выживания, где вам предстоит искать топливо, спасаться от орд и добраться до зоны карантина в пустоши.",
     "date": "29 сентября 2026",
@@ -3839,7 +3839,7 @@ window.allArticles = [
     "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5196540/65df5dddeaa2f27cd5161b683b53c753821b36d3/header.jpg?t=1791491647"
   },
   {
-    "url": "/archive/sad-virus-dungeon-5223830.html",
+    "url": "/archive/sad-virus-dungeon-5223830",
     "title": "Sad Virus Dungeon – обзор и особенности",
     "excerpt": "Sad Virus Dungeon – приключенческий инди-симулятор в стиле третьего лица. Исследуйте подземелье, избегайте ловушек и собирайте бутылки. Подходит любителям",
     "date": "29 сентября 2026",
@@ -3852,7 +3852,7 @@ window.allArticles = [
     "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5223830/3f28afec11dd634a9c56d137835557349e1ed96b/header.jpg?t=1790666092"
   },
   {
-    "url": "/archive/ysh-park-3171340.html",
+    "url": "/archive/ysh-park-3171340",
     "title": "ysh park — инди игра с открытым выбором уровней",
     "excerpt": "ysh park — оригинальная инди‑игра в китаевском стиле, где игрок сам выбирает порядок уровней, защищает себя с помощью мониторинга и восстанавливает",
     "date": "29 сентября 2026",
@@ -3865,7 +3865,7 @@ window.allArticles = [
     "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3171340/8c4715380fae0fdf2a1facff1193fc426aa5635f/header_russian.jpg?t=1790665990"
   },
   {
-    "url": "/archive/boobs-cowgirls-5188170.html",
+    "url": "/archive/boobs-cowgirls-5188170",
     "title": "Boobs & Cowgirls — обзор",
     "excerpt": "Boobs & Cowgirls — взрослый вестерн‑симулятор, где игроку предстоит выбрать сторону между законом и бандой, взаимодействовать с шестеркой персонажей и",
     "date": "29 сентября 2026",
@@ -3878,7 +3878,7 @@ window.allArticles = [
     "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5188170/f9d768d7220e54b0f3ff91d608f161e58f1941d9/header.jpg?t=1790665266"
   },
   {
-    "url": "/archive/never-enough-corn-5246180.html",
+    "url": "/archive/never-enough-corn-5246180",
     "title": "Never Enough Corn – казуальная инди-игра про сбор кукурузы",
     "excerpt": "Never Enough Corn – увлекательная казуальная игра, где вы улучшаете трактор, собираете редкие сорта кукурузы и получаете награды. Идеально для любителей",
     "date": "29 сентября 2026",
@@ -3891,7 +3891,7 @@ window.allArticles = [
     "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5246180/ef506ec2ab5a51632d6735afca134e9cf8708a36/header.jpg?t=1790678296"
   },
   {
-    "url": "/archive/idle-bomb-animals-desktop-mining-4692190.html",
+    "url": "/archive/idle-bomb-animals-desktop-mining-4692190",
     "title": "Idle Bomb Animals – казуальная idle‑игра про добычу",
     "excerpt": "Idle Bomb Animals – простая idle‑игра, где милые животные копают шахты на фоне вашего рабочего стола. Идеально для тех, кто хочет расслабиться, пока",
     "date": "29 сентября 2026",
@@ -3904,7 +3904,7 @@ window.allArticles = [
     "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4692190/8ad699d2be24c29ad0f45798e80650d8defec765/header.jpg?t=1790662141"
   },
   {
-    "url": "/archive/-4885400.html",
+    "url": "/archive/-4885400",
     "title": "箱押しマスター — 3D головоломка в стиле сокобан",
     "excerpt": "箱押しマスター — бесплатная инди-головоломка, где игроку предстоит перемещать ящики в трёхмерных уровнях, используя пространство и перспективу. Идеально для",
     "date": "29 сентября 2026",
@@ -3917,7 +3917,7 @@ window.allArticles = [
     "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4885400/b50100aaba408d4d362a57c463d84e6e1361a586/header.jpg?t=1790658359"
   },
   {
-    "url": "/archive/shattered-realm-corridor-5116690.html",
+    "url": "/archive/shattered-realm-corridor-5116690",
     "title": "Shattered‑Realm Corridor – быстрый экшн‑рогалик",
     "excerpt": "Shattered‑Realm Corridor – динамичный шутер‑roguelike от первого лица в постапокалиптическом мире. Слеш, дэш, сбор лута и постоянный риск смерти делают",
     "date": "29 сентября 2026",
@@ -3930,7 +3930,7 @@ window.allArticles = [
     "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5116690/b3a6a9ed98ac725f63ba9c7f27461cf971174fdb/header.jpg?t=1791200660"
   },
   {
-    "url": "/archive/the-last-camp-dawn-4198430.html",
+    "url": "/archive/the-last-camp-dawn-4198430",
     "title": "The Last Camp : Dawn: цена, отзывы и статистика игроков",
     "excerpt": "The Last Camp : Dawn: актуальная цена (792.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
     "date": "29 сентября 2026",
@@ -3938,7 +3938,7 @@ window.allArticles = [
     "category": "Обзоры"
   },
   {
-    "url": "/archive/scroll-of-taiwu-4975570.html",
+    "url": "/archive/scroll-of-taiwu-4975570",
     "title": "Scroll Of Taiwu - 元鸡化影: цена, отзывы и статистика игроков",
     "excerpt": "Scroll Of Taiwu - 元鸡化影: актуальная цена (335.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
     "date": "29 сентября 2026",
@@ -3946,7 +3946,7 @@ window.allArticles = [
     "category": "Обзоры"
   },
   {
-    "url": "/archive/zombie-survivors-last-soldier-4465840.html",
+    "url": "/archive/zombie-survivors-last-soldier-4465840",
     "title": "Zombie Survivors - last soldier -: цена, отзывы и статистика игроков",
     "excerpt": "Zombie Survivors - last soldier -: актуальная цена (200.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
     "date": "29 сентября 2026",
@@ -3954,7 +3954,7 @@ window.allArticles = [
     "category": "Обзоры"
   },
   {
-    "url": "/archive/camp-whittlewood-4813190.html",
+    "url": "/archive/camp-whittlewood-4813190",
     "title": "Camp Whittlewood: цена, отзывы и статистика игроков",
     "excerpt": "Camp Whittlewood: актуальная цена (240.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
     "date": "29 сентября 2026",
@@ -3962,7 +3962,7 @@ window.allArticles = [
     "category": "Обзоры"
   },
   {
-    "url": "/archive/escape-from-z-4549090.html",
+    "url": "/archive/escape-from-z-4549090",
     "title": "Escape From Z: цена, отзывы и статистика игроков",
     "excerpt": "Escape From Z: актуальная цена (180.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
     "date": "29 сентября 2026",
@@ -3970,7 +3970,7 @@ window.allArticles = [
     "category": "Обзоры"
   },
   {
-    "url": "/archive/american-mahjong-5015290.html",
+    "url": "/archive/american-mahjong-5015290",
     "title": "American Mahjong: цена, отзывы и статистика игроков",
     "excerpt": "American Mahjong: актуальная цена (354.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
     "date": "29 сентября 2026",
@@ -3978,7 +3978,7 @@ window.allArticles = [
     "category": "Обзоры"
   },
   {
-    "url": "/archive/ntrex-4096590.html",
+    "url": "/archive/ntrex-4096590",
     "title": "NTREX: цена, отзывы и статистика игроков",
     "excerpt": "NTREX: актуальная цена (452.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
     "date": "29 сентября 2026",
@@ -3986,7 +3986,7 @@ window.allArticles = [
     "category": "Обзоры"
   },
   {
-    "url": "/archive/hanok-from-thatch-to-palace-5130100.html",
+    "url": "/archive/hanok-from-thatch-to-palace-5130100",
     "title": "Hanok: From Thatch to Palace: цена, отзывы и статистика игроков",
     "excerpt": "Hanok: From Thatch to Palace: актуальная цена (501.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
     "date": "29 сентября 2026",
@@ -3994,7 +3994,7 @@ window.allArticles = [
     "category": "Обзоры"
   },
   {
-    "url": "/archive/frutiger-home-3935530.html",
+    "url": "/archive/frutiger-home-3935530",
     "title": "Frutiger Home: цена, отзывы и статистика игроков",
     "excerpt": "Frutiger Home: актуальная цена (216.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
     "date": "29 сентября 2026",
@@ -4002,7 +4002,7 @@ window.allArticles = [
     "category": "Обзоры"
   },
   {
-    "url": "/archive/-4190040.html",
+    "url": "/archive/-4190040",
     "title": "病み菌少女 地雷ちゃん: цена, отзывы и статистика игроков",
     "excerpt": "病み菌少女 地雷ちゃん: актуальная цена (192.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
     "date": "29 сентября 2026",
@@ -4010,7 +4010,7 @@ window.allArticles = [
     "category": "Обзоры"
   },
   {
-    "url": "/archive/ai-vj-2893580.html",
+    "url": "/archive/ai-vj-2893580",
     "title": "AI-VJ: цена, отзывы и статистика игроков",
     "excerpt": "AI-VJ: актуальная цена (Бесплатно), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
     "date": "29 сентября 2026",
@@ -4018,7 +4018,7 @@ window.allArticles = [
     "category": "Обзоры"
   },
   {
-    "url": "/archive/sarge-s-horrors-4708930.html",
+    "url": "/archive/sarge-s-horrors-4708930",
     "title": "Sarge's Horrors: цена, отзывы и статистика игроков",
     "excerpt": "Sarge's Horrors: актуальная цена (465.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
     "date": "29 сентября 2026",
@@ -4026,7 +4026,7 @@ window.allArticles = [
     "category": "Обзоры"
   },
   {
-    "url": "/archive/crawler-3d-5039680.html",
+    "url": "/archive/crawler-3d-5039680",
     "title": "Crawler 3D: цена, отзывы и статистика игроков",
     "excerpt": "Crawler 3D: актуальная цена (308.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
     "date": "29 сентября 2026",
@@ -4034,7 +4034,7 @@ window.allArticles = [
     "category": "Обзоры"
   },
   {
-    "url": "/archive/arcane-eclipse-survivors-5159390.html",
+    "url": "/archive/arcane-eclipse-survivors-5159390",
     "title": "Arcane Eclipse: Survivors: цена, отзывы и статистика игроков",
     "excerpt": "Arcane Eclipse: Survivors: актуальная цена (200.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
     "date": "29 сентября 2026",
@@ -4042,7 +4042,7 @@ window.allArticles = [
     "category": "Обзоры"
   },
   {
-    "url": "/archive/swing-shift-5170210.html",
+    "url": "/archive/swing-shift-5170210",
     "title": "Swing Shift: цена, отзывы и статистика игроков",
     "excerpt": "Swing Shift: актуальная цена (59.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
     "date": "29 сентября 2026",
@@ -4050,7 +4050,7 @@ window.allArticles = [
     "category": "Обзоры"
   },
   {
-    "url": "/archive/ace-combat-8-wings-of-theve-2288340.html",
+    "url": "/archive/ace-combat-8-wings-of-theve-2288340",
     "title": "ACE COMBAT 8: WINGS OF THEVE: цена, отзывы и статистика игроков",
     "excerpt": "ACE COMBAT 8: WINGS OF THEVE: актуальная цена (4999.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
     "date": "29 сентября 2026",
@@ -4058,7 +4058,7 @@ window.allArticles = [
     "category": "Обзоры"
   },
   {
-    "url": "/archive/by-royal-request-5167010.html",
+    "url": "/archive/by-royal-request-5167010",
     "title": "By Royal Request: цена, отзывы и статистика игроков",
     "excerpt": "By Royal Request: актуальная цена (240.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
     "date": "28 сентября 2026",
@@ -4066,7 +4066,7 @@ window.allArticles = [
     "category": "Обзоры"
   },
   {
-    "url": "/archive/xenohaven-3461270.html",
+    "url": "/archive/xenohaven-3461270",
     "title": "异星家园(XenoHaven): цена, отзывы и статистика игроков",
     "excerpt": "异星家园(XenoHaven): актуальная цена (352.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
     "date": "28 сентября 2026",
@@ -4074,7 +4074,7 @@ window.allArticles = [
     "category": "Обзоры"
   },
   {
-    "url": "/archive/the-abyss-gazer-5016420.html",
+    "url": "/archive/the-abyss-gazer-5016420",
     "title": "誅仙記_THE ABYSS GAZER: цена, отзывы и статистика игроков",
     "excerpt": "誅仙記_THE ABYSS GAZER: актуальная цена (Бесплатно), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
     "date": "28 сентября 2026",
@@ -4082,7 +4082,7 @@ window.allArticles = [
     "category": "Обзоры"
   },
   {
-    "url": "/archive/bomberparty-3130680.html",
+    "url": "/archive/bomberparty-3130680",
     "title": "BomberParty: цена, отзывы и статистика игроков",
     "excerpt": "BomberParty: актуальная цена (150.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
     "date": "28 сентября 2026",
@@ -4090,7 +4090,7 @@ window.allArticles = [
     "category": "Обзоры"
   },
   {
-    "url": "/archive/my-zombies-are-hungry-5239600.html",
+    "url": "/archive/my-zombies-are-hungry-5239600",
     "title": "My Zombies Are Hungry: цена, отзывы и статистика игроков",
     "excerpt": "My Zombies Are Hungry: актуальная цена (170.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
     "date": "28 сентября 2026",
@@ -4098,7 +4098,7 @@ window.allArticles = [
     "category": "Обзоры"
   },
   {
-    "url": "/archive/galaxy-critter-co-3630680.html",
+    "url": "/archive/galaxy-critter-co-3630680",
     "title": "Galaxy Critter Co.: цена, отзывы и статистика игроков",
     "excerpt": "Galaxy Critter Co.: актуальная цена (246.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
     "date": "28 сентября 2026",
@@ -4106,7 +4106,7 @@ window.allArticles = [
     "category": "Обзоры"
   },
   {
-    "url": "/archive/-3594090.html",
+    "url": "/archive/-3594090",
     "title": "大荒: цена, отзывы и статистика игроков",
     "excerpt": "大荒: актуальная цена (678.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
     "date": "28 сентября 2026",
@@ -4114,7 +4114,7 @@ window.allArticles = [
     "category": "Обзоры"
   },
   {
-    "url": "/archive/inspiration-test-5184950.html",
+    "url": "/archive/inspiration-test-5184950",
     "title": "Inspiration Test: цена, отзывы и статистика игроков",
     "excerpt": "Inspiration Test: актуальная цена (150.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
     "date": "28 сентября 2026",
@@ -4122,7 +4122,7 @@ window.allArticles = [
     "category": "Обзоры"
   },
   {
-    "url": "/archive/crime-podcast-1976-5194140.html",
+    "url": "/archive/crime-podcast-1976-5194140",
     "title": "Crime Podcast: 1976: цена, отзывы и статистика игроков",
     "excerpt": "Crime Podcast: 1976: актуальная цена (150.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
     "date": "28 сентября 2026",
@@ -4130,7 +4130,7 @@ window.allArticles = [
     "category": "Обзоры"
   },
   {
-    "url": "/archive/ss13-bar-sim-4459540.html",
+    "url": "/archive/ss13-bar-sim-4459540",
     "title": "SS13 BAR SIM: цена, отзывы и статистика игроков",
     "excerpt": "SS13 BAR SIM: актуальная цена (208.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
     "date": "28 сентября 2026",
@@ -4138,7 +4138,7 @@ window.allArticles = [
     "category": "Обзоры"
   },
   {
-    "url": "/archive/v0-098-5184600.html",
+    "url": "/archive/v0-098-5184600",
     "title": "爱之巢~V0.098~: цена, отзывы и статистика игроков",
     "excerpt": "爱之巢~V0.098~: актуальная цена (Бесплатно), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
     "date": "28 сентября 2026",
@@ -4146,7 +4146,7 @@ window.allArticles = [
     "category": "Обзоры"
   },
   {
-    "url": "/archive/cozy-jigsaw-5227040.html",
+    "url": "/archive/cozy-jigsaw-5227040",
     "title": "Cozy Jigsaw: цена, отзывы и статистика игроков",
     "excerpt": "Cozy Jigsaw: актуальная цена (59.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
     "date": "28 сентября 2026",
@@ -4154,7 +4154,7 @@ window.allArticles = [
     "category": "Обзоры"
   },
   {
-    "url": "/archive/you-re-it-5187640.html",
+    "url": "/archive/you-re-it-5187640",
     "title": "You're It!: цена, отзывы и статистика игроков",
     "excerpt": "You're It!: актуальная цена (327.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
     "date": "28 сентября 2026",
@@ -4162,7 +4162,7 @@ window.allArticles = [
     "category": "Обзоры"
   },
   {
-    "url": "/archive/s-5197180.html",
+    "url": "/archive/s-5197180",
     "title": "フロアーⅩⅢの心象～S: цена, отзывы и статистика игроков",
     "excerpt": "フロアーⅩⅢの心象～S: актуальная цена (101.90 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
     "date": "28 сентября 2026",
@@ -4170,7 +4170,7 @@ window.allArticles = [
     "category": "Обзоры"
   },
   {
-    "url": "/archive/rippusion-5065060.html",
+    "url": "/archive/rippusion-5065060",
     "title": "Rippusion: цена, отзывы и статистика игроков",
     "excerpt": "Rippusion: актуальная цена (505.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
     "date": "28 сентября 2026",
@@ -4178,7 +4178,7 @@ window.allArticles = [
     "category": "Обзоры"
   },
   {
-    "url": "/archive/magic-circle-generator-4708730.html",
+    "url": "/archive/magic-circle-generator-4708730",
     "title": "Magic Circle Generator: цена, отзывы и статистика игроков",
     "excerpt": "Magic Circle Generator: актуальная цена (641.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
     "date": "28 сентября 2026",
@@ -4186,7 +4186,7 @@ window.allArticles = [
     "category": "Обзоры"
   },
   {
-    "url": "/archive/wonderboy-in-monster-land-5166980.html",
+    "url": "/archive/wonderboy-in-monster-land-5166980",
     "title": "Wonderboy in Monster Land: цена, отзывы и статистика игроков",
     "excerpt": "Wonderboy in Monster Land: актуальная цена (192.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
     "date": "28 сентября 2026",
@@ -4194,7 +4194,7 @@ window.allArticles = [
     "category": "Обзоры"
   },
   {
-    "url": "/archive/-4976640.html",
+    "url": "/archive/-4976640",
     "title": "封神归来: цена, отзывы и статистика игроков",
     "excerpt": "封神归来: актуальная цена (Бесплатно), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
     "date": "28 сентября 2026",
@@ -4202,7 +4202,7 @@ window.allArticles = [
     "category": "Обзоры"
   },
   {
-    "url": "/archive/-5075340.html",
+    "url": "/archive/-5075340",
     "title": "正统三国：无尽演义: цена, отзывы и статистика игроков",
     "excerpt": "正统三国：无尽演义: актуальная цена (51.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
     "date": "28 сентября 2026",
@@ -4210,7 +4210,7 @@ window.allArticles = [
     "category": "Обзоры"
   },
   {
-    "url": "/archive/otgoloski-bella-2873060.html",
+    "url": "/archive/otgoloski-bella-2873060",
     "title": "Отголоски Белла: цена, отзывы и статистика игроков",
     "excerpt": "Отголоски Белла: актуальная цена (584.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
     "date": "28 сентября 2026",
@@ -4218,7 +4218,7 @@ window.allArticles = [
     "category": "Обзоры"
   },
   {
-    "url": "/archive/human-intelligence-5054370.html",
+    "url": "/archive/human-intelligence-5054370",
     "title": "HUMAN INTELLIGENCE: цена, отзывы и статистика игроков",
     "excerpt": "HUMAN INTELLIGENCE: актуальная цена (240.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
     "date": "28 сентября 2026",
@@ -4226,7 +4226,7 @@ window.allArticles = [
     "category": "Обзоры"
   },
   {
-    "url": "/archive/grave-digging-for-wealth-4973140.html",
+    "url": "/archive/grave-digging-for-wealth-4973140",
     "title": "盗墓贼Grave digging for wealth: цена, отзывы и статистика игроков",
     "excerpt": "盗墓贼Grave digging for wealth: актуальная цена (317.40 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
     "date": "28 сентября 2026",
@@ -4234,7 +4234,7 @@ window.allArticles = [
     "category": "Обзоры"
   },
   {
-    "url": "/archive/project-devourslime-3263880.html",
+    "url": "/archive/project-devourslime-3263880",
     "title": " Project DevourSlime: цена, отзывы и статистика игроков",
     "excerpt": " Project DevourSlime: актуальная цена (180.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
     "date": "28 сентября 2026",
@@ -4242,7 +4242,7 @@ window.allArticles = [
     "category": "Обзоры"
   },
   {
-    "url": "/archive/ultimate-multiplayer-survival-engine-5171770.html",
+    "url": "/archive/ultimate-multiplayer-survival-engine-5171770",
     "title": "Ultimate Multiplayer Survival Engine: цена, отзывы и статистика игроков",
     "excerpt": "Ultimate Multiplayer Survival Engine: актуальная цена (Бесплатно), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
     "date": "28 сентября 2026",
@@ -4250,7 +4250,7 @@ window.allArticles = [
     "category": "Обзоры"
   },
   {
-    "url": "/archive/florana-defense-4840080.html",
+    "url": "/archive/florana-defense-4840080",
     "title": "Florana Defense: цена, отзывы и статистика игроков",
     "excerpt": "Florana Defense: актуальная цена (257.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
     "date": "28 сентября 2026",
@@ -4258,7 +4258,7 @@ window.allArticles = [
     "category": "Обзоры"
   },
   {
-    "url": "/archive/psyche-et-al-4590880.html",
+    "url": "/archive/psyche-et-al-4590880",
     "title": "Psyche et al: цена, отзывы и статистика игроков",
     "excerpt": "Psyche et al: актуальная цена (335.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
     "date": "28 сентября 2026",
@@ -4266,7 +4266,7 @@ window.allArticles = [
     "category": "Обзоры"
   },
   {
-    "url": "/archive/refantasy-autobattler-5062170.html",
+    "url": "/archive/refantasy-autobattler-5062170",
     "title": "ReFantasy Autobattler: цена, отзывы и статистика игроков",
     "excerpt": "ReFantasy Autobattler: актуальная цена (70.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
     "date": "28 сентября 2026",
@@ -4274,7 +4274,7 @@ window.allArticles = [
     "category": "Обзоры"
   },
   {
-    "url": "/archive/pay-your-deeds-5222360.html",
+    "url": "/archive/pay-your-deeds-5222360",
     "title": "Pay your Deeds: цена, отзывы и статистика игроков",
     "excerpt": "Pay your Deeds: актуальная цена (395.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
     "date": "28 сентября 2026",
@@ -4282,7 +4282,7 @@ window.allArticles = [
     "category": "Обзоры"
   },
   {
-    "url": "/archive/star-space-5166030.html",
+    "url": "/archive/star-space-5166030",
     "title": "Star Space: цена, отзывы и статистика игроков",
     "excerpt": "Star Space: актуальная цена (555.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
     "date": "28 сентября 2026",
@@ -4290,7 +4290,7 @@ window.allArticles = [
     "category": "Обзоры"
   },
   {
-    "url": "/archive/death-delivery-3303790.html",
+    "url": "/archive/death-delivery-3303790",
     "title": "Death Delivery: цена, отзывы и статистика игроков",
     "excerpt": "Death Delivery: актуальная цена (120.00 RUB), рейтинг обновляется, статистика владельцев (20,000 – 50,000). Данные обновляются автоматически.",
     "date": "28 сентября 2026",
@@ -4298,7 +4298,7 @@ window.allArticles = [
     "category": "Обзоры"
   },
   {
-    "url": "/archive/transport-fever-3-3493540.html",
+    "url": "/archive/transport-fever-3-3493540",
     "title": "Transport Fever 3: цена, отзывы и статистика игроков",
     "excerpt": "Transport Fever 3: актуальная цена (2290.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
     "date": "28 сентября 2026",
@@ -4306,7 +4306,7 @@ window.allArticles = [
     "category": "Обзоры"
   },
   {
-    "url": "/archive/squad-393380.html",
+    "url": "/archive/squad-393380",
     "title": "Squad: цена, отзывы и статистика игроков",
     "excerpt": "Squad: актуальная цена (899.00 RUB), 83% положительных отзывов в Steam, статистика владельцев (2,000,000 – 5,000,000). Данные обновляются автоматически.",
     "date": "28 сентября 2026",
@@ -4314,7 +4314,7 @@ window.allArticles = [
     "category": "Обзоры"
   },
   {
-    "url": "/archive/solitaire-together-5213680.html",
+    "url": "/archive/solitaire-together-5213680",
     "title": "Solitaire Together: цена, отзывы и статистика игроков",
     "excerpt": "Solitaire Together: актуальная цена (цена не указана), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
     "date": "27 сентября 2026",
@@ -4322,7 +4322,7 @@ window.allArticles = [
     "category": "Обзоры"
   },
   {
-    "url": "/archive/wpg-ravelin-5135630.html",
+    "url": "/archive/wpg-ravelin-5135630",
     "title": "WPG Ravelin: цена, отзывы и статистика игроков",
     "excerpt": "WPG Ravelin: актуальная цена (454.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
     "date": "27 сентября 2026",
@@ -4330,7 +4330,7 @@ window.allArticles = [
     "category": "Обзоры"
   },
   {
-    "url": "/archive/hall-of-mirrors-3223460.html",
+    "url": "/archive/hall-of-mirrors-3223460",
     "title": "Hall of Mirrors: цена, отзывы и статистика игроков",
     "excerpt": "Hall of Mirrors: актуальная цена (150.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
     "date": "27 сентября 2026",
@@ -4338,7 +4338,7 @@ window.allArticles = [
     "category": "Обзоры"
   },
   {
-    "url": "/archive/nova-origin-4132030.html",
+    "url": "/archive/nova-origin-4132030",
     "title": "Nova Origin: цена, отзывы и статистика игроков",
     "excerpt": "Nova Origin: актуальная цена (840.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
     "date": "27 сентября 2026",
@@ -4346,7 +4346,7 @@ window.allArticles = [
     "category": "Обзоры"
   },
   {
-    "url": "/archive/souls-runner-4888600.html",
+    "url": "/archive/souls-runner-4888600",
     "title": "Souls Runner: цена, отзывы и статистика игроков",
     "excerpt": "Souls Runner: актуальная цена (242.08 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
     "date": "27 сентября 2026",
@@ -4354,7 +4354,7 @@ window.allArticles = [
     "category": "Обзоры"
   },
   {
-    "url": "/archive/horde-slayer-3778250.html",
+    "url": "/archive/horde-slayer-3778250",
     "title": "Horde Slayer: цена, отзывы и статистика игроков",
     "excerpt": "Horde Slayer: актуальная цена (84.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
     "date": "27 сентября 2026",
@@ -4362,7 +4362,7 @@ window.allArticles = [
     "category": "Обзоры"
   },
   {
-    "url": "/archive/hyperboard-extreme-4892910.html",
+    "url": "/archive/hyperboard-extreme-4892910",
     "title": "Hyperboard Extreme: цена, отзывы и статистика игроков",
     "excerpt": "Hyperboard Extreme: актуальная цена (Бесплатно), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
     "date": "27 сентября 2026",
@@ -4370,7 +4370,7 @@ window.allArticles = [
     "category": "Обзоры"
   },
   {
-    "url": "/archive/maritime-simulator-4273820.html",
+    "url": "/archive/maritime-simulator-4273820",
     "title": "Maritime Simulator: цена, отзывы и статистика игроков",
     "excerpt": "Maritime Simulator: актуальная цена (590.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
     "date": "27 сентября 2026",
@@ -4378,7 +4378,7 @@ window.allArticles = [
     "category": "Обзоры"
   },
   {
-    "url": "/archive/truck-titans-3939990.html",
+    "url": "/archive/truck-titans-3939990",
     "title": "Truck Titans: цена, отзывы и статистика игроков",
     "excerpt": "Truck Titans: актуальная цена (320.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
     "date": "27 сентября 2026",
@@ -4386,7 +4386,7 @@ window.allArticles = [
     "category": "Обзоры"
   },
   {
-    "url": "/archive/-4803270.html",
+    "url": "/archive/-4803270",
     "title": "『スクジサマ』を巡る考察: цена, отзывы и статистика игроков",
     "excerpt": "『スクジサマ』を巡る考察: актуальная цена (497.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
     "date": "27 сентября 2026",
@@ -4394,7 +4394,7 @@ window.allArticles = [
     "category": "Обзоры"
   },
   {
-    "url": "/archive/scratch-tickets-with-your-friends-5148990.html",
+    "url": "/archive/scratch-tickets-with-your-friends-5148990",
     "title": "Scratch Tickets With Your Friends 🎰: цена, отзывы и статистика игроков",
     "excerpt": "Scratch Tickets With Your Friends 🎰: актуальная цена (174.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
     "date": "27 сентября 2026",
@@ -4402,7 +4402,7 @@ window.allArticles = [
     "category": "Обзоры"
   },
   {
-    "url": "/archive/voltus-neon-nightmare-colossal-cure-4882170.html",
+    "url": "/archive/voltus-neon-nightmare-colossal-cure-4882170",
     "title": "Voltus' Neon Nightmare - Colossal Cure: цена, отзывы и статистика игроков",
     "excerpt": "Voltus' Neon Nightmare - Colossal Cure: актуальная цена (403.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
     "date": "27 сентября 2026",
@@ -4410,7 +4410,7 @@ window.allArticles = [
     "category": "Обзоры"
   },
   {
-    "url": "/archive/fiducia-rent-the-world-4953150.html",
+    "url": "/archive/fiducia-rent-the-world-4953150",
     "title": "Fiducia: Rent The World: цена, отзывы и статистика игроков",
     "excerpt": "Fiducia: Rent The World: актуальная цена (Бесплатно), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
     "date": "27 сентября 2026",
@@ -4418,7 +4418,7 @@ window.allArticles = [
     "category": "Обзоры"
   },
   {
-    "url": "/archive/-5184740.html",
+    "url": "/archive/-5184740",
     "title": "枪火幻想: цена, отзывы и статистика игроков",
     "excerpt": "枪火幻想: актуальная цена (89.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
     "date": "27 сентября 2026",
@@ -4426,7 +4426,7 @@ window.allArticles = [
     "category": "Обзоры"
   },
   {
-    "url": "/archive/kartboard-dash-4510790.html",
+    "url": "/archive/kartboard-dash-4510790",
     "title": "Kartboard Dash: цена, отзывы и статистика игроков",
     "excerpt": "Kartboard Dash: актуальная цена (Бесплатно), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
     "date": "27 сентября 2026",
@@ -4434,7 +4434,7 @@ window.allArticles = [
     "category": "Обзоры"
   },
   {
-    "url": "/archive/versus-one-3653680.html",
+    "url": "/archive/versus-one-3653680",
     "title": "Versus One: цена, отзывы и статистика игроков",
     "excerpt": "Versus One: актуальная цена (Бесплатно), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
     "date": "27 сентября 2026",
@@ -4442,7 +4442,7 @@ window.allArticles = [
     "category": "Обзоры"
   },
   {
-    "url": "/archive/section-80-5191570.html",
+    "url": "/archive/section-80-5191570",
     "title": "Section 80: цена, отзывы и статистика игроков",
     "excerpt": "Section 80: актуальная цена (216.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
     "date": "27 сентября 2026",
@@ -4450,7 +4450,7 @@ window.allArticles = [
     "category": "Обзоры"
   },
   {
-    "url": "/archive/gemorium-4798740.html",
+    "url": "/archive/gemorium-4798740",
     "title": "Gemorium: цена, отзывы и статистика игроков",
     "excerpt": "Gemorium: актуальная цена (135.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
     "date": "27 сентября 2026",
@@ -4458,7 +4458,7 @@ window.allArticles = [
     "category": "Обзоры"
   },
   {
-    "url": "/archive/infinite-game-cartridge-collection-touchy-cube-4311830.html",
+    "url": "/archive/infinite-game-cartridge-collection-touchy-cube-4311830",
     "title": "Infinite Game Cartridge Collection - Touchy Cube: цена, отзывы и статистика игроков",
     "excerpt": "Infinite Game Cartridge Collection - Touchy Cube: актуальная цена (Бесплатно), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
     "date": "27 сентября 2026",
@@ -4466,7 +4466,7 @@ window.allArticles = [
     "category": "Обзоры"
   },
   {
-    "url": "/archive/fuel-sort-4431410.html",
+    "url": "/archive/fuel-sort-4431410",
     "title": "Fuel Sort: цена, отзывы и статистика игроков",
     "excerpt": "Fuel Sort: актуальная цена (150.38 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
     "date": "27 сентября 2026",
@@ -4474,7 +4474,7 @@ window.allArticles = [
     "category": "Обзоры"
   },
   {
-    "url": "/archive/the-handler-of-dragons-1172730.html",
+    "url": "/archive/the-handler-of-dragons-1172730",
     "title": "The Handler of Dragons: цена, отзывы и статистика игроков",
     "excerpt": "The Handler of Dragons: актуальная цена (240.00 RUB), 67% положительных отзывов в Steam, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
     "date": "26 сентября 2026",
@@ -4482,7 +4482,7 @@ window.allArticles = [
     "category": "Обзоры"
   },
   {
-    "url": "/archive/-4948400.html",
+    "url": "/archive/-4948400",
     "title": "잭팟 던전: цена, отзывы и статистика игроков",
     "excerpt": "잭팟 던전: актуальная цена (110.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
     "date": "26 сентября 2026",
@@ -4490,7 +4490,7 @@ window.allArticles = [
     "category": "Обзоры"
   },
   {
-    "url": "/archive/sector-13-haunted-woods-4244040.html",
+    "url": "/archive/sector-13-haunted-woods-4244040",
     "title": "Sector 13: Haunted Woods: цена, отзывы и статистика игроков",
     "excerpt": "Sector 13: Haunted Woods: актуальная цена (346.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
     "date": "26 сентября 2026",
@@ -4498,7 +4498,7 @@ window.allArticles = [
     "category": "Обзоры"
   },
   {
-    "url": "/archive/surrounded-by-scrunchies-5228310.html",
+    "url": "/archive/surrounded-by-scrunchies-5228310",
     "title": "Surrounded by Scrunchies: цена, отзывы и статистика игроков",
     "excerpt": "Surrounded by Scrunchies: актуальная цена (592.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
     "date": "26 сентября 2026",
@@ -4506,7 +4506,7 @@ window.allArticles = [
     "category": "Обзоры"
   },
   {
-    "url": "/archive/dark-hunter-kuro-4150170.html",
+    "url": "/archive/dark-hunter-kuro-4150170",
     "title": "DARK HUNTER KURO: цена, отзывы и статистика игроков",
     "excerpt": "DARK HUNTER KURO: актуальная цена (639.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
     "date": "26 сентября 2026",
@@ -4514,7 +4514,7 @@ window.allArticles = [
     "category": "Обзоры"
   },
   {
-    "url": "/archive/stranded-with-you-4260270.html",
+    "url": "/archive/stranded-with-you-4260270",
     "title": "Stranded with You: цена, отзывы и статистика игроков",
     "excerpt": "Stranded with You: актуальная цена (372.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
     "date": "26 сентября 2026",
@@ -4522,7 +4522,7 @@ window.allArticles = [
     "category": "Обзоры"
   },
   {
-    "url": "/archive/lexilotl-crossword-puzzle-run-4735750.html",
+    "url": "/archive/lexilotl-crossword-puzzle-run-4735750",
     "title": "Lexilotl: Crossword Puzzle Run: цена, отзывы и статистика игроков",
     "excerpt": "Lexilotl: Crossword Puzzle Run: актуальная цена (240.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
     "date": "26 сентября 2026",
@@ -4530,7 +4530,7 @@ window.allArticles = [
     "category": "Обзоры"
   },
   {
-    "url": "/archive/hentai-age-cat-5234460.html",
+    "url": "/archive/hentai-age-cat-5234460",
     "title": "Hentai Age Cat: цена, отзывы и статистика игроков",
     "excerpt": "Hentai Age Cat: актуальная цена (40.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
     "date": "26 сентября 2026",
@@ -4538,7 +4538,7 @@ window.allArticles = [
     "category": "Обзоры"
   },
   {
-    "url": "/archive/loki-s-revenge-2936750.html",
+    "url": "/archive/loki-s-revenge-2936750",
     "title": "Loki's Revenge: цена, отзывы и статистика игроков",
     "excerpt": "Loki's Revenge: актуальная цена (46.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
     "date": "26 сентября 2026",
@@ -4546,7 +4546,7 @@ window.allArticles = [
     "category": "Обзоры"
   },
   {
-    "url": "/archive/killdozer-4909940.html",
+    "url": "/archive/killdozer-4909940",
     "title": "Killdozer: цена, отзывы и статистика игроков",
     "excerpt": "Killdozer: актуальная цена (180.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
     "date": "26 сентября 2026",
@@ -4554,7 +4554,7 @@ window.allArticles = [
     "category": "Обзоры"
   },
   {
-    "url": "/archive/afk-army-for-keyboard-5194330.html",
+    "url": "/archive/afk-army-for-keyboard-5194330",
     "title": "AFK - Army For Keyboard: цена, отзывы и статистика игроков",
     "excerpt": "AFK - Army For Keyboard: актуальная цена (135.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
     "date": "26 сентября 2026",
@@ -4562,7 +4562,7 @@ window.allArticles = [
     "category": "Обзоры"
   },
   {
-    "url": "/archive/mmo-massive-mommy-orgy-4949180.html",
+    "url": "/archive/mmo-massive-mommy-orgy-4949180",
     "title": "MMO: Massive Mommy Orgy: цена, отзывы и статистика игроков",
     "excerpt": "MMO: Massive Mommy Orgy: актуальная цена (479.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
     "date": "26 сентября 2026",
@@ -4570,7 +4570,7 @@ window.allArticles = [
     "category": "Обзоры"
   },
   {
-    "url": "/archive/hockey-fire-5089520.html",
+    "url": "/archive/hockey-fire-5089520",
     "title": "Hockey Fire: цена, отзывы и статистика игроков",
     "excerpt": "Hockey Fire: актуальная цена (232.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
     "date": "26 сентября 2026",
@@ -4578,7 +4578,7 @@ window.allArticles = [
     "category": "Обзоры"
   },
   {
-    "url": "/archive/traffic-stop-anomaly-4408710.html",
+    "url": "/archive/traffic-stop-anomaly-4408710",
     "title": "Traffic Stop Anomaly: цена, отзывы и статистика игроков",
     "excerpt": "Traffic Stop Anomaly: актуальная цена (232.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
     "date": "26 сентября 2026",
@@ -4586,7 +4586,7 @@ window.allArticles = [
     "category": "Обзоры"
   },
   {
-    "url": "/archive/overdeveloped-requiem-3321770.html",
+    "url": "/archive/overdeveloped-requiem-3321770",
     "title": "Overdeveloped: Requiem: цена, отзывы и статистика игроков",
     "excerpt": "Overdeveloped: Requiem: актуальная цена (82.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
     "date": "26 сентября 2026",
@@ -4594,7 +4594,7 @@ window.allArticles = [
     "category": "Обзоры"
   },
   {
-    "url": "/archive/dungeon-forge-5080420.html",
+    "url": "/archive/dungeon-forge-5080420",
     "title": "Dungeon Forge: цена, отзывы и статистика игроков",
     "excerpt": "Dungeon Forge: актуальная цена (120.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
     "date": "26 сентября 2026",
@@ -4602,7 +4602,7 @@ window.allArticles = [
     "category": "Обзоры"
   },
   {
-    "url": "/archive/glass-masquerade-4-constellations-tarots-5285480.html",
+    "url": "/archive/glass-masquerade-4-constellations-tarots-5285480",
     "title": "Glass Masquerade 4: Constellations - Tarots: цена, отзывы и статистика игроков",
     "excerpt": "Glass Masquerade 4: Constellations - Tarots: актуальная цена (99.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
     "date": "26 сентября 2026",
@@ -4610,7 +4610,7 @@ window.allArticles = [
     "category": "Обзоры"
   },
   {
-    "url": "/archive/anna-chapter-2-4375800.html",
+    "url": "/archive/anna-chapter-2-4375800",
     "title": "Anna - Chapter 2: цена, отзывы и статистика игроков",
     "excerpt": "Anna - Chapter 2: актуальная цена (658.24 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
     "date": "26 сентября 2026",
@@ -4618,7 +4618,7 @@ window.allArticles = [
     "category": "Обзоры"
   },
   {
-    "url": "/archive/smoke-keeper-5115860.html",
+    "url": "/archive/smoke-keeper-5115860",
     "title": "Smoke Keeper: цена, отзывы и статистика игроков",
     "excerpt": "Smoke Keeper: актуальная цена (261.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
     "date": "26 сентября 2026",
@@ -4626,7 +4626,7 @@ window.allArticles = [
     "category": "Обзоры"
   },
   {
-    "url": "/archive/ctrl-esc-4323690.html",
+    "url": "/archive/ctrl-esc-4323690",
     "title": "CTRL+ESC: цена, отзывы и статистика игроков",
     "excerpt": "CTRL+ESC: актуальная цена (135.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
     "date": "26 сентября 2026",
@@ -4634,7 +4634,7 @@ window.allArticles = [
     "category": "Обзоры"
   },
   {
-    "url": "/archive/sumo-fumble-physics-party-4357300.html",
+    "url": "/archive/sumo-fumble-physics-party-4357300",
     "title": "Sumo Fumble: Physics Party: цена, отзывы и статистика игроков",
     "excerpt": "Sumo Fumble: Physics Party: актуальная цена (192.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
     "date": "26 сентября 2026",
@@ -4642,7 +4642,7 @@ window.allArticles = [
     "category": "Обзоры"
   },
   {
-    "url": "/archive/pixel-cross-stitch-toys-miniatures-pack-5103610.html",
+    "url": "/archive/pixel-cross-stitch-toys-miniatures-pack-5103610",
     "title": "Pixel Cross Stitch - Toys Miniatures Pack: цена, отзывы и статистика игроков",
     "excerpt": "Pixel Cross Stitch - Toys Miniatures Pack: актуальная цена (Бесплатно), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
     "date": "26 сентября 2026",
@@ -4650,7 +4650,7 @@ window.allArticles = [
     "category": "Обзоры"
   },
   {
-    "url": "/archive/nightmare-horror-investigation-5215920.html",
+    "url": "/archive/nightmare-horror-investigation-5215920",
     "title": "Nightmare Horror Investigation: цена, отзывы и статистика игроков",
     "excerpt": "Nightmare Horror Investigation: актуальная цена (200.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
     "date": "26 сентября 2026",
@@ -4658,7 +4658,7 @@ window.allArticles = [
     "category": "Обзоры"
   },
   {
-    "url": "/archive/hentai-femboy-secretary-5207580.html",
+    "url": "/archive/hentai-femboy-secretary-5207580",
     "title": "Hentai Femboy Secretary: цена, отзывы и статистика игроков",
     "excerpt": "Hentai Femboy Secretary: актуальная цена (124.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
     "date": "26 сентября 2026",
@@ -4666,7 +4666,7 @@ window.allArticles = [
     "category": "Обзоры"
   },
   {
-    "url": "/archive/rpg-5230220.html",
+    "url": "/archive/rpg-5230220",
     "title": "言葉遠征 ~~ 日语学习RPG ~~: цена, отзывы и статистика игроков",
     "excerpt": "言葉遠征 ~~ 日语学习RPG ~~: актуальная цена (429.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
     "date": "25 сентября 2026",
@@ -4674,7 +4674,7 @@ window.allArticles = [
     "category": "Обзоры"
   },
   {
-    "url": "/archive/assassin-of-werewolf-5236010.html",
+    "url": "/archive/assassin-of-werewolf-5236010",
     "title": "Assassin Of Werewolf: цена, отзывы и статистика игроков",
     "excerpt": "Assassin Of Werewolf: актуальная цена (108.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
     "date": "25 сентября 2026",
@@ -4682,7 +4682,7 @@ window.allArticles = [
     "category": "Обзоры"
   },
   {
-    "url": "/archive/300-5206350.html",
+    "url": "/archive/300-5206350",
     "title": "高三最后300天: цена, отзывы и статистика игроков",
     "excerpt": "高三最后300天: актуальная цена (192.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
     "date": "25 сентября 2026",
@@ -4690,7 +4690,7 @@ window.allArticles = [
     "category": "Обзоры"
   },
   {
-    "url": "/archive/goblins-and-gunslingers-4557390.html",
+    "url": "/archive/goblins-and-gunslingers-4557390",
     "title": "Goblins and Gunslingers: цена, отзывы и статистика игроков",
     "excerpt": "Goblins and Gunslingers: актуальная цена (Бесплатно), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
     "date": "25 сентября 2026",
@@ -4698,7 +4698,7 @@ window.allArticles = [
     "category": "Обзоры"
   },
   {
-    "url": "/archive/triple-pairing-4710010.html",
+    "url": "/archive/triple-pairing-4710010",
     "title": "Triple Pairing: цена, отзывы и статистика игроков",
     "excerpt": "Triple Pairing: актуальная цена (1014.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
     "date": "25 сентября 2026",
@@ -4706,7 +4706,7 @@ window.allArticles = [
     "category": "Обзоры"
   },
   {
-    "url": "/archive/virtual-skies-fpv-vr-5090850.html",
+    "url": "/archive/virtual-skies-fpv-vr-5090850",
     "title": "Virtual Skies FPV VR: цена, отзывы и статистика игроков",
     "excerpt": "Virtual Skies FPV VR: актуальная цена (174.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
     "date": "25 сентября 2026",
@@ -4714,7 +4714,7 @@ window.allArticles = [
     "category": "Обзоры"
   },
   {
-    "url": "/archive/best-puppy-certificate-4366980.html",
+    "url": "/archive/best-puppy-certificate-4366980",
     "title": "最佳小狗证 Best Puppy Certificate: цена, отзывы и статистика игроков",
     "excerpt": "最佳小狗证 Best Puppy Certificate: актуальная цена (127.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
     "date": "25 сентября 2026",
@@ -4722,7 +4722,7 @@ window.allArticles = [
     "category": "Обзоры"
   },
   {
-    "url": "/archive/a-transfer-student-from-chang-an-4128680.html",
+    "url": "/archive/a-transfer-student-from-chang-an-4128680",
     "title": "高考移民：常安转校生 A Transfer Student from Chang'an: цена, отзывы и статистика игроков",
     "excerpt": "高考移民：常安转校生 A Transfer Student from Chang'an: актуальная цена (207.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
     "date": "25 сентября 2026",
@@ -4730,7 +4730,7 @@ window.allArticles = [
     "category": "Обзоры"
   },
   {
-    "url": "/archive/pixel-planet-survivor-5125780.html",
+    "url": "/archive/pixel-planet-survivor-5125780",
     "title": "Pixel Planet Survivor: цена, отзывы и статистика игроков",
     "excerpt": "Pixel Planet Survivor: актуальная цена (74.92 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
     "date": "25 сентября 2026",
@@ -4738,7 +4738,7 @@ window.allArticles = [
     "category": "Обзоры"
   },
   {
-    "url": "/archive/death-momotaro-5119790.html",
+    "url": "/archive/death-momotaro-5119790",
     "title": "Death Momotaro: цена, отзывы и статистика игроков",
     "excerpt": "Death Momotaro: актуальная цена (180.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
     "date": "25 сентября 2026",
@@ -4746,7 +4746,7 @@ window.allArticles = [
     "category": "Обзоры"
   },
   {
-    "url": "/archive/abandoned-gameshop-5080530.html",
+    "url": "/archive/abandoned-gameshop-5080530",
     "title": "Abandoned Gameshop: цена, отзывы и статистика игроков",
     "excerpt": "Abandoned Gameshop: актуальная цена (152.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
     "date": "25 сентября 2026",
@@ -4754,7 +4754,7 @@ window.allArticles = [
     "category": "Обзоры"
   },
   {
-    "url": "/archive/den-ko-senka-4744850.html",
+    "url": "/archive/den-ko-senka-4744850",
     "title": "DEN KO SENKA: цена, отзывы и статистика игроков",
     "excerpt": "DEN KO SENKA: актуальная цена (Бесплатно), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
     "date": "25 сентября 2026",
@@ -4762,7 +4762,7 @@ window.allArticles = [
     "category": "Обзоры"
   },
   {
-    "url": "/archive/combat-conductor-4744840.html",
+    "url": "/archive/combat-conductor-4744840",
     "title": "Combat Conductor: цена, отзывы и статистика игроков",
     "excerpt": "Combat Conductor: актуальная цена (Бесплатно), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
     "date": "25 сентября 2026",
@@ -4770,7 +4770,7 @@ window.allArticles = [
     "category": "Обзоры"
   },
   {
-    "url": "/archive/ganbleyd-reyndzher-3702140.html",
+    "url": "/archive/ganbleyd-reyndzher-3702140",
     "title": "Ганблейд-Рейнджер: цена, отзывы и статистика игроков",
     "excerpt": "Ганблейд-Рейнджер: актуальная цена (204.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
     "date": "25 сентября 2026",
@@ -4778,7 +4778,7 @@ window.allArticles = [
     "category": "Обзоры"
   },
   {
-    "url": "/archive/magic-realm-3183450.html",
+    "url": "/archive/magic-realm-3183450",
     "title": "魔法之境 Magic Realm: цена, отзывы и статистика игроков",
     "excerpt": "魔法之境 Magic Realm: актуальная цена (308.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
     "date": "25 сентября 2026",
@@ -4786,7 +4786,7 @@ window.allArticles = [
     "category": "Обзоры"
   },
   {
-    "url": "/archive/abandoned-hospital-patrol-4744810.html",
+    "url": "/archive/abandoned-hospital-patrol-4744810",
     "title": "Abandoned Hospital Patrol: цена, отзывы и статистика игроков",
     "excerpt": "Abandoned Hospital Patrol: актуальная цена (Бесплатно), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
     "date": "25 сентября 2026",
@@ -4794,7 +4794,7 @@ window.allArticles = [
     "category": "Обзоры"
   },
   {
-    "url": "/archive/marine-slalom-4744790.html",
+    "url": "/archive/marine-slalom-4744790",
     "title": "Marine♡Slalom: цена, отзывы и статистика игроков",
     "excerpt": "Marine♡Slalom: актуальная цена (Бесплатно), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
     "date": "25 сентября 2026",
@@ -4802,7 +4802,7 @@ window.allArticles = [
     "category": "Обзоры"
   },
   {
-    "url": "/archive/onigotchi-4184190.html",
+    "url": "/archive/onigotchi-4184190",
     "title": "Onigotchi: цена, отзывы и статистика игроков",
     "excerpt": "Onigotchi: актуальная цена (140.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
     "date": "25 сентября 2026",
@@ -4810,7 +4810,7 @@ window.allArticles = [
     "category": "Обзоры"
   },
   {
-    "url": "/archive/dark-souls-remastered-570940.html",
+    "url": "/archive/dark-souls-remastered-570940",
     "title": "DARK SOULS™: REMASTERED: цена, отзывы и статистика игроков",
     "excerpt": "DARK SOULS™: REMASTERED: актуальная цена (1199.00 RUB), 92% положительных отзывов в Steam, статистика владельцев (2,000,000 – 5,000,000). Данные обновляются автоматически.",
     "date": "25 сентября 2026",
@@ -4818,7 +4818,7 @@ window.allArticles = [
     "category": "Обзоры"
   },
   {
-    "url": "/archive/american-truck-simulator-south-dakota-3749870.html",
+    "url": "/archive/american-truck-simulator-south-dakota-3749870",
     "title": "American Truck Simulator - South Dakota: цена, отзывы и статистика игроков",
     "excerpt": "American Truck Simulator - South Dakota: актуальная цена (749.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
     "date": "25 сентября 2026",
@@ -4826,7 +4826,7 @@ window.allArticles = [
     "category": "Обзоры"
   },
   {
-    "url": "/archive/garfield-escape-from-monday-3932790.html",
+    "url": "/archive/garfield-escape-from-monday-3932790",
     "title": "Garfield - Escape from Monday: цена, отзывы и статистика игроков",
     "excerpt": "Garfield - Escape from Monday: актуальная цена (1817.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
     "date": "24 сентября 2026",
@@ -4834,7 +4834,7 @@ window.allArticles = [
     "category": "Обзоры"
   },
   {
-    "url": "/archive/kalanoro-3158820.html",
+    "url": "/archive/kalanoro-3158820",
     "title": "Kalanoro: цена, отзывы и статистика игроков",
     "excerpt": "Kalanoro: актуальная цена (532.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
     "date": "24 сентября 2026",
@@ -4842,7 +4842,7 @@ window.allArticles = [
     "category": "Обзоры"
   },
   {
-    "url": "/archive/chesscape-room-3949530.html",
+    "url": "/archive/chesscape-room-3949530",
     "title": "Chesscape Room: цена, отзывы и статистика игроков",
     "excerpt": "Chesscape Room: актуальная цена (399.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
     "date": "24 сентября 2026",
@@ -4850,7 +4850,7 @@ window.allArticles = [
     "category": "Обзоры"
   },
   {
-    "url": "/archive/mpe-keys-5216600.html",
+    "url": "/archive/mpe-keys-5216600",
     "title": "MPE Keys: цена, отзывы и статистика игроков",
     "excerpt": "MPE Keys: актуальная цена (561.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
     "date": "24 сентября 2026",
@@ -4858,7 +4858,7 @@ window.allArticles = [
     "category": "Обзоры"
   },
   {
-    "url": "/archive/shahmaty-pyati-stihiy-1611690.html",
+    "url": "/archive/shahmaty-pyati-stihiy-1611690",
     "title": "Шахматы Пяти Стихий: цена, отзывы и статистика игроков",
     "excerpt": "Шахматы Пяти Стихий: актуальная цена (561.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
     "date": "24 сентября 2026",
@@ -4866,7 +4866,7 @@ window.allArticles = [
     "category": "Обзоры"
   },
   {
-    "url": "/archive/drapline-3103780.html",
+    "url": "/archive/drapline-3103780",
     "title": "DRAPLINE: цена, отзывы и статистика игроков",
     "excerpt": "DRAPLINE: актуальная цена (590.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
     "date": "24 сентября 2026",
@@ -4874,7 +4874,7 @@ window.allArticles = [
     "category": "Обзоры"
   },
   {
-    "url": "/archive/infinite-galleries-5017500.html",
+    "url": "/archive/infinite-galleries-5017500",
     "title": "Infinite Galleries: цена, отзывы и статистика игроков",
     "excerpt": "Infinite Galleries: актуальная цена (Бесплатно), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
     "date": "24 сентября 2026",
@@ -4882,7 +4882,7 @@ window.allArticles = [
     "category": "Обзоры"
   },
   {
-    "url": "/archive/prisoners-chess-4902250.html",
+    "url": "/archive/prisoners-chess-4902250",
     "title": "Prisoners Chess: цена, отзывы и статистика игроков",
     "excerpt": "Prisoners Chess: актуальная цена (378.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
     "date": "24 сентября 2026",
@@ -4890,7 +4890,7 @@ window.allArticles = [
     "category": "Обзоры"
   },
   {
-    "url": "/archive/duola-mage-4133550.html",
+    "url": "/archive/duola-mage-4133550",
     "title": "Duola Mage: цена, отзывы и статистика игроков",
     "excerpt": "Duola Mage: актуальная цена (268.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
     "date": "24 сентября 2026",
@@ -4898,7 +4898,7 @@ window.allArticles = [
     "category": "Обзоры"
   },
   {
-    "url": "/archive/desktop-girl-chika-4285860.html",
+    "url": "/archive/desktop-girl-chika-4285860",
     "title": "Desktop Girl Chika: цена, отзывы и статистика игроков",
     "excerpt": "Desktop Girl Chika: актуальная цена (327.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
     "date": "24 сентября 2026",
@@ -4906,7 +4906,7 @@ window.allArticles = [
     "category": "Обзоры"
   },
   {
-    "url": "/archive/galaxy-hunter-4246520.html",
+    "url": "/archive/galaxy-hunter-4246520",
     "title": "Galaxy Hunter: цена, отзывы и статистика игроков",
     "excerpt": "Galaxy Hunter: актуальная цена (346.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
     "date": "24 сентября 2026",
@@ -4914,7 +4914,7 @@ window.allArticles = [
     "category": "Обзоры"
   },
   {
-    "url": "/archive/reflection-witch-2626560.html",
+    "url": "/archive/reflection-witch-2626560",
     "title": "Reflection Witch: цена, отзывы и статистика игроков",
     "excerpt": "Reflection Witch: актуальная цена (346.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
     "date": "24 сентября 2026",
@@ -4922,7 +4922,7 @@ window.allArticles = [
     "category": "Обзоры"
   },
   {
-    "url": "/archive/even-if-tempest-4483830.html",
+    "url": "/archive/even-if-tempest-4483830",
     "title": "even if TEMPEST 宵闇にかく語りき魔女: цена, отзывы и статистика игроков",
     "excerpt": "even if TEMPEST 宵闇にかく語りき魔女: актуальная цена (3149.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
     "date": "24 сентября 2026",
@@ -4930,7 +4930,7 @@ window.allArticles = [
     "category": "Обзоры"
   },
   {
-    "url": "/archive/-3997000.html",
+    "url": "/archive/-3997000",
     "title": "飛燕の短剣: цена, отзывы и статистика игроков",
     "excerpt": "飛燕の短剣: актуальная цена (51.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
     "date": "24 сентября 2026",
@@ -4938,7 +4938,7 @@ window.allArticles = [
     "category": "Обзоры"
   },
   {
-    "url": "/archive/downhill-drift-5218170.html",
+    "url": "/archive/downhill-drift-5218170",
     "title": "Downhill Drift: цена, отзывы и статистика игроков",
     "excerpt": "Downhill Drift: актуальная цена (99.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
     "date": "24 сентября 2026",
@@ -4946,7 +4946,7 @@ window.allArticles = [
     "category": "Обзоры"
   },
   {
-    "url": "/archive/unanchored-spaceshooting-4216770.html",
+    "url": "/archive/unanchored-spaceshooting-4216770",
     "title": "Unanchored Spaceshooting: цена, отзывы и статистика игроков",
     "excerpt": "Unanchored Spaceshooting: актуальная цена (65.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
     "date": "24 сентября 2026",
@@ -4954,7 +4954,7 @@ window.allArticles = [
     "category": "Обзоры"
   },
   {
-    "url": "/archive/off-the-clock-13-f-5136120.html",
+    "url": "/archive/off-the-clock-13-f-5136120",
     "title": "Off the Clock: 13/F: цена, отзывы и статистика игроков",
     "excerpt": "Off the Clock: 13/F: актуальная цена (216.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
     "date": "24 сентября 2026",
@@ -4962,7 +4962,7 @@ window.allArticles = [
     "category": "Обзоры"
   },
   {
-    "url": "/archive/myau-otryad-inkrementalnaya-lovlya-4753960.html",
+    "url": "/archive/myau-otryad-inkrementalnaya-lovlya-4753960",
     "title": "Мяу Отряд: Инкрементальная Ловля: цена, отзывы и статистика игроков",
     "excerpt": "Мяу Отряд: Инкрементальная Ловля: актуальная цена (180.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
     "date": "24 сентября 2026",
@@ -4970,7 +4970,7 @@ window.allArticles = [
     "category": "Обзоры"
   },
   {
-    "url": "/archive/spy-mission-my-girlfriend-the-old-noble-s-maid-3192250.html",
+    "url": "/archive/spy-mission-my-girlfriend-the-old-noble-s-maid-3192250",
     "title": "Spy Mission: My Girlfriend, the Old Noble’s Maid: цена, отзывы и статистика игроков",
     "excerpt": "Spy Mission: My Girlfriend, the Old Noble’s Maid: актуальная цена (346.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
     "date": "24 сентября 2026",
@@ -4978,7 +4978,7 @@ window.allArticles = [
     "category": "Обзоры"
   },
   {
-    "url": "/archive/-5172380.html",
+    "url": "/archive/-5172380",
     "title": "挂机升级爆装备: цена, отзывы и статистика игроков",
     "excerpt": "挂机升级爆装备: актуальная цена (180.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
     "date": "24 сентября 2026",
@@ -4986,7 +4986,7 @@ window.allArticles = [
     "category": "Обзоры"
   },
   {
-    "url": "/archive/-5245970.html",
+    "url": "/archive/-5245970",
     "title": "餅月: цена, отзывы и статистика игроков",
     "excerpt": "餅月: актуальная цена (Бесплатно), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
     "date": "24 сентября 2026",
@@ -4994,7 +4994,7 @@ window.allArticles = [
     "category": "Обзоры"
   },
   {
-    "url": "/archive/chronolens-5245980.html",
+    "url": "/archive/chronolens-5245980",
     "title": "ChronoLens: цена, отзывы и статистика игроков",
     "excerpt": "ChronoLens: актуальная цена (Бесплатно), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
     "date": "24 сентября 2026",
@@ -5002,7 +5002,7 @@ window.allArticles = [
     "category": "Обзоры"
   },
   {
-    "url": "/archive/-5144870.html",
+    "url": "/archive/-5144870",
     "title": "おでんポンッ！: цена, отзывы и статистика игроков",
     "excerpt": "おでんポンッ！: актуальная цена (Бесплатно), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
     "date": "24 сентября 2026",
@@ -5010,7 +5010,7 @@ window.allArticles = [
     "category": "Обзоры"
   },
   {
-    "url": "/archive/-2698960.html",
+    "url": "/archive/-2698960",
     "title": "浮生地中海: цена, отзывы и статистика игроков",
     "excerpt": "浮生地中海: актуальная цена (203.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
     "date": "24 сентября 2026",
@@ -5018,7 +5018,7 @@ window.allArticles = [
     "category": "Обзоры"
   },
   {
-    "url": "/archive/brother-get-the-oats-3191280.html",
+    "url": "/archive/brother-get-the-oats-3191280",
     "title": "Brother, Get The Oats: цена, отзывы и статистика игроков",
     "excerpt": "Brother, Get The Oats: актуальная цена (280.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
     "date": "24 сентября 2026",
@@ -5026,7 +5026,7 @@ window.allArticles = [
     "category": "Обзоры"
   },
   {
-    "url": "/archive/-3882410.html",
+    "url": "/archive/-3882410",
     "title": "神貌のクリファ: цена, отзывы и статистика игроков",
     "excerpt": "神貌のクリファ: актуальная цена (1750.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
     "date": "24 сентября 2026",
@@ -5034,7 +5034,7 @@ window.allArticles = [
     "category": "Обзоры"
   },
   {
-    "url": "/archive/fusty-dungeon-3410670.html",
+    "url": "/archive/fusty-dungeon-3410670",
     "title": "Fusty Dungeon: цена, отзывы и статистика игроков",
     "excerpt": "Fusty Dungeon: актуальная цена (512.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
     "date": "24 сентября 2026",
@@ -5042,7 +5042,7 @@ window.allArticles = [
     "category": "Обзоры"
   },
   {
-    "url": "/archive/trails-in-the-sky-2nd-chapter-eternal-summer-swimsuit-set-4975690.html",
+    "url": "/archive/trails-in-the-sky-2nd-chapter-eternal-summer-swimsuit-set-4975690",
     "title": "Trails in the Sky 2nd Chapter - Eternal Summer Swimsuit Set: цена, отзывы и статистика игроков",
     "excerpt": "Trails in the Sky 2nd Chapter - Eternal Summer Swimsuit Set: актуальная цена (660.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
     "date": "24 сентября 2026",
@@ -5050,7 +5050,7 @@ window.allArticles = [
     "category": "Обзоры"
   },
   {
-    "url": "/archive/love-all-my-girls-4553130.html",
+    "url": "/archive/love-all-my-girls-4553130",
     "title": "Love All My Girls: цена, отзывы и статистика игроков",
     "excerpt": "Love All My Girls: актуальная цена (372.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
     "date": "24 сентября 2026",
@@ -5058,7 +5058,7 @@ window.allArticles = [
     "category": "Обзоры"
   },
   {
-    "url": "/archive/frog-pond-simulator-3892380.html",
+    "url": "/archive/frog-pond-simulator-3892380",
     "title": "Frog Pond Simulator: цена, отзывы и статистика игроков",
     "excerpt": "Frog Pond Simulator: актуальная цена (106.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
     "date": "24 сентября 2026",
@@ -5066,7 +5066,7 @@ window.allArticles = [
     "category": "Обзоры"
   },
   {
-    "url": "/archive/noir-3851170.html",
+    "url": "/archive/noir-3851170",
     "title": "Noir: цена, отзывы и статистика игроков",
     "excerpt": "Noir: актуальная цена (375.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
     "date": "23 сентября 2026",
@@ -5074,7 +5074,7 @@ window.allArticles = [
     "category": "Обзоры"
   },
   {
-    "url": "/archive/heroes-vow-three-kingdoms-3020510.html",
+    "url": "/archive/heroes-vow-three-kingdoms-3020510",
     "title": "Heroes' Vow: Three Kingdoms: цена, отзывы и статистика игроков",
     "excerpt": "Heroes' Vow: Three Kingdoms: актуальная цена (900.00 RUB), 89% положительных отзывов в Steam, статистика владельцев (200,000 – 500,000). Данные обновляются автоматически.",
     "date": "23 сентября 2026",
@@ -5082,7 +5082,7 @@ window.allArticles = [
     "category": "Обзоры"
   },
   {
-    "url": "/archive/nios-1568460.html",
+    "url": "/archive/nios-1568460",
     "title": "NIOS: цена, отзывы и статистика игроков",
     "excerpt": "NIOS: актуальная цена (555.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
     "date": "23 сентября 2026",
@@ -5090,7 +5090,7 @@ window.allArticles = [
     "category": "Обзоры"
   },
   {
-    "url": "/archive/pirate-guy-2-new-land-5198550.html",
+    "url": "/archive/pirate-guy-2-new-land-5198550",
     "title": "Pirate Guy 2 New Land: цена, отзывы и статистика игроков",
     "excerpt": "Pirate Guy 2 New Land: актуальная цена (81.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
     "date": "23 сентября 2026",
@@ -5098,7 +5098,7 @@ window.allArticles = [
     "category": "Обзоры"
   },
   {
-    "url": "/archive/pizza-revolution-4786960.html",
+    "url": "/archive/pizza-revolution-4786960",
     "title": "Pizza Revolution: цена, отзывы и статистика игроков",
     "excerpt": "Pizza Revolution: актуальная цена (160.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
     "date": "23 сентября 2026",
@@ -5106,7 +5106,7 @@ window.allArticles = [
     "category": "Обзоры"
   },
   {
-    "url": "/archive/the-piper-of-dawn-3804370.html",
+    "url": "/archive/the-piper-of-dawn-3804370",
     "title": "The Piper of Dawn: цена, отзывы и статистика игроков",
     "excerpt": "The Piper of Dawn: актуальная цена (531.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
     "date": "23 сентября 2026",
@@ -5114,7 +5114,7 @@ window.allArticles = [
     "category": "Обзоры"
   },
   {
-    "url": "/archive/aigenrobo-5130010.html",
+    "url": "/archive/aigenrobo-5130010",
     "title": "AIGENROBO: цена, отзывы и статистика игроков",
     "excerpt": "AIGENROBO: актуальная цена (418.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
     "date": "23 сентября 2026",
@@ -5122,7 +5122,7 @@ window.allArticles = [
     "category": "Обзоры"
   },
   {
-    "url": "/archive/dog-5057210.html",
+    "url": "/archive/dog-5057210",
     "title": "Dog: цена, отзывы и статистика игроков",
     "excerpt": "Dog: актуальная цена (150.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
     "date": "23 сентября 2026",
@@ -5130,7 +5130,7 @@ window.allArticles = [
     "category": "Обзоры"
   },
   {
-    "url": "/archive/rip-923530.html",
+    "url": "/archive/rip-923530",
     "title": "RIP: цена, отзывы и статистика игроков",
     "excerpt": "RIP: актуальная цена (520.00 RUB), 67% положительных отзывов в Steam, статистика владельцев (20,000 – 50,000). Данные обновляются автоматически.",
     "date": "23 сентября 2026",
@@ -5138,7 +5138,7 @@ window.allArticles = [
     "category": "Обзоры"
   },
   {
-    "url": "/archive/one-more-pearl-4800440.html",
+    "url": "/archive/one-more-pearl-4800440",
     "title": "One More Pearl!: цена, отзывы и статистика игроков",
     "excerpt": "One More Pearl!: актуальная цена (84.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
     "date": "23 сентября 2026",
@@ -5146,7 +5146,7 @@ window.allArticles = [
     "category": "Обзоры"
   },
   {
-    "url": "/archive/birthday-4696240.html",
+    "url": "/archive/birthday-4696240",
     "title": "Birthday: цена, отзывы и статистика игроков",
     "excerpt": "Birthday: актуальная цена (51.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
     "date": "23 сентября 2026",
@@ -5154,7 +5154,7 @@ window.allArticles = [
     "category": "Обзоры"
   },
   {
-    "url": "/archive/dusha-primanka-bait-soul-3484100.html",
+    "url": "/archive/dusha-primanka-bait-soul-3484100",
     "title": "Душа-приманка (Bait Soul): цена, отзывы и статистика игроков",
     "excerpt": "Душа-приманка (Bait Soul): актуальная цена (378.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
     "date": "23 сентября 2026",
@@ -5162,7 +5162,7 @@ window.allArticles = [
     "category": "Обзоры"
   },
   {
-    "url": "/archive/edo-village-nightmare-4327010.html",
+    "url": "/archive/edo-village-nightmare-4327010",
     "title": "姉妹道中千両箱 : Edo Village Nightmare: цена, отзывы и статистика игроков",
     "excerpt": "姉妹道中千両箱 : Edo Village Nightmare: актуальная цена (203.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
     "date": "23 сентября 2026",
@@ -5170,7 +5170,7 @@ window.allArticles = [
     "category": "Обзоры"
   },
   {
-    "url": "/archive/island-ntr-survival-ss-3192240.html",
+    "url": "/archive/island-ntr-survival-ss-3192240",
     "title": "Island NTR Survival SS: цена, отзывы и статистика игроков",
     "excerpt": "Island NTR Survival SS: актуальная цена (301.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
     "date": "23 сентября 2026",
@@ -5178,7 +5178,7 @@ window.allArticles = [
     "category": "Обзоры"
   },
   {
-    "url": "/archive/-4169160.html",
+    "url": "/archive/-4169160",
     "title": "妹控计划: цена, отзывы и статистика игроков",
     "excerpt": "妹控计划: актуальная цена (89.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
     "date": "23 сентября 2026",
@@ -5186,7 +5186,7 @@ window.allArticles = [
     "category": "Обзоры"
   },
   {
-    "url": "/archive/-3319700.html",
+    "url": "/archive/-3319700",
     "title": "新世界：暗影成双: цена, отзывы и статистика игроков",
     "excerpt": "新世界：暗影成双: актуальная цена (311.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
     "date": "23 сентября 2026",
@@ -5194,7 +5194,7 @@ window.allArticles = [
     "category": "Обзоры"
   },
   {
-    "url": "/archive/blitz-jong-5183080.html",
+    "url": "/archive/blitz-jong-5183080",
     "title": "Blitz Jong: цена, отзывы и статистика игроков",
     "excerpt": "Blitz Jong: актуальная цена (Бесплатно), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
     "date": "23 сентября 2026",
@@ -5202,7 +5202,7 @@ window.allArticles = [
     "category": "Обзоры"
   },
   {
-    "url": "/archive/space-fishing-verti-go-4521300.html",
+    "url": "/archive/space-fishing-verti-go-4521300",
     "title": "Space Fishing: Verti-Go!: цена, отзывы и статистика игроков",
     "excerpt": "Space Fishing: Verti-Go!: актуальная цена (150.42 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
     "date": "23 сентября 2026",
@@ -5210,7 +5210,7 @@ window.allArticles = [
     "category": "Обзоры"
   },
   {
-    "url": "/archive/rokovoy-tyag-the-doomed-draw-4277000.html",
+    "url": "/archive/rokovoy-tyag-the-doomed-draw-4277000",
     "title": "Роковой Тяг (The Doomed Draw): цена, отзывы и статистика игроков",
     "excerpt": "Роковой Тяг (The Doomed Draw): актуальная цена (40.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
     "date": "23 сентября 2026",
@@ -5218,7 +5218,7 @@ window.allArticles = [
     "category": "Обзоры"
   },
   {
-    "url": "/archive/scrolls-of-torah-prophets-writings-4980790.html",
+    "url": "/archive/scrolls-of-torah-prophets-writings-4980790",
     "title": "Scrolls of Torah, Prophets & Writings: цена, отзывы и статистика игроков",
     "excerpt": "Scrolls of Torah, Prophets & Writings: актуальная цена (290.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
     "date": "23 сентября 2026",
@@ -5226,7 +5226,7 @@ window.allArticles = [
     "category": "Обзоры"
   },
   {
-    "url": "/archive/beat-boxy-4536120.html",
+    "url": "/archive/beat-boxy-4536120",
     "title": "Beat Boxy: цена, отзывы и статистика игроков",
     "excerpt": "Beat Boxy: актуальная цена (224.06 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
     "date": "23 сентября 2026",
@@ -5234,7 +5234,7 @@ window.allArticles = [
     "category": "Обзоры"
   },
   {
-    "url": "/archive/fuel-up-4883240.html",
+    "url": "/archive/fuel-up-4883240",
     "title": "Fuel Up: цена, отзывы и статистика игроков",
     "excerpt": "Fuel Up: актуальная цена (Бесплатно), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
     "date": "23 сентября 2026",
@@ -5242,7 +5242,7 @@ window.allArticles = [
     "category": "Обзоры"
   },
   {
-    "url": "/archive/emoji-jackpot-word-finder-3131810.html",
+    "url": "/archive/emoji-jackpot-word-finder-3131810",
     "title": "EMOJI JACKPOT: Word Finder: цена, отзывы и статистика игроков",
     "excerpt": "EMOJI JACKPOT: Word Finder: актуальная цена (99.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
     "date": "23 сентября 2026",
@@ -5250,7 +5250,7 @@ window.allArticles = [
     "category": "Обзоры"
   },
   {
-    "url": "/archive/magnet-5197660.html",
+    "url": "/archive/magnet-5197660",
     "title": "MAGNET: цена, отзывы и статистика игроков",
     "excerpt": "MAGNET: актуальная цена (51.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
     "date": "23 сентября 2026",
@@ -5258,7 +5258,7 @@ window.allArticles = [
     "category": "Обзоры"
   },
   {
-    "url": "/archive/ebitapes-2221850.html",
+    "url": "/archive/ebitapes-2221850",
     "title": "EbiTapes: цена, отзывы и статистика игроков",
     "excerpt": "EbiTapes: актуальная цена (561.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
     "date": "23 сентября 2026",
@@ -5266,7 +5266,7 @@ window.allArticles = [
     "category": "Обзоры"
   },
   {
-    "url": "/archive/uncles-5022820.html",
+    "url": "/archive/uncles-5022820",
     "title": "Uncles: цена, отзывы и статистика игроков",
     "excerpt": "Uncles: актуальная цена (100.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
     "date": "23 сентября 2026",
@@ -5274,7 +5274,7 @@ window.allArticles = [
     "category": "Обзоры"
   },
   {
-    "url": "/archive/fruit-golf-406890.html",
+    "url": "/archive/fruit-golf-406890",
     "title": "Fruit Golf: цена, отзывы и статистика игроков",
     "excerpt": "Fruit Golf: актуальная цена (419.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
     "date": "23 сентября 2026",
@@ -5282,7 +5282,7 @@ window.allArticles = [
     "category": "Обзоры"
   },
   {
-    "url": "/archive/deskfamiliar-4943020.html",
+    "url": "/archive/deskfamiliar-4943020",
     "title": "DeskFamiliar: цена, отзывы и статистика игроков",
     "excerpt": "DeskFamiliar: актуальная цена (Бесплатно), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
     "date": "23 сентября 2026",
@@ -5290,7 +5290,7 @@ window.allArticles = [
     "category": "Обзоры"
   },
   {
-    "url": "/archive/now-showing-a-cinema-programming-game-5066560.html",
+    "url": "/archive/now-showing-a-cinema-programming-game-5066560",
     "title": "NOW SHOWING: A Cinema Programming Game: цена, отзывы и статистика игроков",
     "excerpt": "NOW SHOWING: A Cinema Programming Game: актуальная цена (590.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
     "date": "23 сентября 2026",
@@ -5298,7 +5298,7 @@ window.allArticles = [
     "category": "Обзоры"
   },
   {
-    "url": "/archive/best-slime-of-my-life-4272610.html",
+    "url": "/archive/best-slime-of-my-life-4272610",
     "title": "Best Slime of my Life: цена, отзывы и статистика игроков",
     "excerpt": "Best Slime of my Life: актуальная цена (216.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
     "date": "23 сентября 2026",
@@ -5306,7 +5306,7 @@ window.allArticles = [
     "category": "Обзоры"
   },
   {
-    "url": "/archive/stuntboost-2999500.html",
+    "url": "/archive/stuntboost-2999500",
     "title": "STUNTBOOST: цена, отзывы и статистика игроков",
     "excerpt": "STUNTBOOST: актуальная цена (280.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
     "date": "22 сентября 2026",
@@ -5314,7 +5314,7 @@ window.allArticles = [
     "category": "Обзоры"
   },
   {
-    "url": "/archive/questfarers-of-the-stone-5010200.html",
+    "url": "/archive/questfarers-of-the-stone-5010200",
     "title": "Questfarers of the Stone: цена, отзывы и статистика игроков",
     "excerpt": "Questfarers of the Stone: актуальная цена (726.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
     "date": "22 сентября 2026",
@@ -5322,7 +5322,7 @@ window.allArticles = [
     "category": "Обзоры"
   },
   {
-    "url": "/archive/catson-files-wizard-town-4967790.html",
+    "url": "/archive/catson-files-wizard-town-4967790",
     "title": "Catson Files: Wizard Town: цена, отзывы и статистика игроков",
     "excerpt": "Catson Files: Wizard Town: актуальная цена (Бесплатно), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
     "date": "22 сентября 2026",
@@ -5330,7 +5330,7 @@ window.allArticles = [
     "category": "Обзоры"
   },
   {
-    "url": "/archive/cheerleaders-3652840.html",
+    "url": "/archive/cheerleaders-3652840",
     "title": "Cheerleaders: цена, отзывы и статистика игроков",
     "excerpt": "Cheerleaders: актуальная цена (501.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
     "date": "22 сентября 2026",
@@ -5338,7 +5338,7 @@ window.allArticles = [
     "category": "Обзоры"
   },
   {
-    "url": "/archive/laryen-5142990.html",
+    "url": "/archive/laryen-5142990",
     "title": "Laryen: цена, отзывы и статистика игроков",
     "excerpt": "Laryen: актуальная цена (Бесплатно), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
     "date": "22 сентября 2026",
@@ -5346,7 +5346,7 @@ window.allArticles = [
     "category": "Обзоры"
   },
   {
-    "url": "/archive/subspace-redux-4821960.html",
+    "url": "/archive/subspace-redux-4821960",
     "title": "Subspace: Redux: цена, отзывы и статистика игроков",
     "excerpt": "Subspace: Redux: актуальная цена (Бесплатно), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
     "date": "22 сентября 2026",
@@ -5354,7 +5354,7 @@ window.allArticles = [
     "category": "Обзоры"
   },
   {
-    "url": "/archive/the-blood-of-yidhra-4643800.html",
+    "url": "/archive/the-blood-of-yidhra-4643800",
     "title": "The Blood of Yidhra: цена, отзывы и статистика игроков",
     "excerpt": "The Blood of Yidhra: актуальная цена (855.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
     "date": "22 сентября 2026",
@@ -5362,7 +5362,7 @@ window.allArticles = [
     "category": "Обзоры"
   },
   {
-    "url": "/archive/parasited-will-3077650.html",
+    "url": "/archive/parasited-will-3077650",
     "title": "Parasited Will: цена, отзывы и статистика игроков",
     "excerpt": "Parasited Will: актуальная цена (290.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
     "date": "22 сентября 2026",
@@ -5370,7 +5370,7 @@ window.allArticles = [
     "category": "Обзоры"
   },
   {
-    "url": "/archive/-4575670.html",
+    "url": "/archive/-4575670",
     "title": "魅魔深渊：三十天生存法则: цена, отзывы и статистика игроков",
     "excerpt": "魅魔深渊：三十天生存法则: актуальная цена (418.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
     "date": "22 сентября 2026",
@@ -5378,7 +5378,7 @@ window.allArticles = [
     "category": "Обзоры"
   },
   {
-    "url": "/archive/screenside-fisher-4270850.html",
+    "url": "/archive/screenside-fisher-4270850",
     "title": "SCREENSIDE FISHER: цена, отзывы и статистика игроков",
     "excerpt": "SCREENSIDE FISHER: актуальная цена (Бесплатно), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
     "date": "22 сентября 2026",
@@ -5386,7 +5386,7 @@ window.allArticles = [
     "category": "Обзоры"
   },
   {
-    "url": "/archive/starshaya-sestra-5206420.html",
+    "url": "/archive/starshaya-sestra-5206420",
     "title": "Старшая сестра: цена, отзывы и статистика игроков",
     "excerpt": "Старшая сестра: актуальная цена (40.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
     "date": "22 сентября 2026",
@@ -5394,7 +5394,7 @@ window.allArticles = [
     "category": "Обзоры"
   },
   {
-    "url": "/archive/lucky-break-fartovyy-spin-4155880.html",
+    "url": "/archive/lucky-break-fartovyy-spin-4155880",
     "title": "Lucky Break: фартовый спин: цена, отзывы и статистика игроков",
     "excerpt": "Lucky Break: фартовый спин: актуальная цена (204.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
     "date": "22 сентября 2026",
@@ -5402,7 +5402,7 @@ window.allArticles = [
     "category": "Обзоры"
   },
   {
-    "url": "/archive/seekers-alliance-hero-s-journey-1352890.html",
+    "url": "/archive/seekers-alliance-hero-s-journey-1352890",
     "title": "Seekers Alliance: Hero's Journey: цена, отзывы и статистика игроков",
     "excerpt": "Seekers Alliance: Hero's Journey: актуальная цена (520.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
     "date": "22 сентября 2026",
@@ -5410,7 +5410,7 @@ window.allArticles = [
     "category": "Обзоры"
   },
   {
-    "url": "/archive/bugarden-4289410.html",
+    "url": "/archive/bugarden-4289410",
     "title": "BuGarden: цена, отзывы и статистика игроков",
     "excerpt": "BuGarden: актуальная цена (192.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
     "date": "22 сентября 2026",
@@ -5418,7 +5418,7 @@ window.allArticles = [
     "category": "Обзоры"
   },
   {
-    "url": "/archive/ved-recure-3255500.html",
+    "url": "/archive/ved-recure-3255500",
     "title": "Ved: Recure: цена, отзывы и статистика игроков",
     "excerpt": "Ved: Recure: актуальная цена (765.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
     "date": "22 сентября 2026",
@@ -5426,7 +5426,7 @@ window.allArticles = [
     "category": "Обзоры"
   },
   {
-    "url": "/archive/a-decent-farewell-5109380.html",
+    "url": "/archive/a-decent-farewell-5109380",
     "title": "A Decent Farewell: цена, отзывы и статистика игроков",
     "excerpt": "A Decent Farewell: актуальная цена (Бесплатно), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
     "date": "22 сентября 2026",
@@ -5434,7 +5434,7 @@ window.allArticles = [
     "category": "Обзоры"
   },
   {
-    "url": "/archive/eagle-knight-paradox-3008700.html",
+    "url": "/archive/eagle-knight-paradox-3008700",
     "title": "Eagle Knight Paradox: цена, отзывы и статистика игроков",
     "excerpt": "Eagle Knight Paradox: актуальная цена (418.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
     "date": "22 сентября 2026",
@@ -5442,7 +5442,7 @@ window.allArticles = [
     "category": "Обзоры"
   },
   {
-    "url": "/archive/grim-siege-4920750.html",
+    "url": "/archive/grim-siege-4920750",
     "title": "Grim Siege: цена, отзывы и статистика игроков",
     "excerpt": "Grim Siege: актуальная цена (405.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
     "date": "22 сентября 2026",
@@ -5450,7 +5450,7 @@ window.allArticles = [
     "category": "Обзоры"
   },
   {
-    "url": "/archive/ludus-deceptor-4920310.html",
+    "url": "/archive/ludus-deceptor-4920310",
     "title": "Ludus Deceptor: цена, отзывы и статистика игроков",
     "excerpt": "Ludus Deceptor: актуальная цена (174.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
     "date": "22 сентября 2026",
@@ -5458,7 +5458,7 @@ window.allArticles = [
     "category": "Обзоры"
   },
   {
-    "url": "/archive/soggy-beans-2636430.html",
+    "url": "/archive/soggy-beans-2636430",
     "title": "Soggy Beans: цена, отзывы и статистика игроков",
     "excerpt": "Soggy Beans: актуальная цена (256.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
     "date": "22 сентября 2026",
@@ -5466,7 +5466,7 @@ window.allArticles = [
     "category": "Обзоры"
   },
   {
-    "url": "/archive/puzzles-trees-4964780.html",
+    "url": "/archive/puzzles-trees-4964780",
     "title": "Puzzles Trees: цена, отзывы и статистика игроков",
     "excerpt": "Puzzles Trees: актуальная цена (51.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
     "date": "22 сентября 2026",
@@ -5474,7 +5474,7 @@ window.allArticles = [
     "category": "Обзоры"
   },
   {
-    "url": "/archive/kick-bot-dx-3664670.html",
+    "url": "/archive/kick-bot-dx-3664670",
     "title": "Kick Bot DX: цена, отзывы и статистика игроков",
     "excerpt": "Kick Bot DX: актуальная цена (125.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
     "date": "22 сентября 2026",
@@ -5482,7 +5482,7 @@ window.allArticles = [
     "category": "Обзоры"
   },
   {
-    "url": "/archive/lewd-elevator-4861300.html",
+    "url": "/archive/lewd-elevator-4861300",
     "title": "Lewd Elevator: цена, отзывы и статистика игроков",
     "excerpt": "Lewd Elevator: актуальная цена (726.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
     "date": "22 сентября 2026",
@@ -5490,7 +5490,7 @@ window.allArticles = [
     "category": "Обзоры"
   },
   {
-    "url": "/archive/brainrot-simulator-5046580.html",
+    "url": "/archive/brainrot-simulator-5046580",
     "title": "Brainrot Simulator: цена, отзывы и статистика игроков",
     "excerpt": "Brainrot Simulator: актуальная цена (465.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
     "date": "22 сентября 2026",
@@ -5498,7 +5498,7 @@ window.allArticles = [
     "category": "Обзоры"
   },
   {
-    "url": "/archive/kebab-shop-simulator-5148830.html",
+    "url": "/archive/kebab-shop-simulator-5148830",
     "title": "Kebab Shop Simulator: цена, отзывы и статистика игроков",
     "excerpt": "Kebab Shop Simulator: актуальная цена (174.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
     "date": "22 сентября 2026",
@@ -5506,7 +5506,7 @@ window.allArticles = [
     "category": "Обзоры"
   },
   {
-    "url": "/archive/so-below-2140700.html",
+    "url": "/archive/so-below-2140700",
     "title": "SO BELOW: цена, отзывы и статистика игроков",
     "excerpt": "SO BELOW: актуальная цена (248.00 RUB), 74% положительных отзывов в Steam, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
     "date": "22 сентября 2026",
@@ -5514,7 +5514,7 @@ window.allArticles = [
     "category": "Обзоры"
   },
   {
-    "url": "/archive/chip-builder-5095670.html",
+    "url": "/archive/chip-builder-5095670",
     "title": "Chip Builder: цена, отзывы и статистика игроков",
     "excerpt": "Chip Builder: актуальная цена (390.51 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
     "date": "22 сентября 2026",
@@ -5522,7 +5522,7 @@ window.allArticles = [
     "category": "Обзоры"
   },
   {
-    "url": "/archive/blockscavenger-5125620.html",
+    "url": "/archive/blockscavenger-5125620",
     "title": "BlockScavenger: цена, отзывы и статистика игроков",
     "excerpt": "BlockScavenger: актуальная цена (200.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
     "date": "22 сентября 2026",
@@ -5530,7 +5530,7 @@ window.allArticles = [
     "category": "Обзоры"
   },
   {
-    "url": "/archive/bespilotnoe-zhelanie-4922560.html",
+    "url": "/archive/bespilotnoe-zhelanie-4922560",
     "title": "Беспилотное Желание: цена, отзывы и статистика игроков",
     "excerpt": "Беспилотное Желание: актуальная цена (201.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
     "date": "22 сентября 2026",
@@ -5538,7 +5538,7 @@ window.allArticles = [
     "category": "Обзоры"
   },
   {
-    "url": "/archive/upload-aliens-4234950.html",
+    "url": "/archive/upload-aliens-4234950",
     "title": "Upload Aliens: цена, отзывы и статистика игроков",
     "excerpt": "Upload Aliens: актуальная цена (395.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
     "date": "22 сентября 2026",
@@ -5546,7 +5546,7 @@ window.allArticles = [
     "category": "Обзоры"
   },
   {
-    "url": "/archive/rv-there-yet-3949040.html",
+    "url": "/archive/rv-there-yet-3949040",
     "title": "RV There Yet?: цена, отзывы и статистика игроков",
     "excerpt": "RV There Yet?: актуальная цена (192.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
     "date": "22 сентября 2026",
@@ -5554,7 +5554,7 @@ window.allArticles = [
     "category": "Обзоры"
   },
   {
-    "url": "/archive/virus-yandere-4513060.html",
+    "url": "/archive/virus-yandere-4513060",
     "title": "Вирус Яндере: цена, отзывы и статистика игроков",
     "excerpt": "Вирус Яндере: актуальная цена (268.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
     "date": "21 сентября 2026",
@@ -5562,7 +5562,7 @@ window.allArticles = [
     "category": "Обзоры"
   },
   {
-    "url": "/archive/-4910440.html",
+    "url": "/archive/-4910440",
     "title": "華京夜探: цена, отзывы и статистика игроков",
     "excerpt": "華京夜探: актуальная цена (Бесплатно), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
     "date": "21 сентября 2026",
@@ -5570,7 +5570,7 @@ window.allArticles = [
     "category": "Обзоры"
   },
   {
-    "url": "/archive/idle-block-breaker-4875650.html",
+    "url": "/archive/idle-block-breaker-4875650",
     "title": "Idle Block Breaker: цена, отзывы и статистика игроков",
     "excerpt": "Idle Block Breaker: актуальная цена (240.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
     "date": "21 сентября 2026",
@@ -5578,7 +5578,7 @@ window.allArticles = [
     "category": "Обзоры"
   },
   {
-    "url": "/archive/19-5145860.html",
+    "url": "/archive/19-5145860",
     "title": "ひびき＆かのんの囲碁19路完全入門: цена, отзывы и статистика игроков",
     "excerpt": "ひびき＆かのんの囲碁19路完全入門: актуальная цена (663.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
     "date": "21 сентября 2026",
@@ -5586,7 +5586,7 @@ window.allArticles = [
     "category": "Обзоры"
   },
   {
-    "url": "/archive/brave-new-wonders-2403830.html",
+    "url": "/archive/brave-new-wonders-2403830",
     "title": "Brave New Wonders: цена, отзывы и статистика игроков",
     "excerpt": "Brave New Wonders: актуальная цена (892.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
     "date": "21 сентября 2026",
@@ -5594,7 +5594,7 @@ window.allArticles = [
     "category": "Обзоры"
   },
   {
-    "url": "/archive/-3855090.html",
+    "url": "/archive/-3855090",
     "title": "永劫之阿比斯: цена, отзывы и статистика игроков",
     "excerpt": "永劫之阿比斯: актуальная цена (378.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
     "date": "21 сентября 2026",
@@ -5602,7 +5602,7 @@ window.allArticles = [
     "category": "Обзоры"
   },
   {
-    "url": "/archive/mellow-flavor-alley-5101560.html",
+    "url": "/archive/mellow-flavor-alley-5101560",
     "title": "Mellow Flavor Alley: цена, отзывы и статистика игроков",
     "excerpt": "Mellow Flavor Alley: актуальная цена (150.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
     "date": "21 сентября 2026",
@@ -5610,7 +5610,7 @@ window.allArticles = [
     "category": "Обзоры"
   },
   {
-    "url": "/archive/project-solaris-3002740.html",
+    "url": "/archive/project-solaris-3002740",
     "title": "Project Solaris: цена, отзывы и статистика игроков",
     "excerpt": "Project Solaris: актуальная цена (465.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
     "date": "21 сентября 2026",
@@ -5618,7 +5618,7 @@ window.allArticles = [
     "category": "Обзоры"
   },
   {
-    "url": "/archive/lumiric-stage-1721290.html",
+    "url": "/archive/lumiric-stage-1721290",
     "title": "Lumiric Stage: цена, отзывы и статистика игроков",
     "excerpt": "Lumiric Stage: актуальная цена (945.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
     "date": "21 сентября 2026",
@@ -5626,7 +5626,7 @@ window.allArticles = [
     "category": "Обзоры"
   },
   {
-    "url": "/archive/-5114020.html",
+    "url": "/archive/-5114020",
     "title": "手搓代码大作战: цена, отзывы и статистика игроков",
     "excerpt": "手搓代码大作战: актуальная цена (51.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
     "date": "21 сентября 2026",
@@ -5634,7 +5634,7 @@ window.allArticles = [
     "category": "Обзоры"
   },
   {
-    "url": "/archive/quack-my-duck-2151450.html",
+    "url": "/archive/quack-my-duck-2151450",
     "title": "Quack my Duck: цена, отзывы и статистика игроков",
     "excerpt": "Quack my Duck: актуальная цена (110.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
     "date": "21 сентября 2026",
@@ -5642,7 +5642,7 @@ window.allArticles = [
     "category": "Обзоры"
   },
   {
-    "url": "/archive/tidy-tokens-5132000.html",
+    "url": "/archive/tidy-tokens-5132000",
     "title": "Tidy Tokens: цена, отзывы и статистика игроков",
     "excerpt": "Tidy Tokens: актуальная цена (385.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
     "date": "21 сентября 2026",
@@ -5650,7 +5650,7 @@ window.allArticles = [
     "category": "Обзоры"
   },
   {
-    "url": "/archive/the-confined-basement-4769110.html",
+    "url": "/archive/the-confined-basement-4769110",
     "title": "The Confined: Basement: цена, отзывы и статистика игроков",
     "excerpt": "The Confined: Basement: актуальная цена (246.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
     "date": "21 сентября 2026",
@@ -5658,7 +5658,7 @@ window.allArticles = [
     "category": "Обзоры"
   },
   {
-    "url": "/archive/partyforge-idle-5166800.html",
+    "url": "/archive/partyforge-idle-5166800",
     "title": "Partyforge Idle: цена, отзывы и статистика игроков",
     "excerpt": "Partyforge Idle: актуальная цена (301.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
     "date": "21 сентября 2026",
@@ -5666,7 +5666,7 @@ window.allArticles = [
     "category": "Обзоры"
   },
   {
-    "url": "/archive/discipline-simulator-4739040.html",
+    "url": "/archive/discipline-simulator-4739040",
     "title": "DISCIPLINE SIMULATOR: цена, отзывы и статистика игроков",
     "excerpt": "DISCIPLINE SIMULATOR: актуальная цена (191.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
     "date": "21 сентября 2026",
@@ -5674,7 +5674,7 @@ window.allArticles = [
     "category": "Обзоры"
   },
   {
-    "url": "/archive/darby-is-here-forever-3124020.html",
+    "url": "/archive/darby-is-here-forever-3124020",
     "title": "Darby Is Here Forever: цена, отзывы и статистика игроков",
     "excerpt": "Darby Is Here Forever: актуальная цена (66.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
     "date": "21 сентября 2026",
@@ -5682,7 +5682,7 @@ window.allArticles = [
     "category": "Обзоры"
   },
   {
-    "url": "/archive/dear-journey-4172110.html",
+    "url": "/archive/dear-journey-4172110",
     "title": "Dear Journey...: цена, отзывы и статистика игроков",
     "excerpt": "Dear Journey...: актуальная цена (372.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
     "date": "21 сентября 2026",
@@ -5690,7 +5690,7 @@ window.allArticles = [
     "category": "Обзоры"
   },
   {
-    "url": "/archive/click-to-farm-4761260.html",
+    "url": "/archive/click-to-farm-4761260",
     "title": "Click to Farm: цена, отзывы и статистика игроков",
     "excerpt": "Click to Farm: актуальная цена (150.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
     "date": "21 сентября 2026",
@@ -5698,7 +5698,7 @@ window.allArticles = [
     "category": "Обзоры"
   },
   {
-    "url": "/archive/brain-eating-bride-4377080.html",
+    "url": "/archive/brain-eating-bride-4377080",
     "title": "Brain-eating Bride: цена, отзывы и статистика игроков",
     "excerpt": "Brain-eating Bride: актуальная цена (372.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
     "date": "21 сентября 2026",
@@ -5706,7 +5706,7 @@ window.allArticles = [
     "category": "Обзоры"
   },
   {
-    "url": "/archive/farmabot-4932410.html",
+    "url": "/archive/farmabot-4932410",
     "title": "Farmabot: цена, отзывы и статистика игроков",
     "excerpt": "Farmabot: актуальная цена (465.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
     "date": "21 сентября 2026",
@@ -5714,7 +5714,7 @@ window.allArticles = [
     "category": "Обзоры"
   },
   {
-    "url": "/archive/-4506090.html",
+    "url": "/archive/-4506090",
     "title": "肉鸽卡牌：商业帝国: цена, отзывы и статистика игроков",
     "excerpt": "肉鸽卡牌：商业帝国: актуальная цена (120.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
     "date": "21 сентября 2026",
@@ -5722,7 +5722,7 @@ window.allArticles = [
     "category": "Обзоры"
   },
   {
-    "url": "/archive/kairos-in-step-with-time-4944490.html",
+    "url": "/archive/kairos-in-step-with-time-4944490",
     "title": "Kairos: In Step with Time: цена, отзывы и статистика игроков",
     "excerpt": "Kairos: In Step with Time: актуальная цена (Бесплатно), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
     "date": "21 сентября 2026",
@@ -5730,7 +5730,7 @@ window.allArticles = [
     "category": "Обзоры"
   },
   {
-    "url": "/archive/diy-dadish-5157680.html",
+    "url": "/archive/diy-dadish-5157680",
     "title": "DIY Dadish: цена, отзывы и статистика игроков",
     "excerpt": "DIY Dadish: актуальная цена (666.05 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
     "date": "21 сентября 2026",
@@ -5738,7 +5738,7 @@ window.allArticles = [
     "category": "Обзоры"
   },
   {
-    "url": "/archive/doctor-mother-in-law-wants-my-baby-4900200.html",
+    "url": "/archive/doctor-mother-in-law-wants-my-baby-4900200",
     "title": "Doctor Mother-in-law Wants My Baby: цена, отзывы и статистика игроков",
     "excerpt": "Doctor Mother-in-law Wants My Baby: актуальная цена (372.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
     "date": "21 сентября 2026",
@@ -5746,7 +5746,7 @@ window.allArticles = [
     "category": "Обзоры"
   },
   {
-    "url": "/archive/-5110470.html",
+    "url": "/archive/-5110470",
     "title": "修仙之凡界: цена, отзывы и статистика игроков",
     "excerpt": "修仙之凡界: актуальная цена (150.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
     "date": "21 сентября 2026",
@@ -5754,7 +5754,7 @@ window.allArticles = [
     "category": "Обзоры"
   },
   {
-    "url": "/archive/counter-strike-10.html",
+    "url": "/archive/counter-strike-10",
     "title": "Counter-Strike: цена, отзывы и статистика игроков",
     "excerpt": "Counter-Strike: актуальная цена (259.00 RUB), 97% положительных отзывов в Steam, статистика владельцев (10,000,000 – 20,000,000). Данные обновляются автоматически.",
     "date": "20 сентября 2026",
@@ -5762,7 +5762,7 @@ window.allArticles = [
     "category": "Обзоры"
   },
   {
-    "url": "/archive/half-life-70.html",
+    "url": "/archive/half-life-70",
     "title": "Half-Life: цена, отзывы и статистика игроков",
     "excerpt": "Half-Life: актуальная цена (259.00 RUB), 97% положительных отзывов в Steam, статистика владельцев (10,000,000 – 20,000,000). Данные обновляются автоматически.",
     "date": "20 сентября 2026",
@@ -5770,7 +5770,7 @@ window.allArticles = [
     "category": "Обзоры"
   },
   {
-    "url": "/archive/counter-strike-condition-zero-100.html",
+    "url": "/archive/counter-strike-condition-zero-100",
     "title": "Counter-Strike: Condition Zero: цена, отзывы и статистика игроков",
     "excerpt": "Counter-Strike: Condition Zero: актуальная цена (259.00 RUB), 90% положительных отзывов в Steam, статистика владельцев (10,000,000 – 20,000,000). Данные обновляются автоматически.",
     "date": "20 сентября 2026",
@@ -5778,7 +5778,7 @@ window.allArticles = [
     "category": "Обзоры"
   },
   {
-    "url": "/archive/half-life-2-220.html",
+    "url": "/archive/half-life-2-220",
     "title": "Half-Life 2: цена, отзывы и статистика игроков",
     "excerpt": "Half-Life 2: актуальная цена (385.00 RUB), 98% положительных отзывов в Steam, статистика владельцев (10,000,000 – 20,000,000). Данные обновляются автоматически.",
     "date": "20 сентября 2026",
@@ -5786,7 +5786,7 @@ window.allArticles = [
     "category": "Обзоры"
   },
   {
-    "url": "/archive/counter-strike-source-240.html",
+    "url": "/archive/counter-strike-source-240",
     "title": "Counter-Strike: Source: цена, отзывы и статистика игроков",
     "excerpt": "Counter-Strike: Source: актуальная цена (385.00 RUB), 96% положительных отзывов в Steam, статистика владельцев (10,000,000 – 20,000,000). Данные обновляются автоматически.",
     "date": "20 сентября 2026",
@@ -5794,7 +5794,7 @@ window.allArticles = [
     "category": "Обзоры"
   },
   {
-    "url": "/archive/half-life-2-deathmatch-320.html",
+    "url": "/archive/half-life-2-deathmatch-320",
     "title": "Half-Life 2: Deathmatch: цена, отзывы и статистика игроков",
     "excerpt": "Half-Life 2: Deathmatch: актуальная цена (цена не указана), 91% положительных отзывов в Steam, статистика владельцев (10,000,000 – 20,000,000). Данные обновляются автоматически.",
     "date": "20 сентября 2026",
@@ -5802,7 +5802,7 @@ window.allArticles = [
     "category": "Обзоры"
   },
   {
-    "url": "/archive/half-life-2-lost-coast-340.html",
+    "url": "/archive/half-life-2-lost-coast-340",
     "title": "Half-Life 2: Lost Coast: цена, отзывы и статистика игроков",
     "excerpt": "Half-Life 2: Lost Coast: актуальная цена (цена не указана), 89% положительных отзывов в Steam, статистика владельцев (20,000,000 – 50,000,000). Данные обновляются автоматически.",
     "date": "20 сентября 2026",
@@ -5810,7 +5810,7 @@ window.allArticles = [
     "category": "Обзоры"
   },
   {
-    "url": "/archive/portal-400.html",
+    "url": "/archive/portal-400",
     "title": "Portal: цена, отзывы и статистика игроков",
     "excerpt": "Portal: актуальная цена (385.00 RUB), 98% положительных отзывов в Steam, статистика владельцев (10,000,000 – 20,000,000). Данные обновляются автоматически.",
     "date": "20 сентября 2026",
@@ -5818,7 +5818,7 @@ window.allArticles = [
     "category": "Обзоры"
   },
   {
-    "url": "/archive/team-fortress-2-440.html",
+    "url": "/archive/team-fortress-2-440",
     "title": "Team Fortress 2: цена, отзывы и статистика игроков",
     "excerpt": "Team Fortress 2: актуальная цена (Бесплатно), 90% положительных отзывов в Steam, статистика владельцев (50,000,000 – 100,000,000). Данные обновляются автоматически.",
     "date": "20 сентября 2026",
@@ -5826,7 +5826,7 @@ window.allArticles = [
     "category": "Обзоры"
   },
   {
-    "url": "/archive/left-4-dead-2-550.html",
+    "url": "/archive/left-4-dead-2-550",
     "title": "Left 4 Dead 2: цена, отзывы и статистика игроков",
     "excerpt": "Left 4 Dead 2: актуальная цена (385.00 RUB), 98% положительных отзывов в Steam, статистика владельцев (50,000,000 – 100,000,000). Данные обновляются автоматически.",
     "date": "20 сентября 2026",
@@ -5834,7 +5834,7 @@ window.allArticles = [
     "category": "Обзоры"
   },
   {
-    "url": "/archive/counter-strike-2-730.html",
+    "url": "/archive/counter-strike-2-730",
     "title": "Counter-Strike 2: цена, отзывы и статистика игроков",
     "excerpt": "Counter-Strike 2: актуальная цена (Бесплатно), 87% положительных отзывов в Steam, статистика владельцев (100,000,000 – 200,000,000). Данные обновляются автоматически.",
     "date": "20 сентября 2026",
@@ -5842,7 +5842,7 @@ window.allArticles = [
     "category": "Обзоры"
   },
   {
-    "url": "/archive/garry-s-mod-4000.html",
+    "url": "/archive/garry-s-mod-4000",
     "title": "Garry's Mod: цена, отзывы и статистика игроков",
     "excerpt": "Garry's Mod: актуальная цена (750.00 RUB), 97% положительных отзывов в Steam, статистика владельцев (20,000,000 – 50,000,000). Данные обновляются автоматически.",
     "date": "20 сентября 2026",
@@ -5850,7 +5850,7 @@ window.allArticles = [
     "category": "Обзоры"
   },
   {
-    "url": "/archive/borderlands-2-49520.html",
+    "url": "/archive/borderlands-2-49520",
     "title": "Borderlands 2: цена, отзывы и статистика игроков",
     "excerpt": "Borderlands 2: актуальная цена (цена не указана), 92% положительных отзывов в Steam, статистика владельцев (10,000,000 – 20,000,000). Данные обновляются автоматически.",
     "date": "20 сентября 2026",
@@ -5858,7 +5858,7 @@ window.allArticles = [
     "category": "Обзоры"
   },
   {
-    "url": "/archive/terraria-105600.html",
+    "url": "/archive/terraria-105600",
     "title": "Terraria: цена, отзывы и статистика игроков",
     "excerpt": "Terraria: актуальная цена (385.00 RUB), 97% положительных отзывов в Steam, статистика владельцев (20,000,000 – 50,000,000). Данные обновляются автоматически.",
     "date": "20 сентября 2026",
@@ -5866,7 +5866,7 @@ window.allArticles = [
     "category": "Обзоры"
   },
   {
-    "url": "/archive/sakura-the-eternal-night-5013390.html",
+    "url": "/archive/sakura-the-eternal-night-5013390",
     "title": "Sakura: The Eternal Night: цена, отзывы и статистика игроков",
     "excerpt": "Sakura: The Eternal Night: актуальная цена (30.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
     "date": "20 сентября 2026",
@@ -5874,7 +5874,7 @@ window.allArticles = [
     "category": "Обзоры"
   },
   {
-    "url": "/archive/uman-5005050.html",
+    "url": "/archive/uman-5005050",
     "title": "UMAN: цена, отзывы и статистика игроков",
     "excerpt": "UMAN: актуальная цена (261.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
     "date": "20 сентября 2026",
@@ -5882,7 +5882,7 @@ window.allArticles = [
     "category": "Обзоры"
   },
   {
-    "url": "/archive/chesstan-5099860.html",
+    "url": "/archive/chesstan-5099860",
     "title": "ChessTan: цена, отзывы и статистика игроков",
     "excerpt": "ChessTan: актуальная цена (Бесплатно), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
     "date": "20 сентября 2026",
@@ -5890,7 +5890,7 @@ window.allArticles = [
     "category": "Обзоры"
   },
   {
-    "url": "/archive/big-bang-to-us-5097440.html",
+    "url": "/archive/big-bang-to-us-5097440",
     "title": "BIG BANG TO US: цена, отзывы и статистика игроков",
     "excerpt": "BIG BANG TO US: актуальная цена (420.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
     "date": "20 сентября 2026",
@@ -5898,7 +5898,7 @@ window.allArticles = [
     "category": "Обзоры"
   },
   {
-    "url": "/archive/ninja-cards-and-ninja-battle-master-5132180.html",
+    "url": "/archive/ninja-cards-and-ninja-battle-master-5132180",
     "title": "忍牌忍战大师Ninja Cards and Ninja Battle Master: цена, отзывы и статистика игроков",
     "excerpt": "忍牌忍战大师Ninja Cards and Ninja Battle Master: актуальная цена (240.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
     "date": "20 сентября 2026",
@@ -5906,7 +5906,7 @@ window.allArticles = [
     "category": "Обзоры"
   },
   {
-    "url": "/archive/meridian-strike-5139650.html",
+    "url": "/archive/meridian-strike-5139650",
     "title": "Meridian Strike: цена, отзывы и статистика игроков",
     "excerpt": "Meridian Strike: актуальная цена (217.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
     "date": "20 сентября 2026",
@@ -5914,7 +5914,7 @@ window.allArticles = [
     "category": "Обзоры"
   },
   {
-    "url": "/archive/submechanic-4741630.html",
+    "url": "/archive/submechanic-4741630",
     "title": "Submechanic: цена, отзывы и статистика игроков",
     "excerpt": "Submechanic: актуальная цена (240.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
     "date": "20 сентября 2026",
@@ -5922,7 +5922,7 @@ window.allArticles = [
     "category": "Обзоры"
   },
   {
-    "url": "/archive/meat-girl-4917360.html",
+    "url": "/archive/meat-girl-4917360",
     "title": "Meat Girl: цена, отзывы и статистика игроков",
     "excerpt": "Meat Girl: актуальная цена (200.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
     "date": "20 сентября 2026",
@@ -5930,7 +5930,7 @@ window.allArticles = [
     "category": "Обзоры"
   },
   {
-    "url": "/archive/slap-the-gamer-5195850.html",
+    "url": "/archive/slap-the-gamer-5195850",
     "title": "Slap the Gamer: цена, отзывы и статистика игроков",
     "excerpt": "Slap the Gamer: актуальная цена (99.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
     "date": "20 сентября 2026",
@@ -5938,7 +5938,7 @@ window.allArticles = [
     "category": "Обзоры"
   },
   {
-    "url": "/archive/rusted-awakening-2874490.html",
+    "url": "/archive/rusted-awakening-2874490",
     "title": "Rusted Awakening: цена, отзывы и статистика игроков",
     "excerpt": "Rusted Awakening: актуальная цена (301.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
     "date": "20 сентября 2026",
@@ -5946,7 +5946,7 @@ window.allArticles = [
     "category": "Обзоры"
   },
   {
-    "url": "/archive/potionpanic-4533650.html",
+    "url": "/archive/potionpanic-4533650",
     "title": "PotionPanic: цена, отзывы и статистика игроков",
     "excerpt": "PotionPanic: актуальная цена (Бесплатно), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
     "date": "20 сентября 2026",
@@ -5954,7 +5954,7 @@ window.allArticles = [
     "category": "Обзоры"
   },
   {
-    "url": "/archive/the-options-menu-4735970.html",
+    "url": "/archive/the-options-menu-4735970",
     "title": "The Options Menu: цена, отзывы и статистика игроков",
     "excerpt": "The Options Menu: актуальная цена (290.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
     "date": "20 сентября 2026",
@@ -5962,7 +5962,7 @@ window.allArticles = [
     "category": "Обзоры"
   },
   {
-    "url": "/archive/astrotennis-5109050.html",
+    "url": "/archive/astrotennis-5109050",
     "title": "AstroTennis: цена, отзывы и статистика игроков",
     "excerpt": "AstroTennis: актуальная цена (45.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
     "date": "20 сентября 2026",
@@ -5970,7 +5970,7 @@ window.allArticles = [
     "category": "Обзоры"
   },
   {
-    "url": "/archive/day-off-simulator-2524740.html",
+    "url": "/archive/day-off-simulator-2524740",
     "title": "Day Off Simulator: цена, отзывы и статистика игроков",
     "excerpt": "Day Off Simulator: актуальная цена (43.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
     "date": "20 сентября 2026",
@@ -5978,7 +5978,7 @@ window.allArticles = [
     "category": "Обзоры"
   },
   {
-    "url": "/archive/night-record-thin-walls-4652040.html",
+    "url": "/archive/night-record-thin-walls-4652040",
     "title": "Night Record: Thin Walls: цена, отзывы и статистика игроков",
     "excerpt": "Night Record: Thin Walls: актуальная цена (316.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
     "date": "20 сентября 2026",
@@ -5986,7 +5986,7 @@ window.allArticles = [
     "category": "Обзоры"
   },
   {
-    "url": "/archive/screw-it-4972300.html",
+    "url": "/archive/screw-it-4972300",
     "title": "Screw IT: цена, отзывы и статистика игроков",
     "excerpt": "Screw IT: актуальная цена (239.06 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
     "date": "20 сентября 2026",
@@ -5994,7 +5994,7 @@ window.allArticles = [
     "category": "Обзоры"
   },
   {
-    "url": "/archive/the-furry-protocol-4141640.html",
+    "url": "/archive/the-furry-protocol-4141640",
     "title": "The Furry Protocol: цена, отзывы и статистика игроков",
     "excerpt": "The Furry Protocol: актуальная цена (404.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
     "date": "20 сентября 2026",
@@ -6002,7 +6002,7 @@ window.allArticles = [
     "category": "Обзоры"
   },
   {
-    "url": "/archive/-5121040.html",
+    "url": "/archive/-5121040",
     "title": "カブトムシの森: цена, отзывы и статистика игроков",
     "excerpt": "カブトムシの森: актуальная цена (99.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
     "date": "20 сентября 2026",
@@ -6010,7 +6010,7 @@ window.allArticles = [
     "category": "Обзоры"
   },
   {
-    "url": "/archive/gwiazdozbi-r-4849030.html",
+    "url": "/archive/gwiazdozbi-r-4849030",
     "title": "Gwiazdozbiór: цена, отзывы и статистика игроков",
     "excerpt": "Gwiazdozbiór: актуальная цена (260.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
     "date": "20 сентября 2026",
@@ -6018,7 +6018,7 @@ window.allArticles = [
     "category": "Обзоры"
   },
   {
-    "url": "/archive/panic-files-buried-sanity-4012730.html",
+    "url": "/archive/panic-files-buried-sanity-4012730",
     "title": "Panic Files: Buried Sanity: цена, отзывы и статистика игроков",
     "excerpt": "Panic Files: Buried Sanity: актуальная цена (200.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
     "date": "20 сентября 2026",
@@ -6026,7 +6026,7 @@ window.allArticles = [
     "category": "Обзоры"
   },
   {
-    "url": "/archive/fluttering-3759520.html",
+    "url": "/archive/fluttering-3759520",
     "title": "Fluttering: цена, отзывы и статистика игроков",
     "excerpt": "Fluttering: актуальная цена (216.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
     "date": "20 сентября 2026",
@@ -6034,7 +6034,7 @@ window.allArticles = [
     "category": "Обзоры"
   },
   {
-    "url": "/archive/pirouette-smile-5171060.html",
+    "url": "/archive/pirouette-smile-5171060",
     "title": "Pirouette & Smile: цена, отзывы и статистика игроков",
     "excerpt": "Pirouette & Smile: актуальная цена (150.38 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
     "date": "20 сентября 2026",
@@ -6042,7 +6042,7 @@ window.allArticles = [
     "category": "Обзоры"
   },
   {
-    "url": "/archive/-4951110.html",
+    "url": "/archive/-4951110",
     "title": "精算大师: цена, отзывы и статистика игроков",
     "excerpt": "精算大师: актуальная цена (51.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
     "date": "20 сентября 2026",
@@ -6050,7 +6050,7 @@ window.allArticles = [
     "category": "Обзоры"
   },
   {
-    "url": "/archive/desire-inn-3956380.html",
+    "url": "/archive/desire-inn-3956380",
     "title": "Desire Inn: цена, отзывы и статистика игроков",
     "excerpt": "Desire Inn: актуальная цена (Бесплатно), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
     "date": "20 сентября 2026",
@@ -6058,7 +6058,7 @@ window.allArticles = [
     "category": "Обзоры"
   },
   {
-    "url": "/archive/only-farms-4657600.html",
+    "url": "/archive/only-farms-4657600",
     "title": "ONLY FARMS 🍑: цена, отзывы и статистика игроков",
     "excerpt": "ONLY FARMS 🍑: актуальная цена (350.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
     "date": "20 сентября 2026",
@@ -6066,7 +6066,7 @@ window.allArticles = [
     "category": "Обзоры"
   },
   {
-    "url": "/archive/somebody-s-tale-776250.html",
+    "url": "/archive/somebody-s-tale-776250",
     "title": "Somebody's Tale: цена, отзывы и статистика игроков",
     "excerpt": "Somebody's Tale: актуальная цена (89.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
     "date": "20 сентября 2026",
@@ -6074,7 +6074,7 @@ window.allArticles = [
     "category": "Обзоры"
   },
   {
-    "url": "/archive/love-in-another-world-4928470.html",
+    "url": "/archive/love-in-another-world-4928470",
     "title": "Love in Another World: цена, отзывы и статистика игроков",
     "excerpt": "Love in Another World: актуальная цена (144.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
     "date": "20 сентября 2026",
@@ -6082,7 +6082,7 @@ window.allArticles = [
     "category": "Обзоры"
   },
   {
-    "url": "/archive/texture-map-studio-5172720.html",
+    "url": "/archive/texture-map-studio-5172720",
     "title": "Texture Map Studio: цена, отзывы и статистика игроков",
     "excerpt": "Texture Map Studio: актуальная цена (51.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
     "date": "20 сентября 2026",
@@ -6090,7 +6090,7 @@ window.allArticles = [
     "category": "Обзоры"
   },
   {
-    "url": "/archive/blackjack-pixel-blackjack-5197410.html",
+    "url": "/archive/blackjack-pixel-blackjack-5197410",
     "title": "Blackjack - Pixel BlackJack: цена, отзывы и статистика игроков",
     "excerpt": "Blackjack - Pixel BlackJack: актуальная цена (Бесплатно), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
     "date": "20 сентября 2026",
@@ -6098,7 +6098,7 @@ window.allArticles = [
     "category": "Обзоры"
   },
   {
-    "url": "/archive/visual-novel-evening-broadcast-5208380.html",
+    "url": "/archive/visual-novel-evening-broadcast-5208380",
     "title": "Visual Novel: EVENING BROADCAST: цена, отзывы и статистика игроков",
     "excerpt": "Visual Novel: EVENING BROADCAST: актуальная цена (42.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
     "date": "20 сентября 2026",
@@ -6106,7 +6106,7 @@ window.allArticles = [
     "category": "Обзоры"
   },
   {
-    "url": "/archive/active-matter-2887580.html",
+    "url": "/archive/active-matter-2887580",
     "title": "Active Matter: цена, отзывы и статистика игроков",
     "excerpt": "Active Matter: актуальная цена (1499.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
     "date": "20 сентября 2026",
@@ -6114,7 +6114,7 @@ window.allArticles = [
     "category": "Обзоры"
   },
   {
-    "url": "/archive/bodycam-2406770.html",
+    "url": "/archive/bodycam-2406770",
     "title": "Bodycam: цена, отзывы и статистика игроков",
     "excerpt": "Bodycam: актуальная цена (1200.00 RUB), 75% положительных отзывов в Steam, статистика владельцев (500,000 – 1,000,000). Данные обновляются автоматически.",
     "date": "20 сентября 2026",
@@ -6122,7 +6122,7 @@ window.allArticles = [
     "category": "Обзоры"
   },
   {
-    "url": "/archive/rust-252490.html",
+    "url": "/archive/rust-252490",
     "title": "Rust: цена, отзывы и статистика игроков",
     "excerpt": "Rust: актуальная цена (849.00 RUB), 87% положительных отзывов в Steam, статистика владельцев (20,000,000 – 50,000,000). Данные обновляются автоматически.",
     "date": "20 сентября 2026",
@@ -6130,7 +6130,7 @@ window.allArticles = [
     "category": "Обзоры"
   },
   {
-    "url": "/archive/graveyard-keeper-2-4358690.html",
+    "url": "/archive/graveyard-keeper-2-4358690",
     "title": "Graveyard Keeper 2: цена, отзывы и статистика игроков",
     "excerpt": "Graveyard Keeper 2: актуальная цена (799.20 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
     "date": "20 сентября 2026",
@@ -6138,7 +6138,7 @@ window.allArticles = [
     "category": "Обзоры"
   },
   {
-    "url": "/archive/baldur-s-gate-3-1086940.html",
+    "url": "/archive/baldur-s-gate-3-1086940",
     "title": "Baldur's Gate 3: цена, отзывы и статистика игроков",
     "excerpt": "Baldur's Gate 3: актуальная цена (1399.00 RUB), 97% положительных отзывов в Steam, статистика владельцев (20,000,000 – 50,000,000). Данные обновляются автоматически.",
     "date": "20 сентября 2026",
@@ -6146,7 +6146,7 @@ window.allArticles = [
     "category": "Обзоры"
   },
   {
-    "url": "/archive/nevidimyy-razum-ii-arhitektor-igrovykh-mirov-2026.html",
+    "url": "/archive/nevidimyy-razum-ii-arhitektor-igrovykh-mirov-2026",
     "title": "Невидимый разум: как ИИ перестал быть «умными врагами» и стал архитектором миров",
     "excerpt": "Три направления, где ИИ уже меняет игры: генерация смыслов и социальных связей, адаптивная сложность и co-pilot-разработка.",
     "date": "25 августа 2026",
@@ -6162,7 +6162,7 @@ window.allArticles = [
     ]
   },
   {
-    "url": "/archive/konec-ery-diskov-sony-cifrovoe-budushee-2028.html",
+    "url": "/archive/konec-ery-diskov-sony-cifrovoe-budushee-2028",
     "title": "Конец эры коллекционирования: почему цифровое будущее Sony меняет правила игры навсегда",
     "excerpt": "Почему переход Sony от физических дисков к цифровым покупкам меняет рынок игр: владение и лицензия, вторичный рынок, серверы и что делать игрокам.",
     "date": "25 августа 2026",
@@ -6178,7 +6178,7 @@ window.allArticles = [
     ]
   },
   {
-    "url": "/archive/igrovye-trendy-avgust-2026-analiz-rynka.html",
+    "url": "/archive/igrovye-trendy-avgust-2026-analiz-rynka",
     "title": "Игровые тренды августа 2026 — анализ рынка, главные релизы и точки роста",
     "excerpt": "Объем рынка $374+ млрд, 3,6 млрд геймеров, топ релизов месяца и статистика Steam. Разбираем реальные факты и цифры индустрии.",
     "date": "22 августа 2026",
@@ -6187,7 +6187,7 @@ window.allArticles = [
     "image": "/img/igrovye-trendy-2026.webp"
   },
   {
-    "url": "/archive/video-game-movies-2027-guide.html",
+    "url": "/archive/video-game-movies-2027-guide",
     "title": "Фильмы по играм 2027 — даты выхода, трейлеры, актеры и все экранизации",
     "excerpt": "Полный гид по экранизациям видеоигр 2027 года: Соник, Зельда, Майнкрафт, Helldivers. Проверенные даты выхода, каст, бюджеты и новости со съемок.",
     "date": "1 августа 2026",
@@ -6196,7 +6196,7 @@ window.allArticles = [
     "image": "/img/video-game-movies-2027.webp"
   },
   {
-    "url": "/archive/operation-darkside-dx-guide-2026.html",
+    "url": "/archive/operation-darkside-dx-guide-2026",
     "title": "Operation Darkside DX (2026): Гайд по прохождению, системные требования и советы по фарму",
     "excerpt": "Полный гайд по Operation Darkside DX: системные требования, решение проблем с вылетами, советы по фарму ресурсов, обзор DX Edition и ответы на частые вопросы игроков.",
     "date": "31 июля 2026",
@@ -6205,7 +6205,7 @@ window.allArticles = [
     "image": "/img/ai/output/operation_darkside_dx_guide.webp"
   },
   {
-    "url": "/archive/igry-v-telegram-bez-skachivaniya-triad-duel.html",
+    "url": "/archive/igry-v-telegram-bez-skachivaniya-triad-duel",
     "title": "Игры в Telegram без скачивания: Как Triad Duel меняет правила мобильного гейминга",
     "excerpt": "Забудьте про APK на 3 ГБ. Разбираем феномен Telegram Mini Apps на примере Triad Duel: тактическая PvP-игра, которая запускается за 1 секунду без установки.",
     "date": "23 июля 2026",
@@ -6214,7 +6214,7 @@ window.allArticles = [
     "image": "/img/ai/output/triad_duel_miniapp.webp"
   },
   {
-    "url": "/archive/gaid-triad-duel-meta-kolody-2026.html",
+    "url": "/archive/gaid-triad-duel-meta-kolody-2026",
     "title": "Гайд по Triad Duel: Топ-3 мета-колоды и скрытые синергии 2026 года",
     "excerpt": "Полный разбор механик Triad Duel: 21 уникальная карта, 3 класса, рабочие синергии танков, ассасинов и магов. Забирай 100 Remains на старте.",
     "date": "23 июля 2026",
@@ -6223,7 +6223,7 @@ window.allArticles = [
     "image": "/img/ai/output/triad_duel_guide.webp"
   },
   {
-    "url": "/archive/konec-epohi-pay-to-win-triad-duel.html",
+    "url": "/archive/konec-epohi-pay-to-win-triad-duel",
     "title": "Конец эпохи Pay-to-Win: Почему геймеры массово переходят в Telegram Mini Apps",
     "excerpt": "Устали от доната и рандома в ККИ? Разбираем феномен Triad Duel — тактической PvP-игры в Telegram, где побеждает скилл, а не толщина кошелька.",
     "date": "23 июля 2026",
@@ -6232,7 +6232,7 @@ window.allArticles = [
     "image": "/img/ai/output/triad_duel_p2w.webp"
   },
   {
-    "url": "/archive/top-igr-v-telegram-2026-triad-duel.html",
+    "url": "/archive/top-igr-v-telegram-2026-triad-duel",
     "title": "Топ игр в Telegram 2026: во что поиграть без скачивания (Обзор Triad Duel)",
     "excerpt": "Забудьте про примитивные кликер. Представляем Triad Duel — лучшую тактическую PvP игру в Telegram Mini Apps 2026 года. Запуск за 1 секунду, без доната и скачивания.",
     "date": "23 июля 2026",
@@ -6241,7 +6241,7 @@ window.allArticles = [
     "image": "/img/ai/output/telegram_mini_apps_top.webp"
   },
   {
-    "url": "/archive/luchshie-kartochnye-igry-na-android-2026.html",
+    "url": "/archive/luchshie-kartochnye-igry-na-android-2026",
     "title": "Лучшие карточные игры на андроид 2026: альтернативы Marvel Snap без доната",
     "excerpt": "Ищете достойные аналоги Marvel Snap и Hearthstone? Обзор Triad Duel — тактической ККИ на телефон, где решает скилл, а не рандом. 3 карты, 21 герой, 0 Pay-to-Win.",
     "date": "23 июля 2026",
@@ -6250,7 +6250,7 @@ window.allArticles = [
     "image": "/img/ai/output/best_card_games_android.webp"
   },
   {
-    "url": "/archive/chestnye-pvp-igry-bez-donata-2026.html",
+    "url": "/archive/chestnye-pvp-igry-bez-donata-2026",
     "title": "Честные PvP игры на телефон: где реально решает скилл, а не донат (Разбор Triad Duel)",
     "excerpt": "Устали от Pay-to-Win? Разбираем Triad Duel — мобильную PvP игру, где донат не дает преимущества в бою. Честная экономика, тактика и бонус 100 Remains на старте.",
     "date": "23 июля 2026",
@@ -6259,7 +6259,7 @@ window.allArticles = [
     "image": "/img/ai/output/fair_pvp_games.webp"
   },
   {
-    "url": "/archive/stalker-2-nevozmozhnye-tayniki-i-artefakty.html",
+    "url": "/archive/stalker-2-nevozmozhnye-tayniki-i-artefakty",
     "title": "S.T.A.L.K.E.R. 2: 5 «невозможных» тайников и артефактов, которые не могут найти игроки",
     "excerpt": "Нашли ключ, но не видите дверь? Артефакт не спавнится? Разбираем самые проблемные тайники и легендарные артефакты S.T.A.L.K.E.R. 2, которые игроки массово не могут найти, и даем рабочие решения.",
     "date": "15 июля 2026",
@@ -6268,7 +6268,7 @@ window.allArticles = [
     "image": "/img/ai/output/stalker2_hidden_stashes.webp"
   },
   {
-    "url": "/archive/operation-darkside-dx-optimal-guide.html",
+    "url": "/archive/operation-darkside-dx-optimal-guide",
     "title": "Operation: Darkside DX — Гайд по оптимизации гринда и получению всех концовок",
     "excerpt": "Реальный гайд по Operation: Darkside DX. Как обойти гринд, использовать новые QoL-функции из патча 2.7 и получить все варианты концовок без потери времени.",
     "date": "15 июля 2026",
@@ -6277,7 +6277,7 @@ window.allArticles = [
     "image": "/img/ai/output/operation_darkside_dx_guide.webp"
   },
   {
-    "url": "/archive/elevator-avici-vse-koncovki-sekrety.html",
+    "url": "/archive/elevator-avici-vse-koncovki-sekrety",
     "title": "ELEVATOR: AVICI — Полный гайд на все 3 концовки и скрытые предметы",
     "excerpt": "Единственный полный гайд на русском: как получить все 3 концовки в ELEVATOR: AVICI. Раскрываем секретный файл разработчика, локации скрытых предметов и точки невозврата.",
     "date": "14 июля 2026",
@@ -6286,7 +6286,7 @@ window.allArticles = [
     "image": "/img/ai/output/elevator_avici_endings.webp"
   },
   {
-    "url": "/archive/stalker-2-skrytye-mekhaniki-tenevye-pravila-2026.html",
+    "url": "/archive/stalker-2-skrytye-mekhaniki-tenevye-pravila-2026",
     "title": "S.T.A.L.K.E.R. 2: 7 мифов о скрытых механиках — правда или вымысел?",
     "excerpt": "Разбираем 7 самых популярных мифов и теорий о скрытых механиках S.T.A.L.K.E.R. 2: теневая экономика, множители урона, секретные локации. Что из этого правда?",
     "date": "13 июля 2026",
@@ -6295,7 +6295,7 @@ window.allArticles = [
     "image": "/img/ai/output/stalker2_hidden_mechanics.webp"
   },
   {
-    "url": "/archive/skrytye-lovushki-apgreyda-2026.html",
+    "url": "/archive/skrytye-lovushki-apgreyda-2026",
     "title": "Скрытые ловушки апгрейда в 2026: Почему ваш ПК «задушит» RTX 5090 и RX 9070 XT?",
     "excerpt": "80% пользователей сталкиваются с тем, что их ПК не готов к новым GPU. Процессорные заторы, кабельный ад, иллюзия Frame Gen — разбираем скрытые расходы и требования.",
     "date": "10 июля 2026",
@@ -6304,7 +6304,7 @@ window.allArticles = [
     "image": "/img/ai/output/upgrade_traps_2026.webp"
   },
   {
-    "url": "/archive/ii-v-gejmdeve-2026-problemy-nejrosetej.html",
+    "url": "/archive/ii-v-gejmdeve-2026-problemy-nejrosetej",
     "title": "ИИ в геймдеве 2026: 7 причин, почему нейросети не спасают индустрию",
     "excerpt": "Честный разбор: реальные цифры GDC 2026, юридические риски, скандалы Unity/Epic, отзывы игроков в Steam. Где ИИ реально работает, а где — маркетинговый миф...",
     "image": "/img/ai/output/ii_v_gejmdeve_2026.webp",
@@ -6313,7 +6313,7 @@ window.allArticles = [
     "category": "Аналитика"
   },
   {
-    "url": "/archive/gta-vi-krizis-industrii-2026.html",
+    "url": "/archive/gta-vi-krizis-industrii-2026",
     "title": "GTA VI — не спасение, а симптом кризиса AAA-индустрии",
     "excerpt": "Почему бюджет в $2 млрд — это не достижение, а симптом болезни. Разбор увольнений, закрытия студий и смерти старой AAA-модели...",
     "image": "/img/ai/output/gta_vi_krizis_industrii.webp",
@@ -6322,7 +6322,7 @@ window.allArticles = [
     "category": "Мнение"
   },
   {
-    "url": "/archive/monetizaciya-yandex-igry-2026-rukovodstvo.html",
+    "url": "/archive/monetizaciya-yandex-igry-2026-rukovodstvo",
     "title": "Монетизация в Яндекс Играх 2026: полное руководство с цифрами и кейсами",
     "excerpt": "Реальные цифры eCPM, рабочие стратегии для гиперказуалок и mid-core, разбор ошибок и кейсы с доходом от $500 до $15,000 в месяц...",
     "image": "/img/ai/output/monetizaciya_yandex_igry_2026.webp",
@@ -6331,7 +6331,7 @@ window.allArticles = [
     "category": "Разработка"
   },
   {
-    "url": "/archive/blood-of-dawnwalker-gajd-bildy-2026.html",
+    "url": "/archive/blood-of-dawnwalker-gajd-bildy-2026",
     "title": "The Blood of Dawnwalker: билды, способности и таймер 30 дней — гайд 2026",
     "excerpt": "Три ветки прокачки, лучшие билды дня и ночи, заряды активации, спасение семьи за 30 дней, все концовки и мод на таймер. Гайд обновлён после релиза.",
     "image": "/img/ai/output/blood_of_dawnwalker_guide_2026.webp",
@@ -6340,7 +6340,7 @@ window.allArticles = [
     "category": "Гайды"
   },
   {
-    "url": "/archive/windows-11-july-2026-update-podgotovka.html",
+    "url": "/archive/windows-11-july-2026-update-podgotovka",
     "title": "Windows 11 July 2026 Update: Как подготовиться и избежать проблем (полный гайд)",
     "excerpt": "14 июля 2026 выходит крупное обновление Windows 11 с Point-in-Time Restore и Unlimited Pause. Чек-лист из 7 шагов, разбор проблем 2026 года, инструкции по откату...",
     "image": "/img/ai/output/windows_11_july_2026_update.webp",
@@ -6349,7 +6349,7 @@ window.allArticles = [
     "category": "Гайды"
   },
   {
-    "url": "/archive/rtx-5090-vs-rx-9070xt-sravnenie-2026.html",
+    "url": "/archive/rtx-5090-vs-rx-9070xt-sravnenie-2026",
     "title": "RTX 5090 vs RX 9070 XT: Честное сравнение 2026 — какую карту брать?",
     "excerpt": "Полный тест RTX 5090 и RX 9070 XT в 27 играх, 3 разрешениях и рабочих задачах. Цена/производительность, температуры, вердикт. Без рекламы — только факты...",
     "image": "/img/ai/output/rtx_5090_vs_rx_9070xt.webp",
@@ -6358,7 +6358,7 @@ window.allArticles = [
     "category": "ИИ и технологии"
   },
   {
-    "url": "/archive/gta-6-polnyy-analiz-utechek-i-treylera.html",
+    "url": "/archive/gta-6-polnyy-analiz-utechek-i-treylera",
     "title": "GTA 6: Полный анализ утечек и трейлера — секреты, которые скрыли от всех",
     "excerpt": "Глубокий анализ GTA 6: разбор трейлера, сравнение механик с GTA 5 и RDR2, прогноз пасхалок и скрытых деталей. То, о чем молчат все СМИ...",
     "image": "/img/ai/output/gta_6_analiz_utechek.webp",
@@ -6367,7 +6367,7 @@ window.allArticles = [
     "category": "Аналитика"
   },
   {
-    "url": "/archive/kak-uvelichit-fps-windows-11-optimizaciya.html",
+    "url": "/archive/kak-uvelichit-fps-windows-11-optimizaciya",
     "title": "Как увеличить FPS в Windows 11: Секретный гайд 2026 года (Выжимаем максимум)",
     "excerpt": "Windows 11 режет FPS в играх? Полный гайд по оптимизации: отключение VBS, настройка HAGS, чистка телеметрии и скрытые фишки для буста фреймрейта до 30-40%...",
     "image": "/img/ai/output/kak_uvelichit_fps_windows_11.webp",
@@ -6376,7 +6376,7 @@ window.allArticles = [
     "category": "Гайды"
   },
   {
-    "url": "/archive/xbox-gamepass-to-steam-saves-2026.html",
+    "url": "/archive/xbox-gamepass-to-steam-saves-2026",
     "title": "Как добавить сохранения из Game Pass PC? Перенос сейвов без потери прогресса",
     "excerpt": "Сохранения из PC Game Pass не всегда там, где ожидаешь. Облачная синхронизация, ручной поиск, перенос Game Pass → Steam и бэкапы без потери прогресса.",
     "image": "/img/ai/output/xbox_gamepass_to_steam_saves.webp",
@@ -6385,7 +6385,7 @@ window.allArticles = [
     "category": "Гайды"
   },
   {
-    "url": "/archive/rdr2-secrets-2026.html",
+    "url": "/archive/rdr2-secrets-2026",
     "title": "Все секреты Red Dead Redemption 2 — 150+ скрытых деталей, пасхалок и редких событий",
     "excerpt": "Более 150 скрытых деталей RDR2: призрачный поезд, вампир Сен-Дени, НЛО, гигант, дом робота и другие секреты, которые миллионы игроков никогда не видели...",
     "image": "/img/ai/output/rdr2_secrets_2026.webp",
@@ -6394,7 +6394,7 @@ window.allArticles = [
     "category": "Гайды"
   },
   {
-    "url": "/archive/nintendo-switch-2-russia-2026.html",
+    "url": "/archive/nintendo-switch-2-russia-2026",
     "title": "Nintendo Switch 2 в России 2026: полный гайд",
     "excerpt": "Как купить, настроить eShop и играть в старые игры на новой консоли. Все о параллельном импорте, обратной совместимости и способах оплаты для российских геймеров...",
     "image": "/img/ai/output/nintendo_switch_2_russia.webp",
@@ -6403,7 +6403,7 @@ window.allArticles = [
     "category": "Консоли"
   },
   {
-    "url": "/archive/vr-ai-2026.html",
+    "url": "/archive/vr-ai-2026",
     "title": "VR + AI 2026: Что реально работает сегодня",
     "excerpt": "Адаптивные NPC, динамические миры и персонализированные сценарии — как искусственный интеллект делает виртуальную реальность по-настоящему живой в 2026 году...",
     "image": "/img/ai/output/vr_ai_2026.webp",
@@ -6412,7 +6412,7 @@ window.allArticles = [
     "category": "Разработка"
   },
   {
-    "url": "/archive/metaverses-ai-2026.html",
+    "url": "/archive/metaverses-ai-2026",
     "title": "Существуют ли реальные AI-метавселенные в 2026?",
     "excerpt": "В 2026 году AI-метавселенные существуют, но не так, как обещают маркетологи. Разбор работающих проектов с живыми NPC, динамическими квестами и реагирующим миром...",
     "image": "/img/ai/output/metaverses_ai_2026.webp",
@@ -6421,7 +6421,7 @@ window.allArticles = [
     "category": "ИИ и технологии"
   },
   {
-    "url": "/archive/game-design-ai-2026.html",
+    "url": "/archive/game-design-ai-2026",
     "title": "AI-геймдизайн 2026: как ИИ стал стандартом разработки",
     "excerpt": "В 2026 году искусственный интеллект стал стандартным инструментом геймдизайна. Как ИИ ускоряет прототипирование, балансировку и создание NPC без замены разработчиков...",
     "image": "/img/ai/output/game_design_ai_2026.webp",
@@ -6430,7 +6430,7 @@ window.allArticles = [
     "category": "Разработка"
   },
   {
-    "url": "/archive/ai-comics-2026.html",
+    "url": "/archive/ai-comics-2026",
     "title": "Нейросетевые комиксы 2026: как ИИ стал инструментом автора",
     "excerpt": "Как нейросети изменили создание графических историй в 2026 году — от черновых панелей до целых визуальных новелл. Почему ИИ не заменил авторов, а усилил их...",
     "image": "/img/ai/output/ai_comics_2026.webp",
@@ -6439,7 +6439,7 @@ window.allArticles = [
     "category": "Тренды"
   },
   {
-    "url": "/archive/aa-games-trend-2026.html",
+    "url": "/archive/aa-games-trend-2026",
     "title": "AA-игры 2026 — как средний бюджет стал главным форматом индустрии",
     "excerpt": "Почему AAA-модель трещит по швам, а среднебюджетные AA-проекты стали новой точкой равновесия между качеством, риском и прибылью в 2026 году...",
     "image": "/img/ai/output/aa_games_trend_2026.webp",
@@ -6448,7 +6448,7 @@ window.allArticles = [
     "category": "Разработка"
   },
   {
-    "url": "/archive/ai-game-translators-2026-guide.html",
+    "url": "/archive/ai-game-translators-2026-guide",
     "title": "Как играть в любую новинку 2026 без русской локализации? Гайд по AI-переводчикам",
     "excerpt": "Гайд по AI-переводчикам 2026: играем в Monster Hunter Wilds, Judas и GTA VI без русской локализации. LunaTranslator 2.0, GPT-4o, DeepL и локальные LLM.",
     "image": "/img/ai/output/ai_game_translators_2026_guide.webp",

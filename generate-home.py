@@ -184,7 +184,7 @@ def generate():
     shown_games = games[:PLAY_LIMIT]
     play_parts = [play_card_html(g) for g in shown_games]
     if len(games) > PLAY_LIMIT:
-        more_url = 'archive.html?category=' + '%D0%9E%D0%B1%D0%B7%D0%BE%D1%80%D1%8B'
+        more_url = 'archive?category=' + '%D0%9E%D0%B1%D0%B7%D0%BE%D1%80%D1%8B'
         play_parts.append(
             f'        <a href="{more_url}" class="play-card play-card--more">\n'
             f'          <span class="play-name">ещё {len(games) - PLAY_LIMIT}</span>\n'

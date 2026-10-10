@@ -27,7 +27,7 @@ jobs:
               'https://one1game.org/',
               'https://one1game.org/portablewebgame/',
               'https://one1game.org/dos/',
-              'https://one1game.org/archive.html',
+              'https://one1game.org/archive',
           ]
 
           for url in urls:

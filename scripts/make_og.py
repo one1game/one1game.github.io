@@ -233,7 +233,7 @@ def main():
     for url, title, image in parse_entries():
         if done >= args.limit:
             break
-        if not url.endswith(".html") or url.startswith("/kino/"):
+        if url.startswith("/kino/"):
             continue
         page = ROOT / url.lstrip("/")
         if not page.exists():
