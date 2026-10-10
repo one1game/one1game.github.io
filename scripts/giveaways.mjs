@@ -61,6 +61,7 @@ function render({ slug, title, description, h1, lead, cardsHtml, faq, sourceHtml
   return `<!DOCTYPE html>
 <html lang="ru">
 <head>
+<script>if(location.hostname==='one1game.github.io'){location.replace('https://one1game.org'+location.pathname+location.search+location.hash);}</script>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>${esc(title)}</title>
