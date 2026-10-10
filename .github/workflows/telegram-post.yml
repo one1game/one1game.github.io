@@ -117,7 +117,7 @@ jobs:
                   continue
 
               desc = meta(html, r'<meta\s+name=["\']description["\']\s+content=["\'](.*?)["\']')
-              url = f'{BASE}/{path.lstrip("/")}'
+              url = f'{BASE}/' + re.sub(r'\.html$', '', path.lstrip("/"))
 
               text = f'<b>{esc(title)}</b>'
               if desc:

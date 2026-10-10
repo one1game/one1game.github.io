@@ -99,7 +99,7 @@ jobs:
               # Файлы подтверждения прав (yandex_*/google*.html) индексировать не нужно.
               if re.match(r'^(yandex_|google)[0-9a-f]+\.html$', path, re.IGNORECASE):
                   continue
-              clean = re.sub(r'index\.html$', '', path)
+              clean = re.sub(r'\.html$', '', re.sub(r'index\.html$', '', path))
               urls.add(f'{BASE}/{clean}' if clean else f'{BASE}/')
 
           if not urls or remainder <= 0:

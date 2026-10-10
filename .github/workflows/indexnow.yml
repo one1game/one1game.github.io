@@ -40,7 +40,7 @@ jobs:
 
           CHANGED=$(git diff --name-only --diff-filter=AM HEAD~1 HEAD -- '*.html' 2>/dev/null || true)
           PATHS=$(printf '%s\n' "$CHANGED" \
-            | sed -e 's#^index\.html$##' -e 's#/index\.html$#/#' \
+            | sed -e 's#^index\.html$##' -e 's#/index\.html$#/#' -e 's#\.html$##' \
             | grep -v '^404\.html$' \
             | grep -v '^$' \
             | sort -u || true)

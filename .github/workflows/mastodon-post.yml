@@ -112,7 +112,7 @@ jobs:
                   print(f'Mastodon: пропускаю автостраницу игры {path}')
                   continue
 
-              url = f'{BASE}/{path.lstrip("/")}'
+              url = f'{BASE}/' + re.sub(r'\.html$', '', path.lstrip("/"))
               text = f'{title}\n\n{url}'
               status, res = publish(text, hashlib.sha1(url.encode()).hexdigest())
               if status in (200, 201):

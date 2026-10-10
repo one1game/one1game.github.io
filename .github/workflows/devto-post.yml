@@ -170,7 +170,7 @@ jobs:
               category = (meta(html, r'<a class="article-category[^"]*"[^>]*>(.*?)</a>') or '').strip().lower()
               tags = (TAG_MAP.get(category) or ['gaming'])[:4]
 
-              url = f'{BASE}/{path.lstrip("/")}'
+              url = f'{BASE}/' + re.sub(r'\.html$', '', path.lstrip("/"))
               article = re.search(r'<article class="article-body">(.*?)</article>', html, re.S | re.I)
               body = to_markdown(article.group(1) if article else '')
               body += f'\n\n---\n\nЧитать полностью на One1Game: [{url}]({url})'
