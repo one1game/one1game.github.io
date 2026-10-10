@@ -5,27 +5,22 @@
   "trailers": 22,
   "removed": 0,
   "dropped": 0,
-  "ai_new": 1,
-  "ai_wiki": 1,
+  "ai_new": 0,
+  "ai_wiki": 0,
   "ai_fail": 1,
   "upcoming": 10,
   "released": 18,
   "errors": [],
   "ai_debug": [
     {
-      "id": 1540305,
-      "strict": false,
-      "raw": "{\"facts\": [\"Режиссёр: Питер Берг\", \"Актёры: Мадс Миккельсен, Jim Boeven\", \"Студии: Paramount Pictures, Activision Blizzard Studios\", \"Страна: США\"], \"lead\": \"Фильм Call of Duty - предстоящий боевик, о"
-    },
-    {
       "id": 1468313,
       "strict": false,
-      "raw": "{\"facts\": [\"Студии: Paramount Pictures, Original Film, SEGA, SEGA of America\", \"Страны: США, Япония\", \"Жанры: фантастика, боевик, приключения\", \"Год: 2028\"], \"lead\": \"Untitled Sonic Universe Film - пр"
+      "raw": "{\"facts\": [\"Paramount Pictures\", \"Original Film\", \"SEGA\", \"США\", \"Япония\"], \"lead\": \"Untitled Sonic Universe Film - предстоящий фильм в жанрах фантастики, боевика и приключений. Он основан на популярн"
     },
     {
       "id": 1468313,
       "strict": true,
-      "raw": "{\"facts\": [\"Paramount Pictures\", \"Original Film\", \"SEGA\", \"SEGA of America\", \"США\", \"Япония\"], \"lead\": \"Untitled Sonic Universe Film - предстоящий фильм в жанре фантастики, боевика и приключений. Выпу"
+      "raw": "{\"facts\": [\"Paramount Pictures\", \"Original Film\", \"SEGA\", \"США\", \"Япония\"], \"lead\": \"Untitled Sonic Universe Film - предстоящий фильм в жанре фантастики, боевика и приключений. Выпуск запланирован на "
     }
   ],
   "cf_debug": []
