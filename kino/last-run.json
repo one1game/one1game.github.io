@@ -1,31 +1,31 @@
 {
   "ok": true,
-  "when": "2026-10-09",
+  "when": "2026-10-10",
   "movies": 28,
   "trailers": 22,
-  "removed": 1,
+  "removed": 0,
   "dropped": 0,
-  "ai_new": 26,
-  "ai_wiki": 12,
-  "ai_fail": 2,
+  "ai_new": 1,
+  "ai_wiki": 1,
+  "ai_fail": 1,
   "upcoming": 10,
   "released": 18,
   "errors": [],
   "ai_debug": [
     {
-      "id": 1153576,
+      "id": 1540305,
       "strict": false,
-      "raw": "{\"facts\": [\"Студии: Capcom, Legendary Pictures\", \"Страны: Япония, США\", \"Жанры: боевик, фэнтези\", \"Год: 2026\"], \"lead\": \"Фильм «Уличный боец» - это боевик с элементами фэнтези, основанный на популярно"
+      "raw": "{\"facts\": [\"Режиссёр: Питер Берг\", \"Актёры: Мадс Миккельсен, Jim Boeven\", \"Студии: Paramount Pictures, Activision Blizzard Studios\", \"Страна: США\"], \"lead\": \"Фильм Call of Duty - предстоящий боевик, о"
     },
     {
-      "id": 1300926,
+      "id": 1468313,
       "strict": false,
-      "raw": "{\"facts\": [\"Rovio Animation\", \"Финляндия\", \"Япония\", \"США\", \"Джейсон Судейкис — Ред\", \"Джош Гэд — Чак\"], \"lead\": \"Angry Birds 3 в кино - новый мультфильм, продолжающий историю о птицах и свиньях. Режи"
+      "raw": "{\"facts\": [\"Студии: Paramount Pictures, Original Film, SEGA, SEGA of America\", \"Страны: США, Япония\", \"Жанры: фантастика, боевик, приключения\", \"Год: 2028\"], \"lead\": \"Untitled Sonic Universe Film - пр"
     },
     {
-      "id": 1401586,
-      "strict": false,
-      "raw": "{\"facts\": [\"Режиссёр - Джефф Фаулер\", \"Студии - Paramount Pictures, Original Film\", \"Страны - США, Япония\", \"Жанры - комедия, боевик, семейный, фантастика\"], \"lead\": \"Фильм «Соник 4 в Кино» - это прод"
+      "id": 1468313,
+      "strict": true,
+      "raw": "{\"facts\": [\"Paramount Pictures\", \"Original Film\", \"SEGA\", \"SEGA of America\", \"США\", \"Япония\"], \"lead\": \"Untitled Sonic Universe Film - предстоящий фильм в жанре фантастики, боевика и приключений. Выпу"
     }
   ],
   "cf_debug": []
