@@ -342,7 +342,7 @@ footer{text-align:center;color:var(--dim);font-size:12px;padding:26px 0 6px}
   const isExt = g => /^https?:/i.test(g.url);
   const link = g => g.url;
   // запуск через обёртку: игра разворачивается на весь экран
-  const launch = g => isExt(g) ? g.url : 'play.html?g=' + encodeURIComponent(g.slug);
+  const launch = g => isExt(g) ? g.url : 'play?g=' + encodeURIComponent(g.slug);
   const isFav = g => favs.indexOf(g.slug) > -1;
   const playCount = g => plays[g.slug] || 0;
 

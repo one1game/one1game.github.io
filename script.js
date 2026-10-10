@@ -402,7 +402,7 @@ class One1GamePlatform {
     }).join('');
 
     if (games.length > LIMIT) {
-      const moreUrl = 'archive.html?category=' + encodeURIComponent('Обзоры');
+      const moreUrl = 'archive?category=' + encodeURIComponent('Обзоры');
       list.insertAdjacentHTML('beforeend',
         `<a href="${moreUrl}" class="play-card play-card--more">
           <span class="play-name">ещё ${games.length - LIMIT}</span>
@@ -460,7 +460,7 @@ class One1GamePlatform {
       const icon = icons[cat] || 'fa-folder';
       const encoded = encodeURIComponent(cat);
       const safeCat = this.escapeHTML(cat);
-      return `<a href="archive.html?category=${encoded}" class="cat-pill ${catClass}">
+      return `<a href="archive?category=${encoded}" class="cat-pill ${catClass}">
         <i class="fas ${icon}" aria-hidden="true"></i> ${safeCat} <span class="cat-count">${count}</span>
       </a>`;
     }).join('');
