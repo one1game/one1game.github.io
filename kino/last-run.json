@@ -1,13 +1,13 @@
 {
   "ok": true,
-  "when": "2026-10-10",
+  "when": "2026-10-12",
   "movies": 28,
   "trailers": 22,
-  "removed": 0,
+  "removed": 4,
   "dropped": 0,
-  "ai_new": 0,
-  "ai_wiki": 0,
-  "ai_fail": 1,
+  "ai_new": 5,
+  "ai_wiki": 4,
+  "ai_fail": 0,
   "upcoming": 10,
   "released": 18,
   "errors": [],
@@ -15,12 +15,17 @@
     {
       "id": 1468313,
       "strict": false,
-      "raw": "{\"facts\": [\"Paramount Pictures\", \"Original Film\", \"SEGA\", \"США\", \"Япония\"], \"lead\": \"Untitled Sonic Universe Film - предстоящий фильм в жанрах фантастики, боевика и приключений. Он основан на популярн"
+      "raw": "{\"facts\": [\"Paramount Pictures\", \"Original Film\", \"SEGA\", \"США\", \"Япония\"], \"lead\": \"Untitled Sonic Universe Film - новый фильм, действие которого происходит во вселенной живого Соника. Он обещает ста"
     },
     {
-      "id": 1468313,
-      "strict": true,
-      "raw": "{\"facts\": [\"Paramount Pictures\", \"Original Film\", \"SEGA\", \"США\", \"Япония\"], \"lead\": \"Untitled Sonic Universe Film - предстоящий фильм в жанре фантастики, боевика и приключений. Выпуск запланирован на "
+      "id": 1232546,
+      "strict": false,
+      "raw": "{\"lead\": \"Фильм «Дожить до рассвета» - новый американский фильм ужасов 2025 года. Режиссёром фильма выступил Дэвид Ф. Сандберг. Фильм основан на одноимённой компьютерной игре 2015 года.\", \"plot\": \"Гру"
+    },
+    {
+      "id": 454640,
+      "strict": false,
+      "raw": "{\"facts\": [\"Бюджет фильма составил 65 000 000 $\", \"Сборы фильма составили 137 792 047 $\", \"Студии: Rovio Animation, Sony Pictures Animation, John Cohen Productions\", \"Страны: Финляндия, США\"], \"lead\":"
     }
   ],
   "cf_debug": []
