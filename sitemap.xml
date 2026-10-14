@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url><loc>https://one1game.org/</loc><lastmod>2026-10-13</lastmod><priority>1.0</priority></url>
-  <url><loc>https://one1game.org/archive</loc><lastmod>2026-10-13</lastmod><priority>0.8</priority></url>
+  <url><loc>https://one1game.org/</loc><lastmod>2026-10-14</lastmod><priority>1.0</priority></url>
+  <url><loc>https://one1game.org/archive</loc><lastmod>2026-10-14</lastmod><priority>0.8</priority></url>
   <url><loc>https://one1game.org/privacy</loc><priority>0.3</priority></url>
   <url><loc>https://one1game.org/terms</loc><priority>0.3</priority></url>
   <url><loc>https://one1game.org/advertising</loc><priority>0.3</priority></url>
@@ -10,60 +10,93 @@
   <url><loc>https://one1game.org/genriprocedur/</loc><priority>0.7</priority></url>
   <url><loc>https://one1game.org/cyber-scanner/</loc><priority>0.7</priority></url>
   <url><loc>https://one1game.org/go/</loc><priority>0.7</priority></url>
-  <url><loc>https://one1game.org/feed/</loc><lastmod>2026-10-13</lastmod><priority>0.8</priority></url>
-  <url><loc>https://one1game.org/portablewebgame/</loc><lastmod>2026-10-13</lastmod><priority>0.8</priority></url>
-  <url><loc>https://one1game.org/dos/</loc><lastmod>2026-10-13</lastmod><priority>0.8</priority></url>
-  <url><loc>https://one1game.org/red-alert-2/</loc><lastmod>2026-10-13</lastmod><priority>0.8</priority></url>
-  <url><loc>https://one1game.org/kino/</loc><lastmod>2026-10-13</lastmod><priority>0.8</priority></url>
-  <url><loc>https://one1game.org/besplatnye-igry</loc><lastmod>2026-10-13</lastmod><priority>0.8</priority></url>
-  <url><loc>https://one1game.org/skidki-na-igry</loc><lastmod>2026-10-13</lastmod><priority>0.8</priority></url>
-  <url><loc>https://one1game.org/vo-chto-poigrat</loc><lastmod>2026-10-13</lastmod><priority>0.7</priority></url>
-  <url><loc>https://one1game.org/igry-bez-videokarty</loc><lastmod>2026-10-13</lastmod><priority>0.8</priority></url>
-  <url><loc>https://one1game.org/igry-dlya-slabyh-noutbukov-4gb-ozu</loc><lastmod>2026-10-13</lastmod><priority>0.8</priority></url>
-  <url><loc>https://one1game.org/besplatnye-igry-dlya-slabyh-pk</loc><lastmod>2026-10-13</lastmod><priority>0.8</priority></url>
-  <url><loc>https://one1game.org/kooperativnye-igry-dlya-slabyh-pk</loc><lastmod>2026-10-13</lastmod><priority>0.8</priority></url>
-  <url><loc>https://one1game.org/shuter-igry-dlya-slabyh-noutbukov</loc><lastmod>2026-10-13</lastmod><priority>0.8</priority></url>
-  <url><loc>https://one1game.org/rpg-igry-dlya-slabyh-noutbukov</loc><lastmod>2026-10-13</lastmod><priority>0.8</priority></url>
-  <url><loc>https://one1game.org/gonochnye-igry-dlya-slabyh-noutbukov</loc><lastmod>2026-10-13</lastmod><priority>0.8</priority></url>
-  <url><loc>https://one1game.org/igry-dlya-slabyh-noutbukov-onlajn</loc><lastmod>2026-10-13</lastmod><priority>0.8</priority></url>
-  <url><loc>https://one1game.org/igry-dlya-slabyh-noutbukov-s-gejmpadom</loc><lastmod>2026-10-13</lastmod><priority>0.8</priority></url>
-  <url><loc>https://one1game.org/category/ii-i-tehnologii</loc><lastmod>2026-10-13</lastmod><priority>0.6</priority></url>
-  <url><loc>https://one1game.org/category/analitika</loc><lastmod>2026-10-13</lastmod><priority>0.6</priority></url>
-  <url><loc>https://one1game.org/category/gajdy</loc><lastmod>2026-10-13</lastmod><priority>0.6</priority></url>
-  <url><loc>https://one1game.org/category/konsoli</loc><lastmod>2026-10-13</lastmod><priority>0.6</priority></url>
-  <url><loc>https://one1game.org/category/trendy</loc><lastmod>2026-10-13</lastmod><priority>0.6</priority></url>
-  <url><loc>https://one1game.org/category/razrabotka</loc><lastmod>2026-10-13</lastmod><priority>0.6</priority></url>
-  <url><loc>https://one1game.org/category/mnenie</loc><lastmod>2026-10-13</lastmod><priority>0.6</priority></url>
-  <url><loc>https://one1game.org/category/kino-i-igry</loc><lastmod>2026-10-13</lastmod><priority>0.6</priority></url>
-  <url><loc>https://one1game.org/category/obzory</loc><lastmod>2026-10-13</lastmod><priority>0.6</priority></url>
-  <url><loc>https://one1game.org/kino/angry-birds-2-v-kino-454640</loc><lastmod>2026-10-13</lastmod><priority>0.6</priority></url>
-  <url><loc>https://one1game.org/kino/angry-birds-3-v-kino-1300926</loc><lastmod>2026-10-13</lastmod><priority>0.6</priority></url>
-  <url><loc>https://one1game.org/kino/bratya-super-mario-v-kino-502356</loc><lastmod>2026-10-13</lastmod><priority>0.6</priority></url>
-  <url><loc>https://one1game.org/kino/call-of-duty-1540305</loc><lastmod>2026-10-13</lastmod><priority>0.6</priority></url>
-  <url><loc>https://one1game.org/kino/dozhit-do-rassveta-1232546</loc><lastmod>2026-10-13</lastmod><priority>0.6</priority></url>
-  <url><loc>https://one1game.org/kino/elden-ring-1485839</loc><lastmod>2026-10-13</lastmod><priority>0.6</priority></url>
-  <url><loc>https://one1game.org/kino/gran-turizmo-980489</loc><lastmod>2026-10-13</lastmod><priority>0.6</priority></url>
-  <url><loc>https://one1game.org/kino/helldivers-1413533</loc><lastmod>2026-10-13</lastmod><priority>0.6</priority></url>
-  <url><loc>https://one1game.org/kino/identity-v-stage-episode-7-come-to-the-rescue-1701407</loc><lastmod>2026-10-13</lastmod><priority>0.6</priority></url>
-  <url><loc>https://one1game.org/kino/legenda-o-zelde-1177369</loc><lastmod>2026-10-13</lastmod><priority>0.6</priority></url>
-  <url><loc>https://one1game.org/kino/minecraft-v-kino-950387</loc><lastmod>2026-10-13</lastmod><priority>0.6</priority></url>
-  <url><loc>https://one1game.org/kino/minecraft-v-kino-v-kvadrate-1461519</loc><lastmod>2026-10-13</lastmod><priority>0.6</priority></url>
-  <url><loc>https://one1game.org/kino/mortal-kombat-2-931285</loc><lastmod>2026-10-13</lastmod><priority>0.6</priority></url>
-  <url><loc>https://one1game.org/kino/obitel-zla-1423191</loc><lastmod>2026-10-13</lastmod><priority>0.6</priority></url>
-  <url><loc>https://one1game.org/kino/obitel-zla-rakkun-siti-460458</loc><lastmod>2026-10-13</lastmod><priority>0.6</priority></url>
-  <url><loc>https://one1game.org/kino/ohotnik-na-monstrov-458576</loc><lastmod>2026-10-13</lastmod><priority>0.6</priority></url>
-  <url><loc>https://one1game.org/kino/pikseli-257344</loc><lastmod>2026-10-13</lastmod><priority>0.6</priority></url>
-  <url><loc>https://one1game.org/kino/pyat-nochey-s-freddi-2-1228246</loc><lastmod>2026-10-13</lastmod><priority>0.6</priority></url>
-  <url><loc>https://one1game.org/kino/pyat-nochey-s-freddi-507089</loc><lastmod>2026-10-13</lastmod><priority>0.6</priority></url>
-  <url><loc>https://one1game.org/kino/ralf-82690</loc><lastmod>2026-10-13</lastmod><priority>0.6</priority></url>
-  <url><loc>https://one1game.org/kino/sonik-2-v-kino-675353</loc><lastmod>2026-10-13</lastmod><priority>0.6</priority></url>
-  <url><loc>https://one1game.org/kino/sonik-3-v-kino-939243</loc><lastmod>2026-10-13</lastmod><priority>0.6</priority></url>
-  <url><loc>https://one1game.org/kino/sonik-4-v-kino-1401586</loc><lastmod>2026-10-13</lastmod><priority>0.6</priority></url>
-  <url><loc>https://one1game.org/kino/sonik-v-kino-454626</loc><lastmod>2026-10-13</lastmod><priority>0.6</priority></url>
-  <url><loc>https://one1game.org/kino/super-mario-galakticheskoe-kino-1226863</loc><lastmod>2026-10-13</lastmod><priority>0.6</priority></url>
-  <url><loc>https://one1game.org/kino/ulichnyy-boec-1153576</loc><lastmod>2026-10-13</lastmod><priority>0.6</priority></url>
-  <url><loc>https://one1game.org/kino/untitled-sonic-universe-film-1468313</loc><lastmod>2026-10-13</lastmod><priority>0.6</priority></url>
-  <url><loc>https://one1game.org/kino/vozvraschenie-v-saylent-hill-680493</loc><lastmod>2026-10-13</lastmod><priority>0.6</priority></url>
+  <url><loc>https://one1game.org/feed/</loc><lastmod>2026-10-14</lastmod><priority>0.8</priority></url>
+  <url><loc>https://one1game.org/portablewebgame/</loc><lastmod>2026-10-14</lastmod><priority>0.8</priority></url>
+  <url><loc>https://one1game.org/dos/</loc><lastmod>2026-10-14</lastmod><priority>0.8</priority></url>
+  <url><loc>https://one1game.org/red-alert-2/</loc><lastmod>2026-10-14</lastmod><priority>0.8</priority></url>
+  <url><loc>https://one1game.org/kino/</loc><lastmod>2026-10-14</lastmod><priority>0.8</priority></url>
+  <url><loc>https://one1game.org/besplatnye-igry</loc><lastmod>2026-10-14</lastmod><priority>0.8</priority></url>
+  <url><loc>https://one1game.org/skidki-na-igry</loc><lastmod>2026-10-14</lastmod><priority>0.8</priority></url>
+  <url><loc>https://one1game.org/vo-chto-poigrat</loc><lastmod>2026-10-14</lastmod><priority>0.7</priority></url>
+  <url><loc>https://one1game.org/igry-bez-videokarty</loc><lastmod>2026-10-14</lastmod><priority>0.8</priority></url>
+  <url><loc>https://one1game.org/igry-dlya-slabyh-noutbukov-4gb-ozu</loc><lastmod>2026-10-14</lastmod><priority>0.8</priority></url>
+  <url><loc>https://one1game.org/besplatnye-igry-dlya-slabyh-pk</loc><lastmod>2026-10-14</lastmod><priority>0.8</priority></url>
+  <url><loc>https://one1game.org/kooperativnye-igry-dlya-slabyh-pk</loc><lastmod>2026-10-14</lastmod><priority>0.8</priority></url>
+  <url><loc>https://one1game.org/shuter-igry-dlya-slabyh-noutbukov</loc><lastmod>2026-10-14</lastmod><priority>0.8</priority></url>
+  <url><loc>https://one1game.org/rpg-igry-dlya-slabyh-noutbukov</loc><lastmod>2026-10-14</lastmod><priority>0.8</priority></url>
+  <url><loc>https://one1game.org/gonochnye-igry-dlya-slabyh-noutbukov</loc><lastmod>2026-10-14</lastmod><priority>0.8</priority></url>
+  <url><loc>https://one1game.org/igry-dlya-slabyh-noutbukov-onlajn</loc><lastmod>2026-10-14</lastmod><priority>0.8</priority></url>
+  <url><loc>https://one1game.org/igry-dlya-slabyh-noutbukov-s-gejmpadom</loc><lastmod>2026-10-14</lastmod><priority>0.8</priority></url>
+  <url><loc>https://one1game.org/category/ii-i-tehnologii</loc><lastmod>2026-10-14</lastmod><priority>0.6</priority></url>
+  <url><loc>https://one1game.org/category/analitika</loc><lastmod>2026-10-14</lastmod><priority>0.6</priority></url>
+  <url><loc>https://one1game.org/category/gajdy</loc><lastmod>2026-10-14</lastmod><priority>0.6</priority></url>
+  <url><loc>https://one1game.org/category/konsoli</loc><lastmod>2026-10-14</lastmod><priority>0.6</priority></url>
+  <url><loc>https://one1game.org/category/trendy</loc><lastmod>2026-10-14</lastmod><priority>0.6</priority></url>
+  <url><loc>https://one1game.org/category/razrabotka</loc><lastmod>2026-10-14</lastmod><priority>0.6</priority></url>
+  <url><loc>https://one1game.org/category/mnenie</loc><lastmod>2026-10-14</lastmod><priority>0.6</priority></url>
+  <url><loc>https://one1game.org/category/kino-i-igry</loc><lastmod>2026-10-14</lastmod><priority>0.6</priority></url>
+  <url><loc>https://one1game.org/category/obzory</loc><lastmod>2026-10-14</lastmod><priority>0.6</priority></url>
+  <url><loc>https://one1game.org/kino/angry-birds-2-v-kino-454640</loc><lastmod>2026-10-14</lastmod><priority>0.6</priority></url>
+  <url><loc>https://one1game.org/kino/angry-birds-3-v-kino-1300926</loc><lastmod>2026-10-14</lastmod><priority>0.6</priority></url>
+  <url><loc>https://one1game.org/kino/bratya-super-mario-v-kino-502356</loc><lastmod>2026-10-14</lastmod><priority>0.6</priority></url>
+  <url><loc>https://one1game.org/kino/call-of-duty-1540305</loc><lastmod>2026-10-14</lastmod><priority>0.6</priority></url>
+  <url><loc>https://one1game.org/kino/dozhit-do-rassveta-1232546</loc><lastmod>2026-10-14</lastmod><priority>0.6</priority></url>
+  <url><loc>https://one1game.org/kino/elden-ring-1485839</loc><lastmod>2026-10-14</lastmod><priority>0.6</priority></url>
+  <url><loc>https://one1game.org/kino/gran-turizmo-980489</loc><lastmod>2026-10-14</lastmod><priority>0.6</priority></url>
+  <url><loc>https://one1game.org/kino/helldivers-1413533</loc><lastmod>2026-10-14</lastmod><priority>0.6</priority></url>
+  <url><loc>https://one1game.org/kino/identity-v-stage-episode-7-come-to-the-rescue-1701407</loc><lastmod>2026-10-14</lastmod><priority>0.6</priority></url>
+  <url><loc>https://one1game.org/kino/legenda-o-zelde-1177369</loc><lastmod>2026-10-14</lastmod><priority>0.6</priority></url>
+  <url><loc>https://one1game.org/kino/minecraft-v-kino-950387</loc><lastmod>2026-10-14</lastmod><priority>0.6</priority></url>
+  <url><loc>https://one1game.org/kino/minecraft-v-kino-v-kvadrate-1461519</loc><lastmod>2026-10-14</lastmod><priority>0.6</priority></url>
+  <url><loc>https://one1game.org/kino/mortal-kombat-2-931285</loc><lastmod>2026-10-14</lastmod><priority>0.6</priority></url>
+  <url><loc>https://one1game.org/kino/obitel-zla-1423191</loc><lastmod>2026-10-14</lastmod><priority>0.6</priority></url>
+  <url><loc>https://one1game.org/kino/obitel-zla-rakkun-siti-460458</loc><lastmod>2026-10-14</lastmod><priority>0.6</priority></url>
+  <url><loc>https://one1game.org/kino/ohotnik-na-monstrov-458576</loc><lastmod>2026-10-14</lastmod><priority>0.6</priority></url>
+  <url><loc>https://one1game.org/kino/pikseli-257344</loc><lastmod>2026-10-14</lastmod><priority>0.6</priority></url>
+  <url><loc>https://one1game.org/kino/pyat-nochey-s-freddi-2-1228246</loc><lastmod>2026-10-14</lastmod><priority>0.6</priority></url>
+  <url><loc>https://one1game.org/kino/pyat-nochey-s-freddi-507089</loc><lastmod>2026-10-14</lastmod><priority>0.6</priority></url>
+  <url><loc>https://one1game.org/kino/ralf-82690</loc><lastmod>2026-10-14</lastmod><priority>0.6</priority></url>
+  <url><loc>https://one1game.org/kino/sonik-2-v-kino-675353</loc><lastmod>2026-10-14</lastmod><priority>0.6</priority></url>
+  <url><loc>https://one1game.org/kino/sonik-3-v-kino-939243</loc><lastmod>2026-10-14</lastmod><priority>0.6</priority></url>
+  <url><loc>https://one1game.org/kino/sonik-4-v-kino-1401586</loc><lastmod>2026-10-14</lastmod><priority>0.6</priority></url>
+  <url><loc>https://one1game.org/kino/sonik-v-kino-454626</loc><lastmod>2026-10-14</lastmod><priority>0.6</priority></url>
+  <url><loc>https://one1game.org/kino/super-mario-galakticheskoe-kino-1226863</loc><lastmod>2026-10-14</lastmod><priority>0.6</priority></url>
+  <url><loc>https://one1game.org/kino/ulichnyy-boec-1153576</loc><lastmod>2026-10-14</lastmod><priority>0.6</priority></url>
+  <url><loc>https://one1game.org/kino/untitled-sonic-universe-film-1468313</loc><lastmod>2026-10-14</lastmod><priority>0.6</priority></url>
+  <url><loc>https://one1game.org/kino/vozvraschenie-v-saylent-hill-680493</loc><lastmod>2026-10-14</lastmod><priority>0.6</priority></url>
+  <url><loc>https://one1game.org/archive/arrows-without-end-5282350</loc><lastmod>2026-10-14</lastmod><priority>0.7</priority></url>
+  <url><loc>https://one1game.org/archive/anomaly-watchout-5123480</loc><lastmod>2026-10-14</lastmod><priority>0.7</priority></url>
+  <url><loc>https://one1game.org/archive/stream-racer-1333410</loc><lastmod>2026-10-14</lastmod><priority>0.7</priority></url>
+  <url><loc>https://one1game.org/archive/tales-from-eternity-interactive-preview-5289970</loc><lastmod>2026-10-14</lastmod><priority>0.7</priority></url>
+  <url><loc>https://one1game.org/archive/my-recycling-center-2-3343920</loc><lastmod>2026-10-14</lastmod><priority>0.7</priority></url>
+  <url><loc>https://one1game.org/archive/-4981040</loc><lastmod>2026-10-14</lastmod><priority>0.7</priority></url>
+  <url><loc>https://one1game.org/archive/deunocta-4485350</loc><lastmod>2026-10-14</lastmod><priority>0.7</priority></url>
+  <url><loc>https://one1game.org/archive/bitwise-5195360</loc><lastmod>2026-10-14</lastmod><priority>0.7</priority></url>
+  <url><loc>https://one1game.org/archive/keysaster-4519510</loc><lastmod>2026-10-14</lastmod><priority>0.7</priority></url>
+  <url><loc>https://one1game.org/archive/hyperion-daw-factory-samples-5140930</loc><lastmod>2026-10-14</lastmod><priority>0.7</priority></url>
+  <url><loc>https://one1game.org/archive/hyperion-daw-5024590</loc><lastmod>2026-10-14</lastmod><priority>0.7</priority></url>
+  <url><loc>https://one1game.org/archive/working-5201080</loc><lastmod>2026-10-14</lastmod><priority>0.7</priority></url>
+  <url><loc>https://one1game.org/archive/-4907670</loc><lastmod>2026-10-14</lastmod><priority>0.7</priority></url>
+  <url><loc>https://one1game.org/archive/-5024270</loc><lastmod>2026-10-14</lastmod><priority>0.7</priority></url>
+  <url><loc>https://one1game.org/archive/the-way-home-is-dangerous-adult-only-5270030</loc><lastmod>2026-10-14</lastmod><priority>0.7</priority></url>
+  <url><loc>https://one1game.org/archive/nientum-op-zero-2725250</loc><lastmod>2026-10-14</lastmod><priority>0.7</priority></url>
+  <url><loc>https://one1game.org/archive/bloom-blow-5277080</loc><lastmod>2026-10-14</lastmod><priority>0.7</priority></url>
+  <url><loc>https://one1game.org/archive/twin-drive-4944320</loc><lastmod>2026-10-14</lastmod><priority>0.7</priority></url>
+  <url><loc>https://one1game.org/archive/astrolite-3450850</loc><lastmod>2026-10-14</lastmod><priority>0.7</priority></url>
+  <url><loc>https://one1game.org/archive/miu-5324860</loc><lastmod>2026-10-14</lastmod><priority>0.7</priority></url>
+  <url><loc>https://one1game.org/archive/a-light-in-the-gloam-5326380</loc><lastmod>2026-10-14</lastmod><priority>0.7</priority></url>
+  <url><loc>https://one1game.org/archive/stellarite-miner-5300160</loc><lastmod>2026-10-14</lastmod><priority>0.7</priority></url>
+  <url><loc>https://one1game.org/archive/permafrost-original-soundtrack-5345330</loc><lastmod>2026-10-14</lastmod><priority>0.7</priority></url>
+  <url><loc>https://one1game.org/archive/trampoline-to-tomorrow-5228280</loc><lastmod>2026-10-14</lastmod><priority>0.7</priority></url>
+  <url><loc>https://one1game.org/archive/-5328210</loc><lastmod>2026-10-14</lastmod><priority>0.7</priority></url>
+  <url><loc>https://one1game.org/archive/trash-day-stinky-rich-supporter-pack-5386580</loc><lastmod>2026-10-14</lastmod><priority>0.7</priority></url>
+  <url><loc>https://one1game.org/archive/kollektsiya-sudoku-klassicheskoe-sudoku-sudoku-killer-diagonalnoe-sudoku-sudoku-pazl-5233550</loc><lastmod>2026-10-14</lastmod><priority>0.7</priority></url>
+  <url><loc>https://one1game.org/archive/trash-day-3314580</loc><lastmod>2026-10-14</lastmod><priority>0.7</priority></url>
+  <url><loc>https://one1game.org/archive/legion-was-here-3492120</loc><lastmod>2026-10-14</lastmod><priority>0.7</priority></url>
+  <url><loc>https://one1game.org/archive/voodoo-fishin-3071240</loc><lastmod>2026-10-14</lastmod><priority>0.7</priority></url>
+  <url><loc>https://one1game.org/archive/valor-mortis-2828710</loc><lastmod>2026-10-14</lastmod><priority>0.7</priority></url>
+  <url><loc>https://one1game.org/archive/deep-dish-dungeon-2871520</loc><lastmod>2026-10-14</lastmod><priority>0.7</priority></url>
+  <url><loc>https://one1game.org/archive/valor-mortis-deluxe-edition-upgrade-5250300</loc><lastmod>2026-10-14</lastmod><priority>0.7</priority></url>
   <url><loc>https://one1game.org/archive/crazy-woman-5063400</loc><lastmod>2026-10-13</lastmod><priority>0.7</priority></url>
   <url><loc>https://one1game.org/archive/flybrain-lab-5331850</loc><lastmod>2026-10-13</lastmod><priority>0.7</priority></url>
   <url><loc>https://one1game.org/archive/iverian-wars-craxion-vs-defugel-1191830</loc><lastmod>2026-10-13</lastmod><priority>0.7</priority></url>
@@ -107,7 +140,7 @@
   <url><loc>https://one1game.org/archive/desktop-cooking-panda-diner-5268210</loc><lastmod>2026-10-12</lastmod><priority>0.7</priority></url>
   <url><loc>https://one1game.org/archive/embersofwar-5233860</loc><lastmod>2026-10-12</lastmod><priority>0.7</priority></url>
   <url><loc>https://one1game.org/archive/desktop-tide-5248560</loc><lastmod>2026-10-12</lastmod><priority>0.7</priority></url>
-  <url><loc>https://one1game.org/archive/slimefall-4923820</loc><lastmod>2026-10-12</lastmod><priority>0.7</priority></url>
+  <url><loc>https://one1game.org/archive/slimefall-4923820</loc><lastmod>2026-10-13</lastmod><priority>0.7</priority></url>
   <url><loc>https://one1game.org/archive/degul-degul-999-5183270</loc><lastmod>2026-10-12</lastmod><priority>0.7</priority></url>
   <url><loc>https://one1game.org/archive/last-on-duty-3820460</loc><lastmod>2026-10-12</lastmod><priority>0.7</priority></url>
   <url><loc>https://one1game.org/archive/roly-5177750</loc><lastmod>2026-10-12</lastmod><priority>0.7</priority></url>
@@ -123,7 +156,7 @@
   <url><loc>https://one1game.org/archive/zaryadnaya-stantsiya-na-rabochem-stole-2528790</loc><lastmod>2026-10-12</lastmod><priority>0.7</priority></url>
   <url><loc>https://one1game.org/archive/traitor-3836580</loc><lastmod>2026-10-12</lastmod><priority>0.7</priority></url>
   <url><loc>https://one1game.org/archive/aim-like-a-cat-5131570</loc><lastmod>2026-10-12</lastmod><priority>0.7</priority></url>
-  <url><loc>https://one1game.org/archive/slime-watch-4361190</loc><lastmod>2026-10-12</lastmod><priority>0.7</priority></url>
+  <url><loc>https://one1game.org/archive/slime-watch-4361190</loc><lastmod>2026-10-13</lastmod><priority>0.7</priority></url>
   <url><loc>https://one1game.org/archive/escape-from-tarkov-3932890</loc><lastmod>2026-10-12</lastmod><priority>0.7</priority></url>
   <url><loc>https://one1game.org/archive/arcana-rift-2022260</loc><lastmod>2026-10-11</lastmod><priority>0.7</priority></url>
   <url><loc>https://one1game.org/archive/nekotrak-5249210</loc><lastmod>2026-10-11</lastmod><priority>0.7</priority></url>
@@ -253,7 +286,7 @@
   <url><loc>https://one1game.org/archive/ii-v-igrodeli-2026-polnyy-razbor</loc><lastmod>2026-10-06</lastmod><priority>0.7</priority></url>
   <url><loc>https://one1game.org/archive/third-law-5245170</loc><lastmod>2026-10-11</lastmod><priority>0.7</priority></url>
   <url><loc>https://one1game.org/archive/empty-inbox-5178990</loc><lastmod>2026-10-11</lastmod><priority>0.7</priority></url>
-  <url><loc>https://one1game.org/archive/deadline-last-checkpoint-5261340</loc><lastmod>2026-10-11</lastmod><priority>0.7</priority></url>
+  <url><loc>https://one1game.org/archive/deadline-last-checkpoint-5261340</loc><lastmod>2026-10-13</lastmod><priority>0.7</priority></url>
   <url><loc>https://one1game.org/archive/10countavoidance-4120530</loc><lastmod>2026-10-11</lastmod><priority>0.7</priority></url>
   <url><loc>https://one1game.org/archive/a-i-ttorney-4355070</loc><lastmod>2026-10-11</lastmod><priority>0.7</priority></url>
   <url><loc>https://one1game.org/archive/norn-saber-the-guardian-s-oath-4030680</loc><lastmod>2026-10-11</lastmod><priority>0.7</priority></url>
@@ -334,7 +367,7 @@
   <url><loc>https://one1game.org/archive/timos-4934110</loc><lastmod>2026-10-11</lastmod><priority>0.7</priority></url>
   <url><loc>https://one1game.org/archive/dreamspring-3231480</loc><lastmod>2026-10-11</lastmod><priority>0.7</priority></url>
   <url><loc>https://one1game.org/archive/general-idler-3200810</loc><lastmod>2026-10-11</lastmod><priority>0.7</priority></url>
-  <url><loc>https://one1game.org/archive/simrace-publisher-studio-5219510</loc><lastmod>2026-10-11</lastmod><priority>0.7</priority></url>
+  <url><loc>https://one1game.org/archive/simrace-publisher-studio-5219510</loc><lastmod>2026-10-13</lastmod><priority>0.7</priority></url>
   <url><loc>https://one1game.org/archive/tunnel-escape-fates-entwined-4285110</loc><lastmod>2026-10-11</lastmod><priority>0.7</priority></url>
   <url><loc>https://one1game.org/archive/spaceman-s-luck-4706030</loc><lastmod>2026-10-11</lastmod><priority>0.7</priority></url>
   <url><loc>https://one1game.org/archive/in-these-hallowed-halls-4875320</loc><lastmod>2026-10-11</lastmod><priority>0.7</priority></url>
@@ -497,7 +530,7 @@
   <url><loc>https://one1game.org/archive/-3594090</loc><lastmod>2026-10-11</lastmod><priority>0.7</priority></url>
   <url><loc>https://one1game.org/archive/inspiration-test-5184950</loc><lastmod>2026-10-11</lastmod><priority>0.7</priority></url>
   <url><loc>https://one1game.org/archive/crime-podcast-1976-5194140</loc><lastmod>2026-10-11</lastmod><priority>0.7</priority></url>
-  <url><loc>https://one1game.org/archive/ss13-bar-sim-4459540</loc><lastmod>2026-10-11</lastmod><priority>0.7</priority></url>
+  <url><loc>https://one1game.org/archive/ss13-bar-sim-4459540</loc><lastmod>2026-10-13</lastmod><priority>0.7</priority></url>
   <url><loc>https://one1game.org/archive/v0-098-5184600</loc><lastmod>2026-10-11</lastmod><priority>0.7</priority></url>
   <url><loc>https://one1game.org/archive/cozy-jigsaw-5227040</loc><lastmod>2026-10-11</lastmod><priority>0.7</priority></url>
   <url><loc>https://one1game.org/archive/you-re-it-5187640</loc><lastmod>2026-10-11</lastmod><priority>0.7</priority></url>
@@ -516,7 +549,7 @@
   <url><loc>https://one1game.org/archive/psyche-et-al-4590880</loc><lastmod>2026-10-11</lastmod><priority>0.7</priority></url>
   <url><loc>https://one1game.org/archive/refantasy-autobattler-5062170</loc><lastmod>2026-10-11</lastmod><priority>0.7</priority></url>
   <url><loc>https://one1game.org/archive/pay-your-deeds-5222360</loc><lastmod>2026-10-11</lastmod><priority>0.7</priority></url>
-  <url><loc>https://one1game.org/archive/star-space-5166030</loc><lastmod>2026-10-11</lastmod><priority>0.7</priority></url>
+  <url><loc>https://one1game.org/archive/star-space-5166030</loc><lastmod>2026-10-13</lastmod><priority>0.7</priority></url>
   <url><loc>https://one1game.org/archive/death-delivery-3303790</loc><lastmod>2026-10-11</lastmod><priority>0.7</priority></url>
   <url><loc>https://one1game.org/archive/transport-fever-3-3493540</loc><lastmod>2026-10-11</lastmod><priority>0.7</priority></url>
   <url><loc>https://one1game.org/archive/squad-393380</loc><lastmod>2026-10-11</lastmod><priority>0.7</priority></url>
@@ -622,7 +655,7 @@
   <url><loc>https://one1game.org/archive/the-piper-of-dawn-3804370</loc><lastmod>2026-10-11</lastmod><priority>0.7</priority></url>
   <url><loc>https://one1game.org/archive/aigenrobo-5130010</loc><lastmod>2026-10-11</lastmod><priority>0.7</priority></url>
   <url><loc>https://one1game.org/archive/dog-5057210</loc><lastmod>2026-10-11</lastmod><priority>0.7</priority></url>
-  <url><loc>https://one1game.org/archive/rip-923530</loc><lastmod>2026-10-11</lastmod><priority>0.7</priority></url>
+  <url><loc>https://one1game.org/archive/rip-923530</loc><lastmod>2026-10-13</lastmod><priority>0.7</priority></url>
   <url><loc>https://one1game.org/archive/one-more-pearl-4800440</loc><lastmod>2026-10-11</lastmod><priority>0.7</priority></url>
   <url><loc>https://one1game.org/archive/birthday-4696240</loc><lastmod>2026-10-11</lastmod><priority>0.7</priority></url>
   <url><loc>https://one1game.org/archive/dusha-primanka-bait-soul-3484100</loc><lastmod>2026-10-11</lastmod><priority>0.7</priority></url>
@@ -641,14 +674,14 @@
   <url><loc>https://one1game.org/archive/ebitapes-2221850</loc><lastmod>2026-10-11</lastmod><priority>0.7</priority></url>
   <url><loc>https://one1game.org/archive/uncles-5022820</loc><lastmod>2026-10-11</lastmod><priority>0.7</priority></url>
   <url><loc>https://one1game.org/archive/fruit-golf-406890</loc><lastmod>2026-10-11</lastmod><priority>0.7</priority></url>
-  <url><loc>https://one1game.org/archive/deskfamiliar-4943020</loc><lastmod>2026-10-11</lastmod><priority>0.7</priority></url>
+  <url><loc>https://one1game.org/archive/deskfamiliar-4943020</loc><lastmod>2026-10-13</lastmod><priority>0.7</priority></url>
   <url><loc>https://one1game.org/archive/now-showing-a-cinema-programming-game-5066560</loc><lastmod>2026-10-11</lastmod><priority>0.7</priority></url>
   <url><loc>https://one1game.org/archive/best-slime-of-my-life-4272610</loc><lastmod>2026-10-11</lastmod><priority>0.7</priority></url>
   <url><loc>https://one1game.org/archive/stuntboost-2999500</loc><lastmod>2026-10-11</lastmod><priority>0.7</priority></url>
   <url><loc>https://one1game.org/archive/questfarers-of-the-stone-5010200</loc><lastmod>2026-10-11</lastmod><priority>0.7</priority></url>
   <url><loc>https://one1game.org/archive/catson-files-wizard-town-4967790</loc><lastmod>2026-10-11</lastmod><priority>0.7</priority></url>
   <url><loc>https://one1game.org/archive/cheerleaders-3652840</loc><lastmod>2026-10-11</lastmod><priority>0.7</priority></url>
-  <url><loc>https://one1game.org/archive/laryen-5142990</loc><lastmod>2026-10-11</lastmod><priority>0.7</priority></url>
+  <url><loc>https://one1game.org/archive/laryen-5142990</loc><lastmod>2026-10-13</lastmod><priority>0.7</priority></url>
   <url><loc>https://one1game.org/archive/subspace-redux-4821960</loc><lastmod>2026-10-11</lastmod><priority>0.7</priority></url>
   <url><loc>https://one1game.org/archive/the-blood-of-yidhra-4643800</loc><lastmod>2026-10-11</lastmod><priority>0.7</priority></url>
   <url><loc>https://one1game.org/archive/parasited-will-3077650</loc><lastmod>2026-10-12</lastmod><priority>0.7</priority></url>
@@ -717,37 +750,37 @@
   <url><loc>https://one1game.org/archive/sakura-the-eternal-night-5013390</loc><lastmod>2026-10-12</lastmod><priority>0.7</priority></url>
   <url><loc>https://one1game.org/archive/uman-5005050</loc><lastmod>2026-10-12</lastmod><priority>0.7</priority></url>
   <url><loc>https://one1game.org/archive/chesstan-5099860</loc><lastmod>2026-10-11</lastmod><priority>0.7</priority></url>
-  <url><loc>https://one1game.org/archive/big-bang-to-us-5097440</loc><lastmod>2026-10-11</lastmod><priority>0.7</priority></url>
-  <url><loc>https://one1game.org/archive/ninja-cards-and-ninja-battle-master-5132180</loc><lastmod>2026-10-11</lastmod><priority>0.7</priority></url>
-  <url><loc>https://one1game.org/archive/meridian-strike-5139650</loc><lastmod>2026-10-11</lastmod><priority>0.7</priority></url>
+  <url><loc>https://one1game.org/archive/big-bang-to-us-5097440</loc><lastmod>2026-10-13</lastmod><priority>0.7</priority></url>
+  <url><loc>https://one1game.org/archive/ninja-cards-and-ninja-battle-master-5132180</loc><lastmod>2026-10-13</lastmod><priority>0.7</priority></url>
+  <url><loc>https://one1game.org/archive/meridian-strike-5139650</loc><lastmod>2026-10-13</lastmod><priority>0.7</priority></url>
   <url><loc>https://one1game.org/archive/submechanic-4741630</loc><lastmod>2026-10-11</lastmod><priority>0.7</priority></url>
-  <url><loc>https://one1game.org/archive/meat-girl-4917360</loc><lastmod>2026-10-11</lastmod><priority>0.7</priority></url>
-  <url><loc>https://one1game.org/archive/slap-the-gamer-5195850</loc><lastmod>2026-10-11</lastmod><priority>0.7</priority></url>
-  <url><loc>https://one1game.org/archive/rusted-awakening-2874490</loc><lastmod>2026-10-11</lastmod><priority>0.7</priority></url>
-  <url><loc>https://one1game.org/archive/potionpanic-4533650</loc><lastmod>2026-10-11</lastmod><priority>0.7</priority></url>
-  <url><loc>https://one1game.org/archive/the-options-menu-4735970</loc><lastmod>2026-10-11</lastmod><priority>0.7</priority></url>
-  <url><loc>https://one1game.org/archive/astrotennis-5109050</loc><lastmod>2026-10-11</lastmod><priority>0.7</priority></url>
-  <url><loc>https://one1game.org/archive/day-off-simulator-2524740</loc><lastmod>2026-10-11</lastmod><priority>0.7</priority></url>
-  <url><loc>https://one1game.org/archive/night-record-thin-walls-4652040</loc><lastmod>2026-10-11</lastmod><priority>0.7</priority></url>
-  <url><loc>https://one1game.org/archive/screw-it-4972300</loc><lastmod>2026-10-11</lastmod><priority>0.7</priority></url>
-  <url><loc>https://one1game.org/archive/the-furry-protocol-4141640</loc><lastmod>2026-10-11</lastmod><priority>0.7</priority></url>
-  <url><loc>https://one1game.org/archive/-5121040</loc><lastmod>2026-10-11</lastmod><priority>0.7</priority></url>
-  <url><loc>https://one1game.org/archive/gwiazdozbi-r-4849030</loc><lastmod>2026-10-11</lastmod><priority>0.7</priority></url>
-  <url><loc>https://one1game.org/archive/panic-files-buried-sanity-4012730</loc><lastmod>2026-10-11</lastmod><priority>0.7</priority></url>
-  <url><loc>https://one1game.org/archive/fluttering-3759520</loc><lastmod>2026-10-11</lastmod><priority>0.7</priority></url>
+  <url><loc>https://one1game.org/archive/meat-girl-4917360</loc><lastmod>2026-10-13</lastmod><priority>0.7</priority></url>
+  <url><loc>https://one1game.org/archive/slap-the-gamer-5195850</loc><lastmod>2026-10-13</lastmod><priority>0.7</priority></url>
+  <url><loc>https://one1game.org/archive/rusted-awakening-2874490</loc><lastmod>2026-10-13</lastmod><priority>0.7</priority></url>
+  <url><loc>https://one1game.org/archive/potionpanic-4533650</loc><lastmod>2026-10-13</lastmod><priority>0.7</priority></url>
+  <url><loc>https://one1game.org/archive/the-options-menu-4735970</loc><lastmod>2026-10-13</lastmod><priority>0.7</priority></url>
+  <url><loc>https://one1game.org/archive/astrotennis-5109050</loc><lastmod>2026-10-13</lastmod><priority>0.7</priority></url>
+  <url><loc>https://one1game.org/archive/day-off-simulator-2524740</loc><lastmod>2026-10-13</lastmod><priority>0.7</priority></url>
+  <url><loc>https://one1game.org/archive/night-record-thin-walls-4652040</loc><lastmod>2026-10-13</lastmod><priority>0.7</priority></url>
+  <url><loc>https://one1game.org/archive/screw-it-4972300</loc><lastmod>2026-10-13</lastmod><priority>0.7</priority></url>
+  <url><loc>https://one1game.org/archive/the-furry-protocol-4141640</loc><lastmod>2026-10-13</lastmod><priority>0.7</priority></url>
+  <url><loc>https://one1game.org/archive/-5121040</loc><lastmod>2026-10-13</lastmod><priority>0.7</priority></url>
+  <url><loc>https://one1game.org/archive/gwiazdozbi-r-4849030</loc><lastmod>2026-10-13</lastmod><priority>0.7</priority></url>
+  <url><loc>https://one1game.org/archive/panic-files-buried-sanity-4012730</loc><lastmod>2026-10-13</lastmod><priority>0.7</priority></url>
+  <url><loc>https://one1game.org/archive/fluttering-3759520</loc><lastmod>2026-10-13</lastmod><priority>0.7</priority></url>
   <url><loc>https://one1game.org/archive/pirouette-smile-5171060</loc><lastmod>2026-10-11</lastmod><priority>0.7</priority></url>
-  <url><loc>https://one1game.org/archive/-4951110</loc><lastmod>2026-10-11</lastmod><priority>0.7</priority></url>
-  <url><loc>https://one1game.org/archive/desire-inn-3956380</loc><lastmod>2026-10-11</lastmod><priority>0.7</priority></url>
-  <url><loc>https://one1game.org/archive/only-farms-4657600</loc><lastmod>2026-10-11</lastmod><priority>0.7</priority></url>
+  <url><loc>https://one1game.org/archive/-4951110</loc><lastmod>2026-10-13</lastmod><priority>0.7</priority></url>
+  <url><loc>https://one1game.org/archive/desire-inn-3956380</loc><lastmod>2026-10-13</lastmod><priority>0.7</priority></url>
+  <url><loc>https://one1game.org/archive/only-farms-4657600</loc><lastmod>2026-10-13</lastmod><priority>0.7</priority></url>
   <url><loc>https://one1game.org/archive/somebody-s-tale-776250</loc><lastmod>2026-10-11</lastmod><priority>0.7</priority></url>
-  <url><loc>https://one1game.org/archive/love-in-another-world-4928470</loc><lastmod>2026-10-11</lastmod><priority>0.7</priority></url>
+  <url><loc>https://one1game.org/archive/love-in-another-world-4928470</loc><lastmod>2026-10-13</lastmod><priority>0.7</priority></url>
   <url><loc>https://one1game.org/archive/texture-map-studio-5172720</loc><lastmod>2026-10-11</lastmod><priority>0.7</priority></url>
-  <url><loc>https://one1game.org/archive/blackjack-pixel-blackjack-5197410</loc><lastmod>2026-10-11</lastmod><priority>0.7</priority></url>
-  <url><loc>https://one1game.org/archive/visual-novel-evening-broadcast-5208380</loc><lastmod>2026-10-11</lastmod><priority>0.7</priority></url>
-  <url><loc>https://one1game.org/archive/active-matter-2887580</loc><lastmod>2026-10-11</lastmod><priority>0.7</priority></url>
+  <url><loc>https://one1game.org/archive/blackjack-pixel-blackjack-5197410</loc><lastmod>2026-10-13</lastmod><priority>0.7</priority></url>
+  <url><loc>https://one1game.org/archive/visual-novel-evening-broadcast-5208380</loc><lastmod>2026-10-13</lastmod><priority>0.7</priority></url>
+  <url><loc>https://one1game.org/archive/active-matter-2887580</loc><lastmod>2026-10-13</lastmod><priority>0.7</priority></url>
   <url><loc>https://one1game.org/archive/bodycam-2406770</loc><lastmod>2026-10-11</lastmod><priority>0.7</priority></url>
-  <url><loc>https://one1game.org/archive/rust-252490</loc><lastmod>2026-10-11</lastmod><priority>0.7</priority></url>
-  <url><loc>https://one1game.org/archive/graveyard-keeper-2-4358690</loc><lastmod>2026-10-11</lastmod><priority>0.7</priority></url>
+  <url><loc>https://one1game.org/archive/rust-252490</loc><lastmod>2026-10-13</lastmod><priority>0.7</priority></url>
+  <url><loc>https://one1game.org/archive/graveyard-keeper-2-4358690</loc><lastmod>2026-10-13</lastmod><priority>0.7</priority></url>
   <url><loc>https://one1game.org/archive/baldur-s-gate-3-1086940</loc><lastmod>2026-10-11</lastmod><priority>0.7</priority></url>
   <url><loc>https://one1game.org/archive/nevidimyy-razum-ii-arhitektor-igrovykh-mirov-2026</loc><lastmod>2026-08-25</lastmod><priority>0.7</priority></url>
   <url><loc>https://one1game.org/archive/konec-ery-diskov-sony-cifrovoe-budushee-2028</loc><lastmod>2026-08-25</lastmod><priority>0.7</priority></url>
