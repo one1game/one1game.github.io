@@ -1,6 +1,18 @@
 // articles-data.js
 window.allArticles = [
   {
+    "url": "/archive/filmy-iskusstvennogo-intellekta-2026",
+    "title": "Фильмы искусственного интеллекта: 5 проектов, которые изменили кино",
+    "excerpt": "«Мороз», Our T2 Remake, «Санспринг», Generation и «Слизень»: проверенные факты, инструменты, встроенные плееры и границы ИИ в кино.",
+    "date": "18 октября 2026",
+    "readTime": "11 мин",
+    "category": "Кино и игры",
+    "image": "/img/filmy-iskusstvennogo-intellekta-2026-800.jpg",
+    "updated": "2026-10-18",
+    "tags": ["ИИ", "Кино", "Генеративное видео", "The Frost", "Sunspring"],
+    "ai": false
+  },
+  {
     "url": "/archive/wolf-island-4729580",
     "title": "Обзор Wolf Island — кооперативное выживание на острове",
     "excerpt": "Обзор Wolf Island: кооперативный симулятор выживания от третьего лица. Исследуйте остров, создавайте предметы и чините лодку ради спасения всей команды.",

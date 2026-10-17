@@ -26,6 +26,7 @@
 - [Ретро-игры](https://one1game.org/portablewebgame/): классические игры в браузере без установки.
 - [DOS-игры](https://one1game.org/dos/): DOOM, Quake и Wolfenstein 3D прямо в браузере.
 - [Кино](https://one1game.org/kino/): подборки фильмов и материалы о кино.
+- [Фильмы искусственного интеллекта](https://one1game.org/archive/filmy-iskusstvennogo-intellekta-2026): разбор пяти AI-фильмов с проверенными фактами, инструментами и встроенными плеерами.
 - [ТикТок](https://one1game.org/feed/): лента коротких видео.
 - [AI Pulse](https://one1game.org/ai/): новости ИИ, рейтинг моделей, трендовые инструменты, бесплатные нейросети.
 - [Cosmic Drift](https://one1game.org/genriprocedur/): генератор процедурной музыки онлайн (ambient и hip-hop).
