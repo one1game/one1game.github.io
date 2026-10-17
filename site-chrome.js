@@ -24,6 +24,7 @@
   var isFeed = starts('/feed');
   var isRetro = starts('/portablewebgame') || starts('/dos') || starts('/ra2') || starts('/red-alert-2');
   var isKino = starts('/kino');
+  var isBrowserQuest = starts('/browserquest');
 
   function a(s) { return s ? ' active' : ''; }
 
@@ -37,6 +38,7 @@
     '      <a href="/feed/" class="nav-link' + a(isFeed) + '">ТикТок</a>' +
     '      <a href="/portablewebgame/" class="nav-link' + a(isRetro) + '">Ретро-игры</a>' +
     '      <a href="/go/" class="nav-link' + a(isGo) + '">Игры онлайн</a>' +
+    '      <a href="/browserquest/" class="nav-link' + a(isBrowserQuest) + '">BrowserQuest</a>' +
     '      <a href="/kino/" class="nav-link' + a(isKino) + '">Кино</a>' +
     '      <a href="/archive" class="nav-link' + a(isArchive) + '">Статьи</a>' +
     '      <a href="/ai/" class="nav-link' + a(isAI) + '">AI Pulse</a>' +
@@ -65,6 +67,7 @@
     '      <a href="/category/ii-i-tehnologii">ИИ и технологии</a>' +
     '      <a href="/ai/">AI Pulse</a>' +
     '      <a href="/genriprocedur/">Cosmic Drift</a>' +
+    '      <a href="/browserquest/">BrowserQuest</a>' +
     '      <a href="/cyber-scanner/">Проверка безопасности</a>' +
     '      <a href="/advertising">Реклама</a>' +
     '      <a href="/privacy">Политика</a>' +
@@ -91,8 +94,8 @@
     '@media (min-width:900px){' +
       '.site-nav{background:rgba(4,6,10,.72);-webkit-backdrop-filter:blur(16px) saturate(1.2);backdrop-filter:blur(16px) saturate(1.2)}' +
       '.nav-inner{padding:0 26px;height:56px}' +
-      '.nav-links{display:flex;align-items:center;gap:0;margin-left:16px}' +
-      '.nav-link{padding:8px 12px;color:#8f99a6;text-decoration:none;font-size:.72rem;letter-spacing:.04em;text-transform:uppercase;white-space:nowrap;border-radius:999px;transition:color .15s,background .15s}' +
+      '.nav-links{display:flex;align-items:center;gap:0;margin-left:12px}' +
+      '.nav-link{padding:8px 7px;color:#8f99a6;text-decoration:none;font-size:.72rem;letter-spacing:.03em;text-transform:uppercase;white-space:nowrap;border-radius:999px;transition:color .15s,background .15s}' +
       '.nav-link:hover,.nav-link.active{color:#7dff9b;background:rgba(125,255,155,.09)}' +
     '}' +
     '@media (min-width:900px) and (max-width:1059px){.nav-links{display:none}}' +

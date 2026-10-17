@@ -53,6 +53,7 @@
   var isRetro = path === '/portablewebgame' || path.indexOf('/portablewebgame/') === 0 || path === '/dos' || path.indexOf('/dos/') === 0
     || path === '/ra2' || path.indexOf('/ra2/') === 0 || path === '/red-alert-2' || path.indexOf('/red-alert-2/') === 0;
   var isKino = path === '/kino' || path.indexOf('/kino/') === 0;
+  var isBrowserQuest = path === '/browserquest' || path.indexOf('/browserquest/') === 0;
 
   function active(state) { return state ? ' active' : ''; }
 
@@ -89,6 +90,7 @@
     '<a href="/feed/" class="nav-link' + active(isFeed) + '">ТикТок</a>' +
     '<a href="/portablewebgame/" class="nav-link' + active(isRetro) + '">Ретро-игры</a>' +
     '<a href="/go/" class="nav-link' + active(isGo) + '">Игры онлайн</a>' +
+    '<a href="/browserquest/" class="nav-link' + active(isBrowserQuest) + '">BrowserQuest</a>' +
     '<a href="/kino/" class="nav-link' + active(isKino) + '">Кино</a>' +
     '<a href="/archive" class="nav-link' + active(isArchive) + '">Статьи</a>' +
     '<a href="/ai/" class="nav-link' + active(isAI) + '">AI Pulse</a>' +
@@ -131,6 +133,7 @@
     '    <a href="/feed/" class="sheet-link' + active(isFeed) + '"><i class="fas fa-fire" aria-hidden="true"></i> ТикТок</a>' +
     '    <a href="/portablewebgame/" class="sheet-link' + active(isRetro) + '"><i class="fas fa-gamepad" aria-hidden="true"></i> Ретро-игры</a>' +
     '    <a href="/go/" class="sheet-link' + active(isGo) + '"><i class="fas ' + I.online + '" aria-hidden="true"></i> Игры онлайн</a>' +
+    '    <a href="/browserquest/" class="sheet-link' + active(isBrowserQuest) + '"><i class="fas ' + I.game + '" aria-hidden="true"></i> BrowserQuest</a>' +
     '    <a href="/kino/" class="sheet-link' + active(isKino) + '"><i class="fas fa-film" aria-hidden="true"></i> Кино</a>' +
     '    <a href="/archive" class="sheet-link' + active(isArchive) + '"><i class="fas ' + I.articles + '" aria-hidden="true"></i> Все статьи</a>' +
     '    <a href="/ai/" class="sheet-link' + active(isAI) + '"><i class="fas ' + I.ai + '" aria-hidden="true"></i> AI Pulse</a>' +
@@ -187,6 +190,7 @@
     '      <a href="/category/ii-i-tehnologii">ИИ и технологии</a>' +
     '      <a href="/ai/">AI Pulse</a>' +
     '      <a href="/genriprocedur/">Cosmic Drift</a>' +
+    '      <a href="/browserquest/">BrowserQuest</a>' +
     '      <a href="/cyber-scanner/">Проверка безопасности</a>' +
     '      <a href="/advertising">Реклама</a>' +
     '      <a href="/privacy">Политика</a>' +
