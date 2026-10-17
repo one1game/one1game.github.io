@@ -22,6 +22,11 @@
 - [Онлайн-игры для слабых ноутбуков](https://one1game.org/igry-dlya-slabyh-noutbukov-onlajn).
 - [Игры с геймпадом](https://one1game.org/igry-dlya-slabyh-noutbukov-s-gejmpadom).
 - [Игры онлайн](https://one1game.org/go/): браузерные мини-игры без установки и регистрации.
+- [BrowserQuest](https://one1game.org/browserquest/): браузерная MMORPG с общим онлайн-миром, монстрами, добычей и достижениями.
+- [Ретро-игры](https://one1game.org/portablewebgame/): классические игры в браузере без установки.
+- [DOS-игры](https://one1game.org/dos/): DOOM, Quake и Wolfenstein 3D прямо в браузере.
+- [Кино](https://one1game.org/kino/): подборки фильмов и материалы о кино.
+- [ТикТок](https://one1game.org/feed/): лента коротких видео.
 - [AI Pulse](https://one1game.org/ai/): новости ИИ, рейтинг моделей, трендовые инструменты, бесплатные нейросети.
 - [Cosmic Drift](https://one1game.org/genriprocedur/): генератор процедурной музыки онлайн (ambient и hip-hop).
 - [CodeFusion](https://one1game.org/anal-code/): онлайн-анализатор исходного кода с ИИ, GitHub, diff и security scan.

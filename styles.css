@@ -997,15 +997,19 @@ body.has-dock .cookie-banner { bottom: calc(var(--dock-h) + env(safe-area-inset-
 }
 .footer-content {
   max-width: 1180px; margin: 0 auto; padding: 0 var(--pad);
-  display: flex; flex-direction: column; gap: 12px;
+  display: flex; flex-direction: column; gap: 18px;
   font-size: 0.66rem; color: var(--ink-faint);
   letter-spacing: 0.06em;
 }
+.footer-brand-row { display: flex; align-items: center; justify-content: space-between; gap: 12px; flex-wrap: wrap; }
 .footer-brand { color: #fff; text-decoration: none; font-weight: 700; text-transform: uppercase; letter-spacing: 0.12em; }
 .footer-brand span { color: var(--acid); }
-.footer-links { display: flex; flex-wrap: wrap; gap: 4px 14px; }
+.footer-links { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 16px 20px; }
+.footer-col { display: flex; flex-direction: column; gap: 5px; }
+.footer-title { margin: 0 0 3px; color: #fff; font-size: 0.62rem; letter-spacing: 0.12em; text-transform: uppercase; }
 .footer-links a { color: var(--ink-dim); text-decoration: none; text-transform: uppercase; }
 .footer-links a:hover { color: var(--acid); }
+.footer-bottom { display: flex; justify-content: space-between; gap: 8px 16px; flex-wrap: wrap; padding-top: 12px; border-top: 1px solid var(--line); }
 .footer-socials { display: flex; gap: 6px; }
 .footer-socials a { width: 32px; height: 32px; display: inline-flex; align-items: center; justify-content: center; border: 1px solid var(--line); color: var(--ink-dim); text-decoration: none; }
 .footer-socials a:hover { color: var(--acid); border-color: var(--line-hi); }
@@ -1032,15 +1036,37 @@ body.has-dock .cookie-banner { bottom: calc(var(--dock-h) + env(safe-area-inset-
   :root { --pad: 26px; --nav-h: 56px; }
   body { font-size: 0.96rem; }
 
-  .nav-links { display: flex; align-items: center; gap: 0; margin-left: 12px; }
+  .nav-links { display: flex; align-items: center; gap: 0; margin-left: 16px; }
   .nav-link {
-    padding: 8px 7px; color: var(--ink-dim); text-decoration: none;
-    font-size: 0.72rem; letter-spacing: 0.03em; text-transform: uppercase;
+    padding: 8px 12px; color: var(--ink-dim); text-decoration: none;
+    font-size: 0.72rem; letter-spacing: 0.04em; text-transform: uppercase;
     white-space: nowrap; border-radius: var(--radius-pill);
     transition: color 0.15s, background 0.15s;
   }
   .nav-link:hover { color: var(--acid); background: var(--acid-soft); }
   .nav-link.active { color: var(--acid); background: var(--acid-soft); }
+
+  /* Группы меню с выпадающими списками */
+  .nav-item { position: relative; }
+  .nav-item > .nav-link::after {
+    content: "▾"; display: inline-block; margin-left: 4px;
+    font-size: 0.7em; opacity: 0.55; transform: translateY(-1px);
+  }
+  .nav-dropdown {
+    position: absolute; top: calc(100% - 2px); left: 0; min-width: 212px;
+    display: none; flex-direction: column; padding: 6px;
+    background: #0a0f14; border: 1px solid var(--line); border-radius: 12px;
+    box-shadow: 0 16px 38px rgba(0, 0, 0, 0.5); z-index: 400;
+  }
+  .nav-item:hover > .nav-dropdown,
+  .nav-item:focus-within > .nav-dropdown { display: flex; }
+  .nav-dropdown a {
+    padding: 9px 12px; border-radius: 8px; color: var(--ink-dim);
+    text-decoration: none; font-size: 0.7rem; letter-spacing: 0.04em;
+    text-transform: uppercase; white-space: nowrap;
+    transition: color 0.15s, background 0.15s;
+  }
+  .nav-dropdown a:hover, .nav-dropdown a:focus { color: var(--acid); background: var(--acid-soft); }
   .nav-social { display: none; }
   .icon-radio { display: inline-flex; }
 
@@ -1086,14 +1112,8 @@ body.has-dock .cookie-banner { bottom: calc(var(--dock-h) + env(safe-area-inset-
   .article-body { font-size: 0.98rem; }
   .gh-card { padding: 16px; }
   .gh-year { font-size: 2rem; }
-  .footer-content { flex-direction: row; align-items: center; justify-content: space-between; }
+  .footer-content { gap: 20px; }
   .ad-vps-card { padding: 18px; }
-}
-
-/* Ссылки в шапке не помещаются в узком десктопе:
-   до 1060px навигацию берут на себя док и шторка */
-@media (min-width: 900px) and (max-width: 1059px) {
-  .nav-links { display: none; }
 }
 
 @media (min-width: 1100px) {

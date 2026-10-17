@@ -85,20 +85,61 @@
   var skipLink = doc.querySelector('.skip-link') ? '' :
     '<a href="#main-content" class="skip-link">Перейти к контенту</a>';
 
+  var isGames = isGo || isBrowserQuest || isRetro || isMusic || isTriad;
+  var isMedia = isKino || isFeed;
+  var isReading = isArchive || path.indexOf('/category/') === 0;
+  var isPicks = path === '/besplatnye-igry' || path === '/skidki-na-igry' || path === '/vo-chto-poigrat'
+    || path.indexOf('/igry-bez-videokarty') === 0 || path.indexOf('/igry-dlya-slabyh') === 0;
+  var isServices = isAI || isCodeFusion || isScanner || isL2;
+
+  function navItem(label, href, state) {
+    return '<a href="' + href + '" class="nav-link' + active(state) + '"' + (state ? ' aria-current="page"' : '') + '>' + label + '</a>';
+  }
+
+  function navDrop(label, href, state, items) {
+    var links = '';
+    for (var i = 0; i < items.length; i++) {
+      links += '<a href="' + items[i][0] + '">' + items[i][1] + '</a>';
+    }
+    return '<div class="nav-item has-drop">' +
+      '<a href="' + href + '" class="nav-link' + active(state) + '" aria-haspopup="true"' + (state ? ' aria-current="page"' : '') + '>' + label + '</a>' +
+      '<div class="nav-dropdown" role="group" aria-label="' + label + '">' + links + '</div>' +
+      '</div>';
+  }
+
   var navLinks =
-    '<a href="/" class="nav-link' + active(isHome) + '">Главная</a>' +
-    '<a href="/feed/" class="nav-link' + active(isFeed) + '">ТикТок</a>' +
-    '<a href="/portablewebgame/" class="nav-link' + active(isRetro) + '">Ретро-игры</a>' +
-    '<a href="/go/" class="nav-link' + active(isGo) + '">Игры онлайн</a>' +
-    '<a href="/browserquest/" class="nav-link' + active(isBrowserQuest) + '">BrowserQuest</a>' +
-    '<a href="/kino/" class="nav-link' + active(isKino) + '">Кино</a>' +
-    '<a href="/archive" class="nav-link' + active(isArchive) + '">Статьи</a>' +
-    '<a href="/ai/" class="nav-link' + active(isAI) + '">AI Pulse</a>' +
-    '<a href="/genriprocedur/" class="nav-link' + active(isMusic) + '">Cosmic Drift</a>' +
-    '<a href="/triad-duel" class="nav-link' + active(isTriad) + '">Triad Duel</a>' +
-    '<a href="/anal-code/" class="nav-link' + active(isCodeFusion) + '">CodeFusion</a>' +
-    '<a href="/cyber-scanner/" class="nav-link' + active(isScanner) + '">Scanner</a>' +
-    '<a href="/l2/" class="nav-link' + active(isL2) + '">L2 Server</a>';
+    navItem('Главная', '/', isHome) +
+    navDrop('Игры', '/go/', isGames, [
+      ['/go/', 'Игры онлайн'],
+      ['/browserquest/', 'BrowserQuest'],
+      ['/genriprocedur/', 'Cosmic Drift'],
+      ['/triad-duel', 'Triad Duel'],
+      ['/portablewebgame/', 'Ретро-игры'],
+      ['/dos/', 'DOS-игры']
+    ]) +
+    navDrop('Медиа', '/kino/', isMedia, [
+      ['/kino/', 'Кино'],
+      ['/feed/', 'ТикТок']
+    ]) +
+    navDrop('Статьи', '/archive', isReading, [
+      ['/archive', 'Все статьи'],
+      ['/category/obzory', 'Обзоры игр'],
+      ['/category/gajdy', 'Гайды'],
+      ['/category/analitika', 'Аналитика'],
+      ['/category/ii-i-tehnologii', 'ИИ и технологии']
+    ]) +
+    navDrop('Подборки', '/besplatnye-igry', isPicks, [
+      ['/besplatnye-igry', 'Бесплатные раздачи'],
+      ['/skidki-na-igry', 'Скидки на игры'],
+      ['/vo-chto-poigrat', 'Во что поиграть'],
+      ['/igry-bez-videokarty', 'Игры для слабых ПК']
+    ]) +
+    navDrop('Сервисы', '/ai/', isServices, [
+      ['/ai/', 'AI Pulse'],
+      ['/anal-code/', 'CodeFusion'],
+      ['/cyber-scanner/', 'Scanner'],
+      ['/l2/', 'L2 Server']
+    ]);
 
   var nav =
     skipLink +
@@ -128,24 +169,41 @@
     '<div class="sheet-backdrop" id="sheet-backdrop" aria-hidden="true"></div>' +
     '<aside class="sheet" id="sheet" role="dialog" aria-modal="true" aria-label="Меню" aria-hidden="true">' +
     '  <div class="sheet-handle" aria-hidden="true"></div>' +
-    '  <p class="sheet-title">Разделы</p>' +
+    '  <p class="sheet-title">Игры</p>' +
     '  <div class="sheet-links">' +
-    '    <a href="/feed/" class="sheet-link' + active(isFeed) + '"><i class="fas fa-fire" aria-hidden="true"></i> ТикТок</a>' +
-    '    <a href="/portablewebgame/" class="sheet-link' + active(isRetro) + '"><i class="fas fa-gamepad" aria-hidden="true"></i> Ретро-игры</a>' +
     '    <a href="/go/" class="sheet-link' + active(isGo) + '"><i class="fas ' + I.online + '" aria-hidden="true"></i> Игры онлайн</a>' +
     '    <a href="/browserquest/" class="sheet-link' + active(isBrowserQuest) + '"><i class="fas ' + I.game + '" aria-hidden="true"></i> BrowserQuest</a>' +
-    '    <a href="/kino/" class="sheet-link' + active(isKino) + '"><i class="fas fa-film" aria-hidden="true"></i> Кино</a>' +
-    '    <a href="/archive" class="sheet-link' + active(isArchive) + '"><i class="fas ' + I.articles + '" aria-hidden="true"></i> Все статьи</a>' +
-    '    <a href="/ai/" class="sheet-link' + active(isAI) + '"><i class="fas ' + I.ai + '" aria-hidden="true"></i> AI Pulse</a>' +
     '    <a href="/genriprocedur/" class="sheet-link' + active(isMusic) + '"><i class="fas ' + I.music + '" aria-hidden="true"></i> Cosmic Drift</a>' +
     '    <a href="/triad-duel" class="sheet-link' + active(isTriad) + '"><i class="fas ' + I.game + '" aria-hidden="true"></i> Triad Duel</a>' +
-    '    <a href="/anal-code/" class="sheet-link' + active(isCodeFusion) + '"><i class="fas ' + I.code + '" aria-hidden="true"></i> CodeFusion</a>' +
-    '    <a href="/cyber-scanner/" class="sheet-link' + active(isScanner) + '"><i class="fas ' + I.scanner + '" aria-hidden="true"></i> Scanner</a>' +
-    '    <a href="/l2/" class="sheet-link' + active(isL2) + '"><i class="fas ' + I.server + '" aria-hidden="true"></i> L2 Server</a>' +
+    '    <a href="/portablewebgame/" class="sheet-link' + active(isRetro) + '"><i class="fas fa-gamepad" aria-hidden="true"></i> Ретро-игры</a>' +
+    '    <a href="/dos/" class="sheet-link' + active(isRetro) + '"><i class="fas fa-floppy-disk" aria-hidden="true"></i> DOS-игры</a>' +
+    '  </div>' +
+    '  <p class="sheet-title">Медиа</p>' +
+    '  <div class="sheet-links">' +
+    '    <a href="/kino/" class="sheet-link' + active(isKino) + '"><i class="fas fa-film" aria-hidden="true"></i> Кино</a>' +
+    '    <a href="/feed/" class="sheet-link' + active(isFeed) + '"><i class="fas fa-fire" aria-hidden="true"></i> ТикТок</a>' +
+    '  </div>' +
+    '  <p class="sheet-title">Статьи</p>' +
+    '  <div class="sheet-links">' +
+    '    <a href="/archive" class="sheet-link' + active(isArchive) + '"><i class="fas ' + I.articles + '" aria-hidden="true"></i> Все статьи</a>' +
+    '    <a href="/category/obzory" class="sheet-link"><i class="fas fa-star" aria-hidden="true"></i> Обзоры игр</a>' +
+    '    <a href="/category/gajdy" class="sheet-link"><i class="fas fa-book" aria-hidden="true"></i> Гайды</a>' +
+    '    <a href="/category/analitika" class="sheet-link"><i class="fas fa-chart-line" aria-hidden="true"></i> Аналитика</a>' +
+    '    <a href="/category/ii-i-tehnologii" class="sheet-link"><i class="fas fa-microchip" aria-hidden="true"></i> ИИ и технологии</a>' +
+    '  </div>' +
+    '  <p class="sheet-title">Подборки</p>' +
+    '  <div class="sheet-links">' +
     '    <a href="/besplatnye-igry" class="sheet-link"><i class="fas fa-gift" aria-hidden="true"></i> Бесплатные раздачи</a>' +
     '    <a href="/skidki-na-igry" class="sheet-link"><i class="fas fa-tags" aria-hidden="true"></i> Скидки на игры</a>' +
     '    <a href="/vo-chto-poigrat" class="sheet-link"><i class="fas fa-dice" aria-hidden="true"></i> Во что поиграть</a>' +
     '    <a href="/igry-bez-videokarty" class="sheet-link"><i class="fas fa-laptop" aria-hidden="true"></i> Игры для слабых ПК</a>' +
+    '  </div>' +
+    '  <p class="sheet-title">Сервисы</p>' +
+    '  <div class="sheet-links">' +
+    '    <a href="/ai/" class="sheet-link' + active(isAI) + '"><i class="fas ' + I.ai + '" aria-hidden="true"></i> AI Pulse</a>' +
+    '    <a href="/anal-code/" class="sheet-link' + active(isCodeFusion) + '"><i class="fas ' + I.code + '" aria-hidden="true"></i> CodeFusion</a>' +
+    '    <a href="/cyber-scanner/" class="sheet-link' + active(isScanner) + '"><i class="fas ' + I.scanner + '" aria-hidden="true"></i> Scanner</a>' +
+    '    <a href="/l2/" class="sheet-link' + active(isL2) + '"><i class="fas ' + I.server + '" aria-hidden="true"></i> L2 Server</a>' +
     '  </div>' +
     '  <p class="sheet-title">Издание</p>' +
     '  <div class="sheet-links">' +
@@ -170,38 +228,67 @@
     '</div>';
 
   // ── Footer ─────────────────────────────────────────
+  function footerCol(title, items) {
+    var links = '';
+    for (var i = 0; i < items.length; i++) {
+      links += '<a href="' + items[i][0] + '">' + items[i][1] + '</a>';
+    }
+    return '<div class="footer-col"><p class="footer-title">' + title + '</p>' + links + '</div>';
+  }
+
   var footer =
     '<footer class="site-footer">' +
     '  <div class="footer-content">' +
-    '    <a href="/" class="footer-brand">ONE1<span>GAME</span></a>' +
+    '    <div class="footer-brand-row">' +
+    '      <a href="/" class="footer-brand">ONE1<span>GAME</span></a>' +
+    '      <div class="footer-socials">' +
+    '        <a href="https://t.me/one1game" target="_blank" rel="noopener" aria-label="Telegram"><i class="fab fa-telegram" aria-hidden="true"></i></a>' +
+    '        <a href="https://vk.com/one1games" target="_blank" rel="noopener" aria-label="ВКонтакте"><i class="fab fa-vk" aria-hidden="true"></i></a>' +
+    '        <a href="https://www.youtube.com/@one1game" target="_blank" rel="noopener" aria-label="YouTube"><i class="fab fa-youtube" aria-hidden="true"></i></a>' +
+    '      </div>' +
+    '    </div>' +
     '    <div class="footer-links">' +
-    '      <a href="/feed/">ТикТок</a>' +
-    '      <a href="/portablewebgame/">Ретро-игры</a>' +
-    '      <a href="/dos/">DOS-игры</a>' +
-    '      <a href="/kino/">Кино</a>' +
-    '      <a href="/besplatnye-igry">Бесплатные раздачи</a>' +
-    '      <a href="/skidki-na-igry">Скидки на игры</a>' +
-    '      <a href="/vo-chto-poigrat">Во что поиграть</a>' +
-    '      <a href="/igry-bez-videokarty">Игры для слабых ПК</a>' +
-    '      <a href="/archive">Статьи</a>' +
-    '      <a href="/category/obzory">Обзоры игр</a>' +
-    '      <a href="/category/gajdy">Гайды</a>' +
-    '      <a href="/category/analitika">Аналитика</a>' +
-    '      <a href="/category/ii-i-tehnologii">ИИ и технологии</a>' +
-    '      <a href="/ai/">AI Pulse</a>' +
-    '      <a href="/genriprocedur/">Cosmic Drift</a>' +
-    '      <a href="/browserquest/">BrowserQuest</a>' +
-    '      <a href="/cyber-scanner/">Проверка безопасности</a>' +
-    '      <a href="/advertising">Реклама</a>' +
-    '      <a href="/privacy">Политика</a>' +
-    '      <a href="/terms">Правила</a>' +
+    footerCol('Игры', [
+      ['/go/', 'Игры онлайн'],
+      ['/browserquest/', 'BrowserQuest'],
+      ['/portablewebgame/', 'Ретро-игры'],
+      ['/dos/', 'DOS-игры'],
+      ['/genriprocedur/', 'Cosmic Drift'],
+      ['/triad-duel', 'Triad Duel']
+    ]) +
+    footerCol('Читать', [
+      ['/archive', 'Все статьи'],
+      ['/category/obzory', 'Обзоры игр'],
+      ['/category/gajdy', 'Гайды'],
+      ['/category/analitika', 'Аналитика'],
+      ['/category/ii-i-tehnologii', 'ИИ и технологии']
+    ]) +
+    footerCol('Подборки', [
+      ['/besplatnye-igry', 'Бесплатные раздачи'],
+      ['/skidki-na-igry', 'Скидки на игры'],
+      ['/vo-chto-poigrat', 'Во что поиграть'],
+      ['/igry-bez-videokarty', 'Игры для слабых ПК']
+    ]) +
+    footerCol('Медиа', [
+      ['/kino/', 'Кино'],
+      ['/feed/', 'ТикТок']
+    ]) +
+    footerCol('Сервисы', [
+      ['/ai/', 'AI Pulse'],
+      ['/anal-code/', 'CodeFusion'],
+      ['/cyber-scanner/', 'Scanner'],
+      ['/l2/', 'L2 Server']
+    ]) +
+    footerCol('Издание', [
+      ['/advertising', 'Реклама'],
+      ['/privacy', 'Политика'],
+      ['/terms', 'Правила']
+    ]) +
     '    </div>' +
-    '    <div class="footer-socials">' +
-    '      <a href="https://t.me/one1game" target="_blank" rel="noopener" aria-label="Telegram"><i class="fab fa-telegram" aria-hidden="true"></i></a>' +
-    '      <a href="https://vk.com/one1games" target="_blank" rel="noopener" aria-label="ВКонтакте"><i class="fab fa-vk" aria-hidden="true"></i></a>' +
-    '      <a href="https://www.youtube.com/@one1game" target="_blank" rel="noopener" aria-label="YouTube"><i class="fab fa-youtube" aria-hidden="true"></i></a>' +
+    '    <div class="footer-bottom">' +
+    '      <span>&copy; 2025–2026 One1Game</span>' +
+    '      <span>Сделано для игроков: без установки и регистрации</span>' +
     '    </div>' +
-    '    <span>&copy; 2025–2026 One1Game</span>' +
     '  </div>' +
     '</footer>';
 
