@@ -1,0 +1,16 @@
+{
+  "name": "one1game-browserquest",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "wrangler dev",
+    "deploy": "wrangler deploy"
+  },
+  "dependencies": {
+    "underscore": "^1.13.7"
+  },
+  "devDependencies": {
+    "wrangler": "^4.112.0",
+    "ws": "^8.18.0"
+  }
+}

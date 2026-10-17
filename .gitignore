@@ -14,5 +14,8 @@ node_modules/
 Thumbs.db
 desktop.ini
 
+# Локальный тулинг Wrangler
+.wrangler/
+
 # Кэш Python
 __pycache__/
