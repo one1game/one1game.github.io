@@ -193,8 +193,8 @@ var Map = module.exports = cls.Class.extend({
     },
     
     getRandomStartingPosition: function() {
-        var nbAreas = _.size(this.startingAreas);
-            i = Utils.randomInt(0, nbAreas-1);
+        var nbAreas = _.size(this.startingAreas),
+            i = Utils.randomInt(0, nbAreas-1),
             area = this.startingAreas[i];
         
         return area.getRandomPosition();

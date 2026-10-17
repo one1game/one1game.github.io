@@ -63,8 +63,8 @@ class ConnectionShim {
         this.listen_callback(message);
       } catch (e) {
         // Не маскируем ошибку игры под «невалидный JSON».
-        console.error("BrowserQuest handler error:", e);
-        this.close("Internal server error.");
+        console.error("BrowserQuest handler error:", e && e.stack ? e.stack : e);
+        this.close("Handler error: " + String((e && e.message) || e).slice(0, 100));
       }
     });
 
