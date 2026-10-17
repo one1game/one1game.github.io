@@ -46,7 +46,7 @@
       "url": "https://one1game.org/category/gajdy",
       "description": "Все материалы раздела «Гайды»: 16 статей и обзоров с датами и краткими описаниями. Обновляется автоматически.",
       "inLanguage": "ru-RU",
-      "dateModified": "2026-10-10",
+      "dateModified": "2026-10-17",
       "isPartOf": {
         "@id": "https://one1game.org/#website"
       },
@@ -168,6 +168,26 @@
     .cat-item strong { display: block; font-size: 1.02rem; margin-bottom: 4px; }
     .cat-item span { display: block; color: var(--text-dim, #8f99a6); font-size: .85rem; line-height: 1.5; margin-bottom: 6px; }
     .cat-item em { color: var(--text-faint, #75808d); font-size: .74rem; font-style: normal; text-transform: uppercase; letter-spacing: .05em; }
+
+    .cat-filters { display: flex; flex-wrap: wrap; gap: 10px 14px; align-items: center; margin: 0 0 18px; padding: 12px 14px; border: 1px solid var(--line, rgba(125,255,155,.16)); border-radius: 12px; background: rgba(125,255,155,.03); }
+    .cat-search { display: flex; align-items: center; gap: 8px; flex: 1 1 240px; min-width: 200px; border: 1px solid var(--line, rgba(125,255,155,.16)); border-radius: 8px; padding: 7px 10px; }
+    .cat-search input { width: 100%; background: transparent; border: 0; outline: none; color: var(--text, #d7dee6); font: inherit; font-size: .9rem; }
+    .cat-search i { color: var(--text-faint, #75808d); font-size: .8rem; }
+    .cat-src { display: flex; gap: 6px; flex-wrap: wrap; }
+    .cat-sort, .cat-year { display: flex; align-items: center; gap: 6px; color: var(--text-faint, #75808d); font-size: .7rem; text-transform: uppercase; letter-spacing: .05em; }
+    .cat-sort select, .cat-year select { background: var(--panel, #0a0f14); color: var(--text, #d7dee6); border: 1px solid var(--line, rgba(125,255,155,.16)); border-radius: 8px; padding: 6px 8px; font: inherit; font-size: .8rem; text-transform: none; }
+    .cat-reset { background: transparent; border: 1px solid var(--line, rgba(125,255,155,.16)); color: var(--text-dim, #8f99a6); border-radius: 999px; padding: 6px 12px; font: inherit; font-size: .7rem; cursor: pointer; text-transform: uppercase; letter-spacing: .05em; }
+    .cat-reset:hover { color: var(--acid, #7dff9b); border-color: var(--line-hi, rgba(125,255,155,.34)); }
+    .cat-count { font-size: .74rem; color: var(--text-faint, #75808d); margin-left: auto; }
+    .cat-item[hidden] { display: none; }
+    .cat-empty { padding: 18px; border: 1px dashed var(--line, rgba(125,255,155,.16)); border-radius: 10px; color: var(--text-dim, #8f99a6); text-align: center; }
+    .cat-empty button { margin-left: 8px; background: transparent; border: 1px solid var(--line, rgba(125,255,155,.16)); color: var(--acid, #7dff9b); border-radius: 999px; padding: 5px 12px; font: inherit; font-size: .76rem; cursor: pointer; }
+    @media (max-width: 600px) {
+      .cat-count { margin-left: 0; width: 100%; }
+      .cat-sort, .cat-year { flex: 1 1 45%; }
+      .cat-sort select, .cat-year select { flex: 1; }
+    }
+
   </style>
 </head>
 <body>
@@ -178,28 +198,153 @@
       <a href="/">Главная</a> → <a href="/archive">Статьи</a> → <span>Гайды</span>
     </nav>
     <h1 class="cat-title">Гайды: все статьи</h1>
-    <p class="cat-lead">В разделе 16 материалов. Отсортированы от новых к старым.</p>
-    <div class="cat-list">
-        <a class="cat-item" href="/archive/igry-dlya-slabyh-noutbukov-2026"><strong>Игры для слабых ноутбуков 2026: полный гид — что реально запустится</strong><span>Что реально идёт на слабом ноутбуке без дискретной видеокарты: разбор категорий железа, топ игр с официальными требованиями Steam, настройки ради максимального FPS и подборки по жанрам.</span><em>8 октября 2026 · 14 мин</em></a>
-        <a class="cat-item" href="/archive/igry-dlya-dvoih-na-telefone-2026"><strong>Игры для двоих на телефоне: 6 неочевидных шедевров (Топ 2026)</strong><span>Забудьте про банальные аркады: 6 неочевидных игр для двоих на телефоне — асимметричный кооп, один экран на двоих и онлайн для пар на расстоянии. Официальные трейлеры, скриншоты и проверенные факты.</span><em>7 октября 2026 · 10 мин</em></a>
-        <a class="cat-item" href="/archive/blood-of-dawnwalker-gajd-bildy-2026"><strong>The Blood of Dawnwalker: билды, способности и таймер 30 дней — гайд 2026</strong><span>Три ветки прокачки, лучшие билды дня и ночи, заряды активации, спасение семьи за 30 дней, все концовки и мод на таймер. Гайд обновлён после релиза.</span><em>6 октября 2026 · 13 мин</em></a>
-        <a class="cat-item" href="/archive/operation-darkside-dx-guide-2026"><strong>Operation Darkside DX (2026): Гайд по прохождению, системные требования и советы по фарму</strong><span>Полный гайд по Operation Darkside DX: системные требования, решение проблем с вылетами, советы по фарму ресурсов, обзор DX Edition и ответы на частые вопросы игроков.</span><em>31 июля 2026 · 8 мин</em></a>
-        <a class="cat-item" href="/archive/gaid-triad-duel-meta-kolody-2026"><strong>Гайд по Triad Duel: Топ-3 мета-колоды и скрытые синергии 2026 года</strong><span>Полный разбор механик Triad Duel: 21 уникальная карта, 3 класса, рабочие синергии танков, ассасинов и магов. Забирай 100 Remains на старте.</span><em>23 июля 2026 · 7 мин</em></a>
-        <a class="cat-item" href="/archive/luchshie-kartochnye-igry-na-android-2026"><strong>Лучшие карточные игры на андроид 2026: альтернативы Marvel Snap без доната</strong><span>Ищете достойные аналоги Marvel Snap и Hearthstone? Обзор Triad Duel — тактической ККИ на телефон, где решает скилл, а не рандом. 3 карты, 21 герой, 0 Pay-to-Win.</span><em>23 июля 2026 · 7 мин</em></a>
-        <a class="cat-item" href="/archive/stalker-2-nevozmozhnye-tayniki-i-artefakty"><strong>S.T.A.L.K.E.R. 2: 5 «невозможных» тайников и артефактов, которые не могут найти игроки</strong><span>Нашли ключ, но не видите дверь? Артефакт не спавнится? Разбираем самые проблемные тайники и легендарные артефакты S.T.A.L.K.E.R. 2, которые игроки массово не могут найти, и даем рабочие решения.</span><em>15 июля 2026 · 8 мин</em></a>
-        <a class="cat-item" href="/archive/operation-darkside-dx-optimal-guide"><strong>Operation: Darkside DX — Гайд по оптимизации гринда и получению всех концовок</strong><span>Реальный гайд по Operation: Darkside DX. Как обойти гринд, использовать новые QoL-функции из патча 2.7 и получить все варианты концовок без потери времени.</span><em>15 июля 2026 · 10 мин</em></a>
-        <a class="cat-item" href="/archive/elevator-avici-vse-koncovki-sekrety"><strong>ELEVATOR: AVICI — Полный гайд на все 3 концовки и скрытые предметы</strong><span>Единственный полный гайд на русском: как получить все 3 концовки в ELEVATOR: AVICI. Раскрываем секретный файл разработчика, локации скрытых предметов и точки невозврата.</span><em>14 июля 2026 · 9 мин</em></a>
-        <a class="cat-item" href="/archive/stalker-2-skrytye-mekhaniki-tenevye-pravila-2026"><strong>S.T.A.L.K.E.R. 2: 7 мифов о скрытых механиках — правда или вымысел?</strong><span>Разбираем 7 самых популярных мифов и теорий о скрытых механиках S.T.A.L.K.E.R. 2: теневая экономика, множители урона, секретные локации. Что из этого правда?</span><em>13 июля 2026 · 10 мин</em></a>
-        <a class="cat-item" href="/archive/skrytye-lovushki-apgreyda-2026"><strong>Скрытые ловушки апгрейда в 2026: Почему ваш ПК «задушит» RTX 5090 и RX 9070 XT?</strong><span>80% пользователей сталкиваются с тем, что их ПК не готов к новым GPU. Процессорные заторы, кабельный ад, иллюзия Frame Gen — разбираем скрытые расходы и требования.</span><em>10 июля 2026 · 8 мин</em></a>
-        <a class="cat-item" href="/archive/windows-11-july-2026-update-podgotovka"><strong>Windows 11 July 2026 Update: Как подготовиться и избежать проблем (полный гайд)</strong><span>14 июля 2026 выходит крупное обновление Windows 11 с Point-in-Time Restore и Unlimited Pause. Чек-лист из 7 шагов, разбор проблем 2026 года, инструкции по откату...</span><em>9 июля 2026 · 8 мин</em></a>
-        <a class="cat-item" href="/archive/kak-uvelichit-fps-windows-11-optimizaciya"><strong>Как увеличить FPS в Windows 11: Секретный гайд 2026 года (Выжимаем максимум)</strong><span>Windows 11 режет FPS в играх? Полный гайд по оптимизации: отключение VBS, настройка HAGS, чистка телеметрии и скрытые фишки для буста фреймрейта до 30-40%...</span><em>8 июля 2026 · 7 мин</em></a>
-        <a class="cat-item" href="/archive/xbox-gamepass-to-steam-saves-2026"><strong>Как добавить сохранения из Game Pass PC? Перенос сейвов без потери прогресса</strong><span>Сохранения из PC Game Pass не всегда там, где ожидаешь. Облачная синхронизация, ручной поиск, перенос Game Pass → Steam и бэкапы без потери прогресса.</span><em>6 июля 2026 · 7 мин</em></a>
-        <a class="cat-item" href="/archive/rdr2-secrets-2026"><strong>Все секреты Red Dead Redemption 2 — 150+ скрытых деталей, пасхалок и редких событий</strong><span>Более 150 скрытых деталей RDR2: призрачный поезд, вампир Сен-Дени, НЛО, гигант, дом робота и другие секреты, которые миллионы игроков никогда не видели...</span><em>22 января 2026 · 8 мин</em></a>
-        <a class="cat-item" href="/archive/ai-game-translators-2026-guide"><strong>Как играть в любую новинку 2026 без русской локализации? Гайд по AI-переводчикам</strong><span>Гайд по AI-переводчикам 2026: играем в Monster Hunter Wilds, Judas и GTA VI без русской локализации. LunaTranslator 2.0, GPT-4o, DeepL и локальные LLM.</span><em>20 января 2026 · 8 мин</em></a>
+    <p class="cat-lead">В разделе 16 материалов, из них 16 авторских. По умолчанию — от новых к старым.</p>
+    <div class="cat-filters">
+      <label class="cat-search">
+        <i class="fas fa-search" aria-hidden="true"></i>
+        <input type="search" id="cat-search" placeholder="Поиск по разделу…" aria-label="Поиск по статьям раздела" autocomplete="off">
+      </label>
+
+      <label class="cat-sort">Сортировка
+        <select id="cat-sort">
+          <option value="new">Сначала новые</option>
+          <option value="old">Сначала старые</option>
+          <option value="title">По названию</option>
+          <option value="read">По времени чтения</option>
+        </select>
+      </label>
+      <label class="cat-year">Год
+        <select id="cat-year">
+      <option value="all">Все годы</option>
+      <option value="2026">2026</option>
+        </select>
+      </label>
+      <button type="button" class="cat-reset" id="cat-reset">Сбросить</button>
+      <span class="cat-count" id="cat-count" aria-live="polite"></span>
     </div>
+    <div class="cat-list">
+        <a class="cat-item" href="/archive/igry-dlya-slabyh-noutbukov-2026" data-date="2026-10-08" data-read="14" data-ai="0"><strong>Игры для слабых ноутбуков 2026: полный гид — что реально запустится</strong><span>Что реально идёт на слабом ноутбуке без дискретной видеокарты: разбор категорий железа, топ игр с официальными требованиями Steam, настройки ради максимального FPS и подборки по жанрам.</span><em>8 октября 2026 · 14 мин</em></a>
+        <a class="cat-item" href="/archive/igry-dlya-dvoih-na-telefone-2026" data-date="2026-10-07" data-read="10" data-ai="0"><strong>Игры для двоих на телефоне: 6 неочевидных шедевров (Топ 2026)</strong><span>Забудьте про банальные аркады: 6 неочевидных игр для двоих на телефоне — асимметричный кооп, один экран на двоих и онлайн для пар на расстоянии. Официальные трейлеры, скриншоты и проверенные факты.</span><em>7 октября 2026 · 10 мин</em></a>
+        <a class="cat-item" href="/archive/blood-of-dawnwalker-gajd-bildy-2026" data-date="2026-10-06" data-read="13" data-ai="0"><strong>The Blood of Dawnwalker: билды, способности и таймер 30 дней — гайд 2026</strong><span>Три ветки прокачки, лучшие билды дня и ночи, заряды активации, спасение семьи за 30 дней, все концовки и мод на таймер. Гайд обновлён после релиза.</span><em>6 октября 2026 · 13 мин</em></a>
+        <a class="cat-item" href="/archive/operation-darkside-dx-guide-2026" data-date="2026-07-31" data-read="8" data-ai="0"><strong>Operation Darkside DX (2026): Гайд по прохождению, системные требования и советы по фарму</strong><span>Полный гайд по Operation Darkside DX: системные требования, решение проблем с вылетами, советы по фарму ресурсов, обзор DX Edition и ответы на частые вопросы игроков.</span><em>31 июля 2026 · 8 мин</em></a>
+        <a class="cat-item" href="/archive/gaid-triad-duel-meta-kolody-2026" data-date="2026-07-23" data-read="7" data-ai="0"><strong>Гайд по Triad Duel: Топ-3 мета-колоды и скрытые синергии 2026 года</strong><span>Полный разбор механик Triad Duel: 21 уникальная карта, 3 класса, рабочие синергии танков, ассасинов и магов. Забирай 100 Remains на старте.</span><em>23 июля 2026 · 7 мин</em></a>
+        <a class="cat-item" href="/archive/luchshie-kartochnye-igry-na-android-2026" data-date="2026-07-23" data-read="7" data-ai="0"><strong>Лучшие карточные игры на андроид 2026: альтернативы Marvel Snap без доната</strong><span>Ищете достойные аналоги Marvel Snap и Hearthstone? Обзор Triad Duel — тактической ККИ на телефон, где решает скилл, а не рандом. 3 карты, 21 герой, 0 Pay-to-Win.</span><em>23 июля 2026 · 7 мин</em></a>
+        <a class="cat-item" href="/archive/stalker-2-nevozmozhnye-tayniki-i-artefakty" data-date="2026-07-15" data-read="8" data-ai="0"><strong>S.T.A.L.K.E.R. 2: 5 «невозможных» тайников и артефактов, которые не могут найти игроки</strong><span>Нашли ключ, но не видите дверь? Артефакт не спавнится? Разбираем самые проблемные тайники и легендарные артефакты S.T.A.L.K.E.R. 2, которые игроки массово не могут найти, и даем рабочие решения.</span><em>15 июля 2026 · 8 мин</em></a>
+        <a class="cat-item" href="/archive/operation-darkside-dx-optimal-guide" data-date="2026-07-15" data-read="10" data-ai="0"><strong>Operation: Darkside DX — Гайд по оптимизации гринда и получению всех концовок</strong><span>Реальный гайд по Operation: Darkside DX. Как обойти гринд, использовать новые QoL-функции из патча 2.7 и получить все варианты концовок без потери времени.</span><em>15 июля 2026 · 10 мин</em></a>
+        <a class="cat-item" href="/archive/elevator-avici-vse-koncovki-sekrety" data-date="2026-07-14" data-read="9" data-ai="0"><strong>ELEVATOR: AVICI — Полный гайд на все 3 концовки и скрытые предметы</strong><span>Единственный полный гайд на русском: как получить все 3 концовки в ELEVATOR: AVICI. Раскрываем секретный файл разработчика, локации скрытых предметов и точки невозврата.</span><em>14 июля 2026 · 9 мин</em></a>
+        <a class="cat-item" href="/archive/stalker-2-skrytye-mekhaniki-tenevye-pravila-2026" data-date="2026-07-13" data-read="10" data-ai="0"><strong>S.T.A.L.K.E.R. 2: 7 мифов о скрытых механиках — правда или вымысел?</strong><span>Разбираем 7 самых популярных мифов и теорий о скрытых механиках S.T.A.L.K.E.R. 2: теневая экономика, множители урона, секретные локации. Что из этого правда?</span><em>13 июля 2026 · 10 мин</em></a>
+        <a class="cat-item" href="/archive/skrytye-lovushki-apgreyda-2026" data-date="2026-07-10" data-read="8" data-ai="0"><strong>Скрытые ловушки апгрейда в 2026: Почему ваш ПК «задушит» RTX 5090 и RX 9070 XT?</strong><span>80% пользователей сталкиваются с тем, что их ПК не готов к новым GPU. Процессорные заторы, кабельный ад, иллюзия Frame Gen — разбираем скрытые расходы и требования.</span><em>10 июля 2026 · 8 мин</em></a>
+        <a class="cat-item" href="/archive/windows-11-july-2026-update-podgotovka" data-date="2026-07-09" data-read="8" data-ai="0"><strong>Windows 11 July 2026 Update: Как подготовиться и избежать проблем (полный гайд)</strong><span>14 июля 2026 выходит крупное обновление Windows 11 с Point-in-Time Restore и Unlimited Pause. Чек-лист из 7 шагов, разбор проблем 2026 года, инструкции по откату...</span><em>9 июля 2026 · 8 мин</em></a>
+        <a class="cat-item" href="/archive/kak-uvelichit-fps-windows-11-optimizaciya" data-date="2026-07-08" data-read="7" data-ai="0"><strong>Как увеличить FPS в Windows 11: Секретный гайд 2026 года (Выжимаем максимум)</strong><span>Windows 11 режет FPS в играх? Полный гайд по оптимизации: отключение VBS, настройка HAGS, чистка телеметрии и скрытые фишки для буста фреймрейта до 30-40%...</span><em>8 июля 2026 · 7 мин</em></a>
+        <a class="cat-item" href="/archive/xbox-gamepass-to-steam-saves-2026" data-date="2026-07-06" data-read="7" data-ai="0"><strong>Как добавить сохранения из Game Pass PC? Перенос сейвов без потери прогресса</strong><span>Сохранения из PC Game Pass не всегда там, где ожидаешь. Облачная синхронизация, ручной поиск, перенос Game Pass → Steam и бэкапы без потери прогресса.</span><em>6 июля 2026 · 7 мин</em></a>
+        <a class="cat-item" href="/archive/rdr2-secrets-2026" data-date="2026-01-22" data-read="8" data-ai="0"><strong>Все секреты Red Dead Redemption 2 — 150+ скрытых деталей, пасхалок и редких событий</strong><span>Более 150 скрытых деталей RDR2: призрачный поезд, вампир Сен-Дени, НЛО, гигант, дом робота и другие секреты, которые миллионы игроков никогда не видели...</span><em>22 января 2026 · 8 мин</em></a>
+        <a class="cat-item" href="/archive/ai-game-translators-2026-guide" data-date="2026-01-20" data-read="8" data-ai="0"><strong>Как играть в любую новинку 2026 без русской локализации? Гайд по AI-переводчикам</strong><span>Гайд по AI-переводчикам 2026: играем в Monster Hunter Wilds, Judas и GTA VI без русской локализации. LunaTranslator 2.0, GPT-4o, DeepL и локальные LLM.</span><em>20 января 2026 · 8 мин</em></a>
+    </div>
+    <div class="cat-empty" id="cat-empty" hidden>Ничего не найдено. <button type="button">Сбросить фильтр</button></div>
   </div>
 </main>
 <script src="/cache-version.js"></script>
+<script>
+(function () {
+  var list = document.querySelector('.cat-list');
+  if (!list) return;
+  var items = Array.prototype.slice.call(list.querySelectorAll('.cat-item'));
+  if (!items.length) return;
+
+  var metas = items.map(function (el) {
+    var strong = el.querySelector('strong');
+    return {
+      el: el,
+      title: (strong ? strong.textContent : '').toLowerCase(),
+      text: el.textContent.toLowerCase(),
+      date: el.getAttribute('data-date') || '',
+      read: parseInt(el.getAttribute('data-read') || '0', 10) || 0,
+      ai: el.getAttribute('data-ai') === '1'
+    };
+  });
+
+  var search = document.getElementById('cat-search');
+  var sortSel = document.getElementById('cat-sort');
+  var yearSel = document.getElementById('cat-year');
+  var count = document.getElementById('cat-count');
+  var empty = document.getElementById('cat-empty');
+  var reset = document.getElementById('cat-reset');
+  var pills = Array.prototype.slice.call(document.querySelectorAll('.cat-src .cat-pill'));
+  var params = new URLSearchParams(location.search);
+  var src = pills.length ? (params.get('src') || 'all') : 'all';
+
+  if (params.get('q')) search.value = params.get('q');
+  if (params.get('sort')) sortSel.value = params.get('sort');
+  if (params.get('year')) yearSel.value = params.get('year');
+
+  function setSrc(value) {
+    src = value;
+    pills.forEach(function (b) {
+      var on = b.getAttribute('data-src') === value;
+      b.classList.toggle('active', on);
+      b.setAttribute('aria-pressed', String(on));
+    });
+  }
+
+  function apply(save) {
+    var q = search.value.trim().toLowerCase();
+    var year = yearSel.value;
+    var sort = sortSel.value;
+    var visible = [];
+
+    metas.forEach(function (m) {
+      var ok = true;
+      if (q && m.text.indexOf(q) === -1) ok = false;
+      if (ok && year !== 'all' && m.date.slice(0, 4) !== year) ok = false;
+      if (ok && src === 'human' && m.ai) ok = false;
+      if (ok && src === 'ai' && !m.ai) ok = false;
+      m.el.hidden = !ok;
+      if (ok) visible.push(m);
+    });
+
+    visible.sort(function (a, b) {
+      if (sort === 'title') return a.title.localeCompare(b.title, 'ru');
+      if (sort === 'read') return a.read - b.read;
+      var d = a.date.localeCompare(b.date);
+      return sort === 'old' ? d : -d;
+    });
+    visible.forEach(function (m) { list.appendChild(m.el); });
+
+    count.textContent = visible.length + ' из ' + metas.length;
+    empty.hidden = visible.length !== 0;
+
+    if (save !== false) {
+      var p = new URLSearchParams();
+      if (q) p.set('q', q);
+      if (src !== 'all') p.set('src', src);
+      if (sort !== 'new') p.set('sort', sort);
+      if (year !== 'all') p.set('year', year);
+      var qs = p.toString();
+      history.replaceState(null, '', qs ? '?' + qs : location.pathname);
+    }
+  }
+
+  setSrc(src);
+  search.addEventListener('input', function () { apply(); });
+  sortSel.addEventListener('change', function () { apply(); });
+  yearSel.addEventListener('change', function () { apply(); });
+  pills.forEach(function (b) {
+    b.addEventListener('click', function () { setSrc(b.getAttribute('data-src')); apply(); });
+  });
+  reset.addEventListener('click', function () {
+    search.value = '';
+    setSrc('all');
+    sortSel.value = 'new';
+    yearSel.value = 'all';
+    apply();
+    search.focus();
+  });
+  empty.querySelector('button').addEventListener('click', function () { reset.click(); });
+
+  apply(false);
+})();
+</script>
 <script src="/components.js?v=35" defer></script>
 </body>
 </html>
+

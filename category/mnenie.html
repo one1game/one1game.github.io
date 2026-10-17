@@ -46,7 +46,7 @@
       "url": "https://one1game.org/category/mnenie",
       "description": "Все материалы раздела «Мнение»: 3 статей и обзоров с датами и краткими описаниями. Обновляется автоматически.",
       "inLanguage": "ru-RU",
-      "dateModified": "2026-10-10",
+      "dateModified": "2026-10-17",
       "isPartOf": {
         "@id": "https://one1game.org/#website"
       },
@@ -90,6 +90,26 @@
     .cat-item strong { display: block; font-size: 1.02rem; margin-bottom: 4px; }
     .cat-item span { display: block; color: var(--text-dim, #8f99a6); font-size: .85rem; line-height: 1.5; margin-bottom: 6px; }
     .cat-item em { color: var(--text-faint, #75808d); font-size: .74rem; font-style: normal; text-transform: uppercase; letter-spacing: .05em; }
+
+    .cat-filters { display: flex; flex-wrap: wrap; gap: 10px 14px; align-items: center; margin: 0 0 18px; padding: 12px 14px; border: 1px solid var(--line, rgba(125,255,155,.16)); border-radius: 12px; background: rgba(125,255,155,.03); }
+    .cat-search { display: flex; align-items: center; gap: 8px; flex: 1 1 240px; min-width: 200px; border: 1px solid var(--line, rgba(125,255,155,.16)); border-radius: 8px; padding: 7px 10px; }
+    .cat-search input { width: 100%; background: transparent; border: 0; outline: none; color: var(--text, #d7dee6); font: inherit; font-size: .9rem; }
+    .cat-search i { color: var(--text-faint, #75808d); font-size: .8rem; }
+    .cat-src { display: flex; gap: 6px; flex-wrap: wrap; }
+    .cat-sort, .cat-year { display: flex; align-items: center; gap: 6px; color: var(--text-faint, #75808d); font-size: .7rem; text-transform: uppercase; letter-spacing: .05em; }
+    .cat-sort select, .cat-year select { background: var(--panel, #0a0f14); color: var(--text, #d7dee6); border: 1px solid var(--line, rgba(125,255,155,.16)); border-radius: 8px; padding: 6px 8px; font: inherit; font-size: .8rem; text-transform: none; }
+    .cat-reset { background: transparent; border: 1px solid var(--line, rgba(125,255,155,.16)); color: var(--text-dim, #8f99a6); border-radius: 999px; padding: 6px 12px; font: inherit; font-size: .7rem; cursor: pointer; text-transform: uppercase; letter-spacing: .05em; }
+    .cat-reset:hover { color: var(--acid, #7dff9b); border-color: var(--line-hi, rgba(125,255,155,.34)); }
+    .cat-count { font-size: .74rem; color: var(--text-faint, #75808d); margin-left: auto; }
+    .cat-item[hidden] { display: none; }
+    .cat-empty { padding: 18px; border: 1px dashed var(--line, rgba(125,255,155,.16)); border-radius: 10px; color: var(--text-dim, #8f99a6); text-align: center; }
+    .cat-empty button { margin-left: 8px; background: transparent; border: 1px solid var(--line, rgba(125,255,155,.16)); color: var(--acid, #7dff9b); border-radius: 999px; padding: 5px 12px; font: inherit; font-size: .76rem; cursor: pointer; }
+    @media (max-width: 600px) {
+      .cat-count { margin-left: 0; width: 100%; }
+      .cat-sort, .cat-year { flex: 1 1 45%; }
+      .cat-sort select, .cat-year select { flex: 1; }
+    }
+
   </style>
 </head>
 <body>
@@ -100,15 +120,140 @@
       <a href="/">Главная</a> → <a href="/archive">Статьи</a> → <span>Мнение</span>
     </nav>
     <h1 class="cat-title">Мнение: все статьи</h1>
-    <p class="cat-lead">В разделе 3 материалов. Отсортированы от новых к старым.</p>
-    <div class="cat-list">
-        <a class="cat-item" href="/archive/konec-epohi-pay-to-win-triad-duel"><strong>Конец эпохи Pay-to-Win: Почему геймеры массово переходят в Telegram Mini Apps</strong><span>Устали от доната и рандома в ККИ? Разбираем феномен Triad Duel — тактической PvP-игры в Telegram, где побеждает скилл, а не толщина кошелька.</span><em>23 июля 2026 · 6 мин</em></a>
-        <a class="cat-item" href="/archive/chestnye-pvp-igry-bez-donata-2026"><strong>Честные PvP игры на телефон: где реально решает скилл, а не донат (Разбор Triad Duel)</strong><span>Устали от Pay-to-Win? Разбираем Triad Duel — мобильную PvP игру, где донат не дает преимущества в бою. Честная экономика, тактика и бонус 100 Remains на старте.</span><em>23 июля 2026 · 6 мин</em></a>
-        <a class="cat-item" href="/archive/gta-vi-krizis-industrii-2026"><strong>GTA VI — не спасение, а симптом кризиса AAA-индустрии</strong><span>Почему бюджет в $2 млрд — это не достижение, а симптом болезни. Разбор увольнений, закрытия студий и смерти старой AAA-модели...</span><em>9 июля 2026 · 14 мин</em></a>
+    <p class="cat-lead">В разделе 3 материалов, из них 3 авторских. По умолчанию — от новых к старым.</p>
+    <div class="cat-filters">
+      <label class="cat-search">
+        <i class="fas fa-search" aria-hidden="true"></i>
+        <input type="search" id="cat-search" placeholder="Поиск по разделу…" aria-label="Поиск по статьям раздела" autocomplete="off">
+      </label>
+
+      <label class="cat-sort">Сортировка
+        <select id="cat-sort">
+          <option value="new">Сначала новые</option>
+          <option value="old">Сначала старые</option>
+          <option value="title">По названию</option>
+          <option value="read">По времени чтения</option>
+        </select>
+      </label>
+      <label class="cat-year">Год
+        <select id="cat-year">
+      <option value="all">Все годы</option>
+      <option value="2026">2026</option>
+        </select>
+      </label>
+      <button type="button" class="cat-reset" id="cat-reset">Сбросить</button>
+      <span class="cat-count" id="cat-count" aria-live="polite"></span>
     </div>
+    <div class="cat-list">
+        <a class="cat-item" href="/archive/konec-epohi-pay-to-win-triad-duel" data-date="2026-07-23" data-read="6" data-ai="0"><strong>Конец эпохи Pay-to-Win: Почему геймеры массово переходят в Telegram Mini Apps</strong><span>Устали от доната и рандома в ККИ? Разбираем феномен Triad Duel — тактической PvP-игры в Telegram, где побеждает скилл, а не толщина кошелька.</span><em>23 июля 2026 · 6 мин</em></a>
+        <a class="cat-item" href="/archive/chestnye-pvp-igry-bez-donata-2026" data-date="2026-07-23" data-read="6" data-ai="0"><strong>Честные PvP игры на телефон: где реально решает скилл, а не донат (Разбор Triad Duel)</strong><span>Устали от Pay-to-Win? Разбираем Triad Duel — мобильную PvP игру, где донат не дает преимущества в бою. Честная экономика, тактика и бонус 100 Remains на старте.</span><em>23 июля 2026 · 6 мин</em></a>
+        <a class="cat-item" href="/archive/gta-vi-krizis-industrii-2026" data-date="2026-07-09" data-read="14" data-ai="0"><strong>GTA VI — не спасение, а симптом кризиса AAA-индустрии</strong><span>Почему бюджет в $2 млрд — это не достижение, а симптом болезни. Разбор увольнений, закрытия студий и смерти старой AAA-модели...</span><em>9 июля 2026 · 14 мин</em></a>
+    </div>
+    <div class="cat-empty" id="cat-empty" hidden>Ничего не найдено. <button type="button">Сбросить фильтр</button></div>
   </div>
 </main>
 <script src="/cache-version.js"></script>
+<script>
+(function () {
+  var list = document.querySelector('.cat-list');
+  if (!list) return;
+  var items = Array.prototype.slice.call(list.querySelectorAll('.cat-item'));
+  if (!items.length) return;
+
+  var metas = items.map(function (el) {
+    var strong = el.querySelector('strong');
+    return {
+      el: el,
+      title: (strong ? strong.textContent : '').toLowerCase(),
+      text: el.textContent.toLowerCase(),
+      date: el.getAttribute('data-date') || '',
+      read: parseInt(el.getAttribute('data-read') || '0', 10) || 0,
+      ai: el.getAttribute('data-ai') === '1'
+    };
+  });
+
+  var search = document.getElementById('cat-search');
+  var sortSel = document.getElementById('cat-sort');
+  var yearSel = document.getElementById('cat-year');
+  var count = document.getElementById('cat-count');
+  var empty = document.getElementById('cat-empty');
+  var reset = document.getElementById('cat-reset');
+  var pills = Array.prototype.slice.call(document.querySelectorAll('.cat-src .cat-pill'));
+  var params = new URLSearchParams(location.search);
+  var src = pills.length ? (params.get('src') || 'all') : 'all';
+
+  if (params.get('q')) search.value = params.get('q');
+  if (params.get('sort')) sortSel.value = params.get('sort');
+  if (params.get('year')) yearSel.value = params.get('year');
+
+  function setSrc(value) {
+    src = value;
+    pills.forEach(function (b) {
+      var on = b.getAttribute('data-src') === value;
+      b.classList.toggle('active', on);
+      b.setAttribute('aria-pressed', String(on));
+    });
+  }
+
+  function apply(save) {
+    var q = search.value.trim().toLowerCase();
+    var year = yearSel.value;
+    var sort = sortSel.value;
+    var visible = [];
+
+    metas.forEach(function (m) {
+      var ok = true;
+      if (q && m.text.indexOf(q) === -1) ok = false;
+      if (ok && year !== 'all' && m.date.slice(0, 4) !== year) ok = false;
+      if (ok && src === 'human' && m.ai) ok = false;
+      if (ok && src === 'ai' && !m.ai) ok = false;
+      m.el.hidden = !ok;
+      if (ok) visible.push(m);
+    });
+
+    visible.sort(function (a, b) {
+      if (sort === 'title') return a.title.localeCompare(b.title, 'ru');
+      if (sort === 'read') return a.read - b.read;
+      var d = a.date.localeCompare(b.date);
+      return sort === 'old' ? d : -d;
+    });
+    visible.forEach(function (m) { list.appendChild(m.el); });
+
+    count.textContent = visible.length + ' из ' + metas.length;
+    empty.hidden = visible.length !== 0;
+
+    if (save !== false) {
+      var p = new URLSearchParams();
+      if (q) p.set('q', q);
+      if (src !== 'all') p.set('src', src);
+      if (sort !== 'new') p.set('sort', sort);
+      if (year !== 'all') p.set('year', year);
+      var qs = p.toString();
+      history.replaceState(null, '', qs ? '?' + qs : location.pathname);
+    }
+  }
+
+  setSrc(src);
+  search.addEventListener('input', function () { apply(); });
+  sortSel.addEventListener('change', function () { apply(); });
+  yearSel.addEventListener('change', function () { apply(); });
+  pills.forEach(function (b) {
+    b.addEventListener('click', function () { setSrc(b.getAttribute('data-src')); apply(); });
+  });
+  reset.addEventListener('click', function () {
+    search.value = '';
+    setSrc('all');
+    sortSel.value = 'new';
+    yearSel.value = 'all';
+    apply();
+    search.focus();
+  });
+  empty.querySelector('button').addEventListener('click', function () { reset.click(); });
+
+  apply(false);
+})();
+</script>
 <script src="/components.js?v=35" defer></script>
 </body>
 </html>
+
