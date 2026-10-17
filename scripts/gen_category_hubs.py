@@ -56,6 +56,7 @@ def parse_articles(content):
             "readTime": g("readTime"),
             "category": g("category"),
             "updated": g("updated"),
+            "image": g("image"),
             "ai": bool(re.search(r'"ai"\s*:\s*true', block)),
         })
     return items
@@ -126,6 +127,9 @@ FILTER_JS = r"""
   var yearSel = document.getElementById('cat-year');
   var count = document.getElementById('cat-count');
   var empty = document.getElementById('cat-empty');
+  var more = document.getElementById('cat-more');
+  var PAGE = 20;
+  var shown = PAGE;
   var reset = document.getElementById('cat-reset');
   var pills = Array.prototype.slice.call(document.querySelectorAll('.cat-src .cat-pill'));
   var params = new URLSearchParams(location.search);
@@ -168,8 +172,13 @@ FILTER_JS = r"""
     });
     visible.forEach(function (m) { list.appendChild(m.el); });
 
-    count.textContent = visible.length + ' из ' + metas.length;
+    var limit = Math.min(shown, visible.length);
+    visible.forEach(function (m, i) { m.el.hidden = i >= limit; });
+
+    count.textContent = 'Показано ' + limit + ' из ' + visible.length;
     empty.hidden = visible.length !== 0;
+    more.hidden = visible.length <= limit;
+    more.textContent = 'Показать ещё ' + Math.min(PAGE, Math.max(visible.length - limit, 0));
 
     if (save !== false) {
       var p = new URLSearchParams();
@@ -183,22 +192,25 @@ FILTER_JS = r"""
   }
 
   setSrc(src);
-  search.addEventListener('input', function () { apply(); });
-  sortSel.addEventListener('change', function () { apply(); });
-  yearSel.addEventListener('change', function () { apply(); });
+  search.addEventListener('input', function () { shown = PAGE; apply(); });
+  sortSel.addEventListener('change', function () { shown = PAGE; apply(); });
+  yearSel.addEventListener('change', function () { shown = PAGE; apply(); });
   pills.forEach(function (b) {
-    b.addEventListener('click', function () { setSrc(b.getAttribute('data-src')); apply(); });
+    b.addEventListener('click', function () { setSrc(b.getAttribute('data-src')); shown = PAGE; apply(); });
   });
+  more.addEventListener('click', function () { shown += PAGE; apply(false); });
   reset.addEventListener('click', function () {
     search.value = '';
     setSrc('all');
     sortSel.value = 'new';
     yearSel.value = 'all';
+    shown = PAGE;
     apply();
     search.focus();
   });
   empty.querySelector('button').addEventListener('click', function () { reset.click(); });
 
+  list.classList.remove('is-collapsed');
   apply(false);
 })();
 """
@@ -233,9 +245,14 @@ def build_hub(category, slug, items):
         f' data-date="{sort_key(it)}"'
         f' data-read="{read_minutes(it["readTime"])}"'
         f' data-ai="{1 if it["ai"] else 0}">'
+        f'<span class="cat-thumb">'
+        f'<img src="{esc(it["image"])}" alt="" loading="lazy" width="460" height="215" decoding="async">'
+        f'</span>'
+        f'<span class="cat-body">'
         f'<strong>{esc(it["title"])}</strong>'
-        f'<span>{esc(it["excerpt"])}</span>'
+        f'<span class="cat-excerpt">{esc(it["excerpt"])}</span>'
         f'<em>{esc(it["date"])}{(" · " + esc(it["readTime"])) if it["readTime"] else ""}</em>'
+        f'</span>'
         f"</a>"
         for it in items
     )
@@ -296,12 +313,23 @@ def build_hub(category, slug, items):
     .cat-page {{ padding: 26px 0 40px; }}
     .cat-title {{ font-size: clamp(1.5rem, 3vw, 2.1rem); margin: 8px 0 6px; }}
     .cat-lead {{ color: var(--text-dim, #8f99a6); margin-bottom: 22px; }}
-    .cat-list {{ display: grid; gap: 10px; }}
-    .cat-item {{ display: block; padding: 14px 16px; border: 1px solid var(--line, rgba(125,255,155,.16)); border-radius: 10px; text-decoration: none; color: var(--text, #d7dee6); }}
-    .cat-item:hover {{ border-color: var(--line-hi, rgba(125,255,155,.34)); }}
-    .cat-item strong {{ display: block; font-size: 1.02rem; margin-bottom: 4px; }}
-    .cat-item span {{ display: block; color: var(--text-dim, #8f99a6); font-size: .85rem; line-height: 1.5; margin-bottom: 6px; }}
-    .cat-item em {{ color: var(--text-faint, #75808d); font-size: .74rem; font-style: normal; text-transform: uppercase; letter-spacing: .05em; }}
+    .cat-list {{ display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 16px; }}
+    .cat-item {{ display: flex; flex-direction: column; border: 1px solid var(--line, rgba(125,255,155,.16)); border-radius: 12px; overflow: hidden; text-decoration: none; color: var(--text, #d7dee6); background: rgba(255,255,255,.02); transition: border-color .15s, transform .15s; }}
+    .cat-item:hover {{ border-color: var(--line-hi, rgba(125,255,155,.34)); transform: translateY(-2px); }}
+    .cat-item[hidden] {{ display: none; }}
+    .cat-list.is-collapsed .cat-item:nth-child(n+21) {{ display: none; }}
+    .cat-thumb {{ display: block; aspect-ratio: 460 / 215; overflow: hidden; background: #0a0f14; }}
+    .cat-thumb img {{ width: 100%; height: 100%; object-fit: cover; display: block; }}
+    .cat-body {{ display: flex; flex-direction: column; gap: 6px; padding: 12px 14px 14px; flex: 1; }}
+    .cat-item strong {{ display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; font-size: .95rem; line-height: 1.35; }}
+    .cat-excerpt {{ display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; color: var(--text-dim, #8f99a6); font-size: .8rem; line-height: 1.45; margin: 0; }}
+    .cat-item em {{ margin-top: auto; padding-top: 4px; color: var(--text-faint, #75808d); font-size: .72rem; font-style: normal; text-transform: uppercase; letter-spacing: .05em; }}
+    .cat-more {{ display: block; margin: 18px auto 0; padding: 10px 22px; background: transparent; border: 1px solid var(--line, rgba(125,255,155,.16)); border-radius: 999px; color: var(--acid, #7dff9b); font: inherit; font-size: .8rem; letter-spacing: .05em; text-transform: uppercase; cursor: pointer; }}
+    .cat-more:hover {{ border-color: var(--line-hi, rgba(125,255,155,.34)); }}
+    .cat-more[hidden] {{ display: none; }}
+    @media (max-width: 1100px) {{ .cat-list {{ grid-template-columns: repeat(3, minmax(0, 1fr)); }} }}
+    @media (max-width: 820px) {{ .cat-list {{ grid-template-columns: repeat(2, minmax(0, 1fr)); }} }}
+    @media (max-width: 560px) {{ .cat-list {{ grid-template-columns: 1fr; }} }}
 {FILTER_CSS}
   </style>
 </head>
@@ -336,10 +364,11 @@ def build_hub(category, slug, items):
       <button type="button" class="cat-reset" id="cat-reset">Сбросить</button>
       <span class="cat-count" id="cat-count" aria-live="polite"></span>
     </div>
-    <div class="cat-list">
+    <div class="cat-list is-collapsed">
 {rows}
     </div>
     <div class="cat-empty" id="cat-empty" hidden>Ничего не найдено. <button type="button">Сбросить фильтр</button></div>
+    <button type="button" class="cat-more" id="cat-more" hidden>Показать ещё</button>
   </div>
 </main>
 <script src="/cache-version.js"></script>
