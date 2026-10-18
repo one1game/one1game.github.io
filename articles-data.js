@@ -1,6 +1,286 @@
 // articles-data.js
 window.allArticles = [
   {
+    "url": "/archive/silly-suspects-4117190",
+    "title": "Silly Suspects: цена, отзывы и статистика игроков",
+    "excerpt": "Silly Suspects: актуальная цена (168.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
+    "date": "18 октября 2026",
+    "readTime": "2 мин",
+    "category": "Обзоры",
+    "updated": "2026-10-18",
+    "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4117190/6ac3de7d73eac93b7d706a475c21878f58aa5e22/header.jpg?t=1792307430"
+  },
+  {
+    "url": "/archive/meteors-are-art-5198130",
+    "title": "Meteors Are Art: цена, отзывы и статистика игроков",
+    "excerpt": "Meteors Are Art: актуальная цена (372.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
+    "date": "18 октября 2026",
+    "readTime": "2 мин",
+    "category": "Обзоры",
+    "updated": "2026-10-18",
+    "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5198130/5bcca9ce451fd46ae5ffe5b36590ce492d2160a6/header.jpg?t=1792292139"
+  },
+  {
+    "url": "/archive/surrounded-1813170",
+    "title": "Surrounded: цена, отзывы и статистика игроков",
+    "excerpt": "Surrounded: актуальная цена (402.00 RUB), 44% положительных отзывов в Steam, статистика владельцев (50,000 – 100,000). Данные обновляются автоматически.",
+    "date": "18 октября 2026",
+    "readTime": "2 мин",
+    "category": "Обзоры",
+    "updated": "2026-10-18",
+    "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1813170/b4aaa8988a67fdd0de177150ec7b933b01d1982b/header.jpg?t=1792301673"
+  },
+  {
+    "url": "/archive/nothing-simulator-2963850",
+    "title": "Nothing Simulator: цена, отзывы и статистика игроков",
+    "excerpt": "Nothing Simulator: актуальная цена (112.38 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
+    "date": "18 октября 2026",
+    "readTime": "2 мин",
+    "category": "Обзоры",
+    "updated": "2026-10-18",
+    "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2963850/bb717ea1dce36584063b57d1309ad638e0def199/header.jpg?t=1792290989"
+  },
+  {
+    "url": "/archive/vampirskiy-potseluy-paradoks-vremeni-4207160",
+    "title": "Вампирский поцелуй: Парадокс времени: цена, отзывы и статистика игроков",
+    "excerpt": "Вампирский поцелуй: Парадокс времени: актуальная цена (180.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
+    "date": "18 октября 2026",
+    "readTime": "2 мин",
+    "category": "Обзоры",
+    "updated": "2026-10-18",
+    "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4207160/a93675e3c8a3703b6391e5ce49a1a6eb598577e5/header_russian.jpg?t=1792276490"
+  },
+  {
+    "url": "/archive/retrohub-5285370",
+    "title": "RetroHub: цена, отзывы и статистика игроков",
+    "excerpt": "RetroHub: актуальная цена (690.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
+    "date": "18 октября 2026",
+    "readTime": "2 мин",
+    "category": "Обзоры",
+    "updated": "2026-10-18",
+    "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5285370/1b9ab17e6d2be889d795c66cc8f38aa84b73080d/header.jpg?t=1792269697"
+  },
+  {
+    "url": "/archive/retro-racers-3441620",
+    "title": "Retro Racers: цена, отзывы и статистика игроков",
+    "excerpt": "Retro Racers: актуальная цена (180.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
+    "date": "18 октября 2026",
+    "readTime": "2 мин",
+    "category": "Обзоры",
+    "updated": "2026-10-18",
+    "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3441620/header.jpg?t=1792261583"
+  },
+  {
+    "url": "/archive/touhou-aichatrpg-5251110",
+    "title": "touhou AICHATRPG: цена, отзывы и статистика игроков",
+    "excerpt": "touhou AICHATRPG: актуальная цена (242.08 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
+    "date": "18 октября 2026",
+    "readTime": "2 мин",
+    "category": "Обзоры",
+    "updated": "2026-10-18",
+    "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5251110/d33a02159d9839b105813fd92406ee891b52bdd6/header.jpg?t=1792259326"
+  },
+  {
+    "url": "/archive/mr-prepper-dlc-alpinist-3864280",
+    "title": "Mr. Prepper - DLC «альпинист»: цена, отзывы и статистика игроков",
+    "excerpt": "Mr. Prepper - DLC «альпинист»: актуальная цена (301.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
+    "date": "18 октября 2026",
+    "readTime": "2 мин",
+    "category": "Обзоры",
+    "updated": "2026-10-18",
+    "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3864280/9df05eb1d7fec6dce8c2baac2b65bab002494b69/header.jpg?t=1792257852"
+  },
+  {
+    "url": "/archive/cook-with-card-4597500",
+    "title": "Cook with Card: цена, отзывы и статистика игроков",
+    "excerpt": "Cook with Card: актуальная цена (231.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
+    "date": "18 октября 2026",
+    "readTime": "2 мин",
+    "category": "Обзоры",
+    "updated": "2026-10-18",
+    "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4597500/cec01e53ce6d49a84a52f9669ddac9d7e84a8487/header.jpg?t=1792254568"
+  },
+  {
+    "url": "/archive/cat-life-2204760",
+    "title": "Cat Life: цена, отзывы и статистика игроков",
+    "excerpt": "Cat Life: актуальная цена (336.00 RUB), 75% положительных отзывов в Steam, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
+    "date": "18 октября 2026",
+    "readTime": "2 мин",
+    "category": "Обзоры",
+    "updated": "2026-10-18",
+    "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2204760/f0bb6053f7c9ab4a196d42390138952983f8e2b5/header.jpg?t=1792254244"
+  },
+  {
+    "url": "/archive/desktoppip-5015450",
+    "title": "DesktopPiP: цена, отзывы и статистика игроков",
+    "excerpt": "DesktopPiP: актуальная цена (311.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
+    "date": "18 октября 2026",
+    "readTime": "2 мин",
+    "category": "Обзоры",
+    "updated": "2026-10-18",
+    "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5015450/3e9fe3c1225d6f6843eb9187f3b7047a1fa68333/header.jpg?t=1792286593"
+  },
+  {
+    "url": "/archive/furry-massage-wallpapers-5277340",
+    "title": "FURRY MASSAGE  - WALLPAPERS🔞: цена, отзывы и статистика игроков",
+    "excerpt": "FURRY MASSAGE  - WALLPAPERS🔞: актуальная цена (127.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
+    "date": "18 октября 2026",
+    "readTime": "2 мин",
+    "category": "Обзоры",
+    "updated": "2026-10-18",
+    "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5277340/abca5e99db8b0d85c8cd2f43836357f64d28470a/header.jpg?t=1792246159"
+  },
+  {
+    "url": "/archive/patient-zero-3576670",
+    "title": "PATIENT ZERO: цена, отзывы и статистика игроков",
+    "excerpt": "PATIENT ZERO: актуальная цена (160.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
+    "date": "18 октября 2026",
+    "readTime": "2 мин",
+    "category": "Обзоры",
+    "updated": "2026-10-18",
+    "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3576670/67e6a02a07979445c4f9cee28037389a080ab4b5/header.jpg?t=1792245197"
+  },
+  {
+    "url": "/archive/furry-massage-4908870",
+    "title": "FURRY MASSAGE 🔞: цена, отзывы и статистика игроков",
+    "excerpt": "FURRY MASSAGE 🔞: актуальная цена (350.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
+    "date": "18 октября 2026",
+    "readTime": "2 мин",
+    "category": "Обзоры",
+    "updated": "2026-10-18",
+    "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4908870/762686347a48b31c65ad7f8a5bd37c806d3e3b42/header.jpg?t=1792261669"
+  },
+  {
+    "url": "/archive/awaiting-your-horders-5280170",
+    "title": "AWAITING YOUR HORDERS: цена, отзывы и статистика игроков",
+    "excerpt": "AWAITING YOUR HORDERS: актуальная цена (279.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
+    "date": "18 октября 2026",
+    "readTime": "2 мин",
+    "category": "Обзоры",
+    "updated": "2026-10-18",
+    "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5280170/2eb09890ef423da737338e6427440746dbac92c4/header.jpg?t=1792306589"
+  },
+  {
+    "url": "/archive/fresh-stacker-5026810",
+    "title": "Fresh Stacker: цена, отзывы и статистика игроков",
+    "excerpt": "Fresh Stacker: актуальная цена (242.08 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
+    "date": "18 октября 2026",
+    "readTime": "2 мин",
+    "category": "Обзоры",
+    "updated": "2026-10-18",
+    "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5026810/59b03086abb68551790a36dd7cb3384d3e68a869/header.jpg?t=1792241310"
+  },
+  {
+    "url": "/archive/madcar-multiplayer-1979510",
+    "title": "Madcar Multiplayer: цена, отзывы и статистика игроков",
+    "excerpt": "Madcar Multiplayer: актуальная цена (Бесплатно), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
+    "date": "18 октября 2026",
+    "readTime": "2 мин",
+    "category": "Обзоры",
+    "updated": "2026-10-18",
+    "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1979510/77f9d220c1d8b7f32999c52710ba1ccc8565fe87/header.jpg?t=1792239954"
+  },
+  {
+    "url": "/archive/beta-earth-sovereignty-next-5114130",
+    "title": "Beta Earth: Sovereignty Next: цена, отзывы и статистика игроков",
+    "excerpt": "Beta Earth: Sovereignty Next: актуальная цена (Бесплатно), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
+    "date": "18 октября 2026",
+    "readTime": "2 мин",
+    "category": "Обзоры",
+    "updated": "2026-10-18",
+    "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5114130/1045d0928a4c6d38c3131bb091fff9e4c39083fb/header.jpg?t=1792287730"
+  },
+  {
+    "url": "/archive/gangster-clicker-3145070",
+    "title": "Gangster Clicker: цена, отзывы и статистика игроков",
+    "excerpt": "Gangster Clicker: актуальная цена (115.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
+    "date": "18 октября 2026",
+    "readTime": "2 мин",
+    "category": "Обзоры",
+    "updated": "2026-10-18",
+    "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3145070/5103e060f9c49fe53a8a26a6d874dba48f0f06e0/header.jpg?t=1792257181"
+  },
+  {
+    "url": "/archive/sparkle-mouse-5077340",
+    "title": "Sparkle Mouse: цена, отзывы и статистика игроков",
+    "excerpt": "Sparkle Mouse: актуальная цена (127.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
+    "date": "18 октября 2026",
+    "readTime": "2 мин",
+    "category": "Обзоры",
+    "updated": "2026-10-18",
+    "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5077340/e30aa0189bbb30aa98b9d48348799ae69176439d/header.jpg?t=1792227956"
+  },
+  {
+    "url": "/archive/skazaniya-o-puti-bessmertnyh-5262700",
+    "title": "Сказания о Пути Бессмертных: цена, отзывы и статистика игроков",
+    "excerpt": "Сказания о Пути Бессмертных: актуальная цена (120.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
+    "date": "18 октября 2026",
+    "readTime": "2 мин",
+    "category": "Обзоры",
+    "updated": "2026-10-18",
+    "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5262700/41d416a7de9483513d2f61bb00a2134a11de0c2a/header_russian.jpg?t=1792225902"
+  },
+  {
+    "url": "/archive/penrogue-5319460",
+    "title": "PenRogue: цена, отзывы и статистика игроков",
+    "excerpt": "PenRogue: актуальная цена (216.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
+    "date": "18 октября 2026",
+    "readTime": "2 мин",
+    "category": "Обзоры",
+    "updated": "2026-10-18",
+    "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5319460/eec24b46e59b25624ef6ef9f5e6a2f5920982808/header.jpg?t=1792225882"
+  },
+  {
+    "url": "/archive/chinesegaokao-5282110",
+    "title": "中国式高考ChineseGaokao‌: цена, отзывы и статистика игроков",
+    "excerpt": "中国式高考ChineseGaokao‌: актуальная цена (74.42 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
+    "date": "18 октября 2026",
+    "readTime": "2 мин",
+    "category": "Обзоры",
+    "updated": "2026-10-18",
+    "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5282110/94b7e9ca879a5ee4f11f72a18a94a70b7d549897/header.jpg?t=1792223761"
+  },
+  {
+    "url": "/archive/tower-survivor-paper-invasion-5178830",
+    "title": "Tower Survivor - Paper Invasion: цена, отзывы и статистика игроков",
+    "excerpt": "Tower Survivor - Paper Invasion: актуальная цена (200.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
+    "date": "18 октября 2026",
+    "readTime": "2 мин",
+    "category": "Обзоры",
+    "updated": "2026-10-18",
+    "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5178830/e03eeada328e032a2f89d2d5fdf7a931360bfc3f/header.jpg?t=1792225796"
+  },
+  {
+    "url": "/archive/yatai-8-5080810",
+    "title": "Yatai 8: цена, отзывы и статистика игроков",
+    "excerpt": "Yatai 8: актуальная цена (200.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
+    "date": "18 октября 2026",
+    "readTime": "2 мин",
+    "category": "Обзоры",
+    "updated": "2026-10-18",
+    "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5080810/9fcdb6d86f755a5495ddd4557c8102f37cdee593/header.jpg?t=1792220524"
+  },
+  {
+    "url": "/archive/i-need-a-room-5285230",
+    "title": "I Need A Room: цена, отзывы и статистика игроков",
+    "excerpt": "I Need A Room: актуальная цена (385.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
+    "date": "18 октября 2026",
+    "readTime": "2 мин",
+    "category": "Обзоры",
+    "updated": "2026-10-18",
+    "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5285230/2468159975c1dffa4af201bc2c06e3790e790592/header.jpg?t=1792213268"
+  },
+  {
+    "url": "/archive/strange-video-editor-premium-fast-local-no-subscription-5093430",
+    "title": "Strange Video Editor — Premium, Fast, Local, No Subscription: цена, отзывы и статистика игроков",
+    "excerpt": "Strange Video Editor — Premium, Fast, Local, No Subscription: актуальная цена (1119.36 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
+    "date": "18 октября 2026",
+    "readTime": "2 мин",
+    "category": "Обзоры",
+    "updated": "2026-10-18",
+    "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5093430/b020d2b599b6e0c2db9a351bdd721c90a87eb139/header.jpg?t=1792207467"
+  },
+  {
     "url": "/archive/filmy-iskusstvennogo-intellekta-2026",
     "title": "Фильмы искусственного интеллекта: 5 проектов, которые изменили кино",
     "excerpt": "«Мороз», Our T2 Remake, «Санспринг», Generation и «Слизень»: проверенные факты, инструменты, встроенные плееры и границы ИИ в кино.",
@@ -9,7 +289,13 @@ window.allArticles = [
     "category": "Кино и игры",
     "image": "/img/filmy-iskusstvennogo-intellekta-2026-800.jpg",
     "updated": "2026-10-18",
-    "tags": ["ИИ", "Кино", "Генеративное видео", "The Frost", "Sunspring"],
+    "tags": [
+      "ИИ",
+      "Кино",
+      "Генеративное видео",
+      "The Frost",
+      "Sunspring"
+    ],
     "ai": false
   },
   {
