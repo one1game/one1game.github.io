@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Крафт и заточка Lineage 2 Interlude — калькулятор шансов 60/70/25%</title>
+<meta name="description" content="Калькулятор крафта и заточки Lineage 2 Interlude: 179 рецептов с шансом 60/70/25%, 150 предметов D–S, реальные шансы L2OFF +3…+16, материалы и симулятор.">
+<meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+<link rel="canonical" href="https://one1game.org/l2craft/">
+<link rel="alternate" hreflang="ru" href="https://one1game.org/l2craft/">
+<link rel="alternate" hreflang="x-default" href="https://one1game.org/l2craft/">
+<meta property="og:locale" content="ru_RU">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="One1Game">
+<meta property="og:title" content="Крафт и заточка Lineage 2 Interlude — калькулятор шансов">
+<meta property="og:description" content="179 рецептов с шансом 60/70/25%, 150 предметов D–S, реальные шансы заточки L2OFF +3…+16. Материалы, ресурсы и симулятор.">
+<meta property="og:url" content="https://one1game.org/l2craft/">
+<meta property="og:image" content="https://one1game.org/l2craft/og-craft.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Крафт и заточка Lineage 2 Interlude">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Крафт и заточка Lineage 2 Interlude — калькулятор шансов">
+<meta name="twitter:description" content="179 рецептов с шансом 60/70/25%, 150 предметов D–S, шансы заточки L2OFF +3…+16.">
+<meta name="twitter:image" content="https://one1game.org/l2craft/og-craft.png">
+<meta name="theme-color" content="#0b0907">
+<link rel="icon" type="image/png" href="icons/etc_recipe_black_i00.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Forum&family=PT+Serif:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebApplication",
+      "@id": "https://one1game.org/l2craft/#app",
+      "name": "Калькулятор крафта и заточки Lineage 2 Interlude",
+      "url": "https://one1game.org/l2craft/",
+      "description": "Симулятор шансового крафта и заточки Lineage 2 Interlude: 179 рецептов с шансом 60/70/25%, 150 предметов D–S, реальные шансы L2OFF.",
+      "applicationCategory": "GameApplication",
+      "operatingSystem": "Any",
+      "browserRequirements": "Requires JavaScript",
+      "inLanguage": "ru-RU",
+      "isAccessibleForFree": true,
+      "offers": { "@type": "Offer", "price": "0", "priceCurrency": "RUB" },
+      "publisher": { "@type": "Organization", "name": "One1Game", "url": "https://one1game.org/" }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Главная", "item": "https://one1game.org/" },
+        { "@type": "ListItem", "position": 2, "name": "L2 Craft", "item": "https://one1game.org/l2craft/" }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Сколько рецептов с шансом в Lineage 2 Interlude?",
+          "acceptedAnswer": { "@type": "Answer", "text": "179 рецептов: 160 со шансом 60%, 18 со шансом 70% и один со шансом 25% — Titan's Powerstone." }
+        },
+        {
+          "@type": "Question",
+          "name": "Какие шансы заточки в Lineage 2 Interlude?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Физическое оружие — 70% до +15 и 35% на +16, магическое — 40% и 20%, броня и бижутерия — 66,67% на каждом шаге. Safe +3, для цельного доспеха +4, максимум +16." }
+        },
+        {
+          "@type": "Question",
+          "name": "Чем отличается обычный свиток заточки от благословенного?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Шанс у них одинаковый. Обычный свиток при провале разрушает предмет, благословенный — сбрасывает заточку на +0, но предмет остаётся." }
+        },
+        {
+          "@type": "Question",
+          "name": "Это официальный сайт Lineage 2?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Нет, это фанатский симулятор. Рецепты и материалы собраны из Recipes.xml C6 Interlude, шансы заточки — по L2OFF retail." }
+        }
+      ]
+    }
+  ]
+}
+</script>
+</head>
+<body>
+<div class="bg-glow" aria-hidden="true"></div>
+<div class="noise" aria-hidden="true"></div>
+
+<header class="topbar">
+  <a class="brand" href="https://one1game.org/" title="На главную">
+    <span class="brand-mark" aria-hidden="true"></span>
+    <span class="brand-text">one1game<span>.org</span></span>
+  </a>
+
+  <div class="title-block">
+    <span class="eyebrow">Lineage II · Interlude</span>
+    <h1>Крафт и заточка Lineage 2 Interlude</h1>
+    <p>Кузница шанса — калькулятор рецептов и заточки с реальными процентами L2OFF</p>
+  </div>
+
+  <div class="top-stats" aria-label="Сводка базы">
+    <div><strong id="topRecipes">179</strong><span>рецептов</span></div>
+    <div><strong>3</strong><span>шанса</span></div>
+    <div><strong>I</strong><span>хроника</span></div>
+  </div>
+</header>
+
+<nav class="topnav" aria-label="Навигация портала">
+  <a href="https://one1game.org/">Главная</a>
+  <a href="https://one1game.org/archive">Статьи</a>
+  <a href="https://one1game.org/category/gajdy">Гайды</a>
+  <a href="https://one1game.org/category/kino-i-igry">Кино и игры</a>
+  <a href="https://one1game.org/besplatnye-igry">Подборки</a>
+  <button type="button" class="topnav-enchant" data-enchant-open>Заточка D–S</button>
+  <a class="topnav-vps" href="https://my.adminvps.ru/aff.php?aff=31864" target="_blank" rel="noopener noreferrer">VPS от 299 ₽</a>
+</nav>
+
+<div class="mode-bar" aria-label="Инструменты кузницы">
+  <span class="mode-bar-title">Кузница</span>
+  <button type="button" class="mode-btn is-active" data-mode="craft">Крафт <small>шансовые рецепты</small></button>
+  <button type="button" class="mode-btn" data-enchant-open>Заточка D–S <small>+0 … +16</small></button>
+  <span class="mode-bar-note">L2OFF Interlude · реальные шансы</span>
+</div>
+
+<nav class="breadcrumbs" aria-label="Хлебные крошки">
+  <a href="https://one1game.org/">Главная</a>
+  <span aria-hidden="true">›</span>
+  <span aria-current="page">L2 Craft — крафт и заточка</span>
+</nav>
+
+<main class="layout">
+  <aside class="catalog" id="catalog" aria-label="Каталог рецептов">
+    <div class="catalog-head">
+      <div>
+        <span class="eyebrow">Каталог</span>
+        <h2>Шансовый крафт</h2>
+      </div>
+      <span class="count-pill" id="catalogCount">179</span>
+    </div>
+
+    <label class="search">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="6.5"></circle><path d="M16 16l4.2 4.2"></path></svg>
+      <input id="searchInput" type="search" placeholder="Найти предмет или рецепт…" autocomplete="off" spellcheck="false">
+    </label>
+
+    <div class="filters">
+      <div class="filter-group" data-filter="grade">
+        <span class="filter-label">Грейд</span>
+        <div class="chips" id="gradeChips"></div>
+      </div>
+      <div class="filter-group" data-filter="type">
+        <span class="filter-label">Тип</span>
+        <div class="chips" id="typeChips"></div>
+      </div>
+      <div class="filter-group" data-filter="chance">
+        <span class="filter-label">Шанс</span>
+        <div class="chips" id="chanceChips"></div>
+      </div>
+    </div>
+
+    <div class="sort-row">
+      <label for="sortSelect">Сортировка</label>
+      <div class="sort-tools">
+        <select id="sortSelect">
+          <option value="grade">Грейд</option>
+          <option value="name">Название</option>
+          <option value="chance">Шанс</option>
+          <option value="level">Уровень крафта</option>
+        </select>
+        <button type="button" class="filter-reset" id="resetFilters" title="Сбросить поиск и фильтры">Сброс</button>
+      </div>
+    </div>
+
+    <div class="recipe-list" id="recipeList" role="listbox" aria-label="Рецепты"></div>
+  </aside>
+
+  <section class="detail" id="detail" aria-live="polite"></section>
+
+  <aside class="widgets" aria-label="Материалы портала и реклама">
+    <section class="widget">
+      <div class="widget-head">
+        <span class="eyebrow">One1Game</span>
+        <h2>Свежее с главной</h2>
+        <a href="https://one1game.org/archive">Все статьи →</a>
+      </div>
+      <div class="article-widget" id="articleWidget"></div>
+    </section>
+
+    <section class="widget vps-widget" aria-label="Реклама VPS">
+      <span class="ad-label">реклама</span>
+      <a class="vps-card" href="https://my.adminvps.ru/aff.php?aff=31864" target="_blank" rel="noopener noreferrer">
+        <div class="vps-badge">выгодно</div>
+        <h2>VPS/VDS от 299 ₽/мес</h2>
+        <p>NVMe-диски, CPU до 5.0 ГГц, бесплатное администрирование. Для сайтов, ботов, Docker и AI.</p>
+        <div class="vps-tags">
+          <span>NVMe</span><span>24/7</span><span>Мир</span>
+        </div>
+        <span class="vps-cta">Попробовать AdminVPS <span aria-hidden="true">→</span></span>
+      </a>
+    </section>
+  </aside>
+</main>
+
+<section class="seo-home" aria-labelledby="seo-craft-title">
+  <div class="seo-home-inner">
+    <span class="eyebrow">Lineage II · Interlude · L2OFF</span>
+    <h2 id="seo-craft-title">Крафт и заточка Lineage 2 Interlude: калькулятор шансов</h2>
+    <p>
+      «Кузница шанса» — бесплатный калькулятор крафта и заточки для Lineage 2 Interlude.
+      Здесь собраны <strong>179 рецептов с шансом успеха</strong> и <strong>150 предметов D–S</strong>
+      для заточки. Каждый крафт считается независимо, а проценты взяты из игровых данных C6 Interlude,
+      а не «на глаз»: 60%, 70% и единственный рецепт с 25% — Titan's Powerstone.
+    </p>
+
+    <div class="seo-link-grid">
+      <a href="/l2craft/craft/">Все 179 рецептов <small>материалы, MP, уровень крафта</small></a>
+      <a href="/l2craft/craft/chance/60/">Рецепты 60% <small>160 предметов</small></a>
+      <a href="/l2craft/craft/chance/70/">Рецепты 70% <small>18 предметов</small></a>
+      <a href="/l2craft/craft/chance/25/">Рецепт 25% <small>Titan's Powerstone</small></a>
+      <a href="/l2craft/enchant/">Заточка D–S <small>шансы +3…+16</small></a>
+      <a href="/l2craft/enchant/type/weapon/">Заточка оружия <small>70% физ. / 40% маг.</small></a>
+      <a href="/l2craft/enchant/type/armor/">Заточка брони <small>66,67% на шаге</small></a>
+      <a href="/l2craft/enchant/type/jewelry/">Заточка бижутерии <small>66,67% на шаге</small></a>
+      <a href="/l2craft/craft/stats/">Статистика базы <small>шансы, материалы, уровни</small></a>
+      <a href="/l2craft/guides/">Гайды <small>заточка, 60%, Titan's Powerstone</small></a>
+    </div>
+
+    <h3>Шансы крафта в Lineage 2 Interlude</h3>
+    <p>
+      В игре шанс успеха принимает всего несколько значений. Из 179 рецептов, которые вообще могут
+      провалиться, 160 имеют шанс 60%, 18 — 70%, и только один — 25%. Остальные рецепты в игре
+      гарантированные, но в этом калькуляторе собраны именно шансовые, потому что они и представляют риск.
+    </p>
+    <div class="table-wrap">
+      <table class="res-table">
+        <thead><tr><th>Шанс</th><th>Рецептов</th><th>Что это значит</th></tr></thead>
+        <tbody>
+          <tr><td>60%</td><td>160</td><td>Самый массовый шанс: оружие, броня, бижутерия</td></tr>
+          <tr><td>70%</td><td>18</td><td>Бижутерия из адамантита и чёрной руды</td></tr>
+          <tr><td>25%</td><td>1</td><td>Titan's Powerstone — худший шанс в игре</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h3>Шансы заточки Lineage 2 Interlude</h3>
+    <p>
+      Заточка в Interlude зависит от типа предмета. Safe-зона — <strong>+3</strong>, для цельного доспеха —
+      <strong>+4</strong>. Максимальный уровень — <strong>+16</strong>. Обычный свиток при провале разрушает
+      предмет, благословенный — сбрасывает заточку на +0, но оставляет предмет.
+    </p>
+    <div class="table-wrap">
+      <table class="res-table">
+        <thead><tr><th>Тип</th><th>+4…+15</th><th>+16</th><th>Провал</th></tr></thead>
+        <tbody>
+          <tr><td>Физическое оружие</td><td>70%</td><td>35%</td><td>разрушение</td></tr>
+          <tr><td>Магическое оружие</td><td>40%</td><td>20%</td><td>разрушение</td></tr>
+          <tr><td>Броня и бижутерия</td><td>66,67%</td><td>66,67%</td><td>разрушение</td></tr>
+          <tr><td>Цельный доспех</td><td>66,67% с +5</td><td>66,67%</td><td>разрушение</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h3>Как пользоваться калькулятором</h3>
+    <ol>
+      <li>Выберите рецепт в каталоге или найдите предмет по названию.</li>
+      <li>Посмотрите материалы, MP, уровень Create Item и шанс успеха.</li>
+      <li>Крутите горн по одной попытке, пачками ×10/×100 или до первого успеха.</li>
+      <li>Для заточки откройте «Заточка D–S», выберите предмет и свиток, точите вручную или авто до +4/+7/+10/+16.</li>
+    </ol>
+
+    <h3>Частые вопросы</h3>
+    <div class="seo-faq">
+      <details>
+        <summary>Сколько рецептов с шансом в Lineage 2 Interlude?</summary>
+        <p>179: 160 со шансом 60%, 18 со шансом 70% и один со шансом 25% — Titan's Powerstone.</p>
+      </details>
+      <details>
+        <summary>Какие шансы заточки в Interlude?</summary>
+        <p>Физическое оружие — 70% до +15 и 35% на +16, магическое — 40% и 20%, броня и бижутерия — 66,67% на каждом шаге. Safe +3, для цельного доспеха +4, максимум +16.</p>
+      </details>
+      <details>
+        <summary>Чем отличается обычный свиток от благословенного?</summary>
+        <p>Шанс одинаковый. Обычный при провале разрушает предмет, благословенный сбрасывает заточку на +0, но предмет остаётся.</p>
+      </details>
+      <details>
+        <summary>Сколько попыток в среднем нужно для крафта?</summary>
+        <p>При шансе 60% — в среднем 1,67 попытки, медиана 1 попытка, для 95% вероятности нужно 4 попытки. При 25% — в среднем 4 попытки и 11 попыток для 95%.</p>
+      </details>
+      <details>
+        <summary>Это официальный сайт Lineage 2?</summary>
+        <p>Нет. Это фанатский симулятор: рецепты и материалы собраны из Recipes.xml C6 Interlude, шансы заточки — по L2OFF retail.</p>
+      </details>
+    </div>
+
+    <p class="seo-updated">
+      Обновлено 19.10.2026. Источники: Recipes.xml C6 Interlude, L2OFF retail, L2J C6 item data.
+      <a href="/l2craft/api/">Открытый JSON API</a>.
+    </p>
+  </div>
+</section>
+
+<footer class="footer">
+  <div>
+    <strong>Кузница шанса</strong> — фанатский симулятор крафта Lineage 2 Interlude.
+    <div class="footer-links">
+      <a href="https://one1game.org/">Главная</a>
+      <a href="https://one1game.org/archive">Все статьи</a>
+      <a href="https://one1game.org/category/gajdy">Гайды</a>
+      <button type="button" data-enchant-open>Заточка D–S</button>
+      <a href="https://one1game.org/advertising">Реклама</a>
+    </div>
+  </div>
+  <div class="footer-meta">
+    <span>Рецепты и шансы: <a href="https://github.com/Hl4p3x/L2JServer_C6_Interlude/blob/master/dist/game/data/Recipes.xml" target="_blank" rel="noopener">Recipes.xml (C6 Interlude)</a></span>
+    <span>Иконки: NCSOFT / la2b.ru</span>
+    <span>Заточка: <a href="https://l2base.su/index/0-261" target="_blank" rel="noopener">L2OFF retail (Interlude)</a></span>
+    <span>Шанс в игре фиксирован, каждый крафт независим.</span>
+  </div>
+</footer>
+
+<div class="enchant-overlay" id="enchantOverlay" hidden>
+  <div class="enchant-backdrop" data-enchant-close></div>
+  <div class="enchant-shell" role="dialog" aria-modal="true" aria-labelledby="enchantTitle">
+    <header class="enchant-head">
+      <div>
+        <span class="eyebrow">Lineage II · Interlude · D–S</span>
+        <h2 id="enchantTitle">Заточка предметов</h2>
+        <p>Шансы L2OFF retail для Interlude: safe +3 (+4 для цельного доспеха), максимум +16. Физ. оружие — 70% до +15 и 35% на +16, магическое — 40% и 20%, броня и бижутерия — 66.67% на каждом шаге. Обычный свиток при провале уничтожает предмет, благословенный — сбрасывает заточку на +0.</p>
+      </div>
+      <button type="button" class="enchant-close" data-enchant-close aria-label="Закрыть">×</button>
+    </header>
+
+    <div class="enchant-body">
+      <aside class="enchant-catalog">
+        <label class="search">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="6.5"></circle><path d="M16 16l4.2 4.2"></path></svg>
+          <input id="enchantSearch" type="search" placeholder="Найти предмет…" autocomplete="off" spellcheck="false">
+        </label>
+        <div class="filters enchant-filters">
+          <div class="filter-group" data-efilter="grade">
+            <span class="filter-label">Грейд</span>
+            <div class="chips" id="enchantGradeChips"></div>
+          </div>
+          <div class="filter-group" data-efilter="type">
+            <span class="filter-label">Тип</span>
+            <div class="chips" id="enchantTypeChips"></div>
+          </div>
+        </div>
+        <div class="enchant-count"><span id="enchantCount">150</span> предметов <button type="button" class="filter-reset" id="enchantResetFilters">Сброс</button></div>
+        <div class="recipe-list enchant-list" id="enchantList" role="listbox" aria-label="Предметы для заточки"></div>
+      </aside>
+      <section class="enchant-detail" id="enchantDetail" aria-live="polite"></section>
+    </div>
+  </div>
+</div>
+
+<script src="data.js" defer></script>
+<script src="articles-widget.js" defer></script>
+<script src="enchant-data.js" defer></script>
+<script src="app.js" defer></script>
+</body>
+</html>

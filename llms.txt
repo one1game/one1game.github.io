@@ -35,6 +35,15 @@
 - [L2 Server](https://one1game.org/l2/): лендинг Lineage 2 x3 DUO PLAY.
 - [Triad Duel](https://one1game.org/triad-duel): тактическая карточная PvP-игра в Telegram.
 
+## Lineage 2 Interlude: крафт и заточка
+
+- [L2 Craft](https://one1game.org/l2craft/): калькулятор крафта и заточки Lineage 2 Interlude — 179 рецептов с шансом 60/70/25% и 150 предметов D–S.
+- [Все рецепты](https://one1game.org/l2craft/craft/): материалы, MP, Create Item и математика попыток для каждого шансового рецепта.
+- [Заточка](https://one1game.org/l2craft/enchant/): шансы +3…+16, safe-уровни, обычный и благословенный свиток.
+- [Гайды](https://one1game.org/l2craft/guides/): шансы заточки, 60% крафт, Titan's Powerstone, грейды D–S.
+- [JSON API](https://one1game.org/l2craft/api/): открытые данные рецептов и заточки.
+- Факты: 179 шансовых рецептов (160×60%, 18×70%, 1×25%); физ. оружие 70%/35%, маг. 40%/20%, броня 66,67%; safe +3 (+4 full body), максимум +16.
+
 ## О сайте
 
 - Язык: русский (ru-RU).

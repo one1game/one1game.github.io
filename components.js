@@ -138,7 +138,8 @@
       ['/ai/', 'AI Pulse'],
       ['/anal-code/', 'CodeFusion'],
       ['/cyber-scanner/', 'Scanner'],
-      ['/l2/', 'L2 Server']
+      ['/l2/', 'L2 Server'],
+      ['/l2craft/', 'L2 Craft']
     ]);
 
   var nav =
