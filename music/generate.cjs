@@ -18,6 +18,7 @@ const API = 'https://api.audius.co/v1';
 const APP = 'One1Game';
 const TODAY = new Date().toISOString().slice(0, 10);
 const DATE_RU = TODAY.split('-').reverse().join('.');
+const TRACK_LIMIT = 48;
 
 const FALLBACK_ART = 'data:image/svg+xml,' + encodeURIComponent(
   '<svg xmlns="http://www.w3.org/2000/svg" width="480" height="480">' +
@@ -37,17 +38,17 @@ const PAGES = [
     kind: 'genre',
     genre: 'Lo-Fi',
     time: 'week',
-    eyebrow: 'Lo-Fi · Audius',
+    eyebrow: 'Lo-Fi · подборка',
     title: 'Lo-Fi музыка слушать онлайн — чилл и учёба | One1Game',
     description: 'Lo-Fi онлайн без регистрации: спокойные биты, чиллхоп и инструментал для учёбы, работы и сна. Плеер прямо на сайте, бесплатно.',
     keywords: 'lo-fi музыка, lofi слушать онлайн, чиллхоп, музыка для учебы, lofi beats, спокойная музыка онлайн',
     h1: 'Lo-Fi музыка <em>онлайн</em>',
     lead: 'Мягкие биты, виниловый треск и никаких резких переходов. Lo-Fi помогает сосредоточиться и не отвлекает от работы.',
     label: 'Лучшее в Lo-Fi',
-    hint: 'Спокойные биты недели по версии Audius. Нажмите на обложку, чтобы слушать.',
+    hint: 'Спокойные биты недели. Нажмите на обложку, чтобы слушать.',
     intro: [
       'Lo-Fi — это не столько жанр, сколько способ звучания: приглушённые высокие частоты, шум винила, сэмплы и размеренный ритм. Такая музыка не перетягивает внимание и хорошо работает фоном.',
-      'В подборке — треки из Audius: чиллхоп, инструментальный хип-хоп и лёгкая электроника. Всё играет в браузере, без регистрации и переходов на другие сервисы.'
+      'В подборке — треки из открытого каталога: чиллхоп, инструментальный хип-хоп и лёгкая электроника. Всё играет в браузере, без регистрации и переходов на другие сервисы.'
     ],
     seoHeading: 'Lo-Fi музыка онлайн',
     seoText: [
@@ -68,27 +69,27 @@ const PAGES = [
     kind: 'genre',
     genre: 'Electronic',
     time: 'week',
-    eyebrow: 'Electronic · Audius',
+    eyebrow: 'Electronic · подборка',
     title: 'Электронная музыка слушать онлайн бесплатно | One1Game',
     description: 'Электроника онлайн: house, techno, synthwave и энергичные биты для игр, стримов и тренировок. Плеер без регистрации на сайте.',
     keywords: 'электронная музыка, electronic music, слушать электронику, house онлайн, techno, synthwave',
     h1: 'Электронная музыка <em>онлайн</em>',
     lead: 'Синтезаторы, плотный бас и ритм, который держит темп. Электроника для игр, стримов, тренировок и ночных поездок.',
     label: 'Лучшее в Electronic',
-    hint: 'Электроника недели по версии Audius. Нажмите на обложку, чтобы слушать.',
+    hint: 'Электроника недели. Нажмите на обложку, чтобы слушать.',
     intro: [
       'Электронная музыка объединяет десятки направлений: от мягкого synthwave до жёсткого techno. Общее у них — синтетические тембры, ритмичная основа и акцент на груве.',
-      'Подборка собрана из треков Audius. Слушайте в фоне, собирайте очередь и переключайте настроение без регистрации и установки приложений.'
+      'Подборка собрана из треков открытого каталога. Слушайте в фоне, собирайте очередь и переключайте настроение без регистрации и установки приложений.'
     ],
     seoHeading: 'Электронная музыка онлайн',
     seoText: [
       'Для игр и стримов лучше подходит ритмичная электроника без длинных вступлений. Для работы — более спокойные synthwave и downtempo-треки.',
-      'Если вы ищете конкретное направление, попробуйте поиск по названию жанра: house, techno, trance, drum & bass или ambient. Поиск работает по каталогу Audius.'
+      'Если вы ищете конкретное направление, попробуйте поиск по названию жанра: house, techno, trance, drum & bass или ambient. Поиск работает по всему каталогу.'
     ],
     faq: [
-      ['Какие направления электроники есть в подборке?', 'В каталоге Audius встречаются house, techno, synthwave, drum & bass, downtempo и экспериментальная электроника. Состав зависит от загрузок артистов.'],
+      ['Какие направления электроники есть в подборке?', 'В каталоге встречаются house, techno, synthwave, drum & bass, downtempo и экспериментальная электроника. Состав зависит от загрузок артистов.'],
       ['Можно ли слушать электронику без регистрации?', 'Да. Плеер работает сразу и не требует аккаунта.'],
-      ['Подойдёт ли электроника для стрима?', 'Для фонового сопровождения — да. Если стрим монетизируется, проверьте условия использования трека у автора на Audius.'],
+      ['Подойдёт ли электроника для стрима?', 'Для фонового сопровождения — да. Если стрим монетизируется, проверьте условия использования трека у автора.'],
       ['Почему некоторые треки пропускаются?', 'Артист мог закрыть стриминг или удалить запись. Плеер автоматически пропускает недоступные треки.']
     ],
     related: ['gaming', 'workout', 'lofi', 'chill']
@@ -99,16 +100,16 @@ const PAGES = [
     kind: 'genre',
     genre: 'Hip-Hop/Rap',
     time: 'week',
-    eyebrow: 'Hip-Hop · Audius',
+    eyebrow: 'Hip-Hop · подборка',
     title: 'Хип-хоп слушать онлайн бесплатно — биты и рэп | One1Game',
-    description: 'Хип-хоп онлайн без регистрации: рэп, инструментальные биты и чиллхоп из Audius. Плеер прямо на сайте, бесплатно.',
+    description: 'Хип-хоп онлайн без регистрации: рэп, инструментальные биты и чиллхоп из открытого каталога. Плеер прямо на сайте, бесплатно.',
     keywords: 'хип-хоп слушать, рэп онлайн, hip hop, инструментальный хип хоп, биты, чиллхоп',
     h1: 'Хип-хоп <em>онлайн</em>',
     lead: 'Биты, читка и грув. От андерграунда до чиллхопа — подборка, для которой не нужна подписка.',
     label: 'Лучшее в Hip-Hop',
-    hint: 'Хип-хоп недели по версии Audius. Нажмите на обложку, чтобы слушать.',
+    hint: 'Хип-хоп недели. Нажмите на обложку, чтобы слушать.',
     intro: [
-      'Хип-хоп в Audius — это не только мейнстрим: здесь много независимых артистов, инструментальных битов и экспериментальных релизов.',
+      'Хип-хоп здесь — это не только мейнстрим: много независимых артистов, инструментальных битов и экспериментальных релизов.',
       'В подборке есть треки с вокалом и инструментал. Для работы и учёбы чаще выбирают биты без слов, для тренировок — треки с плотным ритмом.'
     ],
     seoHeading: 'Хип-хоп и рэп онлайн',
@@ -117,7 +118,7 @@ const PAGES = [
       'Если нужен чиллхоп, откройте подборку Lo-Fi. Если нужен более энергичный темп — подборку для тренировок.'
     ],
     faq: [
-      ['Есть ли инструментальный хип-хоп?', 'Да, в каталоге Audius много битов и инструментальных релизов. Ищите по словам instrumental, beat или chillhop.'],
+      ['Есть ли инструментальный хип-хоп?', 'Да, в каталоге много битов и инструментальных релизов. Ищите по словам instrumental, beat или chillhop.'],
       ['Можно ли слушать рэп без регистрации?', 'Да. Плеер доступен сразу, аккаунт не требуется.'],
       ['Чем чиллхоп отличается от хип-хопа?', 'Чиллхоп — более спокойное ответвление с мягкими сэмплами и размеренным ритмом.'],
       ['Почему трек может не играть?', 'Автор мог ограничить стриминг или удалить запись. Плеер пропускает недоступные треки автоматически.']
@@ -130,16 +131,16 @@ const PAGES = [
     kind: 'genre',
     genre: 'Rock',
     time: 'week',
-    eyebrow: 'Rock · Audius',
+    eyebrow: 'Rock · подборка',
     title: 'Рок музыка слушать онлайн бесплатно | One1Game',
-    description: 'Рок онлайн: гитары, драйв и новые независимые группы из Audius. Слушайте без регистрации прямо на сайте.',
+    description: 'Рок онлайн: гитары, драйв и новые независимые группы из открытого каталога. Слушайте без регистрации прямо на сайте.',
     keywords: 'рок музыка, слушать рок, rock online, независимые группы, гитарная музыка',
     h1: 'Рок музыка <em>онлайн</em>',
     lead: 'Гитары, живые барабаны и честный звук. Независимые группы и классические жанровые ответвления.',
     label: 'Лучшее в Rock',
-    hint: 'Рок недели по версии Audius. Нажмите на обложку, чтобы слушать.',
+    hint: 'Рок недели. Нажмите на обложку, чтобы слушать.',
     intro: [
-      'Рок в Audius — это независимые группы, сольные проекты и записи, которые не попали в крупные каталоги. Здесь встречаются панк, гараж, альтернатива и классический гитарный звук.',
+      'Рок здесь — это независимые группы, сольные проекты и записи, которые не попали в крупные каталоги. Встречаются панк, гараж, альтернатива и классический гитарный звук.',
       'Слушайте прямо на сайте: плеер не уводит на сторонние сервисы, а очередь и избранное сохраняются в браузере.'
     ],
     seoHeading: 'Рок музыка онлайн',
@@ -148,10 +149,10 @@ const PAGES = [
       'Если нравится конкретный исполнитель, откройте его имя на карточке: внутри сайта покажется профиль и другие треки автора.'
     ],
     faq: [
-      ['Какие направления рока есть в подборке?', 'В каталоге Audius встречаются альтернатива, панк, гараж, инди и пост-рок. Состав зависит от загрузок артистов.'],
+      ['Какие направления рока есть в подборке?', 'В каталоге встречаются альтернатива, панк, гараж, инди и пост-рок. Состав зависит от загрузок артистов.'],
       ['Можно ли слушать рок без регистрации?', 'Да. Плеер работает сразу и не требует аккаунта.'],
       ['Есть ли живые записи?', 'Иногда артисты публикуют концертные версии. Ищите в названии слова live, session или concert.'],
-      ['Можно ли использовать треки в видео?', 'Права определяет автор. Для публикации проверьте условия на странице трека в Audius.']
+      ['Можно ли использовать треки в видео?', 'Права определяет автор. Для публикации проверьте условия на странице трека.']
     ],
     related: ['electronic', 'hip-hop', 'chill', 'workout']
   },
@@ -161,17 +162,17 @@ const PAGES = [
     kind: 'genre',
     genre: 'Ambient',
     time: 'week',
-    eyebrow: 'Chill · Audius',
+    eyebrow: 'Chill · подборка',
     title: 'Chill и эмбиент музыка слушать онлайн | One1Game',
     description: 'Chill и эмбиент онлайн: спокойная музыка для отдыха, работы и сна. Без регистрации, плеер прямо на сайте.',
     keywords: 'chill музыка, эмбиент, ambient online, спокойная музыка, музыка для сна, музыка для работы',
     h1: 'Chill и <em>эмбиент</em>',
     lead: 'Медленные текстуры, воздух и тишина между звуками. Для отдыха, чтения и работы без спешки.',
     label: 'Лучшее в Ambient',
-    hint: 'Эмбиент и чилл недели по версии Audius. Нажмите на обложку, чтобы слушать.',
+    hint: 'Эмбиент и чилл недели. Нажмите на обложку, чтобы слушать.',
     intro: [
       'Эмбиент строится на текстурах и медленном развитии. Здесь нет резких переходов и навязчивых мелодий, поэтому музыка хорошо подходит для глубокой работы и отдыха.',
-      'В подборке — записи из Audius: от классического эмбиента до дроуна и лёгкого чилла. Всё воспроизводится на сайте.'
+      'В подборке — записи из открытого каталога: от классического эмбиента до дроуна и лёгкого чилла. Всё воспроизводится на сайте.'
     ],
     seoHeading: 'Chill и эмбиент онлайн',
     seoText: [
@@ -192,7 +193,7 @@ const PAGES = [
     kind: 'genre',
     genre: 'Lo-Fi',
     time: 'month',
-    eyebrow: 'Фокус · Audius',
+    eyebrow: 'Фокус · подборка',
     title: 'Музыка для учёбы слушать онлайн бесплатно | One1Game',
     description: 'Музыка для учёбы и концентрации: Lo-Fi и инструментал без слов. Слушайте онлайн без регистрации, плеер на сайте.',
     keywords: 'музыка для учебы, музыка для концентрации, музыка для работы, lo-fi для учебы, фоновая музыка',
@@ -202,7 +203,7 @@ const PAGES = [
     hint: 'Подборка месяца: спокойные треки для концентрации. Нажмите на обложку, чтобы слушать.',
     intro: [
       'Музыка для учёбы должна быть предсказуемой: без резких смен темпа и громких вокалов. Lo-Fi и инструментальный эмбиент подходят лучше всего.',
-      'Эта подборка собрана из треков Audius за месяц. Включите её фоном и оставьте вкладку открытой: плеер продолжит играть.'
+      'Эта подборка собрана из треков каталога за месяц. Включите её фоном и оставьте вкладку открытой: плеер продолжит играть.'
     ],
     seoHeading: 'Музыка для учёбы и концентрации',
     seoText: [
@@ -223,7 +224,7 @@ const PAGES = [
     kind: 'genre',
     genre: 'Electronic',
     time: 'month',
-    eyebrow: 'Gaming · Audius',
+    eyebrow: 'Gaming · подборка',
     title: 'Музыка для игр и стримов слушать онлайн | One1Game',
     description: 'Музыка для игр и стримов: электроника, биты и энергичный фон. Слушайте онлайн без регистрации прямо на сайте.',
     keywords: 'музыка для игр, музыка для стрима, игровой фон, electronic gaming, музыка для монтажа',
@@ -233,15 +234,15 @@ const PAGES = [
     hint: 'Электроника месяца для игр и стримов. Нажмите на обложку, чтобы слушать.',
     intro: [
       'Игровой фон не должен перекрывать звук игры и голосовой чат. Электроника с ровным ритмом подходит лучше, чем треки с длинными вступлениями и резкими пиками.',
-      'В подборке — записи Audius за месяц. Включайте в фоне, переключайте треки горячими клавишами и не уходите со страницы.'
+      'В подборке — записи каталога за месяц. Включайте в фоне, переключайте треки горячими клавишами и не уходите со страницы.'
     ],
     seoHeading: 'Музыка для игр и стримов',
     seoText: [
-      'Для стрима выбирайте треки, которые не содержат чужих сэмплов с неясными правами. Audius показывает автора, но условия использования лучше проверять на странице релиза.',
+      'Для стрима выбирайте треки, которые не содержат чужих сэмплов с неясными правами. На странице трека указан автор, но условия использования лучше проверять у него.',
       'Если нужен более спокойный фон для монтажа, откройте эмбиент или Lo-Fi. Для тренировок — подборку с хип-хопом.'
     ],
     faq: [
-      ['Подойдёт ли эта музыка для стрима?', 'Для личного фона — да. Для монетизируемого стрима проверьте права на трек у автора в Audius.'],
+      ['Подойдёт ли эта музыка для стрима?', 'Для личного фона — да. Для монетизируемого стрима проверьте права на трек у автора.'],
       ['Можно ли играть музыку в фоне?', 'Да, воспроизведение продолжается при переключении вкладки и в полноэкранном режиме браузера.'],
       ['Есть ли треки без вокала?', 'Да, в электронике много инструментальных записей. Ищите слова instrumental или no vocals.'],
       ['Нужна ли регистрация?', 'Нет. Плеер запускается сразу.']
@@ -254,7 +255,7 @@ const PAGES = [
     kind: 'genre',
     genre: 'Hip-Hop/Rap',
     time: 'month',
-    eyebrow: 'Workout · Audius',
+    eyebrow: 'Workout · подборка',
     title: 'Музыка для тренировок слушать онлайн | One1Game',
     description: 'Музыка для тренировок: хип-хоп, электроника и треки с темпом. Слушайте онлайн без регистрации на One1Game.',
     keywords: 'музыка для тренировок, музыка для спорта, хип-хоп для тренировки, энергичная музыка, workout music',
@@ -264,7 +265,7 @@ const PAGES = [
     hint: 'Хип-хоп месяца для тренировок. Нажмите на обложку, чтобы слушать.',
     intro: [
       'На тренировке музыка задаёт темп. Плотный бит и короткие композиции помогают удерживать ритм и не отвлекаться на переключение треков.',
-      'В подборке — хип-хоп из Audius за месяц. Если нужен более электронный драйв, откройте подборку Electronic.'
+      'В подборке — хип-хоп за месяц. Если нужен более электронный драйв, откройте подборку Electronic.'
     ],
     seoHeading: 'Музыка для тренировок и спорта',
     seoText: [
@@ -285,25 +286,25 @@ const PAGES = [
     kind: 'playlists',
     genre: '',
     time: '',
-    eyebrow: 'Плейлисты · Audius',
-    title: 'Плейлисты Audius — слушать онлайн бесплатно | One1Game',
-    description: 'Плейлисты Audius онлайн: подборки треков по жанрам и настроению. Слушайте без регистрации прямо на сайте.',
-    keywords: 'плейлисты audius, музыкальные подборки, слушать плейлисты онлайн, музыка по настроению',
-    h1: 'Плейлисты <em>Audius</em>',
+    eyebrow: 'Плейлисты · One1Game',
+    title: 'Плейлисты — слушать онлайн бесплатно | One1Game',
+    description: 'Плейлисты онлайн: подборки треков по жанрам и настроению. Слушайте без регистрации прямо на сайте.',
+    keywords: 'плейлисты, музыкальные подборки, слушать плейлисты онлайн, музыка по настроению',
+    h1: 'Плейлисты <em>онлайн</em>',
     lead: 'Готовые подборки: открывайте плейлист и слушайте целиком. Всё воспроизводится на сайте.',
-    label: 'Плейлисты Audius',
+    label: 'Плейлисты',
     hint: 'Популярные плейлисты недели. Нажмите на карточку, чтобы открыть треки.',
     intro: [
-      'Плейлисты удобны, когда не хочется выбирать отдельные треки. В Audius их собирают артисты, кураторы и обычные слушатели.',
+      'Плейлисты удобны, когда не хочется выбирать отдельные треки. Их собирают артисты, кураторы и обычные слушатели.',
       'В подборке — популярные плейлисты. Откройте карточку, чтобы увидеть список треков и слушать их без перехода на другой сайт.'
     ],
-    seoHeading: 'Плейлисты Audius онлайн',
+    seoHeading: 'Плейлисты онлайн',
     seoText: [
       'Плейлисты помогают удерживать настроение: один список может быть собран под работу, тренировку или вечернюю поездку.',
       'Если плейлист не подошёл, вернитесь к жанровым подборкам: Lo-Fi, электроника, хип-хоп, рок, chill, учёба, игры и тренировки.'
     ],
     faq: [
-      ['Что такое Audius?', 'Открытая музыкальная платформа, куда артисты загружают треки. One1Game использует официальный API для стриминга.'],
+      ['Откуда берутся плейлисты?', 'Их собирают артисты, кураторы и слушатели на открытой музыкальной платформе. Мы воспроизводим треки через официальный API.'],
       ['Можно ли слушать плейлист целиком?', 'Да. Откройте плейлист на карточке и нажмите «Слушать всё» — треки встанут в очередь.'],
       ['Нужна ли регистрация?', 'Нет. Плеер и плейлисты доступны без аккаунта.'],
       ['Почему плейлист может быть недоступен?', 'Автор мог удалить его или закрыть стриминг. Плеер пропускает недоступные записи.']
@@ -440,14 +441,16 @@ async function fetchTracks(genre, time, limit) {
   const json = await api('/tracks/trending', {
     genre: genre || '',
     time: time || 'week',
-    limit: String(limit || 24)
+    limit: String(limit || TRACK_LIMIT)
   });
-  return (json.data || []).filter(isPlayable);
+  return (json.data || []).filter(isPlayable)
+    .filter((track) => !/audius/i.test((track.title || '') + ' ' + ((track.user && track.user.name) || '')));
 }
 
 async function fetchPlaylists(limit) {
   const json = await api('/playlists/trending', { limit: String(limit || 24) });
-  return (json.data || []).filter((item) => item && !item.is_delete && !item.is_unlisted);
+  return (json.data || []).filter((item) => item && !item.is_delete && !item.is_unlisted)
+    .filter((item) => !/audius/i.test((item.playlist_name || '') + ' ' + ((item.user && item.user.name) || '')));
 }
 
 /* ── HTML-карточки ────────────────────────────────────────── */
@@ -464,7 +467,7 @@ function trackCard(track, index) {
       '<div class="music-card__body">' +
         '<span class="music-card__title">' + esc(track.title) + '</span>' +
         '<span class="music-card__artist" data-artist="' + esc(track.artistId) + '">' + esc(track.artist) + '</span>' +
-        '<span class="music-card__meta"><span>' + esc(track.genre || 'Audius') + '</span><span>' + fmtTime(track.duration) + '</span></span>' +
+        '<span class="music-card__meta"><span>' + esc(track.genre || 'Музыка') + '</span><span>' + fmtTime(track.duration) + '</span></span>' +
       '</div>' +
     '</article>'
   );
@@ -480,7 +483,7 @@ function playlistCard(playlist) {
       '<img class="music-playlist__art" src="' + esc(playlist.artwork || FALLBACK_ART) + '" alt="' + esc(playlist.title) + '" loading="lazy" decoding="async">' +
       '<span class="music-playlist__body">' +
         '<span class="music-playlist__title">' + esc(playlist.title) + '</span>' +
-        '<span class="music-playlist__meta">' + esc(playlist.artist || 'Audius') + '<br>' + playlist.trackCount + ' треков · ' + fmtCount(playlist.plays) + ' прослушиваний</span>' +
+        '<span class="music-playlist__meta">' + esc(playlist.artist || 'One1Game') + '<br>' + playlist.trackCount + ' треков · ' + fmtCount(playlist.plays) + ' прослушиваний</span>' +
       '</span>' +
     '</button>'
   );
@@ -548,7 +551,7 @@ function playlistLd(page, playlists) {
             name: playlist.title,
             numTracks: playlist.trackCount,
             url: playlist.page,
-            byArtist: { '@type': 'MusicGroup', name: playlist.artist || 'Audius' }
+            byArtist: { '@type': 'MusicGroup', name: playlist.artist || 'One1Game' }
           }
         }))
       }
@@ -609,7 +612,7 @@ function seoHtml(page, tracks, playlists) {
 
   const selection = page.kind === 'playlists'
     ? playlists.slice(0, 10).map((playlist) =>
-        '<li><a href="' + routeFor(page.slug) + '?playlist=' + encodeURIComponent(playlist.id) + '">' + esc(playlist.title) + '</a> — ' + esc(playlist.artist || 'Audius') + ', ' + playlist.trackCount + ' треков</li>'
+        '<li><a href="' + routeFor(page.slug) + '?playlist=' + encodeURIComponent(playlist.id) + '">' + esc(playlist.title) + '</a> — ' + esc(playlist.artist || 'One1Game') + ', ' + playlist.trackCount + ' треков</li>'
       ).join('')
     : tracks.slice(0, 12).map((track) =>
         '<li><a href="/music/?track=' + encodeURIComponent(track.id) + '">' + esc(track.title) + '</a> — ' + esc(track.artist) + (track.genre ? ' · ' + esc(track.genre) : '') + '</li>'
@@ -632,7 +635,7 @@ function seoHtml(page, tracks, playlists) {
       '<ul>' + links + '<li><a href="/music/">Вся музыка онлайн</a></li></ul>' +
       '<h2>Частые вопросы</h2>' +
       '<div class="music-faq">' + faqHtml(page) + '</div>' +
-      '<p class="music-note">Музыка предоставлена <a href="https://audius.co/" target="_blank" rel="noopener nofollow">Audius</a>. Все права принадлежат исполнителям. Мы не храним аудиофайлы и не предоставляем скачивание.</p>' +
+      '<p class="music-note">Все права на музыку принадлежат исполнителям. Мы не храним аудиофайлы и не предоставляем скачивание.</p>' +
     '</section>'
   );
 }
@@ -644,7 +647,7 @@ function injectHome(homeTracks, homePlaylists) {
   if (!fs.existsSync(file)) return;
   let html = fs.readFileSync(file, 'utf8');
 
-  html = replaceBetween(html, '<!--MUSIC:TREND:START-->', '<!--MUSIC:TREND:END-->', '\n' + tracksHtml(homeTracks.slice(0, 24)) + '\n');
+  html = replaceBetween(html, '<!--MUSIC:TREND:START-->', '<!--MUSIC:TREND:END-->', '\n' + tracksHtml(homeTracks.slice(0, TRACK_LIMIT)) + '\n');
   html = replaceBetween(html, '<!--MUSIC:PLAYLISTS:START-->', '<!--MUSIC:PLAYLISTS:END-->', '\n' + playlistsHtml(homePlaylists.slice(0, 12)) + '\n');
 
   html = html.replace(
@@ -669,7 +672,7 @@ function injectHome(homeTracks, homePlaylists) {
     '@context': 'https://schema.org',
     '@type': 'CollectionPage',
     name: 'Музыка онлайн бесплатно',
-    description: 'Слушать музыку онлайн без регистрации: Lo-Fi, электроника, хип-хоп, рок, эмбиент и плейлисты Audius.',
+    description: 'Слушать музыку онлайн без регистрации: Lo-Fi, электроника, хип-хоп, рок, эмбиент и готовые плейлисты.',
     url: ORIGIN + '/music/',
     inLanguage: 'ru-RU',
     dateModified: TODAY,
@@ -693,8 +696,8 @@ function buildPage(page, tracks, playlists) {
   let html = fs.readFileSync(file, 'utf8');
 
   html = replaceOnce(html, '<title>Музыка онлайн бесплатно — слушать без регистрации | One1Game</title>', '<title>' + esc(page.title) + '</title>');
-  html = replaceOnce(html, '<meta name="description" content="Слушайте музыку онлайн бесплатно: Lo-Fi, электроника, хип-хоп, рок, эмбиент и плейлисты Audius. Поиск, подборки по настроению и плеер без регистрации.">', '<meta name="description" content="' + esc(page.description) + '">');
-  html = replaceOnce(html, '<meta name="keywords" content="музыка онлайн, слушать музыку бесплатно, музыка без регистрации, lo-fi музыка, электронная музыка, хип-хоп онлайн, музыка для учебы, музыка для игр, музыка для тренировок, audius">', '<meta name="keywords" content="' + esc(page.keywords) + '">');
+  html = replaceOnce(html, '<meta name="description" content="Слушайте музыку онлайн бесплатно: Lo-Fi, электроника, хип-хоп, рок, эмбиент и готовые плейлисты. Поиск, подборки по настроению и плеер без регистрации.">', '<meta name="description" content="' + esc(page.description) + '">');
+  html = replaceOnce(html, '<meta name="keywords" content="музыка онлайн, слушать музыку бесплатно, музыка без регистрации, lo-fi музыка, электронная музыка, хип-хоп онлайн, музыка для учебы, музыка для игр, музыка для тренировок, плейлисты">', '<meta name="keywords" content="' + esc(page.keywords) + '">');
   html = replaceOnce(html, '<link rel="canonical" href="https://one1game.org/music/">', '<link rel="canonical" href="' + urlFor(page.slug) + '">');
   html = replaceOnce(html, '<meta property="og:title" content="Музыка онлайн бесплатно — слушать без регистрации">', '<meta property="og:title" content="' + esc(page.title) + '">');
   html = replaceOnce(html, '<meta property="og:description" content="Lo-Fi, электроника, хип-хоп, рок и эмбиент. Плеер прямо на сайте, без регистрации и переходов.">', '<meta property="og:description" content="' + esc(page.description) + '">');
@@ -710,7 +713,7 @@ function buildPage(page, tracks, playlists) {
   );
   html = replaceOnce(
     html,
-    '<span class="music-eyebrow"><i class="fas fa-wave-square" aria-hidden="true"></i> One1Game · Audius</span>',
+    '<span class="music-eyebrow"><i class="fas fa-wave-square" aria-hidden="true"></i> One1Game · Music</span>',
     '<span class="music-eyebrow"><i class="fas fa-wave-square" aria-hidden="true"></i> ' + esc(page.eyebrow) + '</span>'
   );
 
@@ -742,11 +745,11 @@ function buildPage(page, tracks, playlists) {
   html = replaceOnce(html, '<h2 id="music-trending-title">Сейчас в тренде</h2>', '<h2 id="music-trending-title">' + esc(page.label) + '</h2>');
   html = replaceOnce(
     html,
-    '<p class="music-section__hint">Треки недели по версии Audius. Нажмите на обложку, чтобы слушать.</p>',
+    '<p class="music-section__hint">Треки недели. Нажмите на обложку, чтобы слушать.</p>',
     '<p class="music-section__hint">' + esc(page.hint) + '</p>'
   );
 
-  html = replaceBetween(html, '<!--MUSIC:TREND:START-->', '<!--MUSIC:TREND:END-->', '\n' + tracksHtml(tracks.slice(0, 24)) + '\n');
+  html = replaceBetween(html, '<!--MUSIC:TREND:START-->', '<!--MUSIC:TREND:END-->', '\n' + tracksHtml(tracks.slice(0, TRACK_LIMIT)) + '\n');
   html = replaceBetween(html, '<!--MUSIC:PLAYLISTS:START-->', '<!--MUSIC:PLAYLISTS:END-->', '\n' + playlistsHtml(playlists.slice(0, page.kind === 'playlists' ? 24 : 12)) + '\n');
 
   const ld = page.kind === 'playlists' ? playlistLd(page, playlists) : collectionLd(page, tracks);
@@ -841,7 +844,7 @@ function writeData(homeTracks, playlists, genreData) {
 
   const data = {
     generatedAt: new Date().toISOString(),
-    source: 'Audius',
+    source: 'open-catalog',
     trending: homeTracks.map(slimTrack),
     playlists: playlists.slice(0, 12).map(slimPlaylist),
     genres: slimGenres
@@ -855,7 +858,7 @@ function writeData(homeTracks, playlists, genreData) {
 async function main() {
   console.log('Генерация раздела «Музыка»…');
 
-  const homeRaw = await fetchTracks('', 'week', 24);
+  const homeRaw = await fetchTracks('', 'week', TRACK_LIMIT);
   const homeTracks = homeRaw.map(normTrack).filter(Boolean);
   await sleep(500);
   const playlistsRaw = await fetchPlaylists(24);
@@ -871,7 +874,7 @@ async function main() {
       continue;
     }
     try {
-      const rawTracks = await fetchTracks(page.genre, page.time, 24);
+      const rawTracks = await fetchTracks(page.genre, page.time, TRACK_LIMIT);
       genreRaw[page.key] = rawTracks;
       pageTracks[page.slug] = rawTracks.map(normTrack).filter(Boolean);
       await sleep(700);

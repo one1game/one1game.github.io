@@ -349,7 +349,7 @@
         '<div class="music-card__body">' +
           '<span class="music-card__title">' + esc(track.title) + '</span>' +
           '<span class="music-card__artist" data-artist="' + esc(track.artistId) + '">' + esc(track.artist) + '</span>' +
-          '<span class="music-card__meta"><span>' + esc(track.genre || 'Audius') + '</span><span>' + fmtTime(track.duration) + '</span></span>' +
+          '<span class="music-card__meta"><span>' + esc(track.genre || 'Музыка') + '</span><span>' + fmtTime(track.duration) + '</span></span>' +
         '</div>' +
       '</article>';
   }
@@ -360,7 +360,7 @@
         '<img class="music-playlist__art" src="' + esc(artUrl(playlist.artwork)) + '" alt="' + esc(playlist.title) + '" loading="lazy" decoding="async">' +
         '<span class="music-playlist__body">' +
           '<span class="music-playlist__title">' + esc(playlist.title) + '</span>' +
-          '<span class="music-playlist__meta">' + esc(playlist.artist || 'Audius') + '<br>' + playlist.trackCount + ' треков · ' + fmtCount(playlist.plays) + ' прослушиваний</span>' +
+          '<span class="music-playlist__meta">' + esc(playlist.artist || 'One1Game') + '<br>' + playlist.trackCount + ' треков · ' + fmtCount(playlist.plays) + ' прослушиваний</span>' +
         '</span>' +
       '</button>';
   }
@@ -677,7 +677,7 @@
       navigator.mediaSession.metadata = new MediaMetadata({
         title: state.current.title,
         artist: state.current.artist,
-        album: 'Audius',
+        album: 'One1Game',
         artwork: [{ src: artUrl(state.current.artwork), sizes: '480x480', type: 'image/jpeg' }]
       });
       navigator.mediaSession.setActionHandler('play', function () { audio.play(); });
@@ -812,7 +812,7 @@
       el.modalBody.innerHTML = '' +
         '<div class="music-modal__hero">' +
           '<img src="' + esc(artUrl(playlist && playlist.artwork)) + '" alt="' + esc(title) + '">' +
-          '<div><h3>' + esc(title) + '</h3><p>' + tracks.length + ' треков · ' + (playlist ? fmtCount(playlist.plays) + ' прослушиваний' : 'Audius') + '</p></div>' +
+          '<div><h3>' + esc(title) + '</h3><p>' + tracks.length + ' треков · ' + (playlist ? fmtCount(playlist.plays) + ' прослушиваний' : 'каталог') + '</p></div>' +
         '</div>' +
         '<div class="music-modal__actions">' +
           '<button type="button" class="is-primary" data-modal-play-all><i class="fas fa-play"></i> Слушать всё</button>' +

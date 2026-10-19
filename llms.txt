@@ -55,10 +55,10 @@
 
 ## Музыка онлайн
 
-- [Музыка](https://one1game.org/music/): онлайн-плеер на базе Audius API — поиск, жанры, очередь, избранное и плейлисты без регистрации.
+- [Музыка](https://one1game.org/music/): онлайн-плеер с поиском, жанрами, очередью, избранным и плейлистами без регистрации.
 - [Lo-Fi](https://one1game.org/music/lofi/), [электроника](https://one1game.org/music/electronic/), [хип-хоп](https://one1game.org/music/hip-hop/), [рок](https://one1game.org/music/rock/), [chill и эмбиент](https://one1game.org/music/chill/).
-- [Музыка для учёбы](https://one1game.org/music/study/), [для игр и стримов](https://one1game.org/music/gaming/), [для тренировок](https://one1game.org/music/workout/), [плейлисты Audius](https://one1game.org/music/playlists/).
-- Треки стримятся через официальный API Audius; аудиофайлы не хранятся на сайте. Все права принадлежат исполнителям.
+- [Музыка для учёбы](https://one1game.org/music/study/), [для игр и стримов](https://one1game.org/music/gaming/), [для тренировок](https://one1game.org/music/workout/), [плейлисты](https://one1game.org/music/playlists/).
+- Треки стримятся через официальный API открытого каталога; аудиофайлы не хранятся на сайте. Все права принадлежат исполнителям.
 
 ## О сайте
 
@@ -72,5 +72,5 @@
 
 - [Бесплатные раздачи игр](https://one1game.org/data/giveaways.json): название, платформы, магазин, дата окончания, ссылка. Обновляется ежедневно.
 - [Скидки на игры в Steam](https://one1game.org/data/deals.json): цена, скидка в процентах, рейтинг Steam. Цены в долларах США. Обновляется ежедневно.
-- [Музыка Audius](https://one1game.org/music/data.json): тренды, плейлисты и жанровые подборки (Lo-Fi, Electronic, Hip-Hop, Rock, Ambient). Обновляется ежедневно.
+- [Музыка](https://one1game.org/music/data.json): тренды, плейлисты и жанровые подборки (Lo-Fi, Electronic, Hip-Hop, Rock, Ambient). Обновляется ежедневно.
 - Данные игр (страницы /archive/*-<appid>.html) собраны из Steam Store API и SteamSpy; минимальные системные требования указаны на каждой странице игры.
