@@ -2,9 +2,6 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url><loc>https://one1game.org/</loc><lastmod>2026-10-19</lastmod><priority>1.0</priority></url>
   <url><loc>https://one1game.org/archive</loc><lastmod>2026-10-19</lastmod><priority>0.8</priority></url>
-  <url><loc>https://one1game.org/l2craft/</loc><lastmod>2026-10-19</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url>
-  <url><loc>https://one1game.org/l2craft/craft/</loc><lastmod>2026-10-19</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://one1game.org/l2craft/enchant/</loc><lastmod>2026-10-19</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
   <url><loc>https://one1game.org/privacy</loc><priority>0.3</priority></url>
   <url><loc>https://one1game.org/terms</loc><priority>0.3</priority></url>
   <url><loc>https://one1game.org/advertising</loc><priority>0.3</priority></url>
@@ -67,6 +64,7 @@
   <url><loc>https://one1game.org/kino/untitled-sonic-universe-film-1468313</loc><lastmod>2026-10-19</lastmod><priority>0.6</priority></url>
   <url><loc>https://one1game.org/kino/vozvraschenie-v-saylent-hill-680493</loc><lastmod>2026-10-19</lastmod><priority>0.6</priority></url>
   <url><loc>https://one1game.org/kino/vyhod-8-1408208</loc><lastmod>2026-10-19</lastmod><priority>0.6</priority></url>
+  <url><loc>https://one1game.org/archive/ii-trendy-2026</loc><lastmod>2026-10-19</lastmod><priority>0.7</priority></url>
   <url><loc>https://one1game.org/archive/tiny-desktop-fishing-5308440</loc><lastmod>2026-10-19</lastmod><priority>0.7</priority></url>
   <url><loc>https://one1game.org/archive/the-harbour-between-us-5359760</loc><lastmod>2026-10-19</lastmod><priority>0.7</priority></url>
   <url><loc>https://one1game.org/archive/dynamite-blue-4714620</loc><lastmod>2026-10-19</lastmod><priority>0.7</priority></url>
@@ -269,7 +267,7 @@
   <url><loc>https://one1game.org/archive/witch-cabin-cleanup-4991240</loc><lastmod>2026-10-18</lastmod><priority>0.7</priority></url>
   <url><loc>https://one1game.org/archive/beset-4963800</loc><lastmod>2026-10-18</lastmod><priority>0.7</priority></url>
   <url><loc>https://one1game.org/archive/magic-cursor-5191880</loc><lastmod>2026-10-18</lastmod><priority>0.7</priority></url>
-  <url><loc>https://one1game.org/archive/lowpoly-cars-5254390</loc><lastmod>2026-10-18</lastmod><priority>0.7</priority></url>
+  <url><loc>https://one1game.org/archive/lowpoly-cars-5254390</loc><lastmod>2026-10-19</lastmod><priority>0.7</priority></url>
   <url><loc>https://one1game.org/archive/cult-of-the-yellow-king-3928030</loc><lastmod>2026-10-18</lastmod><priority>0.7</priority></url>
   <url><loc>https://one1game.org/archive/triet-cat-5289540</loc><lastmod>2026-10-18</lastmod><priority>0.7</priority></url>
   <url><loc>https://one1game.org/archive/blocky-miner-5124050</loc><lastmod>2026-10-18</lastmod><priority>0.7</priority></url>
@@ -505,7 +503,7 @@
   <url><loc>https://one1game.org/archive/a-schoolhouse-in-gensokyo-3679100</loc><lastmod>2026-10-18</lastmod><priority>0.7</priority></url>
   <url><loc>https://one1game.org/archive/the-webring-4884750</loc><lastmod>2026-10-18</lastmod><priority>0.7</priority></url>
   <url><loc>https://one1game.org/archive/airline-empire-4893990</loc><lastmod>2026-10-18</lastmod><priority>0.7</priority></url>
-  <url><loc>https://one1game.org/archive/pixel-trader-4962430</loc><lastmod>2026-10-18</lastmod><priority>0.7</priority></url>
+  <url><loc>https://one1game.org/archive/pixel-trader-4962430</loc><lastmod>2026-10-19</lastmod><priority>0.7</priority></url>
   <url><loc>https://one1game.org/archive/myriad-gambit-5262940</loc><lastmod>2026-10-18</lastmod><priority>0.7</priority></url>
   <url><loc>https://one1game.org/archive/horde-is-coming-4482600</loc><lastmod>2026-10-18</lastmod><priority>0.7</priority></url>
   <url><loc>https://one1game.org/archive/-5136270</loc><lastmod>2026-10-18</lastmod><priority>0.7</priority></url>

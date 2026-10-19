@@ -1436,6 +1436,49 @@ footer, header, hgroup, menu, nav, section {
     }
     #opt-fullscreen:hover {background:#2b3749;}
 
+    /* Экранная кнопка полноэкранного режима */
+    #fullscreen-button {
+        position:fixed;
+        top:12px;
+        right:12px;
+        z-index:500;
+        display:none;
+        width:44px;
+        height:44px;
+        padding:0;
+        margin:0;
+        -webkit-box-align:center;
+        -webkit-align-items:center;
+        align-items:center;
+        -webkit-box-pack:center;
+        -webkit-justify-content:center;
+        justify-content:center;
+        background:rgba(10,14,20,0.78);
+        border:1px solid rgba(150,165,185,0.45);
+        border-radius:8px;
+        color:#d3dcea;
+        cursor:pointer;
+        -webkit-backdrop-filter:blur(4px);
+        backdrop-filter:blur(4px);
+        -webkit-transition:background 0.15s, border-color 0.15s;
+        transition:background 0.15s, border-color 0.15s;
+    }
+    .game #fullscreen-button {display:-webkit-box;display:-webkit-flex;display:flex;}
+    #fullscreen-button:hover {background:rgba(43,55,73,0.92);border-color:#7f93ad;}
+    #fullscreen-button:focus {outline:none;border-color:#7f93ad;box-shadow:0 0 0 2px rgba(127,147,173,0.35);}
+    #fullscreen-button svg {width:22px;height:22px;display:block;pointer-events:none;}
+    #fullscreen-button .icon-exit {display:none;}
+    #fullscreen-button.is-fullscreen .icon-enter {display:none;}
+    #fullscreen-button.is-fullscreen .icon-exit {display:block;}
+
+    /* В полноэкранном режиме никакого браузерного хрома — только игра */
+    #fullscreen-button:fullscreen {top:12px;right:12px;}
+
+    @media (max-width:700px) {
+        #fullscreen-button {top:8px;right:8px;width:40px;height:40px;}
+        #fullscreen-button svg {width:20px;height:20px;}
+    }
+
     #settings .settings-close {font-size:14px;color:#78849a;margin-top:16px;padding:0;}
     .settings-hint-line {font-size:14px !important;color:#6d6352;margin-top:10px !important;}
 

@@ -33,3 +33,5 @@ Allow: /
 
 Sitemap: https://one1game.org/sitemap.xml
 Sitemap: https://one1game.org/l2craft/sitemap.xml
+Sitemap: https://one1game.org/oboi/sitemap.xml
+Sitemap: https://one1game.org/music/sitemap.xml

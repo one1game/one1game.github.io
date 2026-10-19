@@ -530,19 +530,40 @@ define(['jquery', 'app'], function($, App) {
                 return !!(document.fullscreenElement || document.webkitFullscreenElement || document.msFullscreenElement);
             };
 
+            var fullscreenSupported = !!(document.fullscreenEnabled || document.webkitFullscreenEnabled || document.msFullscreenEnabled);
+
             var updateFullscreenLabel = function() {
-                $('#opt-fullscreen').text(isFullscreen() ? "Выключить" : "Включить");
+                var active = isFullscreen();
+
+                $('#opt-fullscreen').text(active ? "Выключить" : "Включить");
+                $('#fullscreen-button')
+                    .toggleClass('is-fullscreen', active)
+                    .attr('aria-label', active ? "Выйти из полноэкранного режима" : "Полный экран")
+                    .attr('aria-pressed', active ? "true" : "false");
             };
 
             var toggleFullscreen = function() {
                 var el = document.documentElement;
 
                 if(!isFullscreen()) {
-                    (el.requestFullscreen || el.webkitRequestFullscreen || el.msRequestFullscreen || function() {}).call(el);
+                    var request = el.requestFullscreen || el.webkitRequestFullscreen || el.msRequestFullscreen;
+
+                    if(request) {
+                        try {
+                            // navigationUI: "hide" убирает браузерный интерфейс там, где поддерживается.
+                            request.call(el, { navigationUI: "hide" });
+                        } catch(e) {
+                            request.call(el);
+                        }
+                    }
                 } else {
                     (document.exitFullscreen || document.webkitExitFullscreen || document.msExitFullscreen || function() {}).call(document);
                 }
             };
+
+            if(!fullscreenSupported) {
+                $('#fullscreen-button').hide();
+            }
 
             var applyTimeOfDay = function() {
                 var h = new Date().getHours(),
@@ -584,7 +605,8 @@ define(['jquery', 'app'], function($, App) {
             });
 
             $('#opt-fullscreen').click(toggleFullscreen);
-            $(document).bind('fullscreenchange webkitfullscreenchange', updateFullscreenLabel);
+            $('#fullscreen-button').click(toggleFullscreen);
+            $(document).bind('fullscreenchange webkitfullscreenchange msfullscreenchange', updateFullscreenLabel);
 
             // Запускаем процедурный эмбиент после первого действия пользователя
             // (требование браузеров к автозапуску аудио).

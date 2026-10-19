@@ -13,3 +13,27 @@
 
 /*.webp
   Cache-Control: public, max-age=31536000, immutable
+
+/oboi/data.json
+  Cache-Control: public, max-age=3600
+
+/oboi/*.js
+  Cache-Control: public, max-age=604800
+
+/oboi/*.css
+  Cache-Control: public, max-age=604800
+
+/oboi/og-oboi.jpg
+  Cache-Control: public, max-age=31536000, immutable
+
+/music/data.json
+  Cache-Control: public, max-age=3600
+
+/music/*.js
+  Cache-Control: public, max-age=604800
+
+/music/*.css
+  Cache-Control: public, max-age=604800
+
+/music/og-music.jpg
+  Cache-Control: public, max-age=31536000, immutable

@@ -308,7 +308,7 @@ def build_hub(category, slug, items):
   </script>
   <link rel="manifest" href="/manifest.json" />
   <link rel="preload" as="style" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css" onload="this.rel='stylesheet';this.removeAttribute('onload')" /><noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css" /></noscript>
-  <link rel="stylesheet" href="/styles.css?v=44" />
+  <link rel="stylesheet" href="/styles.css?v=45" />
   <style>
     .cat-page {{ padding: 26px 0 40px; }}
     .cat-title {{ font-size: clamp(1.5rem, 3vw, 2.1rem); margin: 8px 0 6px; }}
@@ -373,7 +373,7 @@ def build_hub(category, slug, items):
 </main>
 <script src="/cache-version.js"></script>
 <script>{FILTER_JS}</script>
-<script src="/components.js?v=35" defer></script>
+<script src="/components.js?v=39" defer></script>
 </body>
 </html>
 """

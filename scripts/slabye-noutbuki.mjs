@@ -156,7 +156,7 @@ function shell({ url, title, description, breadcrumbs, jsonld, body }) {
   <link rel="preconnect" href="https://shared.akamai.steamstatic.com" crossorigin />
   <link rel="preload" as="style" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css" onload="this.rel='stylesheet';this.removeAttribute('onload')" />
   <noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css" /></noscript>
-  <link rel="stylesheet" href="/styles.css?v=44" />
+  <link rel="stylesheet" href="/styles.css?v=45" />
   <link rel="manifest" href="/manifest.json" />
   <script defer src="/analytics-consent.js?v=2"></script>
   <style>
@@ -199,7 +199,7 @@ ${body}
   </div>
 </div>
 </main>
-<script src="/components.js?v=35" defer></script>
+<script src="/components.js?v=39" defer></script>
 </body>
 </html>
 `;
