@@ -1184,7 +1184,10 @@
         if (!data) throw new Error('no data');
         state.trending = (data.trending || []).map(normTrack).filter(Boolean);
         state.playlists = (data.playlists || []).map(normPlaylist).filter(Boolean);
-        state.genres = data.genres || {};
+        state.genres = {};
+        Object.keys(data.genres || {}).forEach(function (key) {
+          state.genres[key] = (data.genres[key] || []).map(normTrack).filter(Boolean);
+        });
         if (data.generatedAt) {
           state.generatedAt = data.generatedAt;
           var date = new Date(data.generatedAt);
