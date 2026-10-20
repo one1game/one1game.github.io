@@ -1,8 +1,8 @@
 {
- "updated": "2026-10-19",
+ "updated": "2026-10-20",
  "source": "gamerpower.com",
  "page": "https://one1game.org/besplatnye-igry",
- "count": 16,
+ "count": 18,
  "items": [
   {
    "title": "Best Plumber (IndieGala) Giveaway",
@@ -11,6 +11,14 @@
    "end_date": "N/A",
    "url": "https://www.gamerpower.com/open/best-plumber-pc-giveaway",
    "description": "Ever dreamed of being a plumber? Probably not... but now’s your chance! Grab Best Plumber for free on IndieGala and step into the boots of a young plumber!"
+  },
+  {
+   "title": "Last Room (IndieGala) Giveaway",
+   "platforms": "PC, DRM-Free",
+   "worth": "$29.99",
+   "end_date": "N/A",
+   "url": "https://www.gamerpower.com/open/last-room-pc-giveaway",
+   "description": "Dive into a world of puzzles today! Download Last Room for free on IndieGala! Last Room is a 3d puzzle game with interactive environments, medieval mysteries and secret levels."
   },
   {
    "title": "The Black Within (itch.io) Giveaway",
@@ -99,6 +107,14 @@
    "end_date": "2026-10-22 23:59:00",
    "url": "https://www.gamerpower.com/open/agent-a-a-puzzle-in-disguise-epic-games-giveaway",
    "description": "Your mission, should you choose to accept it, is to claim this giveaway! Yes, you can grab Agent A: A Puzzle in Disguise for free from the Epic Games Store at no cost! Agent A: A Puzzle in Disguise is a stylish spy game packed with clever puzzles. *Please note this game is also available via Epic Ga"
+  },
+  {
+   "title": "GetHigh.EXE (Epic Games) Giveaway",
+   "platforms": "PC, Epic Games Store",
+   "worth": "$1.99",
+   "end_date": "2026-11-02 23:59:00",
+   "url": "https://www.gamerpower.com/open/gethigh-exe-epic-games-giveaway",
+   "description": "Claim GetHigh.EXE for free via Epic Games Store! GetHigh.EXE is a casual 3d parkour game where you run and jump through an obstacle course to reach the top."
   },
   {
    "title": "Wordle (IndieGala) Giveaway",
