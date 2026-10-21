@@ -32,7 +32,7 @@
   <link rel="dns-prefetch" href="https://www.google-analytics.com" />
 
   <link rel="preload" as="style" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css" onload="this.rel='stylesheet';this.removeAttribute('onload')" /><noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css" /></noscript>
-  <link rel="stylesheet" href="styles.css?v=45" />
+  <link rel="stylesheet" href="styles.css?v=48" />
   <link rel="manifest" href="/manifest.json" />
   <meta name="theme-color" content="#04060a" />
 
@@ -70,6 +70,7 @@
     ]
   }
   </script>
+  <script defer src="/player.js?v=2"></script>
 </head>
 <body class="page-home">
 
@@ -153,6 +154,132 @@
         </div>
       </a>
     </div>
+
+    <!-- РАЗДЕЛЫ САЙТА -->
+    <section class="o1hub" id="o1hub" aria-label="Разделы сайта">
+      <div class="o1hub__head">
+        <div class="o1hub__intro">
+          <p class="o1hub__eyebrow"><i class="fas fa-sliders" aria-hidden="true"></i> One1Game · разделы</p>
+          <h2 class="o1hub__title">Разделы сайта</h2>
+          <p class="o1hub__sub">Обои, музыка, игры, медиа, статьи, подборки и сервисы. Всё открывается внутри сайта, без переходов на сторонние ресурсы.</p>
+        </div>
+      </div>
+
+      <div class="o1hub__tabs" role="tablist" aria-label="Категории сайта">
+        <button type="button" class="o1hub__tab is-active" role="tab" aria-selected="true" aria-controls="o1hub-panel-oboi" id="o1hub-tab-oboi" data-o1hub-tab="oboi"><i class="fas fa-image" aria-hidden="true"></i> Обои</button>
+        <button type="button" class="o1hub__tab" role="tab" aria-selected="false" aria-controls="o1hub-panel-music" id="o1hub-tab-music" data-o1hub-tab="music"><i class="fas fa-music" aria-hidden="true"></i> Музыка</button>
+        <button type="button" class="o1hub__tab" role="tab" aria-selected="false" aria-controls="o1hub-panel-games" id="o1hub-tab-games" data-o1hub-tab="games"><i class="fas fa-gamepad" aria-hidden="true"></i> Игры</button>
+        <button type="button" class="o1hub__tab" role="tab" aria-selected="false" aria-controls="o1hub-panel-media" id="o1hub-tab-media" data-o1hub-tab="media"><i class="fas fa-film" aria-hidden="true"></i> Медиа</button>
+        <button type="button" class="o1hub__tab" role="tab" aria-selected="false" aria-controls="o1hub-panel-articles" id="o1hub-tab-articles" data-o1hub-tab="articles"><i class="fas fa-newspaper" aria-hidden="true"></i> Статьи</button>
+        <button type="button" class="o1hub__tab" role="tab" aria-selected="false" aria-controls="o1hub-panel-picks" id="o1hub-tab-picks" data-o1hub-tab="picks"><i class="fas fa-gift" aria-hidden="true"></i> Подборки</button>
+        <button type="button" class="o1hub__tab" role="tab" aria-selected="false" aria-controls="o1hub-panel-services" id="o1hub-tab-services" data-o1hub-tab="services"><i class="fas fa-toolbox" aria-hidden="true"></i> Сервисы</button>
+      </div>
+
+      <div class="o1hub__panels">
+        <div class="o1hub__panel is-active" id="o1hub-panel-oboi" role="tabpanel" aria-labelledby="o1hub-tab-oboi" data-o1hub-panel="oboi">
+          <div class="o1hub__panel-head">
+            <h3>Обои для рабочего стола</h3>
+            <div class="o1hub__actions">
+              <button type="button" data-o1hub-shuffle="oboi"><i class="fas fa-shuffle" aria-hidden="true"></i> Перемешать</button>
+              <a href="/oboi/">Все обои <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
+            </div>
+          </div>
+          <div class="o1hub-walls" id="o1hub-walls">
+            <div class="o1hub-wall o1hub-wall--skeleton"></div>
+            <div class="o1hub-wall o1hub-wall--skeleton"></div>
+            <div class="o1hub-wall o1hub-wall--skeleton"></div>
+            <div class="o1hub-wall o1hub-wall--skeleton"></div>
+          </div>
+          <p class="o1hub__hint">4K, Full HD и телефон. Выбирайте подборку — всё остаётся внутри сайта.</p>
+        </div>
+
+        <div class="o1hub__panel" id="o1hub-panel-music" role="tabpanel" aria-labelledby="o1hub-tab-music" data-o1hub-panel="music" hidden>
+          <div class="o1hub__panel-head">
+            <h3>Музыка, которая играет здесь</h3>
+            <div class="o1hub__actions"><a href="/music/">Вся музыка <i class="fas fa-arrow-right" aria-hidden="true"></i></a></div>
+          </div>
+          <div class="o1hub-music">
+            <div class="o1hub-music__art"><img id="o1hub-music-art" alt="Обложка трека" loading="lazy" decoding="async"></div>
+            <div class="o1hub-music__body">
+              <b id="o1hub-music-title">Загрузка…</b>
+              <span id="o1hub-music-artist">—</span>
+              <a id="o1hub-music-link" href="/music/">Открыть трек <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
+            </div>
+            <div class="o1hub-music__controls">
+              <button type="button" id="o1hub-music-play"><i class="fas fa-play" aria-hidden="true"></i> Слушать</button>
+              <button type="button" id="o1hub-music-next" aria-label="Следующий трек"><i class="fas fa-forward-step" aria-hidden="true"></i></button>
+            </div>
+          </div>
+          <p class="o1hub__hint">Трек запускается прямо на главной. Без регистрации и переходов.</p>
+        </div>
+
+        <div class="o1hub__panel" id="o1hub-panel-games" role="tabpanel" aria-labelledby="o1hub-tab-games" data-o1hub-panel="games" hidden>
+          <div class="o1hub__panel-head">
+            <h3>Игры в браузере</h3>
+            <div class="o1hub__actions">
+              <button type="button" data-o1hub-random="games"><i class="fas fa-dice" aria-hidden="true"></i> Случайная игра</button>
+              <a href="/go/">Все игры <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
+            </div>
+          </div>
+          <div class="o1hub-links">
+            <a class="o1hub-link" href="/go/"><i class="fas fa-dice" aria-hidden="true"></i><b>Игры онлайн</b><span>быстрый запуск в браузере</span></a>
+            <a class="o1hub-link" href="/browserquest/"><i class="fas fa-gamepad" aria-hidden="true"></i><b>BrowserQuest</b><span>классическая MMORPG</span></a>
+            <a class="o1hub-link" href="/genriprocedur/"><i class="fas fa-rocket" aria-hidden="true"></i><b>Cosmic Drift</b><span>процедурный космос</span></a>
+            <a class="o1hub-link" href="/triad-duel"><i class="fas fa-layer-group" aria-hidden="true"></i><b>Triad Duel</b><span>карточная PvP-стратегия</span></a>
+            <a class="o1hub-link" href="/portablewebgame/"><i class="fas fa-gamepad" aria-hidden="true"></i><b>Ретро-игры</b><span>аркады прошлых лет</span></a>
+            <a class="o1hub-link" href="/dos/"><i class="fas fa-floppy-disk" aria-hidden="true"></i><b>DOS-игры</b><span>классика в браузере</span></a>
+          </div>
+          <p class="o1hub__hint">Всё запускается на сайте — ничего скачивать не нужно.</p>
+        </div>
+
+        <div class="o1hub__panel" id="o1hub-panel-media" role="tabpanel" aria-labelledby="o1hub-tab-media" data-o1hub-panel="media" hidden>
+          <div class="o1hub__panel-head"><h3>Кино и лента</h3></div>
+          <div class="o1hub-links o1hub-links--two">
+            <a class="o1hub-link" href="/kino/"><i class="fas fa-film" aria-hidden="true"></i><b>Кино</b><span>фильмы, подборки и разборы</span></a>
+            <a class="o1hub-link" href="/feed/"><i class="fas fa-fire" aria-hidden="true"></i><b>ТикТок</b><span>короткие видео и тренды</span></a>
+          </div>
+          <p class="o1hub__hint">Медиа-раздел остаётся на сайте: без внешних плееров и редиректов.</p>
+        </div>
+
+        <div class="o1hub__panel" id="o1hub-panel-articles" role="tabpanel" aria-labelledby="o1hub-tab-articles" data-o1hub-panel="articles" hidden>
+          <div class="o1hub__panel-head">
+            <h3>Свежие статьи</h3>
+            <div class="o1hub__actions">
+              <button type="button" data-o1hub-random="articles"><i class="fas fa-shuffle" aria-hidden="true"></i> Случайная статья</button>
+              <a href="/archive">Все статьи <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
+            </div>
+          </div>
+          <div class="o1hub-articles" id="o1hub-articles">
+            <a class="o1hub-article" href="/archive/ii-trendy-2026"><span>ИИ и технологии</span><b>ИИ-тренды 2026: 5 технологий, которые забирают рутину</b><i>19 октября 2026</i></a>
+            <a class="o1hub-article" href="/archive/filmy-iskusstvennogo-intellekta-2026"><span>Кино и игры</span><b>Фильмы искусственного интеллекта: 5 проектов, которые изменили кино</b><i>18 октября 2026</i></a>
+            <a class="o1hub-article" href="/archive/igry-dlya-slabyh-noutbukov-2026"><span>Гайды</span><b>Игры для слабых ноутбуков 2026: полный гид</b><i>8 октября 2026</i></a>
+          </div>
+          <p class="o1hub__hint">Все материалы читаются на сайте.</p>
+        </div>
+
+        <div class="o1hub__panel" id="o1hub-panel-picks" role="tabpanel" aria-labelledby="o1hub-tab-picks" data-o1hub-panel="picks" hidden>
+          <div class="o1hub__panel-head"><h3>Подборки</h3><div class="o1hub__actions"><a href="/besplatnye-igry">Открыть подборки <i class="fas fa-arrow-right" aria-hidden="true"></i></a></div></div>
+          <div class="o1hub-links o1hub-links--two">
+            <a class="o1hub-link" href="/besplatnye-igry"><i class="fas fa-gift" aria-hidden="true"></i><b>Бесплатные раздачи</b><span>актуальные предложения</span></a>
+            <a class="o1hub-link" href="/skidki-na-igry"><i class="fas fa-tags" aria-hidden="true"></i><b>Скидки на игры</b><span>выгодные цены</span></a>
+            <a class="o1hub-link" href="/vo-chto-poigrat"><i class="fas fa-dice" aria-hidden="true"></i><b>Во что поиграть</b><span>идеи на вечер</span></a>
+            <a class="o1hub-link" href="/igry-bez-videokarty"><i class="fas fa-laptop" aria-hidden="true"></i><b>Игры для слабых ПК</b><span>без видеокарты</span></a>
+          </div>
+        </div>
+
+        <div class="o1hub__panel" id="o1hub-panel-services" role="tabpanel" aria-labelledby="o1hub-tab-services" data-o1hub-panel="services" hidden>
+          <div class="o1hub__panel-head"><h3>Сервисы</h3></div>
+          <div class="o1hub-links">
+            <a class="o1hub-link" href="/ai/"><i class="fas fa-robot" aria-hidden="true"></i><b>AI Pulse</b><span>ИИ-новости и разборы</span></a>
+            <a class="o1hub-link" href="/anal-code/"><i class="fas fa-code" aria-hidden="true"></i><b>CodeFusion</b><span>разработка и код</span></a>
+            <a class="o1hub-link" href="/cyber-scanner/"><i class="fas fa-shield-halved" aria-hidden="true"></i><b>Scanner</b><span>проверка безопасности</span></a>
+            <a class="o1hub-link" href="/l2/"><i class="fas fa-server" aria-hidden="true"></i><b>Lineage 2 — сервер</b><span>сервер x3 DUO PLAY</span></a>
+            <a class="o1hub-link" href="/l2craft/"><i class="fas fa-hammer" aria-hidden="true"></i><b>Lineage 2 — крафт</b><span>179 рецептов, 150 предметов</span></a>
+            <a class="o1hub-link" href="/oboi/4k/"><i class="fas fa-expand" aria-hidden="true"></i><b>Обои 4K</b><span>для ПК и телефона</span></a>
+          </div>
+        </div>
+      </div>
+    </section>
 
     <!-- ЛЕНТА ЗАПИСЕЙ -->
     <div class="section-header">
@@ -363,7 +490,8 @@
 
 <script src="/cache-version.js"></script>
 <script defer src="articles-data.js?v=30"></script>
-<script defer src="/components.js?v=39"></script>
+<script defer src="/hub.js?v=2"></script>
+<script defer src="/components.js?v=40"></script>
 <script defer src="/hero-space.js?v=1"></script>
 <script defer src="script.js?v=32"></script>
 <script defer src="/api-config.js?v=1"></script>

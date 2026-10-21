@@ -120,6 +120,56 @@
   audio.preload = 'metadata';
   audio.volume = state.volume;
 
+  /* ── Сквозной плеер: отдаём состояние на другие страницы ──── */
+  var lastShare = 0;
+
+  function sharePlayer(force) {
+    if (!window.O1Player || !state.current) return;
+    if (!force && Date.now() - lastShare < 1200) return;
+    lastShare = Date.now();
+    window.O1Player.sync({
+      track: state.current,
+      queue: state.queue,
+      index: state.index,
+      time: audio.currentTime || 0,
+      playing: !audio.paused
+    });
+  }
+
+  function resumeShared() {
+    if (state.current || !window.O1Player) return;
+    var saved = window.O1Player.saved();
+    if (!saved || !saved.track || !saved.track.stream) return;
+    if (!saved.playing || Date.now() - saved.savedAt > 6 * 60 * 60 * 1000) return;
+
+    var track = saved.track;
+    var queue = saved.queue.length ? saved.queue.slice() : [track];
+    var index = saved.index >= 0 && queue[saved.index] && queue[saved.index].id === track.id ? saved.index : -1;
+    if (index < 0) {
+      index = 0;
+      for (var i = 0; i < queue.length; i++) {
+        if (queue[i].id === track.id) { index = i; break; }
+      }
+    }
+
+    state.queue = queue;
+    state.index = index;
+    state.current = track;
+    audio.src = track.stream;
+    var resumeAt = Number(saved.time) || 0;
+    audio.addEventListener('loadedmetadata', function once() {
+      if (resumeAt > 1) {
+        try { audio.currentTime = Math.min(resumeAt, (audio.duration || resumeAt) - 0.5); } catch (e) {}
+      }
+    }, { once: true });
+    audio.play().catch(function () {});
+    updatePlayerUI();
+    renderQueue();
+    updatePlayingCards();
+    updateMediaSession();
+    addHistory(track);
+  }
+
   /* ── Storage ─────────────────────────────────────────────── */
   function readStore(key, fallback) {
     try {
@@ -553,6 +603,7 @@
     audio.play().catch(function () {
       toast('Не удалось включить трек. Попробуйте другой.');
     });
+    sharePlayer(true);
     updatePlayerUI();
     addHistory(track);
     updatePlayingCards();
@@ -614,7 +665,7 @@
     if (el.npArt) el.npArt.src = artUrl(track.artwork);
     if (el.npTitle) el.npTitle.textContent = track.title;
     if (el.npArtist) el.npArtist.textContent = track.artist;
-    if (el.npSource) el.npSource.href = track.page;
+    if (el.npSource) el.npSource.href = track.page || ('/music/?track=' + encodeURIComponent(track.id));
     el.player.classList.add('is-visible');
     document.body.classList.add('music-has-track');
     updateDurationUI();
@@ -1130,14 +1181,15 @@
     });
 
     // Audio events.
-    audio.addEventListener('play', function () { state.playing = true; updatePlayButtons(); });
-    audio.addEventListener('pause', function () { state.playing = false; updatePlayButtons(); });
+    audio.addEventListener('play', function () { state.playing = true; updatePlayButtons(); sharePlayer(true); });
+    audio.addEventListener('pause', function () { state.playing = false; updatePlayButtons(); sharePlayer(true); });
     audio.addEventListener('loadedmetadata', function () { updateDurationUI(); });
     audio.addEventListener('durationchange', function () { updateDurationUI(); });
     audio.addEventListener('timeupdate', function () {
       setSeekValue(audio.currentTime);
       var duration = Number.isFinite(audio.duration) && audio.duration > 0 ? audio.duration : (state.current ? state.current.duration : 0);
       setTimeLabels(audio.currentTime, duration);
+      sharePlayer(false);
     });
     audio.addEventListener('ended', function () {
       if (state.repeat === 2) {
@@ -1156,6 +1208,9 @@
     document.addEventListener('keydown', function (e) {
       var tag = (e.target && e.target.tagName) || '';
       if (/INPUT|TEXTAREA|SELECT/.test(tag)) return;
+      // После перехода на другую страницу без перезагрузки плеер живёт,
+      // но горячие клавиши музыкального раздела там не должны мешать.
+      if (!document.getElementById('music-page')) return;
       if (e.code === 'Space') {
         e.preventDefault();
         togglePlay();
@@ -1173,7 +1228,7 @@
       }
     });
 
-    window.addEventListener('beforeunload', function () { audio.pause(); });
+    window.addEventListener('pagehide', function () { sharePlayer(true); });
   }
 
   /* ── Init ───────────────────────────────────────────────── */
@@ -1262,6 +1317,7 @@
     setView('home');
     loadData().then(function () {
       handleDeepLink();
+      resumeShared();
       if (state.current) el.player.classList.add('is-visible');
     });
   }

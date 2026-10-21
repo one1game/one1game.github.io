@@ -9,8 +9,7 @@
 <meta name="keywords" content="ИИ, искусственный интеллект, новости ИИ, рейтинг нейросетей, OpenRouter, LLM, AI-инструменты, бесплатные нейросети, g4f, One1Game">
 <meta name="robots" content="index, follow">
 <link rel="canonical" href="https://one1game.org/ai/">
-<meta name="theme-color" content="#0f1820" media="(prefers-color-scheme:dark)">
-<meta name="theme-color" content="#e8edf2" media="(prefers-color-scheme:light)">
+<meta name="theme-color" content="#04060a">
 
 <!-- OpenGraph -->
 <meta property="og:type" content="website">
@@ -30,7 +29,6 @@
 <link rel="manifest" href="/manifest.json">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,800&display=swap" rel="stylesheet">
 
 <script type="application/ld+json">
 {
@@ -46,15 +44,14 @@
 }
 </script>
 <style>
-:root{--bg:#e8edf2;--panel:#f6f8fa;--ink:#12202b;--mute:#5d6b78;--line:#c9d3dc;--blue:#2b4bff;--amber:#f2b134;--r:10px}
-@media (prefers-color-scheme:dark){:root{--bg:#0f1820;--panel:#16222c;--ink:#e6edf3;--mute:#8fa1b0;--line:#27384a;--blue:#6f86ff;--amber:#f2b134}}
+:root{--bg:#04060a;--panel:#090d13;--ink:#d7dee6;--mute:#8f99a6;--line:rgba(125,255,155,.16);--blue:#7dff9b;--amber:#ffc061;--r:12px;--mono:ui-monospace,'SF Mono',SFMono-Regular,Menlo,Consolas,'Liberation Mono',monospace;color-scheme:dark}
 *{box-sizing:border-box}
-body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.5 "Bricolage Grotesque",system-ui,sans-serif}
+body{margin:0;background:var(--bg);color:var(--ink);font:15px/1.6 var(--mono)}
 a{color:inherit}
 .wrap{max-width:1100px;margin:0 auto;padding:0 20px}
 header{padding:36px 0 20px}
 .top{display:flex;justify-content:space-between;align-items:flex-start;gap:12px}
-h1{font-size:clamp(32px,6vw,60px);line-height:1;margin:0 0 8px;font-weight:800;letter-spacing:-.03em}
+h1{font-size:clamp(1.6rem,4.6vw,2.6rem);line-height:1.1;margin:0 0 8px;font-weight:700;letter-spacing:-.01em;text-transform:uppercase}
 .sub{color:var(--mute);margin:0 0 24px;max-width:56ch}
 .lang{display:flex;align-items:center;gap:6px;font-size:14px;color:var(--mute)}
 .bars{background:var(--panel);border:1px solid var(--line);border-radius:var(--r);padding:16px}
@@ -78,13 +75,13 @@ select,input{font:inherit;padding:8px 10px;border:1px solid var(--line);border-r
 .card p{margin:0;color:var(--mute);font-size:14px}
 .meta{display:flex;gap:8px;flex-wrap:wrap;font-size:12px;color:var(--mute)}
 .tag{background:var(--amber);color:#1b1500;border-radius:4px;padding:1px 7px;font-weight:600}
-.tag.b{background:var(--blue);color:#fff}
+.tag.b{background:var(--blue);color:#04060a}
 table{width:100%;border-collapse:collapse;background:var(--panel);border:1px solid var(--line);border-radius:var(--r);overflow:hidden;font-size:14px}
 th,td{padding:10px 12px;text-align:left;border-bottom:1px solid var(--line);white-space:nowrap}
 th{color:var(--mute);font-weight:600}
 tr.row{cursor:pointer}tr.row:hover{background:var(--bg)}
 .scroll{overflow-x:auto}
-.more{display:block;margin:20px auto;padding:10px 22px;font:inherit;font-weight:600;background:var(--blue);color:#fff;border:0;border-radius:8px;cursor:pointer}
+.more{display:block;margin:20px auto;padding:10px 22px;font:inherit;font-weight:600;background:var(--blue);color:#04060a;border:0;border-radius:8px;cursor:pointer;text-transform:uppercase;letter-spacing:.06em}
 .more:disabled{opacity:.5}
 .msg{padding:30px;text-align:center;color:var(--mute)}
 dialog{border:1px solid var(--line);border-radius:14px;background:var(--panel);color:var(--ink);max-width:620px;width:calc(100% - 32px);padding:24px}
@@ -93,13 +90,13 @@ dialog h2{margin:0 0 10px;font-size:24px;line-height:1.2}
 dialog dl{display:grid;grid-template-columns:auto 1fr;gap:6px 16px;margin:14px 0}
 dialog dt{color:var(--mute)}dialog dd{margin:0}
 .close{float:right;background:none;border:0;font-size:26px;cursor:pointer;color:var(--mute)}
-.btn{display:inline-block;margin-top:10px;background:var(--blue);color:#fff;text-decoration:none;padding:8px 16px;border-radius:8px;font-weight:600}
+.btn{display:inline-block;margin-top:10px;background:var(--blue);color:#04060a;text-decoration:none;padding:8px 16px;border-radius:8px;font-weight:700;text-transform:uppercase;letter-spacing:.06em;font-size:13px}
 footer{padding:30px 0 50px;color:var(--mute);font-size:13px}
 #tstat{position:fixed;right:14px;bottom:14px;background:var(--ink);color:var(--bg);padding:6px 12px;border-radius:20px;font-size:13px;opacity:0;transition:opacity .2s;pointer-events:none}
 #tstat.on{opacity:.9}
 [hidden]{display:none!important}
 .chip{font:inherit;font-size:13px;padding:4px 12px;border-radius:20px;border:1px solid var(--line);background:var(--panel);color:var(--ink);cursor:pointer}
-.chip[aria-pressed=true]{background:var(--blue);color:#fff;border-color:var(--blue)}
+.chip[aria-pressed=true]{background:var(--blue);color:#04060a;border-color:var(--blue)}
 .cp{font:inherit;font-size:12px;padding:2px 10px;border:1px solid var(--line);border-radius:6px;background:none;color:var(--ink);cursor:pointer}
 .back{display:inline-flex;align-items:center;gap:6px;font-size:13px;font-weight:600;color:var(--mute);text-decoration:none;margin-bottom:14px}
 .back:hover{color:var(--blue)}
@@ -136,6 +133,7 @@ footer{padding:30px 0 50px;color:var(--mute);font-size:13px}
 .news-rail .card:hover{transform:translateY(-2px);border-left-color:var(--amber)}
 .news-rail .card h3{font-size:15px;line-height:1.35}
 </style>
+  <script defer src="/player.js?v=2"></script>
 </head>
 <body>
 <div class="wrap">

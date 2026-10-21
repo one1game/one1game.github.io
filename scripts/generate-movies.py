@@ -572,7 +572,7 @@ def head(title, description, canonical, extra_css, ld):
 <script type="application/ld+json">
 {json.dumps(ld, ensure_ascii=False, indent=2)}
 </script>
-<link rel="stylesheet" href="/styles.css?v=45">
+<link rel="stylesheet" href="/styles.css?v=46">
 <style>{extra_css}</style>
 </head>
 <body>

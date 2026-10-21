@@ -96,42 +96,31 @@
 
 <style>
 :root {
-  --primary: #6366f1;
-  --primary-hover: #4f46e5;
-  --secondary: #10b981;
-  --accent: #8b5cf6;
-  --dark: #0f172a;
-  --darker: #020617;
-  --light: #f8fafc;
-  --gray: #64748b;
-  --success: #22c55e;
-  --error: #ef4444;
-  --warning: #f59e0b;
-  --info: #3b82f6;
-  --glass: rgba(255, 255, 255, 0.05);
-  --glass-border: rgba(255, 255, 255, 0.1);
-  --bg-gradient: linear-gradient(135deg, var(--darker) 0%, var(--dark) 100%);
-  --text-color: var(--light);
-  --card-bg: var(--glass);
-  --code-bg: #0d1117;
-  --border-color: var(--glass-border);
-}
-[data-theme="light"] {
-  --dark: #f1f5f9;
-  --darker: #e2e8f0;
-  --light: #0f172a;
-  --gray: #475569;
-  --glass: rgba(255, 255, 255, 0.7);
-  --glass-border: rgba(0, 0, 0, 0.1);
-  --bg-gradient: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
-  --text-color: #0f172a;
-  --card-bg: rgba(255, 255, 255, 0.8);
-  --code-bg: #1e293b;
-  --border-color: rgba(0, 0, 0, 0.1);
+  /* Единая тема One1Game — как на главной */
+  --primary: #7dff9b;
+  --primary-hover: #b6ffc6;
+  --secondary: #9aa7ff;
+  --accent: #9aa7ff;
+  --dark: #090d13;
+  --darker: #04060a;
+  --light: #d7dee6;
+  --gray: #8f99a6;
+  --success: #7dff9b;
+  --error: #ff5f3d;
+  --warning: #ffc061;
+  --info: #9aa7ff;
+  --glass: rgba(255, 255, 255, 0.03);
+  --glass-border: rgba(125, 255, 155, 0.16);
+  --bg-gradient: linear-gradient(135deg, #04060a 0%, #070a10 100%);
+  --text-color: #d7dee6;
+  --card-bg: rgba(255, 255, 255, 0.03);
+  --code-bg: #070a10;
+  --border-color: rgba(125, 255, 155, 0.16);
+  color-scheme: dark;
 }
 * { margin: 0; padding: 0; box-sizing: border-box; }
 body {
-  font-family: 'Inter', sans-serif;
+  font-family: ui-monospace,'SF Mono',SFMono-Regular,Menlo,Consolas,'Liberation Mono',monospace;
   background: var(--bg-gradient);
   color: var(--text-color);
   min-height: 100vh;
@@ -326,7 +315,7 @@ h1 {
   cursor: pointer;
   transition: all 0.2s ease;
 }
-.filter-chip.active { background: var(--primary); color: white; border-color: var(--primary); }
+.filter-chip.active { background: var(--primary); color: #04060a; border-color: var(--primary); }
 /* File List */
 .selected-files { margin-top: 1.5rem; }
 .view-toggle { display: flex; gap: 0.5rem; justify-content: flex-end; margin-bottom: 1rem; }
@@ -339,7 +328,7 @@ h1 {
   cursor: pointer;
   transition: all 0.2s ease;
 }
-.view-btn.active { background: var(--primary); color: white; }
+.view-btn.active { background: var(--primary); color: #04060a; }
 .file-list { display: grid; gap: 0.75rem; max-height: 400px; overflow-y: auto; padding-right: 0.5rem; }
 .file-list.tree-view {
   display: block;
@@ -400,7 +389,7 @@ h1 {
   transition: all 0.3s ease;
   display: inline-flex; align-items: center; gap: 0.5rem;
 }
-.btn-primary { background: linear-gradient(135deg, var(--primary), var(--accent)); color: white; }
+.btn-primary { background: var(--primary); color: #04060a; font-weight: 700; }
 .btn-primary:hover:not(:disabled) { transform: translateY(-2px); box-shadow: 0 10px 25px rgba(99, 102, 241, 0.4); }
 .btn-secondary { background: rgba(255, 255, 255, 0.1); color: white; border: 1px solid var(--glass-border); }
 [data-theme="light"] .btn-secondary { background: rgba(0, 0, 0, 0.05); color: var(--text-color); }
@@ -784,6 +773,7 @@ kbd {
 }
 .sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); border: 0; }
 </style>
+  <script defer src="/player.js?v=2"></script>
 </head>
 <body>
 <canvas id="particlesCanvas" aria-hidden="true"></canvas>

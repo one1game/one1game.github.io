@@ -1,24 +1,26 @@
 :root {
-  --bg: #0b0907;
-  --bg-2: #100d0a;
-  --panel: #16120d;
-  --panel-2: #1b1610;
-  --panel-3: #211a12;
-  --line: #3a3024;
-  --line-soft: #2a231b;
-  --gold: #d2ab63;
-  --gold-bright: #f2d394;
-  --gold-dim: #8f7444;
-  --text: #eee5d5;
-  --muted: #a89b85;
-  --muted-2: #7d715f;
-  --red: #c2604d;
-  --red-dim: #7d3a30;
-  --green: #8fae68;
-  --green-dim: #4f6439;
+  /* Единая тема One1Game — как на главной */
+  --bg: #04060a;
+  --bg-2: #070a10;
+  --panel: #090d13;
+  --panel-2: #0c1118;
+  --panel-3: #0f151d;
+  --line: rgba(125, 255, 155, 0.16);
+  --line-soft: rgba(255, 255, 255, 0.07);
+  --gold: #7dff9b;
+  --gold-bright: #b6ffc6;
+  --gold-dim: rgba(125, 255, 155, 0.55);
+  --text: #d7dee6;
+  --muted: #8f99a6;
+  --muted-2: #75808d;
+  --red: #ff5f3d;
+  --red-dim: rgba(255, 95, 61, 0.45);
+  --green: #7dff9b;
+  --green-dim: rgba(125, 255, 155, 0.4);
   --shadow: 0 24px 60px rgba(0, 0, 0, .45);
-  --head: "Forum", "Times New Roman", serif;
-  --body: "PT Serif", Georgia, serif;
+  --head: ui-monospace, 'SF Mono', SFMono-Regular, Menlo, Consolas, 'Liberation Mono', monospace;
+  --body: ui-monospace, 'SF Mono', SFMono-Regular, Menlo, Consolas, 'Liberation Mono', monospace;
+  color-scheme: dark;
 }
 
 * { box-sizing: border-box; }
@@ -33,13 +35,13 @@ body {
   font-size: 15px;
   line-height: 1.5;
   background:
-    radial-gradient(1100px 700px at 78% -10%, rgba(172, 103, 42, .13), transparent 62%),
-    radial-gradient(800px 500px at 8% 12%, rgba(83, 100, 119, .09), transparent 60%),
-    linear-gradient(180deg, #0d0a08 0%, #090705 60%, #0b0907 100%);
+    radial-gradient(1100px 700px at 78% -10%, rgba(125, 255, 155, .07), transparent 62%),
+    radial-gradient(800px 500px at 8% 12%, rgba(255, 95, 61, .04), transparent 60%),
+    linear-gradient(180deg, #04060a 0%, #05070c 60%, #04060a 100%);
   background-attachment: fixed;
 }
 
-body::selection { background: rgba(210, 171, 99, .3); }
+body::selection { background: rgba(125, 255, 155, .3); }
 
 a { color: var(--gold); text-decoration: none; }
 a:hover { color: var(--gold-bright); }
@@ -52,8 +54,8 @@ button { cursor: pointer; }
   inset: 0;
   pointer-events: none;
   background:
-    radial-gradient(520px 340px at 72% 8%, rgba(201, 124, 47, .10), transparent 70%),
-    radial-gradient(400px 260px at 40% 100%, rgba(130, 74, 32, .06), transparent 70%);
+    radial-gradient(520px 340px at 72% 8%, rgba(125, 255, 155, .07), transparent 70%),
+    radial-gradient(400px 260px at 40% 100%, rgba(125, 255, 155, .04), transparent 70%);
   z-index: 0;
 }
 

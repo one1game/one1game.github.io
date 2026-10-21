@@ -15,7 +15,7 @@
   border: 1px solid var(--line);
   border-radius: var(--radius-lg);
   background:
-    radial-gradient(560px 220px at 82% -20%, rgba(154, 167, 255, 0.16), transparent 70%),
+    radial-gradient(560px 220px at 82% -20%, rgba(255, 192, 97, 0.10), transparent 70%),
     radial-gradient(420px 200px at 8% 120%, rgba(125, 255, 155, 0.12), transparent 70%),
     var(--panel);
   overflow: hidden;

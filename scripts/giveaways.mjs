@@ -80,7 +80,7 @@ function render({ slug, title, description, h1, lead, cardsHtml, faq, sourceHtml
   <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin />
   <link rel="preload" as="style" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css" onload="this.rel='stylesheet';this.removeAttribute('onload')" />
   <noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css" /></noscript>
-  <link rel="stylesheet" href="/styles.css?v=45" />
+  <link rel="stylesheet" href="/styles.css?v=46" />
   <link rel="manifest" href="/manifest.json" />
   <script defer src="/analytics-consent.js?v=2"></script>
   <style>
@@ -116,7 +116,7 @@ ${cardsHtml}
   </div>
 </div>
 </main>
-<script src="/components.js?v=39" defer></script>
+<script src="/components.js?v=40" defer></script>
 </body>
 </html>
 `;

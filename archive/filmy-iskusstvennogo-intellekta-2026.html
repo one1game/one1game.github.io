@@ -33,7 +33,7 @@
   <meta name="twitter:image" content="https://one1game.org/img/filmy-iskusstvennogo-intellekta-2026.png" />
   <script defer src="/analytics-consent.js?v=2"></script>
   <link rel="preload" as="style" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css" onload="this.rel='stylesheet';this.removeAttribute('onload')" /><noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css" /></noscript>
-  <link rel="stylesheet" href="/styles.css?v=45" />
+  <link rel="stylesheet" href="/styles.css?v=48" />
   <link rel="stylesheet" href="/reactions.css" />
   <style>
     .reading-progress-container{position:fixed;top:0;left:0;width:100%;height:4px;z-index:10000}.reading-progress-bar{height:100%;background:var(--cyan,#00d4ff);width:0;transition:width .1s}
@@ -142,6 +142,7 @@
     ]
   }
   </script>
+  <script defer src="/player.js?v=2"></script>
 </head>
 <body>
 <div class="reading-progress-container" aria-hidden="true"><div class="reading-progress-bar" id="reading-progress"></div></div>
@@ -395,7 +396,7 @@
 window.addEventListener('scroll',()=>{const y=document.documentElement.scrollTop||document.body.scrollTop,h=document.documentElement.scrollHeight-document.documentElement.clientHeight;document.getElementById('reading-progress').style.width=(y/h*100)+'%';document.getElementById('back-to-top').classList.toggle('visible',y>500)});
 (function(){const currentUrl=window.location.pathname.replace(/^\/+/,'/'),all=window.allArticles||[],article=all.find(a=>a.url===currentUrl),url=encodeURIComponent('https://one1game.org'+currentUrl),title=encodeURIComponent(document.title);document.getElementById('share-buttons').innerHTML=['<a target="_blank" rel="nofollow noopener noreferrer" class="share-btn" href="https://vk.com/share.php?url='+url+'&title='+title+'">VK</a>','<a target="_blank" rel="nofollow noopener noreferrer" class="share-btn" href="https://t.me/share/url?url='+url+'&text='+title+'">Telegram</a>','<a target="_blank" rel="nofollow noopener noreferrer" class="share-btn" href="https://x.com/intent/tweet?url='+url+'&text='+title+'">X (Twitter)</a>'].join('');const related=all.filter(a=>a.url!==currentUrl&&(a.category==='Кино и игры'||a.category==='Аналитика')).slice(0,5);document.getElementById('related-container').innerHTML=(related.length?related:all.filter(a=>a.url!==currentUrl).slice(0,5)).map(a=>'<a href="'+a.url+'" class="related-card"><strong>'+a.title+'</strong><span>'+a.date+'</span></a>').join('')})();
 </script>
-<script src="/components.js?v=39" defer></script>
+<script src="/components.js?v=40" defer></script>
 <script src="/reactions.js" defer></script>
 </body>
 </html>

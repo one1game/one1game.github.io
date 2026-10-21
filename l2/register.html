@@ -9,37 +9,38 @@
 <meta name="description" content="Регистрация аккаунта L2 x3 DUO PLAY: создайте логин и подключитесь к игровому серверу.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Yeseva+One&family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;600;700&display=swap" rel="stylesheet">
 <style>
   :root{
-    --ink: #0a0b0e;
-    --panel: #15171d;
-    --panel-raised: #1c1f27;
-    --hairline: rgba(184,147,62,0.22);
-    --gold: #b8933e;
-    --gold-bright: #e6c56d;
-    --blood: #7a1b26;
-    --blood-bright: #b8384a;
-    --parchment: #cdc7b8;
-    --parchment-dim: #8e8a7d;
-    --muted: #5c5f6a;
+    /* Единая тема One1Game — как на главной */
+    --ink: #04060a;
+    --panel: #090d13;
+    --panel-raised: #0c1118;
+    --hairline: rgba(125,255,155,0.16);
+    --gold: #7dff9b;
+    --gold-bright: #b6ffc6;
+    --blood: #ff5f3d;
+    --blood-bright: #ff8a70;
+    --parchment: #d7dee6;
+    --parchment-dim: #8f99a6;
+    --muted: #75808d;
+    --mono: ui-monospace,'SF Mono',SFMono-Regular,Menlo,Consolas,'Liberation Mono',monospace;
   }
   *{box-sizing:border-box; margin:0; padding:0;}
   html{scroll-behavior:smooth;}
   body{
     background:
-      radial-gradient(ellipse 900px 500px at 15% -10%, rgba(184,147,62,0.07), transparent 60%),
-      radial-gradient(ellipse 700px 500px at 85% 10%, rgba(122,27,38,0.10), transparent 55%),
+      radial-gradient(ellipse 900px 500px at 15% -10%, rgba(125,255,155,0.06), transparent 60%),
+      radial-gradient(ellipse 700px 500px at 85% 10%, rgba(255,95,61,0.05), transparent 55%),
       var(--ink);
     color: var(--parchment);
-    font-family: 'Inter', sans-serif;
+    font-family:var(--mono);
     line-height: 1.6;
     overflow-x: hidden;
   }
   a{ color:inherit; text-decoration:none; }
 
   .eyebrow{
-    font-family:'JetBrains Mono', monospace;
+    font-family:var(--mono);
     font-size: .72rem;
     letter-spacing: .32em;
     text-transform: uppercase;
@@ -59,7 +60,7 @@
     backdrop-filter: blur(10px);
     border-bottom: 1px solid var(--hairline);
   }
-  .logo{ font-family:'Yeseva One', serif; font-size:1.25rem; color: var(--parchment); letter-spacing:.02em;}
+  .logo{ display:none; font-family:var(--mono); font-size:1.25rem; color: var(--parchment); letter-spacing:.02em;}
   .logo span{ color: var(--gold);}
   .nav-links{ display:flex; gap:2rem; font-size:.88rem; color: var(--parchment-dim);}
   .nav-links a{ transition: color .2s; }
@@ -81,7 +82,7 @@
   .page-section::after{ right:.4rem; border-left:none; border-bottom:none; }
 
   .page-section h1{
-    font-family:'Yeseva One', serif;
+    font-family:var(--mono);
     font-size: clamp(1.8rem, 4vw, 2.8rem);
     line-height: 1.15;
     color: var(--parchment);
@@ -98,7 +99,7 @@
   .field{ margin-bottom: 1.2rem; text-align:left; }
   .field label{
     display: block;
-    font-family:'JetBrains Mono', monospace;
+    font-family:var(--mono);
     font-size: .72rem;
     letter-spacing: .08em;
     text-transform: uppercase;
@@ -113,13 +114,13 @@
     padding: .8rem 1rem;
     color: var(--parchment);
     font-size: .93rem;
-    font-family: 'JetBrains Mono', monospace;
+    font-family:var(--mono);
     transition: border-color .2s, box-shadow .2s;
     outline: none;
   }
   .field input:focus{
     border-color: var(--gold);
-    box-shadow: 0 0 0 3px rgba(184,147,62,0.08);
+    box-shadow: 0 0 0 3px rgba(125,255,155,0.06);
   }
   .field input.input-error{ border-color: var(--blood-bright); }
   .field-hint{
@@ -158,7 +159,7 @@
     border-radius: 3px;
     line-height: 1.5;
   }
-  .form-msg.success{ background: rgba(184,147,62,0.08); color: var(--gold-bright); }
+  .form-msg.success{ background: rgba(125,255,155,0.06); color: var(--gold-bright); }
   .form-msg.error{ background: rgba(122,27,38,0.12); color: var(--blood-bright); }
   .form-msg small{ display:inline-block; margin-top:.3rem; opacity:.7; }
 
@@ -168,7 +169,7 @@
 
   .download-banner{
     display:flex; align-items:center; gap:.7rem;
-    background:linear-gradient(160deg, rgba(184,147,62,0.08), rgba(184,147,62,0.03));
+    background:linear-gradient(160deg, rgba(125,255,155,0.06), rgba(184,147,62,0.03));
     border:1px solid var(--hairline);
     border-radius:4px;
     padding:.9rem 1.2rem;
@@ -178,9 +179,9 @@
     text-decoration:none;
     transition:border-color .25s, box-shadow .25s;
   }
-  .download-banner:hover{ border-color:var(--gold); box-shadow:0 4px 16px rgba(184,147,62,0.10); }
+  .download-banner:hover{ border-color:var(--gold); box-shadow:0 4px 16px rgba(125,255,155,0.10); }
   .download-icon{ font-size:1.1rem; }
-  .download-hint{ margin-left:auto; font-size:.72rem; color:var(--muted); font-family:'JetBrains Mono',monospace; }
+  .download-hint{ margin-left:auto; font-size:.72rem; color:var(--muted); font-family:var(--mono); }
 
   .footer{
     text-align:center; padding: 2.5rem 1.5rem 3rem;
@@ -201,13 +202,13 @@
   }
   .sponsor-banner:hover{
     border-color:var(--gold);
-    box-shadow:0 8px 28px rgba(184,147,62,0.10);
+    box-shadow:0 8px 28px rgba(125,255,155,0.10);
   }
   .sponsor-header{
     display:flex; align-items:center; gap:.6rem; flex-wrap:wrap; margin-bottom:.8rem;
   }
   .sponsor-badge{
-    font-family:'JetBrains Mono',monospace;
+    font-family:var(--mono);
     font-size:.66rem; font-weight:700;
     letter-spacing:.08em;
     text-transform:uppercase;
@@ -218,7 +219,7 @@
     border:1px solid var(--hairline);
   }
   .sponsor-title{
-    font-family:'Yeseva One',serif;
+    font-family:var(--mono);
     font-size:1.08rem;
     color:var(--parchment);
     margin:0;
@@ -232,7 +233,7 @@
   }
   .sponsor-tag{
     font-size:.7rem; font-weight:500;
-    background:rgba(184,147,62,0.07);
+    background:rgba(125,255,155,0.06);
     color:var(--parchment-dim);
     padding:.3rem .7rem;
     border-radius:3px;
@@ -240,7 +241,7 @@
   }
   .sponsor-cta{
     display:block; text-align:center;
-    font-family:'JetBrains Mono',monospace;
+    font-family:var(--mono);
     font-size:.8rem; font-weight:600;
     background:linear-gradient(160deg, var(--gold-bright), var(--gold));
     color:#191307;
@@ -253,6 +254,7 @@
     box-shadow:0 6px 20px rgba(184,147,62,0.20);
   }
 </style>
+  <script defer src="/player.js?v=2"></script>
 </head>
 <body>
 

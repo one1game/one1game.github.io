@@ -1031,7 +1031,7 @@ function headHtml(page, items) {
     '<link rel="preconnect" href="https://th.wallhaven.cc" crossorigin>\n' +
     '<link rel="preconnect" href="https://w.wallhaven.cc" crossorigin>\n' +
     '<link rel="preload" as="style" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css" onload="this.rel=\'stylesheet\';this.removeAttribute(\'onload\')"><noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css"></noscript>\n' +
-    '<link rel="stylesheet" href="/styles.css?v=45">\n' +
+    '<link rel="stylesheet" href="/styles.css?v=46">\n' +
     '<link rel="stylesheet" href="/oboi/style.css?v=2">\n' +
     jsonLd(page, items) + '\n' +
     '</head>\n<body>\n' +
@@ -1058,7 +1058,7 @@ function headHtml(page, items) {
     relatedHtml(page) + '\n' +
     seoHtml(page) + '\n' +
     '</div>\n</div>\n</main>\n' +
-    '<script src="/components.js?v=39" defer></script>\n' +
+    '<script src="/components.js?v=40" defer></script>\n' +
     '</body>\n</html>'
   );
 }

@@ -92,7 +92,7 @@
   var isReading = isArchive || path.indexOf('/category/') === 0;
   var isPicks = path === '/besplatnye-igry' || path === '/skidki-na-igry' || path === '/vo-chto-poigrat'
     || path.indexOf('/igry-bez-videokarty') === 0 || path.indexOf('/igry-dlya-slabyh') === 0;
-  var isServices = isAI || isCodeFusion || isScanner || isL2 || isOboi || isMusicHub;
+  var isServices = isAI || isCodeFusion || isScanner || isL2;
 
   function navItem(label, href, state) {
     return '<a href="' + href + '" class="nav-link' + active(state) + '"' + (state ? ' aria-current="page"' : '') + '>' + label + '</a>';
@@ -110,9 +110,24 @@
   }
 
   var navLinks =
-    navItem('Главная', '/', isHome) +
-    navItem('Обои', '/oboi/', isOboi) +
-    navItem('Музыка', '/music/', isMusicHub) +
+    navDrop('Обои', '/oboi/', isOboi, [
+      ['/oboi/', 'Все игровые обои'],
+      ['/oboi/4k/', '4K'],
+      ['/oboi/phone/', 'На телефон'],
+      ['/oboi/neon/', 'Неон'],
+      ['/oboi/cyberpunk/', 'Киберпанк'],
+      ['/oboi/anime/', 'Аниме'],
+      ['/oboi/dark/', 'Тёмные']
+    ]) +
+    navDrop('Музыка', '/music/', isMusicHub, [
+      ['/music/', 'Вся музыка'],
+      ['/music/lofi/', 'Lo-Fi'],
+      ['/music/electronic/', 'Электроника'],
+      ['/music/hip-hop/', 'Хип-хоп'],
+      ['/music/rock/', 'Рок'],
+      ['/music/chill/', 'Chill и эмбиент'],
+      ['/music/playlists/', 'Плейлисты']
+    ]) +
     navDrop('Игры', '/go/', isGames, [
       ['/go/', 'Игры онлайн'],
       ['/browserquest/', 'BrowserQuest'],
@@ -130,7 +145,12 @@
       ['/category/obzory', 'Обзоры игр'],
       ['/category/gajdy', 'Гайды'],
       ['/category/analitika', 'Аналитика'],
-      ['/category/ii-i-tehnologii', 'ИИ и технологии']
+      ['/category/ii-i-tehnologii', 'ИИ и технологии'],
+      ['/category/razrabotka', 'Разработка'],
+      ['/category/konsoli', 'Консоли'],
+      ['/category/mnenie', 'Мнения'],
+      ['/category/kino-i-igry', 'Кино и игры'],
+      ['/category/trendy', 'Тренды']
     ]) +
     navDrop('Подборки', '/besplatnye-igry', isPicks, [
       ['/besplatnye-igry', 'Бесплатные раздачи'],
@@ -142,10 +162,8 @@
       ['/ai/', 'AI Pulse'],
       ['/anal-code/', 'CodeFusion'],
       ['/cyber-scanner/', 'Scanner'],
-      ['/oboi/', 'Игровые обои'],
-      ['/music/', 'Музыка онлайн'],
-      ['/l2/', 'L2 Server'],
-      ['/l2craft/', 'L2 Craft']
+      ['/l2/', 'Lineage 2 — сервер'],
+      ['/l2craft/', 'Lineage 2 — крафт']
     ]);
 
   var nav =
@@ -168,7 +186,7 @@
     '  <a href="/archive" class="dock-item' + active(isArchive) + '"><i class="fas ' + I.articles + '" aria-hidden="true"></i><span>Статьи</span></a>' +
     '  <button type="button" class="dock-item" id="dock-radio"' + (hasRadio ? '' : ' hidden') + '><i class="fas ' + I.radio + '" aria-hidden="true"></i><span>Радио</span></button>' +
     '  <button type="button" class="dock-item" id="dock-search"><i class="fas ' + I.search + '" aria-hidden="true"></i><span>Поиск</span></button>' +
-    '  <button type="button" class="dock-item" id="dock-more"><i class="fas ' + I.more + '" aria-hidden="true"></i><span>Ещё</span></button>' +
+    '  <button type="button" class="dock-item" id="dock-more" aria-label="Открыть меню"><i class="fas ' + I.more + '" aria-hidden="true"></i><span>Меню</span></button>' +
     '</nav>';
 
   // ── Bottom sheet ───────────────────────────────────
@@ -176,6 +194,24 @@
     '<div class="sheet-backdrop" id="sheet-backdrop" aria-hidden="true"></div>' +
     '<aside class="sheet" id="sheet" role="dialog" aria-modal="true" aria-label="Меню" aria-hidden="true">' +
     '  <div class="sheet-handle" aria-hidden="true"></div>' +
+    '  <p class="sheet-title">Обои</p>' +
+    '  <div class="sheet-links">' +
+    '    <a href="/oboi/" class="sheet-link' + active(isOboi) + '"><i class="fas fa-image" aria-hidden="true"></i> Все игровые обои</a>' +
+    '    <a href="/oboi/4k/" class="sheet-link"><i class="fas fa-expand" aria-hidden="true"></i> 4K</a>' +
+    '    <a href="/oboi/phone/" class="sheet-link"><i class="fas fa-mobile-screen" aria-hidden="true"></i> На телефон</a>' +
+    '    <a href="/oboi/neon/" class="sheet-link"><i class="fas fa-bolt" aria-hidden="true"></i> Неон</a>' +
+    '    <a href="/oboi/cyberpunk/" class="sheet-link"><i class="fas fa-city" aria-hidden="true"></i> Киберпанк</a>' +
+    '  </div>' +
+    '  <p class="sheet-title">Музыка</p>' +
+    '  <div class="sheet-links">' +
+    '    <a href="/music/" class="sheet-link' + active(isMusicHub) + '"><i class="fas fa-music" aria-hidden="true"></i> Вся музыка</a>' +
+    '    <a href="/music/lofi/" class="sheet-link"><i class="fas fa-mug-hot" aria-hidden="true"></i> Lo-Fi</a>' +
+    '    <a href="/music/electronic/" class="sheet-link"><i class="fas fa-wave-square" aria-hidden="true"></i> Электроника</a>' +
+    '    <a href="/music/hip-hop/" class="sheet-link"><i class="fas fa-microphone" aria-hidden="true"></i> Хип-хоп</a>' +
+    '    <a href="/music/rock/" class="sheet-link"><i class="fas fa-guitar" aria-hidden="true"></i> Рок</a>' +
+    '    <a href="/music/chill/" class="sheet-link"><i class="fas fa-cloud" aria-hidden="true"></i> Chill и эмбиент</a>' +
+    '    <a href="/music/playlists/" class="sheet-link"><i class="fas fa-list-ul" aria-hidden="true"></i> Плейлисты</a>' +
+    '  </div>' +
     '  <p class="sheet-title">Игры</p>' +
     '  <div class="sheet-links">' +
     '    <a href="/go/" class="sheet-link' + active(isGo) + '"><i class="fas ' + I.online + '" aria-hidden="true"></i> Игры онлайн</a>' +
@@ -188,7 +224,6 @@
     '  <p class="sheet-title">Медиа</p>' +
     '  <div class="sheet-links">' +
     '    <a href="/kino/" class="sheet-link' + active(isKino) + '"><i class="fas fa-film" aria-hidden="true"></i> Кино</a>' +
-    '    <a href="/music/" class="sheet-link' + active(isMusicHub) + '"><i class="fas fa-music" aria-hidden="true"></i> Музыка онлайн</a>' +
     '    <a href="/feed/" class="sheet-link' + active(isFeed) + '"><i class="fas fa-fire" aria-hidden="true"></i> ТикТок</a>' +
     '  </div>' +
     '  <p class="sheet-title">Статьи</p>' +
@@ -198,6 +233,11 @@
     '    <a href="/category/gajdy" class="sheet-link"><i class="fas fa-book" aria-hidden="true"></i> Гайды</a>' +
     '    <a href="/category/analitika" class="sheet-link"><i class="fas fa-chart-line" aria-hidden="true"></i> Аналитика</a>' +
     '    <a href="/category/ii-i-tehnologii" class="sheet-link"><i class="fas fa-microchip" aria-hidden="true"></i> ИИ и технологии</a>' +
+    '    <a href="/category/razrabotka" class="sheet-link"><i class="fas fa-code" aria-hidden="true"></i> Разработка</a>' +
+    '    <a href="/category/konsoli" class="sheet-link"><i class="fas fa-gamepad" aria-hidden="true"></i> Консоли</a>' +
+    '    <a href="/category/mnenie" class="sheet-link"><i class="fas fa-comment" aria-hidden="true"></i> Мнения</a>' +
+    '    <a href="/category/kino-i-igry" class="sheet-link"><i class="fas fa-film" aria-hidden="true"></i> Кино и игры</a>' +
+    '    <a href="/category/trendy" class="sheet-link"><i class="fas fa-arrow-trend-up" aria-hidden="true"></i> Тренды</a>' +
     '  </div>' +
     '  <p class="sheet-title">Подборки</p>' +
     '  <div class="sheet-links">' +
@@ -211,9 +251,8 @@
     '    <a href="/ai/" class="sheet-link' + active(isAI) + '"><i class="fas ' + I.ai + '" aria-hidden="true"></i> AI Pulse</a>' +
     '    <a href="/anal-code/" class="sheet-link' + active(isCodeFusion) + '"><i class="fas ' + I.code + '" aria-hidden="true"></i> CodeFusion</a>' +
     '    <a href="/cyber-scanner/" class="sheet-link' + active(isScanner) + '"><i class="fas ' + I.scanner + '" aria-hidden="true"></i> Scanner</a>' +
-    '    <a href="/oboi/" class="sheet-link' + active(isOboi) + '"><i class="fas fa-image" aria-hidden="true"></i> Игровые обои</a>' +
-    '    <a href="/l2/" class="sheet-link' + active(isL2) + '"><i class="fas ' + I.server + '" aria-hidden="true"></i> L2 Server</a>' +
-    '    <a href="/l2craft/" class="sheet-link"><i class="fas fa-hammer" aria-hidden="true"></i> L2 Craft</a>' +
+    '    <a href="/l2/" class="sheet-link' + active(isL2) + '"><i class="fas ' + I.server + '" aria-hidden="true"></i> Lineage 2 — сервер</a>' +
+    '    <a href="/l2craft/" class="sheet-link"><i class="fas fa-hammer" aria-hidden="true"></i> Lineage 2 — крафт</a>' +
     '  </div>' +
     '  <p class="sheet-title">Издание</p>' +
     '  <div class="sheet-links">' +
@@ -266,12 +305,16 @@
       ['/genriprocedur/', 'Cosmic Drift'],
       ['/triad-duel', 'Triad Duel']
     ]) +
-    footerCol('Читать', [
+    footerCol('Статьи', [
       ['/archive', 'Все статьи'],
       ['/category/obzory', 'Обзоры игр'],
       ['/category/gajdy', 'Гайды'],
       ['/category/analitika', 'Аналитика'],
-      ['/category/ii-i-tehnologii', 'ИИ и технологии']
+      ['/category/ii-i-tehnologii', 'ИИ и технологии'],
+      ['/category/razrabotka', 'Разработка'],
+      ['/category/konsoli', 'Консоли'],
+      ['/category/mnenie', 'Мнения'],
+      ['/category/kino-i-igry', 'Кино и игры']
     ]) +
     footerCol('Подборки', [
       ['/besplatnye-igry', 'Бесплатные раздачи'],
@@ -280,6 +323,8 @@
       ['/igry-bez-videokarty', 'Игры для слабых ПК']
     ]) +
     footerCol('Медиа', [
+      ['/oboi/', 'Игровые обои'],
+      ['/music/', 'Музыка онлайн'],
       ['/kino/', 'Кино'],
       ['/feed/', 'ТикТок']
     ]) +
@@ -287,10 +332,8 @@
       ['/ai/', 'AI Pulse'],
       ['/anal-code/', 'CodeFusion'],
       ['/cyber-scanner/', 'Scanner'],
-      ['/oboi/', 'Игровые обои'],
-      ['/music/', 'Музыка онлайн'],
-      ['/l2/', 'L2 Server'],
-      ['/l2craft/', 'L2 Craft']
+      ['/l2/', 'Lineage 2 — сервер'],
+      ['/l2craft/', 'Lineage 2 — крафт']
     ]) +
     footerCol('Издание', [
       ['/advertising', 'Реклама'],
