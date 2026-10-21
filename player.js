@@ -140,7 +140,7 @@
   function ensureAudio() {
     if (audio) return audio;
     audio = new Audio();
-    audio.preload = 'metadata';
+    audio.preload = 'auto';
     audio.volume = readVolume();
 
     audio.addEventListener('play', function () {
@@ -157,13 +157,24 @@
       save(true);
     });
     audio.addEventListener('timeupdate', function () {
-      state.time = audio.currentTime || 0;
+      var now = audio.currentTime || 0;
+      state.time = now;
       updateProgress();
-      if (Date.now() - lastSave > 1000) save(false);
+      if (Date.now() - lastSave > 3000) save(false);
     });
     audio.addEventListener('loadedmetadata', updateProgress);
     audio.addEventListener('durationchange', updateProgress);
-    audio.addEventListener('ended', function () { next(true); });
+    audio.addEventListener('ended', function () {
+      // Один трек в очереди — не зацикливаем его бесконечно.
+      if (state.queue.length <= 1) {
+        state.playing = false;
+        render();
+        emit();
+        save(true);
+        return;
+      }
+      next(true);
+    });
     audio.addEventListener('error', function () {
       errors += 1;
       if (errors <= 3) setTimeout(function () { next(true); }, 600);
@@ -176,7 +187,10 @@
     if (ownedByPage) return;
     lastSave = Date.now();
     if (audio && audio.src) {
-      state.time = audio.currentTime || 0;
+      var now = audio.currentTime || 0;
+      // Страховка от обнуления позиции при выгрузке страницы:
+      // если только что играли дальше, нулевой currentTime — не правда.
+      if (now > 0 || !(state.time > 2)) state.time = now;
       state.playing = !audio.paused;
     }
     state.savedAt = Date.now();
@@ -215,7 +229,6 @@
 
     var a = ensureAudio();
     a.src = item.stream;
-    try { a.currentTime = 0; } catch (e) {}
     a.play().catch(function () {
       state.playing = false;
       render();
@@ -338,11 +351,17 @@
 
     var a = ensureAudio();
     var started = false;
+    var target = Number(obj.time) || 0;
     function start() {
       if (started) return;
       started = true;
-      if (state.time > 1) {
-        try { a.currentTime = state.time; } catch (e) {}
+      var duration = isFinite(a.duration) && a.duration > 0 ? a.duration : (item.duration || 0);
+      // Не встаём у самого конца: иначе трек мгновенно «заканчивается»
+      // и на одной дорожке это выглядит как зацикливание.
+      if (duration > 6 && target > duration - 3) target = 0;
+      if (target > 1) {
+        if (duration > 6) target = Math.min(target, duration - 3);
+        try { a.currentTime = target; } catch (e) {}
       }
       if (obj.playing) {
         a.play().then(function () { state.playing = true; }).catch(function () {

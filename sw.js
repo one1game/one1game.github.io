@@ -1,4 +1,4 @@
-const CACHE = 'one1game-v63';
+const CACHE = 'one1game-v64';
 const CDN_CACHE = 'one1game-cdn-v1';
 
 const SHELL = [

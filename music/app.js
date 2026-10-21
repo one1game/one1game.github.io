@@ -125,7 +125,7 @@
 
   function sharePlayer(force) {
     if (!window.O1Player || !state.current) return;
-    if (!force && Date.now() - lastShare < 1200) return;
+    if (!force && Date.now() - lastShare < 3000) return;
     lastShare = Date.now();
     window.O1Player.sync({
       track: state.current,
@@ -158,8 +158,11 @@
     audio.src = track.stream;
     var resumeAt = Number(saved.time) || 0;
     audio.addEventListener('loadedmetadata', function once() {
+      var dur = Number.isFinite(audio.duration) && audio.duration > 0 ? audio.duration : (track.duration || 0);
+      // У самого конца не встаём — иначе трек сразу закончится.
+      if (dur > 6 && resumeAt > dur - 3) resumeAt = 0;
       if (resumeAt > 1) {
-        try { audio.currentTime = Math.min(resumeAt, (audio.duration || resumeAt) - 0.5); } catch (e) {}
+        try { audio.currentTime = Math.min(resumeAt, (dur || resumeAt) - 3); } catch (e) {}
       }
     }, { once: true });
     audio.play().catch(function () {});
