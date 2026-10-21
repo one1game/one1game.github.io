@@ -1032,7 +1032,7 @@ function headHtml(page, items) {
     '<link rel="preconnect" href="https://w.wallhaven.cc" crossorigin>\n' +
     '<link rel="preload" as="style" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css" onload="this.rel=\'stylesheet\';this.removeAttribute(\'onload\')"><noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css"></noscript>\n' +
     '<link rel="stylesheet" href="/styles.css?v=46">\n' +
-    '<link rel="stylesheet" href="/oboi/style.css?v=2">\n' +
+    '<link rel="stylesheet" href="/oboi/style.css?v=5">\n' +
     jsonLd(page, items) + '\n' +
     '</head>\n<body>\n' +
     '<a href="#main-content" class="skip-link">Перейти к содержимому</a>\n' +

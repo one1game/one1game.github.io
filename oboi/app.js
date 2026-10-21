@@ -83,7 +83,8 @@
     viewerPrev: $('#oboi-viewer-prev'),
     viewerNext: $('#oboi-viewer-next'),
     viewBtns: $$('.oboi-view-toggle button'),
-    updated: $('#oboi-updated')
+    updated: $('#oboi-updated'),
+    hero: $('#oboi-hero')
   };
 
   /* ── Storage ─────────────────────────────────────────────── */
@@ -499,6 +500,54 @@
     return page;
   }
 
+  /* ── Случайный обой фоном hero ───────────────────────────── */
+  var bgPool = [];
+  var BG_KEY = 'oboi:hero';
+
+  function buildBgPool() {
+    var seen = {};
+    var pool = [];
+
+    function add(items) {
+      (items || []).forEach(function (item) {
+        if (!item || !item.id || !item.thumb || seen[item.id]) return;
+        if (item.width && item.height && item.width < item.height) return;
+        seen[item.id] = true;
+        pool.push(item);
+      });
+    }
+
+    if (!initialData) return pool;
+    add(initialData.home);
+    var pages = initialData.pages || {};
+    Object.keys(pages).forEach(function (key) {
+      add(pages[key] && pages[key].items);
+    });
+    return pool;
+  }
+
+  function readLastBg() {
+    try { return sessionStorage.getItem(BG_KEY) || ''; } catch (e) { return ''; }
+  }
+
+  function showHeroBg() {
+    if (!el.hero || !bgPool.length) return;
+
+    var last = readLastBg();
+    var item = bgPool[Math.floor(Math.random() * bgPool.length)];
+    for (var i = 0; i < 3 && bgPool.length > 1 && item.id === last; i++) {
+      item = bgPool[Math.floor(Math.random() * bgPool.length)];
+    }
+
+    var img = new Image();
+    img.onload = function () {
+      el.hero.style.setProperty('--oboi-hero', 'url("' + item.thumb + '")');
+      el.hero.classList.add('is-bg');
+      try { sessionStorage.setItem(BG_KEY, item.id); } catch (e) {}
+    };
+    img.src = item.thumb;
+  }
+
   /* ── Загрузка ────────────────────────────────────────────── */
   function search(reset) {
     if (state.loading) {
@@ -585,6 +634,8 @@
       .then(function (res) { return res.ok ? res.json() : null; })
       .then(function (data) {
         initialData = data;
+        bgPool = buildBgPool();
+        showHeroBg();
         if (data && data.generatedAt && el.updated) {
           var updatedDate = new Date(data.generatedAt);
           if (!isNaN(updatedDate.getTime())) {
