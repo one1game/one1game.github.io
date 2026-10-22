@@ -1058,7 +1058,7 @@ function headHtml(page, items) {
     relatedHtml(page) + '\n' +
     seoHtml(page) + '\n' +
     '</div>\n</div>\n</main>\n' +
-    '<script src="/components.js?v=40" defer></script>\n' +
+    '<script src="/components.js?v=41" defer></script>\n' +
     '</body>\n</html>'
   );
 }

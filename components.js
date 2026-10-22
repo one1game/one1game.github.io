@@ -163,7 +163,8 @@
       ['/anal-code/', 'CodeFusion'],
       ['/cyber-scanner/', 'Scanner'],
       ['/l2/', 'Lineage 2 — сервер'],
-      ['/l2craft/', 'Lineage 2 — крафт']
+      ['/l2craft/', 'Lineage 2 — крафт'],
+      ['/l2craft/guides/life-stone/', 'Lineage 2 — гайд по ЛС']
     ]);
 
   var nav =
@@ -253,6 +254,7 @@
     '    <a href="/cyber-scanner/" class="sheet-link' + active(isScanner) + '"><i class="fas ' + I.scanner + '" aria-hidden="true"></i> Scanner</a>' +
     '    <a href="/l2/" class="sheet-link' + active(isL2) + '"><i class="fas ' + I.server + '" aria-hidden="true"></i> Lineage 2 — сервер</a>' +
     '    <a href="/l2craft/" class="sheet-link"><i class="fas fa-hammer" aria-hidden="true"></i> Lineage 2 — крафт</a>' +
+    '    <a href="/l2craft/guides/life-stone/" class="sheet-link"><i class="fas fa-gem" aria-hidden="true"></i> Lineage 2 — гайд по ЛС</a>' +
     '  </div>' +
     '  <p class="sheet-title">Издание</p>' +
     '  <div class="sheet-links">' +
@@ -333,7 +335,8 @@
       ['/anal-code/', 'CodeFusion'],
       ['/cyber-scanner/', 'Scanner'],
       ['/l2/', 'Lineage 2 — сервер'],
-      ['/l2craft/', 'Lineage 2 — крафт']
+      ['/l2craft/', 'Lineage 2 — крафт'],
+      ['/l2craft/guides/life-stone/', 'Гайд по ЛС']
     ]) +
     footerCol('Издание', [
       ['/advertising', 'Реклама'],

@@ -373,7 +373,7 @@ def build_hub(category, slug, items):
 </main>
 <script src="/cache-version.js"></script>
 <script>{FILTER_JS}</script>
-<script src="/components.js?v=40" defer></script>
+<script src="/components.js?v=41" defer></script>
 </body>
 </html>
 """

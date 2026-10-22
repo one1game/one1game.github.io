@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Гайд по ЛС (Life Stone) в Lineage 2 Interlude — шансы, капы, аугментация</title>
+<meta name="description" content="Точные шансы ЛС в Interlude: Normal 1–2%, Mid ~5%, High 10–12%, Top 15% (+4% к стату). Что стакается, кап крита 500, рефлект и тайминг на Олимпиаде. Симулятор аугментации.">
+<meta name="keywords" content="лс lineage 2 interlude, life stone interlude, шанс лс интерлюд, аугментация лс, какие лс стакаются, кап крита интерлюд, рефлект лс, лс на олимпиаде, топ лс или хай лс">
+<meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+<link rel="canonical" href="https://one1game.org/l2craft/guides/life-stone/">
+<link rel="alternate" hreflang="ru" href="https://one1game.org/l2craft/guides/life-stone/">
+<link rel="alternate" hreflang="x-default" href="https://one1game.org/l2craft/guides/life-stone/">
+<meta property="og:locale" content="ru_RU">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="One1Game">
+<meta property="og:title" content="Гайд по ЛС (Life Stone) в Lineage 2 Interlude — шансы, капы, аугментация">
+<meta property="og:description" content="Шансы ЛС по грейдам, стакание Might и Wild Magic, кап крита 500, рефлект и пенальти на Олимпиаде. С интерактивным симулятором аугментации.">
+<meta property="og:url" content="https://one1game.org/l2craft/guides/life-stone/">
+<meta property="og:image" content="https://one1game.org/l2craft/og-craft.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Гайд по Life Stone в Lineage 2 Interlude">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Гайд по ЛС в Lineage 2 Interlude — шансы, капы, аугментация">
+<meta name="twitter:description" content="Normal 1–2%, Mid ~5%, High 10–12%, Top 15%. Что стакается, кап крита 500, рефлект и тайминг на Олимпе.">
+<meta name="twitter:image" content="https://one1game.org/l2craft/og-craft.png">
+<meta name="theme-color" content="#04060a">
+<link rel="icon" type="image/png" href="../../icons/weapon_heavens_divider_i00.png">
+<link rel="stylesheet" href="../../style.css?v=2">
+<link rel="stylesheet" href="style.css?v=2">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"Article","headline":"Гайд по ЛС (Life Stone) в Lineage 2 Interlude: точные шансы, капы и математика аугментации","description":"Шансы выпадения скиллов из ЛС по грейдам, правила стакания, капы физ. и маг. крита, рефлект и пенальти на Олимпиаде. С интерактивным симулятором аугментации.","url":"https://one1game.org/l2craft/guides/life-stone/","inLanguage":"ru-RU","datePublished":"2026-10-21","dateModified":"2026-10-21","author":{"@type":"Organization","name":"One1Game","url":"https://one1game.org/"},"publisher":{"@type":"Organization","name":"One1Game","url":"https://one1game.org/"},"articleSection":"Гайды","keywords":"лс lineage 2 interlude, life stone, аугментация, шансы лс, кап крита, рефлект, олимпиада"}
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Главная","item":"https://one1game.org/"},{"@type":"ListItem","position":2,"name":"L2 Craft","item":"https://one1game.org/l2craft/"},{"@type":"ListItem","position":3,"name":"Гайды","item":"https://one1game.org/l2craft/guides/"},{"@type":"ListItem","position":4,"name":"Гайд по ЛС (Life Stone)","item":"https://one1game.org/l2craft/guides/life-stone/"}]}
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
+{"@type":"Question","name":"Какие скиллы можно поймать из ЛС в Interlude?","acceptedAnswer":{"@type":"Answer","text":"Might, Focus, Wild Magic, Duel Might, Celestial Shield, Heal, Refresh, Reflect Damage, Shield, Magic Barrier, Clarity, Agility, Evasion, Empower и Nuke — в активном или пассивном варианте. Точный пул зависит от типа оружия и сборки сервера."}},
+{"@type":"Question","name":"Какой шанс поймать активный скилл из Топ ЛС в Interlude?","acceptedAnswer":{"@type":"Answer","text":"Около 15% на скилл плюс отдельные 4% на бонус +1 к базовому стату. У High-Grade шанс 10–12%, у Mid-Grade около 5%, у обычного ЛС 1–2%."}},
+{"@type":"Question","name":"Стакаются ли пассивный и активный Might из ЛС?","acceptedAnswer":{"@type":"Answer","text":"Да. Пассивный и активный Might имеют разные системные идентификаторы, поэтому складываются мультипликативно: 1,05 × 1,10 = 1,155, то есть +15,5% к P. Atk. Бафф Might Lv 3 от ПП тоже стакается с ними."}},
+{"@type":"Question","name":"Какой кап шанса физического крита в Interlude?","acceptedAnswer":{"@type":"Answer","text":"500 единиц, то есть 50%. Если под баффом у вас уже 500, пассивный или активный Item Skill: Focus не даст ничего — прибавка уйдёт в перекап."}},
+{"@type":"Question","name":"Что отражает Reflect Damage из ЛС?","acceptedAnswer":{"@type":"Answer","text":"Только физическую автоатаку с руки. Скиллы дагеров (Backstab, Deadly Blow), абилки воинов, магия и выстрелы из луков не отражаются — против них рефлект бесполезен."}},
+{"@type":"Question","name":"Почему скилл из ЛС не работает на Олимпиаде?","acceptedAnswer":{"@type":"Answer","text":"При надевании оружия с активным ЛСом срабатывает Reuse Penalty — задержка 15–30 секунд в зависимости от сборки. Надевайте пуху с ЛСом сразу на арене, баффайтесь, а скилл прожимайте к началу боя."}},
+{"@type":"Question","name":"Что выгоднее покупать: Top-Grade или High-Grade ЛС?","acceptedAnswer":{"@type":"Answer","text":"Для скиллов — High-Grade. Top стоит в 4–5 раз дороже, а шанс выше всего на 3–5 процентных пункта: на те же деньги High даёт в 2,5–3 раза больше скиллов. Top оправдан только для ролла +1 STR или +1 INT."}}
+]}
+</script>
+<script defer src="/player.js?v=3"></script>
+</head>
+<body class="seo-page">
+<div class="bg-glow" aria-hidden="true"></div>
+<div class="noise" aria-hidden="true"></div>
+<header class="topbar seo-topbar">
+  <a class="brand" href="https://one1game.org/" title="На главную One1Game">
+    <span class="brand-mark" aria-hidden="true"></span>
+    <span class="brand-text">one1game<span>.org</span></span>
+  </a>
+  <div class="seo-topbar-note">Lineage II · Interlude · Life Stone</div>
+  <div class="top-stats" aria-label="Ключевые цифры">
+    <div><strong>4</strong><span>грейда ЛС</span></div>
+    <div><strong>500</strong><span>кап крита</span></div>
+    <div><strong>15–30 с</strong><span>пенальти на Оли</span></div>
+  </div>
+</header>
+<nav class="topnav" aria-label="Навигация">
+  <a href="https://one1game.org/">Главная</a>
+  <a href="/l2craft/">L2 Craft</a>
+  <a href="/l2craft/craft/">Крафт</a>
+  <a href="/l2craft/enchant/">Заточка</a>
+  <a href="/l2craft/guides/">Гайды</a>
+  <a href="/l2craft/guides/life-stone/" aria-current="page">ЛС</a>
+  <a href="/l2craft/craft/stats/">Статистика</a>
+  <a href="/l2craft/api/">API</a>
+</nav>
+<main class="seo-wrap">
+<nav class="breadcrumbs" aria-label="Хлебные крошки"><a href="/">Главная</a><span aria-hidden="true">›</span><a href="/l2craft/">L2 Craft</a><span aria-hidden="true">›</span><a href="/l2craft/guides/">Гайды</a><span aria-hidden="true">›</span><span aria-current="page">Гайд по ЛС (Life Stone)</span></nav>
+
+<article class="sheet seo-sheet">
+  <header class="result-head">
+    <div class="result-info">
+      <div class="result-kicker"><span>Lineage II</span><span>Interlude</span><span>Гайд</span></div>
+      <h1>Гайд по ЛС (Life Stone) в Lineage 2 Interlude: точные шансы, капы и математика аугментации</h1>
+      <div class="recipe-name">Обновлено 21.10.2026 · PTS и Java-сборки (Scryde, Asterios, Ketra)</div>
+    </div>
+  </header>
+
+  <section class="panel">
+    <p class="ls-lead">Большинство старых гайдов про вставку ЛС на форумах либо устарели, либо путают грейды камней. Ниже — сухие цифры: шансы по грейдам, что реально стакается, где стоят капы и почему ЛС не срабатывает на Олимпиаде. Всё, что можно посчитать, — считается прямо на странице.</p>
+
+    <div class="ls-answer">
+      <strong>Коротко.</strong> Top-Grade даёт 15% на скилл и 4% на +1 к стату, High-Grade — 10–12%, Mid — около 5%, обычный — 1–2%. Пассивный и активный Might стакаются (1,05 × 1,10 = +15,5%). Физ. крит упирается в 500, маг. — в 200. Reflect работает только по автоатаке. На Олимпе активный ЛС получает Reuse Penalty 15–30 секунд.
+    </div>
+
+    <nav class="ls-toc" aria-label="Содержание">
+      <p>Содержание</p>
+      <ol>
+        <li><a href="#shansy">Шансы выпадения скиллов по грейдам</a></li>
+        <li><a href="#simulator">Симулятор аугментации</a></li>
+        <li><a href="#skilly">Скиллы ЛС: что дают и кому</a></li>
+        <li><a href="#ekonomika">Экономика: Top против High</a></li>
+        <li><a href="#stak">Что стакается, а что нет</a></li>
+        <li><a href="#kapy">Капы крита и бесполезные ЛСы</a></li>
+        <li><a href="#reflect">Reflect Damage: что он не отражает</a></li>
+        <li><a href="#olimp">Тайминги ЛС на Олимпиаде</a></li>
+        <li><a href="#shpargalka">Шпаргалка по классам</a></li>
+        <li><a href="#faq">Частые вопросы</a></li>
+      </ol>
+    </nav>
+
+    <h2 id="shansy">1. Шансы выпадения скиллов из ЛС</h2>
+    <p>Шанс зависит только от грейда камня. Все цифры ниже — на одну вставку у кузнеца; каждая попытка независима, «накопленной удачи» не существует.</p>
+    <div class="table-wrap">
+      <table class="res-table">
+        <thead>
+          <tr><th>Грейд ЛС</th><th>Шанс скилла</th><th>Бонус к стату</th><th>Когда брать</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Normal</td><td>1–2%</td><td class="dim">—</td><td class="dim">Почти всегда пустая трата адены</td></tr>
+          <tr><td>Mid-Grade</td><td>~5%</td><td class="dim">—</td><td class="dim">Дешёвый массовый ролл на старте</td></tr>
+          <tr><td>High-Grade</td><td>10–12%</td><td class="dim">—</td><td>Основной выбор для скиллов и баффов</td></tr>
+          <tr><td>Top-Grade</td><td>15%</td><td class="gold">+4% на +1 STR / INT / CON / MEN</td><td>Только ради статов, не ради скиллов</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="ls-note">На Java-сборках шансы могут отличаться от PTS: админ может менять конфиг. Проверяйте свой сервер, но порядок цифр остается тем же.</p>
+
+    <h2 id="simulator">2. Симулятор аугментации</h2>
+    <p>Выберите пуху и грейд камня — и вставляйте. Счётчик считает расход адены и среднюю цену пойманного скилла. Один камень может дать скилл, на Top-Grade — ещё и +1 к стату; в остальных случаях камень сгорает.</p>
+
+    <div class="ls-sim" id="ls-sim">
+      <div class="ls-sim__col">
+        <label class="ls-label" for="ls-weapon">Оружие</label>
+        <select id="ls-weapon" class="ls-select"></select>
+        <div class="ls-weapon" id="ls-weapon-card">
+          <div class="ls-weapon__icon"><img id="ls-weapon-icon" src="../../icons/weapon_heavens_divider_i00.png" alt="" width="48" height="48"></div>
+          <div class="ls-weapon__meta">
+            <b id="ls-weapon-name">Heaven's Divider</b>
+            <span id="ls-weapon-type">S · двуручный меч</span>
+            <span class="ls-weapon__best" id="ls-weapon-best">Цель: Might / Celestial Shield</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="ls-sim__col">
+        <span class="ls-label">Грейд ЛС</span>
+        <div class="ls-grades" role="radiogroup" aria-label="Грейд Life Stone">
+          <button type="button" class="ls-grade" data-grade="normal" role="radio" aria-checked="false"><b>Normal</b><span>1–2%</span></button>
+          <button type="button" class="ls-grade" data-grade="mid" role="radio" aria-checked="false"><b>Mid</b><span>~5%</span></button>
+          <button type="button" class="ls-grade is-active" data-grade="high" role="radio" aria-checked="true"><b>High</b><span>10–12%</span></button>
+          <button type="button" class="ls-grade" data-grade="top" role="radio" aria-checked="false"><b>Top</b><span>15% + 4%</span></button>
+        </div>
+
+        <div class="ls-price-row">
+          <label class="ls-label" for="ls-price">Цена камня, аден</label>
+          <input id="ls-price" class="ls-input" type="number" min="0" step="100000" value="3000000" inputmode="numeric">
+        </div>
+
+        <div class="ls-actions">
+          <button type="button" class="ls-btn ls-btn--main" id="ls-roll">Вставить ЛС</button>
+          <button type="button" class="ls-btn" id="ls-roll10">×10</button>
+          <button type="button" class="ls-btn" id="ls-roll100">×100</button>
+          <button type="button" class="ls-btn ls-btn--ghost" id="ls-reset">Сброс</button>
+        </div>
+
+        <div class="ls-result" id="ls-result" aria-live="polite">
+          <span class="ls-result__badge">Готово</span>
+          <div class="ls-result__body"><b>Выберите камень</b><span>Результат вставки появится здесь.</span></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="ls-stats" id="ls-stats">
+      <div><strong id="ls-stat-stones">0</strong><span>камней вставлено</span></div>
+      <div><strong id="ls-stat-skills">0</strong><span>скиллов поймано</span></div>
+      <div><strong id="ls-stat-bonus">0</strong><span>бонусов к стату</span></div>
+      <div><strong id="ls-stat-spent">0</strong><span>потрачено аден</span></div>
+      <div><strong id="ls-stat-avg">—</strong><span>средняя цена скилла</span></div>
+    </div>
+
+    <ul class="ls-log" id="ls-log" aria-live="polite"></ul>
+
+    <h2 id="skilly">3. Скиллы ЛС: что дают и кому нужны</h2>
+    <p>Пул зависит от типа оружия и сборки сервера, но эффекты одинаковые. Вот что реально стоит ловить — и где у каждого подвох.</p>
+    <div class="table-wrap">
+      <table class="res-table ls-skills">
+        <thead>
+          <tr><th>Скилл</th><th>Что даёт</th><th>Кому</th><th>Подвох</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Might <span class="dim">пассивный</span></td><td>+5% P. Atk</td><td>физ. классам</td><td class="dim">С активным Might стакается: ×1,155</td></tr>
+          <tr><td>Might <span class="dim">активный</span></td><td>+10% P. Atk</td><td>дестрам, тирам, дагерам</td><td class="dim">Отдельный ID: бафф Might Lv 3 его не заменяет</td></tr>
+          <tr><td>Focus <span class="dim">пасс./актив.</span></td><td>шанс физ. крита</td><td>дагерам, дестрам, тирам</td><td class="dim">При 500 крита даёт 0</td></tr>
+          <tr><td>Wild Magic <span class="dim">пасс./актив.</span></td><td>шанс маг. крита</td><td>магам</td><td class="dim">Кап маг. крита — 200 (20%)</td></tr>
+          <tr><td>Duel Might <span class="dim">активный</span></td><td>+P. Atk в PvP</td><td>дагерам, оли-фармерам</td><td class="dim">В PvE не работает</td></tr>
+          <tr><td>Celestial Shield <span class="dim">активный</span></td><td>кратковременная неуязвимость</td><td>всем на Олимпе</td><td class="dim">Нужен запас на Reuse Penalty</td></tr>
+          <tr><td>Heal <span class="dim">активный</span></td><td>восстановление HP</td><td>ЕЕ / ШЕ / бишу</td><td class="dim">Лечит, но не снимает дебаффы</td></tr>
+          <tr><td>Refresh <span class="dim">активный</span></td><td>сокращает откат умений</td><td>магам, оли-фармерам</td><td class="dim">Прожимать до гонга</td></tr>
+          <tr><td>Reflect Damage <span class="dim">пасс./актив.</span></td><td>возвращает часть урона</td><td>дестрам, тирам</td><td class="dim">Только автоатака с руки</td></tr>
+          <tr><td>Shield <span class="dim">активный</span></td><td>+P. Def</td><td>танкам, оли-фармерам</td><td class="dim">От магии не спасает</td></tr>
+          <tr><td>Magic Barrier <span class="dim">пассивный</span></td><td>+M. Def</td><td>всем на Олимпе</td><td class="dim">Только маг. защита</td></tr>
+          <tr><td>Clarity <span class="dim">пассивный</span></td><td>меньше расход MP</td><td>магам, оли-фармерам</td><td class="dim">Экономия, а не сила</td></tr>
+          <tr><td>Agility <span class="dim">пассивный</span></td><td>скорость атаки и темп</td><td>дагерам</td><td class="dim">Не заменяет бафф скорости</td></tr>
+          <tr><td>Evasion <span class="dim">пассивный</span></td><td>+уклонение</td><td>дагерам</td><td class="dim">Против магии не помогает</td></tr>
+          <tr><td>Empower <span class="dim">пассивный</span></td><td>+M. Atk</td><td>магам</td><td class="dim">Не путать с Nuke</td></tr>
+          <tr><td>Nuke <span class="dim">активный</span></td><td>магический удар стихией</td><td>магам</td><td class="dim">Ловить только свою стихию</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="ls-note">Точный пул и проценты зависят от типа оружия и конфига сервера — на Java-сборках админ может их менять. Порядок вещей от этого не меняется.</p>
+
+    <h2 id="ekonomika">4. Экономика: что выгоднее покупать</h2>
+    <p>Top-76 обычно стоит в 4–5 раз дороже High-76, но шанс поймать нужный активный навык выше всего на 3–5 процентных пунктов. Посчитайте на своих ценах:</p>
+
+    <div class="ls-calc">
+      <div class="ls-calc__inputs">
+        <label>Цена Top LS<input id="ls-price-top" class="ls-input" type="number" min="1" step="100000" value="15000000"></label>
+        <label>Цена High LS<input id="ls-price-high" class="ls-input" type="number" min="1" step="100000" value="3000000"></label>
+        <label>Бюджет<input id="ls-budget" class="ls-input" type="number" min="0" step="1000000" value="1500000000"></label>
+      </div>
+      <div class="ls-compare" id="ls-compare">
+        <div class="ls-compare__row">
+          <div class="ls-compare__head"><b>High-Grade</b><span id="ls-high-count">—</span></div>
+          <div class="ls-bar"><i id="ls-high-bar" style="width:0%"></i></div>
+          <p id="ls-high-out">—</p>
+        </div>
+        <div class="ls-compare__row">
+          <div class="ls-compare__head"><b>Top-Grade</b><span id="ls-top-count">—</span></div>
+          <div class="ls-bar"><i id="ls-top-bar" class="is-top" style="width:0%"></i></div>
+          <p id="ls-top-out">—</p>
+        </div>
+      </div>
+      <p class="ls-verdict" id="ls-verdict">—</p>
+    </div>
+
+    <h2 id="stak">5. Какие ЛС стакаются</h2>
+    <p>В движке каждый эффект живёт под своим Abnormal Type. Если идентификаторы разные — эффекты складываются, если одинаковые — сильнейший заменяет слабый.</p>
+    <ul class="ls-list">
+      <li><b>Пассивный Might + активный Might</b> — стакаются. Считаются мультипликативно: 1,05 × 1,10 = 1,155, итого +15,5% к P. Atk.</li>
+      <li><b>Might из ЛС + бафф Might Lv 3 (ПП/Профет)</b> — стакаются: разные системные ID, бафф не вытесняет ЛС.</li>
+      <li><b>Пассивный Wild Magic + активный Wild Magic</b> — стакаются, разгоняя шанс маг. крита.</li>
+    </ul>
+
+    <div class="ls-stack">
+      <p class="ls-label">Соберите набор</p>
+      <label class="ls-check"><input type="checkbox" id="ls-stk-passive" checked> Пассивный Might <span>+5% P. Atk</span></label>
+      <label class="ls-check"><input type="checkbox" id="ls-stk-active" checked> Активный Might <span>+10% P. Atk</span></label>
+      <label class="ls-check"><input type="checkbox" id="ls-stk-buff"> Бафф Might Lv 3 <span>+15% P. Atk</span></label>
+      <div class="ls-stack__out">
+        <strong id="ls-stack-mult">×1,000</strong>
+        <span id="ls-stack-formula">1,00 → +0%</span>
+      </div>
+    </div>
+
+    <h2 id="kapy">6. Жёсткие капы и бесполезные ЛСы</h2>
+    <p>Статы упираются в ограничения клиента. Всё, что выше капа, уходит в «молоко» — адена потрачена зря.</p>
+
+    <div class="ls-cap">
+      <div class="ls-cap__row">
+        <div class="ls-cap__head"><b>Physical Critical Rate</b><span>кап 500 = 50%</span></div>
+        <input id="ls-crit-phys" class="ls-range" type="range" min="0" max="600" step="5" value="400" aria-label="Текущий шанс физического крита">
+        <div class="ls-cap__meta"><span>Сейчас: <b id="ls-crit-phys-val">400</b></span><span id="ls-crit-phys-note">до капа 100</span></div>
+      </div>
+      <div class="ls-cap__row">
+        <div class="ls-cap__head"><b>Magic Critical Rate</b><span>база 200 = 20%</span></div>
+        <input id="ls-crit-magic" class="ls-range" type="range" min="0" max="260" step="5" value="150" aria-label="Текущий шанс магического крита">
+        <div class="ls-cap__meta"><span>Сейчас: <b id="ls-crit-magic-val">150</b></span><span id="ls-crit-magic-note">до капа 50</span></div>
+      </div>
+      <p class="ls-verdict" id="ls-crit-verdict">Если физ. крит уже 500 — Item Skill: Focus не даст ничего.</p>
+    </div>
+
+    <p>Отдельно про <b>Item Skill: Focus</b>: при капе 500 он бесполезен и для дагеров, и для дестра, и для тира. Сначала проверьте крит под полным баффом (Dance of Fire, Eye of Hunter, Focus), потом покупайте камень.</p>
+
+    <h2 id="reflect">7. Reflect Damage: что он не отражает</h2>
+    <p>ЛС Reflect — и активный, и пассивный — возвращает урон только от <b>физической автоатаки с руки</b>.</p>
+    <div class="table-wrap">
+      <table class="res-table">
+        <thead><tr><th>Источник урона</th><th>Отражается</th><th>Комментарий</th></tr></thead>
+        <tbody>
+          <tr><td>Автоатака мечом, дубиной, копьём</td><td class="gold">Да</td><td>Основной сценарий рефлекта</td></tr>
+          <tr><td>Backstab, Deadly Blow, абилки дагеров</td><td class="dim">Нет</td><td>Против дагеров рефлект не работает</td></tr>
+          <tr><td>Triple Slash, Sonic Buster и другие скиллы воинов</td><td class="dim">Нет</td><td>Скиллы игнорируют рефлект</td></tr>
+          <tr><td>Магия</td><td class="dim">Нет</td><td>Против магов бесполезен</td></tr>
+          <tr><td>Выстрелы из лука</td><td class="dim">Нет</td><td>Лучник не получит возврат</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h2 id="olimp">8. Тайминги ЛС на Олимпиаде</h2>
+    <p>При надевании оружия с активным ЛСом срабатывает Reuse Penalty — откат 15–30 секунд в зависимости от сборки. Именно поэтому «ЛС не работает»: скилл ещё на кулдауне.</p>
+    <ol class="ls-timeline">
+      <li><b>Выход на арену.</b> Сразу надеваете пуху с активным ЛСом — запускается таймер пенальти.</li>
+      <li><b>Бафф.</b> Пока идёт откат, бафаете Health, Blessed Body и остальное.</li>
+      <li><b>15–20-я секунда.</b> Прожимаете скилл ЛСа до начала боя.</li>
+      <li><b>Смена оружия.</b> Переключаетесь на боевую пуху и выходите на гонг.</li>
+    </ol>
+    <p class="ls-note">Смена пухи за 3 секунды до гонга — худший вариант: пенальти только стартует, и скилл не успеет откатиться.</p>
+
+    <h2 id="shpargalka">9. Шпаргалка по классам</h2>
+    <div class="table-wrap">
+      <table class="res-table">
+        <thead><tr><th>Класс</th><th>Лучший активный ЛС</th><th>Лучший пассивный ЛС</th><th>Частая ошибка</th></tr></thead>
+        <tbody>
+          <tr><td>Destroyer / Tyrant</td><td>Might / Celestial Shield</td><td>Might / Reflect</td><td class="dim">Ловить Focus при капе 500</td></tr>
+          <tr><td>TH / AW / PW (дагеры)</td><td>Duel Might / Refresh</td><td>Agility / Evasion</td><td class="dim">Покупать Top LS ради скиллов</td></tr>
+          <tr><td>SpS / Necr / Sorc / SH</td><td>Wild Magic / Nuke</td><td>Empower / Wild Magic</td><td class="dim">Nuke не своей стихии</td></tr>
+          <tr><td>Оли-фармеры (EE/SE/Bishop)</td><td>Heal / Celestial / Refresh</td><td>Clarity / Magic Barrier</td><td class="dim">Смена пухи за 3 с до гонга</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h2 id="faq">10. Частые вопросы</h2>
+    <div class="ls-faq">
+      <details>
+        <summary>Какие скиллы можно поймать из ЛС?</summary>
+        <p>Might, Focus, Wild Magic, Duel Might, Celestial Shield, Heal, Refresh, Reflect Damage, Shield, Magic Barrier, Clarity, Agility, Evasion, Empower и Nuke — в активном или пассивном варианте. Точный пул зависит от типа оружия и сборки сервера.</p>
+      </details>
+      <details>
+        <summary>Какой шанс поймать активный скилл из Топ ЛС?</summary>
+        <p>15% на скилл и отдельные 4% на +1 к базовому стату (STR, INT, CON, MEN). У High-Grade — 10–12%, у Mid — около 5%, у обычного ЛСа — 1–2%.</p>
+      </details>
+      <details>
+        <summary>Стакаются ли пассивный и активный Might?</summary>
+        <p>Да. Это разные Abnormal Type, поэтому бонусы перемножаются: 1,05 × 1,10 = 1,155, то есть +15,5% к P. Atk. Бафф Might Lv 3 от ПП тоже стакается с ними.</p>
+      </details>
+      <details>
+        <summary>Какой кап физ. и маг. крита в Interlude?</summary>
+        <p>Физический — 500 единиц (50%). Магический на классическом клиенте — 200 единиц (20%). Всё выше капа не даёт прибавки.</p>
+      </details>
+      <details>
+        <summary>Что отражает Reflect Damage из ЛСа?</summary>
+        <p>Только физическую автоатаку с руки. Скиллы, магия и выстрелы из луков не отражаются.</p>
+      </details>
+      <details>
+        <summary>Почему ЛС-скилл не работает на Олимпиаде?</summary>
+        <p>Из-за Reuse Penalty при надевании оружия: откат 15–30 секунд. Наденьте пуху сразу на арене, чтобы таймер стартовал во время баффа.</p>
+      </details>
+      <details>
+        <summary>Top или High: что брать?</summary>
+        <p>Для скиллов — High: на те же деньги получается в 2,5–3 раза больше попыток и скиллов. Top нужен только для ролла +1 STR / INT / CON / MEN.</p>
+      </details>
+    </div>
+
+    <div class="seo-link-grid">
+      <a href="/l2craft/">Калькулятор крафта и заточки <small>179 рецептов, шансы 60/70/25%, заточка +3…+16</small></a>
+      <a href="/l2craft/guides/">Все гайды L2 <small>Крафт, заточка, Titan's Powerstone</small></a>
+      <a href="/l2craft/enchant/">Шансы заточки <small>Таблица по уровням и типам предметов</small></a>
+      <a href="/l2/">Сервер Lineage 2 x3 <small>DUO PLAY — играть на нашем сервере</small></a>
+    </div>
+  </section>
+
+  <div class="seo-cta"><a class="craft-btn" href="/l2craft/">Открыть калькулятор L2 Craft</a></div>
+</article>
+</main>
+
+<footer class="footer">
+  <div>
+    <strong>Кузница шанса</strong> — фанатский разбор механик Lineage 2 Interlude.
+    <div class="footer-links">
+      <a href="/l2craft/">Симулятор</a>
+      <a href="/l2craft/craft/">Все рецепты</a>
+      <a href="/l2craft/enchant/">Заточка</a>
+      <a href="/l2craft/guides/">Гайды</a>
+      <a href="/l2craft/guides/life-stone/">Life Stone</a>
+      <a href="/l2craft/api/">JSON API</a>
+      <a href="https://one1game.org/">One1Game</a>
+    </div>
+  </div>
+  <div class="footer-meta">
+    <span>ЛС: PTS / Java Interlude</span>
+    <span>Шансы: High 10–12%, Top 15%</span>
+    <span>Обновлено 2026-10-21</span>
+  </div>
+</footer>
+
+<script defer src="app.js?v=1"></script>
+</body>
+</html>

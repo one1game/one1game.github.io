@@ -396,7 +396,7 @@
 window.addEventListener('scroll',()=>{const y=document.documentElement.scrollTop||document.body.scrollTop,h=document.documentElement.scrollHeight-document.documentElement.clientHeight;document.getElementById('reading-progress').style.width=(y/h*100)+'%';document.getElementById('back-to-top').classList.toggle('visible',y>500)});
 (function(){const currentUrl=window.location.pathname.replace(/^\/+/,'/'),all=window.allArticles||[],article=all.find(a=>a.url===currentUrl),url=encodeURIComponent('https://one1game.org'+currentUrl),title=encodeURIComponent(document.title);document.getElementById('share-buttons').innerHTML=['<a target="_blank" rel="nofollow noopener noreferrer" class="share-btn" href="https://vk.com/share.php?url='+url+'&title='+title+'">VK</a>','<a target="_blank" rel="nofollow noopener noreferrer" class="share-btn" href="https://t.me/share/url?url='+url+'&text='+title+'">Telegram</a>','<a target="_blank" rel="nofollow noopener noreferrer" class="share-btn" href="https://x.com/intent/tweet?url='+url+'&text='+title+'">X (Twitter)</a>'].join('');const related=all.filter(a=>a.url!==currentUrl&&(a.category==='Кино и игры'||a.category==='Аналитика')).slice(0,5);document.getElementById('related-container').innerHTML=(related.length?related:all.filter(a=>a.url!==currentUrl).slice(0,5)).map(a=>'<a href="'+a.url+'" class="related-card"><strong>'+a.title+'</strong><span>'+a.date+'</span></a>').join('')})();
 </script>
-<script src="/components.js?v=40" defer></script>
+<script src="/components.js?v=41" defer></script>
 <script src="/reactions.js" defer></script>
 </body>
 </html>

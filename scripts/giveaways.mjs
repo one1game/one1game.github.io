@@ -116,7 +116,7 @@ ${cardsHtml}
   </div>
 </div>
 </main>
-<script src="/components.js?v=40" defer></script>
+<script src="/components.js?v=41" defer></script>
 </body>
 </html>
 `;
