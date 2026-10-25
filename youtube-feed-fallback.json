@@ -2,6 +2,12 @@
   "ok": true,
   "items": [
     {
+      "videoId": "GXYLjjyP9Xc",
+      "title": "Настоящий хардкор! Lineage 2 Interlude",
+      "publishedAt": "2026-10-25T05:00:38+00:00",
+      "thumbnail": "https://i4.ytimg.com/vi/GXYLjjyP9Xc/hqdefault.jpg"
+    },
+    {
       "videoId": "mXX0Fcb9Cow",
       "title": "Lineage 2 Так играют на Interlude!",
       "publishedAt": "2026-10-24T08:20:54+00:00",
@@ -30,12 +36,6 @@
       "title": "МУХА-НЕЙРОСЕТЬ ИГРАЕТ САМА 5 ЧАСОВ ПОДРЯД · FLY BRAIN SIMULATION 🧠",
       "publishedAt": "2026-10-17T16:29:53+00:00",
       "thumbnail": "https://i3.ytimg.com/vi/BFESJMIkKwE/hqdefault.jpg"
-    },
-    {
-      "videoId": "ksnMG4Poe80",
-      "title": "игра lineage 2, сервер флаурон",
-      "publishedAt": "2026-09-28T05:47:20+00:00",
-      "thumbnail": "https://i4.ytimg.com/vi/ksnMG4Poe80/hqdefault.jpg"
     }
   ]
 }
