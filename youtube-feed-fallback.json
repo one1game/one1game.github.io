@@ -2,8 +2,20 @@
   "ok": true,
   "items": [
     {
+      "videoId": "dtWvmRDquxI",
+      "title": "пошел экшен #rdr2 #reddeadredemption2",
+      "publishedAt": "2026-10-26T15:14:23+00:00",
+      "thumbnail": "https://i1.ytimg.com/vi/dtWvmRDquxI/hqdefault.jpg"
+    },
+    {
+      "videoId": "W8lLx0zmk_w",
+      "title": "Эту деталь в Red Dead Redemption 2 заметил 1% игроков",
+      "publishedAt": "2026-10-26T15:00:09+00:00",
+      "thumbnail": "https://i4.ytimg.com/vi/W8lLx0zmk_w/hqdefault.jpg"
+    },
+    {
       "videoId": "PalXOxuW5_4",
-      "title": "33 минут",
+      "title": "33 минуты",
       "publishedAt": "2026-10-26T08:09:37+00:00",
       "thumbnail": "https://i1.ytimg.com/vi/PalXOxuW5_4/hqdefault.jpg"
     },
@@ -24,18 +36,6 @@
       "title": "бобик",
       "publishedAt": "2026-10-25T16:54:18+00:00",
       "thumbnail": "https://i1.ytimg.com/vi/pCk3IBuTwRU/hqdefault.jpg"
-    },
-    {
-      "videoId": "GXYLjjyP9Xc",
-      "title": "Настоящий хардкор! Lineage 2 Interlude | Соло Фарм и Прокачка",
-      "publishedAt": "2026-10-25T05:00:38+00:00",
-      "thumbnail": "https://i4.ytimg.com/vi/GXYLjjyP9Xc/hqdefault.jpg"
-    },
-    {
-      "videoId": "mXX0Fcb9Cow",
-      "title": "Так играют на Interlude! | Lineage 2 Interlude (L2 C6) 2026",
-      "publishedAt": "2026-10-24T08:20:54+00:00",
-      "thumbnail": "https://i2.ytimg.com/vi/mXX0Fcb9Cow/hqdefault.jpg"
     }
   ]
 }
