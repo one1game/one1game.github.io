@@ -2,6 +2,12 @@
   "ok": true,
   "items": [
     {
+      "videoId": "PalXOxuW5_4",
+      "title": "33 минут",
+      "publishedAt": "2026-10-26T08:09:37+00:00",
+      "thumbnail": "https://i1.ytimg.com/vi/PalXOxuW5_4/hqdefault.jpg"
+    },
+    {
       "videoId": "OZ5wvAHe6Sg",
       "title": "тупо",
       "publishedAt": "2026-10-25T20:25:08+00:00",
@@ -21,21 +27,15 @@
     },
     {
       "videoId": "GXYLjjyP9Xc",
-      "title": "Настоящий хардкор! Lineage 2 Interlude",
+      "title": "Настоящий хардкор! Lineage 2 Interlude | Соло Фарм и Прокачка",
       "publishedAt": "2026-10-25T05:00:38+00:00",
       "thumbnail": "https://i4.ytimg.com/vi/GXYLjjyP9Xc/hqdefault.jpg"
     },
     {
       "videoId": "mXX0Fcb9Cow",
-      "title": "Lineage 2 Так играют на Interlude!",
+      "title": "Так играют на Interlude! | Lineage 2 Interlude (L2 C6) 2026",
       "publishedAt": "2026-10-24T08:20:54+00:00",
       "thumbnail": "https://i2.ytimg.com/vi/mXX0Fcb9Cow/hqdefault.jpg"
-    },
-    {
-      "videoId": "T88e4G4_Mpk",
-      "title": "GTA San Andreas killer",
-      "publishedAt": "2026-10-22T11:32:14+00:00",
-      "thumbnail": "https://i1.ytimg.com/vi/T88e4G4_Mpk/hqdefault.jpg"
     }
   ]
 }
