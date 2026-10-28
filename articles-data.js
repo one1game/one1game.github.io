@@ -4,7 +4,7 @@ window.allArticles = [
     "url": "/archive/monetizaciya-yandex-igry-2026-rukovodstvo",
     "title": "Сколько платят в Яндекс Играх в 2026: доход, выплаты и требования",
     "excerpt": "50% с покупок, минималка 3000 ₽, налог 6%, модерация 3–5 дней. Реальные цифры разработчиков, требования и калькулятор дохода — данные на 28 октября 2026.",
-    "image": "/img/ai/output/monetizaciya_yandex_igry_2026.webp",
+    "image": "/img/ai/output/yandex-games-2026.webp",
     "date": "28 октября 2026",
     "readTime": "12 мин",
     "category": "Разработка",
