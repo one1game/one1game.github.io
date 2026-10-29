@@ -2,6 +2,12 @@
   "ok": true,
   "items": [
     {
+      "videoId": "SJmO2zoOBCU",
+      "title": "линейка #l2 саламандер",
+      "publishedAt": "2026-10-28T18:34:10+00:00",
+      "thumbnail": "https://i4.ytimg.com/vi/SJmO2zoOBCU/hqdefault.jpg"
+    },
+    {
       "videoId": "_N2LJEaRk0U",
       "title": "Lineage 2 первая профа",
       "publishedAt": "2026-10-28T12:09:28+00:00",
@@ -30,12 +36,6 @@
       "title": "Гайд на 1 профу Human Wizard L2: Забудь про гайды из 2007 года!",
       "publishedAt": "2026-10-27T14:00:03+00:00",
       "thumbnail": "https://i2.ytimg.com/vi/Ik0tFeql1vA/hqdefault.jpg"
-    },
-    {
-      "videoId": "Sj5uVh-83tQ",
-      "title": "нормально прошил #rdr2 #reddeadredemption2",
-      "publishedAt": "2026-10-27T12:54:37+00:00",
-      "thumbnail": "https://i4.ytimg.com/vi/Sj5uVh-83tQ/hqdefault.jpg"
     }
   ]
 }
