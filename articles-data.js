@@ -1,6 +1,16 @@
 // articles-data.js
 window.allArticles = [
   {
+    "url": "/archive/filmy-pro-gejming-2026",
+    "title": "10 фильмов про видеоигры, которые вы могли пропустить",
+    "excerpt": "«Видеодром», «Хардкор», Battle Royale, Indie Game, Kung Fury и ещё пять картин: постеры, трейлеры и где смотреть — подборка без воды.",
+    "image": "/img/ai/output/filmy-pro-gejming-2026.webp",
+    "date": "30 октября 2026",
+    "readTime": "11 мин",
+    "category": "Кино и игры",
+    "updated": "2026-10-30"
+  },
+  {
     "url": "/archive/sancta-4025270",
     "title": "Sancta: обзор мрачного приключения в темных глубинах",
     "excerpt": "Обзор Sancta: атмосферное приключение в заброшенном подземелье, где свет спасает жизнь. Узнайте о головоломках и опасностях тьмы.",
