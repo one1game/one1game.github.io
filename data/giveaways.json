@@ -1,5 +1,5 @@
 {
- "updated": "2026-10-29",
+ "updated": "2026-10-30",
  "source": "gamerpower.com",
  "page": "https://one1game.org/besplatnye-igry",
  "count": 36,
@@ -83,6 +83,14 @@
    "end_date": "2026-11-05 23:59:00",
    "url": "https://www.gamerpower.com/open/do-you-have-a-moment-to-talk-about-our-lord-and-savior-itch-io-giveaway",
    "description": "Grab “Do You Have a Moment to Talk About Our Lord and Savior?” for free on itch.io! A short 3D roguelike deckbuilder with retro PSX-style graphics."
+  },
+  {
+   "title": "Sorry We're Closed (Epic Games) Giveaway",
+   "platforms": "PC, Epic Games Store",
+   "worth": "$24.99",
+   "end_date": "2026-11-05 23:59:00",
+   "url": "https://www.gamerpower.com/open/sorry-we-re-closed-epic-games-giveaway",
+   "description": "Score Sorry We're Closed for free on Epic Games Store! Sorry We're Closed is a single-player survival game with arcade-style combat, puzzles and multiple endings. Check it out!"
   },
   {
    "title": "The Green Light (itch.io) Giveaway",
@@ -197,30 +205,6 @@
    "description": "Claim GetHigh.EXE for free via Epic Games Store! GetHigh.EXE is a casual 3d parkour game where you run and jump through an obstacle course to reach the top."
   },
   {
-   "title": "Terraspace (Epic Games) Giveaway",
-   "platforms": "PC, Epic Games Store",
-   "worth": "$7.99",
-   "end_date": "2026-10-27 23:59:00",
-   "url": "https://www.gamerpower.com/open/terraspace-epic-games-giveaway",
-   "description": "Download Terraspace for free via Epic Games Store! Terraspace is a casual city builder game about creating conditions for life on unsuitable planets."
-  },
-  {
-   "title": "Home (Epic Games) Giveaway",
-   "platforms": "PC, Android, iOS, Epic Games Store",
-   "worth": "$4.99",
-   "end_date": "2026-10-29 23:59:59",
-   "url": "https://www.gamerpower.com/open/home",
-   "description": "Don´t miss this indie game! Grab Home for free via Epic Games Store! Home is a indie murder mystery game set in a 2d pixel world. *Please note this game is also available via Epic Games App (Android and iOS)!"
-  },
-  {
-   "title": "Sker Ritual (Epic Games) Giveaway",
-   "platforms": "PC, Epic Games Store",
-   "worth": "$19.99",
-   "end_date": "2026-10-29 23:59:59",
-   "url": "https://www.gamerpower.com/open/sker-ritual",
-   "description": "Looking for a Call of Duty Zombies-like experience? Get Sker Ritual for free on Epic Games Store! Sker Ritual is a cool 3d co-op horde shooter game where you can play solo or with up to 4 players."
-  },
-  {
    "title": "Wordle (IndieGala) Giveaway",
    "platforms": "PC, DRM-Free",
    "worth": "$29.99",
@@ -277,12 +261,28 @@
    "description": "Claim this bundle (worth $384) and download 116 games for free on itch.io! No strings attached!"
   },
   {
+   "title": "Galaxy Kart (Mobile) Giveaway",
+   "platforms": "Android, iOS",
+   "worth": "$4.99",
+   "end_date": "2026-11-05 23:59:00",
+   "url": "https://www.gamerpower.com/open/galaxy-kart-mobile-giveaway",
+   "description": "Galaxy Kart (Mobile version) is free until November 5 on the Epic Games Store App for iPhone, iPad, and Android. Note: May not be available in all regions."
+  },
+  {
    "title": "Sausage Hunter (Indiegala) Giveaway",
    "platforms": "PC, DRM-Free",
    "worth": "$29.99",
    "end_date": "N/A",
    "url": "https://www.gamerpower.com/open/sausage-hunter-pc-giveaway",
    "description": "The hunt for the magic sausage starts now! Download Sausage Hunter for free on IndieGala. Sausage Hunter is a 2D platformer with hand-drawn graphics and intriguing puzzles... plus a kitten and sausages, for some reason."
+  },
+  {
+   "title": "Hexologic (Steam) Giveaway",
+   "platforms": "PC, Steam",
+   "worth": "$4.99",
+   "end_date": "2026-10-31 23:59:00",
+   "url": "https://www.gamerpower.com/open/hexologic-steam-giveaway",
+   "description": "Fall in love in with Sudoku again! Grab Hexologic for free via Steam! Hexologic is a Sudoku-like puzzle game with nice visuals and relaxing music. Don´t miss it!"
   },
   {
    "title": "Battle Ram (IndieGala) Giveaway",
