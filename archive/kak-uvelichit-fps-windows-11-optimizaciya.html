@@ -11,7 +11,7 @@
   <link rel="dns-prefetch" href="https://www.google-analytics.com" />
 
   <title>Как увеличить FPS в Windows 11 — 15 работающих настроек (2026)</title>
-  <meta name="description" content="Пошаговая оптимизация Windows 11: VBS и изоляция ядра, HAGS, Game Mode, драйверы, XMP. Сколько FPS даёт каждая настройка и что делать, если прироста нет." />
+  <meta name="description" content="Пошаговая оптимизация Windows 11: безопасные настройки за 10 минут, VBS, HAGS, драйверы, XMP. Сколько FPS даёт каждая и что делать, если прироста нет." />
   <meta name="keywords" content="как увеличить fps windows 11, повысить фпс windows 11, оптимизация windows 11 для игр, отключить vbs, изоляция ядра, hags, игровой режим windows 11, низкий фпс, микрофризы, 1% low" />
   <meta name="robots" content="index, follow, max-image-preview:large" />
   <meta name="author" content="One1Game" />
@@ -81,7 +81,29 @@
     .related-inline{background:var(--bg-secondary,#0c1118);border:1px solid rgba(255,255,255,.07);border-radius:10px;padding:18px 22px;margin:26px 0}
     .related-inline h4{margin:0 0 10px}
     .related-inline li{margin:6px 0}
-    @media (max-width:600px){.article-meta{font-size:12px;gap:10px}.data-table{font-size:.8rem}.toc{padding:14px 16px}}
+    .start-here{background:linear-gradient(180deg,rgba(125,255,155,.07),rgba(125,255,155,.02));border:1px solid rgba(125,255,155,.25);border-radius:12px;padding:20px 22px;margin:26px 0}
+    .start-here h3{margin:0 0 6px;color:var(--cyan,#7dff9b);font-size:1.12rem}
+    .start-here p{margin:0 0 12px;color:#c2ccd8}
+    .start-here ol{margin:0 0 12px;padding-left:20px}
+    .start-here li{margin:7px 0;line-height:1.55}
+    .start-here a{color:var(--cyan,#7dff9b)}
+    .plain-note{font-size:.9rem;color:#9aa7b4;margin-top:12px}
+    .lvl{display:inline-block;border-radius:999px;padding:2px 10px;font-size:.7rem;letter-spacing:.04em;text-transform:uppercase;border:1px solid;vertical-align:middle;margin-left:8px;white-space:nowrap}
+    .lvl.easy{color:#9dffb4;border-color:rgba(125,255,155,.35);background:rgba(125,255,155,.08)}
+    .lvl-line{margin:-6px 0 12px}
+    .lvl.care{color:#ffc061;border-color:rgba(255,192,97,.4);background:rgba(255,192,97,.08)}
+    .lvl.hard{color:#ff9d86;border-color:rgba(255,95,61,.4);background:rgba(255,95,61,.08)}
+    details.advanced,details.glossary{background:rgba(255,255,255,.02);border:1px solid rgba(255,255,255,.08);border-radius:10px;padding:14px 18px;margin:22px 0}
+    details.advanced summary,details.glossary summary{cursor:pointer;font-weight:600;color:#d7dee6;list-style:none}
+    details.advanced summary::-webkit-details-marker,details.glossary summary::-webkit-details-marker{display:none}
+    details.advanced summary::before,details.glossary summary::before{content:"▸";display:inline-block;margin-right:8px;color:var(--cyan,#7dff9b);transition:transform .2s}
+    details[open].advanced summary::before,details[open].glossary summary::before{transform:rotate(90deg)}
+    details.advanced[open] summary,details.glossary[open] summary{margin-bottom:12px}
+    details.advanced p:last-child{margin-bottom:0}
+    details.glossary dl{margin:0}
+    details.glossary dt{font-weight:600;margin-top:10px;color:#d7dee6}
+    details.glossary dd{margin:2px 0 0;color:#a9b5c2;line-height:1.55}
+    @media (max-width:600px){.article-meta{font-size:12px;gap:10px}.data-table{font-size:.8rem}.toc{padding:14px 16px}.lvl{margin-left:6px;font-size:.64rem}}
   </style>
 
   <script type="application/ld+json">
@@ -183,7 +205,7 @@
       <div class="article-meta">
         <span><i class="far fa-calendar"></i> Опубликовано: <time datetime="2026-07-08">8 июля 2026</time></span>
         <span><i class="fas fa-sync-alt"></i> Обновлено: <time datetime="2026-10-31">31 октября 2026</time></span>
-        <span><i class="far fa-clock"></i> 12 минут чтения</span>
+        <span><i class="far fa-clock"></i> 13 минут чтения</span>
         <span><i class="fas fa-user"></i> One1Game</span>
       </div>
     </div>
@@ -195,7 +217,20 @@
 
     <article class="article-body">
       <div class="quick-answer" id="quick-answer">
-        <strong>Коротко:</strong> сначала проверьте три вещи — частоту монитора (часто стоит 60 Гц вместо 144), «Целостность памяти» (она же HVCI) и включён ли HAGS. В процессорозависимых играх это возвращает 5–15% FPS, в играх, упирающихся в видеокарту, — 0–5%. И не меняйте десять настроек сразу: без замера «до/после» вы не поймёте, что сработало.
+        <strong>Коротко:</strong> сначала проверьте три вещи — частоту монитора (часто стоит 60 Гц вместо 144), переключатель «Целостность памяти» и планирование видеокарты (HAGS). В играх, которые упираются в процессор, это возвращает 5–15% FPS; в играх, которые упираются в видеокарту, — 0–5%. Если не хотите разбираться во всём — сделайте пять шагов из блока ниже и остановитесь на этом.
+      </div>
+
+      <div class="start-here" id="start">
+        <h3>Уровень 1: безопасно за 10 минут</h3>
+        <p>Здесь нет реестра, BIOS и сторонних программ — только обычные настройки Windows. Всё можно вернуть назад, ничего не сломается.</p>
+        <ol>
+          <li><strong>Частота монитора.</strong> Win + I → Система → Дисплей → Дополнительные параметры экрана → выберите максимум (144, 165, 240 Гц). <a href="#monitor">Подробнее</a></li>
+          <li><strong>Игровой режим.</strong> Параметры → Игры → Режим игры → включить. <a href="#game-mode">Подробнее</a></li>
+          <li><strong>План питания.</strong> Параметры → Система → Питание и аккумулятор → «Наилучшая производительность». <a href="#power">Подробнее</a></li>
+          <li><strong>Драйвер видеокарты.</strong> Обновите в NVIDIA App или AMD Adrenalin, а не через Windows Update. <a href="#driver">Подробнее</a></li>
+          <li><strong>Планирование GPU (HAGS).</strong> Дисплей → Графика → Параметры по умолчанию → включить и перезагрузиться. <a href="#hags">Подробнее</a></li>
+        </ol>
+        <p class="plain-note">В большинстве случаев этого достаточно. Если FPS всё ещё низкий — идите по шагам ниже, но меняйте только одно за раз. Не уверены в шаге — пропустите его: остальные дадут большую часть результата.</p>
       </div>
 
       <div class="author-card">
@@ -218,6 +253,7 @@
       <nav class="toc" aria-label="Содержание статьи">
         <h3>Содержание</h3>
         <ol>
+          <li><a href="#start">Уровень 1: безопасно за 10 минут</a></li>
           <li><a href="#diagnostika">Сначала выясните, что именно тормозит</a></li>
           <li><a href="#skolko">Сколько FPS реально даёт оптимизация</a></li>
           <li><a href="#driver">Шаг 1. Драйвер видеокарты</a></li>
@@ -238,6 +274,29 @@
         </ol>
       </nav>
 
+      <details class="glossary">
+        <summary>Словарь: 8 слов, без которых не разобраться</summary>
+        <dl>
+          <dt>FPS</dt>
+          <dd>Сколько кадров в секунду рисует игра. Чем больше — тем плавнее картинка.</dd>
+          <dt>1% low</dt>
+          <dd>Средний FPS в худшие 1% времени. Если средний 140, а 1% low — 45, вы будете чувствовать рывки, хотя счётчик выглядит отлично.</dd>
+          <dt>CPU-bound / GPU-bound</dt>
+          <dd>Первое значит «упирается в процессор», второе — «упирается в видеокарту». От этого зависит, какие настройки вообще помогут.</dd>
+          <dt>VBS / HVCI</dt>
+          <dd>Защита Windows, которая проверяет драйверы в изолированной среде. Полезная штука, но в играх отнимает часть ресурсов процессора.</dd>
+          <dt>HAGS</dt>
+          <dd>Планирование видеокарты с аппаратным ускорением. Часть работы по подготовке кадров берёт на себя GPU.</dd>
+          <dt>VRR / G-Sync / FreeSync</dt>
+          <dd>Монитор подстраивает частоту обновления под игру. Убирает разрывы и рывки без жёсткого V-Sync.</dd>
+          <dt>XMP / EXPO</dt>
+          <dd>Профиль памяти в BIOS. Без него оперативная память работает медленнее, чем написано на наклейке.</dd>
+          <dt>BIOS</dt>
+          <dd>Настройки материнской платы до загрузки Windows. Именно там включают память и Re-Size BAR.</dd>
+        </dl>
+      </details>
+      <p class="plain-note" style="margin:-10px 0 22px;">Все шаги ниже, кроме VBS и BIOS, — обычные переключатели в настройках Windows. Их можно включать и выключать без риска для системы.</p>
+
       <h2 id="diagnostika">Сначала выясните, что именно тормозит</h2>
       <p>Любая оптимизация Windows 11 бессмысленна, пока вы не поняли, куда смотреть. Откройте игру, включите оверлей <strong>Xbox Game Bar (Win + G)</strong> или <a class="internal-link" href="https://www.capframex.com/" target="_blank" rel="noopener">CapFrameX</a> и посмотрите на загрузку в тяжёлой сцене:</p>
       <ul>
@@ -246,6 +305,8 @@
         <li><strong>Средний FPS высокий, но картинка дёргается</strong> — смотрите на 1% low и график времени кадра. Это микрофризы, и лечатся они не «бустом FPS», а фоном, температурой и стабильностью памяти.</li>
       </ul>
       <p>Замерьте один и тот же участок игры (лучше встроенный бенчмарк или повторяемый маршрут) и запишите три цифры: средний FPS, 1% low, максимальная температура процессора. Это ваша точка отсчёта — без неё любые «стало плавнее» остаются ощущениями.</p>
+
+      <p><strong>Не знаете, что у вас за железо?</strong> Нажмите <strong>Ctrl + Shift + Esc</strong> → вкладка «Производительность»: там видно процессор, видеокарту и объём памяти. Или <strong>Win + R</strong> → <code>dxdiag</code>.</p>
 
       <div class="callout">
         <p><strong>Важно:</strong> у каждого твика должен быть понятный механизм. Если совет звучит как «отключите службу X, и FPS вырастет на 30%», но никто не объясняет, что эта служба делает, — скорее всего, это миф.</p>
@@ -288,7 +349,9 @@
       <p><strong>Не ставьте драйвер «на всякий случай» каждую неделю.</strong> Если всё стабильно, обновляйтесь под новые крупные игры или при появлении проблем.</p>
 
       <h2 id="vbs"><span class="step-badge">Шаг 2</span> VBS и изоляция ядра — главный резерв</h2>
-      <p>Виртуализация на основе безопасности (VBS) и «Целостность памяти» (HVCI) запускают проверку драйверов и памяти внутри изолированной среды. Для корпоративного ПК это правильно, для игрового — лишний слой на пути каждого вызова ядра. По замерам Tom’s Hardware и TechSpot средняя потеря составляет около 5%, в процессорозависимых играх доходит до 10–15%, а на отдельных конфигурациях и выше.</p>
+      <p class="lvl-line"><span class="lvl care">Осторожно, но обратимо</span></p>
+      <p>Сразу успокоим: это не взлом и не «отключение защиты навсегда». Обычный переключатель в настройках Windows, который можно вернуть в любой момент. VBS и «Целостность памяти» (HVCI) проверяют драйверы и память в изолированной среде. Для корпоративного ПК это правильно, для игрового — лишний слой на пути каждого вызова ядра. По замерам Tom’s Hardware и TechSpot средняя потеря составляет около 5%, в процессорозависимых играх доходит до 10–15%, а на отдельных конфигурациях и выше.</p>
+      <p class="plain-note">Если компьютер рабочий или корпоративный — пропустите этот шаг. На домашнем игровом ПК риск умеренный, и всё возвращается обратно одной кнопкой.</p>
 
       <h3>Проверка: включено ли у вас</h3>
       <ol>
@@ -304,16 +367,19 @@
         <li>Перезагрузите ПК и проверьте FPS тем же сценарием, что и до этого.</li>
       </ol>
 
-      <h3>Полное отключение VBS (только если не используете Hyper-V)</h3>
-      <p>Если после первого шага msinfo32 всё ещё показывает «Запущено», отключите VBS через реестр:</p>
-      <ol>
-        <li><strong>Win + R</strong> → <code>regedit</code>.</li>
-        <li>Перейдите в <code>HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\DeviceGuard</code>.</li>
-        <li>Параметр <strong>EnableVirtualizationBasedSecurity</strong> (DWORD) поставьте в <strong>0</strong>. Если его нет — создайте.</li>
-        <li>В ветке <code>...\DeviceGuard\Scenarios\HypervisorEnforcedCodeIntegrity</code> параметр <strong>Enabled</strong> поставьте в <strong>0</strong>.</li>
-        <li>Перезагрузите ПК.</li>
-      </ol>
-      <p>Продвинутый вариант — отключить запуск гипервизора: в терминале от администратора выполните <code>bcdedit /set hypervisorlaunchtype off</code> и перезагрузитесь. Вернуть обратно: <code>bcdedit /set hypervisorlaunchtype auto</code>.</p>
+      <details class="advanced">
+        <summary>Продвинутый уровень: полностью отключить VBS (если не используете Hyper-V / WSL2)</summary>
+        <p>Это официальные параметры Windows, а не сторонние утилиты. Если после первого шага msinfo32 всё ещё показывает «Запущено» — можно отключить VBS через реестр:</p>
+        <ol>
+          <li><strong>Win + R</strong> → <code>regedit</code>.</li>
+          <li>Перейдите в <code>HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\DeviceGuard</code>.</li>
+          <li>Параметр <strong>EnableVirtualizationBasedSecurity</strong> (DWORD) поставьте в <strong>0</strong>. Если его нет — создайте.</li>
+          <li>В ветке <code>...\DeviceGuard\Scenarios\HypervisorEnforcedCodeIntegrity</code> параметр <strong>Enabled</strong> поставьте в <strong>0</strong>.</li>
+          <li>Перезагрузите ПК.</li>
+        </ol>
+        <p>Крайний вариант — отключить запуск гипервизора: в терминале от администратора выполните <code>bcdedit /set hypervisorlaunchtype off</code> и перезагрузитесь. Вернуть обратно: <code>bcdedit /set hypervisorlaunchtype auto</code>.</p>
+        <p class="plain-note">Не используете виртуальные машины, WSL2 и эмуляторы Android — этот вариант безопасен. Если используете — не трогайте.</p>
+      </details>
 
       <div class="callout danger">
         <p><strong>Что вы теряете:</strong> VBS участвует в защите от эксплойтов уровня ядра, а также используется Credential Guard и некоторыми сценариями BitLocker. На домашнем игровом ПК риск умеренный, на рабочем или корпоративном — не отключайте. После крупных обновлений Windows настройку стоит перепроверять: она может вернуться.</p>
@@ -370,7 +436,9 @@
       <p>Не включайте одновременно «оптимизации» из панели драйвера и сторонних «бустеров» — они конфликтуют и дают обратный эффект.</p>
 
       <h2 id="bios"><span class="step-badge">Шаг 7</span> BIOS: XMP/EXPO и Re-Size BAR</h2>
-      <p>Это единственный шаг, который требует перезагрузки в BIOS, и часто самый недооценённый. Без XMP/EXPO память работает на базовой частоте JEDEC — обычно 2133 или 4800 МТ/с вместо заявленных 6000.</p>
+      <p class="lvl-line"><span class="lvl hard">Нужен BIOS</span></p>
+      <p>Это единственный шаг, который требует перезагрузки в BIOS, и часто самый недооценённый. Без XMP/EXPO память работает на базовой, самой медленной частоте — обычно 2133 или 4800 МТ/с вместо заявленных 6000.</p>
+      <p class="plain-note">Никогда не заходили в BIOS? Ничего не сломается: передумали — выйдите без сохранения (Esc → «Выйти без сохранения»). Не уверены — пропустите шаг, остальные дадут большую часть результата.</p>
       <ol>
         <li>Перезагрузитесь в BIOS (обычно <strong>Del</strong> или <strong>F2</strong>).</li>
         <li>Найдите <strong>XMP</strong> (Intel), <strong>EXPO</strong> (AMD) или <strong>DOCP</strong> (ASUS) и выберите профиль 1.</li>
@@ -518,7 +586,7 @@
       <div class="update-log">
         <h4>История обновлений</h4>
         <ul>
-          <li><strong>31.10.2026:</strong> гайд переписан: добавлены замеры до/после, разделы про 1% low, Xbox Mode, ноутбуки и диагностику узкого места. Исправлен совет про «Оптимизацию полноэкранных окон».</li>
+          <li><strong>31.10.2026:</strong> гайд переписан и упрощён: добавлен «Уровень 1» на 10 минут, словарь терминов, скрытый продвинутый блок вместо реестра на виду. Исправлен совет про «Оптимизацию полноэкранных окон».</li>
           <li><strong>08.07.2026:</strong> первая версия.</li>
         </ul>
       </div>

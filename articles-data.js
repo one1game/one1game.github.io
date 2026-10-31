@@ -16081,7 +16081,7 @@ window.allArticles = [
     "image": "/img/ai/output/kak_uvelichit_fps_windows_11.webp",
     "date": "8 июля 2026",
     "updated": "2026-10-31",
-    "readTime": "12 мин",
+    "readTime": "13 мин",
     "category": "Гайды"
   },
   {
