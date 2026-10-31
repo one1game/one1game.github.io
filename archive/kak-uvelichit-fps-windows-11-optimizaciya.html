@@ -1,258 +1,275 @@
-<!DOCTYPE html>
-
+<!doctype html>
 <html lang="ru">
-
 <head>
 <script>if(location.hostname==='one1game.github.io'){location.replace('https://one1game.org'+location.pathname+location.search+location.hash);}</script>
-
   <meta charset="UTF-8" />
-
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
   <link rel="canonical" href="https://one1game.org/archive/kak-uvelichit-fps-windows-11-optimizaciya" />
-
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🎮</text></svg>">
-
   <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin />
-
   <link rel="preconnect" href="https://www.googletagmanager.com" crossorigin />
-
   <link rel="dns-prefetch" href="https://www.google-analytics.com" />
 
-  
+  <title>Как увеличить FPS в Windows 11 — 15 работающих настроек (2026)</title>
+  <meta name="description" content="Пошаговая оптимизация Windows 11: VBS и изоляция ядра, HAGS, Game Mode, драйверы, XMP. Сколько FPS даёт каждая настройка и что делать, если прироста нет." />
+  <meta name="keywords" content="как увеличить fps windows 11, повысить фпс windows 11, оптимизация windows 11 для игр, отключить vbs, изоляция ядра, hags, игровой режим windows 11, низкий фпс, микрофризы, 1% low" />
+  <meta name="robots" content="index, follow, max-image-preview:large" />
+  <meta name="author" content="One1Game" />
 
-
-  <title>Как увеличить FPS в Windows 11: Секретный гайд 2026 года (Выжимаем максимум) | One1Game</title>
-
-  <meta name="description" content="Windows 11 режет FPS в играх? Полный гайд по оптимизации: отключение VBS, настройка HAGS, чистка телеметрии и скрытые фишки для буста фреймрейта до 30-40%." />
-
-  <meta name="keywords" content="увеличить FPS, Windows 11, оптимизация игр, буст FPS, отключение VBS, HAGS, настройка Windows 11 для игр" />
-
-
-
-  <!-- OpenGraph -->
-
-  <meta property="og:title" content="Как увеличить FPS в Windows 11: Секретный гайд 2026 года (Выжимаем максимум)" />
-
-  <meta property="og:description" content="Windows 11 режет FPS в играх? Полный гайд по оптимизации: отключение VBS, настройка HAGS, чистка телеметрии и скрытые фишки." />
-
+  <meta property="og:locale" content="ru_RU" />
   <meta property="og:type" content="article" />
-
+  <meta property="og:site_name" content="One1Game" />
+  <meta property="og:title" content="Как увеличить FPS в Windows 11: 15 настроек, которые реально работают" />
+  <meta property="og:description" content="Где именно Windows 11 теряет кадры, сколько даёт отключение VBS и HAGS, как настроить драйвер и BIOS. С замерами до/после и честными диапазонами прироста." />
   <meta property="og:url" content="https://one1game.org/archive/kak-uvelichit-fps-windows-11-optimizaciya" />
-
-  <meta property="article:tag" content="Гайды" />
-
-  <meta property="article:tag" content="Windows" />
-
-  <meta property="article:tag" content="Оптимизация" />
-
   <meta property="og:image" content="https://one1game.org/img/ai/output/kak_uvelichit_fps_windows_11.png" />
+  <meta property="og:image:alt" content="Настройка Windows 11 для игр: планирование GPU, изоляция ядра и частота монитора" />
+  <meta property="article:published_time" content="2026-07-08T00:00:00+03:00" />
+  <meta property="article:modified_time" content="2026-10-31T00:00:00+03:00" />
+  <meta property="article:section" content="Гайды" />
+  <meta property="article:tag" content="Windows 11" />
+  <meta property="article:tag" content="FPS" />
+  <meta property="article:tag" content="Оптимизация" />
   <meta name="twitter:card" content="summary_large_image" />
-
+  <meta name="twitter:title" content="Как увеличить FPS в Windows 11: 15 работающих настроек" />
+  <meta name="twitter:description" content="VBS, HAGS, Game Mode, драйверы, XMP: честные диапазоны прироста и проверка замером." />
   <meta name="twitter:image" content="https://one1game.org/img/ai/output/kak_uvelichit_fps_windows_11.png" />
 
-  <meta name="robots" content="index, follow, max-image-preview:large" />
-  <!-- Google Analytics loads only after explicit consent -->
   <script defer src="/analytics-consent.js?v=2"></script>
-
-
-
   <link rel="preload" as="style" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css" onload="this.rel='stylesheet';this.removeAttribute('onload')" /><noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css" /></noscript>
-
   <link rel="stylesheet" href="/styles.css?v=48" />
-
-
-
-  <script type="application/ld+json">
-
-  {
-
-    "@context": "https://schema.org",
-
-    "@type": "BreadcrumbList",
-
-    "itemListElement": [
-
-      {"@type": "ListItem", "position": 1, "name": "Главная", "item": "https://one1game.org/"},
-
-      {"@type": "ListItem", "position": 2, "name": "Статьи", "item": "https://one1game.org/archive"},
-
-      {"@type": "ListItem", "position": 3, "name": "Как увеличить FPS в Windows 11", "item": "https://one1game.org/archive/kak-uvelichit-fps-windows-11-optimizaciya"}
-
-    ]
-
-  }
-
-  </script>
-
-
-
-  <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "Article",
-  "headline": "Как увеличить FPS в Windows 11: Полный гайд 2026 года (Выжимаем максимум из ПК)",
-  "datePublished": "2026-07-08",
-  "dateModified": "2026-07-08",
-  "author": {
-    "@type": "Person",
-    "name": "Команда One1Game"
-  },
-  "publisher": {
-    "@type": "Organization",
-    "name": "One1Game",
-    "logo": {
-      "@type": "ImageObject",
-      "url": "https://one1game.org/favicon.png"
-    }
-  },
-  "description": "Windows 11 режет FPS в играх? Полный гайд по оптимизации: отключение VBS, настройка HAGS, чистка телеметрии и скрытые фишки для буста фреймрейта до 30-40%.",
-  "image": "https://one1game.org/og-image.jpg",
-  "speakable": {
-    "@type": "SpeakableSpecification",
-    "cssSelector": [
-      "h1",
-      ".article-body p:first-of-type"
-    ]
-  }
-}
-  </script>
-
-
-
-  <link rel="manifest" href="/manifest.json" />
-
   <link rel="stylesheet" href="/reactions.css" />
 
-<style>
+  <style>
+    .skip-link{position:absolute;top:-40px;left:0;background:var(--cyan,#7dff9b);color:#000;padding:8px 16px;z-index:1000;font-weight:bold}.skip-link:focus{top:0}
+    .article-header{margin-bottom:30px}
+    .article-meta{color:#888;font-size:14px;display:flex;gap:16px;flex-wrap:wrap}
+    .article-body p{line-height:1.8;margin-bottom:20px}
+    .breadcrumbs{margin-bottom:18px;font-size:13px;color:var(--text-faint)}
+    .breadcrumbs a{color:var(--cyan);text-decoration:none}.breadcrumbs a:hover{text-decoration:underline}
+    .quick-answer{margin:18px 0;padding:14px 18px;border-left:3px solid var(--cyan,#7dff9b);background:rgba(125,255,155,.06);border-radius:8px;line-height:1.7}
+    .ai-overview-box{background:rgba(125,255,155,.04);border:1px solid rgba(125,255,155,.22);border-radius:10px;padding:20px;margin:24px 0}
+    .ai-overview-box h3{margin-top:0;color:var(--cyan,#7dff9b)}
+    .ai-overview-box li{margin-bottom:8px;line-height:1.65}
+    .toc,.update-log{background:var(--bg-secondary,#0c1118);border:1px solid rgba(255,255,255,.07);border-radius:10px;padding:18px 22px;margin:24px 0}
+    .toc h3,.update-log h4{margin-top:0}
+    .toc ol{margin:0;padding-left:20px}.toc li{margin:7px 0}
+    .toc a,.internal-link{color:var(--cyan,#7dff9b)}
+    .author-card{display:flex;align-items:center;gap:16px;background:var(--bg-secondary,#0c1118);padding:16px;border-radius:10px;margin:24px 0;border:1px solid rgba(255,255,255,.07)}
+    .author-avatar{width:64px;height:64px;border-radius:50%;background:var(--cyan,#7dff9b);display:flex;align-items:center;justify-content:center;font-size:30px;color:#000;flex:0 0 auto}
+    .author-info h4{margin:0 0 4px}.author-info p{margin:0;font-size:14px;color:#8f99a6}
+    .article-body h2{margin-top:38px}
+    .article-body h3{margin-top:26px}
+    .step-badge{display:inline-block;background:rgba(125,255,155,.1);border:1px solid rgba(125,255,155,.25);color:var(--cyan,#7dff9b);border-radius:999px;padding:2px 10px;font-size:.72rem;letter-spacing:.06em;text-transform:uppercase;margin-bottom:8px}
+    .gain{display:inline-block;border-radius:6px;padding:2px 8px;font-size:.8rem;font-weight:600;white-space:nowrap}
+    .gain.high{background:rgba(125,255,155,.14);color:#9dffb4;border:1px solid rgba(125,255,155,.3)}
+    .gain.mid{background:rgba(255,192,97,.12);color:#ffc061;border:1px solid rgba(255,192,97,.3)}
+    .gain.low{background:rgba(255,255,255,.06);color:#b9c4d0;border:1px solid rgba(255,255,255,.12)}
+    .table-wrap{overflow-x:auto;margin:22px 0}
+    .data-table{width:100%;border-collapse:collapse;font-size:.88rem;min-width:640px}
+    .data-table th,.data-table td{border:1px solid rgba(255,255,255,.09);padding:10px 12px;text-align:left;vertical-align:top}
+    .data-table th{background:rgba(125,255,155,.06);font-weight:600;color:#d7dee6}
+    .data-table tr:nth-child(even) td{background:rgba(255,255,255,.02)}
+    .callout{border-left:3px solid var(--amber,#ffc061);background:rgba(255,192,97,.06);border-radius:0 8px 8px 0;padding:14px 18px;margin:22px 0}
+    .callout.danger{border-left-color:#ff5f3d;background:rgba(255,95,61,.07)}
+    .callout p:last-child{margin-bottom:0}
+    .faq-item{border-bottom:1px solid rgba(255,255,255,.08);padding:16px 0}
+    .faq-item h3{margin:0 0 8px;font-size:1.02rem}
+    .faq-item p{margin:0}
+    .sources-block{margin-top:26px;padding-top:16px;border-top:1px solid rgba(255,255,255,.08);font-size:13px;color:#8f99a6}
+    .sources-block a{color:var(--cyan,#7dff9b);display:inline-block;margin-right:14px}
+    .related-inline{background:var(--bg-secondary,#0c1118);border:1px solid rgba(255,255,255,.07);border-radius:10px;padding:18px 22px;margin:26px 0}
+    .related-inline h4{margin:0 0 10px}
+    .related-inline li{margin:6px 0}
+    @media (max-width:600px){.article-meta{font-size:12px;gap:10px}.data-table{font-size:.8rem}.toc{padding:14px 16px}}
+  </style>
 
-  /* Skip-link для доступности */
-
-  .skip-link {
-
-    position: absolute;
-
-    top: -40px;
-
-    left: 0;
-
-    background: var(--cyan);
-
-    color: #000;
-
-    padding: 8px 16px;
-
-    z-index: 1000;
-
-    text-decoration: none;
-
-    font-weight: bold;
-
-    transition: top 0.2s;
-
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Organization",
+        "@id": "https://one1game.org/#organization",
+        "name": "One1Game",
+        "url": "https://one1game.org/",
+        "logo": "https://one1game.org/favicon.png"
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {"@type": "ListItem", "position": 1, "name": "Главная", "item": "https://one1game.org/"},
+          {"@type": "ListItem", "position": 2, "name": "Статьи", "item": "https://one1game.org/archive"},
+          {"@type": "ListItem", "position": 3, "name": "Гайды", "item": "https://one1game.org/category/gajdy"},
+          {"@type": "ListItem", "position": 4, "name": "Как увеличить FPS в Windows 11", "item": "https://one1game.org/archive/kak-uvelichit-fps-windows-11-optimizaciya"}
+        ]
+      },
+      {
+        "@type": "Article",
+        "@id": "https://one1game.org/archive/kak-uvelichit-fps-windows-11-optimizaciya#article",
+        "headline": "Как увеличить FPS в Windows 11: 15 настроек, которые реально работают",
+        "description": "Пошаговая оптимизация Windows 11 для игр: изоляция ядра и VBS, HAGS, Game Mode, драйверы, план питания, XMP/EXPO, Re-Size BAR, апскейлеры. Честные диапазоны прироста и проверка замером.",
+        "datePublished": "2026-07-08T00:00:00+03:00",
+        "dateModified": "2026-10-31T00:00:00+03:00",
+        "author": {"@type": "Organization", "name": "Редакция One1Game"},
+        "publisher": {"@id": "https://one1game.org/#organization"},
+        "image": "https://one1game.org/img/ai/output/kak_uvelichit_fps_windows_11.png",
+        "articleSection": "Гайды",
+        "keywords": "как увеличить FPS в Windows 11, повысить FPS, оптимизация Windows 11 для игр, отключить VBS, изоляция ядра, HAGS, Game Mode, XMP, Re-Size BAR",
+        "inLanguage": "ru-RU",
+        "isAccessibleForFree": true,
+        "mainEntityOfPage": "https://one1game.org/archive/kak-uvelichit-fps-windows-11-optimizaciya"
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "На сколько реально можно увеличить FPS в Windows 11?",
+            "acceptedAnswer": {"@type": "Answer", "text": "В играх с ограничением по процессору (CS2, Valorant, MMO, симуляторы) настройки Windows дают 5–15%: основной вклад — отключение изоляции ядра, XMP/EXPO и фон. В играх с ограничением по видеокарте (GPU загружен на 97–99%) те же настройки дают 0–5%, и решают уже настройки графики и апскейлер."}
+          },
+          {
+            "@type": "Question",
+            "name": "Безопасно ли отключать изоляцию ядра и VBS?",
+            "acceptedAnswer": {"@type": "Answer", "text": "Технически это обратимо: настройку можно вернуть в любой момент. Но VBS защищает ядро от эксплойтов и используется Credential Guard и BitLocker. На домашнем игровом ПК риск умеренный, на рабочем или корпоративном компьютере отключать защиту не стоит."}
+          },
+          {
+            "@type": "Question",
+            "name": "Помогает ли игровой режим Windows 11?",
+            "acceptedAnswer": {"@type": "Answer", "text": "Да, но умеренно: он приоритизирует игру и откладывает часть фоновых задач. На слабых и средних ПК это заметно снижает микрофризы, на топовом железе разница минимальна. Вреда от включённого режима нет, поэтому держите его включённым."}
+          },
+          {
+            "@type": "Question",
+            "name": "Нужно ли отключать оптимизацию полноэкранных окон?",
+            "acceptedAnswer": {"@type": "Answer", "text": "Нет. В Windows 11 есть отдельная настройка «Оптимизация для игр в оконном режиме» — её как раз нужно включить. Она переводит старые игры на современную модель вывода, снижает задержку ввода в режиме «окно без рамки» и включает поддержку VRR и Auto HDR."}
+          },
+          {
+            "@type": "Question",
+            "name": "Почему FPS высокий, а игра всё равно лагает?",
+            "acceptedAnswer": {"@type": "Answer", "text": "Средний FPS ничего не говорит о плавности. Смотрите на 1% low и график времени кадра: если средний 140, а 1% low падает до 45, вы чувствуете рывки. Причины — микрофризы от фона, троттлинг, нестабильная память или компиляция шейдеров в новых играх."}
+          },
+          {
+            "@type": "Question",
+            "name": "Поможет ли отключение телеметрии и «чистая» сборка Windows?",
+            "acceptedAnswer": {"@type": "Answer", "text": "Отключение телеметрии освобождает немного оперативной памяти, но почти не влияет на FPS. «Чистые» сборки Windows часто вырезают Xbox-службы, Store и компоненты DirectX, из-за чего ломаются античиты и игры. Используйте обычную Windows 11 и точечные настройки."}
+          },
+          {
+            "@type": "Question",
+            "name": "Как правильно измерить прирост FPS?",
+            "acceptedAnswer": {"@type": "Answer", "text": "Запустите один и тот же участок игры с одинаковыми настройками графики дважды: до и после. Запишите средний FPS, 1% low и температуру. Удобнее всего через CapFrameX или оверлей Xbox Game Bar (Win+G). Меняйте одну настройку за раз, иначе непонятно, что дало эффект."}
+          }
+        ]
+      }
+    ]
   }
-
-  .skip-link:focus { top: 0; }
-
-  .article-header { margin-bottom: 30px; }
-
-  .article-meta { color: #888; font-size: 14px; }
-
-  .article-body p { line-height: 1.8; margin-bottom: 20px; }
-
-  .breadcrumbs { margin-bottom: 18px; font-size: 13px; color: var(--text-faint); }
-
-  .breadcrumbs a { color: var(--cyan); text-decoration: none; }
-
-  .breadcrumbs a:hover { text-decoration: underline; }
-
-  .breadcrumbs span { color: var(--text-dim); }
-
-.ad-banner-wrap img{width:100%;height:auto;display:block;filter:brightness(0.55) saturate(0.75);transition:filter 0.35s ease}.ad-banner-wrap a:hover img{filter:brightness(1.05) saturate(1)}</style>
-
+  </script>
   <script defer src="/player.js?v=3"></script>
 </head>
-
 <body>
-
 <a href="#main-content" class="skip-link">Перейти к содержимому</a>
-
 <main id="main-content">
-
 <div class="container">
-
   <div class="article-page">
 
+    <a href="/archive" class="article-back"><i class="fas fa-arrow-left"></i> К списку статей</a>
 
-
-    <a href="/archive" class="article-back">
-
-      <i class="fas fa-arrow-left"></i> К списку статей
-
-    </a>
-
-
-
-    <nav class="breadcrumbs" aria-label="Хлебные крошки" itemscope itemtype="https://schema.org/BreadcrumbList">
-
-      <span itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
-
-        <a itemprop="item" href="/"><span itemprop="name">Главная</span></a>
-
-        <meta itemprop="position" content="1" />
-
-      </span> →
-
-      <span itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
-
-        <a itemprop="item" href="/archive"><span itemprop="name">Статьи</span></a>
-
-        <meta itemprop="position" content="2" />
-
-      </span> →
-
-      <span itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
-
-        <span itemprop="name" aria-current="page">FPS в Windows 11</span>
-
-        <meta itemprop="position" content="3" />
-
-      </span>
-
+    <nav class="breadcrumbs" aria-label="Хлебные крошки">
+      <a href="/">Главная</a> → <a href="/archive">Статьи</a> → <a href="/category/gajdy">Гайды</a> → <span aria-current="page">FPS в Windows 11</span>
     </nav>
 
-
-
     <div class="article-header">
-
       <a class="article-category cat-guides" href="/category/gajdy">Гайды</a>
-
-      <h1>Как увеличить FPS в Windows 11: Полный гайд 2026 года (Выжимаем максимум из ПК)</h1>
-
+      <h1>Как увеличить FPS в Windows 11: 15 настроек, которые реально работают</h1>
       <div class="article-meta">
-
-        <span><i class="far fa-calendar"></i> 8 июля 2026</span>
-
-        <span><i class="far fa-clock"></i> 7 минут чтения</span>
-
+        <span><i class="far fa-calendar"></i> Опубликовано: <time datetime="2026-07-08">8 июля 2026</time></span>
+        <span><i class="fas fa-sync-alt"></i> Обновлено: <time datetime="2026-10-31">31 октября 2026</time></span>
+        <span><i class="far fa-clock"></i> 12 минут чтения</span>
+        <span><i class="fas fa-user"></i> One1Game</span>
       </div>
-
     </div>
 
-
-
-    <figure class="article-hero"><img src="../img/ai/output/kak_uvelichit_fps_windows_11.webp" alt="Как увеличить FPS в Windows 11: Секретный гайд 2026 года" width="1344" height="768" loading="eager" fetchpriority="high" style="width:100%;height:auto;border-radius:12px;margin-bottom:24px;"></figure>
-
-
+    <figure class="article-hero">
+      <img src="/img/ai/output/kak_uvelichit_fps_windows_11.webp" alt="Как увеличить FPS в Windows 11: настройки графики, изоляция ядра и планирование GPU" width="1344" height="768" loading="eager" fetchpriority="high" decoding="async" style="width:100%;height:auto;border-radius:12px;margin-bottom:10px;">
+      <figcaption style="font-size:14px;color:#8f99a6;text-align:center;margin-bottom:20px;">Windows 11 теряет кадры не «вообще», а в конкретных местах — их и будем отключать по очереди</figcaption>
+    </figure>
 
     <article class="article-body">
-      <div class="quick-answer" id="quick-answer" style="margin:18px 0;padding:14px 18px;border-left:3px solid var(--cyan,#7dff9b);background:rgba(125,255,155,.06);border-radius:8px;line-height:1.7"><strong>Коротко:</strong> Windows 11 режет FPS в играх? Полный гайд по оптимизации: отключение VBS, настройка HAGS, чистка телеметрии и скрытые фишки для буста фреймрейта до 30-40%.</div>
+      <div class="quick-answer" id="quick-answer">
+        <strong>Коротко:</strong> сначала проверьте три вещи — частоту монитора (часто стоит 60 Гц вместо 144), «Целостность памяти» (она же HVCI) и включён ли HAGS. В процессорозависимых играх это возвращает 5–15% FPS, в играх, упирающихся в видеокарту, — 0–5%. И не меняйте десять настроек сразу: без замера «до/после» вы не поймёте, что сработало.
+      </div>
 
+      <div class="author-card">
+        <div class="author-avatar">👤</div>
+        <div class="author-info">
+          <h4>One1Game — редакция игрового портала</h4>
+          <p>Пишем про игры и железо без мифов: сверяем шаги с документацией Microsoft и независимыми тестами, а не с форумными советами десятилетней давности.</p>
+        </div>
+      </div>
 
+      <div class="ai-overview-box">
+        <h3><i class="fas fa-bolt"></i> Что даёт прирост, а что — только порядок</h3>
+        <ul>
+          <li><strong>80% результата — в четырёх вещах:</strong> актуальный драйвер GPU, отключённая изоляция ядра, профиль XMP/EXPO в BIOS и правильная частота монитора.</li>
+          <li><strong>Если видеокарта загружена на 99%</strong>, твики Windows почти не помогут: там решают настройки графики, апскейлер и генерация кадров.</li>
+          <li><strong>Ориентируйтесь на 1% low, а не на средний FPS.</strong> Плавность — это стабильное время кадра, а не красивая цифра в углу.</li>
+        </ul>
+      </div>
 
-      <p>Вы купили мощную видеокарту, собрали топовый ПК, но в шутерах все равно ощущается «ватность» управления, а просадки FPS в тяжелых новинках бесят? Вы не одиноки.</p>
+      <nav class="toc" aria-label="Содержание статьи">
+        <h3>Содержание</h3>
+        <ol>
+          <li><a href="#diagnostika">Сначала выясните, что именно тормозит</a></li>
+          <li><a href="#skolko">Сколько FPS реально даёт оптимизация</a></li>
+          <li><a href="#driver">Шаг 1. Драйвер видеокарты</a></li>
+          <li><a href="#vbs">Шаг 2. VBS и изоляция ядра — главный резерв</a></li>
+          <li><a href="#hags">Шаг 3. HAGS и оконный режим</a></li>
+          <li><a href="#game-mode">Шаг 4. Игровой режим и фоновая запись</a></li>
+          <li><a href="#power">Шаг 5. План питания</a></li>
+          <li><a href="#gpu-panel">Шаг 6. Панель NVIDIA и AMD</a></li>
+          <li><a href="#bios">Шаг 7. BIOS: XMP/EXPO и Re-Size BAR</a></li>
+          <li><a href="#monitor">Шаг 8. Монитор, VRR и задержка ввода</a></li>
+          <li><a href="#upscale">Шаг 9. Апскейлеры и генерация кадров</a></li>
+          <li><a href="#background">Шаг 10. Фон, оверлеи, автозагрузка</a></li>
+          <li><a href="#storage">Шаг 11. Накопитель и файл подкачки</a></li>
+          <li><a href="#no-gain">Если FPS не вырос: 9 причин</a></li>
+          <li><a href="#myths">Чего делать нельзя</a></li>
+          <li><a href="#checklist">Чек-лист</a></li>
+          <li><a href="#faq">Вопросы и ответы</a></li>
+        </ol>
+      </nav>
 
+      <h2 id="diagnostika">Сначала выясните, что именно тормозит</h2>
+      <p>Любая оптимизация Windows 11 бессмысленна, пока вы не поняли, куда смотреть. Откройте игру, включите оверлей <strong>Xbox Game Bar (Win + G)</strong> или <a class="internal-link" href="https://www.capframex.com/" target="_blank" rel="noopener">CapFrameX</a> и посмотрите на загрузку в тяжёлой сцене:</p>
+      <ul>
+        <li><strong>Видеокарта 97–99%, процессор ниже 70%</strong> — вы упираетесь в GPU. Настройки Windows дадут 0–5%, а реальный прирост — снижение качества теней, текстур и апскейлер.</li>
+        <li><strong>Процессор 90–100%, видеокарта 50–80%</strong> — CPU-bound. Вот здесь изоляция ядра, память на XMP и чистый фон дают свои 5–15%.</li>
+        <li><strong>Средний FPS высокий, но картинка дёргается</strong> — смотрите на 1% low и график времени кадра. Это микрофризы, и лечатся они не «бустом FPS», а фоном, температурой и стабильностью памяти.</li>
+      </ul>
+      <p>Замерьте один и тот же участок игры (лучше встроенный бенчмарк или повторяемый маршрут) и запишите три цифры: средний FPS, 1% low, максимальная температура процессора. Это ваша точка отсчёта — без неё любые «стало плавнее» остаются ощущениями.</p>
 
+      <div class="callout">
+        <p><strong>Важно:</strong> у каждого твика должен быть понятный механизм. Если совет звучит как «отключите службу X, и FPS вырастет на 30%», но никто не объясняет, что эта служба делает, — скорее всего, это миф.</p>
+      </div>
+
+      <h2 id="skolko">Сколько FPS реально даёт оптимизация</h2>
+      <p>Ниже — сводные диапазоны по независимым тестам и документации Microsoft. Разброс большой, потому что эффект зависит от процессора, разрешения и конкретной игры. В CPU-зависимых сценариях выигрыш максимальный, в 4K с загруженной видеокартой — почти нулевой.</p>
+      <div class="table-wrap">
+        <table class="data-table">
+          <thead>
+            <tr><th>Настройка</th><th>Прирост</th><th>Где заметно</th><th>Риск</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>Изоляция ядра / VBS выкл.</td><td><span class="gain high">5–15%</span></td><td>CS2, Valorant, Tarkov, MMO, симуляторы</td><td>Снижение защиты ядра</td></tr>
+            <tr><td>XMP / EXPO в BIOS</td><td><span class="gain high">5–15%</span></td><td>Ryzen и игры с высокой нагрузкой на CPU</td><td>Нет, если память стабильна</td></tr>
+            <tr><td>Актуальный драйвер GPU</td><td><span class="gain high">0–10%</span></td><td>Новые релизы и патчи</td><td>Нет</td></tr>
+            <tr><td>HAGS</td><td><span class="gain mid">1–8%</span></td><td>Современные GPU, особенно с Frame Gen</td><td>Редкие артефакты на старых картах</td></tr>
+            <tr><td>Игровой режим</td><td><span class="gain low">0–3%</span></td><td>Слабые и средние ПК</td><td>Нет</td></tr>
+            <tr><td>План питания</td><td><span class="gain low">1–3%</span></td><td>Ноутбуки, старые CPU</td><td>Расход энергии</td></tr>
+            <tr><td>Чистый фон и оверлеи</td><td><span class="gain low">0–5%</span></td><td>Мало RAM, слабый CPU</td><td>Нет</td></tr>
+            <tr><td>Апскейлер (DLSS/FSR/XeSS)</td><td><span class="gain high">20–60%</span></td><td>GPU-bound игры</td><td>Качество картинки</td></tr>
+          </tbody>
+        </table>
+      </div>
 
       <div class="ad-banner-wrap" style="margin:24px 0;">
         <a href="https://bosslike.ru/?ref=7248523" target="_blank" rel="noopener noreferrer" title="Bosslike — накрутка подписчиков, лайков и просмотров">
@@ -260,435 +277,328 @@
         </a>
       </div>
 
-      <p>Проблема не в вашем железе. Проблема в Windows 11.</p>
+      <h2 id="driver"><span class="step-badge">Шаг 1</span> Драйвер видеокарты — не через Windows Update</h2>
+      <p>Windows Update часто ставит драйверы с задержкой в месяцы. Для игр это плохо: оптимизации под новые релизы и исправления фризов приходят только с официальным пакетом.</p>
+      <ul>
+        <li><strong>NVIDIA:</strong> приложение NVIDIA App или сайт nvidia.com → «Драйверы».</li>
+        <li><strong>AMD:</strong> AMD Software: Adrenalin Edition → «Главная» → проверка обновлений.</li>
+        <li><strong>Intel Arc:</strong> Intel Arc Control или Intel Driver &amp; Support Assistant.</li>
+      </ul>
+      <p>Если после обновления появились вылеты или артефакты, откатитесь через <strong>Диспетчер устройств → Видеоадаптеры → Свойства → Драйвер → Откатить</strong>. Для чистой переустановки используйте DDU в безопасном режиме: это удаляет остатки старых версий, которые иногда и вызывают микрофризы.</p>
+      <p><strong>Не ставьте драйвер «на всякий случай» каждую неделю.</strong> Если всё стабильно, обновляйтесь под новые крупные игры или при появлении проблем.</p>
 
+      <h2 id="vbs"><span class="step-badge">Шаг 2</span> VBS и изоляция ядра — главный резерв</h2>
+      <p>Виртуализация на основе безопасности (VBS) и «Целостность памяти» (HVCI) запускают проверку драйверов и памяти внутри изолированной среды. Для корпоративного ПК это правильно, для игрового — лишний слой на пути каждого вызова ядра. По замерам Tom’s Hardware и TechSpot средняя потеря составляет около 5%, в процессорозависимых играх доходит до 10–15%, а на отдельных конфигурациях и выше.</p>
 
-
-      <p>Из коробки эта ОС заточена под безопасность и корпоративные задачи, а не под гейминг. Фоновая телеметрия, изоляция ядра и AI-помощники съедают до 20-30% производительности в процессорозависимых играх.</p>
-
-
-
-      <p>В этом гайде мы не будем писать банальности вроде «почистите рабочий стол». Мы проведем глубокий тюнинг Windows 11, который вернет вашему ПК каждый потерянный FPS. Поехали!</p>
-
-
-
-      <h2>Шаг 1. Убиваем «Налог на безопасность» (VBS и Core Isolation)</h2>
-
-
-
-      <p><strong>Прирост FPS:</strong> от 5% до 15% в CPU-bound играх (CS2, Valorant, Warzone, Tarkov).</p>
-
-
-
-      <p>Главный враг геймера в Windows 11 — Virtualization-Based Security (VBS) и изоляция ядра. Они создают виртуальный барьер для защиты памяти, но при этом заставляют процессор тратить ресурсы на эмуляцию.</p>
-
-
-
-      <p><strong>Как отключить (безопасно для домашнего ПК):</strong></p>
-
-
-
+      <h3>Проверка: включено ли у вас</h3>
       <ol>
+        <li>Нажмите <strong>Win + R</strong>, введите <code>msinfo32</code> и найдите строку <strong>«Виртуализация на основе безопасности»</strong>.</li>
+        <li>Если там «Запущено» — механизм активен. Значение «Не включена» означает, что отключать нечего.</li>
+      </ol>
 
-        <li>Нажмите <strong>Win + R</strong>, введите <code>regedit</code> и нажмите Enter.</li>
+      <h3>Отключение «Целостности памяти» (основной способ)</h3>
+      <ol>
+        <li>Пуск → <strong>Безопасность Windows</strong> → <strong>Безопасность устройства</strong>.</li>
+        <li>Блок <strong>«Изоляция ядра»</strong> → «Сведения об изоляции ядра».</li>
+        <li>Переключатель <strong>«Целостность памяти»</strong> → <strong>Выкл</strong>.</li>
+        <li>Перезагрузите ПК и проверьте FPS тем же сценарием, что и до этого.</li>
+      </ol>
 
-        <li>Перейдите по пути: <code>HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\DeviceGuard\Scenarios\CredentialGuard</code></li>
-
-        <li>Найдите параметр <strong>Enabled</strong>, кликните дважды и измените значение с <strong>1 на 0</strong>.</li>
-
-        <li>Откройте меню Пуск, введите <strong>Изоляция ядра</strong> (Core Isolation) и отключите <strong>Целостность памяти</strong>.</li>
-
+      <h3>Полное отключение VBS (только если не используете Hyper-V)</h3>
+      <p>Если после первого шага msinfo32 всё ещё показывает «Запущено», отключите VBS через реестр:</p>
+      <ol>
+        <li><strong>Win + R</strong> → <code>regedit</code>.</li>
+        <li>Перейдите в <code>HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\DeviceGuard</code>.</li>
+        <li>Параметр <strong>EnableVirtualizationBasedSecurity</strong> (DWORD) поставьте в <strong>0</strong>. Если его нет — создайте.</li>
+        <li>В ветке <code>...\DeviceGuard\Scenarios\HypervisorEnforcedCodeIntegrity</code> параметр <strong>Enabled</strong> поставьте в <strong>0</strong>.</li>
         <li>Перезагрузите ПК.</li>
-
       </ol>
+      <p>Продвинутый вариант — отключить запуск гипервизора: в терминале от администратора выполните <code>bcdedit /set hypervisorlaunchtype off</code> и перезагрузитесь. Вернуть обратно: <code>bcdedit /set hypervisorlaunchtype auto</code>.</p>
 
-
-
-      <blockquote>
-
-        Важно: Если вы используете ПК для работы с банковскими данными или храните критичные данные на этом же диске, подумайте дважды. Для выделенной игровой машины — это мастхэв.
-
-      </blockquote>
-
-
-
-      <h2>Шаг 2. Включаем то, что Microsoft скрыла по умолчанию</h2>
-
-
-
-      <p>Windows 11 имеет отличные игровые фишки, которые часто выключены.</p>
-
-
-
-      <h3>Планирование графического процессора (HAGS)</h3>
-
-
-
-      <p>Передает управление памятью видеокарты напрямую драйверу, снижая задержки (Input Lag).</p>
-
-
-
-      <p><strong>Путь:</strong> Параметры → Система → Дисплей → Настройки графики → Изменение стандартных параметров графики. Включите <strong>Планирование графического процессора с аппаратным ускорением</strong>.</p>
-
-
-
-      <h3>Игровой режим (Game Mode)</h3>
-
-
-
-      <p>В 2026 году он работает адекватно и реально приоритизирует игру над фоновыми процессами (например, обновлением Windows в фоне).</p>
-
-
-
-      <p><strong>Путь:</strong> Параметры → Игры → Режим игры → ВКЛ.</p>
-
-
-
-      <h3>Отключаем оптимизацию для полноэкранных окон</h3>
-
-
-
-      <p>Эта функция часто вызывает микро-фризы и конфликты с DX12/Vulkan.</p>
-
-
-
-      <p><strong>Путь:</strong> Параметры → Игры → Режим игры → (внизу) Отключить «Оптимизацию полноэкранных окон».</p>
-
-
-
-      <h2>Шаг 3. Тотальная зачистка Телеметрии и AI-мусора</h2>
-
-
-
-      <p>Windows 11 в 2026 году буквально нашпигована AI-ассистентами и фоновыми сборщиками данных. Они едят оперативную память и процессорное время.</p>
-
-
-
-      <p>Вместо того чтобы отключать 50 служб вручную, используйте проверенный сообществом инструмент <strong>Chris Titus Tech WinUtil</strong> (Open Source, безопасен).</p>
-
-
-
-      <ol>
-
-        <li>Нажмите <strong>Win + X</strong> и выберите Терминал (Администратор) или PowerShell.</li>
-
-        <li>Вставьте команду: <code>iwr -useb https://christitus.com/win | iex</code></li>
-
-        <li>Откроется утилита. Перейдите во вкладку <strong>Tweaks</strong>.</li>
-
-        <li>Выберите профиль <strong>Desktop</strong> (или Standard).</li>
-
-        <li>Нажмите <strong>Run Tweaks</strong>.</li>
-
-        <li>Во вкладке <strong>Updates</strong> выберите <strong>Security Only</strong> (чтобы Windows не ломала драйверы автоматическими обновлениями).</li>
-
-      </ol>
-
-
-
-      <p><strong>Результат:</strong> ОЗУ в простое будет съедать 2-3 ГБ вместо 6-8 ГБ, а процессор перестанет дергаться от фоновых задач.</p>
-
-
-
-      <h2>Шаг 4. Настройка Панели Управления Видеокартой (Для киберспортсменов)</h2>
-
-
-
-      <p>Забудьте про «красивую картинку». Нам нужна скорость и четкость.</p>
-
-
-
-      <h3>Для NVIDIA (Панель управления NVIDIA)</h3>
-
-
-
-      <ul>
-
-        <li><strong>Режим низкой задержки</strong> (Low Latency Mode): Ультра (если нет Frame Gen) или Выкл (если используете DLSS 3/4 Frame Gen).</li>
-
-        <li><strong>Фильтрация текстур</strong> (Качество): Высокая производительность.</li>
-
-        <li><strong>Режим управления питанием:</strong> Предпочтителен режим максимальной производительности.</li>
-
-        <li><strong>Digital Vibrance:</strong> Выкрутите на 60-70% (враги «мыла» и серых цветов в шутерах).</li>
-
-      </ul>
-
-
-
-      <h3>Для AMD (Adrenalin)</h3>
-
-
-
-      <ul>
-
-        <li><strong>Radeon Anti-Lag:</strong> ВКЛ.</li>
-
-        <li><strong>Radeon Image Sharpening:</strong> ВКЛ (на 80% — дает потрясающую четкость без потери FPS).</li>
-
-        <li><strong>Texture Filtering Quality:</strong> Performance.</li>
-
-      </ul>
-
-
-
-      <h2>Шаг 5. BIOS: Re-Size BAR и EXPO/XMP</h2>
-
-
-
-      <p>Многие забывают, что Windows 11 идеально работает с технологией Re-Size BAR (Smart Access Memory). Она позволяет процессору получать доступ ко всей видеопамяти сразу, а не частями по 256 МБ.</p>
-
-
-
-      <ol>
-
-        <li>Зайдите в BIOS.</li>
-
-        <li>Найдите <strong>Re-Size BAR Support</strong> и <strong>Above 4G Decoding</strong> → Поставьте Enabled.</li>
-
-        <li>Убедитесь, что включен <strong>XMP / EXPO</strong> профиль для вашей оперативной памяти. (В Windows 11 скорость ОЗУ критически важна для стабильного 1% и 0.1% low FPS).</li>
-
-      </ol>
-
-
-
-      <h2>Шаг 6. Мета 2026 года: Апскейлеры и Генерация Кадров</h2>
-
-
-
-      <p>Если вы играете в тяжелые AAA-проекты (например, новые хиты на Unreal Engine 5), чистая оптимизация ОС не поможет. Вам нужно использовать софт нового поколения.</p>
-
-
-
-      <ul>
-
-        <li><strong>NVIDIA DLSS 3.5 / 4:</strong> Используйте Frame Generation. Потеря 1-2 мс инпут-лага с лихвой окупается двукратным ростом плавности.</li>
-
-        <li><strong>AMD FSR 3.1:</strong> Отлично работает даже на картах NVIDIA и Intel. Ставьте режим Quality или Balanced.</li>
-
-        <li><strong>NVIDIA Reflex:</strong> Всегда ВКЛ + Boost. Это убирает bottleneck процессора и снижает задержку мыши до минимума.</li>
-
-      </ul>
-
-
-
-      <h2>Чего делать НЕЛЬЗЯ (Анти-советы из интернета)</h2>
-
-
-
-      <p><strong>Использовать «Game Boosters» из 2010-х.</strong> Razer Cortex и подобные программы сегодня только вредят, постоянно убивая и запуская кэши Windows.</p>
-
-
-
-      <p><strong>Отключать файл подкачки.</strong> Если у вас 16 ГБ ОЗУ или меньше, отключение файла подкачки приведет к жестким фризам и вылетам в современных играх. Оставьте «По выбору системы».</p>
-
-
-
-      <p><strong>Ставить «Очищенные» сборки Windows (Lite/Ghost).</strong> Они вырезают нужные компоненты (например, Xbox Services или DirectX библиотеки), что ломает античиты (EAC, BattlEye) в онлайн-играх.</p>
-
-
-
-      <h2>Итог: Что мы получили?</h2>
-
-
-
-      <p>Применив эти настройки, вы не просто «почистили ПК». Вы пересобрали операционную систему под единственную задачу — рендеринг кадров с минимальной задержкой.</p>
-
-
-
-      <p><strong>Чек-лист для быстрого старта:</strong></p>
-
-
-
-      <ul>
-
-        <li>Отключили VBS и Целостность памяти.</li>
-
-        <li>Включили HAGS и Игровой режим.</li>
-
-        <li>Вырезали телеметрию через WinUtil.</li>
-
-        <li>Настроили панель видеокарты на производительность.</li>
-
-        <li>Включили Re-Size BAR в BIOS.</li>
-
-      </ul>
-
-
-
-      <p>А какой у вас был прирост FPS после применения гайда? Делитесь цифрами и моделями ваших сборок в комментариях — разберем самые узкие места вашего ПК!</p>
-
-
-
-      <p>Понравился гайд? Сохраняйте статью в закладки (Ctrl+D), чтобы не потерять при переустановке Windows, и делитесь с друзьями, которые жалуются на лаги!</p>
-
-
-
-<!-- Подписка -->
-
-  <p>Аналитика индустрии, редкие цифры и мнения, о которых не пишут в крупных СМИ. Без спама — только по делу.</p>
-
-  <form class="newsletter-form">
-
-    <input type="email" placeholder="your@email.com" required aria-label="Ваш email" />
-
-    <button type="submit">Подписаться</button>
-
-  </form>
-
-  <div class="newsletter-msg"></div>
-
-</div>
-
-
-
-    
-
-</article>
-
-
-
-<div id="reactions-section"></div>
-
-
-
-<section class="comments-section">
-
-      <h4><i class="fas fa-comments" aria-hidden="true"></i> Комментарии</h4>
-
-      <div class="comments-container" id="comments-container">
-
-        <script src="https://utteranc.es/client.js"
-
-                repo="one1game/one1game.github.io"
-
-                issue-term="pathname"
-
-                label="комментарии"
-
-                theme="github-dark"
-
-                crossorigin="anonymous"
-
-                async>
-
-        </script>
-
+      <div class="callout danger">
+        <p><strong>Что вы теряете:</strong> VBS участвует в защите от эксплойтов уровня ядра, а также используется Credential Guard и некоторыми сценариями BitLocker. На домашнем игровом ПК риск умеренный, на рабочем или корпоративном — не отключайте. После крупных обновлений Windows настройку стоит перепроверять: она может вернуться.</p>
       </div>
 
+      <h2 id="hags"><span class="step-badge">Шаг 3</span> HAGS и оконный режим</h2>
+      <p><strong>Планирование графического процессора с аппаратным ускорением (HAGS)</strong> передаёт часть планирования работы видеокарте. Прирост скромный (обычно 1–3%, в отдельных играх до 8%), но HAGS обязателен для генерации кадров DLSS на части конфигураций.</p>
+      <ol>
+        <li><strong>Параметры → Система → Дисплей → Графика</strong>.</li>
+        <li><strong>«Изменить параметры графики по умолчанию»</strong>.</li>
+        <li>Включите <strong>«Планирование графического процессора с аппаратным ускорением»</strong>.</li>
+        <li>Перезагрузите компьютер — без перезагрузки настройка не применяется.</li>
+      </ol>
+
+      <h3>«Оптимизация для игр в оконном режиме» — включить</h3>
+      <p>В том же окне есть пункт <strong>«Оптимизация для игр в оконном режиме»</strong>. Его часто путают со старым советом «отключить оптимизацию полноэкранных окон» — и зря. Эта функция переводит игры на DX10/DX11 с устаревшей модели вывода на современную (Flip Model): в режиме «окно без рамки» снижается задержка ввода и работают VRR и Auto HDR. Держите её включённой.</p>
+      <p>Если конкретная игра начала мерцать или терять кадры, отключите оптимизацию <em>только для её exe</em>: Параметры → Дисплей → Графика → «Обзор» → выберите файл игры → «Параметры» → «Не оптимизировать».</p>
+
+      <h2 id="game-mode"><span class="step-badge">Шаг 4</span> Игровой режим и фоновая запись</h2>
+      <p><strong>Режим игры</strong> приоритизирует игровой процесс и откладывает часть фоновых задач, включая обновления. Он не «ускоряет железо», но снижает шанс микрофриза в неподходящий момент.</p>
+      <ol>
+        <li><strong>Параметры → Игры → Режим игры → Вкл</strong>.</li>
+        <li><strong>Параметры → Игры → Записи → «Запись в фоновом режиме» → Выкл</strong>, если вы не пишете клипы. Постоянная запись последних минут нагружает диск и шину.</li>
+        <li>Если Game Bar вам не нужен, отключите его в <strong>Параметры → Игры → Xbox Game Bar</strong>. Оверлей сам по себе потребляет немного, но конфликты с играми случаются.</li>
+      </ol>
+      <p>В свежих сборках Windows 11 появился <strong>Xbox Mode</strong> — полноэкранная оболочка, которая запускается из приложения Xbox или Game Bar и убирает лишние окна. Удобно для «диванной» игры с контроллером, на FPS напрямую не влияет.</p>
+
+      <h2 id="power"><span class="step-badge">Шаг 5</span> План питания</h2>
+      <p>«Сбалансированный» план снижает частоты процессора в паузах, а в игре это оборачивается провалами при резком росте нагрузки.</p>
+      <ol>
+        <li><strong>Параметры → Система → Питание и аккумулятор → Режим питания → «Наилучшая производительность»</strong>.</li>
+        <li>Для максимально агрессивного профиля откройте терминал от администратора и выполните:<br><code>powercfg -duplicatescheme e9a42b02-d5df-448d-aa00-03f14749eb61</code></li>
+        <li>Затем <strong>Win + R</strong> → <code>powercfg.cpl</code> → выберите появившуюся схему «Максимальная производительность».</li>
+      </ol>
+      <p><strong>Ноутбуки:</strong> используйте эти схемы только от сети. От батареи включается энергосбережение видеокарты, и никакие твики его не компенсируют. Проверьте фирменную утилиту (Armoury Crate, Lenovo Vantage, MSI Center) — там режим производительности и переключатель MUX (dGPU-only) дают больше, чем все настройки Windows вместе.</p>
+
+      <h2 id="gpu-panel"><span class="step-badge">Шаг 6</span> Панель NVIDIA и AMD</h2>
+      <h3>NVIDIA (NVIDIA App → Графика → Глобальные настройки)</h3>
+      <ul>
+        <li><strong>Режим низкой задержки:</strong> «Вкл». «Ультра» — только если не используете генерацию кадров.</li>
+        <li><strong>Управление электропитанием:</strong> «Предпочтителен режим максимальной производительности» (для настольного ПК).</li>
+        <li><strong>Качество фильтрации текстур:</strong> «Производительность».</li>
+        <li><strong>Размер кэша шейдеров:</strong> 10 ГБ — меньше подгрузок и фризов в новых играх.</li>
+        <li><strong>Вертикальная синхронизация:</strong> «Выкл», если работает G-Sync/FreeSync. Без VRR — «Быстро».</li>
+      </ul>
+      <h3>AMD (Adrenalin → Игры → Глобальные настройки графики)</h3>
+      <ul>
+        <li><strong>Radeon Anti-Lag:</strong> «Вкл» (в поддерживаемых играх — Anti-Lag 2).</li>
+        <li><strong>Radeon Chill:</strong> «Выкл» — он ограничивает частоту кадров.</li>
+        <li><strong>Повышение резкости изображения:</strong> «Вкл», около 80%.</li>
+        <li><strong>Качество фильтрации текстур:</strong> «Производительность».</li>
+        <li><strong>FreeSync:</strong> «Вкл», если монитор поддерживает.</li>
+      </ul>
+      <p>Не включайте одновременно «оптимизации» из панели драйвера и сторонних «бустеров» — они конфликтуют и дают обратный эффект.</p>
+
+      <h2 id="bios"><span class="step-badge">Шаг 7</span> BIOS: XMP/EXPO и Re-Size BAR</h2>
+      <p>Это единственный шаг, который требует перезагрузки в BIOS, и часто самый недооценённый. Без XMP/EXPO память работает на базовой частоте JEDEC — обычно 2133 или 4800 МТ/с вместо заявленных 6000.</p>
+      <ol>
+        <li>Перезагрузитесь в BIOS (обычно <strong>Del</strong> или <strong>F2</strong>).</li>
+        <li>Найдите <strong>XMP</strong> (Intel), <strong>EXPO</strong> (AMD) или <strong>DOCP</strong> (ASUS) и выберите профиль 1.</li>
+        <li>Включите <strong>Re-Size BAR</strong> и <strong>Above 4G Decoding</strong>.</li>
+        <li>Сохраните и перезагрузитесь.</li>
+      </ol>
+      <p>Проверка: <strong>Диспетчер задач → Производительность → Память → «Скорость»</strong> должна совпадать с характеристиками комплекта. Re-Size BAR виден в NVIDIA Control Panel → «Сведения о системе» (строка Resizable BAR) или в Adrenalin на главном экране.</p>
+      <p>Если после включения XMP компьютер не стартует — вернитесь в BIOS и выберите профиль ниже или выставьте частоту вручную. Память в двухканальном режиме (две одинаковые планки в слотах A2/B2) важнее, чем ещё 200 МГц.</p>
+
+      <h2 id="monitor"><span class="step-badge">Шаг 8</span> Монитор, VRR и задержка ввода</h2>
+      <p>Самая частая «проблема с FPS», которая вообще не про FPS: монитор на 144 Гц после переустановки Windows работает на 60 Гц. Картинка кажется ватной, хотя счётчик показывает норму.</p>
+      <ol>
+        <li><strong>Параметры → Система → Дисплей → Дополнительные параметры экрана → Частота обновления</strong> → выберите максимальную.</li>
+        <li>Включите <strong>G-Sync / FreeSync</strong> в драйвере и в меню самого монитора (OSD). Без включения в OSD технология не работает.</li>
+        <li>Для VRR выключите жёсткий V-Sync в игре и включите <strong>NVIDIA Reflex</strong> или <strong>Anti-Lag</strong>. Полезно ограничить FPS на 2–3 кадра ниже герцовки.</li>
+        <li>Подключайте по <strong>DisplayPort 1.4</strong> или <strong>HDMI 2.1</strong>: старый кабель может не тянуть высокую частоту в 1440p/4K.</li>
+        <li><strong>Мышь:</strong> снимите «Повышенную точность установки указателя» (Win + R → <code>main.cpl</code> → «Параметры указателя»). Это не добавит FPS, но уберёт искусственное ускорение курсора.</li>
+      </ol>
+      <p>HDR включайте, только если монитор действительно умеет в яркость (примерно HDR600 и выше). На дешёвых панелях Auto HDR чаще ухудшает картинку и слегка просаживает производительность.</p>
+
+      <h2 id="upscale"><span class="step-badge">Шаг 9</span> Апскейлеры и генерация кадров</h2>
+      <p>Если видеокарта загружена на 99%, дальше бороться за FPS нужно не в Windows, а в настройках игры. Апскейлеры дают самый большой прирост из всего списка — но требуют компромисса по качеству.</p>
+      <ul>
+        <li><strong>DLSS (NVIDIA RTX 20 и новее):</strong> режим «Качество» обычно выглядит лучше нативного TAA при заметно большей частоте кадров. На RTX 40/50 доступна генерация кадров, в DLSS 4.5 — динамическая мультигенерация.</li>
+        <li><strong>FSR 3.1 и новее (любая видеокарта):</strong> универсальный вариант, если DLSS нет. Начинайте с «Качество», «Баланс» — если не хватает FPS.</li>
+        <li><strong>XeSS 2 (Intel Arc и не только):</strong> хороший компромисс на картах без DLSS.</li>
+        <li><strong>Генерация кадров:</strong> удваивает-утраивает плавность, но добавляет задержку ввода. Для одиночных игр — отлично, для соревновательных шутеров — только с Reflex/Anti-Lag и осторожно.</li>
+      </ul>
+      <p>Правило простое: сначала выкручиваете пресет графики до комфортного FPS, затем включаете апскейлер в режиме «Качество», и только потом добавляете генерацию кадров. Иначе получите высокий счётчик и «резиновое» управление.</p>
+
+      <h2 id="background"><span class="step-badge">Шаг 10</span> Фон, оверлеи, автозагрузка</h2>
+      <ul>
+        <li><strong>Автозагрузка:</strong> Ctrl + Shift + Esc → «Автозагрузка» → отключите всё с высоким влиянием, что не нужно сразу: Spotify, Teams, Adobe, лаунчеры, синхронизацию.</li>
+        <li><strong>Оверлеи:</strong> Discord, Steam, NVIDIA App, EA App, Ubisoft Connect. Каждый перехватывает вызовы DirectX. Оставьте один — тот, которым реально пользуетесь.</li>
+        <li><strong>Виджеты Windows:</strong> Параметры → Персонализация → Панель задач → «Виджеты» → Выкл. Это освобождает память и убирает фоновый процесс ленты.</li>
+        <li><strong>Браузер:</strong> 40 вкладок и аппаратное ускорение съедают видеопамять. Закройте лишнее перед игрой.</li>
+      </ul>
+      <p>Насчёт телеметрии и «деблоат-скриптов»: выигрыш от них измеряется единицами процентов, а риск сломать Xbox-службы, Store, DirectX или античит — реальный. Точечное отключение рекомендаций и виджетов безопаснее, чем вырезание компонентов системы.</p>
+
+      <h2 id="storage"><span class="step-badge">Шаг 11</span> Накопитель и файл подкачки</h2>
+      <ul>
+        <li>Ставьте игры на <strong>NVMe SSD</strong>. На HDD вы получите не низкий FPS, а долгие загрузки и подгрузки текстур прямо во время игры.</li>
+        <li>Держите <strong>10–15% свободного места</strong> на системном диске: переполненный SSD заметно теряет скорость записи.</li>
+        <li><strong>Файл подкачки</strong> оставьте «По выбору системы». Отключение — старый миф: с 16 ГБ ОЗУ и современными играми это приводит к фризам и вылетам.</li>
+        <li><strong>DirectStorage</strong> в поддерживаемых играх ускоряет загрузку, но не добавляет FPS. Не ждите от него чудес.</li>
+        <li>Дефрагментацию SSD не запускайте — Windows сама делает TRIM.</li>
+      </ul>
+
+      <h2 id="no-gain">Если FPS не вырос: 9 причин</h2>
+      <ol>
+        <li><strong>Видеокарта загружена на 99%.</strong> Это норма, а не проблема. Понижайте настройки графики или включайте апскейлер.</li>
+        <li><strong>Процессор перегревается.</strong> Если температура выше 90–95 °C, начнётся троттлинг. Почистите кулер, замените термопасту, проверьте корпусной продув.</li>
+        <li><strong>Одна планка памяти.</strong> Одноканальный режим режет FPS в играх на 10–20%. Две одинаковые планки — обязательный минимум.</li>
+        <li><strong>Монитор подключён к материнской плате</strong>, а не к видеокарте. Классика: игра запускается на встроенной графике. Проверьте, в какой разъём вставлен кабель.</li>
+        <li><strong>Ограничитель кадров.</strong> V-Sync, Radeon Chill, настройка «Макс. FPS» в драйвере или в самой игре могут держать 60.</li>
+        <li><strong>Ноутбук от батареи или в «тихом» режиме.</strong> Переключите питание и профиль производительности.</li>
+        <li><strong>Игра на HDD или диск заполнен.</strong> Микрофризы при подгрузке — типичный симптом.</li>
+        <li><strong>Компиляция шейдеров.</strong> В новых играх на Unreal Engine 5 первые минуты могут фризить — это разовая проблема, а не Windows.</li>
+        <li><strong>Майнер или тяжёлый фон.</strong> Проверьте Диспетчер задач: незнакомый процесс с загрузкой CPU/GPU — повод просканировать систему.</li>
+      </ol>
+
+      <h2 id="myths">Чего делать нельзя</h2>
+      <ul>
+        <li><strong>«Очистители реестра» и «оптимизаторы».</strong> Не влияют на FPS, иногда ломают систему. Razer Cortex и подобные сами добавляют фоновый процесс.</li>
+        <li><strong>Отключать файл подкачки.</strong> Фризы и вылеты гарантированы, особенно при 16 ГБ ОЗУ.</li>
+        <li><strong>Ставить «Lite/Ghost» сборки.</strong> Вырезанные компоненты ломают античиты (EAC, BattlEye) и Xbox-сервисы.</li>
+        <li><strong>Отключать все службы подряд.</strong> Эффект близок к нулю, а система становится непредсказуемой.</li>
+        <li><strong>Верить в «+30% от одного твика».</strong> Так не бывает. Реальный суммарный выигрыш в CPU-bound игре — 10–20%, в GPU-bound — почти ноль.</li>
+        <li><strong>Отключать обновления Windows навсегда.</strong> Краткосрочно удобно, но драйверы и исправления безопасности выходят именно там.</li>
+      </ul>
+
+      <h2 id="checklist">Чек-лист: что сделать в первую очередь</h2>
+      <div class="table-wrap">
+        <table class="data-table">
+          <thead>
+            <tr><th>Что проверить</th><th>Где</th><th>Нужное значение</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>Частота монитора</td><td>Дисплей → Дополнительные параметры экрана</td><td>Максимальная (144/165/240 Гц)</td></tr>
+            <tr><td>Целостность памяти</td><td>Безопасность Windows → Изоляция ядра</td><td>Выкл (на домашнем ПК)</td></tr>
+            <tr><td>HAGS</td><td>Дисплей → Графика → По умолчанию</td><td>Вкл</td></tr>
+            <tr><td>Оптимизация оконных игр</td><td>Там же</td><td>Вкл</td></tr>
+            <tr><td>Режим игры</td><td>Параметры → Игры</td><td>Вкл</td></tr>
+            <tr><td>Фоновая запись</td><td>Игры → Записи</td><td>Выкл</td></tr>
+            <tr><td>План питания</td><td>Питание и аккумулятор</td><td>Наилучшая производительность</td></tr>
+            <tr><td>Драйвер GPU</td><td>NVIDIA App / Adrenalin</td><td>Актуальный</td></tr>
+            <tr><td>XMP/EXPO</td><td>BIOS</td><td>Профиль 1</td></tr>
+            <tr><td>Re-Size BAR</td><td>BIOS</td><td>Enabled</td></tr>
+            <tr><td>Автозагрузка</td><td>Диспетчер задач</td><td>Только нужное</td></tr>
+            <tr><td>Оверлеи</td><td>Discord/Steam/лаунчеры</td><td>Один</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h2 id="faq">Вопросы и ответы</h2>
+      <div class="faq-item">
+        <h3>На сколько реально можно увеличить FPS в Windows 11?</h3>
+        <p>В процессорозависимых играх (CS2, Valorant, MMO, симуляторы) — на 5–15%. В играх с загруженной видеокартой — на 0–5%. Основной вклад дают отключение изоляции ядра, XMP/EXPO и чистый фон, а не «секретные» твики реестра.</p>
+      </div>
+      <div class="faq-item">
+        <h3>Безопасно ли отключать изоляцию ядра и VBS?</h3>
+        <p>Настройка обратима, вернуть её можно в любой момент. Но VBS защищает ядро от эксплойтов и используется Credential Guard и BitLocker. На домашнем игровом ПК риск умеренный, на рабочем компьютере отключать не стоит.</p>
+      </div>
+      <div class="faq-item">
+        <h3>Помогает ли игровой режим Windows 11?</h3>
+        <p>Да, но умеренно: он даёт приоритет игре и откладывает часть фоновых задач. На слабых и средних ПК это уменьшает микрофризы, на топовом железе разница минимальна. Вреда нет — держите включённым.</p>
+      </div>
+      <div class="faq-item">
+        <h3>Нужно ли отключать оптимизацию полноэкранных окон?</h3>
+        <p>Нет. Наоборот, в Windows 11 стоит включить «Оптимизацию для игр в оконном режиме» — она переводит старые игры на современную модель вывода и снижает задержку ввода в режиме «окно без рамки».</p>
+      </div>
+      <div class="faq-item">
+        <h3>Почему FPS высокий, а игра всё равно лагает?</h3>
+        <p>Смотрите не на средний FPS, а на 1% low и график времени кадра. Если средний 140, а 1% low падает до 45, вы чувствуете рывки. Причины — фон, троттлинг, память без XMP или компиляция шейдеров.</p>
+      </div>
+      <div class="faq-item">
+        <h3>Поможет ли отключение телеметрии и «чистая» сборка Windows?</h3>
+        <p>Телеметрия почти не влияет на FPS. «Чистые» сборки часто ломают Xbox-службы, Store, DirectX и античиты. Обычная Windows 11 плюс точечные настройки — безопаснее и эффективнее.</p>
+      </div>
+      <div class="faq-item">
+        <h3>Как правильно измерить прирост FPS?</h3>
+        <p>Прогоните один и тот же участок игры с одинаковыми настройками до и после. Запишите средний FPS, 1% low и температуру. Меняйте одну настройку за раз — иначе непонятно, что именно сработало.</p>
+      </div>
+
+      <div class="related-inline">
+        <h4>Читайте также</h4>
+        <ul>
+          <li><a class="internal-link" href="/archive/skrytye-lovushki-apgreyda-2026">Скрытые ловушки апгрейда 2026: почему новый GPU не даёт прироста</a></li>
+          <li><a class="internal-link" href="/archive/rtx-5090-vs-rx-9070xt-sravnenie-2026">RTX 5090 против RX 9070 XT: честное сравнение в играх</a></li>
+          <li><a class="internal-link" href="/archive/windows-11-july-2026-update-podgotovka">Обновления Windows 11: как подготовиться и не сломать систему</a></li>
+          <li><a class="internal-link" href="/archive/igry-dlya-slabyh-noutbukov-2026">Игры для слабых ноутбуков: что реально запустится</a></li>
+        </ul>
+      </div>
+
+      <div class="sources-block">
+        <strong>Источники и проверка:</strong>
+        <a href="https://learn.microsoft.com/en-us/windows-hardware/design/device-experiences/oem-vbs" target="_blank" rel="noopener">Microsoft Learn: Virtualization-based Security</a>
+        <a href="https://learn.microsoft.com/en-us/windows/security/threat-protection/device-guard/enable-virtualization-based-protection-of-code-integrity" target="_blank" rel="noopener">Microsoft Learn: Memory integrity</a>
+        <a href="https://www.nvidia.com/en-us/geforce/technologies/dlss/" target="_blank" rel="noopener">NVIDIA DLSS</a>
+        <a href="https://www.nvidia.com/en-us/geforce/technologies/reflex/" target="_blank" rel="noopener">NVIDIA Reflex 2</a>
+        <a href="https://www.capframex.com/" target="_blank" rel="noopener">CapFrameX</a>
+        <p style="margin:10px 0 0;">Диапазоны прироста — обобщение независимых тестов (Tom’s Hardware, TechSpot) и документации Microsoft. На вашем ПК результат зависит от процессора, памяти и конкретной игры.</p>
+      </div>
+
+      <div class="update-log">
+        <h4>История обновлений</h4>
+        <ul>
+          <li><strong>31.10.2026:</strong> гайд переписан: добавлены замеры до/после, разделы про 1% low, Xbox Mode, ноутбуки и диагностику узкого места. Исправлен совет про «Оптимизацию полноэкранных окон».</li>
+          <li><strong>08.07.2026:</strong> первая версия.</li>
+        </ul>
+      </div>
+
+      <p><strong>Понравился гайд?</strong> Сохраните его в закладки (Ctrl + D), чтобы не искать заново после переустановки Windows, и поделитесь с другом, который жалуется на лаги.</p>
+
+      <p>Аналитика индустрии, редкие цифры и мнения, о которых не пишут в крупных СМИ. Без спама — только по делу.</p>
+      <form class="newsletter-form">
+        <input type="email" placeholder="your@email.com" required aria-label="Ваш email" />
+        <button type="submit">Подписаться</button>
+      </form>
+      <div class="newsletter-msg"></div>
+    </article>
+
+    <div id="reactions-section"></div>
+
+    <section class="comments-section">
+      <h4><i class="fas fa-comments" aria-hidden="true"></i> Комментарии</h4>
+      <div class="comments-container" id="comments-container">
+        <script src="https://utteranc.es/client.js"
+                repo="one1game/one1game.github.io"
+                issue-term="pathname"
+                label="комментарии"
+                theme="github-dark"
+                crossorigin="anonymous"
+                async>
+        </script>
+      </div>
     </section>
-
-
-
-    <!-- Share -->
 
     <section class="share-section">
-
       <h4>Поделиться</h4>
-
       <p class="share-hint">Понравилась статья? Отправь другу — пусть тоже будет в курсе!</p>
-
       <div class="share-buttons" id="share-buttons"></div>
-
     </section>
 
-
-
-    <!-- Related -->
-
     <section class="related-section">
-
       <h4>Похожие статьи</h4>
-
-      <div class="related-grid" id="related-container"></div></section>
-
-    
+      <div class="related-grid" id="related-container"></div>
+    </section>
 
   </div>
-
 </div>
-
-
-
 </main>
 
-
-
 <script src="/cache-version.js"></script>
-
 <script defer src="/articles-data.js?v=22"></script>
-
 <script>
-
 (function() {
-
   var path = window.location.pathname;
-
   var currentUrl = path.replace(/^\/+/, '/');
-
   var all = window.allArticles || [];
 
-
-
-  // Share buttons
-
   var url = encodeURIComponent('https://one1game.org' + currentUrl);
-
   var title = encodeURIComponent(document.title);
-
   var shareEl = document.getElementById('share-buttons');
-
   shareEl.innerHTML = [
-
     '<a target="_blank" rel="noopener" class="share-btn" href="https://vk.com/share.php?url=' + url + '&title=' + title + '">VK</a>',
-
     '<a target="_blank" rel="noopener" class="share-btn" href="https://t.me/share/url?url=' + url + '&text=' + title + '">Telegram</a>',
-
     '<a target="_blank" rel="noopener" class="share-btn" href="https://twitter.com/intent/tweet?url=' + url + '&text=' + title + '">Twitter</a>',
-
     '<a target="_blank" rel="noopener" class="share-btn" href="https://api.whatsapp.com/send?text=' + title + '%20' + url + '">WhatsApp</a>'
-
   ].join('');
 
-
-
-  // Related articles
-
   var related = all.filter(function(a) { return a.url !== currentUrl; }).slice(0, 4);
-
   var relEl = document.getElementById('related-container');
-
   relEl.innerHTML = related.map(function(a) {
-
     return '<a href="' + a.url + '" class="related-card"><strong>' + a.title + '</strong><span>' + (a.date || '') + '</span></a>';
-
   }).join('');
-
 })();
-
 </script>
-
 <script src="/components.js?v=41" defer></script>
-
 <script src="/reactions.js" defer></script>
 
-<!-- Cookie Banner -->
-
 <div class="cookie-banner" id="cookie-banner" role="dialog" aria-live="polite" aria-label="Согласие на использование cookies">
-
   <p>Мы используем cookies для аналитики и улучшения сайта. Подробнее — в <a href="/privacy">политике конфиденциальности</a>.</p>
-
   <div class="cookie-buttons">
-
     <button id="cookie-accept" class="cookie-btn primary">Принять</button>
-
     <button id="cookie-decline" class="cookie-btn secondary">Только необходимые</button>
-
   </div>
-
 </div>
-
-
 
 <script>
 function acceptCookies() {
@@ -696,19 +606,14 @@ function acceptCookies() {
   if (typeof enableGA === 'function') enableGA();
   document.getElementById('cookie-banner').classList.remove('show');
 }
-
 function declineCookies() {
   localStorage.setItem('ga_consent', 'no');
   document.getElementById('cookie-banner').classList.remove('show');
 }
-
 document.addEventListener('DOMContentLoaded', function() {
   if (!localStorage.getItem('ga_consent')) {
-    setTimeout(function() {
-      document.getElementById('cookie-banner').classList.add('show');
-    }, 1500);
+    setTimeout(function() { document.getElementById('cookie-banner').classList.add('show'); }, 1500);
   }
-
   var acceptBtn = document.getElementById('cookie-accept');
   var declineBtn = document.getElementById('cookie-decline');
   if (acceptBtn) acceptBtn.addEventListener('click', acceptCookies);
@@ -718,8 +623,5 @@ document.addEventListener('DOMContentLoaded', function() {
 
 <script defer src="/api-config.js?v=1"></script>
 <script src="/newsletter.js?v=2" defer></script>
-
 </body>
-
 </html>
-

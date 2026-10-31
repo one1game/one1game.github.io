@@ -16076,11 +16076,12 @@ window.allArticles = [
   },
   {
     "url": "/archive/kak-uvelichit-fps-windows-11-optimizaciya",
-    "title": "Как увеличить FPS в Windows 11: Секретный гайд 2026 года (Выжимаем максимум)",
-    "excerpt": "Windows 11 режет FPS в играх? Полный гайд по оптимизации: отключение VBS, настройка HAGS, чистка телеметрии и скрытые фишки для буста фреймрейта до 30-40%...",
+    "title": "Как увеличить FPS в Windows 11: 15 настроек, которые реально работают",
+    "excerpt": "Изоляция ядра, HAGS, Game Mode, драйверы, XMP и Re-Size BAR: честные диапазоны прироста, диагностика узкого места и чек-лист. Обновлено 31 октября 2026.",
     "image": "/img/ai/output/kak_uvelichit_fps_windows_11.webp",
     "date": "8 июля 2026",
-    "readTime": "7 мин",
+    "updated": "2026-10-31",
+    "readTime": "12 мин",
     "category": "Гайды"
   },
   {
