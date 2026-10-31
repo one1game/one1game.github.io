@@ -1,8 +1,8 @@
 {
- "updated": "2026-10-30",
+ "updated": "2026-10-31",
  "source": "gamerpower.com",
  "page": "https://one1game.org/besplatnye-igry",
- "count": 36,
+ "count": 38,
  "items": [
   {
    "title": "Best Plumber (IndieGala) Giveaway",
@@ -27,6 +27,14 @@
    "end_date": "N/A",
    "url": "https://www.gamerpower.com/open/ancient-evil-pc-giveaway",
    "description": "Download ANCIENT EVIL for free via IndieGala! Ancient Evil is a 2d tactical RPG with puzzle elements. Don´t miss it!"
+  },
+  {
+   "title": "My Darkest Witch (IndieGala) Giveaway",
+   "platforms": "PC, DRM-Free",
+   "worth": "$4.99",
+   "end_date": "N/A",
+   "url": "https://www.gamerpower.com/open/my-darkest-witch-pc-giveaway",
+   "description": "Score My Darkest Witch for free on IndieGala! My Darkest Witch is a 2d survival arena game with endless waves of enemies."
   },
   {
    "title": "The Black Within (itch.io) Giveaway",
@@ -189,14 +197,6 @@
    "description": "Download Sleep Demon for free on Itch.io until November 1, a indie single player walking simulator game about sleep paralysis."
   },
   {
-   "title": "Bad cat Sam (IndieGala) Giveaway",
-   "platforms": "PC, DRM-Free",
-   "worth": "$2.99",
-   "end_date": "N/A",
-   "url": "https://www.gamerpower.com/open/bad-cat-sam-pc-giveaway",
-   "description": "Download Bad cat Sam for free on IndieGala. Bad cat Sam is a 2d platformer about a cat named serious Sam."
-  },
-  {
    "title": "GetHigh.EXE (Epic Games) Giveaway",
    "platforms": "PC, Epic Games Store",
    "worth": "$1.99",
@@ -285,12 +285,28 @@
    "description": "Fall in love in with Sudoku again! Grab Hexologic for free via Steam! Hexologic is a Sudoku-like puzzle game with nice visuals and relaxing music. Don´t miss it!"
   },
   {
+   "title": "A New Beginning: Final Cut (GOG) Giveaway",
+   "platforms": "PC, GOG, DRM-Free",
+   "worth": "$9.99",
+   "end_date": "2026-11-02 23:59:00",
+   "url": "https://www.gamerpower.com/open/a-new-beginning-final-cut-gog-giveaway",
+   "description": "Score A New Beginning: Final Cut for free via GOG! A New Beginning - Final Cut is a cinematic adventure game with amazing graphics and great characters. Don´t miss it!"
+  },
+  {
    "title": "Battle Ram (IndieGala) Giveaway",
    "platforms": "PC, DRM-Free",
    "worth": "$29.99",
    "end_date": "N/A",
    "url": "https://www.gamerpower.com/open/battle-ram-pc-giveaway",
    "description": "Become the battle lamb you were born to be! Battle Ram is free this week on IndieGala, download it now! Battle Ram is a 2d action-packed game with lambs and battling robots."
+  },
+  {
+   "title": "Asleep: Act 1 (Steam) Giveaway",
+   "platforms": "PC, Steam",
+   "worth": "$9.99",
+   "end_date": "2026-11-02 23:59:00",
+   "url": "https://www.gamerpower.com/open/asleep-act-1-steam-giveaway",
+   "description": "Claim Asleep: Act 1 for free via Steam until 2 Nov! Asleep is a 2d adventure game with dark atmosphere and challenging puzzles."
   }
  ]
 }
