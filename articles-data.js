@@ -386,6 +386,16 @@ window.allArticles = [
     "updated": "2026-10-30"
   },
   {
+    "url": "/archive/kak-uvelichit-fps-windows-11-optimizaciya",
+    "title": "Как увеличить FPS в Windows 11: 15 настроек, которые реально работают",
+    "excerpt": "Уровень 1 — безопасно за 10 минут без реестра: частота монитора, Game Mode, питание, драйвер и HAGS. Дальше — VBS, BIOS и честные цифры прироста.",
+    "image": "/img/ai/output/kak_uvelichit_fps_windows_11-2026.webp",
+    "date": "31 октября 2026",
+    "updated": "2026-10-31",
+    "readTime": "13 мин",
+    "category": "Гайды"
+  },
+  {
     "url": "/archive/sancta-4025270",
     "title": "Sancta: обзор мрачного приключения в темных глубинах",
     "excerpt": "Обзор Sancta: атмосферное приключение в заброшенном подземелье, где свет спасает жизнь. Узнайте о головоломках и опасностях тьмы.",
@@ -16073,16 +16083,6 @@ window.allArticles = [
     "date": "8 июля 2026",
     "readTime": "10 мин",
     "category": "Аналитика"
-  },
-  {
-    "url": "/archive/kak-uvelichit-fps-windows-11-optimizaciya",
-    "title": "Как увеличить FPS в Windows 11: 15 настроек, которые реально работают",
-    "excerpt": "Изоляция ядра, HAGS, Game Mode, драйверы, XMP и Re-Size BAR: честные диапазоны прироста, диагностика узкого места и чек-лист. Обновлено 31 октября 2026.",
-    "image": "/img/ai/output/kak_uvelichit_fps_windows_11.webp?v=2",
-    "date": "8 июля 2026",
-    "updated": "2026-10-31",
-    "readTime": "13 мин",
-    "category": "Гайды"
   },
   {
     "url": "/archive/xbox-gamepass-to-steam-saves-2026",
