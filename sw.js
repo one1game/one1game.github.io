@@ -1,4 +1,4 @@
-const CACHE = 'one1game-v64';
+const CACHE = 'one1game-v65';
 const CDN_CACHE = 'one1game-cdn-v1';
 
 const SHELL = [
@@ -72,6 +72,10 @@ self.addEventListener('activate', e => {
 // Кэш используется только как офлайн-запас.
 self.addEventListener('fetch', e => {
   if (e.request.method !== 'GET') return;
+
+  // HTML всегда берём из сети. Иначе старый service worker может
+  // подсовывать закэшированную главную после обычного обновления.
+  if (e.request.mode === 'navigate') return;
 
   let url;
   try {

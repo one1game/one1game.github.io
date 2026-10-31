@@ -32,7 +32,9 @@
 
   // ── PWA ────────────────────────────────────────────
   if ('serviceWorker' in navigator) {
-    navigator.serviceWorker.register('/sw.js').then(function (reg) {
+    // Новый URL заставляет браузер скачать свежий sw.js, даже если старая
+    // версия закэширована и подсовывала устаревшую главную.
+    navigator.serviceWorker.register('/sw.js?v=65', { updateViaCache: 'none' }).then(function (reg) {
       // Проверяем обновление при каждом заходе, чтобы новая версия подхватывалась сразу.
       if (reg && reg.update) reg.update();
     }).catch(function () {});
