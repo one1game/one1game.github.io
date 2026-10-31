@@ -19,3 +19,6 @@ desktop.ini
 
 # Кэш Python
 __pycache__/
+
+# Локальная SEO-лаборатория (анализ тем и запросов)
+seo-lab/
