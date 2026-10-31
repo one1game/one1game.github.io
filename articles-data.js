@@ -1,6 +1,306 @@
 // articles-data.js
 window.allArticles = [
   {
+    "url": "/archive/turn-limit-100-5116540",
+    "title": "Turn Limit 100: цена, отзывы и статистика игроков",
+    "excerpt": "Turn Limit 100: актуальная цена (475.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
+    "date": "31 октября 2026",
+    "readTime": "2 мин",
+    "category": "Обзоры",
+    "updated": "2026-10-31",
+    "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5116540/98eb1b03f18763f18afdefe06e92c186cceed744/header.jpg?t=1793434323"
+  },
+  {
+    "url": "/archive/blackboard-ponies-4670040",
+    "title": "Blackboard Ponies: цена, отзывы и статистика игроков",
+    "excerpt": "Blackboard Ponies: актуальная цена (91.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
+    "date": "31 октября 2026",
+    "readTime": "2 мин",
+    "category": "Обзоры",
+    "updated": "2026-10-31",
+    "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4670040/a4fc7e5ecd57c4f340231fb2be2976b26c222a2a/header.jpg?t=1793438058"
+  },
+  {
+    "url": "/archive/minesweeper-arcade-5431750",
+    "title": "MINESWEEPER ARCADE: цена, отзывы и статистика игроков",
+    "excerpt": "MINESWEEPER ARCADE: актуальная цена (104.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
+    "date": "31 октября 2026",
+    "readTime": "2 мин",
+    "category": "Обзоры",
+    "updated": "2026-10-31",
+    "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5431750/a90718cfa8c3b50d81ebbb5f3aeb69856ee39894/header.jpg?t=1793431237"
+  },
+  {
+    "url": "/archive/miniracingonline-5288230",
+    "title": "MiniRacingOnline: цена, отзывы и статистика игроков",
+    "excerpt": "MiniRacingOnline: актуальная цена (Бесплатно), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
+    "date": "31 октября 2026",
+    "readTime": "2 мин",
+    "category": "Обзоры",
+    "updated": "2026-10-31",
+    "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5288230/0ba6b0d399dd576b9372c1f631cf4243bf8451ef/header.jpg?t=1793430933"
+  },
+  {
+    "url": "/archive/withouteyes-chapter1-4374510",
+    "title": "WithoutEyes Chapter1: цена, отзывы и статистика игроков",
+    "excerpt": "WithoutEyes Chapter1: актуальная цена (Бесплатно), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
+    "date": "31 октября 2026",
+    "readTime": "2 мин",
+    "category": "Обзоры",
+    "updated": "2026-10-31",
+    "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4374510/15b4ecf08840358ee877e8670668d50d1f1393e7/header.jpg?t=1793430442"
+  },
+  {
+    "url": "/archive/kur-endless-descent-ashipu-class-5456270",
+    "title": "Kur - Endless Descent - Ashipu (Class): цена, отзывы и статистика игроков",
+    "excerpt": "Kur - Endless Descent - Ashipu (Class): актуальная цена (Бесплатно), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
+    "date": "31 октября 2026",
+    "readTime": "2 мин",
+    "category": "Обзоры",
+    "updated": "2026-10-31",
+    "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5456270/d524c2cd57eb76b0b2918a7728552cece4e45ed6/header.jpg?t=1793394221"
+  },
+  {
+    "url": "/archive/reactance-5357500",
+    "title": "Reactance: цена, отзывы и статистика игроков",
+    "excerpt": "Reactance: актуальная цена (Бесплатно), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
+    "date": "31 октября 2026",
+    "readTime": "2 мин",
+    "category": "Обзоры",
+    "updated": "2026-10-31",
+    "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5357500/d953602568e2f5c0e431356b78abb4c6a6998110/header.jpg?t=1793352059"
+  },
+  {
+    "url": "/archive/joystick-jammers-one-prawn-5196280",
+    "title": "JOYSTICK JAMMERS: One Prawn: цена, отзывы и статистика игроков",
+    "excerpt": "JOYSTICK JAMMERS: One Prawn: актуальная цена (Бесплатно), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
+    "date": "31 октября 2026",
+    "readTime": "2 мин",
+    "category": "Обзоры",
+    "updated": "2026-10-31",
+    "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5196280/45bb7d1fdff9d8c522e4b359e6cd3b6c55f9efac/header.jpg?t=1793427271"
+  },
+  {
+    "url": "/archive/everdeep-idle-4980350",
+    "title": "Everdeep Idle: цена, отзывы и статистика игроков",
+    "excerpt": "Everdeep Idle: актуальная цена (216.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
+    "date": "31 октября 2026",
+    "readTime": "2 мин",
+    "category": "Обзоры",
+    "updated": "2026-10-31",
+    "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4980350/bff2715049cb5de5fd26977feec2609762113d22/header.jpg?t=1793423103"
+  },
+  {
+    "url": "/archive/the-pasture-5351540",
+    "title": "The Pasture: цена, отзывы и статистика игроков",
+    "excerpt": "The Pasture: актуальная цена (Бесплатно), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
+    "date": "31 октября 2026",
+    "readTime": "2 мин",
+    "category": "Обзоры",
+    "updated": "2026-10-31",
+    "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5351540/9cf8b7177f5559597e559d9fe2a5db76cbe2816c/header.jpg?t=1793422877"
+  },
+  {
+    "url": "/archive/darkblood-reverse-3052820",
+    "title": "DarkBlood -ReVerse-: цена, отзывы и статистика игроков",
+    "excerpt": "DarkBlood -ReVerse-: актуальная цена (372.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
+    "date": "31 октября 2026",
+    "readTime": "2 мин",
+    "category": "Обзоры",
+    "updated": "2026-10-31",
+    "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3052820/header.jpg?t=1793420822"
+  },
+  {
+    "url": "/archive/hospital-rhapsody-5129280",
+    "title": "Hospital Rhapsody: цена, отзывы и статистика игроков",
+    "excerpt": "Hospital Rhapsody: актуальная цена (372.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
+    "date": "31 октября 2026",
+    "readTime": "2 мин",
+    "category": "Обзоры",
+    "updated": "2026-10-31",
+    "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5129280/ae35f50cac940ecd7e9cbe505deebbd10ba02eda/header.jpg?t=1793419324"
+  },
+  {
+    "url": "/archive/pactmage-chess-roster-5287260",
+    "title": "Pactmage - Chess Roster: цена, отзывы и статистика игроков",
+    "excerpt": "Pactmage - Chess Roster: актуальная цена (Бесплатно), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
+    "date": "31 октября 2026",
+    "readTime": "2 мин",
+    "category": "Обзоры",
+    "updated": "2026-10-31",
+    "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5287260/f792016cf408ffb21db13a0c2550151628af4ae9/header.jpg?t=1793417365"
+  },
+  {
+    "url": "/archive/-5404630",
+    "title": "忌質物管理局　第七保管室: цена, отзывы и статистика игроков",
+    "excerpt": "忌質物管理局　第七保管室: актуальная цена (169.98 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
+    "date": "31 октября 2026",
+    "readTime": "2 мин",
+    "category": "Обзоры",
+    "updated": "2026-10-31",
+    "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5404630/b1c2891ce8d641fc2cc5b821d5ea413f7367bf22/header.jpg?t=1793415656"
+  },
+  {
+    "url": "/archive/c-huangmeic-3919400",
+    "title": "黄莓C HuangmeiC: цена, отзывы и статистика игроков",
+    "excerpt": "黄莓C HuangmeiC: актуальная цена (378.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
+    "date": "31 октября 2026",
+    "readTime": "2 мин",
+    "category": "Обзоры",
+    "updated": "2026-10-31",
+    "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3919400/4b4769edf258b586bd84d3d0111eea708aa0a4ab/header.jpg?t=1793415013"
+  },
+  {
+    "url": "/archive/triad-of-victory-4603280",
+    "title": "Triad of Victory: цена, отзывы и статистика игроков",
+    "excerpt": "Triad of Victory: актуальная цена (90.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
+    "date": "31 октября 2026",
+    "readTime": "2 мин",
+    "category": "Обзоры",
+    "updated": "2026-10-31",
+    "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4603280/e2edf7147c94503a13f0531493b9f9f9dc9fee47/header.jpg?t=1793421009"
+  },
+  {
+    "url": "/archive/spinstack-5202640",
+    "title": "Spinstack: цена, отзывы и статистика игроков",
+    "excerpt": "Spinstack: актуальная цена (150.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
+    "date": "31 октября 2026",
+    "readTime": "2 мин",
+    "category": "Обзоры",
+    "updated": "2026-10-31",
+    "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5202640/ad1e276c7f50b74f8295f31aeb394b5c447b6989/header.jpg?t=1793413327"
+  },
+  {
+    "url": "/archive/brand-of-betrayal-4690880",
+    "title": "Brand of Betrayal: цена, отзывы и статистика игроков",
+    "excerpt": "Brand of Betrayal: актуальная цена (372.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
+    "date": "31 октября 2026",
+    "readTime": "2 мин",
+    "category": "Обзоры",
+    "updated": "2026-10-31",
+    "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4690880/cd47ed493aa4344ffe7c9e168e40a0b2cf330f0d/header.jpg?t=1793412846"
+  },
+  {
+    "url": "/archive/so-3-caso-044-5420850",
+    "title": "SO-3: Caso 044: цена, отзывы и статистика игроков",
+    "excerpt": "SO-3: Caso 044: актуальная цена (400.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
+    "date": "31 октября 2026",
+    "readTime": "2 мин",
+    "category": "Обзоры",
+    "updated": "2026-10-31",
+    "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5420850/825031e87f09ccabcfed0aa81d8c0bb6a4efb399/header.jpg?t=1793412672"
+  },
+  {
+    "url": "/archive/orbital-peril-4408520",
+    "title": "Orbital Peril: цена, отзывы и статистика игроков",
+    "excerpt": "Orbital Peril: актуальная цена (220.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
+    "date": "31 октября 2026",
+    "readTime": "2 мин",
+    "category": "Обзоры",
+    "updated": "2026-10-31",
+    "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4408520/36e5a21583125829baf6d3672ba31d5e53fe9fcf/header.jpg?t=1793413006"
+  },
+  {
+    "url": "/archive/the-dark-forest-calls-4088940",
+    "title": "The Dark Forest Calls: цена, отзывы и статистика игроков",
+    "excerpt": "The Dark Forest Calls: актуальная цена (442.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
+    "date": "31 октября 2026",
+    "readTime": "2 мин",
+    "category": "Обзоры",
+    "updated": "2026-10-31",
+    "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4088940/a9b93c5f948d00490a03203ec3aec817a69a895e/header.jpg?t=1793411912"
+  },
+  {
+    "url": "/archive/name-me-if-you-can-5396420",
+    "title": "NAME ME IF YOU CAN: цена, отзывы и статистика игроков",
+    "excerpt": "NAME ME IF YOU CAN: актуальная цена (210.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
+    "date": "31 октября 2026",
+    "readTime": "2 мин",
+    "category": "Обзоры",
+    "updated": "2026-10-31",
+    "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5396420/84c56c1929d01f4a96a5162ff05493f8cb2f185d/header.jpg?t=1793413157"
+  },
+  {
+    "url": "/archive/vagina-sancta-5335830",
+    "title": "Vagina Sancta: цена, отзывы и статистика игроков",
+    "excerpt": "Vagina Sancta: актуальная цена (110.77 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
+    "date": "31 октября 2026",
+    "readTime": "2 мин",
+    "category": "Обзоры",
+    "updated": "2026-10-31",
+    "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5335830/fba911d640dccbb6a4fcffd9585ad13fee5fd5fb/header.jpg?t=1793409673"
+  },
+  {
+    "url": "/archive/apothecary-grounds-4394570",
+    "title": "Apothecary Grounds: цена, отзывы и статистика игроков",
+    "excerpt": "Apothecary Grounds: актуальная цена (Бесплатно), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
+    "date": "31 октября 2026",
+    "readTime": "2 мин",
+    "category": "Обзоры",
+    "updated": "2026-10-31",
+    "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4394570/60a0516f74d18ba87c559ba5678f3bf56b74fc0d/header.jpg?t=1793408556"
+  },
+  {
+    "url": "/archive/tronix-carnival-games-3854560",
+    "title": "Tronix Carnival Games: цена, отзывы и статистика игроков",
+    "excerpt": "Tronix Carnival Games: актуальная цена (385.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
+    "date": "31 октября 2026",
+    "readTime": "2 мин",
+    "category": "Обзоры",
+    "updated": "2026-10-31",
+    "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3854560/d786012f84dec96f4b3dc5ba3b4daf1370589797/header.jpg?t=1793407872"
+  },
+  {
+    "url": "/archive/prey-island-5297390",
+    "title": "Prey Island: цена, отзывы и статистика игроков",
+    "excerpt": "Prey Island: актуальная цена (170.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
+    "date": "31 октября 2026",
+    "readTime": "2 мин",
+    "category": "Обзоры",
+    "updated": "2026-10-31",
+    "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5297390/ee1b83c53c6a991b4681741925b947577ca41477/header.jpg?t=1793406967"
+  },
+  {
+    "url": "/archive/redshift-3851950",
+    "title": "REDSHIFT: цена, отзывы и статистика игроков",
+    "excerpt": "REDSHIFT: актуальная цена (Бесплатно), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
+    "date": "31 октября 2026",
+    "readTime": "2 мин",
+    "category": "Обзоры",
+    "updated": "2026-10-31",
+    "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3851950/a0693e84404405a00181d397ce60630d00a8d740/header.jpg?t=1793406027"
+  },
+  {
+    "url": "/archive/mine-away-5416030",
+    "title": "Mine Away: цена, отзывы и статистика игроков",
+    "excerpt": "Mine Away: актуальная цена (195.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
+    "date": "31 октября 2026",
+    "readTime": "2 мин",
+    "category": "Обзоры",
+    "updated": "2026-10-31",
+    "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5416030/15e9b48d28e8a292b13d81715885e306299b1a0a/header.jpg?t=1793404827"
+  },
+  {
+    "url": "/archive/factorize-1-4932970",
+    "title": "FACTORIZE: 1: цена, отзывы и статистика игроков",
+    "excerpt": "FACTORIZE: 1: актуальная цена (290.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
+    "date": "31 октября 2026",
+    "readTime": "2 мин",
+    "category": "Обзоры",
+    "updated": "2026-10-31",
+    "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4932970/a255c1ff045b0291e219fed84a552037860ea1bd/header.jpg?t=1793403437"
+  },
+  {
+    "url": "/archive/logical-cat-logistics-5154220",
+    "title": "Logical Cat Logistics: цена, отзывы и статистика игроков",
+    "excerpt": "Logical Cat Logistics: актуальная цена (120.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
+    "date": "31 октября 2026",
+    "readTime": "2 мин",
+    "category": "Обзоры",
+    "updated": "2026-10-31",
+    "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5154220/2237209f86aa1bb89f66aa67437588fff420e17f/header.jpg?t=1793402107"
+  },
+  {
     "url": "/archive/filmy-pro-gejming-2026",
     "title": "10 фильмов про видеоигры, которые вы могли пропустить",
     "excerpt": "«Видеодром», «Хардкор», Battle Royale, Indie Game, Kung Fury и ещё пять картин: постеры, трейлеры и где смотреть — подборка без воды.",
