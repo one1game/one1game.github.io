@@ -89,6 +89,17 @@ jobs:
               print(f'  Добавь https://{HOST} отдельным хостом и подтверди права.')
               raise SystemExit(1)
 
+          # Хост может быть добавлен, но ещё не «загружен» Яндексом: права не
+          # подтверждены либо данные не подтянулись. В этом состоянии sitemap,
+          # сводка и переобход отвечают 404/504 — долбить их бессмысленно.
+          hstatus, hsummary = api(f'/user/{uid}/hosts/{host_id}/summary/')
+          if hstatus == 404 and hsummary.get('error_code') == 'HOST_NOT_LOADED':
+              print(f'Webmaster: хост {host_id} добавлен, но Яндекс его ещё не загрузил.')
+              print('  Подтверди права на https://one1game.org в Вебмастере.')
+              print('  DNS-запись yandex-verification уже в DNS — нажми «Проверить».')
+              print('  Пока хост не загружен, sitemap и переобход бесполезны: пропускаю.')
+              raise SystemExit(0)
+
           # Регистрируем sitemap.xml (идемпотентно: повторная регистрация → 409).
           sitemap_url = f'{BASE}/sitemap.xml'
           _, existing = api(f'/user/{uid}/hosts/{host_id}/user-added-sitemaps/')
