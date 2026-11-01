@@ -1,0 +1,497 @@
+{
+ "site": "sc-domain:one1game.org",
+ "total": 54,
+ "states": {
+  "Submitted and indexed": 1,
+  "Crawled - currently not indexed": 22,
+  "URL is unknown to Google": 31
+ },
+ "urls": [
+  {
+   "url": "https://one1game.org/",
+   "verdict": "PASS",
+   "coverage": "Submitted and indexed",
+   "robots": "ALLOWED",
+   "indexing": "INDEXING_ALLOWED",
+   "lastCrawl": "2026-10-25",
+   "googleCanonical": "https://one1game.org/"
+  },
+  {
+   "url": "https://one1game.org/archive",
+   "verdict": "NEUTRAL",
+   "coverage": "Crawled - currently not indexed",
+   "robots": "ALLOWED",
+   "indexing": "INDEXING_ALLOWED",
+   "lastCrawl": "2026-10-17",
+   "googleCanonical": "https://one1game.org/archive"
+  },
+  {
+   "url": "https://one1game.org/potyanet-li-igra",
+   "verdict": "NEUTRAL",
+   "coverage": "URL is unknown to Google",
+   "robots": "ROBOTS_TXT_STATE_UNSPECIFIED",
+   "indexing": "INDEXING_STATE_UNSPECIFIED",
+   "lastCrawl": "",
+   "googleCanonical": null
+  },
+  {
+   "url": "https://one1game.org/igry-bez-videokarty",
+   "verdict": "NEUTRAL",
+   "coverage": "Crawled - currently not indexed",
+   "robots": "ALLOWED",
+   "indexing": "INDEXING_ALLOWED",
+   "lastCrawl": "2026-10-10",
+   "googleCanonical": "https://one1game.org/igry-bez-videokarty"
+  },
+  {
+   "url": "https://one1game.org/besplatnye-igry-dlya-slabyh-pk",
+   "verdict": "NEUTRAL",
+   "coverage": "URL is unknown to Google",
+   "robots": "ROBOTS_TXT_STATE_UNSPECIFIED",
+   "indexing": "INDEXING_STATE_UNSPECIFIED",
+   "lastCrawl": "",
+   "googleCanonical": null
+  },
+  {
+   "url": "https://one1game.org/igry-dlya-slabyh-noutbukov-4gb-ozu",
+   "verdict": "NEUTRAL",
+   "coverage": "Crawled - currently not indexed",
+   "robots": "ALLOWED",
+   "indexing": "INDEXING_ALLOWED",
+   "lastCrawl": "2026-10-10",
+   "googleCanonical": "https://one1game.org/igry-dlya-slabyh-noutbukov-4gb-ozu"
+  },
+  {
+   "url": "https://one1game.org/kooperativnye-igry-dlya-slabyh-pk",
+   "verdict": "NEUTRAL",
+   "coverage": "URL is unknown to Google",
+   "robots": "ROBOTS_TXT_STATE_UNSPECIFIED",
+   "indexing": "INDEXING_STATE_UNSPECIFIED",
+   "lastCrawl": "",
+   "googleCanonical": null
+  },
+  {
+   "url": "https://one1game.org/shuter-igry-dlya-slabyh-noutbukov",
+   "verdict": "NEUTRAL",
+   "coverage": "URL is unknown to Google",
+   "robots": "ROBOTS_TXT_STATE_UNSPECIFIED",
+   "indexing": "INDEXING_STATE_UNSPECIFIED",
+   "lastCrawl": "",
+   "googleCanonical": null
+  },
+  {
+   "url": "https://one1game.org/rpg-igry-dlya-slabyh-noutbukov",
+   "verdict": "NEUTRAL",
+   "coverage": "Crawled - currently not indexed",
+   "robots": "ALLOWED",
+   "indexing": "INDEXING_ALLOWED",
+   "lastCrawl": "2026-10-10",
+   "googleCanonical": "https://one1game.org/rpg-igry-dlya-slabyh-noutbukov"
+  },
+  {
+   "url": "https://one1game.org/igry-dlya-slabyh-noutbukov-onlajn",
+   "verdict": "NEUTRAL",
+   "coverage": "URL is unknown to Google",
+   "robots": "ROBOTS_TXT_STATE_UNSPECIFIED",
+   "indexing": "INDEXING_STATE_UNSPECIFIED",
+   "lastCrawl": "",
+   "googleCanonical": null
+  },
+  {
+   "url": "https://one1game.org/category/obzory",
+   "verdict": "NEUTRAL",
+   "coverage": "URL is unknown to Google",
+   "robots": "ROBOTS_TXT_STATE_UNSPECIFIED",
+   "indexing": "INDEXING_STATE_UNSPECIFIED",
+   "lastCrawl": "",
+   "googleCanonical": null
+  },
+  {
+   "url": "https://one1game.org/category/gajdy",
+   "verdict": "NEUTRAL",
+   "coverage": "Crawled - currently not indexed",
+   "robots": "ALLOWED",
+   "indexing": "INDEXING_ALLOWED",
+   "lastCrawl": "2026-10-21",
+   "googleCanonical": "https://one1game.org/category/gajdy"
+  },
+  {
+   "url": "https://one1game.org/besplatnye-igry",
+   "verdict": "NEUTRAL",
+   "coverage": "Crawled - currently not indexed",
+   "robots": "ALLOWED",
+   "indexing": "INDEXING_ALLOWED",
+   "lastCrawl": "2026-10-12",
+   "googleCanonical": "https://one1game.org/besplatnye-igry"
+  },
+  {
+   "url": "https://one1game.org/skidki-na-igry",
+   "verdict": "NEUTRAL",
+   "coverage": "Crawled - currently not indexed",
+   "robots": "ALLOWED",
+   "indexing": "INDEXING_ALLOWED",
+   "lastCrawl": "2026-10-23",
+   "googleCanonical": "https://one1game.org/skidki-na-igry"
+  },
+  {
+   "url": "https://one1game.org/vo-chto-poigrat",
+   "verdict": "NEUTRAL",
+   "coverage": "Crawled - currently not indexed",
+   "robots": "ALLOWED",
+   "indexing": "INDEXING_ALLOWED",
+   "lastCrawl": "2026-10-12",
+   "googleCanonical": "https://one1game.org/vo-chto-poigrat"
+  },
+  {
+   "url": "https://one1game.org/category/analitika",
+   "verdict": "NEUTRAL",
+   "coverage": "Crawled - currently not indexed",
+   "robots": "ALLOWED",
+   "indexing": "INDEXING_ALLOWED",
+   "lastCrawl": "2026-10-24",
+   "googleCanonical": "https://one1game.org/category/analitika"
+  },
+  {
+   "url": "https://one1game.org/kino/vozvraschenie-v-saylent-hill-680493",
+   "verdict": "NEUTRAL",
+   "coverage": "URL is unknown to Google",
+   "robots": "ROBOTS_TXT_STATE_UNSPECIFIED",
+   "indexing": "INDEXING_STATE_UNSPECIFIED",
+   "lastCrawl": "",
+   "googleCanonical": null
+  },
+  {
+   "url": "https://one1game.org/archive/triad-of-victory-4603280",
+   "verdict": "NEUTRAL",
+   "coverage": "URL is unknown to Google",
+   "robots": "ROBOTS_TXT_STATE_UNSPECIFIED",
+   "indexing": "INDEXING_STATE_UNSPECIFIED",
+   "lastCrawl": "",
+   "googleCanonical": null
+  },
+  {
+   "url": "https://one1game.org/archive/ferzgate-4930390",
+   "verdict": "NEUTRAL",
+   "coverage": "URL is unknown to Google",
+   "robots": "ROBOTS_TXT_STATE_UNSPECIFIED",
+   "indexing": "INDEXING_STATE_UNSPECIFIED",
+   "lastCrawl": "",
+   "googleCanonical": null
+  },
+  {
+   "url": "https://one1game.org/archive/smithonion-natural-history-museum-4541970",
+   "verdict": "NEUTRAL",
+   "coverage": "URL is unknown to Google",
+   "robots": "ROBOTS_TXT_STATE_UNSPECIFIED",
+   "indexing": "INDEXING_STATE_UNSPECIFIED",
+   "lastCrawl": "",
+   "googleCanonical": null
+  },
+  {
+   "url": "https://one1game.org/archive/sabre-hunter-keep-on-moving-4725720",
+   "verdict": "NEUTRAL",
+   "coverage": "URL is unknown to Google",
+   "robots": "ROBOTS_TXT_STATE_UNSPECIFIED",
+   "indexing": "INDEXING_STATE_UNSPECIFIED",
+   "lastCrawl": "",
+   "googleCanonical": null
+  },
+  {
+   "url": "https://one1game.org/archive/cowpokers-dead-man-s-frontier-5315130",
+   "verdict": "NEUTRAL",
+   "coverage": "URL is unknown to Google",
+   "robots": "ROBOTS_TXT_STATE_UNSPECIFIED",
+   "indexing": "INDEXING_STATE_UNSPECIFIED",
+   "lastCrawl": "",
+   "googleCanonical": null
+  },
+  {
+   "url": "https://one1game.org/archive/take-off-the-rocket-2883720",
+   "verdict": "NEUTRAL",
+   "coverage": "URL is unknown to Google",
+   "robots": "ROBOTS_TXT_STATE_UNSPECIFIED",
+   "indexing": "INDEXING_STATE_UNSPECIFIED",
+   "lastCrawl": "",
+   "googleCanonical": null
+  },
+  {
+   "url": "https://one1game.org/archive/grifford-academy-2445780",
+   "verdict": "NEUTRAL",
+   "coverage": "URL is unknown to Google",
+   "robots": "ROBOTS_TXT_STATE_UNSPECIFIED",
+   "indexing": "INDEXING_STATE_UNSPECIFIED",
+   "lastCrawl": "",
+   "googleCanonical": null
+  },
+  {
+   "url": "https://one1game.org/archive/keep-on-digging-5386060",
+   "verdict": "NEUTRAL",
+   "coverage": "URL is unknown to Google",
+   "robots": "ROBOTS_TXT_STATE_UNSPECIFIED",
+   "indexing": "INDEXING_STATE_UNSPECIFIED",
+   "lastCrawl": "",
+   "googleCanonical": null
+  },
+  {
+   "url": "https://one1game.org/archive/aicomi-append-data-4607890",
+   "verdict": "NEUTRAL",
+   "coverage": "URL is unknown to Google",
+   "robots": "ROBOTS_TXT_STATE_UNSPECIFIED",
+   "indexing": "INDEXING_STATE_UNSPECIFIED",
+   "lastCrawl": "",
+   "googleCanonical": null
+  },
+  {
+   "url": "https://one1game.org/archive/juice-stand-tycoon-4833540",
+   "verdict": "NEUTRAL",
+   "coverage": "URL is unknown to Google",
+   "robots": "ROBOTS_TXT_STATE_UNSPECIFIED",
+   "indexing": "INDEXING_STATE_UNSPECIFIED",
+   "lastCrawl": "",
+   "googleCanonical": null
+  },
+  {
+   "url": "https://one1game.org/archive/six-4935870",
+   "verdict": "NEUTRAL",
+   "coverage": "URL is unknown to Google",
+   "robots": "ROBOTS_TXT_STATE_UNSPECIFIED",
+   "indexing": "INDEXING_STATE_UNSPECIFIED",
+   "lastCrawl": "",
+   "googleCanonical": null
+  },
+  {
+   "url": "https://one1game.org/archive/cat-life-5253180",
+   "verdict": "NEUTRAL",
+   "coverage": "URL is unknown to Google",
+   "robots": "ROBOTS_TXT_STATE_UNSPECIFIED",
+   "indexing": "INDEXING_STATE_UNSPECIFIED",
+   "lastCrawl": "",
+   "googleCanonical": null
+  },
+  {
+   "url": "https://one1game.org/archive/nothing-simulator-2963850",
+   "verdict": "NEUTRAL",
+   "coverage": "URL is unknown to Google",
+   "robots": "ROBOTS_TXT_STATE_UNSPECIFIED",
+   "indexing": "INDEXING_STATE_UNSPECIFIED",
+   "lastCrawl": "",
+   "googleCanonical": null
+  },
+  {
+   "url": "https://one1game.org/archive/hentai-tales-profane-arbitration-5044690",
+   "verdict": "NEUTRAL",
+   "coverage": "URL is unknown to Google",
+   "robots": "ROBOTS_TXT_STATE_UNSPECIFIED",
+   "indexing": "INDEXING_STATE_UNSPECIFIED",
+   "lastCrawl": "",
+   "googleCanonical": null
+  },
+  {
+   "url": "https://one1game.org/archive/giblings-5025950",
+   "verdict": "NEUTRAL",
+   "coverage": "URL is unknown to Google",
+   "robots": "ROBOTS_TXT_STATE_UNSPECIFIED",
+   "indexing": "INDEXING_STATE_UNSPECIFIED",
+   "lastCrawl": "",
+   "googleCanonical": null
+  },
+  {
+   "url": "https://one1game.org/archive/gallery-organizer-4938790",
+   "verdict": "NEUTRAL",
+   "coverage": "URL is unknown to Google",
+   "robots": "ROBOTS_TXT_STATE_UNSPECIFIED",
+   "indexing": "INDEXING_STATE_UNSPECIFIED",
+   "lastCrawl": "",
+   "googleCanonical": null
+  },
+  {
+   "url": "https://one1game.org/archive/permafrost-original-soundtrack-5345330",
+   "verdict": "NEUTRAL",
+   "coverage": "URL is unknown to Google",
+   "robots": "ROBOTS_TXT_STATE_UNSPECIFIED",
+   "indexing": "INDEXING_STATE_UNSPECIFIED",
+   "lastCrawl": "",
+   "googleCanonical": null
+  },
+  {
+   "url": "https://one1game.org/archive/blocky-miner-5124050",
+   "verdict": "NEUTRAL",
+   "coverage": "URL is unknown to Google",
+   "robots": "ROBOTS_TXT_STATE_UNSPECIFIED",
+   "indexing": "INDEXING_STATE_UNSPECIFIED",
+   "lastCrawl": "",
+   "googleCanonical": null
+  },
+  {
+   "url": "https://one1game.org/archive/aim-like-a-cat-5131570",
+   "verdict": "NEUTRAL",
+   "coverage": "Crawled - currently not indexed",
+   "robots": "ALLOWED",
+   "indexing": "INDEXING_ALLOWED",
+   "lastCrawl": "2026-10-22",
+   "googleCanonical": "https://one1game.org/archive/aim-like-a-cat-5131570"
+  },
+  {
+   "url": "https://one1game.org/archive/guys-with-magnets-4594370",
+   "verdict": "NEUTRAL",
+   "coverage": "Crawled - currently not indexed",
+   "robots": "ALLOWED",
+   "indexing": "INDEXING_ALLOWED",
+   "lastCrawl": "2026-10-25",
+   "googleCanonical": "https://one1game.org/archive/guys-with-magnets-4594370"
+  },
+  {
+   "url": "https://one1game.org/archive/demon-general-kirsten-4112840",
+   "verdict": "NEUTRAL",
+   "coverage": "Crawled - currently not indexed",
+   "robots": "ALLOWED",
+   "indexing": "INDEXING_ALLOWED",
+   "lastCrawl": "2026-10-20",
+   "googleCanonical": "https://one1game.org/archive/demon-general-kirsten-4112840"
+  },
+  {
+   "url": "https://one1game.org/archive/steel-vanguard-project-ares-5099110",
+   "verdict": "NEUTRAL",
+   "coverage": "Crawled - currently not indexed",
+   "robots": "ALLOWED",
+   "indexing": "INDEXING_ALLOWED",
+   "lastCrawl": "2026-10-12",
+   "googleCanonical": "https://one1game.org/archive/steel-vanguard-project-ares-5099110"
+  },
+  {
+   "url": "https://one1game.org/archive/pogo-gnom-5128520",
+   "verdict": "NEUTRAL",
+   "coverage": "Crawled - currently not indexed",
+   "robots": "ALLOWED",
+   "indexing": "INDEXING_ALLOWED",
+   "lastCrawl": "2026-10-20",
+   "googleCanonical": "https://one1game.org/archive/pogo-gnom-5128520"
+  },
+  {
+   "url": "https://one1game.org/archive/catventure-4459980",
+   "verdict": "NEUTRAL",
+   "coverage": "URL is unknown to Google",
+   "robots": "ROBOTS_TXT_STATE_UNSPECIFIED",
+   "indexing": "INDEXING_STATE_UNSPECIFIED",
+   "lastCrawl": "",
+   "googleCanonical": null
+  },
+  {
+   "url": "https://one1game.org/archive/alchemy-master-5201260",
+   "verdict": "NEUTRAL",
+   "coverage": "Crawled - currently not indexed",
+   "robots": "ALLOWED",
+   "indexing": "INDEXING_ALLOWED",
+   "lastCrawl": "2026-10-12",
+   "googleCanonical": "https://one1game.org/archive/alchemy-master-5201260"
+  },
+  {
+   "url": "https://one1game.org/archive/idle-am-lofi-idle-mmo-5233680",
+   "verdict": "NEUTRAL",
+   "coverage": "Crawled - currently not indexed",
+   "robots": "ALLOWED",
+   "indexing": "INDEXING_ALLOWED",
+   "lastCrawl": "2026-10-12",
+   "googleCanonical": "https://one1game.org/archive/idle-am-lofi-idle-mmo-5233680"
+  },
+  {
+   "url": "https://one1game.org/archive/mxgp-26-the-official-game-3634190",
+   "verdict": "NEUTRAL",
+   "coverage": "Crawled - currently not indexed",
+   "robots": "ALLOWED",
+   "indexing": "INDEXING_ALLOWED",
+   "lastCrawl": "2026-10-12",
+   "googleCanonical": "https://one1game.org/archive/mxgp-26-the-official-game-3634190"
+  },
+  {
+   "url": "https://one1game.org/archive/bitva-zelenyh-shlyap-5235150",
+   "verdict": "NEUTRAL",
+   "coverage": "Crawled - currently not indexed",
+   "robots": "ALLOWED",
+   "indexing": "INDEXING_ALLOWED",
+   "lastCrawl": "2026-10-12",
+   "googleCanonical": "https://one1game.org/archive/bitva-zelenyh-shlyap-5235150"
+  },
+  {
+   "url": "https://one1game.org/archive/boobs-cowgirls-5188170",
+   "verdict": "NEUTRAL",
+   "coverage": "URL is unknown to Google",
+   "robots": "ROBOTS_TXT_STATE_UNSPECIFIED",
+   "indexing": "INDEXING_STATE_UNSPECIFIED",
+   "lastCrawl": "",
+   "googleCanonical": null
+  },
+  {
+   "url": "https://one1game.org/archive/rippusion-5065060",
+   "verdict": "NEUTRAL",
+   "coverage": "URL is unknown to Google",
+   "robots": "ROBOTS_TXT_STATE_UNSPECIFIED",
+   "indexing": "INDEXING_STATE_UNSPECIFIED",
+   "lastCrawl": "",
+   "googleCanonical": null
+  },
+  {
+   "url": "https://one1game.org/archive/infinite-game-cartridge-collection-touchy-cube-4311830",
+   "verdict": "NEUTRAL",
+   "coverage": "Crawled - currently not indexed",
+   "robots": "ALLOWED",
+   "indexing": "INDEXING_ALLOWED",
+   "lastCrawl": "2026-10-12",
+   "googleCanonical": "https://one1game.org/archive/infinite-game-cartridge-collection-touchy-cube-4311830"
+  },
+  {
+   "url": "https://one1game.org/archive/a-transfer-student-from-chang-an-4128680",
+   "verdict": "NEUTRAL",
+   "coverage": "Crawled - currently not indexed",
+   "robots": "ALLOWED",
+   "indexing": "INDEXING_ALLOWED",
+   "lastCrawl": "2026-10-20",
+   "googleCanonical": "https://one1game.org/archive/a-transfer-student-from-chang-an-4128680"
+  },
+  {
+   "url": "https://one1game.org/archive/brother-get-the-oats-3191280",
+   "verdict": "NEUTRAL",
+   "coverage": "Crawled - currently not indexed",
+   "robots": "ALLOWED",
+   "indexing": "INDEXING_ALLOWED",
+   "lastCrawl": "2026-10-21",
+   "googleCanonical": "https://one1game.org/archive/brother-get-the-oats-3191280"
+  },
+  {
+   "url": "https://one1game.org/archive/best-slime-of-my-life-4272610",
+   "verdict": "NEUTRAL",
+   "coverage": "URL is unknown to Google",
+   "robots": "ROBOTS_TXT_STATE_UNSPECIFIED",
+   "indexing": "INDEXING_STATE_UNSPECIFIED",
+   "lastCrawl": "",
+   "googleCanonical": null
+  },
+  {
+   "url": "https://one1game.org/archive/idle-block-breaker-4875650",
+   "verdict": "NEUTRAL",
+   "coverage": "Crawled - currently not indexed",
+   "robots": "ALLOWED",
+   "indexing": "INDEXING_ALLOWED",
+   "lastCrawl": "2026-10-20",
+   "googleCanonical": "https://one1game.org/archive/idle-block-breaker-4875650"
+  },
+  {
+   "url": "https://one1game.org/archive/terraria-105600",
+   "verdict": "NEUTRAL",
+   "coverage": "URL is unknown to Google",
+   "robots": "ROBOTS_TXT_STATE_UNSPECIFIED",
+   "indexing": "INDEXING_STATE_UNSPECIFIED",
+   "lastCrawl": "",
+   "googleCanonical": null
+  },
+  {
+   "url": "https://one1game.org/archive/graveyard-keeper-2-4358690",
+   "verdict": "NEUTRAL",
+   "coverage": "URL is unknown to Google",
+   "robots": "ROBOTS_TXT_STATE_UNSPECIFIED",
+   "indexing": "INDEXING_STATE_UNSPECIFIED",
+   "lastCrawl": "",
+   "googleCanonical": null
+  }
+ ]
+}
