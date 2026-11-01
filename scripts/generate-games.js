@@ -914,10 +914,6 @@ ${JSON.stringify(videoGameLd, null, 2)}
           <div class="label">Положительных отзывов</div>
           <div class="value">${positiveRatio}%</div>
         </div>` : ""}
-        <div class="game-stat-card">
-          <div class="label">Владельцев (оценка)</div>
-          <div class="value">${owners}</div>
-        </div>
       </div>
 ${adBannerHTML()}
       <h2>Об игре</h2>
