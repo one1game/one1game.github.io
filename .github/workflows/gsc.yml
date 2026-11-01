@@ -22,6 +22,9 @@ jobs:
   gsc:
     runs-on: ubuntu-latest
     steps:
+      # Без checkout снимок некуда коммитить: «fatal: not in a git directory».
+      - uses: actions/checkout@v5
+
       - name: Install google-auth
         run: pip install --quiet google-auth requests
 
@@ -143,11 +146,18 @@ jobs:
                     f'страниц {len(snapshot["pages"])}')
           PY
 
+      # Отвечает на вопрос, который по цифрам кликов не решается: страница
+      # в индексе или её там нет. Это разные болезни и лечатся по-разному.
+      - name: Статус индексации (URL Inspection API)
+        env:
+          GSC_SERVICE_ACCOUNT_JSON: ${{ secrets.GSC_SERVICE_ACCOUNT_JSON }}
+        run: python scripts/gsc_inspect.py
+
       - name: Сохранить снимок в репозиторий
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
           # На push-запуске снимка нет — git add не должен валить джоб.
-          git add scripts/data/gsc-snapshot.json 2>/dev/null || true
+          git add scripts/data/gsc-snapshot.json scripts/data/gsc-index.json 2>/dev/null || true
           git diff --quiet --cached || git commit -m "Снимок поисковых запросов Google: $(date -u +'%Y-%m-%d')"
           git push
