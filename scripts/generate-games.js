@@ -96,16 +96,30 @@ function loadDemand() {
 // Без этого один неверный номер даёт целую страницу про чужую игру.
 function matchesExpect(storeName, expect) {
   if (!expect || !expect.length) return true;
-  const n = String(storeName || "").toLowerCase();
-  return expect.some((t) => n.includes(String(t).toLowerCase()));
+  // Сравниваем без знаков и пробелов: в Steam «S.T.A.L.K.E.R. 2» с точками,
+  // и обычный includes по «stalker» такое название не находил — игра выпадала.
+  const norm = (s) => String(s || "").toLowerCase().replace(/[^a-zа-яё0-9]+/g, "");
+  const n = norm(storeName);
+  return expect.some((t) => n.includes(norm(t)));
 }
 
 async function getStoreDetails(appid) {
-  const data = await fetchJson(
-    `https://store.steampowered.com/api/appdetails?appids=${appid}&l=${CONFIG.language}&cc=${CONFIG.countryCode}`
-  );
-  const entry = data[appid];
-  return entry && entry.success ? entry.data : null;
+  const url = (l, cc) =>
+    `https://store.steampowered.com/api/appdetails?appids=${appid}&l=${l}&cc=${cc}`;
+  // В RU-регионе часть каталога не отдаётся вовсе (Cyberpunk 2077, Ведьмак 3,
+  // STALKER 2, Hogwarts Legacy): Steam считает эти игры недоступными, и страница
+  // не создавалась. Требования, обложка и описание при этом есть — берём их из
+  // мирового каталога, чтобы не терять самые частые поисковые названия.
+  for (const [l, cc] of [[CONFIG.language, CONFIG.countryCode], ["english", "us"]]) {
+    try {
+      const data = await fetchJson(url(l, cc));
+      const entry = data[appid];
+      if (entry && entry.success) return entry.data;
+    } catch (err) {
+      // регион недоступен — пробуем следующий
+    }
+  }
+  return null;
 }
 
 // Транслитерация для человекочитаемого URL (slug)
@@ -1145,7 +1159,7 @@ async function main() {
         updated: todayISO(),
         // Та же логика, что в <meta robots>: закрытые страницы не должны
         // попадать в счётчики разделов и в списки на главной.
-        noindex: /^-\d+$/.test(slug) || !demandIds().has(String(appid)),
+        noindex: /^-\d+$/.test(slug) || !demandByApp.has(String(appid)),
         // Обложка: официальный Steam header из Store API (URL с хешем ассета).
         // Без него карточка уйдёт на процедурный плейсхолдер.
         image: store.header_image || "",

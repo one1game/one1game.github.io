@@ -179,9 +179,9 @@ META = {
             "доля положительных отзывов, текущий онлайн, минимальные требования и отдельный вердикт — "
             "потянет ли игра на слабом ПК.",
             'В подборке — игры, которые ищут чаще всего: <a href="/archive/elden-ring-1245620">Elden Ring</a>, '
+            '<a href="/archive/cyberpunk-2077-1091500">Cyberpunk 2077</a>, '
             '<a href="/archive/baldur-s-gate-3-1086940">Baldur\'s Gate 3</a>, '
-            '<a href="/archive/counter-strike-2-730">Counter-Strike 2</a>, '
-            '<a href="/archive/black-myth-wukong-2358720">Black Myth: Wukong</a>.',
+            '<a href="/archive/red-dead-redemption-2-1174180">Red Dead Redemption 2</a>.',
             'Если нужен ответ на вопрос «пойдёт ли на моём ноутбуке» — откройте таблицу '
             '<a href="/potyanet-li-igra">«Потянет ли игра на моём ПК»</a> или подборку под свою '
             "видеокарту ниже.",
