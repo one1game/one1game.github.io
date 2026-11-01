@@ -84,8 +84,15 @@ jobs:
           if sitemap_url in known:
               print(f'Webmaster: sitemap уже добавлен — {sitemap_url}')
           else:
-              status, res = api(
-                  f'/user/{uid}/hosts/{host_id}/user-added-sitemaps/', 'POST', {'url': sitemap_url})
+              # 504 от Яндекса — это их шлюз, а не наша ошибка: повторяем.
+              status, res = 0, {}
+              for attempt in range(3):
+                  status, res = api(
+                      f'/user/{uid}/hosts/{host_id}/user-added-sitemaps/', 'POST', {'url': sitemap_url})
+                  if status in (200, 201, 202, 409):
+                      break
+                  print(f'Webmaster: sitemap не принят (HTTP {status}), повтор {attempt + 2}/3 через 15 с')
+                  time.sleep(15)
               if status in (200, 201, 202):
                   print(f'Webmaster: sitemap добавлен — {sitemap_url}')
               elif status == 409:
@@ -96,14 +103,51 @@ jobs:
           _, quota = api(f'/user/{uid}/hosts/{host_id}/recrawl/quota')
           remainder = int(quota.get('quota_remainder') or 0)
 
-          # Ручной запуск и cron — просто отчёт.
+          # Ручной запуск и cron — сводка плюс трата остатка квоты на важные
+          # страницы: переобход — единственный канал, который ставит URL в
+          # очередь обхода сразу, не дожидаясь обычного цикла.
+          PRIORITY = [
+              '/', '/archive', '/potyanet-li-igra',
+              '/igry-bez-videokarty', '/besplatnye-igry-dlya-slabyh-pk',
+              '/igry-dlya-slabyh-noutbukov-4gb-ozu', '/kooperativnye-igry-dlya-slabyh-pk',
+              '/shuter-igry-dlya-slabyh-noutbukov', '/rpg-igry-dlya-slabyh-noutbukov',
+              '/gonochnye-igry-dlya-slabyh-noutbukov', '/igry-dlya-slabyh-noutbukov-onlajn',
+              '/igry-dlya-slabyh-noutbukov-s-gejmpadom',
+              '/category/obzory', '/category/gajdy', '/category/ii-i-tehnologii',
+              '/besplatnye-igry', '/skidki-na-igry', '/vo-chto-poigrat',
+              '/triad-duel', '/l2/', '/ai/', '/kino/', '/go/',
+          ]
+
           if EVENT != 'push':
-              _, summary = api(f'/user/{uid}/hosts/{host_id}/summary/')
-              print('Webmaster: сводка по', HOST)
-              print(f"  SQI:               {summary.get('sqi')}")
-              print(f"  Страниц в поиске:  {summary.get('searchable_pages_count')}")
-              print(f"  Исключено страниц: {summary.get('excluded_pages_count')}")
+              status, summary = api(f'/user/{uid}/hosts/{host_id}/summary/')
+              print(f'Webmaster: сводка по {HOST} — HTTP {status}')
+              if status != 200:
+                  # Пустые поля в прошлый раз означали именно это: сводка
+                  # отвалилась, а мы печатали None как будто так и надо.
+                  print(f'  ответ API: {summary}')
+              else:
+                  print(f"  SQI:               {summary.get('sqi')}")
+                  print(f"  Страниц в поиске:  {summary.get('searchable_pages_count')}")
+                  print(f"  Исключено страниц: {summary.get('excluded_pages_count')}")
               print(f"  Квота переобхода:  остаток {remainder} из {quota.get('daily_quota')}")
+
+              sent = 0
+              for path in PRIORITY[:max(0, remainder)]:
+                  url = BASE + path if path != '/' else BASE + '/'
+                  status, res = api(f'/user/{uid}/hosts/{host_id}/recrawl/queue',
+                                    'POST', {'url': url})
+                  if status == 202:
+                      sent += 1
+                      print(f'  в очередь: {url}')
+                  elif status == 409:
+                      print(f'  уже в очереди: {url}')
+                  elif status == 429:
+                      print('  квота исчерпана, стоп')
+                      break
+                  else:
+                      print(f'  ошибка {status} для {url} — {res}')
+                  time.sleep(1)
+              print(f'Webmaster: отправлено на переобход {sent} из {len(PRIORITY)}')
               raise SystemExit(0)
 
           changed = subprocess.run(

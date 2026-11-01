@@ -6,10 +6,18 @@
   Permissions-Policy: geolocation=(), microphone=(), camera=()
 
 /
-  Cache-Control: no-cache, must-revalidate
+  Cache-Control: public, max-age=0, s-maxage=300, stale-while-revalidate=86400
 
 /*.html
-  Cache-Control: no-cache, must-revalidate
+  Cache-Control: public, max-age=0, s-maxage=300, stale-while-revalidate=86400
+
+# Sitemap и фиды краулеры забирают часто, а отдавались с TTFB > 1 с и без кэша
+# на краю (cf-cache-status: DYNAMIC). 10 минут кэша экономят обход.
+/*.xml
+  Cache-Control: public, max-age=0, s-maxage=600, stale-while-revalidate=86400
+
+/robots.txt
+  Cache-Control: public, max-age=0, s-maxage=3600
 
 /sw.js
   Cache-Control: no-cache

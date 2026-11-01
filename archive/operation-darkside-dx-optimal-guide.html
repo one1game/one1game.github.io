@@ -441,7 +441,7 @@
 
     <nav class="breadcrumbs" aria-label="Хлебные крошки">
 
-      <a href="/">Главная</a> →
+      <a href="/">One1Game</a> →
 
       <a href="/archive">Статьи</a> →
 
@@ -788,7 +788,12 @@
 
       <h4>Похожие статьи</h4>
 
-      <div class="related-grid" id="related-container"></div>
+      <div class="related-grid" id="related-container">
+        <a href="/archive/elevator-avici-vse-koncovki-sekrety" class="related-card"><strong>ELEVATOR: AVICI — Полный гайд на все 3 концовки и скрытые предметы</strong><span>14 июля 2026</span></a>
+        <a href="/archive/operation-darkside-dx-guide-2026" class="related-card"><strong>Operation Darkside DX (2026): Гайд по прохождению, системные требования и советы по фарму</strong><span>31 июля 2026</span></a>
+        <a href="/archive/windows-11-july-2026-update-podgotovka" class="related-card"><strong>Windows 11 July 2026 Update: Как подготовиться и избежать проблем (полный гайд)</strong><span>9 июля 2026</span></a>
+        <a href="/archive/stalker-2-nevozmozhnye-tayniki-i-artefakty" class="related-card"><strong>S.T.A.L.K.E.R. 2: 5 «невозможных» тайников и артефактов, которые не могут найти игроки</strong><span>15 июля 2026</span></a>
+      </div>
 
     </section>
 
@@ -834,14 +839,12 @@
 
 
   var related = all.filter(function(a) { return a.url !== currentUrl; }).slice(0, 4);
-
   var relEl = document.getElementById('related-container');
-
-  relEl.innerHTML = related.map(function(a) {
-
-    return '<a href="' + a.url + '" class="related-card"><strong>' + a.title + '</strong><span>' + (a.date || '') + '</span></a>';
-
-  }).join('');
+  if (relEl && !relEl.querySelector('a') && related.length) {
+    relEl.innerHTML = related.map(function(a) {
+      return '<a href="' + a.url + '" class="related-card"><strong>' + a.title + '</strong><span>' + (a.date || '') + '</span></a>';
+    }).join('');
+  }
 
 })();
 
@@ -855,25 +858,6 @@
 
 <script src="/cache-version.js"></script>
 
-<script>
-
-(function() {
-
-  if (window.allArticles) return;
-
-  var ver = window.CACHE_VER || '15';
-
-  var s = document.createElement('script');
-
-  s.src = '/articles-data.js?v=' + ver;
-
-  s.async = true;
-
-  document.head.appendChild(s);
-
-})();
-
-</script>
 
 
 

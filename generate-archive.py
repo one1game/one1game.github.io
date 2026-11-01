@@ -107,6 +107,50 @@ def inject(source, tag, inner):
     return pattern.sub(lambda _: start + inner + end, source, count=1)
 
 
+# Куда вести вес из /archive: разделы и подборки. Без этого узел был тупиком.
+HUB_LINKS = [
+    ('/category/obzory', 'Обзоры игр'),
+    ('/category/gajdy', 'Гайды'),
+    ('/category/analitika', 'Аналитика'),
+    ('/category/trendy', 'Тренды'),
+    ('/category/ii-i-tehnologii', 'ИИ и технологии'),
+    ('/category/razrabotka', 'Разработка'),
+    ('/category/konsoli', 'Консоли'),
+    ('/category/kino-i-igry', 'Кино и игры'),
+    ('/category/mnenie', 'Мнение'),
+    ('/igry-bez-videokarty', 'Игры без видеокарты'),
+    ('/igry-dlya-slabyh-noutbukov-4gb-ozu', 'Игры на 4 ГБ ОЗУ'),
+    ('/besplatnye-igry-dlya-slabyh-pk', 'Бесплатные игры для слабых ПК'),
+    ('/kooperativnye-igry-dlya-slabyh-pk', 'Кооператив на слабом ПК'),
+    ('/shuter-igry-dlya-slabyh-noutbukov', 'Шутеры для слабого ноутбука'),
+    ('/rpg-igry-dlya-slabyh-noutbukov', 'RPG для слабого ноутбука'),
+    ('/igry-dlya-slabyh-noutbukov-onlajn', 'Игры для слабого ПК онлайн'),
+    ('/igry-dlya-slabyh-noutbukov-s-gejmpadom', 'Игры с геймпадом'),
+    ('/potyanet-li-igra', 'Потянет ли игра на моём ПК'),
+    ('/besplatnye-igry', 'Бесплатные раздачи'),
+    ('/skidki-na-igry', 'Скидки на игры'),
+]
+
+
+def all_block(articles):
+    """Разметка статического блока: все редакционные материалы + хабы."""
+    items = []
+    for a in articles:
+        url = escape_html(a.get('url') or '#')
+        title = escape_html(a.get('title') or '')
+        date = escape_html(a.get('date') or '')
+        items.append(f'<li><a href="{url}">{title}</a><span>{date}</span></li>')
+
+    hubs = ''.join(
+        f'<a href="{escape_html(u)}">{escape_html(t)}</a>' for u, t in HUB_LINKS
+    )
+    return (
+        f'\n    <h2 id="archive-all-title">Все материалы</h2>'
+        f'\n    <ul class="archive-all-list">' + ''.join(items) + '</ul>'
+        f'\n    <p class="archive-all-hubs"><strong>Разделы и подборки:</strong> {hubs}</p>\n  '
+    )
+
+
 def generate():
     articles = load_articles()
     if not articles:
@@ -153,6 +197,7 @@ def generate():
     out = inject(src, 'LIST', with_eol('\n' + feed_html + '\n    '))
     out = inject(out, 'FILTERS', with_eol(filters_html))
     out = inject(out, 'PAG', pag_html)
+    out = inject(out, 'ALL', with_eol(all_block(filtered)))
 
     if out == src:
         print('Без изменений: archive.html уже актуален')

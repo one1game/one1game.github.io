@@ -41,7 +41,7 @@
     if (localStorage.getItem('ga_consent') === 'yes') enableGA();
   </script>
   <link href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css" rel="stylesheet" />
-  <link rel="stylesheet" href="/styles.css?v=31" />
+  <link rel="stylesheet" href="/styles.css?v=33" />
 
   <script type="application/ld+json">
   {
@@ -202,7 +202,7 @@
 
     <nav class="breadcrumbs" aria-label="Хлебные крошки" itemscope itemtype="https://schema.org/BreadcrumbList">
       <span itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
-        <a itemprop="item" href="/"><span itemprop="name">Главная</span></a>
+        <a itemprop="item" href="/"><span itemprop="name">One1Game</span></a>
         <meta itemprop="position" content="1" />
       </span> →
       <span itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
@@ -210,8 +210,12 @@
         <meta itemprop="position" content="2" />
       </span> →
       <span itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
-        <span itemprop="name" aria-current="page">Twin Drive</span>
+        <a itemprop="item" href="/category/obzory"><span itemprop="name">Обзоры</span></a>
         <meta itemprop="position" content="3" />
+      </span> →
+      <span itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+        <span itemprop="name" aria-current="page">Twin Drive</span>
+        <meta itemprop="position" content="4" />
       </span>
     </nav>
 
@@ -295,9 +299,10 @@
       </div>
 <!--LOWEND:START-->
       <section class="lowend-block" style="margin:26px 0;padding:16px 18px;border:1px solid rgba(255,255,255,.10);border-radius:10px;background:rgba(255,255,255,.03)">
-        <h2 style="margin:0 0 10px;font-size:1.15rem">Потянет ли слабый ноутбук?</h2>
+        <h2 style="margin:0 0 10px;font-size:1.15rem">Потянет ли Twin Drive на слабом ноутбуке?</h2>
         <p><strong>Минимальные требования (Steam):</strong> ОС: Windows 10, 64-разрядная · Процессор: Четырёхъядерный процессор или аналогичный · Оперативная память: 4 GB ОЗУ · Видеокарта: Совместимая с DirectX 11, не менее 2 ГБ видеопамяти · DirectX: версии 11 · Сеть: Широкополосное подключение к интернету · Место на диске: 2 GB</p>
-        <p>Ориентир для ноутбука без дискретной видеокарты — 720p и низкие настройки. Готовые подборки: <a href="/igry-bez-videokarty">игры без видеокарты</a>, <a href="/igry-dlya-slabyh-noutbukov-4gb-ozu">игры на 4 ГБ ОЗУ</a>, <a href="/besplatnye-igry-dlya-slabyh-pk">бесплатные игры для слабых ПК</a>. Как поднять FPS — в <a href="/archive/igry-dlya-slabyh-noutbukov-2026">полном гиде по слабым ноутбукам</a>.</p>
+        <p><strong>Оценка:</strong> Потянет на встроенной графике при 720p и низких настройках.</p>
+        <p>Подборки под слабое железо: <a href="/shuter-igry-dlya-slabyh-noutbukov">шутеры для слабого ноутбука</a> →</p>
       </section>
 <!--LOWEND:END-->
 
@@ -332,9 +337,34 @@
       <div class="share-buttons" id="share-buttons"></div>
     </section>
 
-    <section class="related-section">
+        <section class="game-faq">
+      <h2>Twin Drive: частые вопросы</h2>
+      <h3>Сколько стоит Twin Drive</h3>
+        <p>В Steam Twin Drive сейчас 150.00 RUB. Цена и скидки обновляются автоматически.</p>
+      <h3>Когда вышла Twin Drive</h3>
+        <p>Дата выхода Twin Drive — 13 окт. 2026 г.</p>
+      <h3>Кто разработал Twin Drive</h3>
+        <p>Разработчик Twin Drive — Fries Crown Games.</p>
+    </section>
+<section class="similar-games">
+      <h2>Похожие игры</h2>
+      <table class="similar-table">
+        <thead><tr><th>Игра</th><th>Цена</th><th>Слабый ПК</th></tr></thead>
+        <tbody>
+          <tr><td><a href="/archive/ultimate-multiplayer-survival-engine-5171770">Ultimate Multiplayer Survival Engine — обзор</a></td><td>Бесплатно</td><td>Нет</td></tr>
+          <tr><td><a href="/archive/vahnora-1624430">Vahnora — бесплатная 3D MMORPG о войне фракций</a></td><td>Бесплатно</td><td>Нет</td></tr>
+          <tr><td><a href="/archive/abraxas-online-5022330">Abraxas Online — классическое фэнтезийное MMORPG</a></td><td>нет данных</td><td>Потянет</td></tr>
+        </tbody>
+      </table>
+    </section>
+<section class="related-section">
       <h4>Похожие статьи</h4>
-      <div class="related-grid" id="related-container"></div></section>
+      <div class="related-grid" id="related-container">
+        <a href="/archive/astrolite-3450850" class="related-card"><strong>Astrolite – экшн‑инди про геноцид в космосе</strong><span>14 октября 2026</span></a>
+        <a href="/archive/miu-5324860" class="related-card"><strong>MIU — визуальная новелла в чёрно‑белом стиле</strong><span>14 октября 2026</span></a>
+        <a href="/archive/a-light-in-the-gloam-5326380" class="related-card"><strong>A Light in the Gloam — обзор игры</strong><span>14 октября 2026</span></a>
+        <a href="/archive/stellarite-miner-5300160" class="related-card"><strong>Stellarite Miner – инкрементальная добыча в космосе</strong><span>14 октября 2026</span></a>
+      </div></section>
     <section class="comments-section">
       <h4><i class="fas fa-comments" aria-hidden="true"></i> Комментарии</h4>
       <div class="comments-container" id="comments-container">
@@ -355,7 +385,6 @@
 </main>
 
 <script src="/cache-version.js"></script>
-<script>document.write('<script src="/articles-data.js?v='+(window.CACHE_VER||'1')+'"><\/script>');</script>
 <script>
 (function() {
   var path = window.location.pathname;
@@ -374,9 +403,11 @@
 
   var related = all.filter(function(a) { return a.url !== currentUrl; }).slice(0, 4);
   var relEl = document.getElementById('related-container');
-  relEl.innerHTML = related.map(function(a) {
-    return '<a href="' + a.url + '" class="related-card"><strong>' + a.title + '</strong><span>' + (a.date || '') + '</span></a>';
-  }).join('');
+  if (relEl && !relEl.querySelector('a') && related.length) {
+    relEl.innerHTML = related.map(function(a) {
+      return '<a href="' + a.url + '" class="related-card"><strong>' + a.title + '</strong><span>' + (a.date || '') + '</span></a>';
+    }).join('');
+  }
 })();
 </script>
 <script src="/components.js" defer></script>

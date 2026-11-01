@@ -41,7 +41,7 @@
     if (localStorage.getItem('ga_consent') === 'yes') enableGA();
   </script>
   <link href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css" rel="stylesheet" />
-  <link rel="stylesheet" href="/styles.css?v=31" />
+  <link rel="stylesheet" href="/styles.css?v=33" />
 
   <script type="application/ld+json">
   {
@@ -202,7 +202,7 @@
 
     <nav class="breadcrumbs" aria-label="Хлебные крошки" itemscope itemtype="https://schema.org/BreadcrumbList">
       <span itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
-        <a itemprop="item" href="/"><span itemprop="name">Главная</span></a>
+        <a itemprop="item" href="/"><span itemprop="name">One1Game</span></a>
         <meta itemprop="position" content="1" />
       </span> →
       <span itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
@@ -210,8 +210,12 @@
         <meta itemprop="position" content="2" />
       </span> →
       <span itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
-        <span itemprop="name" aria-current="page">Escape from Tarkov</span>
+        <a itemprop="item" href="/category/obzory"><span itemprop="name">Обзоры</span></a>
         <meta itemprop="position" content="3" />
+      </span> →
+      <span itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+        <span itemprop="name" aria-current="page">Escape from Tarkov</span>
+        <meta itemprop="position" content="4" />
       </span>
     </nav>
 
@@ -297,9 +301,10 @@
       </div>
 <!--LOWEND:START-->
       <section class="lowend-block" style="margin:26px 0;padding:16px 18px;border:1px solid rgba(255,255,255,.10);border-radius:10px;background:rgba(255,255,255,.03)">
-        <h2 style="margin:0 0 10px;font-size:1.15rem">Потянет ли слабый ноутбук?</h2>
+        <h2 style="margin:0 0 10px;font-size:1.15rem">Потянет ли Escape from Tarkov на слабом ноутбуке?</h2>
         <p><strong>Минимальные требования (Steam):</strong> 64-разрядные процессор и операционная система · ОС: Windows 10 · Процессор: AMD Ryzen 5 3600 or similar · Оперативная память: 16 GB ОЗУ · Видеокарта: GTX 1660 or similar · DirectX: версии 11 · Место на диске: 80 GB</p>
-        <p>Ориентир для ноутбука без дискретной видеокарты — 720p и низкие настройки. Готовые подборки: <a href="/igry-bez-videokarty">игры без видеокарты</a>, <a href="/igry-dlya-slabyh-noutbukov-4gb-ozu">игры на 4 ГБ ОЗУ</a>, <a href="/besplatnye-igry-dlya-slabyh-pk">бесплатные игры для слабых ПК</a>. Как поднять FPS — в <a href="/archive/igry-dlya-slabyh-noutbukov-2026">полном гиде по слабым ноутбукам</a>.</p>
+        <p><strong>Оценка:</strong> Нужна дискретная видеокарта — на встроенной графике играть не получится.</p>
+        <p>Подборки под слабое железо: <a href="/besplatnye-igry-dlya-slabyh-pk">бесплатные игры для слабого ПК</a> →</p>
       </section>
 <!--LOWEND:END-->
 
@@ -334,9 +339,47 @@
       <div class="share-buttons" id="share-buttons"></div>
     </section>
 
-    <section class="related-section">
+            <section class="gpu-check">
+      <h2>Потянет ли Escape from Tarkov на моей видеокарте</h2>
+      <p>Минимум по Steam — <strong>GTX 1660</strong>. Сравнение по приблизительной производительности, а не по точному FPS.</p>
+      <ul class="gpu-check-list">
+        <li><strong>RTX 5060</strong> — потянет</li>
+        <li><strong>RTX 4060</strong> — потянет</li>
+        <li><strong>RTX 3050</strong> — потянет на минимальных настройках</li>
+        <li><strong>GTX 1050 Ti</strong> — не потянет — нужна карта сильнее</li>
+        <li><strong>RX 580</strong> — потянет на минимальных настройках</li>
+        <li><strong>Intel UHD 620</strong> — не потянет — нужна карта сильнее</li>
+      </ul>
+      <p>Полная таблица по 600+ играм: <a href="/potyanet-li-igra">потянет ли игра на моём ПК</a>.</p>
+    </section>
+        <section class="game-faq">
+      <h2>Escape from Tarkov: частые вопросы</h2>
+      <h3>Сколько стоит Escape from Tarkov</h3>
+        <p>В Steam Escape from Tarkov сейчас 1800.00 RUB. Цена и скидки обновляются автоматически.</p>
+      <h3>Когда вышла Escape from Tarkov</h3>
+        <p>Дата выхода Escape from Tarkov — 15 ноя. 2025 г.</p>
+      <h3>Кто разработал Escape from Tarkov</h3>
+        <p>Разработчик Escape from Tarkov — Battlestate Games.</p>
+    </section>
+<section class="similar-games">
+      <h2>Похожие игры</h2>
+      <table class="similar-table">
+        <thead><tr><th>Игра</th><th>Цена</th><th>Слабый ПК</th></tr></thead>
+        <tbody>
+          <tr><td><a href="/archive/postapo-2216510">PostApo - обзор игры</a></td><td>42.00 RUB</td><td>Нет</td></tr>
+          <tr><td><a href="/archive/vahnora-1624430">Vahnora — бесплатная 3D MMORPG о войне фракций</a></td><td>Бесплатно</td><td>Нет</td></tr>
+          <tr><td><a href="/archive/frontline-2042-modern-war-shooter-5010310">Frontline 2042: Modern War Shooter – обзор</a></td><td>Бесплатно</td><td>Нет</td></tr>
+        </tbody>
+      </table>
+    </section>
+<section class="related-section">
       <h4>Похожие статьи</h4>
-      <div class="related-grid" id="related-container"></div></section>
+      <div class="related-grid" id="related-container">
+        <a href="/archive/arcana-rift-2022260" class="related-card"><strong>Обзор Arcana Rift: тактическая карточная дуэль</strong><span>11 октября 2026</span></a>
+        <a href="/archive/nekotrak-5249210" class="related-card"><strong>Обзор NekoTrak: виртуальный питомец и трекер времени</strong><span>11 октября 2026</span></a>
+        <a href="/archive/ultimate-racing-simulator-1-5046820" class="related-card"><strong>Обзор Ultimate Racing Simulator 1: симулятор команды</strong><span>11 октября 2026</span></a>
+        <a href="/archive/429-four-twenty-knight-4665910" class="related-card"><strong>Обзор 429 - Four Twenty Knight: экшен-головоломка</strong><span>11 октября 2026</span></a>
+      </div></section>
     <section class="comments-section">
       <h4><i class="fas fa-comments" aria-hidden="true"></i> Комментарии</h4>
       <div class="comments-container" id="comments-container">
@@ -357,7 +400,6 @@
 </main>
 
 <script src="/cache-version.js"></script>
-<script>document.write('<script src="/articles-data.js?v='+(window.CACHE_VER||'1')+'"><\/script>');</script>
 <script>
 (function() {
   var path = window.location.pathname;
@@ -376,9 +418,11 @@
 
   var related = all.filter(function(a) { return a.url !== currentUrl; }).slice(0, 4);
   var relEl = document.getElementById('related-container');
-  relEl.innerHTML = related.map(function(a) {
-    return '<a href="' + a.url + '" class="related-card"><strong>' + a.title + '</strong><span>' + (a.date || '') + '</span></a>';
-  }).join('');
+  if (relEl && !relEl.querySelector('a') && related.length) {
+    relEl.innerHTML = related.map(function(a) {
+      return '<a href="' + a.url + '" class="related-card"><strong>' + a.title + '</strong><span>' + (a.date || '') + '</span></a>';
+    }).join('');
+  }
 })();
 </script>
 <script src="/components.js" defer></script>

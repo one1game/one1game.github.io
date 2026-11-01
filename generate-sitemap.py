@@ -50,6 +50,27 @@ def url_block(loc, lastmod=None, priority='0.7'):
     return f'  <url><loc>{loc}</loc>{lastmod_xml}<priority>{priority}</priority></url>'
 
 
+def page_lastmod(name):
+    """Дата последнего реального изменения файла — из его же JSON-LD.
+
+    Раньше сюда подставлялся today: 80 URL каждый прогон объявляли себя
+    обновлёнными, даже когда байты не менялись. Движки такую дату перестают
+    учитывать, и приоритет обхода у новых страниц падает. Если даты в файле
+    нет — lastmod не пишем вовсе: пусть движок решает сам.
+    """
+    path = name
+    if path.endswith('/'):
+        path = path.rstrip('/') + '/index.html'
+    if not os.path.exists(path):
+        return None
+    try:
+        html = open(path, encoding='utf-8', errors='ignore').read()
+    except OSError:
+        return None
+    m = re.search(r'"dateModified"\s*:\s*"(\d{4}-\d{2}-\d{2})', html)
+    return m.group(1) if m else None
+
+
 def generate():
     try:
         with open(DATA_FILE, 'r', encoding='utf-8') as f:
@@ -70,53 +91,76 @@ def generate():
     # Дата сборки: у статических хабов нет своего «обновлено», но менять их принято
     today = datetime.now(timezone.utc).strftime("%Y-%m-%d")
 
+    # Статические страницы и хабы. lastmod — из файла, а не «сегодня»:
+    # дата должна меняться только тогда, когда менялись байты страницы.
+    FIXED = [
+        ('/', 'index.html', '1.0'),
+        ('/archive.html', 'archive.html', '0.8'),
+        ('/privacy.html', None, '0.3'),
+        ('/terms.html', None, '0.3'),
+        ('/advertising.html', None, '0.3'),
+        ('/anal-code/', None, '0.7'),
+        ('/ai/', None, '0.7'),
+        ('/genriprocedur/', None, '0.7'),
+        ('/cyber-scanner/', None, '0.7'),
+        ('/go/', None, '0.7'),
+        ('/feed/', 'feed/index.html', '0.8'),
+        ('/browserquest/', 'browserquest/index.html', '0.8'),
+        ('/portablewebgame/', 'portablewebgame/index.html', '0.8'),
+        ('/dos/', 'dos/index.html', '0.8'),
+        ('/red-alert-2/', 'red-alert-2/index.html', '0.8'),
+        ('/kino/', 'kino/index.html', '0.8'),
+        ('/besplatnye-igry.html', 'besplatnye-igry.html', '0.8'),
+        ('/skidki-na-igry.html', 'skidki-na-igry.html', '0.8'),
+        ('/vo-chto-poigrat.html', 'vo-chto-poigrat.html', '0.7'),
+        # С главной на них ведут ссылки, а в карте сайта их не было: робот
+        # узнавал об этих разделах только по обходу, а не из карты.
+        ('/triad-duel.html', 'triad-duel.html', '0.6'),
+        ('/l2/', 'l2/index.html', '0.6'),
+        # Хабы «игры для слабых ноутбуков» (собираются scripts/slabye-noutbuki.mjs)
+        ('/igry-bez-videokarty.html', 'igry-bez-videokarty.html', '0.8'),
+        ('/igry-dlya-slabyh-noutbukov-4gb-ozu.html', 'igry-dlya-slabyh-noutbukov-4gb-ozu.html', '0.8'),
+        ('/besplatnye-igry-dlya-slabyh-pk.html', 'besplatnye-igry-dlya-slabyh-pk.html', '0.8'),
+        ('/kooperativnye-igry-dlya-slabyh-pk.html', 'kooperativnye-igry-dlya-slabyh-pk.html', '0.8'),
+        ('/shuter-igry-dlya-slabyh-noutbukov.html', 'shuter-igry-dlya-slabyh-noutbukov.html', '0.8'),
+        ('/rpg-igry-dlya-slabyh-noutbukov.html', 'rpg-igry-dlya-slabyh-noutbukov.html', '0.8'),
+        ('/gonochnye-igry-dlya-slabyh-noutbukov.html', 'gonochnye-igry-dlya-slabyh-noutbukov.html', '0.8'),
+        ('/igry-dlya-slabyh-noutbukov-onlajn.html', 'igry-dlya-slabyh-noutbukov-onlajn.html', '0.8'),
+        ('/igry-dlya-slabyh-noutbukov-s-gejmpadom.html', 'igry-dlya-slabyh-noutbukov-s-gejmpadom.html', '0.8'),
+        ('/potyanet-li-igra.html', 'potyanet-li-igra.html', '0.8'),
+    ]
+
     lines = [
         '<?xml version="1.0" encoding="UTF-8"?>',
         '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">',
-        url_block(f'{BASE_URL}/', lastmod=today, priority='1.0'),
-        url_block(f'{BASE_URL}/archive.html', lastmod=today, priority='0.8'),
-        url_block(f'{BASE_URL}/privacy.html', priority='0.3'),
-        url_block(f'{BASE_URL}/terms.html', priority='0.3'),
-        url_block(f'{BASE_URL}/advertising.html', priority='0.3'),
-        url_block(f'{BASE_URL}/anal-code/', priority='0.7'),
-        url_block(f'{BASE_URL}/ai/', priority='0.7'),
-        url_block(f'{BASE_URL}/genriprocedur/', priority='0.7'),
-        url_block(f'{BASE_URL}/cyber-scanner/', priority='0.7'),
-        url_block(f'{BASE_URL}/go/', priority='0.7'),
-        url_block(f'{BASE_URL}/feed/', lastmod=today, priority='0.8'),
-        url_block(f'{BASE_URL}/browserquest/', lastmod=today, priority='0.8'),
-        url_block(f'{BASE_URL}/portablewebgame/', lastmod=today, priority='0.8'),
-        url_block(f'{BASE_URL}/dos/', lastmod=today, priority='0.8'),
-        url_block(f'{BASE_URL}/red-alert-2/', lastmod=today, priority='0.8'),
-        url_block(f'{BASE_URL}/kino/', lastmod=today, priority='0.8'),
-        url_block(f'{BASE_URL}/besplatnye-igry.html', lastmod=today, priority='0.8'),
-        url_block(f'{BASE_URL}/skidki-na-igry.html', lastmod=today, priority='0.8'),
-        url_block(f'{BASE_URL}/vo-chto-poigrat.html', lastmod=today, priority='0.7'),
-        # Хабы «игры для слабых ноутбуков» (собираются scripts/slabye-noutbuki.mjs)
-        url_block(f'{BASE_URL}/igry-bez-videokarty.html', lastmod=today, priority='0.8'),
-        url_block(f'{BASE_URL}/igry-dlya-slabyh-noutbukov-4gb-ozu.html', lastmod=today, priority='0.8'),
-        url_block(f'{BASE_URL}/besplatnye-igry-dlya-slabyh-pk.html', lastmod=today, priority='0.8'),
-        url_block(f'{BASE_URL}/kooperativnye-igry-dlya-slabyh-pk.html', lastmod=today, priority='0.8'),
-        url_block(f'{BASE_URL}/shuter-igry-dlya-slabyh-noutbukov.html', lastmod=today, priority='0.8'),
-        url_block(f'{BASE_URL}/rpg-igry-dlya-slabyh-noutbukov.html', lastmod=today, priority='0.8'),
-        url_block(f'{BASE_URL}/gonochnye-igry-dlya-slabyh-noutbukov.html', lastmod=today, priority='0.8'),
-        url_block(f'{BASE_URL}/igry-dlya-slabyh-noutbukov-onlajn.html', lastmod=today, priority='0.8'),
-        url_block(f'{BASE_URL}/igry-dlya-slabyh-noutbukov-s-gejmpadom.html', lastmod=today, priority='0.8'),
     ]
+    for loc, fname, prio in FIXED:
+        lines.append(url_block(f'{BASE_URL}{loc}',
+                               lastmod=page_lastmod(fname) if fname else None,
+                               priority=prio))
 
     # Страницы-хабы категорий (topical authority)
     for slug in ('ii-i-tehnologii', 'analitika', 'gajdy', 'konsoli', 'trendy',
                  'razrabotka', 'mnenie', 'kino-i-igry', 'obzory'):
-        lines.append(url_block(f'{BASE_URL}/category/{slug}.html', lastmod=today, priority='0.6'))
+        lines.append(url_block(f'{BASE_URL}/category/{slug}.html',
+                               lastmod=page_lastmod(f'category/{slug}.html'), priority='0.6'))
 
     # Страницы фильмов, сгенерированные из TMDB
     kino_dir = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'kino')
     if os.path.isdir(kino_dir):
         for name in sorted(os.listdir(kino_dir)):
             if name.endswith('.html') and name != 'index.html':
-                lines.append(url_block(f'{BASE_URL}/kino/{name}', lastmod=today, priority='0.6'))
+                lines.append(url_block(f'{BASE_URL}/kino/{name}',
+                                       lastmod=page_lastmod(os.path.join(kino_dir, name)),
+                                       priority='0.6'))
 
+    skipped = 0
     for url in urls:
+        # /archive/-<appid> — страница без человекочитаемого слага (название игры
+        # не латиницей). Она закрыта noindex, в карту сайта не попадает.
+        if re.fullmatch(r'/archive/-\d+', url):
+            skipped += 1
+            continue
         clean_path = url.lstrip('/')
         lines.append(url_block(f'{BASE_URL}/{clean_path}', lastmod=lastmods.get(url)))
 
@@ -126,7 +170,8 @@ def generate():
         f.write('\n'.join(lines))
 
     with_date = sum(1 for u in urls if u in lastmods)
-    print(f"Готово! В sitemap добавлено страниц: {len(urls) + 2} (с lastmod: {with_date})")
+    print(f"Готово! В sitemap добавлено страниц: {len(lines) - 3} (с lastmod: {with_date}), "
+          f"пропущено noindex-страниц: {skipped}")
 
 
 if __name__ == '__main__':

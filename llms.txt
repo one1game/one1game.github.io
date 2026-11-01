@@ -9,6 +9,20 @@
 - [Скидки на игры](https://one1game.org/skidki-na-igry): лучшие скидки Steam по размеру скидки (обновляется ежедневно).
 - [Во что поиграть](https://one1game.org/vo-chto-poigrat): случайная игра из базы сайта с фильтром по описанию.
 
+## Elden Ring
+
+- [Elden Ring: гайд для новичков](https://one1game.org/archive/elden-ring-gajd-dlya-novichkov-2026): классы, первые 15 минут, прокачка, кузнечные камни и частые ошибки.
+- [Elden Ring не запускается на Windows 11](https://one1game.org/archive/elden-ring-ne-zapuskaetsya-windows-11): 9 исправлений для чёрного экрана, вылетов и Easy Anti-Cheat.
+- [Elden Ring Nightreign: гайд для новичков](https://one1game.org/archive/elden-ring-nightreign-gajd-dlya-novichkov-2026): отряд, первые три дня, классы и типичные ошибки.
+
+### Elden Ring: инструменты
+
+- [Сколько рун нужно на уровень](https://one1game.org/archive/elden-ring-skolko-runok-na-uroven): таблица уровней 1–713, стоимость каждого уровня и калькулятор.
+- [Перегруз и перекат](https://one1game.org/archive/elden-ring-peregruz-perekat): пороги 30%, 70%, 100% и калькулятор нагрузки.
+- [Nightreign соло](https://one1game.org/archive/elden-ring-nightreign-solo): как проходить забеги одному.
+- [Кузнечные камни](https://one1game.org/archive/elden-ring-kuznechnye-kamni-gde-vzyat): где искать, колокольчики рудокопа, уровни улучшения.
+- [Poise (стойкость)](https://one1game.org/archive/elden-ring-poise-chto-eto): что это простыми словами и порог 51.
+
 ## Игры для слабых ноутбуков
 
 - [Полный гид: игры для слабых ноутбуков 2026](https://one1game.org/archive/igry-dlya-slabyh-noutbukov-2026): что реально запустится без дискретной видеокарты, настройки ради FPS.

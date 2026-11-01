@@ -388,7 +388,7 @@
 
     <nav class="breadcrumbs" aria-label="Хлебные крошки" itemscope itemtype="https://schema.org/BreadcrumbList">
       <span itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
-        <a itemprop="item" href="/"><span itemprop="name">Главная</span></a>
+        <a itemprop="item" href="/"><span itemprop="name">One1Game</span></a>
         <meta itemprop="position" content="1" />
       </span> →
       <span itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
@@ -765,7 +765,12 @@
     <!-- Related -->
     <section class="related-section">
       <h4>Похожие статьи</h4>
-      <div class="related-grid" id="related-container"></div></section>
+      <div class="related-grid" id="related-container">
+        <a href="/archive/elden-ring-gajd-dlya-novichkov-2026" class="related-card"><strong>Elden Ring: гайд для новичков — с чего начать и как не бросить игру</strong><span>1 ноября 2026</span></a>
+        <a href="/archive/elden-ring-nightreign-gajd-dlya-novichkov-2026" class="related-card"><strong>Elden Ring Nightreign: гайд для новичков — с чего начать</strong><span>1 ноября 2026</span></a>
+        <a href="/archive/monetizaciya-yandex-igry-2026-rukovodstvo" class="related-card"><strong>Сколько платят в Яндекс Играх в 2026: доход, выплаты и требования</strong><span>28 октября 2026</span></a>
+        <a href="/archive/windows-11-july-2026-update-podgotovka" class="related-card"><strong>Windows 11 July 2026 Update: Как подготовиться и избежать проблем (полный гайд)</strong><span>9 июля 2026</span></a>
+      </div></section>
 
   </div>
 </div>
@@ -777,7 +782,6 @@
 </button>
 
 <script src="/cache-version.js"></script>
-<script defer src="/articles-data.js?v=22"></script>
 <script>
 (function() {
   var path = window.location.pathname;
@@ -796,9 +800,11 @@
 
   var related = all.filter(function(a) { return a.url !== currentUrl; }).slice(0, 4);
   var relEl = document.getElementById('related-container');
-  relEl.innerHTML = related.map(function(a) {
-    return '<a href="' + a.url + '" class="related-card"><strong>' + a.title + '</strong><span>' + (a.date || '') + '</span></a>';
-  }).join('');
+  if (relEl && !relEl.querySelector('a') && related.length) {
+    relEl.innerHTML = related.map(function(a) {
+      return '<a href="' + a.url + '" class="related-card"><strong>' + a.title + '</strong><span>' + (a.date || '') + '</span></a>';
+    }).join('');
+  }
 })();
 
 // Table of Contents

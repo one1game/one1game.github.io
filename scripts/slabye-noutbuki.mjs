@@ -20,6 +20,22 @@ import { fileURLToPath } from 'node:url';
 const ROOT = resolve(dirname(fileURLToPath(import.meta.url)), '..');
 const DATA_FILE = resolve(ROOT, 'scripts/data/slabye-noutbuki.json');
 const CACHE_FILE = resolve(ROOT, 'scripts/data/steam-cache.json');
+const CATALOG_FILE = resolve(ROOT, 'articles-data.js');
+
+/**
+ * appid → наша страница игры («/archive/<slug>-<appid>»).
+ * Без этого карточка хаба вела только наружу, в Steam, и 7 хабов на ~350 игр
+ * не отдавали ни одной внутренней ссылки на собственные страницы.
+ */
+const OWN_PAGES = (() => {
+  const map = new Map();
+  if (!existsSync(CATALOG_FILE)) return map;
+  const src = readFileSync(CATALOG_FILE, 'utf8');
+  for (const m of src.matchAll(/"url":\s*"(\/archive\/[^"]+?-(\d+))"/g)) {
+    map.set(m[2], m[1]);
+  }
+  return map;
+})();
 
 const SITE = 'https://one1game.org';
 const UA = { 'User-Agent': 'Mozilla/5.0 (compatible; One1GameBot/1.0)' };
@@ -27,6 +43,13 @@ const MONTHS = ['января', 'февраля', 'марта', 'апреля', 
   'июля', 'августа', 'сентября', 'октября', 'ноября', 'декабря'];
 
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
+
+/**
+ * Cloudflare Pages отдаёт страницу и по адресу без .html. Canonical, og:url и
+ * внутренние ссылки обязаны указывать на один и тот же вариант — иначе в
+ * индексе оказываются две копии одной страницы.
+ */
+const cleanUrl = (u) => String(u || '').replace(/\.html$/, '');
 const esc = (s) => String(s ?? '').replace(/[&<>"']/g, (c) => ({
   '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;',
 }[c]));
@@ -142,12 +165,12 @@ function shell({ url, title, description, breadcrumbs, jsonld, body }) {
   <meta name="description" content="${esc(description)}" />
   <meta name="keywords" content="игры для слабых ноутбуков, игры на слабом пк, нетребовательные игры, встроенная графика" />
   <meta name="robots" content="index, follow, max-image-preview:large" />
-  <link rel="canonical" href="${url}" />
+  <link rel="canonical" href="${cleanUrl(url)}" />
   <meta property="og:type" content="article" />
   <meta property="og:site_name" content="One1Game" />
   <meta property="og:title" content="${esc(title)}" />
   <meta property="og:description" content="${esc(description)}" />
-  <meta property="og:url" content="${url}" />
+  <meta property="og:url" content="${cleanUrl(url)}" />
   <meta property="og:image" content="${SITE}/og-image.jpg" />
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="theme-color" content="#06060c" />
@@ -156,7 +179,7 @@ function shell({ url, title, description, breadcrumbs, jsonld, body }) {
   <link rel="preconnect" href="https://shared.akamai.steamstatic.com" crossorigin />
   <link rel="preload" as="style" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css" onload="this.rel='stylesheet';this.removeAttribute('onload')" />
   <noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css" /></noscript>
-  <link rel="stylesheet" href="/styles.css?v=46" />
+  <link rel="stylesheet" href="/styles.css?v=33" />
   <link rel="manifest" href="/manifest.json" />
   <script defer src="/analytics-consent.js?v=2"></script>
   <style>
@@ -185,6 +208,7 @@ function shell({ url, title, description, breadcrumbs, jsonld, body }) {
     .updated { color: #8c93a3; font-size: .9rem; }
   </style>
 ${jsonld.map((j) => `  <script type="application/ld+json">${JSON.stringify(j)}</script>`).join('\n')}
+  <script defer src="/player.js?v=3"></script>
 </head>
 <body>
 <main id="main-content">
@@ -193,7 +217,7 @@ ${jsonld.map((j) => `  <script type="application/ld+json">${JSON.stringify(j)}</
     <nav class="breadcrumbs" aria-label="Хлебные крошки">
 ${breadcrumbs.map((b, i) => (i === breadcrumbs.length - 1
   ? `      <span aria-current="page">${esc(b.name)}</span>`
-  : `      <a href="${b.url}">${esc(b.name)}</a> →`)).join('\n')}
+  : `      <a href="${cleanUrl(b.url)}">${esc(b.name)}</a> →`)).join('\n')}
     </nav>
 ${body}
   </div>
@@ -208,6 +232,12 @@ ${body}
 function buildHub(hub, entries) {
   const url = `${SITE}/${hub.slug}`;
   const titleTag = hub.title;
+
+  // Название игры ведёт на нашу страницу, если она есть в каталоге.
+  const nameHtml = (e) => {
+    const own = e.appid ? OWN_PAGES.get(String(e.appid)) : '';
+    return own ? `<a href="${esc(own)}">${esc(e.name)}</a>` : esc(e.name);
+  };
 
   const cards = entries.map((e) => {
     // Картинку берём из наших данных, иначе из API, иначе прямо с CDN Steam по appid.
@@ -229,7 +259,7 @@ function buildHub(hub, entries) {
       : '';
     return `      <article class="hub-card">
         ${img}
-        <h3>${esc(e.name)}</h3>
+        <h3>${nameHtml(e)}</h3>
         ${req}
         <p class="hub-note">${esc(e.note)}</p>
         ${link}
@@ -256,7 +286,7 @@ function buildHub(hub, entries) {
   const related = hub.related
     .map((s) => HUBS.find((h) => h.slug === s))
     .filter(Boolean)
-    .map((h) => `      <a href="/${h.slug}">${esc(h.h1)}</a>`)
+    .map((h) => `      <a href="${esc(cleanUrl(`/${h.slug}`))}">${esc(h.h1)}</a>`)
     .join('\n');
 
   const body = `    <h1>${esc(hub.h1)}</h1>
@@ -287,7 +317,7 @@ ${cards}
 
     <div class="hub-also">
       <h4>Читайте также</h4>
-      <a href="${esc(ARTICLE)}">Игры для слабых ноутбуков: полный гид 2026</a>
+      <a href="${esc(cleanUrl(ARTICLE))}">Игры для слабых ноутбуков: полный гид 2026</a>
 ${related}
       <a href="/vo-chto-poigrat">Во что поиграть — случайная игра из базы</a>
       <a href="/archive">Все статьи</a>
@@ -320,8 +350,8 @@ ${related}
     '@type': 'BreadcrumbList',
     itemListElement: [
       { '@type': 'ListItem', position: 1, name: 'Главная', item: `${SITE}/` },
-      { '@type': 'ListItem', position: 2, name: 'Игры для слабых ноутбуков', item: `${SITE}${ARTICLE}` },
-      { '@type': 'ListItem', position: 3, name: hub.h1, item: url },
+      { '@type': 'ListItem', position: 2, name: 'Игры для слабых ноутбуков', item: `${SITE}${cleanUrl(ARTICLE)}` },
+      { '@type': 'ListItem', position: 3, name: hub.h1, item: cleanUrl(url) },
     ],
   };
 
@@ -374,8 +404,13 @@ async function main() {
       continue;
     }
     const html = buildHub(hub, entries);
-    writeFileSync(resolve(ROOT, hub.slug), html, 'utf8');
-    console.log(`✓ ${hub.slug} — ${entries.length} игр (${html.length} байт)`);
+    // Пишем только при реальном изменении: иначе страница получает новую дату
+    // на каждом прогоне, хотя байты те же, и lastmod в sitemap начинает врать.
+    const target = resolve(ROOT, hub.slug);
+    const prev = existsSync(target) ? readFileSync(target, 'utf8') : null;
+    if (prev !== html) writeFileSync(target, html, 'utf8');
+    console.log(`✓ ${hub.slug} — ${entries.length} игр (${html.length} байт${
+      prev === html ? ', без изменений' : ''})`);
   }
 }
 

@@ -41,36 +41,73 @@
     if (localStorage.getItem('ga_consent') === 'yes') enableGA();
   </script>
   <link href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css" rel="stylesheet" />
-  <link rel="stylesheet" href="/styles.css?v=31" />
+  <link rel="stylesheet" href="/styles.css?v=33" />
 
   <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "BreadcrumbList",
-    "itemListElement": [
-      {"@type": "ListItem", "position": 1, "name": "Главная", "item": "https://one1game.org/"},
-      {"@type": "ListItem", "position": 2, "name": "Статьи", "item": "https://one1game.org/archive"},
-      {"@type": "ListItem", "position": 3, "name": "SubSurvival: SSN-13 "Grendel"", "item": "https://one1game.org/archive/subsurvival-ssn-13-grendel-5039370"}
-    ]
-  }
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Главная",
+      "item": "https://one1game.org/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Статьи",
+      "item": "https://one1game.org/archive"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Обзоры",
+      "item": "https://one1game.org/category/obzory"
+    },
+    {
+      "@type": "ListItem",
+      "position": 4,
+      "name": "SubSurvival: SSN-13 \"Grendel\": цена, отзывы и статистика игроков",
+      "item": "https://one1game.org/archive/subsurvival-ssn-13-grendel-5039370"
+    }
+  ]
+}
   </script>
 
   <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "Article",
-    "headline": "SubSurvival: SSN-13 "Grendel": цена, отзывы и статистика игроков | One1Game",
-    "datePublished": "2026-10-27",
-    "dateModified": "2026-10-27",
-    "author": {"@type": "Person", "name": "Команда One1Game"},
-    "publisher": {"@type": "Organization", "name": "One1Game", "logo": {"@type": "ImageObject", "url": "https://one1game.org/logo.png"}},
-    "description": "SubSurvival: SSN-13 "Grendel" — актуальная цена, скидки, процент положительных отзывов и статистика игроков в Steam. Обновляется автоматически.",
-    "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5039370/5b5bcfabc690ecc60dd2a0231a5702d4cd5bb058/header.jpg?t=1793064230",
-    "inLanguage": "ru-RU",
-    "isAccessibleForFree": true,
-    "articleSection": "Обзоры",
-    "speakable": {"@type": "SpeakableSpecification", "cssSelector": ["h1", ".article-body p:first-of-type"]}
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "SubSurvival: SSN-13 \"Grendel\": цена, отзывы и статистика игроков | One1Game",
+  "datePublished": "2026-10-27",
+  "dateModified": "2026-10-27",
+  "author": {
+    "@type": "Person",
+    "name": "Команда One1Game"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "One1Game",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://one1game.org/logo.png"
+    }
+  },
+  "description": "SubSurvival: SSN-13 ",
+  "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5039370/5b5bcfabc690ecc60dd2a0231a5702d4cd5bb058/header.jpg?t=1793064230",
+  "inLanguage": "ru-RU",
+  "isAccessibleForFree": true,
+  "articleSection": "Обзоры",
+  "speakable": {
+    "@type": "SpeakableSpecification",
+    "cssSelector": [
+      "h1",
+      ".article-body p:first-of-type"
+    ]
   }
+}
   </script>
 
   <script type="application/ld+json">
@@ -202,7 +239,7 @@
 
     <nav class="breadcrumbs" aria-label="Хлебные крошки" itemscope itemtype="https://schema.org/BreadcrumbList">
       <span itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
-        <a itemprop="item" href="/"><span itemprop="name">Главная</span></a>
+        <a itemprop="item" href="/"><span itemprop="name">One1Game</span></a>
         <meta itemprop="position" content="1" />
       </span> →
       <span itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
@@ -210,8 +247,12 @@
         <meta itemprop="position" content="2" />
       </span> →
       <span itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
-        <span itemprop="name" aria-current="page">SubSurvival: SSN-13 "Grendel"</span>
+        <a itemprop="item" href="/category/obzory"><span itemprop="name">Обзоры</span></a>
         <meta itemprop="position" content="3" />
+      </span> →
+      <span itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+        <span itemprop="name" aria-current="page">SubSurvival: SSN-13 "Grendel"</span>
+        <meta itemprop="position" content="4" />
       </span>
     </nav>
 
@@ -286,9 +327,10 @@
       </div>
 <!--LOWEND:START-->
       <section class="lowend-block" style="margin:26px 0;padding:16px 18px;border:1px solid rgba(255,255,255,.10);border-radius:10px;background:rgba(255,255,255,.03)">
-        <h2 style="margin:0 0 10px;font-size:1.15rem">Потянет ли слабый ноутбук?</h2>
+        <h2 style="margin:0 0 10px;font-size:1.15rem">Потянет ли SubSurvival: SSN-13 &quot;Grendel&quot; на слабом ноутбуке?</h2>
         <p><strong>Минимальные требования (Steam):</strong> 64-разрядные процессор и операционная система · ОС: Windows 10 · Процессор: Dual Core · Оперативная память: 4 GB ОЗУ · Видеокарта: Integrated · Место на диске: 250 MB · Дополнительно: 1920×1080</p>
-        <p>Ориентир для ноутбука без дискретной видеокарты — 720p и низкие настройки. Готовые подборки: <a href="/igry-bez-videokarty">игры без видеокарты</a>, <a href="/igry-dlya-slabyh-noutbukov-4gb-ozu">игры на 4 ГБ ОЗУ</a>, <a href="/besplatnye-igry-dlya-slabyh-pk">бесплатные игры для слабых ПК</a>. Как поднять FPS — в <a href="/archive/igry-dlya-slabyh-noutbukov-2026">полном гиде по слабым ноутбукам</a>.</p>
+        <p><strong>Оценка:</strong> Потянет на встроенной графике при 720p и низких настройках.</p>
+        <p>Подборки под слабое железо: <a href="/igry-bez-videokarty">игры без видеокарты</a> →</p>
       </section>
 <!--LOWEND:END-->
 
@@ -323,9 +365,34 @@
       <div class="share-buttons" id="share-buttons"></div>
     </section>
 
-    <section class="related-section">
+        <section class="game-faq">
+      <h2>SubSurvival: SSN-13 &quot;Grendel&quot;: частые вопросы</h2>
+      <h3>Сколько стоит SubSurvival: SSN-13 &quot;Grendel&quot;</h3>
+        <p>В Steam SubSurvival: SSN-13 &quot;Grendel&quot; сейчас 204.00 RUB (скидка 15%). Цена и скидки обновляются автоматически.</p>
+      <h3>Когда вышла SubSurvival: SSN-13 &quot;Grendel&quot;</h3>
+        <p>Дата выхода SubSurvival: SSN-13 &quot;Grendel&quot; — 26 окт. 2026 г.</p>
+      <h3>Кто разработал SubSurvival: SSN-13 &quot;Grendel&quot;</h3>
+        <p>Разработчик SubSurvival: SSN-13 &quot;Grendel&quot; — Pomme Bleue.</p>
+    </section>
+<section class="similar-games">
+      <h2>Похожие игры</h2>
+      <table class="similar-table">
+        <thead><tr><th>Игра</th><th>Цена</th><th>Слабый ПК</th></tr></thead>
+        <tbody>
+          <tr><td><a href="/archive/superstore-simulator-5127970">SuperStore Simulator – симулятор супермаркета</a></td><td>280.00 RUB</td><td>Нет</td></tr>
+          <tr><td><a href="/archive/supporter-bundle-2-silly-linguine-cat-simulator-deluxe-online-5073640">Supporter Bundle #2 – Silly Linguine Cat Simulator</a></td><td>790.00 RUB</td><td>—</td></tr>
+          <tr><td><a href="/archive/supporters-pack-5240540">塔防山贼模拟器 - Supporters Pack: обзор</a></td><td>240.00 RUB</td><td>—</td></tr>
+        </tbody>
+      </table>
+    </section>
+<section class="related-section">
       <h4>Похожие статьи</h4>
-      <div class="related-grid" id="related-container"></div></section>
+      <div class="related-grid" id="related-container">
+        <a href="/archive/chill-gyaru-5087840" class="related-card"><strong>Chill Gyaru — казуальный симулятор</strong><span>27 октября 2026</span></a>
+        <a href="/archive/prepod-ona-realno-zlitsya-5217200" class="related-card"><strong>Препод, она реально злится! – обзор игры</strong><span>27 октября 2026</span></a>
+        <a href="/archive/cosplaying-in-costalia-the-tororo-sisters-3891200" class="related-card"><strong>Cosplaying in Costalia: The Tororo Sisters! – обзор игры</strong><span>27 октября 2026</span></a>
+        <a href="/archive/trash-to-cash-5130520" class="related-card"><strong>Trash to Cash — казуальная игра о поиске сокровищ</strong><span>27 октября 2026</span></a>
+      </div></section>
     <section class="comments-section">
       <h4><i class="fas fa-comments" aria-hidden="true"></i> Комментарии</h4>
       <div class="comments-container" id="comments-container">
@@ -346,7 +413,6 @@
 </main>
 
 <script src="/cache-version.js"></script>
-<script>document.write('<script src="/articles-data.js?v='+(window.CACHE_VER||'1')+'"><\/script>');</script>
 <script>
 (function() {
   var path = window.location.pathname;
@@ -365,9 +431,11 @@
 
   var related = all.filter(function(a) { return a.url !== currentUrl; }).slice(0, 4);
   var relEl = document.getElementById('related-container');
-  relEl.innerHTML = related.map(function(a) {
-    return '<a href="' + a.url + '" class="related-card"><strong>' + a.title + '</strong><span>' + (a.date || '') + '</span></a>';
-  }).join('');
+  if (relEl && !relEl.querySelector('a') && related.length) {
+    relEl.innerHTML = related.map(function(a) {
+      return '<a href="' + a.url + '" class="related-card"><strong>' + a.title + '</strong><span>' + (a.date || '') + '</span></a>';
+    }).join('');
+  }
 })();
 </script>
 <script src="/components.js" defer></script>

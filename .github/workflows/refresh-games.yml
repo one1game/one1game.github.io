@@ -27,6 +27,16 @@ jobs:
           DELAY_MS: "1200"
         run: node scripts/generate-games.js
 
+      # Генератор пишет шаблон без блоков «Похожие», поэтому после рефреша
+      # их надо собрать заново, иначе страницы останутся с пустыми контейнерами.
+      - name: Пересборка блоков «Похожие» и «Похожие игры»
+        run: |
+          python scripts/rebuild_related.py
+          python scripts/build_similar.py
+          python scripts/build_passages.py
+          python scripts/build_pc_tool.py
+          python scripts/build_gpu_verdicts.py
+
       - name: Коммит и пуш изменений
         run: |
           git config user.name "github-actions[bot]"

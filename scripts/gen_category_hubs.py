@@ -48,6 +48,9 @@ def parse_articles(content):
         url = g("url")
         if not url:
             continue
+        # "/archive/-<appid>" закрыты noindex — ссылки на них в хабы не ставим.
+        if re.fullmatch(r"/archive/-\d+", url):
+            continue
         items.append({
             "url": url,
             "title": g("title"),
@@ -338,7 +341,7 @@ def build_hub(category, slug, items):
   <div class="container cat-page">
     <a href="/archive" class="article-back"><i class="fas fa-arrow-left" aria-hidden="true"></i> К списку статей</a>
     <nav class="breadcrumbs" aria-label="Хлебные крошки">
-      <a href="/">Главная</a> → <a href="/archive">Статьи</a> → <span>{esc(category)}</span>
+      <a href="/">One1Game</a> → <a href="/archive">Статьи</a> → <span>{esc(category)}</span>
     </nav>
     <h1 class="cat-title">{esc(category)}: все статьи</h1>
     <p class="cat-lead">В разделе {len(items)} материалов, из них {human_count} авторских. По умолчанию — от новых к старым.</p>
@@ -400,8 +403,12 @@ def main():
             print(f"===FILE:{slug}===")
             print(page)
         else:
-            (OUT_DIR / f"{slug}.html").write_text(page, encoding="utf-8")
-            print(f"  OK {slug}.html — {len(arts)} статей")
+            target = OUT_DIR / f"{slug}.html"
+            prev = target.read_text(encoding="utf-8") if target.exists() else None
+            # Пишем только при реальном изменении, иначе дата файла врёт.
+            if prev != page:
+                target.write_text(page, encoding="utf-8")
+            print(f"  OK {slug}.html — {len(arts)} статей{'' if prev != page else ' (без изменений)'}")
         made += 1
     if not to_stdout:
         print(f"Готово: {made} хабов")

@@ -41,7 +41,7 @@
     if (localStorage.getItem('ga_consent') === 'yes') enableGA();
   </script>
   <link href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css" rel="stylesheet" />
-  <link rel="stylesheet" href="/styles.css?v=31" />
+  <link rel="stylesheet" href="/styles.css?v=33" />
 
   <script type="application/ld+json">
   {
@@ -208,7 +208,7 @@
 
     <nav class="breadcrumbs" aria-label="Хлебные крошки" itemscope itemtype="https://schema.org/BreadcrumbList">
       <span itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
-        <a itemprop="item" href="/"><span itemprop="name">Главная</span></a>
+        <a itemprop="item" href="/"><span itemprop="name">One1Game</span></a>
         <meta itemprop="position" content="1" />
       </span> →
       <span itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
@@ -299,9 +299,9 @@
       </div>
 <!--LOWEND:START-->
       <section class="lowend-block" style="margin:26px 0;padding:16px 18px;border:1px solid rgba(255,255,255,.10);border-radius:10px;background:rgba(255,255,255,.03)">
-        <h2 style="margin:0 0 10px;font-size:1.15rem">Потянет ли слабый ноутбук?</h2>
+        <h2 style="margin:0 0 10px;font-size:1.15rem">Потянет ли Portal на слабом ноутбуке?</h2>
         <p><strong>Минимальные требования (Steam):</strong> Минимальные: Процессор 1,7 ГГц, 512 МБ оперативной памяти, видеокарта с поддержкой DirectX&reg; 8.1 (требуется поддержка SSE), Windows&reg; 7 (32/64-разрядная)/Vista/XP, мышь, клавиатура, подключение к Интернету Рекомендуемые: Процессор Pentium 4 (3 ГГц или лучше), 1 ГБ оперативной памяти, видеокарта с поддержкой DirectX&reg; 9, Windows&reg; 7 (32/64-разрядная)/Vista/XP, мышь, клавиатура, подключе</p>
-        <p>Ориентир для ноутбука без дискретной видеокарты — 720p и низкие настройки. Готовые подборки: <a href="/igry-bez-videokarty">игры без видеокарты</a>, <a href="/igry-dlya-slabyh-noutbukov-4gb-ozu">игры на 4 ГБ ОЗУ</a>, <a href="/besplatnye-igry-dlya-slabyh-pk">бесплатные игры для слабых ПК</a>. Как поднять FPS — в <a href="/archive/igry-dlya-slabyh-noutbukov-2026">полном гиде по слабым ноутбукам</a>.</p>
+        <p>Подборки под слабое железо: <a href="/kooperativnye-igry-dlya-slabyh-pk">кооперативные игры для слабых ПК</a> →</p>
       </section>
 <!--LOWEND:END-->
 
@@ -336,9 +336,34 @@
       <div class="share-buttons" id="share-buttons"></div>
     </section>
 
-    <section class="related-section">
+        <section class="game-faq">
+      <h2>Portal: частые вопросы</h2>
+      <h3>Сколько стоит Portal</h3>
+        <p>В Steam Portal сейчас 445.00 RUB. Цена и скидки обновляются автоматически.</p>
+      <h3>Когда вышла Portal</h3>
+        <p>Дата выхода Portal — 10 окт. 2007 г.</p>
+      <h3>Кто разработал Portal</h3>
+        <p>Разработчик Portal — Valve.</p>
+    </section>
+<section class="similar-games">
+      <h2>Похожие игры</h2>
+      <table class="similar-table">
+        <thead><tr><th>Игра</th><th>Цена</th><th>Слабый ПК</th></tr></thead>
+        <tbody>
+          <tr><td><a href="/archive/postapo-2216510">PostApo - обзор игры</a></td><td>42.00 RUB</td><td>Нет</td></tr>
+          <tr><td><a href="/archive/prehistoric-toybox-5257370">Prehistoric toybox – экшен‑роглайт от инди</a></td><td>249.00 RUB</td><td>Нет</td></tr>
+          <tr><td><a href="/archive/prey-island-5297390">Prey Island — экшен‑приключение про выживание</a></td><td>170.00 RUB (скидка 15%)</td><td>Нет</td></tr>
+        </tbody>
+      </table>
+    </section>
+<section class="related-section">
       <h4>Похожие статьи</h4>
-      <div class="related-grid" id="related-container"></div></section>
+      <div class="related-grid" id="related-container">
+        <a href="/archive/team-fortress-2-440" class="related-card"><strong>Team Fortress 2 — бесплатный шутер с классами</strong><span>20 сентября 2026</span></a>
+        <a href="/archive/left-4-dead-2-550" class="related-card"><strong>Left 4 Dead 2 – кооперативный зомби‑экшен</strong><span>20 сентября 2026</span></a>
+        <a href="/archive/counter-strike-2-730" class="related-card"><strong>Counter-Strike 2: цена, отзывы и статистика игроков</strong><span>20 сентября 2026</span></a>
+        <a href="/archive/garry-s-mod-4000" class="related-card"><strong>Garry's Mod: цена, отзывы и статистика игроков</strong><span>20 сентября 2026</span></a>
+      </div></section>
     <section class="comments-section">
       <h4><i class="fas fa-comments" aria-hidden="true"></i> Комментарии</h4>
       <div class="comments-container" id="comments-container">
@@ -359,7 +384,6 @@
 </main>
 
 <script src="/cache-version.js"></script>
-<script>document.write('<script src="/articles-data.js?v='+(window.CACHE_VER||'1')+'"><\/script>');</script>
 <script>
 (function() {
   var path = window.location.pathname;
@@ -378,9 +402,11 @@
 
   var related = all.filter(function(a) { return a.url !== currentUrl; }).slice(0, 4);
   var relEl = document.getElementById('related-container');
-  relEl.innerHTML = related.map(function(a) {
-    return '<a href="' + a.url + '" class="related-card"><strong>' + a.title + '</strong><span>' + (a.date || '') + '</span></a>';
-  }).join('');
+  if (relEl && !relEl.querySelector('a') && related.length) {
+    relEl.innerHTML = related.map(function(a) {
+      return '<a href="' + a.url + '" class="related-card"><strong>' + a.title + '</strong><span>' + (a.date || '') + '</span></a>';
+    }).join('');
+  }
 })();
 </script>
 <script src="/components.js" defer></script>

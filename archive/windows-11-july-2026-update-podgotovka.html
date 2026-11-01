@@ -196,7 +196,7 @@
 
       <span itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
 
-        <a itemprop="item" href="/"><span itemprop="name">Главная</span></a>
+        <a itemprop="item" href="/"><span itemprop="name">One1Game</span></a>
 
         <meta itemprop="position" content="1" />
 
@@ -871,7 +871,12 @@
 
       <h4>Похожие статьи</h4>
 
-      <div class="related-grid" id="related-container"></div></section>
+      <div class="related-grid" id="related-container">
+        <a href="/archive/kak-uvelichit-fps-windows-11-optimizaciya" class="related-card"><strong>Как увеличить FPS в Windows 11: 15 настроек, которые реально работают</strong><span>31 октября 2026</span></a>
+        <a href="/archive/xbox-gamepass-to-steam-saves-2026" class="related-card"><strong>Как добавить сохранения из Game Pass PC? Перенос сейвов без потери прогресса</strong><span>6 июля 2026</span></a>
+        <a href="/archive/elden-ring-ne-zapuskaetsya-windows-11" class="related-card"><strong>Elden Ring не запускается на Windows 11: 9 исправлений</strong><span>1 ноября 2026</span></a>
+        <a href="/archive/rtx-5090-vs-rx-9070xt-sravnenie-2026" class="related-card"><strong>RTX 5090 vs RX 9070 XT: Честное сравнение 2026 — какую карту брать?</strong><span>9 июля 2026</span></a>
+      </div></section>
 
     
 
@@ -887,7 +892,6 @@
 
 <script src="/cache-version.js"></script>
 
-<script defer src="/articles-data.js?v=22"></script>
 
 <script>
 
@@ -922,14 +926,12 @@
 
 
   var related = all.filter(function(a) { return a.url !== currentUrl; }).slice(0, 4);
-
   var relEl = document.getElementById('related-container');
-
-  relEl.innerHTML = related.map(function(a) {
-
-    return '<a href="' + a.url + '" class="related-card"><strong>' + a.title + '</strong><span>' + (a.date || '') + '</span></a>';
-
-  }).join('');
+  if (relEl && !relEl.querySelector('a') && related.length) {
+    relEl.innerHTML = related.map(function(a) {
+      return '<a href="' + a.url + '" class="related-card"><strong>' + a.title + '</strong><span>' + (a.date || '') + '</span></a>';
+    }).join('');
+  }
 
 })();
 

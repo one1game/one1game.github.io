@@ -18,13 +18,21 @@ jobs:
           python-version: '3.x'
       - name: Run generators
         run: |
-          python generate-sitemap.py
+          python generate-feed.py
           python generate-home.py
           python generate-archive.py
           python scripts/gen_category_hubs.py
+          python scripts/rebuild_related.py
+          python scripts/build_similar.py
+          python scripts/build_passages.py
+          python scripts/build_pc_tool.py
+          python scripts/build_gpu_verdicts.py
+          # sitemap последним: lastmod корня берётся из index.html после того,
+          # как generate-home выставил там дату реального изменения.
+          python generate-sitemap.py
       - name: Commit and push
         run: |
           git config --global user.name 'Sitemap Bot'
           git config --global user.email 'bot@github.com'
-          git add sitemap.xml index.html archive.html category
-          git diff --quiet && git diff --staged --quiet || (git commit -m "Автогенерация: sitemap, статичные главная и лента статей, хабы категорий" && git push)
+          git add sitemap.xml feed.xml index.html archive.html category archive
+          git diff --quiet && git diff --staged --quiet || (git commit -m "Автогенерация: sitemap, RSS, статичные главная и лента статей, хабы категорий" && git push)

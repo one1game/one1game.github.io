@@ -48,7 +48,8 @@
       "h1",
       ".article-body p:first-of-type"
     ]
-  }
+  },
+  "image": "https://one1game.org/img/ai/output/fair_pvp_games.png"
 }
   </script>
 <style>
@@ -83,7 +84,7 @@
   <div class="article-page">
     <a href="/archive" class="article-back"><i class="fas fa-arrow-left"></i> К списку статей</a>
     <nav class="breadcrumbs" aria-label="Хлебные крошки">
-      <a href="/">Главная</a> → <a href="/archive">Статьи</a> → <span aria-current="page">Честные PvP игры</span>
+      <a href="/">One1Game</a> → <a href="/archive">Статьи</a> → <span aria-current="page">Честные PvP игры</span>
     </nav>
 
     <div class="article-header">
@@ -155,21 +156,18 @@
 
     <section class="related-section">
       <h4>Похожие статьи</h4>
-      <div class="related-grid" id="related-container"></div>
+      <div class="related-grid" id="related-container">
+        <a href="/archive/igry-v-telegram-bez-skachivaniya-triad-duel" class="related-card"><strong>Игры в Telegram без скачивания: Как Triad Duel меняет правила мобильного гейминга</strong><span>23 июля 2026</span></a>
+        <a href="/archive/konec-epohi-pay-to-win-triad-duel" class="related-card"><strong>Конец эпохи Pay-to-Win: Почему геймеры массово переходят в Telegram Mini Apps</strong><span>23 июля 2026</span></a>
+        <a href="/archive/luchshie-kartochnye-igry-na-android-2026" class="related-card"><strong>Лучшие карточные игры на андроид 2026: альтернативы Marvel Snap без доната</strong><span>23 июля 2026</span></a>
+        <a href="/archive/stalker-2-nevozmozhnye-tayniki-i-artefakty" class="related-card"><strong>S.T.A.L.K.E.R. 2: 5 «невозможных» тайников и артефактов, которые не могут найти игроки</strong><span>15 июля 2026</span></a>
+      </div>
     </section>
   </div>
 </div>
 </main>
 
 <script src="/cache-version.js"></script>
-<script>
-  (function() {
-    var script = document.createElement('script');
-    script.src = '/articles-data.js?v=' + (window.CACHE_VER || '15');
-    script.async = false;
-    document.head.appendChild(script);
-  })();
-</script>
 <script>
 (function() {
   var path = window.location.pathname;
@@ -187,9 +185,9 @@
   }
   var related = all.filter(function(a) { return a.url !== currentUrl; }).slice(0, 4);
   var relEl = document.getElementById('related-container');
-  if (relEl) {
+  if (relEl && !relEl.querySelector('a') && related.length) {
     relEl.innerHTML = related.map(function(a) {
-      return '<a href="' + a.url + '" class="related-card"><div class="related-info"><span class="related-cat cat-opinion">' + (a.category || 'Мнение') + '</span><h5>' + a.title + '</h5></div></a>';
+      return '<a href="' + a.url + '" class="related-card"><strong>' + a.title + '</strong><span>' + (a.date || '') + '</span></a>';
     }).join('');
   }
 })();

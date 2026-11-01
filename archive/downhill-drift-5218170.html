@@ -41,7 +41,7 @@
     if (localStorage.getItem('ga_consent') === 'yes') enableGA();
   </script>
   <link href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css" rel="stylesheet" />
-  <link rel="stylesheet" href="/styles.css?v=31" />
+  <link rel="stylesheet" href="/styles.css?v=33" />
 
   <script type="application/ld+json">
   {
@@ -202,7 +202,7 @@
 
     <nav class="breadcrumbs" aria-label="Хлебные крошки" itemscope itemtype="https://schema.org/BreadcrumbList">
       <span itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
-        <a itemprop="item" href="/"><span itemprop="name">Главная</span></a>
+        <a itemprop="item" href="/"><span itemprop="name">One1Game</span></a>
         <meta itemprop="position" content="1" />
       </span> →
       <span itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
@@ -210,8 +210,12 @@
         <meta itemprop="position" content="2" />
       </span> →
       <span itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
-        <span itemprop="name" aria-current="page">Downhill Drift</span>
+        <a itemprop="item" href="/category/obzory"><span itemprop="name">Обзоры</span></a>
         <meta itemprop="position" content="3" />
+      </span> →
+      <span itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+        <span itemprop="name" aria-current="page">Downhill Drift</span>
+        <meta itemprop="position" content="4" />
       </span>
     </nav>
 
@@ -290,9 +294,10 @@
       </div>
 <!--LOWEND:START-->
       <section class="lowend-block" style="margin:26px 0;padding:16px 18px;border:1px solid rgba(255,255,255,.10);border-radius:10px;background:rgba(255,255,255,.03)">
-        <h2 style="margin:0 0 10px;font-size:1.15rem">Потянет ли слабый ноутбук?</h2>
+        <h2 style="margin:0 0 10px;font-size:1.15rem">Потянет ли Downhill Drift на слабом ноутбуке?</h2>
         <p><strong>Минимальные требования (Steam):</strong> 64-разрядные процессор и операционная система · ОС: Windows 11 · Процессор: i5 · Оперативная память: 2 GB ОЗУ · Видеокарта: Nvidia GTX 1050 · Место на диске: 1 GB</p>
-        <p>Ориентир для ноутбука без дискретной видеокарты — 720p и низкие настройки. Готовые подборки: <a href="/igry-bez-videokarty">игры без видеокарты</a>, <a href="/igry-dlya-slabyh-noutbukov-4gb-ozu">игры на 4 ГБ ОЗУ</a>, <a href="/besplatnye-igry-dlya-slabyh-pk">бесплатные игры для слабых ПК</a>. Как поднять FPS — в <a href="/archive/igry-dlya-slabyh-noutbukov-2026">полном гиде по слабым ноутбукам</a>.</p>
+        <p><strong>Оценка:</strong> Нужна дискретная видеокарта — на встроенной графике играть не получится.</p>
+        <p>Подборки под слабое железо: <a href="/igry-bez-videokarty">игры без видеокарты</a> →</p>
       </section>
 <!--LOWEND:END-->
 
@@ -327,9 +332,47 @@
       <div class="share-buttons" id="share-buttons"></div>
     </section>
 
-    <section class="related-section">
+            <section class="gpu-check">
+      <h2>Потянет ли Downhill Drift на моей видеокарте</h2>
+      <p>Минимум по Steam — <strong>Nvidia GTX 1050</strong>. Сравнение по приблизительной производительности, а не по точному FPS.</p>
+      <ul class="gpu-check-list">
+        <li><strong>RTX 5060</strong> — потянет</li>
+        <li><strong>RTX 4060</strong> — потянет</li>
+        <li><strong>RTX 3050</strong> — потянет</li>
+        <li><strong>GTX 1050 Ti</strong> — потянет на минимальных настройках</li>
+        <li><strong>RX 580</strong> — потянет</li>
+        <li><strong>Intel UHD 620</strong> — не потянет — нужна карта сильнее</li>
+      </ul>
+      <p>Полная таблица по 600+ играм: <a href="/potyanet-li-igra">потянет ли игра на моём ПК</a>.</p>
+    </section>
+        <section class="game-faq">
+      <h2>Downhill Drift: частые вопросы</h2>
+      <h3>Сколько стоит Downhill Drift</h3>
+        <p>В Steam Downhill Drift сейчас 150.00 RUB. Цена и скидки обновляются автоматически.</p>
+      <h3>Когда вышла Downhill Drift</h3>
+        <p>Дата выхода Downhill Drift — 23 сен. 2026 г.</p>
+      <h3>Кто разработал Downhill Drift</h3>
+        <p>Разработчик Downhill Drift — Rainy Walker.</p>
+    </section>
+<section class="similar-games">
+      <h2>Похожие игры</h2>
+      <table class="similar-table">
+        <thead><tr><th>Игра</th><th>Цена</th><th>Слабый ПК</th></tr></thead>
+        <tbody>
+          <tr><td><a href="/archive/madcar-multiplayer-1979510">Madcar Multiplayer — безумные онлайн‑гонки</a></td><td>Бесплатно</td><td>—</td></tr>
+          <tr><td><a href="/archive/over-the-hill-2929250">over the hill – гонки по бездорожью</a></td><td>840.00 RUB (скидка 20%)</td><td>Нет</td></tr>
+          <tr><td><a href="/archive/truck-titans-3939990">Truck Titans — аркадные гонки на монстр‑траках</a></td><td>320.00 RUB</td><td>Нет</td></tr>
+        </tbody>
+      </table>
+    </section>
+<section class="related-section">
       <h4>Похожие статьи</h4>
-      <div class="related-grid" id="related-container"></div></section>
+      <div class="related-grid" id="related-container">
+        <a href="/archive/unanchored-spaceshooting-4216770" class="related-card"><strong>Unanchored Spaceshooting — динамичный шутер с физикой</strong><span>24 сентября 2026</span></a>
+        <a href="/archive/off-the-clock-13-f-5136120" class="related-card"><strong>Off the Clock: 13/F – приключенческая инди-игра</strong><span>24 сентября 2026</span></a>
+        <a href="/archive/myau-otryad-inkrementalnaya-lovlya-4753960" class="related-card"><strong>Мяу Отряд: Инкрементальная Ловля — обзор</strong><span>24 сентября 2026</span></a>
+        <a href="/archive/spy-mission-my-girlfriend-the-old-noble-s-maid-3192250" class="related-card"><strong>Spy Mission: My Girlfriend, the Old Noble’s Maid: цена, отзывы и статистика игроков</strong><span>24 сентября 2026</span></a>
+      </div></section>
     <section class="comments-section">
       <h4><i class="fas fa-comments" aria-hidden="true"></i> Комментарии</h4>
       <div class="comments-container" id="comments-container">
@@ -350,7 +393,6 @@
 </main>
 
 <script src="/cache-version.js"></script>
-<script>document.write('<script src="/articles-data.js?v='+(window.CACHE_VER||'1')+'"><\/script>');</script>
 <script>
 (function() {
   var path = window.location.pathname;
@@ -369,9 +411,11 @@
 
   var related = all.filter(function(a) { return a.url !== currentUrl; }).slice(0, 4);
   var relEl = document.getElementById('related-container');
-  relEl.innerHTML = related.map(function(a) {
-    return '<a href="' + a.url + '" class="related-card"><strong>' + a.title + '</strong><span>' + (a.date || '') + '</span></a>';
-  }).join('');
+  if (relEl && !relEl.querySelector('a') && related.length) {
+    relEl.innerHTML = related.map(function(a) {
+      return '<a href="' + a.url + '" class="related-card"><strong>' + a.title + '</strong><span>' + (a.date || '') + '</span></a>';
+    }).join('');
+  }
 })();
 </script>
 <script src="/components.js" defer></script>

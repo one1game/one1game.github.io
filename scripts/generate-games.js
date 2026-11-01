@@ -18,6 +18,10 @@ const CONFIG = {
   steadyLimit: parseInt(process.env.STEADY_LIMIT || "15", 10),
   // Сколько брать из новинок/топ-продаж (эти реально меняются каждый день).
   freshLimit: parseInt(process.env.FRESH_LIMIT || "35", 10),
+  // Третий источник — не витрина Steam, а спрос: игры, которые реально вбивают
+  // в поиск (снято с suggest движков). Список в scripts/data/demand-appids.json.
+  demandLimit: parseInt(process.env.DEMAND_LIMIT || "40", 10),
+  demandPath: process.env.DEMAND_PATH || "scripts/data/demand-appids.json",
   archiveDir: process.env.ARCHIVE_DIR || "archive",
   delayMs: parseInt(process.env.DELAY_MS || "1500", 10),
   language: "russian",
@@ -67,6 +71,33 @@ async function getFreshAppIds(limit) {
 
 async function getSteamSpyDetails(appid) {
   return fetchJson(`https://steamspy.com/api.php?request=appdetails&appid=${appid}`);
+}
+
+// ── Источник «спрос» ──
+// Витрина Steam показывает то, что продвигает магазин. Списки suggest показывают
+// то, что люди набирают сами. Здесь — игры из второй выборки, с их кириллическими
+// названиями: без них страница физически не может совпасть с запросом «потянет
+// ли сталкер 2», потому что слова «сталкер» в ней нет.
+function loadDemand() {
+  const file = path.resolve(process.cwd(), CONFIG.demandPath);
+  if (!fs.existsSync(file)) return [];
+  try {
+    const list = JSON.parse(fs.readFileSync(file, "utf-8")).games || [];
+    return list
+      .filter((g) => g && Number.isInteger(g.appid))
+      .slice(0, CONFIG.demandLimit);
+  } catch (e) {
+    console.warn(`[внимание] ${CONFIG.demandPath} не разобран: ${e.message}`);
+    return [];
+  }
+}
+
+// Страховка от опечатки в appid: сверяем имя из Steam с ожидаемым.
+// Без этого один неверный номер даёт целую страницу про чужую игру.
+function matchesExpect(storeName, expect) {
+  if (!expect || !expect.length) return true;
+  const n = String(storeName || "").toLowerCase();
+  return expect.some((t) => n.includes(String(t).toLowerCase()));
 }
 
 async function getStoreDetails(appid) {
@@ -162,6 +193,57 @@ function todayISO() {
   return new Date().toISOString().slice(0, 10);
 }
 
+function pageDatesFrom(file) {
+  if (!fs.existsSync(file)) return null;
+  const h = fs.readFileSync(file, "utf-8");
+  const p = h.match(/"datePublished":\s*"([^"]+)"/);
+  const m = h.match(/"dateModified":\s*"([^"]+)"/);
+  return p && m ? { published: p[1], modified: m[1] } : null;
+}
+
+function stripDates(s) {
+  // Даты и форматирование (отступы) не должны считаться «изменением контента»,
+  // иначе каждая перегенерация поднимает dateModified у всех страниц.
+  return s
+    .replace(/"(datePublished|dateModified)":\s*"[^"]*"/g, "$1")
+    .replace(/\s+/g, " ");
+}
+
+// Пишем файл только если разметка реально изменилась. Иначе даты остаются
+// прежними, а поисковик не получает ложный сигнал «страница обновилась».
+function writePageIfChanged(file, opts) {
+  const old = pageDatesFrom(file);
+  if (!old) {
+    fs.writeFileSync(file, buildPage(opts), "utf-8");
+    return true;
+  }
+  const draft = buildPage({ ...opts, dates: old });
+  if (stripDates(fs.readFileSync(file, "utf-8")) === stripDates(draft)) return false;
+  fs.writeFileSync(
+    file,
+    buildPage({ ...opts, dates: { published: old.published, modified: todayISO() } }),
+    "utf-8"
+  );
+  return true;
+}
+
+// Похожие игры: следующие записи того же раздела (закольцовано).
+// Даёт каждой странице 4 статические ссылки вместо пустого <div>.
+function pickRelated(currentUrl, arr, n = 4) {
+  const idx = arr.findIndex((a) => a.url === currentUrl);
+  if (idx < 0) return [];
+  const out = [];
+  for (let i = 1; out.length < n && i <= arr.length; i++) {
+    const c = arr[(idx + i) % arr.length];
+    // Слаги вида "-<appid>" закрыты noindex: ссылки в них уводят вес в тупик.
+    if (!c || c.url === currentUrl || /\/-\d+$/.test(c.url)) continue;
+    if (c.category === CONFIG.categoryLabel) {
+      out.push({ url: c.url, title: c.title, date: c.date });
+    }
+  }
+  return out;
+}
+
 function isFreePrice(store) {
   if (store.is_free) return "Бесплатно";
   if (store.price_overview) {
@@ -192,27 +274,291 @@ function todayRuFull() {
   return `${d.getDate()} ${months[d.getMonth()]} ${d.getFullYear()}`;
 }
 
-// Блок «Потянет ли слабый ноутбук?»: официальные требования Steam + ссылки на
-// кластер страниц про слабое железо. Он должен собираться прямо в шаблоне, иначе
-// при обновлении данных страницы его потеряют.
-function lowEndBlock(store) {
+// Блок «Потянет ли слабый ноутбук?»: официальные требования Steam + вердикт.
+// ВАЖНО: здесь НЕ должно быть точных фраз целевых страниц («игры без видеокарты»,
+// «бесплатные игры для слабых ПК», «игры на 4 ГБ ОЗУ»). Этот блок стоит на каждой
+// из 1236 игровых страниц, и такие вхождения делали каждую игру конкурентом хаба
+// за один и тот же запрос. Ссылка осталась одна и с нейтральным анкором.
+// Вердикт ставится только при явном совпадении — та же логика, что в generate-home.py.
+// STRONG = в требованиях названа дискретная карта; WEAK = только встроенная графика
+// либо GPU не указан вовсе при ОЗУ <= 4 ГБ (тогда Steam фактически не требует видеокарту).
+const WEAK_GPU = /(intel\s+(hd|uhd)|iris|vega|radeon\s+(hd|graphics)|\bhd\s*\d{3}|\d{3}\s*hd\b|\b(128|256|512)\s*mb|integrated|встроенн|opengl\s*[23]|direct\s*x?\s*(9|10|11)|any\s*gpu|shader\s*model)/i;
+const STRONG_GPU = /(rtx|gtx|geforce|quadro|tesla|\bgt\s*\d{3,4}\b|\brx\s*\d{3,4}\b|radeon\s+(rx|pro|vii)|arc\s*a\d{3})/i;
+const RAM_GB = /(\d+)\s*(?:gb|гб)\s*(?:озу|ram)/i;
+
+function gpuVerdict(req) {
+  const s = String(req || "");
+  if (STRONG_GPU.test(s)) return "Нужна дискретная видеокарта — на встроенной графике играть не получится.";
+  if (WEAK_GPU.test(s)) return "Потянет на встроенной графике при 720p и низких настройках.";
+  const ram = s.match(RAM_GB);
+  if (ram && parseInt(ram[1], 10) <= 4) {
+    return "Потянет на встроенной графике при 720p и низких настройках.";
+  }
+  return "";
+}
+
+// Кластер подборок. Ссылка с sitewide-блока ОДНА на страницу, но цель и анкор
+// распределяются по кластеру детерминированно. Иначе получается перекос:
+// все 1239 ссылок уходили в один URL, а остальные хабы оставались с двумя
+// входящими на весь сайт — анкорный индекс у них пустой.
+const LOWEND_HUBS = [
+  ["/igry-bez-videokarty", "игры без видеокарты", "игры на встроенной графике"],
+  ["/besplatnye-igry-dlya-slabyh-pk", "бесплатные игры для слабых ПК", "бесплатные игры для слабого ПК"],
+  ["/igry-dlya-slabyh-noutbukov-4gb-ozu", "игры на 4 ГБ ОЗУ", "игры для ноутбука с 4 ГБ ОЗУ"],
+  ["/kooperativnye-igry-dlya-slabyh-pk", "кооперативные игры для слабых ПК", "кооператив на слабом ПК"],
+  ["/shuter-igry-dlya-slabyh-noutbukov", "шутеры для слабого ноутбука", "стрелялки для слабого ПК"],
+  ["/rpg-igry-dlya-slabyh-noutbukov", "RPG для слабого ноутбука", "ролевые игры для слабого ПК"],
+  ["/igry-dlya-slabyh-noutbukov-onlajn", "игры для слабого ПК онлайн", "онлайн-игры на слабом ПК"],
+  ["/archive/igry-dlya-slabyh-noutbukov-2026", "полный гид по слабым ноутбукам", "как выжать FPS на слабом ноутбуке"],
+];
+
+function lowEndLink(slug) {
+  let h = 0;
+  for (let i = 0; i < slug.length; i++) h = (h * 31 + slug.charCodeAt(i)) >>> 0;
+  const hub = LOWEND_HUBS[h % LOWEND_HUBS.length];
+  const anchor = hub[1 + ((h >>> 8) % 2)];
+  return `<a href="${hub[0]}">${anchor}</a>`;
+}
+
+// ── Вердикт по видеокартам ──
+// Запросы идут и в обратную сторону: «потянет ли видеокарта 4060 гта 6».
+// Сравниваем минимальные требования Steam с популярными картами по грубому
+// индексу производительности (GTX 1060 = 100). Разметка совпадает с
+// scripts/build_gpu_verdicts.py — иначе генератор перепишет страницы.
+const GPU_SCORES = {
+  "intel hd graphics 4000": 8, "intel hd graphics 5000": 9,
+  "intel uhd 620": 12, "intel uhd 630": 13, "intel iris xe": 25,
+  "vega 8": 20, "vega 11": 24,
+  "gt 730": 8, "gt 1030": 18,
+  "gtx 650": 15, "gtx 660": 25, "gtx 750 ti": 30, "gtx 760": 32,
+  "gtx 950": 38, "gtx 960": 42, "gtx 970": 62, "gtx 980": 75,
+  "gtx 1050": 42, "gtx 1050 ti": 48, "gtx 1060": 100, "gtx 1070": 135,
+  "gtx 1080": 165,
+  "gtx 1650": 62, "gtx 1660": 95, "gtx 1660 ti": 110,
+  "rtx 2060": 140, "rtx 2070": 165, "rtx 2080": 200,
+  "rtx 3050": 105, "rtx 3060": 145, "rtx 3070": 185, "rtx 3080": 230,
+  "rtx 4060": 175, "rtx 4070": 235, "rtx 4080": 310, "rtx 4090": 390,
+  "rtx 5060": 200, "rtx 5070": 270,
+  "rx 550": 22, "rx 560": 32, "rx 570": 90, "rx 580": 100, "rx 590": 110,
+  "rx 6600": 160, "rx 6700": 200, "rx 6800": 250, "rx 7600": 175,
+};
+const GPU_TARGETS = ["RTX 5060", "RTX 4060", "RTX 3050", "GTX 1050 Ti", "RX 580",
+  "Intel UHD 620"];
+
+// Тот же шаблон, что GPU в scripts/build_gpu_verdicts.py.
+const GPU_MODEL_RX = /\b((?:NVIDIA|AMD|ATI|Intel)?\s*(?:GeForce\s*)?(?:RTX|GTX|RX)\s*\d{3,4}|(?:Intel|AMD)\s+(?:HD|UHD|Iris|Vega)\s*(?:Graphics\s*)?\d{2,4}|(?:Intel|AMD)\s+(?:HD|UHD|Iris|Vega)\s*Graphics|Radeon\s+(?:HD|RX)\s*\d{3,4}|GeForce\s+(?:GT|GTX)\s*\d{3,4})\b/i;
+
+function gpuScore(model) {
+  const m = String(model || "").toLowerCase().replace(/\s+/g, " ");
+  // Старые семейства не оцениваем: шкала для них врёт сильнее, чем польза.
+  if (/radeon hd/.test(m) || /geforce\s+(8|9|2|3|4|5)\d{2}/.test(m)) return null;
+  const keys = Object.keys(GPU_SCORES).sort((a, b) => b.length - a.length);
+  for (const k of keys) if (m.includes(k)) return GPU_SCORES[k];
+  return null;
+}
+
+function gpuVerdictText(target, minimum) {
+  if (target >= minimum * 1.15) return "потянет";
+  if (target >= minimum) return "потянет на минимальных настройках";
+  if (target >= minimum * 0.75) return "на низких настройках, 720p";
+  return "не потянет — нужна карта сильнее";
+}
+
+function gpuCheckBlock(store) {
+  const reqHtml = String((store && store.pc_requirements && store.pc_requirements.minimum) || "");
+  const items = [...reqHtml.matchAll(/<li[^>]*>([\s\S]*?)<\/li>/gi)].map((m) => m[1]);
+  const text = (items.length ? items : [reqHtml])
+    .map((s) => s.replace(/<[^>]+>/g, " ").replace(/\s+/g, " ").trim())
+    .join(" · ");
+  const gpu = text.match(GPU_MODEL_RX);
+  if (!gpu) return "";
+  const ms = gpuScore(gpu[1]);
+  if (!ms) return "";
+  const rows = GPU_TARGETS.map((t) =>
+    `        <li><strong>${escAttr(t)}</strong> — ${gpuVerdictText(gpuScore(t), ms)}</li>`
+  ).join("\n");
+  return `    <section class="gpu-check">
+      <h2>Потянет ли ${escAttr(store.name)} на моей видеокарте</h2>
+      <p>Минимум по Steam — <strong>${escAttr(gpu[1].trim())}</strong>. Сравнение по приблизительной производительности, а не по точному FPS.</p>
+      <ul class="gpu-check-list">
+${rows}
+      </ul>
+      <p>Полная таблица по 600+ играм: <a href="/potyanet-li-igra">потянет ли игра на моём ПК</a>.</p>
+    </section>`;
+}
+
+function lowEndBlock(store, slug, alias) {
   const reqHtml = String((store && store.pc_requirements && store.pc_requirements.minimum) || "");
   const items = [...reqHtml.matchAll(/<li[^>]*>([\s\S]*?)<\/li>/gi)].map((m) => m[1]);
   const parts = (items.length ? items : reqHtml ? [reqHtml] : [])
     .map((s) => s.replace(/<[^>]+>/g, " ").replace(/\s+/g, " ").trim())
     .filter(Boolean);
   const req = parts.join(" · ").slice(0, 400);
+  const verdict = gpuVerdict(req);
   return `<!--LOWEND:START-->
       <section class="lowend-block" style="margin:26px 0;padding:16px 18px;border:1px solid rgba(255,255,255,.10);border-radius:10px;background:rgba(255,255,255,.03)">
-        <h2 style="margin:0 0 10px;font-size:1.15rem">Потянет ли слабый ноутбук?</h2>
+        <h2 style="margin:0 0 10px;font-size:1.15rem">Потянет ли ${escAttr(store.name)} на слабом ноутбуке?</h2>
+        ${alias ? `<p>Как ещё ищут: <strong>${escAttr(alias)}</strong>.</p>` : ""}
         ${req ? `<p><strong>Минимальные требования (Steam):</strong> ${req}</p>` : ""}
-        <p>Ориентир для ноутбука без дискретной видеокарты — 720p и низкие настройки. Готовые подборки: <a href="/igry-bez-videokarty">игры без видеокарты</a>, <a href="/igry-dlya-slabyh-noutbukov-4gb-ozu">игры на 4 ГБ ОЗУ</a>, <a href="/besplatnye-igry-dlya-slabyh-pk">бесплатные игры для слабых ПК</a>. Как поднять FPS — в <a href="/archive/igry-dlya-slabyh-noutbukov-2026">полном гиде по слабым ноутбукам</a>.</p>
+        ${verdict ? `<p><strong>Оценка:</strong> ${verdict}</p>` : ""}
+        <p>Подборки под слабое железо: ${lowEndLink(slug)} →</p>
       </section>
 <!--LOWEND:END-->
 `;
 }
 
-function buildPage({ appid, slug, store, spy, entry }) {
+// ── Пассажный блок ──
+// Google с 2021 индексирует не документ, а пассаж под заголовком, и раскрывает
+// запрос в набор подзапросов. Ответ «1 299 ₽» в карточке не подставляется ни под
+// один запрос — а фраза «Сколько стоит X» с ответом рядом подставляется.
+// Заголовки содержат название игры, поэтому не превращаются в шаблон на 1233 страницах.
+function faqBlock(name, price, release, devs) {
+  const items = [];
+  if (price) {
+    items.push(
+      `      <h3>Сколько стоит ${escAttr(name)}</h3>\n        <p>В Steam ${escAttr(name)} сейчас ${escAttr(price)}. Цена и скидки обновляются автоматически.</p>`
+    );
+  }
+  if (release) {
+    const rel = String(release).replace(/\.$/, "");
+    items.push(
+      `      <h3>Когда вышла ${escAttr(name)}</h3>\n        <p>Дата выхода ${escAttr(name)} — ${escAttr(rel)}.</p>`
+    );
+  }
+  if (devs) {
+    items.push(
+      `      <h3>Кто разработал ${escAttr(name)}</h3>\n        <p>Разработчик ${escAttr(name)} — ${escAttr(devs)}.</p>`
+    );
+  }
+  if (!items.length) return "";
+  return `    <section class="game-faq">
+      <h2>${escAttr(name)}: частые вопросы</h2>
+${items.join("\n")}
+    </section>`;
+}
+
+// Блок «Похожие статьи» собирается статически: AI-краулеры (GPTBot, ClaudeBot,
+// PerplexityBot, OAI-SearchBot) не исполняют JavaScript и видят пустой <div>.
+function relatedBlock(related) {
+  const items = Array.isArray(related) ? related.slice(0, 4) : [];
+  const cards = items
+    .map(
+      (r) =>
+        `        <a href="${escAttr(r.url)}" class="related-card"><strong>${escAttr(r.title)}</strong><span>${escAttr(r.date || "")}</span></a>`
+    )
+    .join("\n");
+  return `    <section class="related-section">
+      <h4>Похожие статьи</h4>
+      <div class="related-grid" id="related-container">
+${cards}
+      </div></section>`;
+}
+
+// ── «Похожие игры»: таблица внутри жанра ──
+// Факты (цена и вердикт по железу) читаются из уже собранных страниц, поэтому
+// блок не требует ни сети, ни дополнительных запросов к Steam. Правило выбора
+// детерминированное: три ближайших по алфавиту URL того же основного жанра.
+// Точно такое же правило продублировано в scripts/build_similar.py — они обязаны
+// давать одинаковый результат, иначе writePageIfChanged будет переписывать файлы.
+let FACTS = null;
+const FACT_TITLE = /<h1[^>]*>([\s\S]*?)<\/h1>/;
+const FACT_PRICE = /<div class="label">Цена<\/div>\s*<div class="value">([\s\S]*?)<\/div>/;
+const FACT_VERDICT = /<strong>Оценка:<\/strong>\s*([^<]+)</;
+const FACT_GENRE = /<strong>Жанры:<\/strong>\s*([^<]*)/;
+
+function loadFacts() {
+  if (FACTS) return FACTS;
+  FACTS = new Map();
+  const dir = path.resolve(process.cwd(), CONFIG.archiveDir);
+  if (!fs.existsSync(dir)) return FACTS;
+  for (const name of fs.readdirSync(dir)) {
+    if (!name.endsWith(".html")) continue;
+    // "-<appid>.html" закрыты noindex: в «Похожих» на них ссылаться нельзя.
+    if (/^-\d+\.html$/.test(name)) continue;
+    const h = fs.readFileSync(path.join(dir, name), "utf-8");
+    const g = h.match(FACT_GENRE);
+    const t = h.match(FACT_TITLE);
+    if (!g || !t) continue;
+    const list = String(g[1]).split(",").map((x) => x.trim().toLowerCase()).filter(Boolean);
+    if (!list.length || list[0] === "не указаны") continue;
+    const price = h.match(FACT_PRICE);
+    const v = h.match(FACT_VERDICT);
+    FACTS.set(`/${CONFIG.archiveDir}/${name.slice(0, -5)}`, {
+      title: t[1].replace(/<[^>]+>/g, " ").replace(/\s+/g, " ").trim(),
+      genres: new Set(list),
+      price: price ? price[1].replace(/<[^>]+>/g, " ").replace(/\s+/g, " ").trim() : "—",
+      verdict: v ? v[1].trim() : "",
+    });
+  }
+  return FACTS;
+}
+
+function shortTitle(s, max = 58) {
+  const t = String(s || "").trim();
+  if (t.length <= max) return t;
+  const cut = t.slice(0, max);
+  const sp = cut.lastIndexOf(" ");
+  return (sp > max * 0.6 ? cut.slice(0, sp) : cut).trim() + "…";
+}
+
+function verdictCell(v) {
+  if (/Потянет/.test(v)) return "Потянет";
+  if (/дискретн/.test(v)) return "Нет";
+  return "—";
+}
+
+// Сначала максимальное пересечение жанров, внутри равного счёта — по кругу от
+// текущего URL, чтобы ссылки распределялись равномерно. Та же логика в
+// scripts/build_similar.py: pick_similar().
+function pickSimilar(url, mine, limit = 3) {
+  if (!mine || !mine.size) return [];
+  const facts = loadFacts();
+  const byScore = new Map();
+  for (const [u, f] of facts) {
+    if (u === url) continue;
+    let inter = 0;
+    for (const g of f.genres) if (mine.has(g)) inter++;
+    if (!inter) continue;
+    if (!byScore.has(inter)) byScore.set(inter, []);
+    byScore.get(inter).push(u);
+  }
+  const out = [];
+  for (const sc of [...byScore.keys()].sort((a, b) => b - a)) {
+    const group = byScore.get(sc).sort();
+    const i = group.findIndex((u) => u > url);
+    const pos = i < 0 ? 0 : i;
+    for (let k = 0; k < group.length; k++) {
+      out.push(group[(pos + k) % group.length]);
+      if (out.length === limit) return out;
+    }
+  }
+  return out;
+}
+
+function similarBlock(slug, genres) {
+  const url = `/${CONFIG.archiveDir}/${slug}`;
+  const facts = loadFacts();
+  const list = String(genres || "").split(",").map((x) => x.trim().toLowerCase()).filter(Boolean);
+  const mine = facts.get(url)?.genres || new Set(list);
+  if (!mine.size || mine.has("не указаны")) return "";
+  const picked = pickSimilar(url, mine);
+  if (!picked.length) return "";
+  const rows = picked.map((u) => {
+    const f = facts.get(u);
+    return `          <tr><td><a href="${escAttr(u)}">${escAttr(shortTitle(f.title))}</a></td><td>${escAttr(f.price)}</td><td>${verdictCell(f.verdict)}</td></tr>`;
+  });
+  return `    <section class="similar-games">
+      <h2>Похожие игры</h2>
+      <table class="similar-table">
+        <thead><tr><th>Игра</th><th>Цена</th><th>Слабый ПК</th></tr></thead>
+        <tbody>
+${rows.join("\n")}
+        </tbody>
+      </table>
+    </section>`;
+}
+
+function buildPage({ appid, slug, store, spy, entry, dates, related, alias }) {
   const title = store.name;
   // Если запись обогащена ИИ — используем её заголовок/описание/интро,
   // чтобы рефреш данных НЕ затирал тексты под людей и поисковики.
@@ -226,6 +572,10 @@ function buildPage({ appid, slug, store, spy, entry }) {
       : `${title} — актуальная цена, скидки, процент положительных отзывов и статистика игроков в Steam. Обновляется автоматически.`;
   const intro = custom && entry.ai_intro ? String(entry.ai_intro) : "";
   const url = `${CONFIG.siteUrl}/${CONFIG.archiveDir}/${slug}`;
+  // Даты не должны «обновляться» при каждой перегенерации: Google оценивает
+  // достоверность datePublished/dateModified сразу по всему сайту.
+  const datePublishedFull = (dates && dates.published) || todayISO();
+  const dateModifiedFull = (dates && dates.modified) || datePublishedFull;
 
   const isFree = store.is_free;
   const price = isFree
@@ -347,7 +697,7 @@ ${movieItems
   <meta property="og:image:height" content="630" />
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:image" content="${headerImg}" />
-  <meta name="robots" content="index, follow, max-image-preview:large" />
+  <meta name="robots" content="${/^-\d+$/.test(slug) ? "noindex, follow" : "index, follow, max-image-preview:large"}" />
 
   <script async src="https://www.googletagmanager.com/gtag/js?id=${CONFIG.gtagId}"></script>
   <script>
@@ -364,36 +714,44 @@ ${movieItems
     if (localStorage.getItem('ga_consent') === 'yes') enableGA();
   </script>
   <link href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css" rel="stylesheet" />
-  <link rel="stylesheet" href="/styles.css?v=31" />
+  <link rel="stylesheet" href="/styles.css?v=33" />
 
   <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "BreadcrumbList",
-    "itemListElement": [
-      {"@type": "ListItem", "position": 1, "name": "Главная", "item": "${CONFIG.siteUrl}/"},
-      {"@type": "ListItem", "position": 2, "name": "Статьи", "item": "${CONFIG.siteUrl}/archive"},
-      {"@type": "ListItem", "position": 3, "name": "${title}", "item": "${url}"}
-    ]
-  }
+${JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    { "@type": "ListItem", position: 1, name: "Главная", item: `${CONFIG.siteUrl}/` },
+    { "@type": "ListItem", position: 2, name: "Статьи", item: `${CONFIG.siteUrl}/archive` },
+    { "@type": "ListItem", position: 3, name: CONFIG.categoryLabel, item: `${CONFIG.siteUrl}/category/obzory` },
+    { "@type": "ListItem", position: 4, name: title, item: url },
+  ],
+}, null, 2)}
   </script>
 
   <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "Article",
-    "headline": "${pageTitle}",
-    "datePublished": "${todayISO()}",
-    "dateModified": "${todayISO()}",
-    "author": {"@type": "Person", "name": "Команда One1Game"},
-    "publisher": {"@type": "Organization", "name": "One1Game", "logo": {"@type": "ImageObject", "url": "${CONFIG.siteUrl}/logo.png"}},
-    "description": "${metaDesc}",
-    "image": "${headerImg}",
-    "inLanguage": "ru-RU",
-    "isAccessibleForFree": true,
-    "articleSection": "Обзоры",
-    "speakable": {"@type": "SpeakableSpecification", "cssSelector": ["h1", ".article-body p:first-of-type"]}
-  }
+${JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "Article",
+  headline: pageTitle,
+  datePublished: datePublishedFull,
+  dateModified: dateModifiedFull,
+  author: { "@type": "Person", name: "Команда One1Game" },
+  publisher: {
+    "@type": "Organization",
+    name: "One1Game",
+    logo: { "@type": "ImageObject", url: `${CONFIG.siteUrl}/logo.png` },
+  },
+  description: metaDesc,
+  image: headerImg,
+  inLanguage: "ru-RU",
+  isAccessibleForFree: true,
+  articleSection: "Обзоры",
+  speakable: {
+    "@type": "SpeakableSpecification",
+    cssSelector: ["h1", ".article-body p:first-of-type"],
+  },
+}, null, 2)}
   </script>
 
   <script type="application/ld+json">
@@ -513,7 +871,7 @@ ${JSON.stringify(videoGameLd, null, 2)}
 
     <nav class="breadcrumbs" aria-label="Хлебные крошки" itemscope itemtype="https://schema.org/BreadcrumbList">
       <span itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
-        <a itemprop="item" href="/"><span itemprop="name">Главная</span></a>
+        <a itemprop="item" href="/"><span itemprop="name">One1Game</span></a>
         <meta itemprop="position" content="1" />
       </span> →
       <span itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
@@ -521,8 +879,12 @@ ${JSON.stringify(videoGameLd, null, 2)}
         <meta itemprop="position" content="2" />
       </span> →
       <span itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
-        <span itemprop="name" aria-current="page">${title}</span>
+        <a itemprop="item" href="/category/obzory"><span itemprop="name">Обзоры</span></a>
         <meta itemprop="position" content="3" />
+      </span> →
+      <span itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+        <span itemprop="name" aria-current="page">${title}</span>
+        <meta itemprop="position" content="4" />
       </span>
     </nav>
 
@@ -570,7 +932,7 @@ ${adVpsHTML()}
       </p>
 ${shotsHTML}
 ${moviesHTML}
-${lowEndBlock(store)}
+${lowEndBlock(store, slug, alias)}
       <p style="color: var(--text-faint); font-size: 13px; margin-top: 30px;">
         Данные о цене, отзывах и статистике обновляются автоматически на основе
         Steam Store API и SteamSpy.
@@ -596,9 +958,10 @@ ${adGoHTML()}
       <div class="share-buttons" id="share-buttons"></div>
     </section>
 
-    <section class="related-section">
-      <h4>Похожие статьи</h4>
-      <div class="related-grid" id="related-container"></div></section>
+${gpuCheckBlock(store)}
+${faqBlock(title, `${price}${discountNote}`, releaseDate === "неизвестно" ? "" : releaseDate, developers === "не указаны" ? "" : developers)}
+${similarBlock(slug, store.genres?.map((g) => g.description).join(", "))}
+${relatedBlock(related)}
     <section class="comments-section">
       <h4><i class="fas fa-comments" aria-hidden="true"></i> Комментарии</h4>
       <div class="comments-container" id="comments-container">
@@ -619,7 +982,6 @@ ${adGoHTML()}
 </main>
 
 <script src="/cache-version.js"></script>
-<script>document.write('<script src="/articles-data.js?v='+(window.CACHE_VER||'1')+'"><\\/script>');</script>
 <script>
 (function() {
   var path = window.location.pathname;
@@ -636,11 +998,15 @@ ${adGoHTML()}
     '<a target="_blank" rel="noopener" class="share-btn" href="https://api.whatsapp.com/send?text=' + title + '%20' + url + '">WhatsApp</a>'
   ].join('');
 
+  // Статический блок «Похожие статьи» уже в HTML — JS только дополняет пустой
+  // контейнер на старых страницах, чтобы не затирать серверную разметку.
   var related = all.filter(function(a) { return a.url !== currentUrl; }).slice(0, 4);
   var relEl = document.getElementById('related-container');
-  relEl.innerHTML = related.map(function(a) {
-    return '<a href="' + a.url + '" class="related-card"><strong>' + a.title + '</strong><span>' + (a.date || '') + '</span></a>';
-  }).join('');
+  if (relEl && !relEl.querySelector('a')) {
+    relEl.innerHTML = related.map(function(a) {
+      return '<a href="' + a.url + '" class="related-card"><strong>' + a.title + '</strong><span>' + (a.date || '') + '</span></a>';
+    }).join('');
+  }
 })();
 </script>
 <script src="/components.js" defer></script>
@@ -684,6 +1050,7 @@ async function main() {
   // Существующие ИИ-записи (url → entry): их тексты нельзя перезаписывать,
   // даже если игра снова попала в топ и её страница пересобирается.
   const existingAiByUrl = {};
+  let allArticles = [];
   try {
     const vm = require("vm");
     const dataPath = path.resolve(process.cwd(), CONFIG.articlesDataPath);
@@ -691,7 +1058,8 @@ async function main() {
       const sandbox = { window: {} };
       vm.createContext(sandbox);
       vm.runInContext(fs.readFileSync(dataPath, "utf-8"), sandbox);
-      for (const e of sandbox.window.allArticles || []) {
+      allArticles = sandbox.window.allArticles || [];
+      for (const e of allArticles) {
         if (e.ai && e.url) existingAiByUrl[e.url] = e;
       }
     }
@@ -705,8 +1073,14 @@ async function main() {
   console.log(`Получаю новинки и топ продаж (Steam featuredcategories)...`);
   const freshIds = await getFreshAppIds(CONFIG.freshLimit);
 
+  // Спрос из suggest-списков: то, что люди набирают сами, а не то, что продвигает Steam.
+  const demand = loadDemand();
+  const demandIds = demand.map((g) => String(g.appid));
+  const demandByApp = new Map(demand.map((g) => [String(g.appid), g]));
+  console.log(`Спрос: ${demandIds.length} игр из ${CONFIG.demandPath}`);
+
   // Объединяем и убираем дубликаты (игра может быть и в топе игроков, и в новинках)
-  const appIds = [...new Set([...steadyIds, ...freshIds])];
+  const appIds = [...new Set([...steadyIds, ...freshIds, ...demandIds])];
 
   console.log(
     `Всего к обработке: ${appIds.length} игр ` +
@@ -714,6 +1088,10 @@ async function main() {
   );
 
   const newEntries = [];
+  // Страницы собираем здесь и пишем ПОСЛЕ цикла: блок «Похожие статьи» должен
+  // считаться по каталогу, в котором новые игры уже есть. Иначе у только что
+  // добавленной игры блок остаётся пустым (её ещё нет в articles-data.js).
+  const pending = [];
   let created = 0;
   let skipped = 0;
 
@@ -730,10 +1108,17 @@ async function main() {
       const spy = await getSteamSpyDetails(appid);
       await sleep(CONFIG.delayMs);
 
+      // Проверка, что appid из списка спроса — та самая игра.
+      const want = demandByApp.get(String(appid));
+      if (want && !matchesExpect(store.name, want.expect)) {
+        console.log(`  [пропуск] ${appid}: «${store.name}» не совпало с ожидаемым`);
+        skipped++;
+        continue;
+      }
+
       const slug = `${slugify(store.name)}-${appid}`;
       const aiEntry = existingAiByUrl[`/${CONFIG.archiveDir}/${slug}`];
-      const html = buildPage({ appid, slug, store, spy, entry: aiEntry });
-      fs.writeFileSync(path.join(archiveDir, `${slug}.html`), html, "utf-8");
+      pending.push({ appid, slug, store, spy, entry: aiEntry, alias: want ? want.alias : "" });
 
       newEntries.push({
         url: `/${CONFIG.archiveDir}/${slug}`,
@@ -759,6 +1144,18 @@ async function main() {
       console.error(`  [ошибка] ${appid}: ${err.message}`);
       skipped++;
     }
+  }
+
+  // Каталог с учётом новых записей — по нему и строятся кольца «Похожих».
+  const knownUrls = new Set(allArticles.map((a) => a.url));
+  const merged = [...newEntries.filter((e) => !knownUrls.has(e.url)), ...allArticles];
+
+  for (const p of pending) {
+    const url = `/${CONFIG.archiveDir}/${p.slug}`;
+    writePageIfChanged(path.join(archiveDir, `${p.slug}.html`), {
+      ...p,
+      related: pickRelated(url, merged),
+    });
   }
 
   updateArticlesData(newEntries);
@@ -1214,16 +1611,19 @@ async function enrichAll() {
       entry.ai_intro = String(got.intro || "").trim();
       entry.ai_about = String(got.about || "").trim();
       entry.ai = true;
-      entry.updated = todayISO();
 
       const spy = (await getSteamSpyDetails(appid)) || {};
       await sleep(CONFIG.delayMs);
       entry.image = store.header_image || entry.image || "";
-      fs.writeFileSync(
-        path.join(archiveDir, `${slug}.html`),
-        buildPage({ appid, slug, store, spy, entry }),
-        "utf-8"
-      );
+      const pageChanged = writePageIfChanged(path.join(archiveDir, `${slug}.html`), {
+        appid,
+        slug,
+        store,
+        spy,
+        entry,
+        related: pickRelated(entry.url, arr),
+      });
+      if (pageChanged) entry.updated = todayISO();
       ok++;
       console.log(`  [ок] ${appid} — ${d.name}`);
     } catch (e) {
@@ -1290,11 +1690,14 @@ async function refreshAll() {
       await sleep(CONFIG.delayMs);
 
       const custom = entry.ai === true;
-      fs.writeFileSync(
-        path.join(archiveDir, `${slug}.html`),
-        buildPage({ appid, slug, store, spy, entry }),
-        "utf-8"
-      );
+      const pageChanged = writePageIfChanged(path.join(archiveDir, `${slug}.html`), {
+        appid,
+        slug,
+        store,
+        spy,
+        entry,
+        related: pickRelated(entry.url, arr),
+      });
 
       // Записи, обогащённые ИИ, сохраняют свой заголовок/описание.
       // Авто-заполнение применяем только к не-ИИ записям.
@@ -1308,7 +1711,9 @@ async function refreshAll() {
         });
       }
       entry.image = store.header_image || "";
-      entry.updated = todayISO();
+      // lastmod в sitemap должен меняться только когда страница реально изменилась.
+      // Иначе карта сайта перестаёт быть достоверным сигналом, и поисковик её игнорирует.
+      if (pageChanged) entry.updated = todayISO();
       ok++;
       console.log(`  [ок] ${appid} — ${store.name}`);
     } catch (err) {

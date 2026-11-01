@@ -33,13 +33,55 @@ jobs:
         with:
           python-version: "3.12"
 
-      - name: Пересборка sitemap.xml
-        run: python generate-sitemap.py
+      # Пуш этого джоба сделан GITHUB_TOKEN, а такие пуши не запускают другие
+      # workflow (sitemap.yml). Поэтому всю цепочку новых игр гоняем здесь же:
+      # RSS, статичная главная и лента, хабы категорий.
+      # sitemap — последним: он читает lastmod из готовых файлов, а дату главной
+      # пишет generate-home и только при реальном изменении её байтов.
+      - name: Пересборка каталога и пререндеров
+        run: |
+          python generate-feed.py
+          python generate-home.py
+          python generate-archive.py
+          python scripts/gen_category_hubs.py
+          python generate-sitemap.py
+
+      # Новые игры попадают в каталог, поэтому блоки «Похожие» у остальных
+      # страниц надо обновить сразу, а не ждать следующего пуша.
+      - name: Пересборка блоков «Похожие»
+        run: |
+          python scripts/rebuild_related.py
+          python scripts/build_similar.py
+          python scripts/build_passages.py
+          python scripts/build_pc_tool.py
+          python scripts/build_gpu_verdicts.py
+
+      # Хабы «для слабых ноутбуков» ссылаются на наши страницы игр, если они
+      # уже есть в каталоге. После появления новой страницы ссылка на Steam
+      # должна стать внутренней.
+      - name: Пересборка хабов «слабые ноутбуки»
+        run: node scripts/slabye-noutbuki.mjs
 
       - name: Коммит и пуш изменений
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add archive/ articles-data.js sitemap.xml
+          git add archive/ archive.html index.html category/ *.html articles-data.js sitemap.xml feed.xml scripts/data/steam-cache.json
           git diff --quiet --cached || git commit -m "Автообновление страниц игр: $(date -u +'%Y-%m-%d')"
           git push
+
+      # Google разрешает Indexing API только для вакансий, но эндпоинт ставит
+      # в очередь любой URL — и обход начинается через часы, а не недели.
+      # Пауза нужна, чтобы сначала доехал деплой Cloudflare Pages: отправлять
+      # URL, который ещё отдаёт 404, хуже, чем не отправлять.
+      - name: Google Indexing API
+        env:
+          GSC_SERVICE_ACCOUNT_JSON: ${{ secrets.GSC_SERVICE_ACCOUNT_JSON }}
+        run: |
+          pip install --quiet google-auth requests
+          CHANGED=$(git diff --name-only HEAD~1 HEAD -- '*.html' 2>/dev/null || true)
+          URLS=$(printf '/\n%s\n' "$CHANGED" \
+            | sed -e 's#^index\.html$#/#' -e 's#/index\.html$#/#' -e 's#\.html$##' \
+            | grep -v '^$' | grep -v '^404' | sort -u | head -n 200)
+          sleep 45
+          python scripts/google_indexing.py $URLS

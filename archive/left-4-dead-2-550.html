@@ -41,36 +41,73 @@
     if (localStorage.getItem('ga_consent') === 'yes') enableGA();
   </script>
   <link href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css" rel="stylesheet" />
-  <link rel="stylesheet" href="/styles.css?v=31" />
+  <link rel="stylesheet" href="/styles.css?v=33" />
 
   <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "BreadcrumbList",
-    "itemListElement": [
-      {"@type": "ListItem", "position": 1, "name": "Главная", "item": "https://one1game.org/"},
-      {"@type": "ListItem", "position": 2, "name": "Статьи", "item": "https://one1game.org/archive"},
-      {"@type": "ListItem", "position": 3, "name": "Left 4 Dead 2", "item": "https://one1game.org/archive/left-4-dead-2-550"}
-    ]
-  }
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Главная",
+      "item": "https://one1game.org/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Статьи",
+      "item": "https://one1game.org/archive"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Обзоры",
+      "item": "https://one1game.org/category/obzory"
+    },
+    {
+      "@type": "ListItem",
+      "position": 4,
+      "name": "Left 4 Dead 2",
+      "item": "https://one1game.org/archive/left-4-dead-2-550"
+    }
+  ]
+}
   </script>
 
   <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "Article",
-    "headline": "Left 4 Dead 2 – кооперативный зомби‑экшен | One1Game",
-    "datePublished": "2026-10-31",
-    "dateModified": "2026-10-31",
-    "author": {"@type": "Person", "name": "Команда One1Game"},
-    "publisher": {"@type": "Organization", "name": "One1Game", "logo": {"@type": "ImageObject", "url": "https://one1game.org/logo.png"}},
-    "description": "Кооперативный шутер Left 4 Dead 2 погружает в зомби‑апокалипсис Юга США, предлагая пять кампаний, где команда из четырёх игроков сражается за выживание в",
-    "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/550/header.jpg?t=1772742214",
-    "inLanguage": "ru-RU",
-    "isAccessibleForFree": true,
-    "articleSection": "Обзоры",
-    "speakable": {"@type": "SpeakableSpecification", "cssSelector": ["h1", ".article-body p:first-of-type"]}
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Left 4 Dead 2 – кооперативный зомби‑экшен | One1Game",
+  "datePublished": "2026-10-31",
+  "dateModified": "2026-11-01",
+  "author": {
+    "@type": "Person",
+    "name": "Команда One1Game"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "One1Game",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://one1game.org/logo.png"
+    }
+  },
+  "description": "Кооперативный шутер Left 4 Dead 2 погружает в зомби‑апокалипсис Юга США, предлагая пять кампаний, где команда из четырёх игроков сражается за выживание в",
+  "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/550/header.jpg?t=1772742214",
+  "inLanguage": "ru-RU",
+  "isAccessibleForFree": true,
+  "articleSection": "Обзоры",
+  "speakable": {
+    "@type": "SpeakableSpecification",
+    "cssSelector": [
+      "h1",
+      ".article-body p:first-of-type"
+    ]
   }
+}
   </script>
 
   <script type="application/ld+json">
@@ -208,7 +245,7 @@
 
     <nav class="breadcrumbs" aria-label="Хлебные крошки" itemscope itemtype="https://schema.org/BreadcrumbList">
       <span itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
-        <a itemprop="item" href="/"><span itemprop="name">Главная</span></a>
+        <a itemprop="item" href="/"><span itemprop="name">One1Game</span></a>
         <meta itemprop="position" content="1" />
       </span> →
       <span itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
@@ -216,8 +253,12 @@
         <meta itemprop="position" content="2" />
       </span> →
       <span itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
-        <span itemprop="name" aria-current="page">Left 4 Dead 2</span>
+        <a itemprop="item" href="/category/obzory"><span itemprop="name">Обзоры</span></a>
         <meta itemprop="position" content="3" />
+      </span> →
+      <span itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+        <span itemprop="name" aria-current="page">Left 4 Dead 2</span>
+        <meta itemprop="position" content="4" />
       </span>
     </nav>
 
@@ -225,7 +266,7 @@
       <span class="article-category cat-reviews">Обзоры</span>
       <h1>Left 4 Dead 2 – кооперативный зомби‑экшен</h1>
       <div class="article-meta">
-        <span><i class="far fa-calendar"></i> 31 октября 2026</span>
+        <span><i class="far fa-calendar"></i> 1 ноября 2026</span>
         <span><i class="far fa-clock"></i> 2 минуты чтения</span>
       </div>
     </div>
@@ -306,9 +347,11 @@
       </div>
 <!--LOWEND:START-->
       <section class="lowend-block" style="margin:26px 0;padding:16px 18px;border:1px solid rgba(255,255,255,.10);border-radius:10px;background:rgba(255,255,255,.03)">
-        <h2 style="margin:0 0 10px;font-size:1.15rem">Потянет ли слабый ноутбук?</h2>
+        <h2 style="margin:0 0 10px;font-size:1.15rem">Потянет ли Left 4 Dead 2 на слабом ноутбуке?</h2>
+        <p>Как ещё ищут: <strong>л4д2, лефт фо дед 2</strong>.</p>
         <p><strong>Минимальные требования (Steam):</strong> ОС *: Windows® 7 32/64-bit / Vista 32/64 / XP · Процессор: Pentium 4 3.0GHz · Оперативная память: 2 GB ОЗУ · Видеокарта: Video card with 128 MB, Shader model 2.0. ATI X800, NVidia 6600 or better · DirectX: версии 9.0c · Место на диске: 13 GB · Звуковая карта: DirectX 9.0c compatible sound card</p>
-        <p>Ориентир для ноутбука без дискретной видеокарты — 720p и низкие настройки. Готовые подборки: <a href="/igry-bez-videokarty">игры без видеокарты</a>, <a href="/igry-dlya-slabyh-noutbukov-4gb-ozu">игры на 4 ГБ ОЗУ</a>, <a href="/besplatnye-igry-dlya-slabyh-pk">бесплатные игры для слабых ПК</a>. Как поднять FPS — в <a href="/archive/igry-dlya-slabyh-noutbukov-2026">полном гиде по слабым ноутбукам</a>.</p>
+        <p><strong>Оценка:</strong> Потянет на встроенной графике при 720p и низких настройках.</p>
+        <p>Подборки под слабое железо: <a href="/kooperativnye-igry-dlya-slabyh-pk">кооперативные игры для слабых ПК</a> →</p>
       </section>
 <!--LOWEND:END-->
 
@@ -343,9 +386,34 @@
       <div class="share-buttons" id="share-buttons"></div>
     </section>
 
-    <section class="related-section">
+        <section class="game-faq">
+      <h2>Left 4 Dead 2: частые вопросы</h2>
+      <h3>Сколько стоит Left 4 Dead 2</h3>
+        <p>В Steam Left 4 Dead 2 сейчас 445.00 RUB. Цена и скидки обновляются автоматически.</p>
+      <h3>Когда вышла Left 4 Dead 2</h3>
+        <p>Дата выхода Left 4 Dead 2 — 16 ноя. 2009 г.</p>
+      <h3>Кто разработал Left 4 Dead 2</h3>
+        <p>Разработчик Left 4 Dead 2 — Valve.</p>
+    </section>
+<section class="similar-games">
+      <h2>Похожие игры</h2>
+      <table class="similar-table">
+        <thead><tr><th>Игра</th><th>Цена</th><th>Слабый ПК</th></tr></thead>
+        <tbody>
+          <tr><td><a href="/archive/lewd-elevator-4861300">Lewd Elevator — детективный клик-адвенчур в стиле экшн</a></td><td>855.00 RUB</td><td>Потянет</td></tr>
+          <tr><td><a href="/archive/locked-out-the-last-bunker-ark-5239910">LOCKED OUT: The Last Bunker ARK – обзор</a></td><td>346.00 RUB (скидка 10%)</td><td>Потянет</td></tr>
+          <tr><td><a href="/archive/loki-s-revenge-2936750">Loki's Revenge: цена, отзывы и статистика игроков</a></td><td>78.00 RUB</td><td>Потянет</td></tr>
+        </tbody>
+      </table>
+    </section>
+<section class="related-section">
       <h4>Похожие статьи</h4>
-      <div class="related-grid" id="related-container"></div></section>
+      <div class="related-grid" id="related-container">
+        <a href="/archive/counter-strike-2-730" class="related-card"><strong>Counter-Strike 2: цена, отзывы и статистика игроков</strong><span>20 сентября 2026</span></a>
+        <a href="/archive/garry-s-mod-4000" class="related-card"><strong>Garry's Mod: цена, отзывы и статистика игроков</strong><span>20 сентября 2026</span></a>
+        <a href="/archive/borderlands-2-49520" class="related-card"><strong>Borderlands 2 – шутер‑ролевой с открытым миром</strong><span>20 сентября 2026</span></a>
+        <a href="/archive/terraria-105600" class="related-card"><strong>Terraria — приключенческий экшен с элементами RPG</strong><span>20 сентября 2026</span></a>
+      </div></section>
     <section class="comments-section">
       <h4><i class="fas fa-comments" aria-hidden="true"></i> Комментарии</h4>
       <div class="comments-container" id="comments-container">
@@ -366,7 +434,6 @@
 </main>
 
 <script src="/cache-version.js"></script>
-<script>document.write('<script src="/articles-data.js?v='+(window.CACHE_VER||'1')+'"><\/script>');</script>
 <script>
 (function() {
   var path = window.location.pathname;
@@ -383,11 +450,15 @@
     '<a target="_blank" rel="noopener" class="share-btn" href="https://api.whatsapp.com/send?text=' + title + '%20' + url + '">WhatsApp</a>'
   ].join('');
 
+  // Статический блок «Похожие статьи» уже в HTML — JS только дополняет пустой
+  // контейнер на старых страницах, чтобы не затирать серверную разметку.
   var related = all.filter(function(a) { return a.url !== currentUrl; }).slice(0, 4);
   var relEl = document.getElementById('related-container');
-  relEl.innerHTML = related.map(function(a) {
-    return '<a href="' + a.url + '" class="related-card"><strong>' + a.title + '</strong><span>' + (a.date || '') + '</span></a>';
-  }).join('');
+  if (relEl && !relEl.querySelector('a')) {
+    relEl.innerHTML = related.map(function(a) {
+      return '<a href="' + a.url + '" class="related-card"><strong>' + a.title + '</strong><span>' + (a.date || '') + '</span></a>';
+    }).join('');
+  }
 })();
 </script>
 <script src="/components.js" defer></script>

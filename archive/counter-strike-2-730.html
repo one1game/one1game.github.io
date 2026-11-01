@@ -41,36 +41,73 @@
     if (localStorage.getItem('ga_consent') === 'yes') enableGA();
   </script>
   <link href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css" rel="stylesheet" />
-  <link rel="stylesheet" href="/styles.css?v=31" />
+  <link rel="stylesheet" href="/styles.css?v=33" />
 
   <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "BreadcrumbList",
-    "itemListElement": [
-      {"@type": "ListItem", "position": 1, "name": "Главная", "item": "https://one1game.org/"},
-      {"@type": "ListItem", "position": 2, "name": "Статьи", "item": "https://one1game.org/archive"},
-      {"@type": "ListItem", "position": 3, "name": "Counter-Strike 2", "item": "https://one1game.org/archive/counter-strike-2-730"}
-    ]
-  }
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Главная",
+      "item": "https://one1game.org/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Статьи",
+      "item": "https://one1game.org/archive"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Обзоры",
+      "item": "https://one1game.org/category/obzory"
+    },
+    {
+      "@type": "ListItem",
+      "position": 4,
+      "name": "Counter-Strike 2",
+      "item": "https://one1game.org/archive/counter-strike-2-730"
+    }
+  ]
+}
   </script>
 
   <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "Article",
-    "headline": "Counter-Strike 2: цена, отзывы и статистика игроков | One1Game",
-    "datePublished": "2026-10-31",
-    "dateModified": "2026-10-31",
-    "author": {"@type": "Person", "name": "Команда One1Game"},
-    "publisher": {"@type": "Organization", "name": "One1Game", "logo": {"@type": "ImageObject", "url": "https://one1game.org/logo.png"}},
-    "description": "Counter-Strike 2 — актуальная цена, скидки, процент положительных отзывов и статистика игроков в Steam. Обновляется автоматически.",
-    "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/730/162664aa5da85f418105350c5d67ca565f6c3713/header.jpg?t=1793054556",
-    "inLanguage": "ru-RU",
-    "isAccessibleForFree": true,
-    "articleSection": "Обзоры",
-    "speakable": {"@type": "SpeakableSpecification", "cssSelector": ["h1", ".article-body p:first-of-type"]}
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Counter-Strike 2: цена, отзывы и статистика игроков | One1Game",
+  "datePublished": "2026-10-31",
+  "dateModified": "2026-11-01",
+  "author": {
+    "@type": "Person",
+    "name": "Команда One1Game"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "One1Game",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://one1game.org/logo.png"
+    }
+  },
+  "description": "Counter-Strike 2 — актуальная цена, скидки, процент положительных отзывов и статистика игроков в Steam. Обновляется автоматически.",
+  "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/730/162664aa5da85f418105350c5d67ca565f6c3713/header.jpg?t=1793054556",
+  "inLanguage": "ru-RU",
+  "isAccessibleForFree": true,
+  "articleSection": "Обзоры",
+  "speakable": {
+    "@type": "SpeakableSpecification",
+    "cssSelector": [
+      "h1",
+      ".article-body p:first-of-type"
+    ]
   }
+}
   </script>
 
   <script type="application/ld+json">
@@ -203,7 +240,7 @@
 
     <nav class="breadcrumbs" aria-label="Хлебные крошки" itemscope itemtype="https://schema.org/BreadcrumbList">
       <span itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
-        <a itemprop="item" href="/"><span itemprop="name">Главная</span></a>
+        <a itemprop="item" href="/"><span itemprop="name">One1Game</span></a>
         <meta itemprop="position" content="1" />
       </span> →
       <span itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
@@ -211,8 +248,12 @@
         <meta itemprop="position" content="2" />
       </span> →
       <span itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
-        <span itemprop="name" aria-current="page">Counter-Strike 2</span>
+        <a itemprop="item" href="/category/obzory"><span itemprop="name">Обзоры</span></a>
         <meta itemprop="position" content="3" />
+      </span> →
+      <span itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+        <span itemprop="name" aria-current="page">Counter-Strike 2</span>
+        <meta itemprop="position" content="4" />
       </span>
     </nav>
 
@@ -220,7 +261,7 @@
       <span class="article-category cat-reviews">Обзоры</span>
       <h1>Counter-Strike 2: цена, отзывы и статистика игроков</h1>
       <div class="article-meta">
-        <span><i class="far fa-calendar"></i> 31 октября 2026</span>
+        <span><i class="far fa-calendar"></i> 1 ноября 2026</span>
         <span><i class="far fa-clock"></i> 2 минуты чтения</span>
       </div>
     </div>
@@ -297,9 +338,11 @@
       </div>
 <!--LOWEND:START-->
       <section class="lowend-block" style="margin:26px 0;padding:16px 18px;border:1px solid rgba(255,255,255,.10);border-radius:10px;background:rgba(255,255,255,.03)">
-        <h2 style="margin:0 0 10px;font-size:1.15rem">Потянет ли слабый ноутбук?</h2>
+        <h2 style="margin:0 0 10px;font-size:1.15rem">Потянет ли Counter-Strike 2 на слабом ноутбуке?</h2>
+        <p>Как ещё ищут: <strong>кс 2, контра, cs2</strong>.</p>
         <p><strong>Минимальные требования (Steam):</strong> ОС: Windows® 10 · Процессор: 4-потоковый процессор — Intel® Core™ i5 750 или лучше · Оперативная память: 8 GB ОЗУ · Видеокарта: с 1 ГБ памяти или больше, совместимая с DirectX 11 и поддерживающая Shader Model 5.0 · DirectX: версии 11 · Место на диске: 85 GB</p>
-        <p>Ориентир для ноутбука без дискретной видеокарты — 720p и низкие настройки. Готовые подборки: <a href="/igry-bez-videokarty">игры без видеокарты</a>, <a href="/igry-dlya-slabyh-noutbukov-4gb-ozu">игры на 4 ГБ ОЗУ</a>, <a href="/besplatnye-igry-dlya-slabyh-pk">бесплатные игры для слабых ПК</a>. Как поднять FPS — в <a href="/archive/igry-dlya-slabyh-noutbukov-2026">полном гиде по слабым ноутбукам</a>.</p>
+        <p><strong>Оценка:</strong> Потянет на встроенной графике при 720p и низких настройках.</p>
+        <p>Подборки под слабое железо: <a href="/archive/igry-dlya-slabyh-noutbukov-2026">как выжать FPS на слабом ноутбуке</a> →</p>
       </section>
 <!--LOWEND:END-->
 
@@ -334,9 +377,34 @@
       <div class="share-buttons" id="share-buttons"></div>
     </section>
 
-    <section class="related-section">
+        <section class="game-faq">
+      <h2>Counter-Strike 2: частые вопросы</h2>
+      <h3>Сколько стоит Counter-Strike 2</h3>
+        <p>В Steam Counter-Strike 2 сейчас Бесплатно. Цена и скидки обновляются автоматически.</p>
+      <h3>Когда вышла Counter-Strike 2</h3>
+        <p>Дата выхода Counter-Strike 2 — 21 авг. 2012 г.</p>
+      <h3>Кто разработал Counter-Strike 2</h3>
+        <p>Разработчик Counter-Strike 2 — Valve.</p>
+    </section>
+<section class="similar-games">
+      <h2>Похожие игры</h2>
+      <table class="similar-table">
+        <thead><tr><th>Игра</th><th>Цена</th><th>Слабый ПК</th></tr></thead>
+        <tbody>
+          <tr><td><a href="/archive/craftlander-5051720">CRAFTLANDER – приключенческий экшен в открытом мире</a></td><td>Бесплатно</td><td>Нет</td></tr>
+          <tr><td><a href="/archive/crystash-4744820">CRYSTASH! – динамичный экшен про кристальный бой</a></td><td>Бесплатно</td><td>Нет</td></tr>
+          <tr><td><a href="/archive/deadly-force-5161590">Deadly Force - обзор игры</a></td><td>Бесплатно</td><td>Нет</td></tr>
+        </tbody>
+      </table>
+    </section>
+<section class="related-section">
       <h4>Похожие статьи</h4>
-      <div class="related-grid" id="related-container"></div></section>
+      <div class="related-grid" id="related-container">
+        <a href="/archive/garry-s-mod-4000" class="related-card"><strong>Garry's Mod: цена, отзывы и статистика игроков</strong><span>20 сентября 2026</span></a>
+        <a href="/archive/borderlands-2-49520" class="related-card"><strong>Borderlands 2 – шутер‑ролевой с открытым миром</strong><span>20 сентября 2026</span></a>
+        <a href="/archive/terraria-105600" class="related-card"><strong>Terraria — приключенческий экшен с элементами RPG</strong><span>20 сентября 2026</span></a>
+        <a href="/archive/sakura-the-eternal-night-5013390" class="related-card"><strong>Sakura: The Eternal Night – ролевая игра с выбором</strong><span>20 сентября 2026</span></a>
+      </div></section>
     <section class="comments-section">
       <h4><i class="fas fa-comments" aria-hidden="true"></i> Комментарии</h4>
       <div class="comments-container" id="comments-container">
@@ -357,7 +425,6 @@
 </main>
 
 <script src="/cache-version.js"></script>
-<script>document.write('<script src="/articles-data.js?v='+(window.CACHE_VER||'1')+'"><\/script>');</script>
 <script>
 (function() {
   var path = window.location.pathname;
@@ -374,11 +441,15 @@
     '<a target="_blank" rel="noopener" class="share-btn" href="https://api.whatsapp.com/send?text=' + title + '%20' + url + '">WhatsApp</a>'
   ].join('');
 
+  // Статический блок «Похожие статьи» уже в HTML — JS только дополняет пустой
+  // контейнер на старых страницах, чтобы не затирать серверную разметку.
   var related = all.filter(function(a) { return a.url !== currentUrl; }).slice(0, 4);
   var relEl = document.getElementById('related-container');
-  relEl.innerHTML = related.map(function(a) {
-    return '<a href="' + a.url + '" class="related-card"><strong>' + a.title + '</strong><span>' + (a.date || '') + '</span></a>';
-  }).join('');
+  if (relEl && !relEl.querySelector('a')) {
+    relEl.innerHTML = related.map(function(a) {
+      return '<a href="' + a.url + '" class="related-card"><strong>' + a.title + '</strong><span>' + (a.date || '') + '</span></a>';
+    }).join('');
+  }
 })();
 </script>
 <script src="/components.js" defer></script>

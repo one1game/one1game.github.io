@@ -206,7 +206,7 @@
     </a>
 
     <nav class="breadcrumbs" aria-label="Хлебные крошки">
-      <a href="/">Главная</a> →
+      <a href="/">One1Game</a> →
       <a href="/archive">Статьи</a> →
       <span aria-current="page">S.T.A.L.K.E.R. 2: Невозможные тайники</span>
     </nav>
@@ -410,7 +410,12 @@
     <!-- Related -->
     <section class="related-section">
       <h4>Похожие статьи</h4>
-      <div class="related-grid" id="related-container"></div>
+      <div class="related-grid" id="related-container">
+        <a href="/archive/elevator-avici-vse-koncovki-sekrety" class="related-card"><strong>ELEVATOR: AVICI — Полный гайд на все 3 концовки и скрытые предметы</strong><span>14 июля 2026</span></a>
+        <a href="/archive/xbox-gamepass-to-steam-saves-2026" class="related-card"><strong>Как добавить сохранения из Game Pass PC? Перенос сейвов без потери прогресса</strong><span>6 июля 2026</span></a>
+        <a href="/archive/stalker-2-skrytye-mekhaniki-tenevye-pravila-2026" class="related-card"><strong>S.T.A.L.K.E.R. 2: 7 мифов о скрытых механиках — правда или вымысел?</strong><span>13 июля 2026</span></a>
+        <a href="/archive/operation-darkside-dx-optimal-guide" class="related-card"><strong>Operation: Darkside DX — Гайд по оптимизации гринда и получению всех концовок</strong><span>15 июля 2026</span></a>
+      </div>
     </section>
 
   </div>
@@ -419,14 +424,6 @@
 
 <script src="/cache-version.js"></script>
 
-<script>
-  (function() {
-    var script = document.createElement('script');
-    script.src = '/articles-data.js?v=' + (window.CACHE_VER || '15');
-    script.async = false;
-    document.head.appendChild(script);
-  })();
-</script>
 
 <script>
 (function() {
@@ -447,9 +444,8 @@
   }
 
   var related = all.filter(function(a) { return a.url !== currentUrl; }).slice(0, 4);
-  
   var relEl = document.getElementById('related-container');
-  if (relEl) {
+  if (relEl && !relEl.querySelector('a') && related.length) {
     relEl.innerHTML = related.map(function(a) {
       return '<a href="' + a.url + '" class="related-card"><strong>' + a.title + '</strong><span>' + (a.date || '') + '</span></a>';
     }).join('');

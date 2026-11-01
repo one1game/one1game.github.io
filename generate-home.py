@@ -8,14 +8,70 @@
 """
 import html
 import json
+import os
 import re
+from datetime import datetime, timezone
 
 DATA_FILE = 'articles-data.js'
 HOME_FILE = 'index.html'
+ARCH_DIR = 'archive'
 FEED_LIMIT = 6      # сколько записей в ленте (1 ведущая + 5)
 PLAY_LIMIT = 14     # сколько игровых обзоров показываем на главной
 
 GAME_SUFFIX = re.compile(r':\s*цена, отзывы и статистика игроков\s*$', re.IGNORECASE)
+
+# Данные для карточек-агрегатора: жанр и минимальная видеокарта из страницы игры.
+REQ_RX = re.compile(r'Минимальные требования \(Steam\):</strong>\s*([^<]+)<', re.IGNORECASE)
+GENRE_RX = re.compile(r'"@type":\s*"VideoGame"[\s\S]{0,400}?"genre":\s*"([^"]*)"', re.IGNORECASE)
+WEAK_RX = re.compile(r'(intel\s+(hd|uhd)|iris|vega|radeon hd|gtx\s*[245]\d\d|gt\s*[567]\d\d|\b(128|256|512)\s*mb|opengl\s*3|integrated|встроенн|direct\s*x?\s*11|any\s*gpu)', re.IGNORECASE)
+STRONG_RX = re.compile(r'(rtx|gtx\s*(7|9|10|16)\d\d|rx\s*[567]\d\d)', re.IGNORECASE)
+NAME_PREFIX = re.compile(r'^\s*обзор\s+(игры\s+)?', re.IGNORECASE)
+VENDOR_RX = re.compile(r'\b(nvidia|amd|ati)\s+', re.IGNORECASE)
+
+_facts_cache = {}
+
+
+def esc_short(value, limit):
+    s = str(value or '').strip()
+    if len(s) > limit:
+        s = s[:limit - 1].rstrip(' ,;-') + '…'
+    return html.escape(s, quote=True)
+
+
+def game_facts(url):
+    """(жанр, минимальная видеокарта, вердикт) — вердикт только когда он очевиден."""
+    if url in _facts_cache:
+        return _facts_cache[url]
+    res = ('', '', None)
+    slug = (url or '').rstrip('/').split('/')[-1]
+    path = os.path.join(ARCH_DIR, slug + '.html')
+    if slug and os.path.exists(path):
+        try:
+            with open(path, encoding='utf-8', errors='ignore') as f:
+                h = f.read()
+        except OSError:
+            h = ''
+        if h:
+            g = GENRE_RX.search(h)
+            genre = g.group(1).strip() if g else ''
+            gpu = ''
+            r = REQ_RX.search(h)
+            if r:
+                for part in r.group(1).split('·'):
+                    part = part.strip()
+                    if part.lower().startswith('видеокарта'):
+                        gpu = part.split(':', 1)[-1].strip()
+                        break
+            badge = None
+            if gpu:
+                if WEAK_RX.search(gpu) and not STRONG_RX.search(gpu):
+                    badge = ('yes', 'Потянет слабый ПК')
+                elif STRONG_RX.search(gpu):
+                    badge = ('no', 'Нужна дискретная')
+            res = (genre, gpu, badge)
+    _facts_cache[url] = res
+    return res
+
 
 
 def escape_html(value):
@@ -28,7 +84,10 @@ def load_articles():
     match = re.search(r'window\.allArticles\s*=\s*(\[.*\])\s*;?', raw, re.DOTALL)
     if not match:
         raise SystemExit('Не удалось разобрать articles-data.js: не найден window.allArticles')
-    return json.loads(match.group(1))
+    arts = json.loads(match.group(1))
+    # "/archive/-<appid>" закрыты noindex — на главной на них не ссылаемся.
+    return [a for a in arts
+            if not re.fullmatch(r'/archive/-\d+', a.get('url') or '')]
 
 
 def is_game_review(article):
@@ -114,16 +173,32 @@ AD_BLOCK = (
 def play_card_html(game):
     url = escape_html(game.get('url') or '#')
     safe_image = escape_html(game.get('image') or '')
-    raw_name = GAME_SUFFIX.sub('', game.get('title') or '').strip() or (game.get('title') or 'Игра')
+    raw_name = GAME_SUFFIX.sub('', game.get('title') or '').strip()
+    raw_name = NAME_PREFIX.sub('', raw_name).strip() or (game.get('title') or 'Игра')
     name = escape_html(raw_name)
     thumb = ''
     if safe_image:
         thumb = (f'\n          <span class="play-thumb fx"><img src="{safe_image}" alt="{name}" '
                  f'loading="lazy" decoding="async" width="280" height="158"></span>')
+    genre, gpu, badge = game_facts(game.get('url') or '')
+    meta_bits = []
+    genres = [g.strip() for g in genre.split(',') if g.strip()][:2]
+    if genres:
+        meta_bits.append(', '.join(genres))
+    gpu_short = (gpu or '').split(',')[0].split('(')[0].strip()
+    if re.search(r'opengl', gpu_short, re.IGNORECASE):
+        gpu_short = 'любая с OpenGL 3.3'
+    else:
+        gpu_short = VENDOR_RX.sub('', gpu_short)
+        gpu_short = re.split(r'\swith\s|\sor\s', gpu_short)[0].strip()
+    if gpu_short:
+        meta_bits.append('мин. видеокарта: ' + esc_short(gpu_short, 26))
+    meta = ' · '.join(meta_bits) if meta_bits else 'обзор · статистика игроков'
+    badge_html = f'\n          <span class="play-badge play-badge--{badge[0]}">{badge[1]}</span>' if badge else ''
     return (
         f'        <a href="{url}" class="play-card">{thumb}\n'
         f'          <span class="play-name">{name}</span>\n'
-        f'          <span class="play-meta">обзор · статистика игроков</span>\n'
+        f'          <span class="play-meta">{meta}</span>{badge_html}\n'
         f'        </a>'
     )
 
@@ -209,9 +284,16 @@ def generate():
     out = set_stat(out, 'stat-articles', len(articles))
     out = set_stat(out, 'stat-sections', sections)
 
-    if out == src:
+    # dateModified = дата последнего РЕАЛЬНОГО изменения главной. Сравниваем
+    # содержимое с вырезанной датой, иначе дата сама создаёт различие и файл
+    # переписывается каждый прогон, а sitemap объявляет корень обновлённым зря.
+    DATE_RX = r'("dateModified"\s*:\s*")[0-9-]+(")'
+    if re.sub(DATE_RX, r'\1x\2', out) == re.sub(DATE_RX, r'\1x\2', src):
         print('Без изменений: главная уже актуальна')
         return
+
+    today = datetime.now(timezone.utc).strftime('%Y-%m-%d')
+    out = re.sub(DATE_RX, lambda m: m.group(1) + today + m.group(2), out, count=1)
 
     with open(HOME_FILE, 'w', encoding='utf-8', newline='') as f:
         f.write(out)

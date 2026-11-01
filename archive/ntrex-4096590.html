@@ -41,7 +41,7 @@
     if (localStorage.getItem('ga_consent') === 'yes') enableGA();
   </script>
   <link href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css" rel="stylesheet" />
-  <link rel="stylesheet" href="/styles.css?v=31" />
+  <link rel="stylesheet" href="/styles.css?v=33" />
 
   <script type="application/ld+json">
   {
@@ -202,7 +202,7 @@
 
     <nav class="breadcrumbs" aria-label="Хлебные крошки" itemscope itemtype="https://schema.org/BreadcrumbList">
       <span itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
-        <a itemprop="item" href="/"><span itemprop="name">Главная</span></a>
+        <a itemprop="item" href="/"><span itemprop="name">One1Game</span></a>
         <meta itemprop="position" content="1" />
       </span> →
       <span itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
@@ -210,8 +210,12 @@
         <meta itemprop="position" content="2" />
       </span> →
       <span itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
-        <span itemprop="name" aria-current="page">NTREX</span>
+        <a itemprop="item" href="/category/obzory"><span itemprop="name">Обзоры</span></a>
         <meta itemprop="position" content="3" />
+      </span> →
+      <span itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+        <span itemprop="name" aria-current="page">NTREX</span>
+        <meta itemprop="position" content="4" />
       </span>
     </nav>
 
@@ -294,9 +298,10 @@
       </div>
 <!--LOWEND:START-->
       <section class="lowend-block" style="margin:26px 0;padding:16px 18px;border:1px solid rgba(255,255,255,.10);border-radius:10px;background:rgba(255,255,255,.03)">
-        <h2 style="margin:0 0 10px;font-size:1.15rem">Потянет ли слабый ноутбук?</h2>
+        <h2 style="margin:0 0 10px;font-size:1.15rem">Потянет ли NTREX на слабом ноутбуке?</h2>
         <p><strong>Минимальные требования (Steam):</strong> ОС *: Windows 8 · Процессор: Core(TM)2 Duo 3.00GHz · Оперативная память: 2 GB ОЗУ · Место на диске: 2 GB</p>
-        <p>Ориентир для ноутбука без дискретной видеокарты — 720p и низкие настройки. Готовые подборки: <a href="/igry-bez-videokarty">игры без видеокарты</a>, <a href="/igry-dlya-slabyh-noutbukov-4gb-ozu">игры на 4 ГБ ОЗУ</a>, <a href="/besplatnye-igry-dlya-slabyh-pk">бесплатные игры для слабых ПК</a>. Как поднять FPS — в <a href="/archive/igry-dlya-slabyh-noutbukov-2026">полном гиде по слабым ноутбукам</a>.</p>
+        <p><strong>Оценка:</strong> Потянет на встроенной графике при 720p и низких настройках.</p>
+        <p>Подборки под слабое железо: <a href="/rpg-igry-dlya-slabyh-noutbukov">RPG для слабого ноутбука</a> →</p>
       </section>
 <!--LOWEND:END-->
 
@@ -331,9 +336,34 @@
       <div class="share-buttons" id="share-buttons"></div>
     </section>
 
-    <section class="related-section">
+        <section class="game-faq">
+      <h2>NTREX: частые вопросы</h2>
+      <h3>Сколько стоит NTREX</h3>
+        <p>В Steam NTREX сейчас 565.00 RUB. Цена и скидки обновляются автоматически.</p>
+      <h3>Когда вышла NTREX</h3>
+        <p>Дата выхода NTREX — 28 сен. 2026 г.</p>
+      <h3>Кто разработал NTREX</h3>
+        <p>Разработчик NTREX — Vincent.</p>
+    </section>
+<section class="similar-games">
+      <h2>Похожие игры</h2>
+      <table class="similar-table">
+        <thead><tr><th>Игра</th><th>Цена</th><th>Слабый ПК</th></tr></thead>
+        <tbody>
+          <tr><td><a href="/archive/obey-the-beat-4957470">Обзор Obey the Beat: динамичная ритм-аркада</a></td><td>135.00 RUB (скидка 10%)</td><td>Потянет</td></tr>
+          <tr><td><a href="/archive/oblachnyy-patrul-5306660">ОБЛАЧНЫЙ ПАТРУЛЬ — динамичный шутер</a></td><td>117.00 RUB (скидка 10%)</td><td>Нет</td></tr>
+          <tr><td><a href="/archive/obstacle-overdrive-3412490">Obstacle Overdrive – казуальная гонка в ретро‑мире</a></td><td>550.00 RUB</td><td>Нет</td></tr>
+        </tbody>
+      </table>
+    </section>
+<section class="related-section">
       <h4>Похожие статьи</h4>
-      <div class="related-grid" id="related-container"></div></section>
+      <div class="related-grid" id="related-container">
+        <a href="/archive/hanok-from-thatch-to-palace-5130100" class="related-card"><strong>Hanok: From Thatch to Palace — уютный строительный симулятор</strong><span>29 сентября 2026</span></a>
+        <a href="/archive/frutiger-home-3935530" class="related-card"><strong>Frutiger Home – уютный симулятор оформления дома</strong><span>29 сентября 2026</span></a>
+        <a href="/archive/ai-vj-2893580" class="related-card"><strong>AI-VJ: цена, отзывы и статистика игроков</strong><span>29 сентября 2026</span></a>
+        <a href="/archive/sarge-s-horrors-4708930" class="related-card"><strong>Sarge's Horrors: цена, отзывы и статистика игроков</strong><span>29 сентября 2026</span></a>
+      </div></section>
     <section class="comments-section">
       <h4><i class="fas fa-comments" aria-hidden="true"></i> Комментарии</h4>
       <div class="comments-container" id="comments-container">
@@ -354,7 +384,6 @@
 </main>
 
 <script src="/cache-version.js"></script>
-<script>document.write('<script src="/articles-data.js?v='+(window.CACHE_VER||'1')+'"><\/script>');</script>
 <script>
 (function() {
   var path = window.location.pathname;
@@ -373,9 +402,11 @@
 
   var related = all.filter(function(a) { return a.url !== currentUrl; }).slice(0, 4);
   var relEl = document.getElementById('related-container');
-  relEl.innerHTML = related.map(function(a) {
-    return '<a href="' + a.url + '" class="related-card"><strong>' + a.title + '</strong><span>' + (a.date || '') + '</span></a>';
-  }).join('');
+  if (relEl && !relEl.querySelector('a') && related.length) {
+    relEl.innerHTML = related.map(function(a) {
+      return '<a href="' + a.url + '" class="related-card"><strong>' + a.title + '</strong><span>' + (a.date || '') + '</span></a>';
+    }).join('');
+  }
 })();
 </script>
 <script src="/components.js" defer></script>

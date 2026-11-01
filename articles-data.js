@@ -1,6 +1,156 @@
 // articles-data.js
 window.allArticles = [
   {
+    "url": "/archive/dark-pgt-2-the-red-death-4844820",
+    "title": "DARK PGT 2: The Red Death: цена, отзывы и статистика игроков",
+    "excerpt": "DARK PGT 2: The Red Death: актуальная цена (216.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
+    "date": "1 ноября 2026",
+    "readTime": "2 мин",
+    "category": "Обзоры",
+    "updated": "2026-11-01",
+    "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4844820/2c6c3413549268a2cbe60ee4d4e665ec78eba8a0/header.jpg?t=1793540824"
+  },
+  {
+    "url": "/archive/halftime-manager-5005920",
+    "title": "HALFTIME Manager: цена, отзывы и статистика игроков",
+    "excerpt": "HALFTIME Manager: актуальная цена (890.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
+    "date": "1 ноября 2026",
+    "readTime": "2 мин",
+    "category": "Обзоры",
+    "updated": "2026-11-01",
+    "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5005920/66903c363de4eb7ff5edad919e75fae4a94da65e/header.jpg?t=1793538125"
+  },
+  {
+    "url": "/archive/battlefield-v-1238810",
+    "title": "Battlefield™ V: цена, отзывы и статистика игроков",
+    "excerpt": "Battlefield™ V: актуальная цена (цена не указана), 71% положительных отзывов в Steam, статистика владельцев (10,000,000 – 20,000,000). Данные обновляются автоматически.",
+    "date": "1 ноября 2026",
+    "readTime": "2 мин",
+    "category": "Обзоры",
+    "updated": "2026-11-01",
+    "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1238810/header.jpg?t=1772707365"
+  },
+  {
+    "url": "/archive/grand-theft-auto-v-legacy-271590",
+    "title": "Grand Theft Auto V Legacy: цена, отзывы и статистика игроков",
+    "excerpt": "Grand Theft Auto V Legacy: актуальная цена (цена не указана), 87% положительных отзывов в Steam, статистика владельцев (50,000,000 – 100,000,000). Данные обновляются автоматически.",
+    "date": "1 ноября 2026",
+    "readTime": "2 мин",
+    "category": "Обзоры",
+    "updated": "2026-11-01",
+    "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/271590/header.jpg?t=1765387725"
+  },
+  {
+    "url": "/archive/dota-2-570",
+    "title": "Dota 2: цена, отзывы и статистика игроков",
+    "excerpt": "Dota 2: актуальная цена (Бесплатно), 82% положительных отзывов в Steam, статистика владельцев (100,000,000 – 200,000,000). Данные обновляются автоматически.",
+    "date": "1 ноября 2026",
+    "readTime": "2 мин",
+    "category": "Обзоры",
+    "updated": "2026-11-01",
+    "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/570/header.jpg?t=1791407503"
+  },
+  {
+    "url": "/archive/elden-ring-1245620",
+    "title": "ELDEN RING: цена, отзывы и статистика игроков",
+    "excerpt": "ELDEN RING: актуальная цена (3599.00 RUB), 93% положительных отзывов в Steam, статистика владельцев (20,000,000 – 50,000,000). Данные обновляются автоматически.",
+    "date": "1 ноября 2026",
+    "readTime": "2 мин",
+    "category": "Обзоры",
+    "updated": "2026-11-01",
+    "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1245620/header.jpg?t=1790290043"
+  },
+  {
+    "url": "/archive/pubg-battlegrounds-578080",
+    "title": "PUBG: BATTLEGROUNDS: цена, отзывы и статистика игроков",
+    "excerpt": "PUBG: BATTLEGROUNDS: актуальная цена (Бесплатно), 59% положительных отзывов в Steam, статистика владельцев (100,000,000 – 200,000,000). Данные обновляются автоматически.",
+    "date": "1 ноября 2026",
+    "readTime": "2 мин",
+    "category": "Обзоры",
+    "updated": "2026-11-01",
+    "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/578080/841ea38bc58cabb70aef65365cf50bc2d79329d9/header.jpg?t=1792718193"
+  },
+  {
+    "url": "/archive/apex-legends-1172470",
+    "title": "Apex Legends™: цена, отзывы и статистика игроков",
+    "excerpt": "Apex Legends™: актуальная цена (Бесплатно), 67% положительных отзывов в Steam, статистика владельцев (100,000,000 – 200,000,000). Данные обновляются автоматически.",
+    "date": "1 ноября 2026",
+    "readTime": "2 мин",
+    "category": "Обзоры",
+    "updated": "2026-11-01",
+    "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1172470/6cf04767652d703b6050da84b82cfb1194258d7d/header.jpg?t=1790164440"
+  },
+  {
+    "url": "/archive/war-thunder-236390",
+    "title": "War Thunder: цена, отзывы и статистика игроков",
+    "excerpt": "War Thunder: актуальная цена (Бесплатно), 64% положительных отзывов в Steam, статистика владельцев (20,000,000 – 50,000,000). Данные обновляются автоматически.",
+    "date": "1 ноября 2026",
+    "readTime": "2 мин",
+    "category": "Обзоры",
+    "updated": "2026-11-01",
+    "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/236390/38881c549e623fe432af4e7b4bc3952b443906f5/header.jpg?t=1793185672"
+  },
+  {
+    "url": "/archive/black-myth-wukong-2358720",
+    "title": "Black Myth: Wukong: цена, отзывы и статистика игроков",
+    "excerpt": "Black Myth: Wukong: актуальная цена (3599.00 RUB), 97% положительных отзывов в Steam, статистика владельцев (50,000,000 – 100,000,000). Данные обновляются автоматически.",
+    "date": "1 ноября 2026",
+    "readTime": "2 мин",
+    "category": "Обзоры",
+    "updated": "2026-11-01",
+    "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2358720/header.jpg?t=1760601605"
+  },
+  {
+    "url": "/archive/warframe-230410",
+    "title": "Warframe: цена, отзывы и статистика игроков",
+    "excerpt": "Warframe: актуальная цена (Бесплатно), 87% положительных отзывов в Steam, статистика владельцев (20,000,000 – 50,000,000). Данные обновляются автоматически.",
+    "date": "1 ноября 2026",
+    "readTime": "2 мин",
+    "category": "Обзоры",
+    "updated": "2026-11-01",
+    "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/230410/1a3e7c2a05ce4e5cad5ac4c7e858cf5b0934704e/header.jpg?t=1792613117"
+  },
+  {
+    "url": "/archive/path-of-exile-238960",
+    "title": "Path of Exile: цена, отзывы и статистика игроков",
+    "excerpt": "Path of Exile: актуальная цена (Бесплатно), 89% положительных отзывов в Steam, статистика владельцев (20,000,000 – 50,000,000). Данные обновляются автоматически.",
+    "date": "1 ноября 2026",
+    "readTime": "2 мин",
+    "category": "Обзоры",
+    "updated": "2026-11-01",
+    "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/238960/177c953b362c5a6221f9c15d340a0b1e2b8bfab8/header.jpg?t=1784681738"
+  },
+  {
+    "url": "/archive/valheim-892970",
+    "title": "Valheim: цена, отзывы и статистика игроков",
+    "excerpt": "Valheim: актуальная цена (1299.00 RUB), 94% положительных отзывов в Steam, статистика владельцев (10,000,000 – 20,000,000). Данные обновляются автоматически.",
+    "date": "1 ноября 2026",
+    "readTime": "2 мин",
+    "category": "Обзоры",
+    "updated": "2026-11-01",
+    "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/892970/1888731b59362fca6c026cdbafa3dfffd45c3146/header_alt_assets_6.jpg?t=1791544831"
+  },
+  {
+    "url": "/archive/stardew-valley-413150",
+    "title": "Stardew Valley: цена, отзывы и статистика игроков",
+    "excerpt": "Stardew Valley: актуальная цена (299.00 RUB), 98% положительных отзывов в Steam, статистика владельцев (20,000,000 – 50,000,000). Данные обновляются автоматически.",
+    "date": "1 ноября 2026",
+    "readTime": "2 мин",
+    "category": "Обзоры",
+    "updated": "2026-11-01",
+    "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/413150/header.jpg?t=1786554168"
+  },
+  {
+    "url": "/archive/portal-2-620",
+    "title": "Portal 2: цена, отзывы и статистика игроков",
+    "excerpt": "Portal 2: актуальная цена (445.00 RUB), 99% положительных отзывов в Steam, статистика владельцев (5,000,000 – 10,000,000). Данные обновляются автоматически.",
+    "date": "1 ноября 2026",
+    "readTime": "2 мин",
+    "category": "Обзоры",
+    "updated": "2026-11-01",
+    "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/620/faffc0f560786e2f05104a8d2fac837c6969bf13/header.jpg?t=1790187113"
+  },
+  {
     "url": "/archive/turn-limit-100-5116540",
     "title": "Обзор Turn Limit 100: карточный рогалик на время",
     "excerpt": "Обзор тактического рогалика Turn Limit 100. Успейте победить за сто ходов: три героя, сбор колоды и динамичные бои в мире Нагории. Стоит ли играть?",
@@ -383,6 +533,86 @@ window.allArticles = [
     "date": "31 октября 2026",
     "updated": "2026-10-31",
     "readTime": "13 мин",
+    "category": "Гайды"
+  },
+  {
+    "url": "/archive/elden-ring-gajd-dlya-novichkov-2026",
+    "title": "Elden Ring: гайд для новичков — с чего начать и как не бросить игру",
+    "excerpt": "Самурай или Бродяга, Золотое семечко, маршрут первых 15 минут, фляги, перекат, прокачка и кузнечные камни — пошаговый старт без спойлеров.",
+    "image": "/img/ai/output/elden-ring-gajd-dlya-novichkov-2026.webp",
+    "date": "1 ноября 2026",
+    "updated": "2026-11-01",
+    "readTime": "14 мин",
+    "category": "Гайды"
+  },
+  {
+    "url": "/archive/elden-ring-ne-zapuskaetsya-windows-11",
+    "title": "Elden Ring не запускается на Windows 11: 9 исправлений",
+    "excerpt": "Чёрный экран, вылет при старте или ошибка Easy Anti-Cheat? Пошагово: проверка файлов, моды, оверлеи, драйвер, DirectX и сейвы.",
+    "image": "/img/ai/output/elden-ring-ne-zapuskaetsya-windows-11.webp",
+    "date": "1 ноября 2026",
+    "updated": "2026-11-01",
+    "readTime": "7 мин",
+    "category": "Гайды"
+  },
+  {
+    "url": "/archive/elden-ring-nightreign-gajd-dlya-novichkov-2026",
+    "title": "Elden Ring Nightreign: гайд для новичков — с чего начать",
+    "excerpt": "Отряд из трёх, три дня, церкви и фляги, классы, призывы и ошибки первого забега. Пошаговый старт в Nightreign.",
+    "image": "/img/ai/output/elden-ring-nightreign-gajd-dlya-novichkov-2026.webp",
+    "date": "1 ноября 2026",
+    "updated": "2026-11-01",
+    "readTime": "9 мин",
+    "category": "Гайды"
+  },
+  {
+    "url": "/archive/elden-ring-skolko-runok-na-uroven",
+    "title": "Сколько рун нужно на уровень в Elden Ring — таблица и калькулятор",
+    "excerpt": "Точная стоимость уровней от 1 до 713, калькулятор: введите свой уровень и узнайте, сколько рун нужно до следующего.",
+    "image": "/img/ai/output/elden-ring-gajd-dlya-novichkov-2026.webp",
+    "date": "1 ноября 2026",
+    "updated": "2026-11-01",
+    "readTime": "6 мин",
+    "category": "Гайды"
+  },
+  {
+    "url": "/archive/elden-ring-peregruz-perekat",
+    "title": "Перегруз в Elden Ring: таблица переката и как убрать медленный ролл",
+    "excerpt": "Пороги 30%, 70% и 100%: какой перекат при каком весе, калькулятор нагрузки и что снять, если персонаж еле уклоняется.",
+    "image": "/img/ai/output/elden-ring-gajd-dlya-novichkov-2026.webp",
+    "date": "1 ноября 2026",
+    "updated": "2026-11-01",
+    "readTime": "5 мин",
+    "category": "Гайды"
+  },
+  {
+    "url": "/archive/elden-ring-nightreign-solo",
+    "title": "Elden Ring Nightreign соло: как играть одному и дожить до финала",
+    "excerpt": "Соло-режим в Nightreign: план на три дня, классы для одиночной игры и пять ошибок, которые убивают забег.",
+    "image": "/img/ai/output/elden-ring-nightreign-gajd-dlya-novichkov-2026.webp",
+    "date": "1 ноября 2026",
+    "updated": "2026-11-01",
+    "readTime": "6 мин",
+    "category": "Гайды"
+  },
+  {
+    "url": "/archive/elden-ring-kuznechnye-kamni-gde-vzyat",
+    "title": "Кузнечные камни в Elden Ring: где найти и как улучшать оружие",
+    "excerpt": "Где искать камни [1]–[8] и сумрачные, что делают колокольчики рудокопа, до какого уровня точить оружие и зачем нужны древние камни.",
+    "image": "/img/ai/output/elden-ring-gajd-dlya-novichkov-2026.webp",
+    "date": "1 ноября 2026",
+    "updated": "2026-11-01",
+    "readTime": "5 мин",
+    "category": "Гайды"
+  },
+  {
+    "url": "/archive/elden-ring-poise-chto-eto",
+    "title": "Poise в Elden Ring: что это простыми словами и сколько нужно",
+    "excerpt": "Стойкость (poise): как она работает, почему в сообществе говорят про порог 51 и чем гиперброня отличается от брони.",
+    "image": "/img/ai/output/elden-ring-gajd-dlya-novichkov-2026.webp",
+    "date": "1 ноября 2026",
+    "updated": "2026-11-01",
+    "readTime": "5 мин",
     "category": "Гайды"
   },
   {
@@ -9101,7 +9331,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/igry-dlya-slabyh-noutbukov-2026",
-    "title": "Игры для слабых ноутбуков 2026: полный гид — что реально запустится",
+    "title": "Игры для слабого ПК и слабых ноутбуков 2026: что запустится",
     "excerpt": "Что реально идёт на слабом ноутбуке без дискретной видеокарты: разбор категорий железа, топ игр с официальными требованиями Steam, настройки ради максимального FPS и подборки по жанрам.",
     "date": "8 октября 2026",
     "readTime": "14 мин",

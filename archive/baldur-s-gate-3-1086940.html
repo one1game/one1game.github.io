@@ -41,36 +41,73 @@
     if (localStorage.getItem('ga_consent') === 'yes') enableGA();
   </script>
   <link href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css" rel="stylesheet" />
-  <link rel="stylesheet" href="/styles.css?v=31" />
+  <link rel="stylesheet" href="/styles.css?v=33" />
 
   <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "BreadcrumbList",
-    "itemListElement": [
-      {"@type": "ListItem", "position": 1, "name": "Главная", "item": "https://one1game.org/"},
-      {"@type": "ListItem", "position": 2, "name": "Статьи", "item": "https://one1game.org/archive"},
-      {"@type": "ListItem", "position": 3, "name": "Baldur's Gate 3", "item": "https://one1game.org/archive/baldur-s-gate-3-1086940"}
-    ]
-  }
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Главная",
+      "item": "https://one1game.org/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Статьи",
+      "item": "https://one1game.org/archive"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Обзоры",
+      "item": "https://one1game.org/category/obzory"
+    },
+    {
+      "@type": "ListItem",
+      "position": 4,
+      "name": "Baldur's Gate 3",
+      "item": "https://one1game.org/archive/baldur-s-gate-3-1086940"
+    }
+  ]
+}
   </script>
 
   <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "Article",
-    "headline": "Baldur's Gate 3: цена, отзывы и статистика игроков | One1Game",
-    "datePublished": "2026-10-25",
-    "dateModified": "2026-10-25",
-    "author": {"@type": "Person", "name": "Команда One1Game"},
-    "publisher": {"@type": "Organization", "name": "One1Game", "logo": {"@type": "ImageObject", "url": "https://one1game.org/logo.png"}},
-    "description": "Baldur's Gate 3 — актуальная цена, скидки, процент положительных отзывов и статистика игроков в Steam. Обновляется автоматически.",
-    "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1086940/48a2fcbda8565bb45025e98fd8ebde8a7203f6a0/header.jpg?t=1777363040",
-    "inLanguage": "ru-RU",
-    "isAccessibleForFree": true,
-    "articleSection": "Обзоры",
-    "speakable": {"@type": "SpeakableSpecification", "cssSelector": ["h1", ".article-body p:first-of-type"]}
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Baldur's Gate 3: цена, отзывы и статистика игроков | One1Game",
+  "datePublished": "2026-10-25",
+  "dateModified": "2026-11-01",
+  "author": {
+    "@type": "Person",
+    "name": "Команда One1Game"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "One1Game",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://one1game.org/logo.png"
+    }
+  },
+  "description": "Baldur's Gate 3 — актуальная цена, скидки, процент положительных отзывов и статистика игроков в Steam. Обновляется автоматически.",
+  "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1086940/48a2fcbda8565bb45025e98fd8ebde8a7203f6a0/header.jpg?t=1777363040",
+  "inLanguage": "ru-RU",
+  "isAccessibleForFree": true,
+  "articleSection": "Обзоры",
+  "speakable": {
+    "@type": "SpeakableSpecification",
+    "cssSelector": [
+      "h1",
+      ".article-body p:first-of-type"
+    ]
   }
+}
   </script>
 
   <script type="application/ld+json">
@@ -208,7 +245,7 @@
 
     <nav class="breadcrumbs" aria-label="Хлебные крошки" itemscope itemtype="https://schema.org/BreadcrumbList">
       <span itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
-        <a itemprop="item" href="/"><span itemprop="name">Главная</span></a>
+        <a itemprop="item" href="/"><span itemprop="name">One1Game</span></a>
         <meta itemprop="position" content="1" />
       </span> →
       <span itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
@@ -216,8 +253,12 @@
         <meta itemprop="position" content="2" />
       </span> →
       <span itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
-        <span itemprop="name" aria-current="page">Baldur's Gate 3</span>
+        <a itemprop="item" href="/category/obzory"><span itemprop="name">Обзоры</span></a>
         <meta itemprop="position" content="3" />
+      </span> →
+      <span itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+        <span itemprop="name" aria-current="page">Baldur's Gate 3</span>
+        <meta itemprop="position" content="4" />
       </span>
     </nav>
 
@@ -225,7 +266,7 @@
       <span class="article-category cat-reviews">Обзоры</span>
       <h1>Baldur's Gate 3: цена, отзывы и статистика игроков</h1>
       <div class="article-meta">
-        <span><i class="far fa-calendar"></i> 25 октября 2026</span>
+        <span><i class="far fa-calendar"></i> 1 ноября 2026</span>
         <span><i class="far fa-clock"></i> 2 минуты чтения</span>
       </div>
     </div>
@@ -302,9 +343,11 @@
       </div>
 <!--LOWEND:START-->
       <section class="lowend-block" style="margin:26px 0;padding:16px 18px;border:1px solid rgba(255,255,255,.10);border-radius:10px;background:rgba(255,255,255,.03)">
-        <h2 style="margin:0 0 10px;font-size:1.15rem">Потянет ли слабый ноутбук?</h2>
+        <h2 style="margin:0 0 10px;font-size:1.15rem">Потянет ли Baldur's Gate 3 на слабом ноутбуке?</h2>
+        <p>Как ещё ищут: <strong>бг3, балдурс гейт 3, балдура</strong>.</p>
         <p><strong>Минимальные требования (Steam):</strong> 64-разрядные процессор и операционная система · ОС: Windows 10 64-bit · Процессор: Intel I5 4690 / AMD FX 8350 / Snapdragon X Elite · Оперативная память: 8 GB ОЗУ · Видеокарта: Nvidia GTX 970 / RX 480 / Intel Arc A380 / Qualcomm Adreno X1 (4GB+ of VRAM) · DirectX: версии 11 · Место на диске: 150 GB · Дополнительно: SSD required</p>
-        <p>Ориентир для ноутбука без дискретной видеокарты — 720p и низкие настройки. Готовые подборки: <a href="/igry-bez-videokarty">игры без видеокарты</a>, <a href="/igry-dlya-slabyh-noutbukov-4gb-ozu">игры на 4 ГБ ОЗУ</a>, <a href="/besplatnye-igry-dlya-slabyh-pk">бесплатные игры для слабых ПК</a>. Как поднять FPS — в <a href="/archive/igry-dlya-slabyh-noutbukov-2026">полном гиде по слабым ноутбукам</a>.</p>
+        <p><strong>Оценка:</strong> Нужна дискретная видеокарта — на встроенной графике играть не получится.</p>
+        <p>Подборки под слабое железо: <a href="/archive/igry-dlya-slabyh-noutbukov-2026">полный гид по слабым ноутбукам</a> →</p>
       </section>
 <!--LOWEND:END-->
 
@@ -339,9 +382,47 @@
       <div class="share-buttons" id="share-buttons"></div>
     </section>
 
-    <section class="related-section">
+            <section class="gpu-check">
+      <h2>Потянет ли Baldur's Gate 3 на моей видеокарте</h2>
+      <p>Минимум по Steam — <strong>Nvidia GTX 970</strong>. Сравнение по приблизительной производительности, а не по точному FPS.</p>
+      <ul class="gpu-check-list">
+        <li><strong>RTX 5060</strong> — потянет</li>
+        <li><strong>RTX 4060</strong> — потянет</li>
+        <li><strong>RTX 3050</strong> — потянет</li>
+        <li><strong>GTX 1050 Ti</strong> — на низких настройках, 720p</li>
+        <li><strong>RX 580</strong> — потянет</li>
+        <li><strong>Intel UHD 620</strong> — не потянет — нужна карта сильнее</li>
+      </ul>
+      <p>Полная таблица по 600+ играм: <a href="/potyanet-li-igra">потянет ли игра на моём ПК</a>.</p>
+    </section>
+        <section class="game-faq">
+      <h2>Baldur's Gate 3: частые вопросы</h2>
+      <h3>Сколько стоит Baldur's Gate 3</h3>
+        <p>В Steam Baldur's Gate 3 сейчас 1999.00 RUB. Цена и скидки обновляются автоматически.</p>
+      <h3>Когда вышла Baldur's Gate 3</h3>
+        <p>Дата выхода Baldur's Gate 3 — 3 авг. 2023 г.</p>
+      <h3>Кто разработал Baldur's Gate 3</h3>
+        <p>Разработчик Baldur's Gate 3 — Larian Studios.</p>
+    </section>
+<section class="similar-games">
+      <h2>Похожие игры</h2>
+      <table class="similar-table">
+        <thead><tr><th>Игра</th><th>Цена</th><th>Слабый ПК</th></tr></thead>
+        <tbody>
+          <tr><td><a href="/archive/blightstone-2832280">Blightstone — тактическое приключение с элементами…</a></td><td>413.00 RUB (скидка 30%)</td><td>Нет</td></tr>
+          <tr><td><a href="/archive/cyber-volleyball-4980110">Cyber Volleyball — аркадный волейбол с прогрессией</a></td><td>99.42 RUB (скидка 21%)</td><td>Потянет</td></tr>
+          <tr><td><a href="/archive/demon-lord-clicker-1742110">Demon Lord: Clicker - обзор</a></td><td>Бесплатно</td><td>Потянет</td></tr>
+        </tbody>
+      </table>
+    </section>
+<section class="related-section">
       <h4>Похожие статьи</h4>
-      <div class="related-grid" id="related-container"></div></section>
+      <div class="related-grid" id="related-container">
+        <a href="/archive/dark-pgt-2-the-red-death-4844820" class="related-card"><strong>DARK PGT 2: The Red Death: цена, отзывы и статистика игроков</strong><span>1 ноября 2026</span></a>
+        <a href="/archive/halftime-manager-5005920" class="related-card"><strong>HALFTIME Manager: цена, отзывы и статистика игроков</strong><span>1 ноября 2026</span></a>
+        <a href="/archive/battlefield-v-1238810" class="related-card"><strong>Battlefield™ V: цена, отзывы и статистика игроков</strong><span>1 ноября 2026</span></a>
+        <a href="/archive/grand-theft-auto-v-legacy-271590" class="related-card"><strong>Grand Theft Auto V Legacy: цена, отзывы и статистика игроков</strong><span>1 ноября 2026</span></a>
+      </div></section>
     <section class="comments-section">
       <h4><i class="fas fa-comments" aria-hidden="true"></i> Комментарии</h4>
       <div class="comments-container" id="comments-container">
@@ -362,7 +443,6 @@
 </main>
 
 <script src="/cache-version.js"></script>
-<script>document.write('<script src="/articles-data.js?v='+(window.CACHE_VER||'1')+'"><\/script>');</script>
 <script>
 (function() {
   var path = window.location.pathname;
@@ -379,11 +459,15 @@
     '<a target="_blank" rel="noopener" class="share-btn" href="https://api.whatsapp.com/send?text=' + title + '%20' + url + '">WhatsApp</a>'
   ].join('');
 
+  // Статический блок «Похожие статьи» уже в HTML — JS только дополняет пустой
+  // контейнер на старых страницах, чтобы не затирать серверную разметку.
   var related = all.filter(function(a) { return a.url !== currentUrl; }).slice(0, 4);
   var relEl = document.getElementById('related-container');
-  relEl.innerHTML = related.map(function(a) {
-    return '<a href="' + a.url + '" class="related-card"><strong>' + a.title + '</strong><span>' + (a.date || '') + '</span></a>';
-  }).join('');
+  if (relEl && !relEl.querySelector('a')) {
+    relEl.innerHTML = related.map(function(a) {
+      return '<a href="' + a.url + '" class="related-card"><strong>' + a.title + '</strong><span>' + (a.date || '') + '</span></a>';
+    }).join('');
+  }
 })();
 </script>
 <script src="/components.js" defer></script>

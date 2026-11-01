@@ -8,6 +8,15 @@ on:
     branches: [main]
     paths:
       - '**.html'
+  # Пуш из workflow сделан GITHUB_TOKEN, а такой пуш не запускает другие
+  # workflow. Событие workflow_run срабатывает всегда, поэтому новые игры
+  # попадают в IndexNow и без секрета с личным токеном.
+  workflow_run:
+    workflows:
+      - "Обновление страниц игр (Steam + SteamSpy)"
+      - "Обновление данных всех игр (Steam)"
+      - "Generate Sitemap & Home"
+    types: [completed]
   workflow_dispatch:
 
 permissions:
@@ -16,9 +25,13 @@ permissions:
 jobs:
   ping:
     runs-on: ubuntu-latest
+    if: ${{ github.event_name != 'workflow_run' || github.event.workflow_run.conclusion == 'success' }}
     steps:
       - uses: actions/checkout@v5
         with:
+          # Для workflow_run GITHUB_SHA — последний коммит основной ветки, то
+          # есть уже вместе с пушем бота. head_sha здесь не годится: это SHA
+          # до коммита, который сделал сам джоб обновления.
           fetch-depth: 2
 
       - name: Submit changed pages
@@ -54,7 +67,20 @@ jobs:
             | grep -v '^$' | sort -u | jq -R . | jq -s .)
           echo "Отправляю URL:"; echo "$URLS"
 
-          sleep 90  # ждём, пока GitHub Pages опубликует новую версию
+          # Ждём не фиксированные 90 секунд, а реальной готовности деплоя:
+          # отправить IndexNow на URL, который ещё отдаёт 404, хуже, чем не
+          # отправить вообще — робот придёт по ссылке и получит ошибку.
+          FIRST=$(printf '%s\n' "$PATHS" | head -n1)
+          PROBE="https://$HOST/$FIRST"
+          for i in $(seq 1 40); do
+            CODE=$(curl -s -o /dev/null -w '%{http_code}' "$PROBE" || echo 000)
+            if [ "$CODE" = "200" ]; then
+              echo "Деплой готов примерно через $((i * 15)) с — отправляю IndexNow"
+              break
+            fi
+            sleep 15
+          done
+
           curl -sS -X POST "https://api.indexnow.org/indexnow" \
             -H "Content-Type: application/json; charset=utf-8" \
             -d "{\"host\":\"$HOST\",\"key\":\"$KEY\",\"keyLocation\":\"https://$HOST/$KEY.txt\",\"urlList\":$URLS}" \

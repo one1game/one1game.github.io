@@ -921,9 +921,49 @@ button, input, select, textarea { font: inherit; color: inherit; }
 .related-card:hover strong { color: var(--acid); }
 .related-card strong { display: block; font-size: 0.82rem; font-weight: 700; color: var(--ink); line-height: 1.35; }
 .related-card span { display: block; margin-top: 4px; font-size: 0.62rem; color: var(--ink-faint); text-transform: uppercase; letter-spacing: 0.08em; }
+
+/* «Похожие игры»: таблица внутри жанра */
+.similar-games { margin: 22px 0 8px; }
+.similar-games h2 { font-size: 0.72rem; font-weight: 700; color: #fff; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 12px; }
+.similar-table { width: 100%; border-collapse: collapse; font-size: 0.8rem; }
+.similar-table th { text-align: left; font-weight: 600; color: var(--ink-faint); font-size: 0.62rem; text-transform: uppercase; letter-spacing: 0.08em; padding: 6px 8px 6px 0; border-bottom: 1px solid var(--line-soft); }
+.similar-table td { padding: 9px 8px 9px 0; border-bottom: 1px solid var(--line-soft); color: var(--ink); vertical-align: top; line-height: 1.35; }
+.similar-table td:first-child { width: 62%; }
+.similar-table td:nth-child(2) { white-space: nowrap; color: var(--ink-dim); }
+.similar-table a { color: inherit; text-decoration: none; }
+.similar-table a:hover { color: var(--acid); }
+
+/* «Частые вопросы» на странице игры — пассажи, сформулированные как запрос */
+.game-faq { margin: 22px 0 8px; }
+.game-faq h2 { font-size: 0.72rem; font-weight: 700; color: #fff; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 12px; }
+.game-faq h3 { font-size: 0.86rem; font-weight: 700; color: var(--ink); margin: 14px 0 4px; }
+.game-faq p { font-size: 0.82rem; color: var(--ink-dim); margin: 0; line-height: 1.5; }
 .related-img { display: none; }
 .related-info .related-cat { display: inline-block; margin-bottom: 5px; font-size: 0.62rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; }
 .related-info h5 { font-size: 0.82rem; font-weight: 700; color: var(--ink); line-height: 1.35; }
+
+/* Статический список всех материалов в /archive: путь вглубь для краулеров */
+.archive-all { margin: 30px 0 10px; padding-top: 20px; border-top: 1px solid rgba(255,255,255,.08); }
+.archive-all h2 { font-size: 0.72rem; font-weight: 700; color: #fff; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 12px; }
+.archive-all-list { list-style: none; margin: 0 0 16px; padding: 0; display: grid; gap: 4px 22px; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); }
+.archive-all-list li { display: flex; justify-content: space-between; gap: 10px; font-size: 0.8rem; line-height: 1.4; }
+.archive-all-list a { color: var(--ink); text-decoration: none; }
+.archive-all-list a:hover { color: var(--acid); text-decoration: underline; }
+.archive-all-list span { color: var(--text-faint); font-size: 0.7rem; white-space: nowrap; }
+.archive-all-hubs { font-size: 0.8rem; line-height: 1.9; color: var(--ink-dim); }
+.archive-all-hubs strong { color: #fff; }
+.archive-all-hubs a { color: var(--cyan); text-decoration: none; margin-right: 10px; }
+.archive-all-hubs a:hover { text-decoration: underline; }
+
+/* Вердикт по видеокартам на странице игры: запросы «потянет ли видеокарта X игра Y» */
+.gpu-check { margin: 26px 0; padding: 16px 18px; border: 1px solid rgba(255,255,255,.10); border-radius: 10px; background: rgba(255,255,255,.03); }
+.gpu-check h2 { margin: 0 0 10px; font-size: 1.15rem; }
+.gpu-check p { margin: 0 0 10px; font-size: 0.85rem; color: var(--ink-dim); line-height: 1.5; }
+.gpu-check-list { margin: 0 0 10px; padding-left: 18px; display: grid; gap: 4px; }
+.gpu-check-list li { font-size: 0.85rem; color: var(--ink-dim); line-height: 1.45; }
+.gpu-check-list strong { color: #fff; }
+.gpu-check a { color: var(--cyan); text-decoration: none; }
+.gpu-check a:hover { text-decoration: underline; }
 
 /* =============================================================
    20. СТАТИЧЕСКИЕ СТРАНИЦЫ / 404 / ПУСТЫЕ СОСТОЯНИЯ
@@ -1523,3 +1563,26 @@ body.has-dock .cookie-banner { bottom: calc(var(--dock-h) + env(safe-area-inset-
 .o1hub-article b { font-size: 0.74rem; line-height: 1.35; }
 .o1hub-article i { align-self: end; color: var(--ink-faint); font-size: 0.56rem; font-style: normal; white-space: nowrap; }
 .o1hub-article:hover { border-color: var(--line-hi); background: var(--acid-soft); }
+
+/* Блок «Разделы сайта» на главной */
+.home-sections { margin: 56px 0 24px; }
+.home-sections .hs-sub { color: var(--ink-faint, #8f99a6); font-size: 0.9rem; margin: 6px 0 18px; }
+.hs-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 12px; }
+.hs-grid a { display: block; padding: 13px 15px; border: 1px solid rgba(255,255,255,.08); border-radius: 10px; background: rgba(255,255,255,.02); text-decoration: none; transition: border-color .15s, transform .15s; }
+.hs-grid a:hover { border-color: rgba(125,255,155,.45); transform: translateY(-1px); }
+.hs-grid strong { display: block; color: var(--ink, #e7eef6); font-size: 0.95rem; margin-bottom: 5px; font-weight: 600; }
+.hs-grid span { display: block; color: var(--ink-faint, #8f99a6); font-size: 0.79rem; line-height: 1.45; }
+
+/* Блок «Частые вопросы» на главной */
+.home-faq { margin: 44px 0 24px; }
+.hfaq-list { display: grid; gap: 10px; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); }
+.hfaq-item { padding: 14px 16px; border: 1px solid rgba(255,255,255,.08); border-radius: 10px; background: rgba(255,255,255,.02); }
+.hfaq-item h3 { margin: 0 0 6px; font-size: 0.95rem; color: var(--ink, #e7eef6); font-weight: 600; }
+.hfaq-item p { margin: 0; font-size: 0.82rem; line-height: 1.55; color: var(--ink-faint, #9aa7b4); }
+.hfaq-item a { color: var(--acid, #7dff9b); text-decoration: none; white-space: nowrap; }
+
+/* Карточки «Во что поиграть»: жанр, минимальная видеокарта, вердикт */
+.play-sub { color: var(--ink-faint, #8f99a6); font-size: 0.86rem; line-height: 1.5; margin: 4px 0 14px; max-width: 70ch; }
+.play-badge { display: inline-block; margin-top: 6px; padding: 2px 8px; border-radius: 999px; font-size: 0.62rem; letter-spacing: .04em; text-transform: uppercase; }
+.play-badge--yes { color: #7dff9b; background: rgba(125,255,155,.10); border: 1px solid rgba(125,255,155,.30); }
+.play-badge--no { color: #ffb86b; background: rgba(255,184,107,.10); border: 1px solid rgba(255,184,107,.30); }

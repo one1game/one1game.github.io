@@ -681,7 +681,7 @@ def render_movie(item):
     desc = art.get("meta") or item["overview"] or f"{item['title']} — экранизация видеоигры: описание, актёры, трейлер."
     body = f"""<main id="main-content" class="container mv-film">
   <nav class="mv-crumbs" aria-label="Хлебные крошки">
-    <a href="/">Главная</a> → <a href="/kino/">Кино</a> → <span>{title_esc}</span>
+    <a href="/">One1Game</a> → <a href="/kino/">Кино</a> → <span>{title_esc}</span>
   </nav>
 
   <div class="mv-film-head">

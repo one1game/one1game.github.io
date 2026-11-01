@@ -196,7 +196,7 @@
 
   <span itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
 
-    <a itemprop="item" href="/"><span itemprop="name">Главная</span></a>
+    <a itemprop="item" href="/"><span itemprop="name">One1Game</span></a>
 
     <meta itemprop="position" content="1" />
 
@@ -819,7 +819,12 @@
 
       <h4>Похожие статьи</h4>
 
-      <div class="related-grid" id="related-container"></div></section>
+      <div class="related-grid" id="related-container">
+        <a href="/archive/skrytye-lovushki-apgreyda-2026" class="related-card"><strong>Скрытые ловушки апгрейда в 2026: Почему ваш ПК «задушит» RTX 5090 и RX 9070 XT?</strong><span>10 июля 2026</span></a>
+        <a href="/archive/nintendo-switch-2-russia-2026" class="related-card"><strong>Nintendo Switch 2 в России 2026: полный гайд</strong><span>20 января 2026</span></a>
+        <a href="/archive/ai-game-translators-2026-guide" class="related-card"><strong>Как играть в любую новинку 2026 без русской локализации? Гайд по AI-переводчикам</strong><span>20 января 2026</span></a>
+        <a href="/archive/gta-6-polnyy-analiz-utechek-i-treylera" class="related-card"><strong>GTA 6: Полный анализ утечек и трейлера — секреты, которые скрыли от всех</strong><span>8 июля 2026</span></a>
+      </div></section>
 
     
 
@@ -835,7 +840,6 @@
 
 <script src="/cache-version.js"></script>
 
-<script defer src="/articles-data.js?v=22"></script>
 
 <script>
 
@@ -870,14 +874,12 @@
 
 
   var related = all.filter(function(a) { return a.url !== currentUrl; }).slice(0, 4);
-
   var relEl = document.getElementById('related-container');
-
-  relEl.innerHTML = related.map(function(a) {
-
-    return '<a href="' + a.url + '" class="related-card"><strong>' + a.title + '</strong><span>' + (a.date || '') + '</span></a>';
-
-  }).join('');
+  if (relEl && !relEl.querySelector('a') && related.length) {
+    relEl.innerHTML = related.map(function(a) {
+      return '<a href="' + a.url + '" class="related-card"><strong>' + a.title + '</strong><span>' + (a.date || '') + '</span></a>';
+    }).join('');
+  }
 
 })();
 

@@ -196,7 +196,7 @@
     <a href="/archive" class="article-back"><i class="fas fa-arrow-left"></i> К списку статей</a>
 
     <nav class="breadcrumbs" aria-label="Хлебные крошки">
-      <a href="/">Главная</a> → <a href="/archive">Статьи</a> → <a href="/category/gajdy">Гайды</a> → <span aria-current="page">FPS в Windows 11</span>
+      <a href="/">One1Game</a> → <a href="/archive">Статьи</a> → <a href="/category/gajdy">Гайды</a> → <span aria-current="page">FPS в Windows 11</span>
     </nav>
 
     <div class="article-header">
@@ -566,6 +566,8 @@
       <div class="related-inline">
         <h4>Читайте также</h4>
         <ul>
+          <li><a class="internal-link" href="/archive/elden-ring-ne-zapuskaetsya-windows-11">Elden Ring не запускается на Windows 11 — 9 исправлений</a></li>
+          <li><a class="internal-link" href="/archive/elden-ring-gajd-dlya-novichkov-2026">Elden Ring: гайд для новичков — с чего начать</a></li>
           <li><a class="internal-link" href="/archive/skrytye-lovushki-apgreyda-2026">Скрытые ловушки апгрейда 2026: почему новый GPU не даёт прироста</a></li>
           <li><a class="internal-link" href="/archive/rtx-5090-vs-rx-9070xt-sravnenie-2026">RTX 5090 против RX 9070 XT: честное сравнение в играх</a></li>
           <li><a class="internal-link" href="/archive/windows-11-july-2026-update-podgotovka">Обновления Windows 11: как подготовиться и не сломать систему</a></li>
@@ -625,7 +627,12 @@
 
     <section class="related-section">
       <h4>Похожие статьи</h4>
-      <div class="related-grid" id="related-container"></div>
+      <div class="related-grid" id="related-container">
+        <a href="/archive/igry-dlya-slabyh-noutbukov-2026" class="related-card"><strong>Игры для слабого ПК и слабых ноутбуков 2026: что запустится</strong><span>8 октября 2026</span></a>
+        <a href="/archive/elden-ring-ne-zapuskaetsya-windows-11" class="related-card"><strong>Elden Ring не запускается на Windows 11: 9 исправлений</strong><span>1 ноября 2026</span></a>
+        <a href="/archive/windows-11-july-2026-update-podgotovka" class="related-card"><strong>Windows 11 July 2026 Update: Как подготовиться и избежать проблем (полный гайд)</strong><span>9 июля 2026</span></a>
+        <a href="/archive/elden-ring-gajd-dlya-novichkov-2026" class="related-card"><strong>Elden Ring: гайд для новичков — с чего начать и как не бросить игру</strong><span>1 ноября 2026</span></a>
+      </div>
     </section>
 
   </div>
@@ -633,7 +640,6 @@
 </main>
 
 <script src="/cache-version.js"></script>
-<script defer src="/articles-data.js?v=23"></script>
 <script>
 (function() {
   var path = window.location.pathname;
@@ -652,9 +658,11 @@
 
   var related = all.filter(function(a) { return a.url !== currentUrl; }).slice(0, 4);
   var relEl = document.getElementById('related-container');
-  relEl.innerHTML = related.map(function(a) {
-    return '<a href="' + a.url + '" class="related-card"><strong>' + a.title + '</strong><span>' + (a.date || '') + '</span></a>';
-  }).join('');
+  if (relEl && !relEl.querySelector('a') && related.length) {
+    relEl.innerHTML = related.map(function(a) {
+      return '<a href="' + a.url + '" class="related-card"><strong>' + a.title + '</strong><span>' + (a.date || '') + '</span></a>';
+    }).join('');
+  }
 })();
 </script>
 <script src="/components.js?v=42" defer></script>

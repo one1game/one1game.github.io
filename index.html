@@ -5,20 +5,21 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
 
-  <title>Игры, ИИ и Кино: Обзоры, Гайды и Разработка | One1Games</title>
+  <title>One1Game — игры, ИИ и кино: обзоры, гайды и разработка</title>
   <meta name="description" content="Честные обзоры видеоигр, свежие IT-гайды, аналитика ИИ-технологий и разработка. Погружайся в мир игр, автоматизации и кино вместе с нами!" />
   <meta name="keywords" content="игры, игровые новости, обзоры игр, гайды, ИИ, искусственный интеллект, кино, разработка, PC, консоли, видеоигры, игровой портал, One1Game" />
 
   <!-- OpenGraph -->
-  <meta property="og:title" content="Игры, ИИ и Кино: Обзоры, Гайды и Разработка | One1Games" />
+  <meta property="og:title" content="One1Game — игры, ИИ и кино: обзоры, гайды и разработка" />
   <meta property="og:description" content="Честные обзоры видеоигр, свежие IT-гайды, аналитика ИИ-технологий и разработка." />
   <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="One1Game" />
   <meta property="og:url" content="https://one1game.org" />
   <meta property="og:image" content="https://one1game.org/site-og.png" />
   <meta property="og:image:width" content="1200" />
   <meta property="og:image:height" content="630" />
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Игры, ИИ и Кино: Обзоры, Гайды и Разработка | One1Games" />
+  <meta name="twitter:title" content="One1Game — игры, ИИ и кино: обзоры, гайды и разработка" />
   <meta name="twitter:description" content="Честные обзоры видеоигр, свежие IT-гайды, аналитика ИИ-технологий и разработка." />
   <meta name="twitter:image" content="https://one1game.org/site-og.png" />
   <meta name="robots" content="index, follow" />
@@ -32,7 +33,8 @@
   <link rel="dns-prefetch" href="https://www.google-analytics.com" />
 
   <link rel="preload" as="style" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css" onload="this.rel='stylesheet';this.removeAttribute('onload')" /><noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css" /></noscript>
-  <link rel="stylesheet" href="styles.css?v=48" />
+  <link rel="stylesheet" href="styles.css?v=49" />
+  <link rel="alternate" type="application/rss+xml" title="One1Game — обзоры и гайды" href="/feed.xml" />
   <link rel="manifest" href="/manifest.json" />
   <meta name="theme-color" content="#04060a" />
 
@@ -41,17 +43,135 @@
 
   <!-- JSON-LD -->
   <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "WebSite",
-    "name": "One1Game",
-    "url": "https://one1game.org",
-    "potentialAction": {
-      "@type": "SearchAction",
-      "target": "https://one1game.org/archive?q={search_term_string}",
-      "query-input": "required name=search_term_string"
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebSite",
+      "@id": "https://one1game.org/#website",
+      "name": "One1Game",
+      "alternateName": ["One1Games", "One1 Game", "One1Game.org"],
+      "url": "https://one1game.org/",
+      "inLanguage": "ru-RU",
+      "description": "Игровой портал: обзоры видеоигр, гайды, аналитика индустрии, ИИ и технологии, кино.",
+      "publisher": {
+        "@id": "https://one1game.org/#organization"
+      },
+      "potentialAction": {
+        "@type": "SearchAction",
+        "target": "https://one1game.org/archive?q={search_term_string}",
+        "query-input": "required name=search_term_string"
+      }
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://one1game.org/#webpage",
+      "url": "https://one1game.org/",
+      "name": "One1Game — игры, ИИ и кино: обзоры, гайды и разработка",
+      "isPartOf": {
+        "@id": "https://one1game.org/#website"
+      },
+      "inLanguage": "ru-RU",
+      "dateModified": "2026-11-01",
+      "description": "Игровой портал: обзоры видеоигр, гайды, аналитика индустрии, ИИ и технологии, кино.",
+      "primaryImageOfPage": {
+        "@type": "ImageObject",
+        "url": "https://one1game.org/site-og.png"
+      }
+    },
+    {
+      "@type": "ItemList",
+      "@id": "https://one1game.org/#latest",
+      "name": "Последние материалы",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "url": "https://one1game.org/archive/elden-ring-gajd-dlya-novichkov-2026",
+          "name": "Elden Ring: гайд для новичков — с чего начать и как не бросить игру"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "url": "https://one1game.org/archive/elden-ring-ne-zapuskaetsya-windows-11",
+          "name": "Elden Ring не запускается на Windows 11: 9 исправлений"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "url": "https://one1game.org/archive/elden-ring-nightreign-gajd-dlya-novichkov-2026",
+          "name": "Elden Ring Nightreign: гайд для новичков — с чего начать"
+        },
+        {
+          "@type": "ListItem",
+          "position": 4,
+          "url": "https://one1game.org/archive/elden-ring-skolko-runok-na-uroven",
+          "name": "Сколько рун нужно на уровень в Elden Ring — таблица и калькулятор"
+        },
+        {
+          "@type": "ListItem",
+          "position": 5,
+          "url": "https://one1game.org/archive/elden-ring-peregruz-perekat",
+          "name": "Перегруз в Elden Ring: таблица переката и как убрать медленный ролл"
+        }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://one1game.org/#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Во что поиграть на слабом ноутбуке в 2026 году?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Смотрите подборку игр для слабых ноутбуков: там собраны проекты, которые реально идут без дискретной видеокарты на 720p и низких настройках, с настройками ради FPS."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Какие игры пойдут без видеокарты на встроенной графике?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Отдельная подборка игр без видеокарты: Intel HD/UHD, Iris Xe и AMD Vega — что из этого тянет и на каких настройках."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Где взять бесплатные игры прямо сейчас?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Раздел бесплатных игр обновляется ежедневно: что отдают бесплатно в Steam, Epic и GOG, с условиями и сроками раздачи."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Где смотреть скидки на игры в Steam?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Раздел скидок сортирует предложения по размеру скидки — от самых больших процентов к меньшим."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Во что поиграть бесплатно в браузере без установки?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Браузерные игры: мини-игры без установки и регистрации, а также ретро-игры и DOS-классика прямо в браузере."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Есть ли гайды для самых сложных игр?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "В разделе гайдов — пошаговые руководства: Elden Ring, настройки Windows ради FPS, разборы механик и калькуляторы."
+          }
+        }
+      ]
     }
-  }
+  ]
+}
   </script>
 
   <script type="application/ld+json">
@@ -66,7 +186,9 @@
     "sameAs": [
       "https://t.me/one1game",
       "https://vk.com/one1games",
-      "https://www.youtube.com/@one1game"
+      "https://www.youtube.com/@one1game",
+      "https://github.com/one1game",
+      "https://github.com/one1game/one1game.github.io"
     ]
   }
   </script>
@@ -88,14 +210,14 @@
           <span class="btc-val" id="btc-val">—</span>
           <span class="btc-chg" id="btc-chg"></span>
         </div>
-        <h1>Игры, ИИ и Кино: <span class="highlight">Обзоры, Гайды и Разработка</span></h1>
-        <p class="hero-sub">Честные обзоры видеоигр, свежие IT-гайды, аналитика ИИ-технологий и разработка. Погружайся в мир игр, автоматизации и кино вместе с нами!</p>
+        <h1>One1Game — игры, ИИ и кино: <span class="highlight">обзоры, гайды и разработка</span></h1>
+        <p class="hero-sub">Сайт One1Game (one1game.org): честные обзоры видеоигр, свежие IT-гайды, аналитика ИИ-технологий и разработка. Погружайся в мир игр, автоматизации и кино вместе с нами!</p>
         <div class="hero-actions">
           <a href="archive" class="btn btn-primary">Читать статьи</a>
           <a href="/triad-duel" class="btn btn-outline">Triad Duel</a>
         </div>
         <div class="hero-stats">
-          <span>материалов <b id="stat-articles">1274</b></span>
+          <span>материалов <b id="stat-articles">1214</b></span>
           <span>разделов <b id="stat-sections">9</b></span>
           <span>апдейт <b>ежедневно</b></span>
         </div>
@@ -163,28 +285,28 @@
 
     <div class="feed" id="latest-articles">
       <!--HOME:FEED:START-->
-      <a href="/archive/filmy-pro-gejming-2026" class="entry">
+      <a href="/archive/elden-ring-gajd-dlya-novichkov-2026" class="entry">
         <span class="entry-no">002</span>
-        <span class="entry-thumb fx"><img src="/img/ai/output/filmy-pro-gejming-2026.webp" alt="10 фильмов про видеоигры, которые вы могли пропустить" loading="lazy" fetchpriority="auto" decoding="async" width="1344" height="768" srcset="/img/ai/output/filmy-pro-gejming-2026-800.webp 800w, /img/ai/output/filmy-pro-gejming-2026.webp 1344w" sizes="(min-width: 1220px) 190px, (min-width: 640px) 140px, 92px"></span>
+        <span class="entry-thumb fx"><img src="/img/ai/output/elden-ring-gajd-dlya-novichkov-2026.webp" alt="Elden Ring: гайд для новичков — с чего начать и как не бросить игру" loading="lazy" fetchpriority="auto" decoding="async" width="1344" height="768" srcset="/img/ai/output/elden-ring-gajd-dlya-novichkov-2026-800.webp 800w, /img/ai/output/elden-ring-gajd-dlya-novichkov-2026.webp 1344w" sizes="(min-width: 1220px) 190px, (min-width: 640px) 140px, 92px"></span>
         <span class="entry-main">
           <span class="entry-top">
-            <span class="entry-cat">#кино и игры</span>
-            <span class="entry-meta">30 октября 2026 · 11 мин</span>
+            <span class="entry-cat">#гайды</span>
+            <span class="entry-meta">1 ноября 2026 · 14 мин</span>
           </span>
-          <span class="entry-title">10 фильмов про видеоигры, которые вы могли пропустить</span>
-          <span class="entry-excerpt">«Видеодром», «Хардкор», Battle Royale, Indie Game, Kung Fury и ещё пять картин: постеры, трейлеры и где смотреть — подборка без воды.</span>
+          <span class="entry-title">Elden Ring: гайд для новичков — с чего начать и как не бросить игру</span>
+          <span class="entry-excerpt">Самурай или Бродяга, Золотое семечко, маршрут первых 15 минут, фляги, перекат, прокачка и кузнечные камни — пошаговый старт без спойлеров.</span>
         </span>
       </a>
-      <a href="/archive/monetizaciya-yandex-igry-2026-rukovodstvo" class="entry">
+      <a href="/archive/elden-ring-ne-zapuskaetsya-windows-11" class="entry">
         <span class="entry-no">003</span>
-        <span class="entry-thumb fx"><img src="/img/ai/output/yandex-games-2026.webp" alt="Сколько платят в Яндекс Играх в 2026: доход, выплаты и требования" loading="lazy" fetchpriority="auto" decoding="async" width="1344" height="768" srcset="/img/ai/output/yandex-games-2026-800.webp 800w, /img/ai/output/yandex-games-2026.webp 1344w" sizes="(min-width: 1220px) 190px, (min-width: 640px) 140px, 92px"></span>
+        <span class="entry-thumb fx"><img src="/img/ai/output/elden-ring-ne-zapuskaetsya-windows-11.webp" alt="Elden Ring не запускается на Windows 11: 9 исправлений" loading="lazy" fetchpriority="auto" decoding="async" width="1344" height="768" srcset="/img/ai/output/elden-ring-ne-zapuskaetsya-windows-11-800.webp 800w, /img/ai/output/elden-ring-ne-zapuskaetsya-windows-11.webp 1344w" sizes="(min-width: 1220px) 190px, (min-width: 640px) 140px, 92px"></span>
         <span class="entry-main">
           <span class="entry-top">
-            <span class="entry-cat">#разработка</span>
-            <span class="entry-meta">28 октября 2026 · 12 мин</span>
+            <span class="entry-cat">#гайды</span>
+            <span class="entry-meta">1 ноября 2026 · 7 мин</span>
           </span>
-          <span class="entry-title">Сколько платят в Яндекс Играх в 2026: доход, выплаты и требования</span>
-          <span class="entry-excerpt">50% с покупок, минималка 3000 ₽, налог 6%, модерация 3–5 дней. Реальные цифры разработчиков, требования и калькулятор дохода — данные на 28 октября 2026.</span>
+          <span class="entry-title">Elden Ring не запускается на Windows 11: 9 исправлений</span>
+          <span class="entry-excerpt">Чёрный экран, вылет при старте или ошибка Easy Anti-Cheat? Пошагово: проверка файлов, моды, оверлеи, драйвер, DirectX и сейвы.</span>
         </span>
       </a>
       <div class="ad-vps-wrap">
@@ -202,40 +324,40 @@
           <span class="ad-vps-cta">Попробовать AdminVPS</span>
         </a>
       </div>
-      <a href="/archive/ii-trendy-2026" class="entry">
+      <a href="/archive/elden-ring-nightreign-gajd-dlya-novichkov-2026" class="entry">
         <span class="entry-no">004</span>
-        <span class="entry-thumb fx"><img src="/img/ai/output/ai_trendy_2026.webp" alt="ИИ-тренды 2026: 5 технологий, которые забирают рутину" loading="lazy" fetchpriority="auto" decoding="async" width="1344" height="768" srcset="/img/ai/output/ai_trendy_2026-800.webp 800w, /img/ai/output/ai_trendy_2026.webp 1344w" sizes="(min-width: 1220px) 190px, (min-width: 640px) 140px, 92px"></span>
-        <span class="entry-main">
-          <span class="entry-top">
-            <span class="entry-cat">#ии и технологии</span>
-            <span class="entry-meta">19 октября 2026 · 10 мин</span>
-          </span>
-          <span class="entry-title">ИИ-тренды 2026: 5 технологий, которые забирают рутину</span>
-          <span class="entry-excerpt">Что умеет ИИ в 2026 году: агенты, локальные нейросети в смартфоне, умный дом, цифровое здоровье и контент под вас — без футурологии и лишних терминов.</span>
-        </span>
-      </a>
-      <a href="/archive/filmy-iskusstvennogo-intellekta-2026" class="entry">
-        <span class="entry-no">005</span>
-        <span class="entry-thumb fx"><img src="/img/filmy-iskusstvennogo-intellekta-2026-800.jpg" alt="Фильмы искусственного интеллекта: 5 проектов, которые изменили кино" loading="lazy" fetchpriority="auto" decoding="async" width="1344" height="768"></span>
-        <span class="entry-main">
-          <span class="entry-top">
-            <span class="entry-cat">#кино и игры</span>
-            <span class="entry-meta">18 октября 2026 · 11 мин</span>
-          </span>
-          <span class="entry-title">Фильмы искусственного интеллекта: 5 проектов, которые изменили кино</span>
-          <span class="entry-excerpt">«Мороз», Our T2 Remake, «Санспринг», Generation и «Слизень»: проверенные факты, инструменты, встроенные плееры и границы ИИ в кино.</span>
-        </span>
-      </a>
-      <a href="/archive/igry-dlya-slabyh-noutbukov-2026" class="entry">
-        <span class="entry-no">006</span>
-        <span class="entry-thumb fx"><img src="/img/igry-dlya-slabyh-noutbukov-2026.webp" alt="Игры для слабых ноутбуков 2026: полный гид — что реально запустится" loading="lazy" fetchpriority="auto" decoding="async" width="1344" height="768" srcset="/img/igry-dlya-slabyh-noutbukov-2026-800.webp 800w, /img/igry-dlya-slabyh-noutbukov-2026.webp 1344w" sizes="(min-width: 1220px) 190px, (min-width: 640px) 140px, 92px"></span>
+        <span class="entry-thumb fx"><img src="/img/ai/output/elden-ring-nightreign-gajd-dlya-novichkov-2026.webp" alt="Elden Ring Nightreign: гайд для новичков — с чего начать" loading="lazy" fetchpriority="auto" decoding="async" width="1344" height="768" srcset="/img/ai/output/elden-ring-nightreign-gajd-dlya-novichkov-2026-800.webp 800w, /img/ai/output/elden-ring-nightreign-gajd-dlya-novichkov-2026.webp 1344w" sizes="(min-width: 1220px) 190px, (min-width: 640px) 140px, 92px"></span>
         <span class="entry-main">
           <span class="entry-top">
             <span class="entry-cat">#гайды</span>
-            <span class="entry-meta">8 октября 2026 · 14 мин</span>
+            <span class="entry-meta">1 ноября 2026 · 9 мин</span>
           </span>
-          <span class="entry-title">Игры для слабых ноутбуков 2026: полный гид — что реально запустится</span>
-          <span class="entry-excerpt">Что реально идёт на слабом ноутбуке без дискретной видеокарты: разбор категорий железа, топ игр с официальными требованиями Steam, настройки ради максимального FPS и подборки по жанрам.</span>
+          <span class="entry-title">Elden Ring Nightreign: гайд для новичков — с чего начать</span>
+          <span class="entry-excerpt">Отряд из трёх, три дня, церкви и фляги, классы, призывы и ошибки первого забега. Пошаговый старт в Nightreign.</span>
+        </span>
+      </a>
+      <a href="/archive/elden-ring-skolko-runok-na-uroven" class="entry">
+        <span class="entry-no">005</span>
+        <span class="entry-thumb fx"><img src="/img/ai/output/elden-ring-gajd-dlya-novichkov-2026.webp" alt="Сколько рун нужно на уровень в Elden Ring — таблица и калькулятор" loading="lazy" fetchpriority="auto" decoding="async" width="1344" height="768" srcset="/img/ai/output/elden-ring-gajd-dlya-novichkov-2026-800.webp 800w, /img/ai/output/elden-ring-gajd-dlya-novichkov-2026.webp 1344w" sizes="(min-width: 1220px) 190px, (min-width: 640px) 140px, 92px"></span>
+        <span class="entry-main">
+          <span class="entry-top">
+            <span class="entry-cat">#гайды</span>
+            <span class="entry-meta">1 ноября 2026 · 6 мин</span>
+          </span>
+          <span class="entry-title">Сколько рун нужно на уровень в Elden Ring — таблица и калькулятор</span>
+          <span class="entry-excerpt">Точная стоимость уровней от 1 до 713, калькулятор: введите свой уровень и узнайте, сколько рун нужно до следующего.</span>
+        </span>
+      </a>
+      <a href="/archive/elden-ring-peregruz-perekat" class="entry">
+        <span class="entry-no">006</span>
+        <span class="entry-thumb fx"><img src="/img/ai/output/elden-ring-gajd-dlya-novichkov-2026.webp" alt="Перегруз в Elden Ring: таблица переката и как убрать медленный ролл" loading="lazy" fetchpriority="auto" decoding="async" width="1344" height="768" srcset="/img/ai/output/elden-ring-gajd-dlya-novichkov-2026-800.webp 800w, /img/ai/output/elden-ring-gajd-dlya-novichkov-2026.webp 1344w" sizes="(min-width: 1220px) 190px, (min-width: 640px) 140px, 92px"></span>
+        <span class="entry-main">
+          <span class="entry-top">
+            <span class="entry-cat">#гайды</span>
+            <span class="entry-meta">1 ноября 2026 · 5 мин</span>
+          </span>
+          <span class="entry-title">Перегруз в Elden Ring: таблица переката и как убрать медленный ролл</span>
+          <span class="entry-excerpt">Пороги 30%, 70% и 100%: какой перекат при каком весе, калькулятор нагрузки и что снять, если персонаж еле уклоняется.</span>
         </span>
       </a>
       <!--HOME:FEED:END-->
@@ -254,86 +376,137 @@
     <!-- ВО ЧТО ПОИГРАТЬ — отдельная система игровых обзоров (JS-populated) -->
     <section class="play-rail" id="play-what" aria-label="Во что поиграть">
       <div class="section-header">
-        <h2 class="section-title">Во что поиграть</h2>
+        <h2 class="section-title">Во что поиграть: игры для слабого ПК и новинки</h2>
         <a href="archive?category=%D0%9E%D0%B1%D0%B7%D0%BE%D1%80%D1%8B" class="btn btn-ghost">все игры</a>
       </div>
+      <p class="play-sub">У каждой игры указан жанр и минимальная видеокарта — видно сразу, пойдёт ли она на вашем ноутбуке. Пометка «потянет слабый ПК» ставится только там, где требования это подтверждают.</p>
       <div class="play-list" id="play-list">
         <!--HOME:PLAY:START-->
-        <a href="/archive/turn-limit-100-5116540" class="play-card">
-          <span class="play-thumb fx"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5116540/98eb1b03f18763f18afdefe06e92c186cceed744/header.jpg?t=1793434323" alt="Обзор Turn Limit 100: карточный рогалик на время" loading="lazy" decoding="async" width="280" height="158"></span>
-          <span class="play-name">Обзор Turn Limit 100: карточный рогалик на время</span>
-          <span class="play-meta">обзор · статистика игроков</span>
+        <a href="/archive/dark-pgt-2-the-red-death-4844820" class="play-card">
+          <span class="play-thumb fx"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4844820/2c6c3413549268a2cbe60ee4d4e665ec78eba8a0/header.jpg?t=1793540824" alt="DARK PGT 2: The Red Death" loading="lazy" decoding="async" width="280" height="158"></span>
+          <span class="play-name">DARK PGT 2: The Red Death</span>
+          <span class="play-meta">Экшены, Приключенческие игры · мин. видеокарта: RTX 3050 TI 4 ГБ | RX 650…</span>
+          <span class="play-badge play-badge--no">Нужна дискретная</span>
         </a>
-        <a href="/archive/blackboard-ponies-4670040" class="play-card">
-          <span class="play-thumb fx"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4670040/a4fc7e5ecd57c4f340231fb2be2976b26c222a2a/header.jpg?t=1793441853" alt="Обзор Blackboard Ponies: платформер про бунтующего пони" loading="lazy" decoding="async" width="280" height="158"></span>
-          <span class="play-name">Обзор Blackboard Ponies: платформер про бунтующего пони</span>
-          <span class="play-meta">обзор · статистика игроков</span>
+        <a href="/archive/halftime-manager-5005920" class="play-card">
+          <span class="play-thumb fx"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5005920/66903c363de4eb7ff5edad919e75fae4a94da65e/header.jpg?t=1793538125" alt="HALFTIME Manager" loading="lazy" decoding="async" width="280" height="158"></span>
+          <span class="play-name">HALFTIME Manager</span>
+          <span class="play-meta">Инди, Симуляторы · мин. видеокарта: Видеокарта с поддержкой D…</span>
+          <span class="play-badge play-badge--no">Нужна дискретная</span>
         </a>
-        <a href="/archive/minesweeper-arcade-5431750" class="play-card">
-          <span class="play-thumb fx"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5431750/a90718cfa8c3b50d81ebbb5f3aeb69856ee39894/header.jpg?t=1793431237" alt="Обзор игры MINESWEEPER ARCADE — новый взгляд на сапёр" loading="lazy" decoding="async" width="280" height="158"></span>
-          <span class="play-name">Обзор игры MINESWEEPER ARCADE — новый взгляд на сапёр</span>
-          <span class="play-meta">обзор · статистика игроков</span>
+        <a href="/archive/battlefield-v-1238810" class="play-card">
+          <span class="play-thumb fx"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1238810/header.jpg?t=1772707365" alt="Battlefield™ V" loading="lazy" decoding="async" width="280" height="158"></span>
+          <span class="play-name">Battlefield™ V</span>
+          <span class="play-meta">Экшены · мин. видеокарта: GeForce® GTX 1050 / GeFor…</span>
+          <span class="play-badge play-badge--no">Нужна дискретная</span>
         </a>
-        <a href="/archive/miniracingonline-5288230" class="play-card">
-          <span class="play-thumb fx"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5288230/0ba6b0d399dd576b9372c1f631cf4243bf8451ef/header.jpg?t=1793430933" alt="Обзор игры MiniRacingOnline: масштабные сетевые гонки" loading="lazy" decoding="async" width="280" height="158"></span>
-          <span class="play-name">Обзор игры MiniRacingOnline: масштабные сетевые гонки</span>
-          <span class="play-meta">обзор · статистика игроков</span>
+        <a href="/archive/grand-theft-auto-v-legacy-271590" class="play-card">
+          <span class="play-thumb fx"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/271590/header.jpg?t=1765387725" alt="Grand Theft Auto V Legacy" loading="lazy" decoding="async" width="280" height="158"></span>
+          <span class="play-name">Grand Theft Auto V Legacy</span>
+          <span class="play-meta">Экшены, Приключенческие игры · мин. видеокарта: 9800 GT c 1 Гб видеопамят…</span>
         </a>
-        <a href="/archive/withouteyes-chapter1-4374510" class="play-card">
-          <span class="play-thumb fx"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4374510/15b4ecf08840358ee877e8670668d50d1f1393e7/header.jpg?t=1793430442" alt="WithoutEyes Chapter1" loading="lazy" decoding="async" width="280" height="158"></span>
-          <span class="play-name">WithoutEyes Chapter1</span>
-          <span class="play-meta">обзор · статистика игроков</span>
+        <a href="/archive/dota-2-570" class="play-card">
+          <span class="play-thumb fx"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/570/header.jpg?t=1791407503" alt="Dota 2" loading="lazy" decoding="async" width="280" height="158"></span>
+          <span class="play-name">Dota 2</span>
+          <span class="play-meta">Экшены, Стратегии · мин. видеокарта: GeForce 8600/9600GT</span>
+          <span class="play-badge play-badge--yes">Потянет слабый ПК</span>
         </a>
-        <a href="/archive/kur-endless-descent-ashipu-class-5456270" class="play-card">
-          <span class="play-thumb fx"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5456270/d524c2cd57eb76b0b2918a7728552cece4e45ed6/header.jpg?t=1793394221" alt="Kur - Endless Descent - Ashipu (Class): обзор класса" loading="lazy" decoding="async" width="280" height="158"></span>
-          <span class="play-name">Kur - Endless Descent - Ashipu (Class): обзор класса</span>
-          <span class="play-meta">обзор · статистика игроков</span>
+        <a href="/archive/elden-ring-1245620" class="play-card">
+          <span class="play-thumb fx"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1245620/header.jpg?t=1790290043" alt="ELDEN RING" loading="lazy" decoding="async" width="280" height="158"></span>
+          <span class="play-name">ELDEN RING</span>
+          <span class="play-meta">Экшены, Ролевые игры · мин. видеокарта: GEFORCE GTX 1060 3 GB</span>
+          <span class="play-badge play-badge--no">Нужна дискретная</span>
         </a>
-        <a href="/archive/reactance-5357500" class="play-card">
-          <span class="play-thumb fx"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5357500/d953602568e2f5c0e431356b78abb4c6a6998110/header.jpg?t=1793352059" alt="Обзор игры Reactance: дуэли ученых от первого лица" loading="lazy" decoding="async" width="280" height="158"></span>
-          <span class="play-name">Обзор игры Reactance: дуэли ученых от первого лица</span>
-          <span class="play-meta">обзор · статистика игроков</span>
+        <a href="/archive/pubg-battlegrounds-578080" class="play-card">
+          <span class="play-thumb fx"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/578080/841ea38bc58cabb70aef65365cf50bc2d79329d9/header.jpg?t=1792718193" alt="PUBG: BATTLEGROUNDS" loading="lazy" decoding="async" width="280" height="158"></span>
+          <span class="play-name">PUBG: BATTLEGROUNDS</span>
+          <span class="play-meta">Экшены, Приключенческие игры · мин. видеокарта: GeForce GTX 960 2GB / Rad…</span>
+          <span class="play-badge play-badge--no">Нужна дискретная</span>
         </a>
-        <a href="/archive/joystick-jammers-one-prawn-5196280" class="play-card">
-          <span class="play-thumb fx"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5196280/45bb7d1fdff9d8c522e4b359e6cd3b6c55f9efac/header.jpg?t=1793427271" alt="JOYSTICK JAMMERS: One Prawn: обзор инди-игры" loading="lazy" decoding="async" width="280" height="158"></span>
-          <span class="play-name">JOYSTICK JAMMERS: One Prawn: обзор инди-игры</span>
-          <span class="play-meta">обзор · статистика игроков</span>
+        <a href="/archive/apex-legends-1172470" class="play-card">
+          <span class="play-thumb fx"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1172470/6cf04767652d703b6050da84b82cfb1194258d7d/header.jpg?t=1790164440" alt="Apex Legends™" loading="lazy" decoding="async" width="280" height="158"></span>
+          <span class="play-name">Apex Legends™</span>
+          <span class="play-meta">Экшены, Приключенческие игры · мин. видеокарта: Radeon™ HD 7790</span>
+          <span class="play-badge play-badge--no">Нужна дискретная</span>
         </a>
-        <a href="/archive/everdeep-idle-4980350" class="play-card">
-          <span class="play-thumb fx"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4980350/bff2715049cb5de5fd26977feec2609762113d22/header.jpg?t=1793423103" alt="Обзор игры Everdeep Idle: вдумчивая авто-ролевка" loading="lazy" decoding="async" width="280" height="158"></span>
-          <span class="play-name">Обзор игры Everdeep Idle: вдумчивая авто-ролевка</span>
-          <span class="play-meta">обзор · статистика игроков</span>
+        <a href="/archive/war-thunder-236390" class="play-card">
+          <span class="play-thumb fx"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/236390/38881c549e623fe432af4e7b4bc3952b443906f5/header.jpg?t=1793185672" alt="War Thunder" loading="lazy" decoding="async" width="280" height="158"></span>
+          <span class="play-name">War Thunder</span>
+          <span class="play-meta">Экшены, Многопользовательские игры · мин. видеокарта: DirectX 11 level video ca…</span>
+          <span class="play-badge play-badge--yes">Потянет слабый ПК</span>
         </a>
-        <a href="/archive/the-pasture-5351540" class="play-card">
-          <span class="play-thumb fx"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5351540/9cf8b7177f5559597e559d9fe2a5db76cbe2816c/header.jpg?t=1793422877" alt="The Pasture — приключенческий квест в ASCII‑мире" loading="lazy" decoding="async" width="280" height="158"></span>
-          <span class="play-name">The Pasture — приключенческий квест в ASCII‑мире</span>
-          <span class="play-meta">обзор · статистика игроков</span>
+        <a href="/archive/black-myth-wukong-2358720" class="play-card">
+          <span class="play-thumb fx"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2358720/header.jpg?t=1760601605" alt="Black Myth: Wukong" loading="lazy" decoding="async" width="280" height="158"></span>
+          <span class="play-name">Black Myth: Wukong</span>
+          <span class="play-meta">Экшены, Приключенческие игры · мин. видеокарта: GeForce GTX 1060 6GB / Ra…</span>
+          <span class="play-badge play-badge--no">Нужна дискретная</span>
         </a>
-        <a href="/archive/darkblood-reverse-3052820" class="play-card">
-          <span class="play-thumb fx"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3052820/header.jpg?t=1793420822" alt="DarkBlood -ReVerse-" loading="lazy" decoding="async" width="280" height="158"></span>
-          <span class="play-name">DarkBlood -ReVerse-</span>
-          <span class="play-meta">обзор · статистика игроков</span>
+        <a href="/archive/warframe-230410" class="play-card">
+          <span class="play-thumb fx"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/230410/1a3e7c2a05ce4e5cad5ac4c7e858cf5b0934704e/header.jpg?t=1792613117" alt="Warframe" loading="lazy" decoding="async" width="280" height="158"></span>
+          <span class="play-name">Warframe</span>
+          <span class="play-meta">Экшены, Ролевые игры</span>
         </a>
-        <a href="/archive/hospital-rhapsody-5129280" class="play-card">
-          <span class="play-thumb fx"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5129280/ae35f50cac940ecd7e9cbe505deebbd10ba02eda/header.jpg?t=1793419324" alt="Hospital Rhapsody" loading="lazy" decoding="async" width="280" height="158"></span>
-          <span class="play-name">Hospital Rhapsody</span>
-          <span class="play-meta">обзор · статистика игроков</span>
+        <a href="/archive/path-of-exile-238960" class="play-card">
+          <span class="play-thumb fx"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/238960/177c953b362c5a6221f9c15d340a0b1e2b8bfab8/header.jpg?t=1784681738" alt="Path of Exile" loading="lazy" decoding="async" width="280" height="158"></span>
+          <span class="play-name">Path of Exile</span>
+          <span class="play-meta">Экшены, Приключенческие игры · мин. видеокарта: NVIDIA® GeForce® GTX 650…</span>
         </a>
-        <a href="/archive/pactmage-chess-roster-5287260" class="play-card">
-          <span class="play-thumb fx"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5287260/f792016cf408ffb21db13a0c2550151628af4ae9/header.jpg?t=1793417365" alt="Pactmage - Chess Roster" loading="lazy" decoding="async" width="280" height="158"></span>
-          <span class="play-name">Pactmage - Chess Roster</span>
-          <span class="play-meta">обзор · статистика игроков</span>
+        <a href="/archive/valheim-892970" class="play-card">
+          <span class="play-thumb fx"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/892970/1888731b59362fca6c026cdbafa3dfffd45c3146/header_alt_assets_6.jpg?t=1791544831" alt="Valheim" loading="lazy" decoding="async" width="280" height="158"></span>
+          <span class="play-name">Valheim</span>
+          <span class="play-meta">Экшены, Приключенческие игры · мин. видеокарта: GeForce GTX 950</span>
+          <span class="play-badge play-badge--no">Нужна дискретная</span>
         </a>
-        <a href="/archive/-5404630" class="play-card">
-          <span class="play-thumb fx"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5404630/b1c2891ce8d641fc2cc5b821d5ea413f7367bf22/header.jpg?t=1793415656" alt="忌質物管理局　第七保管室 – обзор игры" loading="lazy" decoding="async" width="280" height="158"></span>
-          <span class="play-name">忌質物管理局　第七保管室 – обзор игры</span>
-          <span class="play-meta">обзор · статистика игроков</span>
+        <a href="/archive/stardew-valley-413150" class="play-card">
+          <span class="play-thumb fx"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/413150/header.jpg?t=1786554168" alt="Stardew Valley" loading="lazy" decoding="async" width="280" height="158"></span>
+          <span class="play-name">Stardew Valley</span>
+          <span class="play-meta">Инди, Ролевые игры · мин. видеокарта: 256 mb video memory</span>
+          <span class="play-badge play-badge--yes">Потянет слабый ПК</span>
         </a>
         <a href="archive?category=%D0%9E%D0%B1%D0%B7%D0%BE%D1%80%D1%8B" class="play-card play-card--more">
-          <span class="play-name">ещё 1221</span>
+          <span class="play-name">ещё 1153</span>
           <span class="play-meta">смотреть все игры</span>
         </a>
         <!--HOME:PLAY:END-->
+      </div>
+    </section>
+
+    <section class="home-sections" aria-labelledby="hs-title">
+      <h2 class="section-title" id="hs-title">Разделы сайта</h2>
+      <p class="hs-sub">Куда пойти дальше — коротко о каждом разделе.</p>
+      <div class="hs-grid">
+        <a href="/category/obzory"><strong>Обзоры игр</strong><span>Все игровые обзоры сайта с датами и краткими выводами</span></a>
+        <a href="/category/gajdy"><strong>Гайды по играм</strong><span>Пошаговые руководства: Elden Ring, FPS, настройки Windows</span></a>
+        <a href="/archive/igry-dlya-slabyh-noutbukov-2026"><strong>Игры для слабых ноутбуков</strong><span>Что реально запустится без дискретной видеокарты</span></a>
+        <a href="/igry-bez-videokarty"><strong>Игры без видеокарты</strong><span>Что тянет встроенная графика Intel и AMD</span></a>
+        <a href="/potyanet-li-igra"><strong>Потянет ли игра на моём ПК</strong><span>Таблица минимальных видеокарт с поиском по названию</span></a>
+        <a href="/igry-dlya-slabyh-noutbukov-4gb-ozu"><strong>Игры для слабых ноутбуков с 4 ГБ ОЗУ</strong><span>Подборка для самых слабых машин</span></a>
+        <a href="/vo-chto-poigrat"><strong>Во что поиграть</strong><span>Случайная игра из базы с фильтром по описанию</span></a>
+        <a href="/besplatnye-igry"><strong>Бесплатные игры</strong><span>Что сейчас отдают бесплатно в Steam, Epic и GOG</span></a>
+        <a href="/skidki-na-igry"><strong>Скидки на игры</strong><span>Лучшие скидки Steam по размеру скидки</span></a>
+        <a href="/ai/"><strong>Нейросети онлайн</strong><span>AI Pulse: новости искусственного интеллекта, модели и инструменты</span></a>
+        <a href="/category/analitika"><strong>Аналитика игрового рынка</strong><span>Цифры, тренды и разборы индустрии</span></a>
+        <a href="/go/"><strong>Браузерные игры</strong><span>Мини-игры без установки и регистрации</span></a>
+        <a href="/portablewebgame/"><strong>Ретро-игры</strong><span>Классика в браузере без установки</span></a>
+        <a href="/dos/"><strong>DOS-игры</strong><span>DOOM, Quake и Wolfenstein 3D прямо в браузере</span></a>
+        <a href="/kino/"><strong>Фильмы про видеоигры</strong><span>Подборки фильмов и материалы о кино</span></a>
+        <a href="/triad-duel"><strong>Карточные игры</strong><span>Triad Duel — тактическая карточная PvP в Telegram</span></a>
+        <a href="/l2/"><strong>Lineage 2</strong><span>Сервер Lineage 2 x3 DUO PLAY</span></a>
+        <a href="/genriprocedur/"><strong>Генератор музыки</strong><span>Процедурная музыка онлайн: ambient и hip-hop</span></a>
+        <a href="/category/konsoli"><strong>Консоли</strong><span>Материалы про PlayStation, Xbox и Switch</span></a>
+        <a href="/category/kino-i-igry"><strong>Кино и игры</strong><span>Материалы на стыке видеоигр и кино</span></a>
+      </div>
+    </section>
+
+    <section class="home-faq" aria-labelledby="hfaq-title">
+      <h2 class="section-title" id="hfaq-title">Частые вопросы</h2>
+      <div class="hfaq-list">
+        <div class="hfaq-item"><h3>Во что поиграть на слабом ноутбуке в 2026 году?</h3><p>Смотрите подборку игр для слабых ноутбуков: там собраны проекты, которые реально идут без дискретной видеокарты на 720p и низких настройках, с настройками ради FPS. <a href="/archive/igry-dlya-slabyh-noutbukov-2026">Открыть раздел</a></p></div>
+        <div class="hfaq-item"><h3>Какие игры пойдут без видеокарты на встроенной графике?</h3><p>Отдельная подборка игр без видеокарты: Intel HD/UHD, Iris Xe и AMD Vega — что из этого тянет и на каких настройках. <a href="/igry-bez-videokarty">Открыть раздел</a></p></div>
+        <div class="hfaq-item"><h3>Где взять бесплатные игры прямо сейчас?</h3><p>Раздел бесплатных игр обновляется ежедневно: что отдают бесплатно в Steam, Epic и GOG, с условиями и сроками раздачи. <a href="/besplatnye-igry">Открыть раздел</a></p></div>
+        <div class="hfaq-item"><h3>Где смотреть скидки на игры в Steam?</h3><p>Раздел скидок сортирует предложения по размеру скидки — от самых больших процентов к меньшим. <a href="/skidki-na-igry">Открыть раздел</a></p></div>
+        <div class="hfaq-item"><h3>Во что поиграть бесплатно в браузере без установки?</h3><p>Браузерные игры: мини-игры без установки и регистрации, а также ретро-игры и DOS-классика прямо в браузере. <a href="/go/">Открыть раздел</a></p></div>
+        <div class="hfaq-item"><h3>Есть ли гайды для самых сложных игр?</h3><p>В разделе гайдов — пошаговые руководства: Elden Ring, настройки Windows ради FPS, разборы механик и калькуляторы. <a href="/category/gajdy">Открыть раздел</a></p></div>
       </div>
     </section>
 

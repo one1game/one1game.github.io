@@ -41,7 +41,7 @@
     if (localStorage.getItem('ga_consent') === 'yes') enableGA();
   </script>
   <link href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css" rel="stylesheet" />
-  <link rel="stylesheet" href="/styles.css?v=31" />
+  <link rel="stylesheet" href="/styles.css?v=33" />
 
   <script type="application/ld+json">
   {
@@ -202,7 +202,7 @@
 
     <nav class="breadcrumbs" aria-label="Хлебные крошки" itemscope itemtype="https://schema.org/BreadcrumbList">
       <span itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
-        <a itemprop="item" href="/"><span itemprop="name">Главная</span></a>
+        <a itemprop="item" href="/"><span itemprop="name">One1Game</span></a>
         <meta itemprop="position" content="1" />
       </span> →
       <span itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
@@ -210,8 +210,12 @@
         <meta itemprop="position" content="2" />
       </span> →
       <span itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
-        <span itemprop="name" aria-current="page">Tidy Up The Backrooms</span>
+        <a itemprop="item" href="/category/obzory"><span itemprop="name">Обзоры</span></a>
         <meta itemprop="position" content="3" />
+      </span> →
+      <span itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+        <span itemprop="name" aria-current="page">Tidy Up The Backrooms</span>
+        <meta itemprop="position" content="4" />
       </span>
     </nav>
 
@@ -296,9 +300,10 @@
       </div>
 <!--LOWEND:START-->
       <section class="lowend-block" style="margin:26px 0;padding:16px 18px;border:1px solid rgba(255,255,255,.10);border-radius:10px;background:rgba(255,255,255,.03)">
-        <h2 style="margin:0 0 10px;font-size:1.15rem">Потянет ли слабый ноутбук?</h2>
+        <h2 style="margin:0 0 10px;font-size:1.15rem">Потянет ли Tidy Up The Backrooms на слабом ноутбуке?</h2>
         <p><strong>Минимальные требования (Steam):</strong> ОС: 64-разрядная Windows 10 · Процессор: Intel Core i7-4790k / AMD Ryzen 5 1500X · Оперативная память: 8 GB ОЗУ · Видеокарта: NVIDIA GeForce GTX 980 Ti 6GB / AMD Radeon RX 6500XT · DirectX: версии 12 · Сеть: Широкополосное подключение к интернету · Место на диске: 20 GB · Дополнительно: DirectX 12 with Shader Model 6</p>
-        <p>Ориентир для ноутбука без дискретной видеокарты — 720p и низкие настройки. Готовые подборки: <a href="/igry-bez-videokarty">игры без видеокарты</a>, <a href="/igry-dlya-slabyh-noutbukov-4gb-ozu">игры на 4 ГБ ОЗУ</a>, <a href="/besplatnye-igry-dlya-slabyh-pk">бесплатные игры для слабых ПК</a>. Как поднять FPS — в <a href="/archive/igry-dlya-slabyh-noutbukov-2026">полном гиде по слабым ноутбукам</a>.</p>
+        <p><strong>Оценка:</strong> Нужна дискретная видеокарта — на встроенной графике играть не получится.</p>
+        <p>Подборки под слабое железо: <a href="/shuter-igry-dlya-slabyh-noutbukov">стрелялки для слабого ПК</a> →</p>
       </section>
 <!--LOWEND:END-->
 
@@ -333,9 +338,47 @@
       <div class="share-buttons" id="share-buttons"></div>
     </section>
 
-    <section class="related-section">
+            <section class="gpu-check">
+      <h2>Потянет ли Tidy Up The Backrooms на моей видеокарте</h2>
+      <p>Минимум по Steam — <strong>NVIDIA GeForce GTX 980</strong>. Сравнение по приблизительной производительности, а не по точному FPS.</p>
+      <ul class="gpu-check-list">
+        <li><strong>RTX 5060</strong> — потянет</li>
+        <li><strong>RTX 4060</strong> — потянет</li>
+        <li><strong>RTX 3050</strong> — потянет</li>
+        <li><strong>GTX 1050 Ti</strong> — не потянет — нужна карта сильнее</li>
+        <li><strong>RX 580</strong> — потянет</li>
+        <li><strong>Intel UHD 620</strong> — не потянет — нужна карта сильнее</li>
+      </ul>
+      <p>Полная таблица по 600+ играм: <a href="/potyanet-li-igra">потянет ли игра на моём ПК</a>.</p>
+    </section>
+        <section class="game-faq">
+      <h2>Tidy Up The Backrooms: частые вопросы</h2>
+      <h3>Сколько стоит Tidy Up The Backrooms</h3>
+        <p>В Steam Tidy Up The Backrooms сейчас 165.75 RUB (скидка 15%). Цена и скидки обновляются автоматически.</p>
+      <h3>Когда вышла Tidy Up The Backrooms</h3>
+        <p>Дата выхода Tidy Up The Backrooms — 22 окт. 2026 г.</p>
+      <h3>Кто разработал Tidy Up The Backrooms</h3>
+        <p>Разработчик Tidy Up The Backrooms — Lowkey GameDev.</p>
+    </section>
+<section class="similar-games">
+      <h2>Похожие игры</h2>
+      <table class="similar-table">
+        <thead><tr><th>Игра</th><th>Цена</th><th>Слабый ПК</th></tr></thead>
+        <tbody>
+          <tr><td><a href="/archive/tidy-up-the-flower-shop-5221510">Tidy Up the Flower Shop — уютный симулятор уборки</a></td><td>290.00 RUB</td><td>Нет</td></tr>
+          <tr><td><a href="/archive/tiny-fishing-club-3070310">Tiny Fishing Club — уютный симулятор рыбалки</a></td><td>170.00 RUB (скидка 15%)</td><td>Нет</td></tr>
+          <tr><td><a href="/archive/too-many-animals-5324570">Обзор Too Many Animals ! — уютный симулятор сортировки</a></td><td>232.00 RUB (скидка 20%)</td><td>Нет</td></tr>
+        </tbody>
+      </table>
+    </section>
+<section class="related-section">
       <h4>Похожие статьи</h4>
-      <div class="related-grid" id="related-container"></div></section>
+      <div class="related-grid" id="related-container">
+        <a href="/archive/spot-the-difference-fighter-5290320" class="related-card"><strong>Обзор Spot the Difference Fighter: файтинг на внимание</strong><span>23 октября 2026</span></a>
+        <a href="/archive/climb-king-3923150" class="related-card"><strong>Climb King — пиксельный инди‑экшн про скалы</strong><span>23 октября 2026</span></a>
+        <a href="/archive/swat-mosquito-sleepless-nights-5345960" class="related-card"><strong>Swat Mosquito: Sleepless Nights — обзор</strong><span>23 октября 2026</span></a>
+        <a href="/archive/suspencil-5303370" class="related-card"><strong>Suspencil — казуальная онлайн-игра с рисованием</strong><span>23 октября 2026</span></a>
+      </div></section>
     <section class="comments-section">
       <h4><i class="fas fa-comments" aria-hidden="true"></i> Комментарии</h4>
       <div class="comments-container" id="comments-container">
@@ -356,7 +399,6 @@
 </main>
 
 <script src="/cache-version.js"></script>
-<script>document.write('<script src="/articles-data.js?v='+(window.CACHE_VER||'1')+'"><\/script>');</script>
 <script>
 (function() {
   var path = window.location.pathname;
@@ -375,9 +417,11 @@
 
   var related = all.filter(function(a) { return a.url !== currentUrl; }).slice(0, 4);
   var relEl = document.getElementById('related-container');
-  relEl.innerHTML = related.map(function(a) {
-    return '<a href="' + a.url + '" class="related-card"><strong>' + a.title + '</strong><span>' + (a.date || '') + '</span></a>';
-  }).join('');
+  if (relEl && !relEl.querySelector('a') && related.length) {
+    relEl.innerHTML = related.map(function(a) {
+      return '<a href="' + a.url + '" class="related-card"><strong>' + a.title + '</strong><span>' + (a.date || '') + '</span></a>';
+    }).join('');
+  }
 })();
 </script>
 <script src="/components.js" defer></script>

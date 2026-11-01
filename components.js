@@ -1034,6 +1034,10 @@
   'use strict';
   var container = document.getElementById('related-container');
   if (!container) return;
+  // Блок уже отрисован на сервере: внутри есть ссылки. Тогда ни опрос каталога,
+  // ни его загрузка не нужны — раньше здесь крутился setTimeout каждые 200 мс
+  // и страница тянула 2 МБ JSON на каждый рендер.
+  if (container.querySelector('a')) return;
 
   function load() {
     if (!window.allArticles || !window.allArticles.length) {

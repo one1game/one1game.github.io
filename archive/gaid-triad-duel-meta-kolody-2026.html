@@ -49,7 +49,8 @@
       "h1",
       ".article-body p:first-of-type"
     ]
-  }
+  },
+  "image": "https://one1game.org/img/ai/output/triad_duel_guide.png"
 }
   </script>
 <style>
@@ -85,7 +86,7 @@
   <div class="article-page">
     <a href="/archive" class="article-back"><i class="fas fa-arrow-left"></i> К списку статей</a>
     <nav class="breadcrumbs" aria-label="Хлебные крошки">
-      <a href="/">Главная</a> → <a href="/archive">Статьи</a> → <span aria-current="page">Гайд по Triad Duel</span>
+      <a href="/">One1Game</a> → <a href="/archive">Статьи</a> → <span aria-current="page">Гайд по Triad Duel</span>
     </nav>
 
     <div class="article-header">
@@ -176,21 +177,18 @@
 
     <section class="related-section">
       <h4>Похожие статьи</h4>
-      <div class="related-grid" id="related-container"></div>
+      <div class="related-grid" id="related-container">
+        <a href="/archive/luchshie-kartochnye-igry-na-android-2026" class="related-card"><strong>Лучшие карточные игры на андроид 2026: альтернативы Marvel Snap без доната</strong><span>23 июля 2026</span></a>
+        <a href="/archive/chestnye-pvp-igry-bez-donata-2026" class="related-card"><strong>Честные PvP игры на телефон: где реально решает скилл, а не донат (Разбор Triad Duel)</strong><span>23 июля 2026</span></a>
+        <a href="/archive/konec-epohi-pay-to-win-triad-duel" class="related-card"><strong>Конец эпохи Pay-to-Win: Почему геймеры массово переходят в Telegram Mini Apps</strong><span>23 июля 2026</span></a>
+        <a href="/archive/top-igr-v-telegram-2026-triad-duel" class="related-card"><strong>Топ игр в Telegram 2026: во что поиграть без скачивания (Обзор Triad Duel)</strong><span>23 июля 2026</span></a>
+      </div>
     </section>
   </div>
 </div>
 </main>
 
 <script src="/cache-version.js"></script>
-<script>
-  (function() {
-    var script = document.createElement('script');
-    script.src = '/articles-data.js?v=' + (window.CACHE_VER || '15');
-    script.async = false;
-    document.head.appendChild(script);
-  })();
-</script>
 <script>
 (function() {
   var path = window.location.pathname;
@@ -208,9 +206,9 @@
   }
   var related = all.filter(function(a) { return a.url !== currentUrl; }).slice(0, 4);
   var relEl = document.getElementById('related-container');
-  if (relEl) {
+  if (relEl && !relEl.querySelector('a') && related.length) {
     relEl.innerHTML = related.map(function(a) {
-      return '<a href="' + a.url + '" class="related-card"><div class="related-info"><span class="related-cat cat-guides">' + (a.category || 'Гайд') + '</span><h5>' + a.title + '</h5></div></a>';
+      return '<a href="' + a.url + '" class="related-card"><strong>' + a.title + '</strong><span>' + (a.date || '') + '</span></a>';
     }).join('');
   }
 })();
