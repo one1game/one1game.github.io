@@ -17,7 +17,7 @@ on:
   workflow_dispatch:
 
 permissions:
-  contents: read
+  contents: write
 
 jobs:
   webmaster:
@@ -69,12 +69,24 @@ jobs:
               raise SystemExit(1)
 
           status, hosts = api(f'/user/{uid}/hosts/')
-          host_id = next(
-              (h.get('host_id') for h in hosts.get('hosts', [])
-               if HOST in (h.get('ascii_host_url') or '') or HOST in (h.get('host_id') or '')),
-              None)
+          # Яндекс различает http и https как ДВА разных сайта (host_id вида
+          # «https:one1game.org:443»). Если взять первый попавшийся, можно
+          # попасть на пустой http-хост: сводка 404, sitemap и переобход 504,
+          # квота 150 висит неиспользованной. Берём только https.
+          all_hosts = hosts.get('hosts', [])
+
+          def pick(scheme):
+              return next((h.get('host_id') for h in all_hosts
+                           if HOST in (h.get('ascii_host_url') or '')
+                           and (h.get('host_id') or '').startswith(scheme)), None)
+
+          host_id = pick('https:')
           if not host_id:
-              print(f'Webmaster: сайт {HOST} не найден среди подтверждённых — {hosts}')
+              http_id = pick('http:')
+              print(f'Webmaster: https-хоста нет в Вебмастере.')
+              if http_id:
+                  print(f'  добавлен только {http_id} — он пустой: сайт живёт на https.')
+              print(f'  Добавь https://{HOST} отдельным хостом и подтверди права.')
               raise SystemExit(1)
 
           # Регистрируем sitemap.xml (идемпотентно: повторная регистрация → 409).
@@ -91,7 +103,7 @@ jobs:
                       f'/user/{uid}/hosts/{host_id}/user-added-sitemaps/', 'POST', {'url': sitemap_url})
                   if status in (200, 201, 202, 409):
                       break
-                  print(f'Webmaster: sitemap не принят (HTTP {status}), повтор {attempt + 2}/3 через 15 с')
+                  print(f'Webmaster: sitemap не принят (HTTP {status}), попытка {attempt + 1} из 3, ждём 15 с')
                   time.sleep(15)
               if status in (200, 201, 202):
                   print(f'Webmaster: sitemap добавлен — {sitemap_url}')
@@ -130,6 +142,35 @@ jobs:
                   print(f"  Страниц в поиске:  {summary.get('searchable_pages_count')}")
                   print(f"  Исключено страниц: {summary.get('excluded_pages_count')}")
               print(f"  Квота переобхода:  остаток {remainder} из {quota.get('daily_quota')}")
+
+              # Запросы из отчёта Яндекса: показы и клики по конкретным фразам.
+              # Это единственный бесплатный источник реального спроса по нашему
+              # сайту, поэтому кладём его в репозиторий целиком.
+              st_q, qdata = api(f'/user/{uid}/hosts/{host_id}/query-analytics/list',
+                                'POST', {'offset': 0, 'limit': 500,
+                                         'device_type_indicator': 'ALL',
+                                         'text_indicator': 'QUERY',
+                                         'sort_by': 'TOTAL_SHOWS',
+                                         'sort_order': 'DESC'})
+              qs = qdata.get('queries') or []
+              if st_q != 200:
+                  print(f'Webmaster: запросы не отдались — HTTP {st_q} {qdata}')
+              else:
+                  snap = {'queries': [
+                      {'query': q.get('text'),
+                       'shows': (q.get('indicators') or {}).get('TOTAL_SHOWS'),
+                       'clicks': (q.get('indicators') or {}).get('TOTAL_CLICKS')}
+                      for q in qs]}
+                  body = json.dumps(snap, ensure_ascii=False, indent=1) + '\n'
+                  path = 'scripts/data/yandex-queries.json'
+                  prev = open(path, encoding='utf-8').read() if os.path.exists(path) else ''
+                  if body != prev:
+                      os.makedirs('scripts/data', exist_ok=True)
+                      with open(path, 'w', encoding='utf-8') as f:
+                          f.write(body)
+                      print(f'Webmaster: снимок запросов сохранён — {len(qs)} фраз')
+                  else:
+                      print(f'Webmaster: запросов {len(qs)}, снимок не изменился')
 
               sent = 0
               for path in PRIORITY[:max(0, remainder)]:
@@ -190,3 +231,12 @@ jobs:
 
           print(f'Webmaster: отправлено {sent} URL на переобход')
           PY
+
+      - name: Сохранить снимок запросов
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          # На push-запуске снимка нет — git add не должен валить джоб.
+          git add scripts/data/yandex-queries.json 2>/dev/null || true
+          git diff --quiet --cached || git commit -m "Снимок запросов Яндекса: $(date -u +'%Y-%m-%d')"
+          git push

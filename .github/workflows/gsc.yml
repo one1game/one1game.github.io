@@ -16,7 +16,7 @@ on:
   workflow_dispatch:
 
 permissions:
-  contents: read
+  contents: write
 
 jobs:
   gsc:
@@ -102,4 +102,52 @@ jobs:
                     f"показы {int(row.get('impressions', 0)):>7}  CTR {row.get('ctr', 0) * 100:5.1f}%")
           if not data.get('rows'):
               print('  данных нет')
+
+          # Полный снимок, а не десять строк в лог: запросы и страницы целиком
+          # кладём в репозиторий, чтобы по ним можно было строить гипотезы,
+          # а не догадки. Кладём только при изменении.
+          def pull(dim, limit):
+              st, d = call(f'/sites/{enc}/searchAnalytics/query', method='POST', body={
+                  'startDate': start.isoformat(),
+                  'endDate': end.isoformat(),
+                  'dimensions': [dim],
+                  'rowLimit': limit,
+              })
+              if st != 200:
+                  print(f'GSC: {dim} не отдался — HTTP {st} {d}')
+                  return []
+              return d.get('rows', [])
+
+          def pack(rows, key):
+              return [{key: r['keys'][0],
+                       'clicks': int(r.get('clicks', 0)),
+                       'impressions': int(r.get('impressions', 0)),
+                       'ctr': round(r.get('ctr', 0), 4),
+                       'position': round(r.get('position', 0), 1)} for r in rows]
+
+          snapshot = {
+              'range': [start.isoformat(), end.isoformat()],
+              'queries': pack(pull('query', 1000), 'query'),
+              'pages': pack(pull('page', 500), 'page'),
+          }
+          path = 'scripts/data/gsc-snapshot.json'
+          body = json.dumps(snapshot, ensure_ascii=False, indent=1)
+          prev = open(path, encoding='utf-8').read() if os.path.exists(path) else ''
+          if body + '\n' == prev:
+              print('GSC: снимок не изменился')
+          else:
+              os.makedirs('scripts/data', exist_ok=True)
+              with open(path, 'w', encoding='utf-8') as f:
+                  f.write(body + '\n')
+              print(f'GSC: снимок сохранён — запросов {len(snapshot["queries"])}, '
+                    f'страниц {len(snapshot["pages"])}')
           PY
+
+      - name: Сохранить снимок в репозиторий
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          # На push-запуске снимка нет — git add не должен валить джоб.
+          git add scripts/data/gsc-snapshot.json 2>/dev/null || true
+          git diff --quiet --cached || git commit -m "Снимок поисковых запросов Google: $(date -u +'%Y-%m-%d')"
+          git push
