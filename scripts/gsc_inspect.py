@@ -35,22 +35,37 @@ PRIORITY = [
 
 
 def pick_urls():
-    urls = [BASE + p for p in PRIORITY]
     try:
         sm = open('sitemap.xml', encoding='utf-8').read()
         all_urls = re.findall(r'<loc>([^<]+)</loc>', sm)
     except OSError:
         all_urls = []
-    # Равномерно берём страницы из карты сайта: так выборка не залипает
-    # только в играх или только в статьях.
-    step = max(1, len(all_urls) // 40)
-    urls += all_urls[::step][:40]
+
+    # Три группы, чтобы отчёт отвечал на вопрос «что именно Google не берёт»:
+    # авто-страницы игр (шаблон), ручные статьи (живой текст) и хабы.
+    games = [u for u in all_urls if re.search(r'/archive/[^/]+-\d+$', u)]
+    articles = [u for u in all_urls
+                if u.startswith(BASE + '/archive/') and u not in games]
+    step_g = max(1, len(games) // 20)
+    step_a = max(1, len(articles) // 15)
+    urls = [BASE + p for p in PRIORITY]
+    urls += games[::step_g][:20] + articles[::step_a][:15]
+
     seen, out = set(), []
     for u in urls:
         if u not in seen:
             seen.add(u)
             out.append(u)
     return out[:LIMIT]
+
+
+def group(url):
+    p = url.replace(BASE, '')
+    if re.search(r'/archive/[^/]+-\d+$', p):
+        return 'игры (автогенерация)'
+    if p.startswith('/archive/'):
+        return 'статьи (ручные)'
+    return 'хабы и разделы'
 
 
 def main():
@@ -84,6 +99,7 @@ def main():
         res = (data.get('inspectionResult') or {}).get('indexStatusResult') or {}
         rows.append({
             'url': url,
+            'group': group(url),
             'verdict': res.get('verdict'),
             'coverage': res.get('coverageState'),
             'robots': res.get('robotsTxtState'),
@@ -93,11 +109,22 @@ def main():
         })
 
     counts = {}
+    by_group = {}
     for r in rows:
         counts[r['coverage']] = counts.get(r['coverage'], 0) + 1
+        bucket = by_group.setdefault(r['group'], {})
+        bucket[r['coverage']] = bucket.get(r['coverage'], 0) + 1
     print('Inspect: проверено %d URL' % len(rows))
     for state, n in sorted(counts.items(), key=lambda x: -x[1]):
         print('  %-52s %d' % (state or '—', n))
+
+    # Разбивка по типам: без неё «1 из 54 в индексе» не говорит, что именно
+    # Google не берёт — шаблон, ручные статьи или хабы.
+    print('Inspect: по типам страниц')
+    for g, st in by_group.items():
+        print('  %s — %d' % (g, sum(st.values())))
+        for state, n in sorted(st.items(), key=lambda x: -x[1]):
+            print('      %-46s %d' % (state or '—', n))
 
     os.makedirs('scripts/data', exist_ok=True)
     snap = {'site': SITE, 'total': len(rows), 'states': counts, 'urls': rows}
