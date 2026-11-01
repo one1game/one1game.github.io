@@ -245,7 +245,9 @@ def generate():
     if not feed:
         raise SystemExit('Не нашлось ни одной обычной статьи для ленты')
 
-    games = [a for a in articles if is_game_review(a)]
+    # Только страницы, открытые от индекса: noindex-карточки на главной
+    # размывают вес и ведут поисковик в тупик.
+    games = [a for a in articles if is_game_review(a) and not a.get('noindex')]
     sections = len({(a.get('category') or '') for a in articles if a.get('category')})
 
     lead_html = entry_html(feed[0], 1, True)
@@ -259,7 +261,7 @@ def generate():
     shown_games = games[:PLAY_LIMIT]
     play_parts = [play_card_html(g) for g in shown_games]
     if len(games) > PLAY_LIMIT:
-        more_url = 'archive?category=' + '%D0%9E%D0%B1%D0%B7%D0%BE%D1%80%D1%8B'
+        more_url = '/category/obzory'
         play_parts.append(
             f'        <a href="{more_url}" class="play-card play-card--more">\n'
             f'          <span class="play-name">ещё {len(games) - PLAY_LIMIT}</span>\n'
@@ -281,7 +283,9 @@ def generate():
     out = inject(out, 'FEED', with_eol(feed_html))
     out = inject(out, 'PLAY', with_eol(play_html))
     out = toggle_play_section(out, bool(shown_games))
-    out = set_stat(out, 'stat-articles', len(articles))
+    # Счётчик — только страницы, открытые от индекса: 1230 шаблонных карточек
+    # игр закрыты noindex и не должны раздувать «материалов».
+    out = set_stat(out, 'stat-articles', sum(1 for a in articles if not a.get('noindex')))
     out = set_stat(out, 'stat-sections', sections)
 
     # dateModified = дата последнего РЕАЛЬНОГО изменения главной. Сравниваем

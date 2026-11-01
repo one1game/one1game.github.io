@@ -1143,6 +1143,9 @@ async function main() {
         readTime: "2 мин",
         category: CONFIG.categoryLabel,
         updated: todayISO(),
+        // Та же логика, что в <meta robots>: закрытые страницы не должны
+        // попадать в счётчики разделов и в списки на главной.
+        noindex: /^-\d+$/.test(slug) || !demandIds().has(String(appid)),
         // Обложка: официальный Steam header из Store API (URL с хешем ассета).
         // Без него карточка уйдёт на процедурный плейсхолдер.
         image: store.header_image || "",

@@ -432,7 +432,10 @@ class One1GamePlatform {
       'Обзоры': 'cat-reviews'
     };
 
+    // Счётчик считает только страницы, открытые от индекса: 1230 шаблонных
+    // карточек игр закрыты noindex, и в меню они создавали ложные «1250 обзоров».
     window.allArticles.forEach(a => {
+      if (a.noindex) return;
       catCount[a.category] = (catCount[a.category] || 0) + 1;
     });
 
@@ -450,6 +453,19 @@ class One1GamePlatform {
     };
 
     const catOrder = ['ИИ и технологии', 'Гайды', 'Консоли', 'Аналитика', 'Тренды', 'Разработка', 'Мнение', 'Кино и игры', 'Обзоры'];
+    // Ведём в хаб раздела: там текст, фильтры и полный список — в отличие от
+    // archive?category=, который фильтрует только ручные статьи.
+    const catSlugs = {
+      'ИИ и технологии': 'ii-i-tehnologii',
+      'Гайды': 'gajdy',
+      'Консоли': 'konsoli',
+      'Аналитика': 'analitika',
+      'Тренды': 'trendy',
+      'Разработка': 'razrabotka',
+      'Мнение': 'mnenie',
+      'Кино и игры': 'kino-i-igry',
+      'Обзоры': 'obzory'
+    };
     const pills = Object.entries(catCount)
       .sort(([a], [b]) => {
         const ai = catOrder.indexOf(a), bi = catOrder.indexOf(b);
@@ -460,7 +476,8 @@ class One1GamePlatform {
       const icon = icons[cat] || 'fa-folder';
       const encoded = encodeURIComponent(cat);
       const safeCat = this.escapeHTML(cat);
-      return `<a href="archive?category=${encoded}" class="cat-pill ${catClass}">
+      const href = catSlugs[cat] ? '/category/' + catSlugs[cat] : 'archive?category=' + encoded;
+      return `<a href="${href}" class="cat-pill ${catClass}">
         <i class="fas ${icon}" aria-hidden="true"></i> ${safeCat} <span class="cat-count">${count}</span>
       </a>`;
     }).join('');

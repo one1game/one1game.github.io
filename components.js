@@ -695,7 +695,12 @@
     var el = doc.getElementById('stat-articles');
     if (!el) return;
     if (window.allArticles && window.allArticles.length) {
-      el.textContent = window.allArticles.length;
+      // Считаем только открытые от индекса: тонкие шаблоны игр не «материалы».
+      var total = 0;
+      for (var k = 0; k < window.allArticles.length; k++) {
+        if (!window.allArticles[k].noindex) total++;
+      }
+      el.textContent = total;
 
       // Число разделов считаем по данным, а не хардкодом
       var secEl = doc.getElementById('stat-sections');

@@ -2,6 +2,7 @@
 window.allArticles = [
   {
     "url": "/archive/dark-pgt-2-the-red-death-4844820",
+    "noindex": true,
     "title": "DARK PGT 2: The Red Death: цена, отзывы и статистика игроков",
     "excerpt": "DARK PGT 2: The Red Death: актуальная цена (216.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
     "date": "1 ноября 2026",
@@ -12,6 +13,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/halftime-manager-5005920",
+    "noindex": true,
     "title": "HALFTIME Manager: цена, отзывы и статистика игроков",
     "excerpt": "HALFTIME Manager: актуальная цена (890.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
     "date": "1 ноября 2026",
@@ -152,6 +154,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/turn-limit-100-5116540",
+    "noindex": true,
     "title": "Обзор Turn Limit 100: карточный рогалик на время",
     "excerpt": "Обзор тактического рогалика Turn Limit 100. Успейте победить за сто ходов: три героя, сбор колоды и динамичные бои в мире Нагории. Стоит ли играть?",
     "date": "31 октября 2026",
@@ -165,6 +168,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/blackboard-ponies-4670040",
+    "noindex": true,
     "title": "Обзор Blackboard Ponies: платформер про бунтующего пони",
     "excerpt": "Blackboard Ponies — инди-платформер с головоломками. Управляйте бунтарским пони на школьной доске, возвращайте миру краски и решайте занятные задачки.",
     "date": "31 октября 2026",
@@ -178,6 +182,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/minesweeper-arcade-5431750",
+    "noindex": true,
     "title": "Обзор игры MINESWEEPER ARCADE — новый взгляд на сапёр",
     "excerpt": "Обзор головоломки MINESWEEPER ARCADE. Узнайте, как классический сапёр преобразился благодаря современным механикам и кому понравится эта логическая",
     "date": "31 октября 2026",
@@ -191,6 +196,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/miniracingonline-5288230",
+    "noindex": true,
     "title": "Обзор игры MiniRacingOnline: масштабные сетевые гонки",
     "excerpt": "MiniRacingOnline — соревновательные гонки на 32 пилота с тысячами машин, сотнями трасс, выбором шинной стратегии и заездами под динамичным дождем.",
     "date": "31 октября 2026",
@@ -204,6 +210,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/withouteyes-chapter1-4374510",
+    "noindex": true,
     "title": "WithoutEyes Chapter1: цена, отзывы и статистика игроков",
     "excerpt": "WithoutEyes Chapter1: актуальная цена (Бесплатно), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
     "date": "31 октября 2026",
@@ -214,6 +221,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/kur-endless-descent-ashipu-class-5456270",
+    "noindex": true,
     "title": "Kur - Endless Descent - Ashipu (Class): обзор класса",
     "excerpt": "Обзор Kur - Endless Descent - Ashipu (Class). Узнайте всё об особенностях экзорциста-целителя подземного мира и его полезности в ролевых приключениях.",
     "date": "31 октября 2026",
@@ -227,6 +235,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/reactance-5357500",
+    "noindex": true,
     "title": "Обзор игры Reactance: дуэли ученых от первого лица",
     "excerpt": "Подробный обзор инди-экшена Reactance. Узнайте про дуэли ученых от первого лица, механику парирования, соревновательные режимы и необычные арены.",
     "date": "31 октября 2026",
@@ -240,6 +249,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/joystick-jammers-one-prawn-5196280",
+    "noindex": true,
     "title": "JOYSTICK JAMMERS: One Prawn: обзор инди-игры",
     "excerpt": "Обзор казуальной инди-игры JOYSTICK JAMMERS: One Prawn. Управляйте стиками геймпада, отбивайте ритмы на барабанах и создавайте собственную музыку.",
     "date": "31 октября 2026",
@@ -253,6 +263,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/everdeep-idle-4980350",
+    "noindex": true,
     "title": "Обзор игры Everdeep Idle: вдумчивая авто-ролевка",
     "excerpt": "Обзор Everdeep Idle: ролевое приключение с автобоями, шестью классами персонажей и глубокой настройкой умений. Узнайте, кому подойдет эта инди-игра.",
     "date": "31 октября 2026",
@@ -266,6 +277,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/the-pasture-5351540",
+    "noindex": true,
     "title": "The Pasture — приключенческий квест в ASCII‑мире",
     "excerpt": "The Pasture — уникальная бесплатная игра‑головоломка, где вы управляете курсором мыши в мире, полностью построенном из текстовых символов. Решайте задачи,",
     "date": "31 октября 2026",
@@ -279,6 +291,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/darkblood-reverse-3052820",
+    "noindex": true,
     "title": "DarkBlood -ReVerse-: цена, отзывы и статистика игроков",
     "excerpt": "DarkBlood -ReVerse-: актуальная цена (372.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
     "date": "31 октября 2026",
@@ -289,6 +302,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/hospital-rhapsody-5129280",
+    "noindex": true,
     "title": "Hospital Rhapsody: цена, отзывы и статистика игроков",
     "excerpt": "Hospital Rhapsody: актуальная цена (372.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
     "date": "31 октября 2026",
@@ -299,6 +313,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/pactmage-chess-roster-5287260",
+    "noindex": true,
     "title": "Pactmage - Chess Roster: цена, отзывы и статистика игроков",
     "excerpt": "Pactmage - Chess Roster: актуальная цена (Бесплатно), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
     "date": "31 октября 2026",
@@ -309,6 +324,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/-5404630",
+    "noindex": true,
     "title": "忌質物管理局　第七保管室 – обзор игры",
     "excerpt": "Игра‑симулятор от инди‑студии, где вы работаете в бюро по управлению проклятыми объектами, проверяя их и принимая решения о хранении, уничтожении или",
     "date": "31 октября 2026",
@@ -322,6 +338,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/c-huangmeic-3919400",
+    "noindex": true,
     "title": "黄莓C HuangmeiC — приключенческая визуальная новелла",
     "excerpt": "轻松的现代生活 визуальная новелла о выпускнике, который устраивается на работу в странный мир. Романтика без драмы, милые персонажи и ежедневные приключения.",
     "date": "31 октября 2026",
@@ -335,6 +352,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/triad-of-victory-4603280",
+    "noindex": true,
     "title": "Triad of Victory – обзор и оценка",
     "excerpt": "Triad of Victory – приключенческая казуальная стратегия, где привычная игра в камень‑ножницы‑бумагу превращается в глубокий тактический квест с прокачкой",
     "date": "31 октября 2026",
@@ -348,6 +366,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/spinstack-5202640",
+    "noindex": true,
     "title": "Spinstack – головоломка-стратегия с падением фигур",
     "excerpt": "Spinstack – однопользовательская головоломка, где нужно вращать квадратную основу, направлять падающие тетромино и формировать кольца. Игра предлагает",
     "date": "31 октября 2026",
@@ -361,6 +380,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/brand-of-betrayal-4690880",
+    "noindex": true,
     "title": "Brand of Betrayal — ролевая игра с интригами",
     "excerpt": "Brand of Betrayal — ролевая игра, где игрок управляет Рейном в борьбе с Демоном‑королём, сопровождая его женой и старыми друзьями. Сюжет полон",
     "date": "31 октября 2026",
@@ -374,6 +394,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/so-3-caso-044-5420850",
+    "noindex": true,
     "title": "SO-3: Caso 044: цена, отзывы и статистика игроков",
     "excerpt": "SO-3: Caso 044: актуальная цена (400.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
     "date": "31 октября 2026",
@@ -384,6 +405,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/orbital-peril-4408520",
+    "noindex": true,
     "title": "Orbital Peril – динамичный экшн‑инди",
     "excerpt": "Orbital Peril – быстрый аркадный экшн, где управление ограничено двумя клавишами, а оружие вращается на 360 градусов. Игра бросает игрока в смертоносный",
     "date": "31 октября 2026",
@@ -397,6 +419,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/the-dark-forest-calls-4088940",
+    "noindex": true,
     "title": "The Dark Forest Calls — обзор и впечатления",
     "excerpt": "The Dark Forest Calls — атмосферный экшен‑приключение в жанре survival horror. Узнайте, чем привлекателен этот инди‑проект, стоит ли погружаться в тайны",
     "date": "31 октября 2026",
@@ -410,6 +433,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/name-me-if-you-can-5396420",
+    "noindex": true,
     "title": "NAME ME IF YOU CAN – многопользовательский экшен",
     "excerpt": "NAME ME IF YOU CAN – динамичная игра от первого лица, где нужно прятать своё имя, выслеживать соперников и использовать предметы для контратак. Подходит",
     "date": "31 октября 2026",
@@ -423,6 +447,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/vagina-sancta-5335830",
+    "noindex": true,
     "title": "Vagina Sancta – интерактивный познавательный инди‑проект",
     "excerpt": "Уникальная казуальная игра Vagina Sancta предлагает интерактивное исследование женской репродуктивной системы, сочетая образование и атмосферный дизайн.",
     "date": "31 октября 2026",
@@ -436,6 +461,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/apothecary-grounds-4394570",
+    "noindex": true,
     "title": "Apothecary Grounds — приключенческий инди‑проект",
     "excerpt": "Apothecary Grounds — атмосферное приключение в пустынном ландшафте, где единственной опорой служит одинокий кладбищенский участок. Игроку предстоит",
     "date": "31 октября 2026",
@@ -449,6 +475,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/tronix-carnival-games-3854560",
+    "noindex": true,
     "title": "Tronix Carnival Games — обзор",
     "excerpt": "Tronix Carnival Games — динамичный шутер‑рогалик в стиле киберпанка, где заброшенный карнавал превратился в арену смертельных испытаний.",
     "date": "31 октября 2026",
@@ -462,6 +489,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/prey-island-5297390",
+    "noindex": true,
     "title": "Prey Island — экшен‑приключение про выживание",
     "excerpt": "Игра Prey Island бросает вас на остров, населённый динозаврами, где единственное оружие — пистолет и нож. Выживание, ограниченные ресурсы и необходимость",
     "date": "31 октября 2026",
@@ -475,6 +503,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/redshift-3851950",
+    "noindex": true,
     "title": "REDSHIFT – психологический хоррор",
     "excerpt": "RED SHIFT – короткая психологическая игра‑хоррор, где закрывая глаза, вы открываете скрытый слой реальности. Исследуйте заброшенную лабораторию и",
     "date": "31 октября 2026",
@@ -488,6 +517,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/mine-away-5416030",
+    "noindex": true,
     "title": "Mine Away — казуальная инди-игра о добыче",
     "excerpt": "Mine Away — спокойная казуальная игра, где вы разбиваете камни, собираете монеты и улучшаете кирку. Простая механика и приятный прогресс делают её",
     "date": "31 октября 2026",
@@ -501,6 +531,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/factorize-1-4932970",
+    "noindex": true,
     "title": "FACTORIZE: 1 – инди‑стратегия с карточным боем",
     "excerpt": "FACTORIZE: 1 – пошаговая карточная стратегия‑рогулит, где нужно комбинировать карты, создавая числа и используя свойства простых чисел. Подойдет любителям",
     "date": "31 октября 2026",
@@ -514,6 +545,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/logical-cat-logistics-5154220",
+    "noindex": true,
     "title": "Logical Cat Logistics – обзор и рекомендации",
     "excerpt": "Logical Cat Logistics – казуальная инди-стратегия, где вы играете за кота‑курьера, синхронно перемещая посылки и взаимодействуя со своим прошлым. Идеально",
     "date": "31 октября 2026",
@@ -627,6 +659,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/sancta-4025270",
+    "noindex": true,
     "title": "Sancta: обзор мрачного приключения в темных глубинах",
     "excerpt": "Обзор Sancta: атмосферное приключение в заброшенном подземелье, где свет спасает жизнь. Узнайте о головоломках и опасностях тьмы.",
     "date": "30 октября 2026",
@@ -640,6 +673,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/the-largest-organism-5143760",
+    "noindex": true,
     "title": "The Largest Organism: обзор необычного симулятора",
     "excerpt": "Обзор The Largest Organism: управляйте ростом живой слизи, скармливая ей глюкозу. Узнайте, кому подойдет этот необычный инди-симулятор эволюции.",
     "date": "30 октября 2026",
@@ -653,6 +687,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/the-wizard-s-assistants-5223870",
+    "noindex": true,
     "title": "The Wizard's Assistants: цена, отзывы и статистика игроков",
     "excerpt": "The Wizard's Assistants: актуальная цена (200.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
     "date": "30 октября 2026",
@@ -663,6 +698,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/buzz-or-die-2899240",
+    "noindex": true,
     "title": "Обзор BUZZ or DIE: битва за лайки в чужом разуме",
     "excerpt": "Подробный обзор инди-игры BUZZ or DIE. Погружайтесь в чужой разум, находите тайны соперников, делайте вирусные видео и боритесь за лайки аудитории.",
     "date": "30 октября 2026",
@@ -676,6 +712,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/pixel-exorcist-4027980",
+    "noindex": true,
     "title": "Обзор Pixel Exorcist: пиксельный ретро-детектив",
     "excerpt": "Обзор игры Pixel Exorcist: приключение про юного экзорциста, спасающего проклятый город. Узнайте, кому подойдет эта пиксельная ретро-головоломка.",
     "date": "30 октября 2026",
@@ -689,6 +726,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/plamennyy-bonsay-4668740",
+    "noindex": true,
     "title": "Пламенный Бонсай – ролевая стратегия",
     "excerpt": "Пламенный Бонсай – ролевая игра со стратегическим элементом, где игрок исследует открытый мир, собирает ресурсы и развивает отношения с персонажами,",
     "date": "30 октября 2026",
@@ -702,6 +740,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/convoycore-5234060",
+    "noindex": true,
     "title": "ConvoyCore: цена, отзывы и статистика игроков",
     "excerpt": "ConvoyCore: актуальная цена (Бесплатно), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
     "date": "30 октября 2026",
@@ -712,6 +751,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/ferzgate-4930390",
+    "noindex": true,
     "title": "FerzGate: обзор медитативной стратегии-головоломки",
     "excerpt": "Обзор FerzGate: медитативная градостроительная головоломка. Разбираем механику синергий, особенности планировки средневековых поселений и правила игры.",
     "date": "30 октября 2026",
@@ -725,6 +765,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/blockia-5344070",
+    "noindex": true,
     "title": "Обзор blockia: уютный симулятор блочного строительства",
     "excerpt": "Обзор blockia: медитативный симулятор блочного строительства. Собирайте уютные сцены, настраивайте свет и делайте снимки. Стоит ли играть?",
     "date": "30 октября 2026",
@@ -738,6 +779,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/wickshore-5379290",
+    "noindex": true,
     "title": "Обзор Wickshore: фэнтезийная защита башен и магия",
     "excerpt": "Обзор Wickshore — стратегический рогалик с элементами защиты башен. Защищайте город куполом, собирайте ману и отбивайте ночные волны чудовищ.",
     "date": "30 октября 2026",
@@ -751,6 +793,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/hatch-n-wall-4915250",
+    "noindex": true,
     "title": "Hatch'n'Wall: цена, отзывы и статистика игроков",
     "excerpt": "Hatch'n'Wall: актуальная цена (260.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
     "date": "30 октября 2026",
@@ -761,6 +804,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/urban-explorer-baldwin-4795960",
+    "noindex": true,
     "title": "Urban Explorer: Baldwin — мрачный инди-экшн",
     "excerpt": "Urban Explorer: Baldwin — мрачный инди‑игровой опыт о выживании в заброшенной промышленной зоне Висконсина, где тайны EPA и зловещие события ждут",
     "date": "30 октября 2026",
@@ -774,6 +818,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/boarding-house-night-shift-4842380",
+    "noindex": true,
     "title": "Boarding House: Night Shift — хоррор‑симулятор",
     "excerpt": "Boarding House: Night Shift – мрачный инди‑хоррор, где вы ночным смотрителем управляете ресурсами, сталкиваетесь с городскими легендами и раскрываете",
     "date": "30 октября 2026",
@@ -787,6 +832,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/expedition-of-the-guild-4261080",
+    "noindex": true,
     "title": "Expedition of the Guild — приключенческий RPG",
     "excerpt": "Expedition of the Guild — ролевая приключенческая игра, где вам предстоит собрать гильдию, нанять героев разных классов и сразиться с мощными боссами в",
     "date": "30 октября 2026",
@@ -800,6 +846,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/veinrider-4110670",
+    "noindex": true,
     "title": "Veinrider – научно‑фантастический инкрементальный симулятор",
     "excerpt": "Veinrider – инкрементальная игра в жанре стратегии и симулятора, где игрок управляет летательным аппаратом, исследует чужие пещеры и улучшает его, чтобы",
     "date": "30 октября 2026",
@@ -813,6 +860,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/summer-room8-3436240",
+    "noindex": true,
     "title": "Summer Room8: цена, отзывы и статистика игроков",
     "excerpt": "Summer Room8: актуальная цена (216.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
     "date": "30 октября 2026",
@@ -823,6 +871,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/-5137980",
+    "noindex": true,
     "title": "古玩掌柜 — пошаговая карточная стратегия",
     "excerpt": "古玩掌柜 – уникальная пошаговая карточная стратегия, где игрок управляет антикварным магазином, собирает более 600 карт из десяти китайских династий и",
     "date": "30 октября 2026",
@@ -836,6 +885,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/axe-descent-5234110",
+    "noindex": true,
     "title": "AXE DESCENT – ролевая инди‑игра с roguelite‑механикой",
     "excerpt": "AXE DESCENT – ролевая инди‑игра‑roguelite с более чем 600 умениями и бесконечными тактиками, где каждый запуск предлагает новые стратегии.",
     "date": "30 октября 2026",
@@ -849,6 +899,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/emberspark-5412290",
+    "noindex": true,
     "title": "Emberspark: цена, отзывы и статистика игроков",
     "excerpt": "Emberspark: актуальная цена (435.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
     "date": "30 октября 2026",
@@ -859,6 +910,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/automate-death-5304530",
+    "noindex": true,
     "title": "AUTOMATE DEATH – инди‑симулятор башенной защиты",
     "excerpt": "AUTOMATE DEATH – физически‑симулированный инкрементальный симулятор защиты, где нужно построить индустрию и остановить орды зелёных гоблинов, стремящихся",
     "date": "30 октября 2026",
@@ -872,6 +924,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/dungeon-monster-master-4764460",
+    "noindex": true,
     "title": "Dungeon Monster Master – обзор и детали",
     "excerpt": "Dungeon Monster Master – action RPG с бесконечно расширяющимся открытым миром, где каждый запуск генерирует новые локации, а игрок собирает и воспитывает",
     "date": "30 октября 2026",
@@ -885,6 +938,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/underdeep-labirint-glubin-4065440",
+    "noindex": true,
     "title": "UNDERDEEP / Лабиринт глубин – обзор",
     "excerpt": "UNDERDEEP / Лабиринт глубин — мрачное приключение в стиле RPG с элементами пассивного прогресса, исследованием подземелий и картографией. Игра понравится",
     "date": "30 октября 2026",
@@ -898,6 +952,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/rail-spirits-5081970",
+    "noindex": true,
     "title": "Rail Spirits — аркадный шутер с элементами рогалита",
     "excerpt": "Rail Spirits — аркадный шутер на путях с элементами рогалита, где вам предстоит отбиваться от волн духов в стиле 80‑х, спасая артефакт для корпорации.",
     "date": "30 октября 2026",
@@ -911,6 +966,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/chromafall-4833810",
+    "noindex": true,
     "title": "Chromafall – неоновая головоломка",
     "excerpt": "Chromafall — неоновая физическая головоломка, где игрок размещает препятствия, чтобы направить светящийся шар к приёмникам. Бесконечные случайно",
     "date": "30 октября 2026",
@@ -924,6 +980,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/quest-please-5275520",
+    "noindex": true,
     "title": "Quest Please! – Инди-симулятор работы на рецепции",
     "excerpt": "Quest Please! – казуальная инди-игра, где вы принимаете документы искателей приключений, раскрываете подделки и продвигаетесь по карьерной лестнице.",
     "date": "30 октября 2026",
@@ -937,6 +994,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/tank-of-the-fittest-5035720",
+    "noindex": true,
     "title": "Tank of the Fittest – мрачный аквариумный рогалик",
     "excerpt": "Tank of the Fittest — мрачный симулятор аквариума, где вы контролируете параметры воды и эволюцию организмов, создавая доминирующий вид. Подойдёт",
     "date": "30 октября 2026",
@@ -950,6 +1008,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/townempire-5316900",
+    "noindex": true,
     "title": "TownEmpire – стратегия и симулятор развития города",
     "excerpt": "TownEmpire – казуальная стратегия, где вы строите и автоматизируете город, управляя ресурсами, производством и торговлей для максимального роста экономики.",
     "date": "30 октября 2026",
@@ -963,6 +1022,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/catch-me-4857320",
+    "noindex": true,
     "title": "Catch Me — быстрая мультиплеерная игра",
     "excerpt": "Catch Me — динамичная казуальная игра для компании до пяти человек, где одна команда прячется, а другая охотится. Играйте в лобби с друзьями, проверяя",
     "date": "30 октября 2026",
@@ -976,6 +1036,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/zenden-5226290",
+    "noindex": true,
     "title": "Zenden – расслабляющая головоломка в стиле пиксель‑арт",
     "excerpt": "Zenden – спокойная головоломка, где игроку предстоит оформлять живописный дзен‑сад, размещать растения, статуи и мосты, наслаждаясь пиксельным визуалом и",
     "date": "30 октября 2026",
@@ -989,6 +1050,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/carve-and-sort-tidy-up-your-pumpkin-patch-5412370",
+    "noindex": true,
     "title": "Carve and Sort: Tidy Up your Pumpkin Patch! – обзор",
     "excerpt": "Казуальная инди-симуляция, где вы раскрашиваете, вырезаете и сортируете тыквы, размещая их на 26 полках. Игра поддерживает до четырёх игроков, сочетая",
     "date": "30 октября 2026",
@@ -1002,6 +1064,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/gothic-1-remake-1297900",
+    "noindex": true,
     "title": "Gothic 1 Remake — ремейк классической RPG",
     "excerpt": "Gothic 1 Remake — переосмысленная классика жанра RPG. Откройте мрачный открытый мир Долины Рудников, где каждый выбор меняет ход истории.",
     "date": "30 октября 2026",
@@ -1015,6 +1078,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/freshwomen-season-3-4005870",
+    "noindex": true,
     "title": "FreshWomen - Season 3: визуальная новелла для взрослых",
     "excerpt": "FreshWomen – Season 3 — приключенческая визуальная новелла, где вы играете за первокурсника, получившего особняк, и выбираете пути общения с девушками, от",
     "date": "30 октября 2026",
@@ -1028,6 +1092,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/stones-4481760",
+    "noindex": true,
     "title": "Обзор головоломки Stones: правила, механики и суть игры",
     "excerpt": "Честный обзор Stones: медитативная головоломка «три в ряд» с механикой огранки самоцветов, лимитом ходов и ежедневными испытаниями на общей доске.",
     "date": "29 октября 2026",
@@ -1041,6 +1106,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/bezzabotnaya-zhizn-bessmertnogo-v-gorah-5387930",
+    "noindex": true,
     "title": "Беззаботная жизнь бессмертного в горах – обзор",
     "excerpt": "Спокойная казуальная игра‑симулятор, где вы развиваете бессмертного, медитируете, собираете силы и обустраиваете уютный дом в горах. Подходит любителям",
     "date": "29 октября 2026",
@@ -1054,6 +1120,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/knuckle-creek-4652930",
+    "noindex": true,
     "title": "Knuckle Creek — комедийный экшен‑боец для друзей",
     "excerpt": "Knuckle Creek — динамичный экшен‑боец в стиле комедии, созданный для весёлой компании. Простое управление, яркие схватки и лёгкий юмор делают игру",
     "date": "29 октября 2026",
@@ -1067,6 +1134,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/fate-candle-three-kingdoms-chronicle-restored-5164420",
+    "noindex": true,
     "title": "Fate Candle: Three Kingdoms - Chronicle Restored – обзор",
     "excerpt": "Стратегия о восстановлении героев эпохи Троецарствия. Управляйте городами, формируйте альянсы и ведите эпические битвы в десяти отрядах, спасая мир от",
     "date": "29 октября 2026",
@@ -1080,6 +1148,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/ayako-s-endeavors-4719140",
+    "noindex": true,
     "title": "Ayako's Endeavors: цена, отзывы и статистика игроков",
     "excerpt": "Ayako's Endeavors: актуальная цена (454.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
     "date": "29 октября 2026",
@@ -1090,6 +1159,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/simsalagrimm-der-chaoskristall-4356280",
+    "noindex": true,
     "title": "SimsalaGrimm™ – Der Chaoskristall обзор",
     "excerpt": "SimsalaGrimm™ – Der Chaoskristall – семейное приключение в сказочном мире, где Йойо и Док Крок ищут предметы, решают загадки и играют в мини‑игры, приводя",
     "date": "29 октября 2026",
@@ -1103,6 +1173,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/ghost-in-the-sql-data-5072430",
+    "noindex": true,
     "title": "Ghost in the SQL Data — обзор",
     "excerpt": "Ghost in the SQL Data — симулятор и стратегия, где игрок исследует архивы экстренных вызовов Парижа с помощью SQL, раскрывая, кто позвонил перед школьным",
     "date": "29 октября 2026",
@@ -1116,6 +1187,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/nordrstein-vikings-together-5400430",
+    "noindex": true,
     "title": "Nordrstein: Vikings Together – кооперативный экшен",
     "excerpt": "Nordrstein: Vikings Together – кооперативная игра о набегах викингов для 1‑4 игроков. Плывите к саксонским деревням, грабьте, развивайте свою деревню и",
     "date": "29 октября 2026",
@@ -1129,6 +1201,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/smithonion-natural-history-museum-4541970",
+    "noindex": true,
     "title": "Smithonion Natural History Museum – кооперативный экшен",
     "excerpt": "Онлайн‑кооперативный экшен Smithonion Natural History Museum: ночная смена в музее, где экспонаты оживают. Играйте в одиночку или с друзьями, спасая",
     "date": "29 октября 2026",
@@ -1142,6 +1215,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/the-florida-trail-5431110",
+    "noindex": true,
     "title": "The Florida Trail – приключенческий инди‑пиксельный квест",
     "excerpt": "The Florida Trail – комедийный пиксельный квест о выживании в Флориде. Выбираете транспорт, управляете ресурсами и пытаетесь добраться до Джорджии с",
     "date": "29 октября 2026",
@@ -1155,6 +1229,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/new-york-mysteries-the-undying-collector-s-edition-5242080",
+    "noindex": true,
     "title": "New York Mysteries: The Undying – обзор",
     "excerpt": "Приключенческая игра‑головоломка, где игроку предстоит раскрыть запутанное дело в Нью‑Йорке, полное мини‑игр и сложных квестов. Подойдёт любителям поисков",
     "date": "29 октября 2026",
@@ -1168,6 +1243,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/milfy-s-lewd-trap-training-tentacles-aphrodisiacs-bondage-squeeze-3436360",
+    "noindex": true,
     "title": "Milfy’s Lewd Trap Training~Tentacles × Aphrodisiacs × Bondage Squeeze!~: цена, отзывы и статистика игроков",
     "excerpt": "Milfy’s Lewd Trap Training~Tentacles × Aphrodisiacs × Bondage Squeeze!~: актуальная цена (288.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
     "date": "29 октября 2026",
@@ -1178,6 +1254,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/curatio-4866860",
+    "noindex": true,
     "title": "Curatio — казуальная головоломка о живописи",
     "excerpt": "Curatio – спокойная инди‑головоломка, где игрок собирает фрагменты запутанных картин, соединяя их как пазл и проверяя память, погружаясь в атмосферу тихой",
     "date": "29 октября 2026",
@@ -1191,6 +1268,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/tama-in-between-3769030",
+    "noindex": true,
     "title": "Tama In-Between: цена, отзывы и статистика игроков",
     "excerpt": "Tama In-Between: актуальная цена (378.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
     "date": "29 октября 2026",
@@ -1201,6 +1279,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/bao-bao-s-cozy-cleaning-services-3832380",
+    "noindex": true,
     "title": "Bao Bao's™ Cozy Cleaning Services: цена, отзывы и статистика игроков",
     "excerpt": "Bao Bao's™ Cozy Cleaning Services: актуальная цена (550.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
     "date": "29 октября 2026",
@@ -1211,6 +1290,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/epic-seven-5019180",
+    "noindex": true,
     "title": "Epic Seven – ролевая стратегия с аниме‑графикой",
     "excerpt": "Epic Seven – бесплатная ролевая игра‑стратегия с пошаговыми боями, яркой 2D‑анимацией и коллекцией героев. Сражайтесь в арене, комбинируйте навыки и",
     "date": "29 октября 2026",
@@ -1224,6 +1304,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/the-day-it-rained-blood-5035700",
+    "noindex": true,
     "title": "The Day It Rained Blood — обзор",
     "excerpt": "Темная визуальная новелла The Day It Rained Blood погружает в мир кровавого проклятия и романтических выборов. Узнайте, кому подойдёт игра и стоит ли её",
     "date": "29 октября 2026",
@@ -1237,6 +1318,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/schastlivyy-schastlivyy-ofis-5311990",
+    "noindex": true,
     "title": "Счастливый счастливый офис — обзор и особенности",
     "excerpt": "Игра «Счастливый счастливый офис» – пикантный стелс‑экшен с элементами приключения, где игроку предстоит тайно встречаться с суккубом‑героинями, избегая",
     "date": "29 октября 2026",
@@ -1250,6 +1332,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/agastache-rugosa-5259270",
+    "noindex": true,
     "title": "Agastache Rugosa – визуальная новелла",
     "excerpt": "Agastache Rugosa — классическая вестерн‑фэнтези отомэ-новелла, где вам предстоит отомстить за друга, раскрывая тайны и выбирая союзников из ярких",
     "date": "29 октября 2026",
@@ -1263,6 +1346,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/vampolitics-vassals-of-the-void-4089000",
+    "noindex": true,
     "title": "Vampolitics: Vassals of the Void – ролевая стратегия в",
     "excerpt": "Vampolitics: Vassals of the Void – ролевая игра‑симулятор стратегии, где вам предстоит управлять кладбищем, вести дипломатические переговоры и вести войну",
     "date": "29 октября 2026",
@@ -1276,6 +1360,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/elder-hills-4985550",
+    "noindex": true,
     "title": "Elder Hills — обзор, жанр, совет игрокам",
     "excerpt": "Elder Hills – темный фэнтезийный рогалик с ритмичной боевой системой, где нужно продержаться 15 минут на шести холмах, используя сотни видов оружия.",
     "date": "29 октября 2026",
@@ -1289,6 +1374,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/static-grain-quiet-a-night-4364380",
+    "noindex": true,
     "title": "Static Grain - Quiet a Night – приключенческая инди-игра",
     "excerpt": "Static Grain - Quiet a Night – атмосферное приключение о первой неделе студентки в новом городе, подходящее любителям инди и казуальных историй.",
     "date": "29 октября 2026",
@@ -1302,6 +1388,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/pro-wrestling-tycoon-5039120",
+    "noindex": true,
     "title": "Pro Wrestling Tycoon – симулятор промоушена",
     "excerpt": "Pro Wrestling Tycoon – менеджерская стратегия о построении собственного реслин-империи: набор бойцов, шоу, телевидение и борьба с конкурентами. Игра для",
     "date": "29 октября 2026",
@@ -1315,6 +1402,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/plasma-protocol-4979840",
+    "noindex": true,
     "title": "Plasma Protocol — быстрый шутер‑раннер",
     "excerpt": "Plasma Protocol — динамичный шутер‑раннер от первого лица. Беги сквозь бесконечные уровни, уничтожай врагов, уклоняйся от препятствий и собирай очки,",
     "date": "29 октября 2026",
@@ -1328,6 +1416,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/brilliante-photo-viewer-4994540",
+    "noindex": true,
     "title": "Brilliante Photo Viewer – просмотр и обработка фото",
     "excerpt": "Brilliante Photo Viewer – универсальное приложение для просмотра HDR, 3D, VR и анимированных фото с любых устройств. Интуитивный интерфейс и полезные",
     "date": "29 октября 2026",
@@ -1341,6 +1430,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/hand-me-downs-3870620",
+    "noindex": true,
     "title": "Hand-me-downs: цена, отзывы и статистика игроков",
     "excerpt": "Hand-me-downs: актуальная цена (288.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
     "date": "29 октября 2026",
@@ -1351,6 +1441,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/blossoms-of-light-5070730",
+    "noindex": true,
     "title": "Blossoms of Light – казуальная головоломка",
     "excerpt": "Blossoms of Light – спокойная головоломка с 60 цветочными пазлами в пяти главах. Перемещайте, вращайте детали, собирайте витражные картины под мягкую",
     "date": "29 октября 2026",
@@ -1364,6 +1455,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/pump-it-up-rise-ez2on-reboot-r-pack-5344930",
+    "noindex": true,
     "title": "PUMP IT UP RISE - EZ2ON REBOOT : R PACK обзор",
     "excerpt": "Обзор PUMP IT UP RISE - EZ2ON REBOOT : R PACK: 20 фирменных треков в новом ритм-режиме, эксклюзивный скин и простое управление для любителей казуальных",
     "date": "29 октября 2026",
@@ -1377,6 +1469,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/imma-peanut-5382720",
+    "noindex": true,
     "title": "imma peanut — бесконечный раннер в стиле 2D",
     "excerpt": "imma peanut — яркий 2D‑раннер, где вы играете за арахис в красных кроссовках, уклоняясь от голодной белки, собираете соль и золотые орешки, соревнуясь в",
     "date": "29 октября 2026",
@@ -1390,6 +1483,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/heliobane-5328670",
+    "noindex": true,
     "title": "Heliobane – вертикальный скролл‑шутер",
     "excerpt": "Heliobane — вертикальный скролл‑шутер, где вы управляете кораблём‑убийцей солнц, сражаетесь с ордами звёздных врагов, собираете вооружение и уничтожаете",
     "date": "29 октября 2026",
@@ -1403,6 +1497,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/probably-stolen-simulyator-magazina-v-kiberpanke-4348910",
+    "noindex": true,
     "title": "Probably Stolen – симулятор магазина в киберпанке",
     "excerpt": "Киберпанковый симулятор магазина с элементами RPG и стратегии. Создавайте гаджеты из хлама, торгуйте на станции и балансируйте отношения фракций, выбирая",
     "date": "29 октября 2026",
@@ -1416,6 +1511,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/crimson-desert-enhanced-charting-the-unknown-5001840",
+    "noindex": true,
     "title": "Crimson Desert Enhanced: Charting the Unknown — обзор",
     "excerpt": "Первый DLC к Crimson Desert открывает новые территории, морские просторы и новые задания в открытом мире. Узнайте, насколько расширяется игра и кому стоит",
     "date": "29 октября 2026",
@@ -1439,6 +1535,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/shahmaty2-4997370",
+    "noindex": true,
     "title": "Шахматы2 – нестандартная стратегия без шаха и мата",
     "excerpt": "Шахматы2 – бесплатная инди-стратегия с доской 10×10, без очереди ходов и традиционных шаха и мата. Новые фигуры и правила делают игру свежей и динамичной.",
     "date": "28 октября 2026",
@@ -1452,6 +1549,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/rainbook-lite-5313750",
+    "noindex": true,
     "title": "RainBook Lite – лёгкий текстовый редактор с атмосферой дождя",
     "excerpt": "RainBook Lite — бесплатный утилитарный редактор, создающий атмосферу дождя для комфортного письма и рисования. Идеален для тех, кто ищет спокойный",
     "date": "28 октября 2026",
@@ -1465,6 +1563,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/sketch-kingdom-4741590",
+    "noindex": true,
     "title": "Sketch Kingdom — инкрементальная стратегия в стиле блокнота",
     "excerpt": "Sketch Kingdom — короткая казуальная игра‑инкременталка с эстетикой блокнота, где вы рисуете существ, собираете ресурсы и улучшаете королевство, проходя",
     "date": "28 октября 2026",
@@ -1478,6 +1577,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/hentai-senpai-things-that-go-hump-in-the-night-4878090",
+    "noindex": true,
     "title": "Hentai Senpai: Things That go HUMP in the Night — обзор",
     "excerpt": "Игра‑инди в стиле казуального хоррора с элементами головоломки. Погрузитесь в ночные приключения, где вам предстоит решать задачи и раскрывать",
     "date": "28 октября 2026",
@@ -1491,6 +1591,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/deductopia-4429720",
+    "noindex": true,
     "title": "Deductopia – уютный детективный квест",
     "excerpt": "Deductopia — приключенческая игра‑головоломка, где вам предстоит исследовать локации, находить подсказки и распутывать истории людей, животных и их вещей.",
     "date": "28 октября 2026",
@@ -1504,6 +1605,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/too-many-animals-5324570",
+    "noindex": true,
     "title": "Обзор Too Many Animals ! — уютный симулятор сортировки",
     "excerpt": "Обзор Too Many Animals !: разбираем горы кубических зверей. Узнайте, кому подойдет этот медитативный казуальный симулятор наведения порядка.",
     "date": "28 октября 2026",
@@ -1517,6 +1619,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/tvoya-zhena-i-tvoya-mat-5402290",
+    "noindex": true,
     "title": "Твоя жена и твоя мать — обзор игры",
     "excerpt": "Краткий обзор «Твоя жена и твоя мать»: казуальная инди-симуляция, где вам предстоит ухаживать за женой и мамой на рабочем столе, выращивая перец и",
     "date": "28 октября 2026",
@@ -1530,6 +1633,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/sabre-hunter-keep-on-moving-4725720",
+    "noindex": true,
     "title": "Sabre Hunter: Keep On Moving — обзор",
     "excerpt": "Sabre Hunter: Keep On Moving — кровавый боевик от третьего лица с глубокой фехтовальной системой, динамичными боями и многопользовательскими режимами.",
     "date": "28 октября 2026",
@@ -1543,6 +1647,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/gin-rummy-pixel-cardroom-5301270",
+    "noindex": true,
     "title": "Обзор Gin Rummy: Pixel Cardroom — честная карточная игра",
     "excerpt": "Обзор Gin Rummy: Pixel Cardroom. Пиксельная карточная стратегия с контролем честности, шестью вариантами правил и темами столов. Узнайте всё об игре.",
     "date": "28 октября 2026",
@@ -1556,6 +1661,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/pikselnyy-domino-klub-5299710",
+    "noindex": true,
     "title": "Пиксельный домино-клуб — обзор настольной игры",
     "excerpt": "Обзор настольной инди-игры «Пиксельный домино-клуб». Правила для двоих, режимы «Блок», «Пятёрки», добор и система прозрачной генерации партий.",
     "date": "28 октября 2026",
@@ -1569,6 +1675,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/castle-of-the-zephyr-4588650",
+    "noindex": true,
     "title": "Castle of the Zephyr — ролевая игра с рогалик‑элементами",
     "excerpt": "Castle of the Zephyr – духовный ремейк классического roguelike, где вас ждут процедурные подземелья, руины, магия и управление инвентарём без классов.",
     "date": "28 октября 2026",
@@ -1582,6 +1689,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/rage-garage-vr-4739080",
+    "noindex": true,
     "title": "Rage Garage VR — аркадный экшен в виртуальном гараже",
     "excerpt": "Rage Garage VR — интенсивный экшен‑симулятор, где в виртуальном гараже разрушают автомобили молотками, оружием и подручными предметами, собирая комбо и",
     "date": "28 октября 2026",
@@ -1595,6 +1703,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/ne-popadis-uchitelyu-5359450",
+    "noindex": true,
     "title": "Не попадись учителю!: обзор симулятора урока",
     "excerpt": "Обзор игры Не попадись учителю!. Узнайте, как устроен этот асимметричный симулятор, кому он подойдет и почему стоит сыграть в компании друзей.",
     "date": "28 октября 2026",
@@ -1608,6 +1717,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/follow-suit-5322620",
+    "noindex": true,
     "title": "Обзор Follow Suit: карточная классика для друзей",
     "excerpt": "Обзор карточной стратегии Follow Suit. Играйте в червы, пики и пасьянсы в одиночку, с умными ботами или с друзьями по сети на любых устройствах.",
     "date": "28 октября 2026",
@@ -1621,6 +1731,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/complexia-a-ballet-of-blades-4688060",
+    "noindex": true,
     "title": "Обзор Complexia, A Ballet of Blades: танец клинков",
     "excerpt": "Всё об инди-экшене Complexia, A Ballet of Blades: гибкие комбо мечом, верные союзники и спасение гибнущей планеты от космической пушки. Узнайте детали.",
     "date": "28 октября 2026",
@@ -1634,6 +1745,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/posedoll-5310640",
+    "noindex": true,
     "title": "PoseDoll – 3D‑инструмент для позирования художников",
     "excerpt": "PoseDoll – удобный трёхмерный справочник поз для художников. Импортируйте фото, используйте камеру, меняйте позу модели и просматривайте её под любым",
     "date": "28 октября 2026",
@@ -1647,6 +1759,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/-5040660",
+    "noindex": true,
     "title": "策马三国志 – ролевая стратегия и тактика",
     "excerpt": "策马三国志 – бесплатная ролевая стратегия, где игрок исследует обширные карты, формирует армию и принимает решения в ограниченных по действиям ходах. Игра",
     "date": "28 октября 2026",
@@ -1660,6 +1773,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/super-retro-race-5348290",
+    "noindex": true,
     "title": "Super Retro Race — аркадные гонки в неоновом стиле",
     "excerpt": "Super Retro Race — динамичная аркадная гонка с дрейфом, нитро и погонями за полицейскими. 15 автомобилей, четыре радиостанции и неоновый мир ждут",
     "date": "28 октября 2026",
@@ -1673,6 +1787,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/blocia-4873510",
+    "noindex": true,
     "title": "Blocia – многопользовательская песочница",
     "excerpt": "Blocia — бесплатная онлайн‑песочница, где можно строить миры, собирать предметы, создавать мини‑игры и взаимодействовать с другими игроками.",
     "date": "28 октября 2026",
@@ -1686,6 +1801,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/cyber-volleyball-4980110",
+    "noindex": true,
     "title": "Cyber Volleyball — аркадный волейбол с прогрессией",
     "excerpt": "Cyber Volleyball — динамичная 2D игра в волейбол с реалистичной физикой, системой прокачки персонажей и режимами приключений и онлайн‑матчей. Идеально для",
     "date": "28 октября 2026",
@@ -1699,6 +1815,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/icepath-5306390",
+    "noindex": true,
     "title": "IcePath — инди‑роуглайк головоломка",
     "excerpt": "IcePath — двухмерная игра‑рогулейк, где каждое прохождение генерируется заново. Собирайте разбросанную по уровням энергию данных, продвигаясь токеном к",
     "date": "28 октября 2026",
@@ -1712,6 +1829,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/unseen-land-into-the-mist-3932010",
+    "noindex": true,
     "title": "UNSEEN LAND: INTO THE MIST — обзор игры",
     "excerpt": "UNSEEN LAND: INTO THE MIST — динамичное экшен‑RPG с элементами защиты территории, где герой меняет стиль боя и строит башни, чтобы удержать волны чудовищ",
     "date": "28 октября 2026",
@@ -1725,6 +1843,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/tasktown-5246480",
+    "noindex": true,
     "title": "TaskTown – казуальная игра о строительстве деревни",
     "excerpt": "TaskTown – бесплатная казуальная игра, где каждое нажатие клавиш превращается в внутриигровую валюту. Собирайте милых животных, находите им инструменты и",
     "date": "28 октября 2026",
@@ -1738,6 +1857,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/-4540040",
+    "noindex": true,
     "title": "琉隐：将魂千军 — экшен roguelike с тактикой",
     "excerpt": "琉隐：将魂千军 – динамичный экшен‑roguelike в древнем стиле «мусу», где игрок командует отрядом союзников, пробивая вражеские линии и раскрывая тайные события.",
     "date": "28 октября 2026",
@@ -1751,6 +1871,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/project-android-3690240",
+    "noindex": true,
     "title": "Project Android – симулятор",
     "excerpt": "Project Android – симулятор, где вы проводите эксперименты и выращиваете андроида, стремящегося стать спасителем человечества.",
     "date": "28 октября 2026",
@@ -1764,6 +1885,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/-5090380",
+    "noindex": true,
     "title": "熊猫钓鱼：台钓问道之旅 — казуальный рыболовный симулятор",
     "excerpt": "Игра‑симулятор рыбалки в стиле тайваньского традиционного ловли. 2D‑мир, живописные локации, настройка снастей и приманок. Подходит любителям спокойного",
     "date": "28 октября 2026",
@@ -1777,6 +1899,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/midnight-heat-retro-racing-5096460",
+    "noindex": true,
     "title": "Midnight Heat: Retro Racing — ретро‑гонки с драйвом",
     "excerpt": "Midnight Heat: Retro Racing — аркадные гонки в стиле ретро, где вы начинаете как личный водитель, участвуете в уличных соревнованиях, зарабатываете",
     "date": "28 октября 2026",
@@ -1790,6 +1913,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/my-useless-hot-milf-in-the-party-4826620",
+    "noindex": true,
     "title": "My Useless Hot MILF in the Party — обзор",
     "excerpt": "Приключенческий ролевой проект, где игрок исследует опасные подземелья от первого лица, тренирует спутницу и решает головоломки. Подойдёт любителям",
     "date": "28 октября 2026",
@@ -1803,6 +1927,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/hatters-3612660",
+    "noindex": true,
     "title": "Hatters — кооперативный экшен‑рогалик с магическим хаосом",
     "excerpt": "Hatters — динамичный кооперативный экшен‑рогалик для четырёх игроков, где случайные заклинания пяти стихий, магические артефакты и юмористичный сюжет",
     "date": "28 октября 2026",
@@ -1816,6 +1941,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/stellar-broadcast-4315190",
+    "noindex": true,
     "title": "Stellar Broadcast – приключенческий симулятор колонизации",
     "excerpt": "Stellar Broadcast – игра, где вы управляете последним кораблём‑колонией, исследуете процедурные миры, решаете загадки сигналов и принимаете судьбоносные",
     "date": "28 октября 2026",
@@ -1829,6 +1955,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/the-long-dark-iron-road-4922630",
+    "noindex": true,
     "title": "The Long Dark: Iron Road — выживание и тайны",
     "excerpt": "The Long Dark: Iron Road — новое дополнение к серии, где вам предстоит исследовать загадочный остров, восстановить старый поезд и раскрыть мрачный секрет,",
     "date": "28 октября 2026",
@@ -1842,6 +1969,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/project-exhibitionist-4688700",
+    "noindex": true,
     "title": "Project Exhibitionist — приключенческий симулятор свободы",
     "excerpt": "Project Exhibitionist — 3D‑песочница, где вы управляете девушкой Сиэль, бросившей вызов и отправившейся в мир без одежды. Полная настройка и открытый мир",
     "date": "28 октября 2026",
@@ -1855,6 +1983,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/retropulse-halloween-5367510",
+    "noindex": true,
     "title": "Обзор RETROPULSE Halloween: неоновая головоломка",
     "excerpt": "RETROPULSE Halloween — казуальная инди-головоломка в стиле ретровейв. Соединяйте точки, создавайте неоновые волны и открывайте праздничные арты.",
     "date": "27 октября 2026",
@@ -1868,6 +1997,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/chaepitie-zvezdnoy-nochyu-5084590",
+    "noindex": true,
     "title": "Чаепитие звёздной ночью — обзор",
     "excerpt": "«Чаепитие звёздной ночью» — асимметричная ролевая игра с элементами погони, где игроки делятся на Гостя и Демона. Оцените уникальный геймплей и атмосферу,",
     "date": "27 октября 2026",
@@ -1881,6 +2011,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/wattverse-5283330",
+    "noindex": true,
     "title": "Обзор Wattverse: симулятор энергетической империи",
     "excerpt": "Обзор Wattverse — инди-кликера про выработку электричества. Развивайте энергетическую империю, автоматизируйте процессы и растите показатели.",
     "date": "27 октября 2026",
@@ -1894,6 +2025,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/farm-story-life-5308110",
+    "noindex": true,
     "title": "Farm Story Life — фермерский симулятор",
     "excerpt": "Farm Story Life — расслабляющий фермерский симулятор, где выращивают урожай, ухаживают за животными и обустраивают уютный деревенский дом. Идеально для",
     "date": "27 октября 2026",
@@ -1907,6 +2039,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/jr-east-train-simulator-musashino-line-t-ky-to-fuch-hommachi-e231-0-series-5345470",
+    "noindex": true,
     "title": "JR EAST Train Simulator: Musashino Line (E231-0 Series) –",
     "excerpt": "Обзор JR EAST Train Simulator: Musashino Line (E231-0 Series). Узнайте, чем привлекателен этот железнодорожный симулятор, какие пейзажи и задачи ждут",
     "date": "27 октября 2026",
@@ -1920,6 +2053,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/re-draw-5062690",
+    "noindex": true,
     "title": "Re:Draw – казуальная инди‑симуляция восстановления мира",
     "excerpt": "Re:Draw – игра‑симулятор, где вы восстанавливаете стертый мир с помощью карандаша, рисуете ландшафты, создаёте экосистемы и наблюдаете за ростом",
     "date": "27 октября 2026",
@@ -1933,6 +2067,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/cell-dominion-5362920",
+    "noindex": true,
     "title": "Cell Dominion — микроскопический экшен‑стратегия",
     "excerpt": "Cell Dominion — динамичная игра, где вы управляете крошечной клеткой в микромире, развивая органеллы, гены и колонию, сражаясь онлайн против соперников в",
     "date": "27 октября 2026",
@@ -1946,6 +2081,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/-5235090",
+    "noindex": true,
     "title": "和平战队 — виртуальный шутер в космосе",
     "excerpt": "和平战队 — однопользовательский шутер в виртуальной реальности, где вам предстоит пройти пять миссий в космической глубине, сражаясь с механическими и",
     "date": "27 октября 2026",
@@ -1959,6 +2095,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/situation-succ-inn-elysium-2696110",
+    "noindex": true,
     "title": "Situation Succ: Inn Elysium – обзор",
     "excerpt": "Темная фэнтезийная приключенческая RPG, где вы играете за детектива, запертого в древней таверне четырьмя злобными существами. Исследуйте, решайте загадки",
     "date": "27 октября 2026",
@@ -1972,6 +2109,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/exe-5112180",
+    "noindex": true,
     "title": "神谕之窗.exe — казуальный симулятор цивилизации",
     "excerpt": "神谕之窗.exe – бесплатный казуальный симулятор, где игрок управляет древней цивилизацией через интерфейс, напоминающий настольную ОС. Строительство, ресурсы и",
     "date": "27 октября 2026",
@@ -1985,6 +2123,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/the-beast-awoke-to-eat-your-darlings-1704950",
+    "noindex": true,
     "title": "The Beast Awoke To Eat Your Darlings — обзор игры",
     "excerpt": "Инди‑стратегия The Beast Awoke To Eat Your Darlings бросает игрока в мрачный мир, где нужно спасать котов, обходя зверя и его стражей.",
     "date": "27 октября 2026",
@@ -1998,6 +2137,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/cowpokers-dead-man-s-frontier-5315130",
+    "noindex": true,
     "title": "Cowpokers: Dead Man's Frontier: цена, отзывы и статистика игроков",
     "excerpt": "Cowpokers: Dead Man's Frontier: актуальная цена (180.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
     "date": "27 октября 2026",
@@ -2008,6 +2148,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/neon-breaker-endless-arcade-5054650",
+    "noindex": true,
     "title": "Neon Breaker: Endless Arcade — аркадный шутер",
     "excerpt": "Neon Breaker: Endless Arcade — динамичный шутер с двумя стиками, где нужно быстро уничтожать волны врагов, собирать улучшения и сражаться с боссами в",
     "date": "27 октября 2026",
@@ -2021,6 +2162,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/tiny-fishing-club-3070310",
+    "noindex": true,
     "title": "Tiny Fishing Club — уютный симулятор рыбалки",
     "excerpt": "Tiny Fishing Club — расслабляющая казуальная игра‑симулятор, где можно ловить рыбу в одиночку или онлайн, собирать питомцев и развивать свой рыболовный",
     "date": "27 октября 2026",
@@ -2034,6 +2176,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/heme-4395840",
+    "noindex": true,
     "title": "HEME – инди игра о любви и связи",
     "excerpt": "HEME – короткая 2‑D игра‑приключение с акцентом на сюжет, исследует сложные чувства и неразрывную связь между персонажами, подходящая любителям",
     "date": "27 октября 2026",
@@ -2047,6 +2190,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/archives-of-disorder-pasture-without-light-5044960",
+    "noindex": true,
     "title": "Archives of Disorder – Pasture Without Light — обзор",
     "excerpt": "Независимая приключенческая игра «Archives of Disorder – Pasture Without Light» предлагает задумчивый сюжет о слепоте, памяти и выборе в",
     "date": "27 октября 2026",
@@ -2060,6 +2204,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/zombie-cropse-5032330",
+    "noindex": true,
     "title": "Zombie Cropse – готический симулятор управления",
     "excerpt": "Zombie Cropse — уютный готический симулятор, где вы выращиваете зомби из семян, автоматизируете кладбище и набираете армию для рейдов. Игра предлагает",
     "date": "27 октября 2026",
@@ -2073,6 +2218,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/scuttled-5044360",
+    "noindex": true,
     "title": "Scuttled — инди‑стратегия с элементами защиты и крафта",
     "excerpt": "Scuttled — гибрид стратегии и инкрементального крафта, где вам предстоит разрушать астероиды, перерабатывать руду и восстанавливать корабль в опасном",
     "date": "27 октября 2026",
@@ -2086,6 +2232,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/gemcremental-5317700",
+    "noindex": true,
     "title": "GemCremental – казуальная инкрементальная игра о ремесле",
     "excerpt": "GemCremental – уютная инкрементальная игра, где вы создаёте разнообразные самоцветы и становитесь величайшей ведьмой. Подходит любителям казуальных",
     "date": "27 октября 2026",
@@ -2099,6 +2246,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/oblachnyy-patrul-5306660",
+    "noindex": true,
     "title": "ОБЛАЧНЫЙ ПАТРУЛЬ — динамичный шутер",
     "excerpt": "ОБЛАЧНЫЙ ПАТРУЛЬ – быстрый FPS, где вам предстоит защищать парящие острова от волн дронов и трёх боссов, улучшая оружие за найденные монеты в 30‑ти циклах",
     "date": "27 октября 2026",
@@ -2112,6 +2260,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/touhou-bansho-cards-4958460",
+    "noindex": true,
     "title": "Touhou Bansho Cards — обзор и рекомендации",
     "excerpt": "Touhou Bansho Cards — карточный рогалик с элементами приключений и стратегии. Собирайте колоду, проходите коридор, спасайте девушек Гэнсокё и раскрывайте",
     "date": "27 октября 2026",
@@ -2125,6 +2274,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/emoji-tidy-up-5237400",
+    "noindex": true,
     "title": "Emoji : Tidy Up – уютные головоломки",
     "excerpt": "Emoji : Tidy Up – казуальная инди‑игра, где нужно сортировать более 2100 ярких эмодзи, подбирать пары и упорядочивать красочный мир, создавая приятную",
     "date": "27 октября 2026",
@@ -2138,6 +2288,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/subsurvival-ssn-13-grendel-5039370",
+    "noindex": true,
     "title": "SubSurvival: SSN-13 \"Grendel\": цена, отзывы и статистика игроков",
     "excerpt": "SubSurvival: SSN-13 \"Grendel\": актуальная цена (204.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
     "date": "27 октября 2026",
@@ -2148,6 +2299,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/chill-gyaru-5087840",
+    "noindex": true,
     "title": "Chill Gyaru — казуальный симулятор",
     "excerpt": "Chill Gyaru — уютная игра‑симулятор, где вы заботитесь о девушке‑гяру, живущей в углу экрана. Наблюдайте, как её жизнь меняется в зависимости от вашего",
     "date": "27 октября 2026",
@@ -2161,6 +2313,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/prepod-ona-realno-zlitsya-5217200",
+    "noindex": true,
     "title": "Препод, она реально злится! – обзор игры",
     "excerpt": "Комедийный стелс-симулятор от первого лица, где нужно тайком переписываться с девушкой на уроке, уклоняться от учителя и прятать телефон. Подойдет",
     "date": "27 октября 2026",
@@ -2174,6 +2327,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/-5370160",
+    "noindex": true,
     "title": "挂机传奇 — бесконечный ARPG",
     "excerpt": "挂机传奇 — казуальная инди-игра, где ваш герой автоматически сражается в подземельях, собирает добычу и улучшает снаряжение, даже когда вы офлайн.",
     "date": "27 октября 2026",
@@ -2187,6 +2341,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/cosplaying-in-costalia-the-tororo-sisters-3891200",
+    "noindex": true,
     "title": "Cosplaying in Costalia: The Tororo Sisters! – обзор игры",
     "excerpt": "Казуальная игра, где вы помогаете сестрам Ямакаке стать моделями для фотосессий в мире Косталии. Простое управление, яркие костюмы и лёгкая атмосфера",
     "date": "27 октября 2026",
@@ -2200,6 +2355,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/trash-to-cash-5130520",
+    "noindex": true,
     "title": "Trash to Cash — казуальная игра о поиске сокровищ",
     "excerpt": "Trash to Cash – казуальная игра, где игроки собирают мусор, ищут скрытые предметы и превращают их в ценные ресурсы, постепенно становясь настоящим Королём",
     "date": "27 октября 2026",
@@ -2213,6 +2369,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/povelitel-demonov-ii-5245310",
+    "noindex": true,
     "title": "Повелитель Демонов II — обзор, геймплей и классы",
     "excerpt": "Повелитель Демонов II — ролевая стратегия с автосражениями и мрачным лутом. Выбирайте из пяти классов, собирайте редкие артефакты и создавайте уникальные",
     "date": "27 октября 2026",
@@ -2226,6 +2383,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/chronogallery-5198470",
+    "noindex": true,
     "title": "ChronoGallery — часы, календарь и фотоальбом",
     "excerpt": "ChronoGallery объединяет часы, календарь и фотоальбом в одном приложении с живыми циферблатами, сменой тем и поддержкой видео, создавая стильный рабочий",
     "date": "27 октября 2026",
@@ -2239,6 +2397,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/outlast-238320",
+    "noindex": true,
     "title": "Outlast — хоррор в психиатрической больнице",
     "excerpt": "Outlast — шутер от первого лица в жанре survival horror. Игрок выступает в роли журналиста, исследующего мрачный психиатрический центр, где каждый шаг",
     "date": "27 октября 2026",
@@ -2252,6 +2411,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/sons-of-the-forest-1326470",
+    "noindex": true,
     "title": "Sons Of The Forest – выживание в жутком открытом мире",
     "excerpt": "Sons Of The Forest – открытый мир, где вам предстоит искать пропавшего миллиардера, сражаться с каннибалами, строить убежище и выживать в страшном",
     "date": "27 октября 2026",
@@ -2265,6 +2425,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/elementers-3018340",
+    "noindex": true,
     "title": "Elementers — сатирическое экшен‑приключение",
     "excerpt": "Elementers – многопользовательская игра‑приключение с элементами экшена и ролевой системы. Сатирический сюжет, магические способности и защита деревень от",
     "date": "26 октября 2026",
@@ -2278,6 +2439,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/what-lurks-below-5107320",
+    "noindex": true,
     "title": "Обзор WHAT LURKS BELOW — жуткие прятки в лабиринте",
     "excerpt": "Обзор WHAT LURKS BELOW: сетевой хоррор в формате пряток. Лабиринты, меняющиеся каждый раунд, голосовой чат и напряженная охота с друзьями или ботами.",
     "date": "26 октября 2026",
@@ -2291,6 +2453,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/crazy-city-golf-5347600",
+    "noindex": true,
     "title": "Crazy City Golf – онлайн парти‑гольф в городе",
     "excerpt": "Crazy City Golf – казуальная спортивная игра, где весь город превращается в поле для гольфа. Играйте до восьми человек, прокладывайте маршрут через",
     "date": "26 октября 2026",
@@ -2304,6 +2467,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/abyss-ring-3401570",
+    "noindex": true,
     "title": "Abyss Ring – экшн‑рогалик с кулинарными боями",
     "excerpt": "Abyss Ring — инди‑экшен с элементами RPG, где вы готовите монстров в рогалике. Более 200 предметов, случайные уровни и постоянный риск делают каждое",
     "date": "26 октября 2026",
@@ -2317,6 +2481,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/frontline-2042-modern-war-shooter-5010310",
+    "noindex": true,
     "title": "Frontline 2042: Modern War Shooter – обзор",
     "excerpt": "Frontline 2042 – динамичный сетевой шутер в жанре современного военного экшена. Играй в командных PvP и режимах «каждый за себя», собирай снаряжение и",
     "date": "26 октября 2026",
@@ -2330,6 +2495,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/-5224210",
+    "noindex": true,
     "title": "斗魔大陆 — темное одиночное экшен‑приключение с ролевой",
     "excerpt": "В игре 斗魔大陆 вам предстоит исследовать магический континент, сражаться с чудовищами и гигантскими боссами, осваивать навыки и улучшать персонажа с помощью",
     "date": "26 октября 2026",
@@ -2343,6 +2509,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/highway-formosa-5398040",
+    "noindex": true,
     "title": "Highway Formosa – аркадные гонки по Тайваню",
     "excerpt": "Highway Formosa – ретро-аркада про гонки по живописным улицам Тайваня. Управляйте красным кабриолетом, уклоняйтесь от машин, собирайте нитро и",
     "date": "26 октября 2026",
@@ -2356,6 +2523,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/advancing-fronts-5204860",
+    "noindex": true,
     "title": "Advancing Fronts — стратегия в реальном времени",
     "excerpt": "Advancing Fronts — масштабная стратегия в реальном времени с процедурно генерируемыми картами, где вам предстоит управлять огромными армиями, развивать",
     "date": "26 октября 2026",
@@ -2369,6 +2537,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/sign-broken-kether-3788590",
+    "noindex": true,
     "title": "Sign: Broken Kether – визуальная новелла с фантазией",
     "excerpt": "Sign: Broken Kether – приключенческая визуальная новелла, где школьница Лира вместе с ведьмой Цигнус отправляются в мир магии, чтобы вернуть утраченные",
     "date": "26 октября 2026",
@@ -2382,6 +2551,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/pro-railway-dispatcher-pro-4932180",
+    "noindex": true,
     "title": "鉄道運行管理シミュレーターPro - Railway Dispatcher Pro -: цена, отзывы и статистика игроков",
     "excerpt": "鉄道運行管理シミュレーターPro - Railway Dispatcher Pro -: актуальная цена (1400.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
     "date": "26 октября 2026",
@@ -2392,6 +2562,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/excids-endless-siege-5087180",
+    "noindex": true,
     "title": "Excids: Endless Siege — обзор мрачного экшен-рогалика",
     "excerpt": "Обзор Excids: Endless Siege. Рассказываем о механике мрачного экшен-рогалика, обороне замка от волн врагов, прокачке героев и выборе реликвий.",
     "date": "26 октября 2026",
@@ -2405,6 +2576,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/-3056620",
+    "noindex": true,
     "title": "Обзор игры 拼好车 — дорожное выживание в пустоши",
     "excerpt": "拼好车 — атмосферный симулятор поездки по постапокалиптической пустоши. Исследуйте заброшенные дома, собирайте ценные ресурсы и выживайте за рулем.",
     "date": "26 октября 2026",
@@ -2418,6 +2590,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/dawn-of-the-robot-empire-452240",
+    "noindex": true,
     "title": "Dawn of the Robot Empire — обзор игры",
     "excerpt": "Dawn of the Robot Empire – динамичный экшен‑шутер в стиле старых аркад. Сразитесь с инопланетными роботами, требующими быстрой реакции и точного",
     "date": "26 октября 2026",
@@ -2431,6 +2604,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/scopa-sweep-5048870",
+    "noindex": true,
     "title": "Scopa Sweep – обзор и геймплей",
     "excerpt": "Scopa Sweep — карточная игра в стиле roguelike, где традиционная итальянская Scopa превращается в стратегическую битву за очки и бонусы.",
     "date": "26 октября 2026",
@@ -2444,6 +2618,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/take-off-the-rocket-2883720",
+    "noindex": true,
     "title": "Take Off The Rocket – тролль‑платформер с ловушками",
     "excerpt": "Take Off The Rocket – казуальный экшен‑платформер, где каждый гибель – часть стратегии. Пройдите 60 уровней на Земле и Луне, избегая ловушек и собирая",
     "date": "26 октября 2026",
@@ -2457,6 +2632,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/puzzle-peace-cozy-jigsaw-puzzles-5324320",
+    "noindex": true,
     "title": "Puzzle Peace: Cozy Jigsaw Puzzles – обзор игры",
     "excerpt": "Puzzle Peace: Cozy Jigsaw Puzzles – бесплатные казуальные пазлы с атмосферой уюта. Сотни уровней от 40 до 1296 деталей, ежедневные задания и приятная",
     "date": "26 октября 2026",
@@ -2470,6 +2646,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/shhh-it-5387480",
+    "noindex": true,
     "title": "Shhh, IT! — карточная стратегия про стартапы",
     "excerpt": "Shhh, IT! — карточная игра про абсурдный мир IT‑стартапов, где нужно нанимать разработчиков, выпускать сумасшедшие продукты и бороться за хайп с",
     "date": "26 октября 2026",
@@ -2483,6 +2660,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/tiny-spellcaster-5315330",
+    "noindex": true,
     "title": "Tiny Spellcaster — аркадный шутер с магией",
     "excerpt": "Tiny Spellcaster — аркадный шутер, где вам предстоит отразить бесконечные волны демонов, используя магические умения и улучшения. Идеально для любителей",
     "date": "26 октября 2026",
@@ -2496,6 +2674,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/lyra-quinn-black-hole-5265120",
+    "noindex": true,
     "title": "Lyra Quinn - Black Hole обзор",
     "excerpt": "Lyra Quinn – Black Hole – динамичный 2D шутер в космическом сеттинге. 26 уровней, быстрый геймплей и бросающие вызов боссы делают игру интересной для",
     "date": "26 октября 2026",
@@ -2509,6 +2688,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/tetromancer-4898560",
+    "noindex": true,
     "title": "Tetromancer – стратегия‑тетрис с битвами",
     "excerpt": "Tetromancer — казуальная инди‑стратегия, где поле Тетриса превращается в экономику войны. Очищая линии, вы вызываете солдат и сражаетесь в реальном",
     "date": "26 октября 2026",
@@ -2522,6 +2702,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/topdeck-duel-4738510",
+    "noindex": true,
     "title": "Topdeck Duel – инкрементальный карточный рогалик",
     "excerpt": "Topdeck Duel — карточный рогалик с инкрементальной механикой: собирайте колоду, улучшайте карты, побеждайте в бесконечных боях и используйте золото для",
     "date": "26 октября 2026",
@@ -2535,6 +2716,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/dub-together-profile-pack-1-sakura-5459020",
+    "noindex": true,
     "title": "Dub Together Profile Pack 1 – Sakura: косметика для профиля",
     "excerpt": "Набор из 18 анимированных предметов в японском стиле для профиля в Dub Together. Таблички, обои и рамки, созданные разработчиком без ИИ, поддержат автора.",
     "date": "26 октября 2026",
@@ -2548,6 +2730,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/campsite-5169220",
+    "noindex": true,
     "title": "Campsite — ужасающий инди‑экшен в лесу",
     "excerpt": "Игра Campsite — атмосферный экшен‑приключение, где в глуши леса вас преследует невидимая сила. Выживание, напряжённые схватки и таинственная история.",
     "date": "26 октября 2026",
@@ -2561,6 +2744,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/viking-life-2058670",
+    "noindex": true,
     "title": "Viking Life — эпический роглайт о викингах",
     "excerpt": "Viking Life — роглайтовый экшен‑приключение, где вы возглавляете дружину викингов, сражаетесь в реальном времени и возрождаетесь в Вальхалле, строя новые",
     "date": "26 октября 2026",
@@ -2574,6 +2758,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/keep-it-trolling-fantasy-edition-5342690",
+    "noindex": true,
     "title": "Keep It Trolling: Fantasy Edition – обзор",
     "excerpt": "Обзор Keep It Trolling: Fantasy Edition – казуальная стратегия с броском кубиков, карточками мифических существ и рискованным управлением очками. Подходит",
     "date": "26 октября 2026",
@@ -2587,6 +2772,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/born-of-the-moon-4111820",
+    "noindex": true,
     "title": "Born of the Moon — социальный хоррор для 3‑6 игроков",
     "excerpt": "Born of the Moon — асимметричный хоррор‑экшен, где группа выживших в особняке сталкивается с предательством и безумием. Игра для 3‑6 человек, где доверие",
     "date": "26 октября 2026",
@@ -2600,6 +2786,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/date-simulator-exe-5196220",
+    "noindex": true,
     "title": "DATE_SIMULATOR.EXE — приключенческий симулятор свиданий",
     "excerpt": "Игра предлагает пройти три уникальных свидания с очаровательными девушками, погрузиться в уютные моменты и почувствовать атмосферу настоящих отношений.",
     "date": "26 октября 2026",
@@ -2613,6 +2800,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/debt-wish-5041720",
+    "noindex": true,
     "title": "Debt Wish – казуальная финансовая стратегия",
     "excerpt": "Debt Wish – симулятор финансов, где вы начинаете с $100, берёте кредиты, торгуете и рискуете, чтобы построить империю. Игра для любителей стратегии и",
     "date": "26 октября 2026",
@@ -2626,6 +2814,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/red-rain-4087210",
+    "noindex": true,
     "title": "Red Rain – инди RPG про выживание",
     "excerpt": "Red Rain — бесплатная инди RPG, где вы играете за Алли, выживающую мать в постапокалиптическом мире. Исследуйте разрушенный, но красивый ландшафт,",
     "date": "26 октября 2026",
@@ -2639,6 +2828,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/project-neko-5303890",
+    "noindex": true,
     "title": "Project Neko – музыкальный экшен в неоновом туннеле",
     "excerpt": "Project Neko – динамичный инди‑экшен, где вы управляете кораблём‑кото́чкой в неоновом ритмичном туннеле, собираете ноты в такт музыке и бросаете вызов",
     "date": "26 октября 2026",
@@ -2652,6 +2842,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/beamng-drive-284160",
+    "noindex": true,
     "title": "BeamNG.drive – реалистичный автосимулятор",
     "excerpt": "BeamNG.drive – физический автосимулятор, где каждый автомобиль ведёт себя как реальный. Идеально для любителей гонок и экспериментов с повреждениями.",
     "date": "26 октября 2026",
@@ -2665,6 +2856,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/some-things-stay-broken-3138080",
+    "noindex": true,
     "title": "Some Things Stay Broken — обзор короткой истории",
     "excerpt": "Обзор инди-игры Some Things Stay Broken. Рассказываем о сюжете, починке предметов и том, кому понравится эта трогательная получасовая история.",
     "date": "25 октября 2026",
@@ -2678,6 +2870,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/the-suburbs-serena-5255540",
+    "noindex": true,
     "title": "The Suburbs: Serena – обзор и особенности",
     "excerpt": "The Suburbs: Serena – симулятор с необычным сюжетом о избалованной жене‑трофее, которая неожиданно становится звездой собственного шоу. Подойдёт любителям",
     "date": "25 октября 2026",
@@ -2691,6 +2884,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/anima-trium-5281110",
+    "noindex": true,
     "title": "Обзор Anima Trium: приключения и пошаговые бои",
     "excerpt": "Обзор инди-игры Anima Trium. Узнайте об исследовании островов, раскрытии тайн древней войны и пошаговых битвах в этом атмосферном ролевом приключении.",
     "date": "25 октября 2026",
@@ -2704,6 +2898,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/blamcon-s-cyber-range-5378020",
+    "noindex": true,
     "title": "Blamcon's Cyber Range: цена, отзывы и статистика игроков",
     "excerpt": "Blamcon's Cyber Range: актуальная цена (335.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
     "date": "25 октября 2026",
@@ -2714,6 +2909,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/last-fisherman-4262030",
+    "noindex": true,
     "title": "Обзор Last Fisherman: медитативная рыбалка в руинах",
     "excerpt": "Подробный обзор Last Fisherman. Узнайте об особенностях меланхоличного симулятора рыбалки среди заброшенных биомов и руин забытых городов.",
     "date": "25 октября 2026",
@@ -2727,6 +2923,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/spellweave-5342920",
+    "noindex": true,
     "title": "Обзор игры SpellWeave: бесконечный экшен-рогалик",
     "excerpt": "Обзор SpellWeave — инди-экшена о создании волшебной палочки из карт заклинаний. Узнайте об особенностях бесконечного подземелья и боевой системе игры.",
     "date": "25 октября 2026",
@@ -2740,6 +2937,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/lumbrix-5358030",
+    "noindex": true,
     "title": "Lumbrix — шутер‑выживание с растущим червём",
     "excerpt": "Lumbrix — динамичный экшен‑выживание, где каждый отросток вашего червя служит и оружием, и щитом. Стреляйте, защищайтесь, улучшайте арсенал и продержитесь",
     "date": "25 октября 2026",
@@ -2753,6 +2951,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/dispatch-control-3752410",
+    "noindex": true,
     "title": "Обзор Dispatch Control: симулятор экстренных служб",
     "excerpt": "Всё об игре Dispatch Control: тактический симулятор диспетчера спасателей. Узнайте об особенностях кампании, кооперативе и стоит ли играть.",
     "date": "25 октября 2026",
@@ -2766,6 +2965,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/ad-nauseam-the-wrong-side-3330380",
+    "noindex": true,
     "title": "Ad Nauseam - The Wrong Side — обзор",
     "excerpt": "Ad Nauseam – The Wrong Side – психологический хоррор‑триллер с элементами приключений и RPG. Игра ставит перед игроком сложные моральные выборы, погружая",
     "date": "25 октября 2026",
@@ -2779,6 +2979,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/fire-bug-4924290",
+    "noindex": true,
     "title": "Fire Bug – аркадный экшн о жаре и насекомых",
     "excerpt": "Fire Bug — быстрый аркадный экшн, в котором вы держите солнце в руке, сжигаете полчища насекомых, собираете искры и улучшаете способности, чтобы победить",
     "date": "25 октября 2026",
@@ -2792,6 +2993,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/avxrpg-5105260",
+    "noindex": true,
     "title": "Обзор AVXRPG: особенности двухмерного ролевого экшена",
     "excerpt": "Стоит ли играть в AVXRPG? Разбираем инди-экшен с короткими вылазками, сбором ресурсов и созданием снаряжения. Узнайте главные плюсы игры в нашем обзоре.",
     "date": "25 октября 2026",
@@ -2805,6 +3007,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/potseluy-menya-za-schet-oligarha-5288620",
+    "noindex": true,
     "title": "Поцелуй меня за счёт олигарха: обзор игры и впечатления",
     "excerpt": "В обзоре игры «Поцелуй меня за счёт олигарха» рассказываем о драме организатора свадеб, тайном торжестве на Адриатике и непростом романтическом выборе.",
     "date": "25 октября 2026",
@@ -2818,6 +3021,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/pixelboss-shattered-depths-4708610",
+    "noindex": true,
     "title": "Обзор PixelBoss: Shattered Depths — хардкорный платформер",
     "excerpt": "Обзор инди-платформера PixelBoss: Shattered Depths. Узнайте об особенностях хардкорного игрового процесса, ловушках и испытаниях на реакцию.",
     "date": "25 октября 2026",
@@ -2831,6 +3035,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/quick-translate-engine-3827150",
+    "noindex": true,
     "title": "Обзор Quick Translate Engine: перевод экрана в играх",
     "excerpt": "Обзор полезной утилиты Quick Translate Engine. Узнайте, как программа переводит текст с экрана, диалоги в играх и помогает общаться с иностранцами.",
     "date": "25 октября 2026",
@@ -2844,6 +3049,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/behind-the-corner-4709550",
+    "noindex": true,
     "title": "Behind the Corner – психологический хоррор в стиле инди",
     "excerpt": "Behind the Corner – атмосферный инди‑хоррор от первого лица, где вам придётся исследовать мрачные винтажные локации и уклоняться от неумолимой сущности,",
     "date": "25 октября 2026",
@@ -2857,6 +3063,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/grifford-academy-2445780",
+    "noindex": true,
     "title": "Grifford Academy — приключенческая RPG с выбором",
     "excerpt": "Grifford Academy – ролевая игра с глубокой историей, где ваш выбор формирует персонажей. Тактические пошаговые бои и исследование волшебного мира книги.",
     "date": "25 октября 2026",
@@ -2870,6 +3077,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/shear-line-5069860",
+    "noindex": true,
     "title": "Shear line – симулятор взлома замков",
     "excerpt": "Shear line – физический симулятор взлома замков без случайных бросков. Изучайте цилиндрические, комбинированные и дисковые механизмы, оттачивая навыки",
     "date": "25 октября 2026",
@@ -2883,6 +3091,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/foulbreaker-2774560",
+    "noindex": true,
     "title": "Foulbreaker — экшн‑рогалик в фэнтезийном мире",
     "excerpt": "Foulbreaker — динамичный экшн‑рогалик с элементами стратегии и магии. Бесконечные битвы с монстрами в мрачном королевстве ждут любителей вызова.",
     "date": "25 октября 2026",
@@ -2896,6 +3105,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/slicefall-4863300",
+    "noindex": true,
     "title": "SLICEFALL — рефлекс‑пазл про укладывание блоков",
     "excerpt": "SLICEFALL – динамичная казуальная игра‑головоломка, где нужно точно таймить падение сужающихся блоков, заполнять ряды и использовать усиления, чтобы",
     "date": "25 октября 2026",
@@ -2909,6 +3119,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/unforgiving-dungeon-4929010",
+    "noindex": true,
     "title": "Unforgiving Dungeon – обзор игры",
     "excerpt": "Unforgiving Dungeon – бесплатный казуальный рогалик с пошаговыми боями и исследованием подземелий в стиле пиксель‑арт. Подойдёт любителям динамичных",
     "date": "25 октября 2026",
@@ -2922,6 +3133,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/thunder-training-ground-4637470",
+    "noindex": true,
     "title": "Thunder Training Ground – обзор и геймплей",
     "excerpt": "Thunder Training Ground — инди‑экшен‑симулятор, где игрок отрабатывает навыки воздушного боя, бомбардировки и зенитной стрельбы. Гибкая настройка техники",
     "date": "25 октября 2026",
@@ -2935,6 +3147,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/lily-or-horse-5385830",
+    "noindex": true,
     "title": "Lily or Horse — простая казуальная игра",
     "excerpt": "Lily or Horse — минималистичная казуальная игра, где нужно подбрасывать монету и угадывать, выпадет ли лилия или лошадь. Простой геймплей, быстрые раунды,",
     "date": "25 октября 2026",
@@ -2948,6 +3161,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/wild-draw-5328190",
+    "noindex": true,
     "title": "Wild Draw – шутер и карточная игра",
     "excerpt": "Wild Draw – динамичный шутер от первого лица для 3‑6 игроков, где каждый раунд начинается карточной раздачей в салуне и заканчивается огненным хаосом.",
     "date": "25 октября 2026",
@@ -2961,6 +3175,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/hedge-knight-5249350",
+    "noindex": true,
     "title": "Hedge Knight – средневековый экшен RPG",
     "excerpt": "Hedge Knight – ролевая игра‑симулятор, где вы возглавляете наёмную компанию, командуете пехотой, лучниками и кавалерией, осаждаете замки, летаете на",
     "date": "25 октября 2026",
@@ -2974,6 +3189,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/chesstria-4999150",
+    "noindex": true,
     "title": "Chesstria – шахматы в стиле roguelite",
     "excerpt": "Chesstria – уникальная шахматная roguelite с артефактами, предметами и режимами PvP. Игра для любителей стратегии и головоломок.",
     "date": "25 октября 2026",
@@ -2987,6 +3203,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/squirt-game-wallpapers-18-5442420",
+    "noindex": true,
     "title": "SQUIRT GAME 💦 - WALLPAPERS 18+ — обзор",
     "excerpt": "Обзор набора обоев SQUIRT GAME 💦 - WALLPAPERS 18+. Узнайте, как яркие иллюстрации из игры могут преобразить ваш рабочий стол, какие стилистические",
     "date": "25 октября 2026",
@@ -3000,6 +3217,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/drivedeck-5354830",
+    "noindex": true,
     "title": "DriveDeck – портативный рабочий стол для SSD",
     "excerpt": "DriveDeck превращает внешний SSD в удобный переносной рабочий стол: хранение, организация, проверенные передачи и безопасное извлечение файлов в одном",
     "date": "25 октября 2026",
@@ -3013,6 +3231,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/squirt-game-5038160",
+    "noindex": true,
     "title": "SQUIRT GAME 💦 – провокационный инди‑симулятор",
     "excerpt": "SQUIRT GAME 💦 – казуальная инди‑игра, где вы участвуете в безумном реалити‑шоу, манипулируете соперниками и бросаете вызов собственным границам.",
     "date": "25 октября 2026",
@@ -3026,6 +3245,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/-4343600",
+    "noindex": true,
     "title": "墨武天工 — экшен‑приключение в мифическом Китае",
     "excerpt": "Игра墨武天工 предлагает открытый мир древнего Китая, где игрок совмещает роль строителя и воина, исследует просторы, выживает и сражается в динамичном экшене.",
     "date": "25 октября 2026",
@@ -3039,6 +3259,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/console-space-5122330",
+    "noindex": true,
     "title": "Console Space – инди-казуальная игра о командных решениях",
     "excerpt": "Console Space – текстовая игра‑симулятор, где вы капитан звёздного корабля, решаете технические и моральные задачи, влияющие на судьбу экипажа.",
     "date": "25 октября 2026",
@@ -3052,6 +3273,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/puzzle-wild-cats-5061340",
+    "noindex": true,
     "title": "Обзор Puzzle Wild Cats: классические пазлы с дикими кошками",
     "excerpt": "Puzzle Wild Cats — казуальная инди-головоломка с дикими кошками. Рассказываем об особенностях игры, уровнях сложности и кому понравится этот проект.",
     "date": "24 октября 2026",
@@ -3065,6 +3287,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/parry-dungeon-5074080",
+    "noindex": true,
     "title": "Parry Dungeon — экшен‑симулятор подземелий",
     "excerpt": "Parry Dungeon – короткий шутер‑подземелье от одиночного разработчика. Управляй парированием, контратаками и поедай монстров, пока не останешься последним.",
     "date": "24 октября 2026",
@@ -3078,6 +3301,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/realize-in-peace-4522380",
+    "noindex": true,
     "title": "Обзор игры Realize in Peace: симулятор утраты",
     "excerpt": "Стоит ли играть в Realize in Peace? Разбираем глубокий психологический симулятор о воскрешении близкого человека в виде искусственного интеллекта.",
     "date": "24 октября 2026",
@@ -3091,6 +3315,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/brass-hard-contact-5365450",
+    "noindex": true,
     "title": "BRASS: Hard Contact — реалистичный 2D шутер",
     "excerpt": "BRASS: Hard Contact — бесплатный 2D военный шутер с реалистичной механикой боя, где каждое выстреливание и укрытие имеют значение. Шесть режимов, восемь",
     "date": "24 октября 2026",
@@ -3104,6 +3329,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/pikabuu-home-5372620",
+    "noindex": true,
     "title": "Обзор Pikabuu: Home — психологический хоррор от двух лиц",
     "excerpt": "Стоит ли играть в Pikabuu: Home? Узнайте все о психологическом хорроре, где молодая пара сталкивается с мрачными тайнами своего нового дома.",
     "date": "24 октября 2026",
@@ -3117,6 +3343,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/tensei-brave-2445430",
+    "noindex": true,
     "title": "Tensei Brave — приключенческая RPG от инди-студии",
     "excerpt": "Tensei Brave — приключенческая ролевая игра, где герой собирает союзников и бросается в поход против Демонского Лорда. Подойдёт любителям сюжетных квестов",
     "date": "24 октября 2026",
@@ -3130,6 +3357,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/penguin-kart-racer-5342830",
+    "noindex": true,
     "title": "Penguin Kart Racer — аркадные гонки в стиле 90‑х",
     "excerpt": "Penguin Kart Racer – ретро‑гонки с низкополигональными пингвинами, шестнадцатью трассами и оркой‑антагонистом. Играйте в одиночку или вчетвером на",
     "date": "24 октября 2026",
@@ -3143,6 +3371,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/slave-princess-elnea-4690300",
+    "noindex": true,
     "title": "Slave Princess Elnea — ролевая игра",
     "excerpt": "RPG, где вы управляете Эленой — бывшей принцессой, ставшей рабыней, и стремитесь к мести, выбирая между публичным унижением и боями в подземельях.",
     "date": "24 октября 2026",
@@ -3156,6 +3385,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/eho-bezdny-5293100",
+    "noindex": true,
     "title": "Эхо Бездны — обзор и рекомендации",
     "excerpt": "Эхо Бездны – survival‑roguelike с элементами экшена и RPG, где игрок управляет световым ядром в безсветном океане, сталкиваясь с симбионтами и пятью",
     "date": "24 октября 2026",
@@ -3169,6 +3399,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/future-fab-heroes-3839200",
+    "noindex": true,
     "title": "Обзор Future Fab Heroes — марсианский симулятор",
     "excerpt": "Рассказываем об игре Future Fab Heroes — образовательном симуляторе на Марсе. Инженерные задачи, робот-напарник и отражение инопланетных атак.",
     "date": "24 октября 2026",
@@ -3182,6 +3413,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/questaway-5195600",
+    "noindex": true,
     "title": "QuestAway — ролевая игра в окне рядом с панелью задач",
     "excerpt": "QuestAway — бесплатная казуальная ролевая игра, где отряд героев сражается в окне рядом с панелью задач. Играйте в паузах, собирайте добычу и боритесь с",
     "date": "24 октября 2026",
@@ -3195,6 +3427,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/good-children-say-grace-3881920",
+    "noindex": true,
     "title": "Good Children Say Grace – атмосферный инди‑приключение",
     "excerpt": "Good Children Say Grace – мрачный инди‑приключенческий опыт с загадочным сюжетом и уникальной визуальной стилистикой, подходящий любителям атмосферных",
     "date": "24 октября 2026",
@@ -3208,6 +3441,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/boys-in-the-dark-4234400",
+    "noindex": true,
     "title": "Boys in the Dark – хоррор‑приключение",
     "excerpt": "Boys in the Dark – мрачный survival horror с элементами гей‑романа. Вы попадаете в кошмарный мир, где нужно сражаться с уродливыми существами, решать",
     "date": "24 октября 2026",
@@ -3221,6 +3455,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/slime-slasher-3786840",
+    "noindex": true,
     "title": "Slime Slasher – экшн‑инди про слизня‑воителя",
     "excerpt": "Slime Slasher – динамичный экшн‑инди, где вы играете за слизня‑повстанца, сражающегося с Мозгом 738 и космическими пингвинами. Выбор класса и уникальный",
     "date": "24 октября 2026",
@@ -3234,6 +3469,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/denimdoug-909-5247790",
+    "noindex": true,
     "title": "Обзор DenimDoug_909: безумный анимационный квест",
     "excerpt": "Обзор DenimDoug_909: необычный анимационный квест про синего пса с десятками случайных событий и более чем двадцатью вариантами финала.",
     "date": "24 октября 2026",
@@ -3247,6 +3483,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/abax-5364900",
+    "noindex": true,
     "title": "Обзор Abax: цифровая настольная стратегия с кубиками",
     "excerpt": "Разбираем Abax — классическую настольную стратегию с бросками костей. Узнайте, кому подойдет проект и сможет ли бросок кубика разрушить идеальный план.",
     "date": "24 октября 2026",
@@ -3260,6 +3497,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/puppetry-4775990",
+    "noindex": true,
     "title": "Puppetry — бесплатный 3D экшен‑приключение",
     "excerpt": "Puppetry — бесплатная 3D игра‑головоломка с элементами экшена и приключений. Вы играете за одержимую вуду‑куклу, запертую в мрачном особняке, решая",
     "date": "24 октября 2026",
@@ -3273,6 +3511,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/sex-office-2-5354300",
+    "noindex": true,
     "title": "Обзор Sex Office 2: карьера, соблазны и романтика",
     "excerpt": "Обзор симулятора Sex Office 2. Узнайте, как совмещать офисную рутину, рискованные ставки и служебные романы с коллегами. Стоит ли играть?",
     "date": "24 октября 2026",
@@ -3286,6 +3525,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/keep-on-digging-5386060",
+    "noindex": true,
     "title": "Keep on Digging! – казуальная стратегия о раскопках",
     "excerpt": "Keep on Digging! – увлекательная казуальная игра‑стратегия, где игроки выкапывают сундуки, собирают ресурсы и развивают персонажа, подходящая для",
     "date": "24 октября 2026",
@@ -3299,6 +3539,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/shatterwing-5286270",
+    "noindex": true,
     "title": "Shatterwing – пиксельный экшен с отражением пуль",
     "excerpt": "Shatterwing – динамичный пиксельный шутер, где вы создаёте зеркала, отражаете вражеский огонь и строите корабль через пять уровней. Шесть кораблей, режим",
     "date": "24 октября 2026",
@@ -3312,6 +3553,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/echoes-of-pinebridge-4100790",
+    "noindex": true,
     "title": "Echoes of Pinebridge – визуальная новелла",
     "excerpt": "Echoes of Pinebridge — инди‑визуальная новелла о студенческой жизни, тайных голосах и сверхъестественной тайне, где каждый выбор меняет сюжет.",
     "date": "24 октября 2026",
@@ -3325,6 +3567,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/futa-girls-5333520",
+    "noindex": true,
     "title": "FUTA GIRLS – простая 2D игра для взрослых",
     "excerpt": "FUTA GIRLS – 2D игра для взрослых, где игрок открывает откровенные изображения персонажей. Простое управление, яркая графика, подходящее для любителей",
     "date": "24 октября 2026",
@@ -3338,6 +3581,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/real-life-simulator-4626420",
+    "noindex": true,
     "title": "Real Life Simulator – торговый симулятор",
     "excerpt": "Real Life Simulator – 2‑D кооперативный симулятор торговли, где вы с друзьями продаёте б/у вещи, открываете автосалоны, управляете недвижимостью и",
     "date": "24 октября 2026",
@@ -3351,6 +3595,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/bloomtale-3168520",
+    "noindex": true,
     "title": "BloomTale – уютный симулятор цветочного магазина",
     "excerpt": "BloomTale – спокойный казуальный симулятор, где вы создаёте букеты, управляете магазином и радуете покупателей в волшебном мире цветов.",
     "date": "24 октября 2026",
@@ -3364,6 +3609,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/7-millimeters-4800650",
+    "noindex": true,
     "title": "7 Millimeters – симулятор столяра и экшен",
     "excerpt": "Игра погружает в роль столяра, где измерения, сборка мебели и выполнение заказов переплетаются с конфликтом с местной бандой. Выбор: платить дань или",
     "date": "24 октября 2026",
@@ -3377,6 +3623,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/money-burner-5226760",
+    "noindex": true,
     "title": "Money Burner — казуальная инди‑симуляция",
     "excerpt": "Money Burner – яркая инкрементальная игра от первого лица, где вы режете купюры, разбиваете золото и сжигаете деньги, улучшая оружие и открывая новые",
     "date": "24 октября 2026",
@@ -3390,6 +3637,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/riskline-4438170",
+    "noindex": true,
     "title": "Riskline — многопользовательская стратегия",
     "excerpt": "Riskline – многопользовательская инди‑игра, где азартные автоматы, ставки в рулетке и дуэли с соперниками определяют, кто соберёт больше всех денег к",
     "date": "24 октября 2026",
@@ -3403,6 +3651,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/chessguardians-5271360",
+    "noindex": true,
     "title": "ChessGuardians – шахматы в новых мирах",
     "excerpt": "ChessGuardians предлагает шахматные баталии на досках фантазии: от классических кабинетов до голографических и постапокалиптических арен, с множеством",
     "date": "24 октября 2026",
@@ -3416,6 +3665,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/family-manners-3473210",
+    "noindex": true,
     "title": "Family Manners — приключенческая инди-игра",
     "excerpt": "Family Manners — атмосферный инди-приключенческий проект о буднях семьи Эвансов, где каждый уголок дома полон света и тихих деталей.",
     "date": "24 октября 2026",
@@ -3429,6 +3679,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/who-invited-you-2428110",
+    "noindex": true,
     "title": "Who Invited You? — казуальная инди-игра про подозрительных",
     "excerpt": "Игра Who Invited You? предлагает раскрыть тайну незваных посетителей вашей вечеринки. Сочетание простого геймплея и атмосферных расследований делает её",
     "date": "24 октября 2026",
@@ -3442,6 +3693,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/moon-sweepers-5335510",
+    "noindex": true,
     "title": "Обзор игры Moon Sweepers: симулятор уборки Луны",
     "excerpt": "Узнайте всё об игре Moon Sweepers. Необычный кооперативный симулятор уборки лунной пыли с друзьями, прокачкой инструментов и тяжелой техникой.",
     "date": "23 октября 2026",
@@ -3455,6 +3707,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/desktop-taxi-4006760",
+    "noindex": true,
     "title": "Desktop Taxi – казуальный симулятор такси",
     "excerpt": "Desktop Taxi – уютный казуальный симулятор, где вы развиваете таксомоторный бизнес под лоу‑фай музыкой, не отрываясь от дел. Идеально для коротких игровых",
     "date": "23 октября 2026",
@@ -3468,6 +3721,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/fibonex-4850930",
+    "noindex": true,
     "title": "Fibonex — обзор стратегического симулятора фабрики",
     "excerpt": "Обзор Fibonex: гибрид симулятора фабрики и защиты башен. Стройте конвейеры, рассчитывайте боеприпасы и защищайте ядро от волн врагов.",
     "date": "23 октября 2026",
@@ -3481,6 +3735,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/sticker-detective-by-the-book-4387730",
+    "noindex": true,
     "title": "Sticker Detective: By the Book — приключенческий квест",
     "excerpt": "Sticker Detective: By the Book — интерактивный квест‑детектив, где расследования проходят с помощью наклеек. Игра погружает в атмосферу небольшого",
     "date": "23 октября 2026",
@@ -3494,6 +3749,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/-4771880",
+    "noindex": true,
     "title": "三国义 — ролевая стратегия с колодой",
     "excerpt": "三国义 — инди‑игра, совмещающая элементы ролевой игры, стратегии и карточного рогалика. Управляйте сувереном, формируйте армию, меняйте колоду и вливайте",
     "date": "23 октября 2026",
@@ -3507,6 +3763,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/cyan-soul-4336790",
+    "noindex": true,
     "title": "Cyan Soul – аркадный пиксельный экшен",
     "excerpt": "Cyan Soul – динамичный аркадный экшен в пиксельном стиле, где игроку предстоит быстро уклоняться, собирать предметы и бросать их в боссов, используя даши",
     "date": "23 октября 2026",
@@ -3520,6 +3777,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/saving-songburg-3954920",
+    "noindex": true,
     "title": "Saving Songburg™ – обзор и детали",
     "excerpt": "Saving Songburg™ — трёхмерный экшен‑приключение в стиле стимпанк. Узнайте, кто стоит за спасением города, какие механики ждут и подходит ли игра любителям",
     "date": "23 октября 2026",
@@ -3533,6 +3791,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/bunny-coming-5330340",
+    "noindex": true,
     "title": "Bunny Coming — визуальная новелла о зайчице‑горничной",
     "excerpt": "Bunny Coming — визуальная новелла с живой 2D‑анимацией, где вы общаетесь с зайчицей‑горничной Луной. Игра сочетает лёгкий сюжет, милые диалоги и слегка",
     "date": "23 октября 2026",
@@ -3546,6 +3805,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/strikem-5020970",
+    "noindex": true,
     "title": "STRIKEM — динамичный 2D экшен‑платформер",
     "excerpt": "STRIKEM – быстрый 2‑мерный шутер‑платформер с физикой, где игроки сражаются в разных режимах, от командного боя до зомби‑кооператива, продвигаясь по 108",
     "date": "23 октября 2026",
@@ -3559,6 +3819,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/the-wizard-is-sus-4989930",
+    "noindex": true,
     "title": "The Wizard is SUS: обзор безумного комедийного экшена",
     "excerpt": "Обзор The Wizard is SUS. Разберитесь с последствиями магии чудаковатого волшебника, крушите скелетов и найдите путь в башню в забавном инди-экшене.",
     "date": "23 октября 2026",
@@ -3572,6 +3833,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/jane-friday-after-hours-5096240",
+    "noindex": true,
     "title": "Jane Friday: After Hours — обзор текстового инди-хоррора",
     "excerpt": "Обзор Jane Friday: After Hours: текстовый ретро-хоррор о ночной смене охранника в 1997 году. Узнайте о сюжете, мрачных аудиокассетах и пяти финалах",
     "date": "23 октября 2026",
@@ -3585,6 +3847,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/halloweenies-candy-run-5377190",
+    "noindex": true,
     "title": "Halloweenies Candy Run — обзор кооперативного экшена",
     "excerpt": "Обзор Halloweenies Candy Run: собирайте конфеты в процедурных домах, спасайтесь от монстров в команде до четырех игроков и используйте рацию с умом.",
     "date": "23 октября 2026",
@@ -3598,6 +3861,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/sacrifice-sanctuary-the-ritual-maiden-s-life-with-monsters-3841050",
+    "noindex": true,
     "title": "Sacrifice Sanctuary: The Ritual Maiden's Life With Monsters: цена, отзывы и статистика игроков",
     "excerpt": "Sacrifice Sanctuary: The Ritual Maiden's Life With Monsters: актуальная цена (168.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
     "date": "23 октября 2026",
@@ -3608,6 +3872,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/tidy-up-the-backrooms-5114970",
+    "noindex": true,
     "title": "Tidy Up The Backrooms — обзор симулятора архива",
     "excerpt": "Обзор Tidy Up The Backrooms: медитативный симулятор сортировки видеокассет из Закулисья. Кому подойдет проект и стоит ли каталогизировать аномалии?",
     "date": "23 октября 2026",
@@ -3621,6 +3886,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/spot-the-difference-fighter-5290320",
+    "noindex": true,
     "title": "Обзор Spot the Difference Fighter: файтинг на внимание",
     "excerpt": "Обзор Spot the Difference Fighter: необычная смесь поиска отличий и динамичного файтинга. Проверьте скорость реакции и зоркость в онлайн-битвах.",
     "date": "23 октября 2026",
@@ -3634,6 +3900,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/climb-king-3923150",
+    "noindex": true,
     "title": "Climb King — пиксельный инди‑экшн про скалы",
     "excerpt": "Climb King – динамичная инди-игра с пиксельной графикой, где вам предстоит подниматься, падать и искать безопасные точки. Идеально для любителей риска и",
     "date": "23 октября 2026",
@@ -3647,6 +3914,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/swat-mosquito-sleepless-nights-5345960",
+    "noindex": true,
     "title": "Swat Mosquito: Sleepless Nights — обзор",
     "excerpt": "Swat Mosquito: Sleepless Nights — 2‑мерная игра‑инкрементал, где нужно отлавливать комаров, зарабатывать монеты и расширять арсенал средств борьбы с",
     "date": "23 октября 2026",
@@ -3660,6 +3928,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/-4773930",
+    "noindex": true,
     "title": "君临传奇之风起云涌 — обзор",
     "excerpt": "Краткий обзор «君临传奇之风起云涌»: бесплатный экшен‑RPG с элементами казуальных и инди‑игр, где бой в реальном времени, кланы и эпические битвы делают игру",
     "date": "23 октября 2026",
@@ -3673,6 +3942,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/suspencil-5303370",
+    "noindex": true,
     "title": "Suspencil — казуальная онлайн-игра с рисованием",
     "excerpt": "Suspencil — онлайн-игра для компании до 8 человек, где участники рисуют на заданную тему и пытаются раскрыть роль Оборотня. Игра сочетает творчество и",
     "date": "23 октября 2026",
@@ -3686,6 +3956,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/matchmaker95-a-programming-simulator-4748140",
+    "noindex": true,
     "title": "MatchMaker95 - A Programming Simulator: цена, отзывы и статистика игроков",
     "excerpt": "MatchMaker95 - A Programming Simulator: актуальная цена (385.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
     "date": "23 октября 2026",
@@ -3696,6 +3967,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/dungeon-inn-2552310",
+    "noindex": true,
     "title": "Dungeon Inn – уютный симулятор управления трактиром",
     "excerpt": "Dungeon Inn – казуальная инди-стратегия, где вам предстоит вести трактир у входа в подземелье, обслуживая две конкурирующие гильдии и скрывая свои тайные",
     "date": "23 октября 2026",
@@ -3709,6 +3981,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/-5359840",
+    "noindex": true,
     "title": "将棋 — стратегическая игра в японские шахматы",
     "excerpt": "Погрузитесь в мир японских шахмат Шоги с живописным акварельным оформлением. Играйте против ИИ или друга, изучайте правила через интерактивные уроки и",
     "date": "23 октября 2026",
@@ -3722,6 +3995,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/chess-5359750",
+    "noindex": true,
     "title": "Chess – спокойные шахматы в ярком оформлении",
     "excerpt": "Игра Chess предлагает классические шахматы в красочных комнатах и сезонных анимациях. Сражайтесь с ИИ, другом или пройдите интерактивные уроки, изучая",
     "date": "23 октября 2026",
@@ -3735,6 +4009,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/-5359780",
+    "noindex": true,
     "title": "象棋 – китайские шахматы в стиле акварели",
     "excerpt": "Игра «象棋» предлагает классическую китайскую шахматную партию в атмосфере акварельных чернильных рисунков. Однопользовательский режим, локальная игра с",
     "date": "23 октября 2026",
@@ -3748,6 +4023,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/aicomi-append-data-4607890",
+    "noindex": true,
     "title": "AICOMI APPEND DATA — дополнение для Aicomi",
     "excerpt": "Дополнительный пакет данных AICOMI APPEND DATA расширяет возможности игры Aicomi, добавляя новые элементы и улучшения, которые понравятся любителям",
     "date": "23 октября 2026",
@@ -3761,6 +4037,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/era-ming-5120560",
+    "noindex": true,
     "title": "ERA-ming（时代：明末）: цена, отзывы и статистика игроков",
     "excerpt": "ERA-ming（时代：明末）: актуальная цена (Бесплатно), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
     "date": "23 октября 2026",
@@ -3771,6 +4048,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/dimon-the-witch-s-pervert-assistant-3121930",
+    "noindex": true,
     "title": "Dimon - The Witch's Pervert Assistant: цена, отзывы и статистика игроков",
     "excerpt": "Dimon - The Witch's Pervert Assistant: актуальная цена (561.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
     "date": "23 октября 2026",
@@ -3781,6 +4059,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/hentai-tales-humanoid-doll-5069390",
+    "noindex": true,
     "title": "Hentai Tales: Humanoid Doll – обзор",
     "excerpt": "Игра Hentai Tales: Humanoid Doll сочетает казуальный геймплей и инди‑стратегию, рассказывая о жизни с бюджетным андроидом и его странных поломках.",
     "date": "23 октября 2026",
@@ -3794,6 +4073,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/r-verie-audio-stories-5382570",
+    "noindex": true,
     "title": "Rêverie: Audio Stories – обзор игры",
     "excerpt": "Rêverie: Audio Stories – бесплатные иллюстрированные аудиоистории, где ваш выбор меняет конец. Две разные сказки без рекламы, подходящие для любителей",
     "date": "23 октября 2026",
@@ -3807,6 +4087,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/laureli-the-blood-dipped-manor-5018720",
+    "noindex": true,
     "title": "LaurEli & the Blood Dipped Manor — обзор",
     "excerpt": "LaurEli & the Blood Dipped Manor — визуальная новелла в стиле детектива, где два героя расследуют убийство вампиром в готическом особняке. Подойдёт",
     "date": "23 октября 2026",
@@ -3820,6 +4101,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/the-walking-dead-the-telltale-definitive-series-1449690",
+    "noindex": true,
     "title": "The Walking Dead: The Telltale Definitive Series: цена, отзывы и статистика игроков",
     "excerpt": "The Walking Dead: The Telltale Definitive Series: актуальная цена (160.00 RUB), 97% положительных отзывов в Steam, статистика владельцев (500,000 – 1,000,000). Данные обновляются автоматически.",
     "date": "23 октября 2026",
@@ -3830,6 +4112,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/phantom-blade-zero-4115450",
+    "noindex": true,
     "title": "Phantom Blade Zero – обзор и рекомендации",
     "excerpt": "Phantom Blade Zero – динамичное сочетание уся и экшена с ролевыми элементами. Узнайте, кому игра понравится и стоит ли её проходить.",
     "date": "23 октября 2026",
@@ -3843,6 +4126,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/sbor-derevni-zaschita-derevni-5318000",
+    "noindex": true,
     "title": "Сбор деревни: Защита деревни — обзор стратегии",
     "excerpt": "Обзор стратегии «Сбор деревни: Защита деревни». Узнайте о механике сетки, героях, защите от разрушителей и стоит ли проект внимания игроков.",
     "date": "22 октября 2026",
@@ -3856,6 +4140,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/axiom-of-stars-5231500",
+    "noindex": true,
     "title": "Обзор Axiom of Stars: медитативная головоломка",
     "excerpt": "Обзор логической игры Axiom of Stars. Узнайте об особенностях созвездий, тысячах уровней, уникальных механиках и медитативном темпе прохождения.",
     "date": "22 октября 2026",
@@ -3869,6 +4154,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/sidetrack-tiny-trains-for-your-desktop-5348500",
+    "noindex": true,
     "title": "Sidetrack — Tiny Trains for Your Desktop: обзор игры",
     "excerpt": "Обзор Sidetrack — Tiny Trains for Your Desktop: уютный фоновый симулятор железной дороги на рабочем столе. Узнайте, кому подойдет эта медитативная игра.",
     "date": "22 октября 2026",
@@ -3882,6 +4168,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/moadra-1713730",
+    "noindex": true,
     "title": "Обзор игры Моадра: выживание на планете Протея VI",
     "excerpt": "Исследуйте мрачный мир игры Моадра на планете Протея VI. Обзор инди-экшена: опасные твари, постоянная эволюция и мрачные тайны чужой планеты.",
     "date": "22 октября 2026",
@@ -3895,6 +4182,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/tcg-fantasy-card-collection-2757440",
+    "noindex": true,
     "title": "TCG: FANTASY Card Collection – обзор",
     "excerpt": "TCG: FANTASY Card Collection – спокойный симулятор коллекционирования фэнтезийных карт. Исследуйте комнату, находите редкие экземпляры и упорядочивайте их",
     "date": "22 октября 2026",
@@ -3908,6 +4196,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/chained-pirates-together-5377200",
+    "noindex": true,
     "title": "Chained Pirates Together: обзор пиратского испытания",
     "excerpt": "Узнайте все об инди-кооперативе Chained Pirates Together. Преодолейте подъем на вершину высотой в километр, где ошибка одного тянет на дно всю команду.",
     "date": "22 октября 2026",
@@ -3921,6 +4210,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/azure-striker-gunvolt-trilogy-enhanced-additional-mode-azure-striker-gunvolt-gx-5165600",
+    "noindex": true,
     "title": "Azure Striker Gunvolt Trilogy Enhanced - Additional mode \"Azure Striker Gunvolt GX\": цена, отзывы и статистика игроков",
     "excerpt": "Azure Striker Gunvolt Trilogy Enhanced - Additional mode \"Azure Striker Gunvolt GX\": актуальная цена (712.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
     "date": "22 октября 2026",
@@ -3931,6 +4221,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/biblioclash-digital-5127780",
+    "noindex": true,
     "title": "Biblioclash Digital – карточная стратегия",
     "excerpt": "Biblioclash Digital – бесплатная инди-стратегия с элементами коллекционной карточной игры, где игроки собирают собственные колоды и сражаются в магических",
     "date": "22 октября 2026",
@@ -3944,6 +4235,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/tbh-task-bar-hero-material-stash-pack-5413620",
+    "noindex": true,
     "title": "TBH : Task Bar Hero – Material Stash Pack обзор",
     "excerpt": "DLC «Хранилище материалов» для TBH : Task Bar Hero вводит отдельный инвентарь, где собраны материалы для украшения, гравировки, надписей и камни душ,",
     "date": "22 октября 2026",
@@ -3957,6 +4249,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/raze-the-zombie-horde-5292740",
+    "noindex": true,
     "title": "Raze the Zombie Horde – экшен‑шутер",
     "excerpt": "Raze the Zombie Horde – динамичный топ‑даун шутер с зомби, где игрок управляет героями, собирает арсенал из до восьми оружий и исследует улицы, крепости,",
     "date": "22 октября 2026",
@@ -3970,6 +4263,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/if-you-stay-4437140",
+    "noindex": true,
     "title": "if you stay – приключенческая игра",
     "excerpt": "Эмоциональная приключенческая игра о сложных выборах в холодной зиме 1999 года. Бесплатный инди‑проект, где каждый шаг влияет на судьбу героя и его",
     "date": "22 октября 2026",
@@ -3983,6 +4277,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/narnok-help-i-was-reincarnated-as-a-brain-in-a-jar-and-need-to-plug-in-my-power-cables-5104990",
+    "noindex": true,
     "title": "NARNOK: Help! I Was Reincarnated as a Brain in a Jar",
     "excerpt": "Инди‑пазл NARNOK предлагает управлять мозгом в банке, соединяя кабели и обходя опасные преграды. Простая механика, но требующая логики и внимания к",
     "date": "22 октября 2026",
@@ -3996,6 +4291,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/little-pot-big-seasons-5330240",
+    "noindex": true,
     "title": "Little Pot, Big Seasons — обзор и рекомендации",
     "excerpt": "Нежный симулятор ухода за растением в стиле аниме. Минималистичный интерфейс, сезонные изменения и простые задачи делают игру отличным способом",
     "date": "22 октября 2026",
@@ -4009,6 +4305,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/-5281080",
+    "noindex": true,
     "title": "水族派對 — подводный симулятор и коллекция рыб",
     "excerpt": "水族派對 — уютный казуальный симулятор, где вы становитесь куратором аквариума на рыбьей островке, собираете более тысячи фантастических рыб и наслаждаетесь",
     "date": "22 октября 2026",
@@ -4022,6 +4319,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/verdict-of-the-forge-5058000",
+    "noindex": true,
     "title": "Verdict of the Forge — обзор и геймплей",
     "excerpt": "Verdict of the Forge – казуальная стратегия о кузнечном деле. Управляйте мастерской, торгуйте ресурсами, участвуйте в состязаниях и создавайте легендарные",
     "date": "22 октября 2026",
@@ -4035,6 +4333,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/irradiate-235-3191530",
+    "noindex": true,
     "title": "Irradiate 235 – инди‑симулятор автоматизации",
     "excerpt": "Irradiate 235 – инновационный симулятор, где вам предстоит исследовать чужеродные лабиринты, автоматизировать производство уникальных материалов и",
     "date": "22 октября 2026",
@@ -4048,6 +4347,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/-5063150",
+    "noindex": true,
     "title": "ゆるキャン△ つなげるみんなのオールインワン!! ちるタイム – Казуальная игра о кемпинге",
     "excerpt": "Казуальная игра, где вы создаёте уникальный лагерь из более чем 1000 предметов, наблюдая за приключениями персонажей и собирая часы сосредоточенности в",
     "date": "22 октября 2026",
@@ -4061,6 +4361,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/the-hidden-ones-4172450",
+    "noindex": true,
     "title": "The Hidden Ones — кооперативный хоррор‑пазл",
     "excerpt": "The Hidden Ones – совместная игра‑головоломка в жанре хоррора, где четыре игрока раскрывают тайну странного пожара в небольшом городке, решая сложные",
     "date": "22 октября 2026",
@@ -4074,6 +4375,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/demons-night-fever-3502620",
+    "noindex": true,
     "title": "DEMONS' NIGHT FEVER: цена, отзывы и статистика игроков",
     "excerpt": "DEMONS' NIGHT FEVER: актуальная цена (2800.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
     "date": "22 октября 2026",
@@ -4084,6 +4386,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/dub-house-5208860",
+    "noindex": true,
     "title": "Dub House — голосовая вечеринка для компании",
     "excerpt": "Dub House — многопользовательская казуальная игра, где от 1 до 8 человек создают смешные сценки, используя только свой голос. Четыре режима, включая",
     "date": "22 октября 2026",
@@ -4097,6 +4400,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/second-source-5260110",
+    "noindex": true,
     "title": "Second Source — инди‑симулятор стратегии",
     "excerpt": "Second Source – атмосферный инди‑симулятор стратегии, где каждый доклад может быть ловушкой. Разгадай загадку артефактов, удержи оборону и спасай команду",
     "date": "22 октября 2026",
@@ -4110,6 +4414,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/doomward-dungeon-autobattler-5364850",
+    "noindex": true,
     "title": "Doomward: Dungeon Autobattler — обзор игры",
     "excerpt": "Doomward: Dungeon Autobattler — ролевая автосхватка, где вы формируете гильдию героев, готовите их к сражениям и сражаетесь с рейдовыми боссами в",
     "date": "22 октября 2026",
@@ -4123,6 +4428,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/solo-shift-karaoke-5329480",
+    "noindex": true,
     "title": "Solo Shift! Karaoke — обзор и особенности",
     "excerpt": "Solo Shift! Karaoke — казуальная игра‑симулятор, где вам предстоит самостоятельно управлять рецепцией, обслуживать гостей, готовить еду и поддерживать",
     "date": "22 октября 2026",
@@ -4136,6 +4442,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/umbral-coterie-4471020",
+    "noindex": true,
     "title": "Umbral Coterie — мрачный средневековый симулятор",
     "excerpt": "Umbral Coterie — стратегия, где вы играете вампиром, управляете жизнью сотен жителей мрачного средневекового города, формируя кровные линии и раскрывая",
     "date": "22 октября 2026",
@@ -4149,6 +4456,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/its-flammin-bingo-4761040",
+    "noindex": true,
     "title": "Its Flammin Bingo – обзор и оценка",
     "excerpt": "Its Flammin Bingo – казуальная роулег‑стратегия, где игроки соревнуются в бинго, используя предметы для повышения шансов и собирая монеты для прогресса.",
     "date": "22 октября 2026",
@@ -4162,6 +4470,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/mumble-pines-the-arrival-3567020",
+    "noindex": true,
     "title": "Mumble Pines: The Arrival – хоррор‑приключение от первого",
     "excerpt": "Mumble Pines: The Arrival – атмосферный хоррор‑экшен, где вы играете за дворника, исследующего закрытый летний лагерь на острове, пытаясь раскрыть тайны",
     "date": "22 октября 2026",
@@ -4175,6 +4484,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/juice-stand-tycoon-4833540",
+    "noindex": true,
     "title": "Juice Stand Tycoon — симулятор уличной торговли",
     "excerpt": "Управляйте небольшим соковым киоском, подбирайте рецепты, устанавливайте цены и реагируйте на отзывы клиентов, чтобы превратить его в главный аттракцион",
     "date": "22 октября 2026",
@@ -4188,6 +4498,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/momolitos-3991200",
+    "noindex": true,
     "title": "Momolitos – уютное приключение и коллекция существ",
     "excerpt": "Momolitos – яркая инди-игра, где игрок исследует красочные зоны, собирает ингредиенты и ухаживает за милыми существами, превращая их в сотни уникальных",
     "date": "22 октября 2026",
@@ -4201,6 +4512,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/pcpill-5077390",
+    "noindex": true,
     "title": "PCpill — динамичный экшен‑шутер от сверху",
     "excerpt": "PCpill – быстрый шутер с видом сверху, где игрок управляет антивирусом, уничтожая вредоносные файлы и восстанавливая работу старого компьютера. Игра",
     "date": "22 октября 2026",
@@ -4214,6 +4526,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/tankfall-arena-4813620",
+    "noindex": true,
     "title": "TankFall Arena — ретро‑экшен про танковые схватки",
     "excerpt": "TankFall Arena — бесплатный экшен в стиле ретро, где танки сражаются на случайных аренах, используя отскоки от стен и мощные усиления. Игра поддерживает",
     "date": "22 октября 2026",
@@ -4227,6 +4540,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/baccarata-5231780",
+    "noindex": true,
     "title": "Обзор Baccarata: карточный рогалик на основе баккары",
     "excerpt": "Обзор Baccarata — необычного карточного рогалика на механике баккары. Оцениваем правила двенадцати уникальных столов и стратегическую глубину партий.",
     "date": "21 октября 2026",
@@ -4240,6 +4554,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/the-killing-stone-2781470",
+    "noindex": true,
     "title": "Обзор The Killing Stone: карточная битва с дьяволом",
     "excerpt": "Обзор The Killing Stone: мрачный карточный баттлер в стиле фолк-хоррора семнадцатого века. Узнайте, как перехитрить демонов и снять проклятие.",
     "date": "21 октября 2026",
@@ -4253,6 +4568,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/traitor-gamble-5318420",
+    "noindex": true,
     "title": "traitor gamble — обзор игры со скрытыми ролями",
     "excerpt": "Узнайте всё об игре traitor gamble. Это азартная вечеринка со скрытыми ролями, где нужно приумножать общий банк и вовремя вычислять тайных саботажников.",
     "date": "21 октября 2026",
@@ -4266,6 +4582,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/uncanny-train-5305740",
+    "noindex": true,
     "title": "Uncanny Train — хоррор‑пазл симулятор",
     "excerpt": "Uncanny Train — атмосферный инди‑симулятор-головоломка, где игрок застрял в загадочном поезде. Нужно добраться до вагона‑1, решая мрачные головоломки и",
     "date": "21 октября 2026",
@@ -4279,6 +4596,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/pitwal-5103730",
+    "noindex": true,
     "title": "PitWal – утилита для анализа телеметрии",
     "excerpt": "PitWal — бесплатный инструмент, который читает телеметрию ваших гонок, показывает места пробуксовки и скрытую мощность ассистентов, помогая стать быстрее",
     "date": "21 октября 2026",
@@ -4292,6 +4610,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/the-inkspire-5156550",
+    "noindex": true,
     "title": "The Inkspire — карточный рогалик в рукописном стиле",
     "excerpt": "The Inkspire — бесплатный инди-казуальный рогалик, где игрок собирает колоды, комбинирует карты и исследует меняющуюся башню. Подойдёт любителям стратегий",
     "date": "21 октября 2026",
@@ -4305,6 +4624,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/panos-5292490",
+    "noindex": true,
     "title": "Panos — казуальная тактическая стратегия",
     "excerpt": "Panos — казуальная тактическая стратегия, где игрок исследует регион 412, раскрывает тайны и сражается с семью могущественными фракциями, выбирая путь,",
     "date": "21 октября 2026",
@@ -4318,6 +4638,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/pawnimals-5223090",
+    "noindex": true,
     "title": "Обзор Pawnimals: трёхмерные шахматы с армиями зверей",
     "excerpt": "Узнайте всё об игре Pawnimals. Необычные трёхмерные шахматы с армиями животных, головоломками, режимом обучения и локальными матчами против друзей.",
     "date": "21 октября 2026",
@@ -4331,6 +4652,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/grurong-random-defense-5074950",
+    "noindex": true,
     "title": "Grurong Random Defense — стратегия с случайными отрядами",
     "excerpt": "Grurong Random Defense – инди-стратегия, где каждый вызов отряда – риск. Пройдите 100 волн, улучшайте юнитов и сразитесь с боссами, используя постоянные",
     "date": "21 октября 2026",
@@ -4344,6 +4666,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/vrplayersim-5024300",
+    "noindex": true,
     "title": "VRPlayerSim — иммерсивный видеоплеер для монитора и XR‑очков",
     "excerpt": "VRPlayerSim превращает обычные видео в эффект погружения: 180° и 360° контент, отслеживание головы через веб‑камеру, без гироскопа. Подходит для любителей",
     "date": "21 октября 2026",
@@ -4357,6 +4680,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/what-the-dog-remembers-4500460",
+    "noindex": true,
     "title": "What The Dog Remembers – психологический хоррор",
     "excerpt": "What The Dog Remembers – ретро‑хоррор‑симулятор, где игроку предстоит выжить неделю в тесном трейлере, искать аномалии и фиксировать их. Каждый ночной",
     "date": "21 октября 2026",
@@ -4370,6 +4694,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/revenant-dawn-5206610",
+    "noindex": true,
     "title": "Revenant Dawn — ролевая игра о выживании",
     "excerpt": "Revenant Dawn — ролевая игра о выживании в зомби-апокалипсисе, где игроки исследуют город, собирают ресурсы и раскрывают тайны эпидемии.",
     "date": "21 октября 2026",
@@ -4383,6 +4708,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/give-my-girl-a-whirl-4013020",
+    "noindex": true,
     "title": "Give My Girl A Whirl — симулятор отношений",
     "excerpt": "Нестандартный симулятор отношений, где главный герой пытается убедить свою девушку принять необычную фантазию. Игра бросает вызов моральным границам и",
     "date": "21 октября 2026",
@@ -4396,6 +4722,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/oval-office-tidy-up-5368560",
+    "noindex": true,
     "title": "Oval Office Tidy Up — обзор",
     "excerpt": "Oval Office Tidy Up – казуальная инди‑игра‑симулятор, где игрок сортирует флаги стран по континентам, стремясь побить личный рекорд. Подойдёт любителям",
     "date": "21 октября 2026",
@@ -4409,6 +4736,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/21-dead-man-s-deck-4737540",
+    "noindex": true,
     "title": "21: Dead Man's Deck: цена, отзывы и статистика игроков",
     "excerpt": "21: Dead Man's Deck: актуальная цена (245.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
     "date": "21 октября 2026",
@@ -4419,6 +4747,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/pixelia-5179830",
+    "noindex": true,
     "title": "Pixelia — многопользовательский мир в пиксельном стиле",
     "excerpt": "Pixelia — онлайн‑игра в стиле пиксель‑арт, где игроки возводят города, управляют экономикой, развивают героев, заключают альянсы и ведут войны, переходя",
     "date": "21 октября 2026",
@@ -4432,6 +4761,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/everest-trail-4677760",
+    "noindex": true,
     "title": "Everest Trail – приключенческий ролевой симулятор",
     "excerpt": "Everest Trail – приключенческий ролевая игра‑симулятор, где вы проходите путь от Джири до базового лагеря Эвереста, взаимодействуете с местными,",
     "date": "21 октября 2026",
@@ -4445,6 +4775,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/merchant-game-4692410",
+    "noindex": true,
     "title": "Обзор merchant GAME: лаконичный симулятор торговца",
     "excerpt": "Обзор merchant GAME: медитативный симулятор торговли и заработка. Узнайте, как устроена механика сделок и кому понравится эта короткая экономическая игра.",
     "date": "21 октября 2026",
@@ -4458,6 +4789,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/draft-day-sports-pro-basketball-27-5250360",
+    "noindex": true,
     "title": "Draft Day Sports: Pro Basketball 27 – баскетбольный",
     "excerpt": "В игре вы берете на себя управление профессиональной баскетбольной командой: драфт, трейды, свободные агенты, контракты и тактика. Идеально для любителей",
     "date": "21 октября 2026",
@@ -4471,6 +4803,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/dementium-ii-5342930",
+    "noindex": true,
     "title": "Dementium II – хоррор‑экшен в психиатрической больнице",
     "excerpt": "Dementium II – восстановленная классика жанра survival‑horror. В роли Уильяма Редмура вы пробуждаетесь в психиатрической лечебнице, где каждый коридор",
     "date": "21 октября 2026",
@@ -4484,6 +4817,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/fzzy-bzzy-s-the-beautiful-ones-5356840",
+    "noindex": true,
     "title": "Fzzy Bzzy's The Beautiful Ones: цена, отзывы и статистика игроков",
     "excerpt": "Fzzy Bzzy's The Beautiful Ones: актуальная цена (59.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
     "date": "21 октября 2026",
@@ -4494,6 +4828,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/bird-empire-5308590",
+    "noindex": true,
     "title": "Bird Empire — казуальная ферма птиц",
     "excerpt": "Bird Empire — уютный симулятор птицефермы, где нужно собрать шесть видов птиц, продавать яйца и развивать постройки, получая доход даже в офлайн режиме.",
     "date": "21 октября 2026",
@@ -4507,6 +4842,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/bunny-hopper-4015730",
+    "noindex": true,
     "title": "Bunny Hopper — быстрый 3D‑платформер",
     "excerpt": "Bunny Hopper — динамичный 3D‑платформер, где вы управляете боевым роботом, бегаете по стенам, делаете рывки и преодолеваете смертельные ловушки. Идеально",
     "date": "21 октября 2026",
@@ -4520,6 +4856,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/julio-s-adventure-3-3670210",
+    "noindex": true,
     "title": "Julio's Adventure 3: цена, отзывы и статистика игроков",
     "excerpt": "Julio's Adventure 3: актуальная цена (697.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
     "date": "21 октября 2026",
@@ -4530,6 +4867,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/fuse-beads-simulator-4944870",
+    "noindex": true,
     "title": "Fuse Beads Simulator — обзор",
     "excerpt": "Fuse Beads Simulator — простая, но напряжённая игра‑симулятор, где вам предстоит собирать и запускать фьюз‑бисер. Подойдёт любителям казуальных испытаний",
     "date": "21 октября 2026",
@@ -4543,6 +4881,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/brush-duel-3331850",
+    "noindex": true,
     "title": "Brush duel — художественные баттлы 1 на 1",
     "excerpt": "Brush duel — казуальная инди-игра, где два игрока соревнуются в рисовании копии картины за пять минут. Игра автоматически оценивает точность, позволяя",
     "date": "21 октября 2026",
@@ -4556,6 +4895,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/dystopia-5169690",
+    "noindex": true,
     "title": "Dystopia — VR ритм-экшен",
     "excerpt": "VR‑ритм игра Dystopia предлагает резать светящиеся кристаллы или стрелять по ним из лазерного пистолета в такт музыке. Пять радиостанций, уникальные треки",
     "date": "21 октября 2026",
@@ -4569,6 +4909,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/pobeg-ot-blogera-4554330",
+    "noindex": true,
     "title": "Побег от блогера – хоррор‑экшен и головоломки",
     "excerpt": "Игрок попадает в дом известного блогера, где его запирают. Нужно скрываться, решать головоломки и искать путь к свободе в напряжённой",
     "date": "21 октября 2026",
@@ -4582,6 +4923,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/six-4935870",
+    "noindex": true,
     "title": "SIX — казуальная инди-игра про броски кубика",
     "excerpt": "SIX — простая, но захватывающая игра, где каждый бросок кубика решает: выпадет шестерка — ваш выигрыш умножается, иначе всё теряется. Идеально подходит",
     "date": "21 октября 2026",
@@ -4595,6 +4937,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/teddy-horses-3957780",
+    "noindex": true,
     "title": "Teddy Horses – уютный симулятор ранчо",
     "excerpt": "Teddy Horses – это уютный симулятор ранчо, где вы берёте на себя роль плюшевого мишки, ухаживаете за яркими лошадьми, строите конюшни и участвуете в",
     "date": "21 октября 2026",
@@ -4608,6 +4951,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/we-were-here-tomorrow-2315050",
+    "noindex": true,
     "title": "We Were Here Tomorrow: цена, отзывы и статистика игроков",
     "excerpt": "We Were Here Tomorrow: актуальная цена (769.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
     "date": "21 октября 2026",
@@ -4618,6 +4962,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/the-finals-season-12-ultimate-battle-pass-bundle-5258280",
+    "noindex": true,
     "title": "THE FINALS – Премиум боевой пропуск 12 сезона",
     "excerpt": "Премиум‑боевой пропуск 12‑го сезона в THE FINALS предлагает 20 уровней, 25 % бонус к опыту за матч, 1000 мультибаксов и лучшие награды сезона. Всё для",
     "date": "21 октября 2026",
@@ -4631,6 +4976,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/slitherlink-line-logic-5352170",
+    "noindex": true,
     "title": "Slitherlink: Line Logic — обзор умной инди-головоломки",
     "excerpt": "Разбираем Slitherlink: Line Logic — минималистичную головоломку с тысячами уровней. Узнайте, кому подойдет эта игра и стоит ли тратить на нее время.",
     "date": "20 октября 2026",
@@ -4644,6 +4990,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/welcome-to-hillveil-5343820",
+    "noindex": true,
     "title": "Welcome To HillVeil — атмосферное приключение",
     "excerpt": "Welcome To HillVeil — исследовательская игра в живописном 3D‑мире, где вам предстоит подбодрить жителей деревни, раскрыть её тайны и создать незабываемые",
     "date": "20 октября 2026",
@@ -4657,6 +5004,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/stella-sora-4813850",
+    "noindex": true,
     "title": "Обзор Stella Sora: фэнтези-экшен и тайны Новы",
     "excerpt": "Подробный обзор Stella Sora. Узнайте об особенностях фэнтезийного ролевого экшена, исследовании континента Нова и прохождении загадочных Монолитов.",
     "date": "20 октября 2026",
@@ -4670,6 +5018,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/quartermark-5061040",
+    "noindex": true,
     "title": "Quartermark – Инди RPG‑стратегия с автоматическим отрядом",
     "excerpt": "Quartermark – ролевая стратегия, где отряд сражается сам. Выбирайте героев, комбинируйте ключевые слова и сражайтесь с 440 монстрами и 100 боссами.",
     "date": "20 октября 2026",
@@ -4683,6 +5032,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/aolta-3825930",
+    "noindex": true,
     "title": "Aolta — казуальная ролевая игра‑симулятор",
     "excerpt": "Aolta — инди‑проект, где вы просыпаетесь спустя тысячелетие без памяти, оказываясь чужим на своей планете. Исследуйте мир, развивайте персонажа и решайте,",
     "date": "20 октября 2026",
@@ -4696,6 +5046,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/crypt-survivor-5056360",
+    "noindex": true,
     "title": "Crypt Survivor — экшн‑рогулит от независимых разработчиков",
     "excerpt": "Crypt Survivor — динамичный экшен‑рогулит, где игрок пробирается через проклятую гробницу, меняет классы, собирает улучшения и использует способности",
     "date": "20 октября 2026",
@@ -4709,6 +5060,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/only-fans-3839910",
+    "noindex": true,
     "title": "Only Fans – поиск предметов в необычном реабилитационном",
     "excerpt": "Игра Only Fans – скрытый объект в стиле приключений и казуального симулятора. Ищите странные предметы в реабилитационном центре, наполненном",
     "date": "20 октября 2026",
@@ -4722,6 +5074,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/mahjong-traveler-1558620",
+    "noindex": true,
     "title": "Mahjong Traveler — уютный рогалик в стиле маджонга",
     "excerpt": "Mahjong Traveler — пиксельный квест‑рогалик, где вы собираете колоду плит, проходите острова и сражаетесь с боссами, восстанавливая правила маджонга.",
     "date": "20 октября 2026",
@@ -4735,6 +5088,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/what-have-my-cats-done-4944840",
+    "noindex": true,
     "title": "What Have My Cats Done – обзор игры",
     "excerpt": "Казуальная головоломка с котами, где элементы падают как в Тетрисе. Игроку предстоит собирать недостающие кусочки пазла, раскрывая, какие проделки",
     "date": "20 октября 2026",
@@ -4748,6 +5102,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/grind-or-die-5357950",
+    "noindex": true,
     "title": "Grind or Die – бесконечный экшен с демонами",
     "excerpt": "Бесконечный топ‑даун экшен Grind or Die предлагает выживание в арене, волны демонов, случайные улучшения и уникальные способности персонажей. Идеально для",
     "date": "20 октября 2026",
@@ -4761,6 +5116,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/curse-of-baghdad-4841390",
+    "noindex": true,
     "title": "Curse of Baghdad – топ‑даун экшн‑шутер",
     "excerpt": "Curse of Baghdad – динамичный топ‑даун шутер с военной атмосферой и насыщенным сюжетом о братстве и проклятии в Ираке. Игра погрузит в опасный мир, где",
     "date": "20 октября 2026",
@@ -4774,6 +5130,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/fall-of-bali-2105440",
+    "noindex": true,
     "title": "Fall of Bali – историческая стратегия",
     "excerpt": "Fall of Bali — историческая стратегия в мире XIX века, где после падения империи остров разделён на королевства, а игроку предстоит вести войны и",
     "date": "20 октября 2026",
@@ -4787,6 +5144,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/puzzmao-puzzle-and-magical-overlord-4314060",
+    "noindex": true,
     "title": "PuzzMao〜Puzzle and Magical Overlord〜 — обзор",
     "excerpt": "PuzzMao〜Puzzle and Magical Overlord〜 — казуальная головоломка в стиле падающих блоков, где вам предстоит сразиться за трон Демонского Владыки в волшебном",
     "date": "20 октября 2026",
@@ -4800,6 +5158,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/turrakata-5218590",
+    "noindex": true,
     "title": "Turrakata — экшн‑приключение в открытом мире",
     "excerpt": "Turrakata — динамичный экшн с элементами выживания и крафта в открытом мире. Играйте от первого лица, собирайте ресурсы, стройте базы и охотьтесь на",
     "date": "20 октября 2026",
@@ -4813,6 +5172,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/thicc-magic-perky-prelude-4956940",
+    "noindex": true,
     "title": "Thicc Magic. Perky Prelude — комедийный приключенческий",
     "excerpt": "Thicc Magic. Perky Prelude — бесплатная приключенческая игра‑шутка, где в роли скромной правительницы раскрываются юмор и лёгкая эротика. Подойдёт",
     "date": "20 октября 2026",
@@ -4826,6 +5186,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/conjurariun-5047760",
+    "noindex": true,
     "title": "Conjurariun – мрачный инди‑экшен с тайнами детства",
     "excerpt": "Conjurariun приглашает вернуться в заброшенный приют, где Хелена сталкивается с жуткими воспоминаниями и раскрывает скрытую правду о пожаре. Атмосферный",
     "date": "20 октября 2026",
@@ -4839,6 +5200,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/softboiled-4454110",
+    "noindex": true,
     "title": "Softboiled — сложный физический платформер",
     "excerpt": "Softboiled — требовательный физический платформер, где вы управляете хрупким яйцом, преодолевая ловкие препятствия. Игра проверит вашу реакцию и точность,",
     "date": "20 октября 2026",
@@ -4852,6 +5214,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/phasewright-5126170",
+    "noindex": true,
     "title": "Phasewright – инди‑симулятор",
     "excerpt": "Phasewright — бесплатный инди‑симулятор стратегии, где игрок строит световые машины, соединяя каналы и разделяя цвета в тактовом ритме. Простая механика",
     "date": "20 октября 2026",
@@ -4865,6 +5228,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/armament-inc-5241840",
+    "noindex": true,
     "title": "Обзор Armament Inc: симулятор оружейного магната",
     "excerpt": "Обзор игры Armament Inc. Постройте оружейную империю, развивайте технологии и побеждайте конкурентов в увлекательном экономическом тайкуне.",
     "date": "20 октября 2026",
@@ -4878,6 +5242,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/galatico-3308220",
+    "noindex": true,
     "title": "Galatico — динамичный шутер в стиле 90‑х",
     "excerpt": "Galatico — быстрый экшен‑шутер, вдохновлённый классикой 90‑х, где вам предстоит разрушать порталы и сражаться с хранителями вселенной. Подойдёт любителям",
     "date": "20 октября 2026",
@@ -4891,6 +5256,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/headshot-manager-5068500",
+    "noindex": true,
     "title": "Обзор Headshot Manager: симулятор киберспорта",
     "excerpt": "В обзоре Headshot Manager рассказываем про тактический симулятор менеджера киберспортивной команды. Узнайте, кому подойдет эта стратегия.",
     "date": "20 октября 2026",
@@ -4904,6 +5270,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/vahnora-1624430",
+    "noindex": true,
     "title": "Vahnora — бесплатная 3D MMORPG о войне фракций",
     "excerpt": "Vahnora — бесплатная 3D MMORPG, где игроки выбирают Святилище или Отрекшихся, осваивают восемь классов и сражаются за контроль над миром, охотясь на",
     "date": "20 октября 2026",
@@ -4917,6 +5284,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/grand-theft-idiots-4919380",
+    "noindex": true,
     "title": "Grand Theft Idiots – хаотичный экшн‑приключение",
     "excerpt": "Grand Theft Idiots — многопользовательский экшн‑приключение, где друзья становятся врагами в безумных ограблениях, а победа зависит от предательств,",
     "date": "20 октября 2026",
@@ -4930,6 +5298,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/abraxas-online-5022330",
+    "noindex": true,
     "title": "Abraxas Online — классическое фэнтезийное MMORPG",
     "excerpt": "Abraxas Online — бесплатная ролевая онлайн-игра с открытым миром, где можно создавать героя, осваивать девять профессий, крафтить предметы, сражаться в",
     "date": "20 октября 2026",
@@ -4943,6 +5312,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/under-investigation-5327970",
+    "noindex": true,
     "title": "Under Investigation – инди‑детектив в полицейском участке",
     "excerpt": "Under Investigation – атмосферный инди‑проект, где игроку предстоит исследовать полицейский участок, искать аномалии и отличать реальные отклонения от",
     "date": "20 октября 2026",
@@ -4956,6 +5326,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/her-revenge-4952170",
+    "noindex": true,
     "title": "Her Revenge – приключенческий инди-роман",
     "excerpt": "Her Revenge – интригующее приключение в запертой квартире, где вам предстоит раскрыть тайну и понять, что случилось с бабушкой, оставаясь полностью",
     "date": "20 октября 2026",
@@ -4969,6 +5340,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/ruleball-5362580",
+    "noindex": true,
     "title": "RULEBALL – казуальная стратегия с гибкой настройкой правил",
     "excerpt": "RULEBALL предлагает уникальный микс казуального спорта и стратегии: задайте любые правила поля, сформируйте команду и броситесь в пятиматчевый",
     "date": "20 октября 2026",
@@ -4982,6 +5354,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/my-friend-pig-4928360",
+    "noindex": true,
     "title": "My friend pig — безумный кооператив для 2‑4 игроков",
     "excerpt": "My friend pig — сумасшедшая кооперативная игра, где от 2 до 4 игроков управляют голодными свиньями, пробирающимися по ферме в поисках тыкв и спасаясь от",
     "date": "20 октября 2026",
@@ -4995,6 +5368,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/cat-life-5253180",
+    "noindex": true,
     "title": "Cat Life – уютный симулятор жизни кота",
     "excerpt": "Cat Life – спокойный казуальный симулятор, где вы ухаживаете за котом, меняете его внешний вид и поддерживаете баланс его потребностей в ежедневной рутине.",
     "date": "20 октября 2026",
@@ -5008,6 +5382,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/ice-cream-hero-4889610",
+    "noindex": true,
     "title": "Ice Cream Hero — сладкая защита от голодных приборов",
     "excerpt": "Ice Cream Hero — бесплатный казуальный экшен в жанре защиты башни для 1‑8 игроков. Защитите Спринкль‑банк от навалива столовых приборов и боссов, играя в",
     "date": "20 октября 2026",
@@ -5031,6 +5406,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/tiny-desktop-fishing-5308440",
+    "noindex": true,
     "title": "Обзор игры Tiny Desktop Fishing: медитативная рыбалка",
     "excerpt": "Подробный обзор Tiny Desktop Fishing. Узнайте, чем интересен этот пиксельный настольный симулятор рыбалки и кому подойдёт неспешный медитативный процесс.",
     "date": "19 октября 2026",
@@ -5044,6 +5420,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/the-harbour-between-us-5359760",
+    "noindex": true,
     "title": "Обзор The Harbour Between Us: уютная рыбалка у экрана",
     "excerpt": "Обзор The Harbour Between Us: уютный симулятор рыбалки внизу экрана и трогательная история любви. Рассказываем о геймплее и атмосфере игры.",
     "date": "19 октября 2026",
@@ -5057,6 +5434,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/dynamite-blue-4714620",
+    "noindex": true,
     "title": "Dynamite Blue — ролевая киберпанковая RPG",
     "excerpt": "Dynamite Blue – атмосферная ролевая игра в киберпанковом городе Вирхейвен, где более 60 героев со своими сюжетами ждут вашего выбора и стратегии.",
     "date": "19 октября 2026",
@@ -5070,6 +5448,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/kings-call-2-4491130",
+    "noindex": true,
     "title": "Обзор Kings Call 2: карточная ролевая стратегия",
     "excerpt": "Kings Call 2 объединяет элементы ролевой игры и карточной стратегии. Узнайте об особенностях классов, механике боев и тактическом потенциале проекта.",
     "date": "19 октября 2026",
@@ -5083,6 +5462,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/hellbent-4694770",
+    "noindex": true,
     "title": "Обзор игры HELLBENT — соулслайк в чистилище",
     "excerpt": "Обзор инди-экшена HELLBENT: рыцарь Небесного Ордена бросает вызов владыке ада в чистилище. Узнайте, кому подойдет эта игра в духе соулслайков.",
     "date": "19 октября 2026",
@@ -5096,6 +5476,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/poker-heroes-geroi-pokera-5252050",
+    "noindex": true,
     "title": "Обзор Poker Heroes - Герои покера: роглайт с картами",
     "excerpt": "Честный обзор Poker Heroes - Герои покера. Разбираем необычную смесь покера, роглайта и призыва героев: стоит ли играть и кому понравится проект.",
     "date": "19 октября 2026",
@@ -5109,6 +5490,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/desktop-monsters-5099260",
+    "noindex": true,
     "title": "Desktop Monsters — обзор тактической стратегии",
     "excerpt": "Обзор Desktop Monsters: стратегическая оборона рабочего стола с башнями, брандмауэром, одиночной кампанией, бесконечным режимом и локальной сетью.",
     "date": "19 октября 2026",
@@ -5122,6 +5504,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/mall-corp-5328220",
+    "noindex": true,
     "title": "Mall Corp — обзор инди-приключения про охранника",
     "excerpt": "Узнайте все об инди-приключении Mall Corp. История пожилого охранника Джона, чья рутинная смена в торговом центре внезапно пошла не по плану.",
     "date": "19 октября 2026",
@@ -5135,6 +5518,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/obey-the-beat-4957470",
+    "noindex": true,
     "title": "Обзор Obey the Beat: динамичная ритм-аркада",
     "excerpt": "Обзор Obey the Beat: энергичная ритм-аркада с семнадцатью треками, таблицами лидеров и хардкорным рогалик-режимом. Узнайте, стоит ли играть.",
     "date": "19 октября 2026",
@@ -5148,6 +5532,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/vselenskaya-uborka-5119740",
+    "noindex": true,
     "title": "ВСЕЛЕНСКАЯ УБОРКА — обзор уютной инди-головоломки",
     "excerpt": "Обзор игры ВСЕЛЕНСКАЯ УБОРКА: казуальная головоломка от первого лица, где нужно наводить порядок. Узнайте, кому подойдет эта медитативная игра.",
     "date": "19 октября 2026",
@@ -5161,6 +5546,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/taskbar-4904450",
+    "noindex": true,
     "title": "Утилита Taskbar: обзор программы для панели задач",
     "excerpt": "Обзор полезной утилиты Taskbar. Узнайте, как преобразить интерфейс системы с помощью подсветки, музыкальных эффектов и гибких визуальных настроек.",
     "date": "19 октября 2026",
@@ -5174,6 +5560,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/achilles-sword-ll-4195360",
+    "noindex": true,
     "title": "Achilles‑Sword II — викингская приключенческая RPG",
     "excerpt": "Achilles‑Sword II — игра‑приключение в открытом мире с живым городом, таверной и множеством NPC. Исследуйте викингские земли, сражайтесь и развивайте",
     "date": "19 октября 2026",
@@ -5187,6 +5574,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/nulevoy-patsient-lyubov-moya-5217710",
+    "noindex": true,
     "title": "Нулевой пациент, любовь моя — визуальная новелла",
     "excerpt": "Визуальная новелла для взрослых «Нулевой пациент, любовь моя» предлагает три романтические ветки, где доктор Одилон Мабеки решает сложные моральные",
     "date": "19 октября 2026",
@@ -5200,6 +5588,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/solar-escape-4237420",
+    "noindex": true,
     "title": "Обзор Solar Escape: выживание с крюком-кошкой",
     "excerpt": "Узнайте всё об игре Solar Escape. Динамичный двухмерный платформер о побеге с гибнущей планеты при помощи верного крюка-кошки. Читайте наш обзор.",
     "date": "19 октября 2026",
@@ -5213,6 +5602,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/a-flower-for-you-5360830",
+    "noindex": true,
     "title": "a Flower for you — обзор медитативной казуальной игры",
     "excerpt": "Обзор a Flower for you: расслабляющий казуальный проект с парящим цветком в открытом небе. Узнайте, кому подойдет этот медитативный цифровой подарок.",
     "date": "19 октября 2026",
@@ -5226,6 +5616,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/iceberg-boss-s-dominant-plunder-4377170",
+    "noindex": true,
     "title": "Iceberg Boss's Dominant Plunder: цена, отзывы и статистика игроков",
     "excerpt": "Iceberg Boss's Dominant Plunder: актуальная цена (372.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
     "date": "19 октября 2026",
@@ -5236,6 +5627,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/superstore-simulator-5127970",
+    "noindex": true,
     "title": "SuperStore Simulator – симулятор супермаркета",
     "excerpt": "SuperStore Simulator – подробный бизнес‑симулятор, где вы возводите супермаркет с нуля, заполняете полки, назначаете цены, нанимаете персонал и стремитесь",
     "date": "19 октября 2026",
@@ -5249,6 +5641,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/nightclub-simulator-2729480",
+    "noindex": true,
     "title": "NightClub Simulator – обзор и описание",
     "excerpt": "NightClub Simulator – виртуальный клуб, где можно танцевать, знакомиться, драться и флиртовать. Реалистичные персонажи, музыка и свобода действий делают",
     "date": "19 октября 2026",
@@ -5262,6 +5655,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/the-loomsong-chronicle-idle-4963690",
+    "noindex": true,
     "title": "The Loomsong Chronicle Idle – ролевая idle‑игра",
     "excerpt": "The Loomsong Chronicle Idle – 2D‑HD idle RPG с шестеркой героев, крафтом, сражениями в галактике, развитием города и бесконечными подземельями.",
     "date": "19 октября 2026",
@@ -5275,6 +5669,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/scribble-tanks-5315860",
+    "noindex": true,
     "title": "Scribble Tanks – экшн‑рогалик в стиле карандашных зарисовок",
     "excerpt": "Scribble Tanks – одиночный survival‑рогалик в 3D‑поле, где всё выглядит как карандашные зарисовки на клетчатой бумаге. Сражайтесь с зомби, танками и",
     "date": "19 октября 2026",
@@ -5288,6 +5683,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/widow-begs-me-to-be-her-master-4920940",
+    "noindex": true,
     "title": "Widow Begs Me to Be Her Master — ролевая игра",
     "excerpt": "Ролевая игра Widow Begs Me to Be Her Master погружает в мир киберконспирологии, где механик Виктор объединяется с наносознанием и сёстрами Севиль.",
     "date": "19 октября 2026",
@@ -5301,6 +5697,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/iron-coffin-ice-queen-her-gaze-awakens-my-beast-4377020",
+    "noindex": true,
     "title": "Iron Coffin Ice Queen: Her Gaze Awakens My Beast — обзор",
     "excerpt": "Ролевая игра Iron Coffin Ice Queen: Her Gaze Awakens My Beast предлагает мрачный сюжет о выживании в смертельной клетке, где каждый обман карается",
     "date": "19 октября 2026",
@@ -5314,6 +5711,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/surgepoint-3342130",
+    "noindex": true,
     "title": "SurgePoint – динамичный экшн с крафтом оружия",
     "excerpt": "SurgePoint – быстрый экшн‑инди, где игроки создают оружие в процессе боя, прыгают по цепочке отдачи и возводят платформы из воздуха. Идеально для",
     "date": "19 октября 2026",
@@ -5327,6 +5725,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/gridmine-5067390",
+    "noindex": true,
     "title": "GRIDMINE – ретро‑игра в жанре башенной защиты с прокачкой",
     "excerpt": "GRIDMINE – компактная ретро‑игра‑защита, где вы строите башни, собираете ресурсы и улучшаете навыки, пытаясь продержаться как можно дольше.",
     "date": "19 октября 2026",
@@ -5340,6 +5739,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/bad-bunnies-beyond-brackenridge-4841350",
+    "noindex": true,
     "title": "Bad Bunnies - Beyond Brackenridge: обзор игры",
     "excerpt": "Bad Bunnies - Beyond Brackenridge – 3D платформер про зайцев, где нужно собирать морковку, обходя ловушки и врагов. Подходит любителям динамичных экшенов",
     "date": "19 октября 2026",
@@ -5353,6 +5753,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/dicey-desk-4079960",
+    "noindex": true,
     "title": "Dicey Desk — казуальная инди‑симуляция",
     "excerpt": "Dicey Desk превращает ваш рабочий стол в мини‑игру: кость заряжается по мере печати, а собранные кубики можно обменять на более редкие. Простая, но",
     "date": "19 октября 2026",
@@ -5366,6 +5767,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/silly-suspects-4117190",
+    "noindex": true,
     "title": "Обзор Silly Suspects: комедийный детектив",
     "excerpt": "Узнайте все об игре Silly Suspects. Забавный инди-детектив с механикой в духе «Угадай, кто?», где нужно расследовать абсурдные дела и допрашивать чудаков.",
     "date": "18 октября 2026",
@@ -5379,6 +5781,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/meteors-are-art-5198130",
+    "noindex": true,
     "title": "Обзор Meteors Are Art: разрушение планет как искусство",
     "excerpt": "Стоит ли играть в Meteors Are Art? Обзор необычного симулятора и стратегии, где уничтожение планет метеоритами превращается в космическое искусство.",
     "date": "18 октября 2026",
@@ -5392,6 +5795,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/surrounded-1813170",
+    "noindex": true,
     "title": "Обзор Surrounded: кооперативный хоррор на выживание",
     "excerpt": "Обзор инди-хоррора Surrounded: совместное выживание до шести человек, сюжетная кампания и опасные существа. Стоит ли играть в этот проект?",
     "date": "18 октября 2026",
@@ -5405,6 +5809,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/nothing-simulator-2963850",
+    "noindex": true,
     "title": "Обзор Nothing Simulator: симулятор бездействия",
     "excerpt": "Подробный обзор Nothing Simulator: разбираем необычный инди-симулятор, где игроку предстоит просто смотреть в черный экран и следить за ходом таймера.",
     "date": "18 октября 2026",
@@ -5418,6 +5823,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/vampirskiy-potseluy-paradoks-vremeni-4207160",
+    "noindex": true,
     "title": "Обзор игры Вампирский поцелуй: Парадокс времени",
     "excerpt": "Обзор игры Вампирский поцелуй: Парадокс времени. Узнайте о сюжете романтической аниме-новеллы с вампирами, нелинейном финале и ключевых особенностях.",
     "date": "18 октября 2026",
@@ -5431,6 +5837,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/retrohub-5285370",
+    "noindex": true,
     "title": "RetroHub — обзор сборника ретро-игр на ТВ-терминале",
     "excerpt": "Обзор RetroHub: пиксельный симулятор интерактивного телевидения 1994 года. Узнайте об особенностях мини-игр и режимах для компании.",
     "date": "18 октября 2026",
@@ -5444,6 +5851,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/retro-racers-3441620",
+    "noindex": true,
     "title": "Обзор Retro Racers: ностальгические гонки с друзьями",
     "excerpt": "Подробный обзор аркады Retro Racers. Винтажные автомобили, настройка колес, кооперативные заезды и дух классических соревнований для фанатов гонок.",
     "date": "18 октября 2026",
@@ -5457,6 +5865,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/touhou-aichatrpg-5251110",
+    "noindex": true,
     "title": "Обзор touhou AICHATRPG: ролевая игра с ИИ",
     "excerpt": "Обзор ролевой игры touhou AICHATRPG. Узнайте особенности фанатского проекта с живыми диалогами на базе искусственного интеллекта и кому он подойдёт.",
     "date": "18 октября 2026",
@@ -5470,6 +5879,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/mr-prepper-dlc-alpinist-3864280",
+    "noindex": true,
     "title": "Mr. Prepper - DLC «альпинист»: обзор дополнения",
     "excerpt": "Обзор Mr. Prepper - DLC «альпинист». Покорите ледяную гору, раскройте тайны Агентства и улучшите бункер технологиями. Стоит ли запускать дополнение?",
     "date": "18 октября 2026",
@@ -5483,6 +5893,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/cook-with-card-4597500",
+    "noindex": true,
     "title": "Обзор Cook with Card: карточный кулинарный симулятор",
     "excerpt": "Узнайте все об инди-стратегии Cook with Card. Готовьте блюда с помощью карт, улучшайте ресторан и выполняйте заказы посетителей в нашем обзоре.",
     "date": "18 октября 2026",
@@ -5496,6 +5907,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/cat-life-2204760",
+    "noindex": true,
     "title": "Обзор Cat Life — приключения кота на диком острове",
     "excerpt": "Узнайте всё об инди-приключении Cat Life: исследование острова, охота, выживание и разгадка тайн в одиночку или с друзьями в кооперативе.",
     "date": "18 октября 2026",
@@ -5509,6 +5921,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/desktoppip-5015450",
+    "noindex": true,
     "title": "Обзор DesktopPiP: полезная утилита для многозадачности",
     "excerpt": "Узнайте все о DesktopPiP — практичной утилите для создания интерактивных плавающих окон. Разбираем возможности настройки рабочего пространства.",
     "date": "18 октября 2026",
@@ -5522,6 +5935,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/furry-massage-wallpapers-5277340",
+    "noindex": true,
     "title": "Обзор FURRY MASSAGE - WALLPAPERS: арт и обои",
     "excerpt": "Обзор набора обоев FURRY MASSAGE - WALLPAPERS для поклонников проекта. Узнайте, что входит в коллекцию фонов с персонажами для рабочего стола.",
     "date": "18 октября 2026",
@@ -5535,6 +5949,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/patient-zero-3576670",
+    "noindex": true,
     "title": "Обзор игры PATIENT ZERO: мрачный кооперативный экшен",
     "excerpt": "Обзор PATIENT ZERO: атмосферный кооперативный экшен с элементами стратегии. Изучайте зараженные зоны, соблюдайте тишину и выживайте вместе с друзьями.",
     "date": "18 октября 2026",
@@ -5548,6 +5963,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/furry-massage-4908870",
+    "noindex": true,
     "title": "Обзор игры FURRY MASSAGE 🔞: симулятор массажа",
     "excerpt": "Обзор игры FURRY MASSAGE 🔞: симулятор массажа для взрослой аудитории. Рассказываем об игровом процессе и кому подойдет этот необычный проект.",
     "date": "18 октября 2026",
@@ -5561,6 +5977,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/awaiting-your-horders-5280170",
+    "noindex": true,
     "title": "Обзор AWAITING YOUR HORDERS: эпичные битвы миллиона армий",
     "excerpt": "Обзор AWAITING YOUR HORDERS: масштабный инди-симулятор битв, где на экране сталкиваются до миллиона бойцов. Узнайте, чем способна удивить эта стратегия.",
     "date": "18 октября 2026",
@@ -5574,6 +5991,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/fresh-stacker-5026810",
+    "noindex": true,
     "title": "Fresh Stacker — обзор соревновательной головоломки",
     "excerpt": "Разбираем Fresh Stacker — динамичную головоломку с блоками, соревновательным мультиплеером и продуманными тренировками. Стоит ли играть?",
     "date": "18 октября 2026",
@@ -5587,6 +6005,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/madcar-multiplayer-1979510",
+    "noindex": true,
     "title": "Madcar Multiplayer — безумные онлайн‑гонки",
     "excerpt": "Madcar Multiplayer — бесплатная многопользовательская гонка, где главное правило: нажимай педаль и мчись к финишу. Весёлый экшен для любителей быстрых и",
     "date": "18 октября 2026",
@@ -5600,6 +6019,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/beta-earth-sovereignty-next-5114130",
+    "noindex": true,
     "title": "Beta Earth: Sovereignty Next – обзор",
     "excerpt": "Beta Earth: Sovereignty Next — текстовая научно‑фантастическая ролевая игра с двумя сюжетными ветками, свободой выбора класса и уникальной библиотекой.",
     "date": "18 октября 2026",
@@ -5613,6 +6033,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/gangster-clicker-3145070",
+    "noindex": true,
     "title": "Gangster Clicker — кликер о построении преступной империи",
     "excerpt": "Gangster Clicker — казуальный кликер, где вы начинаете с кастетов и пустого кармана, улучшаете оружие, нанимаете банду и захватываете 12 районов, сражаясь",
     "date": "18 октября 2026",
@@ -5626,6 +6047,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/sparkle-mouse-5077340",
+    "noindex": true,
     "title": "Sparkle Mouse – яркие частицы для рабочего стола",
     "excerpt": "Sparkle Mouse превращает ваш ПК в живую картину: на рабочем столе появляются анимированные частицы, создающие уникальную атмосферу. Идеально для тех, кто",
     "date": "18 октября 2026",
@@ -5639,6 +6061,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/skazaniya-o-puti-bessmertnyh-5262700",
+    "noindex": true,
     "title": "Сказания о Пути Бессмертных — обзор",
     "excerpt": "Карточный рогалик «Сказания о Пути Бессмертных» сочетает стили сянься и рисование тушью, предлагая игроку глубокую стратегию и бесконечные артефакты в",
     "date": "18 октября 2026",
@@ -5652,6 +6075,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/penrogue-5319460",
+    "noindex": true,
     "title": "PenRogue — ролевая стратегия с пеной",
     "excerpt": "PenRogue — уникальная ролевая стратегия, где вы ловите разные виды пены, сражаетесь с тренерами и преодолеваете 100 волн, используя систему типов с тремя",
     "date": "18 октября 2026",
@@ -5665,6 +6089,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/chinesegaokao-5282110",
+    "noindex": true,
     "title": "中国式高考 ChineseGaokao — обзор и особенности",
     "excerpt": "中国式高考 ChineseGaokao – казуальная ролевая симуляция, где игрок проходит путь ученика, изучает материал, отрабатывает навыки и готовится к вступительным",
     "date": "18 октября 2026",
@@ -5678,6 +6103,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/tower-survivor-paper-invasion-5178830",
+    "noindex": true,
     "title": "Tower Survivor – Paper Invasion: казуальная стратегия",
     "excerpt": "Tower Survivor – Paper Invasion — казуальная стратегия с элементами обороны, где каждое решение меняет ход битвы против бумажных врагов. Игра проверит",
     "date": "18 октября 2026",
@@ -5691,6 +6117,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/yatai-8-5080810",
+    "noindex": true,
     "title": "Yatai 8 — инди‑симулятор бесконечного коридора",
     "excerpt": "Yatai 8 — атмосферный инди‑симулятор, где игрок бродит по мрачному японскому коридору, ищет аномалии и пытается вырваться из бесконечного цикла. Игра",
     "date": "18 октября 2026",
@@ -5704,6 +6131,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/i-need-a-room-5285230",
+    "noindex": true,
     "title": "I Need A Room – приключенческий симулятор отеля",
     "excerpt": "I Need A Room – уникальный инди-симулятор управления отелем, где игроку предстоит вести бизнес, знакомиться с разнообразными гостями и раскрывать их",
     "date": "18 октября 2026",
@@ -5717,6 +6145,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/strange-video-editor-premium-fast-local-no-subscription-5093430",
+    "noindex": true,
     "title": "Strange Video Editor — премиум, быстрый, локальный",
     "excerpt": "Strange Video Editor — локальный видеоредактор без подписки, позволяющий быстро создавать таймлайн, добавлять субтитры и экспортировать готовый ролик",
     "date": "18 октября 2026",
@@ -5748,6 +6177,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/wolf-island-4729580",
+    "noindex": true,
     "title": "Обзор Wolf Island — кооперативное выживание на острове",
     "excerpt": "Обзор Wolf Island: кооперативный симулятор выживания от третьего лица. Исследуйте остров, создавайте предметы и чините лодку ради спасения всей команды.",
     "date": "17 октября 2026",
@@ -5761,6 +6191,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/ocean-4360980",
+    "noindex": true,
     "title": "Обзор игры Ocean — карточная стратегия с ИИ",
     "excerpt": "Подробный обзор карточной стратегии Ocean. Узнайте, как работают карты на базе искусственного интеллекта, система обмена и приключения.",
     "date": "17 октября 2026",
@@ -5774,6 +6205,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/five-nights-with-maids-4771580",
+    "noindex": true,
     "title": "Five Nights with Maids: обзор хоррор-симулятора",
     "excerpt": "Обзор Five Nights with Maids. Ночные смены охранника в особняке со странными горничными. Рассказываем о механике наблюдения и атмосфере хоррора.",
     "date": "17 октября 2026",
@@ -5787,6 +6219,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/fps-game-5094120",
+    "noindex": true,
     "title": "Обзор FPS Game: безумный мультяшный шутер",
     "excerpt": "Обзор FPS Game — динамичного сетевого шутера с мультяшной графикой. Узнайте об особенностях безумных перестрелок, механике подкатов и наградах за серию.",
     "date": "17 октября 2026",
@@ -5800,6 +6233,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/astrology-101-5313050",
+    "noindex": true,
     "title": "Обзор игры Astrology 101: интерактивная астрология",
     "excerpt": "Обзор Astrology 101: познавательная казуальная игра об основах астрологии. Разбираем уроки, составление натальной карты и плюсы проекта.",
     "date": "17 октября 2026",
@@ -5813,6 +6247,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/conquer-her-5292910",
+    "noindex": true,
     "title": "Обзор Conquer Her: экшен о противостоянии генералов",
     "excerpt": "Узнайте всё об экшене Conquer Her. Сюжет о борьбе двух генералов, ключевые особенности и вердикт редакции: стоит ли играть в проект.",
     "date": "17 октября 2026",
@@ -5826,6 +6261,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/hentai-tales-profane-arbitration-5044690",
+    "noindex": true,
     "title": "Hentai Tales: Profane Arbitration – обзор",
     "excerpt": "Обзор Hentai Tales: Profane Arbitration – казуальная стратегия от инди‑разработчиков, где вы играете посредником в темных фантазиях Токио. Подходит",
     "date": "17 октября 2026",
@@ -5839,6 +6275,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/puzzle-jungle-5232240",
+    "noindex": true,
     "title": "Puzzle Jungle: обзор классической инди-головоломки",
     "excerpt": "Разбираем Puzzle Jungle — казуальную инди-головоломку с множеством уровней и красочным визуалом. Узнайте, кому подойдет этот классический проект.",
     "date": "17 октября 2026",
@@ -5852,6 +6289,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/puzzle-fireworks-5151410",
+    "noindex": true,
     "title": "Обзор игры Puzzle Fireworks: классическая головоломка",
     "excerpt": "Узнайте все об инди-игре Puzzle Fireworks. Разбираем особенности казуальной головоломки, визуальный стиль и то, кому стоит обратить внимание на проект.",
     "date": "17 октября 2026",
@@ -5865,6 +6303,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/super-cuber-4398300",
+    "noindex": true,
     "title": "Обзор Super Cuber: головоломка для спидкуберов",
     "excerpt": "Обзор логической игры Super Cuber. Узнайте об особенностях сборки кубика на скорость, кастомизации и таблицах лидеров в нашем материале.",
     "date": "17 октября 2026",
@@ -5878,6 +6317,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/trafficjam-der-stau-simulator-3993220",
+    "noindex": true,
     "title": "Обзор TrafficJam - der Stau Simulator: симулятор пробок",
     "excerpt": "Обзор TrafficJam - der Stau Simulator. Узнайте, чем интересен этот необычный симулятор дорожных заторов и стоит ли тратить на него свое время.",
     "date": "17 октября 2026",
@@ -5891,6 +6331,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/grid64-5316940",
+    "noindex": true,
     "title": "Обзор GRID64: минималистичные пиксельные шахматы",
     "excerpt": "Обзор GRID64 — строгие черно-белые пиксельные шахматы. Решайте задачи на мат, соревнуйтесь в турнирах арены и проверьте тактику против умного движка.",
     "date": "17 октября 2026",
@@ -5904,6 +6345,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/just-a-cat-4350900",
+    "noindex": true,
     "title": "Обзор Just a Cat: милый питомец на рабочем столе",
     "excerpt": "Обзор Just a Cat: казуальный проект про кота на экране. Кастомизация питомца, отслеживание кликов и уютная атмосфера для работы и отдыха.",
     "date": "17 октября 2026",
@@ -5917,6 +6359,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/nekomancer-5066530",
+    "noindex": true,
     "title": "Обзор Nekomancer — рогалик про кота и орды врагов",
     "excerpt": "Обзор Nekomancer: динамичный экшен-рогалик про кота против полчищ монстров. Узнайте об особенностях прокачки, стихийных навыках и битвах с боссами.",
     "date": "17 октября 2026",
@@ -5930,6 +6373,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/steel-fortune-5252440",
+    "noindex": true,
     "title": "Steel & Fortune: обзор ролевой стратегии про гильдию",
     "excerpt": "Обзор Steel & Fortune: управление гильдией, тактические автобитвы и прямой контроль героев. Узнайте, кому подойдет эта ролевая стратегия.",
     "date": "17 октября 2026",
@@ -5943,6 +6387,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/ghillie-wars-5211690",
+    "noindex": true,
     "title": "Обзор Ghillie Wars: снайперские дуэли и маскировка",
     "excerpt": "Разбираем Ghillie Wars — сетевой тактический экшен про снайперскую охоту. Узнайте об особенностях маскировки, правилах дуэлей и балансе равных условий.",
     "date": "17 октября 2026",
@@ -5956,6 +6401,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/strayed-reaper-skin-pack-5414000",
+    "noindex": true,
     "title": "Strayed - Reaper Skin Pack: обзор дополнения",
     "excerpt": "Всё о дополнении Strayed - Reaper Skin Pack. Узнайте, что входит в мрачный косметический набор Жнеца и стоит ли примерять зловещий образ для выживания.",
     "date": "17 октября 2026",
@@ -5969,6 +6415,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/ogon-i-voda-duhi-lesa-4697950",
+    "noindex": true,
     "title": "Огонь и Вода: Духи Леса — кооперативное приключение",
     "excerpt": "Красочный кооперативный экшен‑приключение Огонь и Вода: Духи Леса приглашает решать головоломки в паре, используя силы Огня, Воды и пяти лесных духов.",
     "date": "17 октября 2026",
@@ -5982,6 +6429,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/open-sourcerer-4561260",
+    "noindex": true,
     "title": "Обзор Open Sourcerer: платформер с магией на коде",
     "excerpt": "Open Sourcerer — необычный двухмерный экшен-платформер, где заклинания создаются с помощью реального кода. Узнайте подробности в нашем обзоре.",
     "date": "17 октября 2026",
@@ -5995,6 +6443,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/the-mayor-s-hand-5175490",
+    "noindex": true,
     "title": "The Mayor’s Hand: цена, отзывы и статистика игроков",
     "excerpt": "The Mayor’s Hand: актуальная цена (290.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
     "date": "17 октября 2026",
@@ -6005,6 +6454,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/wife-s-bedroom-5230050",
+    "noindex": true,
     "title": "Wife's Bedroom: цена, отзывы и статистика игроков",
     "excerpt": "Wife's Bedroom: актуальная цена (Бесплатно), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
     "date": "17 октября 2026",
@@ -6015,6 +6465,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/the-great-game-of-cards-5250500",
+    "noindex": true,
     "title": "The Great Game of Cards — пошаговая карточная стратегия",
     "excerpt": "Пошаговая карточная стратегия с общим пулом карт, где каждый формирует свою колоду и сражается с друзьями, проверяя тактическое мышление и умение",
     "date": "17 октября 2026",
@@ -6028,6 +6479,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/belgo-odyssey-5296070",
+    "noindex": true,
     "title": "Belgo Odyssey – абсурдный бельгийский экшн",
     "excerpt": "Belgo Odyssey – двумерный экшн‑приключение, где вы летаете на дирижабле по Бельгии, сражаетесь с дронами, странными монстрами и типично бельгийскими",
     "date": "17 октября 2026",
@@ -6041,6 +6493,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/spudfall-4924000",
+    "noindex": true,
     "title": "SpudFall – картофельный экшен в реальном времени",
     "excerpt": "SpudFall – динамичный мультиплеерный экшн‑симулятор, где 1‑4 игрока бросают картофельные снаряды, взрывают ландшафт и борются за выживание в хаотичных",
     "date": "17 октября 2026",
@@ -6054,6 +6507,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/pure-muay-thai-5062840",
+    "noindex": true,
     "title": "Pure Muay Thai – бокс в стиле тайского кикбоксинга",
     "excerpt": "Pure Muay Thai – динамичный экшен‑спортивный инди‑проект, где бойцы сражаются с продвинутым ИИ в реалистичных аренах тайского бокса. Игра предлагает",
     "date": "17 октября 2026",
@@ -6067,6 +6521,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/solemnfable-5007740",
+    "noindex": true,
     "title": "SOLEMNFABLE — приключенческая RPG",
     "excerpt": "SOLEMNFABLE — приключенческая ролевая игра с элементами быстрых реакций, где вам предстоит сражаться, прощать и исследовать миры Земли и космоса вместе с",
     "date": "17 октября 2026",
@@ -6080,6 +6535,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/inkpress-4950180",
+    "noindex": true,
     "title": "Inkpress – расслабляющая головоломка",
     "excerpt": "Inkpress – казуальная инди-игра, где нужно нажимать блоки, решая головоломки без спешки. Идеально для тех, кто любит спокойный геймплей.",
     "date": "17 октября 2026",
@@ -6093,6 +6549,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/the-king-s-gambit-3873340",
+    "noindex": true,
     "title": "The King's Gambit: цена, отзывы и статистика игроков",
     "excerpt": "The King's Gambit: актуальная цена (82.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
     "date": "17 октября 2026",
@@ -6103,6 +6560,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/blightstone-2832280",
+    "noindex": true,
     "title": "Blightstone — тактическое приключение с элементами roguelike",
     "excerpt": "Blightstone — пошаговая стратегия с ролевыми элементами, где вам предстоит вести отряд, разрушать проклятый кристалл и спасать мир от порчи.",
     "date": "17 октября 2026",
@@ -6116,6 +6574,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/beyond-these-stars-2295060",
+    "noindex": true,
     "title": "Beyond These Stars – симулятор строительства и стратегии",
     "excerpt": "Beyond These Stars — управляемый симулятор строительства на спине космического кита. Стройте города, налаживайте поставки, исследуйте тайны вселенной и",
     "date": "17 октября 2026",
@@ -6129,6 +6588,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/escape-from-elohell-4547860",
+    "noindex": true,
     "title": "Escape from EloHell – казуальная стратегия с элементами",
     "excerpt": "Escape from EloHell – однопользовательская игра, сочетающая случайность и тактику. Быстрые матчи, цепочки побед и стремление к первому месту в таблице без",
     "date": "16 октября 2026",
@@ -6142,6 +6602,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/lotwick-hill-5288610",
+    "noindex": true,
     "title": "Lotwick Hill — торговая стратегия в портовом городе",
     "excerpt": "Lotwick Hill — инди‑симулятор торговли, где вы управляете портовым бизнесом, покупаете и продаёте товары, конкурируете с ИИ или друзьями и развиваете",
     "date": "16 октября 2026",
@@ -6155,6 +6616,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/keng-s-little-universe-1725860",
+    "noindex": true,
     "title": "Keng's Little Universe: цена, отзывы и статистика игроков",
     "excerpt": "Keng's Little Universe: актуальная цена (590.00 RUB), 88% положительных отзывов в Steam, статистика владельцев (20,000 – 50,000). Данные обновляются автоматически.",
     "date": "16 октября 2026",
@@ -6165,6 +6627,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/x-x-3196120",
+    "noindex": true,
     "title": "少女 X 愛 X 麻將 — легкий взрослый маджонг",
     "excerpt": "Легкая игра‑маджонг с элементами романтики и юмора. Подойдёт любителям казуальных стратегий, ищущим лёгкое развлечение для взрослых.",
     "date": "16 октября 2026",
@@ -6178,6 +6641,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/hay-one-billion-2069070",
+    "noindex": true,
     "title": "Hay! One Billion! — обзор и впечатления",
     "excerpt": "Hay! One Billion! — инди-игра про поиски иголки в бесконечном поле сухой травы. Разбирайте сено, собирайте монеты, улучшайте инструменты и ускоряйте",
     "date": "16 октября 2026",
@@ -6191,6 +6655,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/-4807880",
+    "noindex": true,
     "title": "冒险者公会 — приключенческий MMORPG",
     "excerpt": "冒险者公会 – бесплатный многопользовательский онлайн‑мир, где сочетаются экшен, приключения и стратегии. Игра подойдет любителям RPG и казуального гейминга.",
     "date": "16 октября 2026",
@@ -6204,6 +6669,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/the-woodman-4064810",
+    "noindex": true,
     "title": "The Woodman — казуальная инди‑симуляция",
     "excerpt": "The Woodman — небольшая инкрементальная игра про огромный дерево, где вы рубите древесину, снабжаете магазин, нанимаете гномов и развиваете лесной лагерь.",
     "date": "16 октября 2026",
@@ -6217,6 +6683,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/gravity-vector-5213050",
+    "noindex": true,
     "title": "Gravity Vector – динамичный экшен в космосе",
     "excerpt": "Gravity Vector – быстрый 3D‑экшен, где гравитацию используют как оружие. Играйте на планетах, ускоряйтесь и сражайтесь в меняющемся космическом поле боя.",
     "date": "16 октября 2026",
@@ -6230,6 +6697,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/platformino-5281430",
+    "noindex": true,
     "title": "Platformino – головоломка в стиле экшн‑инди",
     "excerpt": "Platformino – простая, но изощрённая головоломка, где нужно бросать блоки, строить пути и достигать портала. Подойдёт любителям казуальных экшенов и",
     "date": "16 октября 2026",
@@ -6243,6 +6711,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/giblings-5025950",
+    "noindex": true,
     "title": "Giblings – динамичный экшн с разрушаемыми аренами",
     "excerpt": "Giblings – быстрый экшн‑шутер, где бой происходит на полностью разрушаемых аренах. Стройте мосты, копайте под ногами врагов и выбирайте из 30 видов",
     "date": "16 октября 2026",
@@ -6256,6 +6725,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/decisive-decks-5324490",
+    "noindex": true,
     "title": "Decisive Decks — стратегия в морском сеттинге",
     "excerpt": "Decisive Decks – пошаговой карточный стратегический симулятор Второй мировой войны. Выбирайте одну из четырёх наций, собирайте колоду кораблей и",
     "date": "16 октября 2026",
@@ -6269,6 +6739,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/-3318210",
+    "noindex": true,
     "title": "파멸의 오타쿠 — приключенческий инди‑симулятор",
     "excerpt": "파멸의 오타쿠 — многовариантное приключение о жизни отаку между реальностью и киберпространством. Инди‑игра с несколькими концовками, подходящая любителям",
     "date": "16 октября 2026",
@@ -6282,6 +6753,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/incredulity-4355200",
+    "noindex": true,
     "title": "Incredulity — обзор игры",
     "excerpt": "Incredulity — атмосферный экшен‑приключение с фиксированными ракурсами, где вы погружаетесь в мысли детектива Зары Морленд, решаете головоломки и",
     "date": "16 октября 2026",
@@ -6295,6 +6767,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/todd-the-technician-5082370",
+    "noindex": true,
     "title": "Todd The Technician – приключенческий пазл от инди‑студии",
     "excerpt": "Todd The Technician – головоломка от первого лица, где вас сопровождает саркастичный искусственный интеллект. Решайте механические и логические задачи,",
     "date": "16 октября 2026",
@@ -6308,6 +6781,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/tickerbound-5335250",
+    "noindex": true,
     "title": "Tickerbound – финансовый симулятор",
     "excerpt": "В Tickerbound вы начинаете с кредита и строите финансовую империю, торгуя на вымышленном рынке, реагируя на новости и инвестируя в бизнес, недвижимость и",
     "date": "16 октября 2026",
@@ -6321,6 +6795,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/ampanic-4644170",
+    "noindex": true,
     "title": "AMPANIC – быстрый экшен в магазине",
     "excerpt": "AMPANIC – динамичный инди‑экшен, где всё действие происходит в магазине. Управляйте прицелом, собирайте и смешивайте товары, соревнуясь в точности и",
     "date": "16 октября 2026",
@@ -6334,6 +6809,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/-4351100",
+    "noindex": true,
     "title": "我独自建造升级 — тактический шутер с элементами защиты",
     "excerpt": "Новый тактический экшен‑приключение, где игрок сочетает стрельбу и строительство обороны. Подойдёт любителям стратегии и динамичных боёв. Оцените",
     "date": "16 октября 2026",
@@ -6347,6 +6823,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/yellow-terminal-5286120",
+    "noindex": true,
     "title": "Yellow Terminal — казуальная инди-игра для рабочего стола",
     "excerpt": "Yellow Terminal — небольшая казуальная игра, где вы работаете за компьютером, а Клэр исследует мир снов. Идеально подходит для коротких перерывов.",
     "date": "16 октября 2026",
@@ -6360,6 +6837,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/-4930500",
+    "noindex": true,
     "title": "盯着你！桌面喵小西 — уютный виртуальный питомец",
     "excerpt": "盯着你！桌面喵小西 – бесплатная казуальная игра‑питомец, которая живёт на вашем рабочем столе, напоминает о перерывах и просто радует глаз.",
     "date": "16 октября 2026",
@@ -6373,6 +6851,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/fossil-digger-5314050",
+    "noindex": true,
     "title": "Fossil Digger — приключенческий инди-симулятор раскопок",
     "excerpt": "Fossil Digger — игра от первого лица, где вы исследуете слои земли, находите кости древних существ, собираете их в музей и улучшаете снаряжение. Подходит",
     "date": "16 октября 2026",
@@ -6386,6 +6865,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/succuquest-2100270",
+    "noindex": true,
     "title": "Succuquest – приключенческий экшен с элементами фэнтези",
     "excerpt": "Succuquest – динамичный экшен‑приключение, где главная героиня Фоун стремится стать героем и завоевать сердца великих воинов, используя кнут, парение и",
     "date": "16 октября 2026",
@@ -6399,6 +6879,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/feed-the-cups-2336220",
+    "noindex": true,
     "title": "Feed the Cups – казуальный roguelite симулятор",
     "excerpt": "Feed the Cups — кооперативный roguelite‑симулятор кафе, где игроки вместе управляют баром, готовят напитки, обслуживают клиентов и справляются с хаосом в",
     "date": "16 октября 2026",
@@ -6412,6 +6893,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/alice-nation-3755350",
+    "noindex": true,
     "title": "Alice Nation — приключенческий карточный квест",
     "excerpt": "Alice Nation — атмосферный одиночный квест в стиле настольных игр, где вам предстоит исследовать мир За Пределами, решать головоломки с помощью карт и",
     "date": "16 октября 2026",
@@ -6425,6 +6907,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/a-detective-story-4484570",
+    "noindex": true,
     "title": "A Detective Story — обзор, жанр, геймплей",
     "excerpt": "A Detective Story — детективный квест в солнечном прибрежном городе, где вам предстоит допросить подозреваемых, искать улики и раскрыть убийство за три",
     "date": "16 октября 2026",
@@ -6438,6 +6921,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/-5075110",
+    "noindex": true,
     "title": "零氪超变 — бесплатный экшен‑приключение",
     "excerpt": "零氪超变 — бесплатный многопользовательский экшен с элементами RPG и приключений. Игра предлагает бесконечные режимы, постоянные обновления и яркую боевую",
     "date": "16 октября 2026",
@@ -6451,6 +6935,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/sleep-walk-4904470",
+    "noindex": true,
     "title": "Sleep Walk — казуальная инди‑симуляция",
     "excerpt": "Sleep Walk — атмосферная казуальная игра‑симулятор, где сын пытается примириться с отцом, преодолевая прошлое. Трогательная история о прощении,",
     "date": "16 октября 2026",
@@ -6464,6 +6949,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/kaebon-5245250",
+    "noindex": true,
     "title": "KAEBON – приключенческий инди‑хоррор",
     "excerpt": "KAEBON – тайская хоррор‑приключенческая игра, где игроки проводят ночные ритуалы, готовят подношения и раскрывают тайны забытых клятв. Атмосферный сюжет и",
     "date": "16 октября 2026",
@@ -6477,6 +6963,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/-3939020",
+    "noindex": true,
     "title": "囚笼之诗 — приключенческий инди-роман",
     "excerpt": "囚笼之诗 – атмосферная приключенческая игра‑инди с элементами ролевого сюжета, где герой просыпается в клетке монстра без памяти и имеет 30 дней на выбор пути.",
     "date": "16 октября 2026",
@@ -6490,6 +6977,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/lyfe-of-the-blade-5218930",
+    "noindex": true,
     "title": "Lyfe of the Blade – экстремальный экшен с полной свободой",
     "excerpt": "Lyfe of the Blade – динамичная экшен‑приключенческая игра от инди‑студии. Полный контроль над каждым движением, возможность отменять действия в реальном",
     "date": "16 октября 2026",
@@ -6503,6 +6991,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/-5180330",
+    "noindex": true,
     "title": "天邪鬼ノ悪夢: цена, отзывы и статистика игроков",
     "excerpt": "天邪鬼ノ悪夢: актуальная цена (418.92 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
     "date": "16 октября 2026",
@@ -6513,6 +7002,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/dayz-badlands-3816030",
+    "noindex": true,
     "title": "DayZ Badlands – выживание в пустыне",
     "excerpt": "DayZ Badlands погружает в провинцию Насдара, где каждый квадратный километр – арена борьбы за ресурсы. Игроки исследуют пустынные просторы, заключают",
     "date": "16 октября 2026",
@@ -6526,6 +7016,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/enshrouded-1203620",
+    "noindex": true,
     "title": "Enshrouded – ролевая игра с открытым миром",
     "excerpt": "Enshrouded – ролевая игра, где игроки исследуют таинственное королевство Эмбервэйл, сражаются с Пеленой и строят мир по своему вкусу, как в одиночку, так",
     "date": "16 октября 2026",
@@ -6539,6 +7030,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/tribal-trouble-resurrected-3945720",
+    "noindex": true,
     "title": "Tribal Trouble: Resurrected – бесплатная стратегия",
     "excerpt": "Tribal Trouble: Resurrected – бесплатная стратегия в реальном времени, где игроки выбирают викингов или коренные племена, строят поселения и сражаются на",
     "date": "15 октября 2026",
@@ -6552,6 +7044,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/arena-unleashed-5045860",
+    "noindex": true,
     "title": "ARENA UNLEASHED — динамичный пиксельный экшен",
     "excerpt": "ARENA UNLEASHED — быстрый экшен с элементами стратегии и навыков, выполненный в грубом пиксельном стиле. Игра предлагает кровавые схватки, где каждый бой",
     "date": "15 октября 2026",
@@ -6565,6 +7058,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/gornaya-chuma-4327330",
+    "noindex": true,
     "title": "Обзор игры Горная чума: сюжетное инди-приключение",
     "excerpt": "Обзор инди-игры «Горная чума». Тайна заброшенной шахты, мистика и расследование болезни в глухой деревне девяностых. Узнайте, стоит ли играть.",
     "date": "15 октября 2026",
@@ -6578,6 +7072,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/the-jackbox-party-pack-12-4199960",
+    "noindex": true,
     "title": "The Jackbox Party Pack 12 — весёлая компания",
     "excerpt": "The Jackbox Party Pack 12 предлагает набор ярких мини-игр для компании: от нелепых приветствий до командных битв знаний. Идеально для вечеринок и",
     "date": "15 октября 2026",
@@ -6591,6 +7086,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/colors-of-v-5214490",
+    "noindex": true,
     "title": "Colors Of V — экшен‑инди с уникальной цветовой механикой",
     "excerpt": "Colors Of V — оригинальный экшен‑инди, где мир построен из векторных туннелей и три цвета управляют физикой и видимостью. Игра предлагает нестандартные",
     "date": "15 октября 2026",
@@ -6604,6 +7100,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/-5242520",
+    "noindex": true,
     "title": "Обзор 放置地下城：无尽远征 — пиксельная ролевая игра",
     "excerpt": "Обзор 放置地下城：无尽远征: мрачная пиксельная ролевая игра с автобоями, пятью классами героев, прокачкой экипировки и зачисткой подземелий от демонов.",
     "date": "15 октября 2026",
@@ -6617,6 +7114,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/sushi-automata-5326650",
+    "noindex": true,
     "title": "Обзор Sushi Automata: ресторан суши и основы кода",
     "excerpt": "Обзор Sushi Automata: симулятор плавучего суши-бара с котиками. Автоматизируйте готовку с помощью реального кода или блоков, развивая свой бизнес.",
     "date": "15 октября 2026",
@@ -6630,6 +7128,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/ball-maze-3678730",
+    "noindex": true,
     "title": "Обзор Ball Maze: физическая головоломка с лабиринтом",
     "excerpt": "Стоит ли играть в Ball Maze? Читайте наш обзор инди-головоломки: физика наклона лабиринта, управление гравитацией и сложность прохождения уровней.",
     "date": "15 октября 2026",
@@ -6643,6 +7142,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/harvest-moon-echoes-of-teradea-3591180",
+    "noindex": true,
     "title": "Harvest Moon®: Echoes of Teradea – обзор",
     "excerpt": "Harvest Moon®: Echoes of Teradea – спокойный фермерский симулятор с элементами приключения, где игроку предстоит восстановить деревню, исследовать",
     "date": "15 октября 2026",
@@ -6656,6 +7156,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/laserwaves-5247290",
+    "noindex": true,
     "title": "LaserWaves — рогулит‑шутер в стиле аркадных экшенов",
     "excerpt": "LaserWaves — динамичный шутер‑выживание в волнах с элементами рогулита. Уникальные забеги, улучшения и сотни раундов держат в напряжении любого любителя",
     "date": "15 октября 2026",
@@ -6669,6 +7170,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/a-bad-dream-trypophobia-5165970",
+    "noindex": true,
     "title": "A Bad Dream: Trypophobia – обзор и оценка",
     "excerpt": "A Bad Dream: Trypophobia — атмосферный инди‑хоррор от первого лица с VHS‑стилем, где вам предстоит искать ключи, спасаясь от пугающей сущности в постоянно",
     "date": "15 октября 2026",
@@ -6682,6 +7184,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/unitra-real-time-voice-translation-for-gamers-4642720",
+    "noindex": true,
     "title": "Unitra: Real-Time Translator For Gamers: цена, отзывы и статистика игроков",
     "excerpt": "Unitra: Real-Time Translator For Gamers: актуальная цена (Бесплатно), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
     "date": "15 октября 2026",
@@ -6692,6 +7195,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/regloss-cross-4808150",
+    "noindex": true,
     "title": "ReGLOSS: CROSS – казуальный пазл от инди‑студии",
     "excerpt": "ReGLOSS: CROSS – 2D головоломка, где вы управляете персонажами, помогая им безопасно встретиться, несмотря на опоздание. Идеально для любителей лёгких",
     "date": "15 октября 2026",
@@ -6705,6 +7209,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/sword-flinger-4474400",
+    "noindex": true,
     "title": "SWORD FLINGER – динамичный рогалит-экшн",
     "excerpt": "SWORD FLINGER – бросайте мечи, создавайте цепочки ударов и исследуйте постоянно меняющиеся подземелья. Игра сочетает быстрый экшен и казуальный подход,",
     "date": "15 октября 2026",
@@ -6718,6 +7223,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/the-fame-game-ii-l-a-heartbreaker-4870960",
+    "noindex": true,
     "title": "The Fame Game II: L.A. Heartbreaker — обзор драмы",
     "excerpt": "Обзор интерактивного кино The Fame Game II: L.A. Heartbreaker. Примерьте роль самозванца в Лос-Анджелесе и выберите свой путь среди лжи и соблазнов.",
     "date": "15 октября 2026",
@@ -6731,6 +7237,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/rogtochess-2685830",
+    "noindex": true,
     "title": "Rogtochess – обзор и оценка игры",
     "excerpt": "Rogtochess сочетает авто-баттлер в командном режиме с элементами RPG и стратегии, предлагая кооперативный режим, приключения и аркадные механики на",
     "date": "15 октября 2026",
@@ -6744,6 +7251,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/-3605230",
+    "noindex": true,
     "title": "Обзор игры 火烧城: пошаговое выживание в киберпанке",
     "excerpt": "Узнайте все об игре 火烧城. Необычная пошаговая стратегия с механикой выживания в горящем киберпанк-городе. Кому подойдет проект и стоит ли в него играть.",
     "date": "15 октября 2026",
@@ -6757,6 +7265,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/gallery-organizer-4938790",
+    "noindex": true,
     "title": "Gallery Organizer — уютный симулятор выставок",
     "excerpt": "Gallery Organizer — казуальная игра‑симулятор, где вы готовите галереи к открытию, развешивая до тысячи картин, находите инструменты и оформляете",
     "date": "15 октября 2026",
@@ -6770,6 +7279,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/how-to-tame-a-wild-fox-girl-5280530",
+    "noindex": true,
     "title": "How To Tame A Wild Fox Girl – эротическая визуальная новелла",
     "excerpt": "Эротическая визуальная новелла How To Tame A Wild Fox Girl предлагает интригующий сюжет о встрече с огромной лисой‑девушкой. Приключенческий инди‑проект",
     "date": "15 октября 2026",
@@ -6783,6 +7293,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/twisted-survivors-5209830",
+    "noindex": true,
     "title": "Обзор Twisted Survivors: мрачный экшен на выживание",
     "excerpt": "Обзор Twisted Survivors: мрачный экшен в стиле темного фэнтези. Сразитесь с бесконечными полчищами врагов в одиночку или в команде до четырех игроков.",
     "date": "15 октября 2026",
@@ -6796,6 +7307,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/arknights-endfield-4732690",
+    "noindex": true,
     "title": "Arknights: Endfield – обзор, жанр и геймплей",
     "excerpt": "Arknights: Endfield – трехмерная ролевая стратегия в реальном времени, где вы становитесь Эндминистратором компании Endfield, исследуете планету Талос II",
     "date": "15 октября 2026",
@@ -6809,6 +7321,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/sr2-screen-recorder-5208760",
+    "noindex": true,
     "title": "SR2 Screen Recorder — простая программа для записи экрана",
     "excerpt": "SR2 Screen Recorder – лёгкое приложение для записи видео с экрана, настройка области, частоты кадров и звука. Сохраняйте результаты в MP4 без лишних",
     "date": "15 октября 2026",
@@ -6822,6 +7335,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/slowburn-2835080",
+    "noindex": true,
     "title": "SLOWBURN — быстрый экшн в постапокалипсисе",
     "excerpt": "SLOWBURN – динамичный экшен‑инди, где каждый убитый враг имеет значение, а жизнь персонажа – лишь ресурс. Играйте в разрушенном городе, собирайте",
     "date": "15 октября 2026",
@@ -6835,6 +7349,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/text-dungeon-the-ring-of-life-4273760",
+    "noindex": true,
     "title": "Text Dungeon: The Ring of Life — обзор и описание",
     "excerpt": "Text Dungeon: The Ring of Life – текстовое приключение в стиле roguelike, где каждый проход по меняющемуся лабиринту уникален. Без графики, только",
     "date": "15 октября 2026",
@@ -6848,6 +7363,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/deep-ocean-4x-conquest-of-the-abyss-5199230",
+    "noindex": true,
     "title": "Deep Ocean 4X – Conquest of the Abyss обзор",
     "excerpt": "Тактическая 4X‑стратегия Deep Ocean 4X – Conquest of the Abyss предлагает управление флотом, исследование бездн и пошаговые битвы в шахматных секторах.",
     "date": "15 октября 2026",
@@ -6861,6 +7377,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/constriction-4482080",
+    "noindex": true,
     "title": "Constriction — мрачная стратегия-головоломка",
     "excerpt": "Constriction — инди‑стратегия, где слово‑гонка превращается в смертельную игру. Быстро угадывайте буквы, пока противник не задохнётся от собственного",
     "date": "15 октября 2026",
@@ -6874,6 +7391,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/bid-rivals-4956060",
+    "noindex": true,
     "title": "Bid Rivals – бесплатный аукционный баттлер",
     "excerpt": "Bid Rivals — бесплатный многопользовательский аукционный баттлер, где игроки покупают сведения, читают зал, блефуют и пытаются выиграть лот за часть его",
     "date": "15 октября 2026",
@@ -6887,6 +7405,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/keyboard-chaos-5182260",
+    "noindex": true,
     "title": "Keyboard Chaos – казуальный инди‑симулятор сборки клавиатур",
     "excerpt": "Keyboard Chaos – спокойный инди‑симулятор, где нужно упорядочить более 2600 кейкапов, собрать 32 клавиатуры и превратить беспорядок стола в идеальный",
     "date": "15 октября 2026",
@@ -6900,6 +7419,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/annalog-4802510",
+    "noindex": true,
     "title": "Annalog — метроидвания в 8‑битном стиле",
     "excerpt": "Annalog — динамичная метроидвания с 8‑битной графикой, открытым миром и загадочной историей. Погрузитесь в нелинейные головоломки и эпические битвы с",
     "date": "15 октября 2026",
@@ -6913,6 +7433,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/-2715730",
+    "noindex": true,
     "title": "后汉姬异录: обзор стратегии и RPG",
     "excerpt": "后汉姬异录 – инди‑игра, совмещающая элементы ролевой и стратегической механики, погружает в эпоху Троецарствия. Подойдёт любителям исторических сюжетов и",
     "date": "15 октября 2026",
@@ -6926,6 +7447,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/over-the-hill-2929250",
+    "noindex": true,
     "title": "over the hill – гонки по бездорожью",
     "excerpt": "over the hill – приключенческий автосимулятор, где вы управляете культовыми внедорожниками 60‑80‑х годов, исследуете живописные трассы и преодолеваете",
     "date": "15 октября 2026",
@@ -6939,6 +7461,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/arrows-without-end-5282350",
+    "noindex": true,
     "title": "Обзор Arrows Without End: китайская головоломка",
     "excerpt": "Обзор Arrows Without End: умная казуальная головоломка по китайскому мифу. Сбивайте солнца стрелами, проходите уровни и соревнуйтесь на скорость.",
     "date": "14 октября 2026",
@@ -6952,6 +7475,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/anomaly-watchout-5123480",
+    "noindex": true,
     "title": "Обзор Anomaly Watchout! — хоррор на наблюдательность",
     "excerpt": "Разбираем Anomaly Watchout! — атмосферный инди-хоррор про слежку за особняком. Ищите аномалии через камеры и выживайте на разных уровнях сложности.",
     "date": "14 октября 2026",
@@ -6965,6 +7489,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/stream-racer-1333410",
+    "noindex": true,
     "title": "Обзор Stream Racer: гонки для стримеров и зрителей",
     "excerpt": "Обзор Stream Racer: интерактивные гонки для стримов. Разбираемся, как устроена игра, как привлечь зрителей в заезды и чем интересен проект.",
     "date": "14 октября 2026",
@@ -6978,6 +7503,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/tales-from-eternity-interactive-preview-5289970",
+    "noindex": true,
     "title": "Tales From Eternity - Interactive Preview обзор",
     "excerpt": "Бесплатный интерактивный пролог Tales From Eternity предлагает пройти первые две главы в виде атмосферного цифрового чтения, погружая в мир",
     "date": "14 октября 2026",
@@ -6991,6 +7517,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/my-recycling-center-2-3343920",
+    "noindex": true,
     "title": "My Recycling Center 2 — симулятор переработки",
     "excerpt": "My Recycling Center 2 — казуальный инди-симулятор, где игрок управляет центром утилизации, сортирует отходы, работает в магазине секонд‑хенд и обслуживает",
     "date": "14 октября 2026",
@@ -7004,6 +7531,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/-4981040",
+    "noindex": true,
     "title": "恐怖夜話 第二夜 — психологический визуальный роман",
     "excerpt": "«恐怖夜話 第二夜» — приключенческая визуальная новелла с элементами психологического ужаса. Игрок выступает в роли автора оккультного журнала, слушающего три",
     "date": "14 октября 2026",
@@ -7017,6 +7545,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/deunocta-4485350",
+    "noindex": true,
     "title": "Deunocta – экшен‑приключение с магией и технологией",
     "excerpt": "Deunocta – динамичный экшен‑приключение, где магия и техника сплетаются в мрачном мире. Игрок управляет наёмником Кэссиди Хром, мстящим против",
     "date": "14 октября 2026",
@@ -7030,6 +7559,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/bitwise-5195360",
+    "noindex": true,
     "title": "BitWise — казуальная инди-симуляция электроцепей",
     "excerpt": "BitWise — головоломка‑симулятор, где игрок собирает реальные электрические схемы. 238 уровней, построение реле, ворот, счётчиков и даже морзянки. Подойдёт",
     "date": "14 октября 2026",
@@ -7043,6 +7573,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/keysaster-4519510",
+    "noindex": true,
     "title": "Keysaster – жуткий экшен‑инди про выживание",
     "excerpt": "Keysaster – атмосферный экшен‑инди, где после загадочного пробуждения вы попадаете в чужеродный мир. Выживание зависит от обхода агрессивных существ и",
     "date": "14 октября 2026",
@@ -7056,6 +7587,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/hyperion-daw-factory-samples-5140930",
+    "noindex": true,
     "title": "HyperION DAW - Factory Samples обзор",
     "excerpt": "Коллекция заводских лупов, ударных и эффектов для HyperION DAW. Бесплатный пакет расширит ваш звуковой арсенал и упростит процесс создания музыки и",
     "date": "14 октября 2026",
@@ -7069,6 +7601,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/hyperion-daw-5024590",
+    "noindex": true,
     "title": "HyperION DAW — бесплатная музыкальная станция",
     "excerpt": "HyperION DAW — современная бесплатная цифровая аудио‑рабочая станция для аранжировки, записи вокала и гитары, генерации идей и восстановления звука,",
     "date": "14 октября 2026",
@@ -7082,6 +7615,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/working-5201080",
+    "noindex": true,
     "title": "Working... — казуальная инди-игра",
     "excerpt": "Рабочий стол оживает в игре Working...: пять героинь в аниме, чиби и пиксель-арт стилях, уютные будни и фэнтезийные сцены, коллекционирование образов и",
     "date": "14 октября 2026",
@@ -7095,6 +7629,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/-4907670",
+    "noindex": true,
     "title": "Обзор игры 霸业封神传奇 – эпический онлайн‑RPG",
     "excerpt": "霸业封神传奇 – многопользовательская ролевая игра с элементами экшена и приключений. Свободные исследования, битвы с боссами и сбор редких артефактов в обширном",
     "date": "14 октября 2026",
@@ -7108,6 +7643,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/-5024270",
+    "noindex": true,
     "title": "Обзор 末日包租公 — постапокалиптический симулятор управления",
     "excerpt": "末日包租公 — странный симулятор постапокалиптического управления базой. Принимайте выживших, стройте и объединяйте помещения, следите за ресурсами и сражайтесь",
     "date": "14 октября 2026",
@@ -7121,6 +7657,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/the-way-home-is-dangerous-adult-only-5270030",
+    "noindex": true,
     "title": "THE WAY HOME IS DANGEROUS - Adult Only обзор",
     "excerpt": "THE WAY HOME IS DANGEROUS – динамичный экшен‑инди с элементами RPG, где игроку предстоит пробиваться через опасный город, собирая оружие и раскрывая тайны",
     "date": "14 октября 2026",
@@ -7134,6 +7671,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/nientum-op-zero-2725250",
+    "noindex": true,
     "title": "Nientum - Op.ZERO обзор",
     "excerpt": "Nientum - Op.ZERO — 2D экшн‑приключение с музыкальными головоломками, где игроки управляют забывчивыми героями в загадочном театре, выбирая путь к разным",
     "date": "14 октября 2026",
@@ -7147,6 +7685,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/bloom-blow-5277080",
+    "noindex": true,
     "title": "Bloom Blow — женская боксерская карьера",
     "excerpt": "Bloom Blow — симулятор карьеры в женском боксе. Управляйте тренировками, состоянием и переговорами, выбирайте тактику в ринге и продвигайте свою",
     "date": "14 октября 2026",
@@ -7160,6 +7699,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/twin-drive-4944320",
+    "noindex": true,
     "title": "Twin Drive — онлайн-кооперативные гонки",
     "excerpt": "Twin Drive – уникальные онлайн‑гонки, где две половины одной машины управляются разными игроками. Скоординированное вождение или хаотичный конфликт – всё",
     "date": "14 октября 2026",
@@ -7173,6 +7713,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/astrolite-3450850",
+    "noindex": true,
     "title": "Astrolite – экшн‑инди про геноцид в космосе",
     "excerpt": "Astrolite — динамичный экшн‑инди, где игрок берёт под контроль разрушительные силы, уничтожая разумных обитателей астероидов. Собирайте уникальное оружие,",
     "date": "14 октября 2026",
@@ -7186,6 +7727,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/miu-5324860",
+    "noindex": true,
     "title": "MIU — визуальная новелла в чёрно‑белом стиле",
     "excerpt": "MIU — атмосферная черно‑белая визуальная новелла от независимых разработчиков. Исследуйте город, встречайте странных персонажей и помогайте девушке",
     "date": "14 октября 2026",
@@ -7199,6 +7741,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/a-light-in-the-gloam-5326380",
+    "noindex": true,
     "title": "A Light in the Gloam — обзор игры",
     "excerpt": "Приключенческий инди‑ролевой проект A Light in the Gloam погружает в подземелье под древним городом, где ждут тайны, бой и четыре финала. Подойдёт",
     "date": "14 октября 2026",
@@ -7212,6 +7755,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/stellarite-miner-5300160",
+    "noindex": true,
     "title": "Stellarite Miner – инкрементальная добыча в космосе",
     "excerpt": "Stellarite Miner – расслабляющая инкрементальная игра, где вы разрезаете астероиды лазером, собираете ресурсы и улучшаете корабль, стремясь стать лучшим",
     "date": "14 октября 2026",
@@ -7225,6 +7769,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/permafrost-original-soundtrack-5345330",
+    "noindex": true,
     "title": "Permafrost - Original Soundtrack — обзор",
     "excerpt": "Официальный саундтрек Permafrost погружает в ледяную атмосферу приключений и опасности. Узнайте, как музыка передаёт холод и напряжение замёрзшего мира.",
     "date": "14 октября 2026",
@@ -7238,6 +7783,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/trampoline-to-tomorrow-5228280",
+    "noindex": true,
     "title": "Trampoline to Tomorrow – обзор",
     "excerpt": "Trampoline to Tomorrow – казуальная инди-игра о прыжках на батуте, где вы растете в высоту, открываете новые планеты и улучшаете дерево навыков. Подойдёт",
     "date": "14 октября 2026",
@@ -7251,6 +7797,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/-5328210",
+    "noindex": true,
     "title": "咕噜物语 – расслабляющая автосражающая ролевая стратегия",
     "excerpt": "咕噜物语 – спокойная ролевая игра‑стратегия, где вы собираете милую партию, автоматически сражаетесь, ищете экипировку со случайными свойствами и исследуете",
     "date": "14 октября 2026",
@@ -7264,6 +7811,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/trash-day-stinky-rich-supporter-pack-5386580",
+    "noindex": true,
     "title": "Trash Day - Stinky Rich Supporter Pack — обзор",
     "excerpt": "Набор «Вонюче богатый спонсор» в Trash Day добавляет образ енотоскунса, цилиндр, монокль и трость, позволяя стильно очищать помойки. Подходит любителям",
     "date": "14 октября 2026",
@@ -7277,6 +7825,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/kollektsiya-sudoku-klassicheskoe-sudoku-sudoku-killer-diagonalnoe-sudoku-sudoku-pazl-5233550",
+    "noindex": true,
     "title": "Коллекция судоку: Классическое, Киллер, Диагональное, Пазл",
     "excerpt": "Коллекция судоку предлагает 320 уникальных головоломок в восьми режимах: классическое, киллер, диагональное, пазл и другие. Игра подходит любителям",
     "date": "14 октября 2026",
@@ -7290,6 +7839,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/trash-day-3314580",
+    "noindex": true,
     "title": "Trash Day — кооперативный экшен с енотами",
     "excerpt": "Trash Day — кооперативное приключение с реалистичной физикой, где от 1 до 6 игроков собирают мусор, заполняют прицеп и доставляют его в енотовый рай. Игра",
     "date": "14 октября 2026",
@@ -7303,6 +7853,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/legion-was-here-3492120",
+    "noindex": true,
     "title": "Legion Was Here – приключенческий инди‑ролевой симулятор",
     "excerpt": "Legion Was Here – атмосферная приключенческая игра с элементами ролевой и симуляции, где вам предстоит менять лица, изучать жизни персонажей и выживать в",
     "date": "14 октября 2026",
@@ -7316,6 +7867,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/voodoo-fishin-3071240",
+    "noindex": true,
     "title": "Voodoo Fishin': цена, отзывы и статистика игроков",
     "excerpt": "Voodoo Fishin': актуальная цена (465.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
     "date": "14 октября 2026",
@@ -7326,6 +7878,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/valor-mortis-2828710",
+    "noindex": true,
     "title": "Valor Mortis — экшен от первого лица в стиле тяжёлых",
     "excerpt": "Valor Mortis – динамичный шутер от первого лица с элементами ролевой игры. Играйте за возрождённого солдата эпохи Наполеона, используя сверхъестественные",
     "date": "14 октября 2026",
@@ -7339,6 +7892,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/deep-dish-dungeon-2871520",
+    "noindex": true,
     "title": "Deep Dish Dungeon: обзор и оценка",
     "excerpt": "Deep Dish Dungeon — экшен‑стратегия с элементами метроидвании и крафтом. Выживание в рукописных подземельях, одиночный режим и кооператив для друзей.",
     "date": "14 октября 2026",
@@ -7352,6 +7906,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/valor-mortis-deluxe-edition-upgrade-5250300",
+    "noindex": true,
     "title": "Valor Mortis Deluxe Edition Upgrade — обзор",
     "excerpt": "Valor Mortis Deluxe Edition Upgrade – расширенный экшен‑приключение с элементами RPG. Узнайте, чем отличается улучшенная версия, какие нововведения ждут",
     "date": "14 октября 2026",
@@ -7365,6 +7920,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/crazy-woman-5063400",
+    "noindex": true,
     "title": "Crazy Woman – жуткий экшен‑пазл от независимых разработчиков",
     "excerpt": "Crazy Woman – атмосферный инди‑экшен с элементами казуального геймплея. Вы просыпаетесь в больнице, где вам предстоит избегать загадочной женщины,",
     "date": "13 октября 2026",
@@ -7378,6 +7934,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/flybrain-lab-5331850",
+    "noindex": true,
     "title": "FLYBRAIN LAB – необычный симулятор мухи",
     "excerpt": "FLYBRAIN LAB – инди‑симулятор, где вы экспериментируете с дрозофилой, меняете условия и наблюдаете её реакции. Интересно и познавательно.",
     "date": "13 октября 2026",
@@ -7391,6 +7948,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/iverian-wars-craxion-vs-defugel-1191830",
+    "noindex": true,
     "title": "Iverian Wars: Craxion vs Defugel — обзор",
     "excerpt": "Бесплатная action‑MMORPG Iverian Wars: Craxion vs Defugel сочетает одиночные квесты, кооперативные сражения и напряжённый PvP, предлагая глубокую",
     "date": "13 октября 2026",
@@ -7404,6 +7962,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/corrupt-exe-4853590",
+    "noindex": true,
     "title": "CORRUPT.EXE – неоновый экшн‑roguelite",
     "excerpt": "Неоновый roguelite‑шутер CORRUPT.EXE ставит вас в роль зловредного кода: выживайте в волнах антивируса, улучшайте оружие и раскрывайте систему 225‑комбо.",
     "date": "13 октября 2026",
@@ -7417,6 +7976,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/hungry-horrors-3048840",
+    "noindex": true,
     "title": "Hungry Horrors – стратегия и кулинарный декбилдер",
     "excerpt": "Hungry Horrors – уникальная инди-стратегия, где вам предстоит готовить традиционные британские блюда, объединять вкусовые цепочки и кормить мифических",
     "date": "13 октября 2026",
@@ -7430,6 +7990,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/warmachine-rogue-scout-5006180",
+    "noindex": true,
     "title": "Warmachine: Rogue-Scout: цена, отзывы и статистика игроков",
     "excerpt": "Warmachine: Rogue-Scout: актуальная цена (Бесплатно), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
     "date": "13 октября 2026",
@@ -7440,6 +8001,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/the-13th-digit-4984160",
+    "noindex": true,
     "title": "THE 13th Digit: цена, отзывы и статистика игроков",
     "excerpt": "THE 13th Digit: актуальная цена (335.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
     "date": "13 октября 2026",
@@ -7450,6 +8012,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/mortal-xiuxian-5250790",
+    "noindex": true,
     "title": "Обзор Mortal Xiuxian: путь к бессмертию через кубики",
     "excerpt": "Обзор Mortal Xiuxian — медитативной ролевой игры о культивации. Бросайте кости, истребляйте демонов, варите зелья и найдите свой путь к вознесению.",
     "date": "13 октября 2026",
@@ -7463,6 +8026,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/-5270020",
+    "noindex": true,
     "title": "惡搞浣熊 — обзор и геймплей",
     "excerpt": "惡搞浣熊 — казуальная игра от третьего лица, где вы играете за енота в мире людей. Исследуйте территорию, выполняйте задания и создавайте проделки, влияющие",
     "date": "13 октября 2026",
@@ -7476,6 +8040,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/wolf-mate-school-date-5195300",
+    "noindex": true,
     "title": "Wolf Mate - School Date: романтика в школе",
     "excerpt": "Wolf Mate - School Date – приключенческий экшен о свидании с Фрейей после школьного фестиваля. Игра предлагает интерактивный сюжет и атмосферу школьных",
     "date": "13 октября 2026",
@@ -7489,6 +8054,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/bitva-poschechin-4613310",
+    "noindex": true,
     "title": "Битва пощёчин — динамичный экшен-спорт для друзей",
     "excerpt": "Битва пощёчин — спортивный экшен, где игроки по очереди бьют друг друга, пока один падёт. Идеально для весёлых дуэлей с друзьями.",
     "date": "13 октября 2026",
@@ -7502,6 +8068,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/rhythm-animal-caf-3859210",
+    "noindex": true,
     "title": "Rhythm Animal Café — обзор",
     "excerpt": "Rhythm Animal Café – казуальная инди-игра, где каждодневный хаос животных превращается в одноударные ритм‑мелодии. Простое управление, яркая музыка и юмор",
     "date": "13 октября 2026",
@@ -7515,6 +8082,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/-4532550",
+    "noindex": true,
     "title": "守护我的大火箭 — обзор",
     "excerpt": "«守护我的大火箭» — экшн‑приключение с элементами ролевой игры и симулятора. Играйте за петуха, стройте базу, крафтите снаряды и защищайте мир от орд куриц.",
     "date": "13 октября 2026",
@@ -7528,6 +8096,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/neenee-deskpals-3863740",
+    "noindex": true,
     "title": "NeeNee Deskpals – милые настольные друзья",
     "excerpt": "NeeNee Deskpals – казуальная игра, где можно создавать уникальных персонажей, настраивать их внешний вид и анимацию, а затем размещать их на рабочем столе",
     "date": "13 октября 2026",
@@ -7541,6 +8110,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/the-story-adam-left-behind-5255930",
+    "noindex": true,
     "title": "The Story Adam Left Behind — интерактивный визуальный роман",
     "excerpt": "The Story Adam Left Behind — ветвящаяся визуальная новелла в жанре инди RPG, где каждое решение влияет на судьбу героя и окружающих. Игра погружает в",
     "date": "13 октября 2026",
@@ -7554,6 +8124,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/karmic-wonders-5287760",
+    "noindex": true,
     "title": "Обзор Karmic Wonders: медитативный симулятор и кликер",
     "excerpt": "Подробный обзор инди-симулятора Karmic Wonders. Оцениваем механику сбора сундуков, систему талантов и автоматизацию мастерской. Стоит ли играть?",
     "date": "13 октября 2026",
@@ -7567,6 +8138,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/beach-volleyball-empire-5233750",
+    "noindex": true,
     "title": "Beach Volleyball Empire – симулятор управления командой",
     "excerpt": "Beach Volleyball Empire – симулятор и стратегия о построении империи пляжного волейбола: набор игроков, развитие команды и управление ресурсами.",
     "date": "13 октября 2026",
@@ -7580,6 +8152,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/knightime-4983560",
+    "noindex": true,
     "title": "Knightime — казуальный рогалик про рыцарей",
     "excerpt": "Knightime — быстрый казуальный рогалик с низкополигональной графикой. Выбирайте из 27 рыцарей, каждый со своим элементом, и сражайтесь с средневековыми",
     "date": "13 октября 2026",
@@ -7593,6 +8166,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/witch-cabin-cleanup-4991240",
+    "noindex": true,
     "title": "Witch Cabin Cleanup – уютный симулятор уборки",
     "excerpt": "Witch Cabin Cleanup – спокойный казуальный симулятор, где нужно упорядочить более 5 тысяч предметов в хижине ведьмы, осваивая простые заклинания.",
     "date": "13 октября 2026",
@@ -7606,6 +8180,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/beset-4963800",
+    "noindex": true,
     "title": "Beset — арена, стратегии и экшн",
     "excerpt": "Бесплатная арена‑битва Beset предлагает быстрые матчи до 20 игроков, 75 способностей и пять режимов на 12 картах. Игра без ботов и платных преимуществ.",
     "date": "13 октября 2026",
@@ -7619,6 +8194,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/magic-cursor-5191880",
+    "noindex": true,
     "title": "Magic Cursor – кастомизация рабочего стола",
     "excerpt": "Magic Cursor позволяет менять курсор, добавлять яркие эффекты и мини‑игры, превращая обычный рабочий стол в живую, уютную сцену для любого пользователя.",
     "date": "13 октября 2026",
@@ -7632,6 +8208,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/lowpoly-cars-5254390",
+    "noindex": true,
     "title": "LowPoly Cars — аркадные гонки в низкополигональном стиле",
     "excerpt": "LowPoly Cars — динамичная аркада с гонками и разрушениями, где игроки управляют простыми автомобилями в стиле низкой полигональности и сражаются в",
     "date": "13 октября 2026",
@@ -7645,6 +8222,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/cult-of-the-yellow-king-3928030",
+    "noindex": true,
     "title": "Cult of the Yellow King – обзор стратегии",
     "excerpt": "Космический хоррор‑идлер Cult of the Yellow King предлагает построить культ, управлять плесенью и развивать базу кликами. Узнайте, подходит ли игра",
     "date": "13 октября 2026",
@@ -7658,6 +8236,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/triet-cat-5289540",
+    "noindex": true,
     "title": "Triet Cat – казуальная игра-рисовалка про котов",
     "excerpt": "Triet Cat – бесплатная казуальная игра, где нужно восстанавливать изображения котов, используя инструменты рисования, получать звёзды и открывать новые",
     "date": "13 октября 2026",
@@ -7671,6 +8250,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/blocky-miner-5124050",
+    "noindex": true,
     "title": "Blocky Miner – расслабляющая инкрементальная игра",
     "excerpt": "Blocky Miner — инкрементальная казуальная игра, где вращая механизм, вы погружаетесь в глубины, добываете ресурсы, улучшаете навыки и открываете новые",
     "date": "13 октября 2026",
@@ -7684,6 +8264,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/dsarts-4611710",
+    "noindex": true,
     "title": "DSARTS – симулятор поиска и спасения дронов",
     "excerpt": "DSARTS – бесплатный симулятор, созданный спасателями для спасателей. Тренируйте управление дроном, отрабатывайте поисковые маршруты и обнаружение целей в",
     "date": "13 октября 2026",
@@ -7697,6 +8278,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/polnye-diplomaticheskie-otnosheniya-5178250",
+    "noindex": true,
     "title": "Полные дипломатические отношения – обзор игры",
     "excerpt": "Приключенческий симулятор «Полные дипломатические отношения» предлагает игроку пройти 11‑недельную сюжетную линию, выбирая одну из трёх романтических",
     "date": "13 октября 2026",
@@ -7710,6 +8292,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/tidy-backpack-in-the-faraway-lands-4612950",
+    "noindex": true,
     "title": "Tidy Backpack: In the Faraway Lands – расслабляющая",
     "excerpt": "Тихая и уютная головоломка Tidy Backpack: In the Faraway Lands приглашает укладывать странные артефакты в рюкзак, открывая тайны далёких миров. Идеально",
     "date": "13 октября 2026",
@@ -7723,6 +8306,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/for-the-cat-sorcerer-s-revenge-4773180",
+    "noindex": true,
     "title": "For The Cat! Sorcerer's Revenge: цена, отзывы и статистика игроков",
     "excerpt": "For The Cat! Sorcerer's Revenge: актуальная цена (290.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
     "date": "13 октября 2026",
@@ -7733,6 +8317,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/capybaria-3250140",
+    "noindex": true,
     "title": "Capybaria – уютное приключение в стиле инди RPG",
     "excerpt": "Capybaria – необычная игра‑приключение, где вы живёте среди капибар, строите дома, исследуете космос и принимаете судьбоносные решения, влияющие на мир.",
     "date": "13 октября 2026",
@@ -7746,6 +8331,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/spy-drops-gaiden-4152490",
+    "noindex": true,
     "title": "Spy Drops Gaiden — обзор игры",
     "excerpt": "Spy Drops Gaiden — динамичный 2D экшен про скрытные операции. Взломайте вражеские базы, обходите охрану и выполните серию тайных миссий в стиле",
     "date": "12 октября 2026",
@@ -7759,6 +8345,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/the-doll-shop-3851680",
+    "noindex": true,
     "title": "The Doll Shop: приключенческая игра",
     "excerpt": "The Doll Shop – атмосферный приключенческий нарратив с элементами романтики и ужаса, действие которого разворачивается в заснеженной японской деревне, где",
     "date": "12 октября 2026",
@@ -7772,6 +8359,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/ravenswatch-kintaro-4809870",
+    "noindex": true,
     "title": "Ravenswatch - Kintaro: обзор и геймплей",
     "excerpt": "Ravenswatch - Kintaro – динамичный экшен‑приключение, где главный герой Кинтаро сражается рядом с Кумой, используя уникальные комбо как пешком, так и",
     "date": "12 октября 2026",
@@ -7785,6 +8373,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/life-the-universe-and-restaurants-3746950",
+    "noindex": true,
     "title": "Life, the Universe, and Restaurants — обзор",
     "excerpt": "Игра Life, the Universe, and Restaurants предлагает управлять рестораном в странном космическом мире, где гости считают себя богами. Стратегия с",
     "date": "12 октября 2026",
@@ -7798,6 +8387,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/space-manager-4229480",
+    "noindex": true,
     "title": "Space Manager – симулятор космических миссий",
     "excerpt": "Space Manager — реалистичный симулятор управления космическими миссиями, где вы строите центр, запускаете спутники и развиваете аэрокосмическую империю,",
     "date": "12 октября 2026",
@@ -7811,6 +8401,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/burn-with-me-soundtrack-5332750",
+    "noindex": true,
     "title": "Burn With Me Soundtrack – мрачный джазовый саундтрек",
     "excerpt": "Темный джазовый саундтрек Burn With Me погружает в атмосферу загадочности и меланхолии. Идеально для любителей атмосферной музыки.",
     "date": "12 октября 2026",
@@ -7824,6 +8415,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/burn-with-me-2954010",
+    "noindex": true,
     "title": "Burn With Me — карточная игра с оккультизмом",
     "excerpt": "Burn With Me — атмосферная карточная стратегия с оккультными сюжетами, где нужно жертвовать картами, чтобы вызвать личного демона и раскрыть свои тайные",
     "date": "12 октября 2026",
@@ -7837,6 +8429,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/panzercity-5299150",
+    "noindex": true,
     "title": "PanzerCity — аркадный танковый шутер",
     "excerpt": "PanzerCity — динамичный аркадный экшен от третьего лица, где игроки в одиночку или в кооперативе до четырёх человек уничтожают бесконечные волны вражеских",
     "date": "12 октября 2026",
@@ -7850,6 +8443,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/locked-out-the-last-bunker-ark-5239910",
+    "noindex": true,
     "title": "LOCKED OUT: The Last Bunker ARK – обзор",
     "excerpt": "LOCKED OUT: The Last Bunker ARK — интерактивный фильм‑экшен с элементами приключения. Игрок управляет Джеком, пробуждающим трёх ИИ‑женщин, чтобы отомстить",
     "date": "12 октября 2026",
@@ -7863,6 +8457,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/meow-garden-3530010",
+    "noindex": true,
     "title": "Meow Garden — уютный котофермерский симулятор",
     "excerpt": "Meow Garden — казуальная инди-игра, где вы выращиваете кошек на собственной ферме, собираете семена, украшаете дом и выполняете заказы, открывая более 40",
     "date": "12 октября 2026",
@@ -7876,6 +8471,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/desktop-cooking-panda-diner-5268210",
+    "noindex": true,
     "title": "Desktop Cooking: Panda Diner – обзор",
     "excerpt": "Desktop Cooking: Panda Diner – казуальная инди-симуляция автоматической готовки, где панды-шефы обслуживают деревенских жителей, а игрок лишь нажимает на",
     "date": "12 октября 2026",
@@ -7889,6 +8485,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/embersofwar-5233860",
+    "noindex": true,
     "title": "EmbersOfWar — тактическая ролевая стратегия",
     "excerpt": "EmbersOfWar – инди‑игра, где вы командуете наёмниками в разрушенном мире. Тактические схватки в реальном времени с паузой, глубоко проработанные персонажи",
     "date": "12 октября 2026",
@@ -7902,6 +8499,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/desktop-tide-5248560",
+    "noindex": true,
     "title": "Desktop Tide – казуальный инди‑симулятор океана",
     "excerpt": "Desktop Tide – спокойный инди‑симулятор, где на краю рабочего стола появляется маленький океан. Вы выращиваете рыбок, открываете сундуки и наблюдаете за",
     "date": "12 октября 2026",
@@ -7915,6 +8513,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/slimefall-4923820",
+    "noindex": true,
     "title": "Slimefall – казуальная головоломка про слияние слаймов",
     "excerpt": "Slimefall – увлекательная казуальная игра‑головоломка, где нужно бросать, отскакивать и объединять мягкие слаймы, соревнуясь в таблице рекордов. Идеально",
     "date": "12 октября 2026",
@@ -7928,6 +8527,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/degul-degul-999-5183270",
+    "noindex": true,
     "title": "DEGUL DEGUL 999 — казуальная инди-игра",
     "excerpt": "DEGUL DEGUL 999 — простая головоломка, где нужно катить куб к цели, не повторяя использованные грани. Интересный вызов для любителей логических задач и",
     "date": "12 октября 2026",
@@ -7941,6 +8541,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/last-on-duty-3820460",
+    "noindex": true,
     "title": "Last On Duty — психологический хоррор от первого лица",
     "excerpt": "Last On Duty — атмосферный психологический хоррор от первого лица, где каждый уголок скрывает подсказки. Игрок исследует локации, решает миссии и в финале",
     "date": "12 октября 2026",
@@ -7954,6 +8555,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/roly-5177750",
+    "noindex": true,
     "title": "ROLY – 2.5D физический платформер",
     "excerpt": "ROLY — оригинальный 2.5D физический платформер, где вы управляете шиной. На 100 уровней ждут стеновые прыжки, катание и столкновения с взрывающимися",
     "date": "12 октября 2026",
@@ -7967,6 +8569,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/printsessa-moey-imperii-pornoaktrisa-4402610",
+    "noindex": true,
     "title": "Принцесса моей империи — порноактриса – обзор",
     "excerpt": "Глубокий менеджмент, стратегии и ролевая система в «Принцесса моей империи — порноактриса». Узнайте, как управлять бюджетом, командой и случайными",
     "date": "12 октября 2026",
@@ -7980,6 +8583,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/kirr-5244200",
+    "noindex": true,
     "title": "KIRR — кооперативный хоррор с элементами стратегии",
     "excerpt": "KIRR — многопользовательская игра‑хоррор, где команда должна найти и уничтожить мозги коллективного разума, пока он не завершит расчёт вашей гибели.",
     "date": "12 октября 2026",
@@ -7993,6 +8597,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/-5071730",
+    "noindex": true,
     "title": "饕餮魔宴 – симулятор управления ресурсами",
     "excerpt": "饕餮魔宴 — лёгкая стратегия‑симулятор, где вам предстоит готовить для требовательных Таотие, управлять ресурсами и искать путь к спасению из хаоса.",
     "date": "12 октября 2026",
@@ -8006,6 +8611,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/demersus-5224380",
+    "noindex": true,
     "title": "Demersus — атмосферный инди-симулятор",
     "excerpt": "Demersus — атмосферный симулятор от первого лица, исследующий ужасы алкогольной зависимости через керамический мир, головоломки и рассказ без диалогов.",
     "date": "12 октября 2026",
@@ -8019,6 +8625,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/idle-vapor-legends-4985520",
+    "noindex": true,
     "title": "Idle Vapor Legends — idle RPG с автоматическим боем",
     "excerpt": "Idle Vapor Legends – казуальная инди-игра, сочетающая элементы RPG и стратегии. Автоби́й, сбор лута без усилий и простая механика делают её идеальной для",
     "date": "12 октября 2026",
@@ -8032,6 +8639,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/supporters-pack-5240540",
+    "noindex": true,
     "title": "塔防山贼模拟器 - Supporters Pack: обзор",
     "excerpt": "Обзор塔防山贼模拟器 Supporters Pack: казуальная инди‑игра‑симулятор с элементами стратегии и RPG, в которой добавлен новый эксклюзивный персонаж.",
     "date": "12 октября 2026",
@@ -8045,6 +8653,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/-4267800",
+    "noindex": true,
     "title": "塔防山贼模拟器 — обзор и рекомендации",
     "excerpt": "塔防山贼模拟器 — гибрид башенной защиты и строительства базы. Узнайте, какие возможности предлагает игра, кому она подойдет и стоит ли уделять ей внимание.",
     "date": "12 октября 2026",
@@ -8058,6 +8667,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/unwatching-the-seven-dolls-5166790",
+    "noindex": true,
     "title": "Unwatching -The Seven Dolls-: цена, отзывы и статистика игроков",
     "excerpt": "Unwatching -The Seven Dolls-: актуальная цена (150.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
     "date": "12 октября 2026",
@@ -8068,6 +8678,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/skulls-and-sweets-5239090",
+    "noindex": true,
     "title": "Skulls and Sweets – казуальная головоломка",
     "excerpt": "Skulls and Sweets – атмосферный матч‑3 в стиле тёмного фэнтези. Играйте за ведьму Софию, собирая сладости и черепа в всё более жутком районе. Подойдёт",
     "date": "12 октября 2026",
@@ -8081,6 +8692,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/zaryadnaya-stantsiya-na-rabochem-stole-2528790",
+    "noindex": true,
     "title": "Зарядная станция на рабочем столе – казуальный симулятор",
     "excerpt": "Управляйте автоматической солнечной зарядной станцией, собирайте монеты и развивайте оборудование в простом инди‑симуляторе.",
     "date": "12 октября 2026",
@@ -8094,6 +8706,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/traitor-3836580",
+    "noindex": true,
     "title": "Traitor — социальный триллер о предательстве",
     "excerpt": "Traitor — многопользовательский социальный триллер, где игроки строят альянсы, собирают улики и пытаются раскрыть предателя среди себя. Игра проверит ваш",
     "date": "12 октября 2026",
@@ -8107,6 +8720,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/aim-like-a-cat-5131570",
+    "noindex": true,
     "title": "Aim Like a Cat: цена, отзывы и статистика игроков",
     "excerpt": "Aim Like a Cat: актуальная цена (385.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
     "date": "12 октября 2026",
@@ -8117,6 +8731,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/slime-watch-4361190",
+    "noindex": true,
     "title": "SLIME WATCH – утилита для рабочего стола в виртуальной",
     "excerpt": "SLIME WATCH превращает часы на запястье в центр управления: время, заряд, музыка, оверлеи и клавиатура в виртуальном пространстве. Инди‑утилита для",
     "date": "12 октября 2026",
@@ -8130,6 +8745,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/escape-from-tarkov-3932890",
+    "noindex": true,
     "title": "Escape from Tarkov – хардкорный шутер",
     "excerpt": "Escape from Tarkov – напряжённый хардкорный шутер‑симулятор, где каждый рейд может стать последним. Выживание, тактика и ценный лут делают игру уникальной",
     "date": "12 октября 2026",
@@ -8143,6 +8759,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/arcana-rift-2022260",
+    "noindex": true,
     "title": "Обзор Arcana Rift: тактическая карточная дуэль",
     "excerpt": "Обзор Arcana Rift: тактический карточный баттлер в загадочном театре. Особенности магии, создание предметов и дуэли с ботами или реальными игроками.",
     "date": "11 октября 2026",
@@ -8156,6 +8773,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/nekotrak-5249210",
+    "noindex": true,
     "title": "Обзор NekoTrak: виртуальный питомец и трекер времени",
     "excerpt": "Знакомимся с NekoTrak — уютным симулятором кота на рабочем столе с функцией учета времени. Узнайте все об особенностях проекта в нашем обзоре.",
     "date": "11 октября 2026",
@@ -8169,6 +8787,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/ultimate-racing-simulator-1-5046820",
+    "noindex": true,
     "title": "Обзор Ultimate Racing Simulator 1: симулятор команды",
     "excerpt": "Обзор Ultimate Racing Simulator 1. Узнайте особенности гоночного менеджера: управление болидом, пилотами, стратегии на сезон и динамические гонки.",
     "date": "11 октября 2026",
@@ -8182,6 +8801,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/429-four-twenty-knight-4665910",
+    "noindex": true,
     "title": "Обзор 429 - Four Twenty Knight: экшен-головоломка",
     "excerpt": "Подробный обзор 429 - Four Twenty Knight. Физическая головоломка: крушите предметы, ищите верный путь и отбивайтесь от опасных стай жутких жуков.",
     "date": "11 октября 2026",
@@ -8195,6 +8815,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/kyro-3063690",
+    "noindex": true,
     "title": "KYRO – пиксельный экшн‑приключение",
     "excerpt": "KYRO – топ‑даун приключение в стиле пиксель-арт, где игрок управляет Айденом с пращой, исследует мир у черной дыры, решает головоломки и помогает жителям",
     "date": "11 октября 2026",
@@ -8208,6 +8829,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/-5235060",
+    "noindex": true,
     "title": "数学谜题 — логические головоломки для любителей задач",
     "excerpt": "数学谜题 — сборник математических и логических задач в уютном 2‑D интерфейсе. Подходит для расслабленного одиночного прохождения, развивает мышление и",
     "date": "11 октября 2026",
@@ -8221,6 +8843,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/cybercowboys-5136630",
+    "noindex": true,
     "title": "CyberCowboys — бездействующий ролевой квест в стиле Дикого",
     "excerpt": "CyberCowboys – бесплатная казуальная игра, где игроки сражаются с бандитами, создают легендарное снаряжение и покоряют мировых боссов в ретро‑стиле",
     "date": "11 октября 2026",
@@ -8234,6 +8857,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/big-furry-weekends-4575830",
+    "noindex": true,
     "title": "Big Furry Weekends! – обзор игры",
     "excerpt": "Уютное казуальное приключение, где нужно соединять аппетитные блюда, собирать большие коллекции и открывать красочные иллюстрации фурри‑девушек в стиле",
     "date": "11 октября 2026",
@@ -8247,6 +8871,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/rooftops-parkour-pro-5291030",
+    "noindex": true,
     "title": "Rooftops Parkour Pro – динамичный паркур в открытом мире",
     "excerpt": "Rooftops Parkour Pro – экшн‑симулятор паркура с продвинутой физикой, боями с NPC и трюками на крышах. Идеально для любителей свободы движения и создания",
     "date": "11 октября 2026",
@@ -8260,6 +8885,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/sex-novel-cheating-girlfriend-5125340",
+    "noindex": true,
     "title": "Sex Novel - Cheating Girlfriend — обзор",
     "excerpt": "Взрослая визуальная новелла «Sex Novel - Cheating Girlfriend» сочетает приключенческий сюжет и казуальный геймплей, раскрывая историю девушки, ищущей",
     "date": "11 октября 2026",
@@ -8273,6 +8899,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/faybound-veils-of-magic-4718070",
+    "noindex": true,
     "title": "Faybound : Veils of Magic – обзор",
     "excerpt": "Faybound : Veils of Magic – 2D приключенческий экшен, где игрок управляет феями, комбинируя их уникальные способности против древней тьмы. Подойдёт",
     "date": "11 октября 2026",
@@ -8286,6 +8913,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/euphoria-supreme-mechanics-vr-3749340",
+    "noindex": true,
     "title": "Euphoria: Supreme Mechanics VR – обзор и впечатления",
     "excerpt": "Euphoria: Supreme Mechanics VR – приключенческий казуальный инди‑симулятор в виртуальной реальности. Головоломки, управление кубами, лазерами и",
     "date": "11 октября 2026",
@@ -8299,6 +8927,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/astro-yoinkers-4456960",
+    "noindex": true,
     "title": "Astro Yoinkers – быстрый экшен и гонки в космосе",
     "excerpt": "Astro Yoinkers — динамичный многопользовательский шутер‑гонка, где команды соревнуются в захвате кристаллов, используя физику гравитации и орбитальные",
     "date": "11 октября 2026",
@@ -8312,6 +8941,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/no-stars-football-5170150",
+    "noindex": true,
     "title": "Обзор No Stars Football: пиксельный ретро-футбол",
     "excerpt": "Подробный обзор No Stars Football. Узнайте об особенностях футбольного симулятора, сочетающего аркадные матчи и глубокое управление клубом на нашем сайте.",
     "date": "11 октября 2026",
@@ -8325,6 +8955,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/fudan-adventure-3058680",
+    "noindex": true,
     "title": "FUDAN ADVENTURE — школьная RPG‑симуляция",
     "excerpt": "FUDAN ADVENTURE — ролевая игра о школьной жизни, где вам предстоит выбирать, как проводить свободное время, решать конфликты и сдавать экзамены в",
     "date": "11 октября 2026",
@@ -8338,6 +8969,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/bounty-hunter-horrors-3627560",
+    "noindex": true,
     "title": "Bounty Hunter Horrors — кооперативный экшен‑хоррор",
     "excerpt": "Bounty Hunter Horrors — динамичный шутер с элементами хоррора, где игроки исследуют жуткие подземелья, сражаются с монстрами и решают головоломки.",
     "date": "11 октября 2026",
@@ -8351,6 +8983,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/ant-clicker-4354120",
+    "noindex": true,
     "title": "Ant Clicker – казуальная инди-игра про муравейник",
     "excerpt": "Ant Clicker – увлекательный казуальный симулятор, где вы строите муравейник, собираете еду, нанимаете касты и исследуете мини‑игры. Подойдёт любителям",
     "date": "11 октября 2026",
@@ -8364,6 +8997,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/shelf-employed-5038020",
+    "noindex": true,
     "title": "Shelf-Employed: цена, отзывы и статистика игроков",
     "excerpt": "Shelf-Employed: актуальная цена (290.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
     "date": "11 октября 2026",
@@ -8374,6 +9008,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/no-cute-girl-can-stop-my-sudoku-5260830",
+    "noindex": true,
     "title": "No Cute Girl Can Stop My Sudoku – обзор игры",
     "excerpt": "Обзор No Cute Girl Can Stop My Sudoku: казуальная головоломка с элементами стратегии и милым настольным питомцем. Подойдёт любителям судоку и уютных игр.",
     "date": "11 октября 2026",
@@ -8387,6 +9022,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/sex-for-money-cheating-wallpapers-5318900",
+    "noindex": true,
     "title": "SEX for MONEY ≠ CHEATING - WALLPAPERS",
     "excerpt": "Коллекция эксклюзивных обоев с яркими изображениями из SEX for MONEY ≠ CHEATING. Откройте стильный визуальный контент, вдохновлённый игрой, для своего",
     "date": "11 октября 2026",
@@ -8400,6 +9036,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/on-hold-call-center-simulator-4847040",
+    "noindex": true,
     "title": "On Hold - Call Center Simulator — обзор игры",
     "excerpt": "Темный комедийный симулятор колл‑центра, где игрок отвечает на бесконечные звонки, проверяет личные данные, ловит мошенников и пытается заработать на",
     "date": "11 октября 2026",
@@ -8413,6 +9050,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/sort-labs-5195910",
+    "noindex": true,
     "title": "Sort Labs – казуальная головоломка‑симулятор",
     "excerpt": "Sort Labs – первая игра‑эксперимент, где нужно упорядочить лабораторию, размещая геометрические формы по цвету и размеру. Подходит для любителей спокойных",
     "date": "11 октября 2026",
@@ -8426,6 +9064,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/catch-the-fish-5211870",
+    "noindex": true,
     "title": "Catch The Fish – обзор, геймплей, советы",
     "excerpt": "Catch The Fish – безумный экшен‑приключение про рыбалку, где пойманная рыба бросается в бой. Исследуйте семь островов, сражайтесь с агрессивными",
     "date": "11 октября 2026",
@@ -8439,6 +9078,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/sex-for-money-cheating-4843820",
+    "noindex": true,
     "title": "SEX for MONEY ≠ CHEATING 🔞 — обзор игры",
     "excerpt": "Обзор игры SEX for MONEY ≠ CHEATING 🔞: казуальная ролевая симуляция, где вы играете фотографом, исполняете провокационные запросы и раскрываете тайные",
     "date": "11 октября 2026",
@@ -8452,6 +9092,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/boss-arena-the-goldilock-one-trials-1965430",
+    "noindex": true,
     "title": "BOSS ARENA: The Goldilock One Trials – обзор",
     "excerpt": "Бесплатный аркадный экшен‑RPG, где игрок проходит серию испытаний, сражается с волнами врагов и мощными боссами, развивая персонажа и подбирая уникальный",
     "date": "11 октября 2026",
@@ -8465,6 +9106,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/lewd-waifu-4987190",
+    "noindex": true,
     "title": "Lewd Waifu – расслабляющая головоломка в неоновом стиле",
     "excerpt": "Lewd Waifu — казуальная инди-головоломка, где игрок переставляет неоновые плитки, собирая ручные иллюстрации. После завершения каждый уровень оживает в",
     "date": "11 октября 2026",
@@ -8478,6 +9120,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/lightholm-3084460",
+    "noindex": true,
     "title": "Lightholm — инди‑стратегия в жанре защита башнями",
     "excerpt": "Lightholm — стратегическая инди-игра, где защита башнями требует подбора слабостей врагов и управления перегревом. Двенадцать полей, четыре типа башен и",
     "date": "11 октября 2026",
@@ -8491,6 +9134,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/legends-of-the-pitch-5294190",
+    "noindex": true,
     "title": "Legends of the Pitch – приключенческий футбольный roguelike",
     "excerpt": "Legends of the Pitch сочетает футбол, карточный roguelike и симуляцию управления командой. Постройте колоду, исследуйте ветвящиеся маршруты и сразитесь с",
     "date": "11 октября 2026",
@@ -8504,6 +9148,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/mushroom-simulator-4928130",
+    "noindex": true,
     "title": "Mushroom Simulator — уютный симулятор грибов",
     "excerpt": "Mushroom Simulator — короткая спокойная игра‑симулятор, где вам предстоит исследовать пять мини‑карт, менять погоду, искать скрытые грибы и наслаждаться",
     "date": "11 октября 2026",
@@ -8517,6 +9162,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/-4895790",
+    "noindex": true,
     "title": "知秋~英语日语单词背诵学习陪伴桌宠~ – обзор",
     "excerpt": "Знакомство с «知秋~英语日语单词背诵学习陪伴桌宠~»: настольный помощник для изучения английских и японских слов, сочетающий обучение, мини‑игры и уход за виртуальным",
     "date": "11 октября 2026",
@@ -8530,6 +9176,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/permafrost-2254990",
+    "noindex": true,
     "title": "Permafrost – игра про выживание в ледяном постапокалипсисе",
     "excerpt": "Permafrost – открытый мир в заснеженной пустоте, где вам предстоит добывать ресурсы, строить убежища и бороться с холодом в одиночку или в кооперативе до",
     "date": "11 октября 2026",
@@ -8543,6 +9190,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/guys-with-magnets-4594370",
+    "noindex": true,
     "title": "Обзор Guys with Magnets: кооперативный паркур с физикой",
     "excerpt": "Обзор Guys with Magnets: веселый паркур с магнитами для компании. Узнайте, чем интересен игровой процесс и стоит ли играть вместе с друзьями.",
     "date": "9 октября 2026",
@@ -8556,6 +9204,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/stancefolio-5306270",
+    "noindex": true,
     "title": "Stancefolio — приключенческий рогалик‑колодостроитель",
     "excerpt": "Stancefolio — бесплатный инди‑проект, сочетающий приключения, стратегию и тактические пошаговые сражения. Выберите одного из шести мастеров боевых",
     "date": "9 октября 2026",
@@ -8569,6 +9218,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/mir-koshmarov-4276450",
+    "noindex": true,
     "title": "Мир кошмаров — обзор, геймплей и советы",
     "excerpt": "Экшн‑инди «Мир кошмаров» погружает в мрачный мир, где девушка спасается от красного демона. Четыре уровня сложности, напряжённые схватки и поиск эмблемы",
     "date": "9 октября 2026",
@@ -8582,6 +9232,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/dark-dice-dungeon-5248650",
+    "noindex": true,
     "title": "Dark Dice Dungeon – ролевая стратегия с бросками кубиков",
     "excerpt": "Dark Dice Dungeon – пошаговой roguelike, где вместо уровней улучшаются грани кубиков. Три героя, два приключения, режим выживания и локальные дуэли без",
     "date": "9 октября 2026",
@@ -8595,6 +9246,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/botlings-4139440",
+    "noindex": true,
     "title": "Botlings — симулятор стратегии и автоматизации",
     "excerpt": "В Botlings вам предстоит управлять роем роботов, создавая фабрику, автоматизируя производство и исследуя технологии, при этом не дать им выйти из‑под",
     "date": "9 октября 2026",
@@ -8608,6 +9260,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/-4872790",
+    "noindex": true,
     "title": "解熵 — музыкальный обучающий инструмент и игра",
     "excerpt": "解熵 – казуальная музыкальная игра‑помощник, позволяющая писать нотные записи, практиковать игру на фортепиано и петь, а также использовать режим практики с",
     "date": "9 октября 2026",
@@ -8621,6 +9274,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/escape-immersion-4033680",
+    "noindex": true,
     "title": "Escape: Immersion — хоррор‑приключение в подводной базе",
     "excerpt": "Escape: Immersion — кинематографический хоррор‑приключенческий экшен в 2,5D. Исследуйте затопленные коридоры, решайте головоломки и избегайте ловушек,",
     "date": "9 октября 2026",
@@ -8634,6 +9288,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/lane-rider-highway-runner-5088650",
+    "noindex": true,
     "title": "Lane Rider: Highway Runner — аркадные гонки",
     "excerpt": "Lane Rider: Highway Runner — аркадные гонки, где вам предстоит мчаться по загруженным трассам, лавируя между машинами, без сложных симуляций.",
     "date": "9 октября 2026",
@@ -8647,6 +9302,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/-4056370",
+    "noindex": true,
     "title": "魔法少女ゆーしゃちゃんと淫獄の迷宮 – пошаговый рогалик",
     "excerpt": "Пошаговый рогалик с элементами экшена и RPG от независимых разработчиков. Исследуйте подземелья, прокачивайте героя и бросайте вызов судьбе.",
     "date": "9 октября 2026",
@@ -8660,6 +9316,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/tower-survivors-fortress-5197160",
+    "noindex": true,
     "title": "Обзор Tower Survivors: Fortress — защита башни",
     "excerpt": "Обзор Tower Survivors: Fortress. Рассказываем об автобаттлере в стиле культовых модов: механики прокачки, отражение волн и кому понравится эта стратегия.",
     "date": "9 октября 2026",
@@ -8673,6 +9330,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/hazmat-simulator-5236060",
+    "noindex": true,
     "title": "Hazmat Simulator — хаотический симулятор уборки",
     "excerpt": "Hazmat Simulator — игра‑симулятор уборки в опасных локациях, где до трёх игроков исследуют запутанные помещения, собирают мусор и находят скрытые предметы.",
     "date": "9 октября 2026",
@@ -8686,6 +9344,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/kronite-void-4096710",
+    "noindex": true,
     "title": "KRONITE VOID — бесплатная стратегия в космосе",
     "excerpt": "KRONITE VOID — бесплатная стратегия в жанре инди, где игрок управляет флотом, исследует опасные уголки галактики и строит уникальные корабли, грабя",
     "date": "9 октября 2026",
@@ -8699,6 +9358,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/-839140",
+    "noindex": true,
     "title": "修仙界 — многопользовательская текстовая игра",
     "excerpt": "修仙界 — бесплатный онлайн‑мир, где можно автокрутить персонажа, но при этом участвовать в живом чате, совместных битвах и событиях с другими игроками.",
     "date": "9 октября 2026",
@@ -8712,6 +9372,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/do-disciplinary-committee-members-dream-of-succubi-4233960",
+    "noindex": true,
     "title": "Do Disciplinary Committee Members Dream of Succubi? – обзор",
     "excerpt": "Приключенческая игра, в которой вы становитесь полдемоном и сражаетесь в прокси‑войне демонов, побеждая соперников и помогая своему виду завоевать",
     "date": "9 октября 2026",
@@ -8725,6 +9386,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/m-a-h-nh-trading-cards-season-4932510",
+    "noindex": true,
     "title": "Mùa Hình (Trading-cards Season): цена, отзывы и статистика игроков",
     "excerpt": "Mùa Hình (Trading-cards Season): актуальная цена (315.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
     "date": "9 октября 2026",
@@ -8735,6 +9397,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/bunny-girl-spa-5214100",
+    "noindex": true,
     "title": "Bunny Girl Spa 〜生意気ギャルにいたずらマッサージ〜 — симулятор массажа",
     "excerpt": "Игра‑симулятор, где вы выступаете массажистом, обслуживая дерзкую девушку‑гяру. Полностью анимированные персонажи, интерактивные сцены и возможность",
     "date": "9 октября 2026",
@@ -8748,6 +9411,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/tessera-5073130",
+    "noindex": true,
     "title": "Tessera – казуальная ролевая стратегия",
     "excerpt": "Tessera – гибрид головоломки и стратегии в стиле roguelike: собирайте драгоценные камни, формируйте тетромино и сражайтесь в мрачной фэнтезийной кампании",
     "date": "9 октября 2026",
@@ -8761,6 +9425,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/-5235070",
+    "noindex": true,
     "title": "百世成仙 — обзор игры",
     "excerpt": "百世成仙 — ролевая казуальная игра с элементами стратегии и симулятора. Погрузитесь в мир культивации, исследуйте города, сражайтесь с демонами и развивайте",
     "date": "9 октября 2026",
@@ -8774,6 +9439,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/taerim-s-blueberry-defense-5165750",
+    "noindex": true,
     "title": "Taerim's Blueberry Defense: цена, отзывы и статистика игроков",
     "excerpt": "Taerim's Blueberry Defense: актуальная цена (150.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
     "date": "9 октября 2026",
@@ -8784,6 +9450,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/blosharper-bitva-tsvetov-4718270",
+    "noindex": true,
     "title": "Blosharper: Битва цветов — обзор",
     "excerpt": "Blosharper: Битва цветов – нуарный рогалик‑колодострой, где каждый ход требует стратегии и умения манипулировать колодой. Игра сочетает элементы",
     "date": "9 октября 2026",
@@ -8797,6 +9464,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/celestay-craft-slowlife-4183770",
+    "noindex": true,
     "title": "CELESTAY Craft&Slowlife — спокойный инди‑симулятор",
     "excerpt": "CELESTAY Craft&Slowlife – безмятежная игра‑строитель, где вы собираете ресурсы, ловите рыбу и возводите дом, поднимаясь к звёздам. Идеально для любителей",
     "date": "9 октября 2026",
@@ -8810,6 +9478,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/snowplow-therapy-4616180",
+    "noindex": true,
     "title": "Snowplow Therapy — расслабляющий симулятор снегоуборки",
     "excerpt": "Snowplow Therapy – казуальная инди-игра, где вы убираете снег с дорог, наслаждаясь реалистичной зимой, ночным небом и возможностью улучшать трактор в",
     "date": "9 октября 2026",
@@ -8823,6 +9492,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/ai-5218580",
+    "noindex": true,
     "title": "重生之我在产业园当AI — обзор игры",
     "excerpt": "Казуальная инди‑ролевка о сознании кода, запертого в нелегальном индустриальном парке. Игроку предстоит создавать и саботировать программы, собирая",
     "date": "9 октября 2026",
@@ -8836,6 +9506,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/puppetborne-5034450",
+    "noindex": true,
     "title": "Puppetborne — экшн‑приключение в ретро‑стиле",
     "excerpt": "Puppetborne — топ‑даун экшн‑RPG в 2D, где игрок исследует разрушенный мир, сражается в опасных подземельях и раскрывает тайны ретро‑вселенной,",
     "date": "9 октября 2026",
@@ -8849,6 +9520,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/hello-golf-5160720",
+    "noindex": true,
     "title": "Hello Golf — минималистичный аркадный гольф",
     "excerpt": "Hello Golf — простая 2‑D аркада про гольф с бесконечно генерируемыми полями, разнообразными режимами и возможностью играть до 16 игроков локально.",
     "date": "9 октября 2026",
@@ -8862,6 +9534,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/yunyun-syndrome-rhythm-psychosis-extra-song-pack-feat-kotoko-5253050",
+    "noindex": true,
     "title": "Yunyun Syndrome!? Rhythm Psychosis - Extra Song Pack feat. KOTOKO: цена, отзывы и статистика игроков",
     "excerpt": "Yunyun Syndrome!? Rhythm Psychosis - Extra Song Pack feat. KOTOKO: актуальная цена (180.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
     "date": "9 октября 2026",
@@ -8872,6 +9545,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/-4451790",
+    "noindex": true,
     "title": "师姐别急，我抽卡就变强 — обзор",
     "excerpt": "Игра сочетает элементы карточных битв и культивирования, позволяя игроку управлять старшими сестрами, собирать более 1300 карт и восстанавливать свой",
     "date": "9 октября 2026",
@@ -8885,6 +9559,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/kill-your-friends-4681250",
+    "noindex": true,
     "title": "Kill Your Friends — хаотичный PvP‑шутер",
     "excerpt": "Kill Your Friends — быстрый PvP‑шутер для 2‑4 игроков, где каждый раунд меняет правила, режимы и арсенал. Идеален для компаний, ищущих нестандартный и",
     "date": "9 октября 2026",
@@ -8898,6 +9573,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/crystash-4744820",
+    "noindex": true,
     "title": "CRYSTASH! – динамичный экшен про кристальный бой",
     "excerpt": "В роли шахтёра‑искателя кристаллов вам предстоит уклоняться от атак могучего Кристального голема и врезаться в него на модифицированном горном транспорте,",
     "date": "9 октября 2026",
@@ -8911,6 +9587,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/rush-aim-show-4744800",
+    "noindex": true,
     "title": "Rush Aim Show – 3D экшн в цирковом стиле",
     "excerpt": "Rush Aim Show – бесплатный 3‑мерный экшен‑платформер, где вы выступаете в цирке, управляя клоунами и устраивая зрелищные шоу. Идеально для любителей",
     "date": "9 октября 2026",
@@ -8924,6 +9601,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/clive-barker-s-hellraiser-revival-1551980",
+    "noindex": true,
     "title": "Clive Barker's Hellraiser: Revival: цена, отзывы и статистика игроков",
     "excerpt": "Clive Barker's Hellraiser: Revival: актуальная цена (2399.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
     "date": "9 октября 2026",
@@ -8934,6 +9612,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/order-of-the-sinking-star-499170",
+    "noindex": true,
     "title": "Order of the Sinking Star — обзор и мнение",
     "excerpt": "Order of the Sinking Star — приключенческий инди‑проект с более чем тысячей головоломок, магической атмосферой и интересными персонажами. Подходит",
     "date": "9 октября 2026",
@@ -8947,6 +9626,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/sortiruy-kapibar-5130480",
+    "noindex": true,
     "title": "Сортируй капибар! – уютный симулятор сортировки",
     "excerpt": "Сортируй капибар! – казуальная игра‑симулятор, где нужно упорядочить более 4800 игрушечных капибар, используя специальные способности и превращая хаос в",
     "date": "8 октября 2026",
@@ -8960,6 +9640,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/puzzles-meteorites-4936770",
+    "noindex": true,
     "title": "Puzzles Meteorites — казуальная головоломка",
     "excerpt": "Puzzles Meteorites — яркая казуальная головоломка от независимых разработчиков. Красивые уровни, простая механика и приятный визуальный стиль делают её",
     "date": "8 октября 2026",
@@ -8973,6 +9654,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/arc-raiders-frozen-trail-collector-set-5201760",
+    "noindex": true,
     "title": "ARC Raiders - Frozen Trail Collector Set — обзор",
     "excerpt": "Коллекционный набор «Морозная тропа» в ARC Raiders предлагает игрокам первое знакомство с таинственными северными землями Медного пояса. Подходит",
     "date": "8 октября 2026",
@@ -8986,6 +9668,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/hiroyu-s-murder-mystery-4080860",
+    "noindex": true,
     "title": "HIROYU's Murder Mystery：マーダーミステリー セッションツール: цена, отзывы и статистика игроков",
     "excerpt": "HIROYU's Murder Mystery：マーダーミステリー セッションツール: актуальная цена (Бесплатно), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
     "date": "8 октября 2026",
@@ -8996,6 +9679,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/i-m-having-a-bad-day-4798970",
+    "noindex": true,
     "title": "I'm Having A Bad Day: цена, отзывы и статистика игроков",
     "excerpt": "I'm Having A Bad Day: актуальная цена (465.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
     "date": "8 октября 2026",
@@ -9006,6 +9690,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/demon-general-kirsten-4112840",
+    "noindex": true,
     "title": "Demon General Kirsten — обзор игры",
     "excerpt": "Краткий обзор Demon General Kirsten: казуальная инди‑ролевая игра о солдате, ищущем смысл, с живыми диалогами и выборами, которые влияют на её путь.",
     "date": "8 октября 2026",
@@ -9019,6 +9704,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/gear-club-unlimited-3-3659460",
+    "noindex": true,
     "title": "Gear.Club Unlimited 3 – гонки и тюнинг автомобилей",
     "excerpt": "Gear.Club Unlimited 3 – реалистичные гонки с возможностью кастомизации машин, красивые трассы Средиземноморья и Японии. Идеально для любителей",
     "date": "8 октября 2026",
@@ -9032,6 +9718,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/fuck-the-ocean-1864730",
+    "noindex": true,
     "title": "Fuck the Ocean – забавный инкрементальный симулятор",
     "excerpt": "Fuck the Ocean – инди-игра, где вы заполняете водные просторы песком, гномами и безумными механизмами. Простой, юмористический симулятор для любителей",
     "date": "8 октября 2026",
@@ -9045,6 +9732,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/taskbar-legends-4904570",
+    "noindex": true,
     "title": "Taskbar Legends – казуальная авто‑битва в стиле ролевой",
     "excerpt": "Taskbar Legends — бесплатный онлайн‑авто‑боец, размещённый на панели задач. Собирайте команду героев, улучшайте их, собирайте добычу и исследуйте",
     "date": "8 октября 2026",
@@ -9058,6 +9746,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/retropulse-wave-5295530",
+    "noindex": true,
     "title": "RETROPULSE Wave – неоновая головоломка",
     "excerpt": "RETROPULSE Wave – атмосферная неоновая головоломка в стиле ретровейв. Связывайте цветные точки, создавайте световые волны и наслаждайтесь яркой графикой",
     "date": "8 октября 2026",
@@ -9071,6 +9760,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/maid-cafe-simulator-3232690",
+    "noindex": true,
     "title": "Maid Cafe Simulator – симулятор мейд-кафе",
     "excerpt": "Maid Cafe Simulator предлагает управлять уютным мейд-кафе, готовить напитки, обслуживать посетителей и решать конфликты с помощью пяти очаровательных",
     "date": "8 октября 2026",
@@ -9084,6 +9774,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/-5298800",
+    "noindex": true,
     "title": "无尽军团 — стратегия выживания в пиксельном стиле",
     "excerpt": "В игре «无尽军团» вас ждёт пиксельный экшен‑стратегия, где за пять минут нужно собрать легион, экипировать героя и отбиваться от волн монстров и главных",
     "date": "8 октября 2026",
@@ -9097,6 +9788,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/beluga-polo-5255280",
+    "noindex": true,
     "title": "Beluga Polo – быстрая водная поло игра",
     "excerpt": "Beluga Polo – динамичная казуальная игра в водное поло с онлайн‑матчами 1v1, различными аренами и возможностью разблокировать наборы цветов.",
     "date": "8 октября 2026",
@@ -9110,6 +9802,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/demonator-5293950",
+    "noindex": true,
     "title": "Demonator – экшн в стиле гангстерского боевика",
     "excerpt": "Demonator – динамичный экшн от третьего лица, где вы играете за гангстера, сражающегося без оружия, используя только удары и кики, исследуя зоны в поисках",
     "date": "8 октября 2026",
@@ -9123,6 +9816,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/angel-legion-dlc-myriad-splendor-h-5041280",
+    "noindex": true,
     "title": "Angel Legion – DLC Myriad Splendor H: обзор",
     "excerpt": "Angel Legion — бесплатный приключенческий ролик с элементами стратегии, где вы собираете команду ангелов и исследуете тайны галактики. DLC Myriad Splendor",
     "date": "8 октября 2026",
@@ -9136,6 +9830,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/catpoker-5005680",
+    "noindex": true,
     "title": "CatPoker – казуальная карточная стратегия для друзей",
     "excerpt": "CatPoker – онлайн‑рогулейк в жанре Доу Дзы, где от 1 до 3 игроков собирают колоды, бросают карты и устраивают весёлый хаос с милыми котами и уникальными",
     "date": "8 октября 2026",
@@ -9149,6 +9844,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/dungeonos-4221660",
+    "noindex": true,
     "title": "DungeonOS – казуальная инди RPG игра",
     "excerpt": "DungeonOS – казуальная инди RPG, где вы исследуете подземелья, собираете добычу и решаете головоломки в стиле старой операционной системы. Игра подходит",
     "date": "8 октября 2026",
@@ -9162,6 +9858,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/borderless-window-manager-5254990",
+    "noindex": true,
     "title": "Borderless Window Manager – утилита для игр",
     "excerpt": "Borderless Window Manager позволяет запускать любые игры в оконном или безрамочном полноэкранном режиме на выбранном мониторе, даже если игра не",
     "date": "8 октября 2026",
@@ -9175,6 +9872,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/sister-compass-slow-life-loving-with-my-sisters-on-a-deserted-island-4583960",
+    "noindex": true,
     "title": "Sister Compass: Slow Life Loving with My Sisters",
     "excerpt": "Казуальная игра‑симулятор, где вам предстоит управлять ранчо на пустынном острове вместе с младшими сестрами, исследовать окрестности и наслаждаться",
     "date": "8 октября 2026",
@@ -9188,6 +9886,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/my-sweet-waifu-konko-3099780",
+    "noindex": true,
     "title": "My Sweet Waifu Konko — обзор игры",
     "excerpt": "Нежная романтическая игра‑симулятор, где вы проводите время с Конко, гладите её, играете и пьёте чай, развивая отношения от любопытства до любви.",
     "date": "8 октября 2026",
@@ -9201,6 +9900,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/secret-with-sophia-4399170",
+    "noindex": true,
     "title": "Secret with Sophia – ролевая симуляция любви и заботы",
     "excerpt": "Secret with Sophia – медленная ролевая игра‑симулятор с живой 2D‑анимацией, где вы становитесь хозяином, а София – преданная горничная и ночная",
     "date": "8 октября 2026",
@@ -9214,6 +9914,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/hroniki-loera-5037330",
+    "noindex": true,
     "title": "Хроники Лоэра — рогалик выживания с элементами",
     "excerpt": "Хроники Лоэра – бесплатный инди‑рогалик, где каждый бой решает, правильно ли вы выбрали элемент. Удвоенный урон за верный выбор, лечение врагов за ошибку.",
     "date": "8 октября 2026",
@@ -9227,6 +9928,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/neon-abyss-2-2235200",
+    "noindex": true,
     "title": "Neon Abyss 2 – динамичный экшен с кооперативом",
     "excerpt": "Neon Abyss 2 – яркий кибер‑мифический экшен с онлайн‑кооперативом до четырёх, новыми стилями боя и бесконечными синергиями предметов. Идеален для",
     "date": "8 октября 2026",
@@ -9240,6 +9942,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/-5258610",
+    "noindex": true,
     "title": "暗示 — карточная стратегия без случайностей",
     "excerpt": "暗示 — одиночная карточная стратегия в стиле казуальных игр. Управляйте фигурами картами, сражайтесь с боссами, балансируя здоровье и боевой дух. Подойдёт",
     "date": "8 октября 2026",
@@ -9253,6 +9956,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/-5069500",
+    "noindex": true,
     "title": "斩爆甜点 — казуальная аркада с музыкой и гонками",
     "excerpt": "斩爆甜点 — короткая 15‑минутная игра‑релакс в виртуальной реальности, где вам предстоит резать десерты в такт популярным мелодиям, собирая комбо и ускоряясь в",
     "date": "8 октября 2026",
@@ -9266,6 +9970,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/thunder-hoop-collection-qubyte-classics-4448240",
+    "noindex": true,
     "title": "Thunder Hoop Collection (QUByte Classics) – обзор",
     "excerpt": "Thunder Hoop Collection – сборник из двух ретро‑платформеров с быстрым экшеном и аркадным духом 90‑х. Игра погружает в бой с мутантами профессора",
     "date": "8 октября 2026",
@@ -9279,6 +9984,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/yulgang-w-5178350",
+    "noindex": true,
     "title": "Yulgang W — приключенческая ролевая игра в стиле тайского",
     "excerpt": "Yulgang W — многопользовательская приключенческая игра с элементами ролевой стратегии и симулятора. Подойдёт любителям динамичных боёв и коллективных",
     "date": "8 октября 2026",
@@ -9292,6 +9998,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/monster-enhancement-5287790",
+    "noindex": true,
     "title": "MONSTER ENHANCEMENT – инди‑кликер о сборе монстров",
     "excerpt": "MONSTER ENHANCEMENT – игра‑кликер, где вы собираете и улучшаете девять видов монстров, управляя риском и ресурсами, продаёте их за золото или храните в",
     "date": "8 октября 2026",
@@ -9305,6 +10012,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/obsessive-5185130",
+    "noindex": true,
     "title": "Obsessive — инди‑приключение‑хоррор",
     "excerpt": "Obsessive — короткая японская игра‑побег, где главный герой с ОКР сталкивается с пугающими мыслями и движущейся статуей. Идеально для любителей",
     "date": "8 октября 2026",
@@ -9318,6 +10026,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/just-mining-4985090",
+    "noindex": true,
     "title": "Just Mining — простая инкрементальная игра о добыче",
     "excerpt": "Just Mining — расслабляющая казуальная игра, где вам предстоит добывать ресурсы, улучшать инструменты и копать всё глубже. Идеально подходит для коротких",
     "date": "8 октября 2026",
@@ -9351,6 +10060,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/hex-reverse-5257350",
+    "noindex": true,
     "title": "Hex Reverse - обзор игры",
     "excerpt": "Hex Reverse - это карточная игра в жанре roguelike с уникальной механикой на шестиугольном поле боя. Создавайте колоду и адаптируйте стратегию.",
     "date": "7 октября 2026",
@@ -9364,6 +10074,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/mopet-studio-4718320",
+    "noindex": true,
     "title": "Mopet Studio – создайте собственного виртуального питомца",
     "excerpt": "Mopet Studio позволяет оформить рабочий стол живым персонажем, взаимодействовать с ним и делиться своими созданиями в сообществе. Инди‑проект для",
     "date": "7 октября 2026",
@@ -9377,6 +10088,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/horde-arena-3561610",
+    "noindex": true,
     "title": "Horde Arena - шутер-рогалик от третьего лица",
     "excerpt": "Horde Arena - это шутер-рогалик от третьего лица с бесконечными волнами врагов. Играйте в одиночку или в кооперативе до 4 игроков.",
     "date": "7 октября 2026",
@@ -9390,6 +10102,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/wog-war-of-genesis-idle-loot-4891320",
+    "noindex": true,
     "title": "War of Genesis: Idle Loot - обзор",
     "excerpt": "War of Genesis: Idle Loot - игра, где персонаж сам сражается и собирает добычу. Подходит для любителей казуальных ролевых игр.",
     "date": "7 октября 2026",
@@ -9403,6 +10116,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/half-body-duo-5207880",
+    "noindex": true,
     "title": "Half Body Duo - обзор игры",
     "excerpt": "Half Body Duo - это хоррор-экшен, где нужно управлять двумя персонажами в лабиринте больницы. Собирайте предохранители и ключи, избегайте монстров.",
     "date": "7 октября 2026",
@@ -9416,6 +10130,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/magetender-4709570",
+    "noindex": true,
     "title": "MageTender - обзор игры",
     "excerpt": "MageTender - казуальная игра, где нужно обслуживать клиентов с разными настроениями и причудами. Смешивайте напитки с магическими ингредиентами.",
     "date": "7 октября 2026",
@@ -9429,6 +10144,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/-5259450",
+    "noindex": true,
     "title": "Обзор игры Дагук Самгукчжи",
     "excerpt": "Дагук Самгукчжи — стратегия в эпоху Трёх царств. Развивайте города, ведите дипломатию и сражайтесь в пошаговых битвах.",
     "date": "7 октября 2026",
@@ -9442,6 +10158,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/the-crimson-hunt-4485020",
+    "noindex": true,
     "title": "The Crimson Hunt - обзор игры",
     "excerpt": "The Crimson Hunt - это приключенческая игра, где охотница на вампиров Виктория и молодая Элеонора сталкиваются с кошмарами и ловушками.",
     "date": "7 октября 2026",
@@ -9455,6 +10172,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/raidkids-2505670",
+    "noindex": true,
     "title": "RaidKids - обзор игры",
     "excerpt": "RaidKids - это 2D приключение с элементами крафта. Игра подойдёт любителям казуальных и инди-игр.",
     "date": "7 октября 2026",
@@ -9468,6 +10186,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/steel-vanguard-project-ares-5099110",
+    "noindex": true,
     "title": "STEEL VANGUARD:Project ARES - обзор",
     "excerpt": "STEEL VANGUARD:Project ARES - шутер с видом сверху в научно-фантастическом мире. Завоевывайте звание сильнейшего пилота и улучшайте свой мех.",
     "date": "7 октября 2026",
@@ -9481,6 +10200,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/-5208470",
+    "noindex": true,
     "title": "Мини Цивилизация: обзор игры",
     "excerpt": "Мини Цивилизация — это доступная пошаговая стратегия на шестиугольной сетке. Начните с одного города и поселенца, развивайте империю.",
     "date": "7 октября 2026",
@@ -9494,6 +10214,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/mouse-shooter-fps-5244690",
+    "noindex": true,
     "title": "Mouse Shooter FPS – шутер на рабочем столе",
     "excerpt": "Mouse Shooter FPS превращает ваш рабочий стол в поле боя: прозрачный оверлей с прицелом и оружием от первого лица, зомби‑волны и система звания. Игра не",
     "date": "7 октября 2026",
@@ -9507,6 +10228,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/dry-powder-5229970",
+    "noindex": true,
     "title": "Dry Powder - обзор симулятора",
     "excerpt": "Dry Powder - это симулятор инвестиций, где нужно стать самым богатым. Торгуйте акциями, облигациями и недвижимостью, используйте кредитное плечо и",
     "date": "7 октября 2026",
@@ -9520,6 +10242,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/motorbay-tycoon-5284560",
+    "noindex": true,
     "title": "Motorbay Tycoon - обзор игры",
     "excerpt": "Motorbay Tycoon - это казуальная игра-симулятор, где нужно управлять автосервисом. Начните с небольшой мастерской и развивайте её до крупного автоцентра.",
     "date": "7 октября 2026",
@@ -9533,6 +10256,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/plates-of-peril-3451820",
+    "noindex": true,
     "title": "Plates of Peril - обзор игры",
     "excerpt": "Plates of Peril - это хаотичная игра о управлении рестораном с каннибальскими элементами. Играйте в одиночку или с друзьями.",
     "date": "7 октября 2026",
@@ -9546,6 +10270,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/midnight-gunwatch-5275630",
+    "noindex": true,
     "title": "Midnight Gunwatch — обзор игры",
     "excerpt": "Midnight Gunwatch — это экшен-стратегия в стиле инди, где нужно обороняться от зомби. Игра подойдёт любителям тактических игр и зомби-шутеров.",
     "date": "7 октября 2026",
@@ -9559,6 +10284,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/creta-taskbar-fishing-5064260",
+    "noindex": true,
     "title": "CRETA: Taskbar Fishing - обзор",
     "excerpt": "CRETA: Taskbar Fishing — уютная игра для ловли рыбы, которая живет на панели задач. Ловите рыбу, пока работаете или играете.",
     "date": "7 октября 2026",
@@ -9572,6 +10298,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/prison-escape-io-3583470",
+    "noindex": true,
     "title": "Prison Escape io - обзор игры",
     "excerpt": "Prison Escape io - динамичная многопользовательская игра, где нужно бежать через ловушки и туннели. Сотрудничай или соревнуйся, чтобы сбежать первым.",
     "date": "7 октября 2026",
@@ -9585,6 +10312,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/zabastovka-v-nebesah-5136190",
+    "noindex": true,
     "title": "Забастовка в небесах - обзор",
     "excerpt": "Забастовка в небесах - это приключенческая игра, где вы возглавляете забастовку бортпроводников. Вас ждут сложные переговоры и романтические линии.",
     "date": "7 октября 2026",
@@ -9598,6 +10326,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/hb-evolution-5243580",
+    "noindex": true,
     "title": "HB Evolution — бесплатный онлайн‑MMORPG",
     "excerpt": "HB Evolution — бесплатный MMORPG с открытым миром, где две враждебные нации ведут масштабные PvP‑битвы. Создавайте героя без классов, осваивайте магию и",
     "date": "7 октября 2026",
@@ -9611,6 +10340,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/mechwarrior-5-mercenaries-ashes-and-ascension-4849350",
+    "noindex": true,
     "title": "MechWarrior 5: Mercenaries – Ashes and Ascension обзор",
     "excerpt": "Новая кампания MechWarrior 5: Mercenaries – Ashes and Ascension предлагает 18 заданий, 13 новых боевых мехов и расширенный арсенал. Подойдёт любителям",
     "date": "7 октября 2026",
@@ -9624,6 +10354,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/tung-4341400",
+    "noindex": true,
     "title": "TUNG - обзор игры",
     "excerpt": "TUNG — это инди-экшен с элементами хоррора, где игроки исследуют лабиринт из живой изгороди и знакомятся с загадочным существом.",
     "date": "7 октября 2026",
@@ -9637,6 +10368,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/paunchy-pets-4052150",
+    "noindex": true,
     "title": "Paunchy Pets — обзор игры",
     "excerpt": "Paunchy Pets — это игра, где вы тренируете и сражаетесь с пухлыми монстриками. Кормите их, участвуйте в мини-играх и сражайтесь с соперниками.",
     "date": "7 октября 2026",
@@ -9650,6 +10382,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/teryon-crisis-5265230",
+    "noindex": true,
     "title": "Teryon Crisis - обзор стратегии",
     "excerpt": "Teryon Crisis - стратегия в жанре RTS с 24 миссиями кампании и кастомизируемыми боями. Управляйте двумя фракциями и исследуйте специализированные",
     "date": "7 октября 2026",
@@ -9663,6 +10396,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/lostbound-4588320",
+    "noindex": true,
     "title": "Lostbound - обзор игры",
     "excerpt": "Lostbound - это Roguelite Action RPG, где нужно найти все артефакты и спастись из рушащегося мира. Тьма жива и пытается утащить тебя в Бездну.",
     "date": "7 октября 2026",
@@ -9676,6 +10410,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/the-call-button-4584180",
+    "noindex": true,
     "title": "The Call Button - хоррор-триллер",
     "excerpt": "The Call Button - это хоррор-триллер на наблюдательность. Игроки просыпаются в больнице и выбирают между таблетками и кнопкой вызова.",
     "date": "7 октября 2026",
@@ -9689,6 +10424,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/infinite-chess-5216780",
+    "noindex": true,
     "title": "Infinite Chess - обзор",
     "excerpt": "Infinite Chess - это стратегическая игра, где каждая партия уникальна. Играйте онлайн против других игроков или против ИИ.",
     "date": "7 октября 2026",
@@ -9702,6 +10438,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/gravebound-rising-5087060",
+    "noindex": true,
     "title": "Gravebound Rising — обзор игры",
     "excerpt": "Gravebound Rising — это стратегия в жанре некромантии, где нужно поднимать армию скелетов и развивать поселения. Игра подойдёт любителям инди-проектов.",
     "date": "7 октября 2026",
@@ -9715,6 +10452,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/flappy-wings-multiplayer-5269790",
+    "noindex": true,
     "title": "Flappy Wings Multiplayer — аркада с онлайн и локальным PvP",
     "excerpt": "Flappy Wings Multiplayer – динамичная 2D‑аркада, где нужно точно рассчитывать прыжки, избегать бесконечных труб и соревноваться в локальном и",
     "date": "7 октября 2026",
@@ -9728,6 +10466,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/fsh-4444200",
+    "noindex": true,
     "title": "Fsh - обзор игры",
     "excerpt": "Fsh - это инди-приключение с элементами экшена. Игроки исследуют странный мир и сражаются за возвращение украденных глаз.",
     "date": "7 октября 2026",
@@ -9750,6 +10489,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/third-law-5245170",
+    "noindex": true,
     "title": "Третья закономерность THIRD LAW",
     "excerpt": "Игра THIRD LAW предлагает уникальный геймплей с использованием отдачи оружия для перемещения. Подойдёт для любителей инди-экшенов.",
     "date": "6 октября 2026",
@@ -9763,6 +10503,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/empty-inbox-5178990",
+    "noindex": true,
     "title": "Empty Inbox - обзор игры",
     "excerpt": "Empty Inbox - это инди-игра, где игроки работают в службе поддержки и пытаются вставлять скрытые слова в письма без обнаружения.",
     "date": "6 октября 2026",
@@ -9776,6 +10517,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/deadline-last-checkpoint-5261340",
+    "noindex": true,
     "title": "DEADLINE: LAST CHECKPOINT — экшен с зомби",
     "excerpt": "Эпичный шутер от первого лица с элементами защиты башни. Защищайте ворота от орд зомби, улучшайте оружие, вызывайте воздушную поддержку и проверяйте себя",
     "date": "6 октября 2026",
@@ -9789,6 +10531,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/10countavoidance-4120530",
+    "noindex": true,
     "title": "10CountAvoidance: цена, отзывы и статистика игроков",
     "excerpt": "10CountAvoidance: актуальная цена (Бесплатно), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
     "date": "6 октября 2026",
@@ -9799,6 +10542,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/a-i-ttorney-4355070",
+    "noindex": true,
     "title": "A.I.ttorney - обзор игры",
     "excerpt": "A.I.ttorney - это интерактивный визуальный роман с множеством сюжетных веток. Игра предлагает увлекательное расследование и интересные головоломки.",
     "date": "6 октября 2026",
@@ -9812,6 +10556,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/norn-saber-the-guardian-s-oath-4030680",
+    "noindex": true,
     "title": "女神：守護之約 – обзор игры",
     "excerpt": "«女神：守護之約» – многопользовательская ролевая стратегия с элементами тактики, крафта и развития отношений. Подойдёт любителям эпических историй и глубокого",
     "date": "6 октября 2026",
@@ -9825,6 +10570,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/king-s-cup-the-online-multiplayer-drinking-game-1506610",
+    "noindex": true,
     "title": "King's Cup: The online multiplayer drinking game: цена, отзывы и статистика игроков",
     "excerpt": "King's Cup: The online multiplayer drinking game: актуальная цена (240.00 RUB), 88% положительных отзывов в Steam, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
     "date": "6 октября 2026",
@@ -9835,6 +10581,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/idle-miner-5255350",
+    "noindex": true,
     "title": "Idle Miner - обзор игры",
     "excerpt": "Idle Miner - это казуальная игра, где вы управляете шахтёрами прямо на рабочем столе. Играйте, когда удобно, развивайте команду.",
     "date": "6 октября 2026",
@@ -9848,6 +10595,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/deadly-force-5161590",
+    "noindex": true,
     "title": "Deadly Force - обзор игры",
     "excerpt": "Deadly Force - это аркадный шутер от первого лица с элементами экшена. Игра предлагает динамичные миссии и простой геймплей.",
     "date": "6 октября 2026",
@@ -9861,6 +10609,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/in-your-hands-5193580",
+    "noindex": true,
     "title": "In Your Hands - обзор психологического хоррора",
     "excerpt": "In Your Hands - психологический хоррор в жанре визуальной новеллы. Исследуйте разрушенное здание и помогите ребёнку выбраться.",
     "date": "6 октября 2026",
@@ -9874,6 +10623,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/chase-the-number-5274390",
+    "noindex": true,
     "title": "Chase The Number - обзор игры",
     "excerpt": "Chase The Number - это симулятор финансовой жизни с элементами стратегии. Игроки начинают с небольшой суммы и стремятся к миллиону.",
     "date": "6 октября 2026",
@@ -9887,6 +10637,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/pogo-gnom-5128520",
+    "noindex": true,
     "title": "Pogo Gnom - обзор игры",
     "excerpt": "Pogo Gnom - это аркада про гнома на прыгалке, который стремится к Луне. Игра без контрольных точек, с уникальными уведомлениями о неудачах.",
     "date": "6 октября 2026",
@@ -9900,6 +10651,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/bering-tonnage-4610080",
+    "noindex": true,
     "title": "Bering Tonnage - обзор игры",
     "excerpt": "Bering Tonnage - это морской тайкун, где нужно создать и автоматизировать грузовой флот. Управляйте судами и преодолевайте вызовы, чтобы стать глобальной",
     "date": "6 октября 2026",
@@ -9913,6 +10665,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/starbloom-ranch-5237770",
+    "noindex": true,
     "title": "Starbloom Ranch - обзор игры",
     "excerpt": "Starbloom Ranch - это уютная фермерская RPG с элементами симулятора и стратегии. Собери команду из 300 существ и сражайся в пошаговых боях.",
     "date": "6 октября 2026",
@@ -9926,6 +10679,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/night-study-5278370",
+    "noindex": true,
     "title": "Night Study - обзор игры",
     "excerpt": "Night Study - это динамичная аркада про организацию полок и выживание в ночь Кровавого Луны. Проверьте свои навыки в этой инди-игре.",
     "date": "6 октября 2026",
@@ -9939,6 +10693,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/stolemates-4761400",
+    "noindex": true,
     "title": "Stolemates - обзор игры",
     "excerpt": "Stolemates - это многопользовательская игра для вечеринок, где нужно украсть сердце и удержать его от друзей. Играйте на карте, вдохновлённой Торонто.",
     "date": "6 октября 2026",
@@ -9952,6 +10707,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/werfast-4763960",
+    "noindex": true,
     "title": "Werfast - обзор игры",
     "excerpt": "Werfast - это мрачный экшен-платформер с элементами метроидвании. Исследуйте подземный мир на мощном мехе, сражайтесь с врагами и раскрывайте тайны.",
     "date": "6 октября 2026",
@@ -9965,6 +10721,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/drone-n-gone-4930810",
+    "noindex": true,
     "title": "Drone n Gone - обзор игры",
     "excerpt": "Drone n Gone - это экшен с элементами инди, где нужно защищать бункер с помощью дронов. Игра предлагает динамичные бои и прогрессию в стиле роглайк.",
     "date": "6 октября 2026",
@@ -9978,6 +10735,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/bloody-bunny-3d-3892280",
+    "noindex": true,
     "title": "Bloody Bunny 3D - обзор игры",
     "excerpt": "Bloody Bunny 3D — это волновой шутер с элементами выживания. Играйте за охотника на зомби, используя ловушки и оружие.",
     "date": "6 октября 2026",
@@ -9991,6 +10749,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/voidfall-4632760",
+    "noindex": true,
     "title": "VoidFall - обзор игры",
     "excerpt": "VoidFall - это экшен с кооперативным режимом, где игроки сражаются с волнами монстров. Подходит для любителей командных сражений.",
     "date": "6 октября 2026",
@@ -10004,6 +10763,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/sinever-first-seal-5001350",
+    "noindex": true,
     "title": "Sinever: First Seal - обзор",
     "excerpt": "Sinever: First Seal - кооперативный хоррор для 1-4 игроков. Исследуйте викторианское поместье и раскройте тайны паранормальных явлений.",
     "date": "6 октября 2026",
@@ -10017,6 +10777,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/sightsplice-5226480",
+    "noindex": true,
     "title": "SightSplice - обзор игры",
     "excerpt": "SightSplice - казуальная инди-игра с пиксельной графикой. Изучайте комнаты и находите изменения, чтобы выжить.",
     "date": "6 октября 2026",
@@ -10030,6 +10791,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/-5207060",
+    "noindex": true,
     "title": "宗门轮回 - обзор игры",
     "excerpt": "Игра宗门轮回 предлагает погрузиться в мир древних сект и демонов. Управляйте временем и спасайте свой клан от гибели.",
     "date": "6 октября 2026",
@@ -10043,6 +10805,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/dospehi-oktoberfest-5239930",
+    "noindex": true,
     "title": "Доспехи «Октоберфест» — обзор",
     "excerpt": "Исследуйте мир после апокалипсиса в Доспехах «Октоберфест». Инди-приключение с элементами ролевой игры и стратегии.",
     "date": "6 октября 2026",
@@ -10056,6 +10819,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/veillombre-4914240",
+    "noindex": true,
     "title": "Veillombre - обзор игры",
     "excerpt": "Veillombre - мультиплеерный пиксельный хоррор на 1-16 игроков. Исследуйте тёмный особняк и выживайте в ночи.",
     "date": "6 октября 2026",
@@ -10069,6 +10833,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/solo-cultivation-3878440",
+    "noindex": true,
     "title": "Solo Cultivation: обзор игры",
     "excerpt": "Solo Cultivation — это игра в жанре экшен и симулятора, вдохновленная жанром ксянься. Игроки могут заниматься культивацией, фермерством и сражениями.",
     "date": "6 октября 2026",
@@ -10082,6 +10847,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/sudoku-girls-hawaii-vacation-4946070",
+    "noindex": true,
     "title": "Sudoku Girls: Hawaii Vacation - обзор",
     "excerpt": "Sudoku Girls: Hawaii Vacation - приключенческая игра с элементами визуальной новеллы. Решайте головоломки и наслаждайтесь отдыхом на Гавайях.",
     "date": "6 октября 2026",
@@ -10095,6 +10861,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/gacha-and-sleep-2101640",
+    "noindex": true,
     "title": "GACHA AND SLEEP - обзор игры",
     "excerpt": "GACHA AND SLEEP - казуальная инди-игра, где нужно собрать редких персонажей. Узнайте, стоит ли играть в эту игру.",
     "date": "6 октября 2026",
@@ -10108,6 +10875,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/stickility-3419140",
+    "noindex": true,
     "title": "Stickility - обзор игры",
     "excerpt": "Stickility - это экшн-приключение в подземном научном центре с уникальными врагами и боссами. Исследуйте и раскрывайте тайны Биотека.",
     "date": "6 октября 2026",
@@ -10121,6 +10889,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/kiosunevn-5273430",
+    "noindex": true,
     "title": "KiosuneVN: цена, отзывы и статистика игроков",
     "excerpt": "KiosuneVN: актуальная цена (465.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
     "date": "6 октября 2026",
@@ -10131,6 +10900,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/-4246730",
+    "noindex": true,
     "title": "Idle: Shuguang's Alchemy Store — обзор игры",
     "excerpt": "Уютный симулятор алхимической лавки. Управляйте магазином в фоне, расслабляйтесь и наблюдайте за ростом бизнеса в спокойном темпе без стресса.",
     "date": "5 октября 2026",
@@ -10144,6 +10914,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/the-listener-4840240",
+    "noindex": true,
     "title": "The Listener: обзор игры-расследования",
     "excerpt": "The Listener — бесплатная симуляция, где вы выступаете югославским радиолюбителем в эпоху холодной войны. Перехватывайте сигналы и раскрывайте тайный заговор.",
     "date": "5 октября 2026",
@@ -10157,6 +10928,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/horror-in-santa-land-5281760",
+    "noindex": true,
     "title": "Horror In Santa Land: обзор хоррор-шутера",
     "excerpt": "Horror In Santa Land — инди-шутер с головоломками. Ищите Санта-Клауса, отбивайтесь от зомби и спасайте Рождество в мрачном экшене.",
     "date": "5 октября 2026",
@@ -10170,6 +10942,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/mugipunch-4617970",
+    "noindex": true,
     "title": "MugiPunch: Аниме-файтинг в стиле beat 'em up",
     "excerpt": "MugiPunch — быстрый аниме-файтинг. Учите парирования, уклонения и открывайте новые способности, чтобы вернуть фигурку. Идеально для фанатов экшена и инди.",
     "date": "5 октября 2026",
@@ -10183,6 +10956,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/jono-5257200",
+    "noindex": true,
     "title": "Jono — совместная игра на миллион уровней",
     "excerpt": "Jono — мультиплеерная casual-игра, где игроки по очереди проходят уровни. Узнайте, подойдёт ли она для коротких сессий и общения.",
     "date": "5 октября 2026",
@@ -10196,6 +10970,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/chamele-guess-5142570",
+    "noindex": true,
     "title": "Chamele-Guess: весёлая партия на 2-8 игроков",
     "excerpt": "Chamele-Guess — казуальная игра, где нужно изобразить слово телом. Угадайте задумку друзей в дуэлях на подиумах. Идеально для компании из 2-8 человек.",
     "date": "5 октября 2026",
@@ -10209,6 +10984,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/hexcavate-5239340",
+    "noindex": true,
     "title": "Hexcavate: уютная головоломка про карликов и шахты",
     "excerpt": "Hexcavate — спокойная пазл-игра, где вы катаете бомбы по шестиугольным островкам. Управляйте рельефом, направляйте телеги и исследуйте 33 уровня без таймеров и провалов.",
     "date": "5 октября 2026",
@@ -10222,6 +10998,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/fussycraft-survival-sandbox-4729900",
+    "noindex": true,
     "title": "FussyCraft Survival: Sandbox — 2D пиксельная выживалка",
     "excerpt": "FussyCraft Survival: Sandbox — инди-RPG с юмором. Копайте, стройте, варите и бросайте вызов королю. Обзор жанра и особенностей пиксельного мира.",
     "date": "5 октября 2026",
@@ -10235,6 +11012,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/chessxpanse-3308260",
+    "noindex": true,
     "title": "ChessXpanse: шахматы с динамичными фронтами в бою",
     "excerpt": "ChessXpanse — бесплатная стратегия, где классические шахматы сталкиваются с хаосом войны. Уникальные стартовые позиции меняют тактику каждой партии.",
     "date": "5 октября 2026",
@@ -10248,6 +11026,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/banana-clicker-2322080",
+    "noindex": true,
     "title": "Banana Clicker: обзор инди-кликера про бананы",
     "excerpt": "Узнайте, чем уникален Banana Clicker. Идиотский кликер с прокачкой, космическими шлемами и режимами выживания. Стоит ли играть в эту инди-игру?",
     "date": "5 октября 2026",
@@ -10261,6 +11040,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/private-mining-company-2957160",
+    "noindex": true,
     "title": "Private Mining Company — стратегия башенной защиты",
     "excerpt": "Private Mining Company — стратегическая игра с элементами башенной защиты и постоянной гибелью персонажей. Управляйте добычей, улучшайте солдат и берите",
     "date": "5 октября 2026",
@@ -10274,6 +11054,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/tunnel-brawl-5052280",
+    "noindex": true,
     "title": "Tunnel Brawl — обзор игры",
     "excerpt": "Tunnel Brawl — это онлайн-экшен с элементами стратегии, где игроки роют туннели и сражаются в танках. Игра подойдёт любителям динамичных дуэлей.",
     "date": "5 октября 2026",
@@ -10287,6 +11068,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/dumpling-delight-5139970",
+    "noindex": true,
     "title": "Dumpling Delight: обзор игры",
     "excerpt": "Dumpling Delight — это казуальная стратегия, где нужно бросать милых пельменей и объединять пары. Игра расслабляет и приносит радость.",
     "date": "5 октября 2026",
@@ -10300,6 +11082,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/piworld-3167710",
+    "noindex": true,
     "title": "Piworld - обзор игры",
     "excerpt": "Piworld - мультиплеер с разнообразными ролями и приключениями. Исследуйте мир, боритесь со злом и веселитесь с друзьями.",
     "date": "5 октября 2026",
@@ -10313,6 +11096,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/-5240670",
+    "noindex": true,
     "title": "Обзор игры 尸海防线",
     "excerpt": "Игра 尸海防线 — это аркадный шутер с видом сверху, где нужно защищаться от орд зомби. Подходит для любителей экшена и казуальных игр.",
     "date": "5 октября 2026",
@@ -10326,6 +11110,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/auris-4902690",
+    "noindex": true,
     "title": "Auris – профессиональный аудиоплеер высокого разрешения",
     "excerpt": "Auris – профессиональный аудиоплеер с бит‑точным воспроизведением, поддержкой DSD, параметрическим эквалайзером, анализом громкости и функцией",
     "date": "5 октября 2026",
@@ -10339,6 +11124,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/catventure-4459980",
+    "noindex": true,
     "title": "Catventure — уютная пассивная игра",
     "excerpt": "Catventure — спокойная казуальная игра, размещаемая в углу экрана. Пассивный геймплей позволяет наслаждаться приключением с котом, не отвлекаясь от дел.",
     "date": "5 октября 2026",
@@ -10352,6 +11138,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/simulyator-krolika-2343380",
+    "noindex": true,
     "title": "Симулятор кролика: обзор игры",
     "excerpt": "Симулятор кролика — это экшн-приключение с акцентом на огнестрельное насилие. Яркая и динамичная игра для любителей инди-проектов.",
     "date": "5 октября 2026",
@@ -10365,6 +11152,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/beyond-xii-5182380",
+    "noindex": true,
     "title": "BEYOND XII: обзор игры",
     "excerpt": "Исследуйте невозможные миры в BEYOND XII. Разгадайте тайны и выживайте, пока время идет. Подходит для любителей инди и казуальных игр.",
     "date": "5 октября 2026",
@@ -10378,6 +11166,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/cursorloom-5268080",
+    "noindex": true,
     "title": "CURSORLOOM - уникальные курсоры для ПК",
     "excerpt": "CURSORLOOM предлагает 188 оригинальных тем для курсоров. Настройте их под себя или создайте свои. От уютных животных до фантастики.",
     "date": "5 октября 2026",
@@ -10391,6 +11180,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/morrowtape-5225470",
+    "noindex": true,
     "title": "MORROWTAPE - обзор игры",
     "excerpt": "MORROWTAPE - психологический хоррор от первого лица в заброшенном архиве. Исследуйте тайны и избегайте опасного существа.",
     "date": "5 октября 2026",
@@ -10404,6 +11194,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/wickling-5225460",
+    "noindex": true,
     "title": "Wickling - платформер с головой- свечой",
     "excerpt": "Wickling - весёлый платформер в стиле 8-битных игр с головой- свечой. Исследуйте карты, сражайтесь с врагами и избегайте странного преследователя.",
     "date": "5 октября 2026",
@@ -10417,6 +11208,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/postapo-2216510",
+    "noindex": true,
     "title": "PostApo - обзор игры",
     "excerpt": "PostApo - это многопользовательская ролевая игра в постапокалиптическом мире 2067 года. Полное озвучивание и локализация на 9 языках.",
     "date": "5 октября 2026",
@@ -10430,6 +11222,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/touhou-blackeight-5008530",
+    "noindex": true,
     "title": "Touhou: BlackEight - обзор игры",
     "excerpt": "Touhou: BlackEight - это хоррор-фанатская игра в жанре приключений. Выживайте восемь ночей в Эйтэнкай, спасая героинь от аномалий.",
     "date": "5 октября 2026",
@@ -10443,6 +11236,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/jolly-roger-jam-cathraul-s-curse-5235210",
+    "noindex": true,
     "title": "Jolly Roger Jam: Cathraul's Curse: цена, отзывы и статистика игроков",
     "excerpt": "Jolly Roger Jam: Cathraul's Curse: актуальная цена (459.51 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
     "date": "5 октября 2026",
@@ -10453,6 +11247,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/lupkar-world-of-billiards-5036340",
+    "noindex": true,
     "title": "LUPKAR - World of Billiards: обзор",
     "excerpt": "LUPKAR - World of Billiards: онлайн-бильярд с русской пирамидой, пулом и снукером. Играйте с игроками со всего мира.",
     "date": "5 октября 2026",
@@ -10466,6 +11261,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/mythicalbeast-5234170",
+    "noindex": true,
     "title": "灵兽问道-MythicalBeast - обзор",
     "excerpt": "Исследуйте мистические земли, выводите духовных зверей и овладевайте Пятью Элементами в одиночном RPG о культивации. Сражайтесь с сектами и боссами.",
     "date": "5 октября 2026",
@@ -10479,6 +11275,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/the-demon-lurking-in-osaka-castle-episode-1-5268550",
+    "noindex": true,
     "title": "The Demon Lurking in Osaka Castle – Episode 1",
     "excerpt": "Исследуйте парк замка Осака в ночи в этом хорроре с живыми актерами. Разгадывайте мистическую тайну через реальные съемки.",
     "date": "5 октября 2026",
@@ -10492,6 +11289,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/hearken-5087210",
+    "noindex": true,
     "title": "HEARKEN — кооп-хоррор с особым звуком",
     "excerpt": "HEARKEN — кооперативный хоррор, где звуки заменяют зрение. Играйте до 4 человек, избегайте монстра, который охотится на слух.",
     "date": "4 октября 2026",
@@ -10505,6 +11303,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/snow-war-1585100",
+    "noindex": true,
     "title": "Snow War - обзор игры",
     "excerpt": "Snow War - это экшн с неоновой атмосферой 80-х, где игроки сражаются снежками и используют самодельные гаджеты. Быстрая и динамичная игра.",
     "date": "4 октября 2026",
@@ -10518,6 +11317,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/hazard-ready-5261710",
+    "noindex": true,
     "title": "Hazard Ready - обзор игры",
     "excerpt": "Hazard Ready - симулятор промышленной безопасности. Игроки учатся работать с оборудованием и избегать аварийных ситуаций.",
     "date": "4 октября 2026",
@@ -10531,6 +11331,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/new-frontier9-5116740",
+    "noindex": true,
     "title": "New Frontier9: цена, отзывы и статистика игроков",
     "excerpt": "New Frontier9: актуальная цена (200.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
     "date": "4 октября 2026",
@@ -10541,6 +11342,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/gentle-night-4546070",
+    "noindex": true,
     "title": "Gentle Night - обзор игры",
     "excerpt": "Gentle Night - это взрослая хоррор-визуальная новелла. Игроки управляют магазином в опасном городе, где им предстоит принять сложные решения.",
     "date": "4 октября 2026",
@@ -10554,6 +11356,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/demon-lord-clicker-1742110",
+    "noindex": true,
     "title": "Demon Lord: Clicker - обзор",
     "excerpt": "Demon Lord: Clicker - это кликер с элементами ролевой игры и стратегии. Сражайтесь с демонами и собирайте награды в увлекательном приключении.",
     "date": "4 октября 2026",
@@ -10567,6 +11370,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/primi-menya-tselikom-5117090",
+    "noindex": true,
     "title": "Прими меня целиком — обзор игры",
     "excerpt": "Прими меня целиком — взрослая романтическая визуальная новелла о жизни в галисийской деревне. Выбирайте маршруты и решайте конфликты общины.",
     "date": "4 октября 2026",
@@ -10580,6 +11384,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/nobody-clocks-out-5262000",
+    "noindex": true,
     "title": "Nobody Clocks Out - обзор игры",
     "excerpt": "Nobody Clocks Out - это ретро-шутер с элементами инди, где нужно пробираться по офисному зданию, сражаясь с охранниками и собирая оружие.",
     "date": "4 октября 2026",
@@ -10593,6 +11398,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/draw-alive-fish-5006170",
+    "noindex": true,
     "title": "Draw Alive: Fish - обзор игры",
     "excerpt": "Draw Alive: Fish - казуальная игра-симулятор, где можно оживить свои рисунки рыб и морских существ в 3D аквариуме.",
     "date": "4 октября 2026",
@@ -10606,6 +11412,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/a-schoolhouse-in-gensokyo-3679100",
+    "noindex": true,
     "title": "Обзор игры 慧音的寺子屋 ~ A Schoolhouse in Gensokyo",
     "excerpt": "Игра 慧音的寺子屋 ~ A Schoolhouse in Gensokyo — это симулятор школы в мире Гэнсокуё. Управляйте учебным заведением и развивайте учеников.",
     "date": "4 октября 2026",
@@ -10619,6 +11426,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/the-webring-4884750",
+    "noindex": true,
     "title": "The Webring - обзор игры",
     "excerpt": "The Webring - это казуальная инди-игра, которая переносит игроков в атмосферу старого интернета. Идеально для ностальгирующих по 90-м.",
     "date": "4 октября 2026",
@@ -10632,6 +11440,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/airline-empire-4893990",
+    "noindex": true,
     "title": "Airline Empire - обзор симулятора авиакомпании",
     "excerpt": "Airline Empire — это пошаговый симулятор авиакомпании, где нужно основать бизнес, соединить города и конкурировать с ИИ-авиакомпаниями.",
     "date": "4 октября 2026",
@@ -10645,6 +11454,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/pixel-trader-4962430",
+    "noindex": true,
     "title": "Pixel Trader – пиксельный симулятор биржи",
     "excerpt": "Pixel Trader — казуальная инди-стратегия в стиле пиксель-арт, где игрок управляет портфелем, покупает и продаёт вымышленные акции, реагируя на новости и",
     "date": "4 октября 2026",
@@ -10658,6 +11468,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/myriad-gambit-5262940",
+    "noindex": true,
     "title": "Myriad Gambit - обзор игры",
     "excerpt": "Myriad Gambit - это мифический китайский авто-баттлер с элементами ролевых игр и стратегий. Соберите команду и сразитесь с боссами.",
     "date": "4 октября 2026",
@@ -10671,6 +11482,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/horde-is-coming-4482600",
+    "noindex": true,
     "title": "Horde is Coming - обзор игры",
     "excerpt": "Horde is Coming - это стратегическая игра, где нужно защищать своих героев от бесконечных волн монстров. Создавайте уникальные билды и комбинируйте руны.",
     "date": "4 октября 2026",
@@ -10684,6 +11496,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/-5136270",
+    "noindex": true,
     "title": "Кровавый Вашингтон - обзор игры",
     "excerpt": "Игра Кровавый Вашингтон - это интерактивная история в жанре вестерн-фэнтези. Игроки борются с вампирской элитой в Вашингтоне.",
     "date": "4 октября 2026",
@@ -10697,6 +11510,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/soldier-rush-5113560",
+    "noindex": true,
     "title": "Soldier Rush - обзор игры",
     "excerpt": "Soldier Rush - это рогалик с видом сверху и автоматической стрельбой. Уворачивайся от волн врагов и побеждай боссов.",
     "date": "4 октября 2026",
@@ -10710,6 +11524,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/blackout-5267360",
+    "noindex": true,
     "title": "Blackout - обзор игры",
     "excerpt": "Blackout - это инди-игра с головоломками, вдохновленная старыми портативными играми 80-х и 90-х годов. Играйте в стиле ретро.",
     "date": "4 октября 2026",
@@ -10723,6 +11538,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/3-5269520",
+    "noindex": true,
     "title": "새벽 3시의 편의점 — обзор игры",
     "excerpt": "새벽 3시의 편의점 — визуальная новелла о ночных разговорах и загадочной посетительнице. Откройте тайны предрассветного часа.",
     "date": "4 октября 2026",
@@ -10736,6 +11552,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/lucid-sys-4131310",
+    "noindex": true,
     "title": "Lucid.sys - обзор стратегии",
     "excerpt": "Lucid.sys - это стратегия с элементами ролевой игры, где нужно манипулировать правилами для победы. Уникальные персонажи и нестандартные решения.",
     "date": "4 октября 2026",
@@ -10749,6 +11566,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/lumesprout-5242800",
+    "noindex": true,
     "title": "LUMESPROUT - обзор игры",
     "excerpt": "LUMESPROUT — это пиксельная экшен-игра с элементами роглайка. Исследуйте шесть потерянных садов, сражайтесь с врагами и собирайте семена.",
     "date": "4 октября 2026",
@@ -10762,6 +11580,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/alchemy-master-5201260",
+    "noindex": true,
     "title": "Alchemy Master - обзор игры",
     "excerpt": "Alchemy Master - это симулятор китайской алхимической мастерской. Управляйте процессами возвышения и улучшения талантов.",
     "date": "4 октября 2026",
@@ -10775,6 +11594,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/timos-4934110",
+    "noindex": true,
     "title": "TimoS – управление ПК в виртуальном мире без контроллеров",
     "excerpt": "TimoS позволяет управлять вашим компьютером в виртуальной реальности, используя только движение головы. Инструменты включают курсор‑по‑взгляду, радиальное",
     "date": "3 октября 2026",
@@ -10788,6 +11608,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/dreamspring-3231480",
+    "noindex": true,
     "title": "Dreamspring — темное фэнтези с открытым миром",
     "excerpt": "Dreamspring — мрачная фэнтезийная ролевая игра‑приключение с открытым миром, где игрок исследует умирающее королевство и его измерения в стиле",
     "date": "3 октября 2026",
@@ -10801,6 +11622,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/general-idler-3200810",
+    "noindex": true,
     "title": "GENERAL IDLER — обзор игры",
     "excerpt": "GENERAL IDLER — стратегия, где нужно завоевать 195 стран на параллельной Земле. Развивайте промышленность, создавайте армии и расширяйте империю.",
     "date": "3 октября 2026",
@@ -10814,6 +11636,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/simrace-publisher-studio-5219510",
+    "noindex": true,
     "title": "SimRace Publisher Studio – автоматизация контента для",
     "excerpt": "SimRace Publisher Studio упрощает создание и публикацию видеоматериалов по симрейсу: запись гонок, автоматический монтаж хайлайтов, подготовка миниатюр и",
     "date": "3 октября 2026",
@@ -10827,6 +11650,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/tunnel-escape-fates-entwined-4285110",
+    "noindex": true,
     "title": "Tunnel Escape Fates Entwined - обзор",
     "excerpt": "Tunnel Escape Fates Entwined - экшн с элементами ролевой игры и приключения. Играйте за смелую полицейскую в разрушенном городе.",
     "date": "3 октября 2026",
@@ -10840,6 +11664,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/spaceman-s-luck-4706030",
+    "noindex": true,
     "title": "Spaceman's Luck: цена, отзывы и статистика игроков",
     "excerpt": "Spaceman's Luck: актуальная цена (465.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
     "date": "3 октября 2026",
@@ -10850,6 +11675,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/in-these-hallowed-halls-4875320",
+    "noindex": true,
     "title": "In These Hallowed Halls - обзор",
     "excerpt": "In These Hallowed Halls — это психологический хоррор с головоломками от первого лица. Исследуйте заброшенную психиатрическую клинику и раскройте тайны.",
     "date": "3 октября 2026",
@@ -10863,6 +11689,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/stick-cards-rng-4611600",
+    "noindex": true,
     "title": "Stick Cards RNG - обзор игры",
     "excerpt": "Stick Cards RNG - это игра, где нужно рисковать и покупать карточные пачки. Подойдёт любителям азарта и стратегий.",
     "date": "3 октября 2026",
@@ -10876,6 +11703,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/your-first-half-orc-a-fantasy-gay-sex-encounter-in-vr-4739740",
+    "noindex": true,
     "title": "Your First Half-Orc: A Fantasy Gay Sex Encounter in VR: цена, отзывы и статистика игроков",
     "excerpt": "Your First Half-Orc: A Fantasy Gay Sex Encounter in VR: актуальная цена (465.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
     "date": "3 октября 2026",
@@ -10886,6 +11714,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/birb-4364930",
+    "noindex": true,
     "title": "Birb — казуальный инди-игровой опыт",
     "excerpt": "Birb — простая, но увлекательная игра, где вы начинаете как обычная птичка, собираете попкорн, строите гнездо и постепенно превращаетесь в могущественное",
     "date": "3 октября 2026",
@@ -10899,6 +11728,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/rorasuketo-4401480",
+    "noindex": true,
     "title": "Rorasuketo — казуальная RPG с роллер‑дерби",
     "excerpt": "Rorasuketo — история о роллер‑дерби в стиле японского спорта, где игроки исследуют яркий мир, заводят друзей и катаются на коньках в стиле ретро‑игр.",
     "date": "3 октября 2026",
@@ -10912,6 +11742,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/major-mutt-4408990",
+    "noindex": true,
     "title": "Major Mutt – динамичный экшен‑выживание",
     "excerpt": "Major Mutt – бесплатный 3D‑экшен в стиле выживания, где вы управляете боевым щенком. Автоприцеливающиеся орудия, волны гигантских тварей и спасение",
     "date": "3 октября 2026",
@@ -10925,6 +11756,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/deer-hunting-the-season-2-5158320",
+    "noindex": true,
     "title": "Deer Hunting - The Season 2 – обзор",
     "excerpt": "Deer Hunting - The Season 2 – открытый симулятор охоты в Северной Америке. Реалистичные локации, разнообразие оружия и развитие персонажа делают игру",
     "date": "3 октября 2026",
@@ -10938,6 +11770,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/factorized-5230410",
+    "noindex": true,
     "title": "Factorized – бесплатный 2D экшен",
     "excerpt": "Factorized – динамичный 2D платформер, где игрок в роли неоднозначного героя с нелепыми пушками сражается с роботами. Бесплатная игра в жанре экшен‑инди,",
     "date": "3 октября 2026",
@@ -10951,6 +11784,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/get-to-orbit-5130440",
+    "noindex": true,
     "title": "Get To Orbit – симулятор орбитального полёта в пиксель-арте",
     "excerpt": "Get To Orbit – казуальная игра‑симулятор, где нужно запустить ракету, выполнить орбитальные манёвры по реальной физике и удержать её в нужной орбите.",
     "date": "3 октября 2026",
@@ -10964,6 +11798,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/gyrogue-4548340",
+    "noindex": true,
     "title": "GYROGUE – быстрый рогалик‑экшен с волчком",
     "excerpt": "GYROGUE – динамичный рогалик‑экшен, где вы управляете настраиваемым волчком на процедурных аренах, сражаясь с волнами врагов и боссами, используя физику",
     "date": "3 октября 2026",
@@ -10977,6 +11812,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/the-vessel-5228590",
+    "noindex": true,
     "title": "The Vessel — приключенческий пазл-игра",
     "excerpt": "The Vessel — инди-игра с двойным управлением, где игрок решает блоковые головоломки в 150 комнатах. Идеально для любителей логических квестов.",
     "date": "3 октября 2026",
@@ -10990,6 +11826,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/manaphore-5242820",
+    "noindex": true,
     "title": "Manaphore – Survival Strategy Horror игра",
     "excerpt": "Manaphore — бесплатная инди‑стратегия в жанре хоррора, где вам предстоит выжить, используя стихии против магических существ, постоянно развивающихся в",
     "date": "3 октября 2026",
@@ -11003,6 +11840,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/dream-simulators-4820100",
+    "noindex": true,
     "title": "Dream Simulators — симулятор моды",
     "excerpt": "Dream Simulators — бесплатный симулятор, где вы играете за Алису, топ‑модель, исследуя мир моды через диалоги с ИИ и меняющийся сюжет. Познакомьтесь с",
     "date": "3 октября 2026",
@@ -11016,6 +11854,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/monster-museum-tidy-up-the-collection-4998990",
+    "noindex": true,
     "title": "Monster Museum: Tidy Up the collection! — обзор и оценка",
     "excerpt": "Monster Museum: Tidy Up the collection! — спокойный инди‑симулятор, где игрок вместе с монстром сортирует более 2500 фигурок, открывает способности и ищет",
     "date": "3 октября 2026",
@@ -11029,6 +11868,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/mane-tekel-fares-5246800",
+    "noindex": true,
     "title": "Mane, Tekel, Fares – приключенческий текстовый квест",
     "excerpt": "Mane, Tekel, Fares — классическое текстовое приключение с огромной свободой выбора и несколькими концовками, основанное на сборнике рассказов.",
     "date": "3 октября 2026",
@@ -11042,6 +11882,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/sandcastle-battle-5179130",
+    "noindex": true,
     "title": "Sandcastle Battle — казуальная битва строителей",
     "excerpt": "Sandcastle Battle — веселая казуальная игра, где вы с друзьями соревнуйтесь в строительстве замков из песка, участвуете в быстрых матчах и голосуете за",
     "date": "3 октября 2026",
@@ -11055,6 +11896,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/clickore-station-5209210",
+    "noindex": true,
     "title": "Clickore Station – казуальная стратегия выживания",
     "excerpt": "Clickore Station – казуальная инди-стратегия, где одним кликом защищаешь станцию, добываешь руду и улучшaешь базу. Подойдёт любителям быстрых и",
     "date": "3 октября 2026",
@@ -11068,6 +11910,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/game-keeper-somebody-messed-up-my-shop-5186690",
+    "noindex": true,
     "title": "Game Keeper: Somebody Messed Up My Shop! Обзор",
     "excerpt": "Game Keeper: Somebody Messed Up My Shop! — казуальная игра‑пазл, где нужно упорядочить хаос видеоигрового магазина, сортируя коробки, заполняя стеллажи и",
     "date": "3 октября 2026",
@@ -11081,6 +11924,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/obstacle-overdrive-3412490",
+    "noindex": true,
     "title": "Obstacle Overdrive – казуальная гонка в ретро‑мире",
     "excerpt": "Obstacle Overdrive – уютное приключение на игрушечных внедорожниках в ярком ретро‑стиле. Преодолевайте красочные трассы, наслаждайтесь лёгкой динамикой и",
     "date": "3 октября 2026",
@@ -11094,6 +11938,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/godspeed-5119800",
+    "noindex": true,
     "title": "GODSPEED – арена‑шутер от первого лица",
     "excerpt": "GODSPEED – динамичный арена‑шутер в стиле инди. Сражайтесь в четырёх адских аренах, используя уникальные пистолеты‑распятия, и соревнуйтесь за лучшие",
     "date": "3 октября 2026",
@@ -11107,6 +11952,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/keepshore-5083090",
+    "noindex": true,
     "title": "Keepshore — спокойный градостроительный симулятор",
     "excerpt": "Keepshore — бесплатный казуальный симулятор, где вы развиваете остров от каменных хижин до электроулиц, строите цепочки производства и наблюдаете за",
     "date": "3 октября 2026",
@@ -11120,6 +11966,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/tidy-up-the-flower-shop-5221510",
+    "noindex": true,
     "title": "Tidy Up the Flower Shop — уютный симулятор уборки",
     "excerpt": "Тихая игра-симулятор, где вам предстоит собирать, сортировать и украшать цветы, приводя в порядок магазин. Идеально для любителей спокойного геймплея без",
     "date": "3 октября 2026",
@@ -11133,6 +11980,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/from-beyond-arcade-edition-4803460",
+    "noindex": true,
     "title": "From Beyond: Arcade Edition — обзор игры",
     "excerpt": "From Beyond: Arcade Edition – яркий экшен‑казуал от инди‑разработчиков, где музыка превращается в битву с инопланетными врагами. Подойдёт любителям",
     "date": "3 октября 2026",
@@ -11146,6 +11994,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/same-time-tomorrow-5059400",
+    "noindex": true,
     "title": "Same Time Tomorrow — атмосферный визуальный роман",
     "excerpt": "Same Time Tomorrow — визуальная новелла о бессонных ночах, тихих связях и работе в магазине у окна. Идеально для любителей атмосферных историй.",
     "date": "3 октября 2026",
@@ -11159,6 +12008,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/warhammer-40-000-space-marine-2-2183900",
+    "noindex": true,
     "title": "Warhammer 40,000: Space Marine 2 – обзор",
     "excerpt": "Warhammer 40,000: Space Marine 2 – динамичный экшен от третьего лица, где вы берете на себя роль космодесантника, сражающегося с тиранидами в одиночных и",
     "date": "3 октября 2026",
@@ -11172,6 +12022,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/idle-am-lofi-idle-mmo-5233680",
+    "noindex": true,
     "title": "idle.am - lofi idle mmo обзор",
     "excerpt": "Уютная текстовая idle‑MMO в стиле лоу‑фай: собирайте ресурсы, крафтите снаряжение, сражайтесь, торгуйте и развивайте 15 навыков, ухаживая за огородом и",
     "date": "2 октября 2026",
@@ -11185,6 +12036,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/puke-and-seek-5118740",
+    "noindex": true,
     "title": "Puke and Seek – казуальный инди‑мультиплеер",
     "excerpt": "Puke and Seek – весёлый мультиплеерный казуальный шутер, где одна команда «блевунов» бросает брызги, а другая «мойщики» пытаются их отмыть. Игра сочетает",
     "date": "2 октября 2026",
@@ -11198,6 +12050,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/wind-s-road-5241100",
+    "noindex": true,
     "title": "Wind's Road: цена, отзывы и статистика игроков",
     "excerpt": "Wind's Road: актуальная цена (51.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
     "date": "2 октября 2026",
@@ -11208,6 +12061,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/hyperfrag-4271950",
+    "noindex": true,
     "title": "HYPERFRAG – быстрый многопользовательский шутер",
     "excerpt": "HYPERFRAG – динамичный бесплатный шутер от первого лица с быстрым темпом и хаотичными битвами. Игра предлагает разнообразные арены и режимы для 2‑4",
     "date": "2 октября 2026",
@@ -11221,6 +12075,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/strip-memory-milfy-librarians-5117300",
+    "noindex": true,
     "title": "Strip Memory: Milfy Librarians — обзор игры",
     "excerpt": "Казуальная инди‑стратегия с элементами карточной памяти. Игроку предстоит собрать пары красивых библиотекарей, раскрывая их тайные желания, пока не",
     "date": "2 октября 2026",
@@ -11234,6 +12089,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/monster-nursery-4819510",
+    "noindex": true,
     "title": "Monster Nursery — расслабляющая игра-коллекционер монстров",
     "excerpt": "Monster Nursery — казуальная инди-симуляция, где вы собираете более 200 монстров, наслаждаетесь спокойной атмосферой и музыкой, игра продолжает",
     "date": "2 октября 2026",
@@ -11247,6 +12103,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/anthem-of-limbo-3968820",
+    "noindex": true,
     "title": "ANTHEM OF LIMBO — бесплатный экшн‑стрелялка",
     "excerpt": "ANTHEM OF LIMBO — динамичная бесплатная игра‑стрелялка в стиле «пулевой ад», где игрок выбирает порядок сражений с восемью сверхъестественными боссами,",
     "date": "2 октября 2026",
@@ -11260,6 +12117,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/chalk-paper-scissors-4956970",
+    "noindex": true,
     "title": "Chalk Paper Scissors – визуальная новелла и платформер",
     "excerpt": "Chalk Paper Scissors – казуальная инди-игра‑новелла с элементами платформера, где вы исследуете воспоминания друзей‑детей в уникальных мирах, раскрывая",
     "date": "2 октября 2026",
@@ -11273,6 +12131,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/ballad-5011870",
+    "noindex": true,
     "title": "Ballad – музыкальный симулятор для творчества",
     "excerpt": "Ballad – бесплатный инди‑симулятор, где вы создаёте мелодии, визуализируете их и делитесь короткими клипами. Идеально для любителей музыки и лёгкого",
     "date": "2 октября 2026",
@@ -11286,6 +12145,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/beer-league-hockey-5096560",
+    "noindex": true,
     "title": "Beer League Hockey – аркадный хоккей",
     "excerpt": "Beer League Hockey — динамичная аркадная хоккейная игра с мощными бросками, яростными столкновениями и прогрессией команды, идеально подходит любителям",
     "date": "2 октября 2026",
@@ -11299,6 +12159,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/sengoku-rance-3867170",
+    "noindex": true,
     "title": "Sengoku Rance — ролевая игра",
     "excerpt": "Sengoku Rance — ролевая игра о приключениях меченосца Рэнса в восточной стране Ниппон, где он ищет горячие источники вместе с верным спутником Силлом.",
     "date": "2 октября 2026",
@@ -11312,6 +12173,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/taru-s-infernal-pledge-3916080",
+    "noindex": true,
     "title": "Taru's Infernal Pledge: цена, отзывы и статистика игроков",
     "excerpt": "Taru's Infernal Pledge: актуальная цена (350.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
     "date": "2 октября 2026",
@@ -11322,6 +12184,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/kot-shpion-kodovoe-imya-wu-4762810",
+    "noindex": true,
     "title": "Кот-шпион: Кодовое имя Wu – обзор",
     "excerpt": "2D приключенческий экшен «Кот-шпион: Кодовое имя Wu» предлагает управлять котом‑агентом, преодолевать препятствия, скрываться и сражаться, раскрывая",
     "date": "2 октября 2026",
@@ -11335,6 +12198,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/dark-are-the-crypts-the-lost-idea-4974810",
+    "noindex": true,
     "title": "Dark Are The Crypts: The Lost Idea – обзор",
     "excerpt": "Психологический хоррор‑приключение в сюрреалистических лиминальных пространствах. Исследуйте, решайте головоломки с камерой и раскрывайте тайны",
     "date": "2 октября 2026",
@@ -11348,6 +12212,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/-5158840",
+    "noindex": true,
     "title": "电子绿植 — казуальная инди-игра про электронные растения",
     "excerpt": "Электронное растение в игре 电子绿植 говорит без притворства то, что вы хотите услышать. Простая механика, атмосферный стиль и размышления о ИИ делают её",
     "date": "2 октября 2026",
@@ -11361,6 +12226,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/nova-slash-5149410",
+    "noindex": true,
     "title": "Nova Slash — динамичный экшен-платформер с",
     "excerpt": "Nova Slash — напряжённый экшен‑платформер с элементами рогалика, где вы управляете мятежником Вейлом, пробирающимся сквозь коррумпированное",
     "date": "2 октября 2026",
@@ -11374,6 +12240,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/one-thought-immortal-4977250",
+    "noindex": true,
     "title": "One Thought Immortal – обзор и геймплей",
     "excerpt": "One Thought Immortal – ролевая инди‑игра с элементами стратегии и roguelite. Пошаговые сражения, система культивации, ремесло и возможность возрождения",
     "date": "2 октября 2026",
@@ -11387,6 +12254,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/five-hearts-under-one-roof-season2-winter-trip-dlc-4745180",
+    "noindex": true,
     "title": "Five Hearts Under One Roof season2 : Winter Trip DLC: цена, отзывы и статистика игроков",
     "excerpt": "Five Hearts Under One Roof season2 : Winter Trip DLC: актуальная цена (625.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
     "date": "2 октября 2026",
@@ -11397,6 +12265,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/hentai-tales-this-mesu-serves-me-now-4976310",
+    "noindex": true,
     "title": "Hentai Tales: This Mesu Serves Me Now — обзор",
     "excerpt": "Обзор Hentai Tales: This Mesu Serves Me Now — казуальная инди-стратегия о эксперименте совместимости в мрачном будущем. Подходит любителям необычных",
     "date": "2 октября 2026",
@@ -11410,6 +12279,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/slaughter-for-the-gods-5254710",
+    "noindex": true,
     "title": "Slaughter for the Gods — экшн‑RPG от инди‑разработчиков",
     "excerpt": "Slaughter for the Gods — одиночный экшн‑RPG с направленным ближним боем, аренными сражениями и исследованием подземелий. Подойдёт любителям динамичных",
     "date": "2 октября 2026",
@@ -11423,6 +12293,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/-5026630",
+    "noindex": true,
     "title": "Обзор игры オピポピ — короткое приключение",
     "excerpt": "オピポピ — небольшая приключенческая игра с казуальным геймплеем и уникальной атмосферой. Исследуйте свою комнату, выбирайте предметы в любом порядке и",
     "date": "2 октября 2026",
@@ -11436,6 +12307,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/lucid-rumination-5023450",
+    "noindex": true,
     "title": "Lucid Rumination – обзор",
     "excerpt": "Lucid Rumination — бесплатный инди‑экшн с элементами RPG, где игрок исследует комнаты, общается с союзниками и комбинирует оружие. Смерть сохраняет часть",
     "date": "2 октября 2026",
@@ -11449,6 +12321,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/pumpkin-patch-3779090",
+    "noindex": true,
     "title": "Pumpkin & Patch — приключенческий экшен",
     "excerpt": "Pumpkin & Patch — 2D метроидвания о приключениях одноглазого шиба-ину и его друга Пампки, полное сражений с боссами и новых способностей.",
     "date": "2 октября 2026",
@@ -11462,6 +12335,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/simple-squares-4611290",
+    "noindex": true,
     "title": "Simple Squares – инди‑платформер с размещением работников",
     "excerpt": "Simple Squares – уникальный инди‑платформер, где игроки размещают рабочих, создают уровни и сражаются в онлайн‑мультиплее. Подойдёт любителям оригинальных",
     "date": "2 октября 2026",
@@ -11475,6 +12349,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/smart-translator-4987360",
+    "noindex": true,
     "title": "Smart Translator — перевод и дубляж без интернета",
     "excerpt": "Smart Translator — полностью автономная студия реального времени: переводит, озвучивает и показывает субтитры любой речи на ваш язык без подключения к",
     "date": "2 октября 2026",
@@ -11488,6 +12363,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/pinched-4906170",
+    "noindex": true,
     "title": "Pinched – кооперативный хоррор в темноте",
     "excerpt": "Pinched – кооперативный экшен‑хоррор для четырёх игроков, где каждый с фонариком исследует генерируемые туннели, слыша голоса и крики в полной темноте.",
     "date": "2 октября 2026",
@@ -11501,6 +12377,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/arcana-gas-waterworks-inc-4476220",
+    "noindex": true,
     "title": "Arcana, Gas & Waterworks Inc. — обзор игры",
     "excerpt": "Arcana, Gas & Waterworks Inc. — комедийный симулятор‑стратегия, где вы управляете магической инфраструктурой, соединяя ресурсы и решая головоломки в",
     "date": "2 октября 2026",
@@ -11514,6 +12391,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/rebelote-belote-coinche-5183310",
+    "noindex": true,
     "title": "Rebelote : Belote & Coinche – онлайн карточная игра",
     "excerpt": "Rebelote : Belote & Coinche – классическая французская карточная игра в цифровом виде. Играйте в бéлоте и коинше с друзьями или против компьютера,",
     "date": "2 октября 2026",
@@ -11527,6 +12405,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/battle-simulator-counter-zombie-reborn-4831090",
+    "noindex": true,
     "title": "Battle Simulator: Counter Zombie REBORN – обзор",
     "excerpt": "Постапокалиптический симулятор сражений с зомби, где точная тактика и командное взаимодействие решают бой. HDR‑графика, разнообразное оружие и умный ИИ",
     "date": "2 октября 2026",
@@ -11540,6 +12419,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/the-outlast-trials-1304930",
+    "noindex": true,
     "title": "The Outlast Trials – хоррор‑экшен в кооперативе",
     "excerpt": "The Outlast Trials – мрачный хоррор‑экшен, где вы и друзья сталкиваетесь с безумными экспериментами. Выживание в атмосфере психического ужаса проверит",
     "date": "2 октября 2026",
@@ -11566,6 +12446,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/arc-raiders-1808500",
+    "noindex": true,
     "title": "ARC Raiders – экшен в стиле извлечения приключений",
     "excerpt": "ARC Raiders – многопользовательская игра в жанре экшен с элементами извлечения, где игроки сражаются с загадочными механическими захватчиками в",
     "date": "2 октября 2026",
@@ -11579,6 +12460,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/lustworld-4253390",
+    "noindex": true,
     "title": "LustWorld — онлайн‑симулятор взрослых в 3D",
     "excerpt": "LustWorld — бесплатный 3D‑симулятор для взрослых с тысячей сцен и множеством вариантов. Игра в реальном времени с другими игроками, подходящая для",
     "date": "1 октября 2026",
@@ -11592,6 +12474,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/climb-up-together-5239210",
+    "noindex": true,
     "title": "Climb Up Together — кооперативное приключение",
     "excerpt": "Climb Up Together — кооперативная игра‑восхождение для 1–4 игроков, где нужно пробираясь по паркур‑трассам собрать части тела и вернуться к жизни.",
     "date": "1 октября 2026",
@@ -11605,6 +12488,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/mxgp-26-the-official-game-3634190",
+    "noindex": true,
     "title": "MXGP 26 - The Official Game обзор",
     "excerpt": "MXGP 26 – реалистичный симулятор мотокросса с полным чемпионатом 2026 года, официальными трассами и гонщиками. Идеален для любителей гонок и точного",
     "date": "1 октября 2026",
@@ -11618,6 +12502,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/elsewar-4629760",
+    "noindex": true,
     "title": "Elsewar — фэнтезийный roguelike с колодой",
     "excerpt": "Elsewar — фэнтезийная roguelike‑игра с построением колоды, где игроку нужно сочетать юниты, создавая синергии, и вести бой с разнообразными монстрами,",
     "date": "1 октября 2026",
@@ -11631,6 +12516,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/hexed-4969240",
+    "noindex": true,
     "title": "Hexed – приключенческая инди-игра о ведьмах",
     "excerpt": "Hexed – стилизованное приключение в стиле Хэллоуина, где память становится главным заклинанием. Запоминайте ритуалы, собирайте мистические ингредиенты и",
     "date": "1 октября 2026",
@@ -11644,6 +12530,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/i-love-dog-5093980",
+    "noindex": true,
     "title": "I Love Dog – приключенческий инди-эксплорер",
     "excerpt": "I Love Dog – бесплатная приключенческая игра, где вам предстоит исследовать загадочный остров, находить собак и расширять свою территорию с помощью",
     "date": "1 октября 2026",
@@ -11657,6 +12544,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/prehistoric-toybox-5257370",
+    "noindex": true,
     "title": "Prehistoric toybox – экшен‑роглайт от инди",
     "excerpt": "Prehistoric toybox – двухмерный экшен‑роглайт с видом сверху, где вы управляете пещерным человеком, золотой рыбкой и динозавром, исследуете подземелья,",
     "date": "1 октября 2026",
@@ -11670,6 +12558,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/autocycle-light-4955820",
+    "noindex": true,
     "title": "autocycle-light: цена, отзывы и статистика игроков",
     "excerpt": "autocycle-light: актуальная цена (Бесплатно), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
     "date": "1 октября 2026",
@@ -11680,6 +12569,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/deal-with-the-deep-5209180",
+    "noindex": true,
     "title": "Deal with the Deep – обзор игры",
     "excerpt": "Deal with the Deep – одиночный приключенческий проект в жанре стратегии с элементами карточных боёв и исследования подземелий. Подойдёт любителям",
     "date": "1 октября 2026",
@@ -11693,6 +12583,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/prediction-error-5227780",
+    "noindex": true,
     "title": "Prediction Error — психологический инди‑приключение",
     "excerpt": "Prediction Error — бесплатная первая игра от первого лица, где игрок блуждает в абстрактных лабиринтах сознания под наблюдением циничного рассказчика,",
     "date": "1 октября 2026",
@@ -11706,6 +12597,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/oath-of-stigmata-5178000",
+    "noindex": true,
     "title": "Oath of Stigmata — тактическая карточная стратегия",
     "excerpt": "Темная фэнтезийная тактическая карточная игра‑рогалик, где вы собираете отряд, расставляете юнитов на многополосном поле и комбинируете способности",
     "date": "1 октября 2026",
@@ -11719,6 +12611,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/marcel-pagnol-and-the-secret-spring-4007920",
+    "noindex": true,
     "title": "Marcel Pagnol and the Secret Spring — обзор",
     "excerpt": "Поэтичное приключение по Провансу в Marcel Pagnol and the Secret Spring. Инди‑игра сочетает казуальный геймплей с атмосферой детских историй Марселя",
     "date": "1 октября 2026",
@@ -11732,6 +12625,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/-4375880",
+    "noindex": true,
     "title": "声韵之恋 — визуальная новелла о любви в мире озвучки",
     "excerpt": "«声韵之恋» — казуальная ролевая визуальная новелла, где главный герой‑режиссёр озвучки возвращается к микрофону, сталкивается с испытаниями и влюбляется в",
     "date": "1 октября 2026",
@@ -11745,6 +12639,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/beta-bar-4904950",
+    "noindex": true,
     "title": "Beta Bar – казуальная инди-игра о вечеринках",
     "excerpt": "Beta Bar – лёгкая казуальная игра, где вы и друзья исследуете четыре этажа баров, танцуете, общаетесь с персонажами и пытаетесь стать последним стоящим в",
     "date": "1 октября 2026",
@@ -11758,6 +12653,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/watatuyo-another-4406710",
+    "noindex": true,
     "title": "Watatuyo-ANOTHER: цена, отзывы и статистика игроков",
     "excerpt": "Watatuyo-ANOTHER: актуальная цена (99.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
     "date": "1 октября 2026",
@@ -11768,6 +12664,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/ma-3-president-simulator-4896760",
+    "noindex": true,
     "title": "MA 3 – President Simulator: игра о власти и стратегии",
     "excerpt": "MA 3 – President Simulator – стратегический экшен, где игрок управляет современным государством, принимая решения и формируя историю нации.",
     "date": "1 октября 2026",
@@ -11781,6 +12678,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/pantheon-tactics-4929050",
+    "noindex": true,
     "title": "Pantheon Tactics — тактическая карточная стратегия",
     "excerpt": "Pantheon Tactics — бесплатная тактическая карточная игра с боями 3 на 3, где действия происходят одновременно. Десятиминутные матчи, процедурно",
     "date": "1 октября 2026",
@@ -11794,6 +12692,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/sculpturillo-5114580",
+    "noindex": true,
     "title": "Sculpturillo — казуальная инди игра",
     "excerpt": "Sculpturillo — онлайн‑партиевая игра, где участники из 2‑10 человек лепят 3D‑глину, пытаясь изобразить тайное слово, пока остальные угадывают в чате.",
     "date": "1 октября 2026",
@@ -11807,6 +12706,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/-5143030",
+    "noindex": true,
     "title": "阴阳界：志怪放置副游 — обзор игры",
     "excerpt": "Обзор игры 阴阳界：志怪放置副游: казуальная ролевая стратегия с элементами карточного боя, где персонажи автоматически сражаются и растут даже в офлайне. Подходит",
     "date": "1 октября 2026",
@@ -11820,6 +12720,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/chromascape-4214800",
+    "noindex": true,
     "title": "Chromascape – приключенческая игра о цветах",
     "excerpt": "Chromascape – атмосферное приключение в 2D‑стиле, где вам предстоит управлять цветами, решать головоломки и вернуть утраченные оттенки в волшебный мир",
     "date": "1 октября 2026",
@@ -11833,6 +12734,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/crabrun-4633560",
+    "noindex": true,
     "title": "CRABRUN – аркадный экшен с высоким счётом",
     "excerpt": "CRABRUN – динамичная аркада, где нужно бегать боком, уклоняться от опасностей и собирать комбо для рекордного счёта. Игра бросает вызов упорству и стилю,",
     "date": "1 октября 2026",
@@ -11846,6 +12748,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/crying-booth-2351740",
+    "noindex": true,
     "title": "CRYING BOOTH: цена, отзывы и статистика игроков",
     "excerpt": "CRYING BOOTH: актуальная цена (335.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
     "date": "1 октября 2026",
@@ -11856,6 +12759,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/the-calamity-trials-3877630",
+    "noindex": true,
     "title": "The Calamity Trials — обзор игры",
     "excerpt": "The Calamity Trials — бесплатный экшен‑симулятор, где вам предстоит преодолевать паркур‑уровни, используя разнообразное оружие, которое меняет скорость",
     "date": "1 октября 2026",
@@ -11869,6 +12773,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/water-droplet-simulator-4435360",
+    "noindex": true,
     "title": "Water Droplet Simulator — уникальный симулятор капли воды",
     "excerpt": "Нестандартный инди‑симулятор, где вы — капля воды, исследуете мир, наблюдая за окружением. Приключенческая и казуальная игра для любителей оригинальных",
     "date": "1 октября 2026",
@@ -11882,6 +12787,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/-5193380",
+    "noindex": true,
     "title": "深空放置：边疆纪元 — космический симулятор стратегии",
     "excerpt": "深空放置：边疆纪元 — игра‑симулятор, где вы возводите промышленную базу в космосе, собираете ресурсы, исследуете технологии и строите корабли, сочетая",
     "date": "1 октября 2026",
@@ -11895,6 +12801,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/by-the-gods-5243030",
+    "noindex": true,
     "title": "By the GODS — быстрая стратегическая карточная игра",
     "excerpt": "By the GODS — динамичная карточная стратегия с элементами «Камень, ножницы, бумага», где каждое решение — предсказание и риск. Идеально для любителей",
     "date": "1 октября 2026",
@@ -11908,6 +12815,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/floor-wiping-race-5189750",
+    "noindex": true,
     "title": "Floor Wiping Race – гонки и экшен в одном флаконе",
     "excerpt": "Floor Wiping Race – динамичное инди‑гонки с элементами экшена и казуального геймплея. Идеально для любителей быстрых соревнований и необычных механик.",
     "date": "1 октября 2026",
@@ -11921,6 +12829,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/supporter-bundle-2-silly-linguine-cat-simulator-deluxe-online-5073640",
+    "noindex": true,
     "title": "Supporter Bundle #2 – Silly Linguine Cat Simulator",
     "excerpt": "Пакет поддержки для Silly Linguine Cat Simulator Deluxe Online ускоряет развитие, добавляет ежедневные ящики, уникальные скины и VIP‑титулы. Подходит",
     "date": "1 октября 2026",
@@ -11934,6 +12843,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/soup-weather-4430190",
+    "noindex": true,
     "title": "Soup Weather – приключенческая инди-игра",
     "excerpt": "Краткое повествовательное исследование, где вы играете за безработного Бина, исследуете город, знакомитесь с соседями и наблюдаете за его падающей",
     "date": "1 октября 2026",
@@ -11947,6 +12857,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/my-ai-sandbox-5238020",
+    "noindex": true,
     "title": "My Ai Sandbox — симулятор искусственного интеллекта",
     "excerpt": "My Ai Sandbox – уникальный симулятор, где вы создаёте и обучаете ИИ в 3‑D‑мире, наблюдая за их эволюцией и неожиданными поведениями в реальном времени.",
     "date": "1 октября 2026",
@@ -11960,6 +12871,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/warhammer-40-000-space-marine-2-season-pass-3-4997770",
+    "noindex": true,
     "title": "Warhammer 40,000: Space Marine 2 – Season Pass 3",
     "excerpt": "Season Pass 3 к Warhammer 40,000: Space Marine 2 добавит новую броню, оружие и 10 косметических наборов, позволяя расширить возможности любимого",
     "date": "1 октября 2026",
@@ -11973,6 +12885,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/memory-wastes-5247380",
+    "noindex": true,
     "title": "Memory Wastes – постапокалиптическая пошаговая RPG",
     "excerpt": "Memory Wastes — бесплатная пошаговая RPG в постапокалиптическом мире, где игрок ищет ресурсы, сражается с врагами и раскрывает забытое прошлое через",
     "date": "30 сентября 2026",
@@ -11986,6 +12899,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/shelfbound-5255880",
+    "noindex": true,
     "title": "Shelfbound — казуальная инди‑симуляция уборки",
     "excerpt": "Shelfbound — инди‑симулятор, где вам предстоит собрать разбросанные полки после шторма, рассортировать предметы и вернуть всё на место. Идеально для",
     "date": "30 сентября 2026",
@@ -11999,6 +12913,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/in-falsus-virtual-singers-song-pack-5256550",
+    "noindex": true,
     "title": "In Falsus - Virtual Singers Song Pack: обзор",
     "excerpt": "Обзор In Falsus - Virtual Singers Song Pack: новый набор из пяти культовых треков, расширяющий музыкальный контент в игре. Подходит любителям экшен‑инди и",
     "date": "30 сентября 2026",
@@ -12012,6 +12927,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/chronicon-cosmic-curse-4778970",
+    "noindex": true,
     "title": "Chronicon - Cosmic Curse: обзор игры",
     "excerpt": "Chronicon - Cosmic Curse – дополнение в стиле космических пиратов. Новые проклятые предметы, их благословление и крафт ультимативного оружия. Подойдет",
     "date": "30 сентября 2026",
@@ -12025,6 +12941,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/match-3-labyrinth-4165370",
+    "noindex": true,
     "title": "Match 3 Labyrinth – головоломка с матч‑3 и Сокобан",
     "excerpt": "Match 3 Labyrinth – оригинальная головоломка, где соединяете ящики в стиле матч‑3 и решаете задачи Сокобана. Подойдёт любителям логических игр и",
     "date": "30 сентября 2026",
@@ -12038,6 +12955,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/taskbar-armory-5226040",
+    "noindex": true,
     "title": "Taskbar Armory – казуальная ролевая стратегия",
     "excerpt": "Taskbar Armory – бесплатная игра‑симулятор, где вы управляете гномьей кузней прямо на панели задач, добываете руду, крафтите оружие и отправляете героев в",
     "date": "30 сентября 2026",
@@ -12051,6 +12969,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/-3438810",
+    "noindex": true,
     "title": "프린세스 메이커: 예언의 아이들 — симулятор воспитания",
     "excerpt": "Игра‑симулятор, где игрок берёт на себя роль родителя и воспитывает дочь от детства до взрослой жизни, выбирая путь развития и помогая ей достичь мечты.",
     "date": "30 сентября 2026",
@@ -12064,6 +12983,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/bitva-zelenyh-shlyap-5235150",
+    "noindex": true,
     "title": "Битва зелёных шляп: обзор и рекомендации",
     "excerpt": "Весёлая 3D‑игра «Битва зелёных шляп» предлагает быстрые матчи 2–10 игроков, где нужно бросать и укладывать шляпы на головы соперников. Подойдёт любителям",
     "date": "30 сентября 2026",
@@ -12077,6 +12997,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/elektroset-2429930",
+    "noindex": true,
     "title": "Электросеть – симулятор электросети",
     "excerpt": "Электросеть – глубокий инди‑симулятор, где вам предстоит построить и поддерживать высоковольтную сеть на острове, управлять ресурсами и защищать жителей",
     "date": "30 сентября 2026",
@@ -12090,6 +13011,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/heart-cage-before-and-after-4270540",
+    "noindex": true,
     "title": "Heart Cage - Before and After — обзор игры",
     "excerpt": "Heart Cage - Before and After — приключенческий инди‑симулятор, расширяющий сюжет оригинального Heart Cage. Узнайте, стоит ли погружаться в эту",
     "date": "30 сентября 2026",
@@ -12103,6 +13025,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/boxcutter-4020370",
+    "noindex": true,
     "title": "Boxcutter – криминальный экшен с открытым миром",
     "excerpt": "Boxcutter – приключенческий экшен, где вам придётся попрошайничать, вороватать и сражаться в мрачном Копенгагене 2000‑х годов. Игра для любителей",
     "date": "30 сентября 2026",
@@ -12116,6 +13039,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/fruit-fetish-4376740",
+    "noindex": true,
     "title": "Fruit Fetish – казуальная инкрементальная игра",
     "excerpt": "Fruit Fetish – активная инкрементальная игра, где вам предстоит собирать и продавать разнообразные фрукты, улучшать навыки и оборудование, чтобы быстро",
     "date": "30 сентября 2026",
@@ -12129,6 +13053,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/the-war-disorder-hexa-4301910",
+    "noindex": true,
     "title": "The War Disorder Hexa — приключенческий обзор",
     "excerpt": "The War Disorder Hexa – приключенческая игра о войне между Королевством Нода и империей. Шесть героев влияют на судьбу конфликтующих стран.",
     "date": "30 сентября 2026",
@@ -12142,6 +13067,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/craftlander-5051720",
+    "noindex": true,
     "title": "CRAFTLANDER – приключенческий экшен в открытом мире",
     "excerpt": "CRAFTLANDER – бесплатный экшен‑приключение, где игроки исследуют острова, собирают ресурсы, крафтят снаряжение и сражаются с фантастическими существами,",
     "date": "30 сентября 2026",
@@ -12155,6 +13081,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/-5024070",
+    "noindex": true,
     "title": "反击吧！牛马！！！ – обзор игры",
     "excerpt": "Roguelike‑экшен с юмором о борьбе с офисными абсурдами. Управление мышью и клавиатурой, сражения, сундуки с добычей и развитие снаряжения.",
     "date": "30 сентября 2026",
@@ -12168,6 +13095,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/-4612540",
+    "noindex": true,
     "title": "君は本当に家に帰りたいと思った事があるか – обзор",
     "excerpt": "Инди‑стратегия с элементами FPS, где нужно построить базу, автоматизировать производство и выжить 10 дней, чтобы вернуться с чужой планеты.",
     "date": "30 сентября 2026",
@@ -12181,6 +13109,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/the-long-graze-5179030",
+    "noindex": true,
     "title": "The Long Graze — приключенческая игра о жизни телёнка",
     "excerpt": "The Long Graze — атмосферное приключение, где вы играете за новорождённого телёнка, преодолевающего опасности саванны, от пожаров до волков. Подойдёт",
     "date": "30 сентября 2026",
@@ -12194,6 +13123,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/so-i-decided-to-start-a-kendo-dojo-secret-ntr-5182140",
+    "noindex": true,
     "title": "So, I Decided to Start a Kendo Dojo-Secret NTR: цена, отзывы и статистика игроков",
     "excerpt": "So, I Decided to Start a Kendo Dojo-Secret NTR: актуальная цена (660.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
     "date": "30 сентября 2026",
@@ -12204,6 +13134,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/koen-1939-3582120",
+    "noindex": true,
     "title": "Коэн 1939 — быстрый шутер с элементами приключений",
     "excerpt": "Коэн 1939 – динамичный топ‑даун шутер в стиле инди, где вам предстоит пробиваться сквозь британскую преступность 1939 года. Игра подходит любителям",
     "date": "30 сентября 2026",
@@ -12217,6 +13148,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/clink-5116180",
+    "noindex": true,
     "title": "CLINK – динамичный аренный шутер",
     "excerpt": "CLINK – аренный шутер с гравитационными трюками, где две команды сражаются на стенах, потолке и полу, используя шесть классов, мины и возможность менять",
     "date": "30 сентября 2026",
@@ -12230,6 +13162,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/little-gable-studio-5044540",
+    "noindex": true,
     "title": "Little Gable Studio – уютный строительный сэндбокс",
     "excerpt": "Небольшой инди‑симулятор, где вы в первом лице проектируете и обустраиваете дома, создавая уютные пространства без спешки.",
     "date": "30 сентября 2026",
@@ -12243,6 +13176,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/wall-escaper-stream-sabotage-4070710",
+    "noindex": true,
     "title": "Wall Escaper: Stream Sabotage — обзор",
     "excerpt": "Wall Escaper: Stream Sabotage – казуальная игра‑выживание, где подарки зрителей превращаются в неожиданные препятствия. Вы будете уклоняться от стен и",
     "date": "30 сентября 2026",
@@ -12256,6 +13190,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/wheel-estate-5134720",
+    "noindex": true,
     "title": "Wheel Estate – симулятор бизнеса с хомяками",
     "excerpt": "Wheel Estate – забавный инди‑симулятор, где вы строите офис для хомяков, нанимаете сотрудников и управляете их работой. Идеально для любителей лёгких",
     "date": "30 сентября 2026",
@@ -12269,6 +13204,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/westner-hero-8-5214280",
+    "noindex": true,
     "title": "Westner Hero 8 — карточный рогалик в стиле Дикого Запада",
     "excerpt": "Westner Hero 8 – пиксельный карточный рогалик, где вам предстоит собрать колоду, улучшать героя и сражаться с врагами на Диком Западе. Постоянно",
     "date": "30 сентября 2026",
@@ -12282,6 +13218,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/shinjuku-anomaly-3386350",
+    "noindex": true,
     "title": "Shinjuku Anomaly — приключенческая инди-игра",
     "excerpt": "Shinjuku Anomaly – игра‑приключение, где вы ночным фотожурналистом фиксируете аномалии в шумном Токио. Атмосферный сюжет и простая механика делают её",
     "date": "30 сентября 2026",
@@ -12295,6 +13232,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/cicada-communication-3500590",
+    "noindex": true,
     "title": "Cicada Communication – приключенческая RPG о школьной жизни",
     "excerpt": "Cicada Communication — ролевая игра о начале обучения в общежитии: учёба, экзамены, дружба и первые романтические чувства в летний фестиваль.",
     "date": "30 сентября 2026",
@@ -12308,6 +13246,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/forgetax-5245810",
+    "noindex": true,
     "title": "ForgeTax — мрачный роглайт о ковке мечей",
     "excerpt": "ForgeTax – мрачный роглайт‑симулятор ковки от первого лица, где каждый удар требует выбора реликвий и синергий. Игра сочетает стратегию, инди‑атмосферу и",
     "date": "30 сентября 2026",
@@ -12321,6 +13260,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/loophole-the-prison-break-4323880",
+    "noindex": true,
     "title": "Loophole: The Prison Break – обзор и геймплей",
     "excerpt": "Loophole: The Prison Break – инди‑пазл‑платформер с видом сверху, где игрок записывает действия, сбрасывает цикл и управляет клонами, решая сложные",
     "date": "30 сентября 2026",
@@ -12334,6 +13274,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/leaf-4324030",
+    "noindex": true,
     "title": "LEAF — 2,5D рогалик‑шутер от независимой студии",
     "excerpt": "LEAF — одиночный топ‑даун рогалик‑шутер в стиле 2,5D. После 200‑летного сна герой ищет своего ребёнка, исследуя случайно генерируемые локации, собирая",
     "date": "30 сентября 2026",
@@ -12347,6 +13288,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/otpisani-nightingale-4708680",
+    "noindex": true,
     "title": "Otpisani: Nightingale – ретро‑шутер про сопротивление",
     "excerpt": "Otpisani: Nightingale – динамичный ретро‑шутер с элементами приключений, где вы сражаетесь в рядах сопротивления против немецкой оккупации. Интересный",
     "date": "30 сентября 2026",
@@ -12360,6 +13302,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/american-truck-simulator-road-trip-ford-3793200",
+    "noindex": true,
     "title": "American Truck Simulator – Road Trip: Ford обзор",
     "excerpt": "Детальный обзор DLC Road Trip: Ford для American Truck Simulator. Узнайте, какие новые возможности открывает пакет, и подходит ли он любителям",
     "date": "30 сентября 2026",
@@ -12373,6 +13316,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/nivalis-nights-1488490",
+    "noindex": true,
     "title": "Nivalis Nights: бизнес и киберпанк",
     "excerpt": "Nivalis Nights – приключенческий ролевой симулятор, где вы строите рестораны и клубы, обустраиваете квартиры, ловите рыбу и ищете любовь в огромном",
     "date": "30 сентября 2026",
@@ -12386,6 +13330,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/the-merlies-2521160",
+    "noindex": true,
     "title": "The Merlies – приключенческая инди-игра",
     "excerpt": "The Merlies — очаровательная приключенческая игра про маленькое сообщество птиц, ищущее гармонию в постапокалиптическом мире руин древней цивилизации.",
     "date": "29 сентября 2026",
@@ -12399,6 +13344,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/automania-remastered-4787700",
+    "noindex": true,
     "title": "Automania Remastered — обзор игры",
     "excerpt": "Automania Remastered — казуальный экшен от независимых разработчиков. Возвращение 8‑битного героя Уолли Уика в хаотичный мир приключений.",
     "date": "29 сентября 2026",
@@ -12412,6 +13358,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/-5189440",
+    "noindex": true,
     "title": "Обзор игры 大唐隐士传 — приключенческий RPG",
     "excerpt": "Данг тайные истории — игра в сеттинге Древнего Тан, сочетающая приключения, казуальный геймплей и элементы ролика. Подойдёт любителям фэнтези и инди-игр,",
     "date": "29 сентября 2026",
@@ -12425,6 +13372,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/wizzo-popout-3670670",
+    "noindex": true,
     "title": "Wizzo PopOut — арена‑шутер с магией и пузырями",
     "excerpt": "Wizzo PopOut – динамичный арена‑шутер для четырёх игроков, где вы управляете волшебным пузырем, миксуете заклинания и отбиваете соперников в локальном и",
     "date": "29 сентября 2026",
@@ -12438,6 +13386,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/island-of-rebirth-ntr-and-love-3725800",
+    "noindex": true,
     "title": "Island of Rebirth~NTR and Love~ — обзор",
     "excerpt": "Мистический остров, амнезия героя и две загадочные девушки — в Island of Rebirth~NTR and Love~ вас ждёт атмосферное исследование, лёгкая ролевая система и",
     "date": "29 сентября 2026",
@@ -12451,6 +13400,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/eropsihoz-proekt-eliziara-3464000",
+    "noindex": true,
     "title": "Эропсихоз: Проект «Элизиара» — обзор",
     "excerpt": "Эропсихоз: Проект «Элизиара» — инди‑ролевая игра о андроиде Люси, попавшей в состояние «Эропсихоза». Исследуйте космический корабль, собирайте уникальные",
     "date": "29 сентября 2026",
@@ -12464,6 +13414,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/delegatory-4320620",
+    "noindex": true,
     "title": "Delegatory – обзор и геймплей",
     "excerpt": "Краткий инкрементальный симулятор, где вы поднимаетесь по карьерной лестнице корпорации будущего, распределяя задания между интернами и развивая их навыки",
     "date": "29 сентября 2026",
@@ -12477,6 +13428,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/dawn-of-the-rotten-5196540",
+    "noindex": true,
     "title": "DAWN OF THE ROTTEN — постапокалиптический экшен",
     "excerpt": "DAWN OF THE ROTTEN — динамичный экшен в стиле выживания, где вам предстоит искать топливо, спасаться от орд и добраться до зоны карантина в пустоши.",
     "date": "29 сентября 2026",
@@ -12490,6 +13442,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/sad-virus-dungeon-5223830",
+    "noindex": true,
     "title": "Sad Virus Dungeon – обзор и особенности",
     "excerpt": "Sad Virus Dungeon – приключенческий инди-симулятор в стиле третьего лица. Исследуйте подземелье, избегайте ловушек и собирайте бутылки. Подходит любителям",
     "date": "29 сентября 2026",
@@ -12503,6 +13456,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/ysh-park-3171340",
+    "noindex": true,
     "title": "ysh park — инди игра с открытым выбором уровней",
     "excerpt": "ysh park — оригинальная инди‑игра в китаевском стиле, где игрок сам выбирает порядок уровней, защищает себя с помощью мониторинга и восстанавливает",
     "date": "29 сентября 2026",
@@ -12516,6 +13470,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/boobs-cowgirls-5188170",
+    "noindex": true,
     "title": "Boobs & Cowgirls — обзор",
     "excerpt": "Boobs & Cowgirls — взрослый вестерн‑симулятор, где игроку предстоит выбрать сторону между законом и бандой, взаимодействовать с шестеркой персонажей и",
     "date": "29 сентября 2026",
@@ -12529,6 +13484,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/never-enough-corn-5246180",
+    "noindex": true,
     "title": "Never Enough Corn – казуальная инди-игра про сбор кукурузы",
     "excerpt": "Never Enough Corn – увлекательная казуальная игра, где вы улучшаете трактор, собираете редкие сорта кукурузы и получаете награды. Идеально для любителей",
     "date": "29 сентября 2026",
@@ -12542,6 +13498,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/idle-bomb-animals-desktop-mining-4692190",
+    "noindex": true,
     "title": "Idle Bomb Animals – казуальная idle‑игра про добычу",
     "excerpt": "Idle Bomb Animals – простая idle‑игра, где милые животные копают шахты на фоне вашего рабочего стола. Идеально для тех, кто хочет расслабиться, пока",
     "date": "29 сентября 2026",
@@ -12555,6 +13512,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/-4885400",
+    "noindex": true,
     "title": "箱押しマスター — 3D головоломка в стиле сокобан",
     "excerpt": "箱押しマスター — бесплатная инди-головоломка, где игроку предстоит перемещать ящики в трёхмерных уровнях, используя пространство и перспективу. Идеально для",
     "date": "29 сентября 2026",
@@ -12568,6 +13526,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/shattered-realm-corridor-5116690",
+    "noindex": true,
     "title": "Shattered‑Realm Corridor – быстрый экшн‑рогалик",
     "excerpt": "Shattered‑Realm Corridor – динамичный шутер‑roguelike от первого лица в постапокалиптическом мире. Слеш, дэш, сбор лута и постоянный риск смерти делают",
     "date": "29 сентября 2026",
@@ -12581,6 +13540,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/the-last-camp-dawn-4198430",
+    "noindex": true,
     "title": "The Last Camp : Dawn — постапокалиптический шутер",
     "excerpt": "The Last Camp : Dawn — динамичный экшен с элементами приключений и RPG в мрачном постапокалиптическом мире. Богатый арсенал, открытый мир и управление",
     "date": "29 сентября 2026",
@@ -12594,6 +13554,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/scroll-of-taiwu-4975570",
+    "noindex": true,
     "title": "Scroll Of Taiwu — приключенческий RPG с курицами",
     "excerpt": "Scroll Of Taiwu — необычная ролевая игра, где жители деревни превращаются в куриц, каждый со своей историей и боевыми навыками. Исследуйте мир, собирайте",
     "date": "29 сентября 2026",
@@ -12607,6 +13568,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/zombie-survivors-last-soldier-4465840",
+    "noindex": true,
     "title": "Zombie Survivors - last soldier - обзор",
     "excerpt": "Zombie Survivors - last soldier - — roguelite‑шутер, где нужно отбиваться от волн зомби, используя разнообразное вооружение. Игра сочетает экшен‑динамику",
     "date": "29 сентября 2026",
@@ -12620,6 +13582,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/camp-whittlewood-4813190",
+    "noindex": true,
     "title": "Camp Whittlewood — хоррор RPG от инди-разработчиков",
     "excerpt": "Camp Whittlewood – старомодная хоррор-ролевая игра в стиле приключений. Вы попадаете в летний лагерь, где страшные легенды становятся реальностью, а",
     "date": "29 сентября 2026",
@@ -12633,6 +13596,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/escape-from-z-4549090",
+    "noindex": true,
     "title": "Escape From Z — динамичный экшен‑выживание",
     "excerpt": "Escape From Z – экшен‑инди про выживание в заражённом зомби здании. Каждый этаж уникален, каждое решение влияет на исход. Игра проверит вашу смекалку и",
     "date": "29 сентября 2026",
@@ -12646,6 +13610,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/american-mahjong-5015290",
+    "noindex": true,
     "title": "American Mahjong – онлайн игра в маджонг",
     "excerpt": "American Mahjong — казуальная стратегическая игра, позволяющая играть в американский маджонг с друзьями, ботами или в режиме совместного экрана.",
     "date": "29 сентября 2026",
@@ -12659,6 +13624,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/ntrex-4096590",
+    "noindex": true,
     "title": "NTREX – казуальная игра о сложных отношениях",
     "excerpt": "NTREX – казуальная игра, где главная героиня пытается решить финансовый кризис, прибегая к рискованным решениям. Игра исследует темы долга, семейных",
     "date": "29 сентября 2026",
@@ -12672,6 +13638,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/hanok-from-thatch-to-palace-5130100",
+    "noindex": true,
     "title": "Hanok: From Thatch to Palace — уютный строительный симулятор",
     "excerpt": "Hanok: From Thatch to Palace – спокойная игра‑строитель, где вы возводите традиционные корейские дома, от соломенного коттеджа до дворца, используя",
     "date": "29 сентября 2026",
@@ -12685,6 +13652,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/frutiger-home-3935530",
+    "noindex": true,
     "title": "Frutiger Home – уютный симулятор оформления дома",
     "excerpt": "Frutiger Home – кооперативный симулятор, где вы и друзья сможете спроектировать и обставить дом в стиле Frutiger, выбирая планировку и декор, создавая",
     "date": "29 сентября 2026",
@@ -12698,6 +13666,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/-4190040",
+    "noindex": true,
     "title": "病み菌少女 地雷ちゃん — динамичный экшен с проволочной механикой",
     "excerpt": "Играет в роли амнезийной девушки Юмеми-чан, пробираясь сквозь мрачные уровни, построенные по образу человеческой психики, и сражаясь с вирусными",
     "date": "29 сентября 2026",
@@ -12711,6 +13680,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/ai-vj-2893580",
+    "noindex": true,
     "title": "AI-VJ: цена, отзывы и статистика игроков",
     "excerpt": "AI-VJ: актуальная цена (Бесплатно), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
     "date": "29 сентября 2026",
@@ -12721,6 +13691,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/sarge-s-horrors-4708930",
+    "noindex": true,
     "title": "Sarge's Horrors: цена, отзывы и статистика игроков",
     "excerpt": "Sarge's Horrors: актуальная цена (279.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
     "date": "29 сентября 2026",
@@ -12731,6 +13702,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/crawler-3d-5039680",
+    "noindex": true,
     "title": "Crawler 3D — ретро‑данжен‑краулер в мрачном фэнтези",
     "excerpt": "Crawler 3D — сеточный FPS‑данжен‑краулер в стиле ретро. Сражения с порчей, боссами, лут и дерево навыков для любителей мрачного фэнтези и инди‑экшенов.",
     "date": "29 сентября 2026",
@@ -12744,6 +13716,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/arcane-eclipse-survivors-5159390",
+    "noindex": true,
     "title": "Arcane Eclipse: Survivors — обзор",
     "excerpt": "Arcane Eclipse: Survivors – динамичный готический экшен‑шутер с элементами выживания, где игроку предстоит сражаться с бесконечными ордами демонов,",
     "date": "29 сентября 2026",
@@ -12757,6 +13730,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/swing-shift-5170210",
+    "noindex": true,
     "title": "Swing Shift — экшен‑казуальная инди‑игра",
     "excerpt": "Swing Shift – динамичный экшен с простыми механиками: один канат, ночной город и крюк‑гравитация. Игра проверит вашу реакцию и чувство тайминга, предлагая",
     "date": "29 сентября 2026",
@@ -12770,6 +13744,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/ace-combat-8-wings-of-theve-2288340",
+    "noindex": true,
     "title": "ACE COMBAT 8: WINGS OF THEVE – обзор",
     "excerpt": "ACE COMBAT 8: WINGS OF THEVE – динамичный авиасимулятор с захватывающими воздушными боями, сюжетной кампанией и продуманным управлением.",
     "date": "29 сентября 2026",
@@ -12783,6 +13758,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/by-royal-request-5167010",
+    "noindex": true,
     "title": "By Royal Request — уютный симулятор королевской жизни",
     "excerpt": "By Royal Request — спокойная инкрементальная игра, где вам предстоит выполнять королевские поручения: рубить, плавить, строить и продавать продукцию.",
     "date": "28 сентября 2026",
@@ -12796,6 +13772,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/xenohaven-3461270",
+    "noindex": true,
     "title": "XenoHaven — приключенческий симулятор",
     "excerpt": "XenoHaven — приключенческий и казуальный инди-симулятор, где вы собираете союзников, строите базу, выращиваете ресурсы и сражаетесь с боссами в открытом",
     "date": "28 сентября 2026",
@@ -12809,6 +13786,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/the-abyss-gazer-5016420",
+    "noindex": true,
     "title": "誅仙記 THE ABYSS GAZER – обзор",
     "excerpt": "Обзор игры 誅仙記 THE ABYSS GAZER: приключенческий инди‑проект с бесплатным доступом, где древние легенды о феях переплетаются с современной мрачной",
     "date": "28 сентября 2026",
@@ -12822,6 +13800,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/bomberparty-3130680",
+    "noindex": true,
     "title": "BomberParty — взрывная многопользовательская игра",
     "excerpt": "BomberParty – динамичная экшн‑приключенка для четырёх игроков, совмещающая элементы классических взрывных баталий и глубокой ролевой кампании о выживании",
     "date": "28 сентября 2026",
@@ -12835,6 +13814,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/my-zombies-are-hungry-5239600",
+    "noindex": true,
     "title": "My Zombies Are Hungry – инкрементальная стратегия",
     "excerpt": "My Zombies Are Hungry – казуальная инди-игра‑стратегия, где вы выращиваете орду зомби, совершаете рейды и улучшаете свою нечисть, сталкиваясь с полицией,",
     "date": "28 сентября 2026",
@@ -12848,6 +13828,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/galaxy-critter-co-3630680",
+    "noindex": true,
     "title": "Galaxy Critter Co. — хаотичный рогалик с защитой и шутером",
     "excerpt": "Galaxy Critter Co. — милая игра‑рогалик, где днем строятся обороны, а ночью ведётся бой против орды, сочетая стратегии и экшен.",
     "date": "28 сентября 2026",
@@ -12861,6 +13842,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/-3594090",
+    "noindex": true,
     "title": "Обзор игры 大荒 — пиксельная RPG‑стратегия",
     "excerpt": "大荒 — инди‑RPG с элементами стратегии в пиксельном фэнтези. Игра рассказывает о молодом жителе деревни, вынужденном спасаться от таинственного нападения, и",
     "date": "28 сентября 2026",
@@ -12874,6 +13856,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/inspiration-test-5184950",
+    "noindex": true,
     "title": "Inspiration Test – казуальная инди-игра про интуицию",
     "excerpt": "Inspiration Test – простая казуальная игра, где вам предстоит угадывать орёл или решку, полагаясь лишь на свою интуицию. Накапливайте очки, проверяя,",
     "date": "28 сентября 2026",
@@ -12887,6 +13870,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/crime-podcast-1976-5194140",
+    "noindex": true,
     "title": "Crime Podcast: 1976 – обзор и рекомендации",
     "excerpt": "Crime Podcast: 1976 – приключенческий инди-детектив о последнем деле агента ФБР, который перед пенсией сталкивается с давно скрытыми уликми. Подходит",
     "date": "28 сентября 2026",
@@ -12900,6 +13884,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/ss13-bar-sim-4459540",
+    "noindex": true,
     "title": "SS13 BAR SIM – симулятор бара на космической станции",
     "excerpt": "SS13 BAR SIM – казуальная инди-игра, где вы управляете баром на космической станции, готовите напитки и слушаете истории экипажа. Подойдёт любителям",
     "date": "28 сентября 2026",
@@ -12913,6 +13898,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/v0-098-5184600",
+    "noindex": true,
     "title": "Обзор игры 爱之巢~V0.098~",
     "excerpt": "爱之巢~V0.098~ — бесплатная ролевая игра, где игрок погружается в атмосферный мир с загадочным сюжетом и интерактивными диалогами, подходящая любителям",
     "date": "28 сентября 2026",
@@ -12926,6 +13912,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/cozy-jigsaw-5227040",
+    "noindex": true,
     "title": "Cozy Jigsaw — расслабляющий пазл‑арт",
     "excerpt": "Cozy Jigsaw — спокойный пазл‑арт: собирайте живописные картинки, выбирайте уровень сложности, превращайте свои фото в головоломки, сохраняйте прогресс и",
     "date": "28 сентября 2026",
@@ -12939,6 +13926,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/you-re-it-5187640",
+    "noindex": true,
     "title": "You're It!: цена, отзывы и статистика игроков",
     "excerpt": "You're It!: актуальная цена (385.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
     "date": "28 сентября 2026",
@@ -12949,6 +13937,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/s-5197180",
+    "noindex": true,
     "title": "フロアーⅩⅢの心象～S — обзор визуальной новеллы",
     "excerpt": "Фронтальная визуальная новелла «フロアーⅩⅢの心象～S» — мрачный приключенческий хоррор‑мистерии с реальными фотографиями, где вам предстоит раскрыть тайны 13‑го",
     "date": "28 сентября 2026",
@@ -12962,6 +13951,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/rippusion-5065060",
+    "noindex": true,
     "title": "Rippusion – генератор музыки с ИИ без подписки",
     "excerpt": "Rippusion – автономный музыкальный движок, создающий двухминутные треки за секунды без подключения к облаку и без сбора данных. Идеально для создателей",
     "date": "28 сентября 2026",
@@ -12975,6 +13965,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/magic-circle-generator-4708730",
+    "noindex": true,
     "title": "Magic Circle Generator – генератор магических кругов",
     "excerpt": "Magic Circle Generator – утилита для создания процедурных магических кругов и сигилов. Позволяет скульптурировать кольца, анимировать заклинания и",
     "date": "28 сентября 2026",
@@ -12988,6 +13979,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/wonderboy-in-monster-land-5166980",
+    "noindex": true,
     "title": "Wonderboy in Monster Land — обзор и впечатления",
     "excerpt": "Wonderboy in Monster Land – ретро‑платформер в стиле аркад 80‑х‑90‑х годов. Бой, исследование, улучшение снаряжения и битва с Меха‑драконом ждут игроков.",
     "date": "28 сентября 2026",
@@ -13001,6 +13993,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/-4976640",
+    "noindex": true,
     "title": "封神归来 — обзор RPG MMORPG",
     "excerpt": "封神归来 — бесплатная MMORPG, действие которой разворачивается в эпоху конфликта между династиями Шан и Чжоу. Игроки прокачивают персонажей, собирают духовных",
     "date": "28 сентября 2026",
@@ -13014,6 +14007,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/-5075340",
+    "noindex": true,
     "title": "正统三国：无尽演义 – обзор игры",
     "excerpt": "Игра 正统三国：无尽演义 – казуальная стратегическая RPG в стиле «только наблюдай». Находите генералов эпохи Троецарствия, собирайте отряды и продвигайте их по",
     "date": "28 сентября 2026",
@@ -13027,6 +14021,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/otgoloski-bella-2873060",
+    "noindex": true,
     "title": "Отголоски Белла — ролевая тактическая стратегия",
     "excerpt": "Отголоски Белла — тактическая ролевая игра с элементами рогалита, где вы исследуете проклятые земли, сражаетесь с мощными врагами, собираете эхо и",
     "date": "28 сентября 2026",
@@ -13040,6 +14035,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/human-intelligence-5054370",
+    "noindex": true,
     "title": "HUMAN INTELLIGENCE – приключенческий симулятор",
     "excerpt": "Игра‑симулятор, где вам предстоит отвечать на запросы клиентов, выдавая себя за искусственный интеллект. Каждый выбор фиксируется, а последствия",
     "date": "28 сентября 2026",
@@ -13053,6 +14049,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/grave-digging-for-wealth-4973140",
+    "noindex": true,
     "title": "盗墓贼 Grave digging for wealth – обзор",
     "excerpt": "Игра‑экшен с элементами приключения и RPG, где вы — охотник за гробницами в эпоху боевых разборок начала XX века. Выбирайте один из четырёх кланов,",
     "date": "28 сентября 2026",
@@ -13066,6 +14063,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/project-devourslime-3263880",
+    "noindex": true,
     "title": "Project DevourSlime – платформенный экшен-головоломка",
     "excerpt": "Project DevourSlime — оригинальный платформер‑головоломка, где Шлайм всасывает и выдувает платформы, преодолевая ловушки и монстров в поисках выхода из",
     "date": "28 сентября 2026",
@@ -13079,6 +14077,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/ultimate-multiplayer-survival-engine-5171770",
+    "noindex": true,
     "title": "Ultimate Multiplayer Survival Engine — обзор",
     "excerpt": "Ultimate Multiplayer Survival Engine — бесплатный экшен‑приключение, где цель выживание: исследуйте мир, собирайте ресурсы, крафтите снаряжение, стройте",
     "date": "28 сентября 2026",
@@ -13092,6 +14091,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/florana-defense-4840080",
+    "noindex": true,
     "title": "Florana Defense — казуальная инкрементальная башенная защита",
     "excerpt": "Florana Defense – инкрементальная игра‑головоломка в жанре башенной защиты. Стройте лабиринт из башен, собирайте золото и создавайте оптимальный путь для",
     "date": "28 сентября 2026",
@@ -13105,6 +14105,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/psyche-et-al-4590880",
+    "noindex": true,
     "title": "Psyche et al — инди RPG",
     "excerpt": "Фэнтезийная ролевая игра Psyche et al переосмысливает древнегреческий миф о Психее. Игроку предстоит стать любопытной Психе, столкнуться с богиней",
     "date": "28 сентября 2026",
@@ -13118,6 +14119,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/refantasy-autobattler-5062170",
+    "noindex": true,
     "title": "ReFantasy Autobattler — автобатлер с элементами roguelike",
     "excerpt": "ReFantasy Autobattler — казуальная стратегия, где вы формируете армию и сражаетесь с волнами монстров. Идеально для коротких игровых сессий.",
     "date": "28 сентября 2026",
@@ -13131,6 +14133,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/pay-your-deeds-5222360",
+    "noindex": true,
     "title": "Pay Your Deeds — казуальная карточная стратегия",
     "excerpt": "Pay Your Deeds — уникальная карточная стратегия с элементами рогалика. Игроку предстоит управлять долгами, вращая слот‑реел и собирая ресурсы для",
     "date": "28 сентября 2026",
@@ -13144,6 +14147,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/star-space-5166030",
+    "noindex": true,
     "title": "Star Space – космический шутер в режиме командного боя",
     "excerpt": "Star Space — динамичный космический шутер, где игроки сражаются в командных и свободных схватках на трёх аренах, а также могут отточить меткость в",
     "date": "28 сентября 2026",
@@ -13157,6 +14161,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/death-delivery-3303790",
+    "noindex": true,
     "title": "Death Delivery – динамичный шутер в стиле 80‑х",
     "excerpt": "Жестокий шутер от первого лица с атмосферой гонконгского кино 80‑х годов, стилизованным замедлением и олдскульной сложностью, понравится любителям",
     "date": "28 сентября 2026",
@@ -13170,6 +14175,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/transport-fever-3-3493540",
+    "noindex": true,
     "title": "Transport Fever 3 – глобальный транспортный симулятор",
     "excerpt": "Transport Fever 3 — масштабный симулятор строительства транспортных сетей: дороги, железные дороги, порты и аэропорты. Управляйте экономикой, развивая",
     "date": "28 сентября 2026",
@@ -13183,6 +14189,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/squad-393380",
+    "noindex": true,
     "title": "Squad — тактический онлайн‑шутер",
     "excerpt": "Squad — реалистичный тактический FPS с боями до 100 игроков, где важна командная работа, построение укреплений и взаимодействие с техникой. Идеален для",
     "date": "28 сентября 2026",
@@ -13196,6 +14203,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/solitaire-together-5213680",
+    "noindex": true,
     "title": "Solitaire Together — уютный пасьянс с котиком",
     "excerpt": "Solitaire Together — казуальная инди-игра‑пасьянс в стиле Клондайк. Играйте в своем темпе, выбирайте уровень сложности и наслаждайтесь компанией милого",
     "date": "27 сентября 2026",
@@ -13209,6 +14217,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/wpg-ravelin-5135630",
+    "noindex": true,
     "title": "WPG Ravelin – хардкорный шутер с башенной обороной",
     "excerpt": "WPG Ravelin – одиночный шутер от первого лица, где вам предстоит строить укрепления, размещать турели и отразить волны врагов. Игра сочетает динамичный",
     "date": "27 сентября 2026",
@@ -13222,6 +14231,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/hall-of-mirrors-3223460",
+    "noindex": true,
     "title": "Hall of Mirrors — аркадный шутер для всей семьи",
     "excerpt": "Hall of Mirrors – быстрый аркадный экшен, где до пяти игроков соревнуются на одном компьютере, стреляя лазерами по воздушным шарам через отражающие",
     "date": "27 сентября 2026",
@@ -13235,6 +14245,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/nova-origin-4132030",
+    "noindex": true,
     "title": "Nova Origin — инди‑симулятор стратегии колоний",
     "excerpt": "Nova Origin – игра‑симулятор, где вам предстоит исследовать чужой мир, собирать ресурсы и построить автоматическую колонию. Управляйте вездеходами,",
     "date": "27 сентября 2026",
@@ -13248,6 +14259,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/souls-runner-4888600",
+    "noindex": true,
     "title": "Souls Runner — динамичный экшн‑приключение",
     "excerpt": "Souls Runner – быстрый экшн‑приключение, где нужно бегать, прыгать, бросать друзей и уклоняться от ловушек, спасаясь от преследователя в адском лабиринте.",
     "date": "27 сентября 2026",
@@ -13261,6 +14273,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/horde-slayer-3778250",
+    "noindex": true,
     "title": "Horde Slayer – динамический кооперативный экшен",
     "excerpt": "Horde Slayer – динамичная кооперативная игра, где каждый игрок создает уникальный билд, сражается с бесконечными ордами и преодолевает сложные испытания,",
     "date": "27 сентября 2026",
@@ -13274,6 +14287,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/hyperboard-extreme-4892910",
+    "noindex": true,
     "title": "Hyperboard Extreme — аркадные гонки с безумными усилителями",
     "excerpt": "Hyperboard Extreme — динамичное аркадное гоночное приключение в стиле ретро‑аркад с яркими персонажами, неожиданными усилителями и стремительной",
     "date": "27 сентября 2026",
@@ -13287,6 +14301,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/maritime-simulator-4273820",
+    "noindex": true,
     "title": "Maritime Simulator – симулятор морского трафика",
     "excerpt": "Maritime Simulator – реалистичный симулятор управления судоходством. Игрок выступает оператором VTS, направляя корабли, избегая конфликтов и поддерживая",
     "date": "27 сентября 2026",
@@ -13300,6 +14315,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/truck-titans-3939990",
+    "noindex": true,
     "title": "Truck Titans — аркадные гонки на монстр‑траках",
     "excerpt": "Truck Titans — динамичная игра о гонках монстр‑траков с более чем девятью уровнями, кастомизацией техники и возможностью участвовать в скоростных заездах",
     "date": "27 сентября 2026",
@@ -13313,6 +14329,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/-4803270",
+    "noindex": true,
     "title": "『スクジサマ』を巡る考察 — обзор",
     "excerpt": "«スクジサマ» — приключенческая игра, построенная на полном романе, где игрок исследует 3D‑пространство, взаимодействует с изображениями, аудио, видео и",
     "date": "27 сентября 2026",
@@ -13326,6 +14343,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/scratch-tickets-with-your-friends-5148990",
+    "noindex": true,
     "title": "Scratch Tickets With Your Friends 🎰 – обзор игры",
     "excerpt": "Хаотичный казуально‑ролевой симулятор, где вам придётся стирать лотерейные билеты, сортировать мусор и принимать спорные решения, чтобы выжить в мире",
     "date": "27 сентября 2026",
@@ -13339,6 +14357,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/voltus-neon-nightmare-colossal-cure-4882170",
+    "noindex": true,
     "title": "Voltus' Neon Nightmare - Colossal Cure: цена, отзывы и статистика игроков",
     "excerpt": "Voltus' Neon Nightmare - Colossal Cure: актуальная цена (290.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
     "date": "27 сентября 2026",
@@ -13349,6 +14368,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/fiducia-rent-the-world-4953150",
+    "noindex": true,
     "title": "Fiducia: Rent The World — обзор, геймплей и советы",
     "excerpt": "Fiducia: Rent The World — симулятор стратегии, где вы управляете семейным бизнесом на острове, выращивая урожай, торгуя и открывая банк. Игра предлагает",
     "date": "27 сентября 2026",
@@ -13362,6 +14382,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/-5184740",
+    "noindex": true,
     "title": "枪火幻想 — казуальная стратегия от инди‑разработчиков",
     "excerpt": "Казуальная стратегическая игра «枪火幻想» погружает в ночной лес, наполненный полчищами монстров. Игра подходит тем, кто любит простую, но захватывающую",
     "date": "27 сентября 2026",
@@ -13375,6 +14396,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/kartboard-dash-4510790",
+    "noindex": true,
     "title": "Kartboard Dash – аркадные гонки на картоне",
     "excerpt": "Kartboard Dash – бесплатный аркадный гонщик, где трассы сделаны из картона, а ваши друзья становятся препятствиями. Каждый круг полон хаоса и",
     "date": "27 сентября 2026",
@@ -13388,6 +14410,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/versus-one-3653680",
+    "noindex": true,
     "title": "Versus One – асимметричный VR‑бой для двоих",
     "excerpt": "Versus One – бесплатный VR‑экшен, где один игрок управляет гигантским монстром, а второй – героем с разнообразным арсеналом. Ассиметричный ко‑оп,",
     "date": "27 сентября 2026",
@@ -13401,6 +14424,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/section-80-5191570",
+    "noindex": true,
     "title": "Section 80 – динамичный экшн от инди-разработчиков",
     "excerpt": "Section 80 – быстрый экшен, где вам предстоит удержать мощный Электро‑Блоб в небольшом секторе арены, избегая охотников, которые могут породить новых",
     "date": "27 сентября 2026",
@@ -13414,6 +14438,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/gemorium-4798740",
+    "noindex": true,
     "title": "Gemorium — расслабляющий кликер про добычу ресурсов",
     "excerpt": "Gemorium — это спокойный кликер, где вы разбиваете камни, собираете минералы и открываете новые возможности без спешки. Идеально подходит для тех, кто",
     "date": "27 сентября 2026",
@@ -13427,6 +14452,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/infinite-game-cartridge-collection-touchy-cube-4311830",
+    "noindex": true,
     "title": "Infinite Game Cartridge Collection - Touchy Cube – обзор",
     "excerpt": "Touchy Cube из Infinite Game Cartridge Collection – простая, но затягивающая игра‑головоломка с кубом, где нужно быстро переключать грани и проходить",
     "date": "27 сентября 2026",
@@ -13440,6 +14466,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/fuel-sort-4431410",
+    "noindex": true,
     "title": "Fuel Sort — казуальная головоломка",
     "excerpt": "Fuel Sort — научно‑фантастическая головоломка, где нужно сортировать топливные ячейки по цвету. 1000 уровней, глобальный рейтинг и достижения ждут",
     "date": "27 сентября 2026",
@@ -13453,6 +14480,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/the-handler-of-dragons-1172730",
+    "noindex": true,
     "title": "The Handler of Dragons — обзор",
     "excerpt": "The Handler of Dragons — RPG‑экшен, где герой умеет разговаривать с драконами. Исследуйте мир, выбирайте, защищать ли их, и решайте, насколько далеко",
     "date": "26 сентября 2026",
@@ -13466,6 +14494,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/-4948400",
+    "noindex": true,
     "title": "잭팟 던전 – приключенческая инди-игра о удаче",
     "excerpt": "잭팟 던전 – короткая инди-игра, где всё решает везение. Простой геймплей без сложных стратегий, идеальна для любителей лёгких приключений.",
     "date": "26 сентября 2026",
@@ -13479,6 +14508,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/sector-13-haunted-woods-4244040",
+    "noindex": true,
     "title": "Sector 13: Haunted Woods – кооперативный поиск аномалий",
     "excerpt": "Sector 13: Haunted Woods – кооперативная игра в открытом мире, где 1‑4 игрока исследуют таинственный лес, собирают артефакты и борются с опасными",
     "date": "26 сентября 2026",
@@ -13492,6 +14522,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/surrounded-by-scrunchies-5228310",
+    "noindex": true,
     "title": "Surrounded by Scrunchies — визуальная новелла",
     "excerpt": "Индивидуальная визуальная новелла Surrounded by Scrunchies погружает в историю случайного совместного проживания в квартире, полной женщин, где главный",
     "date": "26 сентября 2026",
@@ -13505,6 +14536,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/dark-hunter-kuro-4150170",
+    "noindex": true,
     "title": "DARK HUNTER KURO — динамичный боевой RPG",
     "excerpt": "В DARK HUNTER KURO игрок надевает изменяющийся боевой костюм и сражается с уродливыми врагами в постапокалиптическом мире, используя стильные комбо и",
     "date": "26 сентября 2026",
@@ -13518,6 +14550,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/stranded-with-you-4260270",
+    "noindex": true,
     "title": "Stranded with You – приключенческий симулятор выживания",
     "excerpt": "Stranded with You – игра о совместном выживании на тропическом острове. Исследуйте окрестности, стройте укрытие и собирайте ресурсы вместе с Мицуки.",
     "date": "26 сентября 2026",
@@ -13531,6 +14564,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/lexilotl-crossword-puzzle-run-4735750",
+    "noindex": true,
     "title": "Lexilotl: Crossword Puzzle Run — обзор игры",
     "excerpt": "Lexilotl: Crossword Puzzle Run — уютная кроссворд‑гонка без таймера, где важно превзойти свой лучший результат, а не спешить. Подойдет любителям словесных",
     "date": "26 сентября 2026",
@@ -13544,6 +14578,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/hentai-age-cat-5234460",
+    "noindex": true,
     "title": "Hentai Age Cat – казуальная головоломка с иллюстрациями",
     "excerpt": "Hentai Age Cat – расслабляющая головоломка без ограничений времени. Собирайте пазлы, открывайте яркие иллюстрации девушек и наслаждайтесь спокойным",
     "date": "26 сентября 2026",
@@ -13557,6 +14592,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/loki-s-revenge-2936750",
+    "noindex": true,
     "title": "Loki's Revenge: цена, отзывы и статистика игроков",
     "excerpt": "Loki's Revenge: актуальная цена (78.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
     "date": "26 сентября 2026",
@@ -13567,6 +14603,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/killdozer-4909940",
+    "noindex": true,
     "title": "Killdozer – экшн‑рогалик про разрушения",
     "excerpt": "Killdozer – динамичный экшн‑рогалик, где вы превращаете бульдозер в машину разрушения, сражаясь с полицией и разгоняя по улицам города. Собирайте",
     "date": "26 сентября 2026",
@@ -13580,6 +14617,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/afk-army-for-keyboard-5194330",
+    "noindex": true,
     "title": "AFK - Army For Keyboard — обзор игры",
     "excerpt": "AFK - Army For Keyboard — казуальная indie‑стратегия с элементами RPG, где ваша армия сражается в фоне, пока вы заняты другими делами. Подойдёт любителям",
     "date": "26 сентября 2026",
@@ -13593,6 +14631,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/mmo-massive-mommy-orgy-4949180",
+    "noindex": true,
     "title": "MMO: Massive Mommy Orgy – обзор казуальной игры",
     "excerpt": "MMO: Massive Mommy Orgy – необычная казуальная визуальная новелла с элементами фэнтези и взрослой тематики. Подойдёт любителям откровенных историй и",
     "date": "26 сентября 2026",
@@ -13606,6 +14645,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/hockey-fire-5089520",
+    "noindex": true,
     "title": "Hockey Fire – динамичный экшен‑спорт",
     "excerpt": "Hockey Fire – быстрый и хаотичный хоккей с физикой, усилителями и ускорением. Игра предлагает одиночные и кооперативные уровни, а также локальный",
     "date": "26 сентября 2026",
@@ -13619,6 +14659,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/traffic-stop-anomaly-4408710",
+    "noindex": true,
     "title": "Traffic Stop Anomaly – приключенческая игра про патруль",
     "excerpt": "Traffic Stop Anomaly – приключенческая игра, где вы выступаете в роли дорожного полицейского, останавливаете машины и ищете аномалии. Интересно для",
     "date": "26 сентября 2026",
@@ -13632,6 +14673,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/overdeveloped-requiem-3321770",
+    "noindex": true,
     "title": "Overdeveloped: Requiem – обзор игры",
     "excerpt": "Overdeveloped: Requiem — платформер‑экшен с элементами тактики, где ученица айдо ищет мести и самосовершенствования. Инди‑проект сочетает динамичные бои и",
     "date": "26 сентября 2026",
@@ -13645,6 +14687,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/dungeon-forge-5080420",
+    "noindex": true,
     "title": "Dungeon Forge — инди RPG с крафтом и подземельями",
     "excerpt": "Dungeon Forge — ролевая инди-игра, где выбираете класс, исследуете подземелья, собираете ресурсы, крафтите снаряжение и строите деревню. Игра проверит",
     "date": "26 сентября 2026",
@@ -13658,6 +14701,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/glass-masquerade-4-constellations-tarots-5285480",
+    "noindex": true,
     "title": "Glass Masquerade 4: Constellations – Tarots – обзор",
     "excerpt": "Новый набор головоломок «Tarots» в Glass Masquerade 4: Constellations предлагает восемь оригинальных уровней, вдохновлённых созвездием Ворона, и",
     "date": "26 сентября 2026",
@@ -13671,6 +14715,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/anna-chapter-2-4375800",
+    "noindex": true,
     "title": "Anna - Chapter 2 – обзор и детали",
     "excerpt": "Anna - Chapter 2 – визуальная новелла о молодой женщине, переезжающей в большой город, где её ждут новые отношения, амбиции и сложные моральные выборы.",
     "date": "26 сентября 2026",
@@ -13684,6 +14729,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/smoke-keeper-5115860",
+    "noindex": true,
     "title": "Smoke Keeper — уютный симулятор организации",
     "excerpt": "Smoke Keeper — спокойный приключенческий симулятор, где вам предстоит упорядочить более 4000 предметов в викторианском табачном магазине. Игра сочетает",
     "date": "26 сентября 2026",
@@ -13697,6 +14743,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/ctrl-esc-4323690",
+    "noindex": true,
     "title": "CTRL+ESC — кликер про хакерство",
     "excerpt": "CTRL+ESC — казуальный инди‑кликер, где вы становитесь хакером, взламываете системы, решаете капчи и развиваете сеть автоматических эксплойтов. Игра",
     "date": "26 сентября 2026",
@@ -13710,6 +14757,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/sumo-fumble-physics-party-4357300",
+    "noindex": true,
     "title": "Sumo Fumble: Physics Party — обзор игры",
     "excerpt": "Sumo Fumble: Physics Party — безумная казуальная экшен‑игра с физикой, где нужно толкать соперников, бросать их в ловушки и устраивать весёлый хаос на",
     "date": "26 сентября 2026",
@@ -13723,6 +14771,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/pixel-cross-stitch-toys-miniatures-pack-5103610",
+    "noindex": true,
     "title": "Pixel Cross Stitch - Toys Miniatures Pack – бесплатный",
     "excerpt": "Pixel Cross Stitch - Toys Miniatures Pack – набор из десяти бесплатных миниатюр с игрушечными мотивами для раскраски по номерам и вышивки крестом.",
     "date": "26 сентября 2026",
@@ -13736,6 +14785,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/nightmare-horror-investigation-5215920",
+    "noindex": true,
     "title": "Nightmare Horror Investigation – обзор",
     "excerpt": "Nightmare Horror Investigation — хоррор‑приключение, где игрок исследует жуткие локации, сражается с опасными врагами и раскрывает тайны мрачного мира.",
     "date": "26 сентября 2026",
@@ -13749,6 +14799,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/hentai-femboy-secretary-5207580",
+    "noindex": true,
     "title": "Hentai Femboy Secretary — головоломка с фембоями",
     "excerpt": "Игровая головоломка Hentai Femboy Secretary сочетает казуальный стиль и индийскую оригинальность, предлагая решать офисные задачи в компании",
     "date": "26 сентября 2026",
@@ -13762,6 +14813,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/rpg-5230220",
+    "noindex": true,
     "title": "言葉遠征 ~~ 日语学习RPG ~~ — обзор и рекомендации",
     "excerpt": "言葉遠征 — обучающая приключенческая игра, где изучение японского превращается в битвы. Подходит тем, кто хочет практиковать лексику и грамматику в",
     "date": "25 сентября 2026",
@@ -13775,6 +14827,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/assassin-of-werewolf-5236010",
+    "noindex": true,
     "title": "Assassin Of Werewolf – обзор игры",
     "excerpt": "Assassin Of Werewolf – динамичный экшен‑приключение от инди‑разработчиков. Управляете воительницей, сражаетесь с волками‑оборотнями на разнообразных",
     "date": "25 сентября 2026",
@@ -13788,6 +14841,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/300-5206350",
+    "noindex": true,
     "title": "Обзор игры 高三最后300天 – интерактивный школьный симулятор",
     "excerpt": "高三最后300天 – ролевая игра‑симулятор, где игрок управляет последними 300 днями старшей школы в Китае, выбирая пол, предметы и стиль обучения, влияя на",
     "date": "25 сентября 2026",
@@ -13801,6 +14855,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/goblins-and-gunslingers-4557390",
+    "noindex": true,
     "title": "Goblins and Gunslingers — обзор и советы",
     "excerpt": "Goblins and Gunslingers — карточный дуэль в стиле вестерна и фэнтези, где магия сталкивается с порохом. Игра сочетает приключения, стратегии и ролевые",
     "date": "25 сентября 2026",
@@ -13814,6 +14869,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/triple-pairing-4710010",
+    "noindex": true,
     "title": "Triple Pairing — игровая новелла о любовном треугольнике",
     "excerpt": "Трехсторонняя романтика в игре Triple Pairing: выбираете между изысканной леди, сложным другом детства и заботливой моделью. Система выбора и радарные",
     "date": "25 сентября 2026",
@@ -13827,6 +14883,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/virtual-skies-fpv-vr-5090850",
+    "noindex": true,
     "title": "Virtual Skies FPV VR — аркадный симулятор полётов",
     "excerpt": "Virtual Skies FPV VR – быстрый аркадный симулятор полётов в стиле FPV. Управляйте неоновым кораблём в бесконечном городе, преодолевая препятствия и",
     "date": "25 сентября 2026",
@@ -13840,6 +14897,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/best-puppy-certificate-4366980",
+    "noindex": true,
     "title": "Best Puppy Certificate – приключенческая инди-игра",
     "excerpt": "Best Puppy Certificate – атмосферная приключенческая игра от независимых разработчиков. Девушка Puppy ищет материалы, чтобы «исцелить» разбитую подругу,",
     "date": "25 сентября 2026",
@@ -13853,6 +14911,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/a-transfer-student-from-chang-an-4128680",
+    "noindex": true,
     "title": "高考移民：常安转校生 A Transfer Student from Chang'an: цена, отзывы и статистика игроков",
     "excerpt": "高考移民：常安转校生 A Transfer Student from Chang'an: актуальная цена (230.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
     "date": "25 сентября 2026",
@@ -13863,6 +14922,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/pixel-planet-survivor-5125780",
+    "noindex": true,
     "title": "Pixel Planet Survivor — обзор",
     "excerpt": "Pixel Planet Survivor — топ‑даун roguelite про выживание на заражённой планете, где враги — пиксельные насекомые. Сбор снаряжения, оборона и попытка",
     "date": "25 сентября 2026",
@@ -13876,6 +14936,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/death-momotaro-5119790",
+    "noindex": true,
     "title": "Death Momotaro — хоррор‑экшен с комедийным уклоном",
     "excerpt": "Death Momotaro — нелепый хоррор‑экшен с элементами комедии, основанный на японской сказке о Момотаро. Игра сочетает страшные сцены и юмор, идеально",
     "date": "25 сентября 2026",
@@ -13889,6 +14950,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/abandoned-gameshop-5080530",
+    "noindex": true,
     "title": "Abandoned Gameshop – обзор и геймплей",
     "excerpt": "Abandoned Gameshop – казуальный симулятор, где игроку предстоит сортировать тысячи ретро‑коробок по платформам и жанрам, возвращая ностальгию по старым",
     "date": "25 сентября 2026",
@@ -13902,6 +14964,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/den-ko-senka-4744850",
+    "noindex": true,
     "title": "DEN KO SENKA — быстрый экшен с электрическими атаками",
     "excerpt": "DEN KO SENKA – динамичный экшен, где игрок мчится по электросетям, используя молниеносные удары, чтобы уничтожить злостного контроллера NODE‑08. Игра",
     "date": "25 сентября 2026",
@@ -13915,6 +14978,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/combat-conductor-4744840",
+    "noindex": true,
     "title": "Combat Conductor — ритмический экшен",
     "excerpt": "Combat Conductor – динамичная 3D‑игра, где вы дирижёром управляете битами, сражаясь с гигантским машинным монстром в ритме музыки. Подходит любителям",
     "date": "25 сентября 2026",
@@ -13928,6 +14992,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/ganbleyd-reyndzher-3702140",
+    "noindex": true,
     "title": "Ганблейд-Рейнджер — экшен‑шутер Roguelite",
     "excerpt": "Ганблейд-Рейнджер — динамичный экшен‑шутер с элементами roguelite, где каждый бой требует быстрой реакции и постоянного убийства врагов для пополнения",
     "date": "25 сентября 2026",
@@ -13941,6 +15006,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/magic-realm-3183450",
+    "noindex": true,
     "title": "Magic Realm – обзор игры",
     "excerpt": "Magic Realm — приключенческий roguelike, где вы управляете магом Систайей и её спутницей Инхуа, исследуете волшебный мир, сражаетесь с монстрами и",
     "date": "25 сентября 2026",
@@ -13954,6 +15020,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/abandoned-hospital-patrol-4744810",
+    "noindex": true,
     "title": "Abandoned Hospital Patrol — обзор",
     "excerpt": "Abandoned Hospital Patrol — атмосферный инди-симулятор приключения в заброшенной больнице. Исследуйте тайные помещения, избегайте преследующего зла и",
     "date": "25 сентября 2026",
@@ -13967,6 +15034,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/marine-slalom-4744790",
+    "noindex": true,
     "title": "Marine♡Slalom — аркадные гонки на флайборде",
     "excerpt": "Marine♡Slalom – динамичная аркадная игра, где вы скользите на флайборде по волнам, уклоняясь от препятствий и собирая очки. Идеально подходит любителям",
     "date": "25 сентября 2026",
@@ -13980,6 +15048,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/onigotchi-4184190",
+    "noindex": true,
     "title": "Onigotchi – казуальная стратегия про озорного они",
     "excerpt": "Onigotchi – простая игра в стиле Тамагочи, где вы управляете милым они, развивая его способности и собирая уникальные амулеты, чтобы сражаться с",
     "date": "25 сентября 2026",
@@ -13993,6 +15062,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/dark-souls-remastered-570940",
+    "noindex": true,
     "title": "DARK SOULS™: REMASTERED – обзор игры",
     "excerpt": "Перезапуск классической экшен‑RPG в полном HD‑обновлении. Узнайте, чем отличается DARK SOULS™: REMASTERED, кто оценит её сложность и стоит ли возвращаться",
     "date": "25 сентября 2026",
@@ -14006,6 +15076,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/american-truck-simulator-south-dakota-3749870",
+    "noindex": true,
     "title": "American Truck Simulator - South Dakota: обзор",
     "excerpt": "Подробный обзор дополнения South Dakota к American Truck Simulator: новые пейзажи, маршруты и задачи для любителей автосимуляторов.",
     "date": "25 сентября 2026",
@@ -14019,6 +15090,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/garfield-escape-from-monday-3932790",
+    "noindex": true,
     "title": "Garfield - Escape from Monday: приключенческий 3D‑платформер",
     "excerpt": "Garfield - Escape from Monday – 3D‑платформер, где ленивый кот Гарфилд пробуждается в мире овощных ловушек. Узнайте, подходит ли игра для любителей лёгких",
     "date": "24 сентября 2026",
@@ -14032,6 +15104,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/kalanoro-3158820",
+    "noindex": true,
     "title": "Kalanoro – экшн‑приключение про лемуров",
     "excerpt": "Kalanoro – яркое экшн‑приключение, где вы собираете команду лемуров‑музыкантов, исследуете красочный остров Лемурию и сражаетесь с ведьмой Ранень,",
     "date": "24 сентября 2026",
@@ -14045,6 +15118,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/chesscape-room-3949530",
+    "noindex": true,
     "title": "Chesscape Room — шахматный симулятор и стратегия",
     "excerpt": "Chesscape Room — оригинальная смесь шахмат и стратегии, где вы управляете королём на нестандартных досках, решаете головоломки, участвуете в онлайн‑матчах",
     "date": "24 сентября 2026",
@@ -14058,6 +15132,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/mpe-keys-5216600",
+    "noindex": true,
     "title": "MPE Keys — визуализатор MIDI‑клавиатуры в реальном времени",
     "excerpt": "MPE Keys — утилита для музыкантов и дизайнеров, отображающая каждую ноту в уникальном цвете, с визуализацией давления, питч‑бенда и тембра. Поддержка",
     "date": "24 сентября 2026",
@@ -14071,6 +15146,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/shahmaty-pyati-stihiy-1611690",
+    "noindex": true,
     "title": "Шахматы Пяти Стихий — магический казуальный стратег",
     "excerpt": "Увлекательная игра, где магия Пяти Стихий встречается с головоломкой соединения трёх одинаковых фигур. Подойдёт любителям лёгкой стратегии и оригинальных",
     "date": "24 сентября 2026",
@@ -14084,6 +15160,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/drapline-3103780",
+    "noindex": true,
     "title": "DRAPLINE — роглайт о дрессировке драконьй девочки",
     "excerpt": "DRAPLINE – roguelite‑тренировка, где игрок воспитывает драконью девочку, кормит её разнообразной едой, комбинирует навыки и готовит к битве с",
     "date": "24 сентября 2026",
@@ -14097,6 +15174,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/infinite-galleries-5017500",
+    "noindex": true,
     "title": "Infinite Galleries – приключенческая инди-игра",
     "excerpt": "Infinite Galleries – исследуйте процедурно‑созданные виртуальные галереи из поисков, коллекций и собственных фото в VR и на ПК. Бесплатный и казуальный",
     "date": "24 сентября 2026",
@@ -14110,6 +15188,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/prisoners-chess-4902250",
+    "noindex": true,
     "title": "Prisoners Chess – шахматный роглайк",
     "excerpt": "Шахматный роглайк Prisoners Chess предлагает уникальную стратегию: каждая фигура может погибнуть, а вы решаете, как её прокачать и использовать в битве за",
     "date": "24 сентября 2026",
@@ -14123,6 +15202,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/duola-mage-4133550",
+    "noindex": true,
     "title": "Duola Mage — динамичный roguelike‑экшн с множеством",
     "excerpt": "Duola Mage — быстрый roguelike‑экшн, где сотни оружий и случайные сборки делают каждое прохождение уникальным. Прокачка персонажей и крафт снаряжения",
     "date": "24 сентября 2026",
@@ -14136,6 +15216,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/desktop-girl-chika-4285860",
+    "noindex": true,
     "title": "Desktop Girl Chika – обзор",
     "excerpt": "Desktop Girl Chika – казуальная игра‑симулятор, где персонаж живёт на рабочем столе, реагирует на действия пользователя и развивается со временем.",
     "date": "24 сентября 2026",
@@ -14149,6 +15230,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/galaxy-hunter-4246520",
+    "noindex": true,
     "title": "Galaxy Hunter – карточная стратегическая игра",
     "excerpt": "Galaxy Hunter – казуальная инди-стратегия с уникальной карточной боевой системой в космической опере. Пошаговые сражения и коллекционные карты привлекут",
     "date": "24 сентября 2026",
@@ -14162,6 +15244,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/reflection-witch-2626560",
+    "noindex": true,
     "title": "Reflection Witch — рогалик‑аркада с магическими шариками",
     "excerpt": "Reflection Witch — инди‑экшен в стиле рогулей, где вы управляете ведьмой, отражая магический шар и разрушая кирпичные препятствия. Оригинальный геймплей",
     "date": "24 сентября 2026",
@@ -14175,6 +15258,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/even-if-tempest-4483830",
+    "noindex": true,
     "title": "even if TEMPEST 宵闇にかく語りき魔女 – обзор",
     "excerpt": "Темная приключенческая игра even if TEMPEST 宵闇にかく語りき魔女 расскажет о проклятой ведьме, обречённой на бесконечный цикл. Атмосферный сюжет и мрачные визуалы",
     "date": "24 сентября 2026",
@@ -14188,6 +15272,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/-3997000",
+    "noindex": true,
     "title": "飛燕の短剣 — визуальная новелла в восточном фэнтези",
     "excerpt": "«飛燕の短剣» — атмосферная визуальная новелла о юной Такэкосэн, вступающей в тайную организацию в постреволюционном Кикоку. Приключения, интриги и выбор пути в",
     "date": "24 сентября 2026",
@@ -14201,6 +15286,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/downhill-drift-5218170",
+    "noindex": true,
     "title": "Downhill Drift — казуальные гонки с бесконечными трассами",
     "excerpt": "Downhill Drift – инди‑гонки, где четыре темы трасс генерируют миллиарды маршрутов. Выбирайте режимы «Скоростной набор очков» или «Тайм‑аттек», управляйте",
     "date": "24 сентября 2026",
@@ -14214,6 +15300,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/unanchored-spaceshooting-4216770",
+    "noindex": true,
     "title": "Unanchored Spaceshooting — динамичный шутер с физикой",
     "excerpt": "Unanchored Spaceshooting – оригинальный экшен‑шутер, где пули становятся реактивными двигателями. Игра бросает вызов привычным законам физики, предлагая",
     "date": "24 сентября 2026",
@@ -14227,6 +15314,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/off-the-clock-13-f-5136120",
+    "noindex": true,
     "title": "Off the Clock: 13/F – приключенческая инди-игра",
     "excerpt": "Off the Clock: 13/F – атмосферный инди‑приключенческий проект, где игрок застревает в бесконечных офисных этажах, полных аномалий из разных эпох. Ищите",
     "date": "24 сентября 2026",
@@ -14240,6 +15328,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/myau-otryad-inkrementalnaya-lovlya-4753960",
+    "noindex": true,
     "title": "Мяу Отряд: Инкрементальная Ловля — обзор",
     "excerpt": "Мяу Отряд: Инкрементальная Ловля – казуальная инди‑стратегия с элементами симулятора рыбалки. Быстрые раунды, аркадные бои с боссами и развитие отряда",
     "date": "24 сентября 2026",
@@ -14253,6 +15342,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/spy-mission-my-girlfriend-the-old-noble-s-maid-3192250",
+    "noindex": true,
     "title": "Spy Mission: My Girlfriend, the Old Noble’s Maid: цена, отзывы и статистика игроков",
     "excerpt": "Spy Mission: My Girlfriend, the Old Noble’s Maid: актуальная цена (385.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
     "date": "24 сентября 2026",
@@ -14263,6 +15353,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/-5172380",
+    "noindex": true,
     "title": "挂机升级爆装备 – приключенческий RPG‑казуал",
     "excerpt": "挂机升级爆装备 – простая игра‑приключение, где игрок уничтожает монстров, собирает их снаряжение и постоянно усиливается, бросая вызов всё более сильным",
     "date": "24 сентября 2026",
@@ -14276,6 +15367,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/-5245970",
+    "noindex": true,
     "title": "餅月 – динамичный экшен‑аркада для всех",
     "excerpt": "餅月 – бесплатная казуальная аркада, где одним движением вы отправляете луну в полёт, разбивая метеоры и собирая комбо для рекордных очков. Идеально для",
     "date": "24 сентября 2026",
@@ -14289,6 +15381,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/chronolens-5245980",
+    "noindex": true,
     "title": "ChronoLens – экшн‑приключение с управлением временем",
     "excerpt": "ChronoLens — бесплатная инди‑игра, где камера позволяет останавливать и перематывать время, решать головоломки и преодолевать препятствия в динамичных",
     "date": "24 сентября 2026",
@@ -14302,6 +15395,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/-5144870",
+    "noindex": true,
     "title": "おでんポンッ！ – казуальная головоломка",
     "excerpt": "Откройте необычную головоломку с ингредиентами оден в игре おでんポンッ!. Прогнозируйте трансформацию форм и получайте удовольствие от каждой правильной",
     "date": "24 сентября 2026",
@@ -14315,6 +15409,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/-2698960",
+    "noindex": true,
     "title": "浮生地中海 — экономический Roguelite в Средиземноморье",
     "excerpt": "Экономический Roguelite с элементами RPG и стратегии. Плывите по Средиземному морю, торгуйте, собирайте миллионы, а при смерти наследуйте богатство в",
     "date": "24 сентября 2026",
@@ -14328,6 +15423,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/brother-get-the-oats-3191280",
+    "noindex": true,
     "title": "Brother, Get The Oats – обзор и рекомендации",
     "excerpt": "Игра‑симулятор, где вам предстоит убедить упрямого поросёнка с искусственным интеллектом отдать свои драгоценные овсяные зерна за десять минут. Интересный",
     "date": "24 сентября 2026",
@@ -14341,6 +15437,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/-3882410",
+    "noindex": true,
     "title": "神貌のクリファ — тактическая ролевая игра",
     "excerpt": "Тактическая ролевая игра «神貌のクリファ» переносит игроков в постапокалиптическое Токио, где после внезапного катаклизма нужно управлять контрударами на",
     "date": "24 сентября 2026",
@@ -14354,6 +15451,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/fusty-dungeon-3410670",
+    "noindex": true,
     "title": "Fusty Dungeon – казуальное приключение в стиле JRPG",
     "excerpt": "Fusty Dungeon – увлекательное казуальное приключение, где вы вместе с двумя красивыми спутницами исследуете подземелья, решаете головоломки и ищете",
     "date": "24 сентября 2026",
@@ -14367,6 +15465,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/trails-in-the-sky-2nd-chapter-eternal-summer-swimsuit-set-4975690",
+    "noindex": true,
     "title": "Trails in the Sky 2nd Chapter - Eternal Summer Swimsuit Set: цена, отзывы и статистика игроков",
     "excerpt": "Trails in the Sky 2nd Chapter - Eternal Summer Swimsuit Set: актуальная цена (660.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
     "date": "24 сентября 2026",
@@ -14377,6 +15476,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/love-all-my-girls-4553130",
+    "noindex": true,
     "title": "Love All My Girls – приключенческий инди‑симулятор",
     "excerpt": "Love All My Girls – необычная игра‑симулятор, где бесконечные воскрешения и путешествия во времени позволяют управлять судьбами шести девушек и спасать",
     "date": "24 сентября 2026",
@@ -14390,6 +15490,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/frog-pond-simulator-3892380",
+    "noindex": true,
     "title": "Frog Pond Simulator — обзор",
     "excerpt": "Frog Pond Simulator — спокойный казуальный симулятор, где вы наблюдаете за ростом лягушек в пруду, наслаждаясь музыкой и атмосферой.",
     "date": "24 сентября 2026",
@@ -14403,6 +15504,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/noir-3851170",
+    "noindex": true,
     "title": "Noir – яркий динамичный платформер в жанре экшен",
     "excerpt": "Noir — красочный и динамичный платформер, где игроку предстоит собирать светящие сферы, преодолевая сотни уровней. Быстрый темп, яркая графика и сложные",
     "date": "23 сентября 2026",
@@ -14416,6 +15518,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/heroes-vow-three-kingdoms-3020510",
+    "noindex": true,
     "title": "Heroes' Vow: Three Kingdoms: цена, отзывы и статистика игроков",
     "excerpt": "Heroes' Vow: Three Kingdoms: актуальная цена (1000.00 RUB), 89% положительных отзывов в Steam, статистика владельцев (200,000 – 500,000). Данные обновляются автоматически.",
     "date": "23 сентября 2026",
@@ -14426,6 +15529,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/nios-1568460",
+    "noindex": true,
     "title": "NIOS – футуристические гонки и экшн",
     "excerpt": "NIOS – антигравитационная аркадная гонка в стиле экшена, где вы мчитесь по открытым трассам сверху вниз, обходя соперников и собирая рекорды.",
     "date": "23 сентября 2026",
@@ -14439,6 +15543,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/pirate-guy-2-new-land-5198550",
+    "noindex": true,
     "title": "Pirate Guy 2 New Land — обзор игры",
     "excerpt": "Pirate Guy 2 New Land – продолжение 2‑D платформера про пирата, где нужно обходить ловушки, сражаться с врагами и находить сокровища. Подойдёт любителям",
     "date": "23 сентября 2026",
@@ -14452,6 +15557,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/pizza-revolution-4786960",
+    "noindex": true,
     "title": "Pizza Revolution — симулятор пиццерии",
     "excerpt": "Pizza Revolution — управляемый симулятор пиццерии, где вам предстоит готовить, выпекать и обслуживать клиентов, стремясь стать лучшим мастером пиццы.",
     "date": "23 сентября 2026",
@@ -14465,6 +15571,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/the-piper-of-dawn-3804370",
+    "noindex": true,
     "title": "The Piper of Dawn – обзор и геймплей",
     "excerpt": "The Piper of Dawn – темная фэнтезийная симуляция управления с элементами RPG, где игрок выращивает магические культуры, управляет алхимической лавкой и",
     "date": "23 сентября 2026",
@@ -14478,6 +15585,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/aigenrobo-5130010",
+    "noindex": true,
     "title": "AIGENROBO — экшен‑шутер с конструированием машины",
     "excerpt": "AIGENROBO — динамичный 3D‑шутер, где вы собираете боевую машину из более чем 300 деталей и сражаетесь в аренных боях. 56 миссий, кооператив до 4 игроков и",
     "date": "23 сентября 2026",
@@ -14491,6 +15599,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/dog-5057210",
+    "noindex": true,
     "title": "Dog – пиксельный питомец для рабочего стола",
     "excerpt": "Dog — небольшая пиксельная собачка, живущая на вашем рабочем столе. Ухаживайте за ней, играйте, украсьте уголок и наслаждайтесь уютным симулятором",
     "date": "23 сентября 2026",
@@ -14504,6 +15613,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/rip-923530",
+    "noindex": true,
     "title": "RIP — военный симулятор боевых действий",
     "excerpt": "RIP — интенсивный военный экшен, где можно вести бой на суше, в небе и на воде, управляя четырьмя классами солдат и разнообразными картами.",
     "date": "23 сентября 2026",
@@ -14517,6 +15627,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/one-more-pearl-4800440",
+    "noindex": true,
     "title": "One More Pearl! – казуальная стратегия с симуляцией",
     "excerpt": "One More Pearl! – увлекательный казуальный симулятор‑стратегия, где вы помогаете морской выдре собирать ракушки, продавать жемчуг и улучшать автомат.",
     "date": "23 сентября 2026",
@@ -14530,6 +15641,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/birthday-4696240",
+    "noindex": true,
     "title": "Birthday – короткая головоломка в лесу",
     "excerpt": "Birthday — небольшая казуальная игра‑головоломка от инди‑разработчиков. Пройдите её за 10‑20 минут, решая простые задачи в лесной атмосфере.",
     "date": "23 сентября 2026",
@@ -14543,6 +15655,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/dusha-primanka-bait-soul-3484100",
+    "noindex": true,
     "title": "Душа-приманка (Bait Soul) – обзор",
     "excerpt": "Душа-приманка – данжен‑кроулер с элементами рогалика и автоматической боевой системой. Игра сочетает исследование подземелий, сбор лута и множество",
     "date": "23 сентября 2026",
@@ -14556,6 +15669,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/edo-village-nightmare-4327010",
+    "noindex": true,
     "title": "姉妹道中千両箱 : Edo Village Nightmare — обзор",
     "excerpt": "Приключенческая игра о поиске сестры в запутанном японском поселении. Подойдёт любителям головоломных историй и атмосферы традиционной Японии.",
     "date": "23 сентября 2026",
@@ -14569,6 +15683,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/island-ntr-survival-ss-3192240",
+    "noindex": true,
     "title": "Island NTR Survival SS – выживание и драма на острове",
     "excerpt": "Island NTR Survival SS – казуальная инди-симуляция выживания на необитаемом острове, где пять мужчин и одна женщина сражаются за жизнь и чистую детскую",
     "date": "23 сентября 2026",
@@ -14582,6 +15697,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/-4169160",
+    "noindex": true,
     "title": "妹控计划 – казуальная RPG об отношениях брата и сестры",
     "excerpt": "Обзор игры 妹控计划: казуальная ролевая игра, где вы вместе с сестрой ШиМэн переживаете виртуальные приключения, пытаясь преодолеть границы экрана и стать",
     "date": "23 сентября 2026",
@@ -14595,6 +15711,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/-3319700",
+    "noindex": true,
     "title": "新世界：暗影成双 — обзор, жанр и особенности",
     "excerpt": "Обзор игры 新世界：暗影成双. Кооперативное приключение в стиле инди‑RPG, где два персонажа — тайный агент и бизнес-леди — раскрывают заговор в Шанхае 1941 года.",
     "date": "23 сентября 2026",
@@ -14608,6 +15725,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/blitz-jong-5183080",
+    "noindex": true,
     "title": "Blitz Jong – казуальная стратегическая игра",
     "excerpt": "Blitz Jong – бесплатная индийская стратегия, где классический риичи-маджонг переосмыслен: все игроки берут и сбрасывают тайлы одновременно, а каждый сброс",
     "date": "23 сентября 2026",
@@ -14621,6 +15739,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/space-fishing-verti-go-4521300",
+    "noindex": true,
     "title": "Space Fishing: Verti-Go!: цена, отзывы и статистика игроков",
     "excerpt": "Space Fishing: Verti-Go!: актуальная цена (167.42 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
     "date": "23 сентября 2026",
@@ -14631,6 +15750,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/rokovoy-tyag-the-doomed-draw-4277000",
+    "noindex": true,
     "title": "Роковой Тяг (The Doomed Draw) — обзор",
     "excerpt": "Казуальная инди‑игра «Роковой Тяг» предлагает игроку принимать важные решения, зная, что однажды случится день великого несчастья. Интересный эксперимент",
     "date": "23 сентября 2026",
@@ -14644,6 +15764,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/scrolls-of-torah-prophets-writings-4980790",
+    "noindex": true,
     "title": "Scrolls of Torah, Prophets & Writings – обзор",
     "excerpt": "Обзор Scrolls of Torah, Prophets & Writings: спокойный симулятор чтения священных текстов с озвучкой, викторинами и достижениями.",
     "date": "23 сентября 2026",
@@ -14657,6 +15778,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/beat-boxy-4536120",
+    "noindex": true,
     "title": "Beat Boxy – ритмический автобег в 3D",
     "excerpt": "Beat Boxy – динамичный 3D‑раннер, где вы управляете коробкой, бегущей под музыку. Прыгайте, скользите и создавайте свои уровни, собирая камни и",
     "date": "23 сентября 2026",
@@ -14670,6 +15792,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/fuel-up-4883240",
+    "noindex": true,
     "title": "Fuel Up – инди‑симулятор спасения планет",
     "excerpt": "Fuel Up – бесплатный инди‑симулятор, где вы играете инженером планетарного коалиции, калибруете дроны и собираете технологии, спасая планеты от гибели,",
     "date": "23 сентября 2026",
@@ -14683,6 +15806,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/emoji-jackpot-word-finder-3131810",
+    "noindex": true,
     "title": "EMOJI JACKPOT: Word Finder — обзор игры",
     "excerpt": "EMOJI JACKPOT: Word Finder — казуальная инди‑игра, где поиск слов превращён в пиксельный слот. Подойдёт любителям быстрых головоломок и яркой визуализации.",
     "date": "23 сентября 2026",
@@ -14696,6 +15820,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/magnet-5197660",
+    "noindex": true,
     "title": "MAGNET — казуальная инди-игра о сборе металла",
     "excerpt": "Управляйте магнитом, собирайте металлический хлам на свалке и доставляйте его на склад. Улучшайте оборудование, поднимайте всё тяжёлее и превращайте",
     "date": "23 сентября 2026",
@@ -14709,6 +15834,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/ebitapes-2221850",
+    "noindex": true,
     "title": "EbiTapes — приключенческая казуальная инди-игра",
     "excerpt": "EbiTapes — музыкальное приключение, где игроки помогают Эби спасти ежегодный фестиваль, собирая звуки, встречая друзей и устраивая концерты в стиле",
     "date": "23 сентября 2026",
@@ -14722,6 +15848,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/uncles-5022820",
+    "noindex": true,
     "title": "Uncles – кооперативный экшен и стратегия",
     "excerpt": "Uncles – динамичное кооперативное приключение в жанрах экшена, RPG и стратегии. Играйте в команде, спасая захваченных в национальном парке.",
     "date": "23 сентября 2026",
@@ -14735,6 +15862,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/fruit-golf-406890",
+    "noindex": true,
     "title": "Fruit Golf — мини‑гольф с фруктами и хаосом",
     "excerpt": "Fruit Golf — безумный мини‑гольф, где игроки бросают ананас на пиратский корабль, устраивая саботажи с акулами, взрывающимися бочками и летающими",
     "date": "23 сентября 2026",
@@ -14748,6 +15876,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/deskfamiliar-4943020",
+    "noindex": true,
     "title": "DeskFamiliar – бесплатная 3D‑оболочка для AI‑агентов",
     "excerpt": "DeskFamiliar – бесплатная утилита, превращающая рабочий стол в живую 3D‑сцену с персонажами вроде Ньютона, Эйнштейна или кота, поддерживая популярные",
     "date": "23 сентября 2026",
@@ -14761,6 +15890,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/now-showing-a-cinema-programming-game-5066560",
+    "noindex": true,
     "title": "NOW SHOWING: A Cinema Programming Game — обзор",
     "excerpt": "NOW SHOWING: A Cinema Programming Game – инди‑симулятор, где вы управляете программой кинотеатра на неделю, выбирая фильмы, лицензии и бюджеты. Идеально",
     "date": "23 сентября 2026",
@@ -14774,6 +15904,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/best-slime-of-my-life-4272610",
+    "noindex": true,
     "title": "Best Slime of my Life — визуальная новелла",
     "excerpt": "Взрослая визуальная новелла в фэнтезийном мире с девушкой‑слаймом и темой NTR. Казуальная игра для любителей сюжетных экспериментов.",
     "date": "23 сентября 2026",
@@ -14787,6 +15918,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/stuntboost-2999500",
+    "noindex": true,
     "title": "STUNTBOOST – быстрые гонки на фингерборде",
     "excerpt": "STUNTBOOST – динамичное инди‑приключение, где вам предстоит мчаться по картонным трассам на фингерборде, улучшать рекорды, собирать медали и соревноваться",
     "date": "22 сентября 2026",
@@ -14800,6 +15932,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/questfarers-of-the-stone-5010200",
+    "noindex": true,
     "title": "Questfarers of the Stone — приключенческий квест в мрачном",
     "excerpt": "Темное фэнтези в стиле 2D‑рисованного клик-приключения. Игра предлагает головоломки и исследование разрушенного мира Камня, подходя для любителей",
     "date": "22 сентября 2026",
@@ -14813,6 +15946,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/catson-files-wizard-town-4967790",
+    "noindex": true,
     "title": "Catson Files: Wizard Town – казуальный квест",
     "excerpt": "Catson Files: Wizard Town – бесплатный инди‑квест о поиске исчезнувших котов в городе волшебников. Идеально для любителей лёгких головоломок.",
     "date": "22 сентября 2026",
@@ -14826,6 +15960,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/cheerleaders-3652840",
+    "noindex": true,
     "title": "Cheerleaders — симулятор",
     "excerpt": "Cheerleaders — игра‑симулятор, где вы погружаетесь в мир элитной чирлинг‑команды, их конкуренции и личных отношений, стремясь к победе на национальном",
     "date": "22 сентября 2026",
@@ -14839,6 +15974,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/laryen-5142990",
+    "noindex": true,
     "title": "Laryen — бесплатный экшен‑ролевой в стиле 2.5D",
     "excerpt": "Laryen – бесплатная многопользовательская ролевая игра в изометрическом 2.5D‑стиле, где игрок превращается в киборга и сражается с роботами в реальных",
     "date": "22 сентября 2026",
@@ -14852,6 +15988,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/subspace-redux-4821960",
+    "noindex": true,
     "title": "Subspace: Redux — научно‑фантастический онлайн‑экшен",
     "excerpt": "Subspace: Redux – масштабный космический MMORPG с боями в открытом космосе, шести классами, четырьмя фракциями и возможностью развивать персонажа до 100",
     "date": "22 сентября 2026",
@@ -14865,6 +16002,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/the-blood-of-yidhra-4643800",
+    "noindex": true,
     "title": "The Blood of Yidhra — обзор",
     "excerpt": "The Blood of Yidhra — мрачный экшен‑инди с элементами ролевой игры, где главная героиня Дельта просыпается в школе, наполненной безмозглыми монстрами, и",
     "date": "22 сентября 2026",
@@ -14878,6 +16016,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/parasited-will-3077650",
+    "noindex": true,
     "title": "Parasited Will — аркадный экшен о выживании",
     "excerpt": "Parasited Will — динамичный экшен‑приключение, где вам предстоит сражаться с инопланетным захватом, поддерживая отряд Антихаоса. Подойдёт любителям",
     "date": "22 сентября 2026",
@@ -14891,6 +16030,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/-4575670",
+    "noindex": true,
     "title": "魅魔深渊：三十天生存法则 — обзор",
     "excerpt": "卡牌‑строительная игра‑рогалик, где нужно собрать команду, сразиться с боссами и спасти жителей иного мира. Подойдёт любителям стратегии и ролевых",
     "date": "22 сентября 2026",
@@ -14904,6 +16044,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/screenside-fisher-4270850",
+    "noindex": true,
     "title": "SCREENSIDE FISHER – казуальная рыбалка",
     "excerpt": "SCREENSIDE FISHER – спокойная настольная рыбалка, где вы ловите рыбу, готовите рецепты, улучшаете снасти и оформляете коллекцию. Игра бесплатна и подходит",
     "date": "22 сентября 2026",
@@ -14917,6 +16058,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/starshaya-sestra-5206420",
+    "noindex": true,
     "title": "Старшая сестра — интерактивный компаньон для рабочего стола",
     "excerpt": "Старшая сестра — интерактивный компаньон для рабочего стола: персонаж моргает, дышит и реагирует на курсор. Выбирайте статичные обои, GIF или MP4, меняйте",
     "date": "22 сентября 2026",
@@ -14930,6 +16072,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/lucky-break-fartovyy-spin-4155880",
+    "noindex": true,
     "title": "Lucky Break: фартовый спин — карточный рогалик",
     "excerpt": "Lucky Break: фартовый спин – интригующий карточный рогалик от инди‑студии, где игроку предстоит балансировать между долгами, алкоголем и шансом на",
     "date": "22 сентября 2026",
@@ -14943,6 +16086,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/seekers-alliance-hero-s-journey-1352890",
+    "noindex": true,
     "title": "Seekers Alliance: Hero's Journey: цена, отзывы и статистика игроков",
     "excerpt": "Seekers Alliance: Hero's Journey: актуальная цена (650.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
     "date": "22 сентября 2026",
@@ -14953,6 +16097,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/bugarden-4289410",
+    "noindex": true,
     "title": "BuGarden — уютный садовый симулятор",
     "excerpt": "BuGarden — спокойный инди‑симулятор, где на экране появляется мини‑сад. Сажайте семена, поливайте, удобряйте, собирайте яркие цветы и фрукты, отгоняйте",
     "date": "22 сентября 2026",
@@ -14966,6 +16111,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/ved-recure-3255500",
+    "noindex": true,
     "title": "Ved: Recure — экшен‑рогулит с настраиваемыми цепями",
     "excerpt": "Ved: Recure — динамичный экшен‑рогулит, где игроку предстоит выбраться из тысячной незапущенной игры, используя кастомные цепи усилений и продуманные",
     "date": "22 сентября 2026",
@@ -14979,6 +16125,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/a-decent-farewell-5109380",
+    "noindex": true,
     "title": "A Decent Farewell — обзор",
     "excerpt": "Краткий обзор A Decent Farewell — психологический хоррор в VR, где память и прощание переплетаются в эмоциональном рассказе.",
     "date": "22 сентября 2026",
@@ -14992,6 +16139,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/eagle-knight-paradox-3008700",
+    "noindex": true,
     "title": "Eagle Knight Paradox — обзор",
     "excerpt": "Eagle Knight Paradox – динамичное приключение с боями на мехах и исследованием неонового города. Выборы игрока влияют на сюжет и судьбы персонажей.",
     "date": "22 сентября 2026",
@@ -15005,6 +16153,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/grim-siege-4920750",
+    "noindex": true,
     "title": "Grim Siege — карточная стратегия в мрачном фэнтези",
     "excerpt": "Grim Siege — карточная дуэль 1 на 1 в мрачном фэнтези. Шесть классов, система статусов и комбинаций делают каждый ход головоломкой. Быстрые матчи и",
     "date": "22 сентября 2026",
@@ -15018,6 +16167,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/ludus-deceptor-4920310",
+    "noindex": true,
     "title": "Ludus Deceptor — мрачная карточная roguelike",
     "excerpt": "Ludus Deceptor – мрачная roguelike‑карточная игра, где каждое решение несёт риск. Сочетайте карты, проклятия и предметы, чтобы выбраться из тюрьмы и",
     "date": "22 сентября 2026",
@@ -15031,6 +16181,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/soggy-beans-2636430",
+    "noindex": true,
     "title": "Soggy Beans — расслабляющая подводная симуляция",
     "excerpt": "Soggy Beans — казуальная инди-игра, где вы фотографируете рыб, собираете бобы и оформляете подводный уголок, наслаждаясь спокойным айдлом и общением с",
     "date": "22 сентября 2026",
@@ -15044,6 +16195,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/puzzles-trees-4964780",
+    "noindex": true,
     "title": "Puzzles Trees – казуальная головоломка с красивой графикой",
     "excerpt": "Puzzles Trees – яркая казуальная игра‑головоломка, где каждый уровень требует логического мышления и дарит удовольствие от красочных визуалов. Подойдёт",
     "date": "22 сентября 2026",
@@ -15057,6 +16209,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/kick-bot-dx-3664670",
+    "noindex": true,
     "title": "Kick Bot DX — экшен с бесконечными прыжками",
     "excerpt": "Kick Bot DX — динамичный экшен‑платформер с бесконечными стенами, новыми визуальными эффектами, кастомизацией персонажа и онлайн‑таблицей лидеров. Игра",
     "date": "22 сентября 2026",
@@ -15070,6 +16223,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/lewd-elevator-4861300",
+    "noindex": true,
     "title": "Lewd Elevator — детективный клик-адвенчур в стиле экшн",
     "excerpt": "Lewd Elevator — соблазнительная детективная игра‑кликер, где игрок исследует проклятый лифт, раскрывает обманщиц и выбирает между сопротивлением и",
     "date": "22 сентября 2026",
@@ -15083,6 +16237,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/brainrot-simulator-5046580",
+    "noindex": true,
     "title": "Brainrot Simulator – обзор и рекомендации",
     "excerpt": "Brainrot Simulator – приключенческий симулятор, где вы собираете странных существ, заполняете кодекс и строите империю. Подойдёт любителям открытых миров",
     "date": "22 сентября 2026",
@@ -15096,6 +16251,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/kebab-shop-simulator-5148830",
+    "noindex": true,
     "title": "Kebab Shop Simulator — симулятор кебабной лавки",
     "excerpt": "Kebab Shop Simulator — казуальный инди-симулятор, где вы берёте дело от отца, готовите кебабы на тропическом острове, управляете запасами и улучшаете",
     "date": "22 сентября 2026",
@@ -15109,6 +16265,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/so-below-2140700",
+    "noindex": true,
     "title": "SO BELOW — хоррор‑приключение в подземельях",
     "excerpt": "SO BELOW — кооперативный экшен‑приключение, где игроки охотятся за призраками в мрачных подземельях, используют кресты и даже могут стать духами, чтобы",
     "date": "22 сентября 2026",
@@ -15122,6 +16279,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/chip-builder-5095670",
+    "noindex": true,
     "title": "Chip Builder – логический конструктор головоломок",
     "excerpt": "Chip Builder — инди‑головоломка, где вы конструируете цифровую логику от простейшего И‑элемента до полного процессора, решая задачи последовательно.",
     "date": "22 сентября 2026",
@@ -15135,6 +16293,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/blockscavenger-5125620",
+    "noindex": true,
     "title": "BlockScavenger — топ‑даун шутер с крафтом",
     "excerpt": "BlockScavenger – динамичный экшен‑инди с видом сверху, где сбор материалов и крафт из блоков становятся частью боевого процесса. Игра предлагает",
     "date": "22 сентября 2026",
@@ -15148,6 +16307,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/bespilotnoe-zhelanie-4922560",
+    "noindex": true,
     "title": "Беспилотное Желание — визуальная новелла‑романс",
     "excerpt": "Взрослая визуальная новелла‑романс «Беспилотное Желание» погружает в мир робо‑такси и моральных дилемм. Игрок берёт роль директора по безопасности,",
     "date": "22 сентября 2026",
@@ -15161,6 +16321,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/upload-aliens-4234950",
+    "noindex": true,
     "title": "Upload Aliens – динамичный экшен от инди‑разработчиков",
     "excerpt": "Upload Aliens – быстрый экшен, где вы бросаете пришельцев в огромного босса. Игра подходит любителям динамичных битв и необычных механик.",
     "date": "22 сентября 2026",
@@ -15174,6 +16335,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/rv-there-yet-3949040",
+    "noindex": true,
     "title": "RV There Yet? — кооперативное приключение за рулём автодома",
     "excerpt": "RV There Yet? — инди-экшен с элементами приключения, где игроки вместе отправляются в путешествие на автодоме, решая задачи и исследуя мир.",
     "date": "22 сентября 2026",
@@ -15187,6 +16349,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/virus-yandere-4513060",
+    "noindex": true,
     "title": "Вирус Яндере – хоррор‑кооператив для друзей",
     "excerpt": "Онлайн‑хоррор для 1‑4 игроков, где вам нужно собрать платонические тыквы и спасти друга, заражённого вирусом яндере. Кооперация, напряжённые моменты и",
     "date": "21 сентября 2026",
@@ -15200,6 +16363,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/-4910440",
+    "noindex": true,
     "title": "華京夜探 – казуальный симулятор в кибер‑восточном мире",
     "excerpt": "華京夜探 – бесплатный казуальный симулятор, где вам предстоит исследовать открывшиеся врата в потусторонний мир, сражаться рядом с очаровательными спутницами",
     "date": "21 сентября 2026",
@@ -15213,6 +16377,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/idle-block-breaker-4875650",
+    "noindex": true,
     "title": "Idle Block Breaker — казуальная игра",
     "excerpt": "Idle Block Breaker – простая казуальная игра, где вы можете разбивать блоки вручную или переключиться в автоматический режим и наблюдать, как процесс идёт",
     "date": "21 сентября 2026",
@@ -15226,6 +16391,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/19-5145860",
+    "noindex": true,
     "title": "ひびき＆かのんの囲碁19路完全入門 — обзор",
     "excerpt": "Обучающая стратегия «ひびき＆かのんの囲碁19路完全入門» знакомит с правилами го на доске 19×19 через диалоги с профессионалом и любителем, предлагает партии с ИИ и",
     "date": "21 сентября 2026",
@@ -15239,6 +16405,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/brave-new-wonders-2403830",
+    "noindex": true,
     "title": "Brave New Wonders – симулятор автоматизации и стратегии",
     "excerpt": "Brave New Wonders – инди‑симулятор, где вы командуете автоматонами, строите фабрики и исследуете постапокалиптический мир. Игра сочетает стратегию и",
     "date": "21 сентября 2026",
@@ -15252,6 +16419,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/-3855090",
+    "noindex": true,
     "title": "永劫之阿比斯 – обзор, геймплей, советы",
     "excerpt": "永劫之阿比斯 — 2D платформер‑рогалик с пиксельной графикой, где игроки переключаются между двумя героинями, создают уникальные сборки из более 200 модификаций и",
     "date": "21 сентября 2026",
@@ -15265,6 +16433,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/mellow-flavor-alley-5101560",
+    "noindex": true,
     "title": "Mellow Flavor Alley — обзор",
     "excerpt": "Mellow Flavor Alley — простая инди-симуляция, где вы управляете небольшим пищевым переулком. Наблюдайте за клиентами, размещайте ингредиенты и позволяйте",
     "date": "21 сентября 2026",
@@ -15278,6 +16447,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/project-solaris-3002740",
+    "noindex": true,
     "title": "Project Solaris – ролевая стратегия с магией",
     "excerpt": "Project Solaris – инди-ролевая стратегия, где вы управляете неудачливым магом и её спутником, преодолевая испытания в течение ста дней. Игра сочетает",
     "date": "21 сентября 2026",
@@ -15291,6 +16461,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/lumiric-stage-1721290",
+    "noindex": true,
     "title": "Lumiric Stage — создание видео и уроков для пианино",
     "excerpt": "Lumiric Stage позволяет легко создавать видеоуроки и живые трансляции с визуализацией нот в реальном времени, настраивая эффекты и ракурсы камеры.",
     "date": "21 сентября 2026",
@@ -15304,6 +16475,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/-5114020",
+    "noindex": true,
     "title": "手搓代码大作战 — казуальная инди-игра про набор кода",
     "excerpt": "手搓代码大作战 — простая инди-игра, где вам предстоит вручную печатать код, сравнивая процесс с генерацией ИИ. Подойдёт тем, кто любит быстрые рефлексы и",
     "date": "21 сентября 2026",
@@ -15317,6 +16489,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/quack-my-duck-2151450",
+    "noindex": true,
     "title": "Quack my Duck — поиск уточек в городе",
     "excerpt": "Quack my Duck — казуальная инди-игра‑поиск предметов, где нужно отыскать всех разбежавшихся уточек по улицам города. Подходит для игроков всех возрастов,",
     "date": "21 сентября 2026",
@@ -15330,6 +16503,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/tidy-tokens-5132000",
+    "noindex": true,
     "title": "Tidy Tokens – расслабляющая охота за сокровищами",
     "excerpt": "Tidy Tokens – спокойная приключенческая игра, где нужно найти 40 скрытых монет. Игра поддерживает одиночный режим и кооператив до четырёх игроков,",
     "date": "21 сентября 2026",
@@ -15343,6 +16517,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/the-confined-basement-4769110",
+    "noindex": true,
     "title": "The Confined: Basement — мрачный инди‑приключенческий",
     "excerpt": "Темный подвал, где игрок ищет выход, собирая фрагменты памяти и сталкиваясь с опасными существами. Инди‑приключение с элементами выживания и загадок,",
     "date": "21 сентября 2026",
@@ -15356,6 +16531,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/partyforge-idle-5166800",
+    "noindex": true,
     "title": "Partyforge Idle — пассивная ролевая игра",
     "excerpt": "Partyforge Idle — инди-ролевая игра, где вы формируете экспедицию, распределяете отряды между активным походом и гарнизоном, а прогресс продолжается даже",
     "date": "21 сентября 2026",
@@ -15369,6 +16545,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/discipline-simulator-4739040",
+    "noindex": true,
     "title": "DISCIPLINE SIMULATOR – хардкорный симулятор дисциплины",
     "excerpt": "DISCIPLINE SIMULATOR – динамичный экшен‑симулятор, где до восьми игроков соревнуются в быстрых схватках, используя свои фотографии‑цели и разнообразные",
     "date": "21 сентября 2026",
@@ -15382,6 +16559,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/darby-is-here-forever-3124020",
+    "noindex": true,
     "title": "Darby Is Here Forever — обзор и оценка",
     "excerpt": "Darby Is Here Forever – 2‑D платформер с точными прыжками, где игрок управляет Дарби, используя вампирские способности, чтобы освободить замок от",
     "date": "21 сентября 2026",
@@ -15395,6 +16573,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/dear-journey-4172110",
+    "noindex": true,
     "title": "Dear Journey... — уютный инди-симулятор путешествий",
     "excerpt": "Dear Journey... – казуальная инди-стратегия, где вы управляете маленьким туристическим агентством, подбирая маршруты по письмам клиентов. Игра предлагает",
     "date": "21 сентября 2026",
@@ -15408,6 +16587,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/click-to-farm-4761260",
+    "noindex": true,
     "title": "Click to Farm — казуальная фермерская игра",
     "excerpt": "Click to Farm — уютный кликер про ферму, где нужно собирать растения, ловить рыбу и заводить животных. Простое управление, постепенное развитие и",
     "date": "21 сентября 2026",
@@ -15421,6 +16601,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/brain-eating-bride-4377080",
+    "noindex": true,
     "title": "Brain-eating Bride: цена, отзывы и статистика игроков",
     "excerpt": "Brain-eating Bride: актуальная цена (465.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
     "date": "21 сентября 2026",
@@ -15431,6 +16612,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/farmabot-4932410",
+    "noindex": true,
     "title": "Farmabot — фермерский экшн‑рогалик",
     "excerpt": "Farmabot — уникальная игра‑симулятор фермы с элементами экшена и рогалика. Вы выращиваете культуры, используя реальные генетические законы, сражаетесь с",
     "date": "21 сентября 2026",
@@ -15444,6 +16626,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/-4506090",
+    "noindex": true,
     "title": "肉鸽卡牌：商业帝国 – обзор стратегии",
     "excerpt": "肉鸽卡牌：商业帝国 – уникальная карточная стратегия с элементами roguelike. Стройте индустриальный парк, выбирайте персонажа и боритесь за место в глобальном",
     "date": "21 сентября 2026",
@@ -15457,6 +16640,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/kairos-in-step-with-time-4944490",
+    "noindex": true,
     "title": "Kairos: In Step with Time – обзор игры",
     "excerpt": "Kairos: In Step with Time — экспериментальное казуальное приключение, где игроку предстоит управлять кольцом времени, отвечать на шесть ключевых моментов",
     "date": "21 сентября 2026",
@@ -15470,6 +16654,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/diy-dadish-5157680",
+    "noindex": true,
     "title": "DIY Dadish – приключенческий экшен от инди‑разработчиков",
     "excerpt": "DIY Dadish – креативный экшен‑приключение, где вы создаёте собственные уровни с любимым репой‑папой и делитесь ими с сообществом.",
     "date": "21 сентября 2026",
@@ -15483,6 +16668,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/doctor-mother-in-law-wants-my-baby-4900200",
+    "noindex": true,
     "title": "Doctor Mother-in-law Wants My Baby: цена, отзывы и статистика игроков",
     "excerpt": "Doctor Mother-in-law Wants My Baby: актуальная цена (465.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
     "date": "21 сентября 2026",
@@ -15493,6 +16679,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/-5110470",
+    "noindex": true,
     "title": "Путь бессмертия: Мир смертных — обзор игры",
     "excerpt": "Путь бессмертия: Мир смертных – приключенческий стратегический симулятор в стиле китайского фэнтези. Управляйте сектой, бойтесь в реальном времени и",
     "date": "21 сентября 2026",
@@ -15506,6 +16693,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/counter-strike-10",
+    "noindex": true,
     "title": "Counter-Strike: цена, отзывы и статистика игроков",
     "excerpt": "Counter-Strike: актуальная цена (445.00 RUB), 97% положительных отзывов в Steam, статистика владельцев (10,000,000 – 20,000,000). Данные обновляются автоматически.",
     "date": "20 сентября 2026",
@@ -15516,6 +16704,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/half-life-70",
+    "noindex": true,
     "title": "Half-Life: цена, отзывы и статистика игроков",
     "excerpt": "Half-Life: актуальная цена (445.00 RUB), 97% положительных отзывов в Steam, статистика владельцев (10,000,000 – 20,000,000). Данные обновляются автоматически.",
     "date": "20 сентября 2026",
@@ -15526,6 +16715,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/counter-strike-condition-zero-100",
+    "noindex": true,
     "title": "Counter-Strike: Condition Zero: цена, отзывы и статистика игроков",
     "excerpt": "Counter-Strike: Condition Zero: актуальная цена (445.00 RUB), 90% положительных отзывов в Steam, статистика владельцев (10,000,000 – 20,000,000). Данные обновляются автоматически.",
     "date": "20 сентября 2026",
@@ -15546,6 +16736,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/counter-strike-source-240",
+    "noindex": true,
     "title": "Counter-Strike: Source: цена, отзывы и статистика игроков",
     "excerpt": "Counter-Strike: Source: актуальная цена (445.00 RUB), 96% положительных отзывов в Steam, статистика владельцев (10,000,000 – 20,000,000). Данные обновляются автоматически.",
     "date": "20 сентября 2026",
@@ -15556,6 +16747,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/half-life-2-deathmatch-320",
+    "noindex": true,
     "title": "Half-Life 2: Deathmatch: цена, отзывы и статистика игроков",
     "excerpt": "Half-Life 2: Deathmatch: актуальная цена (цена не указана), 91% положительных отзывов в Steam, статистика владельцев (10,000,000 – 20,000,000). Данные обновляются автоматически.",
     "date": "20 сентября 2026",
@@ -15566,6 +16758,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/half-life-2-lost-coast-340",
+    "noindex": true,
     "title": "Half-Life 2: Lost Coast: цена, отзывы и статистика игроков",
     "excerpt": "Half-Life 2: Lost Coast: актуальная цена (цена не указана), 89% положительных отзывов в Steam, статистика владельцев (20,000,000 – 50,000,000). Данные обновляются автоматически.",
     "date": "20 сентября 2026",
@@ -15576,6 +16769,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/portal-400",
+    "noindex": true,
     "title": "Portal: цена, отзывы и статистика игроков",
     "excerpt": "Portal: актуальная цена (445.00 RUB), 98% положительных отзывов в Steam, статистика владельцев (10,000,000 – 20,000,000). Данные обновляются автоматически.",
     "date": "20 сентября 2026",
@@ -15586,6 +16780,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/team-fortress-2-440",
+    "noindex": true,
     "title": "Team Fortress 2 — бесплатный шутер с классами",
     "excerpt": "Team Fortress 2 — многоклассный онлайн‑шутер, где каждый из девяти персонажей обладает уникальными способностями. Игра постоянно пополняется новыми",
     "date": "20 сентября 2026",
@@ -15622,6 +16817,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/garry-s-mod-4000",
+    "noindex": true,
     "title": "Garry's Mod: цена, отзывы и статистика игроков",
     "excerpt": "Garry's Mod: актуальная цена (750.00 RUB), 97% положительных отзывов в Steam, статистика владельцев (20,000,000 – 50,000,000). Данные обновляются автоматически.",
     "date": "20 сентября 2026",
@@ -15632,6 +16828,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/borderlands-2-49520",
+    "noindex": true,
     "title": "Borderlands 2 – шутер‑ролевой с открытым миром",
     "excerpt": "Borderlands 2 – динамичный экшен с элементами ролевой игры, где каждый охотник за сокровищами выбирает свой стиль боя и прокачивает персонажа, исследуя",
     "date": "20 сентября 2026",
@@ -15658,6 +16855,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/sakura-the-eternal-night-5013390",
+    "noindex": true,
     "title": "Sakura: The Eternal Night – ролевая игра с выбором",
     "excerpt": "Sakura: The Eternal Night – атмосферная ролевая игра в виртуальном Киото, где юный герой и девица без памяти раскрывают тайны мира и собственных чувств",
     "date": "20 сентября 2026",
@@ -15671,6 +16869,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/uman-5005050",
+    "noindex": true,
     "title": "UMAN – инди‑симулятор о рутине на работе",
     "excerpt": "UMAN – мрачный инди‑симулятор, где вы становитесь безликой шестерёнкой в бесконечном офисе: работа, сон, сбор мусора, выполнение квот и встречи с",
     "date": "20 сентября 2026",
@@ -15684,6 +16883,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/chesstan-5099860",
+    "noindex": true,
     "title": "ChessTan: цена, отзывы и статистика игроков",
     "excerpt": "ChessTan: актуальная цена (Бесплатно), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
     "date": "20 сентября 2026",
@@ -15694,6 +16894,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/big-bang-to-us-5097440",
+    "noindex": true,
     "title": "BIG BANG TO US – интерактивный симулятор космоса",
     "excerpt": "Погрузитесь в 13,8 миллиарда лет истории вселенной с BIG BANG TO US – интерактивным научным симулятором, позволяющим исследовать космические события и",
     "date": "20 сентября 2026",
@@ -15707,6 +16908,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/ninja-cards-and-ninja-battle-master-5132180",
+    "noindex": true,
     "title": "Ninja Cards and Ninja Battle Master — обзор",
     "excerpt": "Игра сочетает в себе элементы экшена, казуального геймплея и стратегии, предлагая два режима – «Ниндзя‑карты» и «Ниндзя‑битва». Подойдёт тем, кто любит",
     "date": "20 сентября 2026",
@@ -15720,6 +16922,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/meridian-strike-5139650",
+    "noindex": true,
     "title": "Meridian Strike – тактическая ролевая игра про мехи",
     "excerpt": "В Meridian Strike вы возглавляете компанию наёмных мехов, ведёте пошаговые схватки на гексах, следите за перегревом и ремонтом, развивая пилотов и технику",
     "date": "20 сентября 2026",
@@ -15733,6 +16936,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/submechanic-4741630",
+    "noindex": true,
     "title": "Submechanic — инди‑ужас в подводной барной кухне",
     "excerpt": "Submechanic — короткая хоррор‑игра, где вам поручают ночной ремонт в баре капитана Фрилла, спускаясь в зловещие резервуары. Атмосфера напряжённая, простые",
     "date": "20 сентября 2026",
@@ -15746,6 +16950,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/meat-girl-4917360",
+    "noindex": true,
     "title": "Meat Girl – визуальная новелла о поиске подруги в горах",
     "excerpt": "Meat Girl — интригующая визуальная новелла с элементами приключения и казуального геймплея. История о девушке, ищущей свою больную соседку в холодных",
     "date": "20 сентября 2026",
@@ -15759,6 +16964,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/slap-the-gamer-5195850",
+    "noindex": true,
     "title": "Slap the Gamer – аркадный кликер с юмором",
     "excerpt": "Slap the Gamer – странный аркадный кликер, где игроку предстоит хлопать назойливого геймера, собирая счёт и открывая достижения в стиле классических",
     "date": "20 сентября 2026",
@@ -15772,6 +16978,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/rusted-awakening-2874490",
+    "noindex": true,
     "title": "Rusted Awakening — хоррор‑экшен от первого лица",
     "excerpt": "Rusted Awakening — динамичный хоррор‑шутер, где быстрый бой сочетается с напряжённой атмосферой страха, напоминающей детские кошмары. Игра предлагает",
     "date": "20 сентября 2026",
@@ -15785,6 +16992,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/potionpanic-4533650",
+    "noindex": true,
     "title": "PotionPanic – кооперативный симулятор варки зелий",
     "excerpt": "PotionPanic — динамичная кооперативная игра, где от 1 до 4 игроков собирают магические ингредиенты и готовят зелья под давлением времени. Идеально для",
     "date": "20 сентября 2026",
@@ -15798,6 +17006,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/the-options-menu-4735970",
+    "noindex": true,
     "title": "The Options Menu — обзор и рекомендации",
     "excerpt": "The Options Menu – казуальная инди‑игра, где вы выступаете в роли Игрока, исследуете бесконечные варианты развития и открываете юмористические концовки.",
     "date": "20 сентября 2026",
@@ -15811,6 +17020,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/astrotennis-5109050",
+    "noindex": true,
     "title": "AstroTennis — казуальный спортивный теннис",
     "excerpt": "AstroTennis — простая и яркая игра, где вам предстоит сыграть в теннис против известных космонавтов. Подойдёт любителям лёгких спортивных матчей и",
     "date": "20 сентября 2026",
@@ -15824,6 +17034,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/day-off-simulator-2524740",
+    "noindex": true,
     "title": "Day Off Simulator — расслабляющий симулятор выходного",
     "excerpt": "Day Off Simulator — инди-симулятор, где можно отдохнуть от рутины: пощечина начальнику, музыка, творческие занятия и простые развлечения для полного",
     "date": "20 сентября 2026",
@@ -15837,6 +17048,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/night-record-thin-walls-4652040",
+    "noindex": true,
     "title": "Night Record: Thin Walls — обзор игры",
     "excerpt": "Night Record: Thin Walls – атмосферный инди‑симулятор, где вы берётесь за домашние заботы в пустом доме, слыша странные шорохи. Игра подходит любителям",
     "date": "20 сентября 2026",
@@ -15850,6 +17062,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/screw-it-4972300",
+    "noindex": true,
     "title": "Screw IT — уютный симулятор организации",
     "excerpt": "Screw IT – спокойный инди-симулятор, где игрок сортирует гвозди и шурупы, используя разные инструменты. Идеально для любителей расслабляющего порядка и",
     "date": "20 сентября 2026",
@@ -15863,6 +17076,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/the-furry-protocol-4141640",
+    "noindex": true,
     "title": "The Fury Protocol – выживание в сибирском комплексе",
     "excerpt": "The Fury Protocol – динамичный экшен‑симулятор, где вам предстоит выжить в сибирском научном комплексе и раскрыть тайны корпорации. Игра для любителей",
     "date": "20 сентября 2026",
@@ -15876,6 +17090,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/-5121040",
+    "noindex": true,
     "title": "カブトムシの森 — приключенческий хоррор",
     "excerpt": "Краткая игра‑хоррор о мальчике, охотящемся на жуков в ночном лесу. Приключения, мрачная атмосфера и неожиданная тайна.",
     "date": "20 сентября 2026",
@@ -15889,6 +17104,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/gwiazdozbi-r-4849030",
+    "noindex": true,
     "title": "Gwiazdozbiór — логическая стратегия о звёздах",
     "excerpt": "Gwiazdozbiór — головоломка‑стратегия, где игрок управляет лучами света, используя зеркала для восстановления созвездий и избегая чёрные дыры. Оцените",
     "date": "20 сентября 2026",
@@ -15902,6 +17118,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/panic-files-buried-sanity-4012730",
+    "noindex": true,
     "title": "Panic Files: Buried Sanity — обзор",
     "excerpt": "Игра Panic Files: Buried Sanity погружает в мрачный подземный мир, где каждый туннель полон опасностей и иллюзий. Приключенческий инди‑титул проверит вашу",
     "date": "20 сентября 2026",
@@ -15915,6 +17132,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/fluttering-3759520",
+    "noindex": true,
     "title": "Fluttering — приключенческий инди‑платформер",
     "excerpt": "Fluttering — точный платформер с уникальной механикой полёта. Управляйте Пипом, преодолевая жестокие падения и сложные уровни, доказывая, что даже ранний",
     "date": "20 сентября 2026",
@@ -15928,6 +17146,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/pirouette-smile-5171060",
+    "noindex": true,
     "title": "Pirouette & Smile — головоломка‑платформер",
     "excerpt": "Pirouette & Smile — казуальная головоломка, где платформенные прыжки переплетаются с пазлами и видеотестами, предлагая необычную игровую механику для",
     "date": "20 сентября 2026",
@@ -15941,6 +17160,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/-4951110",
+    "noindex": true,
     "title": "精算大师 — многопользовательская стратегия с аукционами",
     "excerpt": "精算大师 — казуальная многопользовательская игра‑стратегия, где каждый игрок управляет уникальными персонажами, использует инструменты и участвует в",
     "date": "20 сентября 2026",
@@ -15954,6 +17174,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/desire-inn-3956380",
+    "noindex": true,
     "title": "Desire Inn — симулятор отеля и отношений",
     "excerpt": "Desire Inn — казуальная игра‑симулятор, где вы управляете сетью отелей, улучшаете номера и строите отношения с девушками‑служанками, раскрывая их тайные",
     "date": "20 сентября 2026",
@@ -15967,6 +17188,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/only-farms-4657600",
+    "noindex": true,
     "title": "ONLY FARMS – приключенческий симулятор летних приключений",
     "excerpt": "Летняя история о фестивалях, тайных желаниях и рискованных выборах. Приключения, казуальный геймплей и симуляция отношений в одном проекте.",
     "date": "20 сентября 2026",
@@ -15980,6 +17202,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/somebody-s-tale-776250",
+    "noindex": true,
     "title": "Somebody's Tale: цена, отзывы и статистика игроков",
     "excerpt": "Somebody's Tale: актуальная цена (74.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.",
     "date": "20 сентября 2026",
@@ -15990,6 +17213,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/love-in-another-world-4928470",
+    "noindex": true,
     "title": "Love in Another World – обзор казуальной игры",
     "excerpt": "Love in Another World – казуальная игра о любви, личностном росте и опасных приключениях в мире, где живут только женщины без одежды, их естественное",
     "date": "20 сентября 2026",
@@ -16003,6 +17227,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/texture-map-studio-5172720",
+    "noindex": true,
     "title": "Texture Map Studio – быстрый генератор PBR‑карт",
     "excerpt": "Texture Map Studio позволяет быстро создавать наборы карт для физически корректного рендеринга из альбедо‑текстуры, генерируя нормали, высоту, AO,",
     "date": "20 сентября 2026",
@@ -16016,6 +17241,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/blackjack-pixel-blackjack-5197410",
+    "noindex": true,
     "title": "Blackjack - Pixel BlackJack обзор",
     "excerpt": "Пиксельный блэкджек с простыми правилами и множеством опций: одиночный режим, онлайн до трёх игроков, возможность удваивать, разделять и страховать руки.",
     "date": "20 сентября 2026",
@@ -16029,6 +17255,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/visual-novel-evening-broadcast-5208380",
+    "noindex": true,
     "title": "Visual Novel: EVENING BROADCAST – обзор и детали",
     "excerpt": "Игра‑визуальная новелла с элементами экшена и приключений. История о студенте и загадочном советском телевизоре 1989 года, полна тайны и интриги.",
     "date": "20 сентября 2026",
@@ -16042,6 +17269,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/active-matter-2887580",
+    "noindex": true,
     "title": "Active Matter — реалистичный военный шутер",
     "excerpt": "Active Matter — динамичный экшен с мультиплеером, где игроки сражаются в квантово‑нестабильных зонах за контроль над активной материей, сочетая рейды и",
     "date": "20 сентября 2026",
@@ -16055,6 +17283,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/bodycam-2406770",
+    "noindex": true,
     "title": "Bodycam – тактический шутер от первого лица",
     "excerpt": "Bodycam – тактический шутер с обзором через нательную камеру, динамичными ближними схватками и несколькими режимами командных боёв, подходящий для",
     "date": "20 сентября 2026",
@@ -16081,6 +17310,7 @@ window.allArticles = [
   },
   {
     "url": "/archive/graveyard-keeper-2-4358690",
+    "noindex": true,
     "title": "Graveyard Keeper 2 — симулятор кладбищенского смотрителя",
     "excerpt": "Graveyard Keeper 2 — приключенческий ролевой симулятор, где вам предстоит возродить средневековый город, управлять кладбищем, автоматизировать",
     "date": "20 сентября 2026",
