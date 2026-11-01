@@ -54,6 +54,7 @@ jobs:
           python scripts/build_similar.py
           python scripts/build_passages.py
           python scripts/build_pc_tool.py
+          python scripts/build_gpu_pages.py
           python scripts/build_gpu_verdicts.py
 
       # Хабы «для слабых ноутбуков» ссылаются на наши страницы игр, если они

@@ -71,6 +71,28 @@ def page_lastmod(name):
     return m.group(1) if m else None
 
 
+def page_noindex(url):
+    """Страница закрыта от индекса — в карту сайта её не кладём.
+
+    Шаблонные страницы игр массово ушли под noindex: Google их и так не брал,
+    а в карте они создавали видимость 1281 «нужной» страницы.
+    """
+    root = os.path.dirname(os.path.abspath(__file__))
+    path = url.lstrip('/')
+    if not path or path.endswith('/'):
+        path = path.rstrip('/') + '/index.html'
+    elif not path.endswith('.html'):
+        path += '.html'
+    full = os.path.join(root, path)
+    if not os.path.exists(full):
+        return False
+    try:
+        head = open(full, encoding='utf-8', errors='ignore').read(4000)
+    except OSError:
+        return False
+    return re.search(r'name="robots"\s+content="[^"]*noindex', head) is not None
+
+
 def generate():
     try:
         with open(DATA_FILE, 'r', encoding='utf-8') as f:
@@ -139,6 +161,13 @@ def generate():
                                lastmod=page_lastmod(fname) if fname else None,
                                priority=prio))
 
+    # Страницы «что пойдёт на <видеокарту>» — генерируются build_gpu_pages.py.
+    root_dir = os.path.dirname(os.path.abspath(__file__))
+    for name in sorted(os.listdir(root_dir)):
+        if re.match(r'^igry-dlya-(gtx|rtx|rx|intel|amd)-[a-z0-9-]+\.html$', name):
+            lines.append(url_block(f'{BASE_URL}/{name}',
+                                   lastmod=page_lastmod(name), priority='0.9'))
+
     # Страницы-хабы категорий (topical authority)
     for slug in ('ii-i-tehnologii', 'analitika', 'gajdy', 'konsoli', 'trendy',
                  'razrabotka', 'mnenie', 'kino-i-igry', 'obzory'):
@@ -159,6 +188,9 @@ def generate():
         # /archive/-<appid> — страница без человекочитаемого слага (название игры
         # не латиницей). Она закрыта noindex, в карту сайта не попадает.
         if re.fullmatch(r'/archive/-\d+', url):
+            skipped += 1
+            continue
+        if page_noindex(url):
             skipped += 1
             continue
         clean_path = url.lstrip('/')

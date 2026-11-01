@@ -558,6 +558,20 @@ ${rows.join("\n")}
     </section>`;
 }
 
+// Кого пускаем в индекс. Проверено через URL Inspection: Google забраковал
+// 22 из 22 проверенных шаблонных страниц («Crawled — currently not indexed»),
+// а из 54 URL в индексе была одна главная. Тонкие страницы не дают трафика,
+// зато кормят сайтовый вердикт «тонкий контент», из-за которого не берутся
+// даже хабы. Поэтому в индекс идут только игры, на которые есть спрос;
+// остальные остаются для людей и внутренних ссылок под noindex, follow.
+let demandIdsCache = null;
+function demandIds() {
+  if (!demandIdsCache) {
+    demandIdsCache = new Set(loadDemand().map((g) => String(g.appid)));
+  }
+  return demandIdsCache;
+}
+
 function buildPage({ appid, slug, store, spy, entry, dates, related, alias }) {
   const title = store.name;
   // Если запись обогащена ИИ — используем её заголовок/описание/интро,
@@ -697,7 +711,7 @@ ${movieItems
   <meta property="og:image:height" content="630" />
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:image" content="${headerImg}" />
-  <meta name="robots" content="${/^-\d+$/.test(slug) ? "noindex, follow" : "index, follow, max-image-preview:large"}" />
+  <meta name="robots" content="${/^-\d+$/.test(slug) || !demandIds().has(String(appid)) ? "noindex, follow" : "index, follow, max-image-preview:large"}" />
 
   <script async src="https://www.googletagmanager.com/gtag/js?id=${CONFIG.gtagId}"></script>
   <script>
