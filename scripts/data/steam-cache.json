@@ -188,6 +188,15 @@
   "released": "21 мая. 2010 г.",
   "min": "ОС: Windows® XP, x64 или 2000 с последней версией пакета обновлений · Процессор: Pentium® 4 с тактовой частотой 1,7 ГГц или аналогичный · Оперативная память: 512 МБ или больше · Видеокарта: GeForce™ 4 Ti или Radeon® 9000 с 64 МБ видеопамяти; монитор с поддержкой формата 4:3 · DirectX®: 9.0c или новее · Жесткий диск: 17"
  },
+ "22380": {
+  "name": "Fallout: New Vegas",
+  "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/22380/header.jpg?t=1765992876",
+  "isFree": false,
+  "price": "$9.99",
+  "genres": "Экшены, Ролевые игры",
+  "released": "19 окт. 2010 г.",
+  "min": "ОС: Windows 7/Vista/XP · Процессор: двухъядерный, с тактовой частотой 2 ГГц · Оперативная память: 2 ГБ · Жесткий диск: 10 ГБ свободного места · Видеокарта: из серии NVIDIA GeForce 6 или ATI 1300XT"
+ },
  "32370": {
   "name": "STAR WARS™ Knights of the Old Republic™",
   "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/32370/header.jpg?t=1681144833",
