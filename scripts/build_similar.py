@@ -22,6 +22,7 @@ GENRE = re.compile(r"<strong>Жанры:</strong>\s*([^<]*)")
 RELATED = '<section class="related-section">'
 EXISTING = re.compile(r'[ \t]*<section class="similar-games">[\s\S]*?</section>\n?')
 DEAD_RX = re.compile(r"/archive/-\d+$")
+NOINDEX_RX = re.compile(r'name="robots" content="[^"]*noindex')
 TAG = re.compile(r"<[^>]+>")
 
 
@@ -60,8 +61,9 @@ for fp in sorted(glob.glob(os.path.join(ARCH, "*.html"))):
     if not g or not t:
         continue
     url = "/archive/" + os.path.basename(fp)[:-5]
-    # "/archive/-<appid>" закрыты noindex — ссылаться на них нельзя.
-    if DEAD_RX.fullmatch(url):
+    # "/archive/-<appid>" и страницы под noindex — ссылаться на них нельзя:
+    # Google скачает такую ссылку, увидит noindex и выбросит, потратив обход.
+    if DEAD_RX.fullmatch(url) or NOINDEX_RX.search(h[:4000]):
         continue
     p, v = PRICE.search(h), VERDICT.search(h)
     glist = [x.strip().lower() for x in g.group(1).split(",") if x.strip()]

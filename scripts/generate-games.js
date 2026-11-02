@@ -249,8 +249,9 @@ function pickRelated(currentUrl, arr, n = 4) {
   const out = [];
   for (let i = 1; out.length < n && i <= arr.length; i++) {
     const c = arr[(idx + i) % arr.length];
-    // Слаги вида "-<appid>" закрыты noindex: ссылки в них уводят вес в тупик.
-    if (!c || c.url === currentUrl || /\/-\d+$/.test(c.url)) continue;
+    // Слаги вида "-<appid>" и страницы под noindex: ссылки в них заставляют
+    // Google обходить пустышки, а это трата краулингового бюджета.
+    if (!c || c.url === currentUrl || /\/-\d+$/.test(c.url) || c.noindex) continue;
     if (c.category === CONFIG.categoryLabel) {
       out.push({ url: c.url, title: c.title, date: c.date });
     }
@@ -490,6 +491,9 @@ function loadFacts() {
     // "-<appid>.html" закрыты noindex: в «Похожих» на них ссылаться нельзя.
     if (/^-\d+\.html$/.test(name)) continue;
     const h = fs.readFileSync(path.join(dir, name), "utf-8");
+    // Страницы под noindex тоже не годится предлагать: Google скачает ссылку,
+    // увидит noindex и выбросит — обход потрачен зря.
+    if (/name="robots" content="[^"]*noindex/.test(h.slice(0, 4000))) continue;
     const g = h.match(FACT_GENRE);
     const t = h.match(FACT_TITLE);
     if (!g || !t) continue;
@@ -592,8 +596,19 @@ function buildPage({ appid, slug, store, spy, entry, dates, related, alias }) {
   // чтобы рефреш данных НЕ затирал тексты под людей и поисковики.
   const custom = !!(entry && entry.ai);
   const displayTitle =
-    custom && entry.title ? entry.title : `${title}: цена, отзывы и статистика игроков`;
-  const pageTitle = `${displayTitle} | One1Game`;
+    custom && entry.title ? entry.title : `${title}: цена, отзывы и требования`;
+  // Заголовок вкладки: держим в пределах ~70 символов, иначе Google обрезает
+  // его в выдаче по ширине и смысл теряется. Режем по границе слова.
+  const BRAND_SUFFIX = " | One1Game";
+  function fitTitle(text, max) {
+    const s = String(text || "").trim();
+    if (s.length <= max) return s;
+    const cut = s.slice(0, max - 1);
+    const at = cut.lastIndexOf(" ");
+    const body = at > max * 0.6 ? cut.slice(0, at) : cut;
+    return body.replace(/[\s,;:—–-]+$/, "") + "…";
+  }
+  const pageTitle = fitTitle(displayTitle, 70 - BRAND_SUFFIX.length) + BRAND_SUFFIX;
   const metaDesc =
     custom && entry.excerpt
       ? entry.excerpt
@@ -622,7 +637,6 @@ function buildPage({ appid, slug, store, spy, entry, dates, related, alias }) {
     spy.positive && spy.negative
       ? Math.round((spy.positive / (spy.positive + spy.negative)) * 100)
       : null;
-  const totalReviews = (spy.positive || 0) + (spy.negative || 0);
   const owners = formatOwners(spy.owners);
   const headerImg = store.header_image || `${CONFIG.siteUrl}/og-image.jpg`;
   const shortDesc = (store.short_description || "").replace(/"/g, "'");
@@ -690,14 +704,10 @@ ${movieItems
       priceCurrency: store.price_overview.currency,
     };
   }
-  if (positiveRatio !== null) {
-    videoGameLd.aggregateRating = {
-      "@type": "AggregateRating",
-      ratingValue: String(Math.round(positiveRatio / 20)),
-      bestRating: "5",
-      ratingCount: String(totalReviews),
-    };
-  }
+  // AggregateRating из Steam здесь больше не размечается: политика Google
+  // запрещает агрегировать отзывы и рейтинги с чужих сайтов («Don't aggregate
+  // reviews or ratings from other websites»). Видимая доля положительных
+  // отзывов остаётся текстом на странице, но своей оценкой не выдаётся.
 
   return `<!DOCTYPE html>
 <html lang="ru">

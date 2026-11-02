@@ -44,10 +44,16 @@ def collect_lastmod(content):
     return result
 
 
-def url_block(loc, lastmod=None, priority='0.7'):
+def url_block(loc, lastmod=None, priority=None):
+    """Один <url> для карты сайта.
+
+    priority/changefreq не пишем: документация Google прямо говорит
+    «Google ignores <priority> and <changefreq> values». Параметр оставлен,
+    чтобы не переписывать все вызовы, но в XML он не попадает.
+    """
     loc = loc.replace('.html', '')  # Cloudflare Pages убирает .html — sitemap тоже без расширения
     lastmod_xml = f'<lastmod>{lastmod}</lastmod>' if lastmod else ''
-    return f'  <url><loc>{loc}</loc>{lastmod_xml}<priority>{priority}</priority></url>'
+    return f'  <url><loc>{loc}</loc>{lastmod_xml}</url>'
 
 
 def page_lastmod(name):
@@ -167,6 +173,13 @@ def generate():
         if re.match(r'^igry-dlya-(gtx|rtx|rx|intel|amd)-[a-z0-9-]+\.html$', name):
             lines.append(url_block(f'{BASE_URL}/{name}',
                                    lastmod=page_lastmod(name), priority='0.9'))
+
+    # Страницы под длинный хвост «потянет ли <игра> на <карта>» —
+    # генерируются build_pc_pairs.py из реальных подсказок поисковиков.
+    for name in sorted(os.listdir(root_dir)):
+        if re.match(r'^potyanet-li-[a-z0-9-]+-na-[a-z0-9-]+\.html$', name):
+            lines.append(url_block(f'{BASE_URL}/{name}',
+                                   lastmod=page_lastmod(name), priority='0.8'))
 
     # Страницы-хабы категорий (topical authority)
     for slug in ('ii-i-tehnologii', 'analitika', 'gajdy', 'konsoli', 'trendy',

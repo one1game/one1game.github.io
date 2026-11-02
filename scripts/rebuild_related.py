@@ -38,11 +38,14 @@ CONTAINER_RX = re.compile(
 raw = open(os.path.join(ROOT, "articles-data.js"), encoding="utf-8").read()
 catalog = json.loads(raw[raw.index("= [") + 2: raw.rindex("];") + 1])
 by_url = {a["url"]: a for a in catalog}
-# Слаги вида "/archive/-<appid>" закрыты noindex — ссылки на них уводят вес
-# в тупик, поэтому в кольцо «Похожие» они не попадают.
+# Слаги вида "/archive/-<appid>" и страницы под noindex не попадают в кольцо
+# «Похожие»: Google всё равно скачает такую ссылку, увидит noindex и выбросит
+# её — обход потрачен зря (документация Google про crawl budget).
 DEAD_RX = re.compile(r"/archive/-\d+$")
 order = [a["url"] for a in catalog
-         if a["url"].startswith("/archive/") and not DEAD_RX.fullmatch(a["url"])]
+         if a["url"].startswith("/archive/")
+         and not DEAD_RX.fullmatch(a["url"])
+         and not a.get("noindex")]
 
 games = [u for u in order if by_url[u].get("category") == GAME_CATEGORY]
 manual = [u for u in order if by_url[u].get("category") != GAME_CATEGORY]

@@ -281,6 +281,22 @@ def indexable(url):
     return re.search(r'name="robots"\s+content="[^"]*noindex', head) is None
 
 
+def pair_links(limit=8):
+    """Страницы «потянет ли <игра> на <карта>» — собираются build_pc_pairs.py."""
+    out = []
+    for fp in sorted(Path(".").glob("potyanet-li-*-na-*.html")):
+        try:
+            h = fp.read_text(encoding="utf-8", errors="ignore")
+        except OSError:
+            continue
+        m = re.search(r"<h1[^>]*>(.*?)</h1>", h, re.S)
+        if not m:
+            continue
+        title = re.sub(r"<[^>]+>", "", m.group(1)).strip()
+        out.append(("/" + fp.name[:-5], title, "Вердикт по требованиям и настройки"))
+    return out[:limit]
+
+
 FILTER_CSS = """
     .cat-filters { display: flex; flex-wrap: wrap; gap: 10px 14px; align-items: center; margin: 0 0 18px; padding: 12px 14px; border: 1px solid var(--line, rgba(125,255,155,.16)); border-radius: 12px; background: rgba(125,255,155,.03); }
     .cat-search { display: flex; align-items: center; gap: 8px; flex: 1 1 240px; min-width: 200px; border: 1px solid var(--line, rgba(125,255,155,.16)); border-radius: 8px; padding: 7px 10px; }
@@ -446,7 +462,12 @@ def build_hub(category, slug, items):
     grid_title = "Все обзоры" if slug == "obzory" else "Все материалы раздела"
 
     picks_html = ""
-    for block_title, links in meta.get("picks", []):
+    blocks = list(meta.get("picks", []))
+    if slug == "obzory":
+        pairs = pair_links()
+        if pairs:
+            blocks.insert(0, ("Потянет ли на конкретной видеокарте", pairs))
+    for block_title, links in blocks:
         lis = "\n".join(
             f'        <li><a href="{esc(u)}">{esc(t)}</a><span>{esc(d)}</span></li>'
             for u, t, d in links
@@ -551,6 +572,7 @@ def build_hub(category, slug, items):
   <meta property="og:title" content="{esc(title)}" />
   <meta property="og:description" content="{esc(desc)}" />
   <meta property="og:url" content="{url}" />
+  <meta property="og:image" content="{BASE}/site-og.png" />
   <script type="application/ld+json">
 {json.dumps(ld, ensure_ascii=False, indent=2)}
   </script>
