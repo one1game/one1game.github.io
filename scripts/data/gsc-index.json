@@ -3,8 +3,8 @@
  "total": 50,
  "states": {
   "Submitted and indexed": 1,
-  "Crawled - currently not indexed": 23,
-  "URL is unknown to Google": 26
+  "Crawled - currently not indexed": 20,
+  "URL is unknown to Google": 29
  },
  "urls": [
   {
@@ -158,6 +158,66 @@
    "googleCanonical": "https://one1game.org/vo-chto-poigrat"
   },
   {
+   "url": "https://one1game.org/archive/s-t-a-l-k-e-r-2-heart-of-chornobyl-1643320",
+   "group": "игры (автогенерация)",
+   "verdict": "NEUTRAL",
+   "coverage": "URL is unknown to Google",
+   "robots": "ROBOTS_TXT_STATE_UNSPECIFIED",
+   "indexing": "INDEXING_STATE_UNSPECIFIED",
+   "lastCrawl": "",
+   "googleCanonical": null
+  },
+  {
+   "url": "https://one1game.org/archive/hogwarts-legacy-990080",
+   "group": "игры (автогенерация)",
+   "verdict": "NEUTRAL",
+   "coverage": "URL is unknown to Google",
+   "robots": "ROBOTS_TXT_STATE_UNSPECIFIED",
+   "indexing": "INDEXING_STATE_UNSPECIFIED",
+   "lastCrawl": "",
+   "googleCanonical": null
+  },
+  {
+   "url": "https://one1game.org/archive/the-elder-scrolls-v-skyrim-72850",
+   "group": "игры (автогенерация)",
+   "verdict": "NEUTRAL",
+   "coverage": "URL is unknown to Google",
+   "robots": "ROBOTS_TXT_STATE_UNSPECIFIED",
+   "indexing": "INDEXING_STATE_UNSPECIFIED",
+   "lastCrawl": "",
+   "googleCanonical": null
+  },
+  {
+   "url": "https://one1game.org/archive/far-cry-4-298110",
+   "group": "игры (автогенерация)",
+   "verdict": "NEUTRAL",
+   "coverage": "URL is unknown to Google",
+   "robots": "ROBOTS_TXT_STATE_UNSPECIFIED",
+   "indexing": "INDEXING_STATE_UNSPECIFIED",
+   "lastCrawl": "",
+   "googleCanonical": null
+  },
+  {
+   "url": "https://one1game.org/archive/dead-by-daylight-381210",
+   "group": "игры (автогенерация)",
+   "verdict": "NEUTRAL",
+   "coverage": "URL is unknown to Google",
+   "robots": "ROBOTS_TXT_STATE_UNSPECIFIED",
+   "indexing": "INDEXING_STATE_UNSPECIFIED",
+   "lastCrawl": "",
+   "googleCanonical": null
+  },
+  {
+   "url": "https://one1game.org/archive/devil-may-cry-5-601150",
+   "group": "игры (автогенерация)",
+   "verdict": "NEUTRAL",
+   "coverage": "URL is unknown to Google",
+   "robots": "ROBOTS_TXT_STATE_UNSPECIFIED",
+   "indexing": "INDEXING_STATE_UNSPECIFIED",
+   "lastCrawl": "",
+   "googleCanonical": null
+  },
+  {
    "url": "https://one1game.org/archive/battlefield-v-1238810",
    "group": "игры (автогенерация)",
    "verdict": "NEUTRAL",
@@ -168,17 +228,7 @@
    "googleCanonical": null
   },
   {
-   "url": "https://one1game.org/archive/dota-2-570",
-   "group": "игры (автогенерация)",
-   "verdict": "NEUTRAL",
-   "coverage": "URL is unknown to Google",
-   "robots": "ROBOTS_TXT_STATE_UNSPECIFIED",
-   "indexing": "INDEXING_STATE_UNSPECIFIED",
-   "lastCrawl": "",
-   "googleCanonical": null
-  },
-  {
-   "url": "https://one1game.org/archive/pubg-battlegrounds-578080",
+   "url": "https://one1game.org/archive/elden-ring-1245620",
    "group": "игры (автогенерация)",
    "verdict": "NEUTRAL",
    "coverage": "URL is unknown to Google",
@@ -198,17 +248,7 @@
    "googleCanonical": null
   },
   {
-   "url": "https://one1game.org/archive/warframe-230410",
-   "group": "игры (автогенерация)",
-   "verdict": "NEUTRAL",
-   "coverage": "URL is unknown to Google",
-   "robots": "ROBOTS_TXT_STATE_UNSPECIFIED",
-   "indexing": "INDEXING_STATE_UNSPECIFIED",
-   "lastCrawl": "",
-   "googleCanonical": null
-  },
-  {
-   "url": "https://one1game.org/archive/valheim-892970",
+   "url": "https://one1game.org/archive/path-of-exile-238960",
    "group": "игры (автогенерация)",
    "verdict": "NEUTRAL",
    "coverage": "URL is unknown to Google",
@@ -228,17 +268,7 @@
    "googleCanonical": null
   },
   {
-   "url": "https://one1game.org/archive/elden-ring-ne-zapuskaetsya-windows-11",
-   "group": "игры (автогенерация)",
-   "verdict": "NEUTRAL",
-   "coverage": "URL is unknown to Google",
-   "robots": "ROBOTS_TXT_STATE_UNSPECIFIED",
-   "indexing": "INDEXING_STATE_UNSPECIFIED",
-   "lastCrawl": "",
-   "googleCanonical": null
-  },
-  {
-   "url": "https://one1game.org/archive/filmy-pro-gejming-2026",
+   "url": "https://one1game.org/archive/elden-ring-nightreign-gajd-dlya-novichkov-2026",
    "group": "игры (автогенерация)",
    "verdict": "NEUTRAL",
    "coverage": "URL is unknown to Google",
@@ -258,24 +288,14 @@
    "googleCanonical": null
   },
   {
-   "url": "https://one1game.org/archive/igry-dlya-dvoih-na-telefone-2026",
-   "group": "игры (автогенерация)",
-   "verdict": "NEUTRAL",
-   "coverage": "URL is unknown to Google",
-   "robots": "ROBOTS_TXT_STATE_UNSPECIFIED",
-   "indexing": "INDEXING_STATE_UNSPECIFIED",
-   "lastCrawl": "",
-   "googleCanonical": null
-  },
-  {
-   "url": "https://one1game.org/archive/half-life-2-220",
+   "url": "https://one1game.org/archive/atomic-heart-668580",
    "group": "игры (автогенерация)",
    "verdict": "NEUTRAL",
    "coverage": "Crawled - currently not indexed",
    "robots": "ALLOWED",
    "indexing": "INDEXING_ALLOWED",
    "lastCrawl": "2026-10-12",
-   "googleCanonical": "https://one1game.org/archive/half-life-2-220"
+   "googleCanonical": "https://one1game.org/archive/atomic-heart-668580"
   },
   {
    "url": "https://one1game.org/archive/counter-strike-2-730",
@@ -288,24 +308,14 @@
    "googleCanonical": "https://one1game.org/archive/counter-strike-2-730"
   },
   {
-   "url": "https://one1game.org/archive/rust-252490",
+   "url": "https://one1game.org/archive/baldur-s-gate-3-1086940",
    "group": "игры (автогенерация)",
    "verdict": "NEUTRAL",
    "coverage": "Crawled - currently not indexed",
    "robots": "ALLOWED",
    "indexing": "INDEXING_ALLOWED",
    "lastCrawl": "2026-10-12",
-   "googleCanonical": "https://one1game.org/archive/rust-252490"
-  },
-  {
-   "url": "https://one1game.org/archive/nevidimyy-razum-ii-arhitektor-igrovykh-mirov-2026",
-   "group": "игры (автогенерация)",
-   "verdict": "NEUTRAL",
-   "coverage": "Crawled - currently not indexed",
-   "robots": "ALLOWED",
-   "indexing": "INDEXING_ALLOWED",
-   "lastCrawl": "2026-10-23",
-   "googleCanonical": "https://one1game.org/archive/nevidimyy-razum-ii-arhitektor-igrovykh-mirov-2026"
+   "googleCanonical": "https://one1game.org/archive/baldur-s-gate-3-1086940"
   },
   {
    "url": "https://one1game.org/archive/operation-darkside-dx-guide-2026",
@@ -318,24 +328,14 @@
    "googleCanonical": "https://one1game.org/archive/operation-darkside-dx-guide-2026"
   },
   {
-   "url": "https://one1game.org/archive/luchshie-kartochnye-igry-na-android-2026",
+   "url": "https://one1game.org/archive/chestnye-pvp-igry-bez-donata-2026",
    "group": "игры (автогенерация)",
    "verdict": "NEUTRAL",
    "coverage": "Crawled - currently not indexed",
    "robots": "ALLOWED",
    "indexing": "INDEXING_ALLOWED",
-   "lastCrawl": "2026-10-12",
-   "googleCanonical": "https://one1game.org/archive/luchshie-kartochnye-igry-na-android-2026"
-  },
-  {
-   "url": "https://one1game.org/archive/stalker-2-skrytye-mekhaniki-tenevye-pravila-2026",
-   "group": "игры (автогенерация)",
-   "verdict": "NEUTRAL",
-   "coverage": "Crawled - currently not indexed",
-   "robots": "ALLOWED",
-   "indexing": "INDEXING_ALLOWED",
-   "lastCrawl": "2026-10-12",
-   "googleCanonical": "https://one1game.org/archive/stalker-2-skrytye-mekhaniki-tenevye-pravila-2026"
+   "lastCrawl": "2026-10-22",
+   "googleCanonical": "https://one1game.org/archive/chestnye-pvp-igry-bez-donata-2026"
   },
   {
    "url": "https://one1game.org/archive/gta-vi-krizis-industrii-2026",
@@ -348,14 +348,14 @@
    "googleCanonical": null
   },
   {
-   "url": "https://one1game.org/archive/rtx-5090-vs-rx-9070xt-sravnenie-2026",
+   "url": "https://one1game.org/archive/xbox-gamepass-to-steam-saves-2026",
    "group": "игры (автогенерация)",
    "verdict": "NEUTRAL",
-   "coverage": "Crawled - currently not indexed",
-   "robots": "ALLOWED",
-   "indexing": "INDEXING_ALLOWED",
-   "lastCrawl": "2026-10-12",
-   "googleCanonical": "https://one1game.org/archive/rtx-5090-vs-rx-9070xt-sravnenie-2026"
+   "coverage": "URL is unknown to Google",
+   "robots": "ROBOTS_TXT_STATE_UNSPECIFIED",
+   "indexing": "INDEXING_STATE_UNSPECIFIED",
+   "lastCrawl": "",
+   "googleCanonical": null
   },
   {
    "url": "https://one1game.org/archive/kak-uvelichit-fps-windows-11-optimizaciya",
