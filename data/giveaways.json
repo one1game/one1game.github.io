@@ -1,8 +1,8 @@
 {
- "updated": "2026-11-01",
+ "updated": "2026-11-02",
  "source": "gamerpower.com",
  "page": "https://one1game.org/besplatnye-igry",
- "count": 38,
+ "count": 39,
  "items": [
   {
    "title": "Best Plumber (IndieGala) Giveaway",
@@ -11,6 +11,30 @@
    "end_date": "N/A",
    "url": "https://www.gamerpower.com/open/best-plumber-pc-giveaway",
    "description": "Ever dreamed of being a plumber? Probably not... but now’s your chance! Grab Best Plumber for free on IndieGala and step into the boots of a young plumber!"
+  },
+  {
+   "title": "Horse Racing (Epic Games) Giveaway",
+   "platforms": "PC, Epic Games Store",
+   "worth": "$9.99",
+   "end_date": "2026-11-08 23:59:00",
+   "url": "https://www.gamerpower.com/open/horse-racing-epic-games-giveaway",
+   "description": "Download Horse Racing for free via Epic Games Store until Nov 8."
+  },
+  {
+   "title": "Dark Mystery (Epic Games) Giveaway",
+   "platforms": "PC, Epic Games Store",
+   "worth": "$7.99",
+   "end_date": "2026-11-08 23:59:00",
+   "url": "https://www.gamerpower.com/open/dark-mystery-epic-games-giveaway",
+   "description": "Claim Dark Mystery for free on Epic Games Store! Dark Mystery is a 2d platformer game with 35 exciting levels."
+  },
+  {
+   "title": "Highway Driving (Epic Games) Giveaway",
+   "platforms": "PC, Epic Games Store",
+   "worth": "$9.99",
+   "end_date": "2026-11-08 23:59:00",
+   "url": "https://www.gamerpower.com/open/highway-driving-epic-games-giveaway",
+   "description": "Score Highway Driving for free on Epic Games Store. Highway Driving is 3D racing game with casual gameplay."
   },
   {
    "title": "Last Room (IndieGala) Giveaway",
@@ -35,14 +59,6 @@
    "end_date": "N/A",
    "url": "https://www.gamerpower.com/open/my-darkest-witch-pc-giveaway",
    "description": "Score My Darkest Witch for free on IndieGala! My Darkest Witch is a 2d survival arena game with endless waves of enemies."
-  },
-  {
-   "title": "The Black Within (itch.io) Giveaway",
-   "platforms": "PC, Itch.io, DRM-Free",
-   "worth": "$5.99",
-   "end_date": "2026-10-31 23:59:59",
-   "url": "https://www.gamerpower.com/open/the-black-within-itch-io-giveaway",
-   "description": "Download The Black Within for free via itch.io! The Black Within is a single-player first-person psychological game with creepy atmosphere and puzzles. Check it out!"
   },
   {
    "title": "Project Malice (itch.io) Giveaway",
@@ -99,14 +115,6 @@
    "end_date": "2026-11-05 23:59:00",
    "url": "https://www.gamerpower.com/open/sorry-we-re-closed-epic-games-giveaway",
    "description": "Score Sorry We're Closed for free on Epic Games Store! Sorry We're Closed is a single-player survival game with arcade-style combat, puzzles and multiple endings. Check it out!"
-  },
-  {
-   "title": "The Green Light (itch.io) Giveaway",
-   "platforms": "PC, Itch.io, DRM-Free",
-   "worth": "$9.99",
-   "end_date": "2026-10-31 23:59:00",
-   "url": "https://www.gamerpower.com/open/the-green-light-itch-io-giveaway",
-   "description": "Download The Green Light for free via itch.io. The Green Light is a indie first person game with a creepy atmosphere. Check it out!"
   },
   {
    "title": "Solace Inc. (itchio) Giveaway",
@@ -171,14 +179,6 @@
    "end_date": "2026-10-31 23:59:00",
    "url": "https://www.gamerpower.com/open/liminal-space-holiday-itch-io-giveaway",
    "description": "Enjoy a Liminal Space Holiday! Score Liminal Space Holiday for free via Itch.io! Liminal Space Holiday is a retro nostalgic adventure game with 3d graphics."
-  },
-  {
-   "title": "Castlevania: 40th Anniversary (Mobile) Giveaway",
-   "platforms": "Android, iOS",
-   "worth": "N/A",
-   "end_date": "2026-10-24 23:59:00",
-   "url": "https://www.gamerpower.com/open/castlevania-40th-anniversary-mobile-giveaway",
-   "description": "Celebrate Castlevania’s 40th Anniversary and claim the original NES classic for free on the App Store and Google Play until October 24."
   },
   {
    "title": "Sleep Demon (Itchio) Giveaway",
@@ -307,6 +307,14 @@
    "end_date": "2026-11-08 23:59:00",
    "url": "https://www.gamerpower.com/open/gladiator-blades-of-fury-epic-games-giveaway",
    "description": "Download Gladiator: Blades of Fury for free via Epic Games Store! Gladiator: Blades of Fury is a 3d melee fighting game set during the medieval period."
+  },
+  {
+   "title": "Epic World - Hunt For Quest (Epic Games) Giveaway",
+   "platforms": "PC, Epic Games Store",
+   "worth": "$6.99",
+   "end_date": "2026-11-08 23:59:00",
+   "url": "https://www.gamerpower.com/open/epic-world-hunt-for-quest-epic-games-giveaway",
+   "description": "Save 100% on Claim Epic World - Hunt For Quest via Epic Games Store! Epic World is a 2d platformer action game with hidden treasures and dangerous enemies."
   }
  ]
 }
