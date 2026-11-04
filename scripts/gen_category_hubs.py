@@ -656,6 +656,7 @@ def build_hub(category, slug, items):
 {picks_html}{other_html}  </div>
 </main>
 <script src="/cache-version.js"></script>
+<script defer src="/analytics-consent.js?v=2"></script>
 <script>{FILTER_JS}</script>
 <script src="/components.js?v=41" defer></script>
 </body>

@@ -3,7 +3,7 @@
   'use strict';
 
   var MEASUREMENT_ID = 'G-SZYYDYEC6T';
-  var METRIKA_ID = 113479059;
+  var METRIKA_ID = 114074476;
   var loaded = false;
   var metrikaLoaded = false;
 
