@@ -40,37 +40,76 @@
     }
     if (localStorage.getItem('ga_consent') === 'yes') enableGA();
   </script>
+  <!-- Метрика: общий загрузчик, чтобы счётчик был на всех страницах -->
+  <script defer src="/analytics-consent.js?v=2"></script>
   <link href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css" rel="stylesheet" />
   <link rel="stylesheet" href="/styles.css?v=33" />
 
   <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "BreadcrumbList",
-    "itemListElement": [
-      {"@type": "ListItem", "position": 1, "name": "Главная", "item": "https://one1game.org/"},
-      {"@type": "ListItem", "position": 2, "name": "Статьи", "item": "https://one1game.org/archive"},
-      {"@type": "ListItem", "position": 3, "name": "The Beast Awoke To Eat Your Darlings", "item": "https://one1game.org/archive/the-beast-awoke-to-eat-your-darlings-1704950"}
-    ]
-  }
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Главная",
+      "item": "https://one1game.org/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Статьи",
+      "item": "https://one1game.org/archive"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Обзоры",
+      "item": "https://one1game.org/category/obzory"
+    },
+    {
+      "@type": "ListItem",
+      "position": 4,
+      "name": "The Beast Awoke To Eat Your Darlings",
+      "item": "https://one1game.org/archive/the-beast-awoke-to-eat-your-darlings-1704950"
+    }
+  ]
+}
   </script>
 
   <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "Article",
-    "headline": "The Beast Awoke To Eat Your Darlings — обзор игры | One1Game",
-    "datePublished": "2026-11-01",
-    "dateModified": "2026-11-01",
-    "author": {"@type": "Person", "name": "Команда One1Game"},
-    "publisher": {"@type": "Organization", "name": "One1Game", "logo": {"@type": "ImageObject", "url": "https://one1game.org/logo.png"}},
-    "description": "Инди‑стратегия The Beast Awoke To Eat Your Darlings бросает игрока в мрачный мир, где нужно спасать котов, обходя зверя и его стражей.",
-    "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1704950/7b6107ed9a6e82b919af994e7254947ac45347a9/header.jpg?t=1793286880",
-    "inLanguage": "ru-RU",
-    "isAccessibleForFree": true,
-    "articleSection": "Обзоры",
-    "speakable": {"@type": "SpeakableSpecification", "cssSelector": ["h1", ".article-body p:first-of-type"]}
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "The Beast Awoke To Eat Your Darlings — обзор игры | One1Game",
+  "datePublished": "2026-11-01",
+  "dateModified": "2026-11-08",
+  "author": {
+    "@type": "Person",
+    "name": "Команда One1Game"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "One1Game",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://one1game.org/logo.png"
+    }
+  },
+  "description": "Инди‑стратегия The Beast Awoke To Eat Your Darlings бросает игрока в мрачный мир, где нужно спасать котов, обходя зверя и его стражей.",
+  "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1704950/7b6107ed9a6e82b919af994e7254947ac45347a9/header.jpg?t=1793286880",
+  "inLanguage": "ru-RU",
+  "isAccessibleForFree": true,
+  "articleSection": "Обзоры",
+  "speakable": {
+    "@type": "SpeakableSpecification",
+    "cssSelector": [
+      "h1",
+      ".article-body p:first-of-type"
+    ]
   }
+}
   </script>
 
   <script type="application/ld+json">
@@ -83,7 +122,7 @@
   "applicationCategory": "Game",
   "offers": {
     "@type": "Offer",
-    "price": "272.00",
+    "price": "299.00",
     "priceCurrency": "RUB"
   }
 }
@@ -189,7 +228,6 @@
       padding: 1px 6px; background: rgba(4,6,10,0.75); border-radius: 3px;
     }
   </style>
-  <script defer src="/analytics-consent.js?v=2"></script>
 </head>
 <body>
 <a href="#main-content" class="skip-link">Перейти к содержимому</a>
@@ -224,7 +262,7 @@
       <span class="article-category cat-reviews">Обзоры</span>
       <h1>The Beast Awoke To Eat Your Darlings — обзор игры</h1>
       <div class="article-meta">
-        <span><i class="far fa-calendar"></i> 1 ноября 2026</span>
+        <span><i class="far fa-calendar"></i> 8 ноября 2026</span>
         <span><i class="far fa-clock"></i> 2 минуты чтения</span>
       </div>
     </div>
@@ -238,7 +276,7 @@
       <div class="game-stats-grid">
         <div class="game-stat-card">
           <div class="label">Цена</div>
-          <div class="value">272.00 RUB (скидка 15%)</div>
+          <div class="value">299.00 RUB</div>
         </div>
         <div class="game-stat-card">
           <div class="label">Дата выхода</div>
@@ -298,6 +336,7 @@
 <!--LOWEND:START-->
       <section class="lowend-block" style="margin:26px 0;padding:16px 18px;border:1px solid rgba(255,255,255,.10);border-radius:10px;background:rgba(255,255,255,.03)">
         <h2 style="margin:0 0 10px;font-size:1.15rem">Потянет ли The Beast Awoke To Eat Your Darlings на слабом ноутбуке?</h2>
+        
         <p><strong>Минимальные требования (Steam):</strong> 64-разрядные процессор и операционная система · ОС: Windows 10 (x64) · Процессор: Intel Core i5 / AMD Ryzen 5 · Оперативная память: 4 GB ОЗУ · Видеокарта: NVidia GTX 1060 / Radeon RX 580 with at least 6GB VRAM · DirectX: версии 12 · Место на диске: 4 GB</p>
         <p><strong>Оценка:</strong> Нужна дискретная видеокарта — на встроенной графике играть не получится.</p>
         <p>Подборки под слабое железо: <a href="/shuter-igry-dlya-slabyh-noutbukov">шутеры для слабого ноутбука</a> →</p>
@@ -335,7 +374,7 @@
       <div class="share-buttons" id="share-buttons"></div>
     </section>
 
-        <section class="gpu-check">
+            <section class="gpu-check">
       <h2>Потянет ли The Beast Awoke To Eat Your Darlings на моей видеокарте</h2>
       <p>Минимум по Steam — <strong>NVidia GTX 1060</strong>. Сравнение по приблизительной производительности, а не по точному FPS.</p>
       <ul class="gpu-check-list">
@@ -351,7 +390,7 @@
 <section class="game-faq">
       <h2>The Beast Awoke To Eat Your Darlings: частые вопросы</h2>
       <h3>Сколько стоит The Beast Awoke To Eat Your Darlings</h3>
-        <p>В Steam The Beast Awoke To Eat Your Darlings сейчас 272.00 RUB (скидка 15%). Цена и скидки обновляются автоматически.</p>
+        <p>В Steam The Beast Awoke To Eat Your Darlings сейчас 299.00 RUB. Цена и скидки обновляются автоматически.</p>
       <h3>Когда вышла The Beast Awoke To Eat Your Darlings</h3>
         <p>Дата выхода The Beast Awoke To Eat Your Darlings — 26 окт. 2026 г.</p>
       <h3>Кто разработал The Beast Awoke To Eat Your Darlings</h3>
@@ -362,19 +401,19 @@
       <table class="similar-table">
         <thead><tr><th>Игра</th><th>Цена</th><th>Слабый ПК</th></tr></thead>
         <tbody>
-          <tr><td><a href="/archive/the-great-game-of-cards-5250500">The Great Game of Cards — пошаговая карточная стратегия</a></td><td>Бесплатно</td><td>Потянет</td></tr>
-          <tr><td><a href="/archive/the-jackbox-party-pack-12-4199960">The Jackbox Party Pack 12 — весёлая компания</a></td><td>1300.00 RUB</td><td>Нет</td></tr>
-          <tr><td><a href="/archive/the-killing-stone-2781470">Обзор The Killing Stone: карточная битва с дьяволом</a></td><td>890.00 RUB</td><td>Нет</td></tr>
+          <tr><td><a href="/archive/valheim-892970">Valheim — выживание в скандинавском мире</a></td><td>1299.00 RUB</td><td>Нет</td></tr>
+          <tr><td><a href="/archive/baldur-s-gate-3-1086940">Baldur's Gate 3: цена, отзывы и требования</a></td><td>1999.00 RUB</td><td>Нет</td></tr>
+          <tr><td><a href="/archive/dota-2-570">Dota 2 — бесплатный MOBA‑экшен</a></td><td>Бесплатно</td><td>Нет</td></tr>
         </tbody>
       </table>
     </section>
-<section class="related-section">
+    <section class="related-section">
       <h4>Похожие статьи</h4>
       <div class="related-grid" id="related-container">
-        <a href="/archive/cowpokers-dead-man-s-frontier-5315130" class="related-card"><strong>Cowpokers: Dead Man's Frontier: цена, отзывы и статистика игроков</strong><span>27 октября 2026</span></a>
-        <a href="/archive/neon-breaker-endless-arcade-5054650" class="related-card"><strong>Neon Breaker: Endless Arcade — аркадный шутер</strong><span>27 октября 2026</span></a>
-        <a href="/archive/tiny-fishing-club-3070310" class="related-card"><strong>Tiny Fishing Club — уютный симулятор рыбалки</strong><span>27 октября 2026</span></a>
-        <a href="/archive/heme-4395840" class="related-card"><strong>HEME – инди игра о любви и связи</strong><span>27 октября 2026</span></a>
+        <a href="/archive/atomic-heart-668580" class="related-card"><strong>Atomic Heart – мрачный техно‑экшен с ролевыми элементами</strong><span>2 октября 2026</span></a>
+        <a href="/archive/half-life-2-220" class="related-card"><strong>Half-Life 2: цена, отзывы и статистика игроков</strong><span>20 сентября 2026</span></a>
+        <a href="/archive/left-4-dead-2-550" class="related-card"><strong>Left 4 Dead 2 – кооперативный зомби‑экшен</strong><span>20 сентября 2026</span></a>
+        <a href="/archive/counter-strike-2-730" class="related-card"><strong>Counter-Strike 2: цена, отзывы и статистика игроков</strong><span>20 сентября 2026</span></a>
       </div></section>
     <section class="comments-section">
       <h4><i class="fas fa-comments" aria-hidden="true"></i> Комментарии</h4>
@@ -412,9 +451,11 @@
     '<a target="_blank" rel="noopener" class="share-btn" href="https://api.whatsapp.com/send?text=' + title + '%20' + url + '">WhatsApp</a>'
   ].join('');
 
+  // Статический блок «Похожие статьи» уже в HTML — JS только дополняет пустой
+  // контейнер на старых страницах, чтобы не затирать серверную разметку.
   var related = all.filter(function(a) { return a.url !== currentUrl; }).slice(0, 4);
   var relEl = document.getElementById('related-container');
-  if (relEl && !relEl.querySelector('a') && related.length) {
+  if (relEl && !relEl.querySelector('a')) {
     relEl.innerHTML = related.map(function(a) {
       return '<a href="' + a.url + '" class="related-card"><strong>' + a.title + '</strong><span>' + (a.date || '') + '</span></a>';
     }).join('');

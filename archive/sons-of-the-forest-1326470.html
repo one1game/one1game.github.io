@@ -40,6 +40,8 @@
     }
     if (localStorage.getItem('ga_consent') === 'yes') enableGA();
   </script>
+  <!-- Метрика: общий загрузчик, чтобы счётчик был на всех страницах -->
+  <script defer src="/analytics-consent.js?v=2"></script>
   <link href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css" rel="stylesheet" />
   <link rel="stylesheet" href="/styles.css?v=33" />
 
@@ -82,7 +84,7 @@
   "@type": "Article",
   "headline": "Sons Of The Forest – выживание в жутком открытом мире | One1Game",
   "datePublished": "2026-11-01",
-  "dateModified": "2026-11-02",
+  "dateModified": "2026-11-08",
   "author": {
     "@type": "Person",
     "name": "Команда One1Game"
@@ -120,7 +122,7 @@
   "applicationCategory": "Game",
   "offers": {
     "@type": "Offer",
-    "price": "308.00",
+    "price": "1100.00",
     "priceCurrency": "RUB"
   }
 }
@@ -226,7 +228,6 @@
       padding: 1px 6px; background: rgba(4,6,10,0.75); border-radius: 3px;
     }
   </style>
-  <script defer src="/analytics-consent.js?v=2"></script>
 </head>
 <body>
 <a href="#main-content" class="skip-link">Перейти к содержимому</a>
@@ -261,7 +262,7 @@
       <span class="article-category cat-reviews">Обзоры</span>
       <h1>Sons Of The Forest – выживание в жутком открытом мире</h1>
       <div class="article-meta">
-        <span><i class="far fa-calendar"></i> 2 ноября 2026</span>
+        <span><i class="far fa-calendar"></i> 8 ноября 2026</span>
         <span><i class="far fa-clock"></i> 2 минуты чтения</span>
       </div>
     </div>
@@ -275,7 +276,7 @@
       <div class="game-stats-grid">
         <div class="game-stat-card">
           <div class="label">Цена</div>
-          <div class="value">308.00 RUB (скидка 72%)</div>
+          <div class="value">1100.00 RUB</div>
         </div>
         <div class="game-stat-card">
           <div class="label">Дата выхода</div>
@@ -331,9 +332,9 @@
 
       <h2>Геймплей</h2>
       <div class="game-movies">
+        <figure class="game-movie"><div class="game-video" data-hls="https://video.akamai.steamstatic.com/store_trailers/1326470/541725/76f298f949c4ae5b4257fa2056112f8d34285799/1750672622/hls_264_master.m3u8?t=1677175226" data-poster="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/256932123/movie.293x165.jpg?t=1677175226" role="button" tabindex="0" aria-label="Смотреть геймплей"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/256932123/movie.293x165.jpg?t=1677175226" alt="" loading="lazy" width="480" height="270" /><span class="game-video-play" aria-hidden="true"></span></div></figure>
         <figure class="game-movie"><div class="game-video" data-hls="https://video.akamai.steamstatic.com/store_trailers/1326470/452653/26cd55f7bd9aa55412f8b5fa91b9595b31855830/1750672607/hls_264_master.m3u8?t=1651692528" data-poster="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/256880856/movie.293x165.jpg?t=1651692528" role="button" tabindex="0" aria-label="Смотреть геймплей"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/256880856/movie.293x165.jpg?t=1651692528" alt="" loading="lazy" width="480" height="270" /><span class="game-video-play" aria-hidden="true"></span></div></figure>
         <figure class="game-movie"><div class="game-video" data-hls="https://video.akamai.steamstatic.com/store_trailers/1326470/452652/f4a8153a2aa101c8594446b339036cb3d28cf601/1750672607/hls_264_master.m3u8?t=1651692533" data-poster="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/256880855/movie.293x165.jpg?t=1651692533" role="button" tabindex="0" aria-label="Смотреть геймплей"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/256880855/movie.293x165.jpg?t=1651692533" alt="" loading="lazy" width="480" height="270" /><span class="game-video-play" aria-hidden="true"></span></div></figure>
-        <figure class="game-movie"><div class="game-video" data-hls="https://video.akamai.steamstatic.com/store_trailers/1326470/452649/778a07f24e46b06fa82e33b781e31f209a828ce7/1750672601/hls_264_master.m3u8?t=1651692538" data-poster="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/256880852/movie.293x165.jpg?t=1651692538" role="button" tabindex="0" aria-label="Смотреть геймплей"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/256880852/movie.293x165.jpg?t=1651692538" alt="" loading="lazy" width="480" height="270" /><span class="game-video-play" aria-hidden="true"></span></div></figure>
       </div>
 <!--LOWEND:START-->
       <section class="lowend-block" style="margin:26px 0;padding:16px 18px;border:1px solid rgba(255,255,255,.10);border-radius:10px;background:rgba(255,255,255,.03)">
@@ -376,7 +377,7 @@
       <div class="share-buttons" id="share-buttons"></div>
     </section>
 
-        <section class="gpu-check">
+            <section class="gpu-check">
       <h2>Потянет ли Sons Of The Forest на моей видеокарте</h2>
       <p>Минимум по Steam — <strong>NVIDIA GeForce GTX 1060</strong>. Сравнение по приблизительной производительности, а не по точному FPS.</p>
       <ul class="gpu-check-list">
@@ -392,7 +393,7 @@
 <section class="game-faq">
       <h2>Sons Of The Forest: частые вопросы</h2>
       <h3>Сколько стоит Sons Of The Forest</h3>
-        <p>В Steam Sons Of The Forest сейчас 308.00 RUB (скидка 72%). Цена и скидки обновляются автоматически.</p>
+        <p>В Steam Sons Of The Forest сейчас 1100.00 RUB. Цена и скидки обновляются автоматически.</p>
       <h3>Когда вышла Sons Of The Forest</h3>
         <p>Дата выхода Sons Of The Forest — 22 фев. 2024 г.</p>
       <h3>Кто разработал Sons Of The Forest</h3>
@@ -403,19 +404,19 @@
       <table class="similar-table">
         <thead><tr><th>Игра</th><th>Цена</th><th>Слабый ПК</th></tr></thead>
         <tbody>
-          <tr><td><a href="/archive/starbloom-ranch-5237770">Starbloom Ranch - обзор игры</a></td><td>Бесплатно</td><td>Потянет</td></tr>
-          <tr><td><a href="/archive/thunder-training-ground-4637470">Thunder Training Ground – обзор и геймплей</a></td><td>575.00 RUB</td><td>Нет</td></tr>
-          <tr><td><a href="/archive/vahnora-1624430">Vahnora — бесплатная 3D MMORPG о войне фракций</a></td><td>Бесплатно</td><td>Нет</td></tr>
+          <tr><td><a href="/archive/terraria-105600">Terraria — приключенческий экшен с элементами RPG</a></td><td>385.00 RUB</td><td>—</td></tr>
+          <tr><td><a href="/archive/valheim-892970">Valheim — выживание в скандинавском мире</a></td><td>1299.00 RUB</td><td>Нет</td></tr>
+          <tr><td><a href="/archive/path-of-exile-238960">Path of Exile — бесплатный онлайн Action RPG</a></td><td>Бесплатно</td><td>Нет</td></tr>
         </tbody>
       </table>
     </section>
-<section class="related-section">
+    <section class="related-section">
       <h4>Похожие статьи</h4>
       <div class="related-grid" id="related-container">
-        <a href="/archive/elementers-3018340" class="related-card"><strong>Elementers — сатирическое экшен‑приключение</strong><span>26 октября 2026</span></a>
-        <a href="/archive/what-lurks-below-5107320" class="related-card"><strong>Обзор WHAT LURKS BELOW — жуткие прятки в лабиринте</strong><span>26 октября 2026</span></a>
-        <a href="/archive/crazy-city-golf-5347600" class="related-card"><strong>Crazy City Golf – онлайн парти‑гольф в городе</strong><span>26 октября 2026</span></a>
-        <a href="/archive/abyss-ring-3401570" class="related-card"><strong>Abyss Ring – экшн‑рогалик с кулинарными боями</strong><span>26 октября 2026</span></a>
+        <a href="/archive/atomic-heart-668580" class="related-card"><strong>Atomic Heart – мрачный техно‑экшен с ролевыми элементами</strong><span>2 октября 2026</span></a>
+        <a href="/archive/half-life-2-220" class="related-card"><strong>Half-Life 2: цена, отзывы и статистика игроков</strong><span>20 сентября 2026</span></a>
+        <a href="/archive/left-4-dead-2-550" class="related-card"><strong>Left 4 Dead 2 – кооперативный зомби‑экшен</strong><span>20 сентября 2026</span></a>
+        <a href="/archive/counter-strike-2-730" class="related-card"><strong>Counter-Strike 2: цена, отзывы и статистика игроков</strong><span>20 сентября 2026</span></a>
       </div></section>
     <section class="comments-section">
       <h4><i class="fas fa-comments" aria-hidden="true"></i> Комментарии</h4>

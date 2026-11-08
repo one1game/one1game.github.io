@@ -40,37 +40,76 @@
     }
     if (localStorage.getItem('ga_consent') === 'yes') enableGA();
   </script>
+  <!-- Метрика: общий загрузчик, чтобы счётчик был на всех страницах -->
+  <script defer src="/analytics-consent.js?v=2"></script>
   <link href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css" rel="stylesheet" />
   <link rel="stylesheet" href="/styles.css?v=33" />
 
   <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "BreadcrumbList",
-    "itemListElement": [
-      {"@type": "ListItem", "position": 1, "name": "Главная", "item": "https://one1game.org/"},
-      {"@type": "ListItem", "position": 2, "name": "Статьи", "item": "https://one1game.org/archive"},
-      {"@type": "ListItem", "position": 3, "name": "Tessera", "item": "https://one1game.org/archive/tessera-5073130"}
-    ]
-  }
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Главная",
+      "item": "https://one1game.org/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Статьи",
+      "item": "https://one1game.org/archive"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Обзоры",
+      "item": "https://one1game.org/category/obzory"
+    },
+    {
+      "@type": "ListItem",
+      "position": 4,
+      "name": "Tessera",
+      "item": "https://one1game.org/archive/tessera-5073130"
+    }
+  ]
+}
   </script>
 
   <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "Article",
-    "headline": "Tessera – казуальная ролевая стратегия | One1Game",
-    "datePublished": "2026-11-01",
-    "dateModified": "2026-11-01",
-    "author": {"@type": "Person", "name": "Команда One1Game"},
-    "publisher": {"@type": "Organization", "name": "One1Game", "logo": {"@type": "ImageObject", "url": "https://one1game.org/logo.png"}},
-    "description": "Tessera – гибрид головоломки и стратегии в стиле roguelike: собирайте драгоценные камни, формируйте тетромино и сражайтесь в мрачной фэнтезийной кампании",
-    "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5073130/44d3a6e0ffb7f2ba348e6d719e6cd26232df7226/header.jpg?t=1791515952",
-    "inLanguage": "ru-RU",
-    "isAccessibleForFree": true,
-    "articleSection": "Обзоры",
-    "speakable": {"@type": "SpeakableSpecification", "cssSelector": ["h1", ".article-body p:first-of-type"]}
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Tessera – казуальная ролевая стратегия | One1Game",
+  "datePublished": "2026-11-01",
+  "dateModified": "2026-11-08",
+  "author": {
+    "@type": "Person",
+    "name": "Команда One1Game"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "One1Game",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://one1game.org/logo.png"
+    }
+  },
+  "description": "Tessera – гибрид головоломки и стратегии в стиле roguelike: собирайте драгоценные камни, формируйте тетромино и сражайтесь в мрачной фэнтезийной кампании",
+  "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5073130/44d3a6e0ffb7f2ba348e6d719e6cd26232df7226/header.jpg?t=1791515952",
+  "inLanguage": "ru-RU",
+  "isAccessibleForFree": true,
+  "articleSection": "Обзоры",
+  "speakable": {
+    "@type": "SpeakableSpecification",
+    "cssSelector": [
+      "h1",
+      ".article-body p:first-of-type"
+    ]
   }
+}
   </script>
 
   <script type="application/ld+json">
@@ -189,7 +228,6 @@
       padding: 1px 6px; background: rgba(4,6,10,0.75); border-radius: 3px;
     }
   </style>
-  <script defer src="/analytics-consent.js?v=2"></script>
 </head>
 <body>
 <a href="#main-content" class="skip-link">Перейти к содержимому</a>
@@ -224,7 +262,7 @@
       <span class="article-category cat-reviews">Обзоры</span>
       <h1>Tessera – казуальная ролевая стратегия</h1>
       <div class="article-meta">
-        <span><i class="far fa-calendar"></i> 1 ноября 2026</span>
+        <span><i class="far fa-calendar"></i> 8 ноября 2026</span>
         <span><i class="far fa-clock"></i> 2 минуты чтения</span>
       </div>
     </div>
@@ -291,6 +329,7 @@
 <!--LOWEND:START-->
       <section class="lowend-block" style="margin:26px 0;padding:16px 18px;border:1px solid rgba(255,255,255,.10);border-radius:10px;background:rgba(255,255,255,.03)">
         <h2 style="margin:0 0 10px;font-size:1.15rem">Потянет ли Tessera на слабом ноутбуке?</h2>
+        
         <p><strong>Минимальные требования (Steam):</strong> ОС: Windows 10 (64-bit) · Процессор: Dual-core 2.0 GHz · Оперативная память: 4096 MB ОЗУ · Видеокарта: OpenGL 3.3 compatible (Intel HD 4000 or better) · Место на диске: 1 GB</p>
         <p><strong>Оценка:</strong> Потянет на встроенной графике при 720p и низких настройках.</p>
         <p>Подборки под слабое железо: <a href="/rpg-igry-dlya-slabyh-noutbukov">ролевые игры для слабого ПК</a> →</p>
@@ -328,7 +367,8 @@
       <div class="share-buttons" id="share-buttons"></div>
     </section>
 
-    <section class="game-faq">
+
+        <section class="game-faq">
       <h2>Tessera: частые вопросы</h2>
       <h3>Сколько стоит Tessera</h3>
         <p>В Steam Tessera сейчас 465.00 RUB. Цена и скидки обновляются автоматически.</p>
@@ -342,19 +382,19 @@
       <table class="similar-table">
         <thead><tr><th>Игра</th><th>Цена</th><th>Слабый ПК</th></tr></thead>
         <tbody>
-          <tr><td><a href="/archive/touhou-bansho-cards-4958460">Touhou Bansho Cards — обзор и рекомендации</a></td><td>355.00 RUB (скидка 10%)</td><td>Потянет</td></tr>
-          <tr><td><a href="/archive/vahnora-1624430">Vahnora — бесплатная 3D MMORPG о войне фракций</a></td><td>Бесплатно</td><td>Нет</td></tr>
-          <tr><td><a href="/archive/a-schoolhouse-in-gensokyo-3679100">Обзор игры 慧音的寺子屋 ~ A Schoolhouse in Gensokyo</a></td><td>465.00 RUB</td><td>Потянет</td></tr>
+          <tr><td><a href="/archive/valheim-892970">Valheim — выживание в скандинавском мире</a></td><td>1299.00 RUB</td><td>Нет</td></tr>
+          <tr><td><a href="/archive/baldur-s-gate-3-1086940">Baldur's Gate 3: цена, отзывы и требования</a></td><td>1999.00 RUB</td><td>Нет</td></tr>
+          <tr><td><a href="/archive/path-of-exile-238960">Path of Exile — бесплатный онлайн Action RPG</a></td><td>Бесплатно</td><td>Нет</td></tr>
         </tbody>
       </table>
     </section>
-<section class="related-section">
+    <section class="related-section">
       <h4>Похожие статьи</h4>
       <div class="related-grid" id="related-container">
-        <a href="/archive/taerim-s-blueberry-defense-5165750" class="related-card"><strong>Taerim's Blueberry Defense: цена, отзывы и статистика игроков</strong><span>9 октября 2026</span></a>
-        <a href="/archive/blosharper-bitva-tsvetov-4718270" class="related-card"><strong>Blosharper: Битва цветов — обзор</strong><span>9 октября 2026</span></a>
-        <a href="/archive/celestay-craft-slowlife-4183770" class="related-card"><strong>CELESTAY Craft&amp;Slowlife — спокойный инди‑симулятор</strong><span>9 октября 2026</span></a>
-        <a href="/archive/snowplow-therapy-4616180" class="related-card"><strong>Snowplow Therapy — расслабляющий симулятор снегоуборки</strong><span>9 октября 2026</span></a>
+        <a href="/archive/atomic-heart-668580" class="related-card"><strong>Atomic Heart – мрачный техно‑экшен с ролевыми элементами</strong><span>2 октября 2026</span></a>
+        <a href="/archive/half-life-2-220" class="related-card"><strong>Half-Life 2: цена, отзывы и статистика игроков</strong><span>20 сентября 2026</span></a>
+        <a href="/archive/left-4-dead-2-550" class="related-card"><strong>Left 4 Dead 2 – кооперативный зомби‑экшен</strong><span>20 сентября 2026</span></a>
+        <a href="/archive/counter-strike-2-730" class="related-card"><strong>Counter-Strike 2: цена, отзывы и статистика игроков</strong><span>20 сентября 2026</span></a>
       </div></section>
     <section class="comments-section">
       <h4><i class="fas fa-comments" aria-hidden="true"></i> Комментарии</h4>
@@ -392,9 +432,11 @@
     '<a target="_blank" rel="noopener" class="share-btn" href="https://api.whatsapp.com/send?text=' + title + '%20' + url + '">WhatsApp</a>'
   ].join('');
 
+  // Статический блок «Похожие статьи» уже в HTML — JS только дополняет пустой
+  // контейнер на старых страницах, чтобы не затирать серверную разметку.
   var related = all.filter(function(a) { return a.url !== currentUrl; }).slice(0, 4);
   var relEl = document.getElementById('related-container');
-  if (relEl && !relEl.querySelector('a') && related.length) {
+  if (relEl && !relEl.querySelector('a')) {
     relEl.innerHTML = related.map(function(a) {
       return '<a href="' + a.url + '" class="related-card"><strong>' + a.title + '</strong><span>' + (a.date || '') + '</span></a>';
     }).join('');

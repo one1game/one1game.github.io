@@ -40,37 +40,76 @@
     }
     if (localStorage.getItem('ga_consent') === 'yes') enableGA();
   </script>
+  <!-- Метрика: общий загрузчик, чтобы счётчик был на всех страницах -->
+  <script defer src="/analytics-consent.js?v=2"></script>
   <link href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css" rel="stylesheet" />
   <link rel="stylesheet" href="/styles.css?v=33" />
 
   <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "BreadcrumbList",
-    "itemListElement": [
-      {"@type": "ListItem", "position": 1, "name": "Главная", "item": "https://one1game.org/"},
-      {"@type": "ListItem", "position": 2, "name": "Статьи", "item": "https://one1game.org/archive"},
-      {"@type": "ListItem", "position": 3, "name": "Pirate Guy 2 New Land", "item": "https://one1game.org/archive/pirate-guy-2-new-land-5198550"}
-    ]
-  }
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Главная",
+      "item": "https://one1game.org/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Статьи",
+      "item": "https://one1game.org/archive"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Обзоры",
+      "item": "https://one1game.org/category/obzory"
+    },
+    {
+      "@type": "ListItem",
+      "position": 4,
+      "name": "Pirate Guy 2 New Land",
+      "item": "https://one1game.org/archive/pirate-guy-2-new-land-5198550"
+    }
+  ]
+}
   </script>
 
   <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "Article",
-    "headline": "Pirate Guy 2 New Land — обзор игры | One1Game",
-    "datePublished": "2026-11-01",
-    "dateModified": "2026-11-01",
-    "author": {"@type": "Person", "name": "Команда One1Game"},
-    "publisher": {"@type": "Organization", "name": "One1Game", "logo": {"@type": "ImageObject", "url": "https://one1game.org/logo.png"}},
-    "description": "Pirate Guy 2 New Land – продолжение 2‑D платформера про пирата, где нужно обходить ловушки, сражаться с врагами и находить сокровища. Подойдёт любителям",
-    "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5198550/b9094aaa818ce1354dc5344128f0e4e194039e4f/header.jpg?t=1790146824",
-    "inLanguage": "ru-RU",
-    "isAccessibleForFree": true,
-    "articleSection": "Обзоры",
-    "speakable": {"@type": "SpeakableSpecification", "cssSelector": ["h1", ".article-body p:first-of-type"]}
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Pirate Guy 2 New Land — обзор игры | One1Game",
+  "datePublished": "2026-11-01",
+  "dateModified": "2026-11-08",
+  "author": {
+    "@type": "Person",
+    "name": "Команда One1Game"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "One1Game",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://one1game.org/logo.png"
+    }
+  },
+  "description": "Pirate Guy 2 New Land – продолжение 2‑D платформера про пирата, где нужно обходить ловушки, сражаться с врагами и находить сокровища. Подойдёт любителям",
+  "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5198550/b9094aaa818ce1354dc5344128f0e4e194039e4f/header.jpg?t=1790146824",
+  "inLanguage": "ru-RU",
+  "isAccessibleForFree": true,
+  "articleSection": "Обзоры",
+  "speakable": {
+    "@type": "SpeakableSpecification",
+    "cssSelector": [
+      "h1",
+      ".article-body p:first-of-type"
+    ]
   }
+}
   </script>
 
   <script type="application/ld+json">
@@ -83,7 +122,7 @@
   "applicationCategory": "Game",
   "offers": {
     "@type": "Offer",
-    "price": "135.00",
+    "price": "28.00",
     "priceCurrency": "RUB"
   }
 }
@@ -189,7 +228,6 @@
       padding: 1px 6px; background: rgba(4,6,10,0.75); border-radius: 3px;
     }
   </style>
-  <script defer src="/analytics-consent.js?v=2"></script>
 </head>
 <body>
 <a href="#main-content" class="skip-link">Перейти к содержимому</a>
@@ -224,7 +262,7 @@
       <span class="article-category cat-reviews">Обзоры</span>
       <h1>Pirate Guy 2 New Land — обзор игры</h1>
       <div class="article-meta">
-        <span><i class="far fa-calendar"></i> 1 ноября 2026</span>
+        <span><i class="far fa-calendar"></i> 8 ноября 2026</span>
         <span><i class="far fa-clock"></i> 2 минуты чтения</span>
       </div>
     </div>
@@ -238,7 +276,7 @@
       <div class="game-stats-grid">
         <div class="game-stat-card">
           <div class="label">Цена</div>
-          <div class="value">135.00 RUB</div>
+          <div class="value">28.00 RUB (скидка 79%)</div>
         </div>
         <div class="game-stat-card">
           <div class="label">Дата выхода</div>
@@ -295,6 +333,7 @@
 <!--LOWEND:START-->
       <section class="lowend-block" style="margin:26px 0;padding:16px 18px;border:1px solid rgba(255,255,255,.10);border-radius:10px;background:rgba(255,255,255,.03)">
         <h2 style="margin:0 0 10px;font-size:1.15rem">Потянет ли Pirate Guy 2 New Land на слабом ноутбуке?</h2>
+        
         <p><strong>Минимальные требования (Steam):</strong> 64-разрядные процессор и операционная система · ОС: windows 10 · Процессор: i5 · Оперативная память: 4 GB ОЗУ · Видеокарта: nvidia 1000 · DirectX: версии 9.0 · Место на диске: 2 GB · Звуковая карта: directx 9</p>
         <p><strong>Оценка:</strong> Потянет на встроенной графике при 720p и низких настройках.</p>
         <p>Подборки под слабое железо: <a href="/besplatnye-igry-dlya-slabyh-pk">бесплатные игры для слабых ПК</a> →</p>
@@ -332,10 +371,11 @@
       <div class="share-buttons" id="share-buttons"></div>
     </section>
 
-    <section class="game-faq">
+
+        <section class="game-faq">
       <h2>Pirate Guy 2 New Land: частые вопросы</h2>
       <h3>Сколько стоит Pirate Guy 2 New Land</h3>
-        <p>В Steam Pirate Guy 2 New Land сейчас 135.00 RUB. Цена и скидки обновляются автоматически.</p>
+        <p>В Steam Pirate Guy 2 New Land сейчас 28.00 RUB (скидка 79%). Цена и скидки обновляются автоматически.</p>
       <h3>Когда вышла Pirate Guy 2 New Land</h3>
         <p>Дата выхода Pirate Guy 2 New Land — 23 сен. 2026 г.</p>
       <h3>Кто разработал Pirate Guy 2 New Land</h3>
@@ -346,19 +386,19 @@
       <table class="similar-table">
         <thead><tr><th>Игра</th><th>Цена</th><th>Слабый ПК</th></tr></thead>
         <tbody>
-          <tr><td><a href="/archive/pixelia-5179830">Pixelia — многопользовательский мир в пиксельном стиле</a></td><td>160.00 RUB (скидка 20%)</td><td>—</td></tr>
-          <tr><td><a href="/archive/questfarers-of-the-stone-5010200">Questfarers of the Stone — приключенческий квест в мрачном</a></td><td>820.00 RUB</td><td>Потянет</td></tr>
-          <tr><td><a href="/archive/r-verie-audio-stories-5382570">Rêverie: Audio Stories – обзор игры</a></td><td>Бесплатно</td><td>Потянет</td></tr>
+          <tr><td><a href="/archive/rust-252490">Rust — выживание в открытом мире</a></td><td>849.00 RUB (скидка 50%)</td><td>Нет</td></tr>
+          <tr><td><a href="/archive/terraria-105600">Terraria — приключенческий экшен с элементами RPG</a></td><td>385.00 RUB</td><td>—</td></tr>
+          <tr><td><a href="/archive/valheim-892970">Valheim — выживание в скандинавском мире</a></td><td>1299.00 RUB</td><td>Нет</td></tr>
         </tbody>
       </table>
     </section>
-<section class="related-section">
+    <section class="related-section">
       <h4>Похожие статьи</h4>
       <div class="related-grid" id="related-container">
-        <a href="/archive/pizza-revolution-4786960" class="related-card"><strong>Pizza Revolution — симулятор пиццерии</strong><span>23 сентября 2026</span></a>
-        <a href="/archive/the-piper-of-dawn-3804370" class="related-card"><strong>The Piper of Dawn – обзор и геймплей</strong><span>23 сентября 2026</span></a>
-        <a href="/archive/aigenrobo-5130010" class="related-card"><strong>AIGENROBO — экшен‑шутер с конструированием машины</strong><span>23 сентября 2026</span></a>
-        <a href="/archive/dog-5057210" class="related-card"><strong>Dog – пиксельный питомец для рабочего стола</strong><span>23 сентября 2026</span></a>
+        <a href="/archive/half-life-2-220" class="related-card"><strong>Half-Life 2: цена, отзывы и статистика игроков</strong><span>20 сентября 2026</span></a>
+        <a href="/archive/left-4-dead-2-550" class="related-card"><strong>Left 4 Dead 2 – кооперативный зомби‑экшен</strong><span>20 сентября 2026</span></a>
+        <a href="/archive/counter-strike-2-730" class="related-card"><strong>Counter-Strike 2: цена, отзывы и статистика игроков</strong><span>20 сентября 2026</span></a>
+        <a href="/archive/terraria-105600" class="related-card"><strong>Terraria — приключенческий экшен с элементами RPG</strong><span>20 сентября 2026</span></a>
       </div></section>
     <section class="comments-section">
       <h4><i class="fas fa-comments" aria-hidden="true"></i> Комментарии</h4>
@@ -396,9 +436,11 @@
     '<a target="_blank" rel="noopener" class="share-btn" href="https://api.whatsapp.com/send?text=' + title + '%20' + url + '">WhatsApp</a>'
   ].join('');
 
+  // Статический блок «Похожие статьи» уже в HTML — JS только дополняет пустой
+  // контейнер на старых страницах, чтобы не затирать серверную разметку.
   var related = all.filter(function(a) { return a.url !== currentUrl; }).slice(0, 4);
   var relEl = document.getElementById('related-container');
-  if (relEl && !relEl.querySelector('a') && related.length) {
+  if (relEl && !relEl.querySelector('a')) {
     relEl.innerHTML = related.map(function(a) {
       return '<a href="' + a.url + '" class="related-card"><strong>' + a.title + '</strong><span>' + (a.date || '') + '</span></a>';
     }).join('');

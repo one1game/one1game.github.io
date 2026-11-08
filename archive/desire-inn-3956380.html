@@ -40,37 +40,76 @@
     }
     if (localStorage.getItem('ga_consent') === 'yes') enableGA();
   </script>
+  <!-- Метрика: общий загрузчик, чтобы счётчик был на всех страницах -->
+  <script defer src="/analytics-consent.js?v=2"></script>
   <link href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css" rel="stylesheet" />
   <link rel="stylesheet" href="/styles.css?v=33" />
 
   <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "BreadcrumbList",
-    "itemListElement": [
-      {"@type": "ListItem", "position": 1, "name": "Главная", "item": "https://one1game.org/"},
-      {"@type": "ListItem", "position": 2, "name": "Статьи", "item": "https://one1game.org/archive"},
-      {"@type": "ListItem", "position": 3, "name": "Desire Inn", "item": "https://one1game.org/archive/desire-inn-3956380"}
-    ]
-  }
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Главная",
+      "item": "https://one1game.org/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Статьи",
+      "item": "https://one1game.org/archive"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Обзоры",
+      "item": "https://one1game.org/category/obzory"
+    },
+    {
+      "@type": "ListItem",
+      "position": 4,
+      "name": "Desire Inn",
+      "item": "https://one1game.org/archive/desire-inn-3956380"
+    }
+  ]
+}
   </script>
 
   <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "Article",
-    "headline": "Desire Inn — симулятор отеля и отношений | One1Game",
-    "datePublished": "2026-11-01",
-    "dateModified": "2026-11-01",
-    "author": {"@type": "Person", "name": "Команда One1Game"},
-    "publisher": {"@type": "Organization", "name": "One1Game", "logo": {"@type": "ImageObject", "url": "https://one1game.org/logo.png"}},
-    "description": "Desire Inn — казуальная игра‑симулятор, где вы управляете сетью отелей, улучшаете номера и строите отношения с девушками‑служанками, раскрывая их тайные",
-    "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3956380/dd8b2225c51a231aec168edfa32cc151e2ee87e6/header_alt_assets_2.jpg?t=1789826149",
-    "inLanguage": "ru-RU",
-    "isAccessibleForFree": true,
-    "articleSection": "Обзоры",
-    "speakable": {"@type": "SpeakableSpecification", "cssSelector": ["h1", ".article-body p:first-of-type"]}
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Desire Inn — симулятор отеля и отношений | One1Game",
+  "datePublished": "2026-11-01",
+  "dateModified": "2026-11-08",
+  "author": {
+    "@type": "Person",
+    "name": "Команда One1Game"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "One1Game",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://one1game.org/logo.png"
+    }
+  },
+  "description": "Desire Inn — казуальная игра‑симулятор, где вы управляете сетью отелей, улучшаете номера и строите отношения с девушками‑служанками, раскрывая их тайные",
+  "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3956380/dd8b2225c51a231aec168edfa32cc151e2ee87e6/header_alt_assets_2.jpg?t=1789826149",
+  "inLanguage": "ru-RU",
+  "isAccessibleForFree": true,
+  "articleSection": "Обзоры",
+  "speakable": {
+    "@type": "SpeakableSpecification",
+    "cssSelector": [
+      "h1",
+      ".article-body p:first-of-type"
+    ]
   }
+}
   </script>
 
   <script type="application/ld+json">
@@ -184,7 +223,6 @@
       padding: 1px 6px; background: rgba(4,6,10,0.75); border-radius: 3px;
     }
   </style>
-  <script defer src="/analytics-consent.js?v=2"></script>
 </head>
 <body>
 <a href="#main-content" class="skip-link">Перейти к содержимому</a>
@@ -219,7 +257,7 @@
       <span class="article-category cat-reviews">Обзоры</span>
       <h1>Desire Inn — симулятор отеля и отношений</h1>
       <div class="article-meta">
-        <span><i class="far fa-calendar"></i> 1 ноября 2026</span>
+        <span><i class="far fa-calendar"></i> 8 ноября 2026</span>
         <span><i class="far fa-clock"></i> 2 минуты чтения</span>
       </div>
     </div>
@@ -292,7 +330,9 @@
 <!--LOWEND:START-->
       <section class="lowend-block" style="margin:26px 0;padding:16px 18px;border:1px solid rgba(255,255,255,.10);border-radius:10px;background:rgba(255,255,255,.03)">
         <h2 style="margin:0 0 10px;font-size:1.15rem">Потянет ли Desire Inn на слабом ноутбуке?</h2>
+        
         <p><strong>Минимальные требования (Steam):</strong> ОС: Windows 10 and Windows 11 · Процессор: x86, x64 architecture with SSE2 instruction set support · Оперативная память: 8 GB ОЗУ · Видеокарта: DirectX® 9 Compatible Graphics Card · Сеть: Широкополосное подключение к интернету · Место на диске: 2 GB · Звуковая карта: DX10, DX11, DX12 capable. · Дополнительно: Internet required</p>
+        
         <p>Подборки под слабое железо: <a href="/rpg-igry-dlya-slabyh-noutbukov">ролевые игры для слабого ПК</a> →</p>
       </section>
 <!--LOWEND:END-->
@@ -328,7 +368,8 @@
       <div class="share-buttons" id="share-buttons"></div>
     </section>
 
-    <section class="game-faq">
+
+        <section class="game-faq">
       <h2>Desire Inn: частые вопросы</h2>
       <h3>Сколько стоит Desire Inn</h3>
         <p>В Steam Desire Inn сейчас Бесплатно. Цена и скидки обновляются автоматически.</p>
@@ -342,19 +383,19 @@
       <table class="similar-table">
         <thead><tr><th>Игра</th><th>Цена</th><th>Слабый ПК</th></tr></thead>
         <tbody>
-          <tr><td><a href="/archive/dicey-desk-4079960">Dicey Desk — казуальная инди‑симуляция</a></td><td>Бесплатно</td><td>Нет</td></tr>
-          <tr><td><a href="/archive/discipline-simulator-4739040">DISCIPLINE SIMULATOR – хардкорный симулятор дисциплины</a></td><td>225.00 RUB</td><td>Нет</td></tr>
-          <tr><td><a href="/archive/era-ming-5120560">ERA-ming（时代：明末）: цена, отзывы и статистика игроков</a></td><td>Бесплатно</td><td>Потянет</td></tr>
+          <tr><td><a href="/archive/war-thunder-236390">War Thunder – масштабный онлайн-симулятор</a></td><td>Бесплатно</td><td>Нет</td></tr>
+          <tr><td><a href="/archive/dota-2-570">Dota 2 — бесплатный MOBA‑экшен</a></td><td>Бесплатно</td><td>Нет</td></tr>
+          <tr><td><a href="/archive/euro-truck-simulator-2-227300">Euro Truck Simulator 2 — реалистичный симулятор</a></td><td>1269.00 RUB</td><td>Нет</td></tr>
         </tbody>
       </table>
     </section>
-<section class="related-section">
+    <section class="related-section">
       <h4>Похожие статьи</h4>
       <div class="related-grid" id="related-container">
-        <a href="/archive/only-farms-4657600" class="related-card"><strong>ONLY FARMS – приключенческий симулятор летних приключений</strong><span>20 сентября 2026</span></a>
-        <a href="/archive/somebody-s-tale-776250" class="related-card"><strong>Somebody's Tale: цена, отзывы и статистика игроков</strong><span>20 сентября 2026</span></a>
-        <a href="/archive/love-in-another-world-4928470" class="related-card"><strong>Love in Another World – обзор казуальной игры</strong><span>20 сентября 2026</span></a>
-        <a href="/archive/texture-map-studio-5172720" class="related-card"><strong>Texture Map Studio – быстрый генератор PBR‑карт</strong><span>20 сентября 2026</span></a>
+        <a href="/archive/rust-252490" class="related-card"><strong>Rust — выживание в открытом мире</strong><span>20 сентября 2026</span></a>
+        <a href="/archive/baldur-s-gate-3-1086940" class="related-card"><strong>Baldur's Gate 3: цена, отзывы и статистика игроков</strong><span>20 сентября 2026</span></a>
+        <a href="/archive/s-t-a-l-k-e-r-2-heart-of-chornobyl-1643320" class="related-card"><strong>S.T.A.L.K.E.R. 2: Heart of Chornobyl – обзор</strong><span>2 ноября 2026</span></a>
+        <a href="/archive/the-witcher-3-wild-hunt-remastered-292030" class="related-card"><strong>The Witcher 3: Wild Hunt — Remastered — обзор</strong><span>2 ноября 2026</span></a>
       </div></section>
     <section class="comments-section">
       <h4><i class="fas fa-comments" aria-hidden="true"></i> Комментарии</h4>
@@ -392,9 +433,11 @@
     '<a target="_blank" rel="noopener" class="share-btn" href="https://api.whatsapp.com/send?text=' + title + '%20' + url + '">WhatsApp</a>'
   ].join('');
 
+  // Статический блок «Похожие статьи» уже в HTML — JS только дополняет пустой
+  // контейнер на старых страницах, чтобы не затирать серверную разметку.
   var related = all.filter(function(a) { return a.url !== currentUrl; }).slice(0, 4);
   var relEl = document.getElementById('related-container');
-  if (relEl && !relEl.querySelector('a') && related.length) {
+  if (relEl && !relEl.querySelector('a')) {
     relEl.innerHTML = related.map(function(a) {
       return '<a href="' + a.url + '" class="related-card"><strong>' + a.title + '</strong><span>' + (a.date || '') + '</span></a>';
     }).join('');

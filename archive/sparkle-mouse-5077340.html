@@ -40,37 +40,76 @@
     }
     if (localStorage.getItem('ga_consent') === 'yes') enableGA();
   </script>
+  <!-- Метрика: общий загрузчик, чтобы счётчик был на всех страницах -->
+  <script defer src="/analytics-consent.js?v=2"></script>
   <link href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css" rel="stylesheet" />
   <link rel="stylesheet" href="/styles.css?v=33" />
 
   <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "BreadcrumbList",
-    "itemListElement": [
-      {"@type": "ListItem", "position": 1, "name": "Главная", "item": "https://one1game.org/"},
-      {"@type": "ListItem", "position": 2, "name": "Статьи", "item": "https://one1game.org/archive"},
-      {"@type": "ListItem", "position": 3, "name": "Sparkle Mouse", "item": "https://one1game.org/archive/sparkle-mouse-5077340"}
-    ]
-  }
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Главная",
+      "item": "https://one1game.org/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Статьи",
+      "item": "https://one1game.org/archive"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Обзоры",
+      "item": "https://one1game.org/category/obzory"
+    },
+    {
+      "@type": "ListItem",
+      "position": 4,
+      "name": "Sparkle Mouse",
+      "item": "https://one1game.org/archive/sparkle-mouse-5077340"
+    }
+  ]
+}
   </script>
 
   <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "Article",
-    "headline": "Sparkle Mouse – яркие частицы для рабочего стола | One1Game",
-    "datePublished": "2026-11-01",
-    "dateModified": "2026-11-01",
-    "author": {"@type": "Person", "name": "Команда One1Game"},
-    "publisher": {"@type": "Organization", "name": "One1Game", "logo": {"@type": "ImageObject", "url": "https://one1game.org/logo.png"}},
-    "description": "Sparkle Mouse превращает ваш ПК в живую картину: на рабочем столе появляются анимированные частицы, создающие уникальную атмосферу. Идеально для тех, кто",
-    "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5077340/e30aa0189bbb30aa98b9d48348799ae69176439d/header.jpg?t=1792227956",
-    "inLanguage": "ru-RU",
-    "isAccessibleForFree": true,
-    "articleSection": "Обзоры",
-    "speakable": {"@type": "SpeakableSpecification", "cssSelector": ["h1", ".article-body p:first-of-type"]}
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Sparkle Mouse – яркие частицы для рабочего стола | One1Game",
+  "datePublished": "2026-11-01",
+  "dateModified": "2026-11-08",
+  "author": {
+    "@type": "Person",
+    "name": "Команда One1Game"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "One1Game",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://one1game.org/logo.png"
+    }
+  },
+  "description": "Sparkle Mouse превращает ваш ПК в живую картину: на рабочем столе появляются анимированные частицы, создающие уникальную атмосферу. Идеально для тех, кто",
+  "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5077340/e30aa0189bbb30aa98b9d48348799ae69176439d/header.jpg?t=1792227956",
+  "inLanguage": "ru-RU",
+  "isAccessibleForFree": true,
+  "articleSection": "Обзоры",
+  "speakable": {
+    "@type": "SpeakableSpecification",
+    "cssSelector": [
+      "h1",
+      ".article-body p:first-of-type"
+    ]
   }
+}
   </script>
 
   <script type="application/ld+json">
@@ -189,7 +228,6 @@
       padding: 1px 6px; background: rgba(4,6,10,0.75); border-radius: 3px;
     }
   </style>
-  <script defer src="/analytics-consent.js?v=2"></script>
 </head>
 <body>
 <a href="#main-content" class="skip-link">Перейти к содержимому</a>
@@ -224,7 +262,7 @@
       <span class="article-category cat-reviews">Обзоры</span>
       <h1>Sparkle Mouse – яркие частицы для рабочего стола</h1>
       <div class="article-meta">
-        <span><i class="far fa-calendar"></i> 1 ноября 2026</span>
+        <span><i class="far fa-calendar"></i> 8 ноября 2026</span>
         <span><i class="far fa-clock"></i> 2 минуты чтения</span>
       </div>
     </div>
@@ -290,6 +328,7 @@
 <!--LOWEND:START-->
       <section class="lowend-block" style="margin:26px 0;padding:16px 18px;border:1px solid rgba(255,255,255,.10);border-radius:10px;background:rgba(255,255,255,.03)">
         <h2 style="margin:0 0 10px;font-size:1.15rem">Потянет ли Sparkle Mouse на слабом ноутбуке?</h2>
+        
         <p><strong>Минимальные требования (Steam):</strong> ОС: Windows 10 · Оперативная память: 4 GB ОЗУ · Видеокарта: Any WebGL 2.0 capable GPU · Место на диске: 100 MB</p>
         <p><strong>Оценка:</strong> Потянет на встроенной графике при 720p и низких настройках.</p>
         <p>Подборки под слабое железо: <a href="/rpg-igry-dlya-slabyh-noutbukov">ролевые игры для слабого ПК</a> →</p>
@@ -327,7 +366,9 @@
       <div class="share-buttons" id="share-buttons"></div>
     </section>
 
-    <section class="game-faq">
+
+
+        <section class="game-faq">
       <h2>Sparkle Mouse: частые вопросы</h2>
       <h3>Сколько стоит Sparkle Mouse</h3>
         <p>В Steam Sparkle Mouse сейчас 150.00 RUB. Цена и скидки обновляются автоматически.</p>
@@ -336,24 +377,13 @@
       <h3>Кто разработал Sparkle Mouse</h3>
         <p>Разработчик Sparkle Mouse — Max van Leeuwen.</p>
     </section>
-<section class="similar-games">
-      <h2>Похожие игры</h2>
-      <table class="similar-table">
-        <thead><tr><th>Игра</th><th>Цена</th><th>Слабый ПК</th></tr></thead>
-        <tbody>
-          <tr><td><a href="/archive/sr2-screen-recorder-5208760">SR2 Screen Recorder — простая программа для записи экрана</a></td><td>95.00 RUB</td><td>Потянет</td></tr>
-          <tr><td><a href="/archive/chronogallery-5198470">ChronoGallery — часы, календарь и фотоальбом</a></td><td>79.00 RUB (скидка 20%)</td><td>Потянет</td></tr>
-          <tr><td><a href="/archive/cursorloom-5268080">CURSORLOOM - уникальные курсоры для ПК</a></td><td>145.49 RUB</td><td>—</td></tr>
-        </tbody>
-      </table>
-    </section>
 <section class="related-section">
       <h4>Похожие статьи</h4>
       <div class="related-grid" id="related-container">
-        <a href="/archive/skazaniya-o-puti-bessmertnyh-5262700" class="related-card"><strong>Сказания о Пути Бессмертных — обзор</strong><span>18 октября 2026</span></a>
-        <a href="/archive/penrogue-5319460" class="related-card"><strong>PenRogue — ролевая стратегия с пеной</strong><span>18 октября 2026</span></a>
-        <a href="/archive/chinesegaokao-5282110" class="related-card"><strong>中国式高考 ChineseGaokao — обзор и особенности</strong><span>18 октября 2026</span></a>
-        <a href="/archive/tower-survivor-paper-invasion-5178830" class="related-card"><strong>Tower Survivor – Paper Invasion: казуальная стратегия</strong><span>18 октября 2026</span></a>
+        <a href="/archive/atomic-heart-668580" class="related-card"><strong>Atomic Heart – мрачный техно‑экшен с ролевыми элементами</strong><span>2 октября 2026</span></a>
+        <a href="/archive/half-life-2-220" class="related-card"><strong>Half-Life 2: цена, отзывы и статистика игроков</strong><span>20 сентября 2026</span></a>
+        <a href="/archive/left-4-dead-2-550" class="related-card"><strong>Left 4 Dead 2 – кооперативный зомби‑экшен</strong><span>20 сентября 2026</span></a>
+        <a href="/archive/counter-strike-2-730" class="related-card"><strong>Counter-Strike 2: цена, отзывы и статистика игроков</strong><span>20 сентября 2026</span></a>
       </div></section>
     <section class="comments-section">
       <h4><i class="fas fa-comments" aria-hidden="true"></i> Комментарии</h4>
@@ -391,9 +421,11 @@
     '<a target="_blank" rel="noopener" class="share-btn" href="https://api.whatsapp.com/send?text=' + title + '%20' + url + '">WhatsApp</a>'
   ].join('');
 
+  // Статический блок «Похожие статьи» уже в HTML — JS только дополняет пустой
+  // контейнер на старых страницах, чтобы не затирать серверную разметку.
   var related = all.filter(function(a) { return a.url !== currentUrl; }).slice(0, 4);
   var relEl = document.getElementById('related-container');
-  if (relEl && !relEl.querySelector('a') && related.length) {
+  if (relEl && !relEl.querySelector('a')) {
     relEl.innerHTML = related.map(function(a) {
       return '<a href="' + a.url + '" class="related-card"><strong>' + a.title + '</strong><span>' + (a.date || '') + '</span></a>';
     }).join('');

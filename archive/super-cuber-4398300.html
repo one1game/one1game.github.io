@@ -40,37 +40,76 @@
     }
     if (localStorage.getItem('ga_consent') === 'yes') enableGA();
   </script>
+  <!-- Метрика: общий загрузчик, чтобы счётчик был на всех страницах -->
+  <script defer src="/analytics-consent.js?v=2"></script>
   <link href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css" rel="stylesheet" />
   <link rel="stylesheet" href="/styles.css?v=33" />
 
   <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "BreadcrumbList",
-    "itemListElement": [
-      {"@type": "ListItem", "position": 1, "name": "Главная", "item": "https://one1game.org/"},
-      {"@type": "ListItem", "position": 2, "name": "Статьи", "item": "https://one1game.org/archive"},
-      {"@type": "ListItem", "position": 3, "name": "Super Cuber", "item": "https://one1game.org/archive/super-cuber-4398300"}
-    ]
-  }
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Главная",
+      "item": "https://one1game.org/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Статьи",
+      "item": "https://one1game.org/archive"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Обзоры",
+      "item": "https://one1game.org/category/obzory"
+    },
+    {
+      "@type": "ListItem",
+      "position": 4,
+      "name": "Super Cuber",
+      "item": "https://one1game.org/archive/super-cuber-4398300"
+    }
+  ]
+}
   </script>
 
   <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "Article",
-    "headline": "Обзор Super Cuber: головоломка для спидкуберов | One1Game",
-    "datePublished": "2026-11-01",
-    "dateModified": "2026-11-01",
-    "author": {"@type": "Person", "name": "Команда One1Game"},
-    "publisher": {"@type": "Organization", "name": "One1Game", "logo": {"@type": "ImageObject", "url": "https://one1game.org/logo.png"}},
-    "description": "Обзор логической игры Super Cuber. Узнайте об особенностях сборки кубика на скорость, кастомизации и таблицах лидеров в нашем материале.",
-    "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4398300/b7931512b866b19dbcad6e384151ba3568ee6c0f/header.jpg?t=1792195174",
-    "inLanguage": "ru-RU",
-    "isAccessibleForFree": true,
-    "articleSection": "Обзоры",
-    "speakable": {"@type": "SpeakableSpecification", "cssSelector": ["h1", ".article-body p:first-of-type"]}
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Обзор Super Cuber: головоломка для спидкуберов | One1Game",
+  "datePublished": "2026-11-01",
+  "dateModified": "2026-11-08",
+  "author": {
+    "@type": "Person",
+    "name": "Команда One1Game"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "One1Game",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://one1game.org/logo.png"
+    }
+  },
+  "description": "Обзор логической игры Super Cuber. Узнайте об особенностях сборки кубика на скорость, кастомизации и таблицах лидеров в нашем материале.",
+  "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4398300/b7931512b866b19dbcad6e384151ba3568ee6c0f/header.jpg?t=1792195174",
+  "inLanguage": "ru-RU",
+  "isAccessibleForFree": true,
+  "articleSection": "Обзоры",
+  "speakable": {
+    "@type": "SpeakableSpecification",
+    "cssSelector": [
+      "h1",
+      ".article-body p:first-of-type"
+    ]
   }
+}
   </script>
 
   <script type="application/ld+json">
@@ -189,7 +228,6 @@
       padding: 1px 6px; background: rgba(4,6,10,0.75); border-radius: 3px;
     }
   </style>
-  <script defer src="/analytics-consent.js?v=2"></script>
 </head>
 <body>
 <a href="#main-content" class="skip-link">Перейти к содержимому</a>
@@ -224,7 +262,7 @@
       <span class="article-category cat-reviews">Обзоры</span>
       <h1>Обзор Super Cuber: головоломка для спидкуберов</h1>
       <div class="article-meta">
-        <span><i class="far fa-calendar"></i> 1 ноября 2026</span>
+        <span><i class="far fa-calendar"></i> 8 ноября 2026</span>
         <span><i class="far fa-clock"></i> 2 минуты чтения</span>
       </div>
     </div>
@@ -292,7 +330,9 @@
 <!--LOWEND:START-->
       <section class="lowend-block" style="margin:26px 0;padding:16px 18px;border:1px solid rgba(255,255,255,.10);border-radius:10px;background:rgba(255,255,255,.03)">
         <h2 style="margin:0 0 10px;font-size:1.15rem">Потянет ли Super Cuber на слабом ноутбуке?</h2>
+        
         <p><strong>Минимальные требования (Steam):</strong> ОС: 10 · Процессор: Zen 2 4c/8t, 2.4-3.5GHz (up to 448 GFlops FP32) · Оперативная память: 8 GB ОЗУ · Видеокарта: 8 RDNA 2 CUs, 1.6GHz (1.6 TFlops FP32) · DirectX: версии 11 · Место на диске: 200 MB</p>
+        
         <p>Подборки под слабое железо: <a href="/kooperativnye-igry-dlya-slabyh-pk">кооператив на слабом ПК</a> →</p>
       </section>
 <!--LOWEND:END-->
@@ -328,7 +368,8 @@
       <div class="share-buttons" id="share-buttons"></div>
     </section>
 
-    <section class="game-faq">
+
+        <section class="game-faq">
       <h2>Super Cuber: частые вопросы</h2>
       <h3>Сколько стоит Super Cuber</h3>
         <p>В Steam Super Cuber сейчас 320.00 RUB. Цена и скидки обновляются автоматически.</p>
@@ -342,19 +383,18 @@
       <table class="similar-table">
         <thead><tr><th>Игра</th><th>Цена</th><th>Слабый ПК</th></tr></thead>
         <tbody>
-          <tr><td><a href="/archive/supporters-pack-5240540">塔防山贼模拟器 - Supporters Pack: обзор</a></td><td>240.00 RUB</td><td>—</td></tr>
-          <tr><td><a href="/archive/sushi-automata-5326650">Обзор Sushi Automata: ресторан суши и основы кода</a></td><td>425.00 RUB</td><td>Потянет</td></tr>
-          <tr><td><a href="/archive/taerim-s-blueberry-defense-5165750">Taerim's Blueberry Defense: цена, отзывы и статистика…</a></td><td>150.00 RUB</td><td>Потянет</td></tr>
+          <tr><td><a href="/archive/baldur-s-gate-3-1086940">Baldur's Gate 3: цена, отзывы и требования</a></td><td>1999.00 RUB</td><td>Нет</td></tr>
+          <tr><td><a href="/archive/dota-2-570">Dota 2 — бесплатный MOBA‑экшен</a></td><td>Бесплатно</td><td>Нет</td></tr>
         </tbody>
       </table>
     </section>
-<section class="related-section">
+    <section class="related-section">
       <h4>Похожие статьи</h4>
       <div class="related-grid" id="related-container">
-        <a href="/archive/trafficjam-der-stau-simulator-3993220" class="related-card"><strong>Обзор TrafficJam - der Stau Simulator: симулятор пробок</strong><span>17 октября 2026</span></a>
-        <a href="/archive/grid64-5316940" class="related-card"><strong>Обзор GRID64: минималистичные пиксельные шахматы</strong><span>17 октября 2026</span></a>
-        <a href="/archive/just-a-cat-4350900" class="related-card"><strong>Обзор Just a Cat: милый питомец на рабочем столе</strong><span>17 октября 2026</span></a>
-        <a href="/archive/nekomancer-5066530" class="related-card"><strong>Обзор Nekomancer — рогалик про кота и орды врагов</strong><span>17 октября 2026</span></a>
+        <a href="/archive/atomic-heart-668580" class="related-card"><strong>Atomic Heart – мрачный техно‑экшен с ролевыми элементами</strong><span>2 октября 2026</span></a>
+        <a href="/archive/half-life-2-220" class="related-card"><strong>Half-Life 2: цена, отзывы и статистика игроков</strong><span>20 сентября 2026</span></a>
+        <a href="/archive/left-4-dead-2-550" class="related-card"><strong>Left 4 Dead 2 – кооперативный зомби‑экшен</strong><span>20 сентября 2026</span></a>
+        <a href="/archive/counter-strike-2-730" class="related-card"><strong>Counter-Strike 2: цена, отзывы и статистика игроков</strong><span>20 сентября 2026</span></a>
       </div></section>
     <section class="comments-section">
       <h4><i class="fas fa-comments" aria-hidden="true"></i> Комментарии</h4>
@@ -392,9 +432,11 @@
     '<a target="_blank" rel="noopener" class="share-btn" href="https://api.whatsapp.com/send?text=' + title + '%20' + url + '">WhatsApp</a>'
   ].join('');
 
+  // Статический блок «Похожие статьи» уже в HTML — JS только дополняет пустой
+  // контейнер на старых страницах, чтобы не затирать серверную разметку.
   var related = all.filter(function(a) { return a.url !== currentUrl; }).slice(0, 4);
   var relEl = document.getElementById('related-container');
-  if (relEl && !relEl.querySelector('a') && related.length) {
+  if (relEl && !relEl.querySelector('a')) {
     relEl.innerHTML = related.map(function(a) {
       return '<a href="' + a.url + '" class="related-card"><strong>' + a.title + '</strong><span>' + (a.date || '') + '</span></a>';
     }).join('');

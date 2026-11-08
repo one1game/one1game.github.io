@@ -40,37 +40,76 @@
     }
     if (localStorage.getItem('ga_consent') === 'yes') enableGA();
   </script>
+  <!-- Метрика: общий загрузчик, чтобы счётчик был на всех страницах -->
+  <script defer src="/analytics-consent.js?v=2"></script>
   <link href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css" rel="stylesheet" />
   <link rel="stylesheet" href="/styles.css?v=33" />
 
   <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "BreadcrumbList",
-    "itemListElement": [
-      {"@type": "ListItem", "position": 1, "name": "Главная", "item": "https://one1game.org/"},
-      {"@type": "ListItem", "position": 2, "name": "Статьи", "item": "https://one1game.org/archive"},
-      {"@type": "ListItem", "position": 3, "name": "I Love Dog", "item": "https://one1game.org/archive/i-love-dog-5093980"}
-    ]
-  }
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Главная",
+      "item": "https://one1game.org/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Статьи",
+      "item": "https://one1game.org/archive"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Обзоры",
+      "item": "https://one1game.org/category/obzory"
+    },
+    {
+      "@type": "ListItem",
+      "position": 4,
+      "name": "I Love Dog",
+      "item": "https://one1game.org/archive/i-love-dog-5093980"
+    }
+  ]
+}
   </script>
 
   <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "Article",
-    "headline": "I Love Dog – приключенческий инди-эксплорер | One1Game",
-    "datePublished": "2026-11-01",
-    "dateModified": "2026-11-01",
-    "author": {"@type": "Person", "name": "Команда One1Game"},
-    "publisher": {"@type": "Organization", "name": "One1Game", "logo": {"@type": "ImageObject", "url": "https://one1game.org/logo.png"}},
-    "description": "I Love Dog – бесплатная приключенческая игра, где вам предстоит исследовать загадочный остров, находить собак и расширять свою территорию с помощью",
-    "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5093980/d0839e5a8e8f9dc640099b5c96a5475ce62b9818/header.jpg?t=1791802066",
-    "inLanguage": "ru-RU",
-    "isAccessibleForFree": true,
-    "articleSection": "Обзоры",
-    "speakable": {"@type": "SpeakableSpecification", "cssSelector": ["h1", ".article-body p:first-of-type"]}
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "I Love Dog – приключенческий инди-эксплорер | One1Game",
+  "datePublished": "2026-11-01",
+  "dateModified": "2026-11-08",
+  "author": {
+    "@type": "Person",
+    "name": "Команда One1Game"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "One1Game",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://one1game.org/logo.png"
+    }
+  },
+  "description": "I Love Dog – бесплатная приключенческая игра, где вам предстоит исследовать загадочный остров, находить собак и расширять свою территорию с помощью",
+  "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5093980/d0839e5a8e8f9dc640099b5c96a5475ce62b9818/header.jpg?t=1791802066",
+  "inLanguage": "ru-RU",
+  "isAccessibleForFree": true,
+  "articleSection": "Обзоры",
+  "speakable": {
+    "@type": "SpeakableSpecification",
+    "cssSelector": [
+      "h1",
+      ".article-body p:first-of-type"
+    ]
   }
+}
   </script>
 
   <script type="application/ld+json">
@@ -184,7 +223,6 @@
       padding: 1px 6px; background: rgba(4,6,10,0.75); border-radius: 3px;
     }
   </style>
-  <script defer src="/analytics-consent.js?v=2"></script>
 </head>
 <body>
 <a href="#main-content" class="skip-link">Перейти к содержимому</a>
@@ -219,7 +257,7 @@
       <span class="article-category cat-reviews">Обзоры</span>
       <h1>I Love Dog – приключенческий инди-эксплорер</h1>
       <div class="article-meta">
-        <span><i class="far fa-calendar"></i> 1 ноября 2026</span>
+        <span><i class="far fa-calendar"></i> 8 ноября 2026</span>
         <span><i class="far fa-clock"></i> 2 минуты чтения</span>
       </div>
     </div>
@@ -285,6 +323,7 @@
 <!--LOWEND:START-->
       <section class="lowend-block" style="margin:26px 0;padding:16px 18px;border:1px solid rgba(255,255,255,.10);border-radius:10px;background:rgba(255,255,255,.03)">
         <h2 style="margin:0 0 10px;font-size:1.15rem">Потянет ли I Love Dog на слабом ноутбуке?</h2>
+        
         <p><strong>Минимальные требования (Steam):</strong> 64-разрядные процессор и операционная система · ОС *: Windows 7 (64 bit) · Процессор: Intel i3-2100 / AMD A8-5600k · Оперативная память: 4 GB ОЗУ · Видеокарта: GeForce GTX 630 / Radeon HD 6570</p>
         <p><strong>Оценка:</strong> Нужна дискретная видеокарта — на встроенной графике играть не получится.</p>
         <p>Подборки под слабое железо: <a href="/shuter-igry-dlya-slabyh-noutbukov">стрелялки для слабого ПК</a> →</p>
@@ -322,7 +361,8 @@
       <div class="share-buttons" id="share-buttons"></div>
     </section>
 
-    <section class="game-faq">
+
+        <section class="game-faq">
       <h2>I Love Dog: частые вопросы</h2>
       <h3>Сколько стоит I Love Dog</h3>
         <p>В Steam I Love Dog сейчас Бесплатно. Цена и скидки обновляются автоматически.</p>
@@ -336,19 +376,19 @@
       <table class="similar-table">
         <thead><tr><th>Игра</th><th>Цена</th><th>Слабый ПК</th></tr></thead>
         <tbody>
-          <tr><td><a href="/archive/ice-cream-hero-4889610">Ice Cream Hero — сладкая защита от голодных приборов</a></td><td>Бесплатно</td><td>—</td></tr>
-          <tr><td><a href="/archive/idle-am-lofi-idle-mmo-5233680">idle.am - lofi idle mmo обзор</a></td><td>Бесплатно</td><td>Потянет</td></tr>
-          <tr><td><a href="/archive/if-you-stay-4437140">if you stay – приключенческая игра</a></td><td>Бесплатно</td><td>Потянет</td></tr>
+          <tr><td><a href="/archive/path-of-exile-238960">Path of Exile — бесплатный онлайн Action RPG</a></td><td>Бесплатно</td><td>Нет</td></tr>
+          <tr><td><a href="/archive/pubg-battlegrounds-578080">PUBG: BATTLEGROUNDS – бесплатный королевский бой</a></td><td>Бесплатно</td><td>Нет</td></tr>
+          <tr><td><a href="/archive/rust-252490">Rust — выживание в открытом мире</a></td><td>849.00 RUB (скидка 50%)</td><td>Нет</td></tr>
         </tbody>
       </table>
     </section>
-<section class="related-section">
+    <section class="related-section">
       <h4>Похожие статьи</h4>
       <div class="related-grid" id="related-container">
-        <a href="/archive/prehistoric-toybox-5257370" class="related-card"><strong>Prehistoric toybox – экшен‑роглайт от инди</strong><span>1 октября 2026</span></a>
-        <a href="/archive/autocycle-light-4955820" class="related-card"><strong>autocycle-light: цена, отзывы и статистика игроков</strong><span>1 октября 2026</span></a>
-        <a href="/archive/deal-with-the-deep-5209180" class="related-card"><strong>Deal with the Deep – обзор игры</strong><span>1 октября 2026</span></a>
-        <a href="/archive/prediction-error-5227780" class="related-card"><strong>Prediction Error — психологический инди‑приключение</strong><span>1 октября 2026</span></a>
+        <a href="/archive/half-life-2-220" class="related-card"><strong>Half-Life 2: цена, отзывы и статистика игроков</strong><span>20 сентября 2026</span></a>
+        <a href="/archive/left-4-dead-2-550" class="related-card"><strong>Left 4 Dead 2 – кооперативный зомби‑экшен</strong><span>20 сентября 2026</span></a>
+        <a href="/archive/counter-strike-2-730" class="related-card"><strong>Counter-Strike 2: цена, отзывы и статистика игроков</strong><span>20 сентября 2026</span></a>
+        <a href="/archive/terraria-105600" class="related-card"><strong>Terraria — приключенческий экшен с элементами RPG</strong><span>20 сентября 2026</span></a>
       </div></section>
     <section class="comments-section">
       <h4><i class="fas fa-comments" aria-hidden="true"></i> Комментарии</h4>
@@ -386,9 +426,11 @@
     '<a target="_blank" rel="noopener" class="share-btn" href="https://api.whatsapp.com/send?text=' + title + '%20' + url + '">WhatsApp</a>'
   ].join('');
 
+  // Статический блок «Похожие статьи» уже в HTML — JS только дополняет пустой
+  // контейнер на старых страницах, чтобы не затирать серверную разметку.
   var related = all.filter(function(a) { return a.url !== currentUrl; }).slice(0, 4);
   var relEl = document.getElementById('related-container');
-  if (relEl && !relEl.querySelector('a') && related.length) {
+  if (relEl && !relEl.querySelector('a')) {
     relEl.innerHTML = related.map(function(a) {
       return '<a href="' + a.url + '" class="related-card"><strong>' + a.title + '</strong><span>' + (a.date || '') + '</span></a>';
     }).join('');

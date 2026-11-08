@@ -40,37 +40,76 @@
     }
     if (localStorage.getItem('ga_consent') === 'yes') enableGA();
   </script>
+  <!-- Метрика: общий загрузчик, чтобы счётчик был на всех страницах -->
+  <script defer src="/analytics-consent.js?v=2"></script>
   <link href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css" rel="stylesheet" />
   <link rel="stylesheet" href="/styles.css?v=33" />
 
   <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "BreadcrumbList",
-    "itemListElement": [
-      {"@type": "ListItem", "position": 1, "name": "Главная", "item": "https://one1game.org/"},
-      {"@type": "ListItem", "position": 2, "name": "Статьи", "item": "https://one1game.org/archive"},
-      {"@type": "ListItem", "position": 3, "name": "Panic Files: Buried Sanity", "item": "https://one1game.org/archive/panic-files-buried-sanity-4012730"}
-    ]
-  }
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Главная",
+      "item": "https://one1game.org/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Статьи",
+      "item": "https://one1game.org/archive"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Обзоры",
+      "item": "https://one1game.org/category/obzory"
+    },
+    {
+      "@type": "ListItem",
+      "position": 4,
+      "name": "Panic Files: Buried Sanity",
+      "item": "https://one1game.org/archive/panic-files-buried-sanity-4012730"
+    }
+  ]
+}
   </script>
 
   <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "Article",
-    "headline": "Panic Files: Buried Sanity — обзор | One1Game",
-    "datePublished": "2026-11-01",
-    "dateModified": "2026-11-01",
-    "author": {"@type": "Person", "name": "Команда One1Game"},
-    "publisher": {"@type": "Organization", "name": "One1Game", "logo": {"@type": "ImageObject", "url": "https://one1game.org/logo.png"}},
-    "description": "Игра Panic Files: Buried Sanity погружает в мрачный подземный мир, где каждый туннель полон опасностей и иллюзий. Приключенческий инди‑титул проверит вашу",
-    "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4012730/8eb6ed02af12bf695f7a0b7fdb1bda538304446a/header.jpg?t=1792702818",
-    "inLanguage": "ru-RU",
-    "isAccessibleForFree": true,
-    "articleSection": "Обзоры",
-    "speakable": {"@type": "SpeakableSpecification", "cssSelector": ["h1", ".article-body p:first-of-type"]}
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Panic Files: Buried Sanity — обзор | One1Game",
+  "datePublished": "2026-11-01",
+  "dateModified": "2026-11-08",
+  "author": {
+    "@type": "Person",
+    "name": "Команда One1Game"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "One1Game",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://one1game.org/logo.png"
+    }
+  },
+  "description": "Игра Panic Files: Buried Sanity погружает в мрачный подземный мир, где каждый туннель полон опасностей и иллюзий. Приключенческий инди‑титул проверит вашу",
+  "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4012730/8eb6ed02af12bf695f7a0b7fdb1bda538304446a/header.jpg?t=1792702818",
+  "inLanguage": "ru-RU",
+  "isAccessibleForFree": true,
+  "articleSection": "Обзоры",
+  "speakable": {
+    "@type": "SpeakableSpecification",
+    "cssSelector": [
+      "h1",
+      ".article-body p:first-of-type"
+    ]
   }
+}
   </script>
 
   <script type="application/ld+json">
@@ -83,7 +122,7 @@
   "applicationCategory": "Game",
   "offers": {
     "@type": "Offer",
-    "price": "100.00",
+    "price": "200.00",
     "priceCurrency": "RUB"
   }
 }
@@ -189,7 +228,6 @@
       padding: 1px 6px; background: rgba(4,6,10,0.75); border-radius: 3px;
     }
   </style>
-  <script defer src="/analytics-consent.js?v=2"></script>
 </head>
 <body>
 <a href="#main-content" class="skip-link">Перейти к содержимому</a>
@@ -224,7 +262,7 @@
       <span class="article-category cat-reviews">Обзоры</span>
       <h1>Panic Files: Buried Sanity — обзор</h1>
       <div class="article-meta">
-        <span><i class="far fa-calendar"></i> 1 ноября 2026</span>
+        <span><i class="far fa-calendar"></i> 8 ноября 2026</span>
         <span><i class="far fa-clock"></i> 2 минуты чтения</span>
       </div>
     </div>
@@ -238,7 +276,7 @@
       <div class="game-stats-grid">
         <div class="game-stat-card">
           <div class="label">Цена</div>
-          <div class="value">100.00 RUB (скидка 50%)</div>
+          <div class="value">200.00 RUB</div>
         </div>
         <div class="game-stat-card">
           <div class="label">Дата выхода</div>
@@ -294,6 +332,7 @@
 <!--LOWEND:START-->
       <section class="lowend-block" style="margin:26px 0;padding:16px 18px;border:1px solid rgba(255,255,255,.10);border-radius:10px;background:rgba(255,255,255,.03)">
         <h2 style="margin:0 0 10px;font-size:1.15rem">Потянет ли Panic Files: Buried Sanity на слабом ноутбуке?</h2>
+        
         <p><strong>Минимальные требования (Steam):</strong> ОС: WINDOWS® 10 · Процессор: Intel® Core™ i3 or AMD Ryzen™ 3 · Оперативная память: 4 GB ОЗУ · Видеокарта: NVIDIA® GeForce® GT 640 · Место на диске: 1 GB</p>
         <p><strong>Оценка:</strong> Нужна дискретная видеокарта — на встроенной графике играть не получится.</p>
         <p>Подборки под слабое железо: <a href="/igry-bez-videokarty">игры на встроенной графике</a> →</p>
@@ -331,10 +370,11 @@
       <div class="share-buttons" id="share-buttons"></div>
     </section>
 
-    <section class="game-faq">
+
+        <section class="game-faq">
       <h2>Panic Files: Buried Sanity: частые вопросы</h2>
       <h3>Сколько стоит Panic Files: Buried Sanity</h3>
-        <p>В Steam Panic Files: Buried Sanity сейчас 100.00 RUB (скидка 50%). Цена и скидки обновляются автоматически.</p>
+        <p>В Steam Panic Files: Buried Sanity сейчас 200.00 RUB. Цена и скидки обновляются автоматически.</p>
       <h3>Когда вышла Panic Files: Buried Sanity</h3>
         <p>Дата выхода Panic Files: Buried Sanity — 19 сен. 2026 г.</p>
       <h3>Кто разработал Panic Files: Buried Sanity</h3>
@@ -345,19 +385,19 @@
       <table class="similar-table">
         <thead><tr><th>Игра</th><th>Цена</th><th>Слабый ПК</th></tr></thead>
         <tbody>
-          <tr><td><a href="/archive/parasited-will-3077650">Parasited Will — аркадный экшен о выживании</a></td><td>203.00 RUB (скидка 30%)</td><td>Нет</td></tr>
-          <tr><td><a href="/archive/path-of-exile-238960">Path of Exile: цена, отзывы и статистика игроков</a></td><td>Бесплатно</td><td>Нет</td></tr>
-          <tr><td><a href="/archive/patient-zero-3576670">Обзор игры PATIENT ZERO: мрачный кооперативный экшен</a></td><td>200.00 RUB</td><td>Нет</td></tr>
+          <tr><td><a href="/archive/path-of-exile-238960">Path of Exile — бесплатный онлайн Action RPG</a></td><td>Бесплатно</td><td>Нет</td></tr>
+          <tr><td><a href="/archive/rust-252490">Rust — выживание в открытом мире</a></td><td>849.00 RUB (скидка 50%)</td><td>Нет</td></tr>
+          <tr><td><a href="/archive/terraria-105600">Terraria — приключенческий экшен с элементами RPG</a></td><td>385.00 RUB</td><td>—</td></tr>
         </tbody>
       </table>
     </section>
-<section class="related-section">
+    <section class="related-section">
       <h4>Похожие статьи</h4>
       <div class="related-grid" id="related-container">
-        <a href="/archive/fluttering-3759520" class="related-card"><strong>Fluttering — приключенческий инди‑платформер</strong><span>20 сентября 2026</span></a>
-        <a href="/archive/pirouette-smile-5171060" class="related-card"><strong>Pirouette &amp; Smile — головоломка‑платформер</strong><span>20 сентября 2026</span></a>
-        <a href="/archive/desire-inn-3956380" class="related-card"><strong>Desire Inn — симулятор отеля и отношений</strong><span>20 сентября 2026</span></a>
-        <a href="/archive/only-farms-4657600" class="related-card"><strong>ONLY FARMS – приключенческий симулятор летних приключений</strong><span>20 сентября 2026</span></a>
+        <a href="/archive/rust-252490" class="related-card"><strong>Rust — выживание в открытом мире</strong><span>20 сентября 2026</span></a>
+        <a href="/archive/baldur-s-gate-3-1086940" class="related-card"><strong>Baldur's Gate 3: цена, отзывы и статистика игроков</strong><span>20 сентября 2026</span></a>
+        <a href="/archive/s-t-a-l-k-e-r-2-heart-of-chornobyl-1643320" class="related-card"><strong>S.T.A.L.K.E.R. 2: Heart of Chornobyl – обзор</strong><span>2 ноября 2026</span></a>
+        <a href="/archive/the-witcher-3-wild-hunt-remastered-292030" class="related-card"><strong>The Witcher 3: Wild Hunt — Remastered — обзор</strong><span>2 ноября 2026</span></a>
       </div></section>
     <section class="comments-section">
       <h4><i class="fas fa-comments" aria-hidden="true"></i> Комментарии</h4>
@@ -395,9 +435,11 @@
     '<a target="_blank" rel="noopener" class="share-btn" href="https://api.whatsapp.com/send?text=' + title + '%20' + url + '">WhatsApp</a>'
   ].join('');
 
+  // Статический блок «Похожие статьи» уже в HTML — JS только дополняет пустой
+  // контейнер на старых страницах, чтобы не затирать серверную разметку.
   var related = all.filter(function(a) { return a.url !== currentUrl; }).slice(0, 4);
   var relEl = document.getElementById('related-container');
-  if (relEl && !relEl.querySelector('a') && related.length) {
+  if (relEl && !relEl.querySelector('a')) {
     relEl.innerHTML = related.map(function(a) {
       return '<a href="' + a.url + '" class="related-card"><strong>' + a.title + '</strong><span>' + (a.date || '') + '</span></a>';
     }).join('');

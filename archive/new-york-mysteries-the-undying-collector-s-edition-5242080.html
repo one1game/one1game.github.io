@@ -40,37 +40,76 @@
     }
     if (localStorage.getItem('ga_consent') === 'yes') enableGA();
   </script>
+  <!-- Метрика: общий загрузчик, чтобы счётчик был на всех страницах -->
+  <script defer src="/analytics-consent.js?v=2"></script>
   <link href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css" rel="stylesheet" />
   <link rel="stylesheet" href="/styles.css?v=33" />
 
   <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "BreadcrumbList",
-    "itemListElement": [
-      {"@type": "ListItem", "position": 1, "name": "Главная", "item": "https://one1game.org/"},
-      {"@type": "ListItem", "position": 2, "name": "Статьи", "item": "https://one1game.org/archive"},
-      {"@type": "ListItem", "position": 3, "name": "New York Mysteries: The Undying Collector's Edition", "item": "https://one1game.org/archive/new-york-mysteries-the-undying-collector-s-edition-5242080"}
-    ]
-  }
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Главная",
+      "item": "https://one1game.org/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Статьи",
+      "item": "https://one1game.org/archive"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Обзоры",
+      "item": "https://one1game.org/category/obzory"
+    },
+    {
+      "@type": "ListItem",
+      "position": 4,
+      "name": "New York Mysteries: The Undying Collector's Edition",
+      "item": "https://one1game.org/archive/new-york-mysteries-the-undying-collector-s-edition-5242080"
+    }
+  ]
+}
   </script>
 
   <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "Article",
-    "headline": "New York Mysteries: The Undying – обзор | One1Game",
-    "datePublished": "2026-11-01",
-    "dateModified": "2026-11-01",
-    "author": {"@type": "Person", "name": "Команда One1Game"},
-    "publisher": {"@type": "Organization", "name": "One1Game", "logo": {"@type": "ImageObject", "url": "https://one1game.org/logo.png"}},
-    "description": "Приключенческая игра‑головоломка, где игроку предстоит раскрыть запутанное дело в Нью‑Йорке, полное мини‑игр и сложных квестов. Подойдёт любителям поисков",
-    "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5242080/b9b7fda796e05941515c9fcf0bca3e4c5fdd2066/header.jpg?t=1793257567",
-    "inLanguage": "ru-RU",
-    "isAccessibleForFree": true,
-    "articleSection": "Обзоры",
-    "speakable": {"@type": "SpeakableSpecification", "cssSelector": ["h1", ".article-body p:first-of-type"]}
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "New York Mysteries: The Undying – обзор | One1Game",
+  "datePublished": "2026-11-01",
+  "dateModified": "2026-11-08",
+  "author": {
+    "@type": "Person",
+    "name": "Команда One1Game"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "One1Game",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://one1game.org/logo.png"
+    }
+  },
+  "description": "Приключенческая игра‑головоломка, где игроку предстоит раскрыть запутанное дело в Нью‑Йорке, полное мини‑игр и сложных квестов. Подойдёт любителям поисков",
+  "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5242080/b9b7fda796e05941515c9fcf0bca3e4c5fdd2066/header.jpg?t=1793257567",
+  "inLanguage": "ru-RU",
+  "isAccessibleForFree": true,
+  "articleSection": "Обзоры",
+  "speakable": {
+    "@type": "SpeakableSpecification",
+    "cssSelector": [
+      "h1",
+      ".article-body p:first-of-type"
+    ]
   }
+}
   </script>
 
   <script type="application/ld+json">
@@ -189,7 +228,6 @@
       padding: 1px 6px; background: rgba(4,6,10,0.75); border-radius: 3px;
     }
   </style>
-  <script defer src="/analytics-consent.js?v=2"></script>
 </head>
 <body>
 <a href="#main-content" class="skip-link">Перейти к содержимому</a>
@@ -224,7 +262,7 @@
       <span class="article-category cat-reviews">Обзоры</span>
       <h1>New York Mysteries: The Undying – обзор</h1>
       <div class="article-meta">
-        <span><i class="far fa-calendar"></i> 1 ноября 2026</span>
+        <span><i class="far fa-calendar"></i> 8 ноября 2026</span>
         <span><i class="far fa-clock"></i> 2 минуты чтения</span>
       </div>
     </div>
@@ -296,6 +334,7 @@
 <!--LOWEND:START-->
       <section class="lowend-block" style="margin:26px 0;padding:16px 18px;border:1px solid rgba(255,255,255,.10);border-radius:10px;background:rgba(255,255,255,.03)">
         <h2 style="margin:0 0 10px;font-size:1.15rem">Потянет ли New York Mysteries: The Undying Collector's Edition на слабом ноутбуке?</h2>
+        
         <p><strong>Минимальные требования (Steam):</strong> 64-разрядные процессор и операционная система · ОС: Windows 10/11 · Процессор: 1.6 GHz · Оперативная память: 1 GB ОЗУ · DirectX: версии 11 · Место на диске: 1800 MB</p>
         <p><strong>Оценка:</strong> Потянет на встроенной графике при 720p и низких настройках.</p>
         <p>Подборки под слабое железо: <a href="/igry-dlya-slabyh-noutbukov-onlajn">игры для слабого ПК онлайн</a> →</p>
@@ -333,7 +372,8 @@
       <div class="share-buttons" id="share-buttons"></div>
     </section>
 
-    <section class="game-faq">
+
+        <section class="game-faq">
       <h2>New York Mysteries: The Undying Collector's Edition: частые вопросы</h2>
       <h3>Сколько стоит New York Mysteries: The Undying Collector's Edition</h3>
         <p>В Steam New York Mysteries: The Undying Collector's Edition сейчас 445.00 RUB. Цена и скидки обновляются автоматически.</p>
@@ -347,19 +387,19 @@
       <table class="similar-table">
         <thead><tr><th>Игра</th><th>Цена</th><th>Слабый ПК</th></tr></thead>
         <tbody>
-          <tr><td><a href="/archive/nientum-op-zero-2725250">Nientum - Op.ZERO обзор</a></td><td>710.00 RUB</td><td>Потянет</td></tr>
-          <tr><td><a href="/archive/ocean-4360980">Обзор игры Ocean — карточная стратегия с ИИ</a></td><td>Бесплатно</td><td>Нет</td></tr>
-          <tr><td><a href="/archive/ogon-i-voda-duhi-lesa-4697950">Огонь и Вода: Духи Леса — кооперативное приключение</a></td><td>200.00 RUB</td><td>Потянет</td></tr>
+          <tr><td><a href="/archive/path-of-exile-238960">Path of Exile — бесплатный онлайн Action RPG</a></td><td>Бесплатно</td><td>Нет</td></tr>
+          <tr><td><a href="/archive/portal-2-620">Portal 2 – головоломки и кооперативный экшен</a></td><td>445.00 RUB</td><td>Нет</td></tr>
+          <tr><td><a href="/archive/pubg-battlegrounds-578080">PUBG: BATTLEGROUNDS – бесплатный королевский бой</a></td><td>Бесплатно</td><td>Нет</td></tr>
         </tbody>
       </table>
     </section>
-<section class="related-section">
+    <section class="related-section">
       <h4>Похожие статьи</h4>
       <div class="related-grid" id="related-container">
-        <a href="/archive/milfy-s-lewd-trap-training-tentacles-aphrodisiacs-bondage-squeeze-3436360" class="related-card"><strong>Milfy’s Lewd Trap Training~Tentacles × Aphrodisiacs × Bondage Squeeze!~: цена, отзывы и статистика игроков</strong><span>29 октября 2026</span></a>
-        <a href="/archive/curatio-4866860" class="related-card"><strong>Curatio — казуальная головоломка о живописи</strong><span>29 октября 2026</span></a>
-        <a href="/archive/tama-in-between-3769030" class="related-card"><strong>Tama In-Between: цена, отзывы и статистика игроков</strong><span>29 октября 2026</span></a>
-        <a href="/archive/bao-bao-s-cozy-cleaning-services-3832380" class="related-card"><strong>Bao Bao's™ Cozy Cleaning Services: цена, отзывы и статистика игроков</strong><span>29 октября 2026</span></a>
+        <a href="/archive/atomic-heart-668580" class="related-card"><strong>Atomic Heart – мрачный техно‑экшен с ролевыми элементами</strong><span>2 октября 2026</span></a>
+        <a href="/archive/half-life-2-220" class="related-card"><strong>Half-Life 2: цена, отзывы и статистика игроков</strong><span>20 сентября 2026</span></a>
+        <a href="/archive/left-4-dead-2-550" class="related-card"><strong>Left 4 Dead 2 – кооперативный зомби‑экшен</strong><span>20 сентября 2026</span></a>
+        <a href="/archive/counter-strike-2-730" class="related-card"><strong>Counter-Strike 2: цена, отзывы и статистика игроков</strong><span>20 сентября 2026</span></a>
       </div></section>
     <section class="comments-section">
       <h4><i class="fas fa-comments" aria-hidden="true"></i> Комментарии</h4>
@@ -397,9 +437,11 @@
     '<a target="_blank" rel="noopener" class="share-btn" href="https://api.whatsapp.com/send?text=' + title + '%20' + url + '">WhatsApp</a>'
   ].join('');
 
+  // Статический блок «Похожие статьи» уже в HTML — JS только дополняет пустой
+  // контейнер на старых страницах, чтобы не затирать серверную разметку.
   var related = all.filter(function(a) { return a.url !== currentUrl; }).slice(0, 4);
   var relEl = document.getElementById('related-container');
-  if (relEl && !relEl.querySelector('a') && related.length) {
+  if (relEl && !relEl.querySelector('a')) {
     relEl.innerHTML = related.map(function(a) {
       return '<a href="' + a.url + '" class="related-card"><strong>' + a.title + '</strong><span>' + (a.date || '') + '</span></a>';
     }).join('');

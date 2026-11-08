@@ -11,11 +11,11 @@
   <link rel="dns-prefetch" href="https://www.google-analytics.com" />
   <link rel="preload" href="../styles.css" as="style" />
 
-  <title>Sarge's Horrors: цена, отзывы и статистика игроков | One1Game</title>
+  <title>Sarge's Horrors: цена, отзывы и требования | One1Game</title>
   <meta name="description" content="Sarge's Horrors — актуальная цена, скидки, процент положительных отзывов и статистика игроков в Steam. Обновляется автоматически." />
   <meta name="keywords" content="Sarge's Horrors, цена, отзывы, скидка, статистика игроков, Steam" />
 
-  <meta property="og:title" content="Sarge's Horrors: цена, отзывы и статистика игроков | One1Game" />
+  <meta property="og:title" content="Sarge's Horrors: цена, отзывы и требования | One1Game" />
   <meta property="og:description" content="Sarge's Horrors — актуальная цена, скидки, процент положительных отзывов и статистика игроков в Steam. Обновляется автоматически." />
   <meta property="og:type" content="article" />
   <meta property="og:url" content="https://one1game.org/archive/sarge-s-horrors-4708930" />
@@ -40,37 +40,76 @@
     }
     if (localStorage.getItem('ga_consent') === 'yes') enableGA();
   </script>
+  <!-- Метрика: общий загрузчик, чтобы счётчик был на всех страницах -->
+  <script defer src="/analytics-consent.js?v=2"></script>
   <link href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css" rel="stylesheet" />
   <link rel="stylesheet" href="/styles.css?v=33" />
 
   <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "BreadcrumbList",
-    "itemListElement": [
-      {"@type": "ListItem", "position": 1, "name": "Главная", "item": "https://one1game.org/"},
-      {"@type": "ListItem", "position": 2, "name": "Статьи", "item": "https://one1game.org/archive"},
-      {"@type": "ListItem", "position": 3, "name": "Sarge's Horrors", "item": "https://one1game.org/archive/sarge-s-horrors-4708930"}
-    ]
-  }
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Главная",
+      "item": "https://one1game.org/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Статьи",
+      "item": "https://one1game.org/archive"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Обзоры",
+      "item": "https://one1game.org/category/obzory"
+    },
+    {
+      "@type": "ListItem",
+      "position": 4,
+      "name": "Sarge's Horrors",
+      "item": "https://one1game.org/archive/sarge-s-horrors-4708930"
+    }
+  ]
+}
   </script>
 
   <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "Article",
-    "headline": "Sarge's Horrors: цена, отзывы и статистика игроков | One1Game",
-    "datePublished": "2026-11-01",
-    "dateModified": "2026-11-01",
-    "author": {"@type": "Person", "name": "Команда One1Game"},
-    "publisher": {"@type": "Organization", "name": "One1Game", "logo": {"@type": "ImageObject", "url": "https://one1game.org/logo.png"}},
-    "description": "Sarge's Horrors — актуальная цена, скидки, процент положительных отзывов и статистика игроков в Steam. Обновляется автоматически.",
-    "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4708930/ae6abe4a5a157834090ff18c82d3e2a45faacdb7/header.jpg?t=1793049957",
-    "inLanguage": "ru-RU",
-    "isAccessibleForFree": true,
-    "articleSection": "Обзоры",
-    "speakable": {"@type": "SpeakableSpecification", "cssSelector": ["h1", ".article-body p:first-of-type"]}
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Sarge's Horrors: цена, отзывы и требования | One1Game",
+  "datePublished": "2026-11-01",
+  "dateModified": "2026-11-08",
+  "author": {
+    "@type": "Person",
+    "name": "Команда One1Game"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "One1Game",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://one1game.org/logo.png"
+    }
+  },
+  "description": "Sarge's Horrors — актуальная цена, скидки, процент положительных отзывов и статистика игроков в Steam. Обновляется автоматически.",
+  "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4708930/ae6abe4a5a157834090ff18c82d3e2a45faacdb7/header.jpg?t=1793049957",
+  "inLanguage": "ru-RU",
+  "isAccessibleForFree": true,
+  "articleSection": "Обзоры",
+  "speakable": {
+    "@type": "SpeakableSpecification",
+    "cssSelector": [
+      "h1",
+      ".article-body p:first-of-type"
+    ]
   }
+}
   </script>
 
   <script type="application/ld+json">
@@ -189,7 +228,6 @@
       padding: 1px 6px; background: rgba(4,6,10,0.75); border-radius: 3px;
     }
   </style>
-  <script defer src="/analytics-consent.js?v=2"></script>
 </head>
 <body>
 <a href="#main-content" class="skip-link">Перейти к содержимому</a>
@@ -222,9 +260,9 @@
 
     <div class="article-header">
       <span class="article-category cat-reviews">Обзоры</span>
-      <h1>Sarge's Horrors: цена, отзывы и статистика игроков</h1>
+      <h1>Sarge's Horrors: цена, отзывы и требования</h1>
       <div class="article-meta">
-        <span><i class="far fa-calendar"></i> 1 ноября 2026</span>
+        <span><i class="far fa-calendar"></i> 8 ноября 2026</span>
         <span><i class="far fa-clock"></i> 2 минуты чтения</span>
       </div>
     </div>
@@ -293,6 +331,7 @@
 <!--LOWEND:START-->
       <section class="lowend-block" style="margin:26px 0;padding:16px 18px;border:1px solid rgba(255,255,255,.10);border-radius:10px;background:rgba(255,255,255,.03)">
         <h2 style="margin:0 0 10px;font-size:1.15rem">Потянет ли Sarge's Horrors на слабом ноутбуке?</h2>
+        
         <p><strong>Минимальные требования (Steam):</strong> 64-разрядные процессор и операционная система · ОС: Windows 10 64-bit · Процессор: Intel Core i5-8400 / Ryzen 5 2600 · Оперативная память: 8 GB ОЗУ · Видеокарта: NVIDIA GTX 1060 / AMD RX 580 · DirectX: версии 12 · Место на диске: 3 GB</p>
         <p><strong>Оценка:</strong> Нужна дискретная видеокарта — на встроенной графике играть не получится.</p>
         <p>Подборки под слабое железо: <a href="/igry-dlya-slabyh-noutbukov-4gb-ozu">игры на 4 ГБ ОЗУ</a> →</p>
@@ -330,7 +369,7 @@
       <div class="share-buttons" id="share-buttons"></div>
     </section>
 
-        <section class="gpu-check">
+            <section class="gpu-check">
       <h2>Потянет ли Sarge's Horrors на моей видеокарте</h2>
       <p>Минимум по Steam — <strong>NVIDIA GTX 1060</strong>. Сравнение по приблизительной производительности, а не по точному FPS.</p>
       <ul class="gpu-check-list">
@@ -357,19 +396,19 @@
       <table class="similar-table">
         <thead><tr><th>Игра</th><th>Цена</th><th>Слабый ПК</th></tr></thead>
         <tbody>
-          <tr><td><a href="/archive/saving-songburg-3954920">Saving Songburg™ – обзор и детали</a></td><td>710.00 RUB</td><td>Потянет</td></tr>
-          <tr><td><a href="/archive/schastlivyy-schastlivyy-ofis-5311990">Счастливый счастливый офис — обзор и особенности</a></td><td>308.00 RUB (скидка 20%)</td><td>Потянет</td></tr>
-          <tr><td><a href="/archive/scribble-tanks-5315860">Scribble Tanks – экшн‑рогалик в стиле карандашных…</a></td><td>195.00 RUB</td><td>Потянет</td></tr>
+          <tr><td><a href="/archive/terraria-105600">Terraria — приключенческий экшен с элементами RPG</a></td><td>385.00 RUB</td><td>—</td></tr>
+          <tr><td><a href="/archive/valheim-892970">Valheim — выживание в скандинавском мире</a></td><td>1299.00 RUB</td><td>Нет</td></tr>
+          <tr><td><a href="/archive/war-thunder-236390">War Thunder – масштабный онлайн-симулятор</a></td><td>Бесплатно</td><td>Нет</td></tr>
         </tbody>
       </table>
     </section>
-<section class="related-section">
+    <section class="related-section">
       <h4>Похожие статьи</h4>
       <div class="related-grid" id="related-container">
-        <a href="/archive/crawler-3d-5039680" class="related-card"><strong>Crawler 3D — ретро‑данжен‑краулер в мрачном фэнтези</strong><span>29 сентября 2026</span></a>
-        <a href="/archive/arcane-eclipse-survivors-5159390" class="related-card"><strong>Arcane Eclipse: Survivors — обзор</strong><span>29 сентября 2026</span></a>
-        <a href="/archive/swing-shift-5170210" class="related-card"><strong>Swing Shift — экшен‑казуальная инди‑игра</strong><span>29 сентября 2026</span></a>
-        <a href="/archive/ace-combat-8-wings-of-theve-2288340" class="related-card"><strong>ACE COMBAT 8: WINGS OF THEVE – обзор</strong><span>29 сентября 2026</span></a>
+        <a href="/archive/half-life-2-220" class="related-card"><strong>Half-Life 2: цена, отзывы и статистика игроков</strong><span>20 сентября 2026</span></a>
+        <a href="/archive/left-4-dead-2-550" class="related-card"><strong>Left 4 Dead 2 – кооперативный зомби‑экшен</strong><span>20 сентября 2026</span></a>
+        <a href="/archive/counter-strike-2-730" class="related-card"><strong>Counter-Strike 2: цена, отзывы и статистика игроков</strong><span>20 сентября 2026</span></a>
+        <a href="/archive/terraria-105600" class="related-card"><strong>Terraria — приключенческий экшен с элементами RPG</strong><span>20 сентября 2026</span></a>
       </div></section>
     <section class="comments-section">
       <h4><i class="fas fa-comments" aria-hidden="true"></i> Комментарии</h4>
@@ -407,9 +446,11 @@
     '<a target="_blank" rel="noopener" class="share-btn" href="https://api.whatsapp.com/send?text=' + title + '%20' + url + '">WhatsApp</a>'
   ].join('');
 
+  // Статический блок «Похожие статьи» уже в HTML — JS только дополняет пустой
+  // контейнер на старых страницах, чтобы не затирать серверную разметку.
   var related = all.filter(function(a) { return a.url !== currentUrl; }).slice(0, 4);
   var relEl = document.getElementById('related-container');
-  if (relEl && !relEl.querySelector('a') && related.length) {
+  if (relEl && !relEl.querySelector('a')) {
     relEl.innerHTML = related.map(function(a) {
       return '<a href="' + a.url + '" class="related-card"><strong>' + a.title + '</strong><span>' + (a.date || '') + '</span></a>';
     }).join('');

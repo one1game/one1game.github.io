@@ -40,37 +40,76 @@
     }
     if (localStorage.getItem('ga_consent') === 'yes') enableGA();
   </script>
+  <!-- Метрика: общий загрузчик, чтобы счётчик был на всех страницах -->
+  <script defer src="/analytics-consent.js?v=2"></script>
   <link href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css" rel="stylesheet" />
   <link rel="stylesheet" href="/styles.css?v=33" />
 
   <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "BreadcrumbList",
-    "itemListElement": [
-      {"@type": "ListItem", "position": 1, "name": "Главная", "item": "https://one1game.org/"},
-      {"@type": "ListItem", "position": 2, "name": "Статьи", "item": "https://one1game.org/archive"},
-      {"@type": "ListItem", "position": 3, "name": "Uncanny Train", "item": "https://one1game.org/archive/uncanny-train-5305740"}
-    ]
-  }
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Главная",
+      "item": "https://one1game.org/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Статьи",
+      "item": "https://one1game.org/archive"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Обзоры",
+      "item": "https://one1game.org/category/obzory"
+    },
+    {
+      "@type": "ListItem",
+      "position": 4,
+      "name": "Uncanny Train",
+      "item": "https://one1game.org/archive/uncanny-train-5305740"
+    }
+  ]
+}
   </script>
 
   <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "Article",
-    "headline": "Uncanny Train — хоррор‑пазл симулятор | One1Game",
-    "datePublished": "2026-11-01",
-    "dateModified": "2026-11-01",
-    "author": {"@type": "Person", "name": "Команда One1Game"},
-    "publisher": {"@type": "Organization", "name": "One1Game", "logo": {"@type": "ImageObject", "url": "https://one1game.org/logo.png"}},
-    "description": "Uncanny Train — атмосферный инди‑симулятор-головоломка, где игрок застрял в загадочном поезде. Нужно добраться до вагона‑1, решая мрачные головоломки и",
-    "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5305740/1f964b5d71f1530d0f8b85e145dd1b1d1987c36c/header.jpg?t=1792563383",
-    "inLanguage": "ru-RU",
-    "isAccessibleForFree": true,
-    "articleSection": "Обзоры",
-    "speakable": {"@type": "SpeakableSpecification", "cssSelector": ["h1", ".article-body p:first-of-type"]}
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Uncanny Train — хоррор‑пазл симулятор | One1Game",
+  "datePublished": "2026-11-01",
+  "dateModified": "2026-11-08",
+  "author": {
+    "@type": "Person",
+    "name": "Команда One1Game"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "One1Game",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://one1game.org/logo.png"
+    }
+  },
+  "description": "Uncanny Train — атмосферный инди‑симулятор-головоломка, где игрок застрял в загадочном поезде. Нужно добраться до вагона‑1, решая мрачные головоломки и",
+  "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5305740/1f964b5d71f1530d0f8b85e145dd1b1d1987c36c/header.jpg?t=1792563383",
+  "inLanguage": "ru-RU",
+  "isAccessibleForFree": true,
+  "articleSection": "Обзоры",
+  "speakable": {
+    "@type": "SpeakableSpecification",
+    "cssSelector": [
+      "h1",
+      ".article-body p:first-of-type"
+    ]
   }
+}
   </script>
 
   <script type="application/ld+json">
@@ -83,7 +122,7 @@
   "applicationCategory": "Game",
   "offers": {
     "@type": "Offer",
-    "price": "135.00",
+    "price": "170.00",
     "priceCurrency": "RUB"
   }
 }
@@ -189,7 +228,6 @@
       padding: 1px 6px; background: rgba(4,6,10,0.75); border-radius: 3px;
     }
   </style>
-  <script defer src="/analytics-consent.js?v=2"></script>
 </head>
 <body>
 <a href="#main-content" class="skip-link">Перейти к содержимому</a>
@@ -224,7 +262,7 @@
       <span class="article-category cat-reviews">Обзоры</span>
       <h1>Uncanny Train — хоррор‑пазл симулятор</h1>
       <div class="article-meta">
-        <span><i class="far fa-calendar"></i> 1 ноября 2026</span>
+        <span><i class="far fa-calendar"></i> 8 ноября 2026</span>
         <span><i class="far fa-clock"></i> 2 минуты чтения</span>
       </div>
     </div>
@@ -238,7 +276,7 @@
       <div class="game-stats-grid">
         <div class="game-stat-card">
           <div class="label">Цена</div>
-          <div class="value">135.00 RUB</div>
+          <div class="value">170.00 RUB</div>
         </div>
         <div class="game-stat-card">
           <div class="label">Дата выхода</div>
@@ -291,6 +329,7 @@
 <!--LOWEND:START-->
       <section class="lowend-block" style="margin:26px 0;padding:16px 18px;border:1px solid rgba(255,255,255,.10);border-radius:10px;background:rgba(255,255,255,.03)">
         <h2 style="margin:0 0 10px;font-size:1.15rem">Потянет ли Uncanny Train на слабом ноутбуке?</h2>
+        
         <p><strong>Минимальные требования (Steam):</strong> 64-разрядные процессор и операционная система · ОС: Windows 10/11 64bit · Процессор: Intel Core i5-8400 · Видеокарта: NVIDIA GeForce GTX 1060 (6GB) · DirectX: версии 12 · Место на диске: 2 GB</p>
         <p><strong>Оценка:</strong> Нужна дискретная видеокарта — на встроенной графике играть не получится.</p>
         <p>Подборки под слабое железо: <a href="/igry-bez-videokarty">игры без видеокарты</a> →</p>
@@ -328,7 +367,7 @@
       <div class="share-buttons" id="share-buttons"></div>
     </section>
 
-        <section class="gpu-check">
+            <section class="gpu-check">
       <h2>Потянет ли Uncanny Train на моей видеокарте</h2>
       <p>Минимум по Steam — <strong>NVIDIA GeForce GTX 1060</strong>. Сравнение по приблизительной производительности, а не по точному FPS.</p>
       <ul class="gpu-check-list">
@@ -344,7 +383,7 @@
 <section class="game-faq">
       <h2>Uncanny Train: частые вопросы</h2>
       <h3>Сколько стоит Uncanny Train</h3>
-        <p>В Steam Uncanny Train сейчас 135.00 RUB. Цена и скидки обновляются автоматически.</p>
+        <p>В Steam Uncanny Train сейчас 170.00 RUB. Цена и скидки обновляются автоматически.</p>
       <h3>Когда вышла Uncanny Train</h3>
         <p>Дата выхода Uncanny Train — 20 окт. 2026 г.</p>
       <h3>Кто разработал Uncanny Train</h3>
@@ -355,19 +394,19 @@
       <table class="similar-table">
         <thead><tr><th>Игра</th><th>Цена</th><th>Слабый ПК</th></tr></thead>
         <tbody>
-          <tr><td><a href="/archive/underdeep-labirint-glubin-4065440">UNDERDEEP / Лабиринт глубин – обзор</a></td><td>302.00 RUB (скидка 35%)</td><td>Потянет</td></tr>
-          <tr><td><a href="/archive/vahnora-1624430">Vahnora — бесплатная 3D MMORPG о войне фракций</a></td><td>Бесплатно</td><td>Нет</td></tr>
-          <tr><td><a href="/archive/vampirskiy-potseluy-paradoks-vremeni-4207160">Обзор игры Вампирский поцелуй: Парадокс времени</a></td><td>200.00 RUB</td><td>Нет</td></tr>
+          <tr><td><a href="/archive/euro-truck-simulator-2-227300">Euro Truck Simulator 2 — реалистичный симулятор</a></td><td>1269.00 RUB</td><td>Нет</td></tr>
+          <tr><td><a href="/archive/stardew-valley-413150">Stardew Valley — фермерский симулятор и ролевая игра</a></td><td>299.00 RUB</td><td>Потянет</td></tr>
+          <tr><td><a href="/archive/valheim-892970">Valheim — выживание в скандинавском мире</a></td><td>1299.00 RUB</td><td>Нет</td></tr>
         </tbody>
       </table>
     </section>
-<section class="related-section">
+    <section class="related-section">
       <h4>Похожие статьи</h4>
       <div class="related-grid" id="related-container">
-        <a href="/archive/pitwal-5103730" class="related-card"><strong>PitWal – утилита для анализа телеметрии</strong><span>21 октября 2026</span></a>
-        <a href="/archive/the-inkspire-5156550" class="related-card"><strong>The Inkspire — карточный рогалик в рукописном стиле</strong><span>21 октября 2026</span></a>
-        <a href="/archive/panos-5292490" class="related-card"><strong>Panos — казуальная тактическая стратегия</strong><span>21 октября 2026</span></a>
-        <a href="/archive/pawnimals-5223090" class="related-card"><strong>Обзор Pawnimals: трёхмерные шахматы с армиями зверей</strong><span>21 октября 2026</span></a>
+        <a href="/archive/atomic-heart-668580" class="related-card"><strong>Atomic Heart – мрачный техно‑экшен с ролевыми элементами</strong><span>2 октября 2026</span></a>
+        <a href="/archive/half-life-2-220" class="related-card"><strong>Half-Life 2: цена, отзывы и статистика игроков</strong><span>20 сентября 2026</span></a>
+        <a href="/archive/left-4-dead-2-550" class="related-card"><strong>Left 4 Dead 2 – кооперативный зомби‑экшен</strong><span>20 сентября 2026</span></a>
+        <a href="/archive/counter-strike-2-730" class="related-card"><strong>Counter-Strike 2: цена, отзывы и статистика игроков</strong><span>20 сентября 2026</span></a>
       </div></section>
     <section class="comments-section">
       <h4><i class="fas fa-comments" aria-hidden="true"></i> Комментарии</h4>
@@ -405,9 +444,11 @@
     '<a target="_blank" rel="noopener" class="share-btn" href="https://api.whatsapp.com/send?text=' + title + '%20' + url + '">WhatsApp</a>'
   ].join('');
 
+  // Статический блок «Похожие статьи» уже в HTML — JS только дополняет пустой
+  // контейнер на старых страницах, чтобы не затирать серверную разметку.
   var related = all.filter(function(a) { return a.url !== currentUrl; }).slice(0, 4);
   var relEl = document.getElementById('related-container');
-  if (relEl && !relEl.querySelector('a') && related.length) {
+  if (relEl && !relEl.querySelector('a')) {
     relEl.innerHTML = related.map(function(a) {
       return '<a href="' + a.url + '" class="related-card"><strong>' + a.title + '</strong><span>' + (a.date || '') + '</span></a>';
     }).join('');

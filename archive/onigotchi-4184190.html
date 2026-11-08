@@ -40,37 +40,76 @@
     }
     if (localStorage.getItem('ga_consent') === 'yes') enableGA();
   </script>
+  <!-- Метрика: общий загрузчик, чтобы счётчик был на всех страницах -->
+  <script defer src="/analytics-consent.js?v=2"></script>
   <link href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css" rel="stylesheet" />
   <link rel="stylesheet" href="/styles.css?v=33" />
 
   <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "BreadcrumbList",
-    "itemListElement": [
-      {"@type": "ListItem", "position": 1, "name": "Главная", "item": "https://one1game.org/"},
-      {"@type": "ListItem", "position": 2, "name": "Статьи", "item": "https://one1game.org/archive"},
-      {"@type": "ListItem", "position": 3, "name": "Onigotchi", "item": "https://one1game.org/archive/onigotchi-4184190"}
-    ]
-  }
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Главная",
+      "item": "https://one1game.org/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Статьи",
+      "item": "https://one1game.org/archive"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Обзоры",
+      "item": "https://one1game.org/category/obzory"
+    },
+    {
+      "@type": "ListItem",
+      "position": 4,
+      "name": "Onigotchi",
+      "item": "https://one1game.org/archive/onigotchi-4184190"
+    }
+  ]
+}
   </script>
 
   <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "Article",
-    "headline": "Onigotchi – казуальная стратегия про озорного они | One1Game",
-    "datePublished": "2026-11-01",
-    "dateModified": "2026-11-01",
-    "author": {"@type": "Person", "name": "Команда One1Game"},
-    "publisher": {"@type": "Organization", "name": "One1Game", "logo": {"@type": "ImageObject", "url": "https://one1game.org/logo.png"}},
-    "description": "Onigotchi – простая игра в стиле Тамагочи, где вы управляете милым они, развивая его способности и собирая уникальные амулеты, чтобы сражаться с",
-    "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4184190/1cd40b4e50d688ab4166e5fc46da4d1268796969/header.jpg?t=1790302197",
-    "inLanguage": "ru-RU",
-    "isAccessibleForFree": true,
-    "articleSection": "Обзоры",
-    "speakable": {"@type": "SpeakableSpecification", "cssSelector": ["h1", ".article-body p:first-of-type"]}
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Onigotchi – казуальная стратегия про озорного они | One1Game",
+  "datePublished": "2026-11-01",
+  "dateModified": "2026-11-08",
+  "author": {
+    "@type": "Person",
+    "name": "Команда One1Game"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "One1Game",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://one1game.org/logo.png"
+    }
+  },
+  "description": "Onigotchi – простая игра в стиле Тамагочи, где вы управляете милым они, развивая его способности и собирая уникальные амулеты, чтобы сражаться с",
+  "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4184190/1cd40b4e50d688ab4166e5fc46da4d1268796969/header.jpg?t=1790302197",
+  "inLanguage": "ru-RU",
+  "isAccessibleForFree": true,
+  "articleSection": "Обзоры",
+  "speakable": {
+    "@type": "SpeakableSpecification",
+    "cssSelector": [
+      "h1",
+      ".article-body p:first-of-type"
+    ]
   }
+}
   </script>
 
   <script type="application/ld+json">
@@ -189,7 +228,6 @@
       padding: 1px 6px; background: rgba(4,6,10,0.75); border-radius: 3px;
     }
   </style>
-  <script defer src="/analytics-consent.js?v=2"></script>
 </head>
 <body>
 <a href="#main-content" class="skip-link">Перейти к содержимому</a>
@@ -224,7 +262,7 @@
       <span class="article-category cat-reviews">Обзоры</span>
       <h1>Onigotchi – казуальная стратегия про озорного они</h1>
       <div class="article-meta">
-        <span><i class="far fa-calendar"></i> 1 ноября 2026</span>
+        <span><i class="far fa-calendar"></i> 8 ноября 2026</span>
         <span><i class="far fa-clock"></i> 2 минуты чтения</span>
       </div>
     </div>
@@ -292,6 +330,7 @@
 <!--LOWEND:START-->
       <section class="lowend-block" style="margin:26px 0;padding:16px 18px;border:1px solid rgba(255,255,255,.10);border-radius:10px;background:rgba(255,255,255,.03)">
         <h2 style="margin:0 0 10px;font-size:1.15rem">Потянет ли Onigotchi на слабом ноутбуке?</h2>
+        
         <p><strong>Минимальные требования (Steam):</strong> ОС: Windows 10/11 (64Bit) · Процессор: Any Dual-Core Processor (Intel or AMD) · Видеокарта: GeForce 700 series, Radeon HD 8000 Series · Место на диске: 50 MB · Звуковая карта: Yes</p>
         <p><strong>Оценка:</strong> Нужна дискретная видеокарта — на встроенной графике играть не получится.</p>
         <p>Подборки под слабое железо: <a href="/shuter-igry-dlya-slabyh-noutbukov">шутеры для слабого ноутбука</a> →</p>
@@ -329,7 +368,8 @@
       <div class="share-buttons" id="share-buttons"></div>
     </section>
 
-    <section class="game-faq">
+
+        <section class="game-faq">
       <h2>Onigotchi: частые вопросы</h2>
       <h3>Сколько стоит Onigotchi</h3>
         <p>В Steam Onigotchi сейчас 165.00 RUB. Цена и скидки обновляются автоматически.</p>
@@ -343,19 +383,18 @@
       <table class="similar-table">
         <thead><tr><th>Игра</th><th>Цена</th><th>Слабый ПК</th></tr></thead>
         <tbody>
-          <tr><td><a href="/archive/panos-5292490">Panos — казуальная тактическая стратегия</a></td><td>465.00 RUB</td><td>Потянет</td></tr>
-          <tr><td><a href="/archive/pawnimals-5223090">Обзор Pawnimals: трёхмерные шахматы с армиями зверей</a></td><td>590.00 RUB</td><td>Потянет</td></tr>
-          <tr><td><a href="/archive/pay-your-deeds-5222360">Pay Your Deeds — казуальная карточная стратегия</a></td><td>465.00 RUB</td><td>Потянет</td></tr>
+          <tr><td><a href="/archive/baldur-s-gate-3-1086940">Baldur's Gate 3: цена, отзывы и требования</a></td><td>1999.00 RUB</td><td>Нет</td></tr>
+          <tr><td><a href="/archive/dota-2-570">Dota 2 — бесплатный MOBA‑экшен</a></td><td>Бесплатно</td><td>Нет</td></tr>
         </tbody>
       </table>
     </section>
-<section class="related-section">
+    <section class="related-section">
       <h4>Похожие статьи</h4>
       <div class="related-grid" id="related-container">
-        <a href="/archive/dark-souls-remastered-570940" class="related-card"><strong>DARK SOULS™: REMASTERED – обзор игры</strong><span>25 сентября 2026</span></a>
-        <a href="/archive/american-truck-simulator-south-dakota-3749870" class="related-card"><strong>American Truck Simulator - South Dakota: обзор</strong><span>25 сентября 2026</span></a>
-        <a href="/archive/garfield-escape-from-monday-3932790" class="related-card"><strong>Garfield - Escape from Monday: приключенческий 3D‑платформер</strong><span>24 сентября 2026</span></a>
-        <a href="/archive/kalanoro-3158820" class="related-card"><strong>Kalanoro – экшн‑приключение про лемуров</strong><span>24 сентября 2026</span></a>
+        <a href="/archive/half-life-2-220" class="related-card"><strong>Half-Life 2: цена, отзывы и статистика игроков</strong><span>20 сентября 2026</span></a>
+        <a href="/archive/left-4-dead-2-550" class="related-card"><strong>Left 4 Dead 2 – кооперативный зомби‑экшен</strong><span>20 сентября 2026</span></a>
+        <a href="/archive/counter-strike-2-730" class="related-card"><strong>Counter-Strike 2: цена, отзывы и статистика игроков</strong><span>20 сентября 2026</span></a>
+        <a href="/archive/terraria-105600" class="related-card"><strong>Terraria — приключенческий экшен с элементами RPG</strong><span>20 сентября 2026</span></a>
       </div></section>
     <section class="comments-section">
       <h4><i class="fas fa-comments" aria-hidden="true"></i> Комментарии</h4>
@@ -393,9 +432,11 @@
     '<a target="_blank" rel="noopener" class="share-btn" href="https://api.whatsapp.com/send?text=' + title + '%20' + url + '">WhatsApp</a>'
   ].join('');
 
+  // Статический блок «Похожие статьи» уже в HTML — JS только дополняет пустой
+  // контейнер на старых страницах, чтобы не затирать серверную разметку.
   var related = all.filter(function(a) { return a.url !== currentUrl; }).slice(0, 4);
   var relEl = document.getElementById('related-container');
-  if (relEl && !relEl.querySelector('a') && related.length) {
+  if (relEl && !relEl.querySelector('a')) {
     relEl.innerHTML = related.map(function(a) {
       return '<a href="' + a.url + '" class="related-card"><strong>' + a.title + '</strong><span>' + (a.date || '') + '</span></a>';
     }).join('');

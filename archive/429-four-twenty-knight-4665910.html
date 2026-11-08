@@ -40,37 +40,76 @@
     }
     if (localStorage.getItem('ga_consent') === 'yes') enableGA();
   </script>
+  <!-- Метрика: общий загрузчик, чтобы счётчик был на всех страницах -->
+  <script defer src="/analytics-consent.js?v=2"></script>
   <link href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css" rel="stylesheet" />
   <link rel="stylesheet" href="/styles.css?v=33" />
 
   <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "BreadcrumbList",
-    "itemListElement": [
-      {"@type": "ListItem", "position": 1, "name": "Главная", "item": "https://one1game.org/"},
-      {"@type": "ListItem", "position": 2, "name": "Статьи", "item": "https://one1game.org/archive"},
-      {"@type": "ListItem", "position": 3, "name": "429 - Four Twenty Knight", "item": "https://one1game.org/archive/429-four-twenty-knight-4665910"}
-    ]
-  }
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Главная",
+      "item": "https://one1game.org/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Статьи",
+      "item": "https://one1game.org/archive"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Обзоры",
+      "item": "https://one1game.org/category/obzory"
+    },
+    {
+      "@type": "ListItem",
+      "position": 4,
+      "name": "429 - Four Twenty Knight",
+      "item": "https://one1game.org/archive/429-four-twenty-knight-4665910"
+    }
+  ]
+}
   </script>
 
   <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "Article",
-    "headline": "Обзор 429 - Four Twenty Knight: экшен-головоломка | One1Game",
-    "datePublished": "2026-11-01",
-    "dateModified": "2026-11-01",
-    "author": {"@type": "Person", "name": "Команда One1Game"},
-    "publisher": {"@type": "Organization", "name": "One1Game", "logo": {"@type": "ImageObject", "url": "https://one1game.org/logo.png"}},
-    "description": "Подробный обзор 429 - Four Twenty Knight. Физическая головоломка: крушите предметы, ищите верный путь и отбивайтесь от опасных стай жутких жуков.",
-    "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4665910/d4fdef59fd94a0fb11a309d07c7f71842b6e7816/header.jpg?t=1793349469",
-    "inLanguage": "ru-RU",
-    "isAccessibleForFree": true,
-    "articleSection": "Обзоры",
-    "speakable": {"@type": "SpeakableSpecification", "cssSelector": ["h1", ".article-body p:first-of-type"]}
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Обзор 429 - Four Twenty Knight: экшен-головоломка | One1Game",
+  "datePublished": "2026-11-01",
+  "dateModified": "2026-11-08",
+  "author": {
+    "@type": "Person",
+    "name": "Команда One1Game"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "One1Game",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://one1game.org/logo.png"
+    }
+  },
+  "description": "Подробный обзор 429 - Four Twenty Knight. Физическая головоломка: крушите предметы, ищите верный путь и отбивайтесь от опасных стай жутких жуков.",
+  "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4665910/d4fdef59fd94a0fb11a309d07c7f71842b6e7816/header.jpg?t=1793349469",
+  "inLanguage": "ru-RU",
+  "isAccessibleForFree": true,
+  "articleSection": "Обзоры",
+  "speakable": {
+    "@type": "SpeakableSpecification",
+    "cssSelector": [
+      "h1",
+      ".article-body p:first-of-type"
+    ]
   }
+}
   </script>
 
   <script type="application/ld+json">
@@ -189,7 +228,6 @@
       padding: 1px 6px; background: rgba(4,6,10,0.75); border-radius: 3px;
     }
   </style>
-  <script defer src="/analytics-consent.js?v=2"></script>
 </head>
 <body>
 <a href="#main-content" class="skip-link">Перейти к содержимому</a>
@@ -224,7 +262,7 @@
       <span class="article-category cat-reviews">Обзоры</span>
       <h1>Обзор 429 - Four Twenty Knight: экшен-головоломка</h1>
       <div class="article-meta">
-        <span><i class="far fa-calendar"></i> 1 ноября 2026</span>
+        <span><i class="far fa-calendar"></i> 8 ноября 2026</span>
         <span><i class="far fa-clock"></i> 2 минуты чтения</span>
       </div>
     </div>
@@ -295,6 +333,7 @@
 <!--LOWEND:START-->
       <section class="lowend-block" style="margin:26px 0;padding:16px 18px;border:1px solid rgba(255,255,255,.10);border-radius:10px;background:rgba(255,255,255,.03)">
         <h2 style="margin:0 0 10px;font-size:1.15rem">Потянет ли 429 - Four Twenty Knight на слабом ноутбуке?</h2>
+        
         <p><strong>Минимальные требования (Steam):</strong> 64-разрядные процессор и операционная система · ОС: Windows 10 64-bit · Процессор: Intel Core i5-4590 / AMD FX 8350 (or better) · Оперативная память: 8000 MB ОЗУ · Видеокарта: NVIDIA GeForce GTX 1060 / AMD Radeon RX 480 (or better) · Место на диске: 300 MB · Поддержка VR: Meta Quest 2/3 via Link/AirLink, Valve Index · Дополнительно: HTC Viv works, too, but cannot open up inventory, which should no</p>
         <p><strong>Оценка:</strong> Нужна дискретная видеокарта — на встроенной графике играть не получится.</p>
         <p>Подборки под слабое железо: <a href="/igry-dlya-slabyh-noutbukov-onlajn">онлайн-игры на слабом ПК</a> →</p>
@@ -332,7 +371,7 @@
       <div class="share-buttons" id="share-buttons"></div>
     </section>
 
-        <section class="gpu-check">
+            <section class="gpu-check">
       <h2>Потянет ли 429 - Four Twenty Knight на моей видеокарте</h2>
       <p>Минимум по Steam — <strong>NVIDIA GeForce GTX 1060</strong>. Сравнение по приблизительной производительности, а не по точному FPS.</p>
       <ul class="gpu-check-list">
@@ -359,19 +398,19 @@
       <table class="similar-table">
         <thead><tr><th>Игра</th><th>Цена</th><th>Слабый ПК</th></tr></thead>
         <tbody>
-          <tr><td><a href="/archive/battle-simulator-counter-zombie-reborn-4831090">Battle Simulator: Counter Zombie REBORN – обзор</a></td><td>200.00 RUB</td><td>Потянет</td></tr>
-          <tr><td><a href="/archive/discipline-simulator-4739040">DISCIPLINE SIMULATOR – хардкорный симулятор дисциплины</a></td><td>225.00 RUB</td><td>Нет</td></tr>
-          <tr><td><a href="/archive/fudan-adventure-3058680">FUDAN ADVENTURE — школьная RPG‑симуляция</a></td><td>240.00 RUB</td><td>—</td></tr>
+          <tr><td><a href="/archive/dota-2-570">Dota 2 — бесплатный MOBA‑экшен</a></td><td>Бесплатно</td><td>Нет</td></tr>
+          <tr><td><a href="/archive/war-thunder-236390">War Thunder – масштабный онлайн-симулятор</a></td><td>Бесплатно</td><td>Нет</td></tr>
+          <tr><td><a href="/archive/apex-legends-1172470">Apex Legends™: цена, отзывы и требования</a></td><td>Бесплатно</td><td>Нет</td></tr>
         </tbody>
       </table>
     </section>
-<section class="related-section">
+    <section class="related-section">
       <h4>Похожие статьи</h4>
       <div class="related-grid" id="related-container">
-        <a href="/archive/kyro-3063690" class="related-card"><strong>KYRO – пиксельный экшн‑приключение</strong><span>11 октября 2026</span></a>
-        <a href="/archive/cybercowboys-5136630" class="related-card"><strong>CyberCowboys — бездействующий ролевой квест в стиле Дикого</strong><span>11 октября 2026</span></a>
-        <a href="/archive/big-furry-weekends-4575830" class="related-card"><strong>Big Furry Weekends! – обзор игры</strong><span>11 октября 2026</span></a>
-        <a href="/archive/rooftops-parkour-pro-5291030" class="related-card"><strong>Rooftops Parkour Pro – динамичный паркур в открытом мире</strong><span>11 октября 2026</span></a>
+        <a href="/archive/atomic-heart-668580" class="related-card"><strong>Atomic Heart – мрачный техно‑экшен с ролевыми элементами</strong><span>2 октября 2026</span></a>
+        <a href="/archive/half-life-2-220" class="related-card"><strong>Half-Life 2: цена, отзывы и статистика игроков</strong><span>20 сентября 2026</span></a>
+        <a href="/archive/left-4-dead-2-550" class="related-card"><strong>Left 4 Dead 2 – кооперативный зомби‑экшен</strong><span>20 сентября 2026</span></a>
+        <a href="/archive/counter-strike-2-730" class="related-card"><strong>Counter-Strike 2: цена, отзывы и статистика игроков</strong><span>20 сентября 2026</span></a>
       </div></section>
     <section class="comments-section">
       <h4><i class="fas fa-comments" aria-hidden="true"></i> Комментарии</h4>
@@ -409,9 +448,11 @@
     '<a target="_blank" rel="noopener" class="share-btn" href="https://api.whatsapp.com/send?text=' + title + '%20' + url + '">WhatsApp</a>'
   ].join('');
 
+  // Статический блок «Похожие статьи» уже в HTML — JS только дополняет пустой
+  // контейнер на старых страницах, чтобы не затирать серверную разметку.
   var related = all.filter(function(a) { return a.url !== currentUrl; }).slice(0, 4);
   var relEl = document.getElementById('related-container');
-  if (relEl && !relEl.querySelector('a') && related.length) {
+  if (relEl && !relEl.querySelector('a')) {
     relEl.innerHTML = related.map(function(a) {
       return '<a href="' + a.url + '" class="related-card"><strong>' + a.title + '</strong><span>' + (a.date || '') + '</span></a>';
     }).join('');

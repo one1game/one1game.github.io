@@ -40,37 +40,76 @@
     }
     if (localStorage.getItem('ga_consent') === 'yes') enableGA();
   </script>
+  <!-- Метрика: общий загрузчик, чтобы счётчик был на всех страницах -->
+  <script defer src="/analytics-consent.js?v=2"></script>
   <link href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css" rel="stylesheet" />
   <link rel="stylesheet" href="/styles.css?v=33" />
 
   <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "BreadcrumbList",
-    "itemListElement": [
-      {"@type": "ListItem", "position": 1, "name": "Главная", "item": "https://one1game.org/"},
-      {"@type": "ListItem", "position": 2, "name": "Статьи", "item": "https://one1game.org/archive"},
-      {"@type": "ListItem", "position": 3, "name": "VRPlayerSim", "item": "https://one1game.org/archive/vrplayersim-5024300"}
-    ]
-  }
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Главная",
+      "item": "https://one1game.org/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Статьи",
+      "item": "https://one1game.org/archive"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Обзоры",
+      "item": "https://one1game.org/category/obzory"
+    },
+    {
+      "@type": "ListItem",
+      "position": 4,
+      "name": "VRPlayerSim",
+      "item": "https://one1game.org/archive/vrplayersim-5024300"
+    }
+  ]
+}
   </script>
 
   <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "Article",
-    "headline": "VRPlayerSim — иммерсивный видеоплеер для монитора и… | One1Game",
-    "datePublished": "2026-11-01",
-    "dateModified": "2026-11-01",
-    "author": {"@type": "Person", "name": "Команда One1Game"},
-    "publisher": {"@type": "Organization", "name": "One1Game", "logo": {"@type": "ImageObject", "url": "https://one1game.org/logo.png"}},
-    "description": "VRPlayerSim превращает обычные видео в эффект погружения: 180° и 360° контент, отслеживание головы через веб‑камеру, без гироскопа. Подходит для любителей",
-    "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5024300/5cb2d10c0ea37c80b88b15375e67f6908340d2ac/header.jpg?t=1792551569",
-    "inLanguage": "ru-RU",
-    "isAccessibleForFree": true,
-    "articleSection": "Обзоры",
-    "speakable": {"@type": "SpeakableSpecification", "cssSelector": ["h1", ".article-body p:first-of-type"]}
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "VRPlayerSim — иммерсивный видеоплеер для монитора и… | One1Game",
+  "datePublished": "2026-11-01",
+  "dateModified": "2026-11-08",
+  "author": {
+    "@type": "Person",
+    "name": "Команда One1Game"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "One1Game",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://one1game.org/logo.png"
+    }
+  },
+  "description": "VRPlayerSim превращает обычные видео в эффект погружения: 180° и 360° контент, отслеживание головы через веб‑камеру, без гироскопа. Подходит для любителей",
+  "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5024300/5cb2d10c0ea37c80b88b15375e67f6908340d2ac/header.jpg?t=1792551569",
+  "inLanguage": "ru-RU",
+  "isAccessibleForFree": true,
+  "articleSection": "Обзоры",
+  "speakable": {
+    "@type": "SpeakableSpecification",
+    "cssSelector": [
+      "h1",
+      ".article-body p:first-of-type"
+    ]
   }
+}
   </script>
 
   <script type="application/ld+json">
@@ -189,7 +228,6 @@
       padding: 1px 6px; background: rgba(4,6,10,0.75); border-radius: 3px;
     }
   </style>
-  <script defer src="/analytics-consent.js?v=2"></script>
 </head>
 <body>
 <a href="#main-content" class="skip-link">Перейти к содержимому</a>
@@ -224,7 +262,7 @@
       <span class="article-category cat-reviews">Обзоры</span>
       <h1>VRPlayerSim — иммерсивный видеоплеер для монитора и XR‑очков</h1>
       <div class="article-meta">
-        <span><i class="far fa-calendar"></i> 1 ноября 2026</span>
+        <span><i class="far fa-calendar"></i> 8 ноября 2026</span>
         <span><i class="far fa-clock"></i> 2 минуты чтения</span>
       </div>
     </div>
@@ -290,6 +328,7 @@
 <!--LOWEND:START-->
       <section class="lowend-block" style="margin:26px 0;padding:16px 18px;border:1px solid rgba(255,255,255,.10);border-radius:10px;background:rgba(255,255,255,.03)">
         <h2 style="margin:0 0 10px;font-size:1.15rem">Потянет ли VRPlayerSim на слабом ноутбуке?</h2>
+        
         <p><strong>Минимальные требования (Steam):</strong> 64-разрядные процессор и операционная система · ОС: Windows 10 · Процессор: Intel Core i5-4590 (AMD FX 8350) or better · Оперативная память: 4 GB ОЗУ · Видеокарта: GeForce GTX 970 (AMD Radeon R9 290) or better · DirectX: версии 11</p>
         <p><strong>Оценка:</strong> Нужна дискретная видеокарта — на встроенной графике играть не получится.</p>
         <p>Подборки под слабое железо: <a href="/kooperativnye-igry-dlya-slabyh-pk">кооперативные игры для слабых ПК</a> →</p>
@@ -327,7 +366,8 @@
       <div class="share-buttons" id="share-buttons"></div>
     </section>
 
-        <section class="gpu-check">
+
+            <section class="gpu-check">
       <h2>Потянет ли VRPlayerSim на моей видеокарте</h2>
       <p>Минимум по Steam — <strong>GeForce GTX 970</strong>. Сравнение по приблизительной производительности, а не по точному FPS.</p>
       <ul class="gpu-check-list">
@@ -349,24 +389,13 @@
       <h3>Кто разработал VRPlayerSim</h3>
         <p>Разработчик VRPlayerSim — VRPlayerSim Studio.</p>
     </section>
-<section class="similar-games">
-      <h2>Похожие игры</h2>
-      <table class="similar-table">
-        <thead><tr><th>Игра</th><th>Цена</th><th>Слабый ПК</th></tr></thead>
-        <tbody>
-          <tr><td><a href="/archive/borderless-window-manager-5254990">Borderless Window Manager – утилита для игр</a></td><td>240.00 RUB</td><td>Потянет</td></tr>
-          <tr><td><a href="/archive/mouse-shooter-fps-5244690">Mouse Shooter FPS – шутер на рабочем столе</a></td><td>52.00 RUB</td><td>Потянет</td></tr>
-          <tr><td><a href="/archive/smart-translator-4987360">Smart Translator — перевод и дубляж без интернета</a></td><td>465.00 RUB</td><td>Нет</td></tr>
-        </tbody>
-      </table>
-    </section>
 <section class="related-section">
       <h4>Похожие статьи</h4>
       <div class="related-grid" id="related-container">
-        <a href="/archive/what-the-dog-remembers-4500460" class="related-card"><strong>What The Dog Remembers – психологический хоррор</strong><span>21 октября 2026</span></a>
-        <a href="/archive/revenant-dawn-5206610" class="related-card"><strong>Revenant Dawn — ролевая игра о выживании</strong><span>21 октября 2026</span></a>
-        <a href="/archive/give-my-girl-a-whirl-4013020" class="related-card"><strong>Give My Girl A Whirl — симулятор отношений</strong><span>21 октября 2026</span></a>
-        <a href="/archive/oval-office-tidy-up-5368560" class="related-card"><strong>Oval Office Tidy Up — обзор</strong><span>21 октября 2026</span></a>
+        <a href="/archive/atomic-heart-668580" class="related-card"><strong>Atomic Heart – мрачный техно‑экшен с ролевыми элементами</strong><span>2 октября 2026</span></a>
+        <a href="/archive/half-life-2-220" class="related-card"><strong>Half-Life 2: цена, отзывы и статистика игроков</strong><span>20 сентября 2026</span></a>
+        <a href="/archive/left-4-dead-2-550" class="related-card"><strong>Left 4 Dead 2 – кооперативный зомби‑экшен</strong><span>20 сентября 2026</span></a>
+        <a href="/archive/counter-strike-2-730" class="related-card"><strong>Counter-Strike 2: цена, отзывы и статистика игроков</strong><span>20 сентября 2026</span></a>
       </div></section>
     <section class="comments-section">
       <h4><i class="fas fa-comments" aria-hidden="true"></i> Комментарии</h4>
@@ -404,9 +433,11 @@
     '<a target="_blank" rel="noopener" class="share-btn" href="https://api.whatsapp.com/send?text=' + title + '%20' + url + '">WhatsApp</a>'
   ].join('');
 
+  // Статический блок «Похожие статьи» уже в HTML — JS только дополняет пустой
+  // контейнер на старых страницах, чтобы не затирать серверную разметку.
   var related = all.filter(function(a) { return a.url !== currentUrl; }).slice(0, 4);
   var relEl = document.getElementById('related-container');
-  if (relEl && !relEl.querySelector('a') && related.length) {
+  if (relEl && !relEl.querySelector('a')) {
     relEl.innerHTML = related.map(function(a) {
       return '<a href="' + a.url + '" class="related-card"><strong>' + a.title + '</strong><span>' + (a.date || '') + '</span></a>';
     }).join('');

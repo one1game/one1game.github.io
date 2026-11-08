@@ -40,37 +40,76 @@
     }
     if (localStorage.getItem('ga_consent') === 'yes') enableGA();
   </script>
+  <!-- Метрика: общий загрузчик, чтобы счётчик был на всех страницах -->
+  <script defer src="/analytics-consent.js?v=2"></script>
   <link href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css" rel="stylesheet" />
   <link rel="stylesheet" href="/styles.css?v=33" />
 
   <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "BreadcrumbList",
-    "itemListElement": [
-      {"@type": "ListItem", "position": 1, "name": "Главная", "item": "https://one1game.org/"},
-      {"@type": "ListItem", "position": 2, "name": "Статьи", "item": "https://one1game.org/archive"},
-      {"@type": "ListItem", "position": 3, "name": "Brother, Get The Oats", "item": "https://one1game.org/archive/brother-get-the-oats-3191280"}
-    ]
-  }
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Главная",
+      "item": "https://one1game.org/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Статьи",
+      "item": "https://one1game.org/archive"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Обзоры",
+      "item": "https://one1game.org/category/obzory"
+    },
+    {
+      "@type": "ListItem",
+      "position": 4,
+      "name": "Brother, Get The Oats",
+      "item": "https://one1game.org/archive/brother-get-the-oats-3191280"
+    }
+  ]
+}
   </script>
 
   <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "Article",
-    "headline": "Brother, Get The Oats – обзор и рекомендации | One1Game",
-    "datePublished": "2026-11-01",
-    "dateModified": "2026-11-01",
-    "author": {"@type": "Person", "name": "Команда One1Game"},
-    "publisher": {"@type": "Organization", "name": "One1Game", "logo": {"@type": "ImageObject", "url": "https://one1game.org/logo.png"}},
-    "description": "Игра‑симулятор, где вам предстоит убедить упрямого поросёнка с искусственным интеллектом отдать свои драгоценные овсяные зерна за десять минут. Интересный",
-    "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3191280/70bed4a8dc341c933f8df335895fe8d4341d5170/header.jpg?t=1791241641",
-    "inLanguage": "ru-RU",
-    "isAccessibleForFree": true,
-    "articleSection": "Обзоры",
-    "speakable": {"@type": "SpeakableSpecification", "cssSelector": ["h1", ".article-body p:first-of-type"]}
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Brother, Get The Oats – обзор и рекомендации | One1Game",
+  "datePublished": "2026-11-01",
+  "dateModified": "2026-11-08",
+  "author": {
+    "@type": "Person",
+    "name": "Команда One1Game"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "One1Game",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://one1game.org/logo.png"
+    }
+  },
+  "description": "Игра‑симулятор, где вам предстоит убедить упрямого поросёнка с искусственным интеллектом отдать свои драгоценные овсяные зерна за десять минут. Интересный",
+  "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3191280/70bed4a8dc341c933f8df335895fe8d4341d5170/header.jpg?t=1791241641",
+  "inLanguage": "ru-RU",
+  "isAccessibleForFree": true,
+  "articleSection": "Обзоры",
+  "speakable": {
+    "@type": "SpeakableSpecification",
+    "cssSelector": [
+      "h1",
+      ".article-body p:first-of-type"
+    ]
   }
+}
   </script>
 
   <script type="application/ld+json">
@@ -189,7 +228,6 @@
       padding: 1px 6px; background: rgba(4,6,10,0.75); border-radius: 3px;
     }
   </style>
-  <script defer src="/analytics-consent.js?v=2"></script>
 </head>
 <body>
 <a href="#main-content" class="skip-link">Перейти к содержимому</a>
@@ -224,7 +262,7 @@
       <span class="article-category cat-reviews">Обзоры</span>
       <h1>Brother, Get The Oats – обзор и рекомендации</h1>
       <div class="article-meta">
-        <span><i class="far fa-calendar"></i> 1 ноября 2026</span>
+        <span><i class="far fa-calendar"></i> 8 ноября 2026</span>
         <span><i class="far fa-clock"></i> 2 минуты чтения</span>
       </div>
     </div>
@@ -293,7 +331,9 @@
 <!--LOWEND:START-->
       <section class="lowend-block" style="margin:26px 0;padding:16px 18px;border:1px solid rgba(255,255,255,.10);border-radius:10px;background:rgba(255,255,255,.03)">
         <h2 style="margin:0 0 10px;font-size:1.15rem">Потянет ли Brother, Get The Oats на слабом ноутбуке?</h2>
+        
         <p><strong>Минимальные требования (Steam):</strong> 64-разрядные процессор и операционная система · ОС: Windows 10 · Оперативная память: 16 GB ОЗУ · Видеокарта: None · Место на диске: 5 GB</p>
+        
         <p>Подборки под слабое железо: <a href="/igry-bez-videokarty">игры на встроенной графике</a> →</p>
       </section>
 <!--LOWEND:END-->
@@ -329,7 +369,8 @@
       <div class="share-buttons" id="share-buttons"></div>
     </section>
 
-    <section class="game-faq">
+
+        <section class="game-faq">
       <h2>Brother, Get The Oats: частые вопросы</h2>
       <h3>Сколько стоит Brother, Get The Oats</h3>
         <p>В Steam Brother, Get The Oats сейчас 200.00 RUB. Цена и скидки обновляются автоматически.</p>
@@ -343,19 +384,19 @@
       <table class="similar-table">
         <thead><tr><th>Игра</th><th>Цена</th><th>Слабый ПК</th></tr></thead>
         <tbody>
-          <tr><td><a href="/archive/brush-duel-3331850">Brush duel — художественные баттлы 1 на 1</a></td><td>255.00 RUB</td><td>Потянет</td></tr>
-          <tr><td><a href="/archive/bugarden-4289410">BuGarden — уютный садовый симулятор</a></td><td>240.00 RUB</td><td>Потянет</td></tr>
-          <tr><td><a href="/archive/bunny-coming-5330340">Bunny Coming — визуальная новелла о зайчице‑горничной</a></td><td>337.30 RUB</td><td>Потянет</td></tr>
+          <tr><td><a href="/archive/euro-truck-simulator-2-227300">Euro Truck Simulator 2 — реалистичный симулятор</a></td><td>1269.00 RUB</td><td>Нет</td></tr>
+          <tr><td><a href="/archive/stardew-valley-413150">Stardew Valley — фермерский симулятор и ролевая игра</a></td><td>299.00 RUB</td><td>Потянет</td></tr>
+          <tr><td><a href="/archive/war-thunder-236390">War Thunder – масштабный онлайн-симулятор</a></td><td>Бесплатно</td><td>Нет</td></tr>
         </tbody>
       </table>
     </section>
-<section class="related-section">
+    <section class="related-section">
       <h4>Похожие статьи</h4>
       <div class="related-grid" id="related-container">
-        <a href="/archive/fusty-dungeon-3410670" class="related-card"><strong>Fusty Dungeon – казуальное приключение в стиле JRPG</strong><span>24 сентября 2026</span></a>
-        <a href="/archive/trails-in-the-sky-2nd-chapter-eternal-summer-swimsuit-set-4975690" class="related-card"><strong>Trails in the Sky 2nd Chapter - Eternal Summer Swimsuit Set: цена, отзывы и статистика игроков</strong><span>24 сентября 2026</span></a>
-        <a href="/archive/love-all-my-girls-4553130" class="related-card"><strong>Love All My Girls – приключенческий инди‑симулятор</strong><span>24 сентября 2026</span></a>
-        <a href="/archive/frog-pond-simulator-3892380" class="related-card"><strong>Frog Pond Simulator — обзор</strong><span>24 сентября 2026</span></a>
+        <a href="/archive/half-life-2-220" class="related-card"><strong>Half-Life 2: цена, отзывы и статистика игроков</strong><span>20 сентября 2026</span></a>
+        <a href="/archive/left-4-dead-2-550" class="related-card"><strong>Left 4 Dead 2 – кооперативный зомби‑экшен</strong><span>20 сентября 2026</span></a>
+        <a href="/archive/counter-strike-2-730" class="related-card"><strong>Counter-Strike 2: цена, отзывы и статистика игроков</strong><span>20 сентября 2026</span></a>
+        <a href="/archive/terraria-105600" class="related-card"><strong>Terraria — приключенческий экшен с элементами RPG</strong><span>20 сентября 2026</span></a>
       </div></section>
     <section class="comments-section">
       <h4><i class="fas fa-comments" aria-hidden="true"></i> Комментарии</h4>
@@ -393,9 +434,11 @@
     '<a target="_blank" rel="noopener" class="share-btn" href="https://api.whatsapp.com/send?text=' + title + '%20' + url + '">WhatsApp</a>'
   ].join('');
 
+  // Статический блок «Похожие статьи» уже в HTML — JS только дополняет пустой
+  // контейнер на старых страницах, чтобы не затирать серверную разметку.
   var related = all.filter(function(a) { return a.url !== currentUrl; }).slice(0, 4);
   var relEl = document.getElementById('related-container');
-  if (relEl && !relEl.querySelector('a') && related.length) {
+  if (relEl && !relEl.querySelector('a')) {
     relEl.innerHTML = related.map(function(a) {
       return '<a href="' + a.url + '" class="related-card"><strong>' + a.title + '</strong><span>' + (a.date || '') + '</span></a>';
     }).join('');

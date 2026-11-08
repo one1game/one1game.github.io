@@ -40,37 +40,76 @@
     }
     if (localStorage.getItem('ga_consent') === 'yes') enableGA();
   </script>
+  <!-- Метрика: общий загрузчик, чтобы счётчик был на всех страницах -->
+  <script defer src="/analytics-consent.js?v=2"></script>
   <link href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css" rel="stylesheet" />
   <link rel="stylesheet" href="/styles.css?v=33" />
 
   <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "BreadcrumbList",
-    "itemListElement": [
-      {"@type": "ListItem", "position": 1, "name": "Главная", "item": "https://one1game.org/"},
-      {"@type": "ListItem", "position": 2, "name": "Статьи", "item": "https://one1game.org/archive"},
-      {"@type": "ListItem", "position": 3, "name": "Dawn of the Robot Empire", "item": "https://one1game.org/archive/dawn-of-the-robot-empire-452240"}
-    ]
-  }
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Главная",
+      "item": "https://one1game.org/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Статьи",
+      "item": "https://one1game.org/archive"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Обзоры",
+      "item": "https://one1game.org/category/obzory"
+    },
+    {
+      "@type": "ListItem",
+      "position": 4,
+      "name": "Dawn of the Robot Empire",
+      "item": "https://one1game.org/archive/dawn-of-the-robot-empire-452240"
+    }
+  ]
+}
   </script>
 
   <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "Article",
-    "headline": "Dawn of the Robot Empire — обзор игры | One1Game",
-    "datePublished": "2026-11-01",
-    "dateModified": "2026-11-01",
-    "author": {"@type": "Person", "name": "Команда One1Game"},
-    "publisher": {"@type": "Organization", "name": "One1Game", "logo": {"@type": "ImageObject", "url": "https://one1game.org/logo.png"}},
-    "description": "Dawn of the Robot Empire – динамичный экшен‑шутер в стиле старых аркад. Сразитесь с инопланетными роботами, требующими быстрой реакции и точного",
-    "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/452240/a274f91bf5a4df53794e56f3578dcebdf8ff4acb/header.jpg?t=1793386456",
-    "inLanguage": "ru-RU",
-    "isAccessibleForFree": true,
-    "articleSection": "Обзоры",
-    "speakable": {"@type": "SpeakableSpecification", "cssSelector": ["h1", ".article-body p:first-of-type"]}
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Dawn of the Robot Empire — обзор игры | One1Game",
+  "datePublished": "2026-11-01",
+  "dateModified": "2026-11-08",
+  "author": {
+    "@type": "Person",
+    "name": "Команда One1Game"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "One1Game",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://one1game.org/logo.png"
+    }
+  },
+  "description": "Dawn of the Robot Empire – динамичный экшен‑шутер в стиле старых аркад. Сразитесь с инопланетными роботами, требующими быстрой реакции и точного",
+  "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/452240/a274f91bf5a4df53794e56f3578dcebdf8ff4acb/header.jpg?t=1793386456",
+  "inLanguage": "ru-RU",
+  "isAccessibleForFree": true,
+  "articleSection": "Обзоры",
+  "speakable": {
+    "@type": "SpeakableSpecification",
+    "cssSelector": [
+      "h1",
+      ".article-body p:first-of-type"
+    ]
   }
+}
   </script>
 
   <script type="application/ld+json">
@@ -189,7 +228,6 @@
       padding: 1px 6px; background: rgba(4,6,10,0.75); border-radius: 3px;
     }
   </style>
-  <script defer src="/analytics-consent.js?v=2"></script>
 </head>
 <body>
 <a href="#main-content" class="skip-link">Перейти к содержимому</a>
@@ -224,7 +262,7 @@
       <span class="article-category cat-reviews">Обзоры</span>
       <h1>Dawn of the Robot Empire — обзор игры</h1>
       <div class="article-meta">
-        <span><i class="far fa-calendar"></i> 1 ноября 2026</span>
+        <span><i class="far fa-calendar"></i> 8 ноября 2026</span>
         <span><i class="far fa-clock"></i> 2 минуты чтения</span>
       </div>
     </div>
@@ -297,7 +335,8 @@
 <!--LOWEND:START-->
       <section class="lowend-block" style="margin:26px 0;padding:16px 18px;border:1px solid rgba(255,255,255,.10);border-radius:10px;background:rgba(255,255,255,.03)">
         <h2 style="margin:0 0 10px;font-size:1.15rem">Потянет ли Dawn of the Robot Empire на слабом ноутбуке?</h2>
-        <p><strong>Минимальные требования (Steam):</strong> ОС *: Windows 8.1 or newer · Процессор: Intel i5-4590 or better · Оперативная память: 4 GB ОЗУ · Видеокарта: NVIDIA GTX 970 / AMD 290 or better · DirectX: версии 11 · Место на диске: 256 MB · Поддержка VR: SteamVR. Standing or Room Scale</p>
+        
+        <p><strong>Минимальные требования (Steam):</strong> ОС: Windows 11 64-bit · Процессор: Intel Core i5-10400 or AMD Ryzen 5 3600 · Оперативная память: 8 GB ОЗУ · Видеокарта: NVIDIA RTX 3060 / AMD RX 6600 or better · DirectX: версии 12 · Место на диске: 512 MB · Поддержка VR: SteamVR/OpenXR; tracked motion controllers required · Дополнительно: Performance depends on headset resolution and refresh rate. Wireless play also requires a suitable streaming </p>
         <p><strong>Оценка:</strong> Нужна дискретная видеокарта — на встроенной графике играть не получится.</p>
         <p>Подборки под слабое железо: <a href="/igry-dlya-slabyh-noutbukov-4gb-ozu">игры для ноутбука с 4 ГБ ОЗУ</a> →</p>
       </section>
@@ -334,15 +373,15 @@
       <div class="share-buttons" id="share-buttons"></div>
     </section>
 
-        <section class="gpu-check">
+            <section class="gpu-check">
       <h2>Потянет ли Dawn of the Robot Empire на моей видеокарте</h2>
-      <p>Минимум по Steam — <strong>NVIDIA GTX 970</strong>. Сравнение по приблизительной производительности, а не по точному FPS.</p>
+      <p>Минимум по Steam — <strong>NVIDIA RTX 3060</strong>. Сравнение по приблизительной производительности, а не по точному FPS.</p>
       <ul class="gpu-check-list">
         <li><strong>RTX 5060</strong> — потянет</li>
         <li><strong>RTX 4060</strong> — потянет</li>
-        <li><strong>RTX 3050</strong> — потянет</li>
-        <li><strong>GTX 1050 Ti</strong> — на низких настройках, 720p</li>
-        <li><strong>RX 580</strong> — потянет</li>
+        <li><strong>RTX 3050</strong> — не потянет — нужна карта сильнее</li>
+        <li><strong>GTX 1050 Ti</strong> — не потянет — нужна карта сильнее</li>
+        <li><strong>RX 580</strong> — не потянет — нужна карта сильнее</li>
         <li><strong>Intel UHD 620</strong> — не потянет — нужна карта сильнее</li>
       </ul>
       <p>Полная таблица по 600+ играм: <a href="/potyanet-li-igra">потянет ли игра на моём ПК</a>.</p>
@@ -361,19 +400,19 @@
       <table class="similar-table">
         <thead><tr><th>Игра</th><th>Цена</th><th>Слабый ПК</th></tr></thead>
         <tbody>
-          <tr><td><a href="/archive/dawn-of-the-rotten-5196540">DAWN OF THE ROTTEN — постапокалиптический экшен</a></td><td>100.34 RUB</td><td>Потянет</td></tr>
-          <tr><td><a href="/archive/death-delivery-3303790">Death Delivery – динамичный шутер в стиле 80‑х</a></td><td>200.00 RUB</td><td>Нет</td></tr>
-          <tr><td><a href="/archive/dementium-ii-5342930">Dementium II – хоррор‑экшен в психиатрической больнице</a></td><td>660.00 RUB</td><td>Потянет</td></tr>
+          <tr><td><a href="/archive/path-of-exile-238960">Path of Exile — бесплатный онлайн Action RPG</a></td><td>Бесплатно</td><td>Нет</td></tr>
+          <tr><td><a href="/archive/rust-252490">Rust — выживание в открытом мире</a></td><td>849.00 RUB (скидка 50%)</td><td>Нет</td></tr>
+          <tr><td><a href="/archive/terraria-105600">Terraria — приключенческий экшен с элементами RPG</a></td><td>385.00 RUB</td><td>—</td></tr>
         </tbody>
       </table>
     </section>
-<section class="related-section">
+    <section class="related-section">
       <h4>Похожие статьи</h4>
       <div class="related-grid" id="related-container">
-        <a href="/archive/scopa-sweep-5048870" class="related-card"><strong>Scopa Sweep – обзор и геймплей</strong><span>26 октября 2026</span></a>
-        <a href="/archive/take-off-the-rocket-2883720" class="related-card"><strong>Take Off The Rocket – тролль‑платформер с ловушками</strong><span>26 октября 2026</span></a>
-        <a href="/archive/puzzle-peace-cozy-jigsaw-puzzles-5324320" class="related-card"><strong>Puzzle Peace: Cozy Jigsaw Puzzles – обзор игры</strong><span>26 октября 2026</span></a>
-        <a href="/archive/shhh-it-5387480" class="related-card"><strong>Shhh, IT! — карточная стратегия про стартапы</strong><span>26 октября 2026</span></a>
+        <a href="/archive/atomic-heart-668580" class="related-card"><strong>Atomic Heart – мрачный техно‑экшен с ролевыми элементами</strong><span>2 октября 2026</span></a>
+        <a href="/archive/half-life-2-220" class="related-card"><strong>Half-Life 2: цена, отзывы и статистика игроков</strong><span>20 сентября 2026</span></a>
+        <a href="/archive/left-4-dead-2-550" class="related-card"><strong>Left 4 Dead 2 – кооперативный зомби‑экшен</strong><span>20 сентября 2026</span></a>
+        <a href="/archive/counter-strike-2-730" class="related-card"><strong>Counter-Strike 2: цена, отзывы и статистика игроков</strong><span>20 сентября 2026</span></a>
       </div></section>
     <section class="comments-section">
       <h4><i class="fas fa-comments" aria-hidden="true"></i> Комментарии</h4>
@@ -411,9 +450,11 @@
     '<a target="_blank" rel="noopener" class="share-btn" href="https://api.whatsapp.com/send?text=' + title + '%20' + url + '">WhatsApp</a>'
   ].join('');
 
+  // Статический блок «Похожие статьи» уже в HTML — JS только дополняет пустой
+  // контейнер на старых страницах, чтобы не затирать серверную разметку.
   var related = all.filter(function(a) { return a.url !== currentUrl; }).slice(0, 4);
   var relEl = document.getElementById('related-container');
-  if (relEl && !relEl.querySelector('a') && related.length) {
+  if (relEl && !relEl.querySelector('a')) {
     relEl.innerHTML = related.map(function(a) {
       return '<a href="' + a.url + '" class="related-card"><strong>' + a.title + '</strong><span>' + (a.date || '') + '</span></a>';
     }).join('');

@@ -40,37 +40,76 @@
     }
     if (localStorage.getItem('ga_consent') === 'yes') enableGA();
   </script>
+  <!-- Метрика: общий загрузчик, чтобы счётчик был на всех страницах -->
+  <script defer src="/analytics-consent.js?v=2"></script>
   <link href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css" rel="stylesheet" />
   <link rel="stylesheet" href="/styles.css?v=33" />
 
   <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "BreadcrumbList",
-    "itemListElement": [
-      {"@type": "ListItem", "position": 1, "name": "Главная", "item": "https://one1game.org/"},
-      {"@type": "ListItem", "position": 2, "name": "Статьи", "item": "https://one1game.org/archive"},
-      {"@type": "ListItem", "position": 3, "name": "Chromascape", "item": "https://one1game.org/archive/chromascape-4214800"}
-    ]
-  }
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Главная",
+      "item": "https://one1game.org/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Статьи",
+      "item": "https://one1game.org/archive"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Обзоры",
+      "item": "https://one1game.org/category/obzory"
+    },
+    {
+      "@type": "ListItem",
+      "position": 4,
+      "name": "Chromascape",
+      "item": "https://one1game.org/archive/chromascape-4214800"
+    }
+  ]
+}
   </script>
 
   <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "Article",
-    "headline": "Chromascape – приключенческая игра о цветах | One1Game",
-    "datePublished": "2026-11-01",
-    "dateModified": "2026-11-01",
-    "author": {"@type": "Person", "name": "Команда One1Game"},
-    "publisher": {"@type": "Organization", "name": "One1Game", "logo": {"@type": "ImageObject", "url": "https://one1game.org/logo.png"}},
-    "description": "Chromascape – атмосферное приключение в 2D‑стиле, где вам предстоит управлять цветами, решать головоломки и вернуть утраченные оттенки в волшебный мир",
-    "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4214800/1b532d0d560e64bb86683987b3d4d9b40d54c8d5/header.jpg?t=1790937940",
-    "inLanguage": "ru-RU",
-    "isAccessibleForFree": true,
-    "articleSection": "Обзоры",
-    "speakable": {"@type": "SpeakableSpecification", "cssSelector": ["h1", ".article-body p:first-of-type"]}
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Chromascape – приключенческая игра о цветах | One1Game",
+  "datePublished": "2026-11-01",
+  "dateModified": "2026-11-08",
+  "author": {
+    "@type": "Person",
+    "name": "Команда One1Game"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "One1Game",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://one1game.org/logo.png"
+    }
+  },
+  "description": "Chromascape – атмосферное приключение в 2D‑стиле, где вам предстоит управлять цветами, решать головоломки и вернуть утраченные оттенки в волшебный мир",
+  "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4214800/1b532d0d560e64bb86683987b3d4d9b40d54c8d5/header.jpg?t=1790937940",
+  "inLanguage": "ru-RU",
+  "isAccessibleForFree": true,
+  "articleSection": "Обзоры",
+  "speakable": {
+    "@type": "SpeakableSpecification",
+    "cssSelector": [
+      "h1",
+      ".article-body p:first-of-type"
+    ]
   }
+}
   </script>
 
   <script type="application/ld+json">
@@ -189,7 +228,6 @@
       padding: 1px 6px; background: rgba(4,6,10,0.75); border-radius: 3px;
     }
   </style>
-  <script defer src="/analytics-consent.js?v=2"></script>
 </head>
 <body>
 <a href="#main-content" class="skip-link">Перейти к содержимому</a>
@@ -224,7 +262,7 @@
       <span class="article-category cat-reviews">Обзоры</span>
       <h1>Chromascape – приключенческая игра о цветах</h1>
       <div class="article-meta">
-        <span><i class="far fa-calendar"></i> 1 ноября 2026</span>
+        <span><i class="far fa-calendar"></i> 8 ноября 2026</span>
         <span><i class="far fa-clock"></i> 2 минуты чтения</span>
       </div>
     </div>
@@ -296,7 +334,9 @@
 <!--LOWEND:START-->
       <section class="lowend-block" style="margin:26px 0;padding:16px 18px;border:1px solid rgba(255,255,255,.10);border-radius:10px;background:rgba(255,255,255,.03)">
         <h2 style="margin:0 0 10px;font-size:1.15rem">Потянет ли Chromascape на слабом ноутбуке?</h2>
+        
         <p><strong>Минимальные требования (Steam):</strong> 64-разрядные процессор и операционная система · ОС: Windows 11 · Процессор: 2Ghz(x86_64) · Оперативная память: 8 GB ОЗУ · Видеокарта: DirectX Compatible video card with Pixel Shader 3.0 and Vertex Shader 3.0 support · DirectX: версии 11 · Место на диске: 1 GB · Звуковая карта: DirectX-compatible sound</p>
+        
         <p>Подборки под слабое железо: <a href="/igry-dlya-slabyh-noutbukov-4gb-ozu">игры для ноутбука с 4 ГБ ОЗУ</a> →</p>
       </section>
 <!--LOWEND:END-->
@@ -332,7 +372,8 @@
       <div class="share-buttons" id="share-buttons"></div>
     </section>
 
-    <section class="game-faq">
+
+        <section class="game-faq">
       <h2>Chromascape: частые вопросы</h2>
       <h3>Сколько стоит Chromascape</h3>
         <p>В Steam Chromascape сейчас 555.00 RUB. Цена и скидки обновляются автоматически.</p>
@@ -346,19 +387,19 @@
       <table class="similar-table">
         <thead><tr><th>Игра</th><th>Цена</th><th>Слабый ПК</th></tr></thead>
         <tbody>
-          <tr><td><a href="/archive/chronicon-cosmic-curse-4778970">Chronicon - Cosmic Curse: обзор игры</a></td><td>290.00 RUB</td><td>—</td></tr>
-          <tr><td><a href="/archive/chronolens-5245980">ChronoLens – экшн‑приключение с управлением временем</a></td><td>Бесплатно</td><td>Нет</td></tr>
-          <tr><td><a href="/archive/cicada-communication-3500590">Cicada Communication – приключенческая RPG о школьной…</a></td><td>880.00 RUB</td><td>—</td></tr>
+          <tr><td><a href="/archive/dayz-221100">DayZ — выживание в постапокалипсисе</a></td><td>2790.00 RUB</td><td>Нет</td></tr>
+          <tr><td><a href="/archive/detroit-become-human-1222140">Detroit: Become Human – обзор и геймплей</a></td><td>2999.00 RUB</td><td>Нет</td></tr>
+          <tr><td><a href="/archive/grand-theft-auto-v-legacy-271590">Grand Theft Auto V Legacy – обзор и геймплей</a></td><td>нет данных</td><td>Потянет</td></tr>
         </tbody>
       </table>
     </section>
-<section class="related-section">
+    <section class="related-section">
       <h4>Похожие статьи</h4>
       <div class="related-grid" id="related-container">
-        <a href="/archive/crabrun-4633560" class="related-card"><strong>CRABRUN – аркадный экшен с высоким счётом</strong><span>1 октября 2026</span></a>
-        <a href="/archive/crying-booth-2351740" class="related-card"><strong>CRYING BOOTH: цена, отзывы и статистика игроков</strong><span>1 октября 2026</span></a>
-        <a href="/archive/the-calamity-trials-3877630" class="related-card"><strong>The Calamity Trials — обзор игры</strong><span>1 октября 2026</span></a>
-        <a href="/archive/water-droplet-simulator-4435360" class="related-card"><strong>Water Droplet Simulator — уникальный симулятор капли воды</strong><span>1 октября 2026</span></a>
+        <a href="/archive/half-life-2-220" class="related-card"><strong>Half-Life 2: цена, отзывы и статистика игроков</strong><span>20 сентября 2026</span></a>
+        <a href="/archive/left-4-dead-2-550" class="related-card"><strong>Left 4 Dead 2 – кооперативный зомби‑экшен</strong><span>20 сентября 2026</span></a>
+        <a href="/archive/counter-strike-2-730" class="related-card"><strong>Counter-Strike 2: цена, отзывы и статистика игроков</strong><span>20 сентября 2026</span></a>
+        <a href="/archive/terraria-105600" class="related-card"><strong>Terraria — приключенческий экшен с элементами RPG</strong><span>20 сентября 2026</span></a>
       </div></section>
     <section class="comments-section">
       <h4><i class="fas fa-comments" aria-hidden="true"></i> Комментарии</h4>
@@ -396,9 +437,11 @@
     '<a target="_blank" rel="noopener" class="share-btn" href="https://api.whatsapp.com/send?text=' + title + '%20' + url + '">WhatsApp</a>'
   ].join('');
 
+  // Статический блок «Похожие статьи» уже в HTML — JS только дополняет пустой
+  // контейнер на старых страницах, чтобы не затирать серверную разметку.
   var related = all.filter(function(a) { return a.url !== currentUrl; }).slice(0, 4);
   var relEl = document.getElementById('related-container');
-  if (relEl && !relEl.querySelector('a') && related.length) {
+  if (relEl && !relEl.querySelector('a')) {
     relEl.innerHTML = related.map(function(a) {
       return '<a href="' + a.url + '" class="related-card"><strong>' + a.title + '</strong><span>' + (a.date || '') + '</span></a>';
     }).join('');

@@ -40,37 +40,76 @@
     }
     if (localStorage.getItem('ga_consent') === 'yes') enableGA();
   </script>
+  <!-- Метрика: общий загрузчик, чтобы счётчик был на всех страницах -->
+  <script defer src="/analytics-consent.js?v=2"></script>
   <link href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css" rel="stylesheet" />
   <link rel="stylesheet" href="/styles.css?v=33" />
 
   <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "BreadcrumbList",
-    "itemListElement": [
-      {"@type": "ListItem", "position": 1, "name": "Главная", "item": "https://one1game.org/"},
-      {"@type": "ListItem", "position": 2, "name": "Статьи", "item": "https://one1game.org/archive"},
-      {"@type": "ListItem", "position": 3, "name": "ACE COMBAT 8: WINGS OF THEVE", "item": "https://one1game.org/archive/ace-combat-8-wings-of-theve-2288340"}
-    ]
-  }
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Главная",
+      "item": "https://one1game.org/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Статьи",
+      "item": "https://one1game.org/archive"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Обзоры",
+      "item": "https://one1game.org/category/obzory"
+    },
+    {
+      "@type": "ListItem",
+      "position": 4,
+      "name": "ACE COMBAT 8: WINGS OF THEVE",
+      "item": "https://one1game.org/archive/ace-combat-8-wings-of-theve-2288340"
+    }
+  ]
+}
   </script>
 
   <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "Article",
-    "headline": "ACE COMBAT 8: WINGS OF THEVE – обзор | One1Game",
-    "datePublished": "2026-11-01",
-    "dateModified": "2026-11-01",
-    "author": {"@type": "Person", "name": "Команда One1Game"},
-    "publisher": {"@type": "Organization", "name": "One1Game", "logo": {"@type": "ImageObject", "url": "https://one1game.org/logo.png"}},
-    "description": "ACE COMBAT 8: WINGS OF THEVE – динамичный авиасимулятор с захватывающими воздушными боями, сюжетной кампанией и продуманным управлением.",
-    "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2288340/13dea8084135fd130605b78189c82e39bf944c35/header.jpg?t=1792128424",
-    "inLanguage": "ru-RU",
-    "isAccessibleForFree": true,
-    "articleSection": "Обзоры",
-    "speakable": {"@type": "SpeakableSpecification", "cssSelector": ["h1", ".article-body p:first-of-type"]}
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "ACE COMBAT 8: WINGS OF THEVE – обзор | One1Game",
+  "datePublished": "2026-11-01",
+  "dateModified": "2026-11-08",
+  "author": {
+    "@type": "Person",
+    "name": "Команда One1Game"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "One1Game",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://one1game.org/logo.png"
+    }
+  },
+  "description": "ACE COMBAT 8: WINGS OF THEVE – динамичный авиасимулятор с захватывающими воздушными боями, сюжетной кампанией и продуманным управлением.",
+  "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2288340/13dea8084135fd130605b78189c82e39bf944c35/header.jpg?t=1792128424",
+  "inLanguage": "ru-RU",
+  "isAccessibleForFree": true,
+  "articleSection": "Обзоры",
+  "speakable": {
+    "@type": "SpeakableSpecification",
+    "cssSelector": [
+      "h1",
+      ".article-body p:first-of-type"
+    ]
   }
+}
   </script>
 
   <script type="application/ld+json">
@@ -189,7 +228,6 @@
       padding: 1px 6px; background: rgba(4,6,10,0.75); border-radius: 3px;
     }
   </style>
-  <script defer src="/analytics-consent.js?v=2"></script>
 </head>
 <body>
 <a href="#main-content" class="skip-link">Перейти к содержимому</a>
@@ -224,7 +262,7 @@
       <span class="article-category cat-reviews">Обзоры</span>
       <h1>ACE COMBAT 8: WINGS OF THEVE – обзор</h1>
       <div class="article-meta">
-        <span><i class="far fa-calendar"></i> 1 ноября 2026</span>
+        <span><i class="far fa-calendar"></i> 8 ноября 2026</span>
         <span><i class="far fa-clock"></i> 2 минуты чтения</span>
       </div>
     </div>
@@ -299,6 +337,7 @@
 <!--LOWEND:START-->
       <section class="lowend-block" style="margin:26px 0;padding:16px 18px;border:1px solid rgba(255,255,255,.10);border-radius:10px;background:rgba(255,255,255,.03)">
         <h2 style="margin:0 0 10px;font-size:1.15rem">Потянет ли ACE COMBAT 8: WINGS OF THEVE на слабом ноутбуке?</h2>
+        
         <p><strong>Минимальные требования (Steam):</strong> 64-разрядные процессор и операционная система · ОС: Windows 11 · Процессор: Intel Core i7-10700K / AMD Ryzen 5 3600X · Оперативная память: 16 GB ОЗУ · Видеокарта: NVIDIA GeForce RTX 2060[6 GB] / AMD Radeon RX 6600 XT[8 GB] · DirectX: версии 12 · Место на диске: 150 GB · Дополнительно: This game requires an SSD, a hardware ray tracing-enabled graphics card, and DirectX 12 with Shader Model 6.6 or h</p>
         <p><strong>Оценка:</strong> Нужна дискретная видеокарта — на встроенной графике играть не получится.</p>
         <p>Подборки под слабое железо: <a href="/rpg-igry-dlya-slabyh-noutbukov">ролевые игры для слабого ПК</a> →</p>
@@ -336,7 +375,7 @@
       <div class="share-buttons" id="share-buttons"></div>
     </section>
 
-        <section class="gpu-check">
+            <section class="gpu-check">
       <h2>Потянет ли ACE COMBAT 8: WINGS OF THEVE на моей видеокарте</h2>
       <p>Минимум по Steam — <strong>NVIDIA GeForce RTX 2060</strong>. Сравнение по приблизительной производительности, а не по точному FPS.</p>
       <ul class="gpu-check-list">
@@ -363,19 +402,19 @@
       <table class="similar-table">
         <thead><tr><th>Игра</th><th>Цена</th><th>Слабый ПК</th></tr></thead>
         <tbody>
-          <tr><td><a href="/archive/achilles-sword-ll-4195360">Achilles‑Sword II — викингская приключенческая RPG</a></td><td>200.00 RUB</td><td>Нет</td></tr>
-          <tr><td><a href="/archive/active-matter-2887580">Active Matter — реалистичный военный шутер</a></td><td>1199.00 RUB (скидка 20%)</td><td>Нет</td></tr>
-          <tr><td><a href="/archive/aigenrobo-5130010">AIGENROBO — экшен‑шутер с конструированием машины</a></td><td>245.00 RUB</td><td>Потянет</td></tr>
+          <tr><td><a href="/archive/apex-legends-1172470">Apex Legends™: цена, отзывы и требования</a></td><td>Бесплатно</td><td>Нет</td></tr>
+          <tr><td><a href="/archive/atomic-heart-668580">Atomic Heart – мрачный техно‑экшен с ролевыми элементами</a></td><td>2499.00 RUB</td><td>Нет</td></tr>
+          <tr><td><a href="/archive/battlefield-v-1238810">Battlefield™ V — обзор и рекомендации</a></td><td>нет данных</td><td>Нет</td></tr>
         </tbody>
       </table>
     </section>
-<section class="related-section">
+    <section class="related-section">
       <h4>Похожие статьи</h4>
       <div class="related-grid" id="related-container">
-        <a href="/archive/by-royal-request-5167010" class="related-card"><strong>By Royal Request — уютный симулятор королевской жизни</strong><span>28 сентября 2026</span></a>
-        <a href="/archive/xenohaven-3461270" class="related-card"><strong>XenoHaven — приключенческий симулятор</strong><span>28 сентября 2026</span></a>
-        <a href="/archive/the-abyss-gazer-5016420" class="related-card"><strong>誅仙記 THE ABYSS GAZER – обзор</strong><span>28 сентября 2026</span></a>
-        <a href="/archive/bomberparty-3130680" class="related-card"><strong>BomberParty — взрывная многопользовательская игра</strong><span>28 сентября 2026</span></a>
+        <a href="/archive/half-life-2-220" class="related-card"><strong>Half-Life 2: цена, отзывы и статистика игроков</strong><span>20 сентября 2026</span></a>
+        <a href="/archive/left-4-dead-2-550" class="related-card"><strong>Left 4 Dead 2 – кооперативный зомби‑экшен</strong><span>20 сентября 2026</span></a>
+        <a href="/archive/counter-strike-2-730" class="related-card"><strong>Counter-Strike 2: цена, отзывы и статистика игроков</strong><span>20 сентября 2026</span></a>
+        <a href="/archive/terraria-105600" class="related-card"><strong>Terraria — приключенческий экшен с элементами RPG</strong><span>20 сентября 2026</span></a>
       </div></section>
     <section class="comments-section">
       <h4><i class="fas fa-comments" aria-hidden="true"></i> Комментарии</h4>
@@ -413,9 +452,11 @@
     '<a target="_blank" rel="noopener" class="share-btn" href="https://api.whatsapp.com/send?text=' + title + '%20' + url + '">WhatsApp</a>'
   ].join('');
 
+  // Статический блок «Похожие статьи» уже в HTML — JS только дополняет пустой
+  // контейнер на старых страницах, чтобы не затирать серверную разметку.
   var related = all.filter(function(a) { return a.url !== currentUrl; }).slice(0, 4);
   var relEl = document.getElementById('related-container');
-  if (relEl && !relEl.querySelector('a') && related.length) {
+  if (relEl && !relEl.querySelector('a')) {
     relEl.innerHTML = related.map(function(a) {
       return '<a href="' + a.url + '" class="related-card"><strong>' + a.title + '</strong><span>' + (a.date || '') + '</span></a>';
     }).join('');

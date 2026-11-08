@@ -40,37 +40,76 @@
     }
     if (localStorage.getItem('ga_consent') === 'yes') enableGA();
   </script>
+  <!-- Метрика: общий загрузчик, чтобы счётчик был на всех страницах -->
+  <script defer src="/analytics-consent.js?v=2"></script>
   <link href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css" rel="stylesheet" />
   <link rel="stylesheet" href="/styles.css?v=33" />
 
   <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "BreadcrumbList",
-    "itemListElement": [
-      {"@type": "ListItem", "position": 1, "name": "Главная", "item": "https://one1game.org/"},
-      {"@type": "ListItem", "position": 2, "name": "Статьи", "item": "https://one1game.org/archive"},
-      {"@type": "ListItem", "position": 3, "name": "One More Pearl!", "item": "https://one1game.org/archive/one-more-pearl-4800440"}
-    ]
-  }
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Главная",
+      "item": "https://one1game.org/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Статьи",
+      "item": "https://one1game.org/archive"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Обзоры",
+      "item": "https://one1game.org/category/obzory"
+    },
+    {
+      "@type": "ListItem",
+      "position": 4,
+      "name": "One More Pearl!",
+      "item": "https://one1game.org/archive/one-more-pearl-4800440"
+    }
+  ]
+}
   </script>
 
   <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "Article",
-    "headline": "One More Pearl! – казуальная стратегия с симуляцией | One1Game",
-    "datePublished": "2026-11-01",
-    "dateModified": "2026-11-01",
-    "author": {"@type": "Person", "name": "Команда One1Game"},
-    "publisher": {"@type": "Organization", "name": "One1Game", "logo": {"@type": "ImageObject", "url": "https://one1game.org/logo.png"}},
-    "description": "One More Pearl! – увлекательный казуальный симулятор‑стратегия, где вы помогаете морской выдре собирать ракушки, продавать жемчуг и улучшать автомат.",
-    "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4800440/70cdf28e41ab3d7bcdbd629c4b3dc32fdc0f7a76/header.jpg?t=1790134144",
-    "inLanguage": "ru-RU",
-    "isAccessibleForFree": true,
-    "articleSection": "Обзоры",
-    "speakable": {"@type": "SpeakableSpecification", "cssSelector": ["h1", ".article-body p:first-of-type"]}
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "One More Pearl! – казуальная стратегия с симуляцией | One1Game",
+  "datePublished": "2026-11-01",
+  "dateModified": "2026-11-08",
+  "author": {
+    "@type": "Person",
+    "name": "Команда One1Game"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "One1Game",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://one1game.org/logo.png"
+    }
+  },
+  "description": "One More Pearl! – увлекательный казуальный симулятор‑стратегия, где вы помогаете морской выдре собирать ракушки, продавать жемчуг и улучшать автомат.",
+  "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4800440/70cdf28e41ab3d7bcdbd629c4b3dc32fdc0f7a76/header.jpg?t=1790134144",
+  "inLanguage": "ru-RU",
+  "isAccessibleForFree": true,
+  "articleSection": "Обзоры",
+  "speakable": {
+    "@type": "SpeakableSpecification",
+    "cssSelector": [
+      "h1",
+      ".article-body p:first-of-type"
+    ]
   }
+}
   </script>
 
   <script type="application/ld+json">
@@ -189,7 +228,6 @@
       padding: 1px 6px; background: rgba(4,6,10,0.75); border-radius: 3px;
     }
   </style>
-  <script defer src="/analytics-consent.js?v=2"></script>
 </head>
 <body>
 <a href="#main-content" class="skip-link">Перейти к содержимому</a>
@@ -224,7 +262,7 @@
       <span class="article-category cat-reviews">Обзоры</span>
       <h1>One More Pearl! – казуальная стратегия с симуляцией</h1>
       <div class="article-meta">
-        <span><i class="far fa-calendar"></i> 1 ноября 2026</span>
+        <span><i class="far fa-calendar"></i> 8 ноября 2026</span>
         <span><i class="far fa-clock"></i> 2 минуты чтения</span>
       </div>
     </div>
@@ -292,6 +330,7 @@
 <!--LOWEND:START-->
       <section class="lowend-block" style="margin:26px 0;padding:16px 18px;border:1px solid rgba(255,255,255,.10);border-radius:10px;background:rgba(255,255,255,.03)">
         <h2 style="margin:0 0 10px;font-size:1.15rem">Потянет ли One More Pearl! на слабом ноутбуке?</h2>
+        
         <p><strong>Минимальные требования (Steam):</strong> 64-разрядные процессор и операционная система · ОС: Windows 10 · Процессор: 需要 64 位处理器和操作系统 · Оперативная память: 4 GB ОЗУ · Видеокарта: GeForce 700 series or similar · Место на диске: 500 MB</p>
         <p><strong>Оценка:</strong> Нужна дискретная видеокарта — на встроенной графике играть не получится.</p>
         <p>Подборки под слабое железо: <a href="/shuter-igry-dlya-slabyh-noutbukov">стрелялки для слабого ПК</a> →</p>
@@ -329,7 +368,8 @@
       <div class="share-buttons" id="share-buttons"></div>
     </section>
 
-    <section class="game-faq">
+
+        <section class="game-faq">
       <h2>One More Pearl!: частые вопросы</h2>
       <h3>Сколько стоит One More Pearl!</h3>
         <p>В Steam One More Pearl! сейчас 99.00 RUB. Цена и скидки обновляются автоматически.</p>
@@ -343,19 +383,19 @@
       <table class="similar-table">
         <thead><tr><th>Игра</th><th>Цена</th><th>Слабый ПК</th></tr></thead>
         <tbody>
-          <tr><td><a href="/archive/pixel-trader-4962430">Pixel Trader – пиксельный симулятор биржи</a></td><td>320.00 RUB</td><td>Потянет</td></tr>
-          <tr><td><a href="/archive/pixelia-5179830">Pixelia — многопользовательский мир в пиксельном стиле</a></td><td>160.00 RUB (скидка 20%)</td><td>—</td></tr>
-          <tr><td><a href="/archive/printsessa-moey-imperii-pornoaktrisa-4402610">Принцесса моей империи — порноактриса – обзор</a></td><td>320.00 RUB</td><td>Нет</td></tr>
+          <tr><td><a href="/archive/stardew-valley-413150">Stardew Valley — фермерский симулятор и ролевая игра</a></td><td>299.00 RUB</td><td>Потянет</td></tr>
+          <tr><td><a href="/archive/war-thunder-236390">War Thunder – масштабный онлайн-симулятор</a></td><td>Бесплатно</td><td>Нет</td></tr>
+          <tr><td><a href="/archive/baldur-s-gate-3-1086940">Baldur's Gate 3: цена, отзывы и требования</a></td><td>1999.00 RUB</td><td>Нет</td></tr>
         </tbody>
       </table>
     </section>
-<section class="related-section">
+    <section class="related-section">
       <h4>Похожие статьи</h4>
       <div class="related-grid" id="related-container">
-        <a href="/archive/birthday-4696240" class="related-card"><strong>Birthday – короткая головоломка в лесу</strong><span>23 сентября 2026</span></a>
-        <a href="/archive/dusha-primanka-bait-soul-3484100" class="related-card"><strong>Душа-приманка (Bait Soul) – обзор</strong><span>23 сентября 2026</span></a>
-        <a href="/archive/edo-village-nightmare-4327010" class="related-card"><strong>姉妹道中千両箱 : Edo Village Nightmare — обзор</strong><span>23 сентября 2026</span></a>
-        <a href="/archive/island-ntr-survival-ss-3192240" class="related-card"><strong>Island NTR Survival SS – выживание и драма на острове</strong><span>23 сентября 2026</span></a>
+        <a href="/archive/half-life-2-220" class="related-card"><strong>Half-Life 2: цена, отзывы и статистика игроков</strong><span>20 сентября 2026</span></a>
+        <a href="/archive/left-4-dead-2-550" class="related-card"><strong>Left 4 Dead 2 – кооперативный зомби‑экшен</strong><span>20 сентября 2026</span></a>
+        <a href="/archive/counter-strike-2-730" class="related-card"><strong>Counter-Strike 2: цена, отзывы и статистика игроков</strong><span>20 сентября 2026</span></a>
+        <a href="/archive/terraria-105600" class="related-card"><strong>Terraria — приключенческий экшен с элементами RPG</strong><span>20 сентября 2026</span></a>
       </div></section>
     <section class="comments-section">
       <h4><i class="fas fa-comments" aria-hidden="true"></i> Комментарии</h4>
@@ -393,9 +433,11 @@
     '<a target="_blank" rel="noopener" class="share-btn" href="https://api.whatsapp.com/send?text=' + title + '%20' + url + '">WhatsApp</a>'
   ].join('');
 
+  // Статический блок «Похожие статьи» уже в HTML — JS только дополняет пустой
+  // контейнер на старых страницах, чтобы не затирать серверную разметку.
   var related = all.filter(function(a) { return a.url !== currentUrl; }).slice(0, 4);
   var relEl = document.getElementById('related-container');
-  if (relEl && !relEl.querySelector('a') && related.length) {
+  if (relEl && !relEl.querySelector('a')) {
     relEl.innerHTML = related.map(function(a) {
       return '<a href="' + a.url + '" class="related-card"><strong>' + a.title + '</strong><span>' + (a.date || '') + '</span></a>';
     }).join('');

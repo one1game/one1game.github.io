@@ -40,37 +40,76 @@
     }
     if (localStorage.getItem('ga_consent') === 'yes') enableGA();
   </script>
+  <!-- Метрика: общий загрузчик, чтобы счётчик был на всех страницах -->
+  <script defer src="/analytics-consent.js?v=2"></script>
   <link href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css" rel="stylesheet" />
   <link rel="stylesheet" href="/styles.css?v=33" />
 
   <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "BreadcrumbList",
-    "itemListElement": [
-      {"@type": "ListItem", "position": 1, "name": "Главная", "item": "https://one1game.org/"},
-      {"@type": "ListItem", "position": 2, "name": "Статьи", "item": "https://one1game.org/archive"},
-      {"@type": "ListItem", "position": 3, "name": "Pirouette & Smile", "item": "https://one1game.org/archive/pirouette-smile-5171060"}
-    ]
-  }
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Главная",
+      "item": "https://one1game.org/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Статьи",
+      "item": "https://one1game.org/archive"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Обзоры",
+      "item": "https://one1game.org/category/obzory"
+    },
+    {
+      "@type": "ListItem",
+      "position": 4,
+      "name": "Pirouette & Smile",
+      "item": "https://one1game.org/archive/pirouette-smile-5171060"
+    }
+  ]
+}
   </script>
 
   <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "Article",
-    "headline": "Pirouette & Smile — головоломка‑платформер | One1Game",
-    "datePublished": "2026-11-01",
-    "dateModified": "2026-11-01",
-    "author": {"@type": "Person", "name": "Команда One1Game"},
-    "publisher": {"@type": "Organization", "name": "One1Game", "logo": {"@type": "ImageObject", "url": "https://one1game.org/logo.png"}},
-    "description": "Pirouette & Smile — казуальная головоломка, где платформенные прыжки переплетаются с пазлами и видеотестами, предлагая необычную игровую механику для",
-    "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5171060/f8a94ded8643ed01ab0411d9288f47a93fd23c37/header.jpg?t=1790096773",
-    "inLanguage": "ru-RU",
-    "isAccessibleForFree": true,
-    "articleSection": "Обзоры",
-    "speakable": {"@type": "SpeakableSpecification", "cssSelector": ["h1", ".article-body p:first-of-type"]}
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Pirouette & Smile — головоломка‑платформер | One1Game",
+  "datePublished": "2026-11-01",
+  "dateModified": "2026-11-08",
+  "author": {
+    "@type": "Person",
+    "name": "Команда One1Game"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "One1Game",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://one1game.org/logo.png"
+    }
+  },
+  "description": "Pirouette & Smile — казуальная головоломка, где платформенные прыжки переплетаются с пазлами и видеотестами, предлагая необычную игровую механику для",
+  "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5171060/f8a94ded8643ed01ab0411d9288f47a93fd23c37/header.jpg?t=1790096773",
+  "inLanguage": "ru-RU",
+  "isAccessibleForFree": true,
+  "articleSection": "Обзоры",
+  "speakable": {
+    "@type": "SpeakableSpecification",
+    "cssSelector": [
+      "h1",
+      ".article-body p:first-of-type"
+    ]
   }
+}
   </script>
 
   <script type="application/ld+json">
@@ -83,7 +122,7 @@
   "applicationCategory": "Game",
   "offers": {
     "@type": "Offer",
-    "price": "32.00",
+    "price": "64.00",
     "priceCurrency": "RUB"
   }
 }
@@ -189,7 +228,6 @@
       padding: 1px 6px; background: rgba(4,6,10,0.75); border-radius: 3px;
     }
   </style>
-  <script defer src="/analytics-consent.js?v=2"></script>
 </head>
 <body>
 <a href="#main-content" class="skip-link">Перейти к содержимому</a>
@@ -224,7 +262,7 @@
       <span class="article-category cat-reviews">Обзоры</span>
       <h1>Pirouette & Smile — головоломка‑платформер</h1>
       <div class="article-meta">
-        <span><i class="far fa-calendar"></i> 1 ноября 2026</span>
+        <span><i class="far fa-calendar"></i> 8 ноября 2026</span>
         <span><i class="far fa-clock"></i> 2 минуты чтения</span>
       </div>
     </div>
@@ -238,7 +276,7 @@
       <div class="game-stats-grid">
         <div class="game-stat-card">
           <div class="label">Цена</div>
-          <div class="value">32.00 RUB (скидка 50%)</div>
+          <div class="value">64.00 RUB</div>
         </div>
         <div class="game-stat-card">
           <div class="label">Дата выхода</div>
@@ -292,6 +330,7 @@
 <!--LOWEND:START-->
       <section class="lowend-block" style="margin:26px 0;padding:16px 18px;border:1px solid rgba(255,255,255,.10);border-radius:10px;background:rgba(255,255,255,.03)">
         <h2 style="margin:0 0 10px;font-size:1.15rem">Потянет ли Pirouette &amp; Smile на слабом ноутбуке?</h2>
+        
         <p><strong>Минимальные требования (Steam):</strong> 64-разрядные процессор и операционная система · ОС: 11 · Процессор: i5-1135G7 @ 2.4 Ghz / Ryzen 5 4500U · Оперативная память: 16 GB ОЗУ · Видеокарта: Iris/GeForce MX350/GT 1030/Radeon RX 550/GTX 750 · Место на диске: 5 GB</p>
         <p><strong>Оценка:</strong> Нужна дискретная видеокарта — на встроенной графике играть не получится.</p>
         <p>Подборки под слабое железо: <a href="/besplatnye-igry-dlya-slabyh-pk">бесплатные игры для слабых ПК</a> →</p>
@@ -329,7 +368,7 @@
       <div class="share-buttons" id="share-buttons"></div>
     </section>
 
-        <section class="gpu-check">
+            <section class="gpu-check">
       <h2>Потянет ли Pirouette &amp; Smile на моей видеокарте</h2>
       <p>Минимум по Steam — <strong>Radeon RX 550</strong>. Сравнение по приблизительной производительности, а не по точному FPS.</p>
       <ul class="gpu-check-list">
@@ -345,7 +384,7 @@
 <section class="game-faq">
       <h2>Pirouette &amp; Smile: частые вопросы</h2>
       <h3>Сколько стоит Pirouette &amp; Smile</h3>
-        <p>В Steam Pirouette &amp; Smile сейчас 32.00 RUB (скидка 50%). Цена и скидки обновляются автоматически.</p>
+        <p>В Steam Pirouette &amp; Smile сейчас 64.00 RUB. Цена и скидки обновляются автоматически.</p>
       <h3>Когда вышла Pirouette &amp; Smile</h3>
         <p>Дата выхода Pirouette &amp; Smile — 19 сен. 2026 г.</p>
       <h3>Кто разработал Pirouette &amp; Smile</h3>
@@ -356,19 +395,19 @@
       <table class="similar-table">
         <thead><tr><th>Игра</th><th>Цена</th><th>Слабый ПК</th></tr></thead>
         <tbody>
-          <tr><td><a href="/archive/pixel-exorcist-4027980">Обзор Pixel Exorcist: пиксельный ретро-детектив</a></td><td>710.00 RUB</td><td>Нет</td></tr>
-          <tr><td><a href="/archive/pixel-planet-survivor-5125780">Pixel Planet Survivor — обзор</a></td><td>124.92 RUB</td><td>Нет</td></tr>
-          <tr><td><a href="/archive/pixel-trader-4962430">Pixel Trader – пиксельный симулятор биржи</a></td><td>320.00 RUB</td><td>Потянет</td></tr>
+          <tr><td><a href="/archive/rust-252490">Rust — выживание в открытом мире</a></td><td>849.00 RUB (скидка 50%)</td><td>Нет</td></tr>
+          <tr><td><a href="/archive/stardew-valley-413150">Stardew Valley — фермерский симулятор и ролевая игра</a></td><td>299.00 RUB</td><td>Потянет</td></tr>
+          <tr><td><a href="/archive/terraria-105600">Terraria — приключенческий экшен с элементами RPG</a></td><td>385.00 RUB</td><td>—</td></tr>
         </tbody>
       </table>
     </section>
-<section class="related-section">
+    <section class="related-section">
       <h4>Похожие статьи</h4>
       <div class="related-grid" id="related-container">
-        <a href="/archive/desire-inn-3956380" class="related-card"><strong>Desire Inn — симулятор отеля и отношений</strong><span>20 сентября 2026</span></a>
-        <a href="/archive/only-farms-4657600" class="related-card"><strong>ONLY FARMS – приключенческий симулятор летних приключений</strong><span>20 сентября 2026</span></a>
-        <a href="/archive/somebody-s-tale-776250" class="related-card"><strong>Somebody's Tale: цена, отзывы и статистика игроков</strong><span>20 сентября 2026</span></a>
-        <a href="/archive/love-in-another-world-4928470" class="related-card"><strong>Love in Another World – обзор казуальной игры</strong><span>20 сентября 2026</span></a>
+        <a href="/archive/rust-252490" class="related-card"><strong>Rust — выживание в открытом мире</strong><span>20 сентября 2026</span></a>
+        <a href="/archive/baldur-s-gate-3-1086940" class="related-card"><strong>Baldur's Gate 3: цена, отзывы и статистика игроков</strong><span>20 сентября 2026</span></a>
+        <a href="/archive/s-t-a-l-k-e-r-2-heart-of-chornobyl-1643320" class="related-card"><strong>S.T.A.L.K.E.R. 2: Heart of Chornobyl – обзор</strong><span>2 ноября 2026</span></a>
+        <a href="/archive/the-witcher-3-wild-hunt-remastered-292030" class="related-card"><strong>The Witcher 3: Wild Hunt — Remastered — обзор</strong><span>2 ноября 2026</span></a>
       </div></section>
     <section class="comments-section">
       <h4><i class="fas fa-comments" aria-hidden="true"></i> Комментарии</h4>
@@ -406,9 +445,11 @@
     '<a target="_blank" rel="noopener" class="share-btn" href="https://api.whatsapp.com/send?text=' + title + '%20' + url + '">WhatsApp</a>'
   ].join('');
 
+  // Статический блок «Похожие статьи» уже в HTML — JS только дополняет пустой
+  // контейнер на старых страницах, чтобы не затирать серверную разметку.
   var related = all.filter(function(a) { return a.url !== currentUrl; }).slice(0, 4);
   var relEl = document.getElementById('related-container');
-  if (relEl && !relEl.querySelector('a') && related.length) {
+  if (relEl && !relEl.querySelector('a')) {
     relEl.innerHTML = related.map(function(a) {
       return '<a href="' + a.url + '" class="related-card"><strong>' + a.title + '</strong><span>' + (a.date || '') + '</span></a>';
     }).join('');

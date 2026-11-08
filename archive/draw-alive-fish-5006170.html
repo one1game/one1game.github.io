@@ -40,37 +40,76 @@
     }
     if (localStorage.getItem('ga_consent') === 'yes') enableGA();
   </script>
+  <!-- Метрика: общий загрузчик, чтобы счётчик был на всех страницах -->
+  <script defer src="/analytics-consent.js?v=2"></script>
   <link href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css" rel="stylesheet" />
   <link rel="stylesheet" href="/styles.css?v=33" />
 
   <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "BreadcrumbList",
-    "itemListElement": [
-      {"@type": "ListItem", "position": 1, "name": "Главная", "item": "https://one1game.org/"},
-      {"@type": "ListItem", "position": 2, "name": "Статьи", "item": "https://one1game.org/archive"},
-      {"@type": "ListItem", "position": 3, "name": "Draw Alive: Fish", "item": "https://one1game.org/archive/draw-alive-fish-5006170"}
-    ]
-  }
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Главная",
+      "item": "https://one1game.org/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Статьи",
+      "item": "https://one1game.org/archive"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Обзоры",
+      "item": "https://one1game.org/category/obzory"
+    },
+    {
+      "@type": "ListItem",
+      "position": 4,
+      "name": "Draw Alive: Fish",
+      "item": "https://one1game.org/archive/draw-alive-fish-5006170"
+    }
+  ]
+}
   </script>
 
   <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "Article",
-    "headline": "Draw Alive: Fish - обзор игры | One1Game",
-    "datePublished": "2026-11-01",
-    "dateModified": "2026-11-01",
-    "author": {"@type": "Person", "name": "Команда One1Game"},
-    "publisher": {"@type": "Organization", "name": "One1Game", "logo": {"@type": "ImageObject", "url": "https://one1game.org/logo.png"}},
-    "description": "Draw Alive: Fish - казуальная игра-симулятор, где можно оживить свои рисунки рыб и морских существ в 3D аквариуме.",
-    "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5006170/1def9a0b5b086e95ba48656c2b00b38c72438fb4/header.jpg?t=1791040897",
-    "inLanguage": "ru-RU",
-    "isAccessibleForFree": true,
-    "articleSection": "Обзоры",
-    "speakable": {"@type": "SpeakableSpecification", "cssSelector": ["h1", ".article-body p:first-of-type"]}
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Draw Alive: Fish - обзор игры | One1Game",
+  "datePublished": "2026-11-01",
+  "dateModified": "2026-11-08",
+  "author": {
+    "@type": "Person",
+    "name": "Команда One1Game"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "One1Game",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://one1game.org/logo.png"
+    }
+  },
+  "description": "Draw Alive: Fish - казуальная игра-симулятор, где можно оживить свои рисунки рыб и морских существ в 3D аквариуме.",
+  "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5006170/1def9a0b5b086e95ba48656c2b00b38c72438fb4/header.jpg?t=1791040897",
+  "inLanguage": "ru-RU",
+  "isAccessibleForFree": true,
+  "articleSection": "Обзоры",
+  "speakable": {
+    "@type": "SpeakableSpecification",
+    "cssSelector": [
+      "h1",
+      ".article-body p:first-of-type"
+    ]
   }
+}
   </script>
 
   <script type="application/ld+json">
@@ -189,7 +228,6 @@
       padding: 1px 6px; background: rgba(4,6,10,0.75); border-radius: 3px;
     }
   </style>
-  <script defer src="/analytics-consent.js?v=2"></script>
 </head>
 <body>
 <a href="#main-content" class="skip-link">Перейти к содержимому</a>
@@ -224,7 +262,7 @@
       <span class="article-category cat-reviews">Обзоры</span>
       <h1>Draw Alive: Fish - обзор игры</h1>
       <div class="article-meta">
-        <span><i class="far fa-calendar"></i> 1 ноября 2026</span>
+        <span><i class="far fa-calendar"></i> 8 ноября 2026</span>
         <span><i class="far fa-clock"></i> 2 минуты чтения</span>
       </div>
     </div>
@@ -290,6 +328,7 @@
 <!--LOWEND:START-->
       <section class="lowend-block" style="margin:26px 0;padding:16px 18px;border:1px solid rgba(255,255,255,.10);border-radius:10px;background:rgba(255,255,255,.03)">
         <h2 style="margin:0 0 10px;font-size:1.15rem">Потянет ли Draw Alive: Fish на слабом ноутбуке?</h2>
+        
         <p><strong>Минимальные требования (Steam):</strong> 64-разрядные процессор и операционная система · ОС: Windows 10 64-bit · Процессор: Dual-core 2.0 GHz · Оперативная память: 2048 MB ОЗУ · Видеокарта: Graphics card with OpenGL 3.2 / Vulkan 1.0 support · Место на диске: 500 MB · Звуковая карта: DirectX compatible sound card · Дополнительно: Mouse or trackpad recommended</p>
         <p><strong>Оценка:</strong> Потянет на встроенной графике при 720p и низких настройках.</p>
         <p>Подборки под слабое железо: <a href="/rpg-igry-dlya-slabyh-noutbukov">RPG для слабого ноутбука</a> →</p>
@@ -327,7 +366,8 @@
       <div class="share-buttons" id="share-buttons"></div>
     </section>
 
-    <section class="game-faq">
+
+        <section class="game-faq">
       <h2>Draw Alive: Fish: частые вопросы</h2>
       <h3>Сколько стоит Draw Alive: Fish</h3>
         <p>В Steam Draw Alive: Fish сейчас 465.00 RUB. Цена и скидки обновляются автоматически.</p>
@@ -341,19 +381,19 @@
       <table class="similar-table">
         <thead><tr><th>Игра</th><th>Цена</th><th>Слабый ПК</th></tr></thead>
         <tbody>
-          <tr><td><a href="/archive/dungeon-inn-2552310">Dungeon Inn – уютный симулятор управления трактиром</a></td><td>528.00 RUB (скидка 20%)</td><td>Нет</td></tr>
-          <tr><td><a href="/archive/dystopia-5169690">Dystopia — VR ритм-экшен</a></td><td>710.00 RUB</td><td>—</td></tr>
-          <tr><td><a href="/archive/era-ming-5120560">ERA-ming（时代：明末）: цена, отзывы и статистика игроков</a></td><td>Бесплатно</td><td>Потянет</td></tr>
+          <tr><td><a href="/archive/euro-truck-simulator-2-227300">Euro Truck Simulator 2 — реалистичный симулятор</a></td><td>1269.00 RUB</td><td>Нет</td></tr>
+          <tr><td><a href="/archive/stardew-valley-413150">Stardew Valley — фермерский симулятор и ролевая игра</a></td><td>299.00 RUB</td><td>Потянет</td></tr>
+          <tr><td><a href="/archive/war-thunder-236390">War Thunder – масштабный онлайн-симулятор</a></td><td>Бесплатно</td><td>Нет</td></tr>
         </tbody>
       </table>
     </section>
-<section class="related-section">
+    <section class="related-section">
       <h4>Похожие статьи</h4>
       <div class="related-grid" id="related-container">
-        <a href="/archive/a-schoolhouse-in-gensokyo-3679100" class="related-card"><strong>Обзор игры 慧音的寺子屋 ~ A Schoolhouse in Gensokyo</strong><span>4 октября 2026</span></a>
-        <a href="/archive/the-webring-4884750" class="related-card"><strong>The Webring - обзор игры</strong><span>4 октября 2026</span></a>
-        <a href="/archive/airline-empire-4893990" class="related-card"><strong>Airline Empire - обзор симулятора авиакомпании</strong><span>4 октября 2026</span></a>
-        <a href="/archive/pixel-trader-4962430" class="related-card"><strong>Pixel Trader – пиксельный симулятор биржи</strong><span>4 октября 2026</span></a>
+        <a href="/archive/atomic-heart-668580" class="related-card"><strong>Atomic Heart – мрачный техно‑экшен с ролевыми элементами</strong><span>2 октября 2026</span></a>
+        <a href="/archive/half-life-2-220" class="related-card"><strong>Half-Life 2: цена, отзывы и статистика игроков</strong><span>20 сентября 2026</span></a>
+        <a href="/archive/left-4-dead-2-550" class="related-card"><strong>Left 4 Dead 2 – кооперативный зомби‑экшен</strong><span>20 сентября 2026</span></a>
+        <a href="/archive/counter-strike-2-730" class="related-card"><strong>Counter-Strike 2: цена, отзывы и статистика игроков</strong><span>20 сентября 2026</span></a>
       </div></section>
     <section class="comments-section">
       <h4><i class="fas fa-comments" aria-hidden="true"></i> Комментарии</h4>
@@ -391,9 +431,11 @@
     '<a target="_blank" rel="noopener" class="share-btn" href="https://api.whatsapp.com/send?text=' + title + '%20' + url + '">WhatsApp</a>'
   ].join('');
 
+  // Статический блок «Похожие статьи» уже в HTML — JS только дополняет пустой
+  // контейнер на старых страницах, чтобы не затирать серверную разметку.
   var related = all.filter(function(a) { return a.url !== currentUrl; }).slice(0, 4);
   var relEl = document.getElementById('related-container');
-  if (relEl && !relEl.querySelector('a') && related.length) {
+  if (relEl && !relEl.querySelector('a')) {
     relEl.innerHTML = related.map(function(a) {
       return '<a href="' + a.url + '" class="related-card"><strong>' + a.title + '</strong><span>' + (a.date || '') + '</span></a>';
     }).join('');

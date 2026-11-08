@@ -40,37 +40,76 @@
     }
     if (localStorage.getItem('ga_consent') === 'yes') enableGA();
   </script>
+  <!-- Метрика: общий загрузчик, чтобы счётчик был на всех страницах -->
+  <script defer src="/analytics-consent.js?v=2"></script>
   <link href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css" rel="stylesheet" />
   <link rel="stylesheet" href="/styles.css?v=33" />
 
   <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "BreadcrumbList",
-    "itemListElement": [
-      {"@type": "ListItem", "position": 1, "name": "Главная", "item": "https://one1game.org/"},
-      {"@type": "ListItem", "position": 2, "name": "Статьи", "item": "https://one1game.org/archive"},
-      {"@type": "ListItem", "position": 3, "name": "Побег от блогера", "item": "https://one1game.org/archive/pobeg-ot-blogera-4554330"}
-    ]
-  }
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Главная",
+      "item": "https://one1game.org/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Статьи",
+      "item": "https://one1game.org/archive"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Обзоры",
+      "item": "https://one1game.org/category/obzory"
+    },
+    {
+      "@type": "ListItem",
+      "position": 4,
+      "name": "Побег от блогера",
+      "item": "https://one1game.org/archive/pobeg-ot-blogera-4554330"
+    }
+  ]
+}
   </script>
 
   <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "Article",
-    "headline": "Побег от блогера – хоррор‑экшен и головоломки | One1Game",
-    "datePublished": "2026-11-01",
-    "dateModified": "2026-11-01",
-    "author": {"@type": "Person", "name": "Команда One1Game"},
-    "publisher": {"@type": "Organization", "name": "One1Game", "logo": {"@type": "ImageObject", "url": "https://one1game.org/logo.png"}},
-    "description": "Игрок попадает в дом известного блогера, где его запирают. Нужно скрываться, решать головоломки и искать путь к свободе в напряжённой",
-    "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4554330/0a007fc323bcbd75a64640d2fcb091a01bf6c97e/header_russian.jpg?t=1792564504",
-    "inLanguage": "ru-RU",
-    "isAccessibleForFree": true,
-    "articleSection": "Обзоры",
-    "speakable": {"@type": "SpeakableSpecification", "cssSelector": ["h1", ".article-body p:first-of-type"]}
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Побег от блогера – хоррор‑экшен и головоломки | One1Game",
+  "datePublished": "2026-11-01",
+  "dateModified": "2026-11-08",
+  "author": {
+    "@type": "Person",
+    "name": "Команда One1Game"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "One1Game",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://one1game.org/logo.png"
+    }
+  },
+  "description": "Игрок попадает в дом известного блогера, где его запирают. Нужно скрываться, решать головоломки и искать путь к свободе в напряжённой",
+  "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4554330/0a007fc323bcbd75a64640d2fcb091a01bf6c97e/header_russian.jpg?t=1792564504",
+  "inLanguage": "ru-RU",
+  "isAccessibleForFree": true,
+  "articleSection": "Обзоры",
+  "speakable": {
+    "@type": "SpeakableSpecification",
+    "cssSelector": [
+      "h1",
+      ".article-body p:first-of-type"
+    ]
   }
+}
   </script>
 
   <script type="application/ld+json">
@@ -83,7 +122,7 @@
   "applicationCategory": "Game",
   "offers": {
     "@type": "Offer",
-    "price": "191.00",
+    "price": "255.00",
     "priceCurrency": "RUB"
   }
 }
@@ -189,7 +228,6 @@
       padding: 1px 6px; background: rgba(4,6,10,0.75); border-radius: 3px;
     }
   </style>
-  <script defer src="/analytics-consent.js?v=2"></script>
 </head>
 <body>
 <a href="#main-content" class="skip-link">Перейти к содержимому</a>
@@ -224,7 +262,7 @@
       <span class="article-category cat-reviews">Обзоры</span>
       <h1>Побег от блогера – хоррор‑экшен и головоломки</h1>
       <div class="article-meta">
-        <span><i class="far fa-calendar"></i> 1 ноября 2026</span>
+        <span><i class="far fa-calendar"></i> 8 ноября 2026</span>
         <span><i class="far fa-clock"></i> 2 минуты чтения</span>
       </div>
     </div>
@@ -238,7 +276,7 @@
       <div class="game-stats-grid">
         <div class="game-stat-card">
           <div class="label">Цена</div>
-          <div class="value">191.00 RUB (скидка 25%)</div>
+          <div class="value">255.00 RUB</div>
         </div>
         <div class="game-stat-card">
           <div class="label">Дата выхода</div>
@@ -290,6 +328,7 @@
 <!--LOWEND:START-->
       <section class="lowend-block" style="margin:26px 0;padding:16px 18px;border:1px solid rgba(255,255,255,.10);border-radius:10px;background:rgba(255,255,255,.03)">
         <h2 style="margin:0 0 10px;font-size:1.15rem">Потянет ли Побег от блогера на слабом ноутбуке?</h2>
+        
         <p><strong>Минимальные требования (Steam):</strong> 64-разрядные процессор и операционная система · ОС *: Windows 7, 8, 8.1, 10, 11 x64 · Процессор: Intel® Core™ i3-3210 3,2 GHz / AMD Athlon™ II X2 245 2,9 GHz · Оперативная память: 4 MB ОЗУ · Видеокарта: NVIDIA® GeForce® GT 960 / AMD Radeon R9 280 · Место на диске: 1 GB</p>
         <p><strong>Оценка:</strong> Нужна дискретная видеокарта — на встроенной графике играть не получится.</p>
         <p>Подборки под слабое железо: <a href="/rpg-igry-dlya-slabyh-noutbukov">ролевые игры для слабого ПК</a> →</p>
@@ -327,10 +366,11 @@
       <div class="share-buttons" id="share-buttons"></div>
     </section>
 
-    <section class="game-faq">
+
+        <section class="game-faq">
       <h2>Побег от блогера: частые вопросы</h2>
       <h3>Сколько стоит Побег от блогера</h3>
-        <p>В Steam Побег от блогера сейчас 191.00 RUB (скидка 25%). Цена и скидки обновляются автоматически.</p>
+        <p>В Steam Побег от блогера сейчас 255.00 RUB. Цена и скидки обновляются автоматически.</p>
       <h3>Когда вышла Побег от блогера</h3>
         <p>Дата выхода Побег от блогера — 20 окт. 2026 г.</p>
       <h3>Кто разработал Побег от блогера</h3>
@@ -341,19 +381,19 @@
       <table class="similar-table">
         <thead><tr><th>Игра</th><th>Цена</th><th>Слабый ПК</th></tr></thead>
         <tbody>
-          <tr><td><a href="/archive/prey-island-5297390">Prey Island — экшен‑приключение про выживание</a></td><td>170.00 RUB (скидка 15%)</td><td>Нет</td></tr>
-          <tr><td><a href="/archive/puppetborne-5034450">Puppetborne — экшн‑приключение в ретро‑стиле</a></td><td>298.25 RUB</td><td>Потянет</td></tr>
-          <tr><td><a href="/archive/raidkids-2505670">RaidKids - обзор игры</a></td><td>290.00 RUB</td><td>Нет</td></tr>
+          <tr><td><a href="/archive/rust-252490">Rust — выживание в открытом мире</a></td><td>849.00 RUB (скидка 50%)</td><td>Нет</td></tr>
+          <tr><td><a href="/archive/terraria-105600">Terraria — приключенческий экшен с элементами RPG</a></td><td>385.00 RUB</td><td>—</td></tr>
+          <tr><td><a href="/archive/valheim-892970">Valheim — выживание в скандинавском мире</a></td><td>1299.00 RUB</td><td>Нет</td></tr>
         </tbody>
       </table>
     </section>
-<section class="related-section">
+    <section class="related-section">
       <h4>Похожие статьи</h4>
       <div class="related-grid" id="related-container">
-        <a href="/archive/six-4935870" class="related-card"><strong>SIX — казуальная инди-игра про броски кубика</strong><span>21 октября 2026</span></a>
-        <a href="/archive/teddy-horses-3957780" class="related-card"><strong>Teddy Horses – уютный симулятор ранчо</strong><span>21 октября 2026</span></a>
-        <a href="/archive/we-were-here-tomorrow-2315050" class="related-card"><strong>We Were Here Tomorrow: цена, отзывы и статистика игроков</strong><span>21 октября 2026</span></a>
-        <a href="/archive/the-finals-season-12-ultimate-battle-pass-bundle-5258280" class="related-card"><strong>THE FINALS – Премиум боевой пропуск 12 сезона</strong><span>21 октября 2026</span></a>
+        <a href="/archive/atomic-heart-668580" class="related-card"><strong>Atomic Heart – мрачный техно‑экшен с ролевыми элементами</strong><span>2 октября 2026</span></a>
+        <a href="/archive/half-life-2-220" class="related-card"><strong>Half-Life 2: цена, отзывы и статистика игроков</strong><span>20 сентября 2026</span></a>
+        <a href="/archive/left-4-dead-2-550" class="related-card"><strong>Left 4 Dead 2 – кооперативный зомби‑экшен</strong><span>20 сентября 2026</span></a>
+        <a href="/archive/counter-strike-2-730" class="related-card"><strong>Counter-Strike 2: цена, отзывы и статистика игроков</strong><span>20 сентября 2026</span></a>
       </div></section>
     <section class="comments-section">
       <h4><i class="fas fa-comments" aria-hidden="true"></i> Комментарии</h4>
@@ -391,9 +431,11 @@
     '<a target="_blank" rel="noopener" class="share-btn" href="https://api.whatsapp.com/send?text=' + title + '%20' + url + '">WhatsApp</a>'
   ].join('');
 
+  // Статический блок «Похожие статьи» уже в HTML — JS только дополняет пустой
+  // контейнер на старых страницах, чтобы не затирать серверную разметку.
   var related = all.filter(function(a) { return a.url !== currentUrl; }).slice(0, 4);
   var relEl = document.getElementById('related-container');
-  if (relEl && !relEl.querySelector('a') && related.length) {
+  if (relEl && !relEl.querySelector('a')) {
     relEl.innerHTML = related.map(function(a) {
       return '<a href="' + a.url + '" class="related-card"><strong>' + a.title + '</strong><span>' + (a.date || '') + '</span></a>';
     }).join('');

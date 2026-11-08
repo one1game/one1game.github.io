@@ -40,37 +40,76 @@
     }
     if (localStorage.getItem('ga_consent') === 'yes') enableGA();
   </script>
+  <!-- Метрика: общий загрузчик, чтобы счётчик был на всех страницах -->
+  <script defer src="/analytics-consent.js?v=2"></script>
   <link href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css" rel="stylesheet" />
   <link rel="stylesheet" href="/styles.css?v=33" />
 
   <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "BreadcrumbList",
-    "itemListElement": [
-      {"@type": "ListItem", "position": 1, "name": "Главная", "item": "https://one1game.org/"},
-      {"@type": "ListItem", "position": 2, "name": "Статьи", "item": "https://one1game.org/archive"},
-      {"@type": "ListItem", "position": 3, "name": "The Fame Game II: L.A. Heartbreaker", "item": "https://one1game.org/archive/the-fame-game-ii-l-a-heartbreaker-4870960"}
-    ]
-  }
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Главная",
+      "item": "https://one1game.org/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Статьи",
+      "item": "https://one1game.org/archive"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Обзоры",
+      "item": "https://one1game.org/category/obzory"
+    },
+    {
+      "@type": "ListItem",
+      "position": 4,
+      "name": "The Fame Game II: L.A. Heartbreaker",
+      "item": "https://one1game.org/archive/the-fame-game-ii-l-a-heartbreaker-4870960"
+    }
+  ]
+}
   </script>
 
   <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "Article",
-    "headline": "The Fame Game II: L.A. Heartbreaker — обзор драмы | One1Game",
-    "datePublished": "2026-11-01",
-    "dateModified": "2026-11-01",
-    "author": {"@type": "Person", "name": "Команда One1Game"},
-    "publisher": {"@type": "Organization", "name": "One1Game", "logo": {"@type": "ImageObject", "url": "https://one1game.org/logo.png"}},
-    "description": "Обзор интерактивного кино The Fame Game II: L.A. Heartbreaker. Примерьте роль самозванца в Лос-Анджелесе и выберите свой путь среди лжи и соблазнов.",
-    "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4870960/70b63f9111746835184016fd4f52ea24a49dd02f/header.jpg?t=1792029524",
-    "inLanguage": "ru-RU",
-    "isAccessibleForFree": true,
-    "articleSection": "Обзоры",
-    "speakable": {"@type": "SpeakableSpecification", "cssSelector": ["h1", ".article-body p:first-of-type"]}
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "The Fame Game II: L.A. Heartbreaker — обзор драмы | One1Game",
+  "datePublished": "2026-11-01",
+  "dateModified": "2026-11-08",
+  "author": {
+    "@type": "Person",
+    "name": "Команда One1Game"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "One1Game",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://one1game.org/logo.png"
+    }
+  },
+  "description": "Обзор интерактивного кино The Fame Game II: L.A. Heartbreaker. Примерьте роль самозванца в Лос-Анджелесе и выберите свой путь среди лжи и соблазнов.",
+  "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4870960/70b63f9111746835184016fd4f52ea24a49dd02f/header.jpg?t=1792029524",
+  "inLanguage": "ru-RU",
+  "isAccessibleForFree": true,
+  "articleSection": "Обзоры",
+  "speakable": {
+    "@type": "SpeakableSpecification",
+    "cssSelector": [
+      "h1",
+      ".article-body p:first-of-type"
+    ]
   }
+}
   </script>
 
   <script type="application/ld+json">
@@ -189,7 +228,6 @@
       padding: 1px 6px; background: rgba(4,6,10,0.75); border-radius: 3px;
     }
   </style>
-  <script defer src="/analytics-consent.js?v=2"></script>
 </head>
 <body>
 <a href="#main-content" class="skip-link">Перейти к содержимому</a>
@@ -224,7 +262,7 @@
       <span class="article-category cat-reviews">Обзоры</span>
       <h1>The Fame Game II: L.A. Heartbreaker — обзор драмы</h1>
       <div class="article-meta">
-        <span><i class="far fa-calendar"></i> 1 ноября 2026</span>
+        <span><i class="far fa-calendar"></i> 8 ноября 2026</span>
         <span><i class="far fa-clock"></i> 2 минуты чтения</span>
       </div>
     </div>
@@ -292,7 +330,9 @@
 <!--LOWEND:START-->
       <section class="lowend-block" style="margin:26px 0;padding:16px 18px;border:1px solid rgba(255,255,255,.10);border-radius:10px;background:rgba(255,255,255,.03)">
         <h2 style="margin:0 0 10px;font-size:1.15rem">Потянет ли The Fame Game II: L.A. Heartbreaker на слабом ноутбуке?</h2>
+        
         <p><strong>Минимальные требования (Steam):</strong> 64-разрядные процессор и операционная система · ОС: Windows 10 / 11, 64-bits · Процессор: Intel Core i3 · Оперативная память: 6 GB ОЗУ · Видеокарта: Dedicated graphics card · DirectX: версии 11 · Сеть: Широкополосное подключение к интернету · Место на диске: 30 GB</p>
+        
         <p>Подборки под слабое железо: <a href="/shuter-igry-dlya-slabyh-noutbukov">стрелялки для слабого ПК</a> →</p>
       </section>
 <!--LOWEND:END-->
@@ -328,7 +368,8 @@
       <div class="share-buttons" id="share-buttons"></div>
     </section>
 
-    <section class="game-faq">
+
+        <section class="game-faq">
       <h2>The Fame Game II: L.A. Heartbreaker: частые вопросы</h2>
       <h3>Сколько стоит The Fame Game II: L.A. Heartbreaker</h3>
         <p>В Steam The Fame Game II: L.A. Heartbreaker сейчас 555.00 RUB. Цена и скидки обновляются автоматически.</p>
@@ -342,19 +383,19 @@
       <table class="similar-table">
         <thead><tr><th>Игра</th><th>Цена</th><th>Слабый ПК</th></tr></thead>
         <tbody>
-          <tr><td><a href="/archive/the-handler-of-dragons-1172730">The Handler of Dragons — обзор</a></td><td>240.00 RUB</td><td>Нет</td></tr>
-          <tr><td><a href="/archive/the-hidden-ones-4172450">The Hidden Ones — кооперативный хоррор‑пазл</a></td><td>500.00 RUB (скидка 20%)</td><td>Нет</td></tr>
-          <tr><td><a href="/archive/the-last-camp-dawn-4198430">The Last Camp : Dawn — постапокалиптический шутер</a></td><td>792.00 RUB (скидка 10%)</td><td>Нет</td></tr>
+          <tr><td><a href="/archive/valheim-892970">Valheim — выживание в скандинавском мире</a></td><td>1299.00 RUB</td><td>Нет</td></tr>
+          <tr><td><a href="/archive/warframe-230410">Warframe — бесплатный экшен RPG онлайн</a></td><td>Бесплатно</td><td>Потянет</td></tr>
+          <tr><td><a href="/archive/atomic-heart-668580">Atomic Heart – мрачный техно‑экшен с ролевыми элементами</a></td><td>2499.00 RUB</td><td>Нет</td></tr>
         </tbody>
       </table>
     </section>
-<section class="related-section">
+    <section class="related-section">
       <h4>Похожие статьи</h4>
       <div class="related-grid" id="related-container">
-        <a href="/archive/rogtochess-2685830" class="related-card"><strong>Rogtochess – обзор и оценка игры</strong><span>15 октября 2026</span></a>
-        <a href="/archive/gallery-organizer-4938790" class="related-card"><strong>Gallery Organizer — уютный симулятор выставок</strong><span>15 октября 2026</span></a>
-        <a href="/archive/how-to-tame-a-wild-fox-girl-5280530" class="related-card"><strong>How To Tame A Wild Fox Girl – эротическая визуальная новелла</strong><span>15 октября 2026</span></a>
-        <a href="/archive/twisted-survivors-5209830" class="related-card"><strong>Обзор Twisted Survivors: мрачный экшен на выживание</strong><span>15 октября 2026</span></a>
+        <a href="/archive/atomic-heart-668580" class="related-card"><strong>Atomic Heart – мрачный техно‑экшен с ролевыми элементами</strong><span>2 октября 2026</span></a>
+        <a href="/archive/half-life-2-220" class="related-card"><strong>Half-Life 2: цена, отзывы и статистика игроков</strong><span>20 сентября 2026</span></a>
+        <a href="/archive/left-4-dead-2-550" class="related-card"><strong>Left 4 Dead 2 – кооперативный зомби‑экшен</strong><span>20 сентября 2026</span></a>
+        <a href="/archive/counter-strike-2-730" class="related-card"><strong>Counter-Strike 2: цена, отзывы и статистика игроков</strong><span>20 сентября 2026</span></a>
       </div></section>
     <section class="comments-section">
       <h4><i class="fas fa-comments" aria-hidden="true"></i> Комментарии</h4>
@@ -392,9 +433,11 @@
     '<a target="_blank" rel="noopener" class="share-btn" href="https://api.whatsapp.com/send?text=' + title + '%20' + url + '">WhatsApp</a>'
   ].join('');
 
+  // Статический блок «Похожие статьи» уже в HTML — JS только дополняет пустой
+  // контейнер на старых страницах, чтобы не затирать серверную разметку.
   var related = all.filter(function(a) { return a.url !== currentUrl; }).slice(0, 4);
   var relEl = document.getElementById('related-container');
-  if (relEl && !relEl.querySelector('a') && related.length) {
+  if (relEl && !relEl.querySelector('a')) {
     relEl.innerHTML = related.map(function(a) {
       return '<a href="' + a.url + '" class="related-card"><strong>' + a.title + '</strong><span>' + (a.date || '') + '</span></a>';
     }).join('');

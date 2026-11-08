@@ -40,37 +40,76 @@
     }
     if (localStorage.getItem('ga_consent') === 'yes') enableGA();
   </script>
+  <!-- Метрика: общий загрузчик, чтобы счётчик был на всех страницах -->
+  <script defer src="/analytics-consent.js?v=2"></script>
   <link href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css" rel="stylesheet" />
   <link rel="stylesheet" href="/styles.css?v=33" />
 
   <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "BreadcrumbList",
-    "itemListElement": [
-      {"@type": "ListItem", "position": 1, "name": "Главная", "item": "https://one1game.org/"},
-      {"@type": "ListItem", "position": 2, "name": "Статьи", "item": "https://one1game.org/archive"},
-      {"@type": "ListItem", "position": 3, "name": "Шахматы Пяти Стихий", "item": "https://one1game.org/archive/shahmaty-pyati-stihiy-1611690"}
-    ]
-  }
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Главная",
+      "item": "https://one1game.org/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Статьи",
+      "item": "https://one1game.org/archive"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Обзоры",
+      "item": "https://one1game.org/category/obzory"
+    },
+    {
+      "@type": "ListItem",
+      "position": 4,
+      "name": "Шахматы Пяти Стихий",
+      "item": "https://one1game.org/archive/shahmaty-pyati-stihiy-1611690"
+    }
+  ]
+}
   </script>
 
   <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "Article",
-    "headline": "Шахматы Пяти Стихий — магический казуальный стратег | One1Game",
-    "datePublished": "2026-11-01",
-    "dateModified": "2026-11-01",
-    "author": {"@type": "Person", "name": "Команда One1Game"},
-    "publisher": {"@type": "Organization", "name": "One1Game", "logo": {"@type": "ImageObject", "url": "https://one1game.org/logo.png"}},
-    "description": "Увлекательная игра, где магия Пяти Стихий встречается с головоломкой соединения трёх одинаковых фигур. Подойдёт любителям лёгкой стратегии и оригинальных",
-    "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1611690/39b67b1c2800d49829fe670ff986e0ec46569f0f/header_russian.jpg?t=1792735764",
-    "inLanguage": "ru-RU",
-    "isAccessibleForFree": true,
-    "articleSection": "Обзоры",
-    "speakable": {"@type": "SpeakableSpecification", "cssSelector": ["h1", ".article-body p:first-of-type"]}
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Шахматы Пяти Стихий — магический казуальный стратег | One1Game",
+  "datePublished": "2026-11-01",
+  "dateModified": "2026-11-08",
+  "author": {
+    "@type": "Person",
+    "name": "Команда One1Game"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "One1Game",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://one1game.org/logo.png"
+    }
+  },
+  "description": "Увлекательная игра, где магия Пяти Стихий встречается с головоломкой соединения трёх одинаковых фигур. Подойдёт любителям лёгкой стратегии и оригинальных",
+  "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1611690/39b67b1c2800d49829fe670ff986e0ec46569f0f/header_russian.jpg?t=1792735764",
+  "inLanguage": "ru-RU",
+  "isAccessibleForFree": true,
+  "articleSection": "Обзоры",
+  "speakable": {
+    "@type": "SpeakableSpecification",
+    "cssSelector": [
+      "h1",
+      ".article-body p:first-of-type"
+    ]
   }
+}
   </script>
 
   <script type="application/ld+json">
@@ -83,7 +122,7 @@
   "applicationCategory": "Game",
   "offers": {
     "@type": "Offer",
-    "price": "660.00",
+    "price": "561.00",
     "priceCurrency": "RUB"
   }
 }
@@ -189,7 +228,6 @@
       padding: 1px 6px; background: rgba(4,6,10,0.75); border-radius: 3px;
     }
   </style>
-  <script defer src="/analytics-consent.js?v=2"></script>
 </head>
 <body>
 <a href="#main-content" class="skip-link">Перейти к содержимому</a>
@@ -224,7 +262,7 @@
       <span class="article-category cat-reviews">Обзоры</span>
       <h1>Шахматы Пяти Стихий — магический казуальный стратег</h1>
       <div class="article-meta">
-        <span><i class="far fa-calendar"></i> 1 ноября 2026</span>
+        <span><i class="far fa-calendar"></i> 8 ноября 2026</span>
         <span><i class="far fa-clock"></i> 2 минуты чтения</span>
       </div>
     </div>
@@ -238,7 +276,7 @@
       <div class="game-stats-grid">
         <div class="game-stat-card">
           <div class="label">Цена</div>
-          <div class="value">660.00 RUB</div>
+          <div class="value">561.00 RUB (скидка 15%)</div>
         </div>
         <div class="game-stat-card">
           <div class="label">Дата выхода</div>
@@ -291,6 +329,7 @@
 <!--LOWEND:START-->
       <section class="lowend-block" style="margin:26px 0;padding:16px 18px;border:1px solid rgba(255,255,255,.10);border-radius:10px;background:rgba(255,255,255,.03)">
         <h2 style="margin:0 0 10px;font-size:1.15rem">Потянет ли Шахматы Пяти Стихий на слабом ноутбуке?</h2>
+        
         <p><strong>Минимальные требования (Steam):</strong> 64-разрядные процессор и операционная система · ОС *: Windows 8, 64-bit · Процессор: Intel CPU Core i3 · Оперативная память: 2 GB ОЗУ · Видеокарта: Nvidia GPU GeForce GTX750 · DirectX: версии 11 · Место на диске: 4 GB · Звуковая карта: DirectX compatible sound card</p>
         <p><strong>Оценка:</strong> Нужна дискретная видеокарта — на встроенной графике играть не получится.</p>
         <p>Подборки под слабое железо: <a href="/kooperativnye-igry-dlya-slabyh-pk">кооперативные игры для слабых ПК</a> →</p>
@@ -328,10 +367,11 @@
       <div class="share-buttons" id="share-buttons"></div>
     </section>
 
-    <section class="game-faq">
+
+        <section class="game-faq">
       <h2>Шахматы Пяти Стихий: частые вопросы</h2>
       <h3>Сколько стоит Шахматы Пяти Стихий</h3>
-        <p>В Steam Шахматы Пяти Стихий сейчас 660.00 RUB. Цена и скидки обновляются автоматически.</p>
+        <p>В Steam Шахматы Пяти Стихий сейчас 561.00 RUB (скидка 15%). Цена и скидки обновляются автоматически.</p>
       <h3>Когда вышла Шахматы Пяти Стихий</h3>
         <p>Дата выхода Шахматы Пяти Стихий — 23 сен. 2026 г.</p>
       <h3>Кто разработал Шахматы Пяти Стихий</h3>
@@ -342,19 +382,19 @@
       <table class="similar-table">
         <thead><tr><th>Игра</th><th>Цена</th><th>Слабый ПК</th></tr></thead>
         <tbody>
-          <tr><td><a href="/archive/shhh-it-5387480">Shhh, IT! — карточная стратегия про стартапы</a></td><td>216.00 RUB (скидка 10%)</td><td>Потянет</td></tr>
-          <tr><td><a href="/archive/sketch-kingdom-4741590">Sketch Kingdom — инкрементальная стратегия в стиле…</a></td><td>165.00 RUB (скидка 15%)</td><td>Потянет</td></tr>
-          <tr><td><a href="/archive/slitherlink-line-logic-5352170">Slitherlink: Line Logic — обзор умной инди-головоломки</a></td><td>144.00 RUB (скидка 40%)</td><td>Потянет</td></tr>
+          <tr><td><a href="/archive/stardew-valley-413150">Stardew Valley — фермерский симулятор и ролевая игра</a></td><td>299.00 RUB</td><td>Потянет</td></tr>
+          <tr><td><a href="/archive/terraria-105600">Terraria — приключенческий экшен с элементами RPG</a></td><td>385.00 RUB</td><td>—</td></tr>
+          <tr><td><a href="/archive/valheim-892970">Valheim — выживание в скандинавском мире</a></td><td>1299.00 RUB</td><td>Нет</td></tr>
         </tbody>
       </table>
     </section>
-<section class="related-section">
+    <section class="related-section">
       <h4>Похожие статьи</h4>
       <div class="related-grid" id="related-container">
-        <a href="/archive/drapline-3103780" class="related-card"><strong>DRAPLINE — роглайт о дрессировке драконьй девочки</strong><span>24 сентября 2026</span></a>
-        <a href="/archive/infinite-galleries-5017500" class="related-card"><strong>Infinite Galleries – приключенческая инди-игра</strong><span>24 сентября 2026</span></a>
-        <a href="/archive/prisoners-chess-4902250" class="related-card"><strong>Prisoners Chess – шахматный роглайк</strong><span>24 сентября 2026</span></a>
-        <a href="/archive/duola-mage-4133550" class="related-card"><strong>Duola Mage — динамичный roguelike‑экшн с множеством</strong><span>24 сентября 2026</span></a>
+        <a href="/archive/half-life-2-220" class="related-card"><strong>Half-Life 2: цена, отзывы и статистика игроков</strong><span>20 сентября 2026</span></a>
+        <a href="/archive/left-4-dead-2-550" class="related-card"><strong>Left 4 Dead 2 – кооперативный зомби‑экшен</strong><span>20 сентября 2026</span></a>
+        <a href="/archive/counter-strike-2-730" class="related-card"><strong>Counter-Strike 2: цена, отзывы и статистика игроков</strong><span>20 сентября 2026</span></a>
+        <a href="/archive/terraria-105600" class="related-card"><strong>Terraria — приключенческий экшен с элементами RPG</strong><span>20 сентября 2026</span></a>
       </div></section>
     <section class="comments-section">
       <h4><i class="fas fa-comments" aria-hidden="true"></i> Комментарии</h4>
@@ -392,9 +432,11 @@
     '<a target="_blank" rel="noopener" class="share-btn" href="https://api.whatsapp.com/send?text=' + title + '%20' + url + '">WhatsApp</a>'
   ].join('');
 
+  // Статический блок «Похожие статьи» уже в HTML — JS только дополняет пустой
+  // контейнер на старых страницах, чтобы не затирать серверную разметку.
   var related = all.filter(function(a) { return a.url !== currentUrl; }).slice(0, 4);
   var relEl = document.getElementById('related-container');
-  if (relEl && !relEl.querySelector('a') && related.length) {
+  if (relEl && !relEl.querySelector('a')) {
     relEl.innerHTML = related.map(function(a) {
       return '<a href="' + a.url + '" class="related-card"><strong>' + a.title + '</strong><span>' + (a.date || '') + '</span></a>';
     }).join('');
