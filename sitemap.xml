@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url><loc>https://one1game.org/</loc><lastmod>2026-11-04</lastmod></url>
+  <url><loc>https://one1game.org/</loc><lastmod>2026-11-08</lastmod></url>
   <url><loc>https://one1game.org/archive</loc></url>
   <url><loc>https://one1game.org/privacy</loc></url>
   <url><loc>https://one1game.org/terms</loc></url>
@@ -40,6 +40,7 @@
   <url><loc>https://one1game.org/igry-dlya-gtx-960</loc></url>
   <url><loc>https://one1game.org/igry-dlya-gtx-970</loc></url>
   <url><loc>https://one1game.org/igry-dlya-intel-hd-graphics-4000</loc></url>
+  <url><loc>https://one1game.org/igry-dlya-intel-uhd-620</loc></url>
   <url><loc>https://one1game.org/category/ii-i-tehnologii</loc><lastmod>2026-10-19</lastmod></url>
   <url><loc>https://one1game.org/category/analitika</loc><lastmod>2026-08-25</lastmod></url>
   <url><loc>https://one1game.org/category/gajdy</loc><lastmod>2026-11-01</lastmod></url>
@@ -48,7 +49,7 @@
   <url><loc>https://one1game.org/category/razrabotka</loc><lastmod>2026-10-28</lastmod></url>
   <url><loc>https://one1game.org/category/mnenie</loc><lastmod>2026-07-23</lastmod></url>
   <url><loc>https://one1game.org/category/kino-i-igry</loc><lastmod>2026-10-30</lastmod></url>
-  <url><loc>https://one1game.org/category/obzory</loc><lastmod>2026-11-04</lastmod></url>
+  <url><loc>https://one1game.org/category/obzory</loc><lastmod>2026-11-07</lastmod></url>
   <url><loc>https://one1game.org/kino/angry-birds-3-v-kino-1300926</loc></url>
   <url><loc>https://one1game.org/kino/bratya-super-mario-v-kino-502356</loc></url>
   <url><loc>https://one1game.org/kino/call-of-duty-1540305</loc></url>
@@ -82,7 +83,7 @@
   <url><loc>https://one1game.org/archive/hogwarts-legacy-990080</loc><lastmod>2026-11-02</lastmod></url>
   <url><loc>https://one1game.org/archive/helldivers-2-553850</loc><lastmod>2026-11-02</lastmod></url>
   <url><loc>https://one1game.org/archive/tom-clancy-s-rainbow-six-siege-359550</loc><lastmod>2026-11-01</lastmod></url>
-  <url><loc>https://one1game.org/archive/the-elder-scrolls-v-skyrim-72850</loc><lastmod>2026-11-01</lastmod></url>
+  <url><loc>https://one1game.org/archive/the-elder-scrolls-v-skyrim-72850</loc><lastmod>2026-11-07</lastmod></url>
   <url><loc>https://one1game.org/archive/red-dead-redemption-2-1174180</loc><lastmod>2026-11-02</lastmod></url>
   <url><loc>https://one1game.org/archive/far-cry-3-220240</loc><lastmod>2026-11-02</lastmod></url>
   <url><loc>https://one1game.org/archive/far-cry-4-298110</loc><lastmod>2026-11-02</lastmod></url>
