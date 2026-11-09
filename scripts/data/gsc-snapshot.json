@@ -1,171 +1,38 @@
 {
  "range": [
-  "2026-10-22",
-  "2026-10-29"
+  "2026-10-30",
+  "2026-11-06"
  ],
  "queries": [
   {
-   "query": "как повысить фпс в играх на windows 11",
-   "clicks": 1,
-   "impressions": 4,
-   "ctr": 0.25,
-   "position": 1
+   "query": "ad1game",
+   "clicks": 0,
+   "impressions": 3,
+   "ctr": 0,
+   "position": 52
   },
   {
-   "query": "bering tonnage скачать",
+   "query": "ad1game отзывы",
    "clicks": 0,
-   "impressions": 1,
+   "impressions": 9,
    "ctr": 0,
-   "position": 9
-  },
-  {
-   "query": "cs 2 обои",
-   "clicks": 0,
-   "impressions": 1,
-   "ctr": 0,
-   "position": 28
-  },
-  {
-   "query": "voltus neon nightmare",
-   "clicks": 0,
-   "impressions": 1,
-   "ctr": 0,
-   "position": 6
-  },
-  {
-   "query": "настройка windows 11 для игр",
-   "clicks": 0,
-   "impressions": 1,
-   "ctr": 0,
-   "position": 9
+   "position": 86
   }
  ],
  "pages": [
   {
-   "page": "https://one1game.org/archive/kak-uvelichit-fps-windows-11-optimizaciya",
-   "clicks": 1,
-   "impressions": 11,
-   "ctr": 0.0909,
-   "position": 1.7
-  },
-  {
    "page": "https://one1game.org/",
    "clicks": 0,
-   "impressions": 4,
+   "impressions": 15,
    "ctr": 0,
-   "position": 38.2
+   "position": 62.4
   },
   {
-   "page": "https://one1game.org/archive/atomic-heart-668580",
+   "page": "https://one1game.org/archive/skrytye-lovushki-apgreyda-2026",
    "clicks": 0,
-   "impressions": 1,
-   "ctr": 0,
-   "position": 51
-  },
-  {
-   "page": "https://one1game.org/archive/bering-tonnage-4610080",
-   "clicks": 0,
-   "impressions": 1,
-   "ctr": 0,
-   "position": 9
-  },
-  {
-   "page": "https://one1game.org/archive/borderless-window-manager-5254990",
-   "clicks": 0,
-   "impressions": 1,
-   "ctr": 0,
-   "position": 10
-  },
-  {
-   "page": "https://one1game.org/archive/dawn-of-the-rotten-5196540",
-   "clicks": 0,
-   "impressions": 1,
-   "ctr": 0,
-   "position": 9
-  },
-  {
-   "page": "https://one1game.org/archive/game-keeper-somebody-messed-up-my-shop-5186690",
-   "clicks": 0,
-   "impressions": 1,
-   "ctr": 0,
-   "position": 21
-  },
-  {
-   "page": "https://one1game.org/archive/monetizaciya-yandex-igry-2026-rukovodstvo",
-   "clicks": 0,
-   "impressions": 3,
-   "ctr": 0,
-   "position": 4.7
-  },
-  {
-   "page": "https://one1game.org/archive/rv-there-yet-3949040",
-   "clicks": 0,
-   "impressions": 1,
-   "ctr": 0,
-   "position": 10
-  },
-  {
-   "page": "https://one1game.org/archive/stalker-2-nevozmozhnye-tayniki-i-artefakty",
-   "clicks": 0,
-   "impressions": 1,
+   "impressions": 2,
    "ctr": 0,
    "position": 2
-  },
-  {
-   "page": "https://one1game.org/archive/the-crimson-hunt-4485020",
-   "clicks": 0,
-   "impressions": 1,
-   "ctr": 0,
-   "position": 7
-  },
-  {
-   "page": "https://one1game.org/archive/voltus-neon-nightmare-colossal-cure-4882170",
-   "clicks": 0,
-   "impressions": 1,
-   "ctr": 0,
-   "position": 6
-  },
-  {
-   "page": "https://one1game.org/gonochnye-igry-dlya-slabyh-noutbukov",
-   "clicks": 0,
-   "impressions": 1,
-   "ctr": 0,
-   "position": 15
-  },
-  {
-   "page": "https://one1game.org/l2craft/craft/229-kris/",
-   "clicks": 0,
-   "impressions": 1,
-   "ctr": 0,
-   "position": 9
-  },
-  {
-   "page": "https://one1game.org/l2craft/craft/6366-imperial-staff/",
-   "clicks": 0,
-   "impressions": 1,
-   "ctr": 0,
-   "position": 4
-  },
-  {
-   "page": "https://one1game.org/l2craft/guides/craft-chances/",
-   "clicks": 0,
-   "impressions": 1,
-   "ctr": 0,
-   "position": 2
-  },
-  {
-   "page": "https://one1game.org/oboi/counter-strike/",
-   "clicks": 0,
-   "impressions": 3,
-   "ctr": 0,
-   "position": 22.3
-  },
-  {
-   "page": "https://one1game.org/oboi/god-of-war/",
-   "clicks": 0,
-   "impressions": 1,
-   "ctr": 0,
-   "position": 9
   }
  ]
 }
