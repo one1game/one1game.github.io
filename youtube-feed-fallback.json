@@ -2,6 +2,12 @@
   "ok": true,
   "items": [
     {
+      "videoId": "2tsGE49OPuI",
+      "title": "Пожертвовал косарь и выбил долг в Red Dead Redemption 2",
+      "publishedAt": "2026-11-12T13:00:06+00:00",
+      "thumbnail": "https://i3.ytimg.com/vi/2tsGE49OPuI/hqdefault.jpg"
+    },
+    {
       "videoId": "IaN9EyNpZSw",
       "title": "может это он #l2 #lineage2 #interlud",
       "publishedAt": "2026-11-11T15:35:41+00:00",
@@ -30,12 +36,6 @@
       "title": "тайный сообщник #l2 #lineage2 #interlude",
       "publishedAt": "2026-11-11T13:30:14+00:00",
       "thumbnail": "https://i4.ytimg.com/vi/sLQfALOxJzc/hqdefault.jpg"
-    },
-    {
-      "videoId": "6SO40VhWcHc",
-      "title": "ассасин в #rdr2 #reddeadredemption2",
-      "publishedAt": "2026-11-11T12:30:28+00:00",
-      "thumbnail": "https://i3.ytimg.com/vi/6SO40VhWcHc/hqdefault.jpg"
     }
   ]
 }
