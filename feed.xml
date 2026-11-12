@@ -6,24 +6,280 @@
     <atom:link href="https://one1game.org/feed.xml" rel="self" type="application/rss+xml" />
     <description>Игровой портал: обзоры видеоигр, гайды, аналитика индустрии, ИИ и технологии, кино.</description>
     <language>ru-RU</language>
-    <lastBuildDate>Wed, 11 Nov 2026 12:00:00 -0000</lastBuildDate>
+    <lastBuildDate>Thu, 12 Nov 2026 12:00:00 -0000</lastBuildDate>
     <docs>https://www.rssboard.org/rss-specification</docs>
     <generator>generate-feed.py</generator>
     <item>
-      <title>Team Fortress Classic: цена, отзывы и статистика игроков</title>
+      <title>BioShock Infinite: цена, отзывы и статистика игроков</title>
+      <link>https://one1game.org/archive/bioshock-infinite-8870</link>
+      <guid isPermaLink="true">https://one1game.org/archive/bioshock-infinite-8870</guid>
+      <pubDate>Thu, 12 Nov 2026 12:00:00 -0000</pubDate>
+      <category>Обзоры</category>
+      <description>BioShock Infinite: актуальная цена (29.99 USD), 93% положительных отзывов в Steam, статистика владельцев (5,000,000 – 10,000,000). Данные обновляются автоматически.</description>
+    </item>
+    <item>
+      <title>Project Zomboid: цена, отзывы и статистика игроков</title>
+      <link>https://one1game.org/archive/project-zomboid-108600</link>
+      <guid isPermaLink="true">https://one1game.org/archive/project-zomboid-108600</guid>
+      <pubDate>Thu, 12 Nov 2026 12:00:00 -0000</pubDate>
+      <category>Обзоры</category>
+      <description>Project Zomboid: актуальная цена (1050.00 RUB), 94% положительных отзывов в Steam, статистика владельцев (10,000,000 – 20,000,000). Данные обновляются автоматически.</description>
+    </item>
+    <item>
+      <title>急急牌档: цена, отзывы и статистика игроков</title>
+      <link>https://one1game.org/archive/-4793910</link>
+      <guid isPermaLink="true">https://one1game.org/archive/-4793910</guid>
+      <pubDate>Thu, 12 Nov 2026 12:00:00 -0000</pubDate>
+      <category>Обзоры</category>
+      <description>急急牌档: актуальная цена (252.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.</description>
+    </item>
+    <item>
+      <title>PlanetOrbit: цена, отзывы и статистика игроков</title>
+      <link>https://one1game.org/archive/planetorbit-4739070</link>
+      <guid isPermaLink="true">https://one1game.org/archive/planetorbit-4739070</guid>
+      <pubDate>Thu, 12 Nov 2026 12:00:00 -0000</pubDate>
+      <category>Обзоры</category>
+      <description>PlanetOrbit: актуальная цена (232.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.</description>
+    </item>
+    <item>
+      <title>Tavern Aftermath: цена, отзывы и статистика игроков</title>
+      <link>https://one1game.org/archive/tavern-aftermath-5353830</link>
+      <guid isPermaLink="true">https://one1game.org/archive/tavern-aftermath-5353830</guid>
+      <pubDate>Thu, 12 Nov 2026 12:00:00 -0000</pubDate>
+      <category>Обзоры</category>
+      <description>Tavern Aftermath: актуальная цена (245.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.</description>
+    </item>
+    <item>
+      <title>BlackoutCity: Island Cove: цена, отзывы и статистика игроков</title>
+      <link>https://one1game.org/archive/blackoutcity-island-cove-5435250</link>
+      <guid isPermaLink="true">https://one1game.org/archive/blackoutcity-island-cove-5435250</guid>
+      <pubDate>Thu, 12 Nov 2026 12:00:00 -0000</pubDate>
+      <category>Обзоры</category>
+      <description>BlackoutCity: Island Cove: актуальная цена (621.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.</description>
+    </item>
+    <item>
+      <title>Warithmetic: цена, отзывы и статистика игроков</title>
+      <link>https://one1game.org/archive/warithmetic-5520100</link>
+      <guid isPermaLink="true">https://one1game.org/archive/warithmetic-5520100</guid>
+      <pubDate>Thu, 12 Nov 2026 12:00:00 -0000</pubDate>
+      <category>Обзоры</category>
+      <description>Warithmetic: актуальная цена (288.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.</description>
+    </item>
+    <item>
+      <title>The Hidden Lot: Bid. Salvage. Restore.: цена, отзывы и статистика игроков</title>
+      <link>https://one1game.org/archive/the-hidden-lot-bid-salvage-restore-5470810</link>
+      <guid isPermaLink="true">https://one1game.org/archive/the-hidden-lot-bid-salvage-restore-5470810</guid>
+      <pubDate>Thu, 12 Nov 2026 12:00:00 -0000</pubDate>
+      <category>Обзоры</category>
+      <description>The Hidden Lot: Bid. Salvage. Restore.: актуальная цена (400.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.</description>
+    </item>
+    <item>
+      <title>Just Farm: цена, отзывы и статистика игроков</title>
+      <link>https://one1game.org/archive/just-farm-5341880</link>
+      <guid isPermaLink="true">https://one1game.org/archive/just-farm-5341880</guid>
+      <pubDate>Thu, 12 Nov 2026 12:00:00 -0000</pubDate>
+      <category>Обзоры</category>
+      <description>Just Farm: актуальная цена (252.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.</description>
+    </item>
+    <item>
+      <title>Big Scoop: Trash Cleaning Simulator: цена, отзывы и статистика игроков</title>
+      <link>https://one1game.org/archive/big-scoop-trash-cleaning-simulator-5492150</link>
+      <guid isPermaLink="true">https://one1game.org/archive/big-scoop-trash-cleaning-simulator-5492150</guid>
+      <pubDate>Thu, 12 Nov 2026 12:00:00 -0000</pubDate>
+      <category>Обзоры</category>
+      <description>Big Scoop: Trash Cleaning Simulator: актуальная цена (140.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.</description>
+    </item>
+    <item>
+      <title>MARK IT: цена, отзывы и статистика игроков</title>
+      <link>https://one1game.org/archive/mark-it-5507930</link>
+      <guid isPermaLink="true">https://one1game.org/archive/mark-it-5507930</guid>
+      <pubDate>Thu, 12 Nov 2026 12:00:00 -0000</pubDate>
+      <category>Обзоры</category>
+      <description>MARK IT: актуальная цена (196.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.</description>
+    </item>
+    <item>
+      <title>Beware of Ants: цена, отзывы и статистика игроков</title>
+      <link>https://one1game.org/archive/beware-of-ants-5516730</link>
+      <guid isPermaLink="true">https://one1game.org/archive/beware-of-ants-5516730</guid>
+      <pubDate>Thu, 12 Nov 2026 12:00:00 -0000</pubDate>
+      <category>Обзоры</category>
+      <description>Beware of Ants: актуальная цена (224.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.</description>
+    </item>
+    <item>
+      <title>Scarecrow: 90s Crime Story: цена, отзывы и статистика игроков</title>
+      <link>https://one1game.org/archive/scarecrow-90s-crime-story-2280360</link>
+      <guid isPermaLink="true">https://one1game.org/archive/scarecrow-90s-crime-story-2280360</guid>
+      <pubDate>Thu, 12 Nov 2026 12:00:00 -0000</pubDate>
+      <category>Обзоры</category>
+      <description>Scarecrow: 90s Crime Story: актуальная цена (319.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.</description>
+    </item>
+    <item>
+      <title>The unwinnable fight of Debuffs against Succubi: цена, отзывы и статистика игроков</title>
+      <link>https://one1game.org/archive/the-unwinnable-fight-of-debuffs-against-succubi-3896020</link>
+      <guid isPermaLink="true">https://one1game.org/archive/the-unwinnable-fight-of-debuffs-against-succubi-3896020</guid>
+      <pubDate>Thu, 12 Nov 2026 12:00:00 -0000</pubDate>
+      <category>Обзоры</category>
+      <description>The unwinnable fight of Debuffs against Succubi: актуальная цена (175.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.</description>
+    </item>
+    <item>
+      <title>SONIC PICO PARK: цена, отзывы и статистика игроков</title>
+      <link>https://one1game.org/archive/sonic-pico-park-4304060</link>
+      <guid isPermaLink="true">https://one1game.org/archive/sonic-pico-park-4304060</guid>
+      <pubDate>Thu, 12 Nov 2026 12:00:00 -0000</pubDate>
+      <category>Обзоры</category>
+      <description>SONIC PICO PARK: актуальная цена (420.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.</description>
+    </item>
+    <item>
+      <title>Moomin: Midsummer Madness: цена, отзывы и статистика игроков</title>
+      <link>https://one1game.org/archive/moomin-midsummer-madness-4463520</link>
+      <guid isPermaLink="true">https://one1game.org/archive/moomin-midsummer-madness-4463520</guid>
+      <pubDate>Thu, 12 Nov 2026 12:00:00 -0000</pubDate>
+      <category>Обзоры</category>
+      <description>Moomin: Midsummer Madness: актуальная цена (689.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.</description>
+    </item>
+    <item>
+      <title>Loadpath: цена, отзывы и статистика игроков</title>
+      <link>https://one1game.org/archive/loadpath-5291620</link>
+      <guid isPermaLink="true">https://one1game.org/archive/loadpath-5291620</guid>
+      <pubDate>Thu, 12 Nov 2026 12:00:00 -0000</pubDate>
+      <category>Обзоры</category>
+      <description>Loadpath: актуальная цена (594.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.</description>
+    </item>
+    <item>
+      <title>Zombie Fish Tank: цена, отзывы и статистика игроков</title>
+      <link>https://one1game.org/archive/zombie-fish-tank-5053110</link>
+      <guid isPermaLink="true">https://one1game.org/archive/zombie-fish-tank-5053110</guid>
+      <pubDate>Thu, 12 Nov 2026 12:00:00 -0000</pubDate>
+      <category>Обзоры</category>
+      <description>Zombie Fish Tank: актуальная цена (216.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.</description>
+    </item>
+    <item>
+      <title>旧存档里的勇者: цена, отзывы и статистика игроков</title>
+      <link>https://one1game.org/archive/-5472210</link>
+      <guid isPermaLink="true">https://one1game.org/archive/-5472210</guid>
+      <pubDate>Thu, 12 Nov 2026 12:00:00 -0000</pubDate>
+      <category>Обзоры</category>
+      <description>旧存档里的勇者: актуальная цена (400.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.</description>
+    </item>
+    <item>
+      <title>Bot Creator Studio: цена, отзывы и статистика игроков</title>
+      <link>https://one1game.org/archive/bot-creator-studio-4597050</link>
+      <guid isPermaLink="true">https://one1game.org/archive/bot-creator-studio-4597050</guid>
+      <pubDate>Thu, 12 Nov 2026 12:00:00 -0000</pubDate>
+      <category>Обзоры</category>
+      <description>Bot Creator Studio: актуальная цена (378.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.</description>
+    </item>
+    <item>
+      <title>VoxPrinceps: The Political Game: цена, отзывы и статистика игроков</title>
+      <link>https://one1game.org/archive/voxprinceps-the-political-game-5238680</link>
+      <guid isPermaLink="true">https://one1game.org/archive/voxprinceps-the-political-game-5238680</guid>
+      <pubDate>Thu, 12 Nov 2026 12:00:00 -0000</pubDate>
+      <category>Обзоры</category>
+      <description>VoxPrinceps: The Political Game: актуальная цена (170.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.</description>
+    </item>
+    <item>
+      <title>Евгений Онегин HD: цена, отзывы и статистика игроков</title>
+      <link>https://one1game.org/archive/evgeniy-onegin-hd-4846060</link>
+      <guid isPermaLink="true">https://one1game.org/archive/evgeniy-onegin-hd-4846060</guid>
+      <pubDate>Thu, 12 Nov 2026 12:00:00 -0000</pubDate>
+      <category>Обзоры</category>
+      <description>Евгений Онегин HD: актуальная цена (339.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.</description>
+    </item>
+    <item>
+      <title>Farm Island: цена, отзывы и статистика игроков</title>
+      <link>https://one1game.org/archive/farm-island-5443380</link>
+      <guid isPermaLink="true">https://one1game.org/archive/farm-island-5443380</guid>
+      <pubDate>Thu, 12 Nov 2026 12:00:00 -0000</pubDate>
+      <category>Обзоры</category>
+      <description>Farm Island: актуальная цена (136.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.</description>
+    </item>
+    <item>
+      <title>More Than  A Woman - Season 1: цена, отзывы и статистика игроков</title>
+      <link>https://one1game.org/archive/more-than-a-woman-season-1-4951820</link>
+      <guid isPermaLink="true">https://one1game.org/archive/more-than-a-woman-season-1-4951820</guid>
+      <pubDate>Thu, 12 Nov 2026 12:00:00 -0000</pubDate>
+      <category>Обзоры</category>
+      <description>More Than  A Woman - Season 1: актуальная цена (562.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.</description>
+    </item>
+    <item>
+      <title>Splatchinko: цена, отзывы и статистика игроков</title>
+      <link>https://one1game.org/archive/splatchinko-3802500</link>
+      <guid isPermaLink="true">https://one1game.org/archive/splatchinko-3802500</guid>
+      <pubDate>Thu, 12 Nov 2026 12:00:00 -0000</pubDate>
+      <category>Обзоры</category>
+      <description>Splatchinko: актуальная цена (348.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.</description>
+    </item>
+    <item>
+      <title>Dead Ringer: цена, отзывы и статистика игроков</title>
+      <link>https://one1game.org/archive/dead-ringer-4762150</link>
+      <guid isPermaLink="true">https://one1game.org/archive/dead-ringer-4762150</guid>
+      <pubDate>Thu, 12 Nov 2026 12:00:00 -0000</pubDate>
+      <category>Обзоры</category>
+      <description>Dead Ringer: актуальная цена (327.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.</description>
+    </item>
+    <item>
+      <title>Flexible Frosty: цена, отзывы и статистика игроков</title>
+      <link>https://one1game.org/archive/flexible-frosty-3256890</link>
+      <guid isPermaLink="true">https://one1game.org/archive/flexible-frosty-3256890</guid>
+      <pubDate>Thu, 12 Nov 2026 12:00:00 -0000</pubDate>
+      <category>Обзоры</category>
+      <description>Flexible Frosty: актуальная цена (140.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.</description>
+    </item>
+    <item>
+      <title>Coastal Cargo: цена, отзывы и статистика игроков</title>
+      <link>https://one1game.org/archive/coastal-cargo-4549920</link>
+      <guid isPermaLink="true">https://one1game.org/archive/coastal-cargo-4549920</guid>
+      <pubDate>Thu, 12 Nov 2026 12:00:00 -0000</pubDate>
+      <category>Обзоры</category>
+      <description>Coastal Cargo: актуальная цена (268.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.</description>
+    </item>
+    <item>
+      <title>わが子と吹奏楽部の1000日: цена, отзывы и статистика игроков</title>
+      <link>https://one1game.org/archive/1000-5027500</link>
+      <guid isPermaLink="true">https://one1game.org/archive/1000-5027500</guid>
+      <pubDate>Thu, 12 Nov 2026 12:00:00 -0000</pubDate>
+      <category>Обзоры</category>
+      <description>わが子と吹奏楽部の1000日: актуальная цена (216.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.</description>
+    </item>
+    <item>
+      <title>みんなでティア表！: цена, отзывы и статистика игроков</title>
+      <link>https://one1game.org/archive/-4921660</link>
+      <guid isPermaLink="true">https://one1game.org/archive/-4921660</guid>
+      <pubDate>Thu, 12 Nov 2026 12:00:00 -0000</pubDate>
+      <category>Обзоры</category>
+      <description>みんなでティア表！: актуальная цена (238.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.</description>
+    </item>
+    <item>
+      <title>Everything Mart: цена, отзывы и статистика игроков</title>
+      <link>https://one1game.org/archive/everything-mart-4637430</link>
+      <guid isPermaLink="true">https://one1game.org/archive/everything-mart-4637430</guid>
+      <pubDate>Thu, 12 Nov 2026 12:00:00 -0000</pubDate>
+      <category>Обзоры</category>
+      <description>Everything Mart: актуальная цена (Бесплатно), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.</description>
+    </item>
+    <item>
+      <title>天下統一恋の乱 Love Ballad～華の章～: цена, отзывы и статистика игроков</title>
+      <link>https://one1game.org/archive/love-ballad-4873310</link>
+      <guid isPermaLink="true">https://one1game.org/archive/love-ballad-4873310</guid>
+      <pubDate>Thu, 12 Nov 2026 12:00:00 -0000</pubDate>
+      <category>Обзоры</category>
+      <description>天下統一恋の乱 Love Ballad～華の章～: актуальная цена (1364.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.</description>
+    </item>
+    <item>
+      <title>Team Fortress Classic – классический командный экшен</title>
       <link>https://one1game.org/archive/team-fortress-classic-20</link>
       <guid isPermaLink="true">https://one1game.org/archive/team-fortress-classic-20</guid>
       <pubDate>Wed, 11 Nov 2026 12:00:00 -0000</pubDate>
       <category>Обзоры</category>
-      <description>Team Fortress Classic: актуальная цена (245.00 RUB), 87% положительных отзывов в Steam, статистика владельцев (5,000,000 – 10,000,000). Данные обновляются автоматически.</description>
+      <description>Team Fortress Classic – легендарный онлайн‑экшен с десятью уникальными классами, каждый со своим арсеналом и способностями, идеален для любителей</description>
     </item>
     <item>
-      <title>Day of Defeat: цена, отзывы и статистика игроков</title>
+      <title>Day of Defeat – командный экшен про Вторую мировую</title>
       <link>https://one1game.org/archive/day-of-defeat-30</link>
       <guid isPermaLink="true">https://one1game.org/archive/day-of-defeat-30</guid>
       <pubDate>Wed, 11 Nov 2026 12:00:00 -0000</pubDate>
       <category>Обзоры</category>
-      <description>Day of Defeat: актуальная цена (245.00 RUB), 88% положительных отзывов в Steam, статистика владельцев (5,000,000 – 10,000,000). Данные обновляются автоматически.</description>
+      <description>Day of Defeat – динамичный командный шутер о боях между союзниками и немцами в Европе Второй мировой. Выберите класс, отразите историческую атмосферу.</description>
     </item>
     <item>
       <title>Deathmatch Classic: цена, отзывы и статистика игроков</title>
@@ -42,12 +298,12 @@
       <description>Half-Life: Opposing Force: актуальная цена (245.00 RUB), 95% положительных отзывов в Steam, статистика владельцев (2,000,000 – 5,000,000). Данные обновляются автоматически.</description>
     </item>
     <item>
-      <title>Ricochet: цена, отзывы и статистика игроков</title>
+      <title>Ricochet – футуристический экшен с боями и командными</title>
       <link>https://one1game.org/archive/ricochet-60</link>
       <guid isPermaLink="true">https://one1game.org/archive/ricochet-60</guid>
       <pubDate>Wed, 11 Nov 2026 12:00:00 -0000</pubDate>
       <category>Обзоры</category>
-      <description>Ricochet: актуальная цена (245.00 RUB), 82% положительных отзывов в Steam, статистика владельцев (5,000,000 – 10,000,000). Данные обновляются автоматически.</description>
+      <description>Ricochet – динамичный экшен, где проверяется ловкость и точность стрельбы. Бои на футуристических аренах, одиночные дуэли и командные матчи.</description>
     </item>
     <item>
       <title>Counter-Strike: Condition Zero: цена, отзывы и статистика игроков</title>
@@ -72,262 +328,6 @@
       <pubDate>Wed, 11 Nov 2026 12:00:00 -0000</pubDate>
       <category>Обзоры</category>
       <description>Half-Life: Source: актуальная цена (445.00 RUB), 68% положительных отзывов в Steam, статистика владельцев (2,000,000 – 5,000,000). Данные обновляются автоматически.</description>
-    </item>
-    <item>
-      <title>Day of Defeat: Source: цена, отзывы и статистика игроков</title>
-      <link>https://one1game.org/archive/day-of-defeat-source-300</link>
-      <guid isPermaLink="true">https://one1game.org/archive/day-of-defeat-source-300</guid>
-      <pubDate>Wed, 11 Nov 2026 12:00:00 -0000</pubDate>
-      <category>Обзоры</category>
-      <description>Day of Defeat: Source: актуальная цена (445.00 RUB), 91% положительных отзывов в Steam, статистика владельцев (5,000,000 – 10,000,000). Данные обновляются автоматически.</description>
-    </item>
-    <item>
-      <title>Half-Life Deathmatch: Source: цена, отзывы и статистика игроков</title>
-      <link>https://one1game.org/archive/half-life-deathmatch-source-360</link>
-      <guid isPermaLink="true">https://one1game.org/archive/half-life-deathmatch-source-360</guid>
-      <pubDate>Wed, 11 Nov 2026 12:00:00 -0000</pubDate>
-      <category>Обзоры</category>
-      <description>Half-Life Deathmatch: Source: актуальная цена (445.00 RUB), 75% положительных отзывов в Steam, статистика владельцев (5,000,000 – 10,000,000). Данные обновляются автоматически.</description>
-    </item>
-    <item>
-      <title>Amusement Factory: цена, отзывы и статистика игроков</title>
-      <link>https://one1game.org/archive/amusement-factory-5053940</link>
-      <guid isPermaLink="true">https://one1game.org/archive/amusement-factory-5053940</guid>
-      <pubDate>Wed, 11 Nov 2026 12:00:00 -0000</pubDate>
-      <category>Обзоры</category>
-      <description>Amusement Factory: актуальная цена (465.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.</description>
-    </item>
-    <item>
-      <title>Asteroid Watch: цена, отзывы и статистика игроков</title>
-      <link>https://one1game.org/archive/asteroid-watch-5389200</link>
-      <guid isPermaLink="true">https://one1game.org/archive/asteroid-watch-5389200</guid>
-      <pubDate>Wed, 11 Nov 2026 12:00:00 -0000</pubDate>
-      <category>Обзоры</category>
-      <description>Asteroid Watch: актуальная цена (Бесплатно), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.</description>
-    </item>
-    <item>
-      <title>正统三国：乱世之弈: цена, отзывы и статистика игроков</title>
-      <link>https://one1game.org/archive/-5451120</link>
-      <guid isPermaLink="true">https://one1game.org/archive/-5451120</guid>
-      <pubDate>Wed, 11 Nov 2026 12:00:00 -0000</pubDate>
-      <category>Обзоры</category>
-      <description>正统三国：乱世之弈: актуальная цена (64.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.</description>
-    </item>
-    <item>
-      <title>異界ノ宿帳: цена, отзывы и статистика игроков</title>
-      <link>https://one1game.org/archive/-4249520</link>
-      <guid isPermaLink="true">https://one1game.org/archive/-4249520</guid>
-      <pubDate>Wed, 11 Nov 2026 12:00:00 -0000</pubDate>
-      <category>Обзоры</category>
-      <description>異界ノ宿帳: актуальная цена (840.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.</description>
-    </item>
-    <item>
-      <title>CrystalCanvas: цена, отзывы и статистика игроков</title>
-      <link>https://one1game.org/archive/crystalcanvas-4859770</link>
-      <guid isPermaLink="true">https://one1game.org/archive/crystalcanvas-4859770</guid>
-      <pubDate>Wed, 11 Nov 2026 12:00:00 -0000</pubDate>
-      <category>Обзоры</category>
-      <description>CrystalCanvas: актуальная цена (378.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.</description>
-    </item>
-    <item>
-      <title>HEADSHOT: Zombie Doomsday: цена, отзывы и статистика игроков</title>
-      <link>https://one1game.org/archive/headshot-zombie-doomsday-5379640</link>
-      <guid isPermaLink="true">https://one1game.org/archive/headshot-zombie-doomsday-5379640</guid>
-      <pubDate>Wed, 11 Nov 2026 12:00:00 -0000</pubDate>
-      <category>Обзоры</category>
-      <description>HEADSHOT: Zombie Doomsday: актуальная цена (117.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.</description>
-    </item>
-    <item>
-      <title>Skoot: Keyboard Brawl: цена, отзывы и статистика игроков</title>
-      <link>https://one1game.org/archive/skoot-keyboard-brawl-4850520</link>
-      <guid isPermaLink="true">https://one1game.org/archive/skoot-keyboard-brawl-4850520</guid>
-      <pubDate>Wed, 11 Nov 2026 12:00:00 -0000</pubDate>
-      <category>Обзоры</category>
-      <description>Skoot: Keyboard Brawl: актуальная цена (196.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.</description>
-    </item>
-    <item>
-      <title>Pop! Jelly PangPang: цена, отзывы и статистика игроков</title>
-      <link>https://one1game.org/archive/pop-jelly-pangpang-5396440</link>
-      <guid isPermaLink="true">https://one1game.org/archive/pop-jelly-pangpang-5396440</guid>
-      <pubDate>Wed, 11 Nov 2026 12:00:00 -0000</pubDate>
-      <category>Обзоры</category>
-      <description>Pop! Jelly PangPang: актуальная цена (Бесплатно), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.</description>
-    </item>
-    <item>
-      <title>Confess To Me: цена, отзывы и статистика игроков</title>
-      <link>https://one1game.org/archive/confess-to-me-5187700</link>
-      <guid isPermaLink="true">https://one1game.org/archive/confess-to-me-5187700</guid>
-      <pubDate>Wed, 11 Nov 2026 12:00:00 -0000</pubDate>
-      <category>Обзоры</category>
-      <description>Confess To Me: актуальная цена (316.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.</description>
-    </item>
-    <item>
-      <title>Great Space Race of 3032: цена, отзывы и статистика игроков</title>
-      <link>https://one1game.org/archive/great-space-race-of-3032-4825260</link>
-      <guid isPermaLink="true">https://one1game.org/archive/great-space-race-of-3032-4825260</guid>
-      <pubDate>Wed, 11 Nov 2026 12:00:00 -0000</pubDate>
-      <category>Обзоры</category>
-      <description>Great Space Race of 3032: актуальная цена (344.51 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.</description>
-    </item>
-    <item>
-      <title>LOOPLINE: цена, отзывы и статистика игроков</title>
-      <link>https://one1game.org/archive/loopline-5513610</link>
-      <guid isPermaLink="true">https://one1game.org/archive/loopline-5513610</guid>
-      <pubDate>Wed, 11 Nov 2026 12:00:00 -0000</pubDate>
-      <category>Обзоры</category>
-      <description>LOOPLINE: актуальная цена (208.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.</description>
-    </item>
-    <item>
-      <title>Obol: цена, отзывы и статистика игроков</title>
-      <link>https://one1game.org/archive/obol-5513550</link>
-      <guid isPermaLink="true">https://one1game.org/archive/obol-5513550</guid>
-      <pubDate>Wed, 11 Nov 2026 12:00:00 -0000</pubDate>
-      <category>Обзоры</category>
-      <description>Obol: актуальная цена (136.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.</description>
-    </item>
-    <item>
-      <title>MISCONDUCTOR | 迷指揮者: цена, отзывы и статистика игроков</title>
-      <link>https://one1game.org/archive/misconductor-5482540</link>
-      <guid isPermaLink="true">https://one1game.org/archive/misconductor-5482540</guid>
-      <pubDate>Wed, 11 Nov 2026 12:00:00 -0000</pubDate>
-      <category>Обзоры</category>
-      <description>MISCONDUCTOR | 迷指揮者: актуальная цена (360.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.</description>
-    </item>
-    <item>
-      <title>Tape Man: цена, отзывы и статистика игроков</title>
-      <link>https://one1game.org/archive/tape-man-4051290</link>
-      <guid isPermaLink="true">https://one1game.org/archive/tape-man-4051290</guid>
-      <pubDate>Wed, 11 Nov 2026 12:00:00 -0000</pubDate>
-      <category>Обзоры</category>
-      <description>Tape Man: актуальная цена (378.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.</description>
-    </item>
-    <item>
-      <title>Super Retro Fighter: цена, отзывы и статистика игроков</title>
-      <link>https://one1game.org/archive/super-retro-fighter-1574750</link>
-      <guid isPermaLink="true">https://one1game.org/archive/super-retro-fighter-1574750</guid>
-      <pubDate>Wed, 11 Nov 2026 12:00:00 -0000</pubDate>
-      <category>Обзоры</category>
-      <description>Super Retro Fighter: актуальная цена (330.00 RUB), 77% положительных отзывов в Steam, статистика владельцев (0 – 20,000). Данные обновляются автоматически.</description>
-    </item>
-    <item>
-      <title>Crossing Space Zen: цена, отзывы и статистика игроков</title>
-      <link>https://one1game.org/archive/crossing-space-zen-5302410</link>
-      <guid isPermaLink="true">https://one1game.org/archive/crossing-space-zen-5302410</guid>
-      <pubDate>Wed, 11 Nov 2026 12:00:00 -0000</pubDate>
-      <category>Обзоры</category>
-      <description>Crossing Space Zen: актуальная цена (159.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.</description>
-    </item>
-    <item>
-      <title>The Devil's Due: цена, отзывы и статистика игроков</title>
-      <link>https://one1game.org/archive/the-devil-s-due-3699850</link>
-      <guid isPermaLink="true">https://one1game.org/archive/the-devil-s-due-3699850</guid>
-      <pubDate>Wed, 11 Nov 2026 12:00:00 -0000</pubDate>
-      <category>Обзоры</category>
-      <description>The Devil's Due: актуальная цена (399.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.</description>
-    </item>
-    <item>
-      <title>Would you mine?: цена, отзывы и статистика игроков</title>
-      <link>https://one1game.org/archive/would-you-mine-4983040</link>
-      <guid isPermaLink="true">https://one1game.org/archive/would-you-mine-4983040</guid>
-      <pubDate>Wed, 11 Nov 2026 12:00:00 -0000</pubDate>
-      <category>Обзоры</category>
-      <description>Would you mine?: актуальная цена (126.58 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.</description>
-    </item>
-    <item>
-      <title>Walk-In: Fold It Together: цена, отзывы и статистика игроков</title>
-      <link>https://one1game.org/archive/walk-in-fold-it-together-5326470</link>
-      <guid isPermaLink="true">https://one1game.org/archive/walk-in-fold-it-together-5326470</guid>
-      <pubDate>Wed, 11 Nov 2026 12:00:00 -0000</pubDate>
-      <category>Обзоры</category>
-      <description>Walk-In: Fold It Together: актуальная цена (196.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.</description>
-    </item>
-    <item>
-      <title>Profiler Files - New Orleans: цена, отзывы и статистика игроков</title>
-      <link>https://one1game.org/archive/profiler-files-new-orleans-2729450</link>
-      <guid isPermaLink="true">https://one1game.org/archive/profiler-files-new-orleans-2729450</guid>
-      <pubDate>Wed, 11 Nov 2026 12:00:00 -0000</pubDate>
-      <category>Обзоры</category>
-      <description>Profiler Files - New Orleans: актуальная цена (586.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.</description>
-    </item>
-    <item>
-      <title>旧物小铺: цена, отзывы и статистика игроков</title>
-      <link>https://one1game.org/archive/-5431930</link>
-      <guid isPermaLink="true">https://one1game.org/archive/-5431930</guid>
-      <pubDate>Wed, 11 Nov 2026 12:00:00 -0000</pubDate>
-      <category>Обзоры</category>
-      <description>旧物小铺: актуальная цена (64.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.</description>
-    </item>
-    <item>
-      <title>vim racer: цена, отзывы и статистика игроков</title>
-      <link>https://one1game.org/archive/vim-racer-4935280</link>
-      <guid isPermaLink="true">https://one1game.org/archive/vim-racer-4935280</guid>
-      <pubDate>Wed, 11 Nov 2026 12:00:00 -0000</pubDate>
-      <category>Обзоры</category>
-      <description>vim racer: актуальная цена (204.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.</description>
-    </item>
-    <item>
-      <title>The Ramen Bar: цена, отзывы и статистика игроков</title>
-      <link>https://one1game.org/archive/the-ramen-bar-4940980</link>
-      <guid isPermaLink="true">https://one1game.org/archive/the-ramen-bar-4940980</guid>
-      <pubDate>Wed, 11 Nov 2026 12:00:00 -0000</pubDate>
-      <category>Обзоры</category>
-      <description>The Ramen Bar: актуальная цена (217.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.</description>
-    </item>
-    <item>
-      <title>Street Panz: цена, отзывы и статистика игроков</title>
-      <link>https://one1game.org/archive/street-panz-5496540</link>
-      <guid isPermaLink="true">https://one1game.org/archive/street-panz-5496540</guid>
-      <pubDate>Wed, 11 Nov 2026 12:00:00 -0000</pubDate>
-      <category>Обзоры</category>
-      <description>Street Panz: актуальная цена (280.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.</description>
-    </item>
-    <item>
-      <title>Soundway: цена, отзывы и статистика игроков</title>
-      <link>https://one1game.org/archive/soundway-4951630</link>
-      <guid isPermaLink="true">https://one1game.org/archive/soundway-4951630</guid>
-      <pubDate>Wed, 11 Nov 2026 12:00:00 -0000</pubDate>
-      <category>Обзоры</category>
-      <description>Soundway: актуальная цена (246.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.</description>
-    </item>
-    <item>
-      <title>Disk Defragmenter: цена, отзывы и статистика игроков</title>
-      <link>https://one1game.org/archive/disk-defragmenter-5471990</link>
-      <guid isPermaLink="true">https://one1game.org/archive/disk-defragmenter-5471990</guid>
-      <pubDate>Wed, 11 Nov 2026 12:00:00 -0000</pubDate>
-      <category>Обзоры</category>
-      <description>Disk Defragmenter: актуальная цена (196.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.</description>
-    </item>
-    <item>
-      <title>滑动方块: цена, отзывы и статистика игроков</title>
-      <link>https://one1game.org/archive/-5274910</link>
-      <guid isPermaLink="true">https://one1game.org/archive/-5274910</guid>
-      <pubDate>Wed, 11 Nov 2026 12:00:00 -0000</pubDate>
-      <category>Обзоры</category>
-      <description>滑动方块: актуальная цена (64.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.</description>
-    </item>
-    <item>
-      <title>GUGUGAGA: PEEKABOO: цена, отзывы и статистика игроков</title>
-      <link>https://one1game.org/archive/gugugaga-peekaboo-4988440</link>
-      <guid isPermaLink="true">https://one1game.org/archive/gugugaga-peekaboo-4988440</guid>
-      <pubDate>Wed, 11 Nov 2026 12:00:00 -0000</pubDate>
-      <category>Обзоры</category>
-      <description>GUGUGAGA: PEEKABOO: актуальная цена (Бесплатно), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.</description>
-    </item>
-    <item>
-      <title>Stock:Retail investors: цена, отзывы и статистика игроков</title>
-      <link>https://one1game.org/archive/stock-retail-investors-2792080</link>
-      <guid isPermaLink="true">https://one1game.org/archive/stock-retail-investors-2792080</guid>
-      <pubDate>Wed, 11 Nov 2026 12:00:00 -0000</pubDate>
-      <category>Обзоры</category>
-      <description>Stock:Retail investors: актуальная цена (99.00 RUB), 81% положительных отзывов в Steam, статистика владельцев (0 – 20,000). Данные обновляются автоматически.</description>
-    </item>
-    <item>
-      <title>Shawarma Karma: цена, отзывы и статистика игроков</title>
-      <link>https://one1game.org/archive/shawarma-karma-5330310</link>
-      <guid isPermaLink="true">https://one1game.org/archive/shawarma-karma-5330310</guid>
-      <pubDate>Wed, 11 Nov 2026 12:00:00 -0000</pubDate>
-      <category>Обзоры</category>
-      <description>Shawarma Karma: актуальная цена (180.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.</description>
     </item>
   </channel>
 </rss>
