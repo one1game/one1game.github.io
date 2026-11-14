@@ -2,6 +2,12 @@
   "ok": true,
   "items": [
     {
+      "videoId": "kyytjgrlMEQ",
+      "title": "Дикая зебра #rdr2 #reddeadredemption2",
+      "publishedAt": "2026-11-14T13:18:19+00:00",
+      "thumbnail": "https://i4.ytimg.com/vi/kyytjgrlMEQ/hqdefault.jpg"
+    },
+    {
       "videoId": "2tsGE49OPuI",
       "title": "Пожертвовал косарь и выбил долг в Red Dead Redemption 2",
       "publishedAt": "2026-11-12T13:00:06+00:00",
@@ -30,12 +36,6 @@
       "title": "о работе #l2",
       "publishedAt": "2026-11-11T15:00:24+00:00",
       "thumbnail": "https://i2.ytimg.com/vi/5ukx6uo9jsM/hqdefault.jpg"
-    },
-    {
-      "videoId": "sLQfALOxJzc",
-      "title": "тайный сообщник #l2 #lineage2 #interlude",
-      "publishedAt": "2026-11-11T13:30:14+00:00",
-      "thumbnail": "https://i4.ytimg.com/vi/sLQfALOxJzc/hqdefault.jpg"
     }
   ]
 }
