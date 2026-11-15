@@ -6,56 +6,296 @@
     <atom:link href="https://one1game.org/feed.xml" rel="self" type="application/rss+xml" />
     <description>Игровой портал: обзоры видеоигр, гайды, аналитика индустрии, ИИ и технологии, кино.</description>
     <language>ru-RU</language>
-    <lastBuildDate>Sat, 14 Nov 2026 12:00:00 -0000</lastBuildDate>
+    <lastBuildDate>Sun, 15 Nov 2026 12:00:00 -0000</lastBuildDate>
     <docs>https://www.rssboard.org/rss-specification</docs>
     <generator>generate-feed.py</generator>
     <item>
-      <title>Warstead: цена, отзывы и статистика игроков</title>
+      <title>Ballpeak: цена, отзывы и статистика игроков</title>
+      <link>https://one1game.org/archive/ballpeak-5462420</link>
+      <guid isPermaLink="true">https://one1game.org/archive/ballpeak-5462420</guid>
+      <pubDate>Sun, 15 Nov 2026 12:00:00 -0000</pubDate>
+      <category>Обзоры</category>
+      <description>Ballpeak: актуальная цена (112.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.</description>
+    </item>
+    <item>
+      <title>내 여동생(My Sister): цена, отзывы и статистика игроков</title>
+      <link>https://one1game.org/archive/my-sister-5485210</link>
+      <guid isPermaLink="true">https://one1game.org/archive/my-sister-5485210</guid>
+      <pubDate>Sun, 15 Nov 2026 12:00:00 -0000</pubDate>
+      <category>Обзоры</category>
+      <description>내 여동생(My Sister): актуальная цена (78.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.</description>
+    </item>
+    <item>
+      <title>Our campus life: цена, отзывы и статистика игроков</title>
+      <link>https://one1game.org/archive/our-campus-life-3473270</link>
+      <guid isPermaLink="true">https://one1game.org/archive/our-campus-life-3473270</guid>
+      <pubDate>Sun, 15 Nov 2026 12:00:00 -0000</pubDate>
+      <category>Обзоры</category>
+      <description>Our campus life: актуальная цена (1150.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.</description>
+    </item>
+    <item>
+      <title>Code Red RTS: цена, отзывы и статистика игроков</title>
+      <link>https://one1game.org/archive/code-red-rts-5512840</link>
+      <guid isPermaLink="true">https://one1game.org/archive/code-red-rts-5512840</guid>
+      <pubDate>Sun, 15 Nov 2026 12:00:00 -0000</pubDate>
+      <category>Обзоры</category>
+      <description>Code Red RTS: актуальная цена (Бесплатно), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.</description>
+    </item>
+    <item>
+      <title>Red Crucible Assault: цена, отзывы и статистика игроков</title>
+      <link>https://one1game.org/archive/red-crucible-assault-3325950</link>
+      <guid isPermaLink="true">https://one1game.org/archive/red-crucible-assault-3325950</guid>
+      <pubDate>Sun, 15 Nov 2026 12:00:00 -0000</pubDate>
+      <category>Обзоры</category>
+      <description>Red Crucible Assault: актуальная цена (467.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.</description>
+    </item>
+    <item>
+      <title>World Guesser: цена, отзывы и статистика игроков</title>
+      <link>https://one1game.org/archive/world-guesser-2402620</link>
+      <guid isPermaLink="true">https://one1game.org/archive/world-guesser-2402620</guid>
+      <pubDate>Sun, 15 Nov 2026 12:00:00 -0000</pubDate>
+      <category>Обзоры</category>
+      <description>World Guesser: актуальная цена (216.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.</description>
+    </item>
+    <item>
+      <title>Crowns &amp; Colossi: цена, отзывы и статистика игроков</title>
+      <link>https://one1game.org/archive/crowns-colossi-5451060</link>
+      <guid isPermaLink="true">https://one1game.org/archive/crowns-colossi-5451060</guid>
+      <pubDate>Sun, 15 Nov 2026 12:00:00 -0000</pubDate>
+      <category>Обзоры</category>
+      <description>Crowns &amp; Colossi: актуальная цена (256.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.</description>
+    </item>
+    <item>
+      <title>How Many Tickets Does It Take To Win The Lottery?: цена, отзывы и статистика игроков</title>
+      <link>https://one1game.org/archive/how-many-tickets-does-it-take-to-win-the-lottery-5450860</link>
+      <guid isPermaLink="true">https://one1game.org/archive/how-many-tickets-does-it-take-to-win-the-lottery-5450860</guid>
+      <pubDate>Sun, 15 Nov 2026 12:00:00 -0000</pubDate>
+      <category>Обзоры</category>
+      <description>How Many Tickets Does It Take To Win The Lottery?: актуальная цена (117.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.</description>
+    </item>
+    <item>
+      <title>Breeze Of Adventure: цена, отзывы и статистика игроков</title>
+      <link>https://one1game.org/archive/breeze-of-adventure-4673230</link>
+      <guid isPermaLink="true">https://one1game.org/archive/breeze-of-adventure-4673230</guid>
+      <pubDate>Sun, 15 Nov 2026 12:00:00 -0000</pubDate>
+      <category>Обзоры</category>
+      <description>Breeze Of Adventure: актуальная цена (535.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.</description>
+    </item>
+    <item>
+      <title>Black Pyramid: цена, отзывы и статистика игроков</title>
+      <link>https://one1game.org/archive/black-pyramid-4938490</link>
+      <guid isPermaLink="true">https://one1game.org/archive/black-pyramid-4938490</guid>
+      <pubDate>Sun, 15 Nov 2026 12:00:00 -0000</pubDate>
+      <category>Обзоры</category>
+      <description>Black Pyramid: актуальная цена (465.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.</description>
+    </item>
+    <item>
+      <title>Commander's Dilemma: цена, отзывы и статистика игроков</title>
+      <link>https://one1game.org/archive/commander-s-dilemma-5445850</link>
+      <guid isPermaLink="true">https://one1game.org/archive/commander-s-dilemma-5445850</guid>
+      <pubDate>Sun, 15 Nov 2026 12:00:00 -0000</pubDate>
+      <category>Обзоры</category>
+      <description>Commander's Dilemma: актуальная цена (400.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.</description>
+    </item>
+    <item>
+      <title>Rubber Stamp Legend: цена, отзывы и статистика игроков</title>
+      <link>https://one1game.org/archive/rubber-stamp-legend-5471970</link>
+      <guid isPermaLink="true">https://one1game.org/archive/rubber-stamp-legend-5471970</guid>
+      <pubDate>Sun, 15 Nov 2026 12:00:00 -0000</pubDate>
+      <category>Обзоры</category>
+      <description>Rubber Stamp Legend: актуальная цена (156.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.</description>
+    </item>
+    <item>
+      <title>THE BACKLOG: цена, отзывы и статистика игроков</title>
+      <link>https://one1game.org/archive/the-backlog-5354240</link>
+      <guid isPermaLink="true">https://one1game.org/archive/the-backlog-5354240</guid>
+      <pubDate>Sun, 15 Nov 2026 12:00:00 -0000</pubDate>
+      <category>Обзоры</category>
+      <description>THE BACKLOG: актуальная цена (308.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.</description>
+    </item>
+    <item>
+      <title>RSP Ultimate Battle: цена, отзывы и статистика игроков</title>
+      <link>https://one1game.org/archive/rsp-ultimate-battle-5455640</link>
+      <guid isPermaLink="true">https://one1game.org/archive/rsp-ultimate-battle-5455640</guid>
+      <pubDate>Sun, 15 Nov 2026 12:00:00 -0000</pubDate>
+      <category>Обзоры</category>
+      <description>RSP Ultimate Battle: актуальная цена (170.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.</description>
+    </item>
+    <item>
+      <title>Hockey Coach Dynasty: цена, отзывы и статистика игроков</title>
+      <link>https://one1game.org/archive/hockey-coach-dynasty-5293350</link>
+      <guid isPermaLink="true">https://one1game.org/archive/hockey-coach-dynasty-5293350</guid>
+      <pubDate>Sun, 15 Nov 2026 12:00:00 -0000</pubDate>
+      <category>Обзоры</category>
+      <description>Hockey Coach Dynasty: актуальная цена (418.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.</description>
+    </item>
+    <item>
+      <title>Tisuland: цена, отзывы и статистика игроков</title>
+      <link>https://one1game.org/archive/tisuland-4212960</link>
+      <guid isPermaLink="true">https://one1game.org/archive/tisuland-4212960</guid>
+      <pubDate>Sun, 15 Nov 2026 12:00:00 -0000</pubDate>
+      <category>Обзоры</category>
+      <description>Tisuland: актуальная цена (136.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.</description>
+    </item>
+    <item>
+      <title>I Ching: Chinese Tarot &amp; Wisdom of Change: цена, отзывы и статистика игроков</title>
+      <link>https://one1game.org/archive/i-ching-chinese-tarot-wisdom-of-change-5275070</link>
+      <guid isPermaLink="true">https://one1game.org/archive/i-ching-chinese-tarot-wisdom-of-change-5275070</guid>
+      <pubDate>Sun, 15 Nov 2026 12:00:00 -0000</pubDate>
+      <category>Обзоры</category>
+      <description>I Ching: Chinese Tarot &amp; Wisdom of Change: актуальная цена (160.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.</description>
+    </item>
+    <item>
+      <title>Tenrei: цена, отзывы и статистика игроков</title>
+      <link>https://one1game.org/archive/tenrei-4366550</link>
+      <guid isPermaLink="true">https://one1game.org/archive/tenrei-4366550</guid>
+      <pubDate>Sun, 15 Nov 2026 12:00:00 -0000</pubDate>
+      <category>Обзоры</category>
+      <description>Tenrei: актуальная цена (Бесплатно), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.</description>
+    </item>
+    <item>
+      <title>Cycle of the First Dawn: цена, отзывы и статистика игроков</title>
+      <link>https://one1game.org/archive/cycle-of-the-first-dawn-5408030</link>
+      <guid isPermaLink="true">https://one1game.org/archive/cycle-of-the-first-dawn-5408030</guid>
+      <pubDate>Sun, 15 Nov 2026 12:00:00 -0000</pubDate>
+      <category>Обзоры</category>
+      <description>Cycle of the First Dawn: актуальная цена (Бесплатно), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.</description>
+    </item>
+    <item>
+      <title>PUSH MID: цена, отзывы и статистика игроков</title>
+      <link>https://one1game.org/archive/push-mid-5097300</link>
+      <guid isPermaLink="true">https://one1game.org/archive/push-mid-5097300</guid>
+      <pubDate>Sun, 15 Nov 2026 12:00:00 -0000</pubDate>
+      <category>Обзоры</category>
+      <description>PUSH MID: актуальная цена (175.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.</description>
+    </item>
+    <item>
+      <title>中国球王之路: цена, отзывы и статистика игроков</title>
+      <link>https://one1game.org/archive/-5355990</link>
+      <guid isPermaLink="true">https://one1game.org/archive/-5355990</guid>
+      <pubDate>Sun, 15 Nov 2026 12:00:00 -0000</pubDate>
+      <category>Обзоры</category>
+      <description>中国球王之路: актуальная цена (346.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.</description>
+    </item>
+    <item>
+      <title>Subsurface: цена, отзывы и статистика игроков</title>
+      <link>https://one1game.org/archive/subsurface-4538060</link>
+      <guid isPermaLink="true">https://one1game.org/archive/subsurface-4538060</guid>
+      <pubDate>Sun, 15 Nov 2026 12:00:00 -0000</pubDate>
+      <category>Обзоры</category>
+      <description>Subsurface: актуальная цена (418.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.</description>
+    </item>
+    <item>
+      <title>Ray Ray Zombies: цена, отзывы и статистика игроков</title>
+      <link>https://one1game.org/archive/ray-ray-zombies-5244680</link>
+      <guid isPermaLink="true">https://one1game.org/archive/ray-ray-zombies-5244680</guid>
+      <pubDate>Sun, 15 Nov 2026 12:00:00 -0000</pubDate>
+      <category>Обзоры</category>
+      <description>Ray Ray Zombies: актуальная цена (756.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.</description>
+    </item>
+    <item>
+      <title>宿の掟 / Rules of the Inn: цена, отзывы и статистика игроков</title>
+      <link>https://one1game.org/archive/rules-of-the-inn-5045430</link>
+      <guid isPermaLink="true">https://one1game.org/archive/rules-of-the-inn-5045430</guid>
+      <pubDate>Sun, 15 Nov 2026 12:00:00 -0000</pubDate>
+      <category>Обзоры</category>
+      <description>宿の掟 / Rules of the Inn: актуальная цена (180.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.</description>
+    </item>
+    <item>
+      <title>Lust Isles: цена, отзывы и статистика игроков</title>
+      <link>https://one1game.org/archive/lust-isles-5122610</link>
+      <guid isPermaLink="true">https://one1game.org/archive/lust-isles-5122610</guid>
+      <pubDate>Sun, 15 Nov 2026 12:00:00 -0000</pubDate>
+      <category>Обзоры</category>
+      <description>Lust Isles: актуальная цена (375.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.</description>
+    </item>
+    <item>
+      <title>Manafest: цена, отзывы и статистика игроков</title>
+      <link>https://one1game.org/archive/manafest-5350040</link>
+      <guid isPermaLink="true">https://one1game.org/archive/manafest-5350040</guid>
+      <pubDate>Sun, 15 Nov 2026 12:00:00 -0000</pubDate>
+      <category>Обзоры</category>
+      <description>Manafest: актуальная цена (Бесплатно), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.</description>
+    </item>
+    <item>
+      <title>AuxPipe: цена, отзывы и статистика игроков</title>
+      <link>https://one1game.org/archive/auxpipe-5367320</link>
+      <guid isPermaLink="true">https://one1game.org/archive/auxpipe-5367320</guid>
+      <pubDate>Sun, 15 Nov 2026 12:00:00 -0000</pubDate>
+      <category>Обзоры</category>
+      <description>AuxPipe: актуальная цена (99.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.</description>
+    </item>
+    <item>
+      <title>Silicon Tycoon: цена, отзывы и статистика игроков</title>
+      <link>https://one1game.org/archive/silicon-tycoon-5482710</link>
+      <guid isPermaLink="true">https://one1game.org/archive/silicon-tycoon-5482710</guid>
+      <pubDate>Sun, 15 Nov 2026 12:00:00 -0000</pubDate>
+      <category>Обзоры</category>
+      <description>Silicon Tycoon: актуальная цена (288.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.</description>
+    </item>
+    <item>
+      <title>Gestalt Journey: цена, отзывы и статистика игроков</title>
+      <link>https://one1game.org/archive/gestalt-journey-5308360</link>
+      <guid isPermaLink="true">https://one1game.org/archive/gestalt-journey-5308360</guid>
+      <pubDate>Sun, 15 Nov 2026 12:00:00 -0000</pubDate>
+      <category>Обзоры</category>
+      <description>Gestalt Journey: актуальная цена (320.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.</description>
+    </item>
+    <item>
+      <title>Intergalactic Defenders: цена, отзывы и статистика игроков</title>
+      <link>https://one1game.org/archive/intergalactic-defenders-2677970</link>
+      <guid isPermaLink="true">https://one1game.org/archive/intergalactic-defenders-2677970</guid>
+      <pubDate>Sun, 15 Nov 2026 12:00:00 -0000</pubDate>
+      <category>Обзоры</category>
+      <description>Intergalactic Defenders: актуальная цена (140.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.</description>
+    </item>
+    <item>
+      <title>Warstead – стратегия строительства и тактики</title>
       <link>https://one1game.org/archive/warstead-5285650</link>
       <guid isPermaLink="true">https://one1game.org/archive/warstead-5285650</guid>
       <pubDate>Sat, 14 Nov 2026 12:00:00 -0000</pubDate>
       <category>Обзоры</category>
-      <description>Warstead: актуальная цена (1600.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.</description>
+      <description>Warstead объединяет строительство поселений, управление ресурсами и тактические бои в реальном времени. Игра в разработке, поддерживает сетевые партии и</description>
     </item>
     <item>
-      <title>Rosaline: The Dragon Girl: цена, отзывы и статистика игроков</title>
+      <title>Rosaline: The Dragon Girl — обзор</title>
       <link>https://one1game.org/archive/rosaline-the-dragon-girl-5405940</link>
       <guid isPermaLink="true">https://one1game.org/archive/rosaline-the-dragon-girl-5405940</guid>
       <pubDate>Sat, 14 Nov 2026 12:00:00 -0000</pubDate>
       <category>Обзоры</category>
-      <description>Rosaline: The Dragon Girl: актуальная цена (171.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.</description>
+      <description>Ролевой экшн Rosaline: The Dragon Girl рассказывает о девушке, получившей силы дракона, её путешествии по Артолии и борьбе с тёмным врагом, который</description>
     </item>
     <item>
-      <title>PingPongDart: цена, отзывы и статистика игроков</title>
+      <title>PingPongDart — казуальная спортивная стратегия</title>
       <link>https://one1game.org/archive/pingpongdart-4922860</link>
       <guid isPermaLink="true">https://one1game.org/archive/pingpongdart-4922860</guid>
       <pubDate>Sat, 14 Nov 2026 12:00:00 -0000</pubDate>
       <category>Обзоры</category>
-      <description>PingPongDart: актуальная цена (240.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.</description>
+      <description>PingPongDart – оригинальная смесь настольного тенниса и дартса. Точная физика, режимы для одного и до четырёх игроков, подходит подросткам и любителям</description>
     </item>
     <item>
-      <title>FINAL COUNT: цена, отзывы и статистика игроков</title>
+      <title>FINAL COUNT — инди‑экшен с элементами стратегии</title>
       <link>https://one1game.org/archive/final-count-5491440</link>
       <guid isPermaLink="true">https://one1game.org/archive/final-count-5491440</guid>
       <pubDate>Sat, 14 Nov 2026 12:00:00 -0000</pubDate>
       <category>Обзоры</category>
-      <description>FINAL COUNT: актуальная цена (445.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.</description>
+      <description>FINAL COUNT — атмосферный инди‑экшен, где вам предстоит управлять телефоном, сканировать коробки и выживать в ночных сменах на туманном складе. Подойдёт</description>
     </item>
     <item>
-      <title>Алхедум: цена, отзывы и статистика игроков</title>
+      <title>Алхедум — инди‑стратегия с алхимией</title>
       <link>https://one1game.org/archive/alhedum-2408840</link>
       <guid isPermaLink="true">https://one1game.org/archive/alhedum-2408840</guid>
       <pubDate>Sat, 14 Nov 2026 12:00:00 -0000</pubDate>
       <category>Обзоры</category>
-      <description>Алхедум: актуальная цена (160.25 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.</description>
+      <description>Алхедум — уникальный roguelite‑симулятор алхимии от первого лица. Игроку предстоит в темнице лорда готовить зелья, комбинировать ингредиенты и решать,</description>
     </item>
     <item>
-      <title>CHUM Fishing: цена, отзывы и статистика игроков</title>
+      <title>CHUM Fishing — кооперативный хоррор о рыбалке</title>
       <link>https://one1game.org/archive/chum-fishing-5011760</link>
       <guid isPermaLink="true">https://one1game.org/archive/chum-fishing-5011760</guid>
       <pubDate>Sat, 14 Nov 2026 12:00:00 -0000</pubDate>
       <category>Обзоры</category>
-      <description>CHUM Fishing: актуальная цена (165.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.</description>
+      <description>Мультиплеерный хоррор‑кооператив «CHUM Fishing» предлагает игрокам в роли инопланетных смотрителей ловить странных рыб, чтобы накормить таинственное</description>
     </item>
     <item>
       <title>Pot O' Gnomes: цена, отзывы и статистика игроков</title>
@@ -66,268 +306,28 @@
       <description>Pot O' Gnomes: актуальная цена (Бесплатно), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.</description>
     </item>
     <item>
-      <title>Door Code: цена, отзывы и статистика игроков</title>
+      <title>Door Code – приключенческая головоломка от</title>
       <link>https://one1game.org/archive/door-code-4951770</link>
       <guid isPermaLink="true">https://one1game.org/archive/door-code-4951770</guid>
       <pubDate>Sat, 14 Nov 2026 12:00:00 -0000</pubDate>
       <category>Обзоры</category>
-      <description>Door Code: актуальная цена (136.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.</description>
+      <description>Door Code – уникальная инди-головоломка, где каждое слово, собранное из панелей, меняет пространство за дверью. Игра проверит ваше воображение и</description>
     </item>
     <item>
-      <title>奥术棋域: цена, отзывы и статистика игроков</title>
+      <title>奥术棋域 — тактическая стратегическая игра</title>
       <link>https://one1game.org/archive/-5403440</link>
       <guid isPermaLink="true">https://one1game.org/archive/-5403440</guid>
       <pubDate>Sat, 14 Nov 2026 12:00:00 -0000</pubDate>
       <category>Обзоры</category>
-      <description>奥术棋域: актуальная цена (Бесплатно), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.</description>
+      <description>奥术棋域 – бесплатная онлайн‑стратегия 1 на 1, где шахматные ходы сочетаются со сборкой колоды. Управляйте фигурами картами, захватывайте сундуки и побеждайте</description>
     </item>
     <item>
-      <title>Livingston County: цена, отзывы и статистика игроков</title>
+      <title>Livingston County — зомби‑выживание в изометрическом мире</title>
       <link>https://one1game.org/archive/livingston-county-5456790</link>
       <guid isPermaLink="true">https://one1game.org/archive/livingston-county-5456790</guid>
       <pubDate>Sat, 14 Nov 2026 12:00:00 -0000</pubDate>
       <category>Обзоры</category>
-      <description>Livingston County: актуальная цена (445.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.</description>
-    </item>
-    <item>
-      <title>Lastrip: цена, отзывы и статистика игроков</title>
-      <link>https://one1game.org/archive/lastrip-4632250</link>
-      <guid isPermaLink="true">https://one1game.org/archive/lastrip-4632250</guid>
-      <pubDate>Sat, 14 Nov 2026 12:00:00 -0000</pubDate>
-      <category>Обзоры</category>
-      <description>Lastrip: актуальная цена (220.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.</description>
-    </item>
-    <item>
-      <title>Conglomerate: цена, отзывы и статистика игроков</title>
-      <link>https://one1game.org/archive/conglomerate-4877650</link>
-      <guid isPermaLink="true">https://one1game.org/archive/conglomerate-4877650</guid>
-      <pubDate>Sat, 14 Nov 2026 12:00:00 -0000</pubDate>
-      <category>Обзоры</category>
-      <description>Conglomerate: актуальная цена (232.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.</description>
-    </item>
-    <item>
-      <title>Territory Idle Defense: цена, отзывы и статистика игроков</title>
-      <link>https://one1game.org/archive/territory-idle-defense-5177230</link>
-      <guid isPermaLink="true">https://one1game.org/archive/territory-idle-defense-5177230</guid>
-      <pubDate>Sat, 14 Nov 2026 12:00:00 -0000</pubDate>
-      <category>Обзоры</category>
-      <description>Territory Idle Defense: актуальная цена (372.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.</description>
-    </item>
-    <item>
-      <title>Duckstep: цена, отзывы и статистика игроков</title>
-      <link>https://one1game.org/archive/duckstep-5183960</link>
-      <guid isPermaLink="true">https://one1game.org/archive/duckstep-5183960</guid>
-      <pubDate>Sat, 14 Nov 2026 12:00:00 -0000</pubDate>
-      <category>Обзоры</category>
-      <description>Duckstep: актуальная цена (204.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.</description>
-    </item>
-    <item>
-      <title>Monster Girl Tactics: Oubliette: цена, отзывы и статистика игроков</title>
-      <link>https://one1game.org/archive/monster-girl-tactics-oubliette-4960970</link>
-      <guid isPermaLink="true">https://one1game.org/archive/monster-girl-tactics-oubliette-4960970</guid>
-      <pubDate>Sat, 14 Nov 2026 12:00:00 -0000</pubDate>
-      <category>Обзоры</category>
-      <description>Monster Girl Tactics: Oubliette: актуальная цена (699.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.</description>
-    </item>
-    <item>
-      <title>CARRRDS: цена, отзывы и статистика игроков</title>
-      <link>https://one1game.org/archive/carrrds-4675790</link>
-      <guid isPermaLink="true">https://one1game.org/archive/carrrds-4675790</guid>
-      <pubDate>Sat, 14 Nov 2026 12:00:00 -0000</pubDate>
-      <category>Обзоры</category>
-      <description>CARRRDS: актуальная цена (288.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.</description>
-    </item>
-    <item>
-      <title>Facial Expression Variety Show: цена, отзывы и статистика игроков</title>
-      <link>https://one1game.org/archive/facial-expression-variety-show-5473160</link>
-      <guid isPermaLink="true">https://one1game.org/archive/facial-expression-variety-show-5473160</guid>
-      <pubDate>Sat, 14 Nov 2026 12:00:00 -0000</pubDate>
-      <category>Обзоры</category>
-      <description>Facial Expression Variety Show: актуальная цена (271.51 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.</description>
-    </item>
-    <item>
-      <title>Ravenford: The Last Raven Warden: цена, отзывы и статистика игроков</title>
-      <link>https://one1game.org/archive/ravenford-the-last-raven-warden-5488980</link>
-      <guid isPermaLink="true">https://one1game.org/archive/ravenford-the-last-raven-warden-5488980</guid>
-      <pubDate>Sat, 14 Nov 2026 12:00:00 -0000</pubDate>
-      <category>Обзоры</category>
-      <description>Ravenford: The Last Raven Warden: актуальная цена (147.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.</description>
-    </item>
-    <item>
-      <title>Race on Stream!: цена, отзывы и статистика игроков</title>
-      <link>https://one1game.org/archive/race-on-stream-5317080</link>
-      <guid isPermaLink="true">https://one1game.org/archive/race-on-stream-5317080</guid>
-      <pubDate>Sat, 14 Nov 2026 12:00:00 -0000</pubDate>
-      <category>Обзоры</category>
-      <description>Race on Stream!: актуальная цена (102.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.</description>
-    </item>
-    <item>
-      <title>Астральный охотник: Возвращение домой: цена, отзывы и статистика игроков</title>
-      <link>https://one1game.org/archive/astralnyy-ohotnik-vozvraschenie-domoy-3540610</link>
-      <guid isPermaLink="true">https://one1game.org/archive/astralnyy-ohotnik-vozvraschenie-domoy-3540610</guid>
-      <pubDate>Sat, 14 Nov 2026 12:00:00 -0000</pubDate>
-      <category>Обзоры</category>
-      <description>Астральный охотник: Возвращение домой: актуальная цена (336.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.</description>
-    </item>
-    <item>
-      <title>Flush Draw: цена, отзывы и статистика игроков</title>
-      <link>https://one1game.org/archive/flush-draw-5193390</link>
-      <guid isPermaLink="true">https://one1game.org/archive/flush-draw-5193390</guid>
-      <pubDate>Sat, 14 Nov 2026 12:00:00 -0000</pubDate>
-      <category>Обзоры</category>
-      <description>Flush Draw: актуальная цена (112.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.</description>
-    </item>
-    <item>
-      <title>Chronicle Hands: цена, отзывы и статистика игроков</title>
-      <link>https://one1game.org/archive/chronicle-hands-5336540</link>
-      <guid isPermaLink="true">https://one1game.org/archive/chronicle-hands-5336540</guid>
-      <pubDate>Sat, 14 Nov 2026 12:00:00 -0000</pubDate>
-      <category>Обзоры</category>
-      <description>Chronicle Hands: актуальная цена (301.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.</description>
-    </item>
-    <item>
-      <title>World of Stick: цена, отзывы и статистика игроков</title>
-      <link>https://one1game.org/archive/world-of-stick-5487820</link>
-      <guid isPermaLink="true">https://one1game.org/archive/world-of-stick-5487820</guid>
-      <pubDate>Sat, 14 Nov 2026 12:00:00 -0000</pubDate>
-      <category>Обзоры</category>
-      <description>World of Stick: актуальная цена (Бесплатно), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.</description>
-    </item>
-    <item>
-      <title>Monster Girls Dice Board: цена, отзывы и статистика игроков</title>
-      <link>https://one1game.org/archive/monster-girls-dice-board-4382510</link>
-      <guid isPermaLink="true">https://one1game.org/archive/monster-girls-dice-board-4382510</guid>
-      <pubDate>Sat, 14 Nov 2026 12:00:00 -0000</pubDate>
-      <category>Обзоры</category>
-      <description>Monster Girls Dice Board: актуальная цена (517.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.</description>
-    </item>
-    <item>
-      <title>デモンズゲート with サバゲでGo!: цена, отзывы и статистика игроков</title>
-      <link>https://one1game.org/archive/with-go-4369110</link>
-      <guid isPermaLink="true">https://one1game.org/archive/with-go-4369110</guid>
-      <pubDate>Sat, 14 Nov 2026 12:00:00 -0000</pubDate>
-      <category>Обзоры</category>
-      <description>デモンズゲート with サバゲでGo!: актуальная цена (Бесплатно), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.</description>
-    </item>
-    <item>
-      <title>无尽战斗：放置与构筑: цена, отзывы и статистика игроков</title>
-      <link>https://one1game.org/archive/-5178010</link>
-      <guid isPermaLink="true">https://one1game.org/archive/-5178010</guid>
-      <pubDate>Sat, 14 Nov 2026 12:00:00 -0000</pubDate>
-      <category>Обзоры</category>
-      <description>无尽战斗：放置与构筑: актуальная цена (160.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.</description>
-    </item>
-    <item>
-      <title>谋定三国：卡牌单机版: цена, отзывы и статистика игроков</title>
-      <link>https://one1game.org/archive/-5318250</link>
-      <guid isPermaLink="true">https://one1game.org/archive/-5318250</guid>
-      <pubDate>Sat, 14 Nov 2026 12:00:00 -0000</pubDate>
-      <category>Обзоры</category>
-      <description>谋定三国：卡牌单机版: актуальная цена (324.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.</description>
-    </item>
-    <item>
-      <title>The Intruder: цена, отзывы и статистика игроков</title>
-      <link>https://one1game.org/archive/the-intruder-2054440</link>
-      <guid isPermaLink="true">https://one1game.org/archive/the-intruder-2054440</guid>
-      <pubDate>Sat, 14 Nov 2026 12:00:00 -0000</pubDate>
-      <category>Обзоры</category>
-      <description>The Intruder: актуальная цена (117.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.</description>
-    </item>
-    <item>
-      <title>Bandits are Coming: цена, отзывы и статистика игроков</title>
-      <link>https://one1game.org/archive/bandits-are-coming-5441690</link>
-      <guid isPermaLink="true">https://one1game.org/archive/bandits-are-coming-5441690</guid>
-      <pubDate>Sat, 14 Nov 2026 12:00:00 -0000</pubDate>
-      <category>Обзоры</category>
-      <description>Bandits are Coming: актуальная цена (552.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.</description>
-    </item>
-    <item>
-      <title>Deja-Vu of the Dead: цена, отзывы и статистика игроков</title>
-      <link>https://one1game.org/archive/deja-vu-of-the-dead-3178040</link>
-      <guid isPermaLink="true">https://one1game.org/archive/deja-vu-of-the-dead-3178040</guid>
-      <pubDate>Sat, 14 Nov 2026 12:00:00 -0000</pubDate>
-      <category>Обзоры</category>
-      <description>Deja-Vu of the Dead: актуальная цена (712.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.</description>
-    </item>
-    <item>
-      <title>Arma 3: цена, отзывы и статистика игроков</title>
-      <link>https://one1game.org/archive/arma-3-107410</link>
-      <guid isPermaLink="true">https://one1game.org/archive/arma-3-107410</guid>
-      <pubDate>Fri, 13 Nov 2026 12:00:00 -0000</pubDate>
-      <category>Обзоры</category>
-      <description>Arma 3: актуальная цена (1690.00 RUB), 91% положительных отзывов в Steam, статистика владельцев (5,000,000 – 10,000,000). Данные обновляются автоматически.</description>
-    </item>
-    <item>
-      <title>Maze Echo — психологический хоррор и визуальная новелла</title>
-      <link>https://one1game.org/archive/maze-echo-5379860</link>
-      <guid isPermaLink="true">https://one1game.org/archive/maze-echo-5379860</guid>
-      <pubDate>Fri, 13 Nov 2026 12:00:00 -0000</pubDate>
-      <category>Обзоры</category>
-      <description>Maze Echo — бесплатная инди-игра‑визуальная новелла в жанре психологического хоррора. Исследуйте санаторий и его зеркальный мир, восстанавливайте забытые</description>
-    </item>
-    <item>
-      <title>Миллион кубов — приключенческий лабиринт</title>
-      <link>https://one1game.org/archive/million-kubov-4553880</link>
-      <guid isPermaLink="true">https://one1game.org/archive/million-kubov-4553880</guid>
-      <pubDate>Fri, 13 Nov 2026 12:00:00 -0000</pubDate>
-      <category>Обзоры</category>
-      <description>Миллион кубов — многопользовательская приключенческая игра‑инди, где до 30 игроков исследуют лабиринт из миллионов комнат, ищут подсказки и пытаются найти</description>
-    </item>
-    <item>
-      <title>Vroomity Loops — казуальная головоломка с автотематикой</title>
-      <link>https://one1game.org/archive/vroomity-loops-4631070</link>
-      <guid isPermaLink="true">https://one1game.org/archive/vroomity-loops-4631070</guid>
-      <pubDate>Fri, 13 Nov 2026 12:00:00 -0000</pubDate>
-      <category>Обзоры</category>
-      <description>Vroomity Loops — яркая 2D‑головоломка в стиле казуального инди, где нужно управлять хаосом на кольцевой развязке, решая задачи и планируя движения. Игра</description>
-    </item>
-    <item>
-      <title>来吃！小兔面包房 – обзор</title>
-      <link>https://one1game.org/archive/-4188070</link>
-      <guid isPermaLink="true">https://one1game.org/archive/-4188070</guid>
-      <pubDate>Fri, 13 Nov 2026 12:00:00 -0000</pubDate>
-      <category>Обзоры</category>
-      <description>Игра-симулятор пекарни, где вы начинаете с одной печеньки и простого стола, развивая бизнес, нанимая персонал и раскрывая истории милых зайцев‑клиентов.</description>
-    </item>
-    <item>
-      <title>龙晶 Draconite — обзор</title>
-      <link>https://one1game.org/archive/draconite-4337080</link>
-      <guid isPermaLink="true">https://one1game.org/archive/draconite-4337080</guid>
-      <pubDate>Fri, 13 Nov 2026 12:00:00 -0000</pubDate>
-      <category>Обзоры</category>
-      <description>Draconite — приключенческая инди-игра в стиле фурри с боковым скроллингом. Вы играете за сотрудника службы безопасности института, раскрывающего скрытые</description>
-    </item>
-    <item>
-      <title>Проклятие похотливого призрака – обзор</title>
-      <link>https://one1game.org/archive/proklyatie-pohotlivogo-prizraka-5207860</link>
-      <guid isPermaLink="true">https://one1game.org/archive/proklyatie-pohotlivogo-prizraka-5207860</guid>
-      <pubDate>Fri, 13 Nov 2026 12:00:00 -0000</pubDate>
-      <category>Обзоры</category>
-      <description>Игра «Проклятие похотливого призрака» – казуальный симулятор с элементами интерактивных историй. Подойдёт тем, кто ищет необычную атмосферу и</description>
-    </item>
-    <item>
-      <title>Heroine's Battle Arena: The Colosseum of Humiliation: цена, отзывы и статистика игроков</title>
-      <link>https://one1game.org/archive/heroine-s-battle-arena-the-colosseum-of-humiliation-4628830</link>
-      <guid isPermaLink="true">https://one1game.org/archive/heroine-s-battle-arena-the-colosseum-of-humiliation-4628830</guid>
-      <pubDate>Fri, 13 Nov 2026 12:00:00 -0000</pubDate>
-      <category>Обзоры</category>
-      <description>Heroine's Battle Arena: The Colosseum of Humiliation: актуальная цена (531.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.</description>
-    </item>
-    <item>
-      <title>Goblin And Glory – казуальная стратегия</title>
-      <link>https://one1game.org/archive/goblin-and-glory-5361230</link>
-      <guid isPermaLink="true">https://one1game.org/archive/goblin-and-glory-5361230</guid>
-      <pubDate>Fri, 13 Nov 2026 12:00:00 -0000</pubDate>
-      <category>Обзоры</category>
-      <description>Goblin And Glory – пиксельный кликер‑стратегия, где вы собираете отряд гоблинов, улучшаете мечи и сражаетесь в десяти подземельях с авто‑атаками и</description>
-    </item>
-    <item>
-      <title>Altertum – исследовательская RPG в стиле инди</title>
-      <link>https://one1game.org/archive/altertum-5240510</link>
-      <guid isPermaLink="true">https://one1game.org/archive/altertum-5240510</guid>
-      <pubDate>Fri, 13 Nov 2026 12:00:00 -0000</pubDate>
-      <category>Обзоры</category>
-      <description>Altertum – ролевая инди-игра, где игрок свободно исследует поверхность и подземелья, собирает материалы, крафтит снаряжение и обустраивает дом, раскрывая</description>
+      <description>Изометрический зомби‑симулятор от инди‑студии: исследуйте разрушенный город, собирайте ресурсы, укрепляйте убежище и спасайте выживших в условиях</description>
     </item>
   </channel>
 </rss>
