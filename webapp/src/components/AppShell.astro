@@ -5,9 +5,10 @@ import catalog from '../data/catalog.json';
 import navigator from '../data/navigator.json';
 import oboi from '../data/oboi.json';
 import movies from '../data/movies.json';
+import ai from '../data/ai.json';
 import { historyByDay } from '../data/gaming-history';
 
-type Mode = 'news' | 'music' | 'nav' | 'oboi' | 'movie';
+type Mode = 'news' | 'music' | 'nav' | 'oboi' | 'movie' | 'ai';
 
 interface Props {
   mode?: Mode;
@@ -53,6 +54,39 @@ const showMusic = variant === 'app' || (variant === 'section' && mode === 'music
 const showNav = variant === 'app' || (variant === 'section' && mode === 'nav');
 const showOboi = variant === 'app' || (variant === 'section' && mode === 'oboi');
 const showMovies = variant === 'app' || (variant === 'section' && mode === 'movie');
+// Раздел ИИ живёт отдельной страницей: данных много, главную не утяжеляем.
+const showAi = mode === 'ai';
+
+// ── ИИ: подкатегории и оформление карточек ────────────────────────
+const countBy = (values: string[]) => {
+  const map = new Map<string, number>();
+  for (const value of values) map.set(value, (map.get(value) || 0) + 1);
+  return Array.from(map, ([label, count]) => ({ label, count }));
+};
+
+const aiNewsCats = countBy(ai.news.map((item) => item.categoryRu));
+const aiToolCats = countBy(ai.tools.map((item) => item.categoryRu));
+// Тон обложки: стабильный цвет по рубрике — лента выглядит собранной,
+// а не пёстрой, и ни одной внешней картинки.
+const AI_TONES = ['Индустрия', 'Инструменты', 'Исследования', 'Стартапы', 'Регулирование', 'Модели', 'Опенсорс'];
+const aiTone = (label: string) => {
+  const index = AI_TONES.indexOf(label);
+  return index < 0 ? 0 : index % 6;
+};
+const aiTop = ai.models[0];
+const aiMaxTokens = aiTop?.tokens || 1;
+const aiPct = (tokens: number) => Math.max(4, Math.round((tokens / aiMaxTokens) * 100));
+const aiInitials = (name: string) =>
+  name
+    .replace(/[^A-Za-zА-Яа-яЁё0-9 ]/g, ' ')
+    .split(/\s+/)
+    .filter(Boolean)
+    .slice(0, 2)
+    .map((word) => word[0])
+    .join('')
+    .toUpperCase();
+const aiPrice = (value: string) => (/free/i.test(value) ? 'Бесплатно' : value);
+const aiFreeCount = ai.free.length;
 
 const catLabel = oboi.categories.find((c) => c.key === cat)?.label || cat;
 const navKey = ['giveaways', 'deals', 'lowend', 'random'].includes(cat) ? cat : '';
@@ -70,7 +104,9 @@ const h1 = postData
           ? cat && cat !== 'all' ? `Обои: ${catLabel}` : 'Обои для рабочего стола и телефона'
           : mode === 'movie'
             ? 'Фильмы по играм: экранизации и новинки'
-            : 'One1Game — новости игр, гайды, обзоры и обои';
+            : mode === 'ai'
+              ? 'Искусственный интеллект: новости, модели и инструменты'
+              : 'One1Game — новости игр, гайды, обзоры и обои';
 
 const catalogMeta = JSON.stringify(
   items.map(({ slug, title, excerpt, category, date, read, image }) => ({
@@ -115,7 +151,9 @@ const listTitle =
         ? 'Обои и подборки'
         : mode === 'movie'
           ? 'Фильмы по играм'
-          : 'Свежие материалы';
+          : mode === 'ai'
+            ? 'AI Pulse'
+            : 'Свежие материалы';
 
 const plural = (n: number, one: string, few: string, many: string) => {
   const m10 = n % 10;
@@ -265,11 +303,13 @@ const genres = [
       <p class="ticker__news" id="ticker-news" data-day={tickerDay}>
         <span class="ticker__label">История в мире игр сегодня</span>
         <span class="ticker__year" id="ticker-year">{tickerEvent?.y}</span>
-        <span
-          class="ticker__text"
-          id="ticker-text"
-          title={tickerEvent ? `${tickerEvent.y} · ${tickerEvent.t} — ${tickerEvent.d}` : 'Событие этого дня в истории игровой индустрии'}
-        >{tickerEvent ? tickerEvent.d : 'Событие этого дня в истории игровой индустрии'}</span>
+        <span class="ticker__viewport" id="ticker-viewport">
+          <span
+            class="ticker__text"
+            id="ticker-text"
+            title={tickerEvent ? `${tickerEvent.y} · ${tickerEvent.t} — ${tickerEvent.d}` : 'Событие этого дня в истории игровой индустрии'}
+          >{tickerEvent ? tickerEvent.d : 'Событие этого дня в истории игровой индустрии'}</span>
+        </span>
       </p>
       <p class="ticker__btc" id="ticker-btc" hidden>
         <span class="ticker__label">BTC</span>
@@ -283,6 +323,7 @@ const genres = [
   <nav class="modes" id="modes" aria-label="Тип контента">
     <div class="wrap modes-row">
       <a class="mode" href={`${base}/`} data-mode="news" aria-pressed={String(mode === 'news')} aria-current={mode === 'news' ? 'page' : undefined}>Новости</a>
+      <a class="mode" href={`${base}/ai/`} data-mode="ai" aria-pressed={String(mode === 'ai')} aria-current={mode === 'ai' ? 'page' : undefined} aria-label="Искусственный интеллект">ИИ</a>
       <a class="mode" href={`${base}/music/`} data-mode="music" aria-pressed={String(mode === 'music')} aria-current={mode === 'music' ? 'page' : undefined}>Музыка</a>
       <a class="mode" href={`${base}/nav/`} data-mode="nav" aria-pressed={String(mode === 'nav')} aria-current={mode === 'nav' ? 'page' : undefined}>Игровой навигатор</a>
       <a class="mode" href={`${base}/oboi/`} data-mode="oboi" aria-pressed={String(mode === 'oboi')} aria-current={mode === 'oboi' ? 'page' : undefined}>Обои</a>
@@ -644,6 +685,258 @@ const genres = [
       ))}
     </section>
 
+    <!-- ИИ: AI Pulse — новости, рейтинг моделей, инструменты и бесплатные нейросети. -->
+    {showAi && (
+    <section class="ai" id="ai-view" aria-label="Искусственный интеллект">
+      <header class="ai-hero">
+        <div class="ai-hero__main">
+          <p class="ai-hero__kicker">AI Pulse · обновляется каждый день</p>
+          <h2 class="ai-hero__title">ИИ без шума: новости, рейтинг моделей и инструменты</h2>
+          <p class="ai-hero__lead">
+            Свежая лента индустрии, рейтинг моделей по реальному объёму токенов,
+            инструменты под задачу и полный список бесплатных нейросетей — без
+            регистрации и ключей. Внешние ссылки ведут только к первоисточникам.
+          </p>
+          <p class="ai-hero__meta">
+            <span>Обновлено {ai.updatedLabel}</span>
+            <span>whatstrending.ai · OpenRouter · g4f</span>
+          </p>
+        </div>
+        <dl class="ai-stats">
+          <div><dt>Новости</dt><dd>{ai.news.length}</dd></div>
+          <div><dt>Модели</dt><dd>{ai.models.length}</dd></div>
+          <div><dt>Инструменты</dt><dd>{ai.tools.length}</dd></div>
+          <div><dt>Бесплатные ИИ</dt><dd>{aiFreeCount}</dd></div>
+        </dl>
+      </header>
+
+          <!-- Обзор: самое важное на одном экране. -->
+          <div class="ai-panel" data-ai-panel="all">
+            <div class="ai-lead-grid">
+              <div class="ai-col ai-col--news">
+                <h3 class="ai-h3">Главное сейчас</h3>
+                <ol class="ai-headlines">
+                  {ai.news.slice(0, 4).map((item) => (
+                    <li>
+                      <a href={item.link} target="_blank" rel="nofollow noopener">
+                        <span class="ai-headlines__cat">{item.categoryRu}</span>
+                        <span class="ai-headlines__title">{item.title}</span>
+                        <span class="ai-headlines__meta">{item.source} · {item.dateLabel}</span>
+                      </a>
+                    </li>
+                  ))}
+                </ol>
+                <button class="ai-more" type="button" data-ai-go="news">Все новости →</button>
+              </div>
+
+              <div class="ai-col">
+                <h3 class="ai-h3">Топ моделей</h3>
+                <ol class="ai-top">
+                  {ai.models.slice(0, 5).map((model) => (
+                    <li>
+                      <span class="ai-top__rank">{model.rank}</span>
+                      <span class="ai-top__body">
+                        <span class="ai-top__name">{model.name}</span>
+                        <span class="ai-top__meta">{model.provider} · {model.categoryRu}</span>
+                        <span class="ai-top__bar"><i style={`width:${aiPct(model.tokens)}%`}></i></span>
+                      </span>
+                      <span class="ai-top__score">{model.scoreDisplay}</span>
+                    </li>
+                  ))}
+                </ol>
+                <button class="ai-more" type="button" data-ai-go="models">Все модели и цены →</button>
+              </div>
+
+              <div class="ai-col">
+                <h3 class="ai-h3">Читают сейчас</h3>
+                <ol class="ai-read ai-read--mini">
+                  {ai.mostRead.slice(0, 4).map((row) => (
+                    <li>
+                      <a
+                        href={row.link || '#'}
+                        target={row.link ? '_blank' : undefined}
+                        rel={row.link ? 'nofollow noopener' : undefined}
+                      >
+                        <span class="ai-read__views">{row.views.toLocaleString('ru-RU')}</span>
+                        <span class="ai-read__title">{row.title}</span>
+                      </a>
+                    </li>
+                  ))}
+                </ol>
+                <button class="ai-more" type="button" data-ai-go="read">Весь топ →</button>
+              </div>
+            </div>
+
+            <h3 class="ai-h3">Инструменты под задачу</h3>
+            <div class="ai-tools">
+              {ai.tools.slice(0, 6).map((tool) => (
+                <a class="ai-tool" href={tool.url} target="_blank" rel="nofollow noopener" data-tone={aiTone(tool.categoryRu)}>
+                  <span class="ai-tool__logo">{aiInitials(tool.name)}</span>
+                  <span class="ai-tool__body">
+                    <span class="ai-tool__name">{tool.name}</span>
+                    <span class="ai-tool__tag">{tool.tagline}</span>
+                    <span class="ai-tool__meta">{tool.categoryRu} · {tool.pricing}</span>
+                  </span>
+                </a>
+              ))}
+            </div>
+            <button class="ai-more" type="button" data-ai-go="tools">Все инструменты →</button>
+          </div>
+
+          <!-- Новости: карточки с рубриками и первоисточником. -->
+          <div class="ai-panel" data-ai-panel="news" hidden>
+            <div class="ai-subchips" id="ai-news-chips" data-ai-chips="news" role="group" aria-label="Рубрики новостей ИИ">
+              <button class="ai-subchip" type="button" data-cat="all" aria-pressed="true">Все · {ai.news.length}</button>
+              {aiNewsCats.map((category) => (
+                <button class="ai-subchip" type="button" data-cat={category.label} aria-pressed="false">
+                  {category.label} · {category.count}
+                </button>
+              ))}
+            </div>
+            <div class="ai-news-grid" id="ai-news-grid">
+              {ai.news.map((item, index) => (
+                <a
+                  class="ai-news"
+                  href={item.link}
+                  target="_blank"
+                  rel="nofollow noopener"
+                  data-ai-cat={item.categoryRu}
+                  data-tone={index % 6}
+                  data-hay={`${item.title} ${item.summary} ${item.source}`.toLowerCase()}
+                >
+                  <span class="ai-news__cover">
+                    <span class="ai-news__grid" aria-hidden="true"></span>
+                    <span class="ai-news__source">{item.source}</span>
+                    <span class="ai-news__date">{item.dateLabel}</span>
+                    <span class="ai-news__cat">{item.categoryRu}</span>
+                  </span>
+                  <span class="ai-news__body">
+                    <span class="ai-news__title">{item.title}</span>
+                    <span class="ai-news__summary">{item.summary}</span>
+                    <span class="ai-news__go">Читать в {item.source} ↗</span>
+                  </span>
+                </a>
+              ))}
+            </div>
+          </div>
+
+          <!-- Модели: объём токенов, цены и контекст. -->
+          <div class="ai-panel" data-ai-panel="models" hidden>
+            <p class="ai-lead">
+              Рейтинг по реальному объёму токенов через OpenRouter за последние
+              сутки. Цена указана за миллион токенов: вход / выход.
+            </p>
+            <div class="ai-models">
+              {ai.models.map((model) => (
+                <article class="ai-model" data-hay={`${model.name} ${model.provider} ${model.categoryRu}`.toLowerCase()}>
+                  <span class="ai-model__rank">{model.rank}</span>
+                  <div class="ai-model__main">
+                    <p class="ai-model__name">{model.name}</p>
+                    <p class="ai-model__provider">{model.provider} · {model.categoryRu}</p>
+                    <span class="ai-model__bar" aria-hidden="true"><i style={`width:${aiPct(model.tokens)}%`}></i></span>
+                  </div>
+                  <dl class="ai-model__facts">
+                    <div><dt>Токены</dt><dd>{model.scoreDisplay}</dd></div>
+                    <div><dt>Запросы</dt><dd>{model.requests.toLocaleString('ru-RU')}</dd></div>
+                    <div><dt>$/1M</dt><dd>{aiPrice(model.pricing)}</dd></div>
+                    <div><dt>Контекст</dt><dd>{model.context}</dd></div>
+                  </dl>
+                  <a
+                    class="ai-model__link"
+                    href={`https://openrouter.ai/${model.or}`}
+                    target="_blank"
+                    rel="nofollow noopener"
+                  >OpenRouter ↗</a>
+                </article>
+              ))}
+            </div>
+          </div>
+
+          <!-- Инструменты: категория, тариф и ссылка на сервис. -->
+          <div class="ai-panel" data-ai-panel="tools" hidden>
+            <div class="ai-subchips" id="ai-tool-chips" data-ai-chips="tools" role="group" aria-label="Категории ИИ-инструментов">
+              <button class="ai-subchip" type="button" data-cat="all" aria-pressed="true">Все · {ai.tools.length}</button>
+              {aiToolCats.map((category) => (
+                <button class="ai-subchip" type="button" data-cat={category.label} aria-pressed="false">
+                  {category.label} · {category.count}
+                </button>
+              ))}
+            </div>
+            <div class="ai-tools-grid" id="ai-tools-grid">
+              {ai.tools.map((tool) => (
+                <a
+                  class="ai-tool"
+                  href={tool.url}
+                  target="_blank"
+                  rel="nofollow noopener"
+                  data-tool-cat={tool.categoryRu}
+                  data-tone={aiTone(tool.categoryRu)}
+                  data-hay={`${tool.name} ${tool.tagline} ${tool.categoryRu}`.toLowerCase()}
+                >
+                  <span class="ai-tool__logo">{aiInitials(tool.name)}</span>
+                  <span class="ai-tool__body">
+                    <span class="ai-tool__name">{tool.name}</span>
+                    <span class="ai-tool__tag">{tool.tagline}</span>
+                    <span class="ai-tool__meta">{tool.categoryRu} · {tool.pricing}</span>
+                  </span>
+                </a>
+              ))}
+            </div>
+          </div>
+
+          <!-- Бесплатные ИИ: каталог g4f, строка копируется в клиент. -->
+          <div class="ai-panel" data-ai-panel="free" hidden>
+            <p class="ai-lead">
+              Провайдеры и модели, которые отвечают без ключа и регистрации:
+              {aiFreeCount} вариантов из каталога g4f. Нажмите «копировать» —
+              получите строку «провайдер|модель|тип» для клиента.
+            </p>
+            <div class="ai-free">
+              <div class="ai-free__group">
+                <div class="ai-free__head">
+                  <span>Текстовые модели</span>
+                  <span>{aiFreeCount}</span>
+                </div>
+                <ul class="ai-free__list" id="ai-free-grid">
+                  {ai.free.map((row) => (
+                    <li class="ai-free__row" data-hay={`${row.provider} ${row.model}`.toLowerCase()}>
+                      <span class="ai-free__provider">{row.provider}</span>
+                      <span class="ai-free__model">{row.model}</span>
+                      <button
+                        class="ai-free__copy"
+                        type="button"
+                        data-copy={`${row.provider}|${row.model}|${row.type}`}
+                        aria-label={`Скопировать ${row.provider} ${row.model}`}
+                      >копировать</button>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <!-- Самое читаемое. -->
+          <div class="ai-panel" data-ai-panel="read" hidden>
+            <p class="ai-lead">Материалы, которые читают чаще всего на whatstrending.ai.</p>
+            <ol class="ai-read">
+              {ai.mostRead.map((row, index) => (
+                <li>
+                  <a
+                    href={row.link || '#'}
+                    target={row.link ? '_blank' : undefined}
+                    rel={row.link ? 'nofollow noopener' : undefined}
+                  >
+                    <span class="ai-read__views">{String(index + 1).padStart(2, '0')} · {row.views.toLocaleString('ru-RU')}</span>
+                    <span class="ai-read__title">{row.title}</span>
+                    <span class="ai-read__source">{row.source}</span>
+                  </a>
+                </li>
+              ))}
+            </ol>
+          </div>
+    </section>
+    )}
+
     <div class="empty" id="empty" hidden>
       Ничего не найдено. <button class="btn btn--ghost" id="reset" type="button" style="margin-left:8px">Сбросить</button>
     </div>
@@ -871,6 +1164,14 @@ const genres = [
         <button class="chip" type="button" data-cat={section.key} aria-pressed={String(activeCat === section.key)}>{section.label}</button>
       ))}
     </div>
+    <div class="wrap chips" data-chips="ai" hidden={mode !== 'ai'}>
+      <button class="chip" type="button" data-cat="all" aria-pressed={String(activeCat === 'all')}>Обзор</button>
+      <button class="chip" type="button" data-cat="news" aria-pressed={String(activeCat === 'news')}>Новости</button>
+      <button class="chip" type="button" data-cat="models" aria-pressed={String(activeCat === 'models')}>Модели</button>
+      <button class="chip" type="button" data-cat="tools" aria-pressed={String(activeCat === 'tools')}>Инструменты</button>
+      <button class="chip" type="button" data-cat="free" aria-pressed={String(activeCat === 'free')}>Бесплатные ИИ</button>
+      <button class="chip" type="button" data-cat="read" aria-pressed={String(activeCat === 'read')}>Читаемое</button>
+    </div>
   </nav>
 
   <!-- Мини-плеер: живёт над нижней панелью, пока играет трек. -->
@@ -897,6 +1198,8 @@ const genres = [
     // app — полноценное SPA; item/section — статические страницы, которые
     // этот же скрипт превращает в приложение. Разметка у них одна.
     const variant = document.body.dataset.variant || 'app';
+    // Заголовок главной нужен, чтобы вернуть его при клике по логотипу.
+    const homeTitle = document.title;
     const prePost = document.getElementById('reader')?.dataset.pre === '1';
     const preMovie = document.getElementById('movie-reader')?.dataset.pre === '1';
 
@@ -924,6 +1227,12 @@ const genres = [
     const oboiView = document.getElementById('oboi-view') as HTMLElement;
     const oboiGrid = document.getElementById('oboi-grid') as HTMLElement;
     const movieGrid = document.getElementById('movie-grid') as HTMLElement;
+    const aiView = document.getElementById('ai-view') as HTMLElement | null;
+    const aiPanels = Array.from(document.querySelectorAll<HTMLElement>('[data-ai-panel]'));
+    const aiNewsCards = Array.from(document.querySelectorAll<HTMLElement>('#ai-news-grid [data-ai-cat]'));
+    const aiToolCards = Array.from(document.querySelectorAll<HTMLElement>('#ai-tools-grid [data-tool-cat]'));
+    const aiNewsChips = document.getElementById('ai-news-chips');
+    const aiToolChips = document.getElementById('ai-tool-chips');
     const movieBlocks = Array.from(document.querySelectorAll<HTMLElement>('[data-movie-block]'));
     const movieCards = Array.from(document.querySelectorAll<HTMLElement>('[data-movie]'));
     const movieReader = document.getElementById('movie-reader') as HTMLElement;
@@ -944,6 +1253,7 @@ const genres = [
       nav: document.querySelector<HTMLElement>('[data-chips="nav"]')!,
       oboi: document.querySelector<HTMLElement>('[data-chips="oboi"]')!,
       movie: document.querySelector<HTMLElement>('[data-chips="movie"]')!,
+      ai: document.querySelector<HTMLElement>('[data-chips="ai"]')!,
     };
 
     const reader = document.getElementById('reader') as HTMLElement;
@@ -1046,7 +1356,7 @@ const genres = [
       seen: new Set<string>(),
     };
 
-    type Mode = 'news' | 'music' | 'nav' | 'oboi' | 'movie';
+    type Mode = 'news' | 'music' | 'nav' | 'oboi' | 'movie' | 'ai';
     let mode: Mode = 'news';
     let newsCat = 'all';
     let navCat = 'all';
@@ -1054,6 +1364,11 @@ const genres = [
     let movieCat = 'all';
     let movieCurrent = '';
     let current = '';
+
+    // ИИ: подразделы и фильтры внутри разделов.
+    let aiCat = 'all';
+    let aiNewsCat = 'all';
+    let aiToolCat = 'all';
 
     const fmtTime = (total: number) => {
       const s = Math.max(0, Math.round(total));
@@ -1069,6 +1384,7 @@ const genres = [
       if (mode === 'nav') return `${base}/nav/`;
       if (mode === 'oboi') return oboiCat && oboiCat !== 'all' ? `${base}/oboi/${oboiCat}/` : `${base}/oboi/`;
       if (mode === 'movie') return movieCurrent ? `${base}/movie/${movieCurrent}/` : `${base}/movie/`;
+      if (mode === 'ai') return `${base}/ai/`;
       if (current) return `${base}/news/${current}/`;
       return `${base}/`;
     }
@@ -1089,6 +1405,7 @@ const genres = [
       if (mode === 'nav' && navCat !== 'all') p.set('cat', navCat);
       if (mode === 'movie' && movieCat !== 'all') p.set('cat', movieCat);
       if (mode === 'oboi' && wallState.sort !== 'favorites') p.set('sort', wallState.sort);
+      if (mode === 'ai' && aiCat !== 'all') p.set('cat', aiCat);
       const q = input.value.trim();
       if (q) p.set('q', q);
       const qs = p.toString();
@@ -1108,6 +1425,7 @@ const genres = [
       if (seg[0] === 'music') return { mode: 'music', cat: params.get('cat') || '' };
       if (seg[0] === 'nav') return { mode: 'nav', cat: params.get('cat') || '' };
       if (seg[0] === 'oboi') return { mode: 'oboi', cat: seg[1] || '' };
+      if (seg[0] === 'ai') return { mode: 'ai', cat: params.get('cat') || '' };
       return { mode: 'news', cat: params.get('cat') || '' };
     }
 
@@ -1234,6 +1552,121 @@ const genres = [
       }
       applyNav();
       scrollTop();
+    }
+
+    // ── ИИ: подразделы, рубрики и копирование строк g4f ────────────
+    const AI_PANELS = ['all', 'news', 'models', 'tools', 'free', 'read'];
+    const aiModelsCount = document.querySelectorAll('.ai-model').length;
+    const aiFreeRows = document.querySelectorAll('.ai-free__row').length;
+    const aiReadCount = document.querySelectorAll('.ai-read:not(.ai-read--mini) > li').length;
+
+    function paintAiChips() {
+      for (const chip of chipsOf('ai')) {
+        chip.setAttribute('aria-pressed', String((chip.dataset.cat || 'all') === aiCat));
+      }
+      // Рубрики новостей и категории инструментов — второй уровень фильтров.
+      aiNewsChips?.querySelectorAll<HTMLButtonElement>('.ai-subchip').forEach((chip) => {
+        chip.setAttribute('aria-pressed', String((chip.dataset.cat || 'all') === aiNewsCat));
+      });
+      aiToolChips?.querySelectorAll<HTMLButtonElement>('.ai-subchip').forEach((chip) => {
+        chip.setAttribute('aria-pressed', String((chip.dataset.cat || 'all') === aiToolCat));
+      });
+    }
+
+    function applyAi(save = true) {
+      if (!AI_PANELS.includes(aiCat)) aiCat = 'all';
+      for (const panel of aiPanels) panel.hidden = panel.dataset.aiPanel !== aiCat;
+      paintAiChips();
+
+      const q = input.value.trim().toLowerCase();
+      let newsShown = 0;
+      for (const card of aiNewsCards) {
+        const ok =
+          (aiNewsCat === 'all' || card.dataset.aiCat === aiNewsCat) &&
+          (!q || (card.dataset.hay || '').includes(q));
+        card.hidden = !ok;
+        if (ok) newsShown++;
+      }
+
+      let toolsShown = 0;
+      for (const card of aiToolCards) {
+        const ok =
+          (aiToolCat === 'all' || card.dataset.toolCat === aiToolCat) &&
+          (!q || (card.dataset.hay || '').includes(q));
+        card.hidden = !ok;
+        if (ok) toolsShown++;
+      }
+
+      clear.hidden = !q;
+      empty.hidden = true;
+
+      if (aiCat === 'news') status.textContent = `${newsShown} из ${aiNewsCards.length} новостей`;
+      else if (aiCat === 'models') status.textContent = `${aiModelsCount} моделей · OpenRouter`;
+      else if (aiCat === 'tools') status.textContent = `${toolsShown} из ${aiToolCards.length} инструментов`;
+      else if (aiCat === 'free') status.textContent = `${aiFreeRows} моделей без ключа`;
+      else if (aiCat === 'read') status.textContent = `${aiReadCount} материалов в топе`;
+      else status.textContent = 'свежие данные';
+
+      if (save) saveUrl();
+    }
+
+    async function copyText(text: string) {
+      try {
+        if (navigator.clipboard?.writeText) {
+          await navigator.clipboard.writeText(text);
+          return true;
+        }
+      } catch {
+        // ниже — запасной путь для небезопасного контекста
+      }
+      const area = document.createElement('textarea');
+      area.value = text;
+      area.setAttribute('readonly', '');
+      area.style.cssText = 'position:fixed;top:0;left:0;opacity:0';
+      document.body.appendChild(area);
+      area.select();
+      let ok = false;
+      try {
+        ok = document.execCommand('copy');
+      } catch {
+        ok = false;
+      }
+      area.remove();
+      return ok;
+    }
+
+    aiView?.addEventListener('click', (e) => {
+      const target = e.target as HTMLElement | null;
+      const copyBtn = target?.closest<HTMLButtonElement>('[data-copy]');
+      if (copyBtn) {
+        const text = copyBtn.dataset.copy || '';
+        copyText(text).then((ok) => {
+          copyBtn.textContent = ok ? 'скопировано' : 'не удалось';
+          copyBtn.classList.toggle('is-done', ok);
+          window.setTimeout(() => {
+            copyBtn.textContent = 'копировать';
+            copyBtn.classList.remove('is-done');
+          }, 1500);
+        });
+        return;
+      }
+      const go = target?.closest<HTMLElement>('[data-ai-go]');
+      if (go?.dataset.aiGo) {
+        aiCat = go.dataset.aiGo;
+        applyAi();
+        scrollTop();
+      }
+    });
+
+    for (const box of [aiNewsChips, aiToolChips]) {
+      box?.addEventListener('click', (e) => {
+        const chip = (e.target as HTMLElement | null)?.closest<HTMLButtonElement>('.ai-subchip');
+        if (!chip) return;
+        const value = chip.dataset.cat || 'all';
+        if (box.dataset.aiChips === 'news') aiNewsCat = value;
+        else aiToolCat = value;
+        applyAi();
+      });
     }
 
     // ── обои: API страницы oboi/ (Wallhaven через прокси сайта) ────
@@ -2405,6 +2838,7 @@ const genres = [
       oboiView.hidden = value !== 'oboi';
       oboiTools.hidden = value !== 'oboi';
       movieGrid.hidden = value !== 'movie';
+      if (aiView) aiView.hidden = value !== 'ai';
       if (value !== 'music') moreWrap.hidden = true;
       if (value !== 'oboi') oboiMoreWrap.hidden = true;
       if (value !== 'nav') {
@@ -2417,13 +2851,14 @@ const genres = [
       chipRows.nav.hidden = value !== 'nav';
       chipRows.oboi.hidden = value !== 'oboi';
       chipRows.movie.hidden = value !== 'movie';
+      chipRows.ai.hidden = value !== 'ai';
       input.placeholder = value === 'news'
         ? 'Игра, гайд…'
         : value === 'music'
           ? 'Трек, артист, жанр…'
           : value === 'oboi'
             ? 'Неон, киберпанк, 4K…'
-            : value === 'movie' ? 'Фильм, игра…' : 'Игра, подборка…';
+            : value === 'movie' ? 'Фильм, игра…' : value === 'ai' ? 'Модель, инструмент…' : 'Игра, подборка…';
 
       if (!reader.hidden && !prePost) closePost(false);
 
@@ -2450,6 +2885,8 @@ const genres = [
       } else if (value === 'movie') {
         syncMovieChips();
         applyMovies(save);
+      } else if (value === 'ai') {
+        applyAi(save);
       } else {
         for (const chip of chipsOf('nav')) {
           chip.setAttribute('aria-pressed', String(chip.dataset.cat === navCat));
@@ -2478,7 +2915,13 @@ const genres = [
         if (e.metaKey || e.ctrlKey || e.shiftKey || e.altKey || e.button !== 0) return;
         e.preventDefault();
         const value = btn.dataset.mode;
-        const next: Mode = value === 'music' ? 'music' : value === 'nav' ? 'nav' : value === 'oboi' ? 'oboi' : value === 'movie' ? 'movie' : 'news';
+        const next: Mode = value === 'ai' ? 'ai' : value === 'music' ? 'music' : value === 'nav' ? 'nav' : value === 'oboi' ? 'oboi' : value === 'movie' ? 'movie' : 'news';
+        // ИИ — отдельная страница со своим снимком данных: обычный переход,
+        // чтобы не тащить сотни карточек на главный экран приложения.
+        if (next === 'ai') {
+          location.href = `${base}/ai/`;
+          return;
+        }
         // На статической странице раздела вкладки — обычные ссылки: каждая
         // вкладка имеет свой индексируемый адрес.
         if (variant !== 'app') {
@@ -2488,11 +2931,36 @@ const genres = [
             nav: `${base}/nav/`,
             oboi: `${base}/oboi/`,
             movie: `${base}/movie/`,
+            ai: `${base}/ai/`,
           };
           location.href = targets[next];
           return;
         }
         setMode(next);
+      });
+    }
+
+    // Логотип ведёт на главную без перезагрузки: закрывает читалку,
+    // сбрасывает фильтры и возвращает список новостей.
+    const brandLink = document.querySelector<HTMLAnchorElement>('.brand');
+    if (brandLink) {
+      brandLink.addEventListener('click', (e) => {
+        if (e.metaKey || e.ctrlKey || e.shiftKey || e.altKey || e.button !== 0) return;
+        // На странице материала главной в DOM нет — там нужен обычный переход.
+        if (variant !== 'app') return;
+        e.preventDefault();
+        newsCat = 'all';
+        movieCat = 'all';
+        current = '';
+        input.value = '';
+        setMode('news', false);
+        const homePath = `${base}/`;
+        // На самой главной не плодим записи истории — просто чистим адрес.
+        if (location.pathname === homePath && !location.search) history.replaceState({}, '', homePath);
+        else history.pushState({}, '', homePath);
+        syncMeta();
+        document.title = homeTitle;
+        scrollTop();
       });
     }
 
@@ -2525,6 +2993,14 @@ const genres = [
       if (!chip) return;
       if (!reader.hidden) closePost(false);
       setNavCat(chip.dataset.cat || 'all');
+    });
+
+    chipRows.ai.addEventListener('click', (e) => {
+      const chip = (e.target as HTMLElement | null)?.closest<HTMLButtonElement>('.chip');
+      if (!chip) return;
+      aiCat = chip.dataset.cat || 'all';
+      applyAi();
+      scrollTop();
     });
 
     navHub.addEventListener('click', (e) => {
@@ -2562,6 +3038,8 @@ const genres = [
         }, 400);
       } else if (mode === 'movie') {
         applyMovies();
+      } else if (mode === 'ai') {
+        applyAi();
       } else {
         applyNews();
       }
@@ -2573,6 +3051,7 @@ const genres = [
       else if (mode === 'nav') applyNav();
       else if (mode === 'oboi') loadWalls(true);
       else if (mode === 'movie') applyMovies();
+      else if (mode === 'ai') applyAi();
       else applyNews();
       input.focus();
     });
@@ -2592,6 +3071,11 @@ const genres = [
         setOboiCat('all');
       } else if (mode === 'movie') {
         setMovieCat('all');
+      } else if (mode === 'ai') {
+        aiCat = 'all';
+        aiNewsCat = 'all';
+        aiToolCat = 'all';
+        applyAi();
       } else {
         setNewsCat('all');
       }
@@ -2877,7 +3361,9 @@ const genres = [
 
     window.addEventListener('popstate', () => {
       const route = routeFromPath();
+      if (route.mode === 'ai') aiCat = route.cat || 'all';
       if (route.mode !== mode) setMode(route.mode, false);
+      else if (route.mode === 'ai') applyAi(false);
 
       if (route.mode === 'news' && route.post && bySlug.has(route.post)) {
         openPost(route.post, false);
@@ -2927,10 +3413,42 @@ const genres = [
     const tickerNews = document.getElementById('ticker-news') as HTMLElement;
     const tickerText = document.getElementById('ticker-text');
     const tickerYear = document.getElementById('ticker-year');
+    const tickerViewport = document.getElementById('ticker-viewport') as HTMLElement | null;
+
+    // Длинное событие не обрезаем многоточием, а пускаем бегущей строкой —
+    // только если текст реально не влезает в полосу на текущей ширине.
+    const layoutTicker = () => {
+      if (!tickerText || !tickerViewport) return;
+      tickerText.classList.remove('is-marquee');
+      tickerText.style.removeProperty('--ticker-shift');
+      tickerText.style.removeProperty('--ticker-dur');
+      const overflow = tickerText.scrollWidth - tickerViewport.clientWidth;
+      if (overflow < 8) return;
+      const shift = -(overflow + 6);
+      tickerText.style.setProperty('--ticker-shift', `${shift}px`);
+      // Скорость ~18 px/с плюс паузы по краям: читается без спешки.
+      tickerText.style.setProperty(
+        '--ticker-dur',
+        `${Math.min(42, Math.max(16, Math.round(Math.abs(shift) / 18) + 12))}s`,
+      );
+      tickerText.classList.add('is-marquee');
+    };
+
     if (tickerNews && tickerText) {
       const pad = (n: number) => String(n).padStart(2, '0');
       const now = new Date();
       const day = `${pad(now.getMonth() + 1)}-${pad(now.getDate())}`;
+      layoutTicker();
+      document.fonts?.ready.then(layoutTicker).catch(() => {});
+      let tickerRaf = 0;
+      window.addEventListener(
+        'resize',
+        () => {
+          cancelAnimationFrame(tickerRaf);
+          tickerRaf = requestAnimationFrame(layoutTicker);
+        },
+        { passive: true },
+      );
       if (day !== tickerNews.dataset.day) {
         fetch(`${base}/history.json`, { credentials: 'omit' })
           .then((res) => (res.ok ? res.json() : null))
@@ -2941,6 +3459,7 @@ const genres = [
             tickerText.title = `${ev.y} · ${ev.t} — ${ev.d}`;
             if (tickerYear) tickerYear.textContent = String(ev.y);
             tickerNews.dataset.day = day;
+            layoutTicker();
           })
           .catch(() => {});
       }
@@ -3014,6 +3533,8 @@ const genres = [
       } else if (initialMode === 'movie') {
         const movieChips = Array.from(chipRows.movie.querySelectorAll<HTMLElement>('.chip'));
         if (initialCat === 'all' || movieChips.some((chip) => chip.dataset.cat === initialCat)) movieCat = initialCat;
+      } else if (initialMode === 'ai') {
+        if (AI_PANELS.includes(initialCat)) aiCat = initialCat;
       } else if (initialCat === 'all' || categories.includes(initialCat)) {
         newsCat = initialCat;
       }
@@ -3039,7 +3560,7 @@ const genres = [
 
     // Первую страницу музыки готовим в фоне: к моменту клика вкладка уже с треками.
     // На медленной сети и при экономии трафика не грузим заранее — это лишние сотни килобайт.
-    if (initialMode !== 'music') {
+    if (initialMode !== 'music' && initialMode !== 'ai') {
       const conn = (navigator as any).connection;
       const cheapTraffic = !conn || (!conn.saveData && !/^(slow-)?2g$|^3g$/.test(conn.effectiveType || ''));
       if (cheapTraffic) {

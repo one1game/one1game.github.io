@@ -5,6 +5,7 @@
   "version": "0.1.0",
   "scripts": {
     "data": "node scripts/build-data.mjs",
+    "ai": "node scripts/fetch-ai.mjs",
     "dev": "npm run data && astro dev",
     "build": "npm run data && astro build && node scripts/publish.mjs",
     "preview": "astro preview"

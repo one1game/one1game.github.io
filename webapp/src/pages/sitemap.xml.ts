@@ -2,6 +2,7 @@ import type { APIRoute } from 'astro';
 import catalog from '../data/catalog.json';
 import movies from '../data/movies.json';
 import oboi from '../data/oboi.json';
+import ai from '../data/ai.json';
 
 export const prerender = true;
 
@@ -34,6 +35,7 @@ const entries: Entry[] = [
   { loc: `${site}${base}/movie/`, lastmod: movies.updated, changefreq: 'weekly', priority: '0.9' },
   { loc: `${site}${base}/oboi/`, lastmod: oboi.updated, changefreq: 'weekly', priority: '0.9' },
   { loc: `${site}${base}/nav/`, lastmod: catalog.stats.generated, changefreq: 'daily', priority: '0.9' },
+  { loc: `${site}${base}/ai/`, lastmod: ai.updatedISO, changefreq: 'daily', priority: '0.9' },
   { loc: `${site}${base}/music/`, lastmod: catalog.stats.generated, changefreq: 'daily', priority: '0.8' },
 ];
 

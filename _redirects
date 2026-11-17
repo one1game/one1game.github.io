@@ -248,6 +248,9 @@
 /category  /app/  301
 
 # Разделы, которые целиком переехали в приложение
+/ai/*  /app/ai/  301
+/ai/  /app/ai/  301
+/ai  /app/ai/  301
 /oboi/*  /app/oboi/  301
 /oboi/  /app/oboi/  301
 /oboi  /app/oboi/  301
