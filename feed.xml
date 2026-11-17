@@ -6,128 +6,136 @@
     <atom:link href="https://one1game.org/feed.xml" rel="self" type="application/rss+xml" />
     <description>Игровой портал: обзоры видеоигр, гайды, аналитика индустрии, ИИ и технологии, кино.</description>
     <language>ru-RU</language>
-    <lastBuildDate>Tue, 17 Nov 2026 12:00:00 -0000</lastBuildDate>
+    <lastBuildDate>Wed, 18 Nov 2026 12:00:00 -0000</lastBuildDate>
     <docs>https://www.rssboard.org/rss-specification</docs>
     <generator>generate-feed.py</generator>
     <item>
-      <title>Pixel Cartographer: цена, отзывы и статистика игроков</title>
+      <title>Российские игры на Sega Mega Drive: гид по homebrew</title>
+      <link>https://one1game.org/archive/rossijskie-igry-na-sega-mega-drive</link>
+      <guid isPermaLink="true">https://one1game.org/archive/rossijskie-igry-na-sega-mega-drive</guid>
+      <pubDate>Wed, 18 Nov 2026 12:00:00 -0000</pubDate>
+      <category>Разработка</category>
+      <description>Новые игры для Sega Mega Drive от российских авторов: RetroSouls, Sasha Darko, TLT и Red Miso Studio. 16 проектов, что запустить первым и как играть.</description>
+    </item>
+    <item>
+      <title>Pixel Cartographer – уютный строитель карт</title>
       <link>https://one1game.org/archive/pixel-cartographer-5281980</link>
       <guid isPermaLink="true">https://one1game.org/archive/pixel-cartographer-5281980</guid>
       <pubDate>Tue, 17 Nov 2026 12:00:00 -0000</pubDate>
       <category>Обзоры</category>
-      <description>Pixel Cartographer: актуальная цена (378.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.</description>
+      <description>Pixel Cartographer – спокойный инди‑симулятор, где вы создаёте локации на карте, учитывая уникальные биомы и ограничения, а также можете свободно</description>
     </item>
     <item>
-      <title>Zero Sum: цена, отзывы и статистика игроков</title>
+      <title>Zero Sum – экшн‑рогалик с математическими головоломками</title>
       <link>https://one1game.org/archive/zero-sum-4546380</link>
       <guid isPermaLink="true">https://one1game.org/archive/zero-sum-4546380</guid>
       <pubDate>Tue, 17 Nov 2026 12:00:00 -0000</pubDate>
       <category>Обзоры</category>
-      <description>Zero Sum: актуальная цена (674.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.</description>
+      <description>Zero Sum – динамичный твин‑стик рогалик‑головоломка, где враги‑числа уничтожаются арифметическими операторами. Игра сочетает быстрый экшен и логические</description>
     </item>
     <item>
-      <title>Shadow at Noon: цена, отзывы и статистика игроков</title>
+      <title>Shadow at Noon – интерактивный звуковой детектив</title>
       <link>https://one1game.org/archive/shadow-at-noon-5441620</link>
       <guid isPermaLink="true">https://one1game.org/archive/shadow-at-noon-5441620</guid>
       <pubDate>Tue, 17 Nov 2026 12:00:00 -0000</pubDate>
       <category>Обзоры</category>
-      <description>Shadow at Noon: актуальная цена (598.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.</description>
+      <description>Shadow at Noon – интерактивный звуковой роман‑детектив в стиле хонкаку. Черно‑белая атмосфера, загадка убийства в зимнем доме, где каждый звук раскрывает</description>
     </item>
     <item>
-      <title>Pending Review: цена, отзывы и статистика игроков</title>
+      <title>Pending Review – инди‑симулятор бюрократических решений</title>
       <link>https://one1game.org/archive/pending-review-5119450</link>
       <guid isPermaLink="true">https://one1game.org/archive/pending-review-5119450</guid>
       <pubDate>Tue, 17 Nov 2026 12:00:00 -0000</pubDate>
       <category>Обзоры</category>
-      <description>Pending Review: актуальная цена (356.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.</description>
+      <description>Pending Review – атмосферный инди‑симулятор, где вам предстоит разбирать заявки, ставить отметки «одобрить» или «отклонить», а правила меняются каждое</description>
     </item>
     <item>
-      <title>Space Catnips: цена, отзывы и статистика игроков</title>
+      <title>Space Catnips – инкрементальная игра про космических котов</title>
       <link>https://one1game.org/archive/space-catnips-5090040</link>
       <guid isPermaLink="true">https://one1game.org/archive/space-catnips-5090040</guid>
       <pubDate>Tue, 17 Nov 2026 12:00:00 -0000</pubDate>
       <category>Обзоры</category>
-      <description>Space Catnips: актуальная цена (252.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.</description>
+      <description>Space Catnips – казуальная инди-симуляция, где вы собираете кошачью мяту на чужих планетах и открываете бар для космических котов. Игра сочетает простую</description>
     </item>
     <item>
-      <title>Between Two Midnights: цена, отзывы и статистика игроков</title>
+      <title>Between Two Midnights — обзор игры</title>
       <link>https://one1game.org/archive/between-two-midnights-5504840</link>
       <guid isPermaLink="true">https://one1game.org/archive/between-two-midnights-5504840</guid>
       <pubDate>Tue, 17 Nov 2026 12:00:00 -0000</pubDate>
       <category>Обзоры</category>
-      <description>Between Two Midnights: актуальная цена (356.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.</description>
+      <description>Between Two Midnights – интригующее приключение с элементами казуального и инди‑игры. История о страсти, ревности и выборе сердца в ночных тайнах.</description>
     </item>
     <item>
-      <title>Dub Together: Profile Pack 2 – Russian Winter: цена, отзывы и статистика игроков</title>
+      <title>Dub Together: Profile Pack 2 – Russian Winter обзор</title>
       <link>https://one1game.org/archive/dub-together-profile-pack-2-russian-winter-5579820</link>
       <guid isPermaLink="true">https://one1game.org/archive/dub-together-profile-pack-2-russian-winter-5579820</guid>
       <pubDate>Tue, 17 Nov 2026 12:00:00 -0000</pubDate>
       <category>Обзоры</category>
-      <description>Dub Together: Profile Pack 2 – Russian Winter: актуальная цена (130.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.</description>
+      <description>Набор из 18 анимированных косметических предметов для профиля в Dub Together, посвящённый русской зиме. Оформление включает таблички, обои и рамки,</description>
     </item>
     <item>
-      <title>MOO: цена, отзывы и статистика игроков</title>
+      <title>MOO — приключенческая инди‑симуляция</title>
       <link>https://one1game.org/archive/moo-5395840</link>
       <guid isPermaLink="true">https://one1game.org/archive/moo-5395840</guid>
       <pubDate>Tue, 17 Nov 2026 12:00:00 -0000</pubDate>
       <category>Обзоры</category>
-      <description>MOO: актуальная цена (395.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.</description>
+      <description>MOO — необычная приключенческая игра‑симулятор, где вы играете за корову, исследуете мир, завязываете контакты, открываете новые локации и управляете</description>
     </item>
     <item>
-      <title>Angel Investor Simulator™: цена, отзывы и статистика игроков</title>
+      <title>Angel Investor Simulator™ – симулятор инвестиций</title>
       <link>https://one1game.org/archive/angel-investor-simulator-4771830</link>
       <guid isPermaLink="true">https://one1game.org/archive/angel-investor-simulator-4771830</guid>
       <pubDate>Tue, 17 Nov 2026 12:00:00 -0000</pubDate>
       <category>Обзоры</category>
-      <description>Angel Investor Simulator™: актуальная цена (479.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.</description>
+      <description>Станьте ангельским инвестором, вкладывайте в стартапы с безумными идеями, управляйте командой экспертов, продвигайте продукты и выводите компании на IPO,</description>
     </item>
     <item>
-      <title>Save Ruika! — Looping with a Losing Heroine: цена, отзывы и статистика игроков</title>
+      <title>Save Ruika! — Looping with a Losing Heroine — обзор</title>
       <link>https://one1game.org/archive/save-ruika-looping-with-a-losing-heroine-5106660</link>
       <guid isPermaLink="true">https://one1game.org/archive/save-ruika-looping-with-a-losing-heroine-5106660</guid>
       <pubDate>Tue, 17 Nov 2026 12:00:00 -0000</pubDate>
       <category>Обзоры</category>
-      <description>Save Ruika! — Looping with a Losing Heroine: актуальная цена (153.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.</description>
+      <description>Романтическая визуальная новелла о бесконечных провалах и попытках спасти героиню Руику. Узнайте, стоит ли погрузиться в её эмоциональные петли и искать</description>
     </item>
     <item>
-      <title>101 Dogs Hidden in Kuala Lumpur: цена, отзывы и статистика игроков</title>
+      <title>101 Dogs Hidden in Kuala Lumpur — обзор</title>
       <link>https://one1game.org/archive/101-dogs-hidden-in-kuala-lumpur-5537920</link>
       <guid isPermaLink="true">https://one1game.org/archive/101-dogs-hidden-in-kuala-lumpur-5537920</guid>
       <pubDate>Tue, 17 Nov 2026 12:00:00 -0000</pubDate>
       <category>Обзоры</category>
-      <description>101 Dogs Hidden in Kuala Lumpur: актуальная цена (38.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.</description>
+      <description>Казуальная инди-игра, где нужно искать 101 собаку в детально проработанном Куала‑Лумпуре. Простое управление, множество достижений и приятный визуальный</description>
     </item>
     <item>
-      <title>Desktop Maid Haru: цена, отзывы и статистика игроков</title>
+      <title>Desktop Maid Haru – интерактивный помощник для рабочего</title>
       <link>https://one1game.org/archive/desktop-maid-haru-4577060</link>
       <guid isPermaLink="true">https://one1game.org/archive/desktop-maid-haru-4577060</guid>
       <pubDate>Tue, 17 Nov 2026 12:00:00 -0000</pubDate>
       <category>Обзоры</category>
-      <description>Desktop Maid Haru: актуальная цена (643.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.</description>
+      <description>Desktop Maid Haru – виртуальная помощница, которая превращает ваш монитор в живой компаньон. Она следит за временем, помогает сосредоточиться и общается с</description>
     </item>
     <item>
-      <title>Melvor Idle 2: A RuneScape Adventure Soundtrack: цена, отзывы и статистика игроков</title>
+      <title>Melvor Idle 2: A RuneScape Adventure – саундтрек</title>
       <link>https://one1game.org/archive/melvor-idle-2-a-runescape-adventure-soundtrack-5552220</link>
       <guid isPermaLink="true">https://one1game.org/archive/melvor-idle-2-a-runescape-adventure-soundtrack-5552220</guid>
       <pubDate>Tue, 17 Nov 2026 12:00:00 -0000</pubDate>
       <category>Обзоры</category>
-      <description>Melvor Idle 2: A RuneScape Adventure Soundtrack: актуальная цена (245.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.</description>
+      <description>Окунитесь в мир Melvor Idle 2 с официальным саундтреком от Маттео Палмера. Музыка передаёт атмосферу мирных ремесел и эпических сражений, оживляя игровую</description>
     </item>
     <item>
-      <title>Everhex: цена, отзывы и статистика игроков</title>
+      <title>Everhex — казуальная стратегическая башенная игра</title>
       <link>https://one1game.org/archive/everhex-5120080</link>
       <guid isPermaLink="true">https://one1game.org/archive/everhex-5120080</guid>
       <pubDate>Tue, 17 Nov 2026 12:00:00 -0000</pubDate>
       <category>Обзоры</category>
-      <description>Everhex: актуальная цена (690.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.</description>
+      <description>Everhex — инди‑стратегия, где вы строите одну башню, сражаетесь с бесконечными волнами врагов и улучшаете её через обширное пассивное дерево. Идеально для</description>
     </item>
     <item>
-      <title>Sort Them Gnomes: цена, отзывы и статистика игроков</title>
+      <title>Sort Them Gnomes – уютный симулятор сортировки</title>
       <link>https://one1game.org/archive/sort-them-gnomes-5452060</link>
       <guid isPermaLink="true">https://one1game.org/archive/sort-them-gnomes-5452060</guid>
       <pubDate>Tue, 17 Nov 2026 12:00:00 -0000</pubDate>
       <category>Обзоры</category>
-      <description>Sort Them Gnomes: актуальная цена (280.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.</description>
+      <description>Sort Them Gnomes – спокойная казуальная игра‑симулятор, где вам предстоит упорядочить более 2000 гномов в садовом центре, расставляя их по полкам и</description>
     </item>
     <item>
       <title>Mad Dvizhuha: Benzovoz: цена, отзывы и статистика игроков</title>
@@ -146,60 +154,60 @@
       <description>Butaro's Overtime Office: актуальная цена (200.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.</description>
     </item>
     <item>
-      <title>Summer, Youth, and Baseball: цена, отзывы и статистика игроков</title>
+      <title>Summer, Youth, and Baseball — обзор</title>
       <link>https://one1game.org/archive/summer-youth-and-baseball-5541800</link>
       <guid isPermaLink="true">https://one1game.org/archive/summer-youth-and-baseball-5541800</guid>
       <pubDate>Tue, 17 Nov 2026 12:00:00 -0000</pubDate>
       <category>Обзоры</category>
-      <description>Summer, Youth, and Baseball: актуальная цена (Бесплатно), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.</description>
+      <description>Краткая инкрементальная игра о бейсболе, где нужно отбивать мяч, собирать овации и дойти до финала. Подойдёт любителям лёгких казуальных и спортивных</description>
     </item>
     <item>
-      <title>Cube Fold: цена, отзывы и статистика игроков</title>
+      <title>Cube Fold – минималистичная головоломка</title>
       <link>https://one1game.org/archive/cube-fold-4748960</link>
       <guid isPermaLink="true">https://one1game.org/archive/cube-fold-4748960</guid>
       <pubDate>Tue, 17 Nov 2026 12:00:00 -0000</pubDate>
       <category>Обзоры</category>
-      <description>Cube Fold: актуальная цена (170.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.</description>
+      <description>Cube Fold – расслабляющая инди‑головоломка с минималистичным дизайном. Разворачивая куб, игрок решает уровни с телепортами, прыгающими плитами и</description>
     </item>
     <item>
-      <title>Механическое Сердце: цена, отзывы и статистика игроков</title>
+      <title>Механическое Сердце – стратегическая защита</title>
       <link>https://one1game.org/archive/mehanicheskoe-serdtse-4710560</link>
       <guid isPermaLink="true">https://one1game.org/archive/mehanicheskoe-serdtse-4710560</guid>
       <pubDate>Tue, 17 Nov 2026 12:00:00 -0000</pubDate>
       <category>Обзоры</category>
-      <description>Механическое Сердце: актуальная цена (180.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.</description>
+      <description>Механическое Сердце – казуальная стратегия с элементами рогалика, где нужно отразить волны машин, улучшать башни и поддерживать ядро в реальном времени.</description>
     </item>
     <item>
-      <title>Pinata Smash: Incremental Circus: цена, отзывы и статистика игроков</title>
+      <title>Pinata Smash: Incremental Circus – обзор</title>
       <link>https://one1game.org/archive/pinata-smash-incremental-circus-4918810</link>
       <guid isPermaLink="true">https://one1game.org/archive/pinata-smash-incremental-circus-4918810</guid>
       <pubDate>Tue, 17 Nov 2026 12:00:00 -0000</pubDate>
       <category>Обзоры</category>
-      <description>Pinata Smash: Incremental Circus: актуальная цена (104.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.</description>
+      <description>Pinata Smash: Incremental Circus – динамичная казуальная игра, где вы разбиваете пиньяты, собираете сладости и развиваете свой цирковой шоу. Подходит</description>
     </item>
     <item>
-      <title>HEXWING: цена, отзывы и статистика игроков</title>
+      <title>HEXWING — готический экшен‑шутер</title>
       <link>https://one1game.org/archive/hexwing-5486840</link>
       <guid isPermaLink="true">https://one1game.org/archive/hexwing-5486840</guid>
       <pubDate>Tue, 17 Nov 2026 12:00:00 -0000</pubDate>
       <category>Обзоры</category>
-      <description>HEXWING: актуальная цена (245.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.</description>
+      <description>HEXWING – мрачный экшен‑шутер с элементами выживания. Пролетайте проклятые небеса, собирайте души, улучшайте арсенал и сражайтесь с массивными боссами в</description>
     </item>
     <item>
-      <title>終末王座: цена, отзывы и статистика игроков</title>
+      <title>終末王座 — постапокалиптическая приключенческая игра</title>
       <link>https://one1game.org/archive/-5185680</link>
       <guid isPermaLink="true">https://one1game.org/archive/-5185680</guid>
       <pubDate>Tue, 17 Nov 2026 12:00:00 -0000</pubDate>
       <category>Обзоры</category>
-      <description>終末王座: актуальная цена (246.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.</description>
+      <description>終末王座 – инди‑приключение в постапокалиптическом мире, где вам предстоит выживать с пятью героинями, собирая ресурсы и спасая их от надвигающейся угрозы.</description>
     </item>
     <item>
-      <title>DerbiManager: цена, отзывы и статистика игроков</title>
+      <title>DerbiManager – симулятор менеджера футбольного клуба</title>
       <link>https://one1game.org/archive/derbimanager-5424160</link>
       <guid isPermaLink="true">https://one1game.org/archive/derbimanager-5424160</guid>
       <pubDate>Tue, 17 Nov 2026 12:00:00 -0000</pubDate>
       <category>Обзоры</category>
-      <description>DerbiManager: актуальная цена (414.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.</description>
+      <description>DerbiManager – глубокий спортивный симулятор, где вы управляете клубом: трансферы, академия, финансы, тренировки и матчи в 3D. Более 1000 клубов и 60 лиг</description>
     </item>
     <item>
       <title>Scripts of Power: цена, отзывы и статистика игроков</title>
@@ -210,52 +218,68 @@
       <description>Scripts of Power: актуальная цена (64.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.</description>
     </item>
     <item>
-      <title>Kyle Coral: цена, отзывы и статистика игроков</title>
+      <title>Kyle Coral — приключенческое инди‑приключение</title>
       <link>https://one1game.org/archive/kyle-coral-5183160</link>
       <guid isPermaLink="true">https://one1game.org/archive/kyle-coral-5183160</guid>
       <pubDate>Tue, 17 Nov 2026 12:00:00 -0000</pubDate>
       <category>Обзоры</category>
-      <description>Kyle Coral: актуальная цена (400.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.</description>
+      <description>Kyle Coral — атмосферное приключение, где каждый вдох считается. Исследуйте пять уникальных биомов, ищите воздушные карманы и преодолевайте стражей, пока</description>
     </item>
     <item>
-      <title>PROJECT: MIRROR: цена, отзывы и статистика игроков</title>
+      <title>PROJECT: MIRROR – интерактивный приключенческий симулятор</title>
       <link>https://one1game.org/archive/project-mirror-4914420</link>
       <guid isPermaLink="true">https://one1game.org/archive/project-mirror-4914420</guid>
       <pubDate>Tue, 17 Nov 2026 12:00:00 -0000</pubDate>
       <category>Обзоры</category>
-      <description>PROJECT: MIRROR: актуальная цена (418.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.</description>
+      <description>PROJECT: MIRROR – напряжённое приключение‑симулятор, где игрок исследует виртуальный рабочий стол, собирает улики и взаимодействует с загадочным ИИ,</description>
     </item>
     <item>
-      <title>ROKUMENSHU: цена, отзывы и статистика игроков</title>
+      <title>ROKUMENSHU — ролевая стратегия с кубами</title>
       <link>https://one1game.org/archive/rokumenshu-5459220</link>
       <guid isPermaLink="true">https://one1game.org/archive/rokumenshu-5459220</guid>
       <pubDate>Tue, 17 Nov 2026 12:00:00 -0000</pubDate>
       <category>Обзоры</category>
-      <description>ROKUMENSHU: актуальная цена (245.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.</description>
+      <description>ROKUMENSHU — автобатлер RPG, где каждый герой — шестигранный куб. Читая кубики врага, формируете расстановку, меняете грани и управляете удачей. Три главы</description>
     </item>
     <item>
-      <title>三国群雄：幸存者: цена, отзывы и статистика игроков</title>
+      <title>三国群雄：幸存者 – пиксельный выживание roguelite</title>
       <link>https://one1game.org/archive/-5533700</link>
       <guid isPermaLink="true">https://one1game.org/archive/-5533700</guid>
       <pubDate>Tue, 17 Nov 2026 12:00:00 -0000</pubDate>
       <category>Обзоры</category>
-      <description>三国群雄：幸存者: актуальная цена (117.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.</description>
+      <description>Игра‑roguelite в стиле пиксель‑арт, где вам предстоит выбрать героя из эпохи Трёх королевств, собрать улучшения и пробиться сквозь волны врагов. Подойдёт</description>
     </item>
     <item>
-      <title>S.O.I.: Sphere of Influence: цена, отзывы и статистика игроков</title>
+      <title>S.O.I.: Sphere of Influence – орбитальная головоломка</title>
       <link>https://one1game.org/archive/s-o-i-sphere-of-influence-5330280</link>
       <guid isPermaLink="true">https://one1game.org/archive/s-o-i-sphere-of-influence-5330280</guid>
       <pubDate>Tue, 17 Nov 2026 12:00:00 -0000</pubDate>
       <category>Обзоры</category>
-      <description>S.O.I.: Sphere of Influence: актуальная цена (325.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.</description>
+      <description>Двумерная орбитальная головоломка S.O.I.: Sphere of Influence предлагает управлять гравитацией планет, планировать импульсы и раскрывать истории освоения</description>
     </item>
     <item>
-      <title>Melvor Idle 2: A RuneScape Adventure: цена, отзывы и статистика игроков</title>
+      <title>Melvor Idle 2: A RuneScape Adventure – обзор</title>
       <link>https://one1game.org/archive/melvor-idle-2-a-runescape-adventure-3218350</link>
       <guid isPermaLink="true">https://one1game.org/archive/melvor-idle-2-a-runescape-adventure-3218350</guid>
       <pubDate>Tue, 17 Nov 2026 12:00:00 -0000</pubDate>
       <category>Обзоры</category>
-      <description>Melvor Idle 2: A RuneScape Adventure: актуальная цена (621.00 RUB), рейтинг обновляется, статистика владельцев (0 – 20,000). Данные обновляются автоматически.</description>
+      <description>Melvor Idle 2 предлагает спокойный кликер в стиле RuneScape: прокачка навыков, сражения и квесты, объединённые в удобный ранний доступ для любителей</description>
+    </item>
+    <item>
+      <title>Tisuland — инди ролевой стратегический шутер</title>
+      <link>https://one1game.org/archive/tisuland-4212960</link>
+      <guid isPermaLink="true">https://one1game.org/archive/tisuland-4212960</guid>
+      <pubDate>Tue, 17 Nov 2026 12:00:00 -0000</pubDate>
+      <category>Обзоры</category>
+      <description>Tisuland сочетает 2‑D шутер и защиту башен, предлагая шесть классов и более десяти умений. Краткие раунды и разнообразные комбинации делают игру</description>
+    </item>
+    <item>
+      <title>Cycle of the First Dawn – ролевая казуальная игра</title>
+      <link>https://one1game.org/archive/cycle-of-the-first-dawn-5408030</link>
+      <guid isPermaLink="true">https://one1game.org/archive/cycle-of-the-first-dawn-5408030</guid>
+      <pubDate>Tue, 17 Nov 2026 12:00:00 -0000</pubDate>
+      <category>Обзоры</category>
+      <description>Cycle of the First Dawn – медитативная ролевая игра в стиле ксянси, где персонаж проходит цикл перерождений, развивая культивирование, исследуя мир и</description>
     </item>
     <item>
       <title>Обзор Grand Theft Auto IV: The Complete Edition</title>
@@ -304,30 +328,6 @@
       <pubDate>Mon, 16 Nov 2026 12:00:00 -0000</pubDate>
       <category>Обзоры</category>
       <description>Подробный обзор Tomb Raider Game of the Year: экшен‑приключение о становлении Лары Крофт, её пути от юной исследовательницы к закалённому выживальщику.</description>
-    </item>
-    <item>
-      <title>Castle Crashers® — яркая кооперативная аркада</title>
-      <link>https://one1game.org/archive/castle-crashers-204360</link>
-      <guid isPermaLink="true">https://one1game.org/archive/castle-crashers-204360</guid>
-      <pubDate>Mon, 16 Nov 2026 12:00:00 -0000</pubDate>
-      <category>Обзоры</category>
-      <description>Castle Crashers® — динамичная аркадная битва в стиле мультфильма, где до четырёх игроков сражаются мечами, магией и юмором, спасая принцесс и собирая</description>
-    </item>
-    <item>
-      <title>Saints Row IV: Re-Elected: цена, отзывы и статистика игроков</title>
-      <link>https://one1game.org/archive/saints-row-iv-re-elected-206420</link>
-      <guid isPermaLink="true">https://one1game.org/archive/saints-row-iv-re-elected-206420</guid>
-      <pubDate>Mon, 16 Nov 2026 12:00:00 -0000</pubDate>
-      <category>Обзоры</category>
-      <description>Saints Row IV: Re-Elected: актуальная цена (19.99 USD), 88% положительных отзывов в Steam, статистика владельцев (5,000,000 – 10,000,000). Данные обновляются автоматически.</description>
-    </item>
-    <item>
-      <title>Survivors Under Siege – обзор и советы</title>
-      <link>https://one1game.org/archive/survivors-under-siege-3305010</link>
-      <guid isPermaLink="true">https://one1game.org/archive/survivors-under-siege-3305010</guid>
-      <pubDate>Mon, 16 Nov 2026 12:00:00 -0000</pubDate>
-      <category>Обзоры</category>
-      <description>Survivors Under Siege – гибрид экшена и стратегии, где нужно расставлять бойцов и оборонять базу от волн зомби и мутантов. Идеально для любителей</description>
     </item>
   </channel>
 </rss>
