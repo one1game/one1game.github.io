@@ -688,29 +688,7 @@ const genres = [
     <!-- ИИ: AI Pulse — новости, рейтинг моделей, инструменты и бесплатные нейросети. -->
     {showAi && (
     <section class="ai" id="ai-view" aria-label="Искусственный интеллект">
-      <header class="ai-hero">
-        <div class="ai-hero__main">
-          <p class="ai-hero__kicker">AI Pulse · обновляется каждый день</p>
-          <h2 class="ai-hero__title">ИИ без шума: новости, рейтинг моделей и инструменты</h2>
-          <p class="ai-hero__lead">
-            Свежая лента индустрии, рейтинг моделей по реальному объёму токенов,
-            инструменты под задачу и полный список бесплатных нейросетей — без
-            регистрации и ключей. Внешние ссылки ведут только к первоисточникам.
-          </p>
-          <p class="ai-hero__meta">
-            <span>Обновлено {ai.updatedLabel}</span>
-            <span>whatstrending.ai · OpenRouter · g4f</span>
-          </p>
-        </div>
-        <dl class="ai-stats">
-          <div><dt>Новости</dt><dd>{ai.news.length}</dd></div>
-          <div><dt>Модели</dt><dd>{ai.models.length}</dd></div>
-          <div><dt>Инструменты</dt><dd>{ai.tools.length}</dd></div>
-          <div><dt>Бесплатные ИИ</dt><dd>{aiFreeCount}</dd></div>
-        </dl>
-      </header>
-
-          <!-- Обзор: самое важное на одном экране. -->
+      <!-- Обзор: самое важное на одном экране. -->
           <div class="ai-panel" data-ai-panel="all">
             <div class="ai-lead-grid">
               <div class="ai-col ai-col--news">
