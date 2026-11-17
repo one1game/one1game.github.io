@@ -21,6 +21,14 @@
   --shadow-card: 0 24px 52px -36px rgba(0, 0, 0, 0.95), inset 0 1px 0 rgba(255, 255, 255, 0.035);
   --shadow-lift: 0 34px 72px -40px rgba(0, 0, 0, 1), inset 0 1px 0 rgba(255, 255, 255, 0.08), 0 0 0 1px rgba(125, 255, 155, 0.1);
   --glow-acid: 0 10px 30px -16px rgba(125, 255, 155, 0.5);
+  /* Редкие светящиеся точки на фоне — «пыль» из макета. */
+  --dots:
+    radial-gradient(circle 1.6px at 12% 18%, rgba(125, 255, 155, 0.5), transparent),
+    radial-gradient(circle 1px at 27% 63%, rgba(125, 255, 155, 0.38), transparent),
+    radial-gradient(circle 1.4px at 78% 11%, rgba(170, 225, 255, 0.42), transparent),
+    radial-gradient(circle 1px at 89% 46%, rgba(125, 255, 155, 0.32), transparent),
+    radial-gradient(circle 1.2px at 44% 86%, rgba(125, 255, 155, 0.3), transparent),
+    radial-gradient(circle 1px at 65% 33%, rgba(170, 225, 255, 0.26), transparent);
   --radius: 16px;
   /* Ширина контента: растёт ступенями на больших мониторах. */
   --content-max: 1180px;
@@ -85,6 +93,7 @@ body {
   /* Фон-«краска»: три цветовых пятна поверх тёмной базы. У каждой вкладки
      своя палитра (ниже), чтобы экраны отличались, а не сливались в серое. */
   background:
+    var(--dots),
     radial-gradient(1200px 620px at 8% -12%, rgba(125, 255, 155, 0.11), transparent 62%),
     radial-gradient(900px 520px at 96% 2%, rgba(70, 130, 255, 0.1), transparent 60%),
     radial-gradient(900px 700px at 50% 112%, rgba(140, 90, 255, 0.08), transparent 66%),
@@ -100,6 +109,7 @@ body {
 
 body[data-mode="music"] {
   background:
+    var(--dots),
     radial-gradient(1100px 620px at 6% -10%, rgba(170, 110, 255, 0.15), transparent 62%),
     radial-gradient(900px 540px at 96% 4%, rgba(255, 90, 180, 0.09), transparent 60%),
     radial-gradient(900px 700px at 46% 112%, rgba(70, 130, 255, 0.11), transparent 66%),
@@ -108,6 +118,7 @@ body[data-mode="music"] {
 
 body[data-mode="nav"] {
   background:
+    var(--dots),
     radial-gradient(1100px 620px at 10% -8%, rgba(80, 200, 255, 0.14), transparent 62%),
     radial-gradient(900px 540px at 94% 6%, rgba(125, 255, 155, 0.1), transparent 60%),
     radial-gradient(900px 700px at 52% 114%, rgba(255, 170, 80, 0.07), transparent 66%),
@@ -116,6 +127,7 @@ body[data-mode="nav"] {
 
 body[data-mode="oboi"] {
   background:
+    var(--dots),
     radial-gradient(1100px 620px at 4% -10%, rgba(255, 180, 90, 0.12), transparent 62%),
     radial-gradient(900px 540px at 98% 2%, rgba(255, 90, 140, 0.1), transparent 60%),
     radial-gradient(900px 700px at 50% 112%, rgba(90, 140, 255, 0.1), transparent 66%),
@@ -124,6 +136,7 @@ body[data-mode="oboi"] {
 
 body[data-mode="movie"] {
   background:
+    var(--dots),
     radial-gradient(1100px 620px at 6% -10%, rgba(255, 140, 80, 0.13), transparent 62%),
     radial-gradient(900px 540px at 96% 4%, rgba(255, 70, 110, 0.1), transparent 60%),
     radial-gradient(900px 700px at 50% 112%, rgba(140, 100, 255, 0.08), transparent 66%),
@@ -405,61 +418,70 @@ h2 { font-size: clamp(1.3rem, 2.4vw, 1.9rem); }
 }
 
 .chip[aria-pressed="true"] {
-  color: var(--acid);
-  border-color: rgba(125, 255, 155, 0.42);
-  background: rgba(125, 255, 155, 0.1);
-  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.16), var(--glow-acid);
+  color: #06120b;
+  border-color: var(--acid);
+  background: linear-gradient(180deg, #a6ffbc, var(--acid));
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.55), 0 12px 28px -16px rgba(125, 255, 155, 0.85);
 }
 
 /* ── верхние вкладки: Новости / Музыка / Навигатор / Обои ─────────── */
+/* Один общий контейнер с рамкой, внутри — равные вкладки.
+   Активная заливается зелёным, остальные живут на прозрачном фоне. */
 .modes {
-  border-bottom: 1px solid var(--line);
-  background: rgba(255, 255, 255, 0.015);
+  padding: 12px 0 4px;
+  background: none;
+  border: 0;
 }
 
 .modes-row {
-  display: grid;
-  grid-template-columns: repeat(5, minmax(0, 1fr));
+  display: flex;
   gap: 4px;
-  width: min(860px, 100% - 16px);
-  padding: 8px 0;
+  padding: 6px;
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  background: var(--surface-1);
+  box-shadow: var(--inset-hi);
+  overflow-x: auto;
+  scrollbar-width: none;
 }
 
-/* Все вкладки одной ширины и высоты: одинаковые рамка, фон и отступы. */
+.modes-row::-webkit-scrollbar { display: none; }
+
+/* Все вкладки одной ширины и высоты: одинаковые отступы и типографика. */
 .mode {
+  flex: 1 1 0;
   display: flex;
   align-items: center;
   justify-content: center;
-  min-width: 0;
-  height: 46px;
-  padding: 0 8px;
-  border: 1px solid var(--line);
-  border-radius: 999px;
-  background: var(--surface-1);
+  min-width: 108px;
+  height: 42px;
+  padding: 0 10px;
+  border: 0;
+  border-radius: 11px;
+  background: transparent;
   color: var(--text-dim);
   font: inherit;
-  font-size: 10px;
+  font-size: 10.5px;
   line-height: 1.2;
-  letter-spacing: 0.05em;
+  letter-spacing: 0.06em;
   text-decoration: none;
   text-align: center;
   text-transform: uppercase;
+  white-space: nowrap;
   cursor: pointer;
-  box-shadow: var(--inset-hi);
-  transition: color 0.15s ease, border-color 0.15s ease, background 0.15s ease, box-shadow 0.15s ease;
+  box-shadow: none;
+  transition: color 0.15s ease, background 0.15s ease, box-shadow 0.15s ease;
 }
 
 .mode:hover {
   color: var(--text);
-  border-color: var(--line-hi);
-  background: var(--surface-2);
+  background: rgba(255, 255, 255, 0.055);
 }
 
 .mode[aria-pressed="true"] {
-  color: var(--acid);
-  border-color: rgba(125, 255, 155, 0.42);
-  background: rgba(125, 255, 155, 0.1);
-  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.16), var(--glow-acid);
+  color: #eafff1;
+  background: linear-gradient(180deg, rgba(125, 255, 155, 0.34), rgba(125, 255, 155, 0.15));
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.16), 0 10px 26px -18px rgba(125, 255, 155, 0.8);
 }
 
 /* ── информер под поиском: свежие новости и курс BTC ─────────────── */
@@ -1121,9 +1143,9 @@ body.has-player .reader {
 .list-head__title {
   margin: 0;
   font-family: var(--font-display);
-  font-size: 1rem;
-  font-weight: 600;
-  letter-spacing: -0.005em;
+  font-size: 1.1rem;
+  font-weight: 700;
+  letter-spacing: -0.015em;
   color: var(--text);
 }
 
@@ -1231,7 +1253,7 @@ body.has-player .reader {
 }
 
 .card__read {
-  right: 10px;
+  left: 10px;
   top: 9px;
   border-color: rgba(255, 255, 255, 0.09);
   color: var(--text-dim);
@@ -2257,6 +2279,7 @@ body.is-viewing-wall { overflow: hidden; }
    отличался от игровых вкладок, но оставался в языке приложения. */
 body[data-mode="ai"] {
   background:
+    var(--dots),
     radial-gradient(1100px 620px at 6% -10%, rgba(70, 160, 255, 0.16), transparent 62%),
     radial-gradient(900px 540px at 96% 4%, rgba(125, 255, 155, 0.1), transparent 60%),
     radial-gradient(900px 700px at 50% 112%, rgba(140, 90, 255, 0.1), transparent 66%),
@@ -2359,9 +2382,9 @@ body[data-mode="ai"] {
 .ai-subchip:hover { color: var(--text); border-color: var(--line); }
 
 .ai-subchip[aria-pressed="true"] {
-  color: var(--acid);
-  border-color: rgba(125, 255, 155, 0.4);
-  background: rgba(125, 255, 155, 0.1);
+  color: #06120b;
+  border-color: var(--acid);
+  background: linear-gradient(180deg, #a6ffbc, var(--acid));
 }
 
 /* Обзор: три колонки, на планшете — две, на телефоне — одна. */
@@ -2523,7 +2546,7 @@ body[data-mode="ai"] {
 .ai-news__cover {
   position: relative;
   display: block;
-  aspect-ratio: 16 / 8;
+  aspect-ratio: 16 / 9;
   overflow: hidden;
   padding: 13px 14px;
   background:

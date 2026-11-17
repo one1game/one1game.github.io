@@ -3574,6 +3574,7 @@ const genres = [
     /* Нижняя панель перекрывает низ экрана — оставляем под неё место. */
     #view-list { padding-bottom: calc(var(--tabbar-h) + 28px + var(--safe-bottom)); }
     .status { margin: 14px 0 0; }
-    #grid { grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); }
+    /* Плотная сетка как в журнале: на широком экране пять карточек в ряд. */
+    #grid { grid-template-columns: repeat(auto-fill, minmax(205px, 1fr)); gap: 16px; }
   </style>
 </Base>
