@@ -1,0 +1,3080 @@
+---
+import Base from '../layouts/Base.astro';
+import Card from '../components/Card.astro';
+import catalog from '../data/catalog.json';
+import navigator from '../data/navigator.json';
+import oboi from '../data/oboi.json';
+import movies from '../data/movies.json';
+import { historyByDay } from '../data/gaming-history';
+
+type Mode = 'news' | 'music' | 'nav' | 'oboi' | 'movie';
+
+interface Props {
+  mode?: Mode;
+  cat?: string;
+  post?: string;
+  movie?: string;
+  variant?: 'app' | 'section' | 'item' | 'movie-item';
+  seoTitle?: string;
+  seoDescription?: string;
+  seoImage?: string;
+  noindex?: boolean;
+  jsonLd?: Record<string, unknown> | Record<string, unknown>[];
+  postData?: any;
+  movieData?: any;
+  walls?: any[];
+  tracks?: any[];
+}
+
+const {
+  mode = 'news',
+  cat = '',
+  post = '',
+  movie = '',
+  variant = 'app',
+  seoTitle,
+  seoDescription,
+  seoImage,
+  noindex = false,
+  jsonLd,
+  postData,
+  movieData,
+  walls = [],
+  tracks = [],
+} = Astro.props;
+
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+const { items, categories, stats } = catalog;
+
+const isItem = variant === 'item';
+const isMovieItem = variant === 'movie-item';
+const showNews = variant === 'app';
+const showMusic = variant === 'app' || (variant === 'section' && mode === 'music');
+const showNav = variant === 'app' || (variant === 'section' && mode === 'nav');
+const showOboi = variant === 'app' || (variant === 'section' && mode === 'oboi');
+const showMovies = variant === 'app' || (variant === 'section' && mode === 'movie');
+
+const catLabel = oboi.categories.find((c) => c.key === cat)?.label || cat;
+const navKey = ['giveaways', 'deals', 'lowend', 'random'].includes(cat) ? cat : '';
+const movieSection = ['upcoming', 'released'].includes(cat) ? cat : '';
+const activeCat = cat || 'all';
+const h1 = postData
+  ? postData.title
+  : movieData
+    ? movieData.title
+    : mode === 'music'
+      ? 'Музыка для игр — слушать онлайн'
+      : mode === 'nav'
+        ? 'Игровой навигатор: скидки, раздачи и подборки'
+        : mode === 'oboi'
+          ? cat && cat !== 'all' ? `Обои: ${catLabel}` : 'Обои для рабочего стола и телефона'
+          : mode === 'movie'
+            ? 'Фильмы по играм: экранизации и новинки'
+            : 'One1Game — новости игр, гайды, обзоры и обои';
+
+const catalogMeta = JSON.stringify(
+  items.map(({ slug, title, excerpt, category, date, read, image }) => ({
+    slug, title, excerpt, category, date, read, image,
+  })),
+);
+
+const movieMeta = JSON.stringify(
+  movies.items.map(({ id, title, section, date, overview, poster, rating }) => ({
+    id, title, section, date, overview, poster, rating,
+  })),
+);
+
+const relatedItems = postData?.related
+  ? postData.related
+      .map((rel: any) => items.find((item) => item.slug === rel.slug))
+      .filter(Boolean)
+      .slice(0, 4)
+  : [];
+
+const bodyData: Record<string, string> = {
+  mode,
+  variant,
+};
+if (cat) bodyData.cat = cat;
+if (post) bodyData.post = post;
+if (movie) bodyData.movie = movie;
+
+// Информер: событие этого дня в истории игр (курс биткоина подтягивается на клиенте).
+const pad2 = (n: number) => String(n).padStart(2, '0');
+const buildDay = new Date();
+const tickerDay = `${pad2(buildDay.getMonth() + 1)}-${pad2(buildDay.getDate())}`;
+const tickerEvent = historyByDay[tickerDay];
+
+// Заголовок списка меняется вместе с разделом.
+const listTitle =
+  mode === 'music'
+    ? 'Музыка для игр'
+    : mode === 'nav'
+      ? 'Навигатор по играм'
+      : mode === 'oboi'
+        ? 'Обои и подборки'
+        : mode === 'movie'
+          ? 'Фильмы по играм'
+          : 'Свежие материалы';
+
+const plural = (n: number, one: string, few: string, many: string) => {
+  const m10 = n % 10;
+  const m100 = n % 100;
+  if (m10 === 1 && m100 !== 11) return one;
+  if (m10 >= 2 && m10 <= 4 && (m100 < 10 || m100 >= 20)) return few;
+  return many;
+};
+
+const navCount = (collection: { key: string; count: number }) => {
+  if (collection.key === 'random') return 'Рандомайзер';
+  if (collection.key === 'lowend') return `${collection.count} ${plural(collection.count, 'игра', 'игры', 'игр')}`;
+  return `${collection.count} ${plural(collection.count, 'предложение', 'предложения', 'предложений')}`;
+};
+
+// Для карточки скидки показываем реальные данные Steam, а не dealRating.
+const dealInfo = (deal: any) => {
+  const parts: string[] = [];
+  if (deal.release) parts.push(String(new Date(deal.release * 1000).getFullYear()));
+  if (deal.ratingPercent) parts.push(`${deal.ratingText || 'Steam'} · ${deal.ratingPercent}%`);
+  else if (deal.ratingText) parts.push(deal.ratingText);
+  if (deal.metacritic) parts.push(`Metacritic ${deal.metacritic}`);
+  return parts.length ? parts.join(' · ') : 'Скидка дня в Steam';
+};
+
+const dealTitle = (deal: any) => {
+  const parts: string[] = [];
+  if (deal.ratingCount) parts.push(`Отзывов Steam: ${deal.ratingCount}`);
+  if (deal.dealRating) parts.push(`Оценка сделки CheapShark: ${deal.dealRating}/10`);
+  return parts.join('. ');
+};
+
+// Полный список жанров Audius (docs: components.schemas.genre).
+// В приложении музыка тянется из их API, а не из статического снимка.
+const genres = [
+  { value: 'Electronic', label: 'Electronic' },
+  { value: 'Hip-Hop/Rap', label: 'Hip-Hop' },
+  { value: 'Rock', label: 'Rock' },
+  { value: 'Pop', label: 'Pop' },
+  { value: 'Lo-Fi', label: 'Lo-Fi' },
+  { value: 'Ambient', label: 'Ambient' },
+  { value: 'House', label: 'House' },
+  { value: 'Techno', label: 'Techno' },
+  { value: 'Trap', label: 'Trap' },
+  { value: 'Drum & Bass', label: 'Drum & Bass' },
+  { value: 'Dubstep', label: 'Dubstep' },
+  { value: 'R&B/Soul', label: 'R&B' },
+  { value: 'Jazz', label: 'Jazz' },
+  { value: 'Classical', label: 'Classical' },
+  { value: 'Reggae', label: 'Reggae' },
+  { value: 'Latin', label: 'Latin' },
+  { value: 'Metal', label: 'Metal' },
+  { value: 'Alternative', label: 'Alternative' },
+  { value: 'Punk', label: 'Punk' },
+  { value: 'Folk', label: 'Folk' },
+  { value: 'Acoustic', label: 'Acoustic' },
+  { value: 'Funk', label: 'Funk' },
+  { value: 'Blues', label: 'Blues' },
+  { value: 'Country', label: 'Country' },
+  { value: 'World', label: 'World' },
+  { value: 'Soundtrack', label: 'Soundtrack' },
+  { value: 'Experimental', label: 'Experimental' },
+  { value: 'Downtempo', label: 'Downtempo' },
+  { value: 'Trance', label: 'Trance' },
+  { value: 'Hardstyle', label: 'Hardstyle' },
+  { value: 'Hyperpop', label: 'Hyperpop' },
+  { value: 'Vaporwave', label: 'Vaporwave' },
+  { value: 'Disco', label: 'Disco' },
+  { value: 'Electro', label: 'Electro' },
+  { value: 'Jungle', label: 'Jungle' },
+  { value: 'Glitch Hop', label: 'Glitch Hop' },
+  { value: 'Future Bass', label: 'Future Bass' },
+  { value: 'Moombahton', label: 'Moombahton' },
+  { value: 'Dancehall', label: 'Dancehall' },
+  { value: 'Deep House', label: 'Deep House' },
+  { value: 'Tech House', label: 'Tech House' },
+  { value: 'Progressive House', label: 'Progressive House' },
+  { value: 'Future House', label: 'Future House' },
+  { value: 'Tropical House', label: 'Tropical House' },
+  { value: 'Jersey Club', label: 'Jersey Club' },
+];
+---
+
+<Base
+  title={seoTitle || `${h1} — One1Game`}
+  description={seoDescription}
+  noindex={noindex}
+  image={seoImage}
+  ogType={postData ? 'article' : movieData ? 'video.movie' : 'website'}
+  jsonLd={jsonLd}
+  bodyData={bodyData}
+  articleMeta={postData ? { published: postData.dateISO, section: postData.category, author: 'One1Game' } : undefined}
+>
+  <header class="appbar">
+    <div class="wrap appbar-row">
+      <a class="brand" href={`${base}/`}>
+        <span class="brand-dot"></span>
+        <span class="brand__text">One1<b>Game</b></span>
+      </a>
+      <div class="appbar-actions">
+        <nav class="socials" aria-label="One1Game в соцсетях">
+          <a
+            class="social"
+            href="https://www.youtube.com/@one1game"
+            target="_blank"
+            rel="noopener"
+            aria-label="YouTube"
+            title="YouTube"
+          >
+            <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+              <path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.6 12 3.6 12 3.6s-7.5 0-9.4.5A3 3 0 0 0 .5 6.2 31.5 31.5 0 0 0 0 12a31.5 31.5 0 0 0 .5 5.8 3 3 0 0 0 2.1 2.1c1.9.5 9.4.5 9.4.5s7.5 0 9.4-.5a3 3 0 0 0 2.1-2.1A31.5 31.5 0 0 0 24 12a31.5 31.5 0 0 0-.5-5.8zM9.6 15.6V8.4L15.8 12z" />
+            </svg>
+          </a>
+          <a
+            class="social"
+            href="https://t.me/one1game"
+            target="_blank"
+            rel="noopener"
+            aria-label="Telegram"
+            title="Telegram"
+          >
+            <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+              <path d="M9.04 15.36 8.7 20c.5 0 .72-.22.98-.48l2.36-2.27 4.9 3.6c.9.5 1.54.24 1.78-.83l3.22-15.1c.3-1.35-.49-1.88-1.37-1.55L1.4 9.66C.08 10.18.1 10.93 1.18 11.26l5.1 1.6L18.1 5.1c.56-.37 1.07-.17.65.2z" />
+            </svg>
+          </a>
+          <a
+            class="social"
+            href="https://vk.com/one1games"
+            target="_blank"
+            rel="noopener"
+            aria-label="ВКонтакте"
+            title="ВКонтакте"
+          >
+            <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+              <path d="M13.16 18.02c-5.7 0-8.95-3.9-9.08-10.4h2.86c.09 4.77 2.2 6.79 3.87 7.2V7.62h2.69v4.11c1.65-.18 3.38-2.06 3.96-4.11h2.69c-.45 2.53-2.33 4.41-3.67 5.18 1.34.62 3.48 2.26 4.29 5.22h-2.96c-.64-2-2.23-3.55-4.31-3.76v3.76h-.34z" />
+            </svg>
+          </a>
+        </nav>
+        <button class="btn" data-install type="button" aria-label="Установить приложение" hidden><span class="install-label">Установить</span></button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Информер: событие этого дня в истории игр и курс биткоина (курс приезжает с API). -->
+  <div class="ticker">
+    <div class="wrap ticker-row">
+      <p class="ticker__news" id="ticker-news" data-day={tickerDay}>
+        <span class="ticker__label">История в мире игр сегодня</span>
+        <span class="ticker__year" id="ticker-year">{tickerEvent?.y}</span>
+        <span
+          class="ticker__text"
+          id="ticker-text"
+          title={tickerEvent ? `${tickerEvent.y} · ${tickerEvent.t} — ${tickerEvent.d}` : 'Событие этого дня в истории игровой индустрии'}
+        >{tickerEvent ? tickerEvent.d : 'Событие этого дня в истории игровой индустрии'}</span>
+      </p>
+      <p class="ticker__btc" id="ticker-btc" hidden>
+        <span class="ticker__label">BTC</span>
+        <span class="ticker__text" id="ticker-btc-price">—</span>
+        <span class="ticker__delta" id="ticker-btc-delta"></span>
+      </p>
+    </div>
+  </div>
+
+  <!-- Верхний уровень: новости и музыка. Новости открыты по умолчанию. -->
+  <nav class="modes" id="modes" aria-label="Тип контента">
+    <div class="wrap modes-row">
+      <a class="mode" href={`${base}/`} data-mode="news" aria-pressed={String(mode === 'news')} aria-current={mode === 'news' ? 'page' : undefined}>Новости</a>
+      <a class="mode" href={`${base}/music/`} data-mode="music" aria-pressed={String(mode === 'music')} aria-current={mode === 'music' ? 'page' : undefined}>Музыка</a>
+      <a class="mode" href={`${base}/nav/`} data-mode="nav" aria-pressed={String(mode === 'nav')} aria-current={mode === 'nav' ? 'page' : undefined}>Игровой навигатор</a>
+      <a class="mode" href={`${base}/oboi/`} data-mode="oboi" aria-pressed={String(mode === 'oboi')} aria-current={mode === 'oboi' ? 'page' : undefined}>Обои</a>
+      <a class="mode" href={`${base}/movie/`} data-mode="movie" aria-pressed={String(mode === 'movie')} aria-current={mode === 'movie' ? 'page' : undefined}>Фильмы по играм</a>
+    </div>
+  </nav>
+
+  <main class="wrap" id="view-list" hidden={isItem || isMovieItem}>
+    {!postData && !movieData && <h1 class="sr-only">{h1}</h1>}
+
+    <div class="list-head">
+      <h2 class="list-head__title">{listTitle}</h2>
+      <span class="list-head__line" aria-hidden="true"></span>
+      <p class="status" id="status" aria-live="polite">{stats.total} материалов</p>
+    </div>
+
+    <!-- Сортировка музыки: тренды недели, всё время, свежие загрузки. -->
+    <div class="music-tools" id="music-tools" hidden={mode !== 'music'}>
+      <div class="sorts" id="sorts" role="group" aria-label="Сортировка музыки">
+        <button class="sort" type="button" data-sort="trending" aria-pressed="true">Тренды</button>
+        <button class="sort" type="button" data-sort="popular" aria-pressed="false">За всё время</button>
+        <button class="sort" type="button" data-sort="new" aria-pressed="false">Новинки</button>
+      </div>
+      <span class="music-tools__src">Audius API</span>
+    </div>
+
+    <div class="grid" id="grid" hidden={mode !== 'news'}>
+      {showNews && items.map((item, i) => <Card item={item} priority={i < 4} />)}
+    </div>
+
+    <div class="grid music-grid" id="music-grid" hidden={mode !== 'music'}>
+      {showMusic && tracks.map((track) => (
+        <button
+          class="track"
+          type="button"
+          data-track
+          data-id={track.id}
+          data-title={track.title}
+          data-artist={track.artist}
+          data-art={track.art}
+          aria-label={`Слушать ${track.title}`}
+        >
+          <span class="track__art">
+            {track.art && <img src={track.art} alt="" loading="lazy" decoding="async" width="480" height="480" />}
+            <span class="track__play" aria-hidden="true"><span class="track__icon">▶</span></span>
+          </span>
+          <span class="track__body">
+            <span class="track__title">{track.title}</span>
+            <span class="track__artist">{track.artist}</span>
+            <span class="track__meta">
+              {track.genre || 'Музыка'} · {Math.floor((track.duration || 0) / 60)}:{String((track.duration || 0) % 60).padStart(2, '0')}
+            </span>
+          </span>
+        </button>
+      ))}
+    </div>
+
+    <div class="music-more" id="music-more-wrap" hidden>
+      <button class="btn btn--ghost" id="music-more" type="button">Показать ещё</button>
+    </div>
+
+    <!-- Игровой навигатор: «Подборки» основного сайта. -->
+    <div class="nav-hub" id="nav-hub" hidden={mode !== 'nav' || !!navKey}>
+      {showNav && navigator.collections.map((collection) => (
+        <button
+          class="nav-hub__card"
+          type="button"
+          data-nav-go={collection.key}
+          data-hay={`${collection.label} ${collection.desc}`.toLowerCase()}
+        >
+          {collection.image && (
+            <span class="nav-hub__art" aria-hidden="true">
+              <img
+                src={collection.image}
+                onerror="this.onerror=null;this.style.display='none'"
+                alt=""
+                width="616"
+                height="353"
+                loading="lazy"
+                decoding="async"
+              />
+            </span>
+          )}
+          <span class="nav-hub__label">Подборка</span>
+          <span class="nav-hub__title">{collection.label}</span>
+          <span class="nav-hub__desc">{collection.desc}</span>
+          <span class="nav-hub__count">{navCount(collection)} →</span>
+        </button>
+      ))}
+    </div>
+
+    <div class="grid nav-grid" id="nav-giveaways" hidden={mode !== 'nav' || navKey !== 'giveaways'}>
+      {showNav && navigator.giveaways.map((giveaway) => (
+        <a
+          class="card nav-card"
+          href={giveaway.url}
+          target="_blank"
+          rel="nofollow noopener"
+          data-nav-item
+          data-hay={`${giveaway.title} ${giveaway.platforms} ${giveaway.description}`.toLowerCase()}
+        >
+          <span class="card__thumb">
+            {giveaway.image && (
+              <img
+                src={giveaway.image}
+                data-fallback={`${base}/icon.svg`}
+                onerror="const s=[this.dataset.fallback,this.dataset.fallback2,this.dataset.fallback3].filter(Boolean),i=+(this.dataset.step||0);if(i<s.length){this.dataset.step=i+1;this.src=s[i]}else{this.onerror=null}"
+                alt={giveaway.title}
+                loading="lazy"
+                decoding="async"
+                width="460"
+                height="215"
+              />
+            )}
+          </span>
+          <span class="card__body">
+            <span class="card__cat">Бесплатно · {giveaway.platforms}</span>
+            <span class="card__title">{giveaway.title}</span>
+            <span class="card__excerpt">{giveaway.description}</span>
+            <span class="card__meta">
+              {giveaway.worth ? `Было ${giveaway.worth} · ` : ''}
+              {giveaway.end ? `до ${giveaway.end} · ` : ''}Забрать →
+            </span>
+          </span>
+        </a>
+      ))}
+    </div>
+
+    <div class="grid nav-grid" id="nav-deals" hidden={mode !== 'nav' || navKey !== 'deals'}>
+      {showNav && navigator.deals.map((deal) => (
+        <a
+          class="card nav-card"
+          href={deal.url}
+          target="_blank"
+          rel="nofollow noopener"
+          data-nav-item
+          data-hay={`${deal.title} ${dealInfo(deal)} скидка steam ${deal.discount}`.toLowerCase()}
+          title={dealTitle(deal)}
+        >
+          <span class="card__thumb">
+            {deal.image && (
+              <img
+                src={deal.image}
+                class={deal.image.includes('capsule_231x87') ? 'is-lowres' : undefined}
+                data-fallback={deal.imageFallback}
+                data-fallback2={deal.thumb}
+                data-fallback3={`${base}/icon.svg`}
+                onerror="const s=[this.dataset.fallback,this.dataset.fallback2,this.dataset.fallback3].filter(Boolean),i=+(this.dataset.step||0);if(i<s.length){this.dataset.step=i+1;this.src=s[i];if(this.src.includes('capsule_231x87'))this.classList.add('is-lowres')}else{this.onerror=null}"
+                alt={deal.title}
+                loading="lazy"
+                decoding="async"
+                width="616"
+                height="353"
+              />
+            )}
+          </span>
+          <span class="card__body">
+            <span class="card__cat">−{deal.discount}% · Steam</span>
+            <span class="card__title">{deal.title}</span>
+            <span class="card__excerpt">{dealInfo(deal)}</span>
+            <span class="card__meta">${deal.normal.toFixed(2)} → ${deal.sale.toFixed(2)} · Открыть →</span>
+          </span>
+        </a>
+      ))}
+    </div>
+
+    <section class="nav-random" id="nav-random" hidden={mode !== 'nav' || navKey !== 'random'}>
+      <p class="nav-random__lead">
+        Не можете выбрать? Нажмите «Крутить» — выпадет случайная игра из базы приложения.
+      </p>
+
+      <div class="random-controls">
+        <input id="random-q" class="random-search" type="search" placeholder="Фильтр по названию…" autocomplete="off" />
+        <button class="btn" id="random-roll" type="button">Крутить</button>
+        <label class="random-opt"><input type="checkbox" id="random-skip" checked /> не повторять</label>
+      </div>
+
+      <article class="random-card" id="random-card" hidden>
+        <div class="random-card__art"><img id="random-img" alt="" width="616" height="353" loading="lazy" decoding="async" /></div>
+        <div class="random-card__body">
+          <span class="card__cat">Случайная игра</span>
+          <h3 id="random-title"></h3>
+          <p id="random-excerpt"></p>
+          <button class="btn" id="random-open" type="button">Открыть обзор →</button>
+        </div>
+      </article>
+
+      <p class="random-stats" id="random-stats"></p>
+
+      <div id="random-pool" hidden>
+        {showNav && items.filter((item) => item.game).map((game) => (
+          <button
+            type="button"
+            data-pick
+            data-slug={game.slug}
+            data-title={game.title}
+            data-excerpt={game.excerpt}
+            data-image={game.image}
+          ></button>
+        ))}
+      </div>
+    </section>
+
+    <div class="grid nav-grid" id="nav-lowend" hidden={mode !== 'nav' || navKey !== 'lowend'}>
+      {showNav && navigator.lowend.map((game) => (
+        <a
+          class="card nav-card"
+          href={game.url}
+          target="_blank"
+          rel="nofollow noopener"
+          data-nav-item
+          data-hay={`${game.title} ${game.note} ${game.req} ${game.ram} ${game.gpu}`.toLowerCase()}
+          title={game.req}
+        >
+          <span class="card__thumb">
+            {game.image && (
+              <img
+                src={game.image}
+                class={game.image.includes('capsule_231x87') ? 'is-lowres' : undefined}
+                data-fallback={game.imageFallback}
+                data-fallback2={`${base}/icon.svg`}
+                onerror="const s=[this.dataset.fallback,this.dataset.fallback2,this.dataset.fallback3].filter(Boolean),i=+(this.dataset.step||0);if(i<s.length){this.dataset.step=i+1;this.src=s[i];if(this.src.includes('capsule_231x87'))this.classList.add('is-lowres')}else{this.onerror=null}"
+                alt={game.title}
+                loading="lazy"
+                decoding="async"
+                width="616"
+                height="353"
+              />
+            )}
+          </span>
+          <span class="card__body">
+            <span class="card__cat">Без видеокарты</span>
+            <span class="card__title">{game.title}</span>
+            <span class="card__excerpt">{game.note || game.req}</span>
+            <span class="card__meta">
+              {game.ram ? `Мин. ОЗУ: ${game.ram.replace(/\s*ОЗУ/i, '')}` : 'Встроенная графика'} · Steam →
+            </span>
+          </span>
+        </a>
+      ))}
+    </div>
+
+    <!-- Обои: API страницы oboi/ (Wallhaven через прокси сайта). -->
+    <section class="oboi" id="oboi-view" hidden={mode !== 'oboi'} aria-label="Обои">
+      <p class="oboi__lead">
+        Игровые обои в 4K и Full HD: неон, киберпанк, аниме, арты из Genshin Impact,
+        Cyberpunk 2077, Elden Ring и других игр. Без регистрации и водяных знаков.
+      </p>
+
+      <div class="music-tools" id="oboi-tools" hidden={mode !== 'oboi'}>
+        <div class="sorts" id="oboi-sorts" role="group" aria-label="Сортировка обоев">
+          <button class="sort" type="button" data-wall-sort="favorites" aria-pressed="true">Популярные</button>
+          <button class="sort" type="button" data-wall-sort="toplist" aria-pressed="false">Лучшие за год</button>
+          <button class="sort" type="button" data-wall-sort="date_added" aria-pressed="false">Новые</button>
+          <button class="sort" type="button" data-wall-sort="random" aria-pressed="false">Случайные</button>
+        </div>
+        <span class="music-tools__src">Wallhaven API</span>
+      </div>
+
+      <div class="grid oboi__grid" id="oboi-grid" aria-live="polite">
+        {showOboi && walls.map((wall, i) => (
+          <article class="card wall-card">
+            <button
+              class="card__thumb wall-card__open"
+              type="button"
+              data-i={i}
+              data-wall-id={wall.id}
+              data-wall-thumb={wall.thumb}
+              data-wall-full={wall.full}
+              data-wall-res={wall.res}
+              data-wall-size={wall.size}
+              data-wall-ratio={wall.ratio}
+              aria-label={`Открыть обои ${wall.res}`}
+            >
+              <img src={wall.thumb} alt={`Обои ${wall.res}`} width="300" height="200" loading="lazy" decoding="async" />
+              <span class="wall__res">{wall.res.replace('x', '×')}</span>
+            </button>
+            <span class="card__body">
+              <span class="card__cat">Обои · Wallhaven</span>
+              <span class="card__title">{wall.res.replace('x', '×')}</span>
+              <span class="card__excerpt">
+                {wall.size ? `${(wall.size / 1048576).toFixed(1).replace('.', ',')} МБ` : 'Для ПК и телефона'}
+              </span>
+              <span class="card__meta">
+                <a
+                  class="wall-card__link"
+                  href={`${base}/download?url=${encodeURIComponent(wall.full)}`}
+                  download
+                  data-wall-save={wall.full}
+                  data-wall-id={wall.id}
+                >Скачать</a>
+              </span>
+            </span>
+          </article>
+        ))}
+      </div>
+
+      <div class="music-more" id="oboi-more-wrap" hidden>
+        <button class="btn btn--ghost" id="oboi-more" type="button">Показать ещё</button>
+      </div>
+
+      <!-- Индекс подборок: живые ссылки на статические страницы разделов. -->
+      {showOboi && (
+        <nav class="cat-index" aria-label="Все подборки обоев">
+          <p class="cat-index__title">Все подборки обоев</p>
+          <div class="cat-index__row">
+            {oboi.categories.filter((category) => category.key !== 'all').map((category) => (
+              <a class="cat-index__link" href={`${base}/oboi/${category.key}/`}>{category.label}</a>
+            ))}
+          </div>
+        </nav>
+      )}
+    </section>
+
+    <!-- Фильмы по играм: хаб kino/ основного сайта — постеры, факты, трейлеры. -->
+    <section class="movie-hub" id="movie-grid" hidden={mode !== 'movie'} aria-label="Фильмы по играм">
+      <p class="movie-hub__lead">
+        Каталог фильмов и сериалов по мотивам видеоигр: что уже вышло и что скоро
+        на экранах. Жми на постер — откроются факты, сюжет, актёры и трейлер.
+      </p>
+      {showMovies && movies.sections.map((section) => (
+        <div class="movie-block" data-movie-block={section.key} hidden={!!movieSection && movieSection !== section.key}>
+          <div class="movie-block__head">
+            <h2 class="movie-block__title">{section.label}</h2>
+            <span class="movie-block__count">{section.count}</span>
+          </div>
+          <div class="grid movie-grid">
+            {movies.items.filter((movie) => movie.section === section.key).map((movie) => (
+              <article
+                class="card movie-card"
+                data-movie={movie.id}
+                data-section={movie.section}
+                data-hay={`${movie.title} ${movie.date} ${movie.overview} ${movie.genres}`.toLowerCase()}
+              >
+                <a
+                  class="card__thumb movie-card__open"
+                  href={`${base}/movie/${movie.id}/`}
+                  data-movie-open={movie.id}
+                  aria-label={`Открыть «${movie.title}»`}
+                >
+                  {movie.poster && (
+                    <>
+                      <img class="movie-card__bg" src={movie.poster} alt="" aria-hidden="true" width="300" height="169" loading="lazy" decoding="async" />
+                      <img class="movie-card__poster" src={movie.poster} alt={`${movie.title} — постер`} width="300" height="450" loading="lazy" decoding="async" />
+                    </>
+                  )}
+                  {movie.rating && <span class="movie-card__rating">{movie.rating.replace(/^★\s*/, '')}</span>}
+                </a>
+                <span class="card__body">
+                  <span class="card__cat">Фильм по игре · {movie.date.split(' ').pop()}</span>
+                  <span class="card__title">{movie.title}</span>
+                  <span class="card__excerpt">{movie.overview}</span>
+                  <span class="card__meta">{movie.date}{movie.genres ? ` · ${movie.genres}` : ''}</span>
+                </span>
+              </article>
+            ))}
+          </div>
+        </div>
+      ))}
+    </section>
+
+    <div class="empty" id="empty" hidden>
+      Ничего не найдено. <button class="btn btn--ghost" id="reset" type="button" style="margin-left:8px">Сбросить</button>
+    </div>
+  </main>
+
+  <!-- Читалка: тот же экран приложения, содержимое приезжает JSON'ом. -->
+  <article
+    class="reader"
+    id="reader"
+    hidden={!postData}
+    data-pre={postData ? '1' : undefined}
+    style={postData?.image ? `--reader-img:url("${postData.image}")` : undefined}
+  >
+    <div class="wrap">
+      {postData && (
+        <nav class="crumbs" aria-label="Хлебные крошки">
+          <a href={`${base}/`}>Главная</a>
+          <span aria-hidden="true">/</span>
+          <a href={`${base}/`}>Новости</a>
+          <span aria-hidden="true">/</span>
+          <span>{postData.title}</span>
+        </nav>
+      )}
+      <div class="reader__top">
+        <button class="back" id="back" type="button">
+          <span aria-hidden="true">←</span> Назад
+        </button>
+        <span class="reader__cat" id="r-cat">{postData?.category}</span>
+        <span class="reader__meta" id="r-meta">
+          {postData
+            ? <><time datetime={postData.dateISO}>{postData.date}</time> · {postData.read} мин чтения</>
+            : null}
+        </span>
+      </div>
+
+      <header class="reader__head">
+        {postData
+          ? <h1 id="r-title">{postData.title}</h1>
+          : <h2 id="r-title"></h2>}
+        <p class="reader__lead" id="r-lead">{postData?.excerpt}</p>
+      </header>
+
+      <div class="reader__cover" id="r-cover" hidden={!postData?.image}>
+        {postData?.image && (
+          <img src={postData.image} alt={`${postData.title} — обложка`} width="1200" height="675" loading="eager" fetchpriority="high" decoding="async" />
+        )}
+      </div>
+      <div class="article-body" id="r-body">
+        <Fragment set:html={postData?.html || ''} />
+      </div>
+      <section class="reader__related" id="r-related" hidden={!relatedItems.length}>
+        <h2 class="reader__related-title">Читать дальше</h2>
+        <div class="reader__related-list" id="r-related-list">
+          {relatedItems.map((rel) => (
+            <a class="rel" href={`${base}/news/${rel.slug}/`} data-slug={rel.slug}>
+              <span class="rel__cat">{rel.category}</span>
+              <span class="rel__title">{rel.title}</span>
+              <span class="rel__date">{rel.date}</span>
+            </a>
+          ))}
+        </div>
+      </section>
+    </div>
+  </article>
+
+  <!-- Фильм: постер, факты, трейлер, сюжет и актёры. -->
+  <article
+    class="reader movie-reader"
+    id="movie-reader"
+    hidden={!movieData}
+    data-pre={movieData ? '1' : undefined}
+  >
+    <div class="wrap">
+      {movieData && (
+        <nav class="crumbs" aria-label="Хлебные крошки">
+          <a href={`${base}/`}>Главная</a>
+          <span aria-hidden="true">/</span>
+          <a href={`${base}/movie/`}>Фильмы по играм</a>
+          <span aria-hidden="true">/</span>
+          <span>{movieData.title}</span>
+        </nav>
+      )}
+      <div class="reader__top">
+        <button class="back" id="movie-back" type="button">
+          <span aria-hidden="true">←</span> Назад
+        </button>
+        <span class="reader__cat" id="m-cat">
+          {movieData ? (movieData.section === 'upcoming' ? 'Скоро на экранах' : 'Фильм по игре') : 'Фильм по игре'}
+        </span>
+        <span class="reader__meta" id="m-meta">{movieData?.date}</span>
+      </div>
+      <div class="movie-detail">
+        <div class="movie-detail__hero">
+          <div class="movie-detail__poster" id="m-poster">
+            {movieData?.poster && (
+              <img
+                src={movieData.poster}
+                alt={`${movieData.title} — постер`}
+                width="500"
+                height="750"
+                loading="eager"
+                decoding="async"
+              />
+            )}
+          </div>
+          <div class="movie-detail__info">
+            {movieData
+              ? <h1 id="m-title">{movieData.title}</h1>
+              : <h2 id="m-title"></h2>}
+            <p class="movie-detail__tagline" id="m-tagline" hidden={!movieData?.tagline}>{movieData?.tagline}</p>
+            <div class="movie-detail__facts" id="m-facts">
+              {movieData?.facts?.map((fact: string) => {
+                const idx = fact.indexOf(':');
+                return idx < 0
+                  ? <span>{fact}</span>
+                  : <span>{fact.slice(0, idx)}: <b>{fact.slice(idx + 1).trim()}</b></span>;
+              })}
+            </div>
+          </div>
+        </div>
+        <div class="article-body" id="m-body">
+          {movieData?.trailer && (
+            <>
+              <h2>Трейлер</h2>
+              <div class="movie-trailer">
+                <iframe
+                  src={`https://www.youtube-nocookie.com/embed/${movieData.trailer}`}
+                  title={`${movieData.title} — трейлер`}
+                  loading="lazy"
+                  allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowfullscreen
+                ></iframe>
+              </div>
+            </>
+          )}
+          {movieData?.plot && (
+            <>
+              <h2>Сюжет</h2>
+              <p>{movieData.plot}</p>
+            </>
+          )}
+          {movieData?.factsList?.length > 0 && (
+            <>
+              <h2>Факты о фильме</h2>
+              <ul class="movie-list">{movieData.factsList.map((fact: string) => <li>{fact}</li>)}</ul>
+            </>
+          )}
+          {movieData?.cast?.length > 0 && (
+            <>
+              <h2>В ролях</h2>
+              <div class="movie-cast">
+                {movieData.cast.map((person: any) => (
+                  <div><b>{person.name}</b>{person.role || ''}</div>
+                ))}
+              </div>
+            </>
+          )}
+          {movieData?.trivia?.length > 0 && (
+            <>
+              <h2>Интересные факты</h2>
+              <ul class="movie-list">{movieData.trivia.map((fact: string) => <li>{fact}</li>)}</ul>
+            </>
+          )}
+        </div>
+      </div>
+    </div>
+  </article>
+
+  <!-- Просмотр обоев: крупная картинка, разрешение, скачивание и ссылка на источник. -->
+  <div class="wall-viewer" id="wall-viewer" role="dialog" aria-modal="true" aria-label="Просмотр обоев" hidden>
+    <div class="wall-viewer__bar">
+      <span class="wall-viewer__count" id="wall-count"></span>
+      <button class="wall-viewer__close" id="wall-close" type="button" aria-label="Закрыть">×</button>
+    </div>
+    <figure class="wall-viewer__stage">
+      <img id="wall-img" alt="" width="1920" height="1080" decoding="async" />
+    </figure>
+    <div class="wall-viewer__foot">
+      <span class="wall-viewer__res" id="wall-res"></span>
+      <a class="wall-viewer__btn" id="wall-download" href="#" download>Скачать</a>
+    </div>
+    <button class="wall-viewer__nav wall-viewer__nav--prev" id="wall-prev" type="button" aria-label="Предыдущие">‹</button>
+    <button class="wall-viewer__nav wall-viewer__nav--next" id="wall-next" type="button" aria-label="Следующие">›</button>
+  </div>
+
+  <!-- Разделы всегда снизу: не уезжают при скролле и в читалке.
+       Содержимое полосы зависит от верхней вкладки. -->
+  <nav class="tabbar" id="chips" aria-label="Разделы">
+    <div class="wrap chips" data-chips="news" hidden={mode !== 'news'}>
+      <button class="chip" type="button" data-cat="all" aria-pressed={String(activeCat === 'all')}>Все</button>
+      {categories.map((c) => (
+        <button class="chip" type="button" data-cat={c} aria-pressed={String(activeCat === c)}>{c}</button>
+      ))}
+    </div>
+    <div class="wrap chips" data-chips="music" hidden={mode !== 'music'}>
+      <button class="chip" type="button" data-cat="all" aria-pressed={String(activeCat === 'all')}>Все</button>
+      {genres.map((g) => (
+        <button class="chip" type="button" data-cat={g.value} aria-pressed={String(activeCat === g.value)}>{g.label}</button>
+      ))}
+    </div>
+    <div class="wrap chips" data-chips="nav" hidden={mode !== 'nav'}>
+      <button class="chip" type="button" data-cat="all" aria-pressed={String(activeCat === 'all')}>Все</button>
+      {navigator.collections.map((collection) => (
+        <button
+          class="chip"
+          type="button"
+          data-cat={collection.key}
+          aria-pressed={String(activeCat === collection.key)}
+        >{collection.label}</button>
+      ))}
+    </div>
+    <div class="wrap chips" data-chips="oboi" hidden={mode !== 'oboi'}>
+      {oboi.categories.map((category) => (
+        <button
+          class="chip"
+          type="button"
+          data-cat={category.key}
+          aria-pressed={String(activeCat === category.key)}
+        >{category.label}</button>
+      ))}
+    </div>
+    <div class="wrap chips" data-chips="movie" hidden={mode !== 'movie'}>
+      <button class="chip" type="button" data-cat="all" aria-pressed={String(activeCat === 'all')}>Все</button>
+      {movies.sections.map((section) => (
+        <button class="chip" type="button" data-cat={section.key} aria-pressed={String(activeCat === section.key)}>{section.label}</button>
+      ))}
+    </div>
+  </nav>
+
+  <!-- Мини-плеер: живёт над нижней панелью, пока играет трек. -->
+  <div class="player" id="player" hidden>
+    <div class="wrap player__row">
+      <span class="player__art" id="p-art"></span>
+      <span class="player__info">
+        <span class="player__title" id="p-title"></span>
+        <span class="player__artist" id="p-artist"></span>
+      </span>
+      <button class="player__btn" id="p-toggle" type="button" aria-label="Пауза">❚❚</button>
+      <button class="player__btn player__btn--close" id="p-close" type="button" aria-label="Остановить">×</button>
+    </div>
+    <div class="player__progress"><i id="p-progress"></i></div>
+  </div>
+
+  <div class="progress" id="progress" hidden><i id="progress-fill"></i></div>
+
+  {(isItem || showNav) && <script type="application/json" id="app-catalog" set:html={catalogMeta} />}
+  {isMovieItem && <script type="application/json" id="app-movies" set:html={movieMeta} />}
+
+  <script>
+    const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+    // app — полноценное SPA; item/section — статические страницы, которые
+    // этот же скрипт превращает в приложение. Разметка у них одна.
+    const variant = document.body.dataset.variant || 'app';
+    const prePost = document.getElementById('reader')?.dataset.pre === '1';
+    const preMovie = document.getElementById('movie-reader')?.dataset.pre === '1';
+
+    // Поиск убран из шапки: невидимый инпут остаётся только как состояние
+    // для фильтров по разделам, чтобы вся логика работала без падений.
+    const input = (document.getElementById('q') as HTMLInputElement | null) ?? document.createElement('input');
+    const clear = (document.getElementById('clear') as HTMLButtonElement | null) ?? document.createElement('button');
+    const status = document.getElementById('status') as HTMLElement;
+    const empty = document.getElementById('empty') as HTMLElement;
+    const reset = document.getElementById('reset') as HTMLButtonElement;
+    const grid = document.getElementById('grid') as HTMLElement;
+    const musicGrid = document.getElementById('music-grid') as HTMLElement;
+    const musicTools = document.getElementById('music-tools') as HTMLElement;
+    const moreWrap = document.getElementById('music-more-wrap') as HTMLElement;
+    const moreBtn = document.getElementById('music-more') as HTMLButtonElement;
+    const sorts = Array.from(document.querySelectorAll<HTMLButtonElement>('.sort'));
+    const navHub = document.getElementById('nav-hub') as HTMLElement;
+    const navRandom = document.getElementById('nav-random') as HTMLElement;
+    const navSections: Record<string, HTMLElement> = {
+      giveaways: document.getElementById('nav-giveaways') as HTMLElement,
+      deals: document.getElementById('nav-deals') as HTMLElement,
+      lowend: document.getElementById('nav-lowend') as HTMLElement,
+    };
+    const listView = document.getElementById('view-list') as HTMLElement;
+    const oboiView = document.getElementById('oboi-view') as HTMLElement;
+    const oboiGrid = document.getElementById('oboi-grid') as HTMLElement;
+    const movieGrid = document.getElementById('movie-grid') as HTMLElement;
+    const movieBlocks = Array.from(document.querySelectorAll<HTMLElement>('[data-movie-block]'));
+    const movieCards = Array.from(document.querySelectorAll<HTMLElement>('[data-movie]'));
+    const movieReader = document.getElementById('movie-reader') as HTMLElement;
+    const movieBack = document.getElementById('movie-back') as HTMLButtonElement;
+    const mCat = document.getElementById('m-cat') as HTMLElement;
+    const mMeta = document.getElementById('m-meta') as HTMLElement;
+    const mTitle = document.getElementById('m-title') as HTMLElement;
+    const mTagline = document.getElementById('m-tagline') as HTMLElement;
+    const mPoster = document.getElementById('m-poster') as HTMLElement;
+    const mFacts = document.getElementById('m-facts') as HTMLElement;
+    const mBody = document.getElementById('m-body') as HTMLElement;
+    const cards = Array.from(grid.querySelectorAll<HTMLElement>('[data-card]'));
+    const listTitle = document.title;
+    const modes = Array.from(document.querySelectorAll<HTMLElement>('.mode'));
+    const chipRows = {
+      news: document.querySelector<HTMLElement>('[data-chips="news"]')!,
+      music: document.querySelector<HTMLElement>('[data-chips="music"]')!,
+      nav: document.querySelector<HTMLElement>('[data-chips="nav"]')!,
+      oboi: document.querySelector<HTMLElement>('[data-chips="oboi"]')!,
+      movie: document.querySelector<HTMLElement>('[data-chips="movie"]')!,
+    };
+
+    const reader = document.getElementById('reader') as HTMLElement;
+    const rCat = document.getElementById('r-cat') as HTMLElement;
+    const rMeta = document.getElementById('r-meta') as HTMLElement;
+    const rTitle = document.getElementById('r-title') as HTMLElement;
+    const rLead = document.getElementById('r-lead') as HTMLElement;
+    const rCover = document.getElementById('r-cover') as HTMLElement;
+    const rBody = document.getElementById('r-body') as HTMLElement;
+    const rRelated = document.getElementById('r-related') as HTMLElement;
+    const rRelatedList = document.getElementById('r-related-list') as HTMLElement;
+    const back = document.getElementById('back') as HTMLButtonElement;
+    const progress = document.getElementById('progress') as HTMLElement;
+    const progressFill = document.getElementById('progress-fill') as HTMLElement;
+
+    // Каталог уже в разметке — второй раз те же данные в скрипт не кладём.
+    interface Meta {
+      slug: string;
+      title: string;
+      excerpt: string;
+      category: string;
+      date: string;
+      read: number;
+      image: string;
+    }
+
+    const bySlug = new Map<string, Meta>();
+    for (const card of cards) {
+      const slug = card.dataset.slug || '';
+      if (!slug) continue;
+      bySlug.set(slug, {
+        slug,
+        title: card.dataset.title || '',
+        excerpt: card.dataset.excerpt || '',
+        category: card.dataset.cat || '',
+        date: card.dataset.dateLabel || '',
+        read: Number(card.dataset.read || 1),
+        image: card.dataset.image || '',
+      });
+    }
+
+    // На статических страницах материала сетки нет — каталог приезжает
+    // готовым JSON'ом, чтобы читалка и «Читать дальше» работали без сети.
+    if (!bySlug.size) {
+      try {
+        const pre = JSON.parse(document.getElementById('app-catalog')?.textContent || '[]');
+        for (const meta of pre) {
+          if (meta?.slug) bySlug.set(meta.slug, meta as Meta);
+        }
+      } catch {
+        // Повреждённый JSON не должен ломать приложение.
+      }
+    }
+
+    // ── музыка: Audius API ────────────────────────────────────────
+    // Документация: https://docs.audius.org/developers/api
+    // app_name обязателен в каждом запросе. Тренды и новинки — отдельные
+    // эндпоинты с limit/offset, поиск идёт по всей базе с sort_method.
+    const AUDIUS = {
+      app: 'One1Game',
+      base: 'https://api.audius.co/v1',
+      // Первая страница меньше: вкладка открывается быстрее, «ещё» добирает.
+      first: 24,
+      page: 40,
+      cacheTtl: 10 * 60 * 1000,
+    };
+
+    // Заглушка вместо битой обложки: узлы-валидаторы Audius иногда
+    // отдают 403 или обрывают соединение — карточка не должна пустовать.
+    const FALLBACK_ART = 'data:image/svg+xml,' + encodeURIComponent(
+      '<svg xmlns="http://www.w3.org/2000/svg" width="480" height="480">' +
+      '<defs><linearGradient id="g" x1="0" y1="0" x2="1" y2="1">' +
+      '<stop offset="0" stop-color="#1a2433"/><stop offset="1" stop-color="#0a0f16"/></linearGradient></defs>' +
+      '<rect width="480" height="480" fill="url(#g)"/>' +
+      '<path d="M200 330V190l120-28v140a44 44 0 1 1-24-39V188l-72 17v125a44 44 0 1 1-24-39z" fill="#7dff9b" opacity=".7"/>' +
+      '</svg>'
+    );
+
+    interface Track {
+      id: string;
+      title: string;
+      artist: string;
+      genre: string;
+      duration: number;
+      art: string;
+      plays: number;
+      date: string;
+      groups?: string[];
+    }
+
+    const musicState = {
+      genre: 'all',
+      sort: 'trending' as 'trending' | 'popular' | 'new',
+      offset: 0,
+      loading: false,
+      loaded: false,
+      done: false,
+      fallback: false,
+      items: [] as Track[],
+      seen: new Set<string>(),
+    };
+
+    type Mode = 'news' | 'music' | 'nav' | 'oboi' | 'movie';
+    let mode: Mode = 'news';
+    let newsCat = 'all';
+    let navCat = 'all';
+    let oboiCat = 'all';
+    let movieCat = 'all';
+    let movieCurrent = '';
+    let current = '';
+
+    const fmtTime = (total: number) => {
+      const s = Math.max(0, Math.round(total));
+      return `${Math.floor(s / 60)}:${String(s % 60).padStart(2, '0')}`;
+    };
+
+    const chipsOf = (m: Mode) => Array.from(chipRows[m].querySelectorAll<HTMLButtonElement>('.chip'));
+
+    // Адрес приложения — не query-строка, а чистый путь. Такую ссылку
+    // отдаёт и статическая страница для поиска, и кнопка «назад» браузера.
+    function cleanPath() {
+      if (mode === 'music') return `${base}/music/`;
+      if (mode === 'nav') return `${base}/nav/`;
+      if (mode === 'oboi') return oboiCat && oboiCat !== 'all' ? `${base}/oboi/${oboiCat}/` : `${base}/oboi/`;
+      if (mode === 'movie') return movieCurrent ? `${base}/movie/${movieCurrent}/` : `${base}/movie/`;
+      if (current) return `${base}/news/${current}/`;
+      return `${base}/`;
+    }
+
+    function syncMeta() {
+      const link = document.querySelector<HTMLLinkElement>('link[rel="canonical"]');
+      if (link) link.href = `https://one1game.org${cleanPath()}`;
+    }
+
+    function saveUrl() {
+      const path = cleanPath();
+      const p = new URLSearchParams();
+      if (mode === 'news' && newsCat !== 'all') p.set('cat', newsCat);
+      if (mode === 'music') {
+        if (musicState.genre !== 'all') p.set('cat', musicState.genre);
+        if (musicState.sort !== 'trending') p.set('sort', musicState.sort);
+      }
+      if (mode === 'nav' && navCat !== 'all') p.set('cat', navCat);
+      if (mode === 'movie' && movieCat !== 'all') p.set('cat', movieCat);
+      if (mode === 'oboi' && wallState.sort !== 'favorites') p.set('sort', wallState.sort);
+      const q = input.value.trim();
+      if (q) p.set('q', q);
+      const qs = p.toString();
+      history.replaceState(null, '', qs ? `${path}?${qs}` : path);
+      syncMeta();
+    }
+
+    // Путь → состояние. Нужен для «назад/вперёд» и для прямого открытия.
+    function routeFromPath(): { mode: Mode; post?: string; movie?: string; cat?: string } {
+      let p = location.pathname;
+      if (base && p.startsWith(base)) p = p.slice(base.length);
+      p = p.replace(/\/+$/, '');
+      const seg = p.split('/').filter(Boolean);
+      const params = new URLSearchParams(location.search);
+      if (seg[0] === 'news' && seg[1]) return { mode: 'news', post: seg[1] };
+      if (seg[0] === 'movie') return { mode: 'movie', movie: seg[1] || '' };
+      if (seg[0] === 'music') return { mode: 'music', cat: params.get('cat') || '' };
+      if (seg[0] === 'nav') return { mode: 'nav', cat: params.get('cat') || '' };
+      if (seg[0] === 'oboi') return { mode: 'oboi', cat: seg[1] || '' };
+      return { mode: 'news', cat: params.get('cat') || '' };
+    }
+
+    function applyNews(save = true) {
+      const q = input.value.trim().toLowerCase();
+      let shown = 0;
+
+      for (const card of cards) {
+        const okCat = newsCat === 'all' || card.dataset.cat === newsCat;
+        const okText = !q || (card.dataset.hay || '').includes(q);
+        const ok = okCat && okText;
+        card.hidden = !ok;
+        if (ok) shown++;
+      }
+
+      clear.hidden = !q;
+      status.textContent = q || newsCat !== 'all'
+        ? `Найдено ${shown} из ${cards.length}`
+        : `${cards.length} материалов`;
+      empty.hidden = shown !== 0;
+      if (save) saveUrl();
+    }
+
+    // ── игровой навигатор ─────────────────────────────────────────
+    // Данные «Подборок» основного сайта уже в разметке: фильтруем,
+    // переключаем разделы и запускаем рандомайзер без запросов к сети.
+    const randomQ = document.getElementById('random-q') as HTMLInputElement;
+    const randomRoll = document.getElementById('random-roll') as HTMLButtonElement;
+    const randomSkip = document.getElementById('random-skip') as HTMLInputElement;
+    const randomCard = document.getElementById('random-card') as HTMLElement;
+    const randomImg = document.getElementById('random-img') as HTMLImageElement;
+    const randomTitle = document.getElementById('random-title') as HTMLElement;
+    const randomExcerpt = document.getElementById('random-excerpt') as HTMLElement;
+    const randomOpen = document.getElementById('random-open') as HTMLButtonElement;
+    const randomStats = document.getElementById('random-stats') as HTMLElement;
+    const pickPool = Array.from(document.querySelectorAll<HTMLElement>('[data-pick]'));
+    const randomSeen = new Set<string>();
+    let randomRolled = false;
+
+    function rollRandom() {
+      const term = randomQ.value.trim().toLowerCase();
+      const matches = (pick: HTMLElement) =>
+        !term || `${pick.dataset.title} ${pick.dataset.excerpt}`.toLowerCase().includes(term);
+
+      let pool = pickPool.filter((pick) => matches(pick) && !(randomSkip.checked && randomSeen.has(pick.dataset.slug || '')));
+      // Всё уже выпадало — начинаем круг заново, а не показываем пустоту.
+      if (!pool.length && randomSkip.checked) {
+        randomSeen.clear();
+        pool = pickPool.filter(matches);
+      }
+      randomStats.textContent = pool.length
+        ? `В выборке: ${pool.length} из ${pickPool.length}`
+        : 'По этому запросу игр нет';
+      if (!pool.length) {
+        randomCard.hidden = true;
+        return;
+      }
+      const pick = pool[Math.floor(Math.random() * pool.length)];
+      randomSeen.add(pick.dataset.slug || '');
+      randomTitle.textContent = pick.dataset.title || '';
+      randomExcerpt.textContent = pick.dataset.excerpt || '';
+      randomOpen.dataset.slug = pick.dataset.slug || '';
+      randomImg.src = pick.dataset.image || FALLBACK_ART;
+      randomImg.alt = randomTitle.textContent;
+      randomCard.hidden = false;
+      randomRolled = true;
+    }
+
+    randomImg.addEventListener('error', () => { randomImg.src = FALLBACK_ART; }, { once: true });
+    randomRoll.addEventListener('click', rollRandom);
+    randomQ.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter') {
+        e.preventDefault();
+        rollRandom();
+      }
+    });
+    randomOpen.addEventListener('click', () => {
+      if (randomOpen.dataset.slug) openPost(randomOpen.dataset.slug);
+    });
+
+    function applyNav(save = true) {
+      const q = input.value.trim().toLowerCase();
+      const isHub = navCat === 'all';
+      navHub.hidden = !isHub;
+      navRandom.hidden = navCat !== 'random';
+      for (const [key, section] of Object.entries(navSections)) section.hidden = navCat !== key;
+
+      if (navCat === 'random') {
+        if (!randomRolled) rollRandom();
+        status.textContent = 'Случайная игра из базы';
+        empty.hidden = true;
+        clear.hidden = !q;
+        if (save) saveUrl();
+        return;
+      }
+
+      const nodes = isHub
+        ? Array.from(navHub.querySelectorAll<HTMLElement>('[data-nav-go]'))
+        : Array.from(navSections[navCat].querySelectorAll<HTMLElement>('[data-nav-item]'));
+      let shown = 0;
+      for (const node of nodes) {
+        const ok = !q || (node.dataset.hay || '').includes(q);
+        node.hidden = !ok;
+        if (ok) shown++;
+      }
+
+      clear.hidden = !q;
+      if (isHub) {
+        status.textContent = q ? `Найдено ${shown} из ${nodes.length}` : '4 подборки';
+      } else {
+        const unit = navCat === 'lowend' ? 'игр' : 'предложений';
+        status.textContent = q ? `Найдено ${shown} из ${nodes.length}` : `${nodes.length} ${unit}`;
+      }
+      empty.hidden = shown !== 0;
+      if (save) saveUrl();
+    }
+
+    function setNavCat(value: string) {
+      navCat = value;
+      for (const chip of chipsOf('nav')) {
+        const active = chip.dataset.cat === value;
+        chip.setAttribute('aria-pressed', String(active));
+        if (active) chip.scrollIntoView({ inline: 'center', block: 'nearest' });
+      }
+      applyNav();
+      scrollTop();
+    }
+
+    // ── обои: API страницы oboi/ (Wallhaven через прокси сайта) ────
+    // Прокси отдаёт весь каталог Wallhaven: фильтры, сортировку, страницы
+    // и общее число обоев. Если он ответил ошибкой (429/сеть), показываем
+    // архив сборки сайта — по 24 картинки на подборку.
+    interface Wall {
+      id: string;
+      thumb: string;
+      full: string;
+      page: string;
+      w: number;
+      h: number;
+      res: string;
+      ratio?: number;
+      size?: number;
+    }
+
+    const WALL_API = 'https://one1game.org/api/wallhaven';
+    const OBOI_CACHE = 'oboi-items-v1';
+    // Ответы API кэшируем на 10 минут: возврат на тот же раздел не тратит
+    // лимит Wallhaven (45 запросов в минуту на IP прокси).
+    const WALL_CACHE = 'wallhaven-cache-v1';
+    const WALL_CACHE_TTL = 10 * 60 * 1000;
+    const oboiTools = document.getElementById('oboi-tools') as HTMLElement;
+    const oboiSorts = document.getElementById('oboi-sorts') as HTMLElement;
+    const oboiMoreWrap = document.getElementById('oboi-more-wrap') as HTMLElement;
+    const oboiMore = document.getElementById('oboi-more') as HTMLButtonElement;
+    const wallSorts = Array.from(oboiSorts.querySelectorAll<HTMLButtonElement>('[data-wall-sort]'));
+    const wallViewer = document.getElementById('wall-viewer') as HTMLElement;
+    const wallImg = document.getElementById('wall-img') as HTMLImageElement;
+    const wallCount = document.getElementById('wall-count') as HTMLElement;
+    const wallRes = document.getElementById('wall-res') as HTMLElement;
+    const wallDownload = document.getElementById('wall-download') as HTMLAnchorElement;
+    const wallPrev = document.getElementById('wall-prev') as HTMLButtonElement;
+    const wallNext = document.getElementById('wall-next') as HTMLButtonElement;
+    const wallClose = document.getElementById('wall-close') as HTMLButtonElement;
+
+    type WallSort = 'favorites' | 'toplist' | 'date_added' | 'random';
+
+    const wallState = {
+      key: 'all',
+      sort: 'favorites' as WallSort,
+      page: 0,
+      lastPage: 1,
+      total: 0,
+      loading: false,
+      api: false,
+      dead: false,
+      items: [] as Wall[],
+    };
+
+    interface WallArchive {
+      items: Record<string, Wall[]>;
+      sorts?: Record<string, Record<string, Wall[]>>;
+    }
+
+    let wallStatic: WallArchive | null = null;
+    let wallList: Wall[] = [];
+
+    // Статическая страница обоев: карточки уже в HTML — подхватываем их,
+    // чтобы просмотр и скачивание работали ещё до ответа API.
+    if (variant !== 'app' && oboiGrid.children.length) {
+      wallList = Array.from(oboiGrid.querySelectorAll<HTMLElement>('.wall-card')).map((card) => {
+        const btn = card.querySelector<HTMLElement>('.wall-card__open');
+        return {
+          id: btn?.dataset.wallId || '',
+          thumb: btn?.dataset.wallThumb || card.querySelector('img')?.getAttribute('src') || '',
+          full: btn?.dataset.wallFull || '',
+          page: '',
+          w: 0,
+          h: 0,
+          res: btn?.dataset.wallRes || '',
+          ratio: Number(btn?.dataset.wallRatio || 0) || undefined,
+          size: Number(btn?.dataset.wallSize || 0) || undefined,
+        };
+      });
+    }
+    let wallIndex = -1;
+    let wallSeq = 0;
+    // После ошибки API минуту не дёргаем его снова — показываем архив.
+    let wallRetryAt = 0;
+    let wallRetryTimer = 0;
+
+    // Теги Wallhaven для игровых подборок (ключ чипа → запрос).
+    const WALL_QUERIES: Record<string, string> = {
+      games: 'game',
+      neon: 'neon',
+      cyberpunk: 'cyberpunk',
+      anime: 'anime',
+      dark: 'dark',
+      retro: 'retro',
+      fantasy: 'fantasy',
+      'cyberpunk-2077': 'cyberpunk 2077',
+      'elden-ring': 'elden ring',
+      'genshin-impact': 'genshin impact',
+      'gta-5': 'gta 5',
+      minecraft: 'minecraft',
+      'counter-strike': 'counter strike',
+      valorant: 'valorant',
+      'the-witcher-3': 'the witcher 3',
+      'star-wars': 'star wars',
+      'dota-2': 'dota 2',
+      'league-of-legends': 'league of legends',
+      fortnite: 'fortnite',
+      'dark-souls': 'dark souls',
+      'god-of-war': 'god of war',
+      'red-dead-redemption-2': 'red dead redemption 2',
+      'hollow-knight': 'hollow knight',
+    };
+
+    const normalizeWall = (raw: any): Wall | null => {
+      const full = raw?.path || '';
+      if (!raw?.id || !full) return null;
+      return {
+        id: String(raw.id),
+        thumb: raw.thumbs?.large || raw.thumbs?.original || full,
+        full,
+        page: raw.url || `https://wallhaven.cc/w/${raw.id}`,
+        w: Number(raw.dimension_x) || 0,
+        h: Number(raw.dimension_y) || 0,
+        res: raw.resolution || `${raw.dimension_x}x${raw.dimension_y}`,
+        ratio: Number(raw.ratio) || (raw.dimension_x && raw.dimension_y ? raw.dimension_x / raw.dimension_y : 0),
+        size: Number(raw.file_size) || 0,
+      };
+    };
+
+    // Параметры фильтра: то же, что делает страница обоев основного сайта.
+    function wallParams() {
+      const p = new URLSearchParams();
+      const typed = input.value.trim();
+      const query = typed || WALL_QUERIES[wallState.key] || '';
+      if (query) p.set('q', query);
+
+      if (wallState.key === '4k') {
+        p.set('atleast', '3840x2160');
+        p.set('ratios', '16x9');
+      } else if (wallState.key === '1920x1080') {
+        p.set('resolutions', '1920x1080');
+        p.set('ratios', '16x9');
+        p.set('atleast', '1920x1080');
+      } else if (wallState.key === '2560x1440') {
+        p.set('resolutions', '2560x1440');
+        p.set('ratios', '16x9');
+        p.set('atleast', '2560x1440');
+      } else if (wallState.key === 'phone') {
+        p.set('atleast', '1080x1920');
+        p.set('ratios', '9x16');
+      } else if (wallState.key === 'ultrawide') {
+        p.set('atleast', '3440x1440');
+        p.set('ratios', '21x9');
+      } else if (!query) {
+        p.set('atleast', '1920x1080');
+      }
+      return p;
+    }
+
+    function wallUrl(page: number) {
+      const p = wallParams();
+      p.set('sorting', wallState.sort);
+      if (wallState.sort === 'toplist') p.set('topRange', '1y');
+      if (wallState.sort === 'random') {
+        // Новый seed — новая случайная выборка, без повторов из кэша.
+        p.set('seed', String(Math.floor(Math.random() * 1e9)));
+        p.set('page', '1');
+      } else {
+        p.set('page', String(page));
+      }
+      return `${WALL_API}?${p.toString()}`;
+    }
+
+    const shuffle = <T,>(list: T[]) => {
+      const copy = [...list];
+      for (let i = copy.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [copy[i], copy[j]] = [copy[j], copy[i]];
+      }
+      return copy;
+    };
+
+    const knownRatios: Array<[number, string]> = [
+      [9 / 16, '9:16'], [3 / 4, '3:4'], [4 / 3, '4:3'],
+      [16 / 10, '16:10'], [16 / 9, '16:9'], [21 / 9, '21:9'],
+    ];
+
+    const ratioLabel = (wall: Wall) => {
+      const r = wall.ratio || (wall.w && wall.h ? wall.w / wall.h : 0);
+      const hit = knownRatios.find(([value]) => Math.abs(value - r) < 0.03);
+      return hit ? hit[1] : '';
+    };
+
+    function renderWalls(list: Wall[]) {
+      wallList = list;
+      const frag = document.createDocumentFragment();
+      for (const [i, wall] of list.entries()) {
+        const res = wall.res.replace('x', '×');
+        const mb = wall.size ? `${(wall.size / 1048576).toFixed(1).replace('.', ',')} МБ` : '';
+        const details = [ratioLabel(wall), mb].filter(Boolean).join(' · ') || 'Для ПК и телефона';
+
+        // Карточка повторяет обычную карточку новостей: обложка 16:9,
+        // подпись, разрешение и действия — одинаковый размер во всех вкладках.
+        const card = document.createElement('article');
+        card.className = 'card wall-card';
+        card.innerHTML =
+          `<button class="card__thumb wall-card__open" type="button" data-i="${i}" aria-label="Открыть обои ${res}">` +
+          `<img src="${wall.thumb}" alt="Обои ${res}" width="300" height="200" loading="lazy" decoding="async">` +
+          `<span class="wall__res">${res}</span></button>` +
+          `<span class="card__body">` +
+          `<span class="card__cat">Обои · Wallhaven</span>` +
+          `<span class="card__title">${res}</span>` +
+          `<span class="card__excerpt">${details}</span>` +
+          `<span class="card__meta">` +
+          `<a class="wall-card__link" href="${base}/download?url=${encodeURIComponent(wall.full)}" download` +
+          ` data-wall-save="${wall.full}" data-wall-id="${wall.id}">Скачать</a>` +
+          `</span></span>`;
+        frag.appendChild(card);
+      }
+      oboiGrid.replaceChildren(frag);
+    }
+
+    function syncWallChips() {
+      for (const chip of chipsOf('oboi')) {
+        const active = chip.dataset.cat === oboiCat;
+        chip.setAttribute('aria-pressed', String(active));
+        if (active) chip.scrollIntoView({ inline: 'center', block: 'nearest' });
+      }
+    }
+
+    function syncWallSorts() {
+      for (const btn of wallSorts) {
+        btn.setAttribute('aria-pressed', String(btn.dataset.wallSort === wallState.sort));
+      }
+    }
+
+    function paintWallChrome() {
+      syncWallSorts();
+      if (wallState.api) {
+        const total = wallState.total ? ` из ${wallState.total.toLocaleString('ru-RU')}` : '';
+        if (mode === 'oboi') status.textContent = `${wallList.length}${total} обоев`;
+        oboiMore.textContent = wallState.sort === 'random' ? 'Ещё случайные' : 'Показать ещё';
+        oboiMoreWrap.hidden = wallState.sort !== 'random' && wallState.page >= wallState.lastPage;
+      } else if (wallStatic) {
+        if (mode === 'oboi') status.textContent = `${wallList.length} картинок`;
+        oboiMoreWrap.hidden = true;
+      }
+      empty.hidden = wallList.length !== 0 || wallState.loading;
+      clear.hidden = !input.value.trim();
+    }
+
+    const readWallCache = (url: string) => {
+      try {
+        const all = JSON.parse(sessionStorage.getItem(WALL_CACHE) || '{}');
+        const hit = all[url];
+        if (hit && Date.now() - Number(hit.ts) < WALL_CACHE_TTL) return hit.json;
+      } catch {
+        // Нет хранилища — просто идём в сеть.
+      }
+      return null;
+    };
+
+    const writeWallCache = (url: string, json: any) => {
+      try {
+        const all = JSON.parse(sessionStorage.getItem(WALL_CACHE) || '{}');
+        all[url] = { ts: Date.now(), json };
+        sessionStorage.setItem(WALL_CACHE, JSON.stringify(all));
+      } catch {
+        // Лимит хранилища или приватный режим — не критично.
+      }
+    };
+
+    async function loadWallStatic() {
+      if (wallStatic) return;
+      try {
+        const cached = sessionStorage.getItem(OBOI_CACHE);
+        if (cached) {
+          const parsed = JSON.parse(cached);
+          if (parsed?.items) wallStatic = parsed;
+        }
+      } catch {
+        wallStatic = null;
+      }
+      if (wallStatic) return;
+      try {
+        const res = await fetch(`${base}/oboi.json`, { signal: AbortSignal.timeout(10000) });
+        if (!res.ok) return;
+        const data = await res.json();
+        if (data?.items) {
+          wallStatic = data;
+          try {
+            sessionStorage.setItem(OBOI_CACHE, JSON.stringify(data));
+          } catch {
+            // Приватный режим без хранилища — просто грузим каждый раз.
+          }
+        }
+      } catch {
+        // Без сети останется пустое состояние с кнопкой сброса.
+      }
+    }
+
+    async function loadWalls(reset = true, save = true, silent = false) {
+      const seq = ++wallSeq;
+      wallState.loading = true;
+      if (!silent) {
+        empty.hidden = true;
+        if (mode === 'oboi') status.textContent = 'Загрузка обоев…';
+      }
+
+      if (reset) {
+        wallState.items = [];
+        wallState.page = 0;
+        wallState.lastPage = 1;
+        wallState.total = 0;
+        // Прошла минута — даём API ещё один шанс.
+        if (Date.now() >= wallRetryAt) wallState.dead = false;
+      }
+
+      if (!wallState.dead) {
+        try {
+          const target = wallUrl(reset ? 1 : wallState.page + 1);
+          // Сначала смотрим кэш: повторный вход в раздел не тратит лимит.
+          // Случайные не кэшируем — иначе выборка застынет на 10 минут.
+          const useCache = wallState.sort !== 'random';
+          let data: any = useCache ? readWallCache(target) : null;
+          if (!data) {
+            const res = await fetch(target, { signal: AbortSignal.timeout(12000) });
+            if (seq !== wallSeq) return;
+            if (!res.ok) throw new Error(String(res.status));
+            data = await res.json();
+            if (seq !== wallSeq) return;
+            if (!Array.isArray(data?.data)) throw new Error('shape');
+            if (useCache) writeWallCache(target, data);
+          }
+
+          const fresh = data.data.map(normalizeWall).filter(Boolean) as Wall[];
+          if (reset) {
+            wallState.items = fresh;
+          } else {
+            const seen = new Set(wallState.items.map((wall) => wall.id));
+            for (const wall of fresh) {
+              if (!seen.has(wall.id)) {
+                wallState.items.push(wall);
+                seen.add(wall.id);
+              }
+            }
+          }
+          wallState.page = Number(data.meta?.current_page) || (reset ? 1 : wallState.page + 1);
+          wallState.lastPage = Number(data.meta?.last_page) || 1;
+          wallState.total = Number(data.meta?.total) || wallState.items.length;
+          wallState.api = true;
+          wallState.loading = false;
+          window.clearTimeout(wallRetryTimer);
+          renderWalls(wallState.items);
+          paintWallChrome();
+          if (save) saveUrl();
+
+          // Добираем до 72 картинок в фоне: первый экран не ждёт,
+          // а раздел выглядит так же плотно, как архив сборки.
+          if (wallState.sort !== 'random' && wallState.page < Math.min(3, wallState.lastPage)) {
+            window.setTimeout(() => {
+              if (seq === wallSeq && mode === 'oboi') loadWalls(false, true, true);
+            }, 300);
+          }
+          return;
+        } catch (e) {
+          if (seq !== wallSeq) return;
+          // Тихая догрузка не должна ломать уже показанную выдачу.
+          if (silent) {
+            wallState.loading = false;
+            return;
+          }
+          wallState.dead = true;
+          wallState.api = false;
+          wallRetryAt = Date.now() + 60000;
+          scheduleWallRetry();
+        }
+      }
+
+      // Архив: подборка из сборки сайта, с той же сортировкой, что выбрана.
+      await loadWallStatic();
+      if (seq !== wallSeq) return;
+
+      const sortKey = wallState.sort === 'random' ? 'favorites' : wallState.sort;
+      const bySort = wallStatic?.sorts?.[wallState.key]?.[sortKey];
+      // Пустая сортировка (у редкой игры нет топа за год) — показываем популярные.
+      const base = bySort?.length ? bySort : wallStatic?.items?.[wallState.key] || [];
+      const all = wallState.sort === 'random' ? shuffle(base) : base;
+      const q = input.value.trim().toLowerCase();
+      const list = q ? all.filter((wall) => `${wall.res} ${wall.w}x${wall.h}`.toLowerCase().includes(q)) : all;
+
+      wallState.loading = false;
+      wallState.page = 1;
+      wallState.lastPage = 1;
+      wallState.total = 0;
+      renderWalls(list);
+      if (!wallStatic) {
+        if (mode === 'oboi') status.textContent = 'Обои не загрузились';
+        oboiMoreWrap.hidden = true;
+        empty.hidden = false;
+        return;
+      }
+      paintWallChrome();
+      if (save) saveUrl();
+    }
+
+    // Один тихий повтор: через минуту лимит Wallhaven обычно освобождается,
+    // архив заменяется живой выдачей без мигания и лишних сообщений.
+    function scheduleWallRetry() {
+      window.clearTimeout(wallRetryTimer);
+      wallRetryTimer = window.setTimeout(() => {
+        if (mode !== 'oboi' || wallState.api) return;
+        wallState.dead = false;
+        loadWalls(true, true, true);
+      }, 60000);
+    }
+
+    function setOboiCat(value: string) {
+      oboiCat = value;
+      wallState.key = value;
+      syncWallChips();
+      scrollTop();
+      loadWalls(true);
+    }
+
+    // ── фильмы по играм (хаб kino/ основного сайта) ────────────────
+    const MOVIE_CACHE = 'movie-detail-v1';
+    const movieLoads = new Map<string, Promise<any>>();
+
+    const escText = (value: string) => String(value || '')
+      .replace(/&/g, '&amp;')
+      .replace(/</g, '&lt;')
+      .replace(/>/g, '&gt;')
+      .replace(/"/g, '&quot;');
+
+    const movieById = new Map<string, HTMLElement>();
+    for (const card of movieCards) {
+      const id = card.dataset.movie || '';
+      if (id) movieById.set(id, card);
+    }
+
+    // Статическая страница фильма: карточек в разметке нет, метаданные
+    // приезжают отдельным JSON'ом — по ним открывается читалка.
+    const movieMetaById = new Map<string, any>();
+    if (!movieById.size) {
+      try {
+        const pre = JSON.parse(document.getElementById('app-movies')?.textContent || '[]');
+        for (const meta of pre) {
+          if (meta?.id) movieMetaById.set(meta.id, meta);
+        }
+      } catch {
+        // Без метаданных страница всё равно показывает пререндер.
+      }
+    }
+
+    function loadMovie(id: string): Promise<any> {
+      const hit = movieLoads.get(id);
+      if (hit) return hit;
+
+      let cached: any = null;
+      try {
+        const all = JSON.parse(sessionStorage.getItem(MOVIE_CACHE) || '{}');
+        cached = all[id] || null;
+      } catch {
+        cached = null;
+      }
+      if (cached) {
+        const done = Promise.resolve(cached);
+        movieLoads.set(id, done);
+        return done;
+      }
+
+      const req = fetch(`${base}/movies/${id}.json`)
+        .then((res) => {
+          if (!res.ok) throw new Error(String(res.status));
+          return res.json();
+        })
+        .then((data) => {
+          try {
+            const all = JSON.parse(sessionStorage.getItem(MOVIE_CACHE) || '{}');
+            all[id] = data;
+            sessionStorage.setItem(MOVIE_CACHE, JSON.stringify(all));
+          } catch {
+            // Приватный режим без хранилища — грузим каждый раз.
+          }
+          return data;
+        })
+        .catch((error) => {
+          movieLoads.delete(id);
+          throw error;
+        });
+      movieLoads.set(id, req);
+      return req;
+    }
+
+    function syncMovieChips() {
+      for (const chip of chipsOf('movie')) {
+        const active = chip.dataset.cat === movieCat;
+        chip.setAttribute('aria-pressed', String(active));
+        if (active) chip.scrollIntoView({ inline: 'center', block: 'nearest' });
+      }
+    }
+
+    function applyMovies(save = true) {
+      const q = input.value.trim().toLowerCase();
+      let shown = 0;
+      for (const card of movieCards) {
+        const okCat = movieCat === 'all' || card.dataset.section === movieCat;
+        const okText = !q || (card.dataset.hay || '').includes(q);
+        const ok = okCat && okText;
+        card.hidden = !ok;
+        if (ok) shown++;
+      }
+      for (const block of movieBlocks) {
+        block.hidden = !block.querySelector<HTMLElement>('[data-movie]:not([hidden])');
+      }
+      clear.hidden = !q;
+      status.textContent = q || movieCat !== 'all'
+        ? `Найдено ${shown} из ${movieCards.length}`
+        : `${movieCards.length} экранизаций`;
+      empty.hidden = shown !== 0;
+      if (save) saveUrl();
+    }
+
+    function setMovieCat(value: string) {
+      movieCat = value;
+      syncMovieChips();
+      applyMovies();
+      if (movieReader.hidden) scrollTop();
+    }
+
+    function paintMovieHero(data: any) {
+      mCat.textContent = data.section === 'upcoming' ? 'Скоро на экранах' : 'Фильм по игре';
+      mMeta.textContent = data.date || '';
+      mTitle.textContent = data.title || '';
+      mTagline.textContent = data.tagline || '';
+      mTagline.hidden = !data.tagline;
+      mPoster.innerHTML = data.poster
+        ? `<img src="${escText(data.poster)}" alt="${escText(data.title)} — постер" width="500" height="750" loading="eager" decoding="async">`
+        : '';
+      mFacts.innerHTML = (data.facts || [])
+        .map((fact: string) => {
+          const idx = fact.indexOf(':');
+          if (idx < 0) return `<span>${escText(fact)}</span>`;
+          return `<span>${escText(fact.slice(0, idx))}: <b>${escText(fact.slice(idx + 1).trim())}</b></span>`;
+        })
+        .join('');
+    }
+
+    function renderMovieBody(data: any) {
+      const parts: string[] = [];
+      if (data.trailer) {
+        parts.push(
+          `<h2>Трейлер</h2><div class="movie-trailer"><iframe src="https://www.youtube-nocookie.com/embed/${escText(data.trailer)}" title="${escText(data.title)} — трейлер" loading="lazy" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>`
+        );
+      }
+      if (data.plot) parts.push(`<h2>Сюжет</h2><p>${escText(data.plot)}</p>`);
+      if (Array.isArray(data.factsList) && data.factsList.length) {
+        parts.push(
+          `<h2>Факты о фильме</h2><ul class="movie-list">${data.factsList.map((fact: string) => `<li>${escText(fact)}</li>`).join('')}</ul>`
+        );
+      }
+      if (Array.isArray(data.cast) && data.cast.length) {
+        parts.push(
+          `<h2>В ролях</h2><div class="movie-cast">${data.cast.map((person: any) => `<div><b>${escText(person.name)}</b>${escText(person.role || '')}</div>`).join('')}</div>`
+        );
+      }
+      if (Array.isArray(data.trivia) && data.trivia.length) {
+        parts.push(
+          `<h2>Интересные факты</h2><ul class="movie-list">${data.trivia.map((fact: string) => `<li>${escText(fact)}</li>`).join('')}</ul>`
+        );
+      }
+      mBody.innerHTML = parts.join('');
+    }
+
+    async function openMovie(id: string, save = true) {
+      const card = movieById.get(id);
+      const meta = movieMetaById.get(id);
+      if (!card && !meta) return;
+
+      movieCurrent = id;
+      listView.hidden = true;
+      movieReader.hidden = false;
+      const title = card?.querySelector('.card__title')?.textContent || meta?.title || '';
+      const poster = card?.querySelector('img')?.getAttribute('src') || meta?.poster || '';
+      const section = card?.dataset.section || meta?.section;
+      mCat.textContent = section === 'upcoming' ? 'Скоро на экранах' : 'Фильм по игре';
+      mMeta.textContent = card?.querySelector('.card__meta')?.textContent || meta?.date || '';
+      mTitle.textContent = title;
+      mTagline.hidden = true;
+      mPoster.innerHTML = poster
+        ? `<img src="${escText(poster)}" alt="${escText(title)} — постер" width="300" height="450" loading="eager" decoding="async">`
+        : '';
+      mFacts.innerHTML = '';
+      mBody.innerHTML = '<p class="movie-loading">Загрузка…</p>';
+      document.title = `${title} — One1Game`;
+      if (save) {
+        history.pushState({ movie: id }, '', `${base}/movie/${id}/`);
+        syncMeta();
+      }
+      scrollTop();
+
+      try {
+        const data = await loadMovie(id);
+        if (movieCurrent !== id) return;
+        paintMovieHero(data);
+        renderMovieBody(data);
+        document.title = `${data.title} — One1Game`;
+      } catch {
+        if (movieCurrent === id) mBody.innerHTML = '<p>Фильм не загрузился. Проверьте соединение и попробуйте ещё раз.</p>';
+      }
+    }
+
+    function closeMovie(save = true) {
+      if (movieReader.hidden) return;
+      if (variant === 'movie-item') {
+        location.href = `${base}/movie/`;
+        return;
+      }
+      movieCurrent = '';
+      movieReader.hidden = true;
+      listView.hidden = false;
+      mBody.innerHTML = '';
+      document.title = listTitle;
+      if (save) {
+        applyMovies();
+        saveUrl();
+      }
+      scrollTop();
+    }
+
+    movieGrid.addEventListener('click', (e) => {
+      const card = (e.target as HTMLElement | null)?.closest<HTMLElement>('[data-movie]');
+      if (!card?.dataset.movie) return;
+      // Ссылка на страницу фильма остаётся рабочей для новой вкладки и робота,
+      // а обычный клик открывает читалку внутри приложения.
+      const link = (e.target as HTMLElement | null)?.closest('a');
+      if (link) {
+        if (e.metaKey || e.ctrlKey || e.shiftKey || e.altKey || e.button !== 0) return;
+        e.preventDefault();
+      }
+      openMovie(card.dataset.movie);
+    });
+
+    movieBack.addEventListener('click', () => closeMovie());
+
+    chipRows.movie.addEventListener('click', (e) => {
+      const chip = (e.target as HTMLElement | null)?.closest<HTMLButtonElement>('.chip');
+      if (!chip) return;
+      if (!movieReader.hidden) closeMovie(false);
+      setMovieCat(chip.dataset.cat || 'all');
+    });
+
+    // Просмотр: сначала превью, затем оригинал — переход без белого экрана.
+    function paintWall() {
+      const wall = wallList[wallIndex];
+      if (!wall) return;
+      const res = wall.res.replace('x', '×');
+      wallImg.alt = `Обои ${res}`;
+      wallImg.src = wall.thumb;
+      const full = new Image();
+      full.addEventListener('load', () => {
+        if (wallList[wallIndex] === wall) wallImg.src = wall.full;
+      }, { once: true });
+      full.src = wall.full;
+      wallCount.textContent = `${wallIndex + 1} / ${wallList.length}`;
+      wallRes.textContent = res;
+      wallDownload.href = `${base}/download?url=${encodeURIComponent(wall.full)}`;
+      wallDownload.dataset.full = wall.full;
+      wallDownload.dataset.id = wall.id;
+    }
+
+    function openWall(index: number) {
+      if (!wallList.length) return;
+      wallIndex = (index + wallList.length) % wallList.length;
+      wallViewer.hidden = false;
+      document.body.classList.add('is-viewing-wall');
+      paintWall();
+    }
+
+    function closeWall() {
+      wallViewer.hidden = true;
+      document.body.classList.remove('is-viewing-wall');
+      wallImg.removeAttribute('src');
+      wallIndex = -1;
+    }
+
+    function stepWall(delta: number) {
+      if (wallViewer.hidden || !wallList.length) return;
+      openWall(wallIndex + delta);
+    }
+
+    // Скачивание сразу: забираем оригинал blob'ом и отдаём браузеру файлом.
+    // У Wallhaven на w.wallhaven.cc стоит Access-Control-Allow-Origin: *,
+    // поэтому атрибут download из чужого домена не игнорируется.
+    async function saveWall(url: string, id: string, link?: HTMLElement) {
+      if (!url || link?.dataset.busy === '1') return;
+      const label = link?.textContent || '';
+      if (link) {
+        link.dataset.busy = '1';
+        link.textContent = 'Скачиваем…';
+      }
+      try {
+        const res = await fetch(url, { credentials: 'omit' });
+        if (!res.ok) throw new Error(String(res.status));
+        const blob = await res.blob();
+        const ext = (url.match(/\.(jpe?g|png|webp)$/i) || [])[1] || 'jpg';
+        const href = URL.createObjectURL(blob);
+        const a = document.createElement('a');
+        a.href = href;
+        a.download = `one1game-${id || 'wallpaper'}.${ext}`;
+        document.body.appendChild(a);
+        a.click();
+        a.remove();
+        window.setTimeout(() => URL.revokeObjectURL(href), 5000);
+      } catch {
+        // Сеть или CORS подвели: идём через service worker — он отдаёт файл
+        // с Content-Disposition, и браузер сохраняет его, а не открывает.
+        const fallback = link instanceof HTMLAnchorElement ? link.href : '';
+        if (navigator.serviceWorker?.controller && fallback) window.location.assign(fallback);
+        else window.open(url, '_blank', 'noopener');
+      } finally {
+        if (link) {
+          delete link.dataset.busy;
+          link.textContent = label;
+        }
+      }
+    }
+
+    oboiGrid.addEventListener('click', (e) => {
+      const target = e.target as HTMLElement | null;
+      const save = target?.closest<HTMLAnchorElement>('[data-wall-save]');
+      if (save) {
+        e.preventDefault();
+        saveWall(save.dataset.wallSave || '', save.dataset.wallId || '', save);
+        return;
+      }
+      const card = target?.closest<HTMLElement>('[data-i]');
+      if (card) openWall(Number(card.dataset.i || 0));
+    });
+    wallClose.addEventListener('click', closeWall);
+    wallPrev.addEventListener('click', () => stepWall(-1));
+    wallNext.addEventListener('click', () => stepWall(1));
+    wallDownload.addEventListener('click', (e) => {
+      const full = wallDownload.dataset.full || '';
+      if (!full) return;
+      e.preventDefault();
+      saveWall(full, wallDownload.dataset.id || '', wallDownload);
+    });
+    wallViewer.addEventListener('click', (e) => {
+      // Клик по затемнённому полю закрывает просмотр.
+      if (e.target === wallViewer) closeWall();
+    });
+    chipRows.oboi.addEventListener('click', (e) => {
+      const chip = (e.target as HTMLElement | null)?.closest<HTMLButtonElement>('.chip');
+      if (!chip) return;
+      setOboiCat(chip.dataset.cat || 'all');
+    });
+
+    for (const btn of wallSorts) {
+      btn.addEventListener('click', () => {
+        const value = btn.dataset.wallSort;
+        if (value !== 'favorites' && value !== 'toplist' && value !== 'date_added' && value !== 'random') return;
+        wallState.sort = value;
+        syncWallSorts();
+        loadWalls(true);
+      });
+    }
+
+    oboiMore.addEventListener('click', () => loadWalls(false));
+
+    async function audius(path: string, params: Record<string, string | number> = {}, signal?: AbortSignal) {
+      const query = new URLSearchParams({ app_name: AUDIUS.app });
+      for (const [key, value] of Object.entries(params)) {
+        if (value !== '' && value !== null && value !== undefined) query.set(key, String(value));
+      }
+      const res = await fetch(`${AUDIUS.base}${path}?${query}`, { credentials: 'omit', signal });
+      if (!res.ok) throw new Error(`Audius ${res.status}`);
+      return res.json();
+    }
+
+    function normalizeTrack(raw: any): Track | null {
+      if (!raw || !raw.id) return null;
+      if (raw.is_streamable === false || raw.is_delete || raw.is_unlisted || raw.is_available === false) return null;
+      if (raw.is_stream_gated) return null;
+      if (raw.access && raw.access.stream === false) return null;
+
+      const artwork = raw.artwork || {};
+      const user = raw.user || {};
+      return {
+        id: String(raw.id),
+        title: raw.title || 'Без названия',
+        artist: user.name || 'Неизвестный артист',
+        genre: raw.genre || '',
+        duration: Number(raw.duration) || 0,
+        art: artwork['480x480'] || artwork['1000x1000'] || artwork['150x150'] || '',
+        plays: Number(raw.play_count) || 0,
+        date: raw.release_date || raw.created_at || '',
+      };
+    }
+
+    function trackCard(track: Track): HTMLButtonElement {
+      const card = document.createElement('button');
+      card.className = 'track';
+      card.type = 'button';
+      card.dataset.track = '';
+      card.dataset.id = track.id;
+      card.dataset.title = track.title;
+      card.dataset.artist = track.artist;
+      card.dataset.art = track.art;
+
+      const art = document.createElement('span');
+      art.className = 'track__art';
+      if (track.art) {
+        const img = document.createElement('img');
+        img.src = track.art;
+        img.alt = '';
+        img.loading = 'lazy';
+        img.decoding = 'async';
+        img.width = 480;
+        img.height = 480;
+        img.addEventListener('error', () => { img.src = FALLBACK_ART; }, { once: true });
+        art.appendChild(img);
+      }
+      const overlay = document.createElement('span');
+      overlay.className = 'track__play';
+      overlay.setAttribute('aria-hidden', 'true');
+      const icon = document.createElement('span');
+      icon.className = 'track__icon';
+      icon.textContent = '▶';
+      overlay.appendChild(icon);
+      art.appendChild(overlay);
+
+      const body = document.createElement('span');
+      body.className = 'track__body';
+      const title = document.createElement('span');
+      title.className = 'track__title';
+      title.textContent = track.title;
+      const artist = document.createElement('span');
+      artist.className = 'track__artist';
+      artist.textContent = track.artist;
+      const meta = document.createElement('span');
+      meta.className = 'track__meta';
+      meta.textContent = `${track.genre || 'Музыка'} · ${fmtTime(track.duration)}`;
+      body.append(title, artist, meta);
+
+      card.append(art, body);
+      card.setAttribute('aria-label', `Слушать ${track.title}`);
+      return card;
+    }
+
+    function appendTracks(list: Track[]) {
+      clearSkeleton();
+      const frag = document.createDocumentFragment();
+      for (const track of list) {
+        if (musicState.seen.has(track.id)) continue;
+        musicState.seen.add(track.id);
+        musicState.items.push(track);
+        frag.appendChild(trackCard(track));
+      }
+      musicGrid.appendChild(frag);
+    }
+
+    function renderMusic(save = true) {
+      if (mode !== 'music') {
+        if (save) saveUrl();
+        return;
+      }
+      const q = input.value.trim();
+      const total = musicState.items.length;
+      if (musicState.fallback) {
+        status.textContent = `API Audius недоступен · ${total} треков из кэша`;
+      } else {
+        status.textContent = q ? `Найдено ${total}` : `${total} треков`;
+      }
+      moreBtn.textContent = 'Показать ещё';
+      moreBtn.disabled = false;
+      moreWrap.hidden = musicState.done || total === 0;
+      empty.hidden = total !== 0;
+      clear.hidden = !q;
+      if (save) saveUrl();
+    }
+
+    // ── кэш первой страницы: повторное открытие вкладки — мгновенное ──
+    const MUSIC_CACHE = 'music-cache-v1';
+    interface MusicPage {
+      tracks: Track[];
+      offset: number;
+      done: boolean;
+      ts: number;
+    }
+
+    const musicKey = (genre: string, sort: string, q: string, offset: number) =>
+      `${genre}|${sort}|${q.toLowerCase()}|${offset}`;
+
+    function readMusicCache(key: string): MusicPage | null {
+      try {
+        const all = JSON.parse(sessionStorage.getItem(MUSIC_CACHE) || '{}');
+        const hit = all[key] as MusicPage | undefined;
+        if (hit && Array.isArray(hit.tracks) && Date.now() - hit.ts < AUDIUS.cacheTtl) return hit;
+      } catch {
+        // Приватный режим — просто грузим с API.
+      }
+      return null;
+    }
+
+    function writeMusicCache(key: string, page: MusicPage) {
+      try {
+        const all = JSON.parse(sessionStorage.getItem(MUSIC_CACHE) || '{}');
+        const keys = Object.keys(all);
+        if (keys.length > 12) delete all[keys.sort((a, b) => all[a].ts - all[b].ts)[0]];
+        all[key] = page;
+        sessionStorage.setItem(MUSIC_CACHE, JSON.stringify(all));
+      } catch {
+        // Переполнение хранилища не должно ломать плеер.
+      }
+    }
+
+    // Пока грузится сеть — показываем скелетоны, чтобы вкладка не «висела» пустой.
+    function musicSkeleton(count = 10) {
+      const frag = document.createDocumentFragment();
+      for (let i = 0; i < count; i++) {
+        const card = document.createElement('div');
+        card.className = 'track track--skeleton';
+        card.setAttribute('aria-hidden', 'true');
+        const art = document.createElement('span');
+        art.className = 'track__art';
+        const body = document.createElement('span');
+        body.className = 'track__body';
+        body.innerHTML = '<span class="skel-line"></span><span class="skel-line"></span>';
+        card.append(art, body);
+        frag.appendChild(card);
+      }
+      musicGrid.appendChild(frag);
+    }
+
+    function clearSkeleton() {
+      for (const node of musicGrid.querySelectorAll('.track--skeleton')) node.remove();
+    }
+
+    // Один запрос к Audius: тренды, новинки или поиск — в зависимости от сортировки.
+    async function musicPage(opts: {
+      genre: string; sort: string; q: string; offset: number; limit: number; signal?: AbortSignal;
+    }) {
+      const { genre, sort, q, offset, limit, signal } = opts;
+      let json: any;
+      if (q) {
+        json = await audius('/tracks/search', {
+          query: q,
+          genre,
+          limit,
+          offset,
+          sort_method: sort === 'new' ? 'recent' : sort === 'popular' ? 'popular' : 'relevant',
+        }, signal);
+      } else if (sort === 'new') {
+        json = await audius('/tracks/latest', { genre, limit, offset }, signal);
+      } else {
+        json = await audius('/tracks/trending', {
+          genre,
+          time: sort === 'popular' ? 'allTime' : 'week',
+          limit,
+          offset,
+        }, signal);
+      }
+      const raw = Array.isArray(json?.data) ? json.data : [];
+      return { tracks: raw.map(normalizeTrack).filter(Boolean) as Track[], rawCount: raw.length };
+    }
+
+    let musicAbort: AbortController | null = null;
+
+    async function loadMusic(reset = true, save = true) {
+      // Новый запрос отменяет предыдущий: быстрые клики по жанрам
+      // не должны смешивать две выдачи.
+      musicAbort?.abort();
+      const controller = new AbortController();
+      musicAbort = controller;
+      const signal = controller.signal;
+      const q = input.value.trim();
+      const genre = musicState.genre === 'all' ? '' : musicState.genre;
+      const limit = reset ? AUDIUS.first : AUDIUS.page;
+
+      if (reset) {
+        musicState.offset = 0;
+        musicState.done = false;
+        musicState.loaded = false;
+        musicState.fallback = false;
+        musicState.items = [];
+        musicState.seen.clear();
+        musicGrid.innerHTML = '';
+        moreWrap.hidden = true;
+        empty.hidden = true;
+
+        // Скелетоны сразу, ещё до ожидания сети — вкладка не «висит» пустой.
+        musicState.loading = true;
+        moreBtn.disabled = true;
+        if (mode === 'music') {
+          status.textContent = 'Загрузка…';
+          musicSkeleton();
+        }
+
+        // Если фоновая загрузка уже идёт — дождёмся её, а не шлём второй запрос.
+        if (musicPrefetch && !q) await musicPrefetch;
+
+        // Первая страница из кэша: вкладка открывается мгновенно,
+        // а сеть догружается только при «Показать ещё».
+        const cached = readMusicCache(musicKey(musicState.genre, musicState.sort, q, 0));
+        if (cached) {
+          appendTracks(cached.tracks);
+          musicState.offset = cached.offset;
+          musicState.done = cached.done;
+          musicState.loading = false;
+          musicState.loaded = true;
+          if (playing) setPlayState(!audio.paused);
+          renderMusic(save);
+          return;
+        }
+      }
+
+      musicState.loading = true;
+      moreBtn.disabled = true;
+      if (mode === 'music') status.textContent = reset ? 'Загрузка…' : 'Загружаю ещё…';
+
+      try {
+        const page = await musicPage({
+          genre,
+          sort: musicState.sort,
+          q,
+          offset: musicState.offset,
+          limit,
+          signal,
+        });
+        if (signal.aborted) return;
+        appendTracks(page.tracks);
+        // offset считаем по сырым элементам: недоступные треки не должны
+        // сдвигать следующую страницу и создавать дубли.
+        musicState.offset += page.rawCount;
+        musicState.done = page.rawCount < limit;
+        if (reset) {
+          writeMusicCache(musicKey(musicState.genre, musicState.sort, q, 0), {
+            tracks: page.tracks,
+            offset: page.rawCount,
+            done: musicState.done,
+            ts: Date.now(),
+          });
+        }
+      } catch {
+        if (signal.aborted) return;
+        clearSkeleton();
+        if (reset) await loadFallback(q, signal);
+        else musicState.done = true;
+      } finally {
+        if (signal.aborted) return;
+        musicState.loading = false;
+        musicState.loaded = true;
+        if (playing) setPlayState(!audio.paused);
+        renderMusic(save);
+      }
+    }
+
+    // Фоновая загрузка первой страницы: пока читаешь новости, музыка уже готова.
+    let musicPrefetch: Promise<void> | null = null;
+    function prefetchMusic() {
+      if (musicState.loaded || musicPrefetch || input.value.trim()) return musicPrefetch;
+      const genre = musicState.genre === 'all' ? '' : musicState.genre;
+      const key = musicKey(musicState.genre, musicState.sort, '', 0);
+      if (readMusicCache(key)) return null;
+      musicPrefetch = (async () => {
+        try {
+          const page = await musicPage({
+            genre,
+            sort: musicState.sort,
+            q: '',
+            offset: 0,
+            limit: AUDIUS.first,
+            signal: AbortSignal.timeout(8000),
+          });
+          if (page.tracks.length) {
+            writeMusicCache(key, {
+              tracks: page.tracks,
+              offset: page.rawCount,
+              done: page.rawCount < AUDIUS.first,
+              ts: Date.now(),
+            });
+          }
+        } catch {
+          // Не вышло — вкладка загрузится обычным путём.
+        } finally {
+          musicPrefetch = null;
+        }
+      })();
+      return musicPrefetch;
+    }
+
+    // Снимок каталога нужен только как страховка: сеть/Audius недоступны.
+    const GENRE_KEYS: Record<string, string> = {
+      'Lo-Fi': 'lofi',
+      Electronic: 'electronic',
+      'Hip-Hop/Rap': 'hip-hop',
+      Rock: 'rock',
+      Ambient: 'chill',
+    };
+
+    async function loadFallback(q: string, signal?: AbortSignal) {
+      musicState.fallback = true;
+      try {
+        const res = await fetch(`${base}/music.json`, { credentials: 'omit', signal });
+        if (!res.ok) throw new Error(String(res.status));
+        const data = await res.json();
+        if (signal?.aborted) return;
+        const key = GENRE_KEYS[musicState.genre];
+
+        let list: Track[] = (data.tracks || []).map((raw: any) => ({
+          id: String(raw.id || ''),
+          title: raw.title || 'Без названия',
+          artist: raw.artist || 'Неизвестный артист',
+          genre: raw.genre || '',
+          duration: Number(raw.duration) || 0,
+          plays: Number(raw.plays) || 0,
+          date: raw.date || '',
+          art: raw.art || '',
+          groups: Array.isArray(raw.groups) ? raw.groups : [],
+        })).filter((track: Track) => track.id);
+
+        if (musicState.genre !== 'all') {
+          list = list.filter((track) => track.genre.toLowerCase() === musicState.genre.toLowerCase()
+            || (key ? (track.groups || []).includes(key) : false));
+        }
+        if (q) {
+          const needle = q.toLowerCase();
+          list = list.filter((track) => `${track.title} ${track.artist} ${track.genre}`.toLowerCase().includes(needle));
+        }
+        if (musicState.sort === 'new') list.sort((a, b) => b.date.localeCompare(a.date));
+        else if (musicState.sort === 'popular') list.sort((a, b) => b.plays - a.plays);
+
+        appendTracks(list);
+        musicState.offset = list.length;
+        musicState.done = true;
+      } catch {
+        if (!signal?.aborted) musicState.done = true;
+      }
+    }
+
+    function syncMusicChips() {
+      for (const chip of chipsOf('music')) {
+        const active = chip.dataset.cat === musicState.genre;
+        chip.setAttribute('aria-pressed', String(active));
+        if (active) chip.scrollIntoView({ inline: 'center', block: 'nearest' });
+      }
+    }
+
+    function syncSorts() {
+      for (const btn of sorts) {
+        btn.setAttribute('aria-pressed', String(btn.dataset.sort === musicState.sort));
+      }
+    }
+
+    function setMode(value: Mode, save = true) {
+      if (!movieReader.hidden && !preMovie) closeMovie(false);
+      mode = value;
+      // Своя палитра фона у каждой вкладки (см. body[data-mode] в global.css).
+      document.body.dataset.mode = value;
+      for (const btn of modes) {
+        const active = btn.dataset.mode === value;
+        btn.setAttribute('aria-pressed', String(active));
+        if (active) btn.setAttribute('aria-current', 'page');
+        else btn.removeAttribute('aria-current');
+      }
+      grid.hidden = value !== 'news';
+      musicGrid.hidden = value !== 'music';
+      musicTools.hidden = value !== 'music';
+      oboiView.hidden = value !== 'oboi';
+      oboiTools.hidden = value !== 'oboi';
+      movieGrid.hidden = value !== 'movie';
+      if (value !== 'music') moreWrap.hidden = true;
+      if (value !== 'oboi') oboiMoreWrap.hidden = true;
+      if (value !== 'nav') {
+        navHub.hidden = true;
+        navRandom.hidden = true;
+        for (const section of Object.values(navSections)) section.hidden = true;
+      }
+      chipRows.news.hidden = value !== 'news';
+      chipRows.music.hidden = value !== 'music';
+      chipRows.nav.hidden = value !== 'nav';
+      chipRows.oboi.hidden = value !== 'oboi';
+      chipRows.movie.hidden = value !== 'movie';
+      input.placeholder = value === 'news'
+        ? 'Игра, гайд…'
+        : value === 'music'
+          ? 'Трек, артист, жанр…'
+          : value === 'oboi'
+            ? 'Неон, киберпанк, 4K…'
+            : value === 'movie' ? 'Фильм, игра…' : 'Игра, подборка…';
+
+      if (!reader.hidden && !prePost) closePost(false);
+
+      if (value === 'news') {
+        for (const chip of chipsOf('news')) {
+          chip.setAttribute('aria-pressed', String(chip.dataset.cat === newsCat));
+        }
+        applyNews(save);
+      } else if (value === 'music') {
+        syncMusicChips();
+        syncSorts();
+        if (!musicState.loaded) loadMusic(true, save);
+        else renderMusic(save);
+      } else if (value === 'oboi') {
+        wallState.key = oboiCat;
+        syncWallChips();
+        if (!wallState.api && !wallState.dead) loadWalls(true, save);
+        else if (wallList.length) {
+          paintWallChrome();
+          if (save) saveUrl();
+        } else {
+          loadWalls(true, save);
+        }
+      } else if (value === 'movie') {
+        syncMovieChips();
+        applyMovies(save);
+      } else {
+        for (const chip of chipsOf('nav')) {
+          chip.setAttribute('aria-pressed', String(chip.dataset.cat === navCat));
+        }
+        applyNav(save);
+      }
+      scrollTop();
+    }
+
+    function setNewsCat(value: string) {
+      newsCat = value;
+      for (const chip of chipsOf('news')) {
+        const active = chip.dataset.cat === value;
+        chip.setAttribute('aria-pressed', String(active));
+        // В горизонтальной панели активный раздел может быть за краем.
+        if (active) chip.scrollIntoView({ inline: 'center', block: 'nearest' });
+      }
+      applyNews();
+      // Смена раздела — показываем список с начала, а не середину.
+      if (reader.hidden) scrollTop();
+    }
+
+    for (const btn of modes) {
+      btn.addEventListener('click', (e) => {
+        // Ctrl/Cmd-клик должен открыть раздел в новой вкладке.
+        if (e.metaKey || e.ctrlKey || e.shiftKey || e.altKey || e.button !== 0) return;
+        e.preventDefault();
+        const value = btn.dataset.mode;
+        const next: Mode = value === 'music' ? 'music' : value === 'nav' ? 'nav' : value === 'oboi' ? 'oboi' : value === 'movie' ? 'movie' : 'news';
+        // На статической странице раздела вкладки — обычные ссылки: каждая
+        // вкладка имеет свой индексируемый адрес.
+        if (variant !== 'app') {
+          const targets: Record<Mode, string> = {
+            news: `${base}/`,
+            music: `${base}/music/`,
+            nav: `${base}/nav/`,
+            oboi: `${base}/oboi/`,
+            movie: `${base}/movie/`,
+          };
+          location.href = targets[next];
+          return;
+        }
+        setMode(next);
+      });
+    }
+
+    chipRows.news.addEventListener('click', (e) => {
+      const chip = (e.target as HTMLElement | null)?.closest<HTMLButtonElement>('.chip');
+      if (!chip) return;
+      // На странице материала сетки нет — раздел открывается списком.
+      if (variant === 'item') {
+        const value = chip.dataset.cat || 'all';
+        location.href = value === 'all'
+          ? `${base}/`
+          : `${base}/?cat=${encodeURIComponent(value)}`;
+        return;
+      }
+      // Раздел выбран во время чтения — возвращаемся к списку.
+      if (!reader.hidden) closePost(false);
+      setNewsCat(chip.dataset.cat || 'all');
+    });
+
+    chipRows.music.addEventListener('click', (e) => {
+      const chip = (e.target as HTMLElement | null)?.closest<HTMLButtonElement>('.chip');
+      if (!chip) return;
+      musicState.genre = chip.dataset.cat || 'all';
+      syncMusicChips();
+      loadMusic(true);
+    });
+
+    chipRows.nav.addEventListener('click', (e) => {
+      const chip = (e.target as HTMLElement | null)?.closest<HTMLButtonElement>('.chip');
+      if (!chip) return;
+      if (!reader.hidden) closePost(false);
+      setNavCat(chip.dataset.cat || 'all');
+    });
+
+    navHub.addEventListener('click', (e) => {
+      const card = (e.target as HTMLElement | null)?.closest<HTMLElement>('[data-nav-go]');
+      if (card?.dataset.navGo) setNavCat(card.dataset.navGo);
+    });
+
+    for (const btn of sorts) {
+      btn.addEventListener('click', () => {
+        const value = btn.dataset.sort;
+        if (value !== 'trending' && value !== 'popular' && value !== 'new') return;
+        musicState.sort = value;
+        syncSorts();
+        loadMusic(true);
+      });
+    }
+
+    moreBtn.addEventListener('click', () => loadMusic(false));
+
+    let searchTimer = 0;
+    input.addEventListener('input', () => {
+      clear.hidden = !input.value.trim();
+      if (mode === 'music') {
+        window.clearTimeout(searchTimer);
+        searchTimer = window.setTimeout(() => {
+          if (mode === 'music') loadMusic(true);
+        }, 400);
+      } else if (mode === 'nav') {
+        applyNav();
+      } else if (mode === 'oboi') {
+        // Поиск уходит в API: не дёргаем прокси на каждую букву.
+        window.clearTimeout(searchTimer);
+        searchTimer = window.setTimeout(() => {
+          if (mode === 'oboi') loadWalls(true);
+        }, 400);
+      } else if (mode === 'movie') {
+        applyMovies();
+      } else {
+        applyNews();
+      }
+    });
+
+    clear.addEventListener('click', () => {
+      input.value = '';
+      if (mode === 'music') loadMusic(true);
+      else if (mode === 'nav') applyNav();
+      else if (mode === 'oboi') loadWalls(true);
+      else if (mode === 'movie') applyMovies();
+      else applyNews();
+      input.focus();
+    });
+
+    reset.addEventListener('click', () => {
+      input.value = '';
+      if (mode === 'music') {
+        musicState.genre = 'all';
+        musicState.sort = 'trending';
+        syncMusicChips();
+        syncSorts();
+        loadMusic(true);
+      } else if (mode === 'nav') {
+        setNavCat('all');
+      } else if (mode === 'oboi') {
+        wallState.sort = 'favorites';
+        setOboiCat('all');
+      } else if (mode === 'movie') {
+        setMovieCat('all');
+      } else {
+        setNewsCat('all');
+      }
+      input.focus();
+    });
+
+    // ── плеер ─────────────────────────────────────────────────────
+    // Полный трек не кладём в приложение: Audius отдаёт поток по id.
+    const player = document.getElementById('player') as HTMLElement;
+    const pArt = document.getElementById('p-art') as HTMLElement;
+    const pTitle = document.getElementById('p-title') as HTMLElement;
+    const pArtist = document.getElementById('p-artist') as HTMLElement;
+    const pToggle = document.getElementById('p-toggle') as HTMLButtonElement;
+    const pClose = document.getElementById('p-close') as HTMLButtonElement;
+    const pProgress = document.getElementById('p-progress') as HTMLElement;
+    const audio = new Audio();
+    audio.preload = 'none';
+    let playing = '';
+
+    function setPlayState(on: boolean) {
+      pToggle.textContent = on ? '❚❚' : '▶';
+      pToggle.setAttribute('aria-label', on ? 'Пауза' : 'Продолжить');
+      for (const card of musicGrid.querySelectorAll<HTMLElement>('[data-track]')) {
+        const active = card.dataset.id === playing;
+        card.classList.toggle('is-active', active);
+        const icon = card.querySelector<HTMLElement>('.track__icon');
+        if (icon) icon.textContent = active && on ? '❚❚' : '▶';
+      }
+    }
+
+    function stopTrack() {
+      playing = '';
+      audio.pause();
+      audio.removeAttribute('src');
+      audio.load();
+      pProgress.style.width = '0';
+      player.hidden = true;
+      document.body.classList.remove('has-player');
+      setPlayState(false);
+    }
+
+    function playTrack(card: HTMLElement) {
+      const id = card.dataset.id || '';
+      if (!id) return;
+
+      if (playing === id) {
+        if (audio.paused) audio.play().catch(() => {});
+        else audio.pause();
+        return;
+      }
+
+      playing = id;
+      audio.src = `${AUDIUS.base}/tracks/${encodeURIComponent(id)}/stream?app_name=${encodeURIComponent(AUDIUS.app)}`;
+      audio.play().catch(() => {});
+
+      pTitle.textContent = card.dataset.title || '';
+      pArtist.textContent = card.dataset.artist || '';
+      pArt.textContent = '';
+      if (card.dataset.art) {
+        const img = document.createElement('img');
+        img.src = card.dataset.art;
+        img.alt = '';
+        img.addEventListener('error', () => { img.src = FALLBACK_ART; }, { once: true });
+        pArt.appendChild(img);
+      }
+      pProgress.style.width = '0';
+      player.hidden = false;
+      document.body.classList.add('has-player');
+      setPlayState(true);
+    }
+
+    musicGrid.addEventListener('click', (e) => {
+      const card = (e.target as HTMLElement | null)?.closest<HTMLElement>('[data-track]');
+      if (card) playTrack(card);
+    });
+
+    pToggle.addEventListener('click', () => {
+      if (!playing) return;
+      if (audio.paused) audio.play().catch(() => {});
+      else audio.pause();
+    });
+    pClose.addEventListener('click', stopTrack);
+    audio.addEventListener('play', () => setPlayState(true));
+    audio.addEventListener('pause', () => setPlayState(false));
+    audio.addEventListener('timeupdate', () => {
+      const value = audio.duration ? (audio.currentTime / audio.duration) * 100 : 0;
+      pProgress.style.width = `${value}%`;
+    });
+    audio.addEventListener('ended', () => setPlayState(false));
+
+    // ── загрузка тел материалов ────────────────────────────────────
+    // Один файл на материал: при старте тянем только индекс, тело —
+    // по наведению/клику. Повторные открытия идут из памяти и SW-кэша.
+    const loads = new Map<string, Promise<any>>();
+
+    function loadPost(slug: string): Promise<any> {
+      const hit = loads.get(slug);
+      if (hit) return hit;
+      const req = fetch(`${base}/posts/${slug}.json`)
+        .then((res) => {
+          if (!res.ok) throw new Error(String(res.status));
+          return res.json();
+        })
+        .catch((err) => {
+          loads.delete(slug);
+          throw err;
+        });
+      loads.set(slug, req);
+      return req;
+    }
+
+    function slugFromHref(href: string): string {
+      try {
+        const url = new URL(href, location.href);
+        // Ссылки в статьях бывают и относительными, и абсолютными на домен сайта.
+        const sameSite = url.origin === location.origin || /(^|\.)one1game\.org$/.test(url.hostname);
+        if (!sameSite) return '';
+        let path = url.pathname.replace(/\/+$/, '');
+        if (base && path.startsWith(base)) path = path.slice(base.length);
+        // Старые адреса сайта и новые адреса приложения ведут в одну читалку.
+        const m = path.match(/^\/(?:archive|news)\/([^/]+)$/);
+        return m && bySlug.has(m[1]) ? m[1] : '';
+      } catch {
+        return '';
+      }
+    }
+
+    function scrollTop() {
+      window.scrollTo({ top: 0, behavior: 'instant' as ScrollBehavior });
+    }
+
+    function skeleton() {
+      return '<div class="skel-line"></div>'.repeat(3);
+    }
+
+    function errorBox(message: string) {
+      rBody.innerHTML = `<div class="callout"><p>${message}</p></div>`;
+    }
+
+    async function openPost(slug: string, push = true) {
+      const meta = bySlug.get(slug);
+      if (!meta) return;
+
+      current = slug;
+      listView.hidden = true;
+      reader.hidden = false;
+      progress.hidden = false;
+
+      rCat.textContent = meta.category;
+      rMeta.textContent = `${meta.date} · ${meta.read} мин чтения`;
+      rTitle.textContent = meta.title;
+      rLead.textContent = meta.excerpt;
+      rBody.innerHTML = skeleton();
+      rRelated.hidden = true;
+
+      if (meta.image) {
+        rCover.innerHTML = `<img src="${meta.image}" alt="${escText(meta.title)} — обложка" width="1200" height="675" loading="eager" fetchpriority="high" decoding="async" />`;
+        rCover.hidden = false;
+        reader.style.setProperty('--reader-img', `url("${meta.image}")`);
+      } else {
+        rCover.innerHTML = '';
+        rCover.hidden = true;
+        reader.style.removeProperty('--reader-img');
+      }
+
+      document.title = `${meta.title} — One1Game`;
+      if (push) {
+        history.pushState({ slug }, '', `${base}/news/${slug}/`);
+        syncMeta();
+      }
+      scrollTop();
+
+      // Заголовок показали сразу — дальше догружаем тело.
+      try {
+        const data = await loadPost(slug);
+        if (current !== slug) return;
+
+        rBody.innerHTML = data.html || '';
+        rTitle.textContent = data.title || meta.title;
+        rLead.textContent = data.excerpt || meta.excerpt;
+        rMeta.textContent = `${data.date} · ${data.read} мин чтения`;
+        if (data.image && !meta.image) {
+          rCover.innerHTML = `<img src="${data.image}" alt="${escText(data.title || meta.title)} — обложка" width="1200" height="675" loading="eager" fetchpriority="high" decoding="async" />`;
+          rCover.hidden = false;
+          reader.style.setProperty('--reader-img', `url("${data.image}")`);
+        }
+
+        const related: Meta[] = Array.isArray(data.related) ? data.related : [];
+        rRelatedList.innerHTML = related
+          .filter((rel) => bySlug.has(rel.slug))
+          .map(
+            (rel) =>
+              `<a class="rel" href="${base}/news/${rel.slug}/" data-slug="${rel.slug}"><span class="rel__cat">${rel.category}</span><span class="rel__title">${rel.title}</span><span class="rel__date">${rel.date}</span></a>`
+          )
+          .join('');
+        rRelated.hidden = !rRelatedList.children.length;
+
+        updateProgress();
+      } catch {
+        if (current === slug) errorBox('Материал не загрузился. Проверьте соединение и попробуйте ещё раз.');
+      }
+    }
+
+    function closePost(push = true) {
+      // Статическая страница материала существует отдельно — возвращаемся
+      // на список полноценной навигацией, без пустой сетки.
+      if (variant === 'item') {
+        location.href = `${base}/`;
+        return;
+      }
+      current = '';
+      reader.hidden = true;
+      progress.hidden = true;
+      reader.style.removeProperty('--reader-img');
+      listView.hidden = false;
+      document.title = listTitle;
+      progressFill.style.width = '0';
+      if (push) {
+        if (mode === 'music') renderMusic();
+        else if (mode === 'nav') applyNav();
+        else applyNews();
+      }
+      scrollTop();
+    }
+
+    function updateProgress() {
+      if (reader.hidden) return;
+      const max = document.documentElement.scrollHeight - window.innerHeight;
+      const value = max > 0 ? Math.min(100, (window.scrollY / max) * 100) : 100;
+      progressFill.style.width = `${value}%`;
+    }
+
+    back.addEventListener('click', () => closePost());
+
+    rRelatedList.addEventListener('click', (e) => {
+      const btn = (e.target as HTMLElement).closest<HTMLElement>('[data-slug]');
+      if (btn?.dataset.slug) openPost(btn.dataset.slug);
+    });
+
+    // Перехватываем ссылки до ClientRouter: материал открывается внутри,
+    // как экран приложения, а не как новая страница сайта.
+    window.addEventListener(
+      'click',
+      (e) => {
+        const target = e.target as HTMLElement | null;
+        const link = target?.closest?.('a');
+        if (!link) return;
+        if (e.button !== 0 || e.metaKey || e.ctrlKey || e.shiftKey || e.altKey) return;
+        if (link.target && link.target !== '_self') return;
+
+        const href = link.getAttribute('href') || '';
+        if (!href) return;
+
+        const slug = slugFromHref(href);
+        if (slug) {
+          e.preventDefault();
+          e.stopPropagation();
+          openPost(slug);
+          return;
+        }
+
+        // Оглавление статьи: якорь внутри читалки, без прыжка наверх.
+        if (!reader.hidden && href.startsWith('#')) {
+          e.preventDefault();
+          e.stopPropagation();
+          const el = document.getElementById(decodeURIComponent(href.slice(1)));
+          el?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      },
+      true
+    );
+
+    // Предзагрузка по наведению — открытие становится мгновенным.
+    const prefetch = (e: Event) => {
+      const card = (e.target as HTMLElement | null)?.closest?.<HTMLElement>('[data-card]');
+      const slug = card?.dataset.slug;
+      if (slug) loadPost(slug).catch(() => {});
+    };
+    grid.addEventListener('pointerover', prefetch, { passive: true });
+    grid.addEventListener('focusin', prefetch);
+
+    window.addEventListener('scroll', updateProgress, { passive: true });
+
+    window.addEventListener('popstate', () => {
+      const route = routeFromPath();
+      if (route.mode !== mode) setMode(route.mode, false);
+
+      if (route.mode === 'news' && route.post && bySlug.has(route.post)) {
+        openPost(route.post, false);
+      } else if (!reader.hidden) {
+        closePost(false);
+      }
+
+      if (route.mode === 'movie' && route.movie && (movieById.has(route.movie) || movieMetaById.has(route.movie))) {
+        openMovie(route.movie, false);
+      } else if (!movieReader.hidden) {
+        closeMovie(false);
+      }
+    });
+
+    // Горячие клавиши как в приложении: «/» или Cmd/Ctrl+K — фокус в поиск.
+    window.addEventListener('keydown', (e) => {
+      // Просмотр обоев: Esc закрывает, стрелки листают подборку.
+      if (!wallViewer.hidden) {
+        if (e.key === 'Escape') {
+          e.preventDefault();
+          closeWall();
+          return;
+        }
+        if (e.key === 'ArrowLeft' || e.key === 'ArrowRight') {
+          e.preventDefault();
+          stepWall(e.key === 'ArrowLeft' ? -1 : 1);
+          return;
+        }
+      }
+
+      if (e.key === 'Escape' && !movieReader.hidden) {
+        e.preventDefault();
+        closeMovie();
+        return;
+      }
+
+      if (e.key === 'Escape' && !reader.hidden) {
+        e.preventDefault();
+        closePost();
+        return;
+      }
+    });
+
+    // ── информер: событие этого дня в истории игр и курс биткоина ──
+    // HTML собирается в день билда, поэтому при другом дне подтягиваем
+    // актуальное событие из /history.json (тот же набор, что и на сервере).
+    const tickerNews = document.getElementById('ticker-news') as HTMLElement;
+    const tickerText = document.getElementById('ticker-text');
+    const tickerYear = document.getElementById('ticker-year');
+    if (tickerNews && tickerText) {
+      const pad = (n: number) => String(n).padStart(2, '0');
+      const now = new Date();
+      const day = `${pad(now.getMonth() + 1)}-${pad(now.getDate())}`;
+      if (day !== tickerNews.dataset.day) {
+        fetch(`${base}/history.json`, { credentials: 'omit' })
+          .then((res) => (res.ok ? res.json() : null))
+          .then((list: Record<string, { y: number; t: string; d: string }> | null) => {
+            const ev = list?.[day];
+            if (!ev) return;
+            tickerText.textContent = ev.d;
+            tickerText.title = `${ev.y} · ${ev.t} — ${ev.d}`;
+            if (tickerYear) tickerYear.textContent = String(ev.y);
+            tickerNews.dataset.day = day;
+          })
+          .catch(() => {});
+      }
+    }
+
+    const btcBox = document.getElementById('ticker-btc') as HTMLElement;
+    const btcPrice = document.getElementById('ticker-btc-price') as HTMLElement;
+    const btcDelta = document.getElementById('ticker-btc-delta') as HTMLElement;
+    const BTC_CACHE = 'btc-quote-v1';
+    const BTC_TTL = 5 * 60 * 1000;
+
+    const paintBtc = (quote: { usd: number; rub?: number; change?: number }) => {
+      if (!quote || !quote.usd) return;
+      btcPrice.textContent = `$${Math.round(quote.usd).toLocaleString('ru-RU')}`;
+      if (quote.rub) btcBox.title = `≈ ${Math.round(quote.rub).toLocaleString('ru-RU')} ₽`;
+      if (typeof quote.change === 'number') {
+        const up = quote.change >= 0;
+        btcDelta.textContent = `${up ? '+' : '−'}${Math.abs(quote.change).toFixed(1).replace('.', ',')}%`;
+        btcDelta.classList.toggle('is-up', up);
+        btcDelta.classList.toggle('is-down', !up);
+      }
+      btcBox.hidden = false;
+    };
+
+    (async () => {
+      // Кэш на 5 минут: CoinGecko не любит частые запросы, а курс не критичен.
+      let cached: any = null;
+      try {
+        cached = JSON.parse(localStorage.getItem(BTC_CACHE) || 'null');
+      } catch {
+        cached = null;
+      }
+      if (cached?.usd) paintBtc(cached);
+      if (cached && Date.now() - (cached.ts || 0) < BTC_TTL) return;
+
+      try {
+        const ctrl = new AbortController();
+        const timer = setTimeout(() => ctrl.abort(), 6000);
+        const res = await fetch(
+          'https://api.coingecko.com/api/v3/simple/price?ids=bitcoin&vs_currencies=usd,rub&include_24hr_change=true',
+          { signal: ctrl.signal },
+        );
+        clearTimeout(timer);
+        if (!res.ok) return;
+        const data = await res.json();
+        const coin = data?.bitcoin;
+        if (!coin?.usd) return;
+        const quote = { usd: coin.usd, rub: coin.rub, change: coin.usd_24h_change, ts: Date.now() };
+        localStorage.setItem(BTC_CACHE, JSON.stringify(quote));
+        paintBtc(quote);
+      } catch {
+        // Без сети остаётся кэш; если его нет — блок просто скрыт.
+      }
+    })();
+
+    // Состояние задаёт сервер: у каждой страницы свой режим, раздел и предмет.
+    // Query-строка остаётся только для поиска и сортировки.
+    const params = new URLSearchParams(location.search);
+    if (params.get('q')) input.value = params.get('q')!;
+    const initialMode: Mode = (document.body.dataset.mode as Mode) || 'news';
+    const initialCat = document.body.dataset.cat || params.get('cat') || '';
+    if (initialCat) {
+      // Неизвестный раздел в ссылке не должен оставлять пустой экран.
+      if (initialMode === 'music') {
+        if (genres.some((g) => g.value === initialCat)) musicState.genre = initialCat;
+      } else if (initialMode === 'nav') {
+        if (initialCat === 'all' || initialCat === 'random' || initialCat in navSections) navCat = initialCat;
+      } else if (initialMode === 'oboi') {
+        const wallChips = Array.from(chipRows.oboi.querySelectorAll<HTMLElement>('.chip'));
+        if (initialCat === 'all' || wallChips.some((chip) => chip.dataset.cat === initialCat)) oboiCat = initialCat;
+      } else if (initialMode === 'movie') {
+        const movieChips = Array.from(chipRows.movie.querySelectorAll<HTMLElement>('.chip'));
+        if (initialCat === 'all' || movieChips.some((chip) => chip.dataset.cat === initialCat)) movieCat = initialCat;
+      } else if (initialCat === 'all' || categories.includes(initialCat)) {
+        newsCat = initialCat;
+      }
+    }
+    const initialSort = params.get('sort');
+    if (initialSort === 'popular' || initialSort === 'new') musicState.sort = initialSort;
+    if (initialMode === 'oboi' && (initialSort === 'toplist' || initialSort === 'date_added' || initialSort === 'random')) {
+      wallState.sort = initialSort;
+    }
+    setMode(initialMode, false);
+
+    const initialMovie = document.body.dataset.movie || '';
+    if (initialMode === 'movie' && initialMovie) {
+      if (preMovie) {
+        // Пререндер уже на экране — просто фиксируем состояние.
+        movieCurrent = initialMovie;
+        listView.hidden = true;
+        movieReader.hidden = false;
+      } else if (movieById.has(initialMovie) || movieMetaById.has(initialMovie)) {
+        openMovie(initialMovie, false);
+      }
+    }
+
+    // Первую страницу музыки готовим в фоне: к моменту клика вкладка уже с треками.
+    // На медленной сети и при экономии трафика не грузим заранее — это лишние сотни килобайт.
+    if (initialMode !== 'music') {
+      const conn = (navigator as any).connection;
+      const cheapTraffic = !conn || (!conn.saveData && !/^(slow-)?2g$|^3g$/.test(conn.effectiveType || ''));
+      if (cheapTraffic) {
+        const startPrefetch = () => {
+          if (!document.hidden) prefetchMusic();
+        };
+        if ('requestIdleCallback' in window) {
+          (window as any).requestIdleCallback(startPrefetch, { timeout: 6000 });
+        } else {
+          window.setTimeout(startPrefetch, 2500);
+        }
+      }
+      for (const btn of modes) {
+        if (btn.dataset.mode === 'music') btn.addEventListener('pointerenter', prefetchMusic, { once: true });
+      }
+    }
+    const initialPost = document.body.dataset.post || '';
+    if (initialMode === 'news' && initialPost) {
+      if (prePost) {
+        // Статья уже в HTML: поисковик видит её без JS, а приложение
+        // подхватывает готовый экран без повторной загрузки.
+        current = initialPost;
+        listView.hidden = true;
+        reader.hidden = false;
+        updateProgress();
+      } else if (bySlug.has(initialPost)) {
+        openPost(initialPost, false);
+      }
+    }
+  </script>
+
+  <style>
+    /* Нижняя панель перекрывает низ экрана — оставляем под неё место. */
+    #view-list { padding-bottom: calc(var(--tabbar-h) + 28px + var(--safe-bottom)); }
+    .status { margin: 14px 0 0; }
+    #grid { grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); }
+  </style>
+</Base>

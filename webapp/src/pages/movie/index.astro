@@ -1,0 +1,50 @@
+---
+import AppShell from '../../components/AppShell.astro';
+import movies from '../../data/movies.json';
+
+const site = 'https://one1game.org';
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+const url = `${site}${base}/movie/`;
+const upcoming = movies.items.filter((movie: any) => movie.section === 'upcoming').length;
+const released = movies.items.filter((movie: any) => movie.section === 'released').length;
+const description =
+  `Фильмы и сериалы по мотивам видеоигр: ${upcoming} премьер скоро на экранах и ${released} уже вышедших экранизаций. Постеры, сюжет, актёры, трейлеры и факты.`;
+
+const jsonLd = [
+  {
+    '@context': 'https://schema.org',
+    '@type': 'CollectionPage',
+    name: 'Фильмы по играм',
+    description,
+    url,
+    inLanguage: 'ru-RU',
+    isPartOf: { '@type': 'WebSite', name: 'One1Game', url: `${site}${base}/` },
+    mainEntity: {
+      '@type': 'ItemList',
+      numberOfItems: movies.items.length,
+      itemListElement: movies.items.map((movie: any, index: number) => ({
+        '@type': 'ListItem',
+        position: index + 1,
+        name: movie.title,
+        url: `${site}${base}/movie/${movie.id}/`,
+      })),
+    },
+  },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: 'Главная', item: `${site}${base}/` },
+      { '@type': 'ListItem', position: 2, name: 'Фильмы по играм', item: url },
+    ],
+  },
+];
+---
+
+<AppShell
+  mode="movie"
+  variant="section"
+  seoTitle="Фильмы по играм — экранизации видеоигр — One1Game"
+  seoDescription={description}
+  jsonLd={jsonLd}
+/>

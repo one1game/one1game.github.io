@@ -22,3 +22,7 @@ __pycache__/
 
 # Локальная SEO-лаборатория (анализ тем и запросов)
 seo-lab/
+
+# PWA: сборка webapp → app/ публикуется как сайт
+webapp/dist/
+webapp/.astro/

@@ -1,0 +1,133 @@
+---
+import '@fontsource-variable/inter';
+import '@fontsource-variable/manrope';
+import '../styles/global.css';
+
+interface Props {
+  title: string;
+  description?: string;
+  noindex?: boolean;
+  canonical?: string;
+  image?: string;
+  ogType?: 'website' | 'article' | 'video.movie';
+  jsonLd?: Record<string, unknown> | Record<string, unknown>[];
+  bodyData?: Record<string, string>;
+  articleMeta?: { published?: string; section?: string; author?: string };
+}
+
+const {
+  title,
+  description = 'One1Game App — новая версия игрового портала: мгновенный поиск, офлайн, установка на телефон.',
+  noindex = false,
+  canonical,
+  image,
+  ogType = 'website',
+  jsonLd,
+  bodyData = {},
+  articleMeta,
+} = Astro.props;
+
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+const site = 'https://one1game.org';
+// Канонический адрес всегда со слэшем на конце: /app/ и /app/news/<slug>/.
+const pathname = Astro.url.pathname;
+const path = pathname.endsWith('/') ? pathname : `${pathname}/`;
+const canonicalUrl = canonical || `${site}${path}`;
+const ogImage = image || `${site}${base}/icon-512.png`;
+const jsonLdList = jsonLd ? (Array.isArray(jsonLd) ? jsonLd : [jsonLd]) : [];
+const bodyAttrs = Object.fromEntries(
+  Object.entries(bodyData).map(([key, value]) => [`data-${key}`, value]),
+);
+---
+
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <meta
+      name="robots"
+      content={noindex ? 'noindex, follow' : 'index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1'}
+    />
+    <link rel="canonical" href={canonicalUrl} />
+    <meta name="theme-color" content="#05080b" />
+    <meta name="color-scheme" content="dark" />
+    <link rel="preconnect" href="https://api.audius.co" crossorigin />
+    <link rel="dns-prefetch" href="https://api.audius.co" />
+    <!-- Обложки: Steam, TMDB и Wallhaven — самые частые источники картинок. -->
+    <link rel="preconnect" href="https://shared.akamai.steamstatic.com" crossorigin />
+    <link rel="preconnect" href="https://image.tmdb.org" crossorigin />
+    <link rel="preconnect" href="https://th.wallhaven.cc" crossorigin />
+    <link rel="dns-prefetch" href="https://shared.fastly.steamstatic.com" />
+    <link rel="manifest" href={`${base}/manifest.webmanifest`} />
+    <link rel="icon" href={`${base}/icon.svg`} type="image/svg+xml" />
+    <link rel="apple-touch-icon" sizes="192x192" href={`${base}/icon-192.png`} />
+
+    <meta property="og:type" content={ogType} />
+    <meta property="og:locale" content="ru_RU" />
+    <meta property="og:site_name" content="One1Game" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonicalUrl} />
+    <meta property="og:image" content={ogImage} />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={ogImage} />
+    {articleMeta?.published && <meta property="article:published_time" content={articleMeta.published} />}
+    {articleMeta?.section && <meta property="article:section" content={articleMeta.section} />}
+    {articleMeta?.author && <meta name="author" content={articleMeta.author} />}
+
+    {jsonLdList.map((data) => (
+      <script type="application/ld+json" set:html={JSON.stringify(data)} />
+    ))}
+  </head>
+  <body {...bodyAttrs}>
+    <slot />
+
+    <script>
+      // Офлайн-режим: кэшируем оболочку приложения, чтобы оно открывалось
+      // даже без сети — как обычное приложение.
+      if ('serviceWorker' in navigator) {
+        window.addEventListener('load', () => {
+          // updateViaCache: 'none' — браузер всегда проверяет свежий sw.js,
+          // иначе старый кэш стилей может жить неделями.
+          navigator.serviceWorker
+            .register('/app/sw.js', { scope: '/app/', updateViaCache: 'none' })
+            .catch(() => {});
+        });
+      }
+
+      const badge = document.createElement('div');
+      badge.className = 'offline';
+      badge.textContent = 'Нет сети — показан кэш';
+      badge.hidden = true;
+      document.body.appendChild(badge);
+      const sync = () => { badge.hidden = navigator.onLine; };
+      window.addEventListener('online', sync);
+      window.addEventListener('offline', sync);
+      sync();
+
+      window.addEventListener('beforeinstallprompt', (e) => {
+        e.preventDefault();
+        window.__installPrompt = e;
+        const btn = document.querySelector<HTMLElement>('[data-install]');
+        if (btn) btn.hidden = false;
+      });
+
+      // Кнопка установки — одна на все страницы.
+      document.addEventListener('click', async (e) => {
+        const btn = (e.target as HTMLElement | null)?.closest<HTMLElement>('[data-install]');
+        if (!btn) return;
+        const prompt = window.__installPrompt;
+        if (!prompt) return;
+        prompt.prompt();
+        await prompt.userChoice;
+        window.__installPrompt = null;
+        btn.hidden = true;
+      });
+    </script>
+  </body>
+</html>

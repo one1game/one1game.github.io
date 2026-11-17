@@ -54,3 +54,17 @@
 
 /music/og-music.jpg
   Cache-Control: public, max-age=31536000, immutable
+
+# Приложение: статические страницы для поиска и для людей.
+# Сначала общее правило, ниже — более точные: они перекрывают общее.
+/app/*
+  Cache-Control: public, max-age=0, s-maxage=300, stale-while-revalidate=86400
+
+/app/*.json
+  Cache-Control: public, max-age=3600
+
+/app/_assets/*
+  Cache-Control: public, max-age=31536000, immutable
+
+/app/sw.js
+  Cache-Control: no-cache

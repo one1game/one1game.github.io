@@ -1,0 +1,58 @@
+---
+import AppShell from '../components/AppShell.astro';
+import catalog from '../data/catalog.json';
+
+const site = 'https://one1game.org';
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+const description =
+  'One1Game — новости игр, гайды и обзоры, музыка для игр, скидки и бесплатные раздачи, обои в 4K и фильмы по играм. Один сайт, который работает как приложение.';
+
+const jsonLd = [
+  {
+    '@context': 'https://schema.org',
+    '@type': 'WebSite',
+    name: 'One1Game',
+    alternateName: 'One1Game App',
+    url: `${site}${base}/`,
+    inLanguage: 'ru-RU',
+    description,
+  },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'Organization',
+    name: 'One1Game',
+    url: `${site}/`,
+    logo: {
+      '@type': 'ImageObject',
+      url: `${site}${base}/icon-512.png`,
+      width: 512,
+      height: 512,
+    },
+    sameAs: [
+      'https://www.youtube.com/@one1game',
+      'https://t.me/one1game',
+      'https://vk.com/one1games',
+    ],
+  },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'ItemList',
+    name: 'Свежие материалы One1Game',
+    numberOfItems: 20,
+    itemListElement: catalog.items.slice(0, 20).map((item, index) => ({
+      '@type': 'ListItem',
+      position: index + 1,
+      name: item.title,
+      url: `${site}${base}/news/${item.slug}/`,
+    })),
+  },
+];
+---
+
+<AppShell
+  mode="news"
+  variant="app"
+  seoTitle="One1Game — новости игр, гайды, обзоры, обои и фильмы по играм"
+  seoDescription={description}
+  jsonLd={jsonLd}
+/>

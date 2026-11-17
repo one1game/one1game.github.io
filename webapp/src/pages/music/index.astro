@@ -1,0 +1,55 @@
+---
+import AppShell from '../../components/AppShell.astro';
+import music from '../../../public/music.json';
+
+const site = 'https://one1game.org';
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+const url = `${site}${base}/music/`;
+const tracks = music.tracks.slice(0, 24);
+const genresText = music.categories.map((genre: any) => genre.label).join(', ');
+const description =
+  `Музыка для игр, учёбы и работы: ${genresText}. Онлайн-плеер без регистрации — ${music.tracks.length} треков в подборках One1Game.`;
+
+const jsonLd = [
+  {
+    '@context': 'https://schema.org',
+    '@type': 'CollectionPage',
+    name: 'Музыка для игр',
+    description,
+    url,
+    inLanguage: 'ru-RU',
+    isPartOf: { '@type': 'WebSite', name: 'One1Game', url: `${site}${base}/` },
+    mainEntity: {
+      '@type': 'ItemList',
+      numberOfItems: tracks.length,
+      itemListElement: tracks.map((track: any, index: number) => ({
+        '@type': 'ListItem',
+        position: index + 1,
+        item: {
+          '@type': 'MusicRecording',
+          name: track.title,
+          byArtist: { '@type': 'MusicGroup', name: track.artist },
+          genre: track.genre || undefined,
+        },
+      })),
+    },
+  },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: 'Главная', item: `${site}${base}/` },
+      { '@type': 'ListItem', position: 2, name: 'Музыка', item: url },
+    ],
+  },
+];
+---
+
+<AppShell
+  mode="music"
+  variant="section"
+  tracks={tracks}
+  seoTitle="Музыка для игр — слушать онлайн бесплатно — One1Game"
+  seoDescription={description}
+  jsonLd={jsonLd}
+/>

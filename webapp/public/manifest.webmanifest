@@ -1,0 +1,56 @@
+{
+  "name": "One1Game — игры, гайды, обои и фильмы по играм",
+  "short_name": "One1Game",
+  "description": "Новости игр, гайды и обзоры, музыка, скидки и раздачи, обои и фильмы по играм.",
+  "lang": "ru",
+  "dir": "ltr",
+  "start_url": "/app/",
+  "scope": "/app/",
+  "display": "standalone",
+  "display_override": ["window-controls-overlay", "standalone", "minimal-ui"],
+  "background_color": "#05080b",
+  "theme_color": "#05080b",
+  "categories": ["games", "news", "entertainment"],
+  "icons": [
+    {
+      "src": "/app/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/app/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/app/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "Поиск по играм",
+      "short_name": "Поиск",
+      "url": "/app/?cat=%D0%9E%D0%B1%D0%B7%D0%BE%D1%80%D1%8B"
+    },
+    {
+      "name": "Гайды",
+      "short_name": "Гайды",
+      "url": "/app/?cat=%D0%93%D0%B0%D0%B9%D0%B4%D1%8B"
+    },
+    {
+      "name": "Обои",
+      "short_name": "Обои",
+      "url": "/app/oboi/"
+    },
+    {
+      "name": "Фильмы по играм",
+      "short_name": "Фильмы",
+      "url": "/app/movie/"
+    }
+  ]
+}

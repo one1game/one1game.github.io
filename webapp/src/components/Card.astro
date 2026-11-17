@@ -1,0 +1,59 @@
+---
+interface Item {
+  slug: string;
+  url: string;
+  title: string;
+  excerpt: string;
+  category: string;
+  date: string;
+  dateISO: string;
+  image: string;
+  game: boolean;
+  read: number;
+}
+
+interface Props {
+  item: Item;
+  priority?: boolean;
+}
+
+const { item, priority = false } = Astro.props;
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+const hay = `${item.title} ${item.excerpt} ${item.category}`.toLowerCase();
+---
+
+<a
+  class="card"
+  href={`${base}/news/${item.slug}/`}
+  data-card
+  data-slug={item.slug}
+  data-cat={item.category}
+  data-date={item.dateISO}
+  data-date-label={item.date}
+  data-title={item.title}
+  data-excerpt={item.excerpt}
+  data-read={item.read}
+  data-image={item.image}
+  data-hay={hay}
+>
+  <span class="card__thumb">
+    {item.image && (
+      <img
+        src={item.image}
+        alt={`${item.title} — обложка`}
+        width="460"
+        height="259"
+        loading={priority ? 'eager' : 'lazy'}
+        fetchpriority={priority ? 'high' : undefined}
+        decoding="async"
+      />
+    )}
+    <span class="card__cat">{item.category}</span>
+    {item.read > 0 && <span class="card__read">{item.read} мин</span>}
+  </span>
+  <span class="card__body">
+    <span class="card__title">{item.title}</span>
+    <span class="card__excerpt">{item.excerpt}</span>
+    <span class="card__meta">{item.date}{item.game ? ' · игра' : ''}</span>
+  </span>
+</a>

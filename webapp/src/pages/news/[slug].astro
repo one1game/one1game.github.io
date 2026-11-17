@@ -1,0 +1,75 @@
+---
+import AppShell from '../../components/AppShell.astro';
+import { fitTitle } from '../../lib/seo';
+
+const site = 'https://one1game.org';
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+
+export function getStaticPaths() {
+  const eager = import.meta.glob('../../../public/posts/*.json', { eager: true }) as Record<
+    string,
+    { default: any }
+  >;
+  return Object.values(eager)
+    .map((mod) => mod.default ?? mod)
+    .map((post) => ({ params: { slug: post.slug }, props: { post } }));
+}
+
+const { post } = Astro.props as { post: any };
+const url = `${site}${base}/news/${post.slug}/`;
+const description = String(post.excerpt || post.title).slice(0, 160);
+
+// Внутренние ссылки статей ведут на старые адреса сайта — переписываем
+// на страницы приложения, чтобы робот видел один актуальный сайт.
+const body = String(post.html || '')
+  .replace(
+    /href="(?:https?:\/\/one1game\.org)?\/archive\/([^"?#]+)([^"]*)"/g,
+    (_match, slug: string, rest: string) => `href="${base}/news/${slug}/${rest}"`,
+  )
+  // Баннер в тексте статьи: размеры нужны до загрузки, иначе страница «прыгает».
+  .replace(/<img\b[^>]*baner2\.webp[^>]*>/g, (tag: string) =>
+    /width=/.test(tag) ? tag : tag.replace(/\s*\/?>$/, (end: string) => ` width="2064" height="512"${end}`),
+  );
+
+const jsonLd = [
+  {
+    '@context': 'https://schema.org',
+    '@type': 'Article',
+    headline: post.title,
+    description: post.excerpt,
+    image: post.image ? [post.image] : undefined,
+    datePublished: post.dateISO,
+    dateModified: post.dateISO,
+    inLanguage: 'ru-RU',
+    articleSection: post.category,
+    wordCount: post.words || undefined,
+    mainEntityOfPage: { '@type': 'WebPage', '@id': url },
+    author: { '@type': 'Organization', name: 'One1Game', url: `${site}/` },
+    publisher: {
+      '@type': 'Organization',
+      name: 'One1Game',
+      logo: { '@type': 'ImageObject', url: `${site}${base}/icon-512.png` },
+    },
+  },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: 'Главная', item: `${site}${base}/` },
+      { '@type': 'ListItem', position: 2, name: 'Новости', item: `${site}${base}/` },
+      { '@type': 'ListItem', position: 3, name: post.title, item: url },
+    ],
+  },
+];
+---
+
+<AppShell
+  mode="news"
+  post={post.slug}
+  variant="item"
+  postData={{ ...post, html: body }}
+  seoTitle={fitTitle(post.title)}
+  seoDescription={description}
+  seoImage={post.image}
+  jsonLd={jsonLd}
+/>
