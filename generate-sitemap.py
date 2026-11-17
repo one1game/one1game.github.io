@@ -209,10 +209,19 @@ def generate():
         clean_path = url.lstrip('/')
         lines.append(url_block(f'{BASE_URL}/{clean_path}', lastmod=lastmods.get(url)))
 
-    lines.append('</urlset>')
+    # Сайт — это приложение /app/: корневая карта остаётся индексом,
+    # иначе автогенерация вернула бы в индекс страницы старого сайта.
+    index = [
+        '<?xml version="1.0" encoding="UTF-8"?>',
+        '<sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">',
+        '  <sitemap>',
+        f'    <loc>{BASE_URL}/app/sitemap.xml</loc>',
+        '  </sitemap>',
+        '</sitemapindex>',
+    ]
 
     with open(SITEMAP_FILE, 'w', encoding='utf-8') as f:
-        f.write('\n'.join(lines))
+        f.write('\n'.join(index))
 
     with_date = sum(1 for u in urls if u in lastmods)
     print(f"Готово! В sitemap добавлено страниц: {len(lines) - 3} (с lastmod: {with_date}), "
