@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Российские игры на Sega Mega Drive: гид по homebrew — One1Game</title>
+<meta name="description" content="Новые игры для Sega Mega Drive от российских авторов: RetroSouls, Sasha Darko, TLT и Red Miso Studio. 16 проектов, что запустить первым и как играть.">
+<link rel="canonical" href="https://one1game.org/archive/rossijskie-igry-na-sega-mega-drive">
+</head>
+<body>
+<article class="article-body">
+<div class="quick-answer" id="quick-answer" style="margin:18px 0;padding:14px 18px;border-left:3px solid var(--acid,#7dff9b);background:rgba(125,255,155,.06);border-radius:8px;line-height:1.7"><strong>Коротко:</strong> для Sega Mega Drive и Genesis до сих пор выходят новые игры, и часть из них делают в России. Дальше — четыре автора и команды, 16 проектов, которые можно запустить уже сегодня, и честное объяснение, чем оригинальная homebrew-игра отличается от пиратского картриджа из 90-х.</div>
+
+<nav class="toc" aria-label="Содержание статьи">
+  <strong>Содержание</strong>
+  <ol>
+    <li><a href="#who">Кто делает новые игры для Sega в России</a></li>
+    <li><a href="#retrosouls">RetroSouls: семь игр из Новосибирска</a></li>
+    <li><a href="#sacred">Sacred Line: хоррор-трилогия Sasha Darko</a></li>
+    <li><a href="#tlt">TLT и GcUP: шарики, металл и космос</a></li>
+    <li><a href="#hellfire">Sonic: Hellfire Saga — хак, который стал игрой</a></li>
+    <li><a href="#list">Все 16 проектов одним списком</a></li>
+    <li><a href="#play">Как играть: эмулятор, флеш-картридж, картридж</a></li>
+    <li><a href="#choose">Что запустить первым</a></li>
+    <li><a href="#faq">Частые вопросы</a></li>
+  </ol>
+</nav>
+
+<p>Sega Mega Drive — она же Genesis в США и Японии — вышла в 1988 году и давно стала музейным экспонатом. Но 16-битная сцена не умерла: в России и СНГ есть авторы, которые пишут новые игры для оригинального железа. Не порты «на память», не ромхаки с заменой спрайтов, а собственные проекты на C и ассемблере, которые запускаются на консоли с картриджа или флеш-картриджа.</p>
+
+<p>Ниже — не сухой список, а гид: кто эти люди, чем отличаются их игры, что стоит включить первым и где всё это лежит легально. Все ссылки ведут на официальные страницы авторов и издателей.</p>
+
+<h2 id="who">Кто делает новые игры для Sega в России</h2>
+
+<p>Если коротко, активных авторов немного, но у каждого свой почерк. Важно сразу разделить три вещи, которые часто путают:</p>
+
+<ul>
+  <li><strong>Оригинальные homebrew-игры</strong> — новые проекты, написанные с нуля. Именно о них эта статья.</li>
+  <li><strong>Собственные порты</strong> — когда автор переносит на Sega свою же игру с другой платформы. Это не хак, но и не новая концепция.</li>
+  <li><strong>Пиратские переделки</strong> — картриджи 90-х и 2000-х, где в чужую игру вставляли новых персонажей. К разработке «с нуля» они отношения не имеют.</li>
+</ul>
+
+<div class="table-wrap"><table>
+  <thead><tr><th>Автор или команда</th><th>Откуда</th><th>Чем известен</th><th>Проекты для Sega</th></tr></thead>
+  <tbody>
+    <tr><td>RetroSouls (Денис Грачёв)</td><td>Новосибирск</td><td>Ретро-игры для старых платформ, изданные Mega Cat Studios</td><td>7 игр</td></tr>
+    <tr><td>Sasha Darko (Александр Кибанов)</td><td>Россия</td><td>Мрачные авторские адвенчуры</td><td>3 игры</td></tr>
+    <tr><td>TLT и GcUP</td><td>Россия / СНГ</td><td>Аркады, головоломки и шутеры для Mega Drive</td><td>5 игр</td></tr>
+    <tr><td>Red Miso Studio</td><td>Россия</td><td>Крупный хак Sonic 3 &amp; Knuckles</td><td>1 проект</td></tr>
+  </tbody>
+</table></div>
+
+<h2 id="retrosouls">RetroSouls: семь игр из Новосибирска</h2>
+
+<p><strong>RetroSouls</strong> — это фактически один человек, Денис Грачёв из Новосибирска. Он делает игры для ZX Spectrum, NES, Mega Drive и даже выпускает их на картриджах через Mega Cat Studios. Для Sega у него семь проектов, и почти все они выросли из его же спектрумовских игр — но на Mega Drive это полноценные отдельные версии, а не эмуляция.</p>
+
+<p>Технически игры написаны на C с использованием SGDK — открытого SDK для Sega Mega Drive. Именно поэтому они выглядят и звучат как настоящие 16-битные проекты, а не как поделки на конструкторе.</p>
+
+<div class="game-shots"><figure>
+      <img src="/app/img/retro/old-towers.webp" alt="Old Towers — homebrew-игра для Sega Mega Drive от RetroSouls" width="640" height="400" loading="lazy" decoding="async">
+      <figcaption><b>Old Towers</b> · 2019 · головоломка</figcaption>
+    </figure><figure>
+      <img src="/app/img/retro/misplaced.webp" alt="Misplaced — игра для Sega Mega Drive от RetroSouls" width="640" height="400" loading="lazy" decoding="async">
+      <figcaption><b>Misplaced</b> · 2019 · головоломка</figcaption>
+    </figure><figure>
+      <img src="/app/img/retro/gluf.webp" alt="GLUF — платформер про лягушку Тесла для Sega Mega Drive" width="640" height="400" loading="lazy" decoding="async">
+      <figcaption><b>GLUF</b> · 2020 · экшен</figcaption>
+    </figure><figure>
+      <img src="/app/img/retro/alterego.webp" alt="AlterEgo — платформер для Sega Mega Drive от RetroSouls" width="640" height="400" loading="lazy" decoding="async">
+      <figcaption><b>AlterEgo</b> · 2020 · платформер</figcaption>
+    </figure><figure>
+      <img src="/app/img/retro/yazzie.webp" alt="YAZZIE — игра про охотника за золотом для Sega Mega Drive" width="640" height="400" loading="lazy" decoding="async">
+      <figcaption><b>YAZZIE</b> · 2020 · платформер</figcaption>
+    </figure><figure>
+      <img src="/app/img/retro/tourmaline.webp" alt="Tourmaline — игра про пещеры и кристаллы для Sega Mega Drive" width="640" height="400" loading="lazy" decoding="async">
+      <figcaption><b>Tourmaline</b> · 2021 · головоломка</figcaption>
+    </figure><figure>
+      <img src="/app/img/retro/gravibots.webp" alt="GraviBots — аркада с гравитацией для Sega Mega Drive" width="640" height="400" loading="lazy" decoding="async">
+      <figcaption><b>GraviBots</b> · 2021 · аркада</figcaption>
+    </figure></div>
+
+<p>Что здесь особенно хорошо: RetroSouls не пытается копировать Sonic. Его игры — это маленькие, злые головоломки и платформеры, где ценятся точность и понимание механики. Old Towers и Misplaced — лучший вход в сцену: они короткие, понятные и бесплатные (или «заплати сколько хочешь»).</p>
+
+<h2 id="sacred">Sacred Line: хоррор-трилогия Sasha Darko</h2>
+
+<p><strong>Александр Кибанов</strong>, известный как <strong>Sasha Darko</strong>, делает то, чего на Mega Drive почти не было: медленные, атмосферные графические адвенчуры с текстом, исследованиями и мрачной историей. Первая часть, <strong>Sacred Line Genesis</strong>, вышла в цифре в 2013 году, а в феврале 2015-го получила картриджное издание от Watermelon — компании, известной по Pier Solar. Это одна из немногих российских игр, которая официально выходила на физическом картридже для Genesis.</p>
+
+<p>Сюжет — про частного детектива Эллен и её пропавшую сестру, восточноевропейскую глушь и вещи, которые лучше не находить. Это не экшен: здесь читают, ходят, принимают решения и постепенно понимают, что происходит.</p>
+
+<div class="game-shots"><figure>
+      <img src="/app/img/retro/sacred-line-1.webp" alt="Sacred Line Genesis — хоррор для Sega Mega Drive от Sasha Darko" width="640" height="400" loading="lazy" decoding="async">
+      <figcaption><b>Sacred Line Genesis</b> · 2013/2015 · хоррор-адвенчура</figcaption>
+    </figure><figure>
+      <img src="/app/img/retro/sacred-line-2.webp" alt="Sacred Line II — приключенческая игра для Sega Mega Drive" width="640" height="400" loading="lazy" decoding="async">
+      <figcaption><b>Sacred Line II</b> · 2022 · приключение</figcaption>
+    </figure><figure>
+      <img src="/app/img/retro/sacred-line-3.webp" alt="Sacred Line III — финальная часть трилогии Sacred Line для Sega Mega Drive" width="640" height="400" loading="lazy" decoding="async">
+      <figcaption><b>Sacred Line III</b> · 2025 · приключение</figcaption>
+    </figure></div>
+
+<p>Вторая часть вышла в 2022 году и стала приключением с головоломками и боями, а <strong>Sacred Line III</strong> — в 2025-м: два времени, 1366 и 1999 год, культ, демоны и несколько концовок. Картриджные версии трилогии анонсированы; цифровые продаются на itch.io, а новости и физические издания — на сайте автора.</p>
+
+<h2 id="tlt">TLT и GcUP: шарики, металл и космос</h2>
+
+<p><strong>Тимур Лязгиев (TLT)</strong> и сообщество <strong>GcUP</strong> — противоположный полюс: здесь любят аркады, головоломки и шутеры. Их <strong>Mega Marble World</strong> — это 50+ комнат с шариком, ловушками и паролями для продолжения; игру выпустила Mega Cat Studios на картридже. <strong>Metal Blast 2277</strong> — бесплатный run-and-gun с рисованными комиксовыми вставками, а <strong>Space Flies Attack</strong> — космический шутер, в который можно играть вдвоём.</p>
+
+<div class="game-shots"><figure>
+      <img src="/app/img/retro/mega-marble-world.webp" alt="Mega Marble World — головоломка с шариком для Sega Mega Drive" width="640" height="400" loading="lazy" decoding="async">
+      <figcaption><b>Mega Marble World</b> · 2018 · головоломка</figcaption>
+    </figure><figure>
+      <img src="/app/img/retro/metal-blast-2277.webp" alt="Metal Blast 2277 — шутер для Sega Mega Drive от TLT и GcUP" width="640" height="400" loading="lazy" decoding="async">
+      <figcaption><b>Metal Blast 2277</b> · 2018 · run-and-gun</figcaption>
+    </figure><figure>
+      <img src="/app/img/retro/space-flies-attack.webp" alt="Space Flies Attack — космический шутер для Sega Mega Drive на двоих" width="640" height="400" loading="lazy" decoding="async">
+      <figcaption><b>Space Flies Attack</b> · 2021 · космический шутер</figcaption>
+    </figure></div>
+
+<p>Отдельно стоит <strong>Racer</strong> (2013) — ранний эксперимент на движке GINCS, с которого команда начинала. Он не так отполирован, как поздние игры, но хорошо показывает, как выглядела сцена до SGDK и массовых флеш-картриджей.</p>
+
+<h2 id="hellfire">Sonic: Hellfire Saga — хак, который стал игрой</h2>
+
+<p>Формально <strong>Sonic: Hellfire Saga</strong> — это ромхак Sonic 3 &amp; Knuckles, а не игра с нуля. Но по объёму работы это уже самостоятельный проект: <strong>Red Miso Studio</strong> пять лет переделывала уровни, графику, музыку, боссов и систему здоровья. Получился готический экшен в духе Castlevania и Ghouls'n Ghosts: 10 актов, 15 мини-боссов, мрачные локации и свой саундтрек.</p>
+
+<div class="game-shots">
+  <figure>
+    <img src="/app/img/retro/hellfire-saga.webp" alt="Sonic Hellfire Saga — готический ромхак Sonic 3 для Sega Mega Drive" width="640" height="400" loading="lazy" decoding="async">
+    <figcaption><b>Sonic: Hellfire Saga</b> · 2023 · платформер-хак от Red Miso Studio</figcaption>
+  </figure>
+</div>
+
+<p>Проект занял первое место на Sonic Hacking Contest 2023 и распространяется бесплатно. Если хочется понять, на что способна сцена, но к оригинальным играм вы ещё не готовы — начните отсюда. Только держите в голове: это фанатская работа, а не официальная игра Sega.</p>
+
+<h2 id="list">Все 16 проектов одним списком</h2>
+
+<p>Сводная таблица: что есть, кто сделал, когда и чем оно отличается. Годы для картриджных и цифровых релизов могут отличаться — в таких случаях указаны оба.</p>
+
+<div class="table-wrap"><table>
+  <thead><tr><th>Игра</th><th>Автор</th><th>Год</th><th>Жанр</th><th>Чем интересна</th></tr></thead>
+  <tbody><tr><td>Old Towers</td><td>RetroSouls</td><td>2019</td><td>Экшен-головоломка</td><td>Башни, ловушки, черепа и 40+ уровней — идеальный вход в homebrew</td></tr><tr><td>Misplaced</td><td>RetroSouls</td><td>2019</td><td>Головоломка</td><td>Путешествия во времени и аккуратные логические комнаты</td></tr><tr><td>GLUF</td><td>RetroSouls</td><td>2020</td><td>Экшен</td><td>Лягушка Тесла с электричеством вместо хлыста</td></tr><tr><td>AlterEgo</td><td>RetroSouls</td><td>2020</td><td>Платформер</td><td>Герой и его зеркальный двойник: два тела, одна жизнь</td></tr><tr><td>YAZZIE</td><td>RetroSouls</td><td>2020</td><td>Платформер</td><td>Охотник за золотом в особняке с ловушками</td></tr><tr><td>Tourmaline</td><td>RetroSouls</td><td>2021</td><td>Головоломка</td><td>Пещеры, кристаллы, динамит и антигравитационный костюм</td></tr><tr><td>GraviBots</td><td>RetroSouls</td><td>2021</td><td>Аркада</td><td>Роботы и переворот гравитации</td></tr><tr><td>Sacred Line Genesis</td><td>Sasha Darko</td><td>2013/2015</td><td>Хоррор-адвенчура</td><td>Мрачный триллер, который вышел на картридже Watermelon</td></tr><tr><td>Sacred Line II</td><td>Sasha Darko</td><td>2022</td><td>Приключение</td><td>Больше исследования, головоломок и боёв</td></tr><tr><td>Sacred Line III</td><td>Sasha Darko</td><td>2025</td><td>Приключение</td><td>Финал трилогии: два времени, культ и несколько концовок</td></tr><tr><td>Mega Marble World</td><td>GcUP / TLT</td><td>2018</td><td>Головоломка</td><td>Шарик, 50+ комнат и запутанные лабиринты</td></tr><tr><td>Mega Marble World 2</td><td>GcUP / TLT</td><td>2021</td><td>Головоломка</td><td>Продолжение с новыми комнатами и ловушками</td></tr><tr><td>Metal Blast 2277</td><td>GcUP / TLT</td><td>2018</td><td>Run-and-gun</td><td>Комедийный боевик в духе Contra и Comix Zone</td></tr><tr><td>Space Flies Attack</td><td>GcUP / TLT</td><td>2021</td><td>Космический шутер</td><td>Аркада на двоих в классическом понимании</td></tr><tr><td>Racer</td><td>GcUP / TLT</td><td>2013</td><td>Головоломка</td><td>Ранний эксперимент на движке GINCS</td></tr><tr><td>Sonic: Hellfire Saga</td><td>Red Miso Studio</td><td>2023</td><td>Платформер (хак)</td><td>Sonic 3 & Knuckles, переделанный в готический экшен</td></tr></tbody>
+</table></div>
+
+<h2 id="play">Как играть: эмулятор, флеш-картридж, картридж</h2>
+
+<p>Есть три пути, и все они рабочие.</p>
+
+<ol>
+  <li><strong>Эмулятор.</strong> Самый простой вариант: Kega Fusion, BlastEm или RetroArch с ядром Genesis Plus GX. Скачайте ROM с официальной страницы автора и откройте его в эмуляторе. Для Sacred Line автор даже кладёт эмулятор в комплект.</li>
+  <li><strong>Флеш-картридж.</strong> EverDrive или аналогичный картридж позволяет запустить ROM на настоящей консоли. Большинство перечисленных игр регион-фри и работают на любой Mega Drive.</li>
+  <li><strong>Официальный картридж.</strong> Old Towers, Mega Marble World и Sacred Line Genesis выходили на физических носителях. Это самый честный способ поддержать авторов.</li>
+</ol>
+
+<p>Важный момент: homebrew — это не пиратство. Авторы сами выкладывают ROM в свободный доступ или продают их. Пиратские картриджи 90-х — другая история: там чужие игры переделывали без разрешения правообладателей. Не путайте эти две вещи, особенно когда читаете про «русские игры для Sega».</p>
+
+<h2 id="choose">Что запустить первым</h2>
+
+<ul>
+  <li><strong>Хочу головоломки:</strong> Old Towers, Misplaced, Tourmaline. Начните с Old Towers — она понятнее всего объясняет, зачем вообще нужна homebrew-сцена.</li>
+  <li><strong>Хочу экшен:</strong> Metal Blast 2277, GLUF, Sonic: Hellfire Saga.</li>
+  <li><strong>Хочу историю и атмосферу:</strong> Sacred Line Genesis, затем Sacred Line II и III.</li>
+  <li><strong>Хочу играть вдвоём:</strong> Space Flies Attack.</li>
+  <li><strong>Хочу что-то необычное:</strong> GraviBots и AlterEgo — механики с гравитацией и зеркальным двойником.</li>
+</ul>
+
+<p>Если нужен один универсальный ответ: <strong>Old Towers</strong> для первого вечера и <strong>Sacred Line Genesis</strong> для второго. Первая покажет, что Sega ещё жива, вторая — что на ней можно рассказывать взрослые истории.</p>
+
+<div class="sources-block">
+  <h2>Источники и официальные страницы</h2>
+  <ul>
+    <li><a href="https://retrosouls.itch.io/" target="_blank" rel="noopener noreferrer">RetroSouls на itch.io</a> — страницы игр и бесплатные версии для Sega Mega Drive.</li>
+    <li><a href="https://www.retrosouls.net/" target="_blank" rel="noopener noreferrer">retrosouls.net</a> — новости и релизы команды.</li>
+    <li><a href="https://sashadarko.com/" target="_blank" rel="noopener noreferrer">sashadarko.com</a> — Sacred Line, музыка и физические издания.</li>
+    <li><a href="https://sashadarko.itch.io/" target="_blank" rel="noopener noreferrer">Sasha Darko на itch.io</a> — цифровые версии трилогии.</li>
+    <li><a href="https://gcup.itch.io/" target="_blank" rel="noopener noreferrer">GcUP на itch.io</a> — Mega Marble World, Metal Blast 2277 и другие аркады.</li>
+    <li><a href="https://megacatstudios.com/" target="_blank" rel="noopener noreferrer">Mega Cat Studios</a> — картриджные издания Old Towers и Mega Marble World.</li>
+    <li><a href="https://shc.zone/entries/contest2023/916" target="_blank" rel="noopener noreferrer">Sonic Hacking Contest 2023</a> — страница Hellfire Saga.</li>
+  </ul>
+</div>
+
+<h2 id="faq">Частые вопросы</h2>
+
+<h3>Правда ли, что для Sega Mega Drive до сих пор выходят новые игры?</h3>
+<p>Да. Это называется homebrew: авторы пишут игры для оригинального железа, а готовые ROM запускают на эмуляторах или флеш-картриджах. Часть проектов доходит до физических картриджей.</p>
+
+<h3>Это официальные игры Sega?</h3>
+<p>Нет. Это нелицензионные проекты, которые Sega не издавала. При этом они не нарушают права так, как пиратские картриджи: авторы создают собственные игры и сами распоряжаются ими.</p>
+
+<h3>Где скачать игры из подборки?</h3>
+<p>На itch.io и официальных сайтах авторов: retrosouls.itch.io, sashadarko.itch.io, gcup.itch.io. Часть игр бесплатна, часть продаётся за небольшие деньги, картриджи — у Mega Cat Studios и напрямую у авторов.</p>
+
+<h3>Запустится ли это на оригинальной консоли?</h3>
+<p>Да, если у вас есть флеш-картридж (EverDrive и аналоги) или официальный картридж. Большинство проектов регион-фри и работают на Mega Drive любого региона.</p>
+
+<h3>Чем homebrew отличается от пиратского картриджа?</h3>
+<p>Homebrew — новая игра, сделанная автором с нуля или на своём движке. Пиратский картридж — это чужая игра с заменёнными персонажами, текстами и заставками. Первое поддерживает разработчиков, второе — нет.</p>
+
+<h3>С какой игры начать знакомство со сценой?</h3>
+<p>С Old Towers: короткая, понятная, бесплатная и сразу показывает уровень качества. Если хочется сюжета — Sacred Line Genesis, если экшена — Metal Blast 2277.</p>
+
+<h3>Нужно ли что-то переделывать в консоли?</h3>
+<p>Обычно нет. Для флеш-картриджа достаточно вставить SD-карту с ROM. Модификации нужны только для редких региональных ограничений и конкретных моделей — читайте страницу игры.</p>
+
+<h3>Будут ли новые игры в 2026 году?</h3>
+<p>Да, сцена живая: RetroSouls и Sasha Darko продолжают выпускать проекты, а картриджные издания Sacred Line III анонсированы на 2026 год. Следите за их страницами — новые релизы появляются там первыми.</p>
+
+<div class="callout" style="margin-top:26px">
+  <p><strong>Дисклеймер:</strong> Sega Mega Drive и Genesis — торговые марки SEGA. Все перечисленные проекты — неофициальные homebrew-работы, созданные авторами независимо от Sega.</p>
+</div>
+
+<p>Больше материалов о ретро, инди и игровой индустрии — в разделе <a href="https://one1game.org/app/">новостей One1Game</a>. А если хочется сначала просто посмотреть на 16-битную эстетику — в приложении есть коллекция <a href="https://one1game.org/app/oboi/retro/">ретро-обоев для рабочего стола</a>.</p>
+</article>
+</body>
+</html>

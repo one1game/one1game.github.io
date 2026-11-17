@@ -43,6 +43,35 @@
 
 * { box-sizing: border-box; }
 
+/* Переходы между страницами как в приложении: без белой вспышки,
+   короткий подъём и растворение. Работает в браузерах с View Transitions. */
+@view-transition {
+  navigation: auto;
+}
+
+::view-transition-old(root) {
+  animation: page-out 0.16s ease both;
+}
+
+::view-transition-new(root) {
+  animation: page-in 0.24s cubic-bezier(0.22, 0.61, 0.36, 1) both;
+}
+
+@keyframes page-out {
+  to { opacity: 0; transform: translateY(-6px); }
+}
+
+@keyframes page-in {
+  from { opacity: 0; transform: translateY(10px); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  ::view-transition-old(root),
+  ::view-transition-new(root) {
+    animation: none;
+  }
+}
+
 /* Атрибут hidden должен побеждать любой авторский display:
    иначе .btn/.card со своим display:flex остаются на экране. */
 [hidden] { display: none !important; }
@@ -1659,11 +1688,42 @@ body.has-player .reader {
 
 .article-body .game-shots {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-  gap: 10px;
+  grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+  gap: 14px;
 }
 
-.article-body .game-shots img { aspect-ratio: 16 / 9; object-fit: cover; width: 100%; }
+.article-body .game-shots figure {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+  margin: 0;
+}
+
+.article-body .game-shots img {
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  width: 100%;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  background: var(--panel-2);
+  transition: transform 0.18s ease, border-color 0.18s ease;
+}
+
+.article-body .game-shots figure:hover img {
+  transform: translateY(-2px);
+  border-color: rgba(125, 255, 155, 0.35);
+}
+
+.article-body .game-shots figcaption {
+  color: var(--text-faint);
+  font-size: 11px;
+  line-height: 1.45;
+}
+
+.article-body .game-shots figcaption b {
+  color: var(--text);
+  font-weight: 600;
+}
 
 /* ── «читать дальше» ─────────────────────────────────────────────── */
 .reader__related {

@@ -1,6 +1,7 @@
 ---
 import '@fontsource-variable/inter';
 import '@fontsource-variable/manrope';
+import { ClientRouter } from 'astro:transitions';
 import '../styles/global.css';
 
 interface Props {
@@ -54,6 +55,7 @@ const bodyAttrs = Object.fromEntries(
     <link rel="canonical" href={canonicalUrl} />
     <meta name="theme-color" content="#05080b" />
     <meta name="color-scheme" content="dark" />
+    <ClientRouter />
     <link rel="preconnect" href="https://api.audius.co" crossorigin />
     <link rel="dns-prefetch" href="https://api.audius.co" />
     <!-- Обложки: Steam, TMDB и Wallhaven — самые частые источники картинок. -->
@@ -100,15 +102,30 @@ const bodyAttrs = Object.fromEntries(
         });
       }
 
-      const badge = document.createElement('div');
-      badge.className = 'offline';
-      badge.textContent = 'Нет сети — показан кэш';
-      badge.hidden = true;
-      document.body.appendChild(badge);
-      const sync = () => { badge.hidden = navigator.onLine; };
-      window.addEventListener('online', sync);
-      window.addEventListener('offline', sync);
-      sync();
+      // Astro меняет только содержимое страницы, поэтому элементы,
+      // живущие в body, создаём заново после каждого перехода.
+      const syncOffline = () => {
+        const badge = document.querySelector<HTMLElement>('.offline');
+        if (badge) badge.hidden = navigator.onLine;
+      };
+
+      const initBase = () => {
+        if (!document.querySelector('.offline')) {
+          const badge = document.createElement('div');
+          badge.className = 'offline';
+          badge.textContent = 'Нет сети — показан кэш';
+          badge.hidden = true;
+          document.body.appendChild(badge);
+        }
+        const install = document.querySelector<HTMLElement>('[data-install]');
+        if (install && window.__installPrompt) install.hidden = false;
+        syncOffline();
+      };
+
+      window.addEventListener('online', syncOffline);
+      window.addEventListener('offline', syncOffline);
+      document.addEventListener('astro:page-load', initBase);
+      initBase();
 
       window.addEventListener('beforeinstallprompt', (e) => {
         e.preventDefault();

@@ -1,6 +1,16 @@
 // articles-data.js
 window.allArticles = [
   {
+    "url": "/archive/rossijskie-igry-na-sega-mega-drive",
+    "title": "Российские игры на Sega Mega Drive: гид по homebrew",
+    "excerpt": "Новые игры для Sega Mega Drive от российских авторов: RetroSouls, Sasha Darko, TLT и Red Miso Studio. 16 проектов, что запустить первым и как играть.",
+    "date": "18 ноября 2026",
+    "readTime": "11 мин",
+    "category": "Разработка",
+    "updated": "2026-11-18",
+    "image": "https://one1game.org/app/img/retro/cover.jpg"
+  },
+  {
     "url": "/archive/pixel-cartographer-5281980",
     "title": "Pixel Cartographer – уютный строитель карт",
     "excerpt": "Pixel Cartographer – спокойный инди‑симулятор, где вы создаёте локации на карте, учитывая уникальные биомы и ограничения, а также можете свободно",

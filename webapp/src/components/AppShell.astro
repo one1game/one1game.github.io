@@ -1172,6 +1172,16 @@ const genres = [
   {isMovieItem && <script type="application/json" id="app-movies" set:html={movieMeta} />}
 
   <script>
+    // ClientRouter меняет только содержимое страницы, поэтому инициализацию
+    // повторяем на каждый переход: для человека это приложение без
+    // перезагрузок, для поисковика — обычный статический HTML.
+    let bootCtrl: AbortController | null = null;
+
+    function boot() {
+      bootCtrl?.abort();
+      bootCtrl = new AbortController();
+      const { signal } = bootCtrl;
+
     const base = import.meta.env.BASE_URL.replace(/\/$/, '');
     // app — полноценное SPA; item/section — статические страницы, которые
     // этот же скрипт превращает в приложение. Разметка у них одна.
@@ -2891,29 +2901,16 @@ const genres = [
       btn.addEventListener('click', (e) => {
         // Ctrl/Cmd-клик должен открыть раздел в новой вкладке.
         if (e.metaKey || e.ctrlKey || e.shiftKey || e.altKey || e.button !== 0) return;
-        e.preventDefault();
         const value = btn.dataset.mode;
         const next: Mode = value === 'ai' ? 'ai' : value === 'music' ? 'music' : value === 'nav' ? 'nav' : value === 'oboi' ? 'oboi' : value === 'movie' ? 'movie' : 'news';
-        // ИИ — отдельная страница со своим снимком данных: обычный переход,
-        // чтобы не тащить сотни карточек на главный экран приложения.
-        if (next === 'ai') {
-          location.href = `${base}/ai/`;
+        // ИИ и разделы на статических страницах открывает роутер Astro:
+        // он меняет контент без перезагрузки документа.
+        if (next === 'ai' || variant !== 'app') return;
+        if (next === mode) {
+          e.preventDefault();
           return;
         }
-        // На статической странице раздела вкладки — обычные ссылки: каждая
-        // вкладка имеет свой индексируемый адрес.
-        if (variant !== 'app') {
-          const targets: Record<Mode, string> = {
-            news: `${base}/`,
-            music: `${base}/music/`,
-            nav: `${base}/nav/`,
-            oboi: `${base}/oboi/`,
-            movie: `${base}/movie/`,
-            ai: `${base}/ai/`,
-          };
-          location.href = targets[next];
-          return;
-        }
+        e.preventDefault();
         setMode(next);
       });
     }
@@ -3323,7 +3320,7 @@ const genres = [
           el?.scrollIntoView({ behavior: 'smooth', block: 'start' });
         }
       },
-      true
+      { capture: true, signal }
     );
 
     // Предзагрузка по наведению — открытие становится мгновенным.
@@ -3335,7 +3332,7 @@ const genres = [
     grid.addEventListener('pointerover', prefetch, { passive: true });
     grid.addEventListener('focusin', prefetch);
 
-    window.addEventListener('scroll', updateProgress, { passive: true });
+    window.addEventListener('scroll', updateProgress, { passive: true, signal });
 
     window.addEventListener('popstate', () => {
       const route = routeFromPath();
@@ -3354,7 +3351,7 @@ const genres = [
       } else if (!movieReader.hidden) {
         closeMovie(false);
       }
-    });
+    }, { signal });
 
     // Горячие клавиши как в приложении: «/» или Cmd/Ctrl+K — фокус в поиск.
     window.addEventListener('keydown', (e) => {
@@ -3383,7 +3380,7 @@ const genres = [
         closePost();
         return;
       }
-    });
+    }, { signal });
 
     // ── информер: событие этого дня в истории игр и курс биткоина ──
     // HTML собирается в день билда, поэтому при другом дне подтягиваем
@@ -3425,7 +3422,7 @@ const genres = [
           cancelAnimationFrame(tickerRaf);
           tickerRaf = requestAnimationFrame(layoutTicker);
         },
-        { passive: true },
+        { passive: true, signal },
       );
       if (day !== tickerNews.dataset.day) {
         fetch(`${base}/history.json`, { credentials: 'omit' })
@@ -3568,6 +3565,19 @@ const genres = [
         openPost(initialPost, false);
       }
     }
+    }
+
+    let bootedOnce = false;
+    const start = () => {
+      bootedOnce = true;
+      boot();
+    };
+    document.addEventListener('astro:page-load', start);
+    // Страховка: если роутер по какой-то причине не прислал событие,
+    // приложение всё равно должно ожить.
+    window.setTimeout(() => {
+      if (!bootedOnce) start();
+    }, 800);
   </script>
 
   <style>

@@ -31,6 +31,29 @@ const body = String(post.html || '')
     /width=/.test(tag) ? tag : tag.replace(/\s*\/?>$/, (end: string) => ` width="2064" height="512"${end}`),
   );
 
+// Разметка FAQ: робот получает вопросы и ответы прямо из текста статьи,
+// поэтому статья может попасть в расширенный сниппет выдачи.
+function faqFrom(html: string) {
+  const start = html.search(/<h2[^>]*id="faq"[^>]*>/i);
+  if (start < 0) return [];
+  const tail = html.slice(start);
+  const nextH2 = tail.slice(4).search(/<h2[\s>]/i);
+  const block = nextH2 < 0 ? tail : tail.slice(0, nextH2 + 4);
+  const out: { q: string; a: string }[] = [];
+  const re = /<h3[^>]*>([\s\S]*?)<\/h3>\s*<p[^>]*>([\s\S]*?)<\/p>/gi;
+  const plain = (s: string) =>
+    s.replace(/<[^>]+>/g, '').replace(/\s+/g, ' ').replace(/&nbsp;/g, ' ').replace(/&amp;/g, '&').trim();
+  let m;
+  while ((m = re.exec(block))) {
+    const q = plain(m[1]);
+    const a = plain(m[2]);
+    if (q && a) out.push({ q, a });
+  }
+  return out;
+}
+
+const faq = faqFrom(body);
+
 const jsonLd = [
   {
     '@context': 'https://schema.org',
@@ -60,6 +83,17 @@ const jsonLd = [
       { '@type': 'ListItem', position: 3, name: post.title, item: url },
     ],
   },
+  ...(faq.length
+    ? [{
+        '@context': 'https://schema.org',
+        '@type': 'FAQPage',
+        mainEntity: faq.map(({ q, a }) => ({
+          '@type': 'Question',
+          name: q,
+          acceptedAnswer: { '@type': 'Answer', text: a },
+        })),
+      }]
+    : []),
 ];
 ---
 
