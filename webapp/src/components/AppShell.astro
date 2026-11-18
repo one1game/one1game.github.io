@@ -124,7 +124,7 @@ const relatedItems = postData?.related
   ? postData.related
       .map((rel: any) => items.find((item) => item.slug === rel.slug))
       .filter(Boolean)
-      .slice(0, 4)
+      .slice(0, 6)
   : [];
 
 const bodyData: Record<string, string> = {
@@ -250,7 +250,7 @@ const genres = [
   <header class="appbar">
     <div class="wrap appbar-row">
       <a class="brand" href={`${base}/`}>
-        <span class="brand-dot"></span>
+        <span class="brand-mark" aria-hidden="true">1</span>
         <span class="brand__text">One1<b>Game</b></span>
       </a>
       <div class="appbar-actions">
@@ -301,33 +301,62 @@ const genres = [
   <div class="ticker">
     <div class="wrap ticker-row">
       <p class="ticker__news" id="ticker-news" data-day={tickerDay}>
-        <span class="ticker__label">История в мире игр сегодня</span>
-        <span class="ticker__year" id="ticker-year">{tickerEvent?.y}</span>
-        <span class="ticker__viewport" id="ticker-viewport">
-          <span
-            class="ticker__text"
-            id="ticker-text"
-            title={tickerEvent ? `${tickerEvent.y} · ${tickerEvent.t} — ${tickerEvent.d}` : 'Событие этого дня в истории игровой индустрии'}
-          >{tickerEvent ? tickerEvent.d : 'Событие этого дня в истории игровой индустрии'}</span>
+        <span class="ticker__ico" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 7.5V12l3 1.8"/><circle cx="12" cy="12" r="8.2"/></svg>
+        </span>
+        <span class="ticker__stack">
+          <span class="ticker__meta">
+            <span class="ticker__label">Этот день в играх</span>
+            <span class="ticker__year" id="ticker-year">{tickerEvent?.y}</span>
+          </span>
+          <span class="ticker__viewport" id="ticker-viewport">
+            <span
+              class="ticker__text"
+              id="ticker-text"
+              title={tickerEvent ? `${tickerEvent.y} · ${tickerEvent.t} — ${tickerEvent.d}` : 'Событие этого дня в истории игровой индустрии'}
+            >{tickerEvent ? tickerEvent.d : 'Событие этого дня в истории игровой индустрии'}</span>
+          </span>
         </span>
       </p>
       <p class="ticker__btc" id="ticker-btc" hidden>
-        <span class="ticker__label">BTC</span>
-        <span class="ticker__text" id="ticker-btc-price">—</span>
-        <span class="ticker__delta" id="ticker-btc-delta"></span>
+        <span class="ticker__stack">
+          <span class="ticker__label">BTC · USD</span>
+          <span class="ticker__price">
+            <span class="ticker__text" id="ticker-btc-price">—</span>
+            <span class="ticker__delta" id="ticker-btc-delta"></span>
+          </span>
+        </span>
       </p>
     </div>
   </div>
 
-  <!-- Верхний уровень: новости и музыка. Новости открыты по умолчанию. -->
+  <!-- Верхний уровень: публикации, ИИ, музыка, навигатор, обои и фильмы. -->
   <nav class="modes" id="modes" aria-label="Тип контента">
     <div class="wrap modes-row">
-      <a class="mode" href={`${base}/`} data-mode="news" aria-pressed={String(mode === 'news')} aria-current={mode === 'news' ? 'page' : undefined}>Новости</a>
-      <a class="mode" href={`${base}/ai/`} data-mode="ai" aria-pressed={String(mode === 'ai')} aria-current={mode === 'ai' ? 'page' : undefined} aria-label="Искусственный интеллект">ИИ</a>
-      <a class="mode" href={`${base}/music/`} data-mode="music" aria-pressed={String(mode === 'music')} aria-current={mode === 'music' ? 'page' : undefined}>Музыка</a>
-      <a class="mode" href={`${base}/nav/`} data-mode="nav" aria-pressed={String(mode === 'nav')} aria-current={mode === 'nav' ? 'page' : undefined}>Игровой навигатор</a>
-      <a class="mode" href={`${base}/oboi/`} data-mode="oboi" aria-pressed={String(mode === 'oboi')} aria-current={mode === 'oboi' ? 'page' : undefined}>Обои</a>
-      <a class="mode" href={`${base}/movie/`} data-mode="movie" aria-pressed={String(mode === 'movie')} aria-current={mode === 'movie' ? 'page' : undefined}>Фильмы по играм</a>
+      <a class="mode" href={`${base}/`} data-mode="news" aria-label="Публикации" aria-pressed={String(mode === 'news')} aria-current={mode === 'news' ? 'page' : undefined}>
+        <svg class="mode__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5.5 4h9l4 4v12a1.5 1.5 0 0 1-1.5 1.5H5.5A1.5 1.5 0 0 1 4 20V5.5A1.5 1.5 0 0 1 5.5 4Z"/><path d="M14 4v4.5h4.5M8 12.5h8M8 16h5.5"/></svg>
+        <span class="mode__label">Публикации</span>
+      </a>
+      <a class="mode" href={`${base}/ai/`} data-mode="ai" aria-pressed={String(mode === 'ai')} aria-current={mode === 'ai' ? 'page' : undefined} aria-label="Искусственный интеллект">
+        <svg class="mode__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M11 3.5l1.9 4.9 4.9 1.9-4.9 1.9L11 17.1 9.1 12.2 4.2 10.3l4.9-1.9z"/><path d="M18 15.5l.8 2.2 2.2.8-2.2.8-.8 2.2-.8-2.2-2.2-.8 2.2-.8z"/></svg>
+        <span class="mode__label">ИИ</span>
+      </a>
+      <a class="mode" href={`${base}/music/`} data-mode="music" aria-label="Музыка" aria-pressed={String(mode === 'music')} aria-current={mode === 'music' ? 'page' : undefined}>
+        <svg class="mode__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="7" cy="17.2" r="2.6"/><circle cx="17.4" cy="15" r="2.6"/><path d="M9.6 17.2V6.6l10.4-2v10.4"/></svg>
+        <span class="mode__label">Музыка</span>
+      </a>
+      <a class="mode" href={`${base}/nav/`} data-mode="nav" aria-label="Игровой навигатор" aria-pressed={String(mode === 'nav')} aria-current={mode === 'nav' ? 'page' : undefined}>
+        <svg class="mode__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="8.6"/><path d="M15.1 8.9l-1.8 4.4-4.4 1.8 1.8-4.4z"/></svg>
+        <span class="mode__label">Игровой навигатор</span>
+      </a>
+      <a class="mode" href={`${base}/oboi/`} data-mode="oboi" aria-label="Обои" aria-pressed={String(mode === 'oboi')} aria-current={mode === 'oboi' ? 'page' : undefined}>
+        <svg class="mode__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3.5" y="4.5" width="17" height="15" rx="2.6"/><circle cx="9" cy="9.8" r="1.6"/><path d="M4.6 17.2l4.6-4.6 3.2 3.2 3-3 4 4"/></svg>
+        <span class="mode__label">Обои</span>
+      </a>
+      <a class="mode" href={`${base}/movie/`} data-mode="movie" aria-label="Фильмы по играм" aria-pressed={String(mode === 'movie')} aria-current={mode === 'movie' ? 'page' : undefined}>
+        <svg class="mode__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3.5" y="5" width="17" height="14" rx="2.6"/><path d="M8 5v14M16 5v14M3.5 9.7h4.5M3.5 14.3h4.5M16 9.7h4.5M16 14.3h4.5"/></svg>
+        <span class="mode__label">Фильмы по играм</span>
+      </a>
     </div>
   </nav>
 
@@ -933,7 +962,7 @@ const genres = [
         <nav class="crumbs" aria-label="Хлебные крошки">
           <a href={`${base}/`}>Главная</a>
           <span aria-hidden="true">/</span>
-          <a href={`${base}/`}>Новости</a>
+          <a href={`${base}/`}>Публикации</a>
           <span aria-hidden="true">/</span>
           <span>{postData.title}</span>
         </nav>
@@ -966,13 +995,26 @@ const genres = [
         <Fragment set:html={postData?.html || ''} />
       </div>
       <section class="reader__related" id="r-related" hidden={!relatedItems.length}>
-        <h2 class="reader__related-title">Читать дальше</h2>
+        <div class="reader__related-head">
+          <h2 class="reader__related-title">Читать дальше</h2>
+          <div class="rel-nav">
+            <button class="rel-nav__btn" id="rel-prev" type="button" aria-label="Предыдущие материалы">←</button>
+            <button class="rel-nav__btn" id="rel-next" type="button" aria-label="Следующие материалы">→</button>
+          </div>
+        </div>
         <div class="reader__related-list" id="r-related-list">
           {relatedItems.map((rel) => (
             <a class="rel" href={`${base}/news/${rel.slug}/`} data-slug={rel.slug}>
-              <span class="rel__cat">{rel.category}</span>
-              <span class="rel__title">{rel.title}</span>
-              <span class="rel__date">{rel.date}</span>
+              <span class="rel__thumb">
+                {rel.image
+                  ? <img src={rel.image} alt="" width="320" height="180" loading="lazy" decoding="async" />
+                  : <span class="rel__thumb-empty" aria-hidden="true">{rel.category.slice(0, 2)}</span>}
+              </span>
+              <span class="rel__body">
+                <span class="rel__cat">{rel.category}</span>
+                <span class="rel__title">{rel.title}</span>
+                <span class="rel__date">{rel.date}</span>
+              </span>
             </a>
           ))}
         </div>
@@ -1256,6 +1298,35 @@ const genres = [
     const back = document.getElementById('back') as HTMLButtonElement;
     const progress = document.getElementById('progress') as HTMLElement;
     const progressFill = document.getElementById('progress-fill') as HTMLElement;
+
+    // ── слайдер «Читать дальше» ───────────────────────────────────
+    // Карточки листаются по одной, стрелки гаснут по краям, а на узких
+    // экранах всё работает свайпом без лишних кнопок.
+    const relPrev = document.getElementById('rel-prev') as HTMLButtonElement | null;
+    const relNext = document.getElementById('rel-next') as HTMLButtonElement | null;
+    const relNav = relPrev?.parentElement as HTMLElement | null;
+
+    function syncRelNav() {
+      if (!rRelatedList || !relNav) return;
+      const max = rRelatedList.scrollWidth - rRelatedList.clientWidth;
+      relNav.hidden = max < 4;
+      if (relPrev) relPrev.disabled = rRelatedList.scrollLeft <= 2;
+      if (relNext) relNext.disabled = rRelatedList.scrollLeft >= max - 2;
+    }
+
+    function slideRel(dir: number) {
+      const card = rRelatedList.querySelector('.rel') as HTMLElement | null;
+      const step = card ? card.offsetWidth + 12 : Math.round(rRelatedList.clientWidth * 0.8);
+      rRelatedList.scrollBy({ left: dir * step, behavior: 'smooth' });
+    }
+
+    if (rRelatedList) {
+      relPrev?.addEventListener('click', () => slideRel(-1), { signal });
+      relNext?.addEventListener('click', () => slideRel(1), { signal });
+      rRelatedList.addEventListener('scroll', syncRelNav, { signal, passive: true });
+      window.addEventListener('resize', syncRelNav, { signal });
+      syncRelNav();
+    }
 
     // Каталог уже в разметке — второй раз те же данные в скрипт не кладём.
     interface Meta {
@@ -3241,12 +3312,18 @@ const genres = [
         const related: Meta[] = Array.isArray(data.related) ? data.related : [];
         rRelatedList.innerHTML = related
           .filter((rel) => bySlug.has(rel.slug))
-          .map(
-            (rel) =>
-              `<a class="rel" href="${base}/news/${rel.slug}/" data-slug="${rel.slug}"><span class="rel__cat">${rel.category}</span><span class="rel__title">${rel.title}</span><span class="rel__date">${rel.date}</span></a>`
-          )
+          .slice(0, 6)
+          .map((rel) => {
+            const photo = rel.image || bySlug.get(rel.slug)?.image || '';
+            const thumb = photo
+              ? `<img src="${escText(photo)}" alt="" width="320" height="180" loading="lazy" decoding="async">`
+              : `<span class="rel__thumb-empty" aria-hidden="true">${escText((rel.category || '').slice(0, 2))}</span>`;
+            return `<a class="rel" href="${base}/news/${rel.slug}/" data-slug="${rel.slug}"><span class="rel__thumb">${thumb}</span><span class="rel__body"><span class="rel__cat">${escText(rel.category)}</span><span class="rel__title">${escText(rel.title)}</span><span class="rel__date">${escText(rel.date)}</span></span></a>`;
+          })
           .join('');
         rRelated.hidden = !rRelatedList.children.length;
+        rRelatedList.scrollLeft = 0;
+        syncRelNav();
 
         updateProgress();
       } catch {

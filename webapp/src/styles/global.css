@@ -285,12 +285,11 @@ h2 { font-size: clamp(1.3rem, 2.4vw, 1.9rem); }
   display: flex;
   align-items: center;
   gap: 14px;
-  padding: calc(12px + var(--safe-top)) 0 12px;
-  background:
-    linear-gradient(180deg, rgba(12, 18, 24, 0.94), rgba(7, 10, 14, 0.82));
+  padding: calc(14px + var(--safe-top)) 0 14px;
+  background: linear-gradient(180deg, rgba(13, 19, 25, 0.97), rgba(8, 12, 16, 0.9));
   backdrop-filter: blur(16px) saturate(1.15);
-  border-bottom: 1px solid var(--line);
-  box-shadow: inset 0 -1px 0 rgba(255, 255, 255, 0.03), 0 24px 48px -34px rgba(0, 0, 0, 0.95);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.07);
+  box-shadow: inset 0 -1px 0 rgba(255, 255, 255, 0.03), 0 28px 56px -38px rgba(0, 0, 0, 1);
 }
 
 /* Верхняя световая нить: тонкий акцент, который читается как «дорогая» деталь. */
@@ -316,9 +315,9 @@ h2 { font-size: clamp(1.3rem, 2.4vw, 1.9rem); }
   align-items: center;
   gap: 10px;
   font-family: var(--font-display);
-  font-size: 13px;
-  font-weight: 600;
-  letter-spacing: 0.1em;
+  font-size: 15px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
   text-transform: uppercase;
   text-decoration: none;
   white-space: nowrap;
@@ -370,31 +369,51 @@ h2 { font-size: clamp(1.3rem, 2.4vw, 1.9rem); }
   fill: currentColor;
 }
 
-.brand-dot {
-  width: 9px;
-  height: 9px;
-  border-radius: 50%;
-  background: var(--acid);
-  box-shadow: 0 0 14px rgba(125, 255, 155, 0.7);
+/* Знак приложения: маленькая «плитка» с единицей — читается как иконка
+   на домашнем экране, а не как декоративная точка. */
+.brand-mark {
+  width: 26px;
+  height: 26px;
+  display: grid;
+  place-items: center;
+  border-radius: 8px;
+  background: linear-gradient(150deg, #a4ffbc, #5fe97f);
+  color: #04140a;
+  font-family: var(--mono);
+  font-size: 13px;
+  font-weight: 700;
+  line-height: 1;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.65), 0 8px 18px -10px rgba(95, 233, 127, 0.85);
+  transition: transform 0.18s ease, box-shadow 0.18s ease;
+}
+
+.brand:hover .brand-mark {
+  transform: translateY(-1px);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.7), 0 12px 22px -12px rgba(95, 233, 127, 0.95);
 }
 
 /* ── нижняя панель разделов ──────────────────────────────────────── */
-/* Всегда прижата к низу: и при скролле, и в читалке, и на телефоне. */
+/* Всегда прижата к низу: и при скролле, и в читалке, и на телефоне.
+   Плотный док: непрозрачная подложка, чёткая обводка, ощутимый вес. */
 .tabbar {
   position: fixed;
-  left: 0;
-  right: 0;
-  bottom: 0;
+  left: 10px;
+  right: 10px;
+  bottom: calc(10px + var(--safe-bottom));
   z-index: 45;
-  padding: 9px 0 calc(9px + var(--safe-bottom));
-  background: linear-gradient(180deg, rgba(9, 14, 19, 0.9), rgba(5, 8, 11, 0.97));
-  backdrop-filter: blur(16px) saturate(1.1);
-  border-top: 1px solid var(--line);
-  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.03), 0 -24px 50px -34px rgba(0, 0, 0, 0.95);
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: 5px;
+  border: 1px solid rgba(255, 255, 255, 0.075);
+  border-radius: 14px;
+  background: #080d12;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.05), 0 18px 40px -26px rgba(0, 0, 0, 1);
 }
 
 .tabbar .chips {
-  padding: 0;
+  width: 100%;
+  padding: 0 4px;
+  gap: 4px;
   align-items: center;
   scroll-snap-type: x proximity;
   scroll-padding-inline: 16px;
@@ -402,7 +421,18 @@ h2 { font-size: clamp(1.3rem, 2.4vw, 1.9rem); }
 
 .chip { scroll-snap-align: start; }
 
-.tabbar .chip { height: 40px; padding: 0 15px; }
+/* Внутри дока чипсы — вспомогательный фильтр: спокойный текст,
+   заливка только у выбранной категории. */
+.tabbar .chip {
+  height: 36px;
+  padding: 0 14px;
+  border-color: transparent;
+  background: transparent;
+  box-shadow: none;
+  color: #8f9ba8;
+  font-size: 12.5px;
+  font-weight: 500;
+}
 
 @media (min-width: 900px) {
   /* Разделов много — ряд всегда начинается слева, иначе левый край обрезается. */
@@ -437,7 +467,7 @@ h2 { font-size: clamp(1.3rem, 2.4vw, 1.9rem); }
   white-space: nowrap;
   cursor: pointer;
   box-shadow: var(--inset-hi);
-  transition: color 0.15s ease, border-color 0.15s ease, background 0.15s ease, box-shadow 0.15s ease;
+  transition: color 0.15s ease, border-color 0.15s ease, background 0.15s ease, box-shadow 0.15s ease, transform 0.15s ease;
 }
 
 .chip:hover {
@@ -446,12 +476,26 @@ h2 { font-size: clamp(1.3rem, 2.4vw, 1.9rem); }
   background: var(--surface-2);
 }
 
-.chip[aria-pressed="true"] {
-  color: #06120b;
-  border-color: var(--acid);
-  background: linear-gradient(180deg, #a6ffbc, var(--acid));
-  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.55), 0 12px 28px -16px rgba(125, 255, 155, 0.85);
+.tabbar .chip:hover {
+  color: #ffffff;
+  border-color: transparent;
+  background: rgba(255, 255, 255, 0.085);
 }
+
+.chip[aria-pressed="true"] {
+  color: #03140a;
+  border-color: var(--acid);
+  background: linear-gradient(180deg, #9dffb6, #5fe97f);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.6), 0 12px 28px -16px rgba(95, 233, 127, 0.9);
+}
+
+.tabbar .chip[aria-pressed="true"] {
+  border-color: transparent;
+  background: linear-gradient(180deg, #9dffb6, #5fe97f);
+  box-shadow: 0 6px 16px -14px rgba(95, 233, 127, 0.95), inset 0 1px 0 rgba(255, 255, 255, 0.5);
+}
+
+.tabbar .chip:active { transform: scale(0.97); }
 
 /* ── верхние вкладки: Новости / Музыка / Навигатор / Обои ─────────── */
 /* Один общий контейнер с рамкой, внутри — равные вкладки.
@@ -462,139 +506,171 @@ h2 { font-size: clamp(1.3rem, 2.4vw, 1.9rem); }
   border: 0;
 }
 
+/* Капсула-сегмент как в нативных приложениях: стекло, тонкая обводка,
+   вкладки по содержимому — без растягивания на всю ширину. */
 .modes-row {
   display: flex;
-  gap: 4px;
-  padding: 6px;
-  border: 1px solid var(--line);
-  border-radius: 16px;
-  background: var(--surface-1);
-  box-shadow: var(--inset-hi);
+  gap: 2px;
+  width: fit-content;
+  max-width: 100%;
+  margin: 0 auto;
+  padding: 4px;
+  border: 1px solid rgba(255, 255, 255, 0.075);
+  border-radius: 999px;
+  background: #080d12;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.05), 0 12px 26px -22px rgba(0, 0, 0, 1);
   overflow-x: auto;
   scrollbar-width: none;
 }
 
 .modes-row::-webkit-scrollbar { display: none; }
 
-/* Все вкладки одной ширины и высоты: одинаковые отступы и типографика. */
 .mode {
-  flex: 1 1 0;
-  display: flex;
+  flex: 0 0 auto;
+  display: inline-flex;
   align-items: center;
   justify-content: center;
-  min-width: 108px;
-  height: 42px;
-  padding: 0 10px;
+  gap: 7px;
+  height: 34px;
+  padding: 0 13px;
   border: 0;
-  border-radius: 11px;
+  border-radius: 999px;
   background: transparent;
-  color: var(--text-dim);
+  color: #8c98a5;
   font: inherit;
-  font-size: 10.5px;
-  line-height: 1.2;
-  letter-spacing: 0.06em;
+  font-size: 12.5px;
+  font-weight: 500;
+  line-height: 1;
+  letter-spacing: 0.002em;
   text-decoration: none;
-  text-align: center;
-  text-transform: uppercase;
   white-space: nowrap;
   cursor: pointer;
   box-shadow: none;
-  transition: color 0.15s ease, background 0.15s ease, box-shadow 0.15s ease;
+  transition: color 0.16s ease, background 0.16s ease, box-shadow 0.16s ease, transform 0.16s ease;
+}
+
+.mode__icon {
+  width: 14px;
+  height: 14px;
+  flex: 0 0 auto;
+  stroke-width: 1.9;
+  opacity: 0.7;
+  transition: opacity 0.16s ease;
 }
 
 .mode:hover {
-  color: var(--text);
-  background: rgba(255, 255, 255, 0.055);
+  color: #eaf1f8;
+  background: rgba(255, 255, 255, 0.07);
 }
 
+.mode:hover .mode__icon { opacity: 1; }
+
+.mode:active { transform: scale(0.97); }
+
+/* Активная вкладка — единственная явная заливка в этом ряду. */
 .mode[aria-pressed="true"] {
-  color: #eafff1;
-  background: linear-gradient(180deg, rgba(125, 255, 155, 0.34), rgba(125, 255, 155, 0.15));
-  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.16), 0 10px 26px -18px rgba(125, 255, 155, 0.8);
+  color: #03140a;
+  background: linear-gradient(180deg, #9dffb6, #5fe97f);
+  box-shadow: 0 6px 16px -14px rgba(95, 233, 127, 0.95), inset 0 1px 0 rgba(255, 255, 255, 0.55);
 }
 
-/* ── информер под поиском: свежие новости и курс BTC ─────────────── */
+.mode[aria-pressed="true"] .mode__icon { opacity: 1; }
+
+/* ── информер под шапкой: событие дня и курс BTC ──────────────────── */
+/* Спокойная статус-карточка: иконка, две строки текста, справа курс.
+   Никакой бегущей «ленты новостей» из нулевых — только ясная иерархия. */
 .ticker {
-  border-bottom: 1px solid var(--line);
-  background:
-    radial-gradient(90% 180% at 8% 0%, rgba(125, 255, 155, 0.08), transparent 56%),
-    linear-gradient(180deg, rgba(255, 255, 255, 0.032), rgba(255, 255, 255, 0.008));
+  padding: 10px 0 0;
+  border: 0;
+  background: none;
 }
 
 .ticker-row {
   display: flex;
   align-items: center;
-  gap: 10px;
-  min-height: 48px;
-  padding: 8px 0;
-  font-size: 11px;
-  line-height: 1.3;
+  gap: 14px;
+  min-height: 0;
+  padding: 12px 14px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 16px;
+  background:
+    radial-gradient(120% 220% at 0% 0%, rgba(125, 255, 155, 0.055), transparent 60%),
+    #0a1015;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.05), 0 20px 44px -34px rgba(0, 0, 0, 0.95);
 }
 
-/* Информер и курс — две аккуратные капсулы вместо голой строки. */
 .ticker__news,
 .ticker__btc {
   display: flex;
   align-items: center;
-  gap: 9px;
+  gap: 11px;
   min-width: 0;
   margin: 0;
-  padding: 6px 12px;
-  border: 1px solid var(--line);
-  border-radius: 12px;
-  background: var(--surface-1);
-  box-shadow: var(--inset-hi), 0 14px 30px -28px rgba(0, 0, 0, 0.9);
 }
 
-.ticker__news {
-  flex: 1 1 auto;
-  background: linear-gradient(90deg, rgba(125, 255, 155, 0.055), rgba(255, 255, 255, 0.02) 62%);
-}
+.ticker__news { flex: 1 1 auto; }
 
 .ticker__btc {
   flex: 0 0 auto;
+  align-self: stretch;
+  padding-left: 14px;
+  border-left: 1px solid rgba(255, 255, 255, 0.07);
   font-variant-numeric: tabular-nums;
+}
+
+/* Иконка в мягком квадрате — как системный виджет, а не эмодзи-плашка. */
+.ticker__ico {
+  flex: 0 0 auto;
+  width: 34px;
+  height: 34px;
+  display: grid;
+  place-items: center;
+  border: 1px solid rgba(125, 255, 155, 0.16);
+  border-radius: 10px;
+  background: rgba(125, 255, 155, 0.075);
+  color: #a9ffc0;
+}
+
+.ticker__ico svg { width: 17px; height: 17px; }
+
+.ticker__stack {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  min-width: 0;
+}
+
+.ticker__meta {
+  display: flex;
+  align-items: center;
+  gap: 8px;
 }
 
 .ticker__label {
   flex: 0 0 auto;
-  padding: 2px 8px;
-  border: 1px solid var(--line);
-  border-radius: 999px;
-  background: rgba(255, 255, 255, 0.04);
-  color: var(--text-faint);
-  font-size: 9px;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
+  color: #87929f;
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 0.03em;
   white-space: nowrap;
 }
 
-/* У BTC короткая подпись — капсула вокруг неё лишняя. */
-.ticker__btc .ticker__label {
-  padding: 0;
-  border: 0;
-  background: transparent;
-  letter-spacing: 0.12em;
-}
-
-/* Год события — маленький «технический» бейдж в акцентной рамке. */
 .ticker__year {
   flex: 0 0 auto;
-  padding: 1px 7px;
-  border: 1px solid var(--line-hi);
-  border-radius: 7px;
-  background: rgba(125, 255, 155, 0.09);
-  color: var(--acid);
+  padding: 1px 6px;
+  border-radius: 5px;
+  background: rgba(255, 255, 255, 0.06);
+  color: #c6d6cd;
   font-family: var(--mono);
   font-size: 10px;
-  font-weight: 600;
-  letter-spacing: 0.06em;
+  font-weight: 500;
+  letter-spacing: 0;
   font-variant-numeric: tabular-nums;
 }
 
 /* Область строки события: обрезает и отдаёт место тексту. */
 .ticker__viewport {
-  flex: 1 1 auto;
+  display: block;
   min-width: 0;
   overflow: hidden;
 }
@@ -605,12 +681,24 @@ h2 { font-size: clamp(1.3rem, 2.4vw, 1.9rem); }
   overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;
-  color: var(--text);
-  font-size: 11.5px;
+  color: #dde5ee;
+  font-size: 13px;
+  font-weight: 500;
+  line-height: 1.35;
   vertical-align: bottom;
 }
 
-.ticker__btc .ticker__text { color: var(--text); font-weight: 600; }
+.ticker__price {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+}
+
+.ticker__btc .ticker__text {
+  color: #ffffff;
+  font-size: 13.5px;
+  font-weight: 600;
+}
 
 /* Если текст не влезает — JS включает бегущую строку: плавно, с паузами
    по краям, чтобы длинное событие можно было спокойно прочитать. */
@@ -640,15 +728,16 @@ h2 { font-size: clamp(1.3rem, 2.4vw, 1.9rem); }
 
 .ticker__delta {
   flex: 0 0 auto;
-  padding: 1px 5px;
-  border-radius: 999px;
+  padding: 1px 6px;
+  border-radius: 6px;
   background: rgba(255, 255, 255, 0.06);
-  color: var(--text-faint);
-  font-size: 10px;
+  color: #8b97a4;
+  font-size: 10.5px;
+  font-weight: 600;
 }
 
-.ticker__delta.is-up { color: var(--acid); background: rgba(125, 255, 155, 0.12); }
-.ticker__delta.is-down { color: #ff8f8f; background: rgba(255, 120, 120, 0.12); }
+.ticker__delta.is-up { color: #8bffab; background: rgba(125, 255, 155, 0.11); }
+.ticker__delta.is-down { color: #ff9b9b; background: rgba(255, 120, 120, 0.11); }
 
 /* ── сетка музыки ────────────────────────────────────────────────── */
 .music-tools {
@@ -1291,6 +1380,37 @@ body.has-player .reader {
   letter-spacing: 0.08em;
 }
 
+/* Свежесть материала: «DROP» — новая публикация, «Обновлено» — правка.
+   Оба бейджа живут три дня и гаснут сами (считаются при сборке данных). */
+.card__badge {
+  position: absolute;
+  right: 9px;
+  top: 9px;
+  z-index: 3;
+  padding: 3px 8px;
+  border-radius: 7px;
+  font-family: var(--mono);
+  font-size: 8.5px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  line-height: 1.5;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.card__badge--new {
+  background: linear-gradient(180deg, #9dffb6, #5fe97f);
+  color: #03140a;
+  box-shadow: 0 6px 18px -8px rgba(125, 255, 155, 0.65);
+}
+
+.card__badge--updated {
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  background: rgba(8, 13, 18, 0.72);
+  color: #d7dee6;
+  letter-spacing: 0.06em;
+}
+
 .card__body {
   display: flex;
   flex-direction: column;
@@ -1414,7 +1534,7 @@ body.has-player .reader {
 
 .reader { padding: 22px 0 calc(var(--tabbar-h) + 36px + var(--safe-bottom)); }
 
-.reader .wrap { width: min(700px, 100% - 32px); }
+.reader .wrap { width: min(680px, 100% - 32px); }
 
 .reader__top {
   display: flex;
@@ -1487,14 +1607,19 @@ body.has-player .reader {
 .reader__head h1,
 .reader__head h2 {
   font-size: clamp(1.5rem, 3.4vw, 2.3rem);
-  margin-bottom: 12px;
+  line-height: 1.16;
+  letter-spacing: -0.02em;
+  margin-bottom: 14px;
 }
 
+/* Лид — мостик к тексту: чуть крупнее и светлее основного абзаца,
+   но не спорит с заголовком. */
 .reader__lead {
   margin: 0;
-  color: var(--text-dim);
-  font-size: 0.92rem;
-  line-height: 1.6;
+  max-width: 62ch;
+  color: #b7c2cf;
+  font-size: 1.04rem;
+  line-height: 1.62;
 }
 
 .reader__cover { margin: 22px 0 4px; }
@@ -1521,43 +1646,71 @@ body.has-player .reader {
 .skel-line:nth-child(3) { width: 70%; }
 
 /* ── типографика материала ───────────────────────────────────────── */
+/* 17 px и 1.75 интерлиньяжа — комфортный ритм для длинного чтения
+   с экрана: строки не слипаются и не разъезжаются по ширине. */
 .article-body {
-  margin-top: 26px;
-  color: #c9d3dd;
-  font-size: 0.96rem;
-  line-height: 1.78;
+  margin-top: 28px;
+  color: #d3dbe4;
+  font-size: 1.0625rem;
+  line-height: 1.75;
+  letter-spacing: 0.004em;
+  text-wrap: pretty;
 }
 
-.article-body > * + * { margin-top: 18px; }
+/* Вертикальный ритм: один шаг между абзацами и списками. */
+.article-body > * + * { margin-top: 20px; }
+
+/* Крупные блоки — картинки, таблицы, врезки — дышат сильнее абзацев,
+   иначе текст липнет к кадру и взгляду не за что зацепиться. */
+.article-body > :is(.game-shots, .toc, .table-wrap, .quick-answer, .callout, blockquote, figure) {
+  margin-top: 28px;
+}
+
+.article-body > :is(.game-shots, .toc, .table-wrap, .quick-answer, .callout, blockquote, figure) + * {
+  margin-top: 28px;
+}
 
 .article-body h2 {
-  margin-top: 34px;
-  font-size: 1.22rem;
-  color: var(--text);
+  margin: 46px 0 16px;
+  font-size: 1.32rem;
+  line-height: 1.3;
+  letter-spacing: -0.012em;
+  color: #f3f8fd;
+  text-wrap: balance;
 }
 
 .article-body h3 {
-  margin-top: 26px;
-  font-size: 1.02rem;
-  color: var(--text);
+  margin: 32px 0 12px;
+  font-size: 1.07rem;
+  line-height: 1.4;
+  letter-spacing: -0.005em;
+  color: #e7eef6;
+  text-wrap: balance;
 }
+
+/* Первый заголовок в тексте не отрывается от лида сверху. */
+.article-body h2:first-child,
+.article-body h3:first-child { margin-top: 0; }
 
 .article-body p { margin: 0; }
 
 .article-body a {
-  color: var(--acid);
+  color: #b9ffca;
   text-decoration: none;
-  border-bottom: 1px solid rgba(125, 255, 155, 0.3);
+  border-bottom: 1px solid rgba(125, 255, 155, 0.28);
+  transition: border-color 0.15s ease, color 0.15s ease;
 }
 
-.article-body a:hover { border-bottom-color: var(--acid); }
+.article-body a:hover { border-bottom-color: var(--acid); color: #d2ffdd; }
 
-.article-body strong { color: #eef4fb; }
+.article-body strong { color: #f4f9fe; font-weight: 600; }
 
 .article-body ul,
-.article-body ol { margin: 0; padding-left: 22px; }
+.article-body ol { margin: 0; padding-left: 24px; }
 
-.article-body li { margin: 8px 0; }
+.article-body li { margin: 7px 0; padding-left: 2px; }
+
+.article-body li::marker { color: rgba(125, 255, 155, 0.6); }
 
 .article-body img {
   border-radius: 12px;
@@ -1569,11 +1722,11 @@ body.has-player .reader {
 
 .article-body blockquote {
   margin: 0;
-  padding: 14px 18px;
+  padding: 16px 20px;
   border-left: 3px solid var(--acid);
-  background: rgba(125, 255, 155, 0.06);
-  border-radius: 0 8px 8px 0;
-  color: var(--text-dim);
+  background: rgba(125, 255, 155, 0.055);
+  border-radius: 0 12px 12px 0;
+  color: #c3ced9;
 }
 
 .article-body code {
@@ -1584,24 +1737,27 @@ body.has-player .reader {
 }
 
 .article-body .quick-answer {
-  padding: 16px 18px;
+  padding: 18px 20px;
   border-left: 3px solid var(--acid);
-  background: rgba(125, 255, 155, 0.07);
-  border-radius: 0 8px 8px 0;
-  line-height: 1.7;
+  background: rgba(125, 255, 155, 0.065);
+  border-radius: 0 12px 12px 0;
+  color: #dbe3eb;
+  line-height: 1.72;
 }
 
 .article-body .toc {
-  padding: 16px 20px;
+  padding: 18px 22px;
   border: 1px solid var(--line);
   border-radius: 12px;
   background: var(--surface-1);
   box-shadow: var(--inset-hi);
 }
 
-.article-body .toc h3 { margin: 0 0 10px; font-size: 0.92rem; }
+.article-body .toc h3 { margin: 0 0 10px; font-size: 0.78rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-faint); }
 .article-body .toc ol { margin: 0; padding-left: 20px; }
-.article-body .toc a { border-bottom: 0; }
+.article-body .toc li { margin: 6px 0; line-height: 1.55; }
+.article-body .toc a { border-bottom: 0; color: #cdd7e1; }
+.article-body .toc a:hover { color: var(--acid); }
 
 .article-body .callout {
   padding: 14px 18px;
@@ -1621,32 +1777,50 @@ body.has-player .reader {
 .article-body .faq-item h3 { margin: 0 0 6px; font-size: 0.98rem; }
 
 .article-body .sources-block {
-  margin-top: 26px;
-  padding-top: 16px;
+  margin-top: 30px;
+  padding-top: 18px;
   border-top: 1px solid var(--line);
-  font-size: 0.8rem;
-  color: var(--text-faint);
+  font-size: 0.86rem;
+  line-height: 1.65;
+  color: #98a3b0;
 }
+
+.article-body .sources-block h2 { margin-top: 0; font-size: 1.1rem; }
 
 .article-body .sources-block a { margin-right: 14px; }
 
-.article-body .table-wrap { overflow-x: auto; }
+.article-body .table-wrap {
+  overflow-x: auto;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.012);
+}
 
 .article-body table {
   width: 100%;
   border-collapse: collapse;
-  font-size: 0.84rem;
+  font-size: 0.9rem;
+  line-height: 1.55;
 }
 
 .article-body th,
 .article-body td {
-  padding: 9px 11px;
-  border: 1px solid var(--line);
+  padding: 11px 13px;
+  border-bottom: 1px solid var(--line-soft);
   text-align: left;
   vertical-align: top;
 }
 
-.article-body th { background: rgba(125, 255, 155, 0.07); font-weight: 600; }
+.article-body th {
+  background: rgba(125, 255, 155, 0.06);
+  color: #e9f0f7;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.article-body tbody tr:last-child td { border-bottom: 0; }
+.article-body tbody tr:nth-child(even) { background: rgba(255, 255, 255, 0.016); }
+.article-body td:first-child { color: #eef4fa; }
 
 .article-body .checklist { list-style: none; padding: 0; }
 
@@ -1688,20 +1862,23 @@ body.has-player .reader {
 
 .article-body .game-shots {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
-  gap: 14px;
+  grid-template-columns: 1fr;
+  gap: 22px;
 }
 
 .article-body .game-shots figure {
   display: flex;
   flex-direction: column;
-  gap: 7px;
+  gap: 9px;
   margin: 0;
 }
 
+/* Кадры идут друг под другом во всю ширину и показываются целиком:
+   высота считается по картинке, поэтому ничего не обрезается. */
 .article-body .game-shots img {
-  aspect-ratio: 16 / 9;
-  object-fit: cover;
+  aspect-ratio: auto;
+  height: auto;
+  object-fit: contain;
   width: 100%;
   border: 1px solid var(--line);
   border-radius: 10px;
@@ -1715,13 +1892,13 @@ body.has-player .reader {
 }
 
 .article-body .game-shots figcaption {
-  color: var(--text-faint);
-  font-size: 11px;
-  line-height: 1.45;
+  color: #98a4b1;
+  font-size: 12.5px;
+  line-height: 1.5;
 }
 
 .article-body .game-shots figcaption b {
-  color: var(--text);
+  color: #e8eff6;
   font-weight: 600;
 }
 
@@ -1732,40 +1909,120 @@ body.has-player .reader {
   border-top: 1px solid var(--line);
 }
 
+.reader__related-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 14px;
+}
+
 .reader__related-title {
   font-size: 0.85rem;
   letter-spacing: 0.1em;
   text-transform: uppercase;
   color: var(--text-faint);
-  margin-bottom: 14px;
+  margin: 0;
 }
 
-.reader__related-list {
+/* Стрелки слайдера: маленькие, в палитре и только когда есть что листать. */
+.rel-nav { display: flex; gap: 6px; }
+
+.rel-nav__btn {
+  width: 30px;
+  height: 30px;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
-  gap: 10px;
+  place-items: center;
+  padding: 0;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: var(--surface-1);
+  color: var(--text-dim);
+  font: inherit;
+  font-size: 13px;
+  line-height: 1;
+  cursor: pointer;
+  transition: border-color 0.15s ease, color 0.15s ease, opacity 0.15s ease;
 }
+
+.rel-nav__btn:hover:not(:disabled) {
+  border-color: var(--line-hi);
+  color: var(--acid);
+}
+
+.rel-nav__btn:disabled { opacity: 0.35; cursor: default; }
+
+/* Горизонтальная лента с прилипанием: одна карточка — один шаг свайпа. */
+.reader__related-list {
+  display: flex;
+  gap: 12px;
+  overflow-x: auto;
+  overscroll-behavior-x: contain;
+  scroll-snap-type: x mandatory;
+  scroll-padding-left: 2px;
+  padding-bottom: 4px;
+  scrollbar-width: none;
+}
+
+.reader__related-list::-webkit-scrollbar { display: none; }
 
 .rel {
+  flex: 0 0 232px;
+  max-width: 232px;
+  scroll-snap-align: start;
   display: flex;
   flex-direction: column;
-  gap: 6px;
-  padding: 14px 16px;
+  overflow: hidden;
   border: 1px solid var(--line);
-  border-radius: 12px;
+  border-radius: 14px;
   background: linear-gradient(180deg, #0e161d, #0a0f14);
   box-shadow: var(--inset-hi);
   color: var(--text);
   font: inherit;
-  text-align: left;
-  cursor: pointer;
+  text-decoration: none;
   transition: border-color 0.15s ease, transform 0.15s ease, box-shadow 0.15s ease;
 }
 
 .rel:hover {
   border-color: var(--line-hi);
-  transform: translateY(-1px);
-  box-shadow: var(--inset-hi), 0 16px 32px -24px rgba(0, 0, 0, 0.95);
+  transform: translateY(-2px);
+  box-shadow: var(--inset-hi), 0 18px 34px -24px rgba(0, 0, 0, 0.95);
+}
+
+.rel__thumb {
+  display: block;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+  background: #0d141a;
+}
+
+.rel__thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.25s ease;
+}
+
+.rel:hover .rel__thumb img { transform: scale(1.04); }
+
+.rel__thumb-empty {
+  display: grid;
+  place-items: center;
+  width: 100%;
+  height: 100%;
+  font-size: 12px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--text-faint);
+  background: radial-gradient(circle at 50% 45%, rgba(125, 255, 155, 0.1), transparent 70%);
+}
+
+.rel__body {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  padding: 12px 14px 14px;
 }
 
 .rel__cat {
@@ -1775,13 +2032,38 @@ body.has-player .reader {
   color: var(--acid);
 }
 
-.rel__title { font-size: 0.88rem; line-height: 1.4; }
+.rel__title {
+  font-size: 0.86rem;
+  line-height: 1.4;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
 
 .rel__date { color: var(--text-faint); font-size: 10px; letter-spacing: 0.06em; text-transform: uppercase; }
 
 @media (max-width: 560px) {
-  .article-body { font-size: 0.92rem; }
+  /* На телефоне кегль не мельчает: 16 px — минимум для комфортного чтения. */
+  .article-body { font-size: 1rem; line-height: 1.72; }
+  .article-body h2 { font-size: 1.2rem; margin-top: 36px; }
+  .article-body h3 { font-size: 1.03rem; margin-top: 26px; }
+  .article-body .quick-answer { padding: 14px 16px; }
   .reader { padding-top: 16px; }
+
+  /* Вкладки на телефоне — компактные иконки в одну строку, без скролла. */
+  .modes-row { gap: 4px; padding: 4px 6px; }
+  .mode { width: 34px; height: 34px; padding: 0; gap: 0; }
+  .mode__label { display: none; }
+  .mode__icon { width: 16px; height: 16px; }
+
+  /* Информер на телефоне ужимается, но остаётся отдельной карточкой. */
+  .ticker-row { gap: 10px; padding: 10px 12px; }
+  .ticker__ico { width: 30px; height: 30px; border-radius: 9px; }
+  .ticker__ico svg { width: 15px; height: 15px; }
+  .ticker__btc { padding-left: 10px; }
+  .ticker__text { font-size: 12.5px; }
+  .ticker__btc .ticker__text { font-size: 12.5px; }
 
   .appbar-row { gap: 10px; }
 
@@ -2413,12 +2695,14 @@ body[data-mode="ai"] {
   background: rgba(125, 255, 155, 0.07);
 }
 
-/* Второй уровень фильтров: рубрики новостей и категории инструментов. */
+/* Второй уровень фильтров: рубрики новостей и категории инструментов.
+   Тот же язык, что у верхних вкладок и нижнего дока: без рамок,
+   активная — залитая мятная пилюля. */
 .ai-subchips {
   display: flex;
-  gap: 7px;
+  gap: 4px;
   overflow-x: auto;
-  padding: 12px 0 6px;
+  padding: 10px 0 4px;
   scrollbar-width: none;
 }
 
@@ -2426,25 +2710,36 @@ body[data-mode="ai"] {
 
 .ai-subchip {
   flex: 0 0 auto;
-  padding: 6px 11px;
-  border: 1px solid var(--line-soft);
+  display: inline-flex;
+  align-items: center;
+  height: 30px;
+  padding: 0 12px;
+  border: 1px solid transparent;
   border-radius: 999px;
-  background: var(--surface-1);
-  color: var(--text-dim);
+  background: transparent;
+  color: #8f9ba8;
   font: inherit;
-  font-size: 11px;
-  line-height: 1.4;
+  font-size: 11.5px;
+  font-weight: 500;
+  line-height: 1;
   white-space: nowrap;
   cursor: pointer;
-  transition: color 0.15s ease, border-color 0.15s ease, background 0.15s ease;
+  transition: color 0.15s ease, background 0.15s ease, box-shadow 0.15s ease, transform 0.15s ease;
 }
 
-.ai-subchip:hover { color: var(--text); border-color: var(--line); }
+.ai-subchip:hover {
+  color: #ffffff;
+  border-color: transparent;
+  background: rgba(255, 255, 255, 0.085);
+}
+
+.ai-subchip:active { transform: scale(0.97); }
 
 .ai-subchip[aria-pressed="true"] {
-  color: #06120b;
-  border-color: var(--acid);
-  background: linear-gradient(180deg, #a6ffbc, var(--acid));
+  color: #03140a;
+  border-color: transparent;
+  background: linear-gradient(180deg, #9dffb6, #5fe97f);
+  box-shadow: 0 6px 16px -10px rgba(95, 233, 127, 0.95), inset 0 1px 0 rgba(255, 255, 255, 0.55);
 }
 
 /* Обзор: три колонки, на планшете — две, на телефоне — одна. */

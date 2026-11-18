@@ -10,6 +10,7 @@ interface Item {
   image: string;
   game: boolean;
   read: number;
+  badge?: 'new' | 'updated' | '';
 }
 
 interface Props {
@@ -50,6 +51,8 @@ const hay = `${item.title} ${item.excerpt} ${item.category}`.toLowerCase();
     )}
     <span class="card__cat">{item.category}</span>
     {item.read > 0 && <span class="card__read">{item.read} мин</span>}
+    {item.badge === 'new' && <span class="card__badge card__badge--new">DROP</span>}
+    {item.badge === 'updated' && <span class="card__badge card__badge--updated">Обновлено</span>}
   </span>
   <span class="card__body">
     <span class="card__title">{item.title}</span>

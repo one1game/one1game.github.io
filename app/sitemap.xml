@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url><loc>https://one1game.org/app/</loc><lastmod>2026-11-17</lastmod><changefreq>daily</changefreq><priority>1.0</priority></url>
+  <url><loc>https://one1game.org/app/</loc><lastmod>2026-11-18</lastmod><changefreq>daily</changefreq><priority>1.0</priority></url>
   <url><loc>https://one1game.org/app/movie/</loc><lastmod>2026-11-16</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url>
-  <url><loc>https://one1game.org/app/oboi/</loc><lastmod>2026-11-17</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url>
-  <url><loc>https://one1game.org/app/nav/</loc><lastmod>2026-11-17</lastmod><changefreq>daily</changefreq><priority>0.9</priority></url>
+  <url><loc>https://one1game.org/app/oboi/</loc><lastmod>2026-11-18</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://one1game.org/app/nav/</loc><lastmod>2026-11-18</lastmod><changefreq>daily</changefreq><priority>0.9</priority></url>
   <url><loc>https://one1game.org/app/ai/</loc><lastmod>2026-11-18</lastmod><changefreq>daily</changefreq><priority>0.9</priority></url>
-  <url><loc>https://one1game.org/app/music/</loc><lastmod>2026-11-17</lastmod><changefreq>daily</changefreq><priority>0.8</priority></url>
+  <url><loc>https://one1game.org/app/music/</loc><lastmod>2026-11-18</lastmod><changefreq>daily</changefreq><priority>0.8</priority></url>
   <url><loc>https://one1game.org/app/news/aa-games-trend-2026/</loc><lastmod>2026-01-20</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
   <url><loc>https://one1game.org/app/news/ai-comics-2026/</loc><lastmod>2026-01-21</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
   <url><loc>https://one1game.org/app/news/ai-game-translators-2026-guide/</loc><lastmod>2026-01-20</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
@@ -75,7 +75,7 @@
   <url><loc>https://one1game.org/app/news/rossijskie-igry-na-sega-mega-drive/</loc><lastmod>2026-11-18</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
   <url><loc>https://one1game.org/app/news/rtx-5090-vs-rx-9070xt-sravnenie-2026/</loc><lastmod>2026-07-09</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
   <url><loc>https://one1game.org/app/news/rust-252490/</loc><lastmod>2026-11-15</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://one1game.org/app/news/s-t-a-l-k-e-r-2-heart-of-chornobyl-1643320/</loc><lastmod>2026-11-15</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://one1game.org/app/news/s-t-a-l-k-e-r-2-heart-of-chornobyl-1643320/</loc><lastmod>2026-11-18</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
   <url><loc>https://one1game.org/app/news/skrytye-lovushki-apgreyda-2026/</loc><lastmod>2026-07-10</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
   <url><loc>https://one1game.org/app/news/stalker-2-nevozmozhnye-tayniki-i-artefakty/</loc><lastmod>2026-07-15</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
   <url><loc>https://one1game.org/app/news/stalker-2-skrytye-mekhaniki-tenevye-pravila-2026/</loc><lastmod>2026-07-13</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
@@ -119,32 +119,32 @@
   <url><loc>https://one1game.org/app/movie/507089/</loc><lastmod>2026-11-16</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://one1game.org/app/movie/1408208/</loc><lastmod>2026-11-16</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://one1game.org/app/movie/335787/</loc><lastmod>2026-11-16</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://one1game.org/app/oboi/games/</loc><lastmod>2026-11-17</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://one1game.org/app/oboi/neon/</loc><lastmod>2026-11-17</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://one1game.org/app/oboi/cyberpunk/</loc><lastmod>2026-11-17</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://one1game.org/app/oboi/anime/</loc><lastmod>2026-11-17</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://one1game.org/app/oboi/dark/</loc><lastmod>2026-11-17</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://one1game.org/app/oboi/retro/</loc><lastmod>2026-11-17</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://one1game.org/app/oboi/fantasy/</loc><lastmod>2026-11-17</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://one1game.org/app/oboi/4k/</loc><lastmod>2026-11-17</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://one1game.org/app/oboi/1920x1080/</loc><lastmod>2026-11-17</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://one1game.org/app/oboi/2560x1440/</loc><lastmod>2026-11-17</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://one1game.org/app/oboi/phone/</loc><lastmod>2026-11-17</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://one1game.org/app/oboi/ultrawide/</loc><lastmod>2026-11-17</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://one1game.org/app/oboi/cyberpunk-2077/</loc><lastmod>2026-11-17</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://one1game.org/app/oboi/elden-ring/</loc><lastmod>2026-11-17</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://one1game.org/app/oboi/genshin-impact/</loc><lastmod>2026-11-17</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://one1game.org/app/oboi/gta-5/</loc><lastmod>2026-11-17</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://one1game.org/app/oboi/minecraft/</loc><lastmod>2026-11-17</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://one1game.org/app/oboi/counter-strike/</loc><lastmod>2026-11-17</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://one1game.org/app/oboi/valorant/</loc><lastmod>2026-11-17</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://one1game.org/app/oboi/the-witcher-3/</loc><lastmod>2026-11-17</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://one1game.org/app/oboi/star-wars/</loc><lastmod>2026-11-17</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://one1game.org/app/oboi/dota-2/</loc><lastmod>2026-11-17</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://one1game.org/app/oboi/league-of-legends/</loc><lastmod>2026-11-17</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://one1game.org/app/oboi/fortnite/</loc><lastmod>2026-11-17</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://one1game.org/app/oboi/dark-souls/</loc><lastmod>2026-11-17</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://one1game.org/app/oboi/god-of-war/</loc><lastmod>2026-11-17</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://one1game.org/app/oboi/red-dead-redemption-2/</loc><lastmod>2026-11-17</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://one1game.org/app/oboi/hollow-knight/</loc><lastmod>2026-11-17</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://one1game.org/app/oboi/games/</loc><lastmod>2026-11-18</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://one1game.org/app/oboi/neon/</loc><lastmod>2026-11-18</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://one1game.org/app/oboi/cyberpunk/</loc><lastmod>2026-11-18</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://one1game.org/app/oboi/anime/</loc><lastmod>2026-11-18</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://one1game.org/app/oboi/dark/</loc><lastmod>2026-11-18</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://one1game.org/app/oboi/retro/</loc><lastmod>2026-11-18</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://one1game.org/app/oboi/fantasy/</loc><lastmod>2026-11-18</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://one1game.org/app/oboi/4k/</loc><lastmod>2026-11-18</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://one1game.org/app/oboi/1920x1080/</loc><lastmod>2026-11-18</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://one1game.org/app/oboi/2560x1440/</loc><lastmod>2026-11-18</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://one1game.org/app/oboi/phone/</loc><lastmod>2026-11-18</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://one1game.org/app/oboi/ultrawide/</loc><lastmod>2026-11-18</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://one1game.org/app/oboi/cyberpunk-2077/</loc><lastmod>2026-11-18</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://one1game.org/app/oboi/elden-ring/</loc><lastmod>2026-11-18</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://one1game.org/app/oboi/genshin-impact/</loc><lastmod>2026-11-18</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://one1game.org/app/oboi/gta-5/</loc><lastmod>2026-11-18</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://one1game.org/app/oboi/minecraft/</loc><lastmod>2026-11-18</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://one1game.org/app/oboi/counter-strike/</loc><lastmod>2026-11-18</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://one1game.org/app/oboi/valorant/</loc><lastmod>2026-11-18</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://one1game.org/app/oboi/the-witcher-3/</loc><lastmod>2026-11-18</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://one1game.org/app/oboi/star-wars/</loc><lastmod>2026-11-18</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://one1game.org/app/oboi/dota-2/</loc><lastmod>2026-11-18</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://one1game.org/app/oboi/league-of-legends/</loc><lastmod>2026-11-18</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://one1game.org/app/oboi/fortnite/</loc><lastmod>2026-11-18</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://one1game.org/app/oboi/dark-souls/</loc><lastmod>2026-11-18</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://one1game.org/app/oboi/god-of-war/</loc><lastmod>2026-11-18</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://one1game.org/app/oboi/red-dead-redemption-2/</loc><lastmod>2026-11-18</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://one1game.org/app/oboi/hollow-knight/</loc><lastmod>2026-11-18</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url>
 </urlset>

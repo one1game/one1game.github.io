@@ -441,7 +441,13 @@ window.allArticles = [
     "readTime": "11 мин",
     "category": "Разработка",
     "updated": "2026-11-18",
-    "image": "https://one1game.org/app/img/retro/cover.jpg"
+    "image": "https://one1game.org/app/img/retro/cover.jpg",
+    "related": [
+      "konec-ery-diskov-sony-cifrovoe-budushee-2028",
+      "nintendo-switch-2-russia-2026",
+      "aa-games-trend-2026",
+      "igrovye-trendy-avgust-2026-analiz-rynka"
+    ]
   },
   {
     "url": "/archive/pixel-cartographer-5281980",
@@ -7106,17 +7112,18 @@ window.allArticles = [
   },
   {
     "url": "/archive/s-t-a-l-k-e-r-2-heart-of-chornobyl-1643320",
-    "title": "S.T.A.L.K.E.R. 2: Heart of Chornobyl – обзор",
-    "excerpt": "S.T.A.L.K.E.R. 2: Heart of Chornobyl – открытый постапокалиптический мир, где игроку придётся исследовать аномалии, сражаться с мутантами и выживать в",
+    "title": "S.T.A.L.K.E.R. 2 в 2026: починили ли игру, русская озвучка и как играть в СНГ",
+    "excerpt": "Честный разбор «Сталкера 2» после патча 2.1: живой A-Life, дорогой ремонт, оптимизация на 8 ГБ, фанатская озвучка и что делать игрокам из СНГ.",
     "date": "2 ноября 2026",
-    "readTime": "2 мин",
+    "readTime": "8 мин",
     "category": "Обзоры",
-    "updated": "2026-11-15",
+    "updated": "2026-11-18",
     "noindex": false,
     "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1643320/9c8da5440ab033af46b9c7fecfd37166479d2ea6/header.jpg?t=1793009305",
-    "ai_intro": "S.T.A.L.K.E.R. 2: Heart of Chornobyl переносит в огромную аномальную зону Чернобыля, где каждый шаг может стать ловушкой. Игра сочетает исследование открытого мира, динамичные схватки и глубокую RPG‑систему, требуя от игрока постоянного выбора и адаптации.",
-    "ai_about": "В игре представлена обширная открытая карта, наполненная опасными аномалиями, разнообразными мутантами и враждебными группировками. Система выживания заставляет собирать ресурсы, ремонтировать снаряжение и планировать каждый поход в зону. RPG‑элементы позволяют развивать персонажа, выбирая навыки и улучшения под свой стиль игры. Благодаря регулярным обновлениям мир постоянно меняется, поддерживая интерес даже после прохождения основной сюжетной линии.",
-    "ai": true
+    "related": [
+      "stalker-2-nevozmozhnye-tayniki-i-artefakty",
+      "stalker-2-skrytye-mekhaniki-tenevye-pravila-2026"
+    ]
   },
   {
     "url": "/archive/the-witcher-3-wild-hunt-remastered-292030",

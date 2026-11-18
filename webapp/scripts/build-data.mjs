@@ -146,6 +146,98 @@ function wordCount(html) {
     .filter((w) => w.length > 1).length;
 }
 
+// ── подбор «Читать дальше» ──
+// Прошлый вариант брал просто свежие материалы той же рубрики: в статье
+// про Sega соседями оказывались нейросети и монетизация. Теперь сравниваем
+// темы по словам заголовка и описания, рубрика даёт лишь небольшой бонус.
+const STOP_WORDS = new Set([
+  'этот', 'этого', 'этом', 'этой', 'этих', 'котор', 'котора', 'которы', 'которые',
+  'чтобы', 'можно', 'нужно', 'будет', 'будут', 'есть', 'было', 'были', 'очень',
+  'также', 'после', 'перед', 'через', 'между', 'свои', 'своих', 'своего', 'это',
+  'обзор', 'обзоры', 'игра', 'игры', 'играх', 'игре', 'игру', 'игрок', 'игрока',
+  'новый', 'новая', 'новое', 'новые', 'какой', 'какая', 'какие', 'почему',
+  'лучшие', 'лучший', 'теперь', 'просто', 'более', 'менее', 'самый', 'самые',
+  'the', 'and', 'with', 'for', 'that', 'this', 'from', 'game', 'games',
+]);
+
+// Грубый стемминг: сравниваем первые пять символов, чтобы «игровой»,
+// «игровая» и «игровые» считались одним словом.
+function topicKeys(item) {
+  const text = `${item.title} ${item.excerpt}`.toLowerCase().replace(/[^a-zа-яё0-9-]+/gi, ' ');
+  const keys = new Set();
+  for (const word of text.split(/\s+/)) {
+    if (word.length < 4 || STOP_WORDS.has(word)) continue;
+    keys.add(word.slice(0, 5));
+  }
+  return keys;
+}
+
+const topicIndex = new Map();
+function keysOf(item) {
+  if (!topicIndex.has(item.slug)) topicIndex.set(item.slug, topicKeys(item));
+  return topicIndex.get(item.slug);
+}
+
+function pickRelated(item) {
+  const bySlug = new Map(items.map((o) => [o.slug, o]));
+  const chosen = [];
+  const seen = new Set([item.slug]);
+
+  // 1. Ручной список автора — он важнее любого алгоритма.
+  for (const slug of item.relatedSlugs) {
+    const hit = bySlug.get(slug);
+    if (hit && !seen.has(hit.slug)) {
+      chosen.push(hit);
+      seen.add(hit.slug);
+    }
+  }
+
+  // 2. Похожие по теме: минимум два общих слова. Одиночное совпадение
+  //    («игра», «начать») тянет случайные материалы, поэтому его отсекаем.
+  const mine = keysOf(item);
+  const scored = items
+    .filter((o) => !seen.has(o.slug))
+    .map((o) => {
+      const keys = keysOf(o);
+      let overlap = 0;
+      for (const key of keys) if (mine.has(key)) overlap++;
+      return { item: o, overlap };
+    })
+    .filter((entry) => entry.overlap >= 2)
+    .sort(
+      (a, b) =>
+        b.overlap - a.overlap ||
+        Number(b.item.category === item.category) - Number(a.item.category === item.category) ||
+        (b.item.dateISO || '').localeCompare(a.item.dateISO || ''),
+    );
+
+  for (const entry of scored) {
+    if (chosen.length >= 6) break;
+    chosen.push(entry.item);
+    seen.add(entry.item.slug);
+  }
+
+  // 3. Подстраховка: если тема редкая, добираем свежим из той же рубрики,
+  //    чтобы блок не оставался с одной карточкой.
+  if (chosen.length < 4) {
+    for (const o of items) {
+      if (chosen.length >= 4) break;
+      if (seen.has(o.slug) || o.category !== item.category) continue;
+      chosen.push(o);
+      seen.add(o.slug);
+    }
+  }
+
+  return chosen.slice(0, 6).map((o) => ({
+    slug: o.slug,
+    title: o.title,
+    category: o.category,
+    date: o.date,
+    image: o.image,
+  }));
+}
+
+
 const raw = fs.readFileSync(SOURCE, 'utf8');
 const start = raw.indexOf('= [');
 const end = raw.lastIndexOf('];');
@@ -164,9 +256,15 @@ const items = all
       category: a.category || '',
       date: a.date || '',
       dateISO: toISO(a.updated) || toISO(a.date),
+      // Даты публикации и правки по отдельности: по ним считается бейдж
+      // «DROP» (новая публикация) и «ОБНОВЛЕНО» (правка старой).
+      published: toISO(a.date),
+      updatedISO: toISO(a.updated) || toISO(a.date),
       // Часть обложек задана путём от корня сайта (/img/...) — в приложении
       // такой адрес ведёт на /app/img/ и даёт 404. Делаем абсолютным.
       image: a.image ? (/^\//.test(a.image) ? `${SITE_URL}${a.image}` : a.image) : '',
+      // Автор может вручную задать «Читать дальше» — эти ссылки идут первыми.
+      relatedSlugs: Array.isArray(a.related) ? a.related : [],
       game: isGame,
       read: Math.max(1, Math.round(((a.excerpt || '').split(/\s+/).length || 0) / 40)) || 1,
     };
@@ -191,10 +289,7 @@ for (const item of items) {
   const words = wordCount(html);
   item.read = Math.max(1, Math.round(words / 180));
 
-  const related = items
-    .filter((o) => o.slug !== item.slug && o.category === item.category)
-    .slice(0, 4)
-    .map((o) => ({ slug: o.slug, title: o.title, category: o.category, date: o.date }));
+  const related = pickRelated(item);
 
   const json = JSON.stringify({
     slug: item.slug,
@@ -211,6 +306,24 @@ for (const item of items) {
   });
   fs.writeFileSync(path.join(POSTS, `${item.slug}.json`), json, 'utf8');
   bytes += Buffer.byteLength(json);
+}
+
+// ── бейджи свежести ──
+// DROP — материал опубликован недавно, ОБНОВЛЕНО — у старого обновили текст.
+// Оба живут ровно три календарных дня от своей даты, потом исчезают.
+const DAY_MS = 86400000;
+const nowDay = Math.floor(Date.now() / DAY_MS);
+const dayNumber = (iso) => {
+  const t = Date.parse(`${iso}T00:00:00Z`);
+  return Number.isNaN(t) ? null : Math.floor(t / DAY_MS);
+};
+
+for (const item of items) {
+  const pubDiff = item.published ? nowDay - dayNumber(item.published) : Infinity;
+  const updDiff = item.updatedISO ? nowDay - dayNumber(item.updatedISO) : Infinity;
+  const isNew = pubDiff >= 0 && pubDiff < 3;
+  const isUpdated = !isNew && item.updatedISO !== item.published && updDiff >= 0 && updDiff < 3;
+  item.badge = isNew ? 'new' : isUpdated ? 'updated' : '';
 }
 
 const categories = [...new Set(items.map((i) => i.category))];
