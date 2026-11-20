@@ -1,6 +1,6 @@
 // Офлайн-оболочка приложения. Кэшируем только свой префикс /app/,
 // чтобы не мешать основному сайту и его страницам.
-const CACHE = 'one1game-app-v5';
+const CACHE = 'one1game-app-v6';
 const SHELL = ['/app/'];
 
 self.addEventListener('install', (event) => {

@@ -48,7 +48,6 @@
   var isScanner = path.includes('/cyber-scanner');
   var isL2 = path.includes('/l2');
   var isTriad = path.includes('/triad-duel');
-  var isAI = path === '/ai' || path.indexOf('/ai/') === 0;
   var isMusic = path === '/genriprocedur' || path.indexOf('/genriprocedur/') === 0;
   var isGo = path === '/go' || path.indexOf('/go/') === 0;
   var isFeed = path === '/feed' || path.indexOf('/feed/') === 0;
@@ -78,7 +77,6 @@
     yt: 'fa-youtube',
     doc: 'fa-file-lines',
     cash: 'fa-rectangle-ad',
-    ai: 'fa-robot',
     music: 'fa-music'
   };
 
@@ -94,7 +92,7 @@
   var isReading = isArchive || path.indexOf('/category/') === 0;
   var isPicks = path === '/besplatnye-igry' || path === '/skidki-na-igry' || path === '/vo-chto-poigrat'
     || path.indexOf('/igry-bez-videokarty') === 0 || path.indexOf('/igry-dlya-slabyh') === 0;
-  var isServices = isAI || isCodeFusion || isScanner || isL2;
+  var isServices = isCodeFusion || isScanner || isL2;
 
   function navItem(label, href, state) {
     return '<a href="' + href + '" class="nav-link' + active(state) + '"' + (state ? ' aria-current="page"' : '') + '>' + label + '</a>';
@@ -160,8 +158,7 @@
       ['/vo-chto-poigrat', 'Во что поиграть'],
       ['/igry-bez-videokarty', 'Игры для слабых ПК']
     ]) +
-    navDrop('Сервисы', '/ai/', isServices, [
-      ['/ai/', 'AI Pulse'],
+    navDrop('Сервисы', '/anal-code/', isServices, [
       ['/anal-code/', 'CodeFusion'],
       ['/cyber-scanner/', 'Scanner'],
       ['/l2/', 'Lineage 2 — сервер'],
@@ -251,7 +248,6 @@
     '  </div>' +
     '  <p class="sheet-title">Сервисы</p>' +
     '  <div class="sheet-links">' +
-    '    <a href="/ai/" class="sheet-link' + active(isAI) + '"><i class="fas ' + I.ai + '" aria-hidden="true"></i> AI Pulse</a>' +
     '    <a href="/anal-code/" class="sheet-link' + active(isCodeFusion) + '"><i class="fas ' + I.code + '" aria-hidden="true"></i> CodeFusion</a>' +
     '    <a href="/cyber-scanner/" class="sheet-link' + active(isScanner) + '"><i class="fas ' + I.scanner + '" aria-hidden="true"></i> Scanner</a>' +
     '    <a href="/l2/" class="sheet-link' + active(isL2) + '"><i class="fas ' + I.server + '" aria-hidden="true"></i> Lineage 2 — сервер</a>' +
@@ -333,7 +329,6 @@
       ['/feed/', 'ТикТок']
     ]) +
     footerCol('Сервисы', [
-      ['/ai/', 'AI Pulse'],
       ['/anal-code/', 'CodeFusion'],
       ['/cyber-scanner/', 'Scanner'],
       ['/l2/', 'Lineage 2 — сервер'],

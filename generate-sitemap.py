@@ -128,7 +128,6 @@ def generate():
         ('/terms.html', None, '0.3'),
         ('/advertising.html', None, '0.3'),
         ('/anal-code/', None, '0.7'),
-        ('/ai/', None, '0.7'),
         ('/genriprocedur/', None, '0.7'),
         ('/cyber-scanner/', None, '0.7'),
         ('/go/', None, '0.7'),

@@ -42,7 +42,6 @@
 - [Кино](https://one1game.org/kino/): подборки фильмов и материалы о кино.
 - [Фильмы искусственного интеллекта](https://one1game.org/archive/filmy-iskusstvennogo-intellekta-2026): разбор пяти AI-фильмов с проверенными фактами, инструментами и встроенными плеерами.
 - [ТикТок](https://one1game.org/feed/): лента коротких видео.
-- [AI Pulse](https://one1game.org/ai/): новости ИИ, рейтинг моделей, трендовые инструменты, бесплатные нейросети.
 - [Cosmic Drift](https://one1game.org/genriprocedur/): генератор процедурной музыки онлайн (ambient и hip-hop).
 - [CodeFusion](https://one1game.org/anal-code/): онлайн-анализатор исходного кода с ИИ, GitHub, diff и security scan.
 - [Cyber-Scanner](https://one1game.org/cyber-scanner/): проверка SPF, DMARC, DKIM, CSP, JWT и паролей без регистрации.

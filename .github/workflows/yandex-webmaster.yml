@@ -138,7 +138,7 @@ jobs:
               '/igry-dlya-slabyh-noutbukov-s-gejmpadom',
               '/category/obzory', '/category/gajdy', '/category/ii-i-tehnologii',
               '/besplatnye-igry', '/skidki-na-igry', '/vo-chto-poigrat',
-              '/triad-duel', '/l2/', '/ai/', '/kino/', '/go/',
+              '/triad-duel', '/l2/', '/kino/', '/go/',
           ]
 
           if EVENT != 'push':

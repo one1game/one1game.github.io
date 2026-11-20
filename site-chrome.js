@@ -2,7 +2,7 @@
 // Только презентационный слой: общая навигация + футер, в том же виде, что на
 // главной. Не подключает styles.css и components.js, не регистрирует service
 // worker и не трогает поиск/радио — чтобы не конфликтовать со скриптами и SW
-// самих приложений (Игры онлайн, AI Pulse, Cosmic Drift, CodeFusion, L2).
+// самих приложений (Игры онлайн, Cosmic Drift, CodeFusion, L2).
 (function () {
   'use strict';
   if (window.__o1gChrome) return;
@@ -15,7 +15,6 @@
   var isHome = path === '/' || path.slice(-11) === '/index.html';
   var isGo = starts('/go');
   var isArchive = starts('/archive') || path === '/archive.html';
-  var isAI = starts('/ai');
   var isMusic = starts('/genriprocedur');
   var isTriad = starts('/triad-duel');
   var isCodeFusion = starts('/anal-code');
@@ -33,7 +32,7 @@
   var isReading = isArchive || path.indexOf('/category/') === 0;
   var isPicks = path === '/besplatnye-igry' || path === '/skidki-na-igry' || path === '/vo-chto-poigrat'
     || path.indexOf('/igry-bez-videokarty') === 0 || path.indexOf('/igry-dlya-slabyh') === 0;
-  var isServices = isAI || isCodeFusion || isScanner || isL2;
+  var isServices = isCodeFusion || isScanner || isL2;
 
   function navItem(label, href, state) {
     return '<a href="' + href + '" class="nav-link' + a(state) + '"' + (state ? ' aria-current="page"' : '') + '>' + label + '</a>';
@@ -82,8 +81,7 @@
       ['/vo-chto-poigrat', 'Во что поиграть'],
       ['/igry-bez-videokarty', 'Игры для слабых ПК']
     ]) +
-    navDrop('Сервисы', '/ai/', isServices, [
-      ['/ai/', 'AI Pulse'],
+    navDrop('Сервисы', '/anal-code/', isServices, [
       ['/anal-code/', 'CodeFusion'],
       ['/cyber-scanner/', 'Scanner'],
       ['/l2/', 'L2 Server']
@@ -138,7 +136,6 @@
       ['/feed/', 'ТикТок']
     ]) +
     footerCol('Сервисы', [
-      ['/ai/', 'AI Pulse'],
       ['/anal-code/', 'CodeFusion'],
       ['/cyber-scanner/', 'Scanner'],
       ['/l2/', 'L2 Server']
