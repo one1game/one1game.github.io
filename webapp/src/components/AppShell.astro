@@ -215,6 +215,39 @@ const genres = [
         <span class="brand-mark" aria-hidden="true">1</span>
         <span class="brand__text">One1<b>Game</b></span>
       </a>
+
+      <!-- Событие дня и курс BTC живут в шапке: компактная строка между
+           логотипом и соцсетями, без отдельной карточки под ней. -->
+      <div class="appbar-ticker" aria-label="Событие дня и курс биткоина">
+        <p class="ticker__news" id="ticker-news" data-day={tickerDay}>
+          <span class="ticker__ico" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 7.5V12l3 1.8"/><circle cx="12" cy="12" r="8.2"/></svg>
+          </span>
+          <span class="ticker__stack">
+            <span class="ticker__meta">
+              <span class="ticker__label">Этот день в играх</span>
+              <span class="ticker__year" id="ticker-year">{tickerEvent?.y}</span>
+            </span>
+            <span class="ticker__viewport" id="ticker-viewport">
+              <span
+                class="ticker__text"
+                id="ticker-text"
+                title={tickerEvent ? `${tickerEvent.y} · ${tickerEvent.t} — ${tickerEvent.d}` : 'Событие этого дня в истории игровой индустрии'}
+              >{tickerEvent ? tickerEvent.d : 'Событие этого дня в истории игровой индустрии'}</span>
+            </span>
+          </span>
+        </p>
+        <p class="ticker__btc" id="ticker-btc" hidden>
+          <span class="ticker__stack">
+            <span class="ticker__label">BTC · USD</span>
+            <span class="ticker__price">
+              <span class="ticker__text" id="ticker-btc-price">—</span>
+              <span class="ticker__delta" id="ticker-btc-delta"></span>
+            </span>
+          </span>
+        </p>
+      </div>
+
       <div class="appbar-actions">
         <nav class="socials" aria-label="One1Game в соцсетях">
           <a
@@ -258,39 +291,6 @@ const genres = [
       </div>
     </div>
   </header>
-
-  <!-- Информер: событие этого дня в истории игр и курс биткоина (курс приезжает с API). -->
-  <div class="ticker">
-    <div class="wrap ticker-row">
-      <p class="ticker__news" id="ticker-news" data-day={tickerDay}>
-        <span class="ticker__ico" aria-hidden="true">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 7.5V12l3 1.8"/><circle cx="12" cy="12" r="8.2"/></svg>
-        </span>
-        <span class="ticker__stack">
-          <span class="ticker__meta">
-            <span class="ticker__label">Этот день в играх</span>
-            <span class="ticker__year" id="ticker-year">{tickerEvent?.y}</span>
-          </span>
-          <span class="ticker__viewport" id="ticker-viewport">
-            <span
-              class="ticker__text"
-              id="ticker-text"
-              title={tickerEvent ? `${tickerEvent.y} · ${tickerEvent.t} — ${tickerEvent.d}` : 'Событие этого дня в истории игровой индустрии'}
-            >{tickerEvent ? tickerEvent.d : 'Событие этого дня в истории игровой индустрии'}</span>
-          </span>
-        </span>
-      </p>
-      <p class="ticker__btc" id="ticker-btc" hidden>
-        <span class="ticker__stack">
-          <span class="ticker__label">BTC · USD</span>
-          <span class="ticker__price">
-            <span class="ticker__text" id="ticker-btc-price">—</span>
-            <span class="ticker__delta" id="ticker-btc-delta"></span>
-          </span>
-        </span>
-      </p>
-    </div>
-  </div>
 
   <!-- Верхний уровень: публикации, музыка, навигатор, обои и фильмы. -->
   <nav class="modes" id="modes" aria-label="Тип контента">
