@@ -2,6 +2,12 @@
   "ok": true,
   "items": [
     {
+      "videoId": "GIqraC3PPnE",
+      "title": "зомби подорвало пукан #sod2",
+      "publishedAt": "2026-11-21T23:25:11+00:00",
+      "thumbnail": "https://i4.ytimg.com/vi/GIqraC3PPnE/hqdefault.jpg"
+    },
+    {
       "videoId": "tfyjWHtgXXA",
       "title": "алгоритм не алгоритм #rdr2 #reddeadredemption2",
       "publishedAt": "2026-11-21T14:28:50+00:00",
@@ -30,12 +36,6 @@
       "title": "планы на стрим поем Пугачиху и Карди Би #rdr2 #reddeadredemption2",
       "publishedAt": "2026-11-18T12:08:41+00:00",
       "thumbnail": "https://i2.ytimg.com/vi/qrK3EDxqGV0/hqdefault.jpg"
-    },
-    {
-      "videoId": "qUMny3N_pM8",
-      "title": "прическа на лето #rdr2 #reddeadredemption2",
-      "publishedAt": "2026-11-17T18:14:33+00:00",
-      "thumbnail": "https://i2.ytimg.com/vi/qUMny3N_pM8/hqdefault.jpg"
     }
   ]
 }
