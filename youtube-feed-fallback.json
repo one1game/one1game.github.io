@@ -2,6 +2,12 @@
   "ok": true,
   "items": [
     {
+      "videoId": "s5pt3_t5qg0",
+      "title": "это было тупо #rdr2 #reddeadredemption2",
+      "publishedAt": "2026-11-23T16:33:12+00:00",
+      "thumbnail": "https://i4.ytimg.com/vi/s5pt3_t5qg0/hqdefault.jpg"
+    },
+    {
       "videoId": "e_tpXonjn9U",
       "title": "нашел #interlude #lineage2",
       "publishedAt": "2026-11-22T18:00:08+00:00",
@@ -30,12 +36,6 @@
       "title": "алгоритм не алгоритм #rdr2 #reddeadredemption2",
       "publishedAt": "2026-11-21T14:28:50+00:00",
       "thumbnail": "https://i1.ytimg.com/vi/tfyjWHtgXXA/hqdefault.jpg"
-    },
-    {
-      "videoId": "RwDkgTMomrA",
-      "title": "не удачно вошёл в поворот #rdr2 #reddeadredemption2",
-      "publishedAt": "2026-11-21T09:59:07+00:00",
-      "thumbnail": "https://i3.ytimg.com/vi/RwDkgTMomrA/hqdefault.jpg"
     }
   ]
 }
