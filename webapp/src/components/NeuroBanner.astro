@@ -3,38 +3,37 @@
 // всю ширину ряда: на десктопе встаёт вторым рядом после первых карточек.
 ---
 
-<aside class="grid-banner" aria-label="Реклама Neuroplace AI">
-  <div class="neuro-banner" id="neuro-banner">
+<aside class="grid-banner">
+  <a
+    class="neuro-banner"
+    id="neuro-banner"
+    href="https://neuroplace.ai/auth/register?referralCode=043da34aae05"
+    target="_blank"
+    rel="sponsored noopener noreferrer"
+  >
     <canvas class="neuro-banner__canvas" id="neuro-canvas" aria-hidden="true"></canvas>
 
-    <span class="neuro-banner__ad">Реклама</span>
-
-    <div class="neuro-banner__content">
+    <span class="neuro-banner__content">
       <span class="neuro-banner__tag">Новый уровень контента</span>
-      <p class="neuro-banner__title">
+      <span class="neuro-banner__title">
         Преврати любое фото в <span>магию ИИ</span>
-      </p>
-      <p class="neuro-banner__subtitle">
+      </span>
+      <span class="neuro-banner__subtitle">
         Seedance 2.5, Sora 2 и Nano Banana Pro в одном месте.
         Создавай вирусные видео и тренды без навыков монтажа.
-      </p>
-      <div class="neuro-banner__cta-wrap">
-        <a
-          class="neuro-banner__cta"
-          href="https://neuroplace.ai/auth/register?referralCode=043da34aae05"
-          target="_blank"
-          rel="sponsored noopener noreferrer"
-        >
+      </span>
+      <span class="neuro-banner__cta-wrap">
+        <span class="neuro-banner__cta">
           Попробовать бесплатно
           <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
             <line x1="5" y1="12" x2="19" y2="12"></line>
             <polyline points="12 5 19 12 12 19"></polyline>
           </svg>
-        </a>
+        </span>
         <span class="neuro-banner__note">Бесплатные кредиты уже начислены на новый аккаунт</span>
-      </div>
-    </div>
-  </div>
+      </span>
+    </span>
+  </a>
 </aside>
 
 <style>
@@ -45,11 +44,15 @@
 
   .neuro-banner {
     position: relative;
+    display: block;
     width: 100%;
     overflow: hidden;
     border: 1px solid rgba(255, 255, 255, 0.08);
     border-radius: var(--radius);
     background: #030305;
+    color: inherit;
+    text-decoration: none;
+    cursor: pointer;
     box-shadow:
       0 25px 50px -12px rgba(0, 0, 0, 0.9),
       0 0 0 1px rgba(0, 240, 255, 0.05);
@@ -69,22 +72,6 @@
     width: 100%;
     height: 100%;
     z-index: 1;
-  }
-
-  .neuro-banner__ad {
-    position: absolute;
-    z-index: 3;
-    top: 12px;
-    right: 12px;
-    padding: 2px 7px;
-    border: 1px solid rgba(255, 255, 255, 0.14);
-    border-radius: 6px;
-    background: rgba(3, 3, 5, 0.55);
-    color: rgba(255, 255, 255, 0.55);
-    font-family: var(--mono);
-    font-size: 9px;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
   }
 
   .neuro-banner__content {
@@ -185,13 +172,13 @@
     transition: background 0.25s ease, transform 0.25s ease, box-shadow 0.25s ease;
   }
 
-  .neuro-banner__cta:hover {
+  .neuro-banner:hover .neuro-banner__cta {
     background: linear-gradient(90deg, #00f0ff 0%, #00c3cc 100%);
     transform: translateY(-2px);
     box-shadow: 0 0 34px rgba(0, 240, 255, 0.5);
   }
 
-  .neuro-banner__cta:active {
+  .neuro-banner:active .neuro-banner__cta {
     transform: translateY(0) scale(0.985);
   }
 
@@ -199,8 +186,13 @@
     transition: transform 0.25s ease;
   }
 
-  .neuro-banner__cta:hover svg {
+  .neuro-banner:hover .neuro-banner__cta svg {
     transform: translateX(4px);
+  }
+
+  .neuro-banner:focus-visible {
+    outline: 2px solid rgba(0, 240, 255, 0.7);
+    outline-offset: 3px;
   }
 
   .neuro-banner__note {
