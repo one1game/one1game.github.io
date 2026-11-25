@@ -1,6 +1,7 @@
 ---
 import Base from '../layouts/Base.astro';
 import Card from '../components/Card.astro';
+import NeuroBanner from '../components/NeuroBanner.astro';
 import catalog from '../data/catalog.json';
 import navigator from '../data/navigator.json';
 import oboi from '../data/oboi.json';
@@ -338,7 +339,12 @@ const genres = [
     </div>
 
     <div class="grid" id="grid" hidden={mode !== 'news'}>
-      {showNews && items.map((item, i) => <Card item={item} priority={i < 4} />)}
+      {showNews && items.map((item, i) => (
+        <Fragment>
+          <Card item={item} priority={i < 4} />
+          {i === 3 && <NeuroBanner />}
+        </Fragment>
+      ))}
     </div>
 
     <div class="grid music-grid" id="music-grid" hidden={mode !== 'music'}>
