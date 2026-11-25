@@ -339,12 +339,8 @@ const genres = [
     </div>
 
     <div class="grid" id="grid" hidden={mode !== 'news'}>
-      {showNews && items.map((item, i) => (
-        <Fragment>
-          <Card item={item} priority={i < 4} />
-          {i === 3 && <NeuroBanner />}
-        </Fragment>
-      ))}
+      {showNews && <NeuroBanner />}
+      {showNews && items.map((item, i) => <Card item={item} priority={i < 4} />)}
     </div>
 
     <div class="grid music-grid" id="music-grid" hidden={mode !== 'music'}>
