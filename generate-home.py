@@ -20,6 +20,30 @@ PLAY_LIMIT = 14     # сколько игровых обзоров показы�
 
 GAME_SUFFIX = re.compile(r':\s*цена, отзывы и статистика игроков\s*$', re.IGNORECASE)
 
+MONTHS = {
+    'января': 1, 'февраля': 2, 'марта': 3, 'апреля': 4, 'мая': 5, 'июня': 6,
+    'июля': 7, 'августа': 8, 'сентября': 9, 'октября': 10, 'ноября': 11, 'декабря': 12,
+}
+
+
+def to_date(value):
+    """Дата из articles-data.js: «18 ноября 2026» или «2026-11-18»."""
+    value = (value or '').strip()
+    if re.fullmatch(r'\d{4}-\d{2}-\d{2}', value):
+        return datetime.strptime(value, '%Y-%m-%d')
+    m = re.fullmatch(r'(\d{1,2})\s+([а-яё]+)\s+(\d{4})', value, re.IGNORECASE)
+    if m and m.group(2).lower() in MONTHS:
+        return datetime(int(m.group(3)), MONTHS[m.group(2).lower()], int(m.group(1)))
+    return None
+
+
+def fresh_first(article):
+    """Лента строится по дате публикации, дата правки — только второй ключ."""
+    published = to_date(article.get('date')) or datetime.min
+    updated = to_date(article.get('updated')) or datetime.min
+    return (published, updated)
+
+
 # Данные для карточек-агрегатора: жанр и минимальная видеокарта из страницы игры.
 REQ_RX = re.compile(r'Минимальные требования \(Steam\):</strong>\s*([^<]+)<', re.IGNORECASE)
 GENRE_RX = re.compile(r'"@type":\s*"VideoGame"[\s\S]{0,400}?"genre":\s*"([^"]*)"', re.IGNORECASE)
@@ -237,7 +261,7 @@ def set_stat(html_src, element_id, value):
 
 
 def generate():
-    articles = load_articles()
+    articles = sorted(load_articles(), key=fresh_first, reverse=True)
     if not articles:
         raise SystemExit('articles-data.js пустой')
 

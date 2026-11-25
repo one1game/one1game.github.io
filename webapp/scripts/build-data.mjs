@@ -269,8 +269,14 @@ const items = all
       read: Math.max(1, Math.round(((a.excerpt || '').split(/\s+/).length || 0) / 40)) || 1,
     };
   })
-  // Свежее сверху: даты ISO, поэтому обычная сортировка строк работает.
-  .sort((a, b) => (b.dateISO || '').localeCompare(a.dateISO || ''));
+  // Лента — строго по дате публикации (так на карточках и написано).
+  // Дата правки идёт только вторым ключом, чтобы не поднимать старые
+  // материалы наверх из-за обновления текста.
+  .sort(
+    (a, b) =>
+      (b.published || '').localeCompare(a.published || '') ||
+      (b.dateISO || '').localeCompare(a.dateISO || ''),
+  );
 
 // ── тела материалов ──
 fs.rmSync(POSTS, { recursive: true, force: true });
