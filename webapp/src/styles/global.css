@@ -290,6 +290,30 @@ h2 { font-size: clamp(1.3rem, 2.4vw, 1.9rem); }
   backdrop-filter: blur(16px) saturate(1.15);
   border-bottom: 1px solid rgba(255, 255, 255, 0.07);
   box-shadow: inset 0 -1px 0 rgba(255, 255, 255, 0.03), 0 28px 56px -38px rgba(0, 0, 0, 1);
+  overflow: hidden;
+  isolation: isolate;
+}
+
+/* Живая сетка частиц на фоне шапки: тонкая, не мешает тексту. */
+.procedural-bg {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  opacity: 0.4;
+}
+
+/* Плёночное зерно поверх градиента — «дорогая» матовая фактура. */
+.appbar::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  opacity: 0.035;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
 }
 
 /* Верхняя световая нить: тонкий акцент, который читается как «дорогая» деталь. */
@@ -298,12 +322,15 @@ h2 { font-size: clamp(1.3rem, 2.4vw, 1.9rem); }
   position: absolute;
   inset: 0 0 auto;
   height: 1px;
+  z-index: 3;
   pointer-events: none;
   background: linear-gradient(90deg, transparent, rgba(125, 255, 155, 0.4) 30%, rgba(120, 190, 255, 0.22) 62%, transparent);
 }
 
 /* Одна строка шапки: бренд + поиск/ссылки. Ширину задаёт .wrap. */
 .appbar-row {
+  position: relative;
+  z-index: 2;
   display: flex;
   align-items: center;
   gap: 14px;
@@ -311,19 +338,52 @@ h2 { font-size: clamp(1.3rem, 2.4vw, 1.9rem); }
 }
 
 .brand {
+  position: relative;
   display: inline-flex;
   align-items: center;
-  gap: 10px;
+  gap: 12px;
+  padding: 4px 0;
   font-family: var(--font-display);
-  font-size: 15px;
+  font-size: 16px;
   font-weight: 700;
-  letter-spacing: 0.06em;
+  letter-spacing: 0.08em;
   text-transform: uppercase;
   text-decoration: none;
   white-space: nowrap;
 }
 
-.brand b { color: var(--acid); font-weight: 600; }
+/* Тонкая линия под брендом при наведении — как индикатор в приложении. */
+.brand::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 0;
+  height: 2px;
+  border-radius: 2px;
+  background: linear-gradient(90deg, var(--acid), rgba(95, 233, 127, 0.1), transparent);
+  transition: width 0.45s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.brand:hover::after { width: 100%; }
+
+.brand__text {
+  position: relative;
+  color: #e2e8f0;
+  transition: color 0.3s ease;
+}
+
+.brand__text b {
+  display: inline-block;
+  color: var(--acid);
+  font-weight: 800;
+  text-shadow: 0 0 10px rgba(95, 233, 127, 0.3);
+  transition: text-shadow 0.4s ease;
+}
+
+.brand:hover .brand__text b {
+  text-shadow: 0 0 20px rgba(95, 233, 127, 0.7), 0 0 40px rgba(95, 233, 127, 0.2);
+}
 
 /* Соцсети и установка — к правому краю шапки, как в нативном приложении. */
 .appbar-actions {
@@ -333,7 +393,18 @@ h2 { font-size: clamp(1.3rem, 2.4vw, 1.9rem); }
   margin-left: auto;
 }
 
-.appbar-actions [data-install] { margin-left: 0; }
+.appbar-actions [data-install] {
+  margin-left: 0;
+  padding: 8px 16px;
+  border-radius: 8px;
+  background: rgba(95, 233, 127, 0.08);
+  font-size: 12px;
+}
+
+.appbar-actions [data-install]:hover {
+  background: rgba(95, 233, 127, 0.15);
+  box-shadow: 0 0 20px rgba(95, 233, 127, 0.2);
+}
 
 .socials {
   display: flex;
@@ -358,8 +429,8 @@ h2 { font-size: clamp(1.3rem, 2.4vw, 1.9rem); }
 .social:hover {
   color: var(--acid);
   border-color: rgba(125, 255, 155, 0.35);
-  background: var(--surface-2);
-  box-shadow: var(--inset-hi), 0 10px 24px -16px rgba(125, 255, 155, 0.45);
+  background: rgba(95, 233, 127, 0.05);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.05), 0 0 15px rgba(95, 233, 127, 0.15);
 }
 
 .social svg {
@@ -375,27 +446,65 @@ h2 { font-size: clamp(1.3rem, 2.4vw, 1.9rem); }
   .appbar-ticker { display: none; }
 }
 
-/* Знак приложения: маленькая «плитка» с единицей — читается как иконка
-   на домашнем экране, а не как декоративная точка. */
+/* Знак приложения: тёмная плитка с неоновой обводкой и мягким свечением.
+   На ховере внутри проходит тонкий вращающийся блик. */
 .brand-mark {
-  width: 26px;
-  height: 26px;
+  position: relative;
+  width: 34px;
+  height: 34px;
   display: grid;
   place-items: center;
-  border-radius: 8px;
-  background: linear-gradient(150deg, #a4ffbc, #5fe97f);
-  color: #04140a;
+  overflow: hidden;
+  border: 1px solid rgba(95, 233, 127, 0.25);
+  border-radius: 10px;
+  background: #06120a;
+  box-shadow:
+    inset 0 1px 1px rgba(255, 255, 255, 0.15),
+    inset 0 0 15px rgba(95, 233, 127, 0.08),
+    0 4px 20px -4px rgba(95, 233, 127, 0.35);
+  transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94), border-color 0.4s ease, box-shadow 0.4s ease;
+}
+
+.brand-mark::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  opacity: 0;
+  background: conic-gradient(from 0deg, transparent 0%, rgba(95, 233, 127, 0.15) 15%, transparent 30%);
+  animation: rotate-sheen 8s linear infinite;
+  transition: opacity 0.5s ease;
+}
+
+.brand-mark-inner {
+  position: relative;
+  z-index: 2;
+  color: #ffffff;
   font-family: var(--mono);
-  font-size: 13px;
-  font-weight: 700;
+  font-size: 16px;
+  font-weight: 800;
   line-height: 1;
-  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.65), 0 8px 18px -10px rgba(95, 233, 127, 0.85);
-  transition: transform 0.18s ease, box-shadow 0.18s ease;
+  text-shadow: 0 0 8px rgba(95, 233, 127, 0.6);
+  transition: text-shadow 0.4s ease;
 }
 
 .brand:hover .brand-mark {
-  transform: translateY(-1px);
-  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.7), 0 12px 22px -12px rgba(95, 233, 127, 0.95);
+  transform: translateY(-2px);
+  border-color: rgba(95, 233, 127, 0.7);
+  box-shadow:
+    inset 0 1px 1px rgba(255, 255, 255, 0.3),
+    inset 0 0 25px rgba(95, 233, 127, 0.15),
+    0 8px 30px -5px rgba(95, 233, 127, 0.5);
+}
+
+.brand:hover .brand-mark::before { opacity: 1; }
+.brand:hover .brand-mark-inner { text-shadow: 0 0 15px rgba(95, 233, 127, 0.9); }
+
+@keyframes rotate-sheen {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
 }
 
 /* ── нижняя панель разделов ──────────────────────────────────────── */
@@ -625,9 +734,20 @@ h2 { font-size: clamp(1.3rem, 2.4vw, 1.9rem); }
   border-radius: 8px;
   background: rgba(125, 255, 155, 0.075);
   color: #a9ffc0;
+  animation: pulse-glow 4s ease-in-out infinite;
 }
 
 .ticker__ico svg { width: 14px; height: 14px; }
+
+@keyframes pulse-glow {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(95, 233, 127, 0); }
+  50% { box-shadow: 0 0 12px 0 rgba(95, 233, 127, 0.15); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .brand-mark::before,
+  .ticker__ico { animation: none; }
+}
 
 .ticker__stack {
   display: flex;
@@ -692,6 +812,7 @@ h2 { font-size: clamp(1.3rem, 2.4vw, 1.9rem); }
 
 .ticker__btc .ticker__text {
   color: #ffffff;
+  font-family: var(--mono);
   font-size: 12.5px;
   font-weight: 600;
 }
@@ -728,8 +849,10 @@ h2 { font-size: clamp(1.3rem, 2.4vw, 1.9rem); }
   border-radius: 6px;
   background: rgba(255, 255, 255, 0.06);
   color: #8b97a4;
+  font-family: var(--mono);
   font-size: 10.5px;
   font-weight: 600;
+  transition: color 0.4s ease, background 0.4s ease;
 }
 
 .ticker__delta.is-up { color: #8bffab; background: rgba(125, 255, 155, 0.11); }

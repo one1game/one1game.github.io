@@ -211,9 +211,12 @@ const genres = [
   articleMeta={postData ? { published: postData.dateISO, section: postData.category, author: 'One1Game' } : undefined}
 >
   <header class="appbar">
+    <canvas class="procedural-bg" id="procedural-bg" aria-hidden="true"></canvas>
     <div class="wrap appbar-row">
       <a class="brand" href={`${base}/`}>
-        <span class="brand-mark" aria-hidden="true">1</span>
+        <span class="brand-mark" aria-hidden="true">
+          <span class="brand-mark-inner">1</span>
+        </span>
         <span class="brand__text">One1<b>Game</b></span>
       </a>
 
@@ -3223,6 +3226,135 @@ const genres = [
     window.setTimeout(() => {
       if (!bootedOnce) start();
     }, 800);
+  </script>
+
+  <script>
+    // Фон шапки: лёгкая сетка частиц. Рисуем только когда шапка на экране,
+    // анимацию отключаем при reduced motion и в скрытой вкладке.
+    (() => {
+      const canvas = document.getElementById('procedural-bg') as HTMLCanvasElement | null;
+      const header = canvas?.closest('.appbar') as HTMLElement | null;
+      const ctx = canvas?.getContext('2d');
+      if (!canvas || !header || !ctx) return;
+      if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+
+      let width = 0;
+      let height = 0;
+      let raf = 0;
+      let particles: Array<{ x: number; y: number; vx: number; vy: number; size: number; alpha: number }> = [];
+      const mouse = { x: null as number | null, y: null as number | null, radius: 120 };
+
+      function init() {
+        const rect = header!.getBoundingClientRect();
+        width = rect.width;
+        height = rect.height;
+        const dpr = Math.min(window.devicePixelRatio || 1, 2);
+        canvas!.width = Math.round(width * dpr);
+        canvas!.height = Math.round(height * dpr);
+        ctx!.setTransform(dpr, 0, 0, dpr, 0, 0);
+
+        const count = Math.min(Math.floor(width / 15), 60);
+        particles = [];
+        for (let i = 0; i < count; i += 1) {
+          particles.push({
+            x: Math.random() * width,
+            y: Math.random() * height,
+            vx: (Math.random() - 0.5) * 0.3,
+            vy: (Math.random() - 0.5) * 0.3,
+            size: Math.random() * 1.5 + 0.5,
+            alpha: Math.random() * 0.3 + 0.1,
+          });
+        }
+      }
+
+      function draw() {
+        ctx!.clearRect(0, 0, width, height);
+
+        for (let i = 0; i < particles.length; i += 1) {
+          const p = particles[i];
+          p.x += p.vx;
+          p.y += p.vy;
+          if (p.x < 0 || p.x > width) p.vx *= -1;
+          if (p.y < 0 || p.y > height) p.vy *= -1;
+
+          if (mouse.x != null && mouse.y != null) {
+            const dx = mouse.x - p.x;
+            const dy = mouse.y - p.y;
+            const dist = Math.hypot(dx, dy);
+            if (dist < mouse.radius) {
+              const force = (mouse.radius - dist) / mouse.radius;
+              p.vx -= (dx / (dist || 1)) * force * 0.02;
+              p.vy -= (dy / (dist || 1)) * force * 0.02;
+            }
+          }
+
+          const speed = Math.hypot(p.vx, p.vy);
+          if (speed > 0.6) {
+            p.vx = (p.vx / speed) * 0.6;
+            p.vy = (p.vy / speed) * 0.6;
+          }
+
+          ctx!.beginPath();
+          ctx!.arc(p.x, p.y, p.size, 0, Math.PI * 2);
+          ctx!.fillStyle = `rgba(95, 233, 127, ${p.alpha})`;
+          ctx!.fill();
+
+          for (let j = i + 1; j < particles.length; j += 1) {
+            const p2 = particles[j];
+            const dist = Math.hypot(p.x - p2.x, p.y - p2.y);
+            if (dist < 100) {
+              ctx!.beginPath();
+              ctx!.strokeStyle = `rgba(95, 233, 127, ${(1 - dist / 100) * 0.15})`;
+              ctx!.lineWidth = 0.5;
+              ctx!.moveTo(p.x, p.y);
+              ctx!.lineTo(p2.x, p2.y);
+              ctx!.stroke();
+            }
+          }
+        }
+
+        raf = requestAnimationFrame(draw);
+      }
+
+      function start() {
+        if (raf || document.hidden) return;
+        raf = requestAnimationFrame(draw);
+      }
+
+      function stop() {
+        cancelAnimationFrame(raf);
+        raf = 0;
+      }
+
+      header.addEventListener('mousemove', (e) => {
+        const rect = header.getBoundingClientRect();
+        mouse.x = e.clientX - rect.left;
+        mouse.y = e.clientY - rect.top;
+      });
+
+      header.addEventListener('mouseleave', () => {
+        mouse.x = null;
+        mouse.y = null;
+      });
+
+      document.addEventListener('visibilitychange', () => {
+        if (document.hidden) stop();
+        else start();
+      });
+
+      let resizeTimer = 0;
+      window.addEventListener('resize', () => {
+        window.clearTimeout(resizeTimer);
+        resizeTimer = window.setTimeout(() => {
+          stop();
+          init();
+          start();
+        }, 150);
+      });
+
+      init();
+      start();
+    })();
   </script>
 
   <style>
