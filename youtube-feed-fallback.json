@@ -2,6 +2,12 @@
   "ok": true,
   "items": [
     {
+      "videoId": "I6VaO3RMZT0",
+      "title": "терпимое ранения #зомбимутант",
+      "publishedAt": "2026-11-25T19:00:40+00:00",
+      "thumbnail": "https://i2.ytimg.com/vi/I6VaO3RMZT0/hqdefault.jpg"
+    },
+    {
       "videoId": "bMTtaOn5NwA",
       "title": "надо быть готовым #horror",
       "publishedAt": "2026-11-24T17:42:29+00:00",
@@ -30,12 +36,6 @@
       "title": "ты уже смотрел? #rdr2 #reddeadredemption2",
       "publishedAt": "2026-11-22T16:03:15+00:00",
       "thumbnail": "https://i4.ytimg.com/vi/SJRP8I821e8/hqdefault.jpg"
-    },
-    {
-      "videoId": "hYBYSsnP-0Y",
-      "title": "#EvilWithin Эта игра пытается быть Resident Evil",
-      "publishedAt": "2026-11-22T10:05:19+00:00",
-      "thumbnail": "https://i1.ytimg.com/vi/hYBYSsnP-0Y/hqdefault.jpg"
     }
   ]
 }
