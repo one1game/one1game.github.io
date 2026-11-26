@@ -31,8 +31,9 @@ Allow: /
 User-agent: Google-Extended
 Allow: /
 
-# Приложение — единственная индексируемая версия сайта.
-# Старые страницы отдают 301 (см. _redirects) либо, если правило не
-# применилось, мгновенный переход из HTML + canonical + noindex.
+# Единственная публичная версия сайта — приложение /app/.
+# Всё остальное закрыто на уровне Cloudflare Pages Functions
+# (functions/_middleware.js): любой старый адрес отдаёт 301 на /app/,
+# поэтому робот видит постоянный редирект, а не старую страницу.
 Sitemap: https://one1game.org/app/sitemap.xml
 Sitemap: https://one1game.org/sitemap.xml
