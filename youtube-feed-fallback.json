@@ -2,6 +2,18 @@
   "ok": true,
   "items": [
     {
+      "videoId": "68PWhIZ9DaI",
+      "title": "бомбит #majesty2 #стратегии",
+      "publishedAt": "2026-11-26T14:47:37+00:00",
+      "thumbnail": "https://i3.ytimg.com/vi/68PWhIZ9DaI/hqdefault.jpg"
+    },
+    {
+      "videoId": "qoerMEJ-N_4",
+      "title": "Потратил всю казну на одного героя: Majesty 2",
+      "publishedAt": "2026-11-26T14:26:26+00:00",
+      "thumbnail": "https://i2.ytimg.com/vi/qoerMEJ-N_4/hqdefault.jpg"
+    },
+    {
       "videoId": "60W1bokuvEk",
       "title": "пешая прогулка #zombie",
       "publishedAt": "2026-11-26T05:00:36+00:00",
@@ -24,18 +36,6 @@
       "title": "надо быть готовым #horror",
       "publishedAt": "2026-11-24T17:42:29+00:00",
       "thumbnail": "https://i3.ytimg.com/vi/bMTtaOn5NwA/hqdefault.jpg"
-    },
-    {
-      "videoId": "zPCx4KyJDXM",
-      "title": "топ оружия #game",
-      "publishedAt": "2026-11-24T13:27:40+00:00",
-      "thumbnail": "https://i3.ytimg.com/vi/zPCx4KyJDXM/hqdefault.jpg"
-    },
-    {
-      "videoId": "s5pt3_t5qg0",
-      "title": "это было тупо #rdr2 #reddeadredemption2",
-      "publishedAt": "2026-11-23T16:33:12+00:00",
-      "thumbnail": "https://i4.ytimg.com/vi/s5pt3_t5qg0/hqdefault.jpg"
     }
   ]
 }
