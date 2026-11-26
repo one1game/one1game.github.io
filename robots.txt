@@ -32,7 +32,7 @@ User-agent: Google-Extended
 Allow: /
 
 # Приложение — единственная индексируемая версия сайта.
-# Старые разделы отдают 301 на /app/ (см. _redirects), поэтому их
-# не закрываем: робот должен увидеть постоянный редирект.
+# Старые страницы отдают 301 (см. _redirects) либо, если правило не
+# применилось, мгновенный переход из HTML + canonical + noindex.
 Sitemap: https://one1game.org/app/sitemap.xml
 Sitemap: https://one1game.org/sitemap.xml

@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Neuroplace AI — Баннер для пользователей</title>
+    <style>
+        /* ==========================================
+           БАЗОВЫЕ НАСТРОЙКИ И ШРИФТЫ
+           ========================================== */
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=JetBrains+Mono:wght@500&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .neuro-banner {
+            position: relative;
+            width: 100%;
+            max-width: 1200px;
+            aspect-ratio: 2.8 / 1;
+            min-height: 300px;
+            background: #030305;
+            border-radius: 16px;
+            overflow: hidden;
+            font-family: 'Inter', sans-serif;
+            color: #ffffff;
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            box-shadow: 
+                0 25px 50px -12px rgba(0, 0, 0, 0.9),
+                0 0 0 1px rgba(0, 240, 255, 0.05);
+            transition: all 0.4s ease;
+        }
+
+        .neuro-banner:hover {
+            border-color: rgba(0, 240, 255, 0.2);
+            box-shadow: 
+                0 30px 60px -12px rgba(0, 0, 0, 0.95),
+                0 0 40px rgba(0, 240, 255, 0.1);
+        }
+
+        #neuro-canvas {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+        }
+
+        .banner-content {
+            position: relative;
+            z-index: 2;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding: 0 6%;
+            background: linear-gradient(
+                90deg, 
+                rgba(3, 3, 5, 0.95) 0%, 
+                rgba(3, 3, 5, 0.8) 40%, 
+                rgba(3, 3, 5, 0.3) 75%, 
+                rgba(3, 3, 5, 0.0) 100%
+            );
+        }
+
+        .banner-tag {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.7rem;
+            font-weight: 500;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            color: #00f0ff;
+            margin-bottom: 16px;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(0, 240, 255, 0.08);
+            border: 1px solid rgba(0, 240, 255, 0.2);
+            padding: 6px 12px;
+            border-radius: 6px;
+            width: fit-content;
+            backdrop-filter: blur(4px);
+        }
+
+        .banner-tag::before {
+            content: '✨';
+            filter: drop-shadow(0 0 5px rgba(0, 240, 255, 0.8));
+        }
+
+        .banner-title {
+            font-size: clamp(1.8rem, 4vw, 3.4rem);
+            font-weight: 800;
+            line-height: 1.1;
+            margin-bottom: 16px;
+            letter-spacing: -0.02em;
+            max-width: 650px;
+        }
+
+        .banner-title .highlight {
+            background: linear-gradient(135deg, #00f0ff 0%, #bc13fe 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            filter: drop-shadow(0 0 15px rgba(0, 240, 255, 0.4));
+        }
+
+        .banner-subtitle {
+            font-size: clamp(0.95rem, 1.3vw, 1.1rem);
+            font-weight: 300;
+            color: rgba(255, 255, 255, 0.75);
+            max-width: 520px;
+            margin-bottom: 32px;
+            line-height: 1.6;
+        }
+
+        /* ==========================================
+           КНОПКА (CTA) С ЭФФЕКТОМ "ПРИТЯЖЕНИЯ"
+           ========================================== */
+        .banner-cta-wrapper {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 12px;
+        }
+
+        .banner-cta {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 18px 36px;
+            font-size: 1rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.06em;
+            color: #030305;
+            background: linear-gradient(90deg, #ffffff 0%, #e0e0e0 100%);
+            border: none;
+            border-radius: 8px;
+            text-decoration: none;
+            position: relative;
+            overflow: hidden;
+            transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            box-shadow: 
+                0 0 20px rgba(255, 255, 255, 0.15),
+                0 4px 15px rgba(0, 0, 0, 0.3);
+            animation: cta-pulse 3s infinite ease-in-out;
+        }
+
+        /* Мягкая пульсация кнопки, привлекающая внимание периферийным зрением */
+        @keyframes cta-pulse {
+            0%, 100% { box-shadow: 0 0 20px rgba(255, 255, 255, 0.15), 0 4px 15px rgba(0, 0, 0, 0.3); }
+            50% { box-shadow: 0 0 30px rgba(0, 240, 255, 0.4), 0 4px 20px rgba(0, 0, 0, 0.4); }
+        }
+
+        .banner-cta::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.9), transparent);
+            transition: left 0.6s ease;
+        }
+
+        .banner-cta:hover {
+            background: linear-gradient(90deg, #00f0ff 0%, #00c3cc 100%);
+            color: #030305;
+            transform: translateY(-2px) scale(1.02);
+            animation: none; /* Останавливаем пульсацию при наведении, чтобы не мешала */
+            box-shadow: 0 0 40px rgba(0, 240, 255, 0.6);
+        }
+
+        .banner-cta:hover::before {
+            left: 100%;
+        }
+
+        .banner-cta:active {
+            transform: translateY(0) scale(0.98);
+        }
+
+        .cta-icon {
+            transition: transform 0.3s ease;
+        }
+        .banner-cta:hover .cta-icon {
+            transform: translateX(4px);
+        }
+
+        /* Микротекст под кнопкой для снятия барьеров */
+        .banner-microcopy {
+            font-size: 0.8rem;
+            color: rgba(255, 255, 255, 0.5);
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+        .banner-microcopy span {
+            color: #00f0ff;
+        }
+
+        /* ==========================================
+           АДАПТИВНОСТЬ
+           ========================================== */
+        @media (max-width: 768px) {
+            .neuro-banner {
+                aspect-ratio: auto;
+                min-height: 420px;
+                border-radius: 12px;
+            }
+            .banner-content {
+                align-items: flex-start;
+                text-align: left;
+                background: linear-gradient(
+                    180deg, 
+                    rgba(3, 3, 5, 0.95) 0%, 
+                    rgba(3, 3, 5, 0.85) 50%, 
+                    rgba(3, 3, 5, 0.95) 100%
+                );
+                padding: 40px 24px;
+            }
+            .banner-title {
+                max-width: 100%;
+            }
+            .banner-subtitle {
+                max-width: 100%;
+                margin-bottom: 28px;
+            }
+            .banner-cta {
+                width: 100%;
+                justify-content: center;
+            }
+            .banner-cta-wrapper {
+                width: 100%;
+                align-items: center;
+            }
+            .banner-microcopy {
+                justify-content: center;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="neuro-banner" id="neuroBanner">
+        <canvas id="neuro-canvas"></canvas>
+        
+        <div class="banner-content">
+            <div class="banner-tag">НОВЫЙ УРОВЕНЬ КОНТЕНТА</div>
+            <h1 class="banner-title">
+                ПРЕВРАТИ ЛЮБОЕ ФОТО В <span class="highlight">МАГИЮ ИИ</span>
+            </h1>
+            <p class="banner-subtitle">
+                Seedance 2.5, Sora 2 и Nano Banana Pro в одном месте. 
+                Создавай вирусные видео и тренды без навыков монтажа. 
+            </p>
+            
+            <div class="banner-cta-wrapper">
+                <a href="https://neuroplace.ai/auth/register?referralCode=043da34aae05" 
+                   target="_blank" 
+                   rel="noopener noreferrer" 
+                   class="banner-cta">
+                    ПОПРОБОВАТЬ БЕСПЛАТНО
+                    <svg class="cta-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                        <line x1="5" y1="12" x2="19" y2="12"></line>
+                        <polyline points="12 5 19 12 12 19"></polyline>
+                    </svg>
+                </a>
+                <div class="banner-microcopy">
+                    🎁 <span>Бесплатные кредиты</span> уже начислены на новый аккаунт
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        /**
+         * ПРОЦЕДУРНАЯ ВИЗУАЛИЗАЦИЯ: NEURAL FLOW FIELD
+         * Плавные, гипнотические потоки данных, создающие ощущение 
+         * "магии" и премиальности, притягивающие взгляд к кнопке.
+         */
+        const canvas = document.getElementById('neuro-canvas');
+        const ctx = canvas.getContext('2d');
+        const banner = document.getElementById('neuroBanner');
+
+        let width, height;
+        let particles = [];
+        let animationId;
+        let time = 0;
+        
+        const config = {
+            particleCount: 0,
+            baseSpeed: 0.8,
+            trailLength: 8, // Чуть длиннее шлейф для "магического" эффекта
+            colors: {
+                cyan: '0, 240, 255',
+                purple: '188, 19, 254'
+            }
+        };
+
+        const mouse = { x: -1000, y: -1000, active: false };
+
+        class Particle {
+            constructor() {
+                this.reset();
+                this.x = Math.random() * width;
+                this.y = Math.random() * height;
+                this.history = [];
+            }
+
+            reset() {
+                // Спавн частиц с легким смещением вправо, чтобы поток визуально "обтекал" контент и шел к кнопке
+                this.x = Math.random() * width * 1.2;
+                this.y = Math.random() * height;
+                this.vx = 0;
+                this.vy = 0;
+                this.life = Math.random() * 150 + 100;
+                this.colorType = Math.random() > 0.5 ? 'purple' : 'cyan';
+                this.history = [];
+            }
+
+            update() {
+                this.history.push({ x: this.x, y: this.y });
+                if (this.history.length > config.trailLength) {
+                    this.history.shift();
+                }
+
+                // Процедурное поле потока (Flow Field)
+                const scale = 0.0025;
+                const angle = (Math.sin(this.x * scale + time * 0.3) + Math.cos(this.y * scale + time * 0.4)) * Math.PI * 2;
+                
+                let targetVx = Math.cos(angle) * config.baseSpeed;
+                let targetVy = Math.sin(angle) * config.baseSpeed;
+
+                // Легкое взаимодействие с мышью (эффект "волны" при наведении)
+                if (mouse.active) {
+                    const dx = this.x - mouse.x;
+                    const dy = this.y - mouse.y;
+                    const dist = Math.sqrt(dx * dx + dy * dy);
+                    if (dist < 180) {
+                        const force = (180 - dist) / 180;
+                        targetVx += (dx / dist) * force * 1.5;
+                        targetVy += (dy / dist) * force * 1.5;
+                    }
+                }
+
+                this.vx += (targetVx - this.vx) * 0.08;
+                this.vy += (targetVy - this.vy) * 0.08;
+
+                this.x += this.vx;
+                this.y += this.vy;
+                this.life--;
+
+                if (this.life <= 0 || this.x < -50 || this.x > width + 50 || this.y < -50 || this.y > height + 50) {
+                    this.reset();
+                }
+            }
+
+            draw() {
+                if (this.history.length < 2) return;
+
+                const color = this.colorType === 'cyan' ? config.colors.cyan : config.colors.purple;
+                
+                ctx.beginPath();
+                ctx.moveTo(this.history[0].x, this.history[0].y);
+                for (let i = 1; i < this.history.length; i++) {
+                    ctx.lineTo(this.history[i].x, this.history[i].y);
+                }
+                
+                ctx.strokeStyle = `rgba(${color}, 0.3)`;
+                ctx.lineWidth = this.colorType === 'cyan' ? 1.5 : 1;
+                ctx.lineCap = 'round';
+                ctx.lineJoin = 'round';
+                ctx.stroke();
+
+                // Светящаяся головка частицы
+                ctx.beginPath();
+                ctx.arc(this.x, this.y, this.colorType === 'cyan' ? 2 : 1.5, 0, Math.PI * 2);
+                ctx.fillStyle = `rgba(${color}, 0.9)`;
+                ctx.shadowBlur = this.colorType === 'cyan' ? 12 : 15;
+                ctx.shadowColor = `rgba(${color}, 0.8)`;
+                ctx.fill();
+                ctx.shadowBlur = 0;
+            }
+        }
+
+        function init() {
+            const rect = banner.getBoundingClientRect();
+            width = rect.width;
+            height = rect.height;
+            
+            const dpr = window.devicePixelRatio || 1;
+            canvas.width = width * dpr;
+            canvas.height = height * dpr;
+            ctx.scale(dpr, dpr);
+            canvas.style.width = `${width}px`;
+            canvas.style.height = `${height}px`;
+
+            const area = width * height;
+            config.particleCount = Math.floor(area / 7000); 
+            
+            particles = [];
+            for (let i = 0; i < config.particleCount; i++) {
+                particles.push(new Particle());
+            }
+        }
+
+        function animate() {
+            // Полупрозрачная очистка для эффекта motion blur (кинематографичность)
+            ctx.fillStyle = 'rgba(3, 3, 5, 0.2)';
+            ctx.fillRect(0, 0, width, height);
+
+            time += 0.004;
+
+            particles.forEach(particle => {
+                particle.update();
+                particle.draw();
+            });
+
+            animationId = requestAnimationFrame(animate);
+        }
+
+        window.addEventListener('resize', () => {
+            cancelAnimationFrame(animationId);
+            init();
+            animate();
+        });
+
+        banner.addEventListener('mousemove', (e) => {
+            const rect = banner.getBoundingClientRect();
+            mouse.x = e.clientX - rect.left;
+            mouse.y = e.clientY - rect.top;
+            mouse.active = true;
+        });
+
+        banner.addEventListener('mouseleave', () => {
+            mouse.active = false;
+            mouse.x = -1000;
+            mouse.y = -1000;
+        });
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    if (!animationId) animate();
+                } else {
+                    cancelAnimationFrame(animationId);
+                    animationId = null;
+                }
+            });
+        }, { threshold: 0.1 });
+        
+        observer.observe(banner);
+
+        init();
+        animate();
+    </script>
+</body>
+</html>
