@@ -440,12 +440,6 @@ h2 { font-size: clamp(1.3rem, 2.4vw, 1.9rem); }
   fill: currentColor;
 }
 
-/* На планшетах и телефонах шапка узкая: информер убираем, чтобы не давить
-   на логотип и соцсети. Данные остаются в разметке, просто скрыты. */
-@media (max-width: 980px) {
-  .appbar-ticker { display: none; }
-}
-
 /* Знак приложения: тёмная плитка с неоновой обводкой и мягким свечением.
    На ховере внутри проходит тонкий вращающийся блик. */
 .brand-mark {
@@ -857,6 +851,37 @@ h2 { font-size: clamp(1.3rem, 2.4vw, 1.9rem); }
 
 .ticker__delta.is-up { color: #8bffab; background: rgba(125, 255, 155, 0.11); }
 .ticker__delta.is-down { color: #ff9b9b; background: rgba(255, 120, 120, 0.11); }
+
+/* ── адаптив шапки ───────────────────────────────────────────────── */
+/* На планшетах и телефонах информер убираем: в узкой строке он давит
+   на логотип и кнопки и ломает шапку. Правило стоит ПОСЛЕ базового
+   .appbar-ticker, иначе display: flex его перекрывает. */
+@media (max-width: 980px) {
+  .appbar-ticker { display: none; }
+}
+
+@media (max-width: 560px) {
+  .appbar { padding: calc(10px + var(--safe-top)) 0 10px; }
+  .appbar-row { gap: 10px; }
+  .brand { gap: 9px; font-size: 13px; letter-spacing: 0.05em; }
+  .brand::after { display: none; }
+  .brand-mark { width: 30px; height: 30px; border-radius: 9px; }
+  .brand-mark-inner { font-size: 14px; }
+  .appbar-actions { gap: 6px; }
+  .social { width: 32px; height: 32px; }
+  .social svg { width: 16px; height: 16px; }
+  .appbar-actions [data-install] { padding: 7px 12px; font-size: 11px; }
+}
+
+@media (max-width: 400px) {
+  .brand { font-size: 12px; }
+  .appbar-actions [data-install] { padding: 7px 10px; }
+}
+
+/* Совсем узкие экраны: остаётся знак, иначе кнопки уезжают за край. */
+@media (max-width: 340px) {
+  .brand__text { display: none; }
+}
 
 /* ── сетка музыки ────────────────────────────────────────────────── */
 .music-tools {
